@@ -1,0 +1,52 @@
+[
+  {
+    "business_line": "FICC",
+    "full_name": "Fixed Income Clearing Corporation",
+    "legal_scope": "GSD and MBSD separately"
+  },
+  {
+    "business_line": "ECS",
+    "full_name": "Equity Clearing & Settlement",
+    "legal_scope": "NSCC clearing and DTC settlement separately"
+  },
+  {
+    "business_line": "RDS",
+    "full_name": "Repository & Derivatives Services",
+    "legal_scope": "trade repositories by jurisdiction; TIW separately"
+  },
+  {
+    "business_line": "WIS",
+    "full_name": "Wealth & Investment Solutions",
+    "legal_scope": "NSCC non-guaranteed fund, insurance and private-market services"
+  },
+  {
+    "business_line": "ITP",
+    "full_name": "Institutional Trade Processing",
+    "legal_scope": "DTCC ITP LLC; not a CCP"
+  },
+  {
+    "business_line": "Asset Services",
+    "full_name": "DTC Asset Services",
+    "legal_scope": "DTC custody, corporate actions, underwriting and tax services"
+  },
+  {
+    "business_line": "DAS",
+    "full_name": "DTC Digital Asset Solutions",
+    "legal_scope": "DTC tokenization service; distinct from DDA technology provider"
+  },
+  {
+    "business_line": "DDA",
+    "full_name": "DTCC Digital Assets",
+    "legal_scope": "technology/platform provider; ex-Securrency"
+  },
+  {
+    "business_line": "Data Services",
+    "full_name": "DTCC Data Services",
+    "legal_scope": "data/analytics products; shared underlying market observations"
+  },
+  {
+    "business_line": "Consulting",
+    "full_name": "DTCC Consulting Services",
+    "legal_scope": "advisory services; DTCC Solutions (UK)"
+  }
+]

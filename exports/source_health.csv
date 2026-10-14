@@ -1,0 +1,262 @@
+source_id,name,kind,enabled,last_checked,last_success,last_status,last_error,linked_businesses
+fed_press,Federal Reserve Board,rss,1,2026-10-14T20:18:32+00:00,2026-10-14T20:18:32+00:00,downloaded,,10
+sec_press,US Securities and Exchange Commission,rss,1,2026-10-14T20:18:32+00:00,2026-10-14T20:18:32+00:00,downloaded,,10
+cftc_press,US Commodity Futures Trading Commission,rss,1,2026-10-14T20:18:32+00:00,2026-10-14T20:18:32+00:00,downloaded,,10
+ecb_press,European Central Bank,rss,1,2026-10-14T20:18:32+00:00,2026-10-14T20:18:32+00:00,downloaded,,10
+bis_press,Bank for International Settlements,rss,1,2026-10-14T20:18:33+00:00,2026-10-14T20:18:33+00:00,downloaded,,10
+fred_SOFR,Secured Overnight Financing Rate,market_series,1,2026-10-14T20:20:34+00:00,2026-10-14T20:20:34+00:00,downloaded,,7
+fred_EFFR,Effective Federal Funds Rate,market_series,1,2026-10-14T20:18:33+00:00,2026-10-14T20:18:33+00:00,downloaded,,7
+fred_DGS10,10-year Treasury yield,market_series,1,2026-10-14T20:18:33+00:00,2026-10-14T20:18:33+00:00,downloaded,,5
+fred_DGS2,2-year Treasury yield,market_series,1,2026-10-14T20:18:33+00:00,2026-10-14T20:18:33+00:00,downloaded,,4
+fred_DGS3MO,3-month Treasury yield,market_series,1,2026-10-14T20:18:33+00:00,2026-10-14T20:18:33+00:00,downloaded,,10
+fred_BAA10Y,Baa corporate yield minus 10-year Treasury yield,market_series,1,2026-10-14T20:18:33+00:00,2026-10-14T20:18:33+00:00,downloaded,,5
+fred_VIXCLS,CBOE equity volatility index,market_series,1,2026-10-14T20:18:33+00:00,2026-10-14T20:18:33+00:00,downloaded,,4
+fred_NFCICREDIT,Chicago Fed credit subindex,market_series,1,2026-10-14T20:18:33+00:00,2026-10-14T20:18:33+00:00,downloaded,,5
+fred_BAMLC0A0CM,ICE BofA US Corporate Index option-adjusted spread,market_series,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,4
+fred_SP500,S&P 500 index,market_series,1,2026-10-14T20:18:33+00:00,2026-10-14T20:18:33+00:00,downloaded,,4
+fred_DTWEXBGS,Nominal broad US dollar index,market_series,1,2026-10-14T20:18:33+00:00,2026-10-14T20:18:33+00:00,downloaded,,4
+fred_WRMFSL,Retail money market funds,market_series,0,,2026-10-14T19:20:08+00:00,imported,,3
+fred_WIMFSL,Institutional money market funds,market_series,0,,2026-10-14T19:20:08+00:00,imported,,3
+fred_CBBTCUSD,Coinbase Bitcoin price,market_series,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,3
+fred_CBETHUSD,Coinbase Ethereum price,market_series,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,3
+fred_USEPUINDXM,US economic policy uncertainty,market_series,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,10
+fred_JTU5200QUR,"Finance and insurance quits rate, not seasonally adjusted",market_series,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,10
+dtcc_asset_services,Asset Services,business_reference,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,3
+dtcc_wealth,Wealth,business_reference,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,1
+dtcc_rds,Rds,business_reference,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,1
+dtcc_itp,Itp,business_reference,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,1
+dtcc_digital,Digital,business_reference,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,2
+dtcc_data_services,Data Services,business_reference,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,3
+dtcc_consulting,Consulting,business_reference,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,1
+dtcc_clearing,Clearing,business_reference,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,2
+dtcc_press,Dtcc Press,news_index,0,,2026-10-14T19:15:11+00:00,imported,,10
+dtcc_insights,Dtcc Insights,news_index,0,,2026-10-14T19:15:11+00:00,imported,,10
+dtcc_notices,Dtcc Notices,notice_index,0,,2026-10-14T19:15:12+00:00,imported,,10
+dtcc_rules,Dtcc Rules,rule_index,0,,2026-10-14T19:15:12+00:00,imported,,10
+dtcc_policy,Dtcc Policy,disclosure_index,0,,2026-10-14T19:15:12+00:00,imported,,2
+dtcc_financials,Dtcc Financials,financial_index,0,,2026-10-14T19:15:12+00:00,imported,,10
+dtcc_market_data,Dtcc Market Data,public_market_index,0,,2026-10-14T19:15:12+00:00,imported,,5
+dtcc_money_market,Dtcc Money Market,public_market_index,0,,2026-10-14T19:15:12+00:00,imported,,3
+ici_fund_flows,ICI weekly long-term mutual fund flows,industry_data_index,0,,,,,3
+fca_publications,Financial Conduct Authority news and publications,regulator_index,0,,2026-10-14T19:15:12+00:00,imported,,6
+esma_news,European Securities and Markets Authority news,esma_news,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,7
+cisa_kev,CISA Known Exploited Vulnerabilities,cyber_catalog,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,10
+google_cloud,Google Cloud public service incidents,provider_incidents,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,10
+google_workspace,Google Workspace public service incidents,provider_incidents,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,10
+federal_register,"Federal Register: SEC, CFTC and Federal Reserve publications",regulatory_documents,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,10
+fema,FEMA disaster declarations,disaster_declarations,1,2026-10-14T20:20:34+00:00,2026-10-14T20:20:34+00:00,downloaded,,10
+dtcc_rss_index,dtcc_rss_index,discovery,0,,,,,10
+dtcc_notice_feed,dtcc_notice_feed,rss,1,2026-10-14T20:20:34+00:00,2026-10-14T20:20:34+00:00,downloaded,,10
+dtcc_equity_trade_volume_insights,dtcc_equity_trade_volume_insights,public_market_index,0,,2026-10-14T19:16:59+00:00,imported,,5
+dtcc_exchange_traded_funds,dtcc_exchange_traded_funds,public_market_index,0,,2026-10-14T19:16:59+00:00,imported,,5
+dtcc_dtcc_gcf_repo_index,dtcc_dtcc_gcf_repo_index,public_market_index,0,,2026-10-14T19:20:09+00:00,imported,,5
+dtcc_previous_12_months_volume_for_gsd,dtcc_previous_12_months_volume_for_gsd,public_market_index,0,,2026-10-14T19:20:09+00:00,imported,,5
+dtcc_previous_12_months_volume_for_mbs,dtcc_previous_12_months_volume_for_mbs,public_market_index,0,,2026-10-14T19:20:09+00:00,imported,,5
+dtcc_membership,dtcc_membership,public_market_index,0,,2026-10-14T19:20:09+00:00,imported,,5
+dtcc_daily_total_us_treasury_trade_fails,dtcc_daily_total_us_treasury_trade_fails,public_market_index,0,,2026-10-14T19:20:10+00:00,imported,,5
+dtcc_underwriting_data_report,dtcc_underwriting_data_report,public_market_index,0,,2026-10-14T19:16:59+00:00,imported,,5
+dtcc_asic_reports,dtcc_asic_reports,public_market_index,0,,2026-10-14T19:16:59+00:00,imported,,5
+dtcc_emir_public_reports,dtcc_emir_public_reports,public_market_index,0,,2026-10-14T19:16:59+00:00,imported,,5
+dtcc_emir_public_reports_uk,dtcc_emir_public_reports_uk,public_market_index,0,,2026-10-14T19:16:59+00:00,imported,,5
+dtcc_sftr_public_reports_uk,dtcc_sftr_public_reports_uk,public_market_index,0,,2026-10-14T19:16:59+00:00,imported,,5
+dtcc_sftr_public_reports,dtcc_sftr_public_reports,public_market_index,0,,2026-10-14T19:17:01+00:00,imported,,5
+dtcc_public_page_js,dtcc_public_page_js,discovery,0,,,,,10
+fca_rss,fca_rss,rss,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,6
+dtcc_underwriting_data_report_embedded_f5297c0e,dtcc_underwriting_data_report_embedded,embedded_market_data,0,,2026-10-14T19:18:24+00:00,imported,,5
+dtcc_underwriting_data_report_embedded_22d8238f,dtcc_underwriting_data_report_embedded,embedded_market_data,0,,2026-10-14T19:18:24+00:00,imported,,5
+dtcc_equity_trade_volume_insights_embedded,dtcc_equity_trade_volume_insights_embedded,equity_operations,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,5
+dtcc_exchange_traded_funds_embedded,dtcc_exchange_traded_funds_embedded,embedded_market_data,0,,2026-10-14T19:18:24+00:00,imported,,5
+dtcc_emir_public_reports_embedded,dtcc_emir_public_reports_embedded,embedded_market_data,0,,2026-10-14T19:18:25+00:00,imported,,5
+dtcc_emir_public_reports_uk_embedded,dtcc_emir_public_reports_uk_embedded,embedded_market_data,0,,2026-10-14T19:18:25+00:00,imported,,5
+dtcc_sftr_public_reports_embedded,dtcc_sftr_public_reports_embedded,embedded_market_data,0,,2026-10-14T19:18:25+00:00,imported,,5
+dtcc_sftr_public_reports_uk_embedded,dtcc_sftr_public_reports_uk_embedded,embedded_market_data,0,,2026-10-14T19:18:25+00:00,imported,,5
+dtcc_asic_reports_embedded,dtcc_asic_reports_embedded,embedded_market_data,0,,2026-10-14T19:18:25+00:00,imported,,5
+dtcc_js_686,dtcc_js_686,discovery,0,,,,,10
+dtcc_js_7255,dtcc_js_7255,discovery,0,,,,,10
+dtcc_js_2795,dtcc_js_2795,discovery,0,,,,,10
+dtcc_js_7664,dtcc_js_7664,discovery,0,,,,,10
+dtcc_js_2570,dtcc_js_2570,discovery,0,,,,,10
+dtcc_js_4596,dtcc_js_4596,discovery,0,,,,,10
+dtcc_js_8918,dtcc_js_8918,discovery,0,,,,,10
+dtcc_js_2330,dtcc_js_2330,discovery,0,,,,,10
+dtcc_feed_catalog,dtcc_feed_catalog,feed_catalog,0,,,,,10
+dtcc_report_js_emir_js,dtcc_report_js_emir_js,discovery,0,,,,,2
+dtcc_etf_listing_csv,dtcc_etf_listing_csv,etf_reference,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,4
+dtcc_report_js_sftrfca_js,dtcc_report_js_sftrfca_js,discovery,0,,,,,2
+dtcc_underwriting_xml,dtcc_underwriting_xml,business_timeseries,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,3
+rds_esma_table1_20261009,rds_esma_table1_20261009,repository_weekly,0,,2026-10-14T19:23:12+00:00,imported,,2
+rds_esma_table2_20261009,rds_esma_table2_20261009,repository_weekly,0,,2026-10-14T19:23:12+00:00,imported,,2
+rds_esma_table3_20261009,rds_esma_table3_20261009,repository_weekly,0,,2026-10-14T19:23:12+00:00,imported,,2
+rds_fca_table1_20261009,rds_fca_table1_20261009,repository_weekly,0,,2026-10-14T19:23:12+00:00,imported,,2
+rds_fca_table2_20261009,rds_fca_table2_20261009,repository_weekly,0,,2026-10-14T19:23:12+00:00,imported,,2
+rds_fca_table3_20261009,rds_fca_table3_20261009,repository_weekly,0,,2026-10-14T19:23:12+00:00,imported,,2
+rds_uk_sftr_table1_20261009,rds_uk_sftr_table1_20261009,repository_weekly,0,,2026-10-14T19:23:13+00:00,imported,,3
+rds_uk_sftr_table2_20261009,rds_uk_sftr_table2_20261009,repository_weekly,0,,2026-10-14T19:23:13+00:00,imported,,3
+rds_uk_sftr_table3_20261009,rds_uk_sftr_table3_20261009,repository_weekly,0,,,,,3
+rds_uk_sftr_table4_20261009,rds_uk_sftr_table4_20261009,repository_weekly,0,,,,,3
+dtcc_report_final_single_name_q2_2026_xlsx,dtcc_report_final_single_name_q2_2026_xlsx,public_business_report,0,,2026-10-14T19:23:13+00:00,imported,,2
+dtcc_report_index_roll_report_06_mar_26_through_28_aug_26_xlsx,dtcc_report_index_roll_report_06_mar_26_through_28_aug_26_xlsx,public_business_report,0,,2026-10-14T19:23:13+00:00,imported,,2
+dtcc_report_money_market_kinetics_insights_june_2026_pdf,dtcc_report_money_market_kinetics_insights_june_2026_pdf,public_business_report,0,,2026-10-14T19:23:13+00:00,imported,,3
+dtc_framework_2026q2,dtc_framework_2026q2,disclosure_framework,0,,2026-10-14T19:23:13+00:00,imported,,3
+dtcc_tokenized_funds_reference,dtcc_tokenized_funds_reference,background_article,0,,2026-10-14T19:23:13+00:00,imported,,3
+article_ebcedbc40897c536,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:10+00:00,imported,,0
+article_cbc5086320f83e3e,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:10+00:00,imported,,1
+article_c6d5f4b95d0819de,US Securities and Exchange Commission original document,article,0,,,,,1
+article_c2733d129e9daa98,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:10+00:00,imported,,0
+article_bd9437e663fc497d,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:10+00:00,imported,,1
+article_9292c3f6398d3839,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:10+00:00,imported,,0
+article_8dac74e8074181af,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:10+00:00,imported,,1
+article_7208058fd586b7a2,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:10+00:00,imported,,1
+article_61868b2f2f3e7339,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:11+00:00,imported,,1
+article_580a7c13a3ef8e4f,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:11+00:00,imported,,1
+article_52703df8675f4ad8,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:11+00:00,imported,,0
+article_4ab92b92be8ef8e9,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:11+00:00,imported,,0
+article_2956a298e117ef43,European Securities and Markets Authority news original document,article,0,,2026-10-14T19:29:11+00:00,imported,,0
+article_fa42660c7db1369b,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:11+00:00,imported,,1
+article_f760a44c7d59c389,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:11+00:00,imported,,0
+article_f6fb33ca271b66af,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:11+00:00,imported,,0
+article_f164606bbc052699,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:11+00:00,imported,,0
+article_ca688a27006cdc18,Federal Reserve Board original document,article,0,,2026-10-14T19:29:11+00:00,imported,,0
+article_c9980d029338d3a7,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:11+00:00,imported,,0
+article_c93921c3bcba117b,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:11+00:00,imported,,0
+article_c68817c005615e24,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:11+00:00,imported,,0
+article_c5fc7abe10a11ea1,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:12+00:00,imported,,0
+article_c57c0b7f6a3350d0,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:12+00:00,imported,,1
+article_b957c0d943df5c67,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:12+00:00,imported,,1
+article_b25591325d07de70,European Securities and Markets Authority news original document,article,0,,2026-10-14T19:29:12+00:00,imported,,0
+article_a84cbd23afdd623c,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:12+00:00,imported,,0
+article_a35220ff4454560b,fca_rss original document,article,0,,2026-10-14T19:29:12+00:00,imported,,0
+article_9cc6074a74be77cf,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:12+00:00,imported,,1
+article_9b6e93b48f207022,European Central Bank original document,article,0,,2026-10-14T19:29:12+00:00,imported,,0
+article_92bfe3cca51094e6,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:12+00:00,imported,,1
+article_8ef4e58a44729c36,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:12+00:00,imported,,1
+article_875e97b272b39eee,European Securities and Markets Authority news original document,article,0,,2026-10-14T19:29:12+00:00,imported,,0
+article_86d45ddd5252b0cc,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:13+00:00,imported,,1
+article_818b3a081587b402,Bank for International Settlements original document,article,0,,2026-10-14T19:29:13+00:00,imported,,0
+article_75f27ade41e05f5d,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:13+00:00,imported,,1
+article_67fde4e995ca7783,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:13+00:00,imported,,0
+article_5a1c93b30bcfb40c,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:13+00:00,imported,,1
+article_4d096047b293ccfa,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:13+00:00,imported,,0
+article_4612179d3c1b46e7,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:13+00:00,imported,,0
+article_44cacfef30aa4ecb,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:13+00:00,imported,,0
+article_3b33e5f2da95d701,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:14+00:00,imported,,0
+article_37a9480d244fd20a,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:14+00:00,imported,,0
+article_34c576b4e474631f,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:14+00:00,imported,,0
+article_31b69380c26a7eb7,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:14+00:00,imported,,0
+article_30e0c8919c4cefd9,fca_rss original document,article,0,,2026-10-14T19:29:14+00:00,imported,,0
+article_2d190585b0b30a3e,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:14+00:00,imported,,0
+article_2c9018217f537673,European Central Bank original document,article,0,,2026-10-14T19:29:14+00:00,imported,,0
+article_2a564ddf0ecfc083,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:14+00:00,imported,,0
+article_2a55b88f0b3e5f34,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:14+00:00,imported,,0
+article_261713c1b99dc872,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:14+00:00,imported,,1
+article_22c2afdb33252b8b,fca_rss original document,article,0,,2026-10-14T19:29:14+00:00,imported,,0
+article_22a63a8f5d476b48,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:14+00:00,imported,,1
+article_19fce718cc38f5aa,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:14+00:00,imported,,0
+article_0bf5ff62507d1e4c,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:14+00:00,imported,,0
+article_fbacc69607319913,European Securities and Markets Authority news original document,article,0,,2026-10-14T19:29:15+00:00,imported,,0
+article_fb13146bf2f3ebf0,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:15+00:00,imported,,1
+article_ef2ef737ac76946e,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:15+00:00,imported,,0
+article_ec0da774fac80138,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:15+00:00,imported,,1
+article_bedd368f2d697113,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:15+00:00,imported,,1
+article_b459fdcb70dcc1b7,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:15+00:00,imported,,1
+article_4a35a406aad951b4,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:15+00:00,imported,,1
+article_26e24eb729b7b884,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:15+00:00,imported,,1
+article_0765f367a2766953,Bank for International Settlements original document,article,0,,2026-10-14T19:29:16+00:00,imported,,0
+article_068045ae81f279ab,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:16+00:00,imported,,1
+article_04f2f46961646f73,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:16+00:00,imported,,1
+article_ff5084ebbc0737c9,European Securities and Markets Authority news original document,article,0,,2026-10-14T19:29:16+00:00,imported,,0
+article_f53ffaaf0919f599,US Commodity Futures Trading Commission original document,article,0,,2026-10-14T19:29:16+00:00,imported,,1
+article_e9125648fbc842c6,US Securities and Exchange Commission original document,article,0,,,,,0
+article_e16e2e0c3ea06a99,European Securities and Markets Authority news original document,article,0,,2026-10-14T19:29:17+00:00,imported,,0
+article_de638dff76861148,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:17+00:00,imported,,0
+article_d9e4e9b44f5fd478,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:17+00:00,imported,,0
+article_ce19eaec2cbf05d3,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:17+00:00,imported,,0
+article_c9aac6a9a28ff26b,European Securities and Markets Authority news original document,article,0,,2026-10-14T19:29:17+00:00,imported,,2
+article_c7e399c182d2eea7,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:17+00:00,imported,,0
+article_b6582caeec3f3540,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:17+00:00,imported,,0
+article_b311c3a0c69320d6,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:17+00:00,imported,,0
+article_9126eb17cf14b3fd,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:17+00:00,imported,,1
+article_8ae1a863c66a7860,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:17+00:00,imported,,1
+article_8759aaa76d2d8a0a,US Commodity Futures Trading Commission original document,article,0,,2026-10-14T19:29:17+00:00,imported,,1
+article_8467e2124a16c543,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:17+00:00,imported,,1
+article_8049c1e2d225a87f,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:18+00:00,imported,,1
+article_643d15ab6c60ae0b,fca_rss original document,article,0,,2026-10-14T19:29:18+00:00,imported,,2
+article_634edda6cfcbbcdf,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:18+00:00,imported,,1
+article_5f011b753eba8300,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:18+00:00,imported,,1
+article_5c530a3f841bc475,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:18+00:00,imported,,1
+article_5929bd6bf32845d7,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:18+00:00,imported,,0
+article_499c5bef5e11b075,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:18+00:00,imported,,0
+article_31ff319bc7af4905,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:18+00:00,imported,,0
+article_2fdb08e43b341226,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:18+00:00,imported,,1
+article_2cdb5cb83e73e3fc,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:18+00:00,imported,,1
+article_277a186038383a12,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:19+00:00,imported,,0
+article_19b375e1b09838b6,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:19+00:00,imported,,1
+article_189d1019c6b7b971,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:19+00:00,imported,,1
+article_16420f279d36cd0c,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:19+00:00,imported,,0
+article_130803055187661e,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:20+00:00,imported,,0
+article_0d84bbab316fddb2,Federal Reserve Board original document,article,0,,2026-10-14T19:29:20+00:00,imported,,0
+article_f0546f5cff30d9d8,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:20+00:00,imported,,0
+article_e7b36056a798be5b,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:20+00:00,imported,,0
+article_e35a2c2f2b8a1b7d,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:20+00:00,imported,,0
+article_d55f21169d127f49,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:22+00:00,imported,,1
+article_bb1d3794c1681c5d,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:22+00:00,imported,,0
+article_b69cc246cd705d27,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:23+00:00,imported,,1
+article_a4a5debc8311c56a,fca_rss original document,article,0,,2026-10-14T19:29:23+00:00,imported,,0
+article_a49d28693e9f47c9,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:23+00:00,imported,,0
+article_a37490dc6bf90744,European Central Bank original document,article,0,,2026-10-14T19:29:23+00:00,imported,,0
+article_8fbb18afd13a46e5,Federal Reserve Board original document,article,0,,2026-10-14T19:29:23+00:00,imported,,0
+article_75feef790b0a4624,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:23+00:00,imported,,1
+article_71ea55d10a5fb0d8,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:24+00:00,imported,,0
+article_7034217a9bdb23ab,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:24+00:00,imported,,0
+article_6f447f0c71f54087,European Securities and Markets Authority news original document,article,0,,2026-10-14T19:29:25+00:00,imported,,0
+article_69f37d867634f068,European Central Bank original document,article,0,,2026-10-14T19:29:25+00:00,imported,,0
+article_667c43de185dbabc,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:25+00:00,imported,,1
+article_5f364f13596d7cd3,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:26+00:00,imported,,0
+article_59ebcef97e010b44,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:26+00:00,imported,,0
+article_5784e0d51d3afab4,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:28+00:00,imported,,1
+article_495b510a48c2ffef,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:28+00:00,imported,,0
+article_42321b0c323e1fee,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:29+00:00,imported,,0
+article_3ca36834dec5a2a4,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:29+00:00,imported,,0
+article_3b6e01fb2aae2ee0,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:31+00:00,imported,,0
+article_39de758680dcfe54,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:31+00:00,imported,,0
+article_31f2170fa9271cb1,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:32+00:00,imported,,0
+article_2ef5bb141d17507f,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:34+00:00,imported,,0
+article_29840b1c40621fc3,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:38+00:00,imported,,0
+article_1ce8f6703c765325,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:38+00:00,imported,,0
+article_116cc4a81cf9b413,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:38+00:00,imported,,0
+article_0ca50564546753b9,fca_rss original document,article,0,,2026-10-14T19:29:38+00:00,imported,,1
+article_067b0f3f5d016ddc,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:38+00:00,imported,,0
+article_05874e0f5577c791,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:41+00:00,imported,,0
+article_dfb762420c981a42,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:41+00:00,imported,,1
+article_deb4369d980f2a76,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:41+00:00,imported,,0
+article_cbb3dc898612e8a9,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:41+00:00,imported,,1
+article_a8eb6bf790b72864,European Central Bank original document,article,0,,2026-10-14T19:29:42+00:00,imported,,1
+article_991631d2c0c562cc,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:42+00:00,imported,,0
+article_96fb38f4c01c2bd0,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:43+00:00,imported,,0
+article_626effe5ecb6cc0b,European Securities and Markets Authority news original document,article,0,,2026-10-14T19:29:43+00:00,imported,,0
+article_5551fe3167959efb,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:43+00:00,imported,,1
+article_52595361f7fdb305,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:43+00:00,imported,,1
+article_3d6cdbbbcdaf29a5,dtcc_notice_feed original document,article,0,,2026-10-14T19:29:44+00:00,imported,,1
+article_08dfdbdaa9ce20cc,Federal Reserve Board original document,article,0,,2026-10-14T19:29:44+00:00,imported,,0
+article_0775120cfda68bdf,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:44+00:00,imported,,0
+dtcc_insight_20261014,DTCC Insights,dated_article,0,,2026-10-14T19:29:46+00:00,imported,,3
+fred_RMFSL,"Retail money market funds, monthly seasonally adjusted",market_series,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,3
+fred_MMMFFAQ027S,Money market funds total financial assets,market_series,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,3
+ici_money_market_release,Investment Company Institute weekly money market fund assets,industry_data_release,0,,2026-10-14T19:32:43+00:00,imported,,3
+dtcc_previous_12_months_volume_for_gsd_embedded_f45759ae,dtcc_previous_12_months_volume_for_gsd public chart,embedded_ficc_data,0,,2026-10-14T19:40:41+00:00,imported,,2
+dtcc_previous_12_months_volume_for_mbs_embedded_e9b11226,dtcc_previous_12_months_volume_for_mbs public chart,embedded_ficc_data,0,,2026-10-14T19:40:41+00:00,imported,,2
+dtcc_dtcc_gcf_repo_index_embedded_1a425e81,dtcc_dtcc_gcf_repo_index public chart,embedded_ficc_data,0,,2026-10-14T19:40:41+00:00,imported,,2
+dtcc_daily_total_us_treasury_trade_fails_embedded_7adec5d9,dtcc_daily_total_us_treasury_trade_fails public chart,embedded_ficc_data,0,,2026-10-14T19:40:41+00:00,imported,,2
+dtcc_membership_embedded_4037e10d,dtcc_membership public chart,embedded_ficc_data,0,,2026-10-14T19:40:42+00:00,imported,,2
+ficc_gcfindex,FICC public gcfindex.csv,ficc_daily_series,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,2
+ficc_failsdata,FICC public failsdata.csv,ficc_daily_series,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,2
+ficc_sponsoredvolume,FICC public SponsoredVolume.csv,ficc_daily_series,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,2
+ficc_clearing_volumes,FICC GSD and MBSD shared clearing-volume history,ficc_monthly_series,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,2
+rds_esma_table1,rds_esma_table1_20261009,repository_weekly,1,2026-10-14T20:18:36+00:00,2026-10-14T20:18:36+00:00,downloaded,,2
+rds_esma_table2,rds_esma_table2_20261009,repository_weekly,1,2026-10-14T20:18:36+00:00,2026-10-14T20:18:36+00:00,downloaded,,2
+rds_esma_table3,rds_esma_table3_20261009,repository_weekly,1,2026-10-14T20:18:36+00:00,2026-10-14T20:18:36+00:00,downloaded,,2
+rds_fca_table1,rds_fca_table1_20261009,repository_weekly,1,2026-10-14T20:18:36+00:00,2026-10-14T20:18:36+00:00,downloaded,,2
+rds_fca_table2,rds_fca_table2_20261009,repository_weekly,1,2026-10-14T20:18:36+00:00,2026-10-14T20:18:36+00:00,downloaded,,2
+rds_fca_table3,rds_fca_table3_20261009,repository_weekly,1,2026-10-14T20:18:36+00:00,2026-10-14T20:18:36+00:00,downloaded,,2
+rds_uk_sftr_table1,rds_uk_sftr_table1_20261009,repository_weekly,1,2026-10-14T20:18:36+00:00,2026-10-14T20:18:36+00:00,downloaded,,3
+rds_uk_sftr_table2,rds_uk_sftr_table2_20261009,repository_weekly,1,2026-10-14T20:18:36+00:00,2026-10-14T20:18:36+00:00,downloaded,,3

@@ -1,0 +1,74 @@
+{
+  "run_id": "2026-10-14T20:20:34+00:00_c971edcf",
+  "as_of_date": "2026-10-14",
+  "new_records": 0,
+  "revised_records": 0,
+  "unchanged_records": 1297,
+  "successful_sources": [
+    "fema",
+    "fred_SOFR",
+    "dtcc_notice_feed"
+  ],
+  "failed_sources": [],
+  "skipped_not_due": [],
+  "source_results": [
+    {
+      "source_id": "fema",
+      "counts": {
+        "unchanged": 12
+      },
+      "requests": [
+        {
+          "url": "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?%24filter=declarationDate+ge+%272026-10-07T00%3A00%3A00.000Z%27+and+declarationDate+le+%272026-10-14T23%3A59%3A59.000Z%27&%24select=disasterNumber%2CdeclarationDate%2CincidentType%2Cstate%2CdeclarationType%2CincidentBeginDate&%24orderby=declarationDate&%24top=10000&%24skip=0",
+          "rows": 12,
+          "duplicates_merged": 116,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source_id": "fred_SOFR",
+      "counts": {
+        "unchanged": 286
+      },
+      "requests": [
+        {
+          "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=SOFR&cosd=2025-09-09&coed=2026-10-14",
+          "rows": 286,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source_id": "dtcc_notice_feed",
+      "counts": {
+        "unchanged": 999
+      },
+      "requests": [
+        {
+          "url": "https://www.dtcc.com/rss-feeds/legal/all-important-notices",
+          "rows": 999,
+          "duplicates_merged": 1,
+          "status": "downloaded"
+        }
+      ]
+    }
+  ],
+  "manual_review_sources": [
+    "dtcc_press",
+    "dtcc_insights",
+    "dtcc_policy",
+    "dtcc_financials",
+    "ici_fund_flows",
+    "ici_money_market_release"
+  ],
+  "models_retrained": false,
+  "business_risk_scores_generated": false,
+  "status": "success",
+  "snapshot": {
+    "file": "capstone.sqlite3.gz",
+    "sha256": "26820bed016ebecb2137a777eb1e4e02ff509bb55401c011b1b6e8e5b189a094",
+    "bytes": 12392653
+  }
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "dataset_id": "business_scale",
+    "n": 20,
+    "latest": "June 2026 daily average"
+  },
+  {
+    "dataset_id": "cds_reference",
+    "n": 1653,
+    "latest": null
+  },
+  {
+    "dataset_id": "equity_operations",
+    "n": 18,
+    "latest": "2026-08"
+  },
+  {
+    "dataset_id": "etf_reference",
+    "n": 6156,
+    "latest": "2026-10-09"
+  },
+  {
+    "dataset_id": "external_events",
+    "n": 1803,
+    "latest": "2026-10-14"
+  },
+  {
+    "dataset_id": "ficc_daily",
+    "n": 7925,
+    "latest": "2026-10-09"
+  },
+  {
+    "dataset_id": "ficc_monthly",
+    "n": 1236,
+    "latest": "2026-09"
+  },
+  {
+    "dataset_id": "financial_metric_evidence",
+    "n": 300,
+    "latest": "2026Q2"
+  },
+  {
+    "dataset_id": "financials",
+    "n": 75,
+    "latest": "2026Q2"
+  },
+  {
+    "dataset_id": "market_observations",
+    "n": 18023,
+    "latest": "2026-10-13"
+  },
+  {
+    "dataset_id": "news",
+    "n": 1221,
+    "latest": "2026-10-14"
+  },
+  {
+    "dataset_id": "pqd_cell_evidence",
+    "n": 1644,
+    "latest": "2026Q2"
+  },
+  {
+    "dataset_id": "pqd_quarterly",
+    "n": 69,
+    "latest": "2026Q2"
+  },
+  {
+    "dataset_id": "quarterly_operations",
+    "n": 182,
+    "latest": "2026Q2"
+  },
+  {
+    "dataset_id": "rds_reports",
+    "n": 1402,
+    "latest": "2026-10-09"
+  },
+  {
+    "dataset_id": "response_cell_evidence",
+    "n": 207,
+    "latest": "2026Q2"
+  },
+  {
+    "dataset_id": "underwriting",
+    "n": 752,
+    "latest": "2026-08"
+  },
+  {
+    "dataset_id": "wis_industry",
+    "n": 36,
+    "latest": "2026-10-07"
+  }
+]

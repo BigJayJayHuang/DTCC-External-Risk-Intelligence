@@ -1,0 +1,30 @@
+{
+  "integrity": "ok",
+  "foreign_keys": "ok",
+  "business_lines": 10,
+  "pqd_quarters": 23,
+  "records": 42722,
+  "versions": 61468,
+  "evidence_hash_references": 237,
+  "verified_bundled_public_evidence_blobs": 0,
+  "dataset_counts": {
+    "business_scale": 20,
+    "cds_reference": 1653,
+    "equity_operations": 18,
+    "etf_reference": 6156,
+    "external_events": 1803,
+    "ficc_daily": 7925,
+    "ficc_monthly": 1236,
+    "financial_metric_evidence": 300,
+    "financials": 75,
+    "market_observations": 18023,
+    "news": 1221,
+    "pqd_cell_evidence": 1644,
+    "pqd_quarterly": 69,
+    "quarterly_operations": 182,
+    "rds_reports": 1402,
+    "response_cell_evidence": 207,
+    "underwriting": 752,
+    "wis_industry": 36
+  }
+}
