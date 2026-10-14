@@ -1,0 +1,10 @@
+{
+  "archive": "Twelve_Risk_Families_FICC_ECS_2026-10-05.zip",
+  "files": 94,
+  "bytes": 7868570,
+  "sha256": "57c0f2d2da32306474eb25c696b70a4981b9e5554c9406894e5966c07d923068",
+  "zip_integrity": "passed",
+  "required_entries": "passed",
+  "PQD_workbooks_included": 22,
+  "packaged_at_utc": "2026-10-06T00:40:51.418473+00:00"
+}

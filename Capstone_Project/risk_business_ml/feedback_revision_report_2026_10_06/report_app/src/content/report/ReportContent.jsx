@@ -1,0 +1,33 @@
+import React,{useState} from 'react';
+import {useDataApp,RichNarrative,ReportSection,DataComponent,DataTable,EvidenceChart,Dropdown,SegmentedControl} from '../../data-app-public.jsx';
+import copy from './report-copy.json';
+import './report.css';
+const allLabels={sofr_effr:['SOFR−EFFR','SOFR−EFFR'],sofr_effr_adjusted:['校正SOFR−EFFR','Adjusted SOFR−EFFR'],ust10_abs_change:['国债日变动','10Y daily change'],ust10_rv20:['国债20日波动','10Y yield RV20'],baa_spread:['Baa信用利差','Baa spread'],baa_widen20:['Baa利差扩大','Baa widening 20D'],vix:['VIX','VIX']};
+const num=x=>x===null||x===undefined?'—':Number(x).toFixed(3);
+const caseShort={im_qoq:['保证金环比','IM growth'],im_call_to_im:['追缴/IM','IM call / IM'],vm_peak_usd:['VM峰值','Peak VM'],vm_peak_to_avg:['VM峰均比','Peak / avg VM']};
+export function ReportContent(){
+ const {reviewedRows,visible}=useDataApp();
+ const [lang,setLang]=useState('cn'),[entity,setEntity]=useState('GSD'),[outcome,setOutcome]=useState('im_qoq'),[sample,setSample]=useState('all');
+ const L=(cn,en)=>lang==='cn'?cn:en; const idx=lang==='cn'?0:1;
+ const c=copy[lang], orig=reviewedRows('original_summary'), responses=reviewedRows('responses'), fields=reviewedRows('fields'), cases=reviewedRows('cases'),feedback=reviewedRows('feedback'),history=reviewedRows('response_history');
+ const rows=responses.filter(r=>r.entity===entity&&r.outcome===outcome&&r.sample===sample);
+ const display=rows.map(r=>({...r,indicatorLabel:allLabels[r.indicator][idx],lagLabel:r.lag===0?L('同季度','Same quarter'):L('下一季度','Next quarter')}));
+ const cr=cases.map(r=>({...r,chartLabel:`${r.entity} ${caseShort[r.outcome][idx]}`,caseLabel:`${r.entity} ${allLabels[r.indicator][idx]} · ${copy.outcome_labels[r.outcome][idx]}`,lagLabel:r.lag===0?L('同季度','Same quarter'):L('下一季度','Next quarter')}));
+ const narr=(i,id,q,sourceRows)=>visible(id)&&<ReportSection id={id} key={id} title={c.sections[i].heading} queryId={q} sourceRows={sourceRows} showHeading={false}><RichNarrative id={`${id}:${lang}`} value={`## ${c.sections[i].heading}\n\n${c.sections[i].paragraphs.join('\n\n')}`} /></ReportSection>;
+ const spec={type:'horizontalBar',x:'chartLabel',y:'rho',series:'lagLabel',stackable:false,valueDecimals:3};
+ return <article className="report-content response-review-report" aria-label={L('业务反应检验报告','Business response test report')}>
+  <div className="report-language"><SegmentedControl label="Language 语言" value={lang} options={[{value:'cn',label:'中文'},{value:'en',label:'English'}]} onChange={setLang}/></div>
+  <RichNarrative id={`report-hero:${lang}`} value={`# ${c.title}\n\n${c.subtitle}\n\n${L('报告日期 2026年10月6日  数据截至2026Q2','Report date October 6, 2026  Data through 2026Q2')}`} />
+  {visible('report-summary')&&<ReportSection id="report-summary" title={c.sections[0].heading} queryId="responses" queryIds={['responses','original_summary']} sourceRowsByQuery={{responses,original_summary:orig}} showHeading={false}><RichNarrative id={`report-summary:${lang}`} value={`## ${c.sections[0].heading}\n\n${c.sections[0].paragraphs.join('\n\n')}`}/></ReportSection>}
+  {narr(1,'report-feedback','feedback',feedback)}
+  {narr(2,'report-field-definitions','fields',fields)}
+  {visible('field-table')&&<DataComponent id="field-table" queryId="fields" title={L('七种业务反应形式','Seven business response formulations')} kind="table" displayRows={fields} sourceRows={fields}><DataTable searchable={false} rows={fields} columns={[{key:lang==='cn'?'metricCn':'metricEn',label:L('指标','Measure')},{key:'formula',label:L('公式','Formula')},{key:lang==='cn'?'windowCn':'windowEn',label:L('窗口及单位','Window and unit')},{key:lang==='cn'?'limitCn':'limitEn',label:L('解释限制','Interpretation limit')}]} /></DataComponent>}
+  {narr(3,'report-case-explanation','cases',cases)}
+  {visible('case-lag-chart')&&<EvidenceChart id="case-lag-chart" queryId="cases" title={L('同季度与下一季度的全样本关联','Full-sample same-quarter and next-quarter associations')} rows={cr} sourceRows={cases} spec={spec} height={440} description={L('预先指定六个展示案例；置信区间和时期分解见下表。','Six predefined examples; confidence intervals and period breakdowns are in the table below.')}/>}
+  {visible('display-case-table')&&<DataComponent id="display-case-table" queryId="cases" title={L('案例证据及不确定性','Case evidence and uncertainty')} kind="table" displayRows={cr} sourceRows={cases}><DataTable rows={cr} columns={[{key:'caseLabel',label:L('案例','Case')},{key:'lagLabel',label:L('滞后','Lag')},{key:'n',label:'n'},{key:'rho',label:'rho',renderCell:num},{key:'q',label:'BH q',renderCell:num},{key:'ci95_low',label:'CI low',renderCell:num},{key:'ci95_high',label:'CI high',renderCell:num},{key:'rho_earlier',label:L('较早rho','Earlier rho'),renderCell:num},{key:'rho_later',label:L('后续rho','Later rho'),renderCell:num}]} /></DataComponent>}
+  {narr(4,'report-methods','responses',responses)}
+  {visible('response-results-table')&&<DataComponent id="response-results-table" queryId="responses" title={L('完整结果浏览','Explore the complete results')} kind="table" displayRows={display} sourceRows={rows}><DataTable rows={display} toolbarControls={<><Dropdown label={L('业务','Service')} showLabel choices={['GSD','MBSD','NSCC']} value={entity} onChange={setEntity}/><Dropdown label={L('指标','Outcome')} showLabel choices={fields.map(f=>f.key)} choiceLabels={Object.fromEntries(fields.map(f=>[f.key,copy.outcome_labels[f.key][idx]]))} value={outcome} onChange={setOutcome}/><Dropdown label={L('样本','Sample')} showLabel choices={['all','earlier','later']} choiceLabels={{all:L('全样本','Full sample'),earlier:L('截至2024Q4','Through 2024Q4'),later:L('后续六季度','Later six quarters')}} value={sample} onChange={setSample}/></>} columns={[{key:'indicatorLabel',label:L('外部指标','External indicator')},{key:'lagLabel',label:L('滞后','Lag')},{key:'n',label:'n'},{key:'rho',label:'rho',renderCell:num},{key:'bh_q_ordinary',label:'BH q',renderCell:num},{key:'ci95_low',label:'CI low',renderCell:num},{key:'ci95_high',label:'CI high',renderCell:num},{key:'rho_first_differences',label:L('差分rho','Difference rho'),renderCell:num}]}/></DataComponent>}
+  <RichNarrative id={`report-nextsteps:${lang}`} value={`## ${c.sections[5].heading}\n\n${c.sections[5].paragraphs.join('\n\n')}`}/>
+  <RichNarrative id={`report-sources:${lang}`} value={`## ${c.sections[6].heading}\n\n${c.sections[6].paragraphs.join('\n\n')}\n\n${copy.sources.map(s=>`- [${s.label}](${s.url})`).join('\n')}`} sourcePreviews={{'https://www.bis.org/publications/public-quantitative-disclosure-standards-central-counterparties.pdf':{title:'CPMI–IOSCO public quantitative disclosure standards',summary:'Quarterly definitions distinguish average daily VM, quarter peak VM, peak aggregate IM calls and quarter-end initial margin requirements.',source:'BIS CPMI–IOSCO',date:'2015-02-26',approvedForReport:true}}}/>
+ </article>
+}

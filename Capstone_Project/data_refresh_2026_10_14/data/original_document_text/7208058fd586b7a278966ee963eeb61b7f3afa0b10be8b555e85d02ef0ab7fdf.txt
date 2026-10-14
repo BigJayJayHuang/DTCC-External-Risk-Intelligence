@@ -1,0 +1,95 @@
+    
+DTCC offers enhanced access to all important notices via a Web -based subscription service. 
+The notification system leverages RSS Newsfeeds, providing significant benefits including  
+real-time updates and customizable delivery. To learn more and to set up your own DTCC RSS  
+alerts, visit http://www.dtcc.com/subscription_form.php.     
+     
+1 
+IMPORTANT NOTICE 
+The Depository Trust Company 
+DTCC Public (White) 
+ 
+B #: 24820-26 
+Date: October 14, 2026 
+To: All Participants 
+Category: Depositary Services Fee 
+From: International Services 
+Attention: Operations, Reorg & Dividend Managers, Partners & Cashiers 
+Subject: 
+Depositary Fees Notification 
+Security: Evotec SE 
+CUSIP: 30050E105 
+JPMorgan Chase Bank, N.A. 
+The Depository Trust Company has received from JPMorgan Chase Bank, N.A, the attached 
+information regarding depositary fees. Charges will be processed through the billing statement 
+on the seventh business day of the month following the Record Date. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Important Legal Information: The Depository Trust Company (“DTC”) does not represent or warrant the accuracy, adequacy, 
+timeliness, completeness, or fitness for any particular purpose of the information contained in this communication, which is based in part. 
+on information obtained from third parties and not independently verified by DTC and which is provided as is. The information contained. 
+in this communication is not intended to be a substitute for obtaining tax advice from an appropriate professional advisor. In providing. 
+this communication, DTC shall not be liable for (1) any loss resulting directly or indirectly from mistakes, errors, omissions, interruptions, 
+delays or defects in such communication, unless caused directly by gross negligence or willful misconduct on the part of DTC, and (2) any. 
+special, consequential, exemplary, incidental, or punitive damages. 
+To ensure compliance with Internal Revenue Service Circular 230, you are hereby notified that: (a) any discussion of federal tax issues. 
+contained or referred to herein is not intended or written to be used, and cannot be used, for the purpose of avoiding penalties that may be 
+imposed under the Internal Revenue Code; and (b) as a matter of policy, DTC does not provide tax, legal or accounting advice and 
+accordingly, you should consult your own tax, legal and accounting advisor before engaging in any transaction. 
+
+October 14, 2026
+JPMorgan Chase Bank, N.A.
+500 Stanton Christiana Rd.
+Newark, Delaware 19713-2107
+ADR Settlements: 302-552-0230
+DEPOSITARY FEES NOTIFICATION - FINAL ANNOUNCEMENT
+J.P. Morgan (the "Depositary") hereby represents and warrants to The Depository Trust Company
+("DTC") that it may collect and receive, pursuant to the terms and conditions of the Deposit Agreement(s)
+(the "Agreement(s)"), by Evotec SE and the Depositary, an annual service fee per ADR share in
+accordance with the table below (the "Representation"):
+Depositary DTC # Security Name CUSIP Security
+Type Fee Record
+Date
+J.P. Morgan 0923 Evotec SE 30050E105 ADR 0.05 November
+16, 2026
+The Depositary hereby instructs DTC to collect and pass-through such fee(s) to the Depositary (the
+"Instruction").
+Depositary hereby agrees to indemnify and defend DTC and its respective officers, directors, employees,
+agents and attorneys (the "Indemnities") from and against, and hold the Indemnities harmless from, any
+and all liabilities, damages, judgments, payments, litigations, costs and expenses (including without
+limitation any costs of investigation and legal fees and expenses incurred), regardless of whether or not
+any liability, payment, obligation or judgment is ultimately imposed against the Indemnities (together
+"Losses") and/or any claim, counterclaim, demand, action, suit, counterclaim, arbitration, inquiry,
+proceeding or investigation before any federal, state or foreign court or other tribunal, or any investigative
+or regulatory agency or SRO (together "Legal Actions") suffered or incurred by the Indemnities resulting
+from, relating to, arising out of, or in connection with the Representation and/or the Instruction.
+For market information on Depositary Receipts and international equities, go to J.P. Morgan’s Web site www.adr.com.
+Disclosures
+J.P. Morgan collects fees from holders of depositary receipts. JPMorgan may (i) reimburse the issuer for certain expenses incurred by the issuer in connection with the
+depositary receipts program or (ii) share with the issuer revenue derived by JPMorgan from the program. JPMorgan may use brokers, dealers or other service providers that are
+affiliates or other divisions of JPMorgan and may earn or share fees and commissions. From time to time, J.P. Morgan may pay a rebate to brokers in connection with the
+deposit of shares for the issuance of unsponsored depositary receipts. J.P. Morgan disclaims all liability arising out of, or relating to, such rebates. In particular, J.P. Morgan
+disclaims all responsibility regarding whether such broker passes all or a portion of such rebate to beneficial holders of such depositary receipts. The details of this
+announcement are provided for informational purposes only. JPMorgan does not warrant or guarantee the accuracy or completeness of, and does not undertake an obligation to
+update or amend this announcement.
+Disclaimer:
+ JPMorgan Chase Bank, N.A. and other J.P. Morgan entities reserve the right to change any of the above execution policies at any time as deemed necessary or appropriate
+and it may cease to offer any of the services referenced herein or add new services over time. This document is provided solely for informational purposes and provides a
+summary of the information contained therein. It is not a complete description of the transactions, processes and procedures referred to herein. Processes and procedures
+described in, and any other content of, this document are subject to change without notice. JPMorgan Chase Bank, N.A. and other J.P. Morgan entities do not accept any
+obligation to update this document on time or at all whether such processes and procedures have changed or otherwise.
+© 2026 JPMorgan Chase & Co. All rights reserved.

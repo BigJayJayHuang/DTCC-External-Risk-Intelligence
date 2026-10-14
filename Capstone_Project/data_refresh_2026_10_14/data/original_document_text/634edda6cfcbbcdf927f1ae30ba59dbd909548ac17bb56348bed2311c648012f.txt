@@ -1,0 +1,90 @@
+    
+DTCC offers enhanced access to all important notices via a Web -based subscription service. 
+The notification system leverages RSS Newsfeeds, providing significant benefits including  
+real-time updates and customizable delivery. To learn more and to set up your own DTCC RSS  
+alerts, visit http://www.dtcc.com/subscription_form.php.     
+     
+1 
+IMPORTANT NOTICE 
+The Depository Trust Company 
+DTCC Public (White) 
+ 
+B #: 24456-26 
+Date: October 9, 2026 
+To: All Participants 
+Category: Depositary Services Fee 
+From: International Services 
+Attention: Operations, Reorg & Dividend Managers, Partners & Cashiers 
+Subject: 
+Depositary Fees Notification  
+Security: AGILYX ASA 
+CUSIP: 00853C101 
+Citibank 
+ 
+The Depository Trust Company has received from Citibank, the attached information regarding 
+Depositary Fees. Charges will be processed through the billing statement on the seventh 
+business day of the month following the Record Date.    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Important Legal Information: The Depository Trust Company (“DTC”) does not represent or warrant the accuracy, adequacy, 
+Timeliness, completeness or fitness for any particular purpose of the information contained in this communication, which is based in part 
+On information obtained from third parties and not independently verified by DTC and which is provided as is. The information contained 
+in this communication is not intended to be a substitute for obtaining tax advice from an appropriate professional advisor. In providing 
+this communication, DTC shall not be liable for (1) any loss resulting directly or indirectly from mistakes, errors, omissions, interruptions, 
+delays or defects in such communication, unless caused directly by gross negligence or willful misconduct on the part of DTC, and (2) any 
+special, consequential, exemplary, incidental or punitive damages. To ensure compliance with Internal Revenue Service Circular 230, you 
+are hereby notified that: (a) any discussion of federal tax issues contained or referred to herein is not intended or written to be used, and 
+cannot be used, for the purpose of avoiding penalties that may be imposed under the Internal Revenue Code; and (b) as a matter of policy, 
+DTC does not provide tax, legal or accounting advice and accordingly, you should consult your own tax, legal and accounting advisor before 
+engaging in any transaction. 
+
+ 
+DEPOSITARY SERVICE FEE ANNOUNCEMENT
+To the holders of: AGILYX ASA
+DATE: 10/07/2026
+Please be advised of the following Depositary Service Fee ("DSF")
+DR PROGRAM: AGILYX ASA
+CUSIP: 00853C101
+ISIN: US00853C1018
+COUNTRY: NORWAY
+RATIO (ORD : DR): 10:1
+DSF RECORD DATE: 11/16/2026
+RATE PER DR: $0.03 per ADS held
+=========================================================================================
+Citibank (the "Depositary") hereby represents and warrants to The Depository Trust Company ("DTC") that it may
+collect and receive, pursuant to the terms and conditions of the Deposit Agreement(s) (the "Agreement(s)"), each
+dated as of 08/17/2026 by AGILYX ASA and the Depositary, a service fee per share in accordance with the table
+below (the 'Representation'):
+Depositary DTC # Security Name CUSIP Security
+Type
+Fee Record Date
+Citibank 953 AGILYX ASA 00853C101 ADR 0.03 11/16/2026
+The Depositary hereby instructs DTC to collect and pass-through such fee(s) to the Depositary (the "Instruction").
+Depositary hereby agrees to indemnify and defend DTC and its respective officers, directors, employees, agents and
+attorneys (the "Indemnitees") against, and hold the Indemnitees harmless from, any and all *Losses  and/or**Legal
+Actions  suffered or incurred by the Indemnitees resulting from, relating to, arising out of, or in connection with the
+Representation and/or the Instruction.
+*"Losses" means and includes all losses, liabilities, damages, judgments, payments, litigations, costs and expenses
+(including without limitation any costs of investigation and legal fees and expenses incurred), regardless of whether or
+not any liability, payment, obligation or judgment is ultimately imposed against the Indemnitees.
+**"Legal Action" means and includes any claim, counterclaim, demand, action, suit, arbitration, inquiry, proceeding or
+investigation before any federal, state or foreign court or other tribunal, or any investigative or regulatory agency or
+SRO.
+Questions may be directed to : MALCOLM BROWN 973-461-7024 or TIFFANY MA 973-461-5734
+Email drdividends@citi.com
+For more information about Citi's Depositary Receipt Services, please visit www.citi.com/dr.

@@ -1,0 +1,17 @@
+{
+  "http_status": 200,
+  "final_url": "https://www.sec.gov/news/pressreleases.rss",
+  "content_type": "application/rss+xml; charset=utf-8",
+  "etag": "\"1790321250\"",
+  "last_modified": "Fri, 25 Sep 2026 07:27:30 GMT",
+  "sha256": "5ad5b13e753f9175ab73f6bfc0c5691f038b57f3badc180fbb97afdd0b95cac6",
+  "collected_at_utc": "2026-09-25T07:27:47+00:00",
+  "source": {
+    "id": "sec_press",
+    "name": "US Securities and Exchange Commission",
+    "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+    "reference_url": "https://www.sec.gov/about/rss-feeds",
+    "coverage": "US securities regulation and SEC announcements; not a complete rulemaking feed",
+    "enabled": true
+  }
+}

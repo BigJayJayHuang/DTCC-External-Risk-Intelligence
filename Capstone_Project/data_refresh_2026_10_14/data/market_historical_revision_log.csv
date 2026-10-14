@@ -1,0 +1,14 @@
+﻿series_id,observation_date,prior_value,current_value,current_raw_file,interpretation
+NFCICREDIT,2026-07-03,-0.035,-0.04,raw/fred_NFCICREDIT_f0fa8775016e.csv,historical revision or later publication; not a new event
+NFCICREDIT,2026-07-10,-0.039,-0.044,raw/fred_NFCICREDIT_f0fa8775016e.csv,historical revision or later publication; not a new event
+NFCICREDIT,2026-07-17,-0.042,-0.048,raw/fred_NFCICREDIT_f0fa8775016e.csv,historical revision or later publication; not a new event
+NFCICREDIT,2026-07-24,-0.046,-0.052,raw/fred_NFCICREDIT_f0fa8775016e.csv,historical revision or later publication; not a new event
+NFCICREDIT,2026-07-31,-0.05,-0.055,raw/fred_NFCICREDIT_f0fa8775016e.csv,historical revision or later publication; not a new event
+NFCICREDIT,2026-08-07,-0.054,-0.058,raw/fred_NFCICREDIT_f0fa8775016e.csv,historical revision or later publication; not a new event
+NFCICREDIT,2026-08-14,-0.057,-0.059,raw/fred_NFCICREDIT_f0fa8775016e.csv,historical revision or later publication; not a new event
+NFCICREDIT,2026-08-21,-0.059,-0.058,raw/fred_NFCICREDIT_f0fa8775016e.csv,historical revision or later publication; not a new event
+NFCICREDIT,2026-08-28,-0.061,-0.055,raw/fred_NFCICREDIT_f0fa8775016e.csv,historical revision or later publication; not a new event
+NFCICREDIT,2026-09-04,-0.062,-0.051,raw/fred_NFCICREDIT_f0fa8775016e.csv,historical revision or later publication; not a new event
+NFCICREDIT,2026-09-11,-0.062,-0.045,raw/fred_NFCICREDIT_f0fa8775016e.csv,historical revision or later publication; not a new event
+NFCICREDIT,2026-09-18,-0.062,-0.039,raw/fred_NFCICREDIT_f0fa8775016e.csv,historical revision or later publication; not a new event
+NFCICREDIT,2026-09-25,-0.061,-0.032,raw/fred_NFCICREDIT_f0fa8775016e.csv,historical revision or later publication; not a new event

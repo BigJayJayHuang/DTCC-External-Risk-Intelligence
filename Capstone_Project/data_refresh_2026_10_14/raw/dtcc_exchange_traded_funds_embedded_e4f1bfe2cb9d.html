@@ -1,0 +1,90 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/products/css/site.css" media="screen" />
+</head>
+<body>
+<div id="container">
+    <div class="lpMain">
+        <div id="highlightedText">
+            <h3>Exchange Trade Funds - Active and Pre Launch</h3>
+            <br/>
+            <h5>
+                This file includes both active ETFs that may be processed at DTCC and ETFs that are not yet active ("pre launch") and, therefore, are not able to be processed at DTCC, unless and until such securities have received all necessary regulatory and other approvals.
+                Please refer to the <a href="https://www.dtcc.com/terms">Terms of Use.</a></H5></p>
+            </h5>
+            <br>
+        </div>
+        <div class="lpContentBlock">
+            <h4><a href=""></a></h4>
+            <div id="etf-table-container"></div>
+            <div id="update-date"></div>
+            <!-- CUSTOM CODE BEGINS -->
+            <script>
+                // Path to your CSV file
+				var date = new Date().getTime();
+                const csvUrl = '/ETFListing/etf_listing.csv?v=' + date;
+
+  
+			function createCSVOutput(csvUrl) {
+                    fetch(csvUrl)
+                        .then(response => response.text())
+                        .then(text => {
+                            const rows = text.trim().split('\n');
+                            let updateDate = '';
+
+                            // Get date from first row, first column
+                            if (rows.length > 0) {
+								const line = rows[0].trim();
+                                let dateStr = line.substr(6, 8); // "20251008"
+                                        let yearPiece = dateStr.substr(0, 4);
+                                        let monthPiece = dateStr.substr(4, 2);
+                                        let dayPiece = dateStr.substr(6, 2);
+                                        updateDate = `Updated (yyyy-mm-dd): <strong>${yearPiece}-${monthPiece}-${dayPiece}</strong>`;
+                            }
+
+                            // Build table header and insert update date at the top
+                            let tableRows = '<table border="0" cellspacing="0" cellpadding="0" id="filingsTable">';
+                            tableRows += `<caption style="text-align:left; font-weight:bold; padding-bottom:8px;">${updateDate}</caption>`;
+                            tableRows += '<tr>' +
+                                '<th scope="col">Trading Symbol</th>' +
+                                '<th scope="col">Trading CUSIP</th>' +
+                                '<th scope="col">ETF Security Description</th>' +
+                                '<th scope="col">ETF Agent</th>' +
+                                '<th scope="col">Foreign (F) / Domestic (D)</th>' +
+                                '<th scope="col">Create/Redeem</th>' +
+                                '</tr>';
+
+                            // Build table rows, skipping the first row (date row)
+                            for (let i = 1; i < rows.length; i++) {
+                                const cols = rows[i].split(',');
+                                if (cols.length === 6) {
+                                    // Use highlightRow class for every other row (even rows)
+                                    const highlightClass = (i % 2 === 0) ? 'highlightRow' : '';
+                                    tableRows += `<tr class="${highlightClass}">`;
+                                    cols.forEach(col => {
+                                        tableRows += `<td>${col.replace(/=|"/g, '')}</td>`;
+                                    });
+                                    tableRows += '</tr>';
+                                }
+                            }
+                            tableRows += '</table>';
+
+                            document.getElementById('etf-table-container').innerHTML = tableRows;
+                        })
+                        .catch(error => {
+                            document.getElementById('etf-table-container').innerText = 'Error loading CSV data.';
+                            console.error(error);
+                        });
+                }
+
+                createCSVOutput(csvUrl);
+            </script>
+
+            <!-- CUSTOM CODE ENDS -->
+        </div><!-- END lpMain -->
+    </div><!-- END container -->
+</div>
+</body>
+</html>

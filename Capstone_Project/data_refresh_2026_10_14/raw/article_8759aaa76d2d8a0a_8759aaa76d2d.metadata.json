@@ -1,0 +1,18 @@
+{
+  "source_id": "article_8759aaa76d2d8a0a",
+  "source_name": "US Commodity Futures Trading Commission original document",
+  "url": "https://www.cftc.gov/PressRoom/PressReleases/9310-26",
+  "file": "raw/article_8759aaa76d2d8a0a_8759aaa76d2d.html",
+  "collected_at_utc": "2026-10-14T19:29:17+00:00",
+  "public_only": true,
+  "business_lines": [
+    "RDS"
+  ],
+  "kind": "article",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://www.cftc.gov/PressRoom/PressReleases/9310-26",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 34985,
+  "sha256": "e004427a7d0d5024bd7426ca0a0c0f0f54a540405cb117940a4129be3e57f63b"
+}

@@ -1,0 +1,48 @@
+INTERVIEW
+Interview with Corriere della Sera
+Interview with Piero Cipollone, Member of the Executive Board of the ECB, conducted by Daniele Manca on 23 September 2026
+8 October 2026
+Some argue that the digital euro will end up replacing cash…
+Not at all. Perhaps some people initially feared that the aim of the digital euro was to replace cash. But that is not the case. The ECB’s work to develop and ultimately introduce a new series of euro banknotes with different designs and the latest anti-counterfeiting features, is proof of that. The digital euro will complement cash, offering the same high level of security and, let me stress, at no cost to individuals, just like cash today.
+So, when can we expect the digital euro? Could it be in 2029?
+Yes. But let me take a step back for a moment. This is not just a technical matter, and not everything is up to the ECB.
+Go on.
+Support for the single currency stands at over 80% in the latest Eurobarometer survey. That tells us that the project has solid foundations: people trust the euro, our common currency. But the world is changing. I hardly need to point out that we live in a digital age. We all carry a phone in our pocket. It would be strange not to complement euro banknotes with a digital form of cash, wouldn’t it?
+I see. That perhaps harks back to what you learned from Federico Caffè, with his emphasis on the social dimension of economics…
+More simply, alongside the cash that our parents and grandparents tell us to carry in our pockets “just in case”, we will have an app on our phones. It will be provided by the ECB, our own bank or another payment service provider, and we will be able to hold an amount of digital euro in it.
+But what is the point of having a digital euro on our phones when we already have so many ways to pay, from cards such as Visa and Mastercard to payment services such as Satispay and PayPal? We can already send money with a single tap.
+They are very different things. Ask merchants what happens today when customers pay by card, whether directly or using their phones. Merchants often have no real alternative when it comes to accepting those payments and have to pay fees that are opaque and often high. Italy has 570,000 merchants employing almost two million people. High fees eat into their margins, which are often already very tight, and ultimately they have little choice but to pass these costs on through their prices.
+With the digital euro, they will have a public alternative. For small merchants, the cost of accepting digital payments could be halved. The digital euro could also be integrated into European private payment solutions, allowing them to be used throughout the euro area, including in places where they are not currently accepted. And this is not just theoretical: in Italy, Satispay and Bancomat are already taking part in our work.
+And what about people who don’t have a phone?
+There will be a card too. And there will be ways to pay as you would with cash, including offline.
+What does that mean?
+It means that if the power goes out or the internet is down, you will still be able to pay offline, without an internet connection or intermediaries. Money will pass from one device to another, just like cash, but in digital form.
+You keep talking about a future that seems a long way off, on the cusp of the next decade.
+It might seem a long way off, but actually the pilot project was launched in the summer and the first tests will start next year, with the first payments being made in less than 12 months.
+But we’re still at the testing stage.
+Remember that several important legislative debates are taking place in Brussels to establish the European legislation needed in order to begin. So, as I said before, not everything is up to the ECB. Fortunately, we are nearly there: by the end of the year the legislative text should be ready. But we at the ECB have not stood still in the meantime. In April we signed agreements to establish the technical standards. In May we received nearly 60 applications to take part in the pilot next year – including from several Italian banks. We have selected 36 of them. Think about how long we have been talking about this. And in just a few months, thanks to the ECB’s work in recent years, we will be ready to test its use in practice.
+What’s behind this acceleration?
+Geopolitics has certainly played a role. The invasion of Ukraine had already focused attention in Europe on strategic autonomy. The starting point was energy dependency, particularly regarding natural gas, and then we realised that there are similar vulnerabilities in other strategic sectors too. Without our own digital payment system, we are at the mercy of other operators.
+Do you mean the new Trump Administration?
+The White House has taken a different tack with digital payments. What matters is that we are building a digital infrastructure for European citizens – by which I mean a network and a scheme – with no room for error. We are talking about the money and deposits of citizens and firms. It’s a European system.
+Of course it would have to be European.
+Having European technology is no small matter. We are always complaining that the EU has no presence in these areas. To achieve this, checks and trials are needed, and we have been conducting them for some time. Just think about merchants.
+How does it affect merchants?
+When we talk about digital, we immediately think about online purchases on websites. But the digital euro will have to be accepted by every single merchant that accepts digital payments, including in shops, as though it were cash, with the same standards of security, resilience and reliability. Think about how many shopkeepers and firms will have to update their systems over the coming years. We must ensure that the digital euro is incorporated easily and naturally into these normal update cycles. In parallel, we are developing an innovation platform that will enable even more advanced services, based on the digital euro, to be offered. We were surprised by the responses from banks, firms and universities to the invitation to take part in the different tests and trials that we have conducted or will conduct. They came from nearly all countries, which is the clearest sign that the challenge has been accepted.
+Related topics
+Digital euro
+Central bank digital currencies (CBDC)
+Euro
+Euro area
+Payment systems
+Disclaimer
+Please note that related topic tags are currently available for selected content only.
+CONTACT
+European Central Bank
+Directorate General Communications
+Sonnemannstrasse 20
+60314 Frankfurt am Main, Germany
++49 69 1344 7455
+media@ecb.europa.eu
+Reproduction is permitted provided that the source is acknowledged.
+Media contacts

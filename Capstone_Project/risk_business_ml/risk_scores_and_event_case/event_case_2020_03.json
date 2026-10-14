@@ -1,0 +1,72 @@
+{
+  "event_id": "covid-market-stress-2020-03",
+  "event_name_zh": "2020年3月疫情引发的市场流动性与波动冲击",
+  "event_start": "2020-03-01",
+  "event_end": "2020-03-31",
+  "scoring_quarter": "2020Q1",
+  "event_window_note": "月份表示案例观察范围，不是单一新闻的精确发生日；季度指数包含2020年1至3月。",
+  "scoring_is_retrospective": true,
+  "not_a_2020_point_in_time_prediction": true,
+  "financial_monitoring_indices": {
+    "FICC_financial_monitoring_index": 98.44300220995075,
+    "NSCC_financial_monitoring_index": 98.00555772142081,
+    "DTC_financial_monitoring_index": 98.35443569239911,
+    "ECS_related_proxy_index": 98.35443569239911,
+    "ECS_proxy_selected_entity": "DTC",
+    "equal_weight_index": 97.72727272727272
+  },
+  "trigger_evidence": {
+    "vix_mean_change_pct": 123.25900549196894,
+    "ten_year_yield_change_pp": -1.22,
+    "credit_conditions_change_index": 0.1253846153846153,
+    "max_sofr_minus_effr_bps": 29.000000000000004
+  },
+  "observed_ficc_activity": {
+    "treasury_daily_clearing_volume_usd_lower_bound": 6000000000000.0,
+    "approx_increase_over_usual_daily_average_pct": 43,
+    "source": "https://www.dtcc.com/insights/2022/making-the-us-treasury-market-safer-for-all-participants",
+    "source_publication_date": "2022-02-22"
+  },
+  "observed_outcomes": [
+    {
+      "entity": "FICC",
+      "scope": "March 2020 episode described by DTCC",
+      "finding": "Orderly processing and settlement; ceasing to act for a member did not result in adverse market impact or loss allocation to members.",
+      "source": "https://www.dtcc.com/insights/2022/making-the-us-treasury-market-safer-for-all-participants"
+    },
+    {
+      "entity": "NSCC",
+      "scope": "Full year 2020 and 2019; guaranteed obligations in Note 15",
+      "finding": "No participant defaults to those guaranteed obligations. This is not a statement that all trades settled without delay.",
+      "source": "https://www.dtcc.com/-/media/Files/Downloads/legal/financials/2020/NSCC-Annual-Financial-Statements-2020-and-2019.pdf",
+      "pdf_page": 24
+    }
+  ],
+  "transmission_chains": {
+    "FICC_GSD": [
+      "疫情与现金需求上升",
+      "国债卖出、重新定价及流动性压力",
+      "现金国债与回购清算活动、头寸风险进入GSD",
+      "清算量与担保义务带来容量、保证金与流动性管理压力",
+      "实际维持有序清算结算；不能推断已发生损失"
+    ],
+    "FICC_MBSD": [
+      "疫情与现金需求上升",
+      "机构MBS价差与波动压力",
+      "会员MBS头寸及保证金管理压力可能进入MBSD",
+      "具体保证金增幅及损失没有本案可核实的月度量化证据"
+    ],
+    "ECS_NSCC_DTC": [
+      "市场波动及交易变化",
+      "券商未结算股票与ETF头寸变化",
+      "NSCC担保敞口与风险保证金管理",
+      "会员现金及证券交付需求影响DTC结算环节",
+      "延迟或违约属于条件性风险；本案没有DTC损失或失败率的直接证据"
+    ]
+  },
+  "sources": {
+    "ficc_event": "https://www.dtcc.com/insights/2022/making-the-us-treasury-market-safer-for-all-participants",
+    "fed_event": "https://www.federalreserve.gov/publications/2020-november-financial-stability-report-borrowing.htm",
+    "nscc_annual": "https://www.dtcc.com/-/media/Files/Downloads/legal/financials/2020/NSCC-Annual-Financial-Statements-2020-and-2019.pdf"
+  }
+}

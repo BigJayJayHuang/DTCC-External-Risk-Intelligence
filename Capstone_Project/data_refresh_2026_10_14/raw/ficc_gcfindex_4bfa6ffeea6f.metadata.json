@@ -1,0 +1,19 @@
+{
+  "source_id": "ficc_gcfindex",
+  "source_name": "FICC public gcfindex.csv",
+  "url": "https://cms-prod.dtcc.com/data/gcfindex.csv",
+  "file": "raw/ficc_gcfindex_4bfa6ffeea6f.csv",
+  "collected_at_utc": "2026-10-14T19:41:43+00:00",
+  "public_only": true,
+  "business_lines": [
+    "FICC",
+    "Data Services"
+  ],
+  "kind": "ficc_daily_series",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://cms-prod.dtcc.com/data/gcfindex.csv",
+  "content_type": "text/csv",
+  "bytes": 13444,
+  "sha256": "695503320ff58479d10a0869dc2f1ef95eabab92fb40dcf7b9744fbae2e044d5"
+}

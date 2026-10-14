@@ -1,0 +1,20 @@
+{
+  "risk_observations_unique_finite_and_before_cutoff": true,
+  "DTC_clearing_only_metrics_not_borrowed": true,
+  "financial_targets_max_absolute_difference": 7.105427357601002e-15,
+  "headline_same_and_lag_pairs_independently_verified": 68,
+  "headline_correlations_max_absolute_difference": 1.1102230246251565e-16,
+  "result_ranges_minimum_n_and_no_causal_claims": true,
+  "lag_uses_calendar_and_early_history_not_imputed": true,
+  "backtest_coverage_max_rounding_difference_pp": 0.0481835564053625,
+  "CISA_and_regulator_document_keys_unique": true,
+  "new_source_snapshots_hash_verified": 23,
+  "PQD_workbooks_hash_verified": 22,
+  "preserved_input_files_hash_verified": 5,
+  "notebook_executed_code_cells": 8,
+  "notebook_runtime_errors": 0,
+  "notebook_embedded_figures": 3,
+  "original_inputs_preserved": true,
+  "validated_at_utc": "2026-10-06T00:40:50.973891+00:00",
+  "visual_review": "See visual_review.json for image inspection; no full browser/HTML review is claimed."
+}

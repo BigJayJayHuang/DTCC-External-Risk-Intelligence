@@ -1,0 +1,13 @@
+taxonomy_family,label_zh,coverage,reason
+Business Continuity,业务连续性,N/A,缺少停机、灾备切换、人员可用性等数据
+Cybersecurity and Information Protection,网络安全与信息保护,N/A,缺少已核实攻击事件、漏洞暴露和影响标签
+Information Technology,信息技术,N/A,缺少系统故障、容量、时延等数据
+Data Management,数据管理,N/A,缺少业务数据差错、完整性与时效性指标
+Processing and Operations,处理与运营,N/A,缺少可比的差错率、结算失败率和运营事件标签
+Clearing and Settlement Financial Risks,清算与结算金融风险,部分覆盖,四项外部代理组成金融压力监测指数；无法评分真实敞口或损失
+Corporate Financial,公司财务,N/A,财务表现是被解释的业务指标，不能直接当作公司财务风险标签
+Model,模型,N/A,模型有效性检查不等于业务模型风险的量化标签
+Legal and Regulatory Compliance,法律与监管合规,仅有活动代理,监管公告篇数没有相关性、严重度、实施期限或成本标签
+Third Party Risk,第三方,N/A,缺少供应商事件及业务依赖数据
+Human Capital and People,人员与人力资本,N/A,缺少人员流失、关键岗位与操作失误数据
+Strategic,战略,仅有活动代理,货币政策公告篇数没有政策方向或业务影响标签

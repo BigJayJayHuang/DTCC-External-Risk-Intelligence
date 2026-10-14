@@ -1,0 +1,20 @@
+{
+  "source_id": "dtcc_report_money_market_kinetics_insights_june_2026_pdf",
+  "source_name": "dtcc_report_money_market_kinetics_insights_june_2026_pdf",
+  "url": "https://files.dtcc.com/download/assets/Money-Market-Kinetics-Insights-June-2026.pdf/2221b2baa17911f1a726f254a183b64d",
+  "file": "raw/dtcc_report_money_market_kinetics_insights_june_2026_pdf_3d9f8d9511af.pdf",
+  "collected_at_utc": "2026-10-14T19:23:13+00:00",
+  "public_only": true,
+  "business_lines": [
+    "WIS",
+    "Asset Services",
+    "Data Services"
+  ],
+  "kind": "public_business_report",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://files.dtcc.com/download/assets/Money-Market-Kinetics-Insights-June-2026.pdf/2221b2baa17911f1a726f254a183b64d",
+  "content_type": "application/pdf",
+  "bytes": 514208,
+  "sha256": "487893fbd986925cab11cba601e4c3425e9491c81a9c13bbef17231f36c2180b"
+}

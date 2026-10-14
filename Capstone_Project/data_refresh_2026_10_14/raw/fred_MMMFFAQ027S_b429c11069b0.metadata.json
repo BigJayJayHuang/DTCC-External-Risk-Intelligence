@@ -1,0 +1,20 @@
+{
+  "source_id": "fred_MMMFFAQ027S",
+  "source_name": "Money market funds total financial assets",
+  "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MMMFFAQ027S&cosd=2026-01-01&coed=2026-10-14",
+  "file": "raw/fred_MMMFFAQ027S_b429c11069b0.csv",
+  "collected_at_utc": "2026-10-14T19:29:47+00:00",
+  "public_only": true,
+  "business_lines": [
+    "WIS",
+    "Asset Services",
+    "Data Services"
+  ],
+  "kind": "market_series",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MMMFFAQ027S&cosd=2026-01-01&coed=2026-10-14",
+  "content_type": "application/csv",
+  "bytes": 67,
+  "sha256": "325584bd9f4d6b8ed4c637dcd1e900ad6b5859f95069e2f5d188b12ba9f12cfb"
+}

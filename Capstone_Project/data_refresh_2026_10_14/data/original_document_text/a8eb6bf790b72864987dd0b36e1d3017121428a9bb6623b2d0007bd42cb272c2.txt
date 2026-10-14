@@ -1,0 +1,48 @@
+PRESS RELEASE
+Results of the September 2026 survey on credit terms and conditions in euro-denominated securities financing and OTC derivatives markets (SESFOD)
+7 October 2026
+Credit terms and conditions eased slightly for all counterparty types for fourth consecutive quarter, mainly through price terms
+Demand for securities financing rose for equities and most other collateral types, while financing rates/spreads increased, particularly for most-favoured clients, and haircuts decreased
+Initial margins declined slightly for several non-centrally cleared OTC derivative types, while valuation disputes increased for foreign exchange and credit derivatives
+The September 2026 SESFOD survey covered a period of uncertainty linked to the conflict in the Middle East and volatile energy prices. The European Central Bank (ECB) raised its key interest rates by 25 basis points in June and held them unchanged in July. In the survey review period from June to August 2026, overall credit terms and conditions eased slightly for all counterparty types, extending the easing recorded in the previous three survey rounds. The change was mainly in price terms; non-price terms eased slightly for banks and dealers, tightened slightly for hedge funds and were unchanged for the other counterparty types. A small number of respondents cited general market liquidity and functioning, competition from other institutions and counterparty financial strength as reasons for easier price terms. Respondents expected a further slight overall easing for all counterparty types over the following three months (Chart 1). Hedge funds’ use of leverage increased slightly. The volume and the duration and persistence of counterparty valuation disputes were unchanged.
+Chart 1
+Expected and realised quarterly changes in overall credit terms and price/non-price terms offered to counterparties across all transaction types
+(net percentages of survey respondents)
+Source: ECB.
+Note: Net percentages are calculated as the difference between the percentage of respondents reporting “tightened somewhat” or “tightened considerably” and the percentage reporting “eased somewhat” or “eased considerably”.
+Looking at securities financing transactions, demand for funding secured against most collateral types increased, led by equities (a net 27% of respondents) (Chart 2). Financing rates/spreads increased for most-favoured clients across all collateral types; for average clients, increases were limited to the categories domestic government bonds, other government bonds and convertible securities. At the same time, haircuts decreased for most bond collateral types and asset-backed securities, and the maximum amount and maturity of funding made available to counterparties increased for some collateral types. The use of central counterparties showed small and mixed changes. Liquidity and market functioning deteriorated slightly for equities and several corporate bond types, while the volume and the duration and persistence of collateral valuation disputes were unchanged.
+Chart 2
+Changes in financing rates and demand for funding by collateral type (Q3 2026)
+(net percentages of survey respondents)
+Source: ECB.
+Note: Net percentages are calculated as the difference between the percentage of respondents reporting “decreased somewhat” or “decreased considerably” and the percentage reporting “increased somewhat” or “increased considerably”.
+Turning to non-centrally cleared over-the-counter (OTC) derivatives, initial margin requirements decreased slightly for foreign exchange, interest rate, equity and several credit derivative types. Maximum exposures and trade maturities were broadly unchanged. Liquidity and trading deteriorated for equity and commodity derivatives but improved slightly for credit derivatives referencing sovereigns. The volume and the duration and persistence of valuation disputes increased for several derivative types, particularly credit derivatives. Terms in new or renegotiated master agreements eased slightly in some areas, while the posting of non-standard collateral remained unchanged.
+Data from previous survey rounds can be accessed and visualised on the
+ECB Data Portal
+.
+The
+results of the September 2026 SESFOD survey
+, the underlying
+detailed data series
+and the
+SESFOD guidelines
+are available on the ECB’s website, together with all other
+SESFOD publications
+The SESFOD survey is conducted four times a year and covers changes in credit terms and conditions over three-month reference periods ending in February, May, August and November. The September 2026 survey collected qualitative information on changes between June and August 2026. The results are based on responses from 26 large banks, comprising 14 euro area banks and 12 banks with head offices outside the euro area.
+For media queries, please contact
+Mila Quacquarelli
+, tel.: +49 1706324603.
+CONTACT
+European Central Bank
+Directorate General Communications
+Sonnemannstrasse 20
+60314 Frankfurt am Main, Germany
++49 69 1344 7455
+media@ecb.europa.eu
+Reproduction is permitted provided that the source is acknowledged.
+Media contacts
+Annexes
+7 October 2026
+Survey on credit terms and conditions in euro-denominated securities financing and OTC derivatives markets (SESFOD) – Guidelines
+7 October 2026
+Detailed data series

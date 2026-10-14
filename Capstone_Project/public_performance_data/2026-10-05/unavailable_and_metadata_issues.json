@@ -1,0 +1,156 @@
+{
+  "unavailable_downloads": [
+    {
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Annual-Financial-Statements-2020-and-2019/12b91b8e369411f08a181282bb7fa251",
+      "listing_records": [
+        {
+          "title": "DTC Financial Statements 2020 and 2019",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Annual-Financial-Statements-2020-and-2019/12b91b8e369411f08a181282bb7fa251",
+          "listed_date": "Mar 1, 2021",
+          "format": "pdf",
+          "category": "financial_statements",
+          "status": "link_collected_download_pending"
+        }
+      ],
+      "status": "download_failed",
+      "error": "curl: (56) The requested URL returned error: 403",
+      "collected_at_utc": "2026-10-05T18:18:43.555534+00:00"
+    },
+    {
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Annual-Financial-Statements-2021-and-2020-March-December/0a67412a369611f09b43c204a2f8334f",
+      "listing_records": [
+        {
+          "title": "DTC Financial Statement Q1 2021",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Annual-Financial-Statements-2021-and-2020-March-December/0a67412a369611f09b43c204a2f8334f",
+          "listed_date": "Apr 30, 2021",
+          "format": "pdf",
+          "category": "financial_statements",
+          "status": "link_collected_download_pending"
+        }
+      ],
+      "status": "download_failed",
+      "error": "curl: (56) The requested URL returned error: 403",
+      "collected_at_utc": "2026-10-05T18:18:43.486294+00:00"
+    },
+    {
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Annual-Financial-Statements-2022-and-2021/19c29130369911f096905e09fb65ecc7",
+      "listing_records": [
+        {
+          "title": "DTC Annual Financial Statements 2022 and 2021",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Annual-Financial-Statements-2022-and-2021/19c29130369911f096905e09fb65ecc7",
+          "listed_date": "Feb 28, 2023",
+          "format": "pdf",
+          "category": "financial_statements",
+          "status": "link_collected_download_pending"
+        }
+      ],
+      "status": "download_failed",
+      "error": "curl: (56) The requested URL returned error: 403",
+      "collected_at_utc": "2026-10-05T18:18:42.833634+00:00"
+    },
+    {
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Annual-Financial-Statements-2023-and-2022/03258a98369611f096905e09fb65ecc7",
+      "listing_records": [
+        {
+          "title": "DTC Annual Financial Statements 2023 and 2022",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Annual-Financial-Statements-2023-and-2022/03258a98369611f096905e09fb65ecc7",
+          "listed_date": "Mar 1, 2024",
+          "format": "pdf",
+          "category": "financial_statements",
+          "status": "link_collected_download_pending"
+        }
+      ],
+      "status": "download_failed",
+      "error": "curl: (56) The requested URL returned error: 403",
+      "collected_at_utc": "2026-10-05T18:18:42.466616+00:00"
+    },
+    {
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q3-2021/37e40d86369611f0bcd7820bd5ac0897",
+      "listing_records": [
+        {
+          "title": "NSCC Financial Statements Q3 2021",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q3-2021/37e40d86369611f0bcd7820bd5ac0897",
+          "listed_date": "Oct 29, 2021",
+          "format": "pdf",
+          "category": "financial_statements",
+          "status": "link_collected_download_pending"
+        }
+      ],
+      "status": "download_failed",
+      "error": "curl: (56) The requested URL returned error: 403",
+      "collected_at_utc": "2026-10-05T18:18:43.260898+00:00"
+    },
+    {
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q3-2024/ce0f3652368f11f08a181282bb7fa251",
+      "listing_records": [
+        {
+          "title": "NSCC Financial Statements Q3 2024",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q3-2024/ce0f3652368f11f08a181282bb7fa251",
+          "listed_date": "Oct 29, 2024",
+          "format": "pdf",
+          "category": "financial_statements",
+          "status": "link_collected_download_pending"
+        }
+      ],
+      "status": "download_failed",
+      "error": "curl: (56) The requested URL returned error: 403",
+      "collected_at_utc": "2026-10-05T18:18:42.175440+00:00"
+    }
+  ],
+  "metadata_issue_records": [
+    {
+      "title": "NSCC Financial Statements Q2 2025",
+      "listed_date": "Jul 31, 2025",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Financial-Statements-Q2-2023/22c43d92369911f08aca526112f6cc5f",
+      "actual_file": "flagged_source_records/DTCC_Q2_2023.pdf",
+      "actual_period": "2023 Q2",
+      "actual_entity": "DTCC",
+      "issues": [
+        "entity_mismatch",
+        "reporting_year_mismatch"
+      ]
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2025 Q2",
+      "listed_date": "Aug 28, 2025",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Public-Quantitative-Disclosures-Q2-2024/f1327658369411f0b16f526112f6cc5f",
+      "actual_file": "quantitative_disclosures/DTCC_PQD_2024_Q2.pdf",
+      "actual_period": "2024 Q2",
+      "actual_entity": "FICC and NSCC",
+      "issues": [
+        "reporting_year_mismatch",
+        "file_format_mismatch"
+      ]
+    }
+  ],
+  "legacy_link_checks": [
+    {
+      "title": "NSCC Annual 2025/2024",
+      "url": "https://www.dtcc.com/-/media/Files/Downloads/legal/financials/2025/NSCC-Financial-Statements-Annual-2025.pdf",
+      "http_status": 404,
+      "checked_date_local": "2026-10-05",
+      "status": "unavailable"
+    },
+    {
+      "title": "DTC Annual 2019/2018",
+      "url": "https://www.dtcc.com/-/media/Files/Downloads/legal/financials/2020/DTC-Annual-Financial-Statements-2019-and-2018-SEC-Filing-022820.pdf",
+      "http_status": 404,
+      "checked_date_local": "2026-10-05",
+      "status": "unavailable"
+    },
+    {
+      "title": "PQD 2019 Q4",
+      "url": "https://www.dtcc.com/-/media/Files/Downloads/legal/policy-and-compliance/CPMI-IOSCO-Quantitative-Disclosure-Results-2019-Q4-1.pdf",
+      "http_status": 404,
+      "checked_date_local": "2026-10-05",
+      "status": "unavailable"
+    },
+    {
+      "title": "DTCC Annual 2019/2018",
+      "url": "https://www.dtcc.com/annuals/2019/pdf/dtcc-2019-annual-financial-statements.pdf",
+      "http_status": 404,
+      "checked_date_local": "2026-10-05",
+      "status": "unavailable"
+    }
+  ]
+}

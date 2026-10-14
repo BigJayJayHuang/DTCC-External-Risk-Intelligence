@@ -1,0 +1,16 @@
+{
+  "source_id": "article_9b6e93b48f207022",
+  "source_name": "European Central Bank original document",
+  "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261014~e4ca33588e.en.html",
+  "file": "raw/article_9b6e93b48f207022_9b6e93b48f20.html",
+  "collected_at_utc": "2026-10-14T19:29:12+00:00",
+  "public_only": true,
+  "business_lines": [],
+  "kind": "article",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261014~e4ca33588e.en.html",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 134430,
+  "sha256": "7a0d93dc87d222c74c5e991785cfc7dfd91265797f89bf222fc28d4c5c9294fc"
+}

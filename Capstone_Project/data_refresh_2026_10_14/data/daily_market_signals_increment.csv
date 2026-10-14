@@ -1,0 +1,26 @@
+﻿date,indicator,value,unit,threshold_past90,alarm,lookback_observations,interpretation
+2026-10-07,sofr_effr,0.0,bp,10.899999999999991,False,252,external market monitoring signal; not a business risk score
+2026-10-08,sofr_effr,-0.9999999999999787,bp,9.89999999999998,False,252,external market monitoring signal; not a business risk score
+2026-10-09,sofr_effr,-0.9999999999999787,bp,9.89999999999998,False,252,external market monitoring signal; not a business risk score
+2026-10-13,sofr_effr,1.000000000000023,bp,9.89999999999998,False,252,external market monitoring signal; not a business risk score
+2026-10-07,sofr_effr_adjusted,-1.000000000000023,bp,9.00000000000003,False,252,external market monitoring signal; not a business risk score
+2026-10-08,sofr_effr_adjusted,-2.0000000000000018,bp,9.000000000000027,False,252,external market monitoring signal; not a business risk score
+2026-10-09,sofr_effr_adjusted,-2.0000000000000018,bp,8.800000000000042,False,252,external market monitoring signal; not a business risk score
+2026-10-13,sofr_effr_adjusted,0.0,bp,8.800000000000042,False,252,external market monitoring signal; not a business risk score
+2026-10-07,ust10_abs_change,1.0000000000000675,bp,6.99999999999994,False,252,external market monitoring signal; not a business risk score
+2026-10-08,ust10_abs_change,6.00000000000005,bp,6.99999999999994,False,252,external market monitoring signal; not a business risk score
+2026-10-09,ust10_abs_change,2.000000000000046,bp,6.99999999999994,False,252,external market monitoring signal; not a business risk score
+2026-10-07,ust10_rv20,5.53339146027384,bp/day,5.184769356055082,True,252,external market monitoring signal; not a business risk score
+2026-10-08,ust10_rv20,5.323977539594357,bp/day,5.18575985398069,True,252,external market monitoring signal; not a business risk score
+2026-10-09,ust10_rv20,5.325213116565573,bp/day,5.1930616030327545,True,252,external market monitoring signal; not a business risk score
+2026-10-07,baa_spread,146.0,bp,178.0,False,252,external market monitoring signal; not a business risk score
+2026-10-08,baa_spread,148.0,bp,178.0,False,252,external market monitoring signal; not a business risk score
+2026-10-09,baa_spread,145.0,bp,178.0,False,252,external market monitoring signal; not a business risk score
+2026-10-07,baa_widen20,0.0,bp,11.00000000000001,False,252,external market monitoring signal; not a business risk score
+2026-10-08,baa_widen20,0.0,bp,11.00000000000001,False,252,external market monitoring signal; not a business risk score
+2026-10-09,baa_widen20,0.0,bp,11.00000000000001,False,252,external market monitoring signal; not a business risk score
+2026-10-07,vix,15.08,index points,23.564,False,252,external market monitoring signal; not a business risk score
+2026-10-08,vix,15.41,index points,23.564,False,252,external market monitoring signal; not a business risk score
+2026-10-09,vix,14.84,index points,23.502000000000002,False,252,external market monitoring signal; not a business risk score
+2026-10-12,vix,15.21,index points,23.502000000000002,False,252,external market monitoring signal; not a business risk score
+2026-10-13,vix,15.27,index points,23.502000000000002,False,252,external market monitoring signal; not a business risk score

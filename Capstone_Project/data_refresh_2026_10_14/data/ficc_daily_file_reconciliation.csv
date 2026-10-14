@@ -1,0 +1,4 @@
+﻿source_id,data_rows,trailer_expected_rows,trailer_count_matches,latest_date
+ficc_failsdata,250,250,True,2026-10-09
+ficc_gcfindex,250,250,True,2026-10-09
+ficc_sponsoredvolume,1285,1285,True,2026-10-08

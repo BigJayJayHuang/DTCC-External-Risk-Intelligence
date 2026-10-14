@@ -1,0 +1,104 @@
+    
+DTCC offers enhanced access to all important notices via a Web -based subscription service. 
+The notification system leverages RSS Newsfeeds, providing significant benefits including  
+real-time updates and customizable delivery. To learn more and to set up your own DTCC RSS  
+alerts, visit http://www.dtcc.com/subscription_form.php.     
+     
+1 
+IMPORTANT NOTICE 
+The Depository Trust Company 
+DTCC Public (White) 
+ 
+B #: 25149-26 
+Date: October 14, 2026 
+To: All Participants 
+Category: Depositary Services Fee 
+From: International Services 
+Attention: Operations, Reorg & Dividend Managers, Partners & Cashiers 
+Subject: 
+Depositary Fees Notification  
+Security: LOTUS TECHNOLOGY INC 
+CUSIP: 54572F101 
+Deutsche Bank 
+ 
+The Depository Trust Company has received from Deutsche Bank Trust Company Americas, 
+the attached information regarding Depositary Fees. Charges will be processed through the 
+billing statement on the seventh business day of the month following the Record Date.    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Important Legal Information: The Depository Trust Company (“DTC”) does not represent or warrant the accuracy, adequacy, 
+Timeliness, completeness or fitness for any particular purpose of the information contained in this communication, which is based in part 
+On information obtained from third parties and not independently verified by DTC and which is provided as is. The information contained 
+in this communication is not intended to be a substitute for obtaining tax advice from an appropriate professional advisor. In providing 
+this communication, DTC shall not be liable for (1) any loss resulting directly or indirectly from mistakes, errors, omissions, interruptions, 
+delays or defects in such communication, unless caused directly by gross negligence or willful misconduct on the part of DTC, and (2) any 
+special, consequential, exemplary, incidental or punitive damages. To ensure compliance with Internal Revenue Service Circular 230, you 
+are hereby notified that: (a) any discussion of federal tax issues contained or referred to herein is not intended or written to be used, and 
+cannot be used, for the purpose of avoiding penalties that may be imposed under the Internal Revenue Code; and (b) as a matter of policy, 
+DTC does not provide tax, legal or accounting advice and accordingly, you should consult your own tax, legal and accounting advisor before 
+engaging in any transaction. 
+
+ 
+Depositary Receipts 
+Announcement
+Deutsche Bank
+Corporate Bank
+Phone: 212-250-2254
+Trust & Securities Services - Depositary Receipts
+www.adr.db.com  servicefees@db.com
+Contact Info:
+Lotus Technology Inc. ADR
+November 13, 2026
+2026
+Record Date:
+Billing Period:
+Please be advised of the following service fee information.
+October 13, 2026
+Deutsche Bank (The 'Depositary') hereby represents and warrants to The Depository Trust Company ('DTC') that, pursuant to the terms 
+and conditions of the deposit agreement governing the below referenced depositary receipt program, it is entitled to collect and receive 
+the below referenced depositary service fee on a per depositary share ("DS") basis.
+CUSIP
+Additional Information:
+ISIN Fee
+(per DS)
+Security
+TypeSecurity NameDTC#Depositary
+Deutsche Bank  2655 Lotus Technology Inc US54572F1012 54572F101ADR 0.02
+The Depositary hereby instructs DTC to collect and pass-through such fee(s) to the Depositary (the 'Instruction').
+The Depositary hereby agrees to indemnify and defend DTC and its respective officers, directors, employees, agents and attorneys (the 
+'Indemnities') from and against, and hold the Indemnities harmless from, any and all Losses¹ and/or Legal Actions² suffered or incurred 
+by the Indemnities resulting from, relating to, arising out of, or in connection with the above representation and/or the Instruction.
+¹ 'Losses' means and includes all losses, liabilities, damages, judgments, payments, litigation, costs and expenses (Including without limitation any 
+reasonable costs of investigation and external and reasonable legal fees and expenses incurred), regardless of whether or not any liability, payment, 
+obligation or judgment is ultimately imposed against the indemnities. 
+² 'Legal Action' means and includes any claim, counter claim, demand, action, suit, arbitration, inquiry, proceeding or investigation before any federal, 
+state or foreign court or other tribunal or any investigative or regulatory agency or SRO.
+Certain of these securities may not have been registered under the US Securities Act of 1933 (the “Act”) and may not be offered or sold in the United States absent registration or an applicable exemption 
+from the registration requirements of the Act. The investment or investment service that is the subject of this announcement is not available to retail clients as defined by the UK Financial Conduct Authority. 
+This announcement has been approved and/or communicated by Deutsche Bank Trust Company Americas. The services described in this notice are provided by Deutsche Bank Trust Company Americas 
+(Deutsche Bank) or by its subsidiaries and/or affiliates in accordance with appropriate local registration and regulation. Deutsche Bank as the Depositary may use brokers, dealers or other service 
+providers that are affiliates or other divisions of Deutsche Bank and that may earn fees and commissions. Deutsche Bank as the Depositary may pay a fee, or provide a rebate, to brokers that deposit 
+shares for the issuance of unsponsored depositary receipts. The Depositary expressly disclaims any liability, and has no responsibility, to holders or beneficial owners of depositary receipts in relation to 
+any such fees paid or rebates made to brokers The above information is being provided solely for informational purposes by Deutsche Bank. Deutsche Bank does not warrant as to or guarantee the 
+accuracy or completeness of, and does not undertake an obligation to update or amend, this announcement. Deutsche Bank, its subsidiaries and/or affiliates disclaims any and all liability to fullest extent 
+permitted by law, whether arising in tort, contract or otherwise, which any of them might otherwise have in respect of the above information. Neither this announcement nor the information contained herein 
+constitutes an offer or solicitation by Deutsche Bank or any other issuer or entity for the purchase or sale of any securities in the United States, nor does it constitute an offer or solicitation to any person in 
+any other jurisdiction.  This material shall not be construed as investment or legal advice or a recommendation, reference or endorsement by Deutsche Bank. Deutsche Bank as the Depositary provides no 
+advice, recommendation or endorsement with respect to any investment, company or security. No part of this announcement may be copied or reproduced in any way without the prior written consent of 
+Deutsche Bank. Past results are not an indication of future performance. Copyright © 10/13/2026 Deutsche Bank AG. All rights reserved.
+Depositary Receipts
+Trust and Securities Services

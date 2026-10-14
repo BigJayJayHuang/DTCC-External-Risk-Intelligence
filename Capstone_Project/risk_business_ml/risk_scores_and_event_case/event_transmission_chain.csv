@@ -1,0 +1,9 @@
+stage_zh,transmission_zh,evidence_limit_zh,source_url
+1. 外部事件,疫情冲击与现金需求增加，投资者调整或出售资产。,疫情与市场动荡为已观察事实；具体机构动机不能一概而论。,https://www.federalreserve.gov/publications/2020-november-financial-stability-report-borrowing.htm
+2. 市场风险信号,国债与机构 MBS 市场流动性恶化、重新定价；本地季度 VIX 均值上升 123.26%。,美联储回顾支持市场失序；季度数值来自已有公开序列。季度变化不等于每一天的方向。,https://www.federalreserve.gov/publications/2020-november-financial-stability-report-borrowing.htm
+3A. 进入 FICC/GSD,会员的现金国债及回购活动进入 GSD 清算；清算规模、头寸风险和管理工作增加。,DTCC 确认 2020 年 3 月 FICC 国债日清算量超过 6 万亿美元，约比通常日均高 43%。该数不能解读为净敞口、亏损或整个季度日均。,https://www.dtcc.com/insights/2022/making-the-us-treasury-market-safer-for-all-participants
+4A. FICC 风险机制,交易与价格变动影响担保敞口和保证金管理；会员需要准备资金和合格抵押品。若会员无法履约，CCP 需要处理其头寸。,这是传导机制，不能由 VIX 或资金利差推算某会员具体保证金、违约概率或 FICC 缺口。国债期货保证金不能当作 FICC 现金国债保证金。,https://www.dtcc.com/insights/2022/making-the-us-treasury-market-safer-for-all-participants
+5A. FICC 实际结果,高压力进入了清算工作量与风险管理环节，但处理、结算仍保持有序。,DTCC 表示，当时停止为一名会员服务，没有造成不利市场影响，也没有向其他会员分摊损失。不能据此宣称所有风险都不存在。,https://www.dtcc.com/insights/2022/making-the-us-treasury-market-safer-for-all-participants
+3B. 进入 ECS/NSCC,股票、ETF 等价格与未结算头寸变化，进入 NSCC 的净额清算及交易担保。,这是 NSCC 业务机制；本案未取得 2020 年 3 月独立 ECS 日度敞口或保证金增量。,https://www.dtcc.com/-/media/Files/Downloads/legal/financials/2020/NSCC-Annual-Financial-Statements-2020-and-2019.pdf
+4B. ECS 风险机制,NSCC 根据未结算组合风险调整保证金；会员的现金、证券交付需求继续进入 DTC 结算环节。,NSCC 2020 年报确认日内计算与必要的追加保证金机制。DTC 延迟、失败或损失仅是条件性后果，本案没有直接量化证据。,https://www.dtcc.com/-/media/Files/Downloads/legal/financials/2020/NSCC-Annual-Financial-Statements-2020-and-2019.pdf
+5B. ECS 可确认结果,风险管理与抵押品准备是应重点监测的环节，不能写成已经发生会员违约。,NSCC 年报说明：2020、2019 年度，对附注 15 所述担保义务没有参与者违约。全年口径不能替代 3 月的结算失败率，也不能扩展成 DTC 零事故。,https://www.dtcc.com/-/media/Files/Downloads/legal/financials/2020/NSCC-Annual-Financial-Statements-2020-and-2019.pdf

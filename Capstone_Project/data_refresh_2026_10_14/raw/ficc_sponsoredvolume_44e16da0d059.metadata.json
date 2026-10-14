@@ -1,0 +1,19 @@
+{
+  "source_id": "ficc_sponsoredvolume",
+  "source_name": "FICC public SponsoredVolume.csv",
+  "url": "https://cms-prod.dtcc.com/data/SponsoredVolume.csv",
+  "file": "raw/ficc_sponsoredvolume_44e16da0d059.csv",
+  "collected_at_utc": "2026-10-14T19:41:43+00:00",
+  "public_only": true,
+  "business_lines": [
+    "FICC",
+    "Data Services"
+  ],
+  "kind": "ficc_daily_series",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://cms-prod.dtcc.com/data/SponsoredVolume.csv",
+  "content_type": "text/csv",
+  "bytes": 145417,
+  "sha256": "7a0e40c8bca70330df747594f48bb19f87e1f50b8a897ed613e03d893e79c14a"
+}

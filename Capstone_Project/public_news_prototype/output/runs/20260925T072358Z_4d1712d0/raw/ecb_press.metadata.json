@@ -1,0 +1,17 @@
+{
+  "http_status": 200,
+  "final_url": "https://www.ecb.europa.eu/rss/press.html",
+  "content_type": "application/rss+xml",
+  "etag": "\"myra-16372167\"",
+  "last_modified": null,
+  "sha256": "a163405b717e652b3020181ba7a73bbcdf68bf9174c56b8582ecfdc389f8a734",
+  "collected_at_utc": "2026-09-25T07:24:01+00:00",
+  "source": {
+    "id": "ecb_press",
+    "name": "European Central Bank",
+    "feed_url": "https://www.ecb.europa.eu/rss/press.html",
+    "reference_url": "https://www.ecb.europa.eu/home/html/rss.en.html",
+    "coverage": "Euro area monetary policy, speeches, interviews and press releases",
+    "enabled": true
+  }
+}

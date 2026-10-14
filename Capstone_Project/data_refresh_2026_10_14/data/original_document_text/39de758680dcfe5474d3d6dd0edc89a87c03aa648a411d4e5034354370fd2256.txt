@@ -1,0 +1,147 @@
+    
+DTCC offers enhanced access to all important notices via a Web-based subscription service. 
+The notification system leverages RSS Newsfeeds, providing significant benefits including 
+real-time updates and customizable delivery. To learn more and to set up your own DTCC RSS 
+alerts, visit http://www.dtcc.com/subscription_form.php.     
+ 
+IMPORTANT NOTICE 
+The Depository Trust Company  
+DTCC Public (White) 
+ B #: B25123-26 
+Date: October 8, 2026 
+To: All Participants, Third-party Service Providers and Other Entities that Connect to DTC 
+Category: DTC Settlement Modernization 
+From: Product Management 
+Attention: Technology Risk Officers and Managers, Technical Connectivity Managers 
+Subject: Required Settlement System Updates and Key Milestones Towards November 2027 
+On September 10, 2026, DTC issued Important Notice B24776-26, which advised all DTC 
+Participants and any third-party service providers, service bureaus or other entities that 
+connect to DTC on behalf of, or for the benefit of, one or more Participants (collectively, 
+“Covered Entities”) that they must complete the required updates to their systems before the 
+effective date of DTC’s settlement modernization. That notice further advised that the effective 
+date would be in November 2027, with the specific date communicated through a subsequent 
+Important Notice. 
+DTC hereby announces that the effective date of DTC’s settlement modernization will be 
+Monday, November 8, 2027 (the “Effective Date”). Implementation and cutover activities 
+are expected to occur over the weekend of November 6 and November 7, 2027, in 
+preparation for the production launch on the Effective Date. 
+Beginning on the Effective Date, all Covered Entities must be operationally connected to and 
+use DTC’s modernized settlement services. The modernized services will include changes to 
+connectivity, data delivery, messaging, reporting, settlement workflows, and settlement 
+profiles. 
+As stated in Important Notice B24776-26, any Covered Entity that has not completed the 
+Required Settlement System Updates by the Effective Date will not be able to access DTC’s 
+settlement services. Failure to complete the required Covered Entity testing activities in 
+accordance with the required timeline in advance of the Effective Date may also result in 
+adverse action by DTC, as applicable, including sanctions, and the reporting of non-
+compliance to relevant U.S. securities and banking regulators. 
+Required Covered Entity Testing Activities 
+All Covered Entities must complete all testing activities relevant to their organization, operating 
+model, and use of DTC settlement services, including the following activities: 
+
+   
+ 
+DTCC Non-Confidential 
+ 
+DTCC Public (White) 
+• Complete all required onboarding to DTC’s testing and production environments to 
+begin testing and prepare for production launch. 
+• Update messaging interfaces and processing to support the applicable future-state 
+standards, including ISO 20022. 
+• Update systems and procedures to consume modernized reports and data outputs. 
+• Validate the readiness of service bureaus, vendors and other third parties relied upon 
+by the Participant. 
+• Update operational procedures, controls, exception-management processes, business-
+continuity arrangements, and production-support models. 
+• Complete a network circuit capacity assessment and make any required bandwidth 
+upgrades before the modernization go-live, so connectivity can support expected 
+production volumes, including ISO 20022 messaging. 
+• Complete production-readiness certification and attestation requirements communicated 
+by DTC (more information on this requirement will be provided in upcoming Important 
+Notices). 
+ 
+To successfully meet the Effective Date, DTC will be monitoring Covered Entities’ readiness 
+against a core set of activity milestones: 
+Activity Milestone Description 
+“At Risk” of Meeting 
+Effective Date If 
+Activity Is Not In- 
+Progress 
+Target Completion 
+Date 
+Connectivity and 
+Entitlements – PSE-A* 
+Establish and validate 
+connectivity and entitlements 
+for testing against the 
+modernized settlement 
+environment. 
+November 30, 2026 January 31, 2027 
+Data Delivery – PSE-A* 
+Complete applicable data-
+delivery profiles, subscriptions, 
+and output validation for the 
+modernized environment. 
+February 28, 2027 March 31, 2027 
+Functional Testing 
+Modernization and 
+Attestation – PSE-A* 
+Complete applicable functional, 
+integration, regression, 
+negative and operational 
+testing, including ISO 20022 
+messaging, enhanced 
+settlement workflows and 
+settlement profiles, new CSV 
+report output, enhanced 
+Settlement Web 2.0 
+capabilities, and submit DTC 
+readiness attestations. 
+April 30, 2027 September 30, 2027 
+
+   
+ 
+DTCC Non-Confidential 
+ 
+DTCC Public (White) 
+Activity Milestone Description 
+“At Risk” of Meeting 
+Effective Date If 
+Activity Is Not In- 
+Progress 
+Target Completion 
+Date 
+Production Readiness 
+Complete internal due 
+diligence, resolve material 
+defects and dependencies, and 
+obtain required internal 
+approvals. 
+May 30, 2027 October 15, 2027 
+* PSE-A is the testing environment that will be used for all Cover Entities to test the DTC settlement modernization functionality 
+Optional Migration Period 
+On November 13, 2026, Cover Entities may begin migrating to the new ISO 20022 transaction 
+message format supporting current settlement functionality, in production, prior to the Effective 
+Date. Covered Entities planning to migrate to production prior to the Effective Date must test 
+ISO 20022 message formats and applicable scenarios, including providing DTC with an 
+attestation of the requisite testing, prior to activation. DTC will close the migration window 
+sometime in Q3 2027, to finalize preparations for the full transition and launch of DTC 
+settlement modernization. 
+Additional Information 
+Additional information on DTC settlement modernization is available on the DTCC Learning 
+Center, under the Settlement Release page, including testing documents, message 
+specifications, reporting specifications, and the Transformation Integration Series webinars. 
+The Required Settlement System Updates are described in detail on the DTCC Transformation 
+site, where Covered Entities can find the Functional Change Document, Settlement Milestone 
+Client Checklist, Client Testing Framework and Scripts, Transformation Functionality Client 
+Checklist, and Transformation Insight Series webinars. 
+Covered Entities that have any questions about the Required Settlement System Updates, 
+activity milestones or readiness-monitoring process, or planning to leverage the ISO 20022 
+migration period should reach out immediately to DTCCTransformation@dtcc.com or their 
+DTCC Relationship Manager. 
+ 
+Please note that the launch of auto-partial settlement functionality, including optional partial 
+settlement and related partial delivery authorization, will not be on the Effective Date but, 
+instead, will be at a later date. More information on auto-partial settlement will be provided in 
+an upcoming Important Notice. 
+ 

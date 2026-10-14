@@ -1,0 +1,34 @@
+[
+  {
+    "url": "https://www.dtcc.com/insights/2022/making-the-us-treasury-market-safer-for-all-participants",
+    "accessed_at_utc": "2026-10-05T23:52:34.063542+00:00",
+    "access_method": "official_page_read_with_web_tool"
+  },
+  {
+    "url": "https://www.federalreserve.gov/publications/2020-november-financial-stability-report-borrowing.htm",
+    "accessed_at_utc": "2026-10-05T23:52:34.063542+00:00",
+    "access_method": "official_page_read_with_web_tool"
+  },
+  {
+    "url": "https://www.dtcc.com/-/media/Files/Downloads/legal/financials/2020/NSCC-Annual-Financial-Statements-2020-and-2019.pdf",
+    "accessed_at_utc": "2026-10-05T23:52:34.063542+00:00",
+    "access_method": "official_page_read_with_web_tool"
+  },
+  {
+    "path": "raw/business_documents/financial_statements/NSCC_Annual_2020_2019.pdf",
+    "sha256": "3554b17d65633b2cdbac5053bf98e0df589213f00e7be81dd9ec28c7cde61705",
+    "pdf_pages_used": [
+      24,
+      26
+    ],
+    "access_method": "existing_download_read_with_pypdf"
+  },
+  {
+    "url": "https://www.dtcc.com/-/media/Files/Downloads/legal/policy-and-compliance/CPMI-IOSCO-Quantitative-Disclosure-Results-2019-Q4-1.pdf",
+    "download_status": "HTTP 404; excluded from numerical event evidence"
+  },
+  {
+    "url": "https://www.dtcc.com/-/media/Files/Downloads/legal/policy-and-compliance/CPMI-IOSCO-Quantitative-Disclosure-Results-2020-Q1-2.pdf",
+    "download_status": "HTTP 404; excluded from numerical event evidence"
+  }
+]

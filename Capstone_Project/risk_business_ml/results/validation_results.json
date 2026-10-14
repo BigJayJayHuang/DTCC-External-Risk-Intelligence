@@ -1,0 +1,43 @@
+{
+  "checks": [
+    {
+      "check": "Original business input hashes",
+      "count": 90,
+      "passed": true
+    },
+    {
+      "check": "Raw risk series hashes",
+      "count": 6,
+      "passed": true
+    },
+    {
+      "check": "Independent PDF and annual/YTD source spot checks",
+      "count": 6,
+      "passed": true
+    },
+    {
+      "check": "Calendar gaps preserved; no invented business changes",
+      "passed": true
+    },
+    {
+      "check": "26 saved pipelines reproduce holdouts; 52 metric rows recomputed",
+      "passed": true
+    },
+    {
+      "check": "Calendar-ordered validation; final test excluded from tuning",
+      "passed": true
+    },
+    {
+      "check": "78 correlations independently recomputed",
+      "passed": true
+    },
+    {
+      "check": "Fresh-kernel executed notebook with 6 figures and HTML export",
+      "passed": true,
+      "code_cells": 13,
+      "figure_outputs": 6
+    }
+  ],
+  "status": "passed",
+  "visual_qa": "Figure and HTML presentation inspection recorded separately in delivery receipt"
+}

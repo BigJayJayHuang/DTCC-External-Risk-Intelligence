@@ -1,0 +1,33 @@
+ 
+    
+DTCC offers enhanced access to all important notices via a Web-based subscription service. 
+The notification system leverages RSS Newsfeeds, providing significant benefits including 
+real-time updates and customizable delivery. To learn more and to set up your own DTCC RSS 
+alerts, visit http://www.dtcc.com/subscription_form.php.    
+     
+1 
+Important Notice 
+National Securities Clearing Corporation 
+ 
+DTCC Public (White) 
+A#: a9834 
+P&S: 9407 
+Date: 10/07/2026 
+To: All Participants 
+From: Equity Risk 
+Attention: Director of Operations, CFM Contacts 
+Subject: Confirmation of Bank Holiday Charge Figure – Columbus Day 2026 
+ 
+As mentioned in Important Notice a9830, Monday, October 12, 2026 is a bank holiday where U.S 
+banks are closed and the U.S equity markets remain open. NSCC will be presented with increased 
+exposure due to one additional day of trading positions held in Members’ portfolios. To address this 
+increased exposure, NSCC confirms the assessment of a Bank Holiday Charge equal to 33% of each 
+Member’s start of day Volatility charge on Friday, October 9, 2026, ahead of Columbus Day, Monday, 
+October 12, 2026.  
+ 
+This additional requirement will be added to each Member’s requirement after the morning clearing 
+fund collection. Any deficit resulting from the additional clearing fund requirement must be satisfied 
+within 60 minutes of notice. 
+ 
+Any questions related to this notice should be directed to Equity Risk at (212) 855-5770. 
+ 

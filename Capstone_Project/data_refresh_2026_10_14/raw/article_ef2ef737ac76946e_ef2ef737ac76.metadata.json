@@ -1,0 +1,16 @@
+{
+  "source_id": "article_ef2ef737ac76946e",
+  "source_name": "dtcc_notice_feed original document",
+  "url": "https://files.dtcc.com/download/assets/25129-26/34cf6ad8c62211f18f21aeccf485c6a4",
+  "file": "raw/article_ef2ef737ac76946e_ef2ef737ac76.pdf",
+  "collected_at_utc": "2026-10-14T19:29:15+00:00",
+  "public_only": true,
+  "business_lines": [],
+  "kind": "article",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://files.dtcc.com/download/assets/25129-26/34cf6ad8c62211f18f21aeccf485c6a4",
+  "content_type": "application/pdf",
+  "bytes": 180954,
+  "sha256": "bca39a6bde5cc4cb49c0ae3cc7608465b581f74427785e167d03c7b31b63038d"
+}

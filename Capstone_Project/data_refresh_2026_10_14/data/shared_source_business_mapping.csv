@@ -1,0 +1,479 @@
+﻿source_id,business_line,source_kind,source_name,source_url,relationship,fetch_once
+fed_press,FICC,rss,Federal Reserve Board,https://www.federalreserve.gov/feeds/press_all.xml,candidate monitoring input,True
+fed_press,ECS,rss,Federal Reserve Board,https://www.federalreserve.gov/feeds/press_all.xml,candidate monitoring input,True
+fed_press,RDS,rss,Federal Reserve Board,https://www.federalreserve.gov/feeds/press_all.xml,candidate monitoring input,True
+fed_press,WIS,rss,Federal Reserve Board,https://www.federalreserve.gov/feeds/press_all.xml,candidate monitoring input,True
+fed_press,ITP,rss,Federal Reserve Board,https://www.federalreserve.gov/feeds/press_all.xml,candidate monitoring input,True
+fed_press,Asset Services,rss,Federal Reserve Board,https://www.federalreserve.gov/feeds/press_all.xml,candidate monitoring input,True
+fed_press,DAS,rss,Federal Reserve Board,https://www.federalreserve.gov/feeds/press_all.xml,candidate monitoring input,True
+fed_press,DDA,rss,Federal Reserve Board,https://www.federalreserve.gov/feeds/press_all.xml,candidate monitoring input,True
+fed_press,Data Services,rss,Federal Reserve Board,https://www.federalreserve.gov/feeds/press_all.xml,candidate monitoring input,True
+fed_press,Consulting,rss,Federal Reserve Board,https://www.federalreserve.gov/feeds/press_all.xml,candidate monitoring input,True
+sec_press,FICC,rss,US Securities and Exchange Commission,https://www.sec.gov/news/pressreleases.rss,candidate monitoring input,True
+sec_press,ECS,rss,US Securities and Exchange Commission,https://www.sec.gov/news/pressreleases.rss,candidate monitoring input,True
+sec_press,RDS,rss,US Securities and Exchange Commission,https://www.sec.gov/news/pressreleases.rss,candidate monitoring input,True
+sec_press,WIS,rss,US Securities and Exchange Commission,https://www.sec.gov/news/pressreleases.rss,candidate monitoring input,True
+sec_press,ITP,rss,US Securities and Exchange Commission,https://www.sec.gov/news/pressreleases.rss,candidate monitoring input,True
+sec_press,Asset Services,rss,US Securities and Exchange Commission,https://www.sec.gov/news/pressreleases.rss,candidate monitoring input,True
+sec_press,DAS,rss,US Securities and Exchange Commission,https://www.sec.gov/news/pressreleases.rss,candidate monitoring input,True
+sec_press,DDA,rss,US Securities and Exchange Commission,https://www.sec.gov/news/pressreleases.rss,candidate monitoring input,True
+sec_press,Data Services,rss,US Securities and Exchange Commission,https://www.sec.gov/news/pressreleases.rss,candidate monitoring input,True
+sec_press,Consulting,rss,US Securities and Exchange Commission,https://www.sec.gov/news/pressreleases.rss,candidate monitoring input,True
+cftc_press,FICC,rss,US Commodity Futures Trading Commission,https://www.cftc.gov/RSS/RSSGP/rssgp.xml,candidate monitoring input,True
+cftc_press,ECS,rss,US Commodity Futures Trading Commission,https://www.cftc.gov/RSS/RSSGP/rssgp.xml,candidate monitoring input,True
+cftc_press,RDS,rss,US Commodity Futures Trading Commission,https://www.cftc.gov/RSS/RSSGP/rssgp.xml,candidate monitoring input,True
+cftc_press,WIS,rss,US Commodity Futures Trading Commission,https://www.cftc.gov/RSS/RSSGP/rssgp.xml,candidate monitoring input,True
+cftc_press,ITP,rss,US Commodity Futures Trading Commission,https://www.cftc.gov/RSS/RSSGP/rssgp.xml,candidate monitoring input,True
+cftc_press,Asset Services,rss,US Commodity Futures Trading Commission,https://www.cftc.gov/RSS/RSSGP/rssgp.xml,candidate monitoring input,True
+cftc_press,DAS,rss,US Commodity Futures Trading Commission,https://www.cftc.gov/RSS/RSSGP/rssgp.xml,candidate monitoring input,True
+cftc_press,DDA,rss,US Commodity Futures Trading Commission,https://www.cftc.gov/RSS/RSSGP/rssgp.xml,candidate monitoring input,True
+cftc_press,Data Services,rss,US Commodity Futures Trading Commission,https://www.cftc.gov/RSS/RSSGP/rssgp.xml,candidate monitoring input,True
+cftc_press,Consulting,rss,US Commodity Futures Trading Commission,https://www.cftc.gov/RSS/RSSGP/rssgp.xml,candidate monitoring input,True
+ecb_press,FICC,rss,European Central Bank,https://www.ecb.europa.eu/rss/press.html,candidate monitoring input,True
+ecb_press,ECS,rss,European Central Bank,https://www.ecb.europa.eu/rss/press.html,candidate monitoring input,True
+ecb_press,RDS,rss,European Central Bank,https://www.ecb.europa.eu/rss/press.html,candidate monitoring input,True
+ecb_press,WIS,rss,European Central Bank,https://www.ecb.europa.eu/rss/press.html,candidate monitoring input,True
+ecb_press,ITP,rss,European Central Bank,https://www.ecb.europa.eu/rss/press.html,candidate monitoring input,True
+ecb_press,Asset Services,rss,European Central Bank,https://www.ecb.europa.eu/rss/press.html,candidate monitoring input,True
+ecb_press,DAS,rss,European Central Bank,https://www.ecb.europa.eu/rss/press.html,candidate monitoring input,True
+ecb_press,DDA,rss,European Central Bank,https://www.ecb.europa.eu/rss/press.html,candidate monitoring input,True
+ecb_press,Data Services,rss,European Central Bank,https://www.ecb.europa.eu/rss/press.html,candidate monitoring input,True
+ecb_press,Consulting,rss,European Central Bank,https://www.ecb.europa.eu/rss/press.html,candidate monitoring input,True
+bis_press,FICC,rss,Bank for International Settlements,https://www.bis.org/doclist/all_pressrels.rss,candidate monitoring input,True
+bis_press,ECS,rss,Bank for International Settlements,https://www.bis.org/doclist/all_pressrels.rss,candidate monitoring input,True
+bis_press,RDS,rss,Bank for International Settlements,https://www.bis.org/doclist/all_pressrels.rss,candidate monitoring input,True
+bis_press,WIS,rss,Bank for International Settlements,https://www.bis.org/doclist/all_pressrels.rss,candidate monitoring input,True
+bis_press,ITP,rss,Bank for International Settlements,https://www.bis.org/doclist/all_pressrels.rss,candidate monitoring input,True
+bis_press,Asset Services,rss,Bank for International Settlements,https://www.bis.org/doclist/all_pressrels.rss,candidate monitoring input,True
+bis_press,DAS,rss,Bank for International Settlements,https://www.bis.org/doclist/all_pressrels.rss,candidate monitoring input,True
+bis_press,DDA,rss,Bank for International Settlements,https://www.bis.org/doclist/all_pressrels.rss,candidate monitoring input,True
+bis_press,Data Services,rss,Bank for International Settlements,https://www.bis.org/doclist/all_pressrels.rss,candidate monitoring input,True
+bis_press,Consulting,rss,Bank for International Settlements,https://www.bis.org/doclist/all_pressrels.rss,candidate monitoring input,True
+fred_SOFR,FICC,market_series,Secured Overnight Financing Rate,https://fred.stlouisfed.org/graph/fredgraph.csv?id=SOFR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_SOFR,ECS,market_series,Secured Overnight Financing Rate,https://fred.stlouisfed.org/graph/fredgraph.csv?id=SOFR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_SOFR,RDS,market_series,Secured Overnight Financing Rate,https://fred.stlouisfed.org/graph/fredgraph.csv?id=SOFR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_SOFR,WIS,market_series,Secured Overnight Financing Rate,https://fred.stlouisfed.org/graph/fredgraph.csv?id=SOFR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_SOFR,Asset Services,market_series,Secured Overnight Financing Rate,https://fred.stlouisfed.org/graph/fredgraph.csv?id=SOFR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_SOFR,Data Services,market_series,Secured Overnight Financing Rate,https://fred.stlouisfed.org/graph/fredgraph.csv?id=SOFR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_SOFR,Consulting,market_series,Secured Overnight Financing Rate,https://fred.stlouisfed.org/graph/fredgraph.csv?id=SOFR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_EFFR,FICC,market_series,Effective Federal Funds Rate,https://fred.stlouisfed.org/graph/fredgraph.csv?id=EFFR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_EFFR,ECS,market_series,Effective Federal Funds Rate,https://fred.stlouisfed.org/graph/fredgraph.csv?id=EFFR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_EFFR,RDS,market_series,Effective Federal Funds Rate,https://fred.stlouisfed.org/graph/fredgraph.csv?id=EFFR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_EFFR,WIS,market_series,Effective Federal Funds Rate,https://fred.stlouisfed.org/graph/fredgraph.csv?id=EFFR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_EFFR,Asset Services,market_series,Effective Federal Funds Rate,https://fred.stlouisfed.org/graph/fredgraph.csv?id=EFFR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_EFFR,Data Services,market_series,Effective Federal Funds Rate,https://fred.stlouisfed.org/graph/fredgraph.csv?id=EFFR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_EFFR,Consulting,market_series,Effective Federal Funds Rate,https://fred.stlouisfed.org/graph/fredgraph.csv?id=EFFR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DGS10,FICC,market_series,10-year Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DGS10,RDS,market_series,10-year Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DGS10,WIS,market_series,10-year Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DGS10,Asset Services,market_series,10-year Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DGS10,Data Services,market_series,10-year Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DGS2,FICC,market_series,2-year Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS2&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DGS2,RDS,market_series,2-year Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS2&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DGS2,WIS,market_series,2-year Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS2&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DGS2,Data Services,market_series,2-year Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS2&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DGS3MO,FICC,market_series,3-month Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS3MO&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DGS3MO,ECS,market_series,3-month Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS3MO&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DGS3MO,RDS,market_series,3-month Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS3MO&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DGS3MO,WIS,market_series,3-month Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS3MO&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DGS3MO,ITP,market_series,3-month Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS3MO&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DGS3MO,Asset Services,market_series,3-month Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS3MO&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DGS3MO,DAS,market_series,3-month Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS3MO&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DGS3MO,DDA,market_series,3-month Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS3MO&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DGS3MO,Data Services,market_series,3-month Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS3MO&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DGS3MO,Consulting,market_series,3-month Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS3MO&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_BAA10Y,FICC,market_series,Baa corporate yield minus 10-year Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAA10Y&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_BAA10Y,RDS,market_series,Baa corporate yield minus 10-year Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAA10Y&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_BAA10Y,WIS,market_series,Baa corporate yield minus 10-year Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAA10Y&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_BAA10Y,Asset Services,market_series,Baa corporate yield minus 10-year Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAA10Y&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_BAA10Y,Data Services,market_series,Baa corporate yield minus 10-year Treasury yield,https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAA10Y&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_VIXCLS,ECS,market_series,CBOE equity volatility index,https://fred.stlouisfed.org/graph/fredgraph.csv?id=VIXCLS&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_VIXCLS,WIS,market_series,CBOE equity volatility index,https://fred.stlouisfed.org/graph/fredgraph.csv?id=VIXCLS&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_VIXCLS,ITP,market_series,CBOE equity volatility index,https://fred.stlouisfed.org/graph/fredgraph.csv?id=VIXCLS&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_VIXCLS,Data Services,market_series,CBOE equity volatility index,https://fred.stlouisfed.org/graph/fredgraph.csv?id=VIXCLS&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_NFCICREDIT,FICC,market_series,Chicago Fed credit subindex,https://fred.stlouisfed.org/graph/fredgraph.csv?id=NFCICREDIT&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_NFCICREDIT,ECS,market_series,Chicago Fed credit subindex,https://fred.stlouisfed.org/graph/fredgraph.csv?id=NFCICREDIT&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_NFCICREDIT,RDS,market_series,Chicago Fed credit subindex,https://fred.stlouisfed.org/graph/fredgraph.csv?id=NFCICREDIT&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_NFCICREDIT,WIS,market_series,Chicago Fed credit subindex,https://fred.stlouisfed.org/graph/fredgraph.csv?id=NFCICREDIT&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_NFCICREDIT,Data Services,market_series,Chicago Fed credit subindex,https://fred.stlouisfed.org/graph/fredgraph.csv?id=NFCICREDIT&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_BAMLC0A0CM,RDS,market_series,ICE BofA US Corporate Index option-adjusted spread,https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLC0A0CM&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_BAMLC0A0CM,WIS,market_series,ICE BofA US Corporate Index option-adjusted spread,https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLC0A0CM&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_BAMLC0A0CM,Asset Services,market_series,ICE BofA US Corporate Index option-adjusted spread,https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLC0A0CM&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_BAMLC0A0CM,Data Services,market_series,ICE BofA US Corporate Index option-adjusted spread,https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLC0A0CM&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_SP500,ECS,market_series,S&P 500 index,https://fred.stlouisfed.org/graph/fredgraph.csv?id=SP500&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_SP500,WIS,market_series,S&P 500 index,https://fred.stlouisfed.org/graph/fredgraph.csv?id=SP500&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_SP500,ITP,market_series,S&P 500 index,https://fred.stlouisfed.org/graph/fredgraph.csv?id=SP500&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_SP500,Data Services,market_series,S&P 500 index,https://fred.stlouisfed.org/graph/fredgraph.csv?id=SP500&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DTWEXBGS,RDS,market_series,Nominal broad US dollar index,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTWEXBGS&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DTWEXBGS,ITP,market_series,Nominal broad US dollar index,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTWEXBGS&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DTWEXBGS,Asset Services,market_series,Nominal broad US dollar index,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTWEXBGS&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_DTWEXBGS,Data Services,market_series,Nominal broad US dollar index,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTWEXBGS&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_WRMFSL,WIS,market_series,Retail money market funds,https://fred.stlouisfed.org/graph/fredgraph.csv?id=WRMFSL&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_WRMFSL,Asset Services,market_series,Retail money market funds,https://fred.stlouisfed.org/graph/fredgraph.csv?id=WRMFSL&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_WRMFSL,Data Services,market_series,Retail money market funds,https://fred.stlouisfed.org/graph/fredgraph.csv?id=WRMFSL&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_WIMFSL,WIS,market_series,Institutional money market funds,https://fred.stlouisfed.org/graph/fredgraph.csv?id=WIMFSL&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_WIMFSL,Asset Services,market_series,Institutional money market funds,https://fred.stlouisfed.org/graph/fredgraph.csv?id=WIMFSL&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_WIMFSL,Data Services,market_series,Institutional money market funds,https://fred.stlouisfed.org/graph/fredgraph.csv?id=WIMFSL&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_CBBTCUSD,DAS,market_series,Coinbase Bitcoin price,https://fred.stlouisfed.org/graph/fredgraph.csv?id=CBBTCUSD&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_CBBTCUSD,DDA,market_series,Coinbase Bitcoin price,https://fred.stlouisfed.org/graph/fredgraph.csv?id=CBBTCUSD&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_CBBTCUSD,Data Services,market_series,Coinbase Bitcoin price,https://fred.stlouisfed.org/graph/fredgraph.csv?id=CBBTCUSD&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_CBETHUSD,DAS,market_series,Coinbase Ethereum price,https://fred.stlouisfed.org/graph/fredgraph.csv?id=CBETHUSD&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_CBETHUSD,DDA,market_series,Coinbase Ethereum price,https://fred.stlouisfed.org/graph/fredgraph.csv?id=CBETHUSD&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_CBETHUSD,Data Services,market_series,Coinbase Ethereum price,https://fred.stlouisfed.org/graph/fredgraph.csv?id=CBETHUSD&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_USEPUINDXM,FICC,market_series,US economic policy uncertainty,https://fred.stlouisfed.org/graph/fredgraph.csv?id=USEPUINDXM&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_USEPUINDXM,ECS,market_series,US economic policy uncertainty,https://fred.stlouisfed.org/graph/fredgraph.csv?id=USEPUINDXM&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_USEPUINDXM,RDS,market_series,US economic policy uncertainty,https://fred.stlouisfed.org/graph/fredgraph.csv?id=USEPUINDXM&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_USEPUINDXM,WIS,market_series,US economic policy uncertainty,https://fred.stlouisfed.org/graph/fredgraph.csv?id=USEPUINDXM&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_USEPUINDXM,ITP,market_series,US economic policy uncertainty,https://fred.stlouisfed.org/graph/fredgraph.csv?id=USEPUINDXM&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_USEPUINDXM,Asset Services,market_series,US economic policy uncertainty,https://fred.stlouisfed.org/graph/fredgraph.csv?id=USEPUINDXM&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_USEPUINDXM,DAS,market_series,US economic policy uncertainty,https://fred.stlouisfed.org/graph/fredgraph.csv?id=USEPUINDXM&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_USEPUINDXM,DDA,market_series,US economic policy uncertainty,https://fred.stlouisfed.org/graph/fredgraph.csv?id=USEPUINDXM&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_USEPUINDXM,Data Services,market_series,US economic policy uncertainty,https://fred.stlouisfed.org/graph/fredgraph.csv?id=USEPUINDXM&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_USEPUINDXM,Consulting,market_series,US economic policy uncertainty,https://fred.stlouisfed.org/graph/fredgraph.csv?id=USEPUINDXM&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_JTU5200QUR,FICC,market_series,"Finance and insurance quits rate, not seasonally adjusted",https://fred.stlouisfed.org/graph/fredgraph.csv?id=JTU5200QUR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_JTU5200QUR,ECS,market_series,"Finance and insurance quits rate, not seasonally adjusted",https://fred.stlouisfed.org/graph/fredgraph.csv?id=JTU5200QUR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_JTU5200QUR,RDS,market_series,"Finance and insurance quits rate, not seasonally adjusted",https://fred.stlouisfed.org/graph/fredgraph.csv?id=JTU5200QUR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_JTU5200QUR,WIS,market_series,"Finance and insurance quits rate, not seasonally adjusted",https://fred.stlouisfed.org/graph/fredgraph.csv?id=JTU5200QUR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_JTU5200QUR,ITP,market_series,"Finance and insurance quits rate, not seasonally adjusted",https://fred.stlouisfed.org/graph/fredgraph.csv?id=JTU5200QUR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_JTU5200QUR,Asset Services,market_series,"Finance and insurance quits rate, not seasonally adjusted",https://fred.stlouisfed.org/graph/fredgraph.csv?id=JTU5200QUR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_JTU5200QUR,DAS,market_series,"Finance and insurance quits rate, not seasonally adjusted",https://fred.stlouisfed.org/graph/fredgraph.csv?id=JTU5200QUR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_JTU5200QUR,DDA,market_series,"Finance and insurance quits rate, not seasonally adjusted",https://fred.stlouisfed.org/graph/fredgraph.csv?id=JTU5200QUR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_JTU5200QUR,Data Services,market_series,"Finance and insurance quits rate, not seasonally adjusted",https://fred.stlouisfed.org/graph/fredgraph.csv?id=JTU5200QUR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_JTU5200QUR,Consulting,market_series,"Finance and insurance quits rate, not seasonally adjusted",https://fred.stlouisfed.org/graph/fredgraph.csv?id=JTU5200QUR&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+dtcc_asset_services,Asset Services,business_reference,Asset Services,https://www.dtcc.com/products-and-services/asset-services,public reference or business measure; scope retained,True
+dtcc_asset_services,ECS,business_reference,Asset Services,https://www.dtcc.com/products-and-services/asset-services,public reference or business measure; scope retained,True
+dtcc_asset_services,DAS,business_reference,Asset Services,https://www.dtcc.com/products-and-services/asset-services,public reference or business measure; scope retained,True
+dtcc_wealth,WIS,business_reference,Wealth,https://www.dtcc.com/products-and-services/wealth-investment-solutions,public reference or business measure; scope retained,True
+dtcc_rds,RDS,business_reference,Rds,https://www.dtcc.com/products-and-services/repository-derivatives-services,public reference or business measure; scope retained,True
+dtcc_itp,ITP,business_reference,Itp,https://www.dtcc.com/products-and-services/trade-processing-solutions,public reference or business measure; scope retained,True
+dtcc_digital,DAS,business_reference,Digital,https://www.dtcc.com/products-and-services/digital-assets,public reference or business measure; scope retained,True
+dtcc_digital,DDA,business_reference,Digital,https://www.dtcc.com/products-and-services/digital-assets,public reference or business measure; scope retained,True
+dtcc_data_services,Data Services,business_reference,Data Services,https://www.dtcc.com/products-and-services/data-services,public reference or business measure; scope retained,True
+dtcc_data_services,RDS,business_reference,Data Services,https://www.dtcc.com/products-and-services/data-services,public reference or business measure; scope retained,True
+dtcc_data_services,Asset Services,business_reference,Data Services,https://www.dtcc.com/products-and-services/data-services,public reference or business measure; scope retained,True
+dtcc_consulting,Consulting,business_reference,Consulting,https://www.dtcc.com/products-and-services/consulting,public reference or business measure; scope retained,True
+dtcc_clearing,FICC,business_reference,Clearing,https://www.dtcc.com/products-and-services/clearing-settlement-services,public reference or business measure; scope retained,True
+dtcc_clearing,ECS,business_reference,Clearing,https://www.dtcc.com/products-and-services/clearing-settlement-services,public reference or business measure; scope retained,True
+dtcc_press,FICC,news_index,Dtcc Press,https://www.dtcc.com/press-releases,public reference or business measure; scope retained,True
+dtcc_press,ECS,news_index,Dtcc Press,https://www.dtcc.com/press-releases,public reference or business measure; scope retained,True
+dtcc_press,RDS,news_index,Dtcc Press,https://www.dtcc.com/press-releases,public reference or business measure; scope retained,True
+dtcc_press,WIS,news_index,Dtcc Press,https://www.dtcc.com/press-releases,public reference or business measure; scope retained,True
+dtcc_press,ITP,news_index,Dtcc Press,https://www.dtcc.com/press-releases,public reference or business measure; scope retained,True
+dtcc_press,Asset Services,news_index,Dtcc Press,https://www.dtcc.com/press-releases,public reference or business measure; scope retained,True
+dtcc_press,DAS,news_index,Dtcc Press,https://www.dtcc.com/press-releases,public reference or business measure; scope retained,True
+dtcc_press,DDA,news_index,Dtcc Press,https://www.dtcc.com/press-releases,public reference or business measure; scope retained,True
+dtcc_press,Data Services,news_index,Dtcc Press,https://www.dtcc.com/press-releases,public reference or business measure; scope retained,True
+dtcc_press,Consulting,news_index,Dtcc Press,https://www.dtcc.com/press-releases,public reference or business measure; scope retained,True
+dtcc_insights,FICC,news_index,Dtcc Insights,https://www.dtcc.com/insights,public reference or business measure; scope retained,True
+dtcc_insights,ECS,news_index,Dtcc Insights,https://www.dtcc.com/insights,public reference or business measure; scope retained,True
+dtcc_insights,RDS,news_index,Dtcc Insights,https://www.dtcc.com/insights,public reference or business measure; scope retained,True
+dtcc_insights,WIS,news_index,Dtcc Insights,https://www.dtcc.com/insights,public reference or business measure; scope retained,True
+dtcc_insights,ITP,news_index,Dtcc Insights,https://www.dtcc.com/insights,public reference or business measure; scope retained,True
+dtcc_insights,Asset Services,news_index,Dtcc Insights,https://www.dtcc.com/insights,public reference or business measure; scope retained,True
+dtcc_insights,DAS,news_index,Dtcc Insights,https://www.dtcc.com/insights,public reference or business measure; scope retained,True
+dtcc_insights,DDA,news_index,Dtcc Insights,https://www.dtcc.com/insights,public reference or business measure; scope retained,True
+dtcc_insights,Data Services,news_index,Dtcc Insights,https://www.dtcc.com/insights,public reference or business measure; scope retained,True
+dtcc_insights,Consulting,news_index,Dtcc Insights,https://www.dtcc.com/insights,public reference or business measure; scope retained,True
+dtcc_notices,FICC,notice_index,Dtcc Notices,https://www.dtcc.com/legal/important-notices,public reference or business measure; scope retained,True
+dtcc_notices,ECS,notice_index,Dtcc Notices,https://www.dtcc.com/legal/important-notices,public reference or business measure; scope retained,True
+dtcc_notices,RDS,notice_index,Dtcc Notices,https://www.dtcc.com/legal/important-notices,public reference or business measure; scope retained,True
+dtcc_notices,WIS,notice_index,Dtcc Notices,https://www.dtcc.com/legal/important-notices,public reference or business measure; scope retained,True
+dtcc_notices,ITP,notice_index,Dtcc Notices,https://www.dtcc.com/legal/important-notices,public reference or business measure; scope retained,True
+dtcc_notices,Asset Services,notice_index,Dtcc Notices,https://www.dtcc.com/legal/important-notices,public reference or business measure; scope retained,True
+dtcc_notices,DAS,notice_index,Dtcc Notices,https://www.dtcc.com/legal/important-notices,public reference or business measure; scope retained,True
+dtcc_notices,DDA,notice_index,Dtcc Notices,https://www.dtcc.com/legal/important-notices,public reference or business measure; scope retained,True
+dtcc_notices,Data Services,notice_index,Dtcc Notices,https://www.dtcc.com/legal/important-notices,public reference or business measure; scope retained,True
+dtcc_notices,Consulting,notice_index,Dtcc Notices,https://www.dtcc.com/legal/important-notices,public reference or business measure; scope retained,True
+dtcc_rules,FICC,rule_index,Dtcc Rules,https://www.dtcc.com/legal/regulatory-rule-filings,public reference or business measure; scope retained,True
+dtcc_rules,ECS,rule_index,Dtcc Rules,https://www.dtcc.com/legal/regulatory-rule-filings,public reference or business measure; scope retained,True
+dtcc_rules,RDS,rule_index,Dtcc Rules,https://www.dtcc.com/legal/regulatory-rule-filings,public reference or business measure; scope retained,True
+dtcc_rules,WIS,rule_index,Dtcc Rules,https://www.dtcc.com/legal/regulatory-rule-filings,public reference or business measure; scope retained,True
+dtcc_rules,ITP,rule_index,Dtcc Rules,https://www.dtcc.com/legal/regulatory-rule-filings,public reference or business measure; scope retained,True
+dtcc_rules,Asset Services,rule_index,Dtcc Rules,https://www.dtcc.com/legal/regulatory-rule-filings,public reference or business measure; scope retained,True
+dtcc_rules,DAS,rule_index,Dtcc Rules,https://www.dtcc.com/legal/regulatory-rule-filings,public reference or business measure; scope retained,True
+dtcc_rules,DDA,rule_index,Dtcc Rules,https://www.dtcc.com/legal/regulatory-rule-filings,public reference or business measure; scope retained,True
+dtcc_rules,Data Services,rule_index,Dtcc Rules,https://www.dtcc.com/legal/regulatory-rule-filings,public reference or business measure; scope retained,True
+dtcc_rules,Consulting,rule_index,Dtcc Rules,https://www.dtcc.com/legal/regulatory-rule-filings,public reference or business measure; scope retained,True
+dtcc_policy,FICC,disclosure_index,Dtcc Policy,https://www.dtcc.com/legal/policy-and-compliance,public reference or business measure; scope retained,True
+dtcc_policy,ECS,disclosure_index,Dtcc Policy,https://www.dtcc.com/legal/policy-and-compliance,public reference or business measure; scope retained,True
+dtcc_financials,FICC,financial_index,Dtcc Financials,https://www.dtcc.com/legal/financial-statements,public reference or business measure; scope retained,True
+dtcc_financials,ECS,financial_index,Dtcc Financials,https://www.dtcc.com/legal/financial-statements,public reference or business measure; scope retained,True
+dtcc_financials,RDS,financial_index,Dtcc Financials,https://www.dtcc.com/legal/financial-statements,public reference or business measure; scope retained,True
+dtcc_financials,WIS,financial_index,Dtcc Financials,https://www.dtcc.com/legal/financial-statements,public reference or business measure; scope retained,True
+dtcc_financials,ITP,financial_index,Dtcc Financials,https://www.dtcc.com/legal/financial-statements,public reference or business measure; scope retained,True
+dtcc_financials,Asset Services,financial_index,Dtcc Financials,https://www.dtcc.com/legal/financial-statements,public reference or business measure; scope retained,True
+dtcc_financials,DAS,financial_index,Dtcc Financials,https://www.dtcc.com/legal/financial-statements,public reference or business measure; scope retained,True
+dtcc_financials,DDA,financial_index,Dtcc Financials,https://www.dtcc.com/legal/financial-statements,public reference or business measure; scope retained,True
+dtcc_financials,Data Services,financial_index,Dtcc Financials,https://www.dtcc.com/legal/financial-statements,public reference or business measure; scope retained,True
+dtcc_financials,Consulting,financial_index,Dtcc Financials,https://www.dtcc.com/legal/financial-statements,public reference or business measure; scope retained,True
+dtcc_market_data,ECS,public_market_index,Dtcc Market Data,https://www.dtcc.com/market-index-data,public reference or business measure; scope retained,True
+dtcc_market_data,RDS,public_market_index,Dtcc Market Data,https://www.dtcc.com/market-index-data,public reference or business measure; scope retained,True
+dtcc_market_data,ITP,public_market_index,Dtcc Market Data,https://www.dtcc.com/market-index-data,public reference or business measure; scope retained,True
+dtcc_market_data,Asset Services,public_market_index,Dtcc Market Data,https://www.dtcc.com/market-index-data,public reference or business measure; scope retained,True
+dtcc_market_data,Data Services,public_market_index,Dtcc Market Data,https://www.dtcc.com/market-index-data,public reference or business measure; scope retained,True
+dtcc_money_market,WIS,public_market_index,Dtcc Money Market,https://www.dtcc.com/products-and-services/data-services/money-market-kinetics-insights,public reference or business measure; scope retained,True
+dtcc_money_market,Asset Services,public_market_index,Dtcc Money Market,https://www.dtcc.com/products-and-services/data-services/money-market-kinetics-insights,public reference or business measure; scope retained,True
+dtcc_money_market,Data Services,public_market_index,Dtcc Money Market,https://www.dtcc.com/products-and-services/data-services/money-market-kinetics-insights,public reference or business measure; scope retained,True
+ici_fund_flows,WIS,industry_data_index,ICI weekly long-term mutual fund flows,https://www.ici.org/research/statistics/mutual-funds/weekly-estimated-longterm-mutual-fund-flows,public reference or business measure; scope retained,True
+ici_fund_flows,ECS,industry_data_index,ICI weekly long-term mutual fund flows,https://www.ici.org/research/statistics/mutual-funds/weekly-estimated-longterm-mutual-fund-flows,public reference or business measure; scope retained,True
+ici_fund_flows,Data Services,industry_data_index,ICI weekly long-term mutual fund flows,https://www.ici.org/research/statistics/mutual-funds/weekly-estimated-longterm-mutual-fund-flows,public reference or business measure; scope retained,True
+fca_publications,RDS,regulator_index,Financial Conduct Authority news and publications,https://www.fca.org.uk/what-we-publish,public reference or business measure; scope retained,True
+fca_publications,WIS,regulator_index,Financial Conduct Authority news and publications,https://www.fca.org.uk/what-we-publish,public reference or business measure; scope retained,True
+fca_publications,ITP,regulator_index,Financial Conduct Authority news and publications,https://www.fca.org.uk/what-we-publish,public reference or business measure; scope retained,True
+fca_publications,DAS,regulator_index,Financial Conduct Authority news and publications,https://www.fca.org.uk/what-we-publish,public reference or business measure; scope retained,True
+fca_publications,DDA,regulator_index,Financial Conduct Authority news and publications,https://www.fca.org.uk/what-we-publish,public reference or business measure; scope retained,True
+fca_publications,Consulting,regulator_index,Financial Conduct Authority news and publications,https://www.fca.org.uk/what-we-publish,public reference or business measure; scope retained,True
+esma_news,RDS,news_index,European Securities and Markets Authority news,https://www.esma.europa.eu/press-news/esma-news,public reference or business measure; scope retained,True
+esma_news,ITP,news_index,European Securities and Markets Authority news,https://www.esma.europa.eu/press-news/esma-news,public reference or business measure; scope retained,True
+esma_news,WIS,news_index,European Securities and Markets Authority news,https://www.esma.europa.eu/press-news/esma-news,public reference or business measure; scope retained,True
+esma_news,DAS,news_index,European Securities and Markets Authority news,https://www.esma.europa.eu/press-news/esma-news,public reference or business measure; scope retained,True
+esma_news,DDA,news_index,European Securities and Markets Authority news,https://www.esma.europa.eu/press-news/esma-news,public reference or business measure; scope retained,True
+esma_news,Data Services,news_index,European Securities and Markets Authority news,https://www.esma.europa.eu/press-news/esma-news,public reference or business measure; scope retained,True
+esma_news,Consulting,news_index,European Securities and Markets Authority news,https://www.esma.europa.eu/press-news/esma-news,public reference or business measure; scope retained,True
+cisa_kev,FICC,cyber_catalog,CISA Known Exploited Vulnerabilities,https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json,candidate monitoring input,True
+cisa_kev,ECS,cyber_catalog,CISA Known Exploited Vulnerabilities,https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json,candidate monitoring input,True
+cisa_kev,RDS,cyber_catalog,CISA Known Exploited Vulnerabilities,https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json,candidate monitoring input,True
+cisa_kev,WIS,cyber_catalog,CISA Known Exploited Vulnerabilities,https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json,candidate monitoring input,True
+cisa_kev,ITP,cyber_catalog,CISA Known Exploited Vulnerabilities,https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json,candidate monitoring input,True
+cisa_kev,Asset Services,cyber_catalog,CISA Known Exploited Vulnerabilities,https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json,candidate monitoring input,True
+cisa_kev,DAS,cyber_catalog,CISA Known Exploited Vulnerabilities,https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json,candidate monitoring input,True
+cisa_kev,DDA,cyber_catalog,CISA Known Exploited Vulnerabilities,https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json,candidate monitoring input,True
+cisa_kev,Data Services,cyber_catalog,CISA Known Exploited Vulnerabilities,https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json,candidate monitoring input,True
+cisa_kev,Consulting,cyber_catalog,CISA Known Exploited Vulnerabilities,https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json,candidate monitoring input,True
+google_cloud,FICC,provider_incidents,Google Cloud public service incidents,https://status.cloud.google.com/incidents.json,candidate monitoring input,True
+google_cloud,ECS,provider_incidents,Google Cloud public service incidents,https://status.cloud.google.com/incidents.json,candidate monitoring input,True
+google_cloud,RDS,provider_incidents,Google Cloud public service incidents,https://status.cloud.google.com/incidents.json,candidate monitoring input,True
+google_cloud,WIS,provider_incidents,Google Cloud public service incidents,https://status.cloud.google.com/incidents.json,candidate monitoring input,True
+google_cloud,ITP,provider_incidents,Google Cloud public service incidents,https://status.cloud.google.com/incidents.json,candidate monitoring input,True
+google_cloud,Asset Services,provider_incidents,Google Cloud public service incidents,https://status.cloud.google.com/incidents.json,candidate monitoring input,True
+google_cloud,DAS,provider_incidents,Google Cloud public service incidents,https://status.cloud.google.com/incidents.json,candidate monitoring input,True
+google_cloud,DDA,provider_incidents,Google Cloud public service incidents,https://status.cloud.google.com/incidents.json,candidate monitoring input,True
+google_cloud,Data Services,provider_incidents,Google Cloud public service incidents,https://status.cloud.google.com/incidents.json,candidate monitoring input,True
+google_cloud,Consulting,provider_incidents,Google Cloud public service incidents,https://status.cloud.google.com/incidents.json,candidate monitoring input,True
+google_workspace,FICC,provider_incidents,Google Workspace public service incidents,https://www.google.com/appsstatus/dashboard/incidents.json,candidate monitoring input,True
+google_workspace,ECS,provider_incidents,Google Workspace public service incidents,https://www.google.com/appsstatus/dashboard/incidents.json,candidate monitoring input,True
+google_workspace,RDS,provider_incidents,Google Workspace public service incidents,https://www.google.com/appsstatus/dashboard/incidents.json,candidate monitoring input,True
+google_workspace,WIS,provider_incidents,Google Workspace public service incidents,https://www.google.com/appsstatus/dashboard/incidents.json,candidate monitoring input,True
+google_workspace,ITP,provider_incidents,Google Workspace public service incidents,https://www.google.com/appsstatus/dashboard/incidents.json,candidate monitoring input,True
+google_workspace,Asset Services,provider_incidents,Google Workspace public service incidents,https://www.google.com/appsstatus/dashboard/incidents.json,candidate monitoring input,True
+google_workspace,DAS,provider_incidents,Google Workspace public service incidents,https://www.google.com/appsstatus/dashboard/incidents.json,candidate monitoring input,True
+google_workspace,DDA,provider_incidents,Google Workspace public service incidents,https://www.google.com/appsstatus/dashboard/incidents.json,candidate monitoring input,True
+google_workspace,Data Services,provider_incidents,Google Workspace public service incidents,https://www.google.com/appsstatus/dashboard/incidents.json,candidate monitoring input,True
+google_workspace,Consulting,provider_incidents,Google Workspace public service incidents,https://www.google.com/appsstatus/dashboard/incidents.json,candidate monitoring input,True
+federal_register,FICC,regulatory_documents,"Federal Register: SEC, CFTC and Federal Reserve publications",https://www.federalregister.gov/api/v1/documents.json?conditions%5Bpublication_date%5D%5Bgte%5D=2026-10-07&conditions%5Bpublication_date%5D%5Blte%5D=2026-10-14&conditions%5Bagencies%5D%5B%5D=securities-and-exchange-commission&conditions%5Bagencies%5D%5B%5D=commodity-futures-trading-commission&conditions%5Bagencies%5D%5B%5D=federal-reserve-system&per_page=1000&order=oldest,candidate monitoring input,True
+federal_register,ECS,regulatory_documents,"Federal Register: SEC, CFTC and Federal Reserve publications",https://www.federalregister.gov/api/v1/documents.json?conditions%5Bpublication_date%5D%5Bgte%5D=2026-10-07&conditions%5Bpublication_date%5D%5Blte%5D=2026-10-14&conditions%5Bagencies%5D%5B%5D=securities-and-exchange-commission&conditions%5Bagencies%5D%5B%5D=commodity-futures-trading-commission&conditions%5Bagencies%5D%5B%5D=federal-reserve-system&per_page=1000&order=oldest,candidate monitoring input,True
+federal_register,RDS,regulatory_documents,"Federal Register: SEC, CFTC and Federal Reserve publications",https://www.federalregister.gov/api/v1/documents.json?conditions%5Bpublication_date%5D%5Bgte%5D=2026-10-07&conditions%5Bpublication_date%5D%5Blte%5D=2026-10-14&conditions%5Bagencies%5D%5B%5D=securities-and-exchange-commission&conditions%5Bagencies%5D%5B%5D=commodity-futures-trading-commission&conditions%5Bagencies%5D%5B%5D=federal-reserve-system&per_page=1000&order=oldest,candidate monitoring input,True
+federal_register,WIS,regulatory_documents,"Federal Register: SEC, CFTC and Federal Reserve publications",https://www.federalregister.gov/api/v1/documents.json?conditions%5Bpublication_date%5D%5Bgte%5D=2026-10-07&conditions%5Bpublication_date%5D%5Blte%5D=2026-10-14&conditions%5Bagencies%5D%5B%5D=securities-and-exchange-commission&conditions%5Bagencies%5D%5B%5D=commodity-futures-trading-commission&conditions%5Bagencies%5D%5B%5D=federal-reserve-system&per_page=1000&order=oldest,candidate monitoring input,True
+federal_register,ITP,regulatory_documents,"Federal Register: SEC, CFTC and Federal Reserve publications",https://www.federalregister.gov/api/v1/documents.json?conditions%5Bpublication_date%5D%5Bgte%5D=2026-10-07&conditions%5Bpublication_date%5D%5Blte%5D=2026-10-14&conditions%5Bagencies%5D%5B%5D=securities-and-exchange-commission&conditions%5Bagencies%5D%5B%5D=commodity-futures-trading-commission&conditions%5Bagencies%5D%5B%5D=federal-reserve-system&per_page=1000&order=oldest,candidate monitoring input,True
+federal_register,Asset Services,regulatory_documents,"Federal Register: SEC, CFTC and Federal Reserve publications",https://www.federalregister.gov/api/v1/documents.json?conditions%5Bpublication_date%5D%5Bgte%5D=2026-10-07&conditions%5Bpublication_date%5D%5Blte%5D=2026-10-14&conditions%5Bagencies%5D%5B%5D=securities-and-exchange-commission&conditions%5Bagencies%5D%5B%5D=commodity-futures-trading-commission&conditions%5Bagencies%5D%5B%5D=federal-reserve-system&per_page=1000&order=oldest,candidate monitoring input,True
+federal_register,DAS,regulatory_documents,"Federal Register: SEC, CFTC and Federal Reserve publications",https://www.federalregister.gov/api/v1/documents.json?conditions%5Bpublication_date%5D%5Bgte%5D=2026-10-07&conditions%5Bpublication_date%5D%5Blte%5D=2026-10-14&conditions%5Bagencies%5D%5B%5D=securities-and-exchange-commission&conditions%5Bagencies%5D%5B%5D=commodity-futures-trading-commission&conditions%5Bagencies%5D%5B%5D=federal-reserve-system&per_page=1000&order=oldest,candidate monitoring input,True
+federal_register,DDA,regulatory_documents,"Federal Register: SEC, CFTC and Federal Reserve publications",https://www.federalregister.gov/api/v1/documents.json?conditions%5Bpublication_date%5D%5Bgte%5D=2026-10-07&conditions%5Bpublication_date%5D%5Blte%5D=2026-10-14&conditions%5Bagencies%5D%5B%5D=securities-and-exchange-commission&conditions%5Bagencies%5D%5B%5D=commodity-futures-trading-commission&conditions%5Bagencies%5D%5B%5D=federal-reserve-system&per_page=1000&order=oldest,candidate monitoring input,True
+federal_register,Data Services,regulatory_documents,"Federal Register: SEC, CFTC and Federal Reserve publications",https://www.federalregister.gov/api/v1/documents.json?conditions%5Bpublication_date%5D%5Bgte%5D=2026-10-07&conditions%5Bpublication_date%5D%5Blte%5D=2026-10-14&conditions%5Bagencies%5D%5B%5D=securities-and-exchange-commission&conditions%5Bagencies%5D%5B%5D=commodity-futures-trading-commission&conditions%5Bagencies%5D%5B%5D=federal-reserve-system&per_page=1000&order=oldest,candidate monitoring input,True
+federal_register,Consulting,regulatory_documents,"Federal Register: SEC, CFTC and Federal Reserve publications",https://www.federalregister.gov/api/v1/documents.json?conditions%5Bpublication_date%5D%5Bgte%5D=2026-10-07&conditions%5Bpublication_date%5D%5Blte%5D=2026-10-14&conditions%5Bagencies%5D%5B%5D=securities-and-exchange-commission&conditions%5Bagencies%5D%5B%5D=commodity-futures-trading-commission&conditions%5Bagencies%5D%5B%5D=federal-reserve-system&per_page=1000&order=oldest,candidate monitoring input,True
+fema,FICC,disaster_declarations,FEMA disaster declarations,https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?%24filter=declarationDate+ge+%272026-10-07T00%3A00%3A00.000Z%27+and+declarationDate+le+%272026-10-14T23%3A59%3A59.000Z%27&%24select=disasterNumber%2CdeclarationDate%2CincidentType%2Cstate%2CdeclarationType%2CincidentBeginDate&%24orderby=declarationDate&%24top=10000,candidate monitoring input,True
+fema,ECS,disaster_declarations,FEMA disaster declarations,https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?%24filter=declarationDate+ge+%272026-10-07T00%3A00%3A00.000Z%27+and+declarationDate+le+%272026-10-14T23%3A59%3A59.000Z%27&%24select=disasterNumber%2CdeclarationDate%2CincidentType%2Cstate%2CdeclarationType%2CincidentBeginDate&%24orderby=declarationDate&%24top=10000,candidate monitoring input,True
+fema,RDS,disaster_declarations,FEMA disaster declarations,https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?%24filter=declarationDate+ge+%272026-10-07T00%3A00%3A00.000Z%27+and+declarationDate+le+%272026-10-14T23%3A59%3A59.000Z%27&%24select=disasterNumber%2CdeclarationDate%2CincidentType%2Cstate%2CdeclarationType%2CincidentBeginDate&%24orderby=declarationDate&%24top=10000,candidate monitoring input,True
+fema,WIS,disaster_declarations,FEMA disaster declarations,https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?%24filter=declarationDate+ge+%272026-10-07T00%3A00%3A00.000Z%27+and+declarationDate+le+%272026-10-14T23%3A59%3A59.000Z%27&%24select=disasterNumber%2CdeclarationDate%2CincidentType%2Cstate%2CdeclarationType%2CincidentBeginDate&%24orderby=declarationDate&%24top=10000,candidate monitoring input,True
+fema,ITP,disaster_declarations,FEMA disaster declarations,https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?%24filter=declarationDate+ge+%272026-10-07T00%3A00%3A00.000Z%27+and+declarationDate+le+%272026-10-14T23%3A59%3A59.000Z%27&%24select=disasterNumber%2CdeclarationDate%2CincidentType%2Cstate%2CdeclarationType%2CincidentBeginDate&%24orderby=declarationDate&%24top=10000,candidate monitoring input,True
+fema,Asset Services,disaster_declarations,FEMA disaster declarations,https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?%24filter=declarationDate+ge+%272026-10-07T00%3A00%3A00.000Z%27+and+declarationDate+le+%272026-10-14T23%3A59%3A59.000Z%27&%24select=disasterNumber%2CdeclarationDate%2CincidentType%2Cstate%2CdeclarationType%2CincidentBeginDate&%24orderby=declarationDate&%24top=10000,candidate monitoring input,True
+fema,DAS,disaster_declarations,FEMA disaster declarations,https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?%24filter=declarationDate+ge+%272026-10-07T00%3A00%3A00.000Z%27+and+declarationDate+le+%272026-10-14T23%3A59%3A59.000Z%27&%24select=disasterNumber%2CdeclarationDate%2CincidentType%2Cstate%2CdeclarationType%2CincidentBeginDate&%24orderby=declarationDate&%24top=10000,candidate monitoring input,True
+fema,DDA,disaster_declarations,FEMA disaster declarations,https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?%24filter=declarationDate+ge+%272026-10-07T00%3A00%3A00.000Z%27+and+declarationDate+le+%272026-10-14T23%3A59%3A59.000Z%27&%24select=disasterNumber%2CdeclarationDate%2CincidentType%2Cstate%2CdeclarationType%2CincidentBeginDate&%24orderby=declarationDate&%24top=10000,candidate monitoring input,True
+fema,Data Services,disaster_declarations,FEMA disaster declarations,https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?%24filter=declarationDate+ge+%272026-10-07T00%3A00%3A00.000Z%27+and+declarationDate+le+%272026-10-14T23%3A59%3A59.000Z%27&%24select=disasterNumber%2CdeclarationDate%2CincidentType%2Cstate%2CdeclarationType%2CincidentBeginDate&%24orderby=declarationDate&%24top=10000,candidate monitoring input,True
+fema,Consulting,disaster_declarations,FEMA disaster declarations,https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?%24filter=declarationDate+ge+%272026-10-07T00%3A00%3A00.000Z%27+and+declarationDate+le+%272026-10-14T23%3A59%3A59.000Z%27&%24select=disasterNumber%2CdeclarationDate%2CincidentType%2Cstate%2CdeclarationType%2CincidentBeginDate&%24orderby=declarationDate&%24top=10000,candidate monitoring input,True
+dtcc_notice_feed,FICC,rss,dtcc_notice_feed,https://www.dtcc.com/rss-feeds/legal/all-important-notices,candidate monitoring input,True
+dtcc_notice_feed,ECS,rss,dtcc_notice_feed,https://www.dtcc.com/rss-feeds/legal/all-important-notices,candidate monitoring input,True
+dtcc_notice_feed,RDS,rss,dtcc_notice_feed,https://www.dtcc.com/rss-feeds/legal/all-important-notices,candidate monitoring input,True
+dtcc_notice_feed,WIS,rss,dtcc_notice_feed,https://www.dtcc.com/rss-feeds/legal/all-important-notices,candidate monitoring input,True
+dtcc_notice_feed,ITP,rss,dtcc_notice_feed,https://www.dtcc.com/rss-feeds/legal/all-important-notices,candidate monitoring input,True
+dtcc_notice_feed,Asset Services,rss,dtcc_notice_feed,https://www.dtcc.com/rss-feeds/legal/all-important-notices,candidate monitoring input,True
+dtcc_notice_feed,DAS,rss,dtcc_notice_feed,https://www.dtcc.com/rss-feeds/legal/all-important-notices,candidate monitoring input,True
+dtcc_notice_feed,DDA,rss,dtcc_notice_feed,https://www.dtcc.com/rss-feeds/legal/all-important-notices,candidate monitoring input,True
+dtcc_notice_feed,Data Services,rss,dtcc_notice_feed,https://www.dtcc.com/rss-feeds/legal/all-important-notices,candidate monitoring input,True
+dtcc_notice_feed,Consulting,rss,dtcc_notice_feed,https://www.dtcc.com/rss-feeds/legal/all-important-notices,candidate monitoring input,True
+dtcc_equity_trade_volume_insights,RDS,public_market_index,dtcc_equity_trade_volume_insights,https://www.dtcc.com/market-index-data/charts/equity-trade-volume-insights,public reference or business measure; scope retained,True
+dtcc_equity_trade_volume_insights,ECS,public_market_index,dtcc_equity_trade_volume_insights,https://www.dtcc.com/market-index-data/charts/equity-trade-volume-insights,public reference or business measure; scope retained,True
+dtcc_equity_trade_volume_insights,ITP,public_market_index,dtcc_equity_trade_volume_insights,https://www.dtcc.com/market-index-data/charts/equity-trade-volume-insights,public reference or business measure; scope retained,True
+dtcc_equity_trade_volume_insights,Asset Services,public_market_index,dtcc_equity_trade_volume_insights,https://www.dtcc.com/market-index-data/charts/equity-trade-volume-insights,public reference or business measure; scope retained,True
+dtcc_equity_trade_volume_insights,Data Services,public_market_index,dtcc_equity_trade_volume_insights,https://www.dtcc.com/market-index-data/charts/equity-trade-volume-insights,public reference or business measure; scope retained,True
+dtcc_exchange_traded_funds,RDS,public_market_index,dtcc_exchange_traded_funds,https://www.dtcc.com/market-index-data/charts/exchange-traded-funds,public reference or business measure; scope retained,True
+dtcc_exchange_traded_funds,ECS,public_market_index,dtcc_exchange_traded_funds,https://www.dtcc.com/market-index-data/charts/exchange-traded-funds,public reference or business measure; scope retained,True
+dtcc_exchange_traded_funds,ITP,public_market_index,dtcc_exchange_traded_funds,https://www.dtcc.com/market-index-data/charts/exchange-traded-funds,public reference or business measure; scope retained,True
+dtcc_exchange_traded_funds,Asset Services,public_market_index,dtcc_exchange_traded_funds,https://www.dtcc.com/market-index-data/charts/exchange-traded-funds,public reference or business measure; scope retained,True
+dtcc_exchange_traded_funds,Data Services,public_market_index,dtcc_exchange_traded_funds,https://www.dtcc.com/market-index-data/charts/exchange-traded-funds,public reference or business measure; scope retained,True
+dtcc_dtcc_gcf_repo_index,RDS,public_market_index,dtcc_dtcc_gcf_repo_index,https://www.dtcc.com/market-index-data/charts/dtcc-gcf-repo-index,public reference or business measure; scope retained,True
+dtcc_dtcc_gcf_repo_index,ECS,public_market_index,dtcc_dtcc_gcf_repo_index,https://www.dtcc.com/market-index-data/charts/dtcc-gcf-repo-index,public reference or business measure; scope retained,True
+dtcc_dtcc_gcf_repo_index,ITP,public_market_index,dtcc_dtcc_gcf_repo_index,https://www.dtcc.com/market-index-data/charts/dtcc-gcf-repo-index,public reference or business measure; scope retained,True
+dtcc_dtcc_gcf_repo_index,Asset Services,public_market_index,dtcc_dtcc_gcf_repo_index,https://www.dtcc.com/market-index-data/charts/dtcc-gcf-repo-index,public reference or business measure; scope retained,True
+dtcc_dtcc_gcf_repo_index,Data Services,public_market_index,dtcc_dtcc_gcf_repo_index,https://www.dtcc.com/market-index-data/charts/dtcc-gcf-repo-index,public reference or business measure; scope retained,True
+dtcc_previous_12_months_volume_for_gsd,RDS,public_market_index,dtcc_previous_12_months_volume_for_gsd,https://www.dtcc.com/market-index-data/charts/previous-12-months-volume-for-gsd,public reference or business measure; scope retained,True
+dtcc_previous_12_months_volume_for_gsd,ECS,public_market_index,dtcc_previous_12_months_volume_for_gsd,https://www.dtcc.com/market-index-data/charts/previous-12-months-volume-for-gsd,public reference or business measure; scope retained,True
+dtcc_previous_12_months_volume_for_gsd,ITP,public_market_index,dtcc_previous_12_months_volume_for_gsd,https://www.dtcc.com/market-index-data/charts/previous-12-months-volume-for-gsd,public reference or business measure; scope retained,True
+dtcc_previous_12_months_volume_for_gsd,Asset Services,public_market_index,dtcc_previous_12_months_volume_for_gsd,https://www.dtcc.com/market-index-data/charts/previous-12-months-volume-for-gsd,public reference or business measure; scope retained,True
+dtcc_previous_12_months_volume_for_gsd,Data Services,public_market_index,dtcc_previous_12_months_volume_for_gsd,https://www.dtcc.com/market-index-data/charts/previous-12-months-volume-for-gsd,public reference or business measure; scope retained,True
+dtcc_previous_12_months_volume_for_mbs,RDS,public_market_index,dtcc_previous_12_months_volume_for_mbs,https://www.dtcc.com/market-index-data/charts/previous-12-months-volume-for-mbs,public reference or business measure; scope retained,True
+dtcc_previous_12_months_volume_for_mbs,ECS,public_market_index,dtcc_previous_12_months_volume_for_mbs,https://www.dtcc.com/market-index-data/charts/previous-12-months-volume-for-mbs,public reference or business measure; scope retained,True
+dtcc_previous_12_months_volume_for_mbs,ITP,public_market_index,dtcc_previous_12_months_volume_for_mbs,https://www.dtcc.com/market-index-data/charts/previous-12-months-volume-for-mbs,public reference or business measure; scope retained,True
+dtcc_previous_12_months_volume_for_mbs,Asset Services,public_market_index,dtcc_previous_12_months_volume_for_mbs,https://www.dtcc.com/market-index-data/charts/previous-12-months-volume-for-mbs,public reference or business measure; scope retained,True
+dtcc_previous_12_months_volume_for_mbs,Data Services,public_market_index,dtcc_previous_12_months_volume_for_mbs,https://www.dtcc.com/market-index-data/charts/previous-12-months-volume-for-mbs,public reference or business measure; scope retained,True
+dtcc_membership,RDS,public_market_index,dtcc_membership,https://www.dtcc.com/market-index-data/charts/membership,public reference or business measure; scope retained,True
+dtcc_membership,ECS,public_market_index,dtcc_membership,https://www.dtcc.com/market-index-data/charts/membership,public reference or business measure; scope retained,True
+dtcc_membership,ITP,public_market_index,dtcc_membership,https://www.dtcc.com/market-index-data/charts/membership,public reference or business measure; scope retained,True
+dtcc_membership,Asset Services,public_market_index,dtcc_membership,https://www.dtcc.com/market-index-data/charts/membership,public reference or business measure; scope retained,True
+dtcc_membership,Data Services,public_market_index,dtcc_membership,https://www.dtcc.com/market-index-data/charts/membership,public reference or business measure; scope retained,True
+dtcc_daily_total_us_treasury_trade_fails,RDS,public_market_index,dtcc_daily_total_us_treasury_trade_fails,https://www.dtcc.com/market-index-data/charts/daily-total-us-treasury-trade-fails,public reference or business measure; scope retained,True
+dtcc_daily_total_us_treasury_trade_fails,ECS,public_market_index,dtcc_daily_total_us_treasury_trade_fails,https://www.dtcc.com/market-index-data/charts/daily-total-us-treasury-trade-fails,public reference or business measure; scope retained,True
+dtcc_daily_total_us_treasury_trade_fails,ITP,public_market_index,dtcc_daily_total_us_treasury_trade_fails,https://www.dtcc.com/market-index-data/charts/daily-total-us-treasury-trade-fails,public reference or business measure; scope retained,True
+dtcc_daily_total_us_treasury_trade_fails,Asset Services,public_market_index,dtcc_daily_total_us_treasury_trade_fails,https://www.dtcc.com/market-index-data/charts/daily-total-us-treasury-trade-fails,public reference or business measure; scope retained,True
+dtcc_daily_total_us_treasury_trade_fails,Data Services,public_market_index,dtcc_daily_total_us_treasury_trade_fails,https://www.dtcc.com/market-index-data/charts/daily-total-us-treasury-trade-fails,public reference or business measure; scope retained,True
+dtcc_underwriting_data_report,RDS,public_market_index,dtcc_underwriting_data_report,https://www.dtcc.com/market-index-data/charts/underwriting-data-report,public reference or business measure; scope retained,True
+dtcc_underwriting_data_report,ECS,public_market_index,dtcc_underwriting_data_report,https://www.dtcc.com/market-index-data/charts/underwriting-data-report,public reference or business measure; scope retained,True
+dtcc_underwriting_data_report,ITP,public_market_index,dtcc_underwriting_data_report,https://www.dtcc.com/market-index-data/charts/underwriting-data-report,public reference or business measure; scope retained,True
+dtcc_underwriting_data_report,Asset Services,public_market_index,dtcc_underwriting_data_report,https://www.dtcc.com/market-index-data/charts/underwriting-data-report,public reference or business measure; scope retained,True
+dtcc_underwriting_data_report,Data Services,public_market_index,dtcc_underwriting_data_report,https://www.dtcc.com/market-index-data/charts/underwriting-data-report,public reference or business measure; scope retained,True
+dtcc_asic_reports,RDS,public_market_index,dtcc_asic_reports,https://www.dtcc.com/market-index-data/asic-reports,public reference or business measure; scope retained,True
+dtcc_asic_reports,ECS,public_market_index,dtcc_asic_reports,https://www.dtcc.com/market-index-data/asic-reports,public reference or business measure; scope retained,True
+dtcc_asic_reports,ITP,public_market_index,dtcc_asic_reports,https://www.dtcc.com/market-index-data/asic-reports,public reference or business measure; scope retained,True
+dtcc_asic_reports,Asset Services,public_market_index,dtcc_asic_reports,https://www.dtcc.com/market-index-data/asic-reports,public reference or business measure; scope retained,True
+dtcc_asic_reports,Data Services,public_market_index,dtcc_asic_reports,https://www.dtcc.com/market-index-data/asic-reports,public reference or business measure; scope retained,True
+dtcc_emir_public_reports,RDS,public_market_index,dtcc_emir_public_reports,https://www.dtcc.com/market-index-data/emir-public-reports,public reference or business measure; scope retained,True
+dtcc_emir_public_reports,ECS,public_market_index,dtcc_emir_public_reports,https://www.dtcc.com/market-index-data/emir-public-reports,public reference or business measure; scope retained,True
+dtcc_emir_public_reports,ITP,public_market_index,dtcc_emir_public_reports,https://www.dtcc.com/market-index-data/emir-public-reports,public reference or business measure; scope retained,True
+dtcc_emir_public_reports,Asset Services,public_market_index,dtcc_emir_public_reports,https://www.dtcc.com/market-index-data/emir-public-reports,public reference or business measure; scope retained,True
+dtcc_emir_public_reports,Data Services,public_market_index,dtcc_emir_public_reports,https://www.dtcc.com/market-index-data/emir-public-reports,public reference or business measure; scope retained,True
+dtcc_emir_public_reports_uk,RDS,public_market_index,dtcc_emir_public_reports_uk,https://www.dtcc.com/market-index-data/emir-public-reports-uk,public reference or business measure; scope retained,True
+dtcc_emir_public_reports_uk,ECS,public_market_index,dtcc_emir_public_reports_uk,https://www.dtcc.com/market-index-data/emir-public-reports-uk,public reference or business measure; scope retained,True
+dtcc_emir_public_reports_uk,ITP,public_market_index,dtcc_emir_public_reports_uk,https://www.dtcc.com/market-index-data/emir-public-reports-uk,public reference or business measure; scope retained,True
+dtcc_emir_public_reports_uk,Asset Services,public_market_index,dtcc_emir_public_reports_uk,https://www.dtcc.com/market-index-data/emir-public-reports-uk,public reference or business measure; scope retained,True
+dtcc_emir_public_reports_uk,Data Services,public_market_index,dtcc_emir_public_reports_uk,https://www.dtcc.com/market-index-data/emir-public-reports-uk,public reference or business measure; scope retained,True
+dtcc_sftr_public_reports_uk,RDS,public_market_index,dtcc_sftr_public_reports_uk,https://www.dtcc.com/market-index-data/sftr-public-reports-uk,public reference or business measure; scope retained,True
+dtcc_sftr_public_reports_uk,ECS,public_market_index,dtcc_sftr_public_reports_uk,https://www.dtcc.com/market-index-data/sftr-public-reports-uk,public reference or business measure; scope retained,True
+dtcc_sftr_public_reports_uk,ITP,public_market_index,dtcc_sftr_public_reports_uk,https://www.dtcc.com/market-index-data/sftr-public-reports-uk,public reference or business measure; scope retained,True
+dtcc_sftr_public_reports_uk,Asset Services,public_market_index,dtcc_sftr_public_reports_uk,https://www.dtcc.com/market-index-data/sftr-public-reports-uk,public reference or business measure; scope retained,True
+dtcc_sftr_public_reports_uk,Data Services,public_market_index,dtcc_sftr_public_reports_uk,https://www.dtcc.com/market-index-data/sftr-public-reports-uk,public reference or business measure; scope retained,True
+dtcc_sftr_public_reports,RDS,public_market_index,dtcc_sftr_public_reports,https://www.dtcc.com/market-index-data/sftr-public-reports,public reference or business measure; scope retained,True
+dtcc_sftr_public_reports,ECS,public_market_index,dtcc_sftr_public_reports,https://www.dtcc.com/market-index-data/sftr-public-reports,public reference or business measure; scope retained,True
+dtcc_sftr_public_reports,ITP,public_market_index,dtcc_sftr_public_reports,https://www.dtcc.com/market-index-data/sftr-public-reports,public reference or business measure; scope retained,True
+dtcc_sftr_public_reports,Asset Services,public_market_index,dtcc_sftr_public_reports,https://www.dtcc.com/market-index-data/sftr-public-reports,public reference or business measure; scope retained,True
+dtcc_sftr_public_reports,Data Services,public_market_index,dtcc_sftr_public_reports,https://www.dtcc.com/market-index-data/sftr-public-reports,public reference or business measure; scope retained,True
+fca_rss,RDS,rss,fca_rss,https://www.fca.org.uk/news/rss.xml,candidate monitoring input,True
+fca_rss,WIS,rss,fca_rss,https://www.fca.org.uk/news/rss.xml,candidate monitoring input,True
+fca_rss,ITP,rss,fca_rss,https://www.fca.org.uk/news/rss.xml,candidate monitoring input,True
+fca_rss,DAS,rss,fca_rss,https://www.fca.org.uk/news/rss.xml,candidate monitoring input,True
+fca_rss,DDA,rss,fca_rss,https://www.fca.org.uk/news/rss.xml,candidate monitoring input,True
+fca_rss,Consulting,rss,fca_rss,https://www.fca.org.uk/news/rss.xml,candidate monitoring input,True
+dtcc_underwriting_data_report_embedded_f5297c0e,RDS,embedded_market_data,dtcc_underwriting_data_report_embedded,https://cms-prod.dtcc.com/globalassets/ftp/products/uw_html_uwc-count.html,public reference or business measure; scope retained,True
+dtcc_underwriting_data_report_embedded_f5297c0e,ECS,embedded_market_data,dtcc_underwriting_data_report_embedded,https://cms-prod.dtcc.com/globalassets/ftp/products/uw_html_uwc-count.html,public reference or business measure; scope retained,True
+dtcc_underwriting_data_report_embedded_f5297c0e,ITP,embedded_market_data,dtcc_underwriting_data_report_embedded,https://cms-prod.dtcc.com/globalassets/ftp/products/uw_html_uwc-count.html,public reference or business measure; scope retained,True
+dtcc_underwriting_data_report_embedded_f5297c0e,Asset Services,embedded_market_data,dtcc_underwriting_data_report_embedded,https://cms-prod.dtcc.com/globalassets/ftp/products/uw_html_uwc-count.html,public reference or business measure; scope retained,True
+dtcc_underwriting_data_report_embedded_f5297c0e,Data Services,embedded_market_data,dtcc_underwriting_data_report_embedded,https://cms-prod.dtcc.com/globalassets/ftp/products/uw_html_uwc-count.html,public reference or business measure; scope retained,True
+dtcc_underwriting_data_report_embedded_22d8238f,RDS,embedded_market_data,dtcc_underwriting_data_report_embedded,https://cms-prod.dtcc.com/globalassets/ftp/products/uw_html_uwc-amounts.html,public reference or business measure; scope retained,True
+dtcc_underwriting_data_report_embedded_22d8238f,ECS,embedded_market_data,dtcc_underwriting_data_report_embedded,https://cms-prod.dtcc.com/globalassets/ftp/products/uw_html_uwc-amounts.html,public reference or business measure; scope retained,True
+dtcc_underwriting_data_report_embedded_22d8238f,ITP,embedded_market_data,dtcc_underwriting_data_report_embedded,https://cms-prod.dtcc.com/globalassets/ftp/products/uw_html_uwc-amounts.html,public reference or business measure; scope retained,True
+dtcc_underwriting_data_report_embedded_22d8238f,Asset Services,embedded_market_data,dtcc_underwriting_data_report_embedded,https://cms-prod.dtcc.com/globalassets/ftp/products/uw_html_uwc-amounts.html,public reference or business measure; scope retained,True
+dtcc_underwriting_data_report_embedded_22d8238f,Data Services,embedded_market_data,dtcc_underwriting_data_report_embedded,https://cms-prod.dtcc.com/globalassets/ftp/products/uw_html_uwc-amounts.html,public reference or business measure; scope retained,True
+dtcc_equity_trade_volume_insights_embedded,RDS,embedded_market_data,dtcc_equity_trade_volume_insights_embedded,https://cms-prod.dtcc.com/globalassets/ftp/products/equity_trade_insights.html,public reference or business measure; scope retained,True
+dtcc_equity_trade_volume_insights_embedded,ECS,embedded_market_data,dtcc_equity_trade_volume_insights_embedded,https://cms-prod.dtcc.com/globalassets/ftp/products/equity_trade_insights.html,public reference or business measure; scope retained,True
+dtcc_equity_trade_volume_insights_embedded,ITP,embedded_market_data,dtcc_equity_trade_volume_insights_embedded,https://cms-prod.dtcc.com/globalassets/ftp/products/equity_trade_insights.html,public reference or business measure; scope retained,True
+dtcc_equity_trade_volume_insights_embedded,Asset Services,embedded_market_data,dtcc_equity_trade_volume_insights_embedded,https://cms-prod.dtcc.com/globalassets/ftp/products/equity_trade_insights.html,public reference or business measure; scope retained,True
+dtcc_equity_trade_volume_insights_embedded,Data Services,embedded_market_data,dtcc_equity_trade_volume_insights_embedded,https://cms-prod.dtcc.com/globalassets/ftp/products/equity_trade_insights.html,public reference or business measure; scope retained,True
+dtcc_exchange_traded_funds_embedded,RDS,embedded_market_data,dtcc_exchange_traded_funds_embedded,https://cms-prod.dtcc.com/globalassets/ftp/etf/etflisting.html,public reference or business measure; scope retained,True
+dtcc_exchange_traded_funds_embedded,ECS,embedded_market_data,dtcc_exchange_traded_funds_embedded,https://cms-prod.dtcc.com/globalassets/ftp/etf/etflisting.html,public reference or business measure; scope retained,True
+dtcc_exchange_traded_funds_embedded,ITP,embedded_market_data,dtcc_exchange_traded_funds_embedded,https://cms-prod.dtcc.com/globalassets/ftp/etf/etflisting.html,public reference or business measure; scope retained,True
+dtcc_exchange_traded_funds_embedded,Asset Services,embedded_market_data,dtcc_exchange_traded_funds_embedded,https://cms-prod.dtcc.com/globalassets/ftp/etf/etflisting.html,public reference or business measure; scope retained,True
+dtcc_exchange_traded_funds_embedded,Data Services,embedded_market_data,dtcc_exchange_traded_funds_embedded,https://cms-prod.dtcc.com/globalassets/ftp/etf/etflisting.html,public reference or business measure; scope retained,True
+dtcc_emir_public_reports_embedded,RDS,embedded_market_data,dtcc_emir_public_reports_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/emirreport.html,public reference or business measure; scope retained,True
+dtcc_emir_public_reports_embedded,ECS,embedded_market_data,dtcc_emir_public_reports_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/emirreport.html,public reference or business measure; scope retained,True
+dtcc_emir_public_reports_embedded,ITP,embedded_market_data,dtcc_emir_public_reports_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/emirreport.html,public reference or business measure; scope retained,True
+dtcc_emir_public_reports_embedded,Asset Services,embedded_market_data,dtcc_emir_public_reports_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/emirreport.html,public reference or business measure; scope retained,True
+dtcc_emir_public_reports_embedded,Data Services,embedded_market_data,dtcc_emir_public_reports_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/emirreport.html,public reference or business measure; scope retained,True
+dtcc_emir_public_reports_uk_embedded,RDS,embedded_market_data,dtcc_emir_public_reports_uk_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/fcareport.html,public reference or business measure; scope retained,True
+dtcc_emir_public_reports_uk_embedded,ECS,embedded_market_data,dtcc_emir_public_reports_uk_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/fcareport.html,public reference or business measure; scope retained,True
+dtcc_emir_public_reports_uk_embedded,ITP,embedded_market_data,dtcc_emir_public_reports_uk_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/fcareport.html,public reference or business measure; scope retained,True
+dtcc_emir_public_reports_uk_embedded,Asset Services,embedded_market_data,dtcc_emir_public_reports_uk_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/fcareport.html,public reference or business measure; scope retained,True
+dtcc_emir_public_reports_uk_embedded,Data Services,embedded_market_data,dtcc_emir_public_reports_uk_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/fcareport.html,public reference or business measure; scope retained,True
+dtcc_sftr_public_reports_embedded,RDS,embedded_market_data,dtcc_sftr_public_reports_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/sftrreport.html,public reference or business measure; scope retained,True
+dtcc_sftr_public_reports_embedded,ECS,embedded_market_data,dtcc_sftr_public_reports_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/sftrreport.html,public reference or business measure; scope retained,True
+dtcc_sftr_public_reports_embedded,ITP,embedded_market_data,dtcc_sftr_public_reports_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/sftrreport.html,public reference or business measure; scope retained,True
+dtcc_sftr_public_reports_embedded,Asset Services,embedded_market_data,dtcc_sftr_public_reports_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/sftrreport.html,public reference or business measure; scope retained,True
+dtcc_sftr_public_reports_embedded,Data Services,embedded_market_data,dtcc_sftr_public_reports_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/sftrreport.html,public reference or business measure; scope retained,True
+dtcc_sftr_public_reports_uk_embedded,RDS,embedded_market_data,dtcc_sftr_public_reports_uk_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/sftrfcareport.html,public reference or business measure; scope retained,True
+dtcc_sftr_public_reports_uk_embedded,ECS,embedded_market_data,dtcc_sftr_public_reports_uk_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/sftrfcareport.html,public reference or business measure; scope retained,True
+dtcc_sftr_public_reports_uk_embedded,ITP,embedded_market_data,dtcc_sftr_public_reports_uk_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/sftrfcareport.html,public reference or business measure; scope retained,True
+dtcc_sftr_public_reports_uk_embedded,Asset Services,embedded_market_data,dtcc_sftr_public_reports_uk_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/sftrfcareport.html,public reference or business measure; scope retained,True
+dtcc_sftr_public_reports_uk_embedded,Data Services,embedded_market_data,dtcc_sftr_public_reports_uk_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/sftrfcareport.html,public reference or business measure; scope retained,True
+dtcc_asic_reports_embedded,RDS,embedded_market_data,dtcc_asic_reports_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/asicreport.html,public reference or business measure; scope retained,True
+dtcc_asic_reports_embedded,ECS,embedded_market_data,dtcc_asic_reports_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/asicreport.html,public reference or business measure; scope retained,True
+dtcc_asic_reports_embedded,ITP,embedded_market_data,dtcc_asic_reports_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/asicreport.html,public reference or business measure; scope retained,True
+dtcc_asic_reports_embedded,Asset Services,embedded_market_data,dtcc_asic_reports_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/asicreport.html,public reference or business measure; scope retained,True
+dtcc_asic_reports_embedded,Data Services,embedded_market_data,dtcc_asic_reports_embedded,https://cms-prod.dtcc.com/globalassets/ftp/gtr/asicreport.html,public reference or business measure; scope retained,True
+dtcc_etf_listing_csv,ECS,business_reference,dtcc_etf_listing_csv,https://cms-prod.dtcc.com/ETFListing/etf_listing.csv,public reference or business measure; scope retained,True
+dtcc_etf_listing_csv,ITP,business_reference,dtcc_etf_listing_csv,https://cms-prod.dtcc.com/ETFListing/etf_listing.csv,public reference or business measure; scope retained,True
+dtcc_etf_listing_csv,WIS,business_reference,dtcc_etf_listing_csv,https://cms-prod.dtcc.com/ETFListing/etf_listing.csv,public reference or business measure; scope retained,True
+dtcc_etf_listing_csv,Data Services,business_reference,dtcc_etf_listing_csv,https://cms-prod.dtcc.com/ETFListing/etf_listing.csv,public reference or business measure; scope retained,True
+dtcc_underwriting_xml,Asset Services,business_timeseries,dtcc_underwriting_xml,https://cms-prod.dtcc.com/products/uw/data/uw_data.xml,public reference or business measure; scope retained,True
+dtcc_underwriting_xml,ECS,business_timeseries,dtcc_underwriting_xml,https://cms-prod.dtcc.com/products/uw/data/uw_data.xml,public reference or business measure; scope retained,True
+dtcc_underwriting_xml,Data Services,business_timeseries,dtcc_underwriting_xml,https://cms-prod.dtcc.com/products/uw/data/uw_data.xml,public reference or business measure; scope retained,True
+rds_esma_table1_20261009,RDS,repository_weekly,rds_esma_table1_20261009,https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_1_OTC_Agg_20261009.csv,public reference or business measure; scope retained,True
+rds_esma_table1_20261009,Data Services,repository_weekly,rds_esma_table1_20261009,https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_1_OTC_Agg_20261009.csv,public reference or business measure; scope retained,True
+rds_esma_table2_20261009,RDS,repository_weekly,rds_esma_table2_20261009,https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_2_OTC_Agg_20261009.csv,public reference or business measure; scope retained,True
+rds_esma_table2_20261009,Data Services,repository_weekly,rds_esma_table2_20261009,https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_2_OTC_Agg_20261009.csv,public reference or business measure; scope retained,True
+rds_esma_table3_20261009,RDS,repository_weekly,rds_esma_table3_20261009,https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_3_OTC_Agg_20261009.csv,public reference or business measure; scope retained,True
+rds_esma_table3_20261009,Data Services,repository_weekly,rds_esma_table3_20261009,https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_3_OTC_Agg_20261009.csv,public reference or business measure; scope retained,True
+rds_fca_table1_20261009,RDS,repository_weekly,rds_fca_table1_20261009,https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_1_OTC_Agg_20261009.csv,public reference or business measure; scope retained,True
+rds_fca_table1_20261009,Data Services,repository_weekly,rds_fca_table1_20261009,https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_1_OTC_Agg_20261009.csv,public reference or business measure; scope retained,True
+rds_fca_table2_20261009,RDS,repository_weekly,rds_fca_table2_20261009,https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_2_OTC_Agg_20261009.csv,public reference or business measure; scope retained,True
+rds_fca_table2_20261009,Data Services,repository_weekly,rds_fca_table2_20261009,https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_2_OTC_Agg_20261009.csv,public reference or business measure; scope retained,True
+rds_fca_table3_20261009,RDS,repository_weekly,rds_fca_table3_20261009,https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_3_OTC_Agg_20261009.csv,public reference or business measure; scope retained,True
+rds_fca_table3_20261009,Data Services,repository_weekly,rds_fca_table3_20261009,https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_3_OTC_Agg_20261009.csv,public reference or business measure; scope retained,True
+rds_uk_sftr_table1_20261009,FICC,repository_weekly,rds_uk_sftr_table1_20261009,https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_1_SFT_C_RP_ORG_20261009.CSV,public reference or business measure; scope retained,True
+rds_uk_sftr_table1_20261009,RDS,repository_weekly,rds_uk_sftr_table1_20261009,https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_1_SFT_C_RP_ORG_20261009.CSV,public reference or business measure; scope retained,True
+rds_uk_sftr_table1_20261009,Data Services,repository_weekly,rds_uk_sftr_table1_20261009,https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_1_SFT_C_RP_ORG_20261009.CSV,public reference or business measure; scope retained,True
+rds_uk_sftr_table2_20261009,FICC,repository_weekly,rds_uk_sftr_table2_20261009,https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_2_SFT_C_OUT_ORG_20261009.CSV,public reference or business measure; scope retained,True
+rds_uk_sftr_table2_20261009,RDS,repository_weekly,rds_uk_sftr_table2_20261009,https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_2_SFT_C_OUT_ORG_20261009.CSV,public reference or business measure; scope retained,True
+rds_uk_sftr_table2_20261009,Data Services,repository_weekly,rds_uk_sftr_table2_20261009,https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_2_SFT_C_OUT_ORG_20261009.CSV,public reference or business measure; scope retained,True
+rds_uk_sftr_table3_20261009,FICC,repository_weekly,rds_uk_sftr_table3_20261009,https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_3_SFT_H_RP_ORG_20261009.CSV,public reference or business measure; scope retained,True
+rds_uk_sftr_table3_20261009,RDS,repository_weekly,rds_uk_sftr_table3_20261009,https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_3_SFT_H_RP_ORG_20261009.CSV,public reference or business measure; scope retained,True
+rds_uk_sftr_table3_20261009,Data Services,repository_weekly,rds_uk_sftr_table3_20261009,https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_3_SFT_H_RP_ORG_20261009.CSV,public reference or business measure; scope retained,True
+rds_uk_sftr_table4_20261009,FICC,repository_weekly,rds_uk_sftr_table4_20261009,https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_4_SFT_H_RP_CORR_20261009.CSV,public reference or business measure; scope retained,True
+rds_uk_sftr_table4_20261009,RDS,repository_weekly,rds_uk_sftr_table4_20261009,https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_4_SFT_H_RP_CORR_20261009.CSV,public reference or business measure; scope retained,True
+rds_uk_sftr_table4_20261009,Data Services,repository_weekly,rds_uk_sftr_table4_20261009,https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_4_SFT_H_RP_CORR_20261009.CSV,public reference or business measure; scope retained,True
+dtcc_report_final_single_name_q2_2026_xlsx,RDS,public_business_report,dtcc_report_final_single_name_q2_2026_xlsx,https://files.dtcc.com/download/assets/Final-Single-Name-Q2-2026.xlsx/0db52cc6957b11f1ad9bc258faf12821,public reference or business measure; scope retained,True
+dtcc_report_final_single_name_q2_2026_xlsx,Data Services,public_business_report,dtcc_report_final_single_name_q2_2026_xlsx,https://files.dtcc.com/download/assets/Final-Single-Name-Q2-2026.xlsx/0db52cc6957b11f1ad9bc258faf12821,public reference or business measure; scope retained,True
+dtcc_report_index_roll_report_06_mar_26_through_28_aug_26_xlsx,RDS,public_business_report,dtcc_report_index_roll_report_06_mar_26_through_28_aug_26_xlsx,https://files.dtcc.com/download/assets/Index-Roll-Report-06-Mar-26-through-28-Aug-26.xlsx/f64c6dd4a64011f1a1870af3a20fdeaf,public reference or business measure; scope retained,True
+dtcc_report_index_roll_report_06_mar_26_through_28_aug_26_xlsx,Data Services,public_business_report,dtcc_report_index_roll_report_06_mar_26_through_28_aug_26_xlsx,https://files.dtcc.com/download/assets/Index-Roll-Report-06-Mar-26-through-28-Aug-26.xlsx/f64c6dd4a64011f1a1870af3a20fdeaf,public reference or business measure; scope retained,True
+dtcc_report_money_market_kinetics_insights_june_2026_pdf,WIS,public_business_report,dtcc_report_money_market_kinetics_insights_june_2026_pdf,https://files.dtcc.com/download/assets/Money-Market-Kinetics-Insights-June-2026.pdf/2221b2baa17911f1a726f254a183b64d,public reference or business measure; scope retained,True
+dtcc_report_money_market_kinetics_insights_june_2026_pdf,Asset Services,public_business_report,dtcc_report_money_market_kinetics_insights_june_2026_pdf,https://files.dtcc.com/download/assets/Money-Market-Kinetics-Insights-June-2026.pdf/2221b2baa17911f1a726f254a183b64d,public reference or business measure; scope retained,True
+dtcc_report_money_market_kinetics_insights_june_2026_pdf,Data Services,public_business_report,dtcc_report_money_market_kinetics_insights_june_2026_pdf,https://files.dtcc.com/download/assets/Money-Market-Kinetics-Insights-June-2026.pdf/2221b2baa17911f1a726f254a183b64d,public reference or business measure; scope retained,True
+dtc_framework_2026q2,ECS,disclosure_framework,dtc_framework_2026q2,https://files.dtcc.com/download/assets/DTC-DISCLOSURE-FRAMEWORK-2026-Q2.pdf/f72b1e04bc4211f193b7027f236bf70c,public reference or business measure; scope retained,True
+dtc_framework_2026q2,Asset Services,disclosure_framework,dtc_framework_2026q2,https://files.dtcc.com/download/assets/DTC-DISCLOSURE-FRAMEWORK-2026-Q2.pdf/f72b1e04bc4211f193b7027f236bf70c,public reference or business measure; scope retained,True
+dtc_framework_2026q2,DAS,disclosure_framework,dtc_framework_2026q2,https://files.dtcc.com/download/assets/DTC-DISCLOSURE-FRAMEWORK-2026-Q2.pdf/f72b1e04bc4211f193b7027f236bf70c,public reference or business measure; scope retained,True
+dtcc_insight_20261014,RDS,dated_article,DTCC Insights,https://www.dtcc.com/insights/2026/why-data-quality-will-shape-the-next-era-of-regulatory-reporting,public reference or business measure; scope retained,True
+dtcc_insight_20261014,Data Services,dated_article,DTCC Insights,https://www.dtcc.com/insights/2026/why-data-quality-will-shape-the-next-era-of-regulatory-reporting,public reference or business measure; scope retained,True
+dtcc_insight_20261014,Consulting,dated_article,DTCC Insights,https://www.dtcc.com/insights/2026/why-data-quality-will-shape-the-next-era-of-regulatory-reporting,public reference or business measure; scope retained,True
+fred_RMFSL,WIS,market_series,"Retail money market funds, monthly seasonally adjusted",https://fred.stlouisfed.org/graph/fredgraph.csv?id=RMFSL&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_RMFSL,Asset Services,market_series,"Retail money market funds, monthly seasonally adjusted",https://fred.stlouisfed.org/graph/fredgraph.csv?id=RMFSL&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_RMFSL,Data Services,market_series,"Retail money market funds, monthly seasonally adjusted",https://fred.stlouisfed.org/graph/fredgraph.csv?id=RMFSL&cosd=2026-07-01&coed=2026-10-14,candidate monitoring input,True
+fred_MMMFFAQ027S,WIS,market_series,Money market funds total financial assets,https://fred.stlouisfed.org/graph/fredgraph.csv?id=MMMFFAQ027S&cosd=2026-01-01&coed=2026-10-14,candidate monitoring input,True
+fred_MMMFFAQ027S,Asset Services,market_series,Money market funds total financial assets,https://fred.stlouisfed.org/graph/fredgraph.csv?id=MMMFFAQ027S&cosd=2026-01-01&coed=2026-10-14,candidate monitoring input,True
+fred_MMMFFAQ027S,Data Services,market_series,Money market funds total financial assets,https://fred.stlouisfed.org/graph/fredgraph.csv?id=MMMFFAQ027S&cosd=2026-01-01&coed=2026-10-14,candidate monitoring input,True
+ici_money_market_release,WIS,industry_data_release,Investment Company Institute weekly money market fund assets,https://www.ici.org/research/stats/mmf,public reference or business measure; scope retained,True
+ici_money_market_release,Asset Services,industry_data_release,Investment Company Institute weekly money market fund assets,https://www.ici.org/research/stats/mmf,public reference or business measure; scope retained,True
+ici_money_market_release,Data Services,industry_data_release,Investment Company Institute weekly money market fund assets,https://www.ici.org/research/stats/mmf,public reference or business measure; scope retained,True
+dtcc_previous_12_months_volume_for_gsd_embedded_f45759ae,FICC,embedded_ficc_data,dtcc_previous_12_months_volume_for_gsd public chart,https://cms-prod.dtcc.com/globalassets/ftp/ficc/previous_year_gsd.html,public reference or business measure; scope retained,True
+dtcc_previous_12_months_volume_for_gsd_embedded_f45759ae,Data Services,embedded_ficc_data,dtcc_previous_12_months_volume_for_gsd public chart,https://cms-prod.dtcc.com/globalassets/ftp/ficc/previous_year_gsd.html,public reference or business measure; scope retained,True
+dtcc_previous_12_months_volume_for_mbs_embedded_e9b11226,FICC,embedded_ficc_data,dtcc_previous_12_months_volume_for_mbs public chart,https://cms-prod.dtcc.com/globalassets/ftp/ficc/previous_year_mbs.html,public reference or business measure; scope retained,True
+dtcc_previous_12_months_volume_for_mbs_embedded_e9b11226,Data Services,embedded_ficc_data,dtcc_previous_12_months_volume_for_mbs public chart,https://cms-prod.dtcc.com/globalassets/ftp/ficc/previous_year_mbs.html,public reference or business measure; scope retained,True
+dtcc_dtcc_gcf_repo_index_embedded_1a425e81,FICC,embedded_ficc_data,dtcc_dtcc_gcf_repo_index public chart,https://cms-prod.dtcc.com/globalassets/ftp/ficc/gcfindex.html,public reference or business measure; scope retained,True
+dtcc_dtcc_gcf_repo_index_embedded_1a425e81,Data Services,embedded_ficc_data,dtcc_dtcc_gcf_repo_index public chart,https://cms-prod.dtcc.com/globalassets/ftp/ficc/gcfindex.html,public reference or business measure; scope retained,True
+dtcc_daily_total_us_treasury_trade_fails_embedded_7adec5d9,FICC,embedded_ficc_data,dtcc_daily_total_us_treasury_trade_fails public chart,https://cms-prod.dtcc.com/globalassets/ftp/ficc/fails_data.html,public reference or business measure; scope retained,True
+dtcc_daily_total_us_treasury_trade_fails_embedded_7adec5d9,Data Services,embedded_ficc_data,dtcc_daily_total_us_treasury_trade_fails public chart,https://cms-prod.dtcc.com/globalassets/ftp/ficc/fails_data.html,public reference or business measure; scope retained,True
+dtcc_membership_embedded_4037e10d,FICC,embedded_ficc_data,dtcc_membership public chart,https://cms-prod.dtcc.com/globalassets/ftp/ficc/sponsor_activity.html,public reference or business measure; scope retained,True
+dtcc_membership_embedded_4037e10d,Data Services,embedded_ficc_data,dtcc_membership public chart,https://cms-prod.dtcc.com/globalassets/ftp/ficc/sponsor_activity.html,public reference or business measure; scope retained,True
+ficc_gcfindex,FICC,ficc_daily_series,FICC public gcfindex.csv,https://cms-prod.dtcc.com/data/gcfindex.csv,public reference or business measure; scope retained,True
+ficc_gcfindex,Data Services,ficc_daily_series,FICC public gcfindex.csv,https://cms-prod.dtcc.com/data/gcfindex.csv,public reference or business measure; scope retained,True
+ficc_failsdata,FICC,ficc_daily_series,FICC public failsdata.csv,https://cms-prod.dtcc.com/data/failsdata.csv,public reference or business measure; scope retained,True
+ficc_failsdata,Data Services,ficc_daily_series,FICC public failsdata.csv,https://cms-prod.dtcc.com/data/failsdata.csv,public reference or business measure; scope retained,True
+ficc_sponsoredvolume,FICC,ficc_daily_series,FICC public SponsoredVolume.csv,https://cms-prod.dtcc.com/data/SponsoredVolume.csv,public reference or business measure; scope retained,True
+ficc_sponsoredvolume,Data Services,ficc_daily_series,FICC public SponsoredVolume.csv,https://cms-prod.dtcc.com/data/SponsoredVolume.csv,public reference or business measure; scope retained,True
+ficc_clearing_volumes,FICC,ficc_monthly_series,FICC GSD and MBSD shared clearing-volume history,https://cms-prod.dtcc.com/products/fi/ficc_clearingvolumes.txt,public reference or business measure; scope retained,True
+ficc_clearing_volumes,Data Services,ficc_monthly_series,FICC GSD and MBSD shared clearing-volume history,https://cms-prod.dtcc.com/products/fi/ficc_clearingvolumes.txt,public reference or business measure; scope retained,True

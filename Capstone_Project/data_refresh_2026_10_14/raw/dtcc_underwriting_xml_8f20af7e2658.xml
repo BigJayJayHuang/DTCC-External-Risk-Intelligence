@@ -1,0 +1,4780 @@
+<uw_data>
+
+<entry>
+	<date>2011-01-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>438</count>
+		<amount>12681211808</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>342</count>
+		<amount>179584735405</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>391</count>
+		<amount>8323372344</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1125</count>
+		<amount>17237663000</amount>
+	</product>
+</entry>
+
+
+<entry>
+	<date>2011-02-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>802</count>
+		<amount>17476813838</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>326</count>
+		<amount>116435195310</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>394</count>
+		<amount>13064506408</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1626</count>
+		<amount>21052959190</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2011-03-04</date>
+	<product>
+		<index>Municipal</index>
+		<count>1054</count>
+		<amount>28604641723</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>471</count>
+		<amount>198616424654</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>499</count>
+		<amount>22030855100</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1758</count>
+		<amount>28323627810</amount>
+	</product>
+</entry>
+<entry>
+	<date>2011-04-04</date>
+	<product>
+		<index>Municipal</index>
+		<count>977</count>
+		<amount>23547583182</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>332</count>
+		<amount>111307048920</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>458</count>
+		<amount>14478921037</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1368</count>
+		<amount>20277786870</amount>
+	</product>
+</entry>						
+<entry>
+	<date>2011-05-05</date>
+	<product>
+		<index>Municipal</index>
+		<count>1103</count>
+		<amount>23919507292</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>442</count>
+		<amount>190672282900</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>527</count>
+		<amount>14366063163</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1613</count>
+		<amount>28556237330</amount>
+	</product>
+</entry>
+<entry>
+	<date>2011-06-05</date>
+	<product>
+		<index>Municipal</index>
+		<count>1678</count>
+		<amount>34890282437</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>381</count>
+		<amount>124117590120</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>539</count>
+		<amount>10544225807</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1617</count>
+		<amount>34454130228</amount>
+	</product>
+</entry>
+								
+<entry>
+	<date>2011-07-06</date>
+	<product>
+		<index>Municipal</index>
+		<count>1368</count>
+		<amount>49792520866</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>308</count>
+		<amount>78864498935</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>471</count>
+		<amount>7407861297</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1178</count>
+		<amount>25072004330</amount>
+	</product>
+</entry>
+<entry>
+	<date>2011-08-06</date>
+	<product>
+		<index>Municipal</index>
+		<count>1355</count>
+		<amount>36857187154</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>342</count>
+		<amount>92596204405</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>559</count>
+		<amount>6330387202</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1866</count>
+		<amount>43147336000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2011-09-06</date>
+	<product>
+		<index>Municipal</index>
+		<count>1400</count>
+		<amount>110850355684</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>305</count>
+		<amount>96758042633</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>670</count>
+		<amount>4802802048</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1974</count>
+		<amount>47988899580</amount>
+	</product>
+</entry>
+<entry>
+	<date>2011-10-07</date>
+	<product>
+		<index>Municipal</index>
+		<count>1279</count>
+		<amount>48019020338</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>261</count>
+		<amount>66463028358</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>575</count>
+		<amount>5761482931</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1616</count>
+		<amount>38625812000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2011-11-07</date>
+	<product>
+		<index>Municipal</index>
+		<count>1467</count>
+		<amount>48850964574</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>382</count>
+		<amount>152726871474</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>523</count>
+		<amount>10497843049</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1658</count>
+		<amount>44855454000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2011-12-08</date>
+	<product>
+		<index>Municipal</index>
+		<count>1848</count>
+		<amount>62200452462</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>261</count>
+		<amount>117605388343</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>546</count>
+		<amount>8075381226</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1637</count>
+		<amount>45965287000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2012-01-08</date>
+	<product>
+		<index>Municipal</index>
+		<count>699</count>
+		<amount>14768324994</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>258</count>
+		<amount>111538175870</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>344</count>
+		<amount>6835801179</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1125</count>
+		<amount>38890601000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2012-02-08</date>
+	<product>
+		<index>Municipal</index>
+		<count>1011</count>
+		<amount>28302811082</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>309</count>
+		<amount>143478786343</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>401</count>
+		<amount>7455010055</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1813</count>
+		<amount>48640439000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2012-03-10</date>
+	<product>
+		<index>Municipal</index>
+		<count>1541</count>
+		<amount>38460828528</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>411</count>
+		<amount>199951830068</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>454</count>
+		<amount>11921737677</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1920</count>
+		<amount>50407047002</amount>
+	</product>
+</entry>
+<entry>
+	<date>2012-04-10</date>
+	<product>
+		<index>Municipal</index>
+		<count>1377</count>
+		<amount>37171115424</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>328</count>
+		<amount>114545079765</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>427</count>
+		<amount>14977982473</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1726</count>
+		<amount>41128933000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2012-05-11</date>
+	<product>
+		<index>Municipal</index>
+		<count>1871</count>
+		<amount>44618067908</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>352</count>
+		<amount>136999863888</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>467</count>
+		<amount>29749013218</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2364</count>
+		<amount>53899130000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2012-06-11</date>
+	<product>
+		<index>Municipal</index>
+		<count>1950</count>
+		<amount>52676453326</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>369</count>
+		<amount>124032088097</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>390</count>
+		<amount>7869525049</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2320</count>
+		<amount>54515135000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2012-07-12</date>
+	<product>
+		<index>Municipal</index>
+		<count>1338</count>
+		<amount>41227086805</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>324</count>
+		<amount>122309640275</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>354</count>
+		<amount>11785416034</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1741</count>
+		<amount>36123931036</amount>
+	</product>
+</entry>
+<entry>
+	<date>2012-08-12</date>
+	<product>
+		<index>Municipal</index>
+		<count>1567</count>
+		<amount>149384459310</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>385</count>
+		<amount>141803908334</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>626</count>
+		<amount>13426060930</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2144</count>
+		<amount>53125061000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2012-09-12</date>
+	<product>
+		<index>Municipal</index>
+		<count>1224</count>
+		<amount>27169955285</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>432</count>
+		<amount>171374302443</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>563</count>
+		<amount>18224009443</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1739</count>
+		<amount>51002407000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2012-10-12</date>
+	<product>
+		<index>Municipal</index>
+		<count>1363</count>
+		<amount>50970401158</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>475</count>
+		<amount>206550299996</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>742</count>
+		<amount>20842293724</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1883</count>
+		<amount>52049461000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2012-11-12</date>
+	<product>
+		<index>Municipal</index>
+		<count>1331</count>
+		<amount>32891603154</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>493</count>
+		<amount>192820251762</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>586</count>
+		<amount>9529387669</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1835</count>
+		<amount>45048603000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2012-12-12</date>
+	<product>
+		<index>Municipal</index>
+		<count>1920</count>
+		<amount>50568520867</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>519</count>
+		<amount>160410164842</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>636</count>
+		<amount>10268671702</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1886</count>
+		<amount>45910529000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2013-01-13</date>
+	<product>
+		<index>Municipal</index>
+		<count>750</count>
+		<amount>19154086984</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>396</count>
+		<amount>158791210478</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>551</count>
+		<amount>15843590642</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1428</count>
+		<amount>47132094000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2013-02-13</date>
+	<product>
+		<index>Municipal</index>
+		<count>1103</count>
+		<amount>29707175773</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>462</count>
+		<amount>195480950483</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>601</count>
+		<amount>12815203331</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1363</count>
+		<amount>28766574000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2013-03-13</date>
+	<product>
+		<index>Municipal</index>
+		<count>1275</count>
+		<amount>35711157336</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>535</count>
+		<amount>203372869256</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>571</count>
+		<amount>15357379107</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1767</count>
+		<amount>49849789000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2013-04-13</date>
+	<product>
+		<index>Municipal</index>
+		<count>1230</count>
+		<amount>38327301948</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>421</count>
+		<amount>193121389619</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>594</count>
+		<amount>14874899650</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1830</count>
+		<amount>41486589000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2013-05-13</date>
+	<product>
+		<index>Municipal</index>
+		<count>1490</count>
+		<amount>38352477183</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>535</count>
+		<amount>268594399344</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>689</count>
+		<amount>23810686718</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2305</count>
+		<amount>48873524924</amount>
+	</product>
+</entry>
+<entry>
+	<date>2013-06-13</date>
+	<product>
+		<index>Municipal</index>
+		<count>1574</count>
+		<amount>29491823562</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>371</count>
+		<amount>115779997681</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>632</count>
+		<amount>10814077016</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2052</count>
+		<amount>11105859006</amount>
+	</product>
+</entry>
+<entry>
+	<date>2013-07-13</date>
+	<product>
+		<index>Municipal</index>
+		<count>1230</count>
+		<amount>38288700457</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>329</count>
+		<amount>126713458414</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>624</count>
+		<amount>13619572283</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2370</count>
+		<amount>8675215000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2013-08-13</date>
+	<product>
+		<index>Municipal</index>
+		<count>1203</count>
+		<amount>43981888477</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>364</count>
+		<amount>139671459426</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>624</count>
+		<amount>10229099810</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2008</count>
+		<amount>7564074000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2013-09-13</date>
+	<product>
+		<index>Municipal</index>
+		<count>1003</count>
+		<amount>30407332598</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>360</count>
+		<amount>212606320019</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>601</count>
+		<amount>9374533904</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2221</count>
+		<amount>8937644000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2013-10-13</date>
+	<product>
+		<index>Municipal</index>
+		<count>1102</count>
+		<amount>30861963000</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>337</count>
+		<amount>146551996618</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>754</count>
+		<amount>24123080225</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2546</count>
+		<amount>9766740000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2013-11-13</date>
+	<product>
+		<index>Municipal</index>
+		<count>987</count>
+		<amount>30168566218</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>467</count>
+		<amount>185332307219</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>662</count>
+		<amount>14775353354</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2218</count>
+		<amount>9141074000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2013-12-13</date>
+	<product>
+		<index>Municipal</index>
+		<count>1333</count>
+		<amount>37232508337</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>403</count>
+		<amount>127679050781</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>690</count>
+		<amount>14376651556</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1853</count>
+		<amount>8460783000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2014-01-13</date>
+	<product>
+		<index>Municipal</index>
+		<count>554</count>
+		<amount>14129257898</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>267</count>
+		<amount>149670913156</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>705</count>
+		<amount>9795155764</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1121</count>
+		<amount>6359484000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2014-02-13</date>
+	<product>
+		<index>Municipal</index>
+		<count>808</count>
+		<amount>22259824827</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>275</count>
+		<amount>137441624188</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>672</count>
+		<amount>9377199622</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1476</count>
+		<amount>7293535000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2014-03-13</date>
+	<product>
+		<index>Municipal</index>
+		<count>928</count>
+		<amount>28767496768</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>454</count>
+		<amount>209074379099</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>706</count>
+		<amount>14123177582</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1868</count>
+		<amount>8780298000</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2014-04-13</date>
+	<product>
+		<index>Municipal</index>
+		<count>933</count>
+		<amount>26037674321</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>367</count>
+		<amount>159139693766</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>689</count>
+		<amount>17597645872</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1829</count>
+		<amount>7416985990</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2014-05-13</date>
+	<product>
+		<index>Municipal</index>
+		<count>1168</count>
+		<amount>28470666797</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>439</count>
+		<amount>200236006688</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>697</count>
+		<amount>17467574988</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2185</count>
+		<amount>8500925500</amount>
+	</product>
+</entry>
+
+
+<entry>
+	<date>2014-06-13</date>
+	<product>
+		<index>Municipal</index>
+		<count>1508</count>
+		<amount>35121121987</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>458</count>
+		<amount>185725547615</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>744</count>
+		<amount>22496745836</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2422</count>
+		<amount>9536110350</amount>
+	</product>
+</entry>
+
+
+<entry>
+	<date>2014-07-14</date>
+	<product>
+		<index>Municipal</index>
+		<count>1371</count>
+		<amount>42527262354</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>409</count>
+		<amount>142817930141</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>775</count>
+		<amount>15864022027</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2285</count>
+		<amount>8635549190</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2014-08-14</date>
+	<product>
+		<index>Municipal</index>
+		<count>1219</count>
+		<amount>33762464698</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>354</count>
+		<amount>120341008325</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>798</count>
+		<amount>14835552217</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2167</count>
+		<amount>9410316000</amount>
+	</product>
+</entry>
+
+
+
+
+<entry>
+	<date>2014-09-14</date>
+	<product>
+		<index>Municipal</index>
+		<count>1173</count>
+		<amount>34378313622</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>470</count>
+		<amount>211742958474</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>791</count>
+		<amount>43633216196</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2574</count>
+		<amount>10311205400</amount>
+	</product>
+</entry>
+
+
+
+
+
+<entry>
+	<date>2014-10-14</date>
+	<product>
+		<index>Municipal</index>
+		<count>1113</count>
+		<amount>34449903923</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>392</count>
+		<amount>172424619212</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>799</count>
+		<amount>12841771588</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2640</count>
+		<amount>9586144620</amount>
+	</product>
+</entry>
+
+
+
+<entry>
+	<date>2014-11-14</date>
+	<product>
+		<index>Municipal</index>
+		<count>1070</count>
+		<amount>36819672592</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>433</count>
+		<amount>216044183778</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>713</count>
+		<amount>16932393194</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2364</count>
+		<amount>8529942790</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2014-12-14</date>
+	<product>
+		<index>Municipal</index>
+		<count>1719</count>
+		<amount>47528759640</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>362</count>
+		<amount>150733079604</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>811</count>
+		<amount>12858990224</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2205</count>
+		<amount>10602006000</amount>
+	</product>
+</entry>
+
+
+
+
+<entry>
+	<date>2015-01-15</date>
+	<product>
+		<index>Municipal</index>
+		<count>771</count>
+		<amount>21242227993</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>271</count>
+		<amount>126715917707</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>665</count>
+		<amount>11009664594</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1596</count>
+		<amount>8529670380</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2015-02-15</date>
+	<product>
+		<index>Municipal</index>
+		<count>1181</count>
+		<amount>32999777781</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>345</count>
+		<amount>163409455688</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>717</count>
+		<amount>12303320224</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2080</count>
+		<amount>9764366050</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2015-03-15</date>
+	<product>
+		<index>Municipal</index>
+		<count>1459</count>
+		<amount>42886552465</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>489</count>
+		<amount>297540196668</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>820</count>
+		<amount>15273925113</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1992</count>
+		<amount>10207261380</amount>
+	</product>
+</entry>
+
+
+
+
+<entry>
+	<date>2015-04-15</date>
+	<product>
+		<index>Municipal</index>
+		<count>1507</count>
+		<amount>51016235189</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>452</count>
+		<amount>190313466784</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>775</count>
+		<amount>14754615185</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2080</count>
+		<amount>9122301410</amount>
+	</product>
+</entry>
+
+
+
+<entry>
+	<date>2015-05-15</date>
+	<product>
+		<index>Municipal</index>
+		<count>1444</count>
+		<amount>32530775662</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>440</count>
+		<amount>269635770200</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>684</count>
+		<amount>13496233387</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2199</count>
+		<amount>8795693000</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2015-06-15</date>
+	<product>
+		<index>Municipal</index>
+		<count>2012</count>
+		<amount>48601063889</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>490</count>
+		<amount>203948494453</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>770</count>
+		<amount>16144927484</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2886</count>
+		<amount>10056880460</amount>
+	</product>
+</entry>
+
+
+
+
+<entry>
+	<date>2015-07-15</date>
+	<product>
+		<index>Municipal</index>
+		<count>1538</count>
+		<amount>46640344578</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>388</count>
+		<amount>192317791160</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>665</count>
+		<amount>9600141856</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3030</count>
+		<amount>10467401000</amount>
+	</product>
+</entry>
+
+
+
+
+<entry>
+	<date>2015-08-15</date>
+	<product>
+		<index>Municipal</index>
+		<count>1262</count>
+		<amount>38956671314</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>429</count>
+		<amount>132281666275</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>573</count>
+		<amount>8132247057</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2643</count>
+		<amount>11669307251</amount>
+	</product>
+</entry>
+
+
+<entry>
+	<date>2015-09-15</date>
+	<product>
+		<index>Municipal</index>
+		<count>1203</count>
+		<amount>33290837289</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>310</count>
+		<amount>132972973952</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>614</count>
+		<amount>9208364075</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2743</count>
+		<amount>11752529130</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2015-10-15</date>
+	<product>
+		<index>Municipal</index>
+		<count>1071</count>
+		<amount>35191478161</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>362</count>
+		<amount>186814149940</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>569</count>
+		<amount>13337969878</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2637</count>
+		<amount>10163415000</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2015-11-15</date>
+	<product>
+		<index>Municipal</index>
+		<count>1061</count>
+		<amount>28809575132</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>374</count>
+		<amount>189550290791</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>567</count>
+		<amount>8427467378</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2454</count>
+		<amount>10064421860</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2015-12-15</date>
+	<product>
+		<index>Municipal</index>
+		<count>1600</count>
+		<amount>39180786243</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>328</count>
+		<amount>107886650748</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>683</count>
+		<amount>11763827857</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2760</count>
+		<amount>11676112000</amount>
+	</product>
+</entry>
+
+
+
+
+
+<entry>
+	<date>2016-01-15</date>
+	<product>
+		<index>Municipal</index>
+		<count>566</count>
+		<amount>15517574957</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>218</count>
+		<amount>132783058688</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>482</count>
+		<amount>6056687533</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1892</count>
+		<amount>11865724000</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2016-02-15</date>
+	<product>
+		<index>Municipal</index>
+		<count>1110</count>
+		<amount>28672703350</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>295</count>
+		<amount>130449702366</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>521</count>
+		<amount>6904457328</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2207</count>
+		<amount>13548133000</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2016-03-16</date>
+	<product>
+		<index>Municipal</index>
+		<count>1449</count>
+		<amount>42736922919</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>399</count>
+		<amount>217980467956</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>628</count>
+		<amount>9947459685</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2224</count>
+		<amount>12588729000</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2016-04-16</date>
+	<product>
+		<index>Municipal</index>
+		<count>1277</count>
+		<amount>35976747286</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>316</count>
+		<amount>175128250660</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>555</count>
+		<amount>5502055065</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1763</count>
+		<amount>10199212000</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2016-05-16</date>
+	<product>
+		<index>Municipal</index>
+		<count>1560</count>
+		<amount>40339193791</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>426</count>
+		<amount>232312736759</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>577</count>
+		<amount>8718370284</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1873</count>
+		<amount>10830994930</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2016-06-16</date>
+	<product>
+		<index>Municipal</index>
+		<count>2154</count>
+		<amount>54639759265</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>445</count>
+		<amount>192594398524</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>663</count>
+		<amount>16742489401</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2664</count>
+		<amount>14173412000</amount>
+	</product>
+</entry>
+
+
+
+
+
+
+
+
+<entry>
+	<date>2016-07-16</date>
+	<product>
+		<index>Municipal</index>
+		<count>1709</count>
+		<amount>43268096304</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>347</count>
+		<amount>169326792998</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>622</count>
+		<amount>9182056123</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2365</count>
+		<amount>11074597000</amount>
+	</product>
+</entry>
+
+
+
+
+
+
+
+
+<entry>
+	<date>2016-08-16</date>
+	<product>
+		<index>Municipal</index>
+		<count>1507</count>
+		<amount>44144330781</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>405</count>
+		<amount>195547747609</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>752</count>
+		<amount>13234816794</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2515</count>
+		<amount>14346754000</amount>
+	</product>
+</entry>
+
+
+
+
+
+<entry>
+	<date>2016-09-16</date>
+	<product>
+		<index>Municipal</index>
+		<count>1359</count>
+		<amount>45733647909</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>421</count>
+		<amount>212438962734</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>753</count>
+		<amount>9426557621</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2451</count>
+		<amount>13552502000</amount>
+	</product>
+</entry>
+
+
+
+
+
+
+<entry>
+	<date>2016-10-16</date>
+	<product>
+		<index>Municipal</index>
+		<count>1261</count>
+		<amount>41024791906</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>449</count>
+		<amount>184844164974</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>707</count>
+		<amount>9598129523</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2262</count>
+		<amount>11331960681</amount>
+	</product>
+</entry>
+
+
+
+
+
+<entry>
+	<date>2016-11-16</date>
+	<product>
+		<index>Municipal</index>
+		<count>1497</count>
+		<amount>53882324208</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>422</count>
+		<amount>180288738835</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>777</count>
+		<amount>10026096508</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2614</count>
+		<amount>12464084000</amount>
+	</product>
+</entry>
+
+
+
+
+
+<entry>
+	<date>2016-12-16</date>
+	<product>
+		<index>Municipal</index>
+		<count>1532</count>
+		<amount>36097440913</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>499</count>
+		<amount>155118099204</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>798</count>
+		<amount>8017011324</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2750</count>
+		<amount>14404327000</amount>
+	</product>
+</entry>
+
+
+<entry>
+	<date>2017-01-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>525</count>
+		<amount>22330302794</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>322</count>
+		<amount>195373006236</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>752</count>
+		<amount>8558910584</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1870</count>
+		<amount>13379555000</amount>
+	</product>
+</entry>
+
+
+
+
+<entry>
+	<date>2017-02-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>991</count>
+		<amount>33595914524</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>419</count>
+		<amount>194155233301</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>789</count>
+		<amount>11024858869</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2022</count>
+		<amount>15204802000</amount>
+	</product>
+</entry>
+
+
+
+
+
+
+<entry>
+	<date>2017-03-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>1067</count>
+		<amount>31063587313</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>577</count>
+		<amount>284703173538</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>1013</count>
+		<amount>13649645991</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2911</count>
+		<amount>20264118000</amount>
+	</product>
+</entry>
+
+
+
+
+<entry>
+	<date>2017-04-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>973</count>
+		<amount>30232816578</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>461</count>
+		<amount>182666818303</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>694</count>
+		<amount>8608100942</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1889</count>
+		<amount>14201068000</amount>
+	</product>
+</entry>
+
+
+
+
+<entry>
+	<date>2017-05-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>1269</count>
+		<amount>43434785968</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>584</count>
+		<amount>277562179376</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>910</count>
+		<amount>15161510760</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3213</count>
+		<amount>18424688000</amount>
+	</product>
+</entry>
+
+
+
+<entry>
+	<date>2017-06-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>1719</count>
+		<amount>43595609</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>529</count>
+		<amount>213685459876</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>878</count>
+		<amount>9823615477</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3271</count>
+		<amount>21886688000</amount>
+	</product>
+</entry>
+
+
+
+
+<entry>
+	<date>2017-07-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>1177</count>
+		<amount>36717333618</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>495</count>
+		<amount>178164257726</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>701</count>
+		<amount>9236745156</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2490</count>
+		<amount>18424003000</amount>
+	</product>
+</entry>
+
+
+
+<entry>
+	<date>2017-08-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>1293</count>
+		<amount>44548827871</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>546</count>
+		<amount>277048413054</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>813</count>
+		<amount>9426737984</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3151</count>
+		<amount>26080515000</amount>
+	</product>
+</entry>
+
+
+
+<entry>
+	<date>2017-09-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>1097</count>
+		<amount>34325811224</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>539</count>
+		<amount>211692037529</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>739</count>
+		<amount>10982932423</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3072</count>
+		<amount>22843545000</amount>
+	</product>
+</entry>
+
+
+
+<entry>
+	<date>2017-10-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>1062</count>
+		<amount>36624552668</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>626</count>
+		<amount>260541343203</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>821</count>
+		<amount>13097656420</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2673</count>
+		<amount>18944555000</amount>
+	</product>
+</entry>
+
+
+
+<entry>
+	<date>2017-11-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>1165</count>
+		<amount>44808877464</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>630</count>
+		<amount>257022065604</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>819</count>
+		<amount>12930605364</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3293</count>
+		<amount>21356136000</amount>
+	</product>
+</entry>
+
+
+
+<entry>
+	<date>2017-12-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>2115</count>
+		<amount>94900380462</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>615</count>
+		<amount>173562098394</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>805</count>
+		<amount>7023437181</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3332</count>
+		<amount>22778981000</amount>
+	</product>
+</entry>
+
+
+
+
+<entry>
+	<date>2018-01-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>337</count>
+		<amount>10230314658</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>487</count>
+		<amount>202762296437</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>870</count>
+		<amount>17028416294</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2519</count>
+		<amount>26007614000</amount>
+	</product>
+</entry>
+
+
+
+
+
+<entry>
+	<date>2018-02-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>721</count>
+		<amount>26703827439</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>512</count>
+		<amount>216297187690</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>904</count>
+		<amount>10257719020</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2587</count>
+		<amount>25626965000</amount>
+	</product>
+</entry>
+
+
+
+
+
+
+<entry>
+	<date>2018-03-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>893</count>
+		<amount>30289704094</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>643</count>
+		<amount>269752297625</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>889</count>
+		<amount>11220203643</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2803</count>
+		<amount>30571528000</amount>
+	</product>
+</entry>
+
+
+
+
+
+
+<entry>
+	<date>2018-04-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>788</count>
+		<amount>25008581078</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>580</count>
+		<amount>216605753934</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>773</count>
+		<amount>10979044692</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2597</count>
+		<amount>29954347000</amount>
+	</product>
+</entry>
+
+
+<entry>
+	<date>2018-05-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>1180</count>
+		<amount>38905846412</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>643</count>
+		<amount>258156240280</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>850</count>
+		<amount>15635121694</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3423</count>
+		<amount>35170357000</amount>
+	</product>
+
+</entry>
+
+
+
+<entry>
+	<date>2018-06-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>1636</count>
+		<amount>44905701660</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>627</count>
+		<amount>235770322705</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>898</count>
+		<amount>22124911117</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3150</count>
+		<amount>34756972000</amount>
+	</product>
+
+</entry>
+
+
+
+
+
+<entry>
+	<date>2018-07-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>1088</count>
+		<amount>31274114206</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>566</count>
+		<amount>173947981164</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>740</count>
+		<amount>12338035881</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2315</count>
+		<amount>30992195000</amount>
+	</product>
+
+</entry>
+
+
+
+
+
+
+<entry>
+	<date>2018-08-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>1243</count>
+		<amount>46680135482</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>614</count>
+		<amount>198376072694</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>785</count>
+		<amount>9342416825</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2911</count>
+		<amount>37179536000</amount>
+	</product>
+
+</entry>
+
+
+
+
+
+
+<entry>
+	<date>2018-09-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>1060</count>
+		<amount>36815928105</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>490</count>
+		<amount>220496759826</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>758</count>
+		<amount>16399881342</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2793</count>
+		<amount>29056672000</amount>
+	</product>
+
+</entry>
+
+
+
+
+
+
+
+<entry>
+	<date>2018-10-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>1092</count>
+		<amount>38249737436</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>637</count>
+		<amount>229111390851</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>809</count>
+		<amount>12598968145</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3164</count>
+		<amount>37749105000</amount>
+	</product>
+
+</entry>
+
+
+<entry>
+	<date>2018-11-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>1064</count>
+		<amount>30716113595</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>556</count>
+		<amount>196911639557</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>624</count>
+		<amount>6441440951</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3198</count>
+		<amount>36853634000</amount>
+	</product>
+
+</entry>
+
+
+
+<entry>
+	<date>2018-12-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>1317</count>
+		<amount>41822913427</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>474</count>
+		<amount>179169541835</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>654</count>
+		<amount>8392732361</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2717</count>
+		<amount>37152592000</amount>
+	</product>
+
+</entry>
+
+
+
+
+
+
+<entry>
+	<date>2019-01-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>509</count>
+		<amount>15570558513</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>386</count>
+		<amount>165211166168</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>536</count>
+		<amount>5998183838</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2348</count>
+		<amount>40500985000</amount>
+	</product>
+
+</entry>
+
+
+
+
+<entry>
+	<date>2019-02-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>929</count>
+		<amount>35945980747</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>529</count>
+		<amount>210333507736</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>610</count>
+		<amount>7948876339</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2410</count>
+		<amount>33403553000</amount>
+	</product>
+
+</entry>
+
+
+
+<entry>
+	<date>2019-03-17</date>
+	<product>
+		<index>Municipal</index>
+		<count>845</count>
+		<amount>24713462223</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>665</count>
+		<amount>241652811998</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>721</count>
+		<amount>13456980909</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2559</count>
+		<amount>33434635000</amount>
+	</product>
+
+</entry>
+
+<entry>
+	<date>2019-04-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>948</count>
+		<amount>36405771622</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>599</count>
+		<amount>209092756324</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>765</count>
+		<amount>26148672778</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2062</count>
+		<amount>29092770000</amount>
+	</product>
+
+</entry>
+
+
+<entry>
+	<date>2019-05-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1185</count>
+		<amount>32707902646</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>702</count>
+		<amount>232874815700</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>864</count>
+		<amount>31719622770</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3252</count>
+		<amount>34898683000</amount>
+	</product>
+
+</entry>
+
+
+
+<entry>
+	<date>2019-06-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1589</count>
+		<amount>42279457373</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>682</count>
+		<amount>195946071575</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>695</count>
+		<amount>15112853896</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2400</count>
+		<amount>31114612000</amount>
+	</product>
+
+</entry>
+
+
+
+
+
+
+<entry>
+	<date>2019-07-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1241</count>
+		<amount>34932909160</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>615</count>
+		<amount>218103205351</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>736</count>
+		<amount>15590537712</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2683</count>
+		<amount>28588380000</amount>
+	</product>
+
+</entry>
+
+
+<entry>
+	<date>2019-08-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1333</count>
+		<amount>46613407053</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>638</count>
+		<amount>226249149384</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>731</count>
+		<amount>10349251021</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2629</count>
+		<amount>30129473000</amount>
+	</product>
+
+</entry>
+
+
+
+
+
+<entry>
+	<date>2019-09-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1208</count>
+		<amount>48837648574</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>671</count>
+		<amount>276212707326</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>656</count>
+		<amount>23792856854</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2286</count>
+		<amount>28704892000</amount>
+	</product>
+
+</entry>
+
+
+
+
+
+
+
+
+<entry>
+	<date>2019-10-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1532</count>
+		<amount>59396701359</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>715</count>
+		<amount>217385656131</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>813</count>
+		<amount>10979239729</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2297</count>
+		<amount>32879133000</amount>
+	</product>
+
+</entry>
+
+
+
+
+<entry>
+	<date>2019-11-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1346</count>
+		<amount>44372724089</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>744</count>
+		<amount>274133585888</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>822</count>
+		<amount>17664182497</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2339</count>
+		<amount>27484129000</amount>
+	</product>
+
+</entry>
+
+<entry>
+	<date>2019-12-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1848</count>
+		<amount>66878243172</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>710</count>
+		<amount>144867256689</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>905</count>
+		<amount>13904484534</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2362</count>
+		<amount>31459281000</amount>
+	</product>
+
+</entry>
+
+
+
+<entry>
+	<date>2020-01-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>625</count>
+		<amount>26103614327</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>660</count>
+		<amount>224047921028</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>795</count>
+		<amount>14083613839</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2308</count>
+		<amount>32537609000</amount>
+	</product>
+
+</entry>
+
+
+<entry>
+	<date>2020-02-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1038</count>
+		<amount>33272157280</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>803</count>
+		<amount>256818382764</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>901</count>
+		<amount>27570747567</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2212</count>
+		<amount>30045399000</amount>
+	</product>
+
+</entry>
+
+
+
+<entry>
+	<date>2020-03-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1090</count>
+		<amount>46325478575</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>772</count>
+		<amount>283571756140</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>781</count>
+		<amount>8444490940</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3399</count>
+		<amount>32303440000</amount>
+	</product>
+
+</entry>
+
+
+<entry>
+	<date>2020-04-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>896</count>
+		<amount>27631123963</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>700</count>
+		<amount>399670449436</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>644</count>
+		<amount>6938032677</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2385</count>
+		<amount>36741901000</amount>
+	</product>
+
+</entry>
+
+
+
+<entry>
+	<date>2020-05-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1105</count>
+		<amount>34084217611</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>825</count>
+		<amount>395479867727</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>609</count>
+		<amount>17258190183</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1521</count>
+		<amount>17275990000</amount>
+	</product>
+
+</entry>
+
+
+
+
+
+<entry>
+	<date>2020-06-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1728</count>
+		<amount>54084330190</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>885</count>
+		<amount>309193309998</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>947</count>
+		<amount>23347228852</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1435</count>
+		<amount>12972549000</amount>
+	</product>
+
+</entry>
+
+
+
+<entry>
+	<date>2020-07-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1567</count>
+		<amount>57600306731</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>712</count>
+		<amount>212652182729</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>833</count>
+		<amount>22799226795</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1234</count>
+		<amount>13379799000</amount>
+	</product>
+
+</entry>
+
+
+
+<entry>
+	<date>2020-08-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1376</count>
+		<amount>50142561415</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>846</count>
+		<amount>284423181031</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>836</count>
+		<amount>35242828440</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1044</count>
+		<amount>9331865000</amount>
+	</product>
+
+</entry>
+
+
+
+
+
+<entry>
+	<date>2020-09-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1539</count>
+		<amount>63484276978</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>815</count>
+		<amount>299294625172</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>960</count>
+		<amount>30640200381</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1012</count>
+		<amount>7976583000</amount>
+	</product>
+
+</entry>
+
+
+
+<entry>
+	<date>2020-10-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1824</count>
+		<amount>69033943068</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>911</count>
+		<amount>245993944750</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>993</count>
+		<amount>35454898135</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>934</count>
+		<amount>7622964000</amount>
+	</product>
+
+</entry>
+
+
+
+<entry>
+	<date>2020-11-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1484</count>
+		<amount>44700099739</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>723</count>
+		<amount>213611673465</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>990</count>
+		<amount>25168689054</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>669</count>
+		<amount>5949633000</amount>
+	</product>
+
+</entry>
+
+
+<entry>
+	<date>2020-12-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1534</count>
+		<amount>49616462969</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>878</count>
+		<amount>177958049030</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>1370</count>
+		<amount>35812093220</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>824</count>
+		<amount>7363704000</amount>
+	</product>
+
+</entry>
+
+
+
+
+
+<entry>
+	<date>2021-01-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>583</count>
+		<amount>17207530187</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>730</count>
+		<amount>208955262739</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>1022</count>
+		<amount>42646812336</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>779</count>
+		<amount>8491028000</amount>
+	</product>
+
+</entry>
+
+
+
+
+
+<entry>
+	<date>2021-02-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>968</count>
+		<amount>35577461058</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>978</count>
+		<amount>281245652491</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>1273</count>
+		<amount>67914400757</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>672</count>
+		<amount>4980056000</amount>
+	</product>
+
+</entry>
+
+
+<entry>
+	<date>2021-03-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1257</count>
+		<amount>49533940276</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>1339</count>
+		<amount>471967712429</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>1509</count>
+		<amount>78663675708</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1012</count>
+		<amount>8579626000</amount>
+	</product>
+
+</entry>
+
+
+<entry>
+	<date>2021-04-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1213</count>
+		<amount>41272211892</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>1077</count>
+		<amount>324771491824</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>1050</count>
+		<amount>22448933423</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>784</count>
+		<amount>6596632000</amount>
+	</product>
+
+</entry>
+
+
+
+
+<entry>
+	<date>2021-05-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1227</count>
+		<amount>33026832949</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>987</count>
+		<amount>295777071659</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>1154</count>
+		<amount>127692050207</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>664</count>
+		<amount>5151702010</amount>
+	</product>
+
+</entry>
+
+
+<entry>
+	<date>2021-06-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1837</count>
+		<amount>48957079451</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>1159</count>
+		<amount>334718338044</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>1375</count>
+		<amount>257288426427</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>945</count>
+		<amount>3919043033</amount>
+	</product>
+
+</entry>
+
+
+
+<entry>
+	<date>2021-07-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1393</count>
+		<amount>50705550787</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>915</count>
+		<amount>242494188973</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>1212</count>
+		<amount>144412792857</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1006</count>
+		<amount>7164085005</amount>
+	</product>
+
+</entry>
+
+
+<entry>
+	<date>2021-08-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1311</count>
+		<amount>40722475289</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>1048</count>
+		<amount>278359915956</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>1232</count>
+		<amount>34246664700</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1099</count>
+		<amount>7575840005</amount>
+	</product>
+
+</entry>
+
+
+<entry>
+	<date>2021-09-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1378</count>
+		<amount>52082369364</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>1162</count>
+		<amount>317256259966</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>1231</count>
+		<amount>88810763397</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1109</count>
+		<amount>7873772009</amount>
+	</product>
+
+</entry>
+
+
+<entry>
+	<date>2021-10-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1171</count>
+		<amount>42842062905</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>1140</count>
+		<amount>324093549524</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>1125</count>
+		<amount>38892246207</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1092</count>
+		<amount>6500383011</amount>
+	</product>
+
+</entry>
+
+<entry>
+	<date>2021-11-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1257</count>
+		<amount>41189319921</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>1219</count>
+		<amount>356357294296</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>1232</count>
+		<amount>49106538179</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1019</count>
+		<amount>7180178021</amount>
+	</product>
+
+</entry>
+
+
+
+<entry>
+	<date>2021-12-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1562</count>
+		<amount>70201607011</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>1250</count>
+		<amount>257650077702</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>1310</count>
+		<amount>23201389089</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1608</count>
+		<amount>10150365017</amount>
+	</product>
+
+</entry>
+
+
+<entry>
+	<date>2022-01-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>476</count>
+		<amount>13749800808</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>796</count>
+		<amount>225563305189</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>1091</count>
+		<amount>42973335982</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1134</count>
+		<amount>6521328007</amount>
+	</product>
+
+</entry>
+
+
+
+<entry>
+	<date>2022-02-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>898</count>
+		<amount>35555941362</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>947</count>
+		<amount>225946116950</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>958</count>
+		<amount>11553467159</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1910</count>
+		<amount>8568041525</amount>
+	</product>
+
+</entry>
+
+<entry>
+	<date>2022-03-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1188</count>
+		<amount>44147446895</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>1268</count>
+		<amount>341949248133</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>1000</count>
+		<amount>9952906199</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2328</count>
+		<amount>12977611128</amount>
+	</product>
+
+</entry>
+
+
+
+
+<entry>
+	<date>2022-04-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>941</count>
+		<amount>38356827601</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>905</count>
+		<amount>254691945824</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>754</count>
+		<amount>7206253042</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2368</count>
+		<amount>17314693015</amount>
+	</product>
+
+</entry>
+
+
+
+
+
+
+<entry>
+	<date>2022-05-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1146</count>
+		<amount>43669507304</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>971</count>
+		<amount>200664882159</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>795</count>
+		<amount>17064817744</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2757</count>
+		<amount>27900395013</amount>
+	</product>
+
+</entry>
+
+
+
+
+<entry>
+	<date>2022-06-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1426</count>
+		<amount>43437536378</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>936</count>
+		<amount>189428154281</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>747</count>
+		<amount>9502798481</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3734</count>
+		<amount>36445337007</amount>
+	</product>
+
+</entry>
+
+
+
+
+
+<entry>
+	<date>2022-07-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1022</count>
+		<amount>43137137193</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>652</count>
+		<amount>128380161226</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>681</count>
+		<amount>6085184831</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2979</count>
+		<amount>34516420011</amount>
+	</product>
+
+</entry>
+
+
+
+<entry>
+	<date>2022-08-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>976</count>
+		<amount>37246186585</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>847</count>
+		<amount>226336608968</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>782</count>
+		<amount>15094504970</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2698</count>
+		<amount>47786683001</amount>
+	</product>
+
+</entry>
+
+
+
+
+<entry>
+	<date>2022-09-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1005</count>
+		<amount>38986220048</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>904</count>
+		<amount>157919926352</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>792</count>
+		<amount>15673119691</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3314</count>
+		<amount>49864327013</amount>
+	</product>
+
+</entry>
+
+
+<entry>
+	<date>2022-10-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>763</count>
+		<amount>29344573968</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>730</count>
+		<amount>112546584298</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>715</count>
+		<amount>8142419639</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3044</count>
+		<amount>65326533002</amount>
+	</product>
+
+</entry>
+
+
+
+<entry>
+	<date>2022-11-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1014</count>
+		<amount>35984594202</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>805</count>
+		<amount>185635036476</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>660</count>
+		<amount>7802870099
+</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3096</count>
+		<amount>80547111003</amount>
+	</product>
+
+</entry>
+
+
+<entry>
+	<date>2022-12-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1185</count>
+		<amount>37376844748</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>824</count>
+		<amount>89116186027</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>735</count>
+		<amount>7281459072
+</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2774</count>
+		<amount>80196985001</amount>
+	</product>
+
+</entry>
+
+
+<entry>
+	<date>2023-01-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>476</count>
+		<amount>15381014480</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>690</count>
+		<amount>183644289378</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>661</count>
+		<amount>7576722692</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2371</count>
+		<amount>60814988001</amount>
+	</product>
+
+</entry>
+
+
+<entry>
+	<date>2023-02-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>684</count>
+		<amount>29907984496</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>906</count>
+		<amount>215449905878</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>688</count>
+		<amount>9462178143</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2759</count>
+		<amount>64284194005</amount>
+	</product>
+
+</entry>
+<entry>
+	<date>2023-03-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>876</count>
+		<amount>40313575966</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>1036</count>
+		<amount>224351790461</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>841</count>
+		<amount>10195816041</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3977</count>
+		<amount>117344682005</amount>
+	</product>
+
+</entry>
+
+<entry>
+	<date>2023-04-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>663</count>
+		<amount>25876653628</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>822</count>
+		<amount>161663855987</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>640</count>
+		<amount>9199963069</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2485</count>
+		<amount>74359637323</amount>
+	</product>
+
+</entry>
+
+<entry>
+	<date>2023-05-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>953</count>
+		<amount>36661810954</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>1103</count>
+		<amount>161663855987</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>625</count>
+		<amount>13654822234</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3242</count>
+		<amount>96786695004</amount>
+	</product>
+
+</entry>
+
+<entry>
+	<date>2023-06-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1201</count>
+		<amount>42570986648</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>1092</count>
+		<amount>173828007291</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>779</count>
+		<amount>9986675297</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3434</count>
+		<amount>70564561349</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2023-07-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>929</count>
+		<amount>31694199676</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>1024</count>
+		<amount>134696664619</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>749</count>
+		<amount>11635919607</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2411</count>
+		<amount>57770394001</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2023-08-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1186</count>
+		<amount>51789607633</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>1267</count>
+		<amount>172066577333</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>821</count>
+		<amount>11550594512</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2745</count>
+		<amount>71251233001</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2023-09-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>993</count>
+		<amount>35245055906</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>1168</count>
+		<amount>221428678640</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>790</count>
+		<amount>14169583926</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2920</count>
+		<amount>65440954001</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2023-10-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>977</count>
+		<amount>38731358286</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>1148</count>
+		<amount>154755283499</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>745</count>
+		<amount>11050318926</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2451</count>
+		<amount>75220995002</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2023-11-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1097</count>
+		<amount>43789792630</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>1154</count>
+		<amount>231268274409</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>714</count>
+		<amount>9427078989</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2505</count>
+		<amount>74452478008</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2023-12-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1143</count>
+		<amount>41443899088</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>1301</count>
+		<amount>129228615244</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>859</count>
+		<amount>9835561497</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2209</count>
+		<amount>62233084000</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2024-01-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>382</count>
+		<amount>21809313311</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>1197</count>
+		<amount>260730840154</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>824</count>
+		<amount>10345956252</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2612</count>
+		<amount>53725471008</amount>
+	</product>
+</entry>
+
+
+<entry>
+	<date>2024-02-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>776</count>
+		<amount>36635198695</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>1387</count>
+		<amount>310942778105</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>874</count>
+		<amount>15917644749</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2870</count>
+		<amount>57065882007</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2024-03-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>814</count>
+		<amount>40922203213</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>2204</count>
+		<amount>333431568657</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>295</count>
+		<amount>6052218250</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2733</count>
+		<amount>67055628000</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2024-04-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>813</count>
+		<amount>41000811957</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>2771</count>
+		<amount>285860640248</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>318</count>
+		<amount>3561397053</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2743</count>
+		<amount>59680605000</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2024-05-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1027</count>
+		<amount>50045786422</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>2616</count>
+		<amount>337784945694</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>276</count>
+		<amount>5429020775</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3435</count>
+		<amount>80021306009</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2024-06-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>846</count>
+		<amount>19828812243</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>2284</count>
+		<amount>273313024592</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>353</count>
+		<amount>5763587269</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2823</count>
+		<amount>75203508007</amount>
+	</product>
+</entry><entry>
+	<date>2024-07-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1047</count>
+		<amount>47017904064</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>2581</count>
+		<amount>291593961243</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>368</count>
+		<amount>12272398929</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2782</count>
+		<amount>65488152015</amount>
+	</product>
+</entry>
+<entry>
+	<date>2024-08-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1159</count>
+		<amount>57386805442</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>2752</count>
+		<amount>290636219497</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>263</count>
+		<amount>2407899150</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3219</count>
+		<amount>54383925000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2024-09-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1117</count>
+		<amount>44585446580</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>2434</count>
+		<amount>349901161130</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>430</count>
+		<amount>3624531220</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2520</count>
+		<amount>51049371000</amount>
+	</product>
+</entry>
+<entry>
+	<date>2024-10-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1320</count>
+		<amount>78445987529</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>2664</count>
+		<amount>299585331543</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>355</count>
+		<amount>14275038028</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2572</count>
+		<amount>50265430105</amount>
+	</product>
+</entry>
+<entry>
+	<date>2024-11-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1047</count>
+		<amount>40059513572</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>2579</count>
+		<amount>272726946563</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>303</count>
+		<amount>2821487164</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2440</count>
+		<amount>48672529003</amount>
+	</product>
+</entry>
+<entry>
+	<date>2024-12-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1311</count>
+		<amount>53215687213</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>2962</count>
+		<amount>219805892637</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>363</count>
+		<amount>3893651357</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>1969</count>
+		<amount>49937311003</amount>
+	</product>
+</entry>
+<entry>
+	<date>2025-01-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>489</count>
+		<amount>20217789662</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>2484</count>
+		<amount>523156506288</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>357</count>
+		<amount>5858365530</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2677</count>
+		<amount>47598715008</amount>
+	</product>
+</entry>
+<entry>
+	<date>2025-02-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>858</count>
+		<amount>46707720500</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>2844</count>
+		<amount>497266580932</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>338</count>
+		<amount>6060618709</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2199</count>
+		<amount>52982112010</amount>
+	</product>
+</entry>
+<entry>
+	<date>2025-03-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1049</count>
+		<amount>51926736773</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>3103</count>
+		<amount>412499847331</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>389</count>
+		<amount>8026195322</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2431</count>
+		<amount>60139006009</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2025-04-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1141</count>
+		<amount>48150330820</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>2808</count>
+		<amount>231942969231</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>360</count>
+		<amount>3845888986</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2805</count>
+		<amount>53066974020</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2025-05-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1287</count>
+		<amount>58576391026</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>2421</count>
+		<amount>349350594125</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>320</count>
+		<amount>11320430026</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2723</count>
+		<amount>57745865009</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2025-06-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1603</count>
+		<amount>73719489707</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>2504</count>
+		<amount>330944441120</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>415</count>
+		<amount>7370621169</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2372</count>
+		<amount>67083457269</amount>
+	</product>
+</entry>
+<entry>
+	<date>2025-07-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1408</count>
+		<amount>60008674212</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>3075</count>
+		<amount>336507068211</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>429</count>
+		<amount>7988224467</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2483</count>
+		<amount>58126636003</amount>
+	</product>
+</entry>
+<entry>
+	<date>2025-08-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1549</count>
+		<amount>77267312021</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>2912</count>
+		<amount>334249797356</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>297</count>
+		<amount>7482455280</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2214</count>
+		<amount>55261268002</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2025-09-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1143</count>
+		<amount>46961414077</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>3407</count>
+		<amount>444179447965</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>427</count>
+		<amount>12478281737</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2606</count>
+		<amount>58017882002</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2025-10-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1217</count>
+		<amount>66072131017</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>4019</count>
+		<amount>357398287078</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>486</count>
+		<amount>8411960162</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2460</count>
+		<amount>56204468005</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2025-11-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1052</count>
+		<amount>51529011813</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>3197</count>
+		<amount>410911015085</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>359</count>
+		<amount>7011557917</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2429</count>
+		<amount>45220725024</amount>
+	</product>
+</entry>
+
+
+<entry>
+	<date>2025-12-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1515</count>
+		<amount>64445075814</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>3103</count>
+		<amount>272679645481</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>437</count>
+		<amount>13958680617</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2463</count>
+		<amount>61036822005</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2026-01-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>491</count>
+		<amount>24323920533</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>3045</count>
+		<amount>345023716813</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>371</count>
+		<amount>8522460090</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2884</count>
+		<amount>53626972006</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2026-02-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>833</count>
+		<amount>46001584604</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>3370</count>
+		<amount>430657893623</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>430</count>
+		<amount>18784553968</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2277</count>
+		<amount>54098218501</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2026-03-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1011</count>
+		<amount>57474711993</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>3602</count>
+		<amount>537281418380</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>455</count>
+		<amount>8409386659</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3004</count>
+		<amount>65093316026</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2026-04-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1084</count>
+		<amount>56829645145</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>2994</count>
+		<amount>387496815756</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>414</count>
+		<amount>9374490630</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2691</count>
+		<amount>59527758007</amount>
+	</product>
+</entry>
+
+<entry>
+	<date>2026-05-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1237</count>
+		<amount>59211973733</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>3286</count>
+		<amount>436142542369</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>473</count>
+		<amount>17489657550</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2578</count>
+		<amount>56745403004</amount>
+	</product>
+</entry>
+
+
+<entry>
+	<date>2026-06-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1643</count>
+		<amount>83764061400</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>3776</count>
+		<amount>462799816627</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>580</count>
+		<amount>122744439071</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>3275</count>
+		<amount>62806765003</amount>
+	</product>
+</entry>
+
+
+<entry>
+	<date>2026-07-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1287</count>
+		<amount>65647622441</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>3801</count>
+		<amount>393054401739</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>453</count>
+		<amount>38065898326</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2876</count>
+		<amount>60891089002</amount>
+	</product>
+	
+</entry>
+
+<entry>
+	<date>2026-08-01</date>
+	<product>
+		<index>Municipal</index>
+		<count>1197</count>
+		<amount>60705200523</amount>
+	</product>
+	<product>
+		<index>Corporate</index>
+		<count>3643</count>
+		<amount>427173771477</amount>
+	</product>
+	<product>
+		<index>Equity</index>
+		<count>406</count>
+		<amount>6382540408</amount>
+	</product>
+	<product>
+		<index>CD</index>
+		<count>2739</count>
+		<amount>60045714000</amount>
+	</product>	
+	
+</entry>
+
+
+</uw_data>

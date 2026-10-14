@@ -1,0 +1,19 @@
+{
+  "source_id": "ficc_failsdata",
+  "source_name": "FICC public failsdata.csv",
+  "url": "https://cms-prod.dtcc.com/data/failsdata.csv",
+  "file": "raw/ficc_failsdata_0f7f8146249c.csv",
+  "collected_at_utc": "2026-10-14T19:41:43+00:00",
+  "public_only": true,
+  "business_lines": [
+    "FICC",
+    "Data Services"
+  ],
+  "kind": "ficc_daily_series",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://cms-prod.dtcc.com/data/failsdata.csv",
+  "content_type": "text/csv",
+  "bytes": 9938,
+  "sha256": "a5afb599647e695a8832dbde6f7072418b4c3d398784d5f9426d3d098649123f"
+}

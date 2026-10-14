@@ -1,0 +1,1047 @@
+    
+Important Legal Information: The Depository Trust Company (“DTC”) does not represent or warrant the accuracy, adequacy, 
+timeliness, completeness or fitness for any particular purpose of the information contained in this communication, which is based in part on 
+information obtained from third parties and not independently verified by DTC and which is provided as is. The information contained in 
+this communication is not intended to be a substitute for obtaining tax advice from an appropriate professional advisor. In providing this 
+communication, DTC shall not be liable for (1) any loss resulting directly or indirectly from mistakes, errors, omissions, interruptions, 
+delays or defects in such communication, unless caused directly by gross negligence or willful misconduct on the part of DTC, and (2) any 
+special, consequential, exemplary, incidental or punitive damages. 
+To ensure compliance with Internal Revenue Service Circular 230, you are hereby notified that: (a) any discussion of federal tax issues 
+contained or referred to herein is not intended or written to be used, and cannot be used, for the purpose of avoiding penalties that may be 
+imposed under the Internal Revenue Code; and (b) as a matter of policy, DTC does not provide tax, legal or accounting advice and 
+accordingly, you should consult your own tax, legal and accounting advisor before engaging in any transaction. 
+ 
+ 
+DTCC offers enhanced access to all important notices via a Web -based subscription service. 
+The notification system leverages RSS Newsfeeds, providing significant benefits including  
+real-time updates and customizable delivery. To learn more and to set up your own DTCC RSS  
+alerts, visit http://www.dtcc.com/subscription_form.php.     
+     
+1 
+IMPORTANT NOTICE 
+The Depository Trust Company 
+DTCC Public (White) 
+ 
+B #: 24768-26 
+Date: October 7, 2026 
+To: All Participants 
+Category: Tax Relief, Distributions 
+From: International Services 
+Attention: Operations, Reorg & Dividend Managers, Partners & Cashiers 
+Subject: 
+Tax Relief Country: ITALY 
+Security: UNICREDIT S.p.A.                                            CUSIP: 904678AY5 
+Record Date: 11/27/2026                                                   Payable Date: 12/03/2026 
+Quick Refund Open Date: Payable Date 
+CA Web Instruction Deadline: 12/03/2026 8:00 PM (E.T.) 
+ 
+Participants can use DTC’s Corporate Actions Web (CA Web) service to certify all, or a portion of their positions 
+entitled to the applicable withholding tax rate. Participants are urged to consult TaxInfo before certifying their 
+instructions over CA Web. 
+ 
+All holders will be paid less 26% withholding under the following CA ID#(s): 
+ 
+CA ID # 158674469 on CUSIP 904678AY5 
+ 
+Eligible holders who comply with the tax certification procedures have the possibility to obtain a quick 
+refund of the remaining 26% withholding by electing in CA Web under the following CA ID#(s) payable on 
+PD+1: 
+ 
+CA ID # 158674477 on CUSIP 904678AY5 
+ 
+Important: Prior to certifying tax withholding instructions, participants are urged to read, understand and comply 
+with the information in the Legal Conditions category found on TaxInfo over the CA Web. 
+***Please read this Important Notice fully to ensure that the self-certification document is sent to the agent 
+by the indicated deadline*** 
+ 
+Questions regarding this Important Notice may be directed to Acupay at +1 212-422-1222. 
+
+ 
+1 PRIVATE 
+ 
+ 
+UniCredit S.p.A. (as Issuer), Citibank, N.A., acting through its New York office (as Receipt Issuer), and Accuratus Tax and 
+CA Services LLC (“Acupay”, as Tax Certification Agent) are distributing this notice with regard to the below-described 
+144A Receipts, representing the Issuer’s notes (the Notes). Interest and related income on the Notes and Receipts are 
+subject to Italian substitute tax (“Italian Substitute Tax”), from which all beneficial owners tax resident in a “White List” 
+country (which maintain no permanent establishment in Italy), central banks of all nations, and supranational 
+organizations recognized by Italy are exempt, subject to certain procedural conditions. The Issuer has arranged with 
+Acupay and Monte Titoli S.p.A. (Monte Titoli) to provide an automated tax processing platform to assist eligible 
+investors in receiving exempt treatment on the 144A Receipts. This notice describes the operation of the tax processing 
+platform for the 144A Receipts and transfers into and out of the Notes. Holders and intermediaries holding the Notes in 
+an account at a Participant of Monte Titoli must contact their custodian bank and follow the tax procedures set out by 
+their custodian bank in order to obtain relief from Italian substitute tax. 
+Issuer: 
+UniCredit S.p.A.  
+By Citibank, N.A., acting through its New York office, as Depositary/Issuer for the Rule 144A Global Receipts 
+Security Type: Medium Term Notes 
+ 
+3.127% 
+Notes due 
+2032 
+144A Receipts: 904678AY5 / US904678AY53 (“GROSS” CUSIP / ISIN, the X Receipt) 
+                            904678AZ2 / US904678AZ29 (“NET” CUSIP / ISIN, the N Receipt) 
+144A Notes: IT0005446890 (the X Note), IT0005446908 (the N Note) 
+Reg S Notes: XS2348714713 
+Country Tax Regime: 
+Italy (Legislative Decree No. 239 of April 1, 1996 or any secondary legislation implementing the 
+same, each as amended and/or supplemented from time to time). Tax is computed for each day of 
+ownership by taxable investors. There is no tax for compliant exempt investors who follow the 
+procedures herein. 
+Next Record Date: November 27, 2026 (Fri)  
+Next Payment Date: December 3, 2026 (Thu)  
+Interest Rate: 3.127% per annum 
+Tax Rates: 
+ 
+0% (exempt) with certification and procedural compliance. 
+26% without certification or procedural compliance - computed for each day of ownership from 
+the settlement date of purchase until the settlement date of sale or transfer. 
+Tax Relief 
+Requirement
+s 
+1: 
+Per-Settlement Reporting: Participants must report to Acupay all daily beneficial owner changes. 
+Acupay Opens: June 3, 2026 (Wed) 9:00 AM Acupay System remains open continuously 
+2: 
+One-Time Italian Self-Certification Form With Custodian’s Confirmation: Valid indefinitely for each 
+beneficial owner listed, but must be signed by a representative at the custodian bank or beneficial owner 
+upon the first purchase of the Receipts, and contemporaneously transmitted via the Acupay System.  
+Acupay Opens: June 3, 2026 (Wed) 9:00 AM Acupay System remains open continuously 
+3: 
+CA Web/Tax Relief Payment-Date Instructions: Prior to each interest payment date, reflecting properly 
+certified positions as of close of business on the night before interest payment date.  
+Acupay Opens: June 3, 2026 (Wed) 9:00 AM Acupay 
+Deadline: December 3, 2026 (Thu) 8:00 PM 
+CA Web 
+Instruction 
+Opens: 
+December 3, 2026 (Thu) 9:00 AM 
+CA Web 
+Instruction 
+Deadline: 
+December 3, 2026 (Thu) 8:00 PM 
+
+
+ 
+ 
+2 
+PRIVATE 
+The information in this important notice is organized as follows: 
+Order Topic Location 
+1 Synopsis Page 3 
+2 Procedure (A): Continuing Settlement Date “Position Updates” Page 4 
+3 Procedure (B): Payment Date Processing via CA Web/Tax Relief Page 6 
+4 Transfer Instructions: Transfers of X or N Receipts to a Participant of Monte Titoli Page 8 
+5 Transfer Instructions: Transfers of 144A Notes to a DTC Participant Page 9 
+6 Transfer Instructions: Transfers of X or N Receipts to a Participant of Euroclear or 
+Clearstream in the Form of Reg S Notes 
+Page 10 
+7 Transfer Instructions: Transfers of Reg S Notes to a Participant of DTC in the Form of X or 
+N Receipts 
+Page 11 
+8 Direct refunds from the Italian tax authorities Page 12 
+9 No Tax Relief Processing Fees by Acupay Page 12 
+10 Further Information and Contacts Page 12 
+11 Annex A: “White List” Countries and lists of Supranational Entities and Central Banks Page 13 
+12 Annex B: Online Resources Page 20 
+ 
+DTC Relief-At-Source Process Change 
+Please be advised that as of November 15, 2021, DTC will no longer process tax relief at source on 
+distributions that are processed with DTC’s interim accounting process. This process change applies to all 
+securities that are processed with DTC’s interim accounting process (e.g., bonds and large equity 
+distributions). More can be read in the notification released by the DTCC at: https://www.dtcc.com/-
+/media/Files/pdf/2021/8/12/15494-21.pdf.  
+ 
+
+
+ 
+ 
+3 
+PRIVATE 
+Synopsis: 
+• Pursuant to Italian Legislative Decree n. 239 dated April 1, 1996, income (including interest) derived from 
+the Notes and the Receipts by:  
+o non-Italian beneficial owners resident, for tax purposes, in a country that allows for a satisfactory 
+exchange of information with Italy (the ‘‘White List” – see Annex A); 
+o central banks of all nations (see Annex A); and 
+o supranational organizations, like the World Bank, the U.N., and other such organizations recognized 
+by Italy (see Annex A); 
+will not be subject to Italian Substitute Tax unless the beneficial owner and/or its DTC Participant fails to 
+comply with the relevant tax-residency certification and position-reporting procedures as described below 
+or as laid out by their custodian bank in the case of Notes held in an account of Monte Titoli.  
+• Beneficial owners or their authorized representatives (including DTC Participants) must sign a ONE-TIME 
+self-certification form contemporaneously with their first purchase of any of the securities. 
+• Each self-certification form will be kept on file for 10+ years  in the Acupay CORE 1 LibraryTM , where its 
+image can be viewed by the relevant DTC Participant and the local withholding agent, Monte Titoli, through 
+an Acupay System secure portal. Forms must be updated to reflect changes to client information. 
+• If all of the procedures laid out in this notice (and the related offering memorandum) are followed properly, 
+a signed and confirmed self-certification form  will be able to support ongoing exemption  from Italian 
+Substitute Tax on both current and future purchases of the Receipts. 
+• To receive exempt treatment for its beneficial owner clients, each DTC Participant is required to: 
+o Provide and continually update, via the Acupay System, a complete  and accurate record of the 
+settlement of each transaction  resulting in a change to the beneficial owner’ s holding s in the  
+Receipts; and  
+o  Ensure that a valid self-certification form for each such beneficial owner is on file with Acupay. 
+ 
+If either of these two conditions is not met,  
+ 
+o the corresponding position in the “gross-paying” CUSIP (or “X Receipt”), after a warning and cure 
+period, will be subject to a procedure of mandatory exchange into an alternate “net-paying” CUSIP 
+(or “N Receipt”). 
+ 
+▪ Interest on such exchanged position will be paid NET of the Italian Substitute Tax for the 
+period commencing on the settlement date of the acquisition of the related N Receipts, and 
+continuing to, but not including, the sooner of (a) the settlement date of the disposal of the 
+related N Receipts or (b) the redemption date of the N Receipts. 
+ 
+▪ The N Receipt position will be chilled in DTC and unable to be transferred via DTC unless 
+such position is transferred upon compliance with the applicable transfer and exchange 
+procedures, including, without limitation, payment of the Italian Substitute Tax on any 
+ 
+1 Certificate of Residence Eligible (CORE) 
+
+ 
+ 
+4 
+PRIVATE 
+interest, including any original-issue discount accrued, but not yet paid, until the settlement 
+date of a prospective transfer, as more fully described in the offering circular. 
+ 
+o The holder of the non-exempt position will be required to pay Italian Substitute Tax for the period 
+when such position was held in the X Receipt. A tax payment request will be submitted through the 
+relevant DTC Participant. 
+• The Acupay Italian Tax Compliance and Relief Procedures  contained in Annex B to the offering 
+memorandum dated May 25, 2021 and the Italian “White List” Countries and lists of Supranational Entities 
+and Central Banks are available at www.acupay.com/italy. 
+ 
+NOTE: Holders and intermediaries holding 144A Notes (ISIN: IT0005446890) or Reg S Notes (ISIN: 
+XS2348714713) in an account at Monte Titoli must contact their custodian bank and follow the procedures 
+set out by their custodian bank in order to obtain relief from Italian substitute tax. 
+ 
+Procedure (A): Continuing Settlement Date “Position Updates” 
+1) To receive exempt treatment, the relevant DTC Participant (or a downstream correspondent maintaining 
+a holding with a DTC Participant) must follow the steps below: 
+A. On or prior to 9:45 AM New York City time on the first New York Business Day after each settlement date 
+of each and every transaction that results in either a positive or a negative change in beneficial holdings 
+at the Participant in the CUSIP (either for a customer account or the firm’s own position), each DTC 
+Participant must transmit a report of each settled transaction through the Acupay System. Settlement 
+reports must be submitted for all transaction types, including buys, sells, free -deliveries and free -
+receives. 
+B. The Acupay System will indicate in real-time whether or not a self-certification form is already on-file 
+in the Acupay CORE Library TM for each beneficial owner  whose position is being increased.  DTC 
+Participants are able to view self-certification forms currently on file  for their c lients through their 
+Acupay System account. 
+C. If, after submission of new transaction settlement data, the Acupay System indicates that one or more 
+related beneficial owners  do not already have a valid self-certification form  on file, the system will  
+support the electronic generation of a self-certification form and KYC confirmation document  for the 
+relevant beneficial owners. 
+i. Self-certification forms and KYC confirmation documents must be prepared online through the 
+facilities of Acupay ( www.acupaysystem.com for DTC  Participants), and must contain an 
+official Acupay barcode.  
+ii. Once prepared via the Acupay System, self-certification forms and related KYC confirmations 
+should be printed, reviewed, and (if accurate and correct) signed by the DTC Participant (or its 
+downstream correspondent custodian) acting on behalf of each beneficial owner.2 
+ 
+2 It is required that every self-certification be confirmed by a custodial intermediary using “Know Your Customer” principles.  
+
+ 
+ 
+5 
+PRIVATE 
+iii. The Acupay System automatically generates relevant certification  text for each type of 
+beneficial investor, including partnerships and other tax-transparent entities.3 Instructions and 
+help-keys are available on the Acupay System.  Assistance via email or by telephone is also 
+available, free-of-charge, from the Acupay teams in New York and London at the contact details 
+provided at the end of this notice. 
+ 
+ 
+ 
+ 
+D. Transmit via fax or PDF / email via the Acupay System (to the email address or fax numbers indicated 
+in the Acupay System) the completed and signed self-certification form (and KYC confirmation 
+document) for receipt no later than 8:00 PM New York City time on the settlement date of a beneficial 
+owner’s first purchase of the Receipts.  
+E. Send via post or courier  to Acupay each original, signed self-certification form and KYC confirmation  
+document that was previously faxed or emailed. The original paper, signed documents MUST be received 
+by Acupay no later than 5:00 PM London time on the 10 th calendar day of the month following the 
+month when the related “first purchase” of Receipts occurred (or if such day is not a London business 
+day, the first London business day immediately preceding such day) at the following address: 
+Accuratus Tax and CA Services LLC 
+Attn: A-Team  
+11th Floor, Cargo Building, 
+25 North Colonnade, 
+London EC2A 4PA 
+United Kingdom 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2) If the beneficial owner or its DTC Participant fails to comply with the above procedures, the related 
+position will be subject to a MANDATORY EXCHANGE into the alternate N Receipt, which will be paid net 
+of Italian Substitute Tax for the period commencing on the settlement date of the acquisition of the 
+related N Receipts, and continuing to the sooner of (a) the settlement date of the disposal of the related N 
+Receipts or (b) the redemption date of the N Receipts, and chilled from transfer via DTC. This status will 
+remain until such position is transferred in compliance with the applicable transfer and exchange 
+ 
+3 There will be no need to supply information about the partners of many forms of collective investment partnerships, so long as the 
+partnerships are established in “White List” countries and are not maintained for the purpose of principally targeting Italian resident 
+investors.  
+ 
+NOTE: Self-certification forms will generally remain valid indefinitely for all of the Italian 
+Receipts serviced by Acupay in which the beneficial owner acquires a beneficial ownership 
+interest and holds through a Participant where a self-certification form has already been 
+received. However, prompt updates must be made should the investor’s information 
+change. 
+NOTE: A DTC Participant that obtains  exemption from Italian Substitute Tax and fails to provide to 
+Acupay the original self-certification form and/or KYC confirmation document by the above-indicated 
+deadline may be prohibited from using the CA Web / Tax Relief and related procedures to obtain 
+favorable tax treatment for current and future interest payments on all of the Receipts held through 
+such DTC Participant. In an event such as this , the DTC Participant w ould receive the interest 
+payments on the entire position held on behalf of all beneficial owner  clients net of  the Italian 
+Substitute Tax, and relief w ould need to be obtained directly from the Italian tax authorities , in 
+accordance with Italian law. 
+
+ 
+ 
+6 
+PRIVATE 
+procedures laid out in the offering memorandum for the securities, including, without limitation, payment 
+of the Italian Substitute Tax on any interest accrued, but not yet paid, until the settlement date of a 
+prospective transfer. 
+A. A DTC Participant holding a Receipt position for which a MANDATORY EXCHANGE  is required would 
+receive a Mandatory Exchange Warning Notice and (if the problem is not cured) a Mandatory Exchange 
+Notice from Citibank, N.A., acting through its New York branch  (as Receipt Issuer), instructing such 
+Participant to undertake: 
+i) a DWAC withdrawal operation prior to 11:30 AM New York City time for the indicated X Receipt 
+position, and 
+ii) a corresponding DWAC deposit operation for the alternate N Receipt. 
+B. The Mandatory Exchange Notice may (if appropriate)  include a Tax Liability Amount  Payment Request, 
+specifying the Tax Liability Amount accrued (if any) by the non-eligible Beneficial Owner of such X Receipt 
+from the date of acquisition until the Exchange Deadline. Such amount (if any) must be paid prior to 9:00 
+AM New York C ity time on the 10th day of the calendar month immediately following  the date of the 
+related payment request. 
+In the event that a Tax Liability Amount is not transmitted in full by 9:00 AM New York City time on the 
+10th day of the calendar month immediately following the date of the related payment request, the 
+relevant DTC Participant acknowledges and agrees that, following a claim for the recovery of such 
+amount made by Monte Titoli, or, at the option of Monte Titoli, by the Receipt Issuer following written 
+instructions received from Monte Titoli to DTC, such DTC Participant’s DTC account shall be debited in 
+accordance with the published rules and procedures of DTC’s CA Web/Tax Relief (as defined in the Tax 
+Certification Procedures). 
+ 
+C. In the event that an electronic report of the completion of the DWAC described in paragraph 2.A.i. has 
+not been received by Citibank through the facilities of DTC by the Exchange Deadline, Citibank shall 
+promptly, thereafter, send a notice to the relevant DTC Participant indicating that such DTC Participant 
+will receive interest payments on the entire position in the X Receipts held by such DTC Participant, net 
+of the applicable Italian Substitute T ax, and relief would, thereafter, need to be obtained directly from 
+the Italian tax authorities, following the direct refund procedure established by Italian law. 
+D. A DTC Participant that was the subject of a Mandatory Exchange Notice, and has failed to complete the 
+required DWACs, may be prohibited from using CA Web/Tax Relief and associated procedures to obtain 
+favorable tax treatment for current and future interest payments  of UniCredit S.p.A. by Citibank, N.A., 
+acting through its New York branch,  as depositary/issuer of the 144A Receipts held through such DTC 
+Participant. 
+Procedure (B): Payment-Date Processing via CA Web/Tax Relief 
+DTC Participants holding positions on behalf of tax-exempt beneficial owners for whom confirmed self-
+certification forms are on file must make corresponding CA Web/Tax Relief Instructions requesting the 
+favorable (exempt) tax rate on behalf of the aggregate position of such beneficial owners prior to each 
+interest payment date in order to receive interest free of the Italian Substitute Tax. 
+ 
+ 
+ 
+
+ 
+ 
+7 
+PRIVATE 
+Steps: 
+Beginning at 9:00 AM New York City time on the interest payment date, and continuing until 8:00 PM New 
+York City time on the interest payment date, DTC Participants must make CA Web/Tax Relief Instructions 
+representing the portion of the securities held on behalf of properly self-certified beneficial owners whose 
+security holdings and related trade settlements have been reported via the Acupay System, in accordance with 
+the steps laid out below: 
+• All CA Web Instructions for favorable tax treatment MUST be supported with valid self-certification 
+forms which are on file with Acupay by the time the CA Web Instruction is made. 
+• DTC Participants must ensure that CA Web Instructions entered into DTC, beneficial owner trade 
+settlement data, and self-certification forms maintained in the Acupay System are synchronized and 
+updated to reflect any changes to beneficial ownership occurring up to 8:00 PM New York City time on 
+the New York Business Day before each interest payment date. 
+• If, at 9:45 AM New York City time on the New York Business Day after the interest payment date, there are 
+any inconsistencies between the Participant’s beneficial owner trade settlement information and self-
+certification forms supplied and confirmed via Acupay, such Participant's CA Web Instructions, and its 
+aggregate daily positions at DTC during the payment period, the Participant will be paid net of the Italian 
+Substitute Tax on its entire position of the 144A Receipts held at DTC. 
+• If, at 9:45 AM New York City time on the New York Business Day after the interest payment date, a 
+Participant's Acupay certifications do not match their favorable CA Web Instructions, their Instructions will 
+be adjusted to the unfavorable rate. Please note that an adjustment for ANY Participant after the CA Web 
+Instruction deadline will delay the payment of tax relief funds for ALL Participants by 1 Business Day. 
+NOTE: Participants using these CA Web / Tax Relief procedures via Acupay and Monte Titoli to obtain tax relief for 
+themselves or their clients must agree that: 
+ 
+The Participant will immediately return to the Italian withho lding agent (Monte Titoli) any funds erroneously received as a result 
+of an improper CA Web Instruction or an improper request for tax exemption, or through a fraudulent submission of one or more 
+trade settlement reports or self-certification forms submitted by the Participant via the Acupay System in support of such requests 
+or instructions. In addition, the Participant agrees to pay any interest, fines, FX losses, additions to tax , or penalties thereon. 
+As a condition of requesting tax exemption  through these procedures, the Participant agrees that Monte Titoli (or Citibank, as 
+Receipt Issuer) may instruct DTC to affect a chargeback arisi ng from the Participant’s receipt of funds which results from an 
+improper CA Web Instruction  or an improper request for tax exemption, o r from a fraudulent submission  of one or more self -
+certification forms or trade settlement reports by the Participant via the Acupay System. DTC is authorized by the Participant to 
+affect such chargeback and the Participant agrees to such debit of its account to satisfy such chargeback . 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+8 
+PRIVATE 
+• Transfer Instructions: Transfers of X or N Receipts to a P articipant of 
+Monte Titoli  
+Investors holding interests in the Notes via DTC (in the form of 144A R eceipts) may transfer such interests to 
+accounts at direct and indirect Participants of Monte Titoli and other clearing systems, including Clearstream 
+and Euroclear.  
+Step Description Form/instruction type Deadline 
+A. Transferor DTC ’s Participant 
+prepares and submits a 
+Transfer Request Form 
+through the Acupay System  
+Forms are available online at 
+www.acupaysystem.com. 
+ 
+1. For transferring or converting X 
+Receipts: deadline for receipt by 
+Acupay System is  5:00 PM NYC 
+time on the NY C business day 
+before the settlement date. 
+2. For transferring  or converting  N 
+Receipts: deadline for receipt by 
+Acupay System is  12:00 PM NYC 
+time on the 3rd NYC business day 
+before the settlement date. 
+B. For transferring N R eceipts 
+only: payment of Italian 
+substitute tax  based on Tax 
+Invoice for Italian Substitute 
+Tax. 
+The Acupay System will generate a tax 
+invoice, following submission of a 
+transfer request. Tax must be paid by Fed-
+Wire to Monte Titoli’s account at 
+Citibank, N.A. (see payment account 
+details on the tax invoice). 
+NOTE: transfers of N R eceipts may be 
+undertaken only following payment of the 
+Italian substitute tax. 
+By 9:00 AM NYC time on the 
+settlement date 
+C. Transferor’s DTC Participant 
+reduces it s position in the 
+relevant Receipts. 
+DWAC withdrawal request submitted to 
+Citi (Agent No. 9971)  containing the 
+relevant CUSIP and the amount being 
+requested for DWAC. 
+ 
+Please submit the DWAC request 
+early in the morning of the intended 
+transfer but no later than 10:00 AM 
+NYC time. 
+D. For transferring X R eceipts 
+only: Transferor DTC 
+Participant updates the 
+Acupay System to reflect the 
+reduction in holding of 
+Receipts. 
+www.acupaysystem.com 
+ 
+By 8:00 PM NYC time on the 
+settlement date 
+ 
+Note: 144A Receipts are not transferable to a Monte Titoli Participant in the form of 144A Notes during 
+the period between the interest payment date and 15 calendar days prior thereto. 
+ 
+
+ 
+ 
+9 
+PRIVATE 
+• Transfer Instructions: Transfers of 144A Notes to a DTC Participant 
+Holders of 144A Notes in Monte Titoli may transfer their 144A Notes to a DTC Participant who takes deliveries 
+in the form of X R eceipts (on behalf of an eligible beneficial owner)  or N Receipts (on behalf of a non -eligible 
+beneficial owner) by following the steps below. 
+Step Description Form/instruction type Deadline 
+A. Transferor’s Monte Titoli 
+Participant prepares and 
+submits a Transfer Request 
+Form through the Acupay 
+System 
+ 
+Forms are available online at 
+www.acupaysystem.com. 
+ 
+ 
+Deadline for receipt by Acupay 
+System is 6:00 PM Milan time on the 
+Milan business day before the 
+settlement date. 
+ 
+B. Transferor’s Monte Titoli 
+Participant delivers 144A 
+Notes to the Monte Titoli 
+account of Citibank (the 
+Receipt Issuer). 
+A message “710 – internal FOP transfer” 
+via MT-X or via the bank network (RNI). 
+NOTE: Issuer account number at Monte Titoli: 
+86117 
+By 12:00 PM Milan time on the 
+settlement date 
+C. Transferee’s DTC Participant 
+increases its position in the 
+relevant Receipts (X Receipts 
+for eligible beneficial owner, 
+N Receipts for a non-eligible 
+beneficial owner). 
+DWAC deposit request at DTC containing 
+the relevant CUSIP and the amount being 
+requested for DWAC. 
+ 
+By 10:00 AM NYC time on the 
+settlement date 
+D. For receiving X Receipts only: 
+transferee’s DTC Participant 
+updates the Acupay System 
+to reflect the increase in 
+holding of Receipts and 
+provides self-certification 
+form. 
+www.acupaysystem.com 
+NOTE: beneficial owners that already have a 
+valid self-certification in place will not need to 
+provide a new one. 
+ 
+By 8:00 PM NYC time on the 
+settlement date 
+ 
+Note: 144A Notes are not transferable to a DTC Participant in the form of Receipts during the period 
+between the interest payment date and 15 calendar days prior thereto. 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+10 
+PRIVATE 
+• Transfer Instructions: Transfers of X or N Receipts to a Participant of 
+Euroclear or Clearstream in the Form of Reg S Notes 
+Investors holding interests in the Notes via DTC (in the form of 144A Receipts) may transfer such interests to 
+accounts at Clearstream and Euroclear in the form of Reg S Notes.  
+Step Description Form/instruction type Deadline 
+A. Transferor DTC’s Participant 
+prepares and submits a 
+Transfer Request Form 
+through the Acupay System  
+Forms are available online at 
+www.acupaysystem.com. 
+1. For transferring or converting X 
+Receipts: deadline for receipt by 
+Acupay System is  5:00 PM NYC 
+time on the NY C business day 
+before the settlement date. 
+2. For transferring  or converting N 
+Receipts: deadline for receipt by 
+Acupay System is  12:00 PM NYC 
+time on the 3rd NYC business day 
+before the settlement date. 
+B. For transferring N R eceipts 
+only: payment of Italian 
+substitute tax  based on Tax 
+Invoice for Italian Substitute 
+Tax. 
+The Acupay System will generate a tax 
+invoice, following submission of a 
+transfer request. Tax must be paid by Fed-
+Wire to Monte Titoli’s account at 
+Citibank, N.A. (see payment account 
+details on the tax invoice). 
+NOTE: transfers of N R eceipts may be 
+undertaken only following payment of the 
+Italian substitute tax. 
+By 9:00 AM NYC time on the 
+settlement date 
+C. Transferor’s DTC Participant 
+reduces it s position in the 
+relevant Receipts. 
+DWAC withdrawal request submitted to 
+Citi (Agent No. 9971)  containing the 
+relevant CUSIP and the amount being 
+requested for DWAC. 
+ 
+Please submit the DWAC request 
+early in the morning of the intended 
+transfer but no later than 10:00 AM 
+NYC time. 
+D. For transferring X Receipts 
+only: Transferor DTC 
+Participant updates the 
+Acupay System to reflect the 
+reduction in holding of 
+Receipts. 
+www.acupaysystem.com 
+ 
+By 8:00 PM NYC time  on the 
+settlement date 
+ 
+Note: 144A Receipts are not transferable to a Euroclear or Clearstream Participant in the form of Reg S 
+Notes during the period between the interest payment date and 15 calendar days prior thereto. 
+ 
+
+ 
+ 
+11 
+PRIVATE 
+• Transfer Instructions: Transfers of Reg S Notes to a Participant of DTC  
+in the Form of X or N Receipts 
+Investors holding interests in the Reg S Notes via Euroclear or Clearstream may transfer such interests to 
+accounts at DTC in the form of X Receipts. Please follow the procedures set forth by Euroclear and Clearstream 
+or your custodian bank. 
+ 
+Note: Reg S notes are not transferable to a DTC Participant in the form of 144A Receipts during the period 
+between the interest payment date and 15 calendar days prior thereto. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+12 
+PRIVATE 
+ 
+Direct refunds from the Italian tax authorities: 
+Beneficial owners entitled to exemption from the Italian Substitute Tax who have not (through their actions or 
+the actions of their agents) timely followed the tax certification procedure as described herein, and therefore 
+have been subject to the imposition and collection of the Italian Substitute Tax, may request a full refund of 
+the amount that has been collected directly from the Italian tax authorities. 
+Beneficial owners have up to the time period allowed pursuant to Italian law (currently a maximum of 48 
+months as of the relevant interest payment date) to claim the amount withheld and paid to the Italian 
+treasury by filing with the Italian tax authorities: (i) the relevant Italian tax form; (ii) proof of beneficial 
+ownership and related withholding of Italian Substitute Tax; and (iii) a Government Tax Residency Certificate. 
+Beneficial owners should consult their tax advisors on the procedures required under Italian tax law to recoup 
+the Italian Substitute Tax in these circumstances. 
+.  .  .  .  . 
+No Tax Relief Processing Fees by Acupay: 
+No tax relief processing fees will be charged by Acupay to beneficial owners or custodians / intermediaries for 
+the tax relief procedures described on pages 1 to 11 of this document. 
+.  .  .  .  . 
+Further Information and Contacts: 
+Questions regarding any aspect of the UniCredit S.p.A. securities or these procedures should be directed to A-
+Team New York at +1-212-422-1222 / ateam@acupay.com or A-Team London at +44-207-382 0340 / 
+ateam@acupay.com. 
+ 
+
+ 
+ 
+13 
+PRIVATE 
+Annex A 
+Italian “White List” Countries  
+And Lists of Supranational Entities and Central Banks 
+(Identified by Accuratus Tax and CA Services LLC as of September 1, 2026) 
+In order to qualify as eligible to receive Interest, free from Italian Substitute Tax, among other things, Noteholders must be resident, 
+for tax purposes, in, or be "institutional investors" established in, a country which the Italian government identifies as al lowing for a 
+satisfactory exchange of information with Italy (the “White List States”). Subject to certain limited exceptions, such as for Central 
+Banks (see list below) and supranational bodies established in accordance with international agreements in force in Italy ( see list 
+below), this residency requirement applies to all ultimate holders of Notes, including ultimate beneficiaries of Interest payments  
+under the Notes holding via sub-accounts to which interests in the Notes may be allocated upon purchase , or thereafter. As of 
+September 1, 2026, the White List nations included the following states: 
+White List States 
+Albania Czech Republic Liechtenstein Serbia 
+Alderney (Channel Islands) Denmark Lithuania Seychelles 
+Algeria Ecuador Luxembourg Singapore 
+Andorra, Principality of Egypt Macedonia Sint Maarten 
+Anguilla, The Island of  Estonia Malaysia Slovak Republic 
+Argentina Ethiopia Malta Slovenia 
+Armenia Faroe Islands Mauritius South Africa 
+Aruba Finland Mexico Korea, Republic of 
+Australia France Moldova Spain 
+Austria Georgia Monaco, Principality of Sri Lanka 
+Azerbaijan Germany Montenegro Sweden 
+Bangladesh Ghana Montserrat Switzerland 
+Barbados, The Island of Gibraltar Morocco Syria 
+Belarus Greece Mozambique Tajikistan 
+Belgium Greenland Nauru, Republic of Taiwan 
+Belize Guernsey (Channel Islands) Netherlands Tanzania 
+Bermuda Islands, The Herm (Channel Islands) New Zealand Thailand 
+Bosnia and Herzegovina Holy See (Vatican City State) Nigeria Trinidad and Tobago 
+Brazil Hong Kong Niue Tunisia 
+British Virgin Islands Hungary Norway Turkey 
+Bulgaria Iceland Oman Turkmenistan 
+Cameroon India Pakistan Turks and Caicos Islands 
+Canada Indonesia Philippines Uganda 
+Cayman Islands Ireland Poland Ukraine 
+Chile Isle of Man Portugal United Arab Emirates 
+China Israel Qatar United Kingdom 
+Colombia Japan Romania United States of America 
+Congo, Republic of Jersey (Channel Islands)  Russian Federation Uruguay 
+Cook Islands Jordan Saint Kitts and Nevis Uzbekistan 
+Costa Rica Kazakhstan Saint Vincent & the Grenadines Venezuela 
+Cote d’Ivoire Kuwait Samoa Vietnam 
+Croatia Kyrgyzstan San Marino Zambia 
+Curaçao Latvia Saudi Arabia  
+Cyprus Lebanon Senegal  
+List is as of September 1, 2026 
+Please check the Acupay website for updates to this list. 
+The White List is subject to continuing changes in accordance with official actions by the government of Italy . Acupay has made 
+arrangements to monitor these changes and will publish its findings on its website. Acupay currently expects to update this website 
+monthly on the first calendar day of each month, to report changes to the White List which have come to the attention of Acup ay 
+through and including the 21st calendar day of the preceding month. In the event that the list appearing on the Acupay website is 
+different from the official list maintained by the government of Italy, the government list will naturally govern.    
+
+ 
+ 
+14 
+PRIVATE 
+List of Supranational Bodies 
+established in accordance with international agreements in force in Italy 
+African Development Bank International Institute of Technology and Management (IIMT) 
+African Development Fund  (ADF) International Maritime Organization (IMSO) 
+Asian Development Bank International Telecommunications Satellite Organization 
+(INTELSAT) 
+Bank for International Settlements (BIS) Multilateral Investment Guarantee Agency (MIGA) 
+Caribbean Development Bank (CDB) Multinational Force and Observers  (MFO) 
+Council of Europe Nature Inspired Cooperative Strategies for Optimization  
+(N.I.C.S.O.) 
+European Atomic Energy Community  (EURATOM) North Atlantic Treaty Organization (NATO) 
+European Bank for Reconstruction and Development  (EBRD) Organisation for Economic Co-operation and Development 
+(OECD) 
+European Commission (EC) United Nations (UN) 
+European Company for the Financing of Railroad Rolling Stock  
+(EUROFIMA) 
+United Nations: Food and Agriculture Organization of the 
+United Nations (FAO) 
+European Investment Bank (EIB) United Nations: International Bank for Reconstruction and 
+Development (IBRD ) 
+European Southern Observatory (ESO) United Nations: International Centre for Settlements of 
+Investment Disputes  (ICSID) 
+European Space Agency (ESA) United Nations: International Civil Aviation Organization 
+(ICAO) 
+European Space Research Organisation (ESRO) United Nations: International Development Association (IDA ) 
+European Telecommunications Satellite Organization 
+(EUTELSAT) 
+United Nations: International Finance Corporation (IFC ) 
+European Union (EU) United Nations: International Fund for Agricultural 
+Development (IFAD) 
+European University Institute  (EUI) United Nations: International Labour Organization (ILO) 
+International Finance Corporation (IFC) United Nations: International Maritime Organization (IMO) 
+Food and Agriculture Organization of the United Nations 
+(FAO) 
+United Nations: International Monetary Fund (IMF) 
+Inter-American Development Bank (EI BID) United Nations: International Telecommunication Union (ITU) 
+Inter-American investment corporation (IIC) United Nations: Multilateral Investment Guarantee Agency 
+(MIGA ) 
+International Atomic Energy Agency  (IAEA) United Nations: United Nations Educational, Scientific and 
+Cultural Organization (UNESCO) 
+International Bank for Reconstruction and Development 
+(IBRD) 
+United Nations: United Nations Industrial Development 
+Organization (UNIDO) 
+International Centre for Genetic Engineering and 
+Biotechnology (ICGEB) 
+United Nations: Universal Postal Union (UPU) 
+International Centre for the Study of the Preservation and 
+Restoration of Cultural Property (ICCROM) 
+United Nations: World Health Organization (WHO ) 
+International Development Association (IDA) United Nations: World Intellectual Property Organization 
+(WIPO) 
+International Funds for Mediterranean Agronomics Education  United Nations: World Meteorological Organization (WMO) 
+International Institute for the Unification of Private Law 
+(UNIDROIT) 
+United Nations: World Tourism Organization (WTO) 
+List is as of September 1, 2026 
+ 
+  
+
+ 
+ 
+15 
+PRIVATE 
+List of Central Banks 
+List is Dated as of September 1, 2026 
+Country Central Bank Name 
+Afghanistan  Bank of Afghanistan 
+Albania  The Bank of Albania 
+Algeria  Bank of Algeria 
+Angola  National Bank of Angola 
+Anguilla Eastern Caribbean Central Bank 
+Antigua and Barbuda Eastern Caribbean Central Bank 
+Argentina  Central Bank of Argentina 
+Armenia  Central Bank of Armenia (CBA) 
+Aruba Central Bank of Aruba 
+Australia  Reserve Bank of Australia 
+Austria  Central Bank of Austria 
+Azerbaijan  Central Bank of the Republic of Azerbaijan 
+Bahamas  Central Bank of The Bahamas 
+Bahrain  Central Bank of Bahrain 
+Bangladesh  Bangladesh Bank 
+Barbados  Central Bank of Barbados 
+Belarus  National Bank of the Republic of Belarus 
+Belgium  National Bank of Belgium 
+Belize  Central Bank of Belize 
+Benin  Central Bank of West African States (BCEAO) 
+Bermuda Islands, The Bermuda Monetary Authority 
+Bhutan  Royal Monetary Authority of Bhutan 
+Bolivia  Central Bank of Bolivia 
+Bosnia and Herzegovina  The Central Bank of Bosnia and Herzegovina (CBBH) 
+Botswana  Bank of Botswana 
+Brazil  Central Bank of Brazil 
+Brunei Darussalam The Brunei Currency and Monetary Board (BCMB) 
+Bulgaria Bulgarian National Bank (BNB) 
+Burkina Faso Central Bank of West African States (BCEAO) 
+Burundi  Bank of the Republic of Burundi 
+Cambodia  National Bank of Cambodia 
+Cameroon  Bank of Central African States 
+Canada  Bank of Canada 
+Cape Verde  The Bank of Cape Verde 
+Cayman Islands  Cayman Islands Monetary Authority  
+Central African Republic  Bank of Central African States 
+Chad Bank of Central African States 
+Chile  Central Bank of Chile 
+China  The People's Bank of China 
+Colombia  Bank of the Republic 
+Comoros  Central Bank of Comoros 
+Congo, Democratic Republic of Central Bank of the Congo 
+
+ 
+ 
+16 
+PRIVATE 
+List of Central Banks 
+List is Dated as of September 1, 2026 
+Congo, Republic of Bank of Central African States 
+Costa Rica  Central Bank of Costa Rica 
+Cote d'Ivoire Central Bank of West African States (BCEAO) 
+Croatia  Croatian National Bank 
+Cuba  Central Bank of Cuba 
+Curaçao Central Bank of Curaçao and Sint Maarten 
+Cyprus  Central Bank of Cyprus 
+Czech Republic  Czech National Bank 
+Denmark  National Bank of Denmark 
+Djibouti The Central Bank of Djibouti 
+Dominica  Eastern Caribbean Central Bank 
+Dominican Rep.  Central Bank of the Dominican Republic 
+Ecuador  Central Bank of Ecuador 
+Egypt  Central Bank of Egypt 
+El Salvador  Central Reserve Bank of El Salvador 
+Equatorial Guinea  Bank of Central African States 
+Eritrea  The Bank of Eritrea 
+Estonia  Bank of Estonia 
+Ethiopia  National Bank of Ethiopia 
+Fiji  Reserve Bank of Fiji 
+Finland  Bank of Finland 
+France  Bank of France 
+Gabon  Bank of Central African States 
+Gambia  Central Bank of The Gambia 
+Georgia  National Bank of Georgia 
+Germany  The Deutsche Bundesbank 
+Ghana  Bank of Ghana 
+Greece  Bank of Greece 
+Grenada  Eastern Caribbean Central Bank 
+Guatemala  Bank of Guatemala 
+Guinea  The Central Bank of the Republic of Guinea 
+Guinea-Bissau  Central Bank of West African States (BCEAO) 
+Guyana  Bank of Guyana 
+Haiti  Central Bank of Haiti 
+Holy See (Vatican City State) Administration of the Patrimony of the Apostolic See 
+Honduras  Central Bank of Honduras 
+Hong Kong Hong Kong Monetary Authority 
+Hungary  The Magyar Nemzeti Bank 
+Iceland  Central Bank of Iceland 
+India  Reserve Bank of India 
+Indonesia  Bank Indonesia  
+Iran  The Central Bank of the Islamic Republic of Iran 
+Iraq  Central Bank of Iraq 
+
+ 
+ 
+17 
+PRIVATE 
+List of Central Banks 
+List is Dated as of September 1, 2026 
+Ireland  Central Bank and Financial Services Authority of Ireland 
+Israel  Bank of Israel 
+Italy  Bank of Italy 
+Jamaica  Bank of Jamaica 
+Japan  Bank of Japan 
+Jordan  Central Bank of Jordan 
+Kazakhstan  National Bank of Kazakhstan 
+Kenya  Central Bank of Kenya 
+Korea, Democratic People's Republic of Central Bank of the Democratic People's Republic of Korea 
+Korea, Republic of Bank of Korea 
+Kuwait  Central Bank of Kuwait 
+Kyrgyzstan  National Bank of the Kyrgyz Republic 
+Lao People’s Democratic Republic Bank of Lao 
+Latvia  The Bank of Latvia 
+Lebanon  Central Bank of Lebanon 
+Lesotho  Central Bank of Lesotho 
+Liberia  Central Bank of Liberia 
+Libya Central Bank of Libya 
+Liechtenstein  National Bank of Liechtenstein 
+Lithuania  Bank of Lithuania 
+Luxembourg  Central Bank of Luxembourg 
+Macedonia  National Bank of the Republic of Macedonia 
+Madagascar  Central Bank of Madagascar 
+Malawi  Reserve Bank of Malawi 
+Malaysia  Central Bank of Malaysia 
+Maldives  Maldives Monetary Authority 
+Mali  Central Bank of West African States (BCEAO) 
+Malta  Central Bank of Malta 
+Mauritania  The Central Bank of Mauritania 
+Mauritius  Bank of Mauritius 
+Mexico  Bank of Mexico 
+Moldova  National Bank of Moldova 
+Mongolia  Bank of Mongolia 
+Montenegro  Central Bank of Montenegro 
+Montserrat Eastern Caribbean Central Bank 
+Morocco  Bank of Morocco 
+Mozambique  Bank of Mozambique 
+Myanmar Central Bank of Myanmar 
+Namibia  Bank of Namibia 
+Nauru  Nauru bank 
+Nepal  Nepal Rastra Bank (NRB) 
+Netherlands  Netherlands Bank 
+New Zealand  Reserve Bank of New Zealand 
+
+ 
+ 
+18 
+PRIVATE 
+List of Central Banks 
+List is Dated as of September 1, 2026 
+Nicaragua  Central Bank of Nicaragua 
+Niger  Central Bank of West African States (BCEAO) 
+Nigeria  Central Bank of Nigeria 
+Norway  Central Bank of Norway 
+Oman  Central Bank of Oman 
+Pakistan  State Bank of Pakistan 
+Papua New Guinea  Bank of Papua New Guinea 
+Paraguay  Central Bank of Paraguay 
+Peru  Central Reserve Bank of Peru 
+Philippines  Bangko Sentral ng Pilipinas 
+Poland  National Bank of Poland 
+Portugal  Bank of Portugal 
+Qatar  Qatar Central Bank 
+Romania  National Bank of Romania 
+Russian Federation   Central Bank of Russia 
+Rwanda  National Bank of Rwanda 
+Saint Kitts & Nevis  Eastern Caribbean Central Bank 
+Saint Lucia  Eastern Caribbean Central Bank 
+Saint Vincent & the Grenadines Eastern Caribbean Central Bank 
+Samoa  Central Bank of Samoa 
+San Marino  Central Bank of the Republic of San Marino 
+Sao Tome and Principe  Central Bank of São Tomé and Príncipe 
+Saudi Arabia Saudi Arabian Monetary Agency (SAMA) 
+Senegal Central Bank of West African States (BCEAO) 
+Serbia  National Bank of Serbia 
+Seychelles  Central Bank of Seychelles 
+Sierra Leone  Bank of Sierra Leone 
+Singapore  Monetary Authority of Singapore 
+Sint Maarten Central Bank of Curaçao and Sint Maarten 
+Slovakia  National Bank of Slovakia 
+Slovenia  The Bank of Slovenia 
+Solomon Islands  Central Bank of Solomon Islands 
+Somalia  The Central Bank of Somalia 
+South Africa  South African Reserve Bank 
+Spain  Bank of Spain 
+Sri Lanka  Central Bank of Sri Lanka 
+Sudan  Bank of Sudan 
+Suriname  Central Bank of Suriname 
+Swaziland  The Central Bank of Swaziland 
+Sweden  The Riksbank 
+Switzerland  Swiss National Bank 
+Syria  Central Bank of Syria 
+Taiwan Central Bank of the Republic of China 
+
+ 
+ 
+19 
+PRIVATE 
+List of Central Banks 
+List is Dated as of September 1, 2026 
+Tajikistan  National Bank of Tajikistan 
+Tanzania  Bank of Tanzania 
+Thailand  Bank of Thailand 
+Timor-Leste The Banking and Payments Authority of Timor-Leste 
+(to be succeeded by the Central Bank of Timor-Leste) 
+Togo  Central Bank of West African States (BCEAO) 
+Tonga  National Reserve Bank of Tonga 
+Trinidad and Tobago Central Bank of Trinidad and Tobago 
+Tunisia  Central Bank of Tunisia 
+Turkey  Central Bank of the Republic of Turkey 
+Turkmenistan  The Central Bank of Turkmenistan 
+Uganda  Bank of Uganda 
+Ukraine  National Bank of Ukraine 
+United Arab Emirates  Central Bank of United Arab Emirates 
+United Kingdom Bank of England 
+United States The Federal Reserve 
+Uruguay  Central Bank of Uruguay 
+Uzbekistan Central Bank of the Republic of Uzbekistan 
+Vanuatu Reserve Bank of Vanuatu 
+Venezuela  Central Bank of Venezuela 
+Vietnam  The State Bank of Vietnam 
+Yemen  Central Bank of Yemen 
+Zambia  Bank of Zambia 
+Zimbabwe Reserve Bank of Zimbabwe 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+20 
+PRIVATE 
+Annex B 
+Online Resources 
+ 
+Acupay System for DTC Participants and downstream correspondents to 
+undertake all of the steps described in this notice.  
+www.acupaysystem.com  
+ 
+ 
+Italian “White List” Countries and  
+Lists of Supranational Entities and Central Banks 
+(Identified by Accuratus Tax and CA Services LLC as of the 21st day of each 
+month). 
+ 
+www.acupay.com/italy 
+ 
+Acupay Italian Tax Compliance and Relief Procedures contained in 
+Appendix A to the Offering Memorandum dated May 25, 2021. 
+Available upon request via ateam@acupay.com 
+ 

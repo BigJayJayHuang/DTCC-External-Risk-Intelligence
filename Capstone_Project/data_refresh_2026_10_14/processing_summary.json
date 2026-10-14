@@ -1,0 +1,50 @@
+{
+  "requested_window": {
+    "start": "2026-10-07",
+    "end": "2026-10-14",
+    "timezone": "America/New_York",
+    "current_day_partial": true
+  },
+  "raw_unique_documents": 1177,
+  "window_documents": 142,
+  "duplicate_document_urls_merged": 1,
+  "news_candidates_by_business": {
+    "Consulting": 7,
+    "Asset Services": 32,
+    "WIS": 11,
+    "ECS": 24,
+    "ITP": 6,
+    "DAS": 7,
+    "RDS": 11,
+    "FICC": 20,
+    "Data Services": 9,
+    "DDA": 7
+  },
+  "news_candidate_rule_matches": 154,
+  "market_series": 19,
+  "market_series_with_window_observations": 12,
+  "market_window_rows": 54,
+  "market_window_nonmissing_rows": 52,
+  "market_revision_rows": 13,
+  "business_snapshot_metrics": 20,
+  "ecs_itp_operations_rows": 18,
+  "etf_reference_rows": 6156,
+  "wis_industry_asset_rows": 36,
+  "ficc_daily_increment_rows": 28,
+  "ficc_monthly_rows": 1236,
+  "ficc_monthly_latest": "2026-09",
+  "underwriting_rows": 752,
+  "underwriting_months": 188,
+  "underwriting_latest_month": "2026-08",
+  "rds_reports": 8,
+  "external_catalog_incident_declaration_updates": 136,
+  "original_content_status": {
+    "publisher_automated_access_block": 66,
+    "available": 73,
+    "not_downloaded_or_access_denied": 2,
+    "structured_public_table_capture": 1
+  },
+  "unrouted_window_documents": 71,
+  "models_retrained": false,
+  "business_risk_scores_generated": false
+}

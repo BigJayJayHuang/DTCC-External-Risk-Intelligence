@@ -1,0 +1,114 @@
+    
+DTCC offers enhanced access to all important notices via a Web -based subscription service. 
+The notification system leverages RSS Newsfeeds, providing significant benefits including  
+real-time updates and customizable delivery. To learn more and to set up your own DTCC RSS  
+alerts, visit http://www.dtcc.com/subscription_form.php.     
+     
+1 
+IMPORTANT NOTICE 
+The Depository Trust Company 
+DTCC Public (White) 
+ 
+B #: 25131-26 
+Date: October 9, 2026 
+To: Participants 
+Category: Securities Processing Service Update 
+From: DTC Asset Services Product Management Team 
+Attention: Officers / Operations Managers / Business Continuity Managers   
+Subject: DRS Withdrawal by Transfer Transaction Processing & DRS Centralized Billing and 
+Legacy Withdrawal by Transfer Scope 
+ 
+DRS Withdrawal by Transfer Transaction Processing  
+ 
+On November 12, 2025, through Important Notice B#23199-25, The Depository Trust Company (“DTC”) 
+announced the user roles and entitlements for DRS Withdrawal by Transfer on the Securities 
+Processing Application (“SPA”) system.  This change, which includes the automation of centralized 
+billing for Transfer Agent pass-through fees on the SPA system, is part of DTC’s multi-year, multi-phase 
+Securities Processing Transformation Program. 
+ 
+The transformation of the DRS system, pending regulatory approval, progresses through a phased 
+rollout of component functionalities at scheduled intervals. 
+ 
+DRS Profile Deposits, DRS Withdrawal by Transfer and DRS Centralized Billing will transition to the 
+SPA system on November 13, 2026.  
+ 
+DRS Centralized Billing 
+ 
+DRS Reject Centralized Billing is being expanded to include centralized billing for DRS Profile Deposits 
+and DRS Withdrawal by Transfer transactions and will become a mandatory service on the SPA 
+system.      
+ 
+Legacy Withdrawal by Transfer Scope 
+ 
+The following Withdrawal by Transfer activities will continue to be processed on PBS via the Auto Night 
+Withdrawal by Transfer function and the CF2WTC/WTM transaction input file. DMADEX and STSWTO 
+will continue with transaction output (see below for full descriptions of these files). 
+ 
+• Certificated Withdrawals (e.g.; DRS Eligible non-Participating certificate only issues) 
+• Withdrawals of certain DTC-eligible securities by foreign national investors (includes 
+communications, aviation and maritime issues). 
+ 
+ 
+ 
+ 
+ 
+
+DTCC Non-Confidential 
+ 
+DTCC Public (White) 
+Follow the link below for a full list of U.S. Securities with Restrictions on Foreign Ownership  
+https://www.dtcc.com/products-and-services/asset-services/securities-processing/securities-processing-
+application   
+Scroll to the PDF. 
+DTC-Securities-Subject-To-Ownership-Certifications.pdf 
+ 
+How it works 
+ 
+The DRS Eligible Indicator contained in each DTC eligible CUSIPs master record as set by DTC will be 
+used as the gatekeeper for Withdrawal by Transfer transactions to route and process through PBS and 
+SPA. 
+ 
+For automated transaction processing firms can find the DRS Eligible Indicator on the ELISC/ELISCD 
+Eligible Corporate Securities/Eligible Corporate Securities with Descriptions data file (Position 44, 
+Length 1, Format Character, Field Name, Field Description “N” = Non-Eligible for DRS, “Y” = DRS 
+Issue).  Firms may use the DRS Eligible Indicator to direct transactions to PBS or SPA as applicable.   
+ 
+All certificated issues (non-DRS Eligible securities) with the DRS Eligible Indicator set to “N” will be 
+rejected upfront when entered in SPA via the SPA portal or API/MQ connectivity.  The system will 
+return a message indicating “DRS eligible issue not participating” or “CUSIP is not DRS Eligible”.  
+These rejects will need to be resubmitted to PBS or the CCF file CF2WTC/WTM.  
+ 
+All DRS Eligible issues with the DRS Eligible Indicator set to “Y” will be rejected upfront when entered 
+in PBS via the Auto Withdrawal by Transfer function and the CCF file CF2WTC/WTM.  The system will 
+return a message indicating “DRS Issue Should be Entered via SPA Portal” or error code “H”, “Invalid 
+or Missing DRS Info” via file.  These rejects will need to be resubmitted to SPA. 
+ 
+Firms instructing Withdrawal by Transfer of U.S. Securities with Restrictions on Foreign Ownership (for 
+foreign national investors) are required to attest to citizenship and should direct these transactions to 
+PBS or the CF2WTC/WTM file.   
+ 
+ CCF File Descriptions 
+ 
+• Auto Withdrawal by Transfer input CF2WTC/WTM– allows Participants to create Withdrawal by 
+Transfer transactions through automation.  This file will continue to support physical certificated 
+Withdrawal by Transfer transactions for the foreseeable future (DRS Withdrawal by Transfer 
+transactions will move to SPA via the DRS Withdrawal by Transfer API or MQ).    
+ 
+• DMA/DMD Out Transfer DMADEX – allows Participants to receive updates on Withdrawal by 
+Transfer transactions through automation.  This file will continue to support physical certificated 
+Withdrawal by Transfer transactions for the foreseeable future (DRS Withdrawal by Transfer 
+transactions will move to SPA via the DRS Withdrawal by Transfer API or MQ).   
+ 
+• Out Transfer Detail Activity STSWTO – allows Participants to receive updates of Withdrawal by 
+Transfer transactions through automation.  This file will continue to support physical certificated 
+Withdrawal by Transfer transactions for the foreseeable future (DRS Withdrawal by Transfer 
+transactions will move to SPA via the DRS Withdrawal by Transfer API or MQ). 
+ 
+This change will be effective on November 13, 2026.  
+ 
+
+DTCC Non-Confidential 
+ 
+DTCC Public (White) 
+Please direct any questions you may have to your Relationship Manager. 
+ 

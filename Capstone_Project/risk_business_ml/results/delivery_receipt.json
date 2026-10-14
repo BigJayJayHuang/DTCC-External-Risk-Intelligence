@@ -1,0 +1,14 @@
+{
+  "completed_at_utc": "2026-10-05T19:08:43.996992+00:00",
+  "collection_date": "2026-10-05",
+  "objective": "Relationships between different risk types and business metrics",
+  "notebook_executed_fresh_kernel": true,
+  "code_cells": 13,
+  "notebook_png_outputs": 6,
+  "independent_numeric_validation": "passed",
+  "figure_visual_inspection": "All six saved figures inspected; title/legend and date-label overlaps repaired; saved notebook PNG inspected",
+  "html_export": "Exported successfully; 7 principal headings, 9 tables and 6 embedded figures checked structurally",
+  "html_full_page_visual_inspection": "Not completed: browser policy prevents opening local file URLs. No alternative browser workaround used.",
+  "scope": "FICC and ECS-related NSCC/DTC legal entities, not all ten business lines",
+  "not_a_causal_or_point_in_time_forecast": true
+}

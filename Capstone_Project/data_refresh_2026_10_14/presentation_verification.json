@@ -1,0 +1,11 @@
+{
+  "notebook_saved_outputs_checked": true,
+  "notebook_html_preview_inspected_in_browser": true,
+  "observations": [
+    "Title, Chinese text, summaries and table outputs displayed correctly.",
+    "Source freshness table and content status table inspected at normal browser width."
+  ],
+  "sqlite_integrity": "ok",
+  "source_business_mapping_rows": 478,
+  "models_retrained": false
+}

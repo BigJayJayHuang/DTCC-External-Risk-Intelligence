@@ -1,0 +1,19 @@
+{
+  "source_id": "dtcc_report_final_single_name_q2_2026_xlsx",
+  "source_name": "dtcc_report_final_single_name_q2_2026_xlsx",
+  "url": "https://files.dtcc.com/download/assets/Final-Single-Name-Q2-2026.xlsx/0db52cc6957b11f1ad9bc258faf12821",
+  "file": "raw/dtcc_report_final_single_name_q2_2026_xlsx_66e1412d5c3d.xlsx",
+  "collected_at_utc": "2026-10-14T19:23:13+00:00",
+  "public_only": true,
+  "business_lines": [
+    "RDS",
+    "Data Services"
+  ],
+  "kind": "public_business_report",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://files.dtcc.com/download/assets/Final-Single-Name-Q2-2026.xlsx/0db52cc6957b11f1ad9bc258faf12821",
+  "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "bytes": 69440,
+  "sha256": "617d9d51c9efecf7d6d83828d92aa2bc6d5f76687bd2c102b38c56643e09cd0a"
+}

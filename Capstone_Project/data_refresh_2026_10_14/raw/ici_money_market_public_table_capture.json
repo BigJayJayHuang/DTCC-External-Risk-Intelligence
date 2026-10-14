@@ -1,0 +1,119 @@
+{
+  "title": "Release: Money Market Fund Assets",
+  "url": "https://www.ici.org/research/stats/mmf",
+  "publication_date": "2026-10-08",
+  "units": "billions of USD",
+  "columns": [
+    "fund_category",
+    "investor_type",
+    "2026-10-07",
+    "2026-09-30",
+    "reported_change_billion_usd",
+    "2026-09-23"
+  ],
+  "rows": [
+    [
+      "Government",
+      "Total",
+      6560.8,
+      6499.65,
+      61.15,
+      6531.22
+    ],
+    [
+      "Government",
+      "Retail",
+      1985.59,
+      1979.11,
+      6.49,
+      1983.74
+    ],
+    [
+      "Government",
+      "Institutional",
+      4575.2,
+      4520.54,
+      54.66,
+      4547.48
+    ],
+    [
+      "Prime",
+      "Total",
+      1239.77,
+      1235.66,
+      4.11,
+      1251.42
+    ],
+    [
+      "Prime",
+      "Retail",
+      987.5,
+      985.73,
+      1.78,
+      989.43
+    ],
+    [
+      "Prime",
+      "Institutional",
+      252.26,
+      249.94,
+      2.33,
+      261.99
+    ],
+    [
+      "Tax-exempt",
+      "Total",
+      162.98,
+      155.96,
+      7.02,
+      154.08
+    ],
+    [
+      "Tax-exempt",
+      "Retail",
+      147.3,
+      141.56,
+      5.74,
+      139.7
+    ],
+    [
+      "Tax-exempt",
+      "Institutional",
+      15.68,
+      14.4,
+      1.28,
+      14.38
+    ],
+    [
+      "All",
+      "Total",
+      7963.55,
+      7891.27,
+      72.27,
+      7936.72
+    ],
+    [
+      "All",
+      "Retail",
+      3120.4,
+      3106.39,
+      14.01,
+      3112.86
+    ],
+    [
+      "All",
+      "Institutional",
+      4843.15,
+      4784.88,
+      58.27,
+      4823.86
+    ]
+  ],
+  "method": "Structured transcription of the public official table read through web.run; not an HTML download",
+  "source_table_lines": "Assets of Money Market Funds, displayed date columns 10/7/2026, 9/30/2026 and 9/23/2026",
+  "caveats": [
+    "Components and reported changes can differ by rounding.",
+    "Changes are a proxy for flows; these are industry assets, not WIS revenue or processed balances.",
+    "Earlier observations are the current revised vintage shown in this release."
+  ]
+}

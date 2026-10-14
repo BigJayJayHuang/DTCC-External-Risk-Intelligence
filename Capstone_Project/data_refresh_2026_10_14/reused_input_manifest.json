@@ -1,0 +1,68 @@
+[
+  {
+    "file": "risk_business_ml/raw/risk_series/SOFR.csv",
+    "sha256": "5eff98c61f8a45d4ac5442fe2460aa8b31ca747867bbd7d9df6b26bb7a27323f",
+    "use": "prior market history",
+    "portable_copy": "inputs/prior/5eff98c61f8a_SOFR.csv"
+  },
+  {
+    "file": "risk_business_ml/raw/risk_series/EFFR.csv",
+    "sha256": "9fb48fa1d22e4cade17b991301dc6d5a5d831f32846e8872060fcead4c87a5d2",
+    "use": "prior market history",
+    "portable_copy": "inputs/prior/9fb48fa1d22e_EFFR.csv"
+  },
+  {
+    "file": "risk_business_ml/raw/risk_series/DGS10.csv",
+    "sha256": "e3627e2b91d758806c96eab3bd928f26543e5b1ab3ab73f71ca1a0faf252a5ea",
+    "use": "prior market history",
+    "portable_copy": "inputs/prior/e3627e2b91d7_DGS10.csv"
+  },
+  {
+    "file": "risk_business_ml/raw/risk_series/DGS2.csv",
+    "sha256": "421b7b475e77f16217c8acf150ccceece5e8bb0599d4491b81c8edcf236529bc",
+    "use": "prior market history",
+    "portable_copy": "inputs/prior/421b7b475e77_DGS2.csv"
+  },
+  {
+    "file": "risk_business_ml/risk_category_expansion/raw/DGS3MO.csv",
+    "sha256": "21a50f676fbbabc5ec49ab68e203c848999a10fd3acfe580486f68ae5767c7be",
+    "use": "prior market history",
+    "portable_copy": "inputs/prior/21a50f676fbb_DGS3MO.csv"
+  },
+  {
+    "file": "risk_business_ml/event_vulnerability_tests_2026_10_06/raw/daily/BAA10Y.csv",
+    "sha256": "1429add3b508e3235ae8c47c6dc4f4e9d3575670482bc6f77bf0496b15a97a38",
+    "use": "prior market history",
+    "portable_copy": "inputs/prior/1429add3b508_BAA10Y.csv"
+  },
+  {
+    "file": "risk_business_ml/raw/risk_series/VIXCLS.csv",
+    "sha256": "a1a78418aa7d98a3da29caf36cf869f014e41de3ce54b646e525213ac5d7ade7",
+    "use": "prior market history",
+    "portable_copy": "inputs/prior/a1a78418aa7d_VIXCLS.csv"
+  },
+  {
+    "file": "risk_business_ml/raw/risk_series/NFCICREDIT.csv",
+    "sha256": "3b1bf0b74747d8dfef145833d567d58f94d76e060fdd9f1986e25f5c2db807bd",
+    "use": "prior market history",
+    "portable_copy": "inputs/prior/3b1bf0b74747_NFCICREDIT.csv"
+  },
+  {
+    "file": "risk_business_ml/risk_category_expansion/raw/USEPUINDXM.csv",
+    "sha256": "ea091f4c10eb64085ce7b7f85861c850258a8e2875a297fbd1142efcbab0c733",
+    "use": "prior market history",
+    "portable_copy": "inputs/prior/ea091f4c10eb_USEPUINDXM.csv"
+  },
+  {
+    "file": "risk_business_ml/risk_category_expansion/raw/JTU5200QUR.csv",
+    "sha256": "bcc1c126bd7057b1866d541fb0ea1538660e00b92070a3fd27f37584ac3c7c66",
+    "use": "prior market history",
+    "portable_copy": "inputs/prior/bcc1c126bd70_JTU5200QUR.csv"
+  },
+  {
+    "file": "public_news_prototype/output/news.sqlite3",
+    "sha256": "00d5dd68ce84bacb7bc976661e32622b90083ce9d4fc6eec87dc193146014b99",
+    "use": "read-only prior news seed",
+    "portable_copy": "inputs/prior/00d5dd68ce84_news.sqlite3"
+  }
+]

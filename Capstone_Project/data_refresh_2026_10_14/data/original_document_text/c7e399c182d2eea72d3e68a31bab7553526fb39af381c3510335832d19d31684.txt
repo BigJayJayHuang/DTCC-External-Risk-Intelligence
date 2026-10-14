@@ -1,0 +1,150 @@
+    
+DTCC offers enhanced access to all important notices via a Web-based subscription service. 
+The notification system leverages RSS Newsfeeds, providing significant benefits including 
+real-time updates and customizable delivery. To learn more and to set up your own DTCC RSS 
+alerts, visit http://www.dtcc.com/rss-feeds.aspx.    Non-Confidential 
+ 
+ 
+DTCC Public (White) DTCC Public (White) DTCC Public (White) DTCC Public (White) DTCC Public (White) DTCC Public (White) DTCC Public (White) DTCC Public (White) 
+A#: 9836 
+P&S #: 9409 
+Date: 10/09/2026 
+To: ALL PARTICIPANTS 
+Attention: 
+OPERATIONS PARTNER/OFFICER; MANAGER P&S DEPARTMENT; CASHIER; 
+ACATS PARTICIPANTS; FUND/SERV PARTICIPANTS; MUNICIPAL BOND 
+COMPARISON PARTICIPANTS 
+From: CLIENT ACCOUNT SERVICES 
+Subject: CHANGES IN THE LIST OF PARTICIPANTS   
+ 
+ 
+• The following firm will retire from all services, as detailed below: 
+Last Trade Date, October 19, 2026: 
+Alter Domus (US) LLC/Dwight Mortgage Trust LLC      No.    1RS2 
+ 
+ 
+In connection with the above account retirement, another member firm will now assume the same 
+number, as detailed below: 
+ 
+ 
+The following firm will begin participation in Alternative Investment Products services, as detailed 
+below: 
+First Trade Date, October 20, 2026 
+Gemini Fund Services, LLC/Dwight Mortgage Trust LLC     No.    1RS2 
+ 
+ 
+• The following firm will retire from all services, as detailed below: 
+Last Trade Date, October 30, 2026: 
+Vista Credit Strategic Lending Corp.        No.    19JZ 
+ 
+ 
+In connection with the above account retirement, another member firm will now assume the same 
+number, as detailed below: 
+ 
+ 
+The following firm will begin participation in Alternative Investment Products services, as detailed 
+below: 
+First Trade Date, November 02, 2026 
+Gemini Fund Services, LLC/ Vista Credit Strategic Lending Corp.    No.    19JZ 
+
+2 DTCC Public (White) DTCC Public (White) DTCC Public (White) DTCC Public (White) DTCC Public (White) DTCC Public (White) DTCC Public (White) DTCC Public (White) 
+• The following firms will retire from all services, as detailed below: 
+Last Trade Date, October 08, 2026: 
+Great Lakes Fund Solutions, Inc./Makaan Investments  No. 1CDE 
+ 
+ 
+Last Trade Date, October 09, 2026: 
+ UMB Fund Services, Inc./JLLX Stony Point, DST        No.    0N3G 
+      UMB Fund Services, Inc./JLLX The Preserve At The Meadows, DST              No.     0N3H 
+      UMB Fund Services, Inc./JLLX Rockwell Apartments, DST        No.    0N3X 
+UMB Fund Services, Inc./JLLX Diversified Vi DST No.    1G8Q  
+ 
+ 
+Last Trade Date, October 15, 2026: 
+Beacon Community Bank No.    0ULY 
+ 
+ 
+Last Trade Date, October 16, 2026: 
+Distribution Services, LLC/Wildermuth Funds No.    3328 
+      Foreside Fund Services, LLC/Sequoia Fund No.    3726 
+ 
+ 
+ 
+ 
+• The following firm will begin participating in the MF Info Xchange services, as detailed below:  
+First Trade Date, October 16, 2026: 
+Thornburg Securities LLC  No.     5541 
+ 
+ 
+ 
+• The following firm will begin participation in Fund/SERV, Networking, Omni/SERV Activity & 
+Position, MF Profile and ACATS Fund/SERV services, as detailed below: 
+First Trade Date, October 12, 2026: 
+Oasis Pro Markets LLC  No. 4438 
+Contact: Matt McDermott 
+Phone: (415) 298-9705 
+ 
+ 
+ 
+• The following firm will begin participation in Networking, DTCC Payment aXis, MF Profile and 
+Insurance Processing services, as detailed below: 
+First Trade Date, October 16, 2026: 
+Wealth Enhancement Brokerage Services, LLC  No. 1819 
+Contact: Lisa Clark 
+Phone: (763) 417-1446 
+ 
+ 
+ 
+ 
+
+3 DTCC Public (White) DTCC Public (White) DTCC Public (White) DTCC Public (White) DTCC Public (White) DTCC Public (White) DTCC Public (White) DTCC Public (White) 
+• The following firms will begin participating in Alternative Investment Products services, as detailed 
+below: 
+First Trade Date, October 07, 2026 
+US Bancorp Fund Services LLC/Angel Oak Heloc Opportunity Fund, LP  No. 1WGT 
+ 
+ 
+First Trade Date, October 08, 2026 
+Nav Consulting Inc/Seminal Technology Investments, L.L.C.    No. 1WMP 
+ 
+ 
+First Trade Date, October 09, 2026 
+Nav Consulting Inc/MHF Real Estate Income Fund LLC    No. 1WN9 
+Ares Industrial Real Estate Exchange LLC/Airex Portfolio 12 DST   No. 1WGA 
+ Gemini Fund Services, LLC/Sagard Private Income Fund       No. 1WNU 
+ Nav Consulting Inc./Infinium Investment Advisors, LLC                                               No.  1WNR             
+ 
+ 
+ First Trade Date, October 12, 2026 
+ Hawk Ridge Capital Management, L.P.       No. 1WNB  
+ Great Lakes Fund Solutions, LLC/Powerlink        No. 1WNX  
+ 
+ First Trade Date, October 13, 2026 
+      Fiduciary Trust Company                                No.  1WNS                       
+JSQ Administrative Services LLC/Origin Nona, DST                            No.      1WO4 
+ 
+ 
+ 
+ 
+• Updates to the NSCC MPID Directory for OTC, Corporates, Municipals, and UITs, as detailed 
+below: 
+                  If you have any questions regarding this notice, please E-mail NSCCAA@DTCC.com. 
+ 
+ 
+Clearing 
+Broker 
+Executing 
+Broker 
+Products 
+OTC/CMU 
+ Alpha Numeric Alpha OTC Corp Muni UIT 
+Delete Last Trade Date, October 07, 2026:        
+Coker & Palmer, Inc. RBCD 0235 COKE     
+        
+Add First Trade Date, October 08, 2026:        
+Gold Street Capital, LLC QNTX 0294 GSCR     
+        
+Add First Trade Date, October 09, 2026:        
+Maps Trading Systems (USA), LLC GCSO 0005 MAPS     
+Quoin Capital LLC SWST 0279 QUOI     
+        

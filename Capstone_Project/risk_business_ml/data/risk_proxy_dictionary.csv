@@ -1,0 +1,7 @@
+feature,名称,definition,units,source,taxonomy_related_scope,interpretation_limit
+vix_change_pct,市场波动变化,100 × (本季度 VIX 平均 / 上季度平均 − 1),%,VIXCLS,Clearing and Settlement Financial Risks / margin sensitivity proxy,波动环境代理，不能代替 FICC 组合 VaR 或保证金不足标签
+rate_change_pp,利率重新定价,本季度末 10 年期美债收益率 − 上季度末收益率,percentage points,DGS10,Clearing and Settlement Financial Risks / interest-rate exposure proxy,利率上升不必然导致业务表现下降，个体头寸未知
+credit_change_index,信用条件变化,本季度 NFCICREDIT 平均 − 上季度平均,index points,NFCICREDIT,Clearing and Settlement Financial Risks / credit conditions proxy,全国信用环境代理，不能视作某会员违约概率
+funding_basis_max_bps,资金市场压力代理,同一日期 SOFR − EFFR，以基点计算，取季度最大值,basis points,SOFR and EFFR,Clearing and Settlement Financial Risks / liquidity conditions proxy,市场融资利差代理，不能视作 FICC 自身流动性缺口
+fed_regulatory_announcements,监管公告活动,官方档案中 bcreg + enforcement 公告篇数,headlines per quarter,Federal Reserve press archives,Legal and Regulatory Compliance / external communication proxy,包含与 DTCC 无直接关系的公告，数量不是严重度、合规成本或已确认事件数
+fed_monetary_announcements,货币政策公告活动,官方档案中 monetary 公告篇数,headlines per quarter,Federal Reserve press archives,Strategic / external policy communication proxy,包含政策与设施公告，不能解释为加息次数或政策收紧强度

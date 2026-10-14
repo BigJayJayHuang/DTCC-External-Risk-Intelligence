@@ -1,0 +1,20 @@
+{
+  "source_id": "dtcc_tokenized_funds_reference",
+  "source_name": "dtcc_tokenized_funds_reference",
+  "url": "https://www.dtcc.com/press-releases/2026/DTCC-FundSERV-Adds-Ondo-Finance-as-First-Tokenization-Member",
+  "file": "raw/dtcc_tokenized_funds_reference_53eadbe03ebe.html",
+  "collected_at_utc": "2026-10-14T19:23:13+00:00",
+  "public_only": true,
+  "business_lines": [
+    "WIS",
+    "DAS",
+    "DDA"
+  ],
+  "kind": "background_article",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://www.dtcc.com/press-releases/2026/DTCC-FundSERV-Adds-Ondo-Finance-as-First-Tokenization-Member",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 321889,
+  "sha256": "329373e9a1a97db84ca687268774420f5f6a9636674671f77bc9d70a1115217a"
+}

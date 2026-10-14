@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Australia Public Data</title>
+
+  <link href="/PublicReports/css/dtcc_1010.css" rel="stylesheet"></link>
+  <link href="/PublicReports/css/RichTextEditor.css" rel="stylesheet"></link>
+  <link href="/PublicReports/css/jqueryui.css" rel="stylesheet"></link>
+  <!-- <link href="/PublicReports/css/libraries.min.css" rel="stylesheet"></link>
+  <link href="/PublicReports/css/components.min.css" rel="stylesheet"></link>
+  
+  
+  	<script src="/PublicReports/js/libraries.min.js"></script>
+	<script src="/PublicReports/js/components.min.js"></script> -->
+	
+	 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  	<!-- <script src="/PublicReports/js/dtcc_util.js"></script> -->
+  	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+ </head>
+ <body style="font-size:10px;font-family:Trebuchet MS,sans-serif;">
+<div id="panel_menu">
+		<div id="deriv_menu_title">
+			<h3>Derivative Type</h3>
+			<form>
+				<div class="ui-buttonset" id="radio_btn_set_deriv_type">
+    					<input name="radio" class="btn_deriv_type ui-helper-hidden-accessible" id="btn_otc" type="radio" checked="checked" value="otc">
+    					<label class="ui-state-active ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left ui-corner-right" role="button" aria-disabled="false" for="btn_otc" style="color:#00b6ce;">
+    					<span class="ui-button-text">Over The Counter</span></label>
+				</div>
+			</form>
+			<form>
+				<div class="ui-buttonset" id="radio_btn_set_sub_type">
+					<input name="radio"
+						class="btn_sub_type ui-helper-hidden-accessible" id="btn_position"
+						type="radio" checked="checked" value="position"> <label
+						class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left"
+						role="button" aria-disabled="false" for="btn_position"> <span
+						class="ui-button-text">Position</span></label> <input name="radio"
+						class="btn_sub_type ui-helper-hidden-accessible"
+						id="btn_transaction" type="radio" value="transaction"> <label
+						class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right"
+						role="button" aria-disabled="false" for="btn_transaction">
+						<span class="ui-button-text">Transaction</span>
+					</label>
+
+				</div>
+			</form>
+		</div>
+		<div id="asset_type_menu_title">
+			<h3>Weekly ASIC Reports by Asset Class</h3>
+		</div>
+		<div class="accordion ui-accordion ui-widget ui-helper-reset" id="accordion_otc_outstanding_positions" role="tablist" style="display: none;">
+		</div>
+		<div class="accordion ui-accordion ui-widget ui-helper-reset" id="accordion_otc_outstanding_transactions" role="tablist" style="display: none;">
+		</div>
+			</div>
+			<div class="desc">
+        		<div style="font-size: 2em;"><b>DTCC Data Repository (Singapore) Pte Ltd</b></div>
+	        	<div style="font-size: 1.5em;">Global Trade Repository</div>
+        	</div>
+        <div id="panel_main">
+		<div id="panel_result"></div>
+	</div>
+	<div id="ajax_wait" style="display: none;"><img src="/PublicReports/images/ajax-loading.png"></div>
+
+	<div id="panel_main_report" style="display: none;">
+ 	 	<div id="panel_main_report_title"><h3>Choose a Report</h3></div>
+ 	 	
+        	<form id="form_report_date">
+        	<div id="change_report_date_div">
+                	<span>Change Report Date (YYYY-MM-DD):<input id="change_report_date" type="text"></span></div>
+                	<div id="change_report_year_div">
+                        	<span>Select Report Year (YYYY):
+                              		<!-- <select id="change_report_year" onchange="create_yearly_report($(this).val())"> -->
+                              		<select id="change_report_year">
+                              		<option selected="selected">2015-2016</option>
+                              		<!-- <option>2016-2017</option><option>2017-2018</option><option>2018-2019</option><option>2019-2020</option>  -->  
+	 						</select>
+                       		 </span>
+					</div>
+					<div id="panel_main_report_table"></div>
+                </form>
+	 </div>
+</body>
+<script>
+$(function(){
+		var dtcc_app ={};
+			init();
+	 	
+		var menuArray = {
+			 outstanding_positions : ["Open Positions","Credit","Equity","Interest Rate","Foreign Exchange","Commodity"],
+			 outstanding_transactions : ["New Transactions"]
+		 };
+		var reportLinkArray={
+					open_positions:["Table 1:All OTC Open Positions by Asset Class","Table 2:All OTC Open Positions by Asset Class and Cleared"],
+					new_transactions:["New weekly transactions by Asset Class","Cumulative count of new transactions for fiscal year by Asset Class"],
+					credit:["Table 3:Credit: All OTC Credit Positions by Currency of Denomination"],
+					equity:["Table 4:Equity: All OTC Equity Positions by Currency of Denomination"],
+					interest_rate:["Table 5:Interest rate: All OTC Interest Rate Positions by Currency of Denomination (excluding Cross Currency Swap)","Table 6:Interest Rate: All OTC Interest Rate Cross Currency Swaps by Currency of Denomination"],
+					foreign_exchange:["Table 7:All OTC FX positions by Currency of Denomination"],
+					commodity:["Table 8:All OTC Commodity Positions by Currency of Denomination"]
+					
+		};
+		addTablist("outstanding_transactions");
+		addTablist("outstanding_positions");
+		
+		/* function specificDates(date) {
+ 
+			var m = date.getMonth();
+ 			var d = date.getDate();
+ 			var y = date.getFullYear();
+ 
+ 				// First convert the date in to the mm-dd-yyyy format 
+ 				// Take note that we will increment the month count by 1 
+ 			var currentdate = (m + 1) + '-' + d + '-' + y ;
+ 
+  				// We will now check if the date belongs to disableddates array 
+ 			for (var i = 0; i < dtcc_app.availableReportDates.length; i++) {
+ 
+ 				// Now check if the current date is in disabled dates array. 
+ 			if ($.inArray(currentdate, dtcc_app.availableReportDates) != -1 ) {
+ 			return [false];
+ 				}
+ 			}
+		} */
+	// Report date changed from 2025-04-22 on words it will effective on Every friday
+		// starting from 25-Apr-2025 for all upcoming reports
+		$( "#change_report_date" ).datepicker({
+			dateFormat: 'yy-mm-dd',
+			changeYear: true,
+			maxDate: new Date(),
+			beforeShowDay: function(date){
+			const cutoffDay = new Date('2025-04-22');
+			let dayToEnable = cutoffDay > date ? 1 : 5;
+			if(date.getDay() == dayToEnable){
+                return [true];
+            }
+			else {
+                return [false];
+            }
+			}
+			
+		});
+			
+		
+		$( ".ui-accordion-header").click(function(){
+            dtcc_app.asset_type = $(this).attr("asset_type");
+             
+   	    });
+		$(".accordion").accordion({
+				collapsible: true,
+				active: false,
+				heightStyle: 'content'
+		});
+		
+		$(".btn_deriv_type").change(function(){
+			dtcc_app.deriv_type = $(this).attr("value");
+			update_accordion_menu(dtcc_app.deriv_type);
+
+		});
+		
+		$(".btn_sub_type").change(function(){
+			$('label[for="btn_position"]').removeClass("ui-state-active");
+			$('label[for="btn_transaction"]').removeClass("ui-state-active");
+			$('label[for="'+$(this).attr("id")+'"]').addClass("ui-state-active");
+				dtcc_app.sub_type = $(this).attr("value");
+				dtcc_app.asset_type = "outstanding_"+dtcc_app.sub_type+"s";
+				update_accordion_menu(dtcc_app.deriv_type);
+		});
+		
+		function init(){
+			$("#panel_main_report").hide();
+			$("#accordion_otc_outstanding_positions").show();
+			$('label[for="btn_position"]').addClass("ui-state-active");
+			dtcc_app.deriv_type = "otc";
+			dtcc_app.asset_type = "outstanding_positions";
+			dtcc_app.sub_type = "position";
+			dtcc_app.date_selected ="00000000";
+			dtcc_app.year_selected = "2015-2016";
+			dtcc_app.report_title = "choose a report";
+			dtcc_app.availableReportDates = ["20181029","20181022","20181015"];
+			
+			getLatestReportDate();
+			
+			//addreportYear();
+			dtcc_app.current_report_date = dtcc_app.availableReportDates[0];
+			addyears();
+			}
+			
+			 function getLatestReportDate(){
+			 	var today=new Date();
+			 	var day=today.getDay();
+																					
+				var diff=today.getDate()-day+(day >= 5 ? 5:-2);
+			 	var displayDate=new Date(today.setDate(diff));
+			
+			 		var dd=displayDate.getDate();
+			 		var mm=displayDate.getMonth()+1;
+			 		var yyyy=displayDate.getFullYear();
+			 		if(dd<10){
+			 	    	dd='0'+dd;
+			 		} 
+			 		if(mm<10){
+			 	    	mm='0'+mm;
+			 		} 
+			 	var fdisplayDate = yyyy+''+mm+''+dd;
+			 	dtcc_app.availableReportDates.unshift(fdisplayDate);
+			}
+			
+		
+		function addyears(){
+			var select = document.getElementById("change_report_year");
+			var myobject = select.options[0].value;//2015-2016
+			console.log("myobjec"+myobject);
+			var years=myobject.split("-");
+			var first=years[0];//2015
+			var last=years[1];//2016
+			var today=new Date();
+			var twoDigitMonth = today.getMonth()+1;if(twoDigitMonth.length==1){	twoDigitMonth="0" +twoDigitMonth;}
+			var twoDigitDate = today.getDate();if(twoDigitDate.length==1){	twoDigitDate="0" +twoDigitDate; }
+			var currentYear=today.getFullYear();
+			var newyr;
+			console.log("before myobject length"+select.length);
+			if(twoDigitMonth < '07' ){
+				currentYear=currentYear-1;//For testing currentYear='2018'
+				console.log("currentYear:"+currentYear);
+			} 
+			console.log("currentYear after :"+currentYear);
+			for(var i=last;i<=currentYear;i++){
+				var nextval=parseInt(i) + 1;
+				console.log("nextval:"+nextval);
+				newyr=i +'-'+nextval;
+				select.options[select.options.length] = new Option(newyr);
+			}
+			console.log("after myobject length"+select.length);
+				/* for(index in myobject) {
+				    select.options[select.options.length] = new Option(myobject[index], index);
+				} */
+		}
+		function update_accordion_menu(){
+			$("#panel_main_report").hide();
+			$("#accordion_otc_outstanding_positions").hide();
+			$("#accordion_otc_outstanding_transactions").hide();
+			$("#accordion_"+dtcc_app.deriv_type+ "_"+ dtcc_app.asset_type).accordion("option","active",false);
+			if(dtcc_app.sub_type=="transaction"){
+				$("#accordion_"+dtcc_app.deriv_type+ "_"+ dtcc_app.asset_type).accordion("option","collapsible",false);
+			}
+			$("#accordion_" + dtcc_app.deriv_type + "_"+ dtcc_app.asset_type).show();
+		};
+		
+		function reset_panel_main(){
+			$("#panel_main_report").hide();
+			}
+		$( ".btn_sub_type").change(function(){
+			dtcc_app.sub_type = $(this).attr("value");
+          });
+	function addreportYear(){
+		console.log("inside add reportYear");
+		var lastValue = $('#change_report_year option:last-child').val();
+		var years=lastValue.split("-");
+		var startYear=years[0];
+		var endYear=years[1];
+		var today=new Date();
+		var twoDigitMonth = today.getMonth()+1;if(twoDigitMonth.length==1){	twoDigitMonth="0" +twoDigitMonth;}
+		var twoDigitDate = today.getDate();if(twoDigitDate.length==1){	twoDigitDate="0" +twoDigitDate; }
+		var currentYear=today.getFullYear();
+		var nextYear=currentYear+1;
+		
+		console.log("twoDigitMonth::"+twoDigitMonth+"twoDigitDate::::"+twoDigitDate);
+		if(twoDigitMonth == "07" && twoDigitDate == "09" ){
+			var yearDiff=currentYear-startYear;
+			console.log("yearDiff::"+yearDiff);
+			//yearDiff=2
+			if (yearDiff > 0 ){
+				for(var i=1;i<=yearDiff;i++){
+					var firstvalue=currentYear+i;
+					var endvalue=currentYear+(i+1)
+					console.log(firstvalue+"-"+endvalue);
+					$('#change_report_year').append($('<option>',
+    				 	{
+        				value: firstvalue+"-"+endvalue
+        				    		}));
+					}
+				}
+			} 
+		}
+		
+		function addTablist(name){
+ 				dtcc_app.asset_type=name;
+ 				var changedValue;
+ 				if(name == "outstanding_positions"){
+ 					dtcc_app.sub_type="position";
+ 				}else{
+ 					dtcc_app.sub_type="transaction";
+ 				}
+				$.each(menuArray[name], function( index, value ) {
+					changedValue=(value.toLowerCase()).replace(" ","_");
+				$('#accordion_otc_'+name).append($("<h3/>").addClass("bold ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons")
+														.attr("id","accordian_header_otc_"+dtcc_app.asset_type+"_"+changedValue)
+														.attr("asset_type",changedValue)
+														.append($("<span/>").addClass("ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"))
+														.html(value));
+														
+				$('#accordion_otc_'+name).append($("<div/>").addClass("ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom")
+														.attr("id","ui-accordian-accordian-otc_"+dtcc_app.asset_type+"_"+changedValue)
+														.css("display","none")
+														);
+				addReportLink("ui-accordian-accordian-otc_"+dtcc_app.asset_type+"_"+changedValue,changedValue);
+				});
+			}
+		function addReportLink(divid,panelid){
+				var displayId;
+				var id=1;
+				 $.each(reportLinkArray[panelid], function( index, value ) {
+			  			if(dtcc_app.sub_type =="position"){
+			  				displayId=value.substring(6, value.indexOf(":"));
+						 }else if(dtcc_app.sub_type =="transaction"){
+							 displayId=id;
+				  				id++;
+						 }
+			  			
+		 	 			$("#"+divid).append($("<div/>").addClass("report_link_block")
+		 	 							  .css("padding","0.2cm")
+		 	 							  .css("text-align","left")
+		 	 							  .append($("<span/>").addClass("table_name"))
+		 	 							  .append($("<span/>").addClass("report_link").attr("report_title",value).attr("display_id",displayId).attr("report_name","table"+displayId).attr("report_download_name","Table "+displayId).html(value))
+		 	 							  );
+		 	 			$("#"+divid).append($("<hr/>"));
+		 			});
+			}
+			
+		function date2YYYYMMDD(date){
+			return date.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3');
+		}
+		function YYYYMMDD2date(date){
+			return date.replace(/-/g,'');
+		} 
+		 function getFileName(dispId){
+			 var fileName;
+		 	 var fileNameArray = {
+			 	1:"Pos",2:"Pos",3:"Credit_Pos",4:"Equity_Pos",5:"Interest_Rate_Pos",6:"Interest_Rate_Pos_Ccy_Swap",7:"FX_Pos",8:"Commodity_Pos"};
+			 	fileName=fileNameArray[dispId];
+			 	return fileName;
+		 }
+		 function getFile(dispId){
+		 	var name;
+		 	if(dtcc_app.sub_type == "position"){
+		 		name="Table_"+dispId+"_OTC_"+getFileName(dispId)+"_"+dtcc_app.current_report_date;
+		 	}else if((dtcc_app.sub_type=="transaction")&&(dtcc_app.report_name=="table1")){
+				 name="Trans_"+dtcc_app.current_report_date
+		 	}else if((dtcc_app.sub_type=="transaction")&&(dtcc_app.report_name=="table2")){
+		 		name="Trans_Cum_"+(dtcc_app.year_selected).replace(/-/g,"");
+		 	}
+		 	console.log("getFile ::"+name);
+		 return name;
+		 }
+		 function renameDownloadFile(dispId){
+			 console.log("inside renameDownloadfile");
+			 var name;
+			 if(dtcc_app.sub_type == "position"){
+			 		name="Table_"+dispId+"_OTC_"+getFileName(dispId)+"_"+dtcc_app.current_report_date;
+			 	}else if((dtcc_app.sub_type=="transaction")&&(dtcc_app.report_name=="table1")){
+					 name="Trans_"+dtcc_app.current_report_date
+			 	}else if((dtcc_app.sub_type=="transaction")&&(dtcc_app.report_name=="table2")){
+			 		name="Trans_Cum_"+(dtcc_app.year_selected).replace(/-/g,"_");
+			 	}
+			 return name;
+		 }
+		 
+		
+		 function setup_report(){
+			const selectedDate = document.getElementById("change_report_date").value;
+			
+			tmp_asset_type = dtcc_app.asset_type;
+			tmp_asset_type = "outstanding_"+dtcc_app.sub_type+"s";
+     		if(dtcc_app.sub_type == "position"){
+				dtcc_app.download_report_url="/PublicReports/reports/asic/"+"ASIC_Table_"+dtcc_app.display_id+"_OTC_"+ getFileName(dtcc_app.display_id)+"_"+dtcc_app.current_report_date + '.csv';
+               var report_title = "<h3>Table "+ dtcc_app.display_id + ": " + dtcc_app.report_title + "<br><br>Report Date (YYYY-MM-DD): " + date2YYYYMMDD(dtcc_app.current_report_date) + "</h3>";
+			}
+			else if((dtcc_app.sub_type=="transaction")&&(dtcc_app.report_name=="table2")){
+                		report_title = "<h3>" + dtcc_app.report_title + "<br><br>Report Year: " + dtcc_app.year_selected + "</h3>";
+                		dtcc_app.download_report_url="/PublicReports/reports/asic/"+"ASIC_Trans_Cum_"+(dtcc_app.year_selected).replace(/-/g,"") + '.csv';
+			}
+			else if((selectedDate == "2025-04-25") && (dtcc_app.sub_type=="transaction")&&(dtcc_app.report_name=="table1")){
+                		report_title = "<h3>" + dtcc_app.report_title + "<br><br>Report Date (YYYY-MM-DD): "  + "2025-04-22 to 2025-04-25 (4 days)" + "</h3>"
+						+ "<p style=font-size:13px;><b>Note:</b> Due to the adjustment in the weekly public reporting cut-off day - moving from EOD Monday to EOD Friday, the New Weekly Transactions for Report date: <b>2025-04-25</b> "
+							+ "will only capture transactions between the <b>2025-04-22</b> to <b>2025-04-25 (4 days)</b>. The weekly reporting will resume to 7 days from the <b>2025-05-02 report date onwards (transactions between 2025-04-26 to 2025-05-02).</b></p>";
+                		dtcc_app.download_report_url="/PublicReports/reports/asic/"+"ASIC_Trans_"+dtcc_app.current_report_date + '.csv';
+			}
+			else if((dtcc_app.sub_type=="transaction")&&(dtcc_app.report_name=="table1")){
+                		report_title = "<h3>" + dtcc_app.report_title + "<br><br>Report Date (YYYY-MM-DD): " + date2YYYYMMDD(dtcc_app.current_report_date) + "</h3>";
+                		dtcc_app.download_report_url="/PublicReports/reports/asic/"+"ASIC_Trans_"+dtcc_app.current_report_date + '.csv';
+			}
+                	$("#panel_main_report_title").html(report_title);
+		}
+		
+		function show_report(data){
+                        reset_panel_main();
+                        var report_html = generateHtmlTable(data);
+                        var download_link = csv_table = "<img width=\"17\" hspace=\"3\" height=\"16\" border=\"0\" src=\"/Presentation/Includes/images/icon_4.png\">"+
+										"<a style=\" color:#666666 \"  href=\"/PublicReports/reports/asic/"+"ASIC_"+getFile(dtcc_app.display_id)+".csv"+"\">Download Report</a>"; 
+		
+                        $("#panel_main_report_table").html(download_link + report_html);
+                        $("#panel_main_report").show();
+                        $("tr:odd").css("background-color","#EEEEEE");
+		            	$('#report_table tr td:first-child').css("background-color", "#CCCCCC");
+		            	 
+                }
+        $("#change_report_year").on('change',function(){
+             dtcc_app.year_selected = $(this).val(); 
+						setup_report();
+                        $.ajax({
+                                url: dtcc_app.download_report_url
+                                ,beforeSend: function() { $('#ajax_wait').show(); }
+                                ,complete: function() { $('#ajax_wait').hide(); }
+                                ,cache:false
+                                ,success: function(result){
+                                        if(0==result.length){
+                                                reset_panel_main();
+                                                var report_html="<h3><font color=\"#00b6c3\"> Report for the chosen date is currently not available.</font></h3>"
+                                                $("#panel_main_report_table").html(report_html) 
+                                                $("#panel_main_report").show()
+                                           }
+                                         else{
+                                                show_report(result);
+                                             }
+                                }
+                                ,error: function(){
+                                          reset_panel_main();
+                                          var report_html="<h3><font color=\"#00b6c3\"> Report for the chosen date is currently not available.</font></h3>"
+                                          $("#panel_main_report_table").html(report_html) 
+                                          $("#panel_main_report").show()
+                                      }
+                           }); 
+                });
+		
+		$(document).on('click', '.report_link', function(){
+				dtcc_app.report_name = $(this).attr("report_name");
+				dtcc_app.report_title = $(this).attr("report_title");
+				dtcc_app.display_id = $(this).attr("display_id");
+				if((dtcc_app.sub_type=="transaction")&&(dtcc_app.report_name=="table1"))
+				{
+                        $("#change_report_date_div").show();
+						$("#change_report_year_div").hide();
+                } else if((dtcc_app.sub_type=="transaction")&&(dtcc_app.report_name=="table2"))
+                {
+                        $("#change_report_date_div").hide();
+			            $("#change_report_year_div").show();
+                 }else{
+                      $("#change_report_date_div").show();
+					  $("#change_report_year_div").hide();
+                                }
+                                if(dtcc_app.date_selected == "00000000"){
+                                        dtcc_app.date_selected = dtcc_app.current_report_date;
+                                }
+                                dtcc_app.current_report_date=dtcc_app.date_selected;
+                                $('#change_report_date').val(date2YYYYMMDD(dtcc_app.date_selected));
+				reset_panel_main();
+				setup_report();
+				$.ajax({
+                        	    url: dtcc_app.download_report_url
+                               ,beforeSend: function() { $('#ajax_wait').show(); }
+                               ,complete: function() { $('#ajax_wait').hide(); }
+				   				,cache:false
+	                            ,success: function(result){
+                                                if(0==result.length){
+                                                        reset_panel_main();
+                                                        var report_html="<h3><font color=\"#00b6c3\"> Report for the chosen date is currently not available.</font></h3>"
+                                                        $("#panel_main_report_table").html(report_html) 
+                                                        $("#panel_main_report").show()
+                                                   }
+                                                 else{
+                                                        show_report(result);
+                                                     }
+                        	             }
+                                    ,error: function(){
+                                                reset_panel_main();
+                                                var report_html="<h3><font color=\"#00b6c3\"> Report for the chosen date is currently not available.</font></h3>"
+                                                $("#panel_main_report_table").html(report_html) 
+                                                $("#panel_main_report").show()
+                                            }
+                        	});
+		});
+		
+		 $('#change_report_date').change(function(){
+				dtcc_app.current_report_date = YYYYMMDD2date($(this).val());
+				dtcc_app.date_selected = dtcc_app.current_report_date;
+				reset_panel_main();
+				setup_report();
+                                $.ajax({
+                                        url: dtcc_app.download_report_url
+                                        ,beforeSend: function() { $('#ajax_wait').show(); }
+                                        ,complete: function() { $('#ajax_wait').hide(); }
+				        ,cache:false
+		                        ,success: function(result){
+                                                if(0==result.length){
+                                                        reset_panel_main();
+                                                        var report_html="<h3><font color=\"#00b6c3\"> Report for the chosen date is currently not available.</font></h3>"
+                                                        $("#panel_main_report_table").html(report_html) 
+                                                        $("#panel_main_report").show()
+                                                   }
+                                                 else{
+                                                        show_report(result);
+                                                     }
+                                     	}
+                                    ,error: function(){
+                                                reset_panel_main();
+                                                var report_html="<h3><font color=\"#00b6c3\"> Report for the chosen date is currently not available.</font></h3>"
+                                                $("#panel_main_report_table").html(report_html) 
+                                                $("#panel_main_report").show()
+                                            }
+                       		 });
+			});
+			
+			update_accordion_menu();
+			
+		function generateHtmlTable(data){
+				var cell_data=[];
+				data=data.replace(/,(?=,)/g, '," "');
+				var report_data=data.split(/\r?\n|\r/);
+				var table_data = '<table id="report_table" class="table table-condensed table-hover table-striped">';
+				for(var count = 0; count<report_data.length; count++)
+			    {
+					var cell_data = report_data[count].match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
+					/* cell_data = $.map(cell_data, function(value){
+						  return value.replace(/ /g, '');
+						}); */
+				     table_data += '<tr>';
+				     if(cell_data != null){
+				     for(var cell_count=0; cell_count<cell_data.length; cell_count++)
+				     {
+				     //console.log("cell_data[cell_count]:::"+cell_data[cell_count]);
+				    	 if(count === 0)
+				         {
+				          table_data += '<th nowrap colspan="1">'+cell_data[cell_count]+'</th>';
+				         }
+				         else
+				         {
+				          table_data += '<td nowrap>'+cell_data[cell_count].replace(/"/g, "")+'</td>';
+				  }
+				     }
+				     }
+				     table_data += '</tr>';
+			    }
+				table_data += '</table>';
+				return table_data;
+			}
+		
+		
+});
+</script>
+ </html>

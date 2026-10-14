@@ -1,0 +1,226 @@
+[
+  {
+    "file": "raw/google_workspace_incidents.json",
+    "url": "https://www.google.com/appsstatus/dashboard/incidents.json",
+    "fetched_at_utc": "2026-10-06T00:13:42.224247+00:00",
+    "http_status": 200,
+    "content_type": "application/json",
+    "status": "downloaded",
+    "bytes": 364707,
+    "sha256": "70ee88befef522e8e941c598dd815c29aef44c3529de15217bfd624314f5378d"
+  },
+  {
+    "file": "raw/google_cloud_incidents.json",
+    "url": "https://status.cloud.google.com/incidents.json",
+    "fetched_at_utc": "2026-10-06T00:13:42.224123+00:00",
+    "http_status": 200,
+    "content_type": "application/json",
+    "status": "downloaded",
+    "bytes": 171290,
+    "sha256": "201d34fc0af9af7732e96d14c63042afedd7da0e5ae41a512425a8a6a9bb4258"
+  },
+  {
+    "file": "raw/google_cloud_summary.html",
+    "url": "https://status.cloud.google.com/summary",
+    "fetched_at_utc": "2026-10-06T00:13:42.224387+00:00",
+    "http_status": 200,
+    "content_type": "text/html",
+    "status": "downloaded",
+    "bytes": 357034,
+    "sha256": "e75ef191e28d12e1e1fff060ac55ec5224e02399c9e5c8387cdc6d05a14f3aa8"
+  },
+  {
+    "file": "raw/cisa_kev.json",
+    "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+    "fetched_at_utc": "2026-10-06T00:13:42.223467+00:00",
+    "http_status": 200,
+    "content_type": "application/json",
+    "status": "downloaded",
+    "bytes": 1767828,
+    "sha256": "f51fed1c9213e7b797104fcd6dbeb1b0dc0c7073a80467b9d4b1fc25e7dd786b"
+  },
+  {
+    "file": "raw/fema_declarations_00000.json",
+    "url": "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?%24filter=declarationDate+ge+%272019-01-01T00%3A00%3A00.000Z%27+and+declarationDate+le+%272026-06-30T23%3A59%3A59.000Z%27&%24select=disasterNumber%2CdeclarationDate%2CincidentType%2Cstate%2CdeclarationType%2CincidentBeginDate&%24orderby=declarationDate&%24top=10000&%24skip=0",
+    "fetched_at_utc": "2026-10-06T00:13:42.870664+00:00",
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "status": "downloaded",
+    "bytes": 1798663,
+    "sha256": "9e733cb0bd13d80c7e0d6bd9624335191e83b4fe00b045833c3d71700c1f4cb7"
+  },
+  {
+    "file": "raw/federal_register_rules_001.json",
+    "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bpublication_date%5D%5Bgte%5D=2019-01-01&conditions%5Bpublication_date%5D%5Blte%5D=2026-06-30&conditions%5Btype%5D%5B%5D=RULE&conditions%5Bagencies%5D%5B%5D=securities-and-exchange-commission&conditions%5Bagencies%5D%5B%5D=commodity-futures-trading-commission&conditions%5Bagencies%5D%5B%5D=federal-reserve-system&per_page=1000&order=oldest",
+    "fetched_at_utc": "2026-10-06T00:13:45.927981+00:00",
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "status": "downloaded",
+    "bytes": 1002387,
+    "sha256": "4ab5dcaae58e5c57d45cfe3162116e66a12821ef9dd4fa8879a4b72d243b4fff"
+  },
+  {
+    "file": "raw/JTU5200QUR.csv",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=JTU5200QUR&cosd=2019-01-01&coed=2026-06-30",
+    "fetched_at_utc": "2026-10-06T00:13:42.614632+00:00",
+    "status": "unavailable",
+    "error": "Remote end closed connection without response"
+  },
+  {
+    "file": "raw/USEPUINDXM.csv",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=USEPUINDXM&cosd=2019-01-01&coed=2026-06-30",
+    "fetched_at_utc": "2026-10-06T00:13:42.649457+00:00",
+    "status": "unavailable",
+    "error": "The read operation timed out"
+  },
+  {
+    "file": "raw/DGS3MO.csv",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS3MO&cosd=2019-01-01&coed=2026-06-30",
+    "fetched_at_utc": "2026-10-06T00:13:42.869850+00:00",
+    "status": "unavailable",
+    "error": "The read operation timed out"
+  },
+  {
+    "file": "raw/fema_declarations_10000.json",
+    "url": "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?%24filter=declarationDate+ge+%272019-01-01T00%3A00%3A00.000Z%27+and+declarationDate+le+%272026-06-30T23%3A59%3A59.000Z%27&%24select=disasterNumber%2CdeclarationDate%2CincidentType%2Cstate%2CdeclarationType%2CincidentBeginDate&%24orderby=declarationDate&%24top=10000&%24skip=10000",
+    "fetched_at_utc": "2026-10-06T00:14:27.974935+00:00",
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "status": "downloaded",
+    "bytes": 1807026,
+    "sha256": "58ca5fcb67100d82df8bf660df437f456030864480163c8b73029e7f4f278af0"
+  },
+  {
+    "file": "raw/fema_declarations_20000.json",
+    "url": "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries?%24filter=declarationDate+ge+%272019-01-01T00%3A00%3A00.000Z%27+and+declarationDate+le+%272026-06-30T23%3A59%3A59.000Z%27&%24select=disasterNumber%2CdeclarationDate%2CincidentType%2Cstate%2CdeclarationType%2CincidentBeginDate&%24orderby=declarationDate&%24top=10000&%24skip=20000",
+    "fetched_at_utc": "2026-10-06T00:14:30.360018+00:00",
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "status": "downloaded",
+    "bytes": 121143,
+    "sha256": "a0cb3fc8585fde05d18eb0eb439b8149263080bed47b4704013789c412c661f1"
+  },
+  {
+    "file": "raw/google_workspace_summary.html",
+    "url": "https://www.google.com/appsstatus/dashboard/summary",
+    "fetched_at_utc": "2026-10-06T00:16:29.700182+00:00",
+    "status": "downloaded",
+    "bytes": 186219,
+    "sha256": "af64169ce97916b26e83d57d266579925c20dfe5049061924f9577c56fe7d41f"
+  },
+  {
+    "file": "raw/history_it_virtual_private_cloud_vpc.html",
+    "url": "https://status.cloud.google.com/products/BSGtCUnz6ZmyajsjgTKv/history",
+    "fetched_at_utc": "2026-10-06T00:16:30.155188+00:00",
+    "status": "downloaded",
+    "bytes": 52394,
+    "sha256": "ab7aa5cbeae1853570422f1768fa3900119a89d22f90eeecab51d19de6019f88"
+  },
+  {
+    "file": "raw/history_it_google_compute_engine.html",
+    "url": "https://status.cloud.google.com/products/L3ggmi3Jy4xJmgodFA9K/history",
+    "fetched_at_utc": "2026-10-06T00:16:30.154881+00:00",
+    "status": "downloaded",
+    "bytes": 127840,
+    "sha256": "b8dbd71140ab5fd8b184563526b16b750374a72459d62829228ed81f42c9a0b7"
+  },
+  {
+    "file": "raw/history_data_google_cloud_storage.html",
+    "url": "https://status.cloud.google.com/products/UwaYoXQ5bHYHG6EdiPB8/history",
+    "fetched_at_utc": "2026-10-06T00:16:30.782490+00:00",
+    "status": "downloaded",
+    "bytes": 53150,
+    "sha256": "fe7e19f76ea2ef4bb9c9582f756ec0ad2bcfef4066a70b1fcbb679461a3523df"
+  },
+  {
+    "file": "raw/history_it_google_cloud_networking.html",
+    "url": "https://status.cloud.google.com/products/VNJxzcH58QmTt5H6pnT6/history",
+    "fetched_at_utc": "2026-10-06T00:16:30.155092+00:00",
+    "status": "downloaded",
+    "bytes": 181952,
+    "sha256": "3fa008e525a5d3137fe274fc12f266b454f2f1ef2d76211db39c047998db4427"
+  },
+  {
+    "file": "raw/history_data_google_cloud_sql.html",
+    "url": "https://status.cloud.google.com/products/hV87iK5DcEXKgWU2kDri/history",
+    "fetched_at_utc": "2026-10-06T00:16:30.960510+00:00",
+    "status": "downloaded",
+    "bytes": 81146,
+    "sha256": "7dfe6ffad65cd652c5cbc2bdfc0c8d9bab44b2ca917aed9ca5ec9a70f5096a69"
+  },
+  {
+    "file": "raw/history_data_cloud_spanner.html",
+    "url": "https://status.cloud.google.com/products/EcNGGUgBtBLrtm4mWvqC/history",
+    "fetched_at_utc": "2026-10-06T00:16:31.371790+00:00",
+    "status": "downloaded",
+    "bytes": 48968,
+    "sha256": "fe96bf3af532a83d7218c78642cd98d564c0d1211728150a94d12098955f1ef9"
+  },
+  {
+    "file": "raw/history_data_google_bigquery.html",
+    "url": "https://status.cloud.google.com/products/9CcrhHUcFevXPSVaSxkf/history",
+    "fetched_at_utc": "2026-10-06T00:16:31.036555+00:00",
+    "status": "downloaded",
+    "bytes": 105048,
+    "sha256": "d10e09b8fe4edca4620219f8008a69334917858c5cb2d52df5bae2270d495a6e"
+  },
+  {
+    "file": "raw/history_third_party_gmail.html",
+    "url": "https://www.google.com/appsstatus/dashboard/products/prPt2Yra2CbGsbEm9cpC/history",
+    "fetched_at_utc": "2026-10-06T00:16:31.482897+00:00",
+    "status": "downloaded",
+    "bytes": 99387,
+    "sha256": "c998db9c7c0c783b322053ebd701ce1670b9bdf1a83c022472c8bc03ad45894a"
+  },
+  {
+    "file": "raw/history_third_party_google_drive.html",
+    "url": "https://www.google.com/appsstatus/dashboard/products/VHNA7p3Z5p3iakj5sA8V/history",
+    "fetched_at_utc": "2026-10-06T00:16:32.031550+00:00",
+    "status": "downloaded",
+    "bytes": 63667,
+    "sha256": "f76cd32cf5702170e7d2daa04d7b6dbe61a650c9d6f8eecd5ef886ce90516199"
+  },
+  {
+    "file": "raw/history_third_party_google_calendar.html",
+    "url": "https://www.google.com/appsstatus/dashboard/products/n5hVexuq1PM9onY9qrmo/history",
+    "fetched_at_utc": "2026-10-06T00:16:32.141416+00:00",
+    "status": "downloaded",
+    "bytes": 56224,
+    "sha256": "b73486f078b7993e9a8fd326b840a732c8dc7a7e6c823e25c0e5e7c9ab82983b"
+  },
+  {
+    "file": "raw/history_third_party_google_meet.html",
+    "url": "https://www.google.com/appsstatus/dashboard/products/sUH4BQXzYXma7NiS94Hi/history",
+    "fetched_at_utc": "2026-10-06T00:16:32.221849+00:00",
+    "status": "downloaded",
+    "bytes": 61172,
+    "sha256": "577d6420cde2dfc6369faef8ebafae8e4537f9ce2c4d526ee637726297ff1f03"
+  },
+  {
+    "file": "raw/JTU5200QUR.csv",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=JTU5200QUR&cosd=2019-01-01&coed=2026-06-30",
+    "status": "downloaded",
+    "method": "curl retry",
+    "bytes": 1378,
+    "sha256": "bcc1c126bd7057b1866d541fb0ea1538660e00b92070a3fd27f37584ac3c7c66",
+    "fetched_at_utc": "2026-10-06T00:16:34.283368+00:00"
+  },
+  {
+    "file": "raw/USEPUINDXM.csv",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=USEPUINDXM&cosd=2019-01-01&coed=2026-06-30",
+    "status": "downloaded",
+    "method": "curl retry",
+    "bytes": 1913,
+    "sha256": "ea091f4c10eb64085ce7b7f85861c850258a8e2875a297fbd1142efcbab0c733",
+    "fetched_at_utc": "2026-10-06T00:16:34.283580+00:00"
+  },
+  {
+    "file": "raw/DGS3MO.csv",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS3MO&cosd=2019-01-01&coed=2026-06-30",
+    "status": "downloaded",
+    "method": "curl retry",
+    "bytes": 30980,
+    "sha256": "21a50f676fbbabc5ec49ab68e203c848999a10fd3acfe580486f68ae5767c7be",
+    "fetched_at_utc": "2026-10-06T00:16:34.283697+00:00"
+  }
+]

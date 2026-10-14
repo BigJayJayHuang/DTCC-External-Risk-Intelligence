@@ -1,0 +1,18 @@
+{
+  "source_id": "article_22a63a8f5d476b48",
+  "source_name": "dtcc_notice_feed original document",
+  "url": "https://files.dtcc.com/download/assets/GOV2251-26/48c4775cc74111f19ed9d27e710e4d14",
+  "file": "raw/article_22a63a8f5d476b48_22a63a8f5d47.pdf",
+  "collected_at_utc": "2026-10-14T19:29:14+00:00",
+  "public_only": true,
+  "business_lines": [
+    "FICC"
+  ],
+  "kind": "article",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://files.dtcc.com/download/assets/GOV2251-26/48c4775cc74111f19ed9d27e710e4d14",
+  "content_type": "application/pdf",
+  "bytes": 533330,
+  "sha256": "961cfd7c193b016f07982d432fe6dcf26480b7df5f4d5fc6c2557c4046548d39"
+}

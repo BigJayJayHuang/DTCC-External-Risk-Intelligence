@@ -1,0 +1,1330 @@
+{
+  "collected_date": "2026-10-05",
+  "financial_catalog": [
+    {
+      "title": "DTCC Financial Statements Q2 2026",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC+Consolidated+Q2+2026+Financial+Statements/ad9278e4957a11f197c9fe5809e33e04",
+      "listed_date": "Aug 6, 2026",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Financial Statements Q2 2026",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC+Q2+2026+Financial+Statements/1143c522957c11f1ac53c258faf12821",
+      "listed_date": "Jul 30, 2026",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Financial Statements Q2 2026",
+      "download_url": "https://files.dtcc.com/download/assets/DTC+Q2+2026+Financial+Statements/a509d01e957a11f1bfa08a63c041fd82",
+      "listed_date": "Jul 30, 2026",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Financial Statements Q2 2026",
+      "download_url": "https://files.dtcc.com/download/assets/FICC+Q2+2026+Financial+Statements/f63281b6957a11f1bc7b8a63c041fd82",
+      "listed_date": "Jul 30, 2026",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Financial Statements Q1 2026",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Q1-2026-Financial-Statements.pdf/32dcfa9c8c1b11f1a2228246cb06f1a9",
+      "listed_date": "May 12, 2026",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Financial Statements Q1 2026",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Q1-2026-Financial-Statements.pdf/32e6ce008c1b11f1adced2e68063bdff",
+      "listed_date": "Apr 30, 2026",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Financial Statements Q1 2026",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Q1-2026-Financial-Statements.pdf/32bd4e908c1b11f1b385da7b8d447cd5",
+      "listed_date": "Apr 30, 2026",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Financial Statements Q1 2026",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Q1-2026-Financial-Statements/ad89ee5e957a11f1a15a4ec37e043074",
+      "listed_date": "Apr 30, 2026",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Annual Financial Statements 2025 and 2024",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Annual-Financial-Statement-2025/c077a934957a11f19784c258faf12821",
+      "listed_date": "Mar 19, 2026",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Annual Financial Statements 2025 and 2024",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Annual-2025/adbc48e0957a11f1bc7b8a63c041fd82",
+      "listed_date": "Feb 27, 2026",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Financial Statements Q4 2025",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q4-2025/06523f78957b11f197c9fe5809e33e04",
+      "listed_date": "Feb 27, 2026",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Annual Financial Statements 2025 and 2024",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Annual-2025/068fecf6957b11f190ec6a7a18072738",
+      "listed_date": "Feb 27, 2026",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Financial Statements Q3 2025",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Financial-Statements-Q3-2025/c03a38b2cea911f08977de3dd66d09b0",
+      "listed_date": "Nov 7, 2025",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Financial Statements Q3 2025",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q3-2025/5f566e6ccea911f08977de3dd66d09b0",
+      "listed_date": "Oct 30, 2025",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Financial Statements Q3 2025",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q3-2025/94f118c2ceab11f08725824dba2f033c",
+      "listed_date": "Oct 30, 2025",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Financial Statements Q3 2025",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q3-2025/08ca0feeceaf11f0b26932bd0f351ae2",
+      "listed_date": "Oct 30, 2025",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Financial Statements Q2 2025",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Financial-Statements-Q2-2025/bdb1de10cea911f086f70aec4933d5f6",
+      "listed_date": "Aug 6, 2025",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Financial Statements Q2 2025",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q2-2025/5cef1318cea911f0931632bd0f351ae2",
+      "listed_date": "Jul 31, 2025",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Financial Statements Q2 2025",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q2-2025/0633b73aceaf11f0a4824e47afc2fc16",
+      "listed_date": "Jul 31, 2025",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Financial Statements Q2 2025",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q2-2025/9234eadcceab11f09c9062cd3fe05a01",
+      "listed_date": "Jul 31, 2025",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Financial Statements Q2 2025",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Financial-Statements-Q2-2023/22c43d92369911f08aca526112f6cc5f",
+      "listed_date": "Jul 31, 2025",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Financial Statements Q1 2025",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Financial+Statements-Q1-2025/bb172872cea911f0815f62cd3fe05a01",
+      "listed_date": "May 2, 2025",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Financial Statements Q1 2025",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q1-2025/5a34a714cea911f0bc13de3dd66d09b0",
+      "listed_date": "Apr 30, 2025",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Financial Statements Q1 2025",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q1-2025/8fbd271aceab11f086f70aec4933d5f6",
+      "listed_date": "Apr 30, 2025",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Financial Statements Q1 2025",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q1-2025/03d27378ceaf11f086ef824dba2f033c",
+      "listed_date": "Apr 30, 2025",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Annual Financial Statements 2024 and 2023",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC+-Annual-2024-Financial-Statements/92ef7c8e369011f0bcd7820bd5ac0897",
+      "listed_date": "Mar 25, 2025",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Annual Financial Statements 2024 and 2023",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Annual-2024/0291821c369611f09182820bd5ac0897",
+      "listed_date": "Feb 28, 2025",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Annual Financial Statements 2024 and 2023",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Annual-2024/587c4090369611f09d3a92d5ae67c534",
+      "listed_date": "Feb 28, 2025",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Financial Statements Q4 2024",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q4-2024/0fa61604369411f0b606526112f6cc5f",
+      "listed_date": "Feb 28, 2025",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Annual Financial Statements 2024 and 2023",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Annual-2024/a256a1ce369b11f0b16f526112f6cc5f",
+      "listed_date": "Feb 28, 2025",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Financial Statements Q3 2024",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Financial-Statements-Q3-2024/1ae49a2c369911f096905e09fb65ecc7",
+      "listed_date": "Nov 8, 2024",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Financial Statements Q3 2024",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q3-2024/ce0f3652368f11f08a181282bb7fa251",
+      "listed_date": "Oct 29, 2024",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Financial Statements Q3 2024",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q3-2024/1cbf9ed2369911f0bf68c204a2f8334f",
+      "listed_date": "Oct 29, 2024",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Financial Statements Q3 2024",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q3-2024/d1c9020a368f11f096905e09fb65ecc7",
+      "listed_date": "Oct 29, 2024",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Financial Statements Q2 2024",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Q2-2024-Financial-Statements/188f1202369911f0aeb3820bd5ac0897",
+      "listed_date": "Aug 5, 2024",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Financial Statements Q2 2024",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q2-2024/ff4f2178369911f09182820bd5ac0897",
+      "listed_date": "Jul 26, 2024",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Financial Statements Q2 2024",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q2-2024/0502cb8c369611f0bcd7820bd5ac0897",
+      "listed_date": "Jul 26, 2024",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Financial Statements Q2 2024",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q2-2024/5c2938b0369611f09a845e09fb65ecc7",
+      "listed_date": "Jul 26, 2024",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Financial Statements Q1 2024",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Q1-2024-Financial-Statements/c7056b50369511f0b7631282bb7fa251",
+      "listed_date": "May 2, 2024",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Financial Statements Q1 2024",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q1-2024/fd02c32e369511f09d3a92d5ae67c534",
+      "listed_date": "Apr 26, 2024",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Financial Statements Q1 2024",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q1-2024/e1d3e7d0369111f09e5592d5ae67c534",
+      "listed_date": "Apr 26, 2024",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Financial Statements Q1 2024",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q1-2024/e5260f06369811f09a6b820bd5ac0897",
+      "listed_date": "Apr 26, 2024",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Annual Financial Statements 2023 and 2022",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Annual-Financial-Statements-2023-and-2022/fcf9b15c369111f091ee1282bb7fa251",
+      "listed_date": "Mar 26, 2024",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Annual Financial Statements 2023 and 2022",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Annual-Financial-Statements-2023-and-2022/03258a98369611f096905e09fb65ecc7",
+      "listed_date": "Mar 1, 2024",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Annual Financial Statements 2023 and 2022",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Annual-Financial-Statements-2023-and-2022/fc0e83dc369911f09182820bd5ac0897",
+      "listed_date": "Mar 1, 2024",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Annual Financial Statements 2023 and 2022",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Annual-Financial-Statements-2023-and-2022/6c3442c6369211f09a845e09fb65ecc7",
+      "listed_date": "Mar 1, 2024",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Financial Statements Q3 2023",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Consolidated-Q3-2023-Financial-Statements/a8378644369b11f0b84192d5ae67c534",
+      "listed_date": "Nov 3, 2023",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Financial Statements Q3 2023",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q3-2023/c5c65f60369511f0b16f526112f6cc5f",
+      "listed_date": "Oct 31, 2023",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Financial Statements Q3 2023",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q3-2023/149c381e369411f09a845e09fb65ecc7",
+      "listed_date": "Oct 31, 2023",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Financial Statements Q3 2023",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q3-2023/cb35f79e369511f0a787c204a2f8334f",
+      "listed_date": "Oct 31, 2023",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Financial Statements Q2 2023",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Financial-Statements-Q2-2023/22c43d92369911f08aca526112f6cc5f",
+      "listed_date": "Aug 8, 2023",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Financial Statements Q2 2023",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q2-2023/11688ae6369211f0b16f526112f6cc5f",
+      "listed_date": "Jul 28, 2023",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Financial Statements Q2 2023",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q2-2023/0bb70d1e369411f096905e09fb65ecc7",
+      "listed_date": "Jul 28, 2023",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Financial Statements Q2 2023",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q2-2023/d60785f6369111f096905e09fb65ecc7",
+      "listed_date": "Jul 28, 2023",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Financial Statements Q1 2023",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Financial-Statements-Q1-2023/db693eba369411f0aeb8c204a2f8334f",
+      "listed_date": "May 5, 2023",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Financial Statements Q1 2023",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q1-2023/cb8f389a369511f0bf68c204a2f8334f",
+      "listed_date": "Apr 28, 2023",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Financial Statements Q1 2023",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q1-2023/2fef7516369611f09a845e09fb65ecc7",
+      "listed_date": "Apr 28, 2023",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Financial Statements Q1 2023",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q1-2023/19aac4d4369311f096cf526112f6cc5f",
+      "listed_date": "Apr 28, 2023",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Annual Financial Statements 2022 and 2021",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Annual-Financial-Statements-2022-and-2021/d75050d0369811f09a845e09fb65ecc7",
+      "listed_date": "Mar 27, 2023",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Annual Financial Statements 2022 and 2021",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Annual-Financial-Statements-2022-and-2021/19c29130369911f096905e09fb65ecc7",
+      "listed_date": "Feb 28, 2023",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Annual Financial Statements 2022 and 2021",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Annual-Financial-Statements-2022-and-2021/58a75c30369611f0a96e92d5ae67c534",
+      "listed_date": "Feb 28, 2023",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Annual Financial Statements 2022 and 2021",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Annual-Financial-Statements-2022-and-2021/c2a339fc369a11f0b16f526112f6cc5f",
+      "listed_date": "Feb 28, 2023",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Financial Statements Q3 2022",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Financial-Statements-Q3-2022/52852f34369211f0a787c204a2f8334f",
+      "listed_date": "Nov 7, 2022",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Financial Statements Q3 2022",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q3-2022/20e9a9da369911f0b84192d5ae67c534",
+      "listed_date": "Oct 31, 2022",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Financial Statements Q3 2022",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q3-2022/5bf6f2a6369611f0ad831282bb7fa251",
+      "listed_date": "Oct 31, 2022",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Financial Statements Q3 2022",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q3-2022/55c442ac369211f091ee1282bb7fa251",
+      "listed_date": "Oct 31, 2022",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Financial Statements Q2 2022",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Financial-Statements-Q2-2022/dcc980ce369111f0a21b5e09fb65ecc7",
+      "listed_date": "Aug 5, 2022",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Financial Statements Q2 2022",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q2-2022/d1b51732369311f0b606526112f6cc5f",
+      "listed_date": "Aug 1, 2022",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Financial Statements Q2 2022",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q2-2022/5f511026369611f091ee1282bb7fa251",
+      "listed_date": "Aug 1, 2022",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Financial Statements Q2 2022",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q2-2022/34dadf8e369611f09b43c204a2f8334f",
+      "listed_date": "Aug 1, 2022",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Financial Statements Q1 2022",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Financial-Statements-Q1-2022/7b94d280369211f08c3d5e09fb65ecc7",
+      "listed_date": "May 10, 2022",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Financial Statements Q1 2022",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q1-2022/c4eab9f0369111f0b7631282bb7fa251",
+      "listed_date": "May 2, 2022",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Financial Statements Q1 2022",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q1-2022/5b138cbe369611f0b7631282bb7fa251",
+      "listed_date": "May 2, 2022",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Financial Statements Q1 2022",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q1-2022/3aa39344369511f09182820bd5ac0897",
+      "listed_date": "May 2, 2022",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Annual Financial Statements 2021 and 2020",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Annual-Financial-Statements-2021/1ba83810369911f09d3a92d5ae67c534",
+      "listed_date": "Mar 29, 2022",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Annual Financial Statements 2021 and 2020",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Annual-Financial-Statements-2021-and-2020/ea4331be369111f0af855e09fb65ecc7",
+      "listed_date": "Mar 1, 2022",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Annual Financial Statements 2021 and 2020",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Annual-Financial-Statements-2021-and-2020/53e28dbe369611f09a6b820bd5ac0897",
+      "listed_date": "Mar 1, 2022",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Annual Financial Statements 2021 and 2020",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Annual-Financial-Statements-2021-and-2020/713a8d42369311f0bf68c204a2f8334f",
+      "listed_date": "Mar 1, 2022",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Financial Statements Q3 2021",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Financial-Statements-Q3-2021/db06eeae369411f0a79fc204a2f8334f",
+      "listed_date": "Nov 4, 2021",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Financial Statements Q3 2021",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q3-2021/200ba772369211f0ad831282bb7fa251",
+      "listed_date": "Oct 29, 2021",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Financial Statements Q3 2021",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q3-2021/37e40d86369611f0bcd7820bd5ac0897",
+      "listed_date": "Oct 29, 2021",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Financial Statements Q3 2021",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q3-2021/7b4e7d68369611f093d0c204a2f8334f",
+      "listed_date": "Oct 29, 2021",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Financial Statements Q2 2021",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Financial-Statements-Q2-2021/cd233256369511f096cf526112f6cc5f",
+      "listed_date": "Aug 5, 2021",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Financial Statements Q2 2021",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q2-2021/1e87a822369911f08aca526112f6cc5f",
+      "listed_date": "Jul 30, 2021",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Financial Statements Q2 2021",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q2-2021/54db61b4369611f096cf526112f6cc5f",
+      "listed_date": "Jul 30, 2021",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Financial Statements Q2 2021",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q2-2021/32f362a4369611f0a96e92d5ae67c534",
+      "listed_date": "Jul 30, 2021",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Financial Statements Q1 2021",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-Financial-Statements-Q1-2021/e65b0ef2369411f09b43c204a2f8334f",
+      "listed_date": "May 10, 2021",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Financial Statement Q1 2021",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-2021-and-2020/6ee8d22e369311f09d3a92d5ae67c534",
+      "listed_date": "Apr 30, 2021",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Financial Statement Q1 2021",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Annual-Financial-Statements-2021-and-2020-March-December/0a67412a369611f09b43c204a2f8334f",
+      "listed_date": "Apr 30, 2021",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Financial Statement Q1 2021",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-2021-and-2020/f05fd82c369111f0b0f15e09fb65ecc7",
+      "listed_date": "Apr 30, 2021",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTCC Financial Statements 2020 and 2019",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC+Annual+Financial+Statements+2020+and+2019/1a49e2ca369911f0a21b5e09fb65ecc7",
+      "listed_date": "Mar 29, 2021",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "DTC Financial Statements 2020 and 2019",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Annual-Financial-Statements-2020-and-2019/12b91b8e369411f08a181282bb7fa251",
+      "listed_date": "Mar 1, 2021",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Financial Statements Q4 2020",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q4-2020/59527746369611f0bcd7820bd5ac0897",
+      "listed_date": "Mar 1, 2021",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "NSCC Financial Statements 2020 and 2019",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Annual-Financial-Statements-2020-and-2019/3ba14682369611f0aeb3820bd5ac0897",
+      "listed_date": "Mar 1, 2021",
+      "format": "pdf",
+      "category": "financial_statements"
+    },
+    {
+      "title": "FICC Financial Statements 2020 and 2019",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Annual-Financial-Statements-2020-and-2019/c2a0b808369511f09a845e09fb65ecc7",
+      "listed_date": "Mar 1, 2021",
+      "format": "pdf",
+      "category": "financial_statements"
+    }
+  ],
+  "policy_catalog": [
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2026 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655",
+      "listed_date": "Sep 1, 2026",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2026 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Public-Quantitative+Disclosures-Q2-2026.pdf/b5a58e7ca85d11f1b801464272346ad0",
+      "listed_date": "Sep 1, 2026",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "FICC Disclosure Framework - 2026 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-DISCLOSURE-FRAMEWORK-2026-Q2.pdf/f553cbc6bc4211f1bfb23e299137fea6",
+      "listed_date": "Jun 30, 2026",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "NSCC Disclosure Framework - 2026 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-DISCLOSURE-FRAMEWORK-2026-Q2.pdf/f59dd3e2bc4211f18381e67d9bc8679c",
+      "listed_date": "Jun 30, 2026",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "DTC Disclosure Framework - 2026 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-DISCLOSURE-FRAMEWORK-2026-Q2.pdf/f72b1e04bc4211f193b7027f236bf70c",
+      "listed_date": "Jun 30, 2026",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2026 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-PQD-026Q1/cf4db142957a11f199296a7a18072738",
+      "listed_date": "May 28, 2026",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2026 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Public-Quantitative-Disclosures-Q1-2026.pdf/6ee26a948c1c11f19d00da7b8d447cd5",
+      "listed_date": "May 28, 2026",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2026 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-PQD-026Q1.xlsx/6f3986768c1c11f1897116f61497a0ac",
+      "listed_date": "May 28, 2026",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "FICC Disclosure Framework - 2026 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-DISCLOSURE-FRAMEWORK-2026-Q1/fe6be976957a11f199296a7a18072738",
+      "listed_date": "Mar 31, 2026",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "NSCC Disclosure Framework - 2026 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-DISCLOSURE-FRAMEWORK-2026-Q1/11adcecc957c11f1ab3f4ec37e043074",
+      "listed_date": "Mar 31, 2026",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "DTC Disclosure Framework - 2026 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-DISCLOSURE-FRAMEWORK-2026-Q1/a5502654957a11f1be576a7a18072738",
+      "listed_date": "Mar 31, 2026",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2025 Q4",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO+Public+Quantitative+Disclosures+-+Q4+2025/7ce632c6957a11f197c9fe5809e33e04",
+      "listed_date": "Mar 9, 2026",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2025 Q4",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO+Public+Quantitative+Disclosures+-+Q4+2025+excel/7c70ac18957a11f1ab3f4ec37e043074",
+      "listed_date": "Mar 9, 2026",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "DTC Disclosure Framework - 2025 Q4",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Disclosure-Framework-2025-Q4/a571801a957a11f1ad9bc258faf12821",
+      "listed_date": "Dec 31, 2025",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "NSCC Disclosure Framework - 2025 Q4",
+      "download_url": "https://files.dtcc.com/download/assets/nscc-disclosure-framework-2025-q4/11a80f14957c11f1bfa08a63c041fd82",
+      "listed_date": "Dec 31, 2025",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "FICC Disclosure Framework - 2025 Q4",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Disclosure-Framework-2025-Q4/feb10a6a957a11f1bbd2c258faf12821",
+      "listed_date": "Dec 31, 2025",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2025 Q3",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO+Public+Quantitative+Disclosures+-+Q3+2025/cf1d8cac957e11f1bc85a2e4b146feca",
+      "listed_date": "Nov 27, 2025",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2025 Q3",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC_PQD_2025Q3/e1223740957e11f190d7a2e4b146feca",
+      "listed_date": "Nov 27, 2025",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "DTC Disclosure Framework - 2025 Q3",
+      "download_url": "https://files.dtcc.com/download/assets/dtc-disclosure-framework-2025-q3/dde440a0957e11f1bc7b8a63c041fd82",
+      "listed_date": "Sep 30, 2025",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "FICC Disclosure Framework - 2025 Q3",
+      "download_url": "https://files.dtcc.com/download/assets/ficc-disclosure-framework-2025-q3/f8439a90957e11f1a8b54ec37e043074",
+      "listed_date": "Sep 30, 2025",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "NSCC Disclosure Framework - 2025 Q3",
+      "download_url": "https://files.dtcc.com/download/assets/nscc-disclosure-framework-2025-q3/80e93148957f11f1bb036a7a18072738",
+      "listed_date": "Sep 30, 2025",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2025 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-PQD-2025Q2/dbce3fb0cea911f0931632bd0f351ae2",
+      "listed_date": "Aug 28, 2025",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2025 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Public-Quantitative-Disclosures-Q2-2025/fb4f1f3ccea711f086f70aec4933d5f6",
+      "listed_date": "Aug 28, 2025",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2025 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Public-Quantitative-Disclosures-Q2-2024/f1327658369411f0b16f526112f6cc5f",
+      "listed_date": "Aug 28, 2025",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "NSCC Disclosure Framework - 2025 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Disclosure-Framework-2025-Q2/016fb4b0ceaf11f0815f62cd3fe05a01",
+      "listed_date": "Jun 30, 2025",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "FICC Disclosure Framework - 2025 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Disclosure-Framework-2025-Q2/8d36d766ceab11f08977de3dd66d09b0",
+      "listed_date": "Jun 30, 2025",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "DTC Disclosure Framework - 2025 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Disclosure-Framework-2025-Q2/551017f0cea911f08a5fde3dd66d09b0",
+      "listed_date": "Jun 30, 2025",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2025 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-PQD-2025Q1/d94aae4acea911f0896d32bd0f351ae2",
+      "listed_date": "May 27, 2025",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2025 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Public-Quantitative-Disclosures-Q1-2025/f886e46acea711f0815f62cd3fe05a01",
+      "listed_date": "May 27, 2025",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "NSCC Disclosure Framework - 2025 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-DISCLOSURE-FRAMEWORK-2025-Q1/fb2e35a4ceae11f0b57c0aec4933d5f6",
+      "listed_date": "Mar 31, 2025",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "FICC Disclosure Framework - 2025 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-DISCLOSURE-FRAMEWORK-2025-Q1/877ee2dcceab11f094090aec4933d5f6",
+      "listed_date": "Mar 31, 2025",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "DTC Disclosure Framework - 2025 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/DTC+DISCLOSURE+FRAMEWORK+-+2025+Q1/3757cf0acea911f08725824dba2f033c",
+      "listed_date": "Mar 31, 2025",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI-IOSCO Public Quantitative Disclosures - Q4 2024",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO+Public+Quantitative+Disclosures+-+Q4+2024/c7054cba369511f09a845e09fb65ecc7",
+      "listed_date": "Mar 10, 2025",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2024 Q3",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2024-Q3/fe012c7acea711f0a4824e47afc2fc16",
+      "listed_date": "Jan 15, 2025",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2024 Q3",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-xl-2024-Q3/a5a516aa369911f0bf68c204a2f8334f",
+      "listed_date": "Jan 15, 2025",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "DTCC UK Tax Strategy",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC+UK+Tax+Strategy+-+FY+2024/c4d96ade369511f096cf526112f6cc5f",
+      "listed_date": "Jan 9, 2025",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "DTC Disclosure Framework - 2024 Q3-Q4",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-DISCLOSURE-FRAMEWORK-2024-Q3-Q4/dc1186ca369811f0afcc820bd5ac0897",
+      "listed_date": "Dec 31, 2024",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "FICC Disclosure Framework - 2024 Q3-Q4",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-DISCLOSURE-FRAMEWORK-2024-Q3-Q4/d35768f6369311f0ad831282bb7fa251",
+      "listed_date": "Dec 31, 2024",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "NSCC Disclosure Framework - 2024 Q3-Q4",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-DISCLOSURE-FRAMEWORK-2024-Q3-Q4/fe834d1e369911f0ad831282bb7fa251",
+      "listed_date": "Dec 31, 2024",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "NSCC Quick Access Transparency Links",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Quick-Access-Transparency-Links/12f63980369211f09d3a92d5ae67c534",
+      "listed_date": "Nov 27, 2024",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "FICC Quick Access Transparency Links",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Quick-Access-Transparency-Links/de50fea6369411f0866b526112f6cc5f",
+      "listed_date": "Nov 27, 2024",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2024 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Public-Quantitative-Disclosures-Q2-2024/f1327658369411f0b16f526112f6cc5f",
+      "listed_date": "Aug 29, 2024",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2024 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-PQD-2024Q2/727ab8b8369211f09d3a92d5ae67c534",
+      "listed_date": "Aug 29, 2024",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "NSCC Disclosure Framework - 2024 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Disclosure-Framework-Q2-2024/2dfa74ea369611f09182820bd5ac0897",
+      "listed_date": "Jun 30, 2024",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "FICC Disclosure Framework - 2024 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Disclosure-Framework-Q2-2024/58f0c2d0369611f0b606526112f6cc5f",
+      "listed_date": "Jun 30, 2024",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "DTC Disclosure Framework - 2024 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Disclosure-Framework-2024-Q2/4308d9f2369211f09182820bd5ac0897",
+      "listed_date": "Jun 30, 2024",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2024 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-PQD-2024Q1/ef1ce6c6369111f086be1282bb7fa251",
+      "listed_date": "Jun 3, 2024",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2024 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Public-Quantitative-Disclosures-Q1-2024/f3cff6d8369411f0b7631282bb7fa251",
+      "listed_date": "Jun 3, 2024",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "NSCC Disclosure Framework - 2024 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Disclosure-Framework-Q1-2024/ea688612369111f0bf68c204a2f8334f",
+      "listed_date": "Mar 31, 2024",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "FICC Disclosure Framework - 2024 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Disclosure-Framework-Q1-2024/c7596e26369511f08aca526112f6cc5f",
+      "listed_date": "Mar 31, 2024",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "DTC Disclosure Framework - 2024 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Disclosure-Framework-2024-Q1/1a6d8cc0369911f096cf526112f6cc5f",
+      "listed_date": "Mar 31, 2024",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2023 Q4",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Public-Quantitative-Disclosures-Results-Q4-2023/ef6eb2b4369411f09a6b820bd5ac0897",
+      "listed_date": "Mar 5, 2024",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2023 Q4",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC_PQD_2023Q4/ded45e40369411f09d3a92d5ae67c534",
+      "listed_date": "Mar 5, 2024",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "FICC Disclosure Framework - 2023 Q4",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Disclosure-Framework-2023-Q4/5f67fd40369611f0aeb3820bd5ac0897",
+      "listed_date": "Dec 31, 2023",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "NSCC Disclosure Framework - 2023 Q4",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Disclosure-Framework-2023-Q4/321fc1d8369611f08aca526112f6cc5f",
+      "listed_date": "Dec 31, 2023",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "DTC Disclosure Framework - 2023 Q4",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Disclosure-Framework-2023-Q4/2884d71e369911f0a787c204a2f8334f",
+      "listed_date": "Dec 31, 2023",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2023 Q3",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-PQD-2023Q3/215a13e6369911f09d3a92d5ae67c534",
+      "listed_date": "Dec 1, 2023",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2023 Q3",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Public-Quantitative-Disclosures-Results-Q3-2023/b037d328369911f096cf526112f6cc5f",
+      "listed_date": "Dec 1, 2023",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "NSCC Disclosure Framework - 2023 Q3",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Disclosure-Framework-Q3-2023/354ca106369511f09a845e09fb65ecc7",
+      "listed_date": "Sep 30, 2023",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "DTC Disclosure Framework - 2023 Q3",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Disclosure-Framework-Q3-2023/f9defa28369511f0ad831282bb7fa251",
+      "listed_date": "Sep 30, 2023",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "FICC Disclosure Framework - 2023 Q3",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Disclosure-Framework-Q3-2023/048313e6369211f09a6b820bd5ac0897",
+      "listed_date": "Sep 30, 2023",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2023 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI_IOSCO_Quantitative_Disclosure_Results_2023_Q2-2/a72d7634369911f09a845e09fb65ecc7",
+      "listed_date": "Aug 30, 2023",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2023 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI_IOSCO_Quantitative_Disclosure_Results_2023_Q2-1/aa664902369911f09182820bd5ac0897",
+      "listed_date": "Aug 30, 2023",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "DTC Disclosure Framework - 2023 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Disclosure-Framework-2023-Q2/217354c8369911f096905e09fb65ecc7",
+      "listed_date": "Jun 30, 2023",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "NSCC Disclosure Framework - 2023 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Disclosure-Framework-2023-Q2/2f268278369611f09b43c204a2f8334f",
+      "listed_date": "Jun 30, 2023",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "FICC Disclosure Framework - 2023 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Disclosure-Framework-2023-Q2/5cf65b92369611f09a6b820bd5ac0897",
+      "listed_date": "Jun 30, 2023",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2023 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-PQD-2023-Q1/6c074810369311f09a845e09fb65ecc7",
+      "listed_date": "May 30, 2023",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2023 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2023-Q1/c2a1381e369511f09c8d92d5ae67c534",
+      "listed_date": "May 30, 2023",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "DTC Disclosure Framework - 2023 Q1 Marked",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Disclosure-Framework-2023-Q1-Marked/f4cd5750369511f09a6b820bd5ac0897",
+      "listed_date": "Mar 31, 2023",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "NSCC Disclosure Framework - 2023 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC_Disclosure_Framework/6df85436369111f09a845e09fb65ecc7",
+      "listed_date": "Mar 31, 2023",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "NSCC Disclosure Framework - 2023 Q1 Marked",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Disclosure-Framework-2023-Q1-Marked/05056664369411f0b16f526112f6cc5f",
+      "listed_date": "Mar 31, 2023",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "FICC Disclosure Framework - 2023 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/FICC_Disclosure_Framework/18bd690e369911f08aca526112f6cc5f",
+      "listed_date": "Mar 31, 2023",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "FICC Disclosure Framework - 2023 Q1 Marked",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Disclosure-Framework-2023-Q1-Marked/53994ac8369611f0aeb3820bd5ac0897",
+      "listed_date": "Mar 31, 2023",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "DTC Disclosure Framework - 2023 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/DTC_Disclosure_Framework/1542436e369211f0ba21820bd5ac0897",
+      "listed_date": "Mar 31, 2023",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2022 Q4",
+      "download_url": "https://files.dtcc.com/download/assets/DTCC-PQD-2022Q4/ca4a53ac369511f0a96e92d5ae67c534",
+      "listed_date": "Mar 2, 2023",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2022 Q4",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2022Q4/a7a7066e369b11f091ee1282bb7fa251",
+      "listed_date": "Mar 2, 2023",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "DTC Disclosure Framework 2022",
+      "download_url": "https://files.dtcc.com/download/assets/DTC-Disclosure-Framework-2022/0348cab2369611f0a79fc204a2f8334f",
+      "listed_date": "Dec 20, 2022",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "FICC Disclosure Framework 2022",
+      "download_url": "https://files.dtcc.com/download/assets/FICC-Disclosure-Framework-2022/545c48e8369611f0a7501282bb7fa251",
+      "listed_date": "Dec 20, 2022",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "NSCC Disclosure Framework - 2022",
+      "download_url": "https://files.dtcc.com/download/assets/NSCC-Disclosure-Framework-2022/cb8d84b4369a11f0aeb8c204a2f8334f",
+      "listed_date": "Dec 20, 2022",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2022 Q3",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2022Q3-1/f50e17a8369111f096905e09fb65ecc7",
+      "listed_date": "Nov 28, 2022",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2022 Q3",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2022-Q3-2/c73bba74369111f0a787c204a2f8334f",
+      "listed_date": "Nov 28, 2022",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2022 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2022Q2-2/d000c416369511f096905e09fb65ecc7",
+      "listed_date": "Sep 22, 2022",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2022 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2022Q2-1/ac5193ca369911f0a96e92d5ae67c534",
+      "listed_date": "Sep 22, 2022",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2022 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2022Q1-1/ee22e25e369411f0bcd7820bd5ac0897",
+      "listed_date": "Jun 6, 2022",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2022 Q1",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2022Q1-2/f64a283e369411f0b16f526112f6cc5f",
+      "listed_date": "Jun 6, 2022",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2021 Q4",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2021-Q4-PDF/ef638592369411f0af855e09fb65ecc7",
+      "listed_date": "Mar 17, 2022",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2021 Q4",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2021-Q4-Excel/a0ba456e369b11f0bcd7820bd5ac0897",
+      "listed_date": "Mar 17, 2022",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2021 Q3",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2021-Q3-Excel/c428f726369a11f0ad831282bb7fa251",
+      "listed_date": "Nov 30, 2021",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2021 Q3",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2021-Q3/ef9fa1ee369411f0b16f526112f6cc5f",
+      "listed_date": "Nov 30, 2021",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2021 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2021-Q2-2/aaaaf5c0369911f0b7631282bb7fa251",
+      "listed_date": "Sep 29, 2021",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI OSCO Quantitative Disclosure Results 2021 Q2",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2021-Q2-1/ec87a6e6369411f09a6b820bd5ac0897",
+      "listed_date": "Sep 29, 2021",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2021 Q1 1",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI_IOSCO_Quantitative_Disclosure_Results_2021_Q1_2/f7eec6a4369411f091ee1282bb7fa251",
+      "listed_date": "Jun 18, 2021",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2021 Q1 1",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI_IOSCO_Quantitative_Disclosure_Results_2021_Q1_1/71c470ac369311f093d0c204a2f8334f",
+      "listed_date": "Jun 18, 2021",
+      "format": "pdf",
+      "category": "public_quantitative_disclosure"
+    },
+    {
+      "title": "CPMI IOSCO Quantitative Disclosure Results 2020 Q4",
+      "download_url": "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2020-Q4-2/d28f0c96369111f09a845e09fb65ecc7",
+      "listed_date": "Mar 22, 2021",
+      "format": "xlsx",
+      "category": "public_quantitative_disclosure"
+    }
+  ]
+}

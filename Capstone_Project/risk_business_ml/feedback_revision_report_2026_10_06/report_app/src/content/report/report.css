@@ -1,0 +1,6 @@
+.response-review-report { --data-app-layout-intent: authored-report; --data-app-content-width: 1050px; padding:0 16px; box-sizing:border-box; min-width:0; }
+.response-review-report .report-language { display:flex;justify-content:flex-end;margin-bottom:20px; }
+.response-review-report > * + * { margin-top:26px; }
+.response-review-report .report-language + * { margin-top:0; }
+.response-review-report h1, .response-review-report h2 { line-height:1.35; }
+@media print { .response-review-report .report-language { display:none; } }

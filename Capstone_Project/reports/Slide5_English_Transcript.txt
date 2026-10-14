@@ -1,0 +1,7 @@
+My part focuses on collecting and preparing the data. We built a collector for five official news feeds and gathered daily market data from FRED. I standardized dates and units, removed duplicate records, and preserved sources and timestamps.
+
+We also assembled twenty-three quarters of DTCC public quantitative disclosures. For FICC, we analyze GSD and MBSD separately. For ECS, we keep NSCC clearing evidence separate from DTC settlement evidence. For DAS, official tokenization announcements and regulatory milestones are our next collection priority.
+
+Our early finding is that four of seven market indicators passed event screening, but quarterly tests have not yet validated their links to FICC outcomes. That means the data supports monitoring, while business impact still needs evidence.
+
+Next, we will address gaps in MOVE and mortgage-backed securities data and expand the sources for DAS.

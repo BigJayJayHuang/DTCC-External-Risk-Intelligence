@@ -1,0 +1,42 @@
+ESMA sets out supervisory expectations on services related to unauthorised stablecoins
+Digital Finance and Innovation
+08/10/2026
+The European Securities and Markets Authority (ESMA), the EU regulator and supervisor, has published an
+opinion
+clarifying supervisory expectations of crypto-asset services involving asset-referenced tokens (ARTs) and e-money tokens (EMTs) - also known as stablecoins- that do not comply with the requirements of the Markets in Crypto-Assets Regulation (MiCA).
+Crypto-asset service providers (CASPs) authorised under MiCA should cease providing services related to non-MiCA-compliant stablecoins to clients in the European Union.
+This applies to the full range of crypto-asset services covered by MiCA, including the operation of trading platforms, exchange services, execution of orders, placing of crypto-assets, reception and transmission of orders, investment advice, transfers, custody and administration, and portfolio management, whether these services are provided individually or in combination.
+The opinion calls on National Competent Authorities (NCAs) to supervise that market participants neither maintain, introduce, nor facilitate access for clients to non-MiCA-compliant stablecoins through their services. NCAs should also ensure that CASPs implement appropriate technical, contractual, and organisational controls to prevent the availability of such tokens in the European Union, including controls preventing clients from acquiring or increasing exposures to those tokens.
+Next steps
+When NCAs identify remaining pre-existing exposures, they should require their remediation as soon as possible and no later than three months after the publication of the opinion.
+Any continuation of services should be strictly limited to activities necessary for the liquidation, conversion, withdrawal, transfer or safekeeping of such assets, and should remain time-limited, risk-based, and closely supervised.
+Further information:
+Cristina Bonillo
+Olivares
+Senior Communications Officer
+press@esma.europa.eu
+Related Documents
+Download All Files
+Download Selected Files
+Date
+Reference
+Title
+Download
+Select
+08/10/2026
+ESMA75-113276571-1742
+Opinion on the provision of crypto asset services in relation to non-MiCA-compliant asset-referenced tokens and e-money tokens
+More on the same topic
+ESMA calls for changes to make MiCA clearer, safer and ready for emerging services
+30/09/2026
+The European Securities and Markets Authority (ESMA), the EU’s financial markets regulator and supervisor, has responded to the European Commission’s public consultation on the review of Markets in
+ESMA sets new supervisory priority on digital innovation from 2027
+23/09/2026
+The European Securities and Markets Authority (ESMA), the EU’s financial markets regulator and supervisor, will launch a new Union Strategic Supervisory Priority (U
+EBA, EIOPA and ESMA call for enhanced governance and consistent supervision to mitigate ICT risks from frontier AI models in the EU financial sector
+31/07/2026
+The European Supervisory Authorities (EBA, EIOPA and ESMA – the ESAs) today published a
+New Q&As available
+10/07/2026
+The European Securities and Markets Authority (ESMA), the EU's securities markets regulator, has published the following question and answer:
+More

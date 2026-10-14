@@ -1,0 +1,19 @@
+{
+  "source_id": "rds_uk_sftr_table4_20261009",
+  "source_name": "rds_uk_sftr_table4_20261009",
+  "url": "https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_4_SFT_H_RP_CORR_20261009.CSV",
+  "file": "raw/rds_uk_sftr_table4_20261009_1fe6e38c7e61.csv",
+  "collected_at_utc": "2026-10-14T19:23:13+00:00",
+  "public_only": true,
+  "business_lines": [
+    "FICC",
+    "RDS",
+    "Data Services"
+  ],
+  "kind": "repository_weekly",
+  "status": "failed",
+  "http_status": 404,
+  "final_url": "https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_4_SFT_H_RP_CORR_20261009.CSV",
+  "content_type": null,
+  "error": "curl: (22) The requested URL returned error: 404"
+}

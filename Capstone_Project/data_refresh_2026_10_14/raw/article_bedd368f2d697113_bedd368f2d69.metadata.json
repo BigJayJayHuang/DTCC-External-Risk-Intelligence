@@ -1,0 +1,18 @@
+{
+  "source_id": "article_bedd368f2d697113",
+  "source_name": "dtcc_notice_feed original document",
+  "url": "https://files.dtcc.com/download/assets/MBS1606-26/a9cb2f3ac66c11f1b93f3ecf2a325fcc",
+  "file": "raw/article_bedd368f2d697113_bedd368f2d69.pdf",
+  "collected_at_utc": "2026-10-14T19:29:15+00:00",
+  "public_only": true,
+  "business_lines": [
+    "FICC"
+  ],
+  "kind": "article",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://files.dtcc.com/download/assets/MBS1606-26/a9cb2f3ac66c11f1b93f3ecf2a325fcc",
+  "content_type": "application/pdf",
+  "bytes": 171483,
+  "sha256": "55838d62a48d597799126b25c46c6e1f1d0b2b48007db8ce991b5ef68b847336"
+}

@@ -1,0 +1,230 @@
+    <html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="/Presentation/Includes/css/jquery.kwicks.css" /><link href="/Presentation/Includes/css/sc-player-red.css" rel="stylesheet" /><link rel="stylesheet" media="print" href="/Presentation/Includes/css/print.css" /><link rel="stylesheet" type="text/css" href="/Presentation/Includes/css/FastFonts/ee57b89d-eea2-415d-b5e8-73b2e74ed476.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	 <!-- css from redesign project -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;display=swap" rel="stylesheet" /><link rel="stylesheet" type="text/css" href="/Presentation/Includes/css/vendors/slick/slick.css" /><link rel="stylesheet" type="text/css" href="/Presentation/Includes/css/vendors/slick/slick-theme.css" /><link href="/Presentation/Includes/css/main.min.css" rel="stylesheet" /><link href="/Presentation/Includes/css/selectric.css" rel="stylesheet" /><!--CL-DTCC2-7VWB02--><meta name="description" content="Download the data chart showing the value of U.S. Treasury securities that were not delivered to fulfill a trade contract. Visit our website for more details." />
+<meta name="google-site-verification" content="Z8sdusiGlgzf_0_KAZ36OsmaVdlnRghvZJErtz-S7_0" />
+	</head>
+	<body>
+	<div id="failsdata">
+    <h3>Daily Total US Treasury and Agency Fails</h3>
+    
+    <ul>
+    <li><a href="#qna">What do these charts show?</a></li>
+    <li><a href="#download">Can I download the data in these charts?</a></li>
+    </ul>
+    
+    <link rel="stylesheet" type="text/css" href="/data/dojo/1.16.5/dijit/themes/claro/claro.css" />
+    <link rel="stylesheet" type="text/css" href="/data/fifails/fifails.css" />
+    
+  
+    </head>
+    
+    <body>
+    <table style="width: 600px; border: 0; padding: 0; margin: 0; margin-left: auto; margin-right: auto;">
+    <tr>
+        <td style="vertical-align: bottom; width: 200px;">
+        <div>
+        <table style="border: 0; padding: 0; margin: 0; float: right;">
+        <tr>
+            <td><input type="button" class="fifailButton" id="fifailBtnPrev" disabled="disabled" value="<<" title="Shift back by a month" /></td>
+            <td><select class="fifailLabelCenterBold" id="fifailSelZoom" disabled="disabled" title="Select time period to display">
+                <option value="13" >Year</option>
+                <option value="6">6 Months</option>
+                <option value="3" selected="selected">3 Months</option>
+                <option value="1">1 Month</option></select></td>
+            <td><input type="button" class="fifailButton" id="fifailBtnNext" disabled="disabled" value=">>" title="Shift forward by a month" /></td>
+        </tr>
+        <tr>
+            <td style="height: 3px;"></td>
+        </tr>
+        </table>
+        </div>
+        </td>
+        <td style="width: 400px;">
+        <table style="border: 0; padding: 0; margin: 0; border-collapse: separate; border-spacing: 10px 0px; float: right;">
+        <tr>
+            <td colspan=7><span class="fifailLabelCenterBold" id="fifailLblDate">Fails Data:</span></td>
+        </tr>
+        <tr>
+            <td colspan=7><hr style="margin-top: 0px; margin-bottom: 0px;" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><span class="fifailLabelCenter">5 DAY</span></td>
+            <td colspan=3></td>
+            <td colspan=2><span class="fifailLabelCenter">52 WEEK</span></td>
+        </tr>
+        <tr>
+            <td><span class="fifailLabelCenter">TOTAL</span></td>
+            <td><span class="fifailLabelCenter">AVG</span></td>
+            <td><span class="fifailLabel">SECURITY</span></td>
+            <td><span class="fifailLabel">LATEST</span></td>
+            <td><span class="fifailLabel">1 WEEK</span></td>
+            <td><span class="fifailLabel">HIGH</span></td>
+            <td><span class="fifailLabel">LOW</span></td>
+        </tr>
+        <tr>
+            <td colspan=7><hr style="margin-top: 0px; margin-bottom: 0px;" /></td>
+        </tr>
+        <tr>
+            <td><span class="fifailLabelCenter"><input type="checkbox" id="fifailCheckAgency" disabled="disabled" title="Show daily total" /></span></td>
+            <td><span class="fifailLabelCenter"><input type="checkbox" id="fifailCheckAgencyAvg" disabled="disabled" title="Show 5-day moving average" /></span></td>
+            <td><span class="fifailLabelBold" style="color: #0096D6;" id="fifailLblAgency">AGENCY</span></td>
+            <td><span class="fifailLabel" id="fifailStatAgencyLatest"></span></td>
+            <td><span class="fifailLabel" id="fifailStatAgency1Wk"></span></td>
+            <td><span class="fifailLabel" id="fifailStatAgency52WkHi"></span></td>
+            <td><span class="fifailLabel" id="fifailStatAgency52WkLo"></span></td>
+        </tr>
+        <tr>
+            <td><span class="fifailLabelCenter"><input type="checkbox" id="fifailCheckTreasury" disabled="disabled" title="Show daily total" /></span></td>
+            <td><span class="fifailLabelCenter"><input type="checkbox" id="fifailCheckTreasuryAvg" disabled="disabled" title="Show 5-day moving average" /></span></td>
+            <td><span class="fifailLabelBold" style="color: #FD3C0F;" id="fifailLblTreasury">TREASURY</span></td>
+            <td><span class="fifailLabel" id="fifailStatTreasuryLatest"></span></td>
+            <td><span class="fifailLabel" id="fifailStatTreasury1Wk"></span></td>
+            <td><span class="fifailLabel" id="fifailStatTreasury52WkHi"></span></td>
+            <td><span class="fifailLabel" id="fifailStatTreasury52WkLo"></span></td>
+        </tr>
+        <tr>
+            <td colspan=7><hr style="margin-top: 0px; margin-bottom: 0px;" /></td>
+        </tr>
+        </table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan=2><div class="fifailChartTitle">Total Amount (in billions USD)</div>
+            <div class="fifailChartArea" id="fifailChartAmt"></div></td>
+    </tr>
+    </table>
+    
+    
+    <div id="download">
+    <p><strong>Can I download the data in these charts?</strong><br>Yes, the data in these charts, which display data going back one year from the most recent date, can be downloaded. To download the data, click <a id="failslink" href="/data/failsdata.csv">here</a></p>
+    </div>
+    <div id="qna">
+    <p><strong>What do these charts show?</strong><br>They show the value of U.S. Treasury securities that were not delivered to fulfill a trade contract.  "Failures-to-deliver" occur when either sellers fail to deliver or buyers fail to receive securities in time to settle a trade.  Settlement of a trade is the point at which the seller is required to deliver the securities agreed upon in the trade and the buyer has to deliver the funds to pay for the securities.</p>
+    <p><strong>Do the charts show the value of failed U.S. Treasury securities deliveries for more than just the previous day?</strong><br>Yes. You can chart rates for the previous day, week, month or the previous 12 months.</p>
+    <p><strong>What's the data source?</strong><br>DTCC's Fixed Income Clearing Corporation, which serves as the clearing house for markets that trade in U.S. government securities.</p>
+    <p><strong>Are there consequences for a failure to deliver?</strong><br>Yes.  Not only does the original trade fail, but the party that bought the securities may have already pledged them in a subsequent trade, and now that trade too will involve a failure-to-deliver, thus creating a cascading effect.</p>
+    <p><strong>Are there penalties for a fail?</strong><br>To encourage prompt delivery of securities, Fixed Income Clearing Corporation (FICC) follows the recommendation of the Treasury Market Practices Group, which is made up of executives from the securities industry.  Based on the group’s recommendation, FICC now collects interest at an annual rate of 3% on the settlement value of the trade (minus the Target Fed funds rate in effect the day before the settlement day).</p>
+    <p><strong>Can you give an example?</strong><br>Let’s assume that a firm fails on a $50 million position on which it is owed $50.1 million.  If the Target Fed funds rate the previous day was 1%, then the fails charge will be 2% per year and it will be applied to the $50.1 million total value of the trade.  This will result in a charge for the firm of $2,783.33 for that day.</p>
+    </div>
+    
+    </div>
+</div>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.7.1.min.js"></script>
+       
+        <script src="/Presentation/Includes/js/WaterMark.min.js"></script>
+
+        <script src="/Presentation/Includes/js/new-script.js"></script>
+       
+     
+        
+       <script src="/Presentation/Includes/js/jquery.kwicks.js"></script>
+        <script src="/Presentation/Includes/js/FlexSlider/jquery.flexslider.js"></script>
+        <script src="/Presentation/Includes/js/Vendor/soundcloud.player.api.js"></script>
+        <script src="/Presentation/Includes/js/Vendor/sc-player.js"></script>
+        <script src="/data/main.js"></script>
+
+        <!-- Scripts from redesign Project -->
+        <link href="/Presentation/Includes/css/FlexSlider/flexslider.css" rel="stylesheet" type="text/css" />
+       
+	<script type="text/javascript" src="/Presentation/Includes/js/all.min.js"></script>
+	
+	<script type="text/javascript">
+		// Configure Dojo BEFORE loading dojo.js
+		var dojoConfig = {
+			async: true, 
+			parseOnLoad: false, 
+			isDebug: false,
+			gfxRenderer: "svg,canvas,vml",
+			packages: [
+				{ name: "gcfindex", location: "/data/gcfindex" },
+				{ name: "fifails", location: "/data/fifails" },
+				{ name: "gcActivity", location: "/data/dojo/1.16.5/gcActivity" },
+				{ name: "spnsrActivity", location: "/data/dojo/1.16.5/spnsrActivity" }
+			]
+		};
+	</script>
+    <script src="/data/dojo/1.16.5/dojo/dojo.js"></script>	
+
+    <script type="text/javascript">
+		var date = new Date().getTime();
+		
+		document.getElementById('failslink').href = "/data/failsdata.csv?v=" + date;
+
+		document.write('<link rel="stylesheet" type="text/css" href="/data/spnsrActivity/SpnsrActivityStyles.css?v=' + date + '" />');
+				
+		if($("#sponsor-chart").length > 0) {
+			$.getScript('/data/dojo/1.16.5/spnsrActivity/SpnsrStart.js?v=' + date);
+		}
+
+		if($("#gc-chart").length > 0) {
+			$.getScript('/data/dojo/1.16.5/gcActivity/GcStart.js?v=' + date);
+		}
+		
+		if($("#gcfrepoindex").length > 0) {
+			dojoConfig = {
+				async: true, parseOnLoad: false, isDebug: false,
+				gfxRenderer: "svg,canvas,silverlight,vml",
+				packages: [{ name: "gcfindex", location: "/data/gcfindex" }]
+			};
+
+
+			require(["dojo/dom", "dojo/parser",	"dojo/ready", "dojo/domReady!", "gcfindex/GcfIndexInit"],
+			function(dom, parser, ready, domReady, GcfIndexInit){
+					 ready(function(){
+					   parser.parse();
+					   new GcfIndexInit("/data/gcfindex.csv?v=" + date).init();
+					});
+				});			
+		}
+		
+		if($("#failsdata").length > 0) {
+
+				dojoConfig = {
+					async: true, parseOnLoad: false, isDebug: false,
+					gfxRenderer: "svg,canvas,silverlight,vml",
+					packages: [{ name: "fifails", location: "/data/fifails" }]
+				};
+
+				require(["dojo/dom", "dojo/parser",	"dojo/ready", "dojo/domReady!", "fifails/FiFailsInit"],
+				function(dom, parser, ready, domReady, FiFailsInit){
+					ready(function(){
+						parser.parse();
+						new FiFailsInit("/data/failsdata.csv?v=" + date).init();
+					});
+				});
+
+		}
+		
+	</script>
+	
+<script>
+   function sendHeight() {
+     try {
+       const h = document.documentElement.scrollHeight || document.body.scrollHeight || 0;
+       const ref = document.referrer;
+       if (ref && ref.includes('dtcc.com')) {
+         const parentOrigin = new URL(ref).origin;
+         window.parent.postMessage({ type: 'CMS_HEIGHT', height: h}, parentOrigin);
+       }
+     } catch (e) {
+       console.warn('An error occurred while sending the height');
+     }
+   }
+   window.addEventListener('load', sendHeight);
+   window.addEventListener('resize', sendHeight);
+  window.addEventListener('hashchange', () => {
+const target = document.querySelector(location.hash);
+if (target) {
+target.scrollIntoView({
+behavior: 'smooth',
+block: 'start'});
+}
+});
+ </script>
+
+    
+</body>
+</html>

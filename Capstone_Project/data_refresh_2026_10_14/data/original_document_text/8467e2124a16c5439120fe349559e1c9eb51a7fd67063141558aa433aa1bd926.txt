@@ -1,0 +1,54 @@
+    
+DTCC offers enhanced access to all important notices via a Web -based subscription service. 
+The notification system leverages RSS Newsfeeds, providing significant benefits including  
+real-time updates and customizable delivery. To learn more and to set up your own DTCC RSS  
+alerts, visit http://www.dtcc.com/subscription_form.php.     
+     
+1 
+IMPORTANT NOTICE 
+National Securities Clearing Corporation 
+ 
+DTCC Public (White) 
+ 
+A #: 9835 
+P&S: 9408 
+Date: 10/09/2026 
+To: ALL MEMBERS AND LIMITED MEMBERS 
+Category: INSURANCE & RETIREMENT SOLUTIONS – SERVICE CHANGE 
+From: WEALTH INVESTMENT SOLUTIONS – INSURANCE & RETIREMENT SOLUTIONS 
+Attention: 
+MANAGER INSURANCE OPERATIONS,  
+MANAGER DATA PROCESSING, MANAGER CASHIERS, MANAGER P&S 
+DEPARTMENT 
+Subject: INSURANCE & RETIREMENT SOLUTIONS - DECOMMISSIONING SOAP-BASED 
+XML SERVICES 
+ 
+To provide clients with a more secure, resilient, and scalable integration model while simplifying 
+ongoing development and maintenance DTCC’s Insurance & Retirement Solutions (I&RS) plans to 
+decommission SOAP-Based XML services in 2027.  This is sooner than originally anticipated to 
+strengthen the security offered for these message types, reduce reliance on end-of-life technology and 
+advance our modernization efforts. 
+ 
+Clients using these SOAP-based XML services below should begin migrating to the corresponding 
+REST/JSON services and complete testing and implementation before Thursday, November 18, 
+2027.  
+ 
+• Attachments 
+• IFT Web Services: Withdrawals, Arrangements, Fund Transfers, Values Inquiry, Policy 
+Administration, Policy Inquiry, and Death Notification 
+ 
+Client action and service availability 
+REST/JSON alternatives are either available today or planned before decommissioning. Clients should 
+identify affected integrations, confirm replacement services, assess connectivity, security, and testing 
+impacts, assign accountable business and technology owners, and allow sufficient time for PSE testing 
+and production deployment. DTCC will communicate service-specific readiness and implementation 
+guidance as milestones are confirmed. 
+ 
+Operational impact: After November 18, 2027, the affected SOAP-based XML services will no longer 
+be available. Clients that have not completed migration may experience disruption to related business 
+processes. 
+ 
+Support: For implementation support, submit a case through MyDTCC or Contact Us and include the 
+affected service, anticipated timeline, and business and technical contacts. 
+ 
+Insurance & Retirement Solutions Product Management 

@@ -1,0 +1,206 @@
+[
+  {
+    "business_line": "FICC",
+    "full_name": "Fixed Income Clearing Corporation",
+    "name_zh": "固定收益清算",
+    "legal_scope": "GSD and MBSD separately",
+    "external_information": "国债和回购利率、利率日变动、信用利差、国债集中清算规则、会员加入退出、清算竞争者与服务变更",
+    "public_business_measures": "GSD/MBSD 保证金、超出初始保证金的压力损失、流动性支付义务与合格资源、会员集中度；公开成交量和财务披露",
+    "internal_vulnerability_needed": "分别按 GSD/MBSD 提取上一期资金覆盖、会员集中度、保证金缓冲；使用披露定义，不将超额压力损失当作总损失",
+    "business_data_gaps": "最新 PQD 仍为 2026Q2；公开季度数据不能给出本周内部脆弱度",
+    "preferred_sources": [
+      "fred_SOFR",
+      "fred_EFFR",
+      "fred_DGS10",
+      "fred_DGS2",
+      "fred_BAA10Y",
+      "dtcc_notice_feed",
+      "dtcc_policy",
+      "dtcc_financials",
+      "federal_register"
+    ],
+    "frequency": "daily external signals; quarterly internal disclosure"
+  },
+  {
+    "business_line": "ECS",
+    "full_name": "Equity Clearing & Settlement",
+    "name_zh": "股票清算与结算",
+    "legal_scope": "NSCC clearing and DTC settlement separately",
+    "external_information": "股市波动、股票和 ETF 活动、结算周期和交易时间变化、发行活动、结算及系统服务通知",
+    "public_business_measures": "NSCC 清算量、DTC 结算量、净额化效率、ETF 名单、NSCC PQD；公开 Equities by the Numbers 月度快照",
+    "internal_vulnerability_needed": "NSCC 资金覆盖与会员集中度；DTC 结算失败率、积压金额、处理时效和服务可用性需要不同指标",
+    "business_data_gaps": "NSCC 财务包含其他服务；DTC 财务包含 Asset Services 等；不能把法律实体收入作为纯 ECS 收入",
+    "preferred_sources": [
+      "fred_VIXCLS",
+      "fred_SP500",
+      "dtcc_notice_feed",
+      "dtcc_equity_trade_volume_insights_embedded",
+      "dtcc_etf_listing_csv",
+      "dtcc_policy",
+      "dtcc_financials"
+    ],
+    "frequency": "daily market signals; monthly operations snapshot; quarterly disclosures"
+  },
+  {
+    "business_line": "RDS",
+    "full_name": "Repository & Derivatives Services",
+    "name_zh": "交易报告与衍生品服务",
+    "legal_scope": "trade repositories by jurisdiction; TIW separately",
+    "external_information": "衍生品和证券融资活动、EMIR/SFTR/CFTC 报告规则、数据字段与格式修订、信用事件和生命周期变化",
+    "public_business_measures": "EU/UK EMIR 公开周度持仓、交易量和名义金额；UK SFTR 报告；TIW CDS 季度参考实体数据；GTR 消息规模与市场覆盖快照",
+    "internal_vulnerability_needed": "报告拒绝/更正率、及时提交率、数据字段错误率、系统可用性、司法辖区和客户集中度",
+    "business_data_gaps": "公开市场报告不等于 GTR 的全部服务消息量、内部报告质量或 RDS 收入；EU/UK 总数不能简单相加",
+    "preferred_sources": [
+      "dtcc_rds",
+      "rds_esma_table1_20261009",
+      "rds_esma_table2_20261009",
+      "rds_esma_table3_20261009",
+      "rds_fca_table1_20261009",
+      "rds_fca_table2_20261009",
+      "rds_fca_table3_20261009",
+      "rds_uk_sftr_table1_20261009",
+      "rds_uk_sftr_table2_20261009",
+      "esma_news",
+      "fca_rss",
+      "federal_register",
+      "dtcc_notice_feed"
+    ],
+    "frequency": "weekly public reports; event-driven regulatory news; periodic business snapshots"
+  },
+  {
+    "business_line": "WIS",
+    "full_name": "Wealth & Investment Solutions",
+    "name_zh": "财富与投资服务",
+    "legal_scope": "NSCC non-guaranteed fund, insurance and private-market services",
+    "external_information": "共同基金与货币基金资金流、保险和年金、私募信贷和私募市场、基金代币化与发行政策",
+    "public_business_measures": "公开基金规模/资金流行业代理；WIS 结算规模、分销商、私募基金和保险合约规模快照",
+    "internal_vulnerability_needed": "基金/保险/AIP 按产品的交易量、拒绝与手工处理率、现金或赎回处理积压、分销商集中度",
+    "business_data_gaps": "NSCC 的 CCP 保证金指标不能直接作为 WIS 脆弱度；WIS 独立收入、处理质量和客户集中度未公开取得",
+    "preferred_sources": [
+      "dtcc_wealth",
+      "ici_money_market_release",
+      "fred_RMFSL",
+      "fred_MMMFFAQ027S",
+      "dtcc_notice_feed",
+      "dtcc_tokenized_funds_reference"
+    ],
+    "frequency": "weekly industry assets; monthly/quarterly public proxies; periodic business snapshots"
+  },
+  {
+    "business_line": "ITP",
+    "full_name": "Institutional Trade Processing",
+    "name_zh": "机构交易处理",
+    "legal_scope": "DTCC ITP LLC; not a CCP",
+    "external_information": "各市场 T+1/T+0 过渡、交易时区与截止时间、交易量、SSI 标准、匹配和确认服务变化",
+    "public_business_measures": "CTM/TradeSuite ID 日均处理量、ALERT SSI 数量、覆盖市场数；月度交易确认和分配快照",
+    "internal_vulnerability_needed": "截止时间前确认率、同日匹配率、异常/手工处理率、处理延迟、SSI 错误率及外部连接集中度",
+    "business_data_gaps": "客户级 ITP Data Analytics 需要订阅/访问权限；当前不能取得完整每月异常率或业务利润",
+    "preferred_sources": [
+      "dtcc_itp",
+      "dtcc_equity_trade_volume_insights_embedded",
+      "dtcc_notice_feed",
+      "esma_news",
+      "fca_rss",
+      "fred_SP500"
+    ],
+    "frequency": "monthly public operations; event-driven settlement-rule changes"
+  },
+  {
+    "business_line": "Asset Services",
+    "full_name": "DTC Asset Services",
+    "name_zh": "资产服务",
+    "legal_scope": "DTC custody, corporate actions, underwriting and tax services",
+    "external_information": "证券新发行、IPO、股息和重组、公司行动日期、税收政策、托管和证券资格变化",
+    "public_business_measures": "DTC 承销月度发行笔数和金额，按市政/公司/股票/CD 分组；证券保管规模和证券品种数快照；税务/公司行动通知",
+    "internal_vulnerability_needed": "公司行动截止时间履约率、支付或税务差错率、未完成指令、托管对账差异、发行人/代理集中度",
+    "business_data_gaps": "承销活动代表业务流量；不能替代服务收入或操作损失；DTC 整体财务不可直接分配为 Asset Services 利润",
+    "preferred_sources": [
+      "dtcc_asset_services",
+      "dtcc_underwriting_xml",
+      "dtcc_notice_feed",
+      "dtc_framework_2026q2",
+      "fred_DGS10",
+      "fred_DTWEXBGS"
+    ],
+    "frequency": "monthly issuance history; daily/event-driven corporate-action notices"
+  },
+  {
+    "business_line": "DAS",
+    "full_name": "DTC Digital Asset Solutions",
+    "name_zh": "DTC 数字资产服务",
+    "legal_scope": "DTC tokenization service; distinct from DDA technology provider",
+    "external_information": "证券代币化、DTC 服务上线/扩展、链上和传统结算衔接、稳定币与监管许可、资产资格变化",
+    "public_business_measures": "官方服务和参与机构公告、公开规则/许可及 DTC 框架；公开链上市场价格仅作为外围环境代理",
+    "internal_vulnerability_needed": "代币化证券余额和笔数、链上/链下对账差异、转换/赎回/结算失败率、可用性和链集中度",
+    "business_data_gaps": "没有公开取得持续的 DAS 业务交易量、服务失败率或分部收入；BTC/ETH 价格不是 DTC 代币化证券风险指标",
+    "preferred_sources": [
+      "dtcc_digital",
+      "dtc_framework_2026q2",
+      "dtcc_notice_feed",
+      "federal_register",
+      "fred_CBBTCUSD",
+      "fred_CBETHUSD",
+      "cisa_kev"
+    ],
+    "frequency": "event-driven public service/regulation; daily contextual market data"
+  },
+  {
+    "business_line": "DDA",
+    "full_name": "DTCC Digital Assets",
+    "name_zh": "数字资产技术平台",
+    "legal_scope": "technology/platform provider; ex-Securrency",
+    "external_information": "ComposerX/平台功能、互操作性、网络/智能合约漏洞、合作伙伴、云平台事件和技术竞争",
+    "public_business_measures": "官方平台和合作公告；CISA 已利用漏洞目录、外部服务提供商事件；数字资产市场外围代理",
+    "internal_vulnerability_needed": "平台运行时长/错误率、API 延迟、漏洞修复时效、关键链/云/技术供应商集中度、客户留存",
+    "business_data_gaps": "外部漏洞和云公告未验证 DDA 具体暴露；公开新闻不能代替平台业务性能和分部财务",
+    "preferred_sources": [
+      "dtcc_digital",
+      "cisa_kev",
+      "google_cloud",
+      "google_workspace",
+      "fred_CBBTCUSD",
+      "fred_CBETHUSD",
+      "federal_register"
+    ],
+    "frequency": "event-driven technical and regulatory events; daily contextual prices"
+  },
+  {
+    "business_line": "Data Services",
+    "full_name": "DTCC Data Services",
+    "name_zh": "数据服务",
+    "legal_scope": "data/analytics products; shared underlying market observations",
+    "external_information": "市场透明度规则、数据接口和格式、ETF/回购/CDS 数据需求、数据许可证和云服务事件",
+    "public_business_measures": "共享的 TIW CDS、ETF、承销和货币市场报告；公开产品覆盖与数据来源规模快照",
+    "internal_vulnerability_needed": "数据发布延迟、完整性/准确性、字段缺失/修订率、接口可用性、上游来源集中度和订阅留存",
+    "business_data_gaps": "Kinetics 付费数据流与订阅量、业务收入没有公开完整时序；底层市场交易量不等于 Data Services 销售",
+    "preferred_sources": [
+      "dtcc_data_services",
+      "dtcc_market_data",
+      "dtcc_etf_listing_csv",
+      "dtcc_underwriting_xml",
+      "dtcc_money_market",
+      "google_cloud",
+      "esma_news"
+    ],
+    "frequency": "shared daily/weekly/monthly market inputs; event-driven data rules"
+  },
+  {
+    "business_line": "Consulting",
+    "full_name": "DTCC Consulting Services",
+    "name_zh": "咨询服务",
+    "legal_scope": "advisory services; DTCC Solutions (UK)",
+    "external_information": "监管规则和生效期限、国债清算准备、T+1、报告制度变化、数字资产采用和行业准备情况",
+    "public_business_measures": "规则、生效日期和官方行业准备调查；咨询服务/项目主题的公开公告",
+    "internal_vulnerability_needed": "项目积压、交付周期、工时利用率、客户集中度、项目利润率和合同续约率",
+    "business_data_gaps": "上述业务 KPI 未公开取得；监管新闻数量不能当作咨询收入、订单或风险强度",
+    "preferred_sources": [
+      "dtcc_consulting",
+      "federal_register",
+      "esma_news",
+      "fca_rss",
+      "dtcc_insight_20261014",
+      "dtcc_notice_feed"
+    ],
+    "frequency": "event-driven rules and deadlines; periodic industry surveys"
+  }
+]

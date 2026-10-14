@@ -1,0 +1,317 @@
+    
+DTCC offers enhanced access to all important notices via a Web -based subscription service. 
+The notification system leverages RSS Newsfeeds, providing significant benefits including  
+real-time updates and customizable delivery. To learn more and to set up your own DTCC RSS  
+alerts, visit http://www.dtcc.com/subscription_form.php.     
+     
+ 
+IMPORTANT NOTICE 
+The Depository Trust Company 
+DTCC Public (White) 
+ 
+B #: 24779-26 
+Date: October 9, 2026 
+ 
+ All Participants 
+Category: Tax Relief, Distributions 
+From: International Services 
+Attention: Operations, Reorg & Dividend Managers, Partners & Cashiers 
+Subject: 
+Tax Relief – Country: SPAIN 
+Security: BANCO BILBAO VIZCAYA ARGENTARIA. 
+CUSIP: 05946k101 
+Record Date: 10/14/2026 
+Payable Date:10/30/2026 
+EDS Cutoff Date: 10/15/2026 8:00 PM ET 
+Quick Refund Instruction Deadline: 11/02/2026 8:00 PM ET 
+One Day Election Window 
+ 
+Participants can use DTC’s Corporate Actions Web (CA Web) service to certify all or a portion of their 
+position entitled to the applicable withholding tax rate. Participants are urged to consult TaxInfo 
+respectively before certifying their instructions over the CA Web. 
+Important: Prior to certifying tax withholding instructions, participants are urged to read, 
+understand, and comply with the information in the Legal Conditions category found on TaxInfo on 
+the CA Web. 
+Questions regarding this Important Notice may be directed to GlobeTax 212-747-9100. 
+ 
+ 
+ 
+Important Legal Information: The Depository Trust Company (“DTC”) does not represent or warrant the accuracy, adequacy, timeliness, 
+completeness or fitness for any particular purpose of the information contained in this communication, which is based in part on 
+information obtained from third parties and not independently verified by DTC and which is provided as is. The information contained in 
+this communication is not intended to be a substitute for obtaining tax advice from an appropriate professional advisor. In providing this 
+communication, DTC shall not be liable for (1) any loss resulting directly or indirectly from mistakes, errors, omissions, interruptions, 
+delays or defects in such communication, unless caused directly by gross negligence or willful misconduct on the part of DTC, and (2) any 
+special, consequential, exemplary, incidental or punitive damages.To ensure compliance with Internal Revenue Service Circular 230, you 
+are hereby notified that: (a) any discussion of federal tax issues contained or referred to herein is not intended or written to be used, and 
+cannot be used, for the purpose of avoiding penalties that may be imposed under the Internal Revenue Code; and (b) as a matter of policy, 
+DTC does not provide tax, legal or accounting advice and accordingly, you should consult your own tax, legal and accounting advisor 
+before engaging in any transaction. 
+
+created by 
+Page 1 
+ 
+ 
+BANCO BILBAO VIZCAYA ARGENTARIA has announced a cash dividend and The Bank of New York Mellon (“BNY”) acts as 
+Depositary for the Depositary Receipt (“DR”) program. 
+Participants may use DTC’s Corporate Actions Web (“CA Web”) instructions tab to certify all, or a portion of their position e ntitled to 
+each applicable withholding tax rate. Use of this instruction method will permit entitlement amounts to be paid through DTC. By making 
+submissions of such certifications the submitter warrants that it has the required authority to make them, that the party for  which the 
+submission is made is eligible therefore, and will indemnify, as applicable, Globe Tax Services, Inc., the applicable deposit ary, the 
+applicable custodian, and other acting, directly, or indirectly, in reliance thereon, including for any inaccuracy therein. B y electing, 
+Participants agree to the Agreements, Fees, Representations and Indemnification from Participants and Beneficial Owners 
+below. 
+On DR pay date, all holders will have the opportunity to receive their full treaty benefits as outlined in the “Eligibility M atrix.” All 
+uncertified holders will receive this dividend net of the full Spanish statutory withholding tax of 19% with the possibility to reclaim as 
+outlined in the “Eligibility Matrix.” After the CA Web window closes, beneficial owners will have the ability to obtain a Qui ck Refund or a 
+Long Form refund for the difference between the statutory rate and the beneficial owner’s rate of entitlement by submitting t he required 
+documentation outlined in the “Eligibility Matrix.” 
+ 
+DIVIDEND EVENT MATRIX 
+ISSUE CUSIP# UNDERLYING 
+ISIN 
+DR RECORD 
+DATE ORD PAY DATE DR PAY DATE RATIO 
+(DR to ORD) ORD RATE 
+BANCO BILBAO 
+VIZCAYA 
+ARGENTARIA 
+ 
+05946K101 
+ 
+ES0113211835 
+ 
+Oct 14, 2026 
+ 
+Oct 15, 2026 
+ 
+Oct 30, 2026 
+ 
+1 : 1 
+ 
+EUR 0.37000 
+ 
+FEES & DEADLINES 
+FILING METHOD PAYMENT 
+METHOD 
+CUSTODIAL 
+FEE (USD) 
+TAX RELIEF 
+FEE 
+MINIMUM FEE PER 
+BENEFICIAL OWNER FINAL SUBMISSION DEADLINE 
+ 
+ 
+RELIEF AT SOURCE 
+ 
+ 
+DTCC 
+ 
+ 
+N/A 
+ 
+ 
+UP TO $ 0.00170 PER DR 
+ 
+ 
+N/A 
+CA WEB / ESP ELECTION DEADLINE: 
+Oct 15, 2026 
+ORIGINAL DOCUMENT DEADLINE: 
+Oct 16, 2026 
+ 
+ 
+QUICK REFUND 
+ 
+ 
+DTCC 
+ 
+ 
+N/A 
+ 
+ 
+UP TO $ 0.00170 PER DR 
+ 
+ 
+N/A 
+CA WEB / ESP ELECTION DEADLINE: 
+Nov 02, 2026 
+ORIGINAL DOCUMENT DEADLINE: 
+Nov 02, 2026 
+LONG FORM CHECK OR ACH N/A UP TO $ 0.01250 PER DR $ 125.00000 Aug 13, 2030 5:00 PM ET 
+INDIVIDUALS NEED TO PROVIDE 
+PLACE AND DATE OF BIRTH 
+THROUGH ESP. 
+ALL CERTIFICATES OF RESIDENCY 
+AND 6166 DOCUMENTS MUST BE 
+ORIGINAL, VALID FOR THE 
+ORDINARY PAY DATE, AND CITE 
+THE TAX TREATY BETWEEN THE 
+BENEFICIAL OWNER’S COUNTRY 
+OF RESIDENCE AND SPAIN. 
+LONG FORM CLAIMS RECEIVED 
+AFTER THE DEADLINE ADVISED IN 
+THIS NOTICE MAY BE SUBJECT TO 
+A EUR 200.00 LATE FEE. 
+
+created by 
+Page 2 
+ 
+ 
+ 
+MINIMUM SHARE AMOUNT REQUIRED TO FILE A CLAIM 
+(CLAIMS RECEIVED BELOW THE FILING MINIMUM WILL BE REJECTED) 
+FILING METHOD WITHHOLDING RATE RECLAIM RATE MINIMUM # OF DRs REQUIRED TO FILE 
+(BASED OFF AN APPROX. EXCHANGE RATE OF 1.126400 USD PER EUR) 
+LONG FORM 0.00000% 19.00000% 3,158 DRs 
+LONG FORM 5.00000% 14.00000% 4,285 DRs 
+LONG FORM 10.00000% 9.00000% 6,666 DRs 
+LONG FORM 12.00000% 7.00000% 8,570 DRs 
+LONG FORM 15.00000% 4.00000% 14,997 DRs 
+LONG FORM 18.00000% 1.00000% 59,986 DRs 
+ 
+Agreements, Fees, Representations and Indemnification from Participants and Beneficial Owners 
+This tax relief assistance service is wholly voluntary and discretionary and outside the terms and conditions of any applicab le deposit agreement. BNY undertakes no duty or obligation to provide this 
+service, and may reject or decline any or all proposed electing participants or holders in its sole discretion. We hereby acc ept and agree to pay the fees of BNY disclosed in the DTC Important Notice 
+posted for this event and type of claim we are submitting (Relief-at-Source, Quick Refund, or Long Form) and any other charges, fees or expenses payable by or due to BNY or its agents, including the 
+(respective) custodian, in connection with the tax reclaim process, or to tax authorities or regulators (which fees, charges or expenses may be deducted from the dividend or any other distribution or by 
+billing or otherwise in BNY's discretion). We hereby agree that any such fees, charges or expenses may be due and payable whether or not a successful reduction in rate or reclamation is obtained. We 
+hereby acknowledge that fees paid to BNY may be shared with its agents and affiliates. 
+We hereby agree in addition to statutory and documentation requirements, and the deduction of fees, tax relief benefits will be subject to review and approval, and potential audits by the applicable 
+custodian and applicable tax regulators, and that BNY is not providing any legal, tax, accounting or other professional advic e on these matters and has expressly disclaimed any liability whatsoever for 
+any loss howsoever arising from or in reliance hereto. Participants and/or investors should seek advice based upon their own particular circumstances from an independent tax advisor. 
+We certify to the best of our knowledge that each of the beneficial owners identified are eligible for the preferential rates  as stated and we declare that we have performed all the necessary due  
+diligence to satisfy ourselves as to the accuracy of the information submitted to us by these beneficial owners. Furthermore,  in the event of an audit we agree to provide any and all documentation 
+required by the respective Tax Authority. 
+We will be fully liable for any and all claims, penalties and / or interest, including without limitation, any foreign exchan ge fluctuations associated therewith. BNY shall not be liable for the failure to  
+secure any tax relief. We expressly agree that BNY and its agents or affiliates shall not have any liability for, and we shall indemnify, defend and hold each of BNY and its agents and affiliates harmless 
+from and against, any and all loss, liability, damage, judgment, settlement, fine, penalty, demand, claim, cost or expense (i ncluding without limitation fees and expenses of defending itself or enforcing 
+this agreement) arising out of or in connection herewith. 
+By using this tax relief assistance service, you are authorizing and directing the disclosure of your personal information to the tax agent, the custodian, the tax authority and their respective agents. You 
+acknowledge and agree that such disclosure may involve your personal data being sent to a tax agent, custodian, tax authority  and their respective agents located in a country outside of that in which 
+you reside.In the event that the General Data Protection Regulation 2016/679 (GDPR) or similar laws apply with regard to this  tax relief assistance service, we certify that each of the beneficial owners 
+identified, in providing this information and as indicated by Owner’s signature below, expressly consents to the processing a nd transfer of their personal data outside of their country of residence. BNY 
+will retain personal data in accordance with the GDPR and for further information about our data protection policies and proc edures please refer to our Data Protection Policy, which can be found at 
+https://www.bnymellon.com/emea/en/privacy-policy.html. 
+ 
+
+created by 
+Page 3 
+ 
+ 
+CONTACT DETAILS 
+PHONE NUMBER 800-915-3536 (+1 212 747 9100 from outside US) 
+FAX NUMBER 800-985-3536 
+GROUP EMAIL SpainESP@globetax.com 
+COMPANY GLOBETAX SERVICES INC. 
+STREET ADDRESS ONE NEW YORK PLAZA, 34TH FLOOR 
+CITY/STATE/ZIP NEW YORK, NY 10004 
+ 
+ELIGIBILITY MATRIX 
+ 
+ 
+ 
+ 
+ 
+BNY offers ESP powered by GlobeTax, an electronic withholding tax submission 
+system. This system allows for the secure and simplified transfer of beneficial owner 
+level data from the Participant to GlobeTax and creates applicable documentation on 
+the Participants' behalf. 
+Submit the data online through the web site below, print out the documents on 
+letterhead, sign them, and mail them to GlobeTax, along with necessary required 
+documents. 
+These claims should be submitted through the following website. 
+https://ESP.GlobeTax.com 
+Please contact us via the ESP Service Desk at 212-747-9100 if you have any questions 
+about this process. 
+ 
+ 
+ 
+ 
+ 
+FREQUENTLY ASKED QUESTIONS (FAQs) 
+AT SOURCE / QUICK REFUND 
+Are the At-Source or Quick Refund processes free of charge? No. This tax relief assistance service is wholly voluntary and discretionary and outside 
+the terms and conditions of any applicable deposit agreement. BNY undertakes no duty 
+or obligation to provide this service and may reject or decline any or all proposed 
+electing participants or holders in its sole discretion. Fees will be charged for this  
+service of up to $0.0017 per DR with no minimum, and any other charges, fees or 
+expenses payable by or due to BNY or its agents, including the custodian or to tax 
+authorities or regulators. Fees paid to BNY may be shared with its agents. 
+What is the minimum amount of shares necessary in order to be eligible for 
+reclaim? 
+There is no share minimum for At-Source or Quick Refund reclaims. 
+Note: All information related to eligibility and documentation requirements can be found on the ESP site by visiting the relevant event and viewing the Eligibility 
+Matrix. If you need access to ESP, please complete the New User Registration form, and our team of market experts would be pleased to help you get set up. 
+For each Country’s general Eligibility Matrix, please see ESPs Reference Guide. 
+
+created by 
+Page 4 
+ 
+ 
+ 
+ 
+FREQUENTLY ASKED QUESTIONS (FAQs) 
+GENERAL 
+Is the long form process free of charge? No. This tax relief assistance service is wholly voluntary and discretionary and outside 
+the terms and conditions of any applicable deposit agreement. BNY undertakes no duty 
+or obligation to provide this service and may reject or decline any or all proposed 
+electing participants or holders in its sole discretion. Fees will be charged for this  
+service of up to $0.0125 per DR with a $125.00 minimum, and any other charges, fees 
+or expenses payable by or due to BNY or its agents, including the custodian or to tax 
+authorities or regulators. Fees paid to BNY may be shared with its agents. 
+Is there a minimum claim value in USD necessary in order to be eligible to 
+reclaim? 
+Yes. There is a minimum reclaim value of $250.00 per Beneficial Owner. 
+Can I submit one IRS form 6166 or certificate of residency for the same 
+beneficiary for multiple pay dates? 
+Yes. As long as the COR has a tax year the same year as the local pay date it may be 
+used again. 
+What is the difference between the Peticion de Reduccion and the Peticion de 
+Devolucion? 
+The forms are similar; however, the Peticion de Reduccion is for the Quick Refund 
+process and the Peticion de Devolucion is for the standard Long Form process. 
+Will Globetax accept claims filed directly to them by beneficial owners? GlobeTax only accepts claims filed by the DTCC participant who was holding the 
+securities through DTC and only to the extent that DTC has reported these holdings to 
+us as valid. 
+Are there special requirements on the certificate of residency for Canadian, 
+Swiss, and UK pension funds? 
+The certificate of residency must explicitly mention the old DTT in which these type of 
+persons were not tax exempted. Example: “Certifies that the pension scheme is  
+resident in Canada in accordance of the article 10 of the DTT as modified by protocol 
+signed between Canada and Spain on mm/dd/year.” 
+Are EU-based UCITS (undertakings for the collective investment of transferable 
+securities) eligible for reclaims? 
+Yes, UCITS are eligible for a withholding tax rate of 1% if they provide a certificate of 
+residency for the dividend tax year and an original certified UCITS Attestation from the 
+appropriate government bureau of the beneficial owner’s country of residence. Please 
+also notify GlobeTax at SpainESP@globetax.com so we may apply the special UCITS 
+rate to your claim upon validation of documents received. 
+Where can I find information on obtaining a LEI (Legal Entity Identifier) code for a 
+beneficial owner? 
+General resource information regarding LEI codes can be found by visiting 
+https://www.gleif.org/en/about-lei/introducing-the-legal-entity-identifier-lei. 
+
+created by 
+Page 5 
+ 
+ 
+Warning and Disclaimer: 
+BNY will not be responsible for the truth or accuracy of any submissions received by it and all Participants and holders, whe ther or not following the procedures 
+set forth herein or otherwise submitting any information, agree to indemnify and hold harmless BNY and their agents for any a nd all losses, liabilities and fees 
+(including reasonable fees and expenses of counsel) incurred by any of them in connection herewith or arising here from. BNY and their agents will be relying 
+upon the truth and accuracy of any and all submissions received by them in connection with the tax relief process and shall h old all participants and DR holders 
+liable and responsible for any losses incurred in connection therewith or arising there from. There is no guarantee that the applicable tax authorities will accept 
+submissions for relief. Neither BNY nor their agents shall be responsible or liable to any holders of DRs in connection with any matters related to, arising from, or 
+in connection with the tax relief process described herein. See also “Agreements, Fees, Representations and Indemnification” above. 
+All tax information contained in this Important Notice is based on a good faith compilation of information obtained and recei ved from multiple sources. The 
+information is subject to change. Actual deadlines frequently vary from the statutory deadlines because of local market condi tions and advanced deadlines set  
+by local agents. To mitigate risk it is strongly advised that DTC Participants file their claims as soon as possible as the d epositary and/or their agents will not be 
+liable for claims filed less than six months before the specified deadline. In the event that local market rules, whether imp lemented by a local agent or a Tax 
+Authority, conflict with the information provided in the important notice, either prior to or after publication, the local ma rket rules will prevail. 
+ 
+FREQUENTLY ASKED QUESTIONS (FAQs) 
+GENERAL 
+What is changing regarding LEI requirements effective January 1, 2027? Effective January 1, 2027, LEI codes will be mandatory for all eligible entities that are 
+not individuals, regardless of the applicable pay date year. 
+ 

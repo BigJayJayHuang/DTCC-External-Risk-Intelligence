@@ -1,0 +1,19 @@
+{
+  "source_id": "dtcc_daily_total_us_treasury_trade_fails_embedded_7adec5d9",
+  "source_name": "dtcc_daily_total_us_treasury_trade_fails public chart",
+  "url": "https://cms-prod.dtcc.com/globalassets/ftp/ficc/fails_data.html",
+  "file": "raw/dtcc_daily_total_us_treasury_trade_fails_embedded_7adec5d9_7adec5d9aa0b.html",
+  "collected_at_utc": "2026-10-14T19:40:41+00:00",
+  "public_only": true,
+  "business_lines": [
+    "FICC",
+    "Data Services"
+  ],
+  "kind": "embedded_ficc_data",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://cms-prod.dtcc.com/globalassets/ftp/ficc/fails_data.html",
+  "content_type": "text/html",
+  "bytes": 12448,
+  "sha256": "3cb1d61974d94b76f094ae8e70c929cfbe069bd718d2555da7a9c178acdcd5c7"
+}

@@ -1,0 +1,15 @@
+{
+  "source_id": "article_e9125648fbc842c6",
+  "source_name": "US Securities and Exchange Commission original document",
+  "url": "https://www.sec.gov/newsroom/press-releases/2026-104-sec-proposes-expanding-securities-eligible-cross-trading-registered-funds",
+  "file": "raw/article_e9125648fbc842c6_e9125648fbc8.html",
+  "collected_at_utc": "2026-10-14T19:29:16+00:00",
+  "public_only": true,
+  "business_lines": [],
+  "kind": "article",
+  "status": "failed",
+  "http_status": 403,
+  "final_url": "https://www.sec.gov/newsroom/press-releases/2026-104-sec-proposes-expanding-securities-eligible-cross-trading-registered-funds",
+  "content_type": "text/html",
+  "error": "curl: (22) The requested URL returned error: 403"
+}

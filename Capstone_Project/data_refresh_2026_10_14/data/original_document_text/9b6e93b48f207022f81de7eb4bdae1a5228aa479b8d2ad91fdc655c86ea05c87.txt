@@ -1,0 +1,267 @@
+SPEECH
+Ensuring resilience in the face of uncertainty
+Keynote speech by Frank Elderson, Member of the Executive Board of the ECB and Vice-Chair of the Supervisory Board of the ECB, at the ECB-Bank of England Conference on supervising climate risk in a non-linear world
+Frankfurt am Main, 14 October 2026
+It is a pleasure to open this joint ECB-Bank of England conference.
+Bringing together experts across disciplines from 18 countries and three continents to discuss how we can ensure resilience in an increasingly non-linear world, this event could hardly be more timely.
+For much of modern finance, risk management has rested on a simple but consequential assumption: with enough data, sufficient information about borrower behaviour, robust models and a solid understanding of historical patterns, banks can estimate the losses they may face with a reasonable degree of precision.
+These estimates inform how banks price risk, set aside provisions for expected losses and determine how much capital they need to absorb any large, unexpected losses. This approach works well when the underlying relationships are broadly stable and has long served as a useful basis for managing financial risks. And of course, today’s modelling is already supplemented by additional layers of risk management, including model overlays, stress testing, underwriting, risk appetite setting and other processes.
+But the world facing us today is becoming more complex, more interconnected and more uncertain almost by the day.
+Think about geopolitical fragmentation, demographic change, artificial intelligence and quantum computing and, of course, the central theme of this conference: the risks from the ongoing climate and nature (C&N) crises.
+These macro trends differ in many respects.
+They differ in origin.
+They differ in scope.
+They differ in speed.
+Yet they all share a common denominator: they arise in complex and highly interconnected systems, which often exhibit non-linear behaviour. This means that small changes can spread and trigger disproportionately large effects. These macro trends can amplify shocks through feedback loops. They can lead to abrupt transitions through tipping points. Events that were considered remote tail risks yesterday are moving closer to tomorrow’s baseline.
+Addressing non-linearities is undoubtedly challenging but still manageable as long as we remain in the realm of what is measurable. However, an even bigger challenge arises when we enter a world characterised by what Frank Knight termed uncertainty, as distinct from risk, or what John Kay and Mervyn King later popularised as radical uncertainty.
+[
+1
+]
+The underlying idea is the same: a form of uncertainty in which future events, their probabilities and even the relevant outcomes cannot be measured with any meaningful degree of confidence.
+Today I would like to use a simple framework to explore this challenge. The distinction between what we know, what we know we don’t know, and what we don’t even know we don’t know. Or put differently: known knowns, known unknowns and unknown unknowns.
+The world we know: the known knowns of C&N risks
+Let me begin with what we already know about C&N risks.
+Over the past decade, banks and supervisors have made substantial progress in identifying, quantifying and managing C&N risks.
+[
+2
+]
+Together, we have built the foundational architecture needed to capture the known knowns of C&N risks in risk management, stress testing and scenario analysis.
+[
+3
+]
+Today, we not only see and feel the effects of rising temperatures; increasingly, we can measure them. Thanks to better tools, better data and better modelling, we are increasingly able to quantify the direct damage caused to the economy by C&N risks.
+[
+4
+]
+Just think about the heavy toll this summers’ extreme weather took on economic activity, labour productivity
+[
+5
+]
+and supply chains.
+[
+6
+]
+Importantly, we also increasingly understand the transmission channels to the financial risk categories facing banks.
+For example, with better climate hazard and geo-location data, banks can better model the financial impacts of droughts and flooding on traditional financial risk metrics such as loss given default (LGD).
+We know banks’ initial estimate of the impact of different transition scenarios on their capital position.
+And we also know that since 2022 the average share of interest income earned from carbon-intensive sectors by significant supervised banks has remained consistently above 70%.
+We know the average energy performance of the properties they finance. We know what share of exposures they have in areas vulnerable to physical risk and what proportion of those exposures, in turn, has deteriorating credit quality. While many of these impacts still rely on estimates, banks have made significant strides in recent years, thanks also to the availability of public data sources, which cover an increasing number of physical risk hazards.
+[
+7
+]
+But as important as this progress is, it only tells part of the story.
+[
+8
+]
+We know that many of the C&N risks that matter most are, by their very nature, forward-looking. And we know that because these risks are very different from past events, they are not fully understood and remain difficult to quantify.
+The progress made so far therefore provides a springboard for a more difficult, but necessary conversation: a conversation about some of the fundamental challenges of these risks and uncertainty, a conversation not only about what we know, but also about what we know we do not yet know.
+What remains uncertain: the known unknowns of C&N risks
+And that brings me to the second category in our framework: the known unknowns.
+These are risks that we know exist, but whose timing, magnitude or probabilities remain uncertain.
+This is not a new challenge. Economic forecasting operates in a similar environment. The economy, like the climate, is a complex adaptive system. We cannot forecast it with precision, but we can explore plausible scenarios and assess our resilience against them.
+C&N risks provide several examples:
+We know that tipping points exist but we do not know exactly when they will be reached. Worryingly, scientists have identified several components of the Earth system for which the tipping point may already be approaching, including the dieback of the Amazon rainforest and the collapse of the Atlantic Meridional Overturning Circulation.
+We also know that compound events can amplify impact. We do not know precisely how such interactions will unfold. A severe drought will likely occur alongside a heatwave. Water scarcity could coincide with a major agricultural disruption. Physical damage could occur simultaneously with pressures on energy systems.
+[
+9
+]
+And we know that nature degradation can affect economic activity through complex and interconnected channels. We know that humanity is living well beyond most of its planetary boundaries.
+[
+10
+]
+In fact, seven of the nine planetary boundaries have already been transgressed. What remains uncertain is how these forces may interact, amplify each other and ultimately propagate through the economy and the financial system.
+In all these examples we run into a fundamental problem: the future impacts of climate change and nature degradation are, by definition, not reflected in the historical data used in traditional risk analysis.
+Using scenario analysis to address known unknowns
+When dealing with uncertainty, scenario analysis is an indispensable tool. Scenarios are best understood not as forecasts, but rather as structured explorations of plausible futures. Their purpose is not to tell us what will happen, but to help us think more systematically about what could happen. They allow us to identify vulnerabilities, test assumptions and investigate transmission channels that may otherwise remain hidden.
+Encouragingly, climate scenario analysis has advanced considerably in recent years. The Network for Greening the Financial System (NGFS) scenarios have become the global reference point for assessing how climate change may affect economies and financial systems over both short and long horizons. These scenarios have evolved to encompass a wider range of risks while also providing financial projections. By offering a publicly accessible set of scenarios, they have significantly improved the capacity of the central banking community to quantify climate risks in a consistent, transparent and comparable manner across jurisdictions.
+But scenarios are a starting point, not an endpoint. When facing uncertainty, we need to avoid a scenario “tunnel vision’’ where risk identification and capital planning becomes anchored to a narrow set of scenario narratives. With heightened uncertainty, the objective of scenarios should not only be to explore baseline pathways, but also to investigate how vulnerabilities might be exposed under extreme yet plausible conditions.
+And we know that the current climate scenarios have their limitations.
+As Simon Sharpe has observed, scientists are trained not to overstate risks, while risk managers are trained not to underestimate them. This distinction also matters for climate models designed by scientists. These models capture what can be quantified robustly, but not necessarily everything scientists know is likely to occur.
+Take thawing permafrost, for example. The Intergovernmental Panel on Climate Change (IPCC) concludes with high confidence that further warming will cause further thaw, thus releasing more carbon. Yet most global climate models do not represent this feedback directly. The separate adjustment used in the latest assessment still excludes abrupt thaw and interactions with Arctic wildfires. Research suggests that nature’s own emissions from thawing permafrost or wildfires could add as much as 0.6°C in an adverse scenario.
+[
+11
+]
+Similar limitations apply to additional emissions from warming wetlands and freshwater systems. Moreover, local transmission channels often differ substantially from global averages.
+The prudent conclusion is therefore to recognise that even the best available projections cannot yet fully capture every piece of relevant feedback, including some that are already well established. This is precisely why scenario analysis matters.
+Scenarios need to be tailored to local contexts, challenged and complemented with expert judgement. This is also why the NGFS encourages a more thoughtful and decision-relevant use of scenarios, rather than seeing climate scenarios as a box-ticking exercise.
+[
+12
+]
+Scenarios must be applied, not just adopted. They must be challenged, not just run.
+Many banks are still at a relatively early stage of integrating C&N risks into their core risk models. As a result, climate stress tests and scenario analysis are often used in the internal capital adequacy assessment process (ICAAP) primarily to calibrate buffers for risks that would otherwise not be covered. Yet these exercises only cover all the risk drivers that banks themselves deem material in around 15% of cases. At the same time, all the limitations and underestimations I have just mentioned also apply. It is therefore increasingly important that banks demonstrate a clear understanding of these limitations and that they take action early to build resilience and reduce their vulnerability to these growing risks over time.
+Scenarios must evolve, which requires a culture of continuous improvement, regular updates and close interaction between supervisors, practitioners and the research community. And that is precisely where this conference – which brings together experts across disciplines spanning the scientific and supervisory community – is invaluable because it can help to address some challenging questions.
+For example, how should supervisors and banks adapt scenario analysis in a world where uncertainty, non-linearity and tipping points cannot be fully captured by models? We look forward to hearing input you may have on the most effective ways to communicate model limitations, broaden the range of scenarios considered, and ensure climate risk assessments remain decision-relevant despite deep uncertainty.
+Or what role do expert judgement and tail-focused scenarios play in complementing quantitative analysis, and which risks require greater attention at the system level rather than at the institution level?
+And how can C&N risk analysis be translated into bank risk management, strategic decision-making and supervisory actions where banks underestimate risks?
+Radical uncertainty: building resilience for the unknown unknowns of the climate and nature crises
+Scenarios are well suited to exploring known unknowns, but they are less able to address radical uncertainty. This brings me to the third category: genuine unknown unknowns.
+The challenge with unknown unknowns is not only that we struggle to estimate probabilities or magnitudes, but that we do not yet know all the relevant states of the world and possible outcomes.
+We don’t even know what all the complex interactions between climate systems, ecosystems, societies and financial markets will be, so there’s no way we can actually measure them.
+We don’t yet know about all the complex feedback loops that only become visible once a shock unfolds.
+And we do not yet know about all the transmission channels that only emerge once critical thresholds have been crossed.
+But worryingly, there is growing evidence that the climate and nature crises are unfolding faster and more severely than expected, which may indicate that some of the complex interactions I mentioned might be coming our way sooner than we thought:
+Consider that the Arctic is warming at almost four times and Europe at roughly twice the global average,
+[
+13
+]
+while the most intense rainfall events are in some cases increasing faster than conventional climate models have captured. The Earth is also accumulating heat at a rate that recent observations suggest is higher than many model simulations anticipated.
+[
+14
+]
+In September the United Nations warned that El Niño is colliding with an already exceptionally warm planet, creating what it described as “being supersized before our eyes”.
+[
+15
+]
+Ocean heat has reached record levels, and the pace of ocean warming over the past two decades has been markedly faster than in earlier periods, suggesting that the earth's capacity to absorb excess heat may be changing in ways that we don’t fully understand.
+[
+16
+]
+Similarly, ecosystems are losing resilience, in some cases faster than earlier assessments anticipated.
+[
+17
+]
+Coral reefs, forests and wetlands are under growing pressure, weakening nature’s capacity to absorb shocks and increasing the risk of cascading impacts across ecological and economic systems.
+Until recently, many of these developments were poorly understood. Others may become visible only as shocks unfold and previously hidden interactions emerge. Their complex interactions cannot be fully anticipated, let alone incorporated into scenarios that capture every interaction across the climate, ecosystems, economies and financial markets. This brings us back to Simon Sharpe’s distinction. Scientific rigour requires caution in describing what cannot yet be demonstrated. Risk management requires similar caution in assuming that what cannot yet be modelled can be safely ignored. This is the realm of radical uncertainty rather than measurable risk. And repeated surprises on the upside should make us cautious about assuming that what remains unknown will be benign.
+The answer to unknown unknowns is therefore not just scenarios or risk modelling, but to build resilience against surprises. Resilience is not something we build after a disaster. Instead, it is something we invest in before shocks occur. Building resilience obviously includes maintaining sufficient capital, liquidity, operational capacity and strategic flexibility to absorb shocks that cannot be predicted in advance. But it is also about having a well-developed and risk-sensitive reaction function. This includes actively reflecting on what further role other layers of risk management, including underwriting, model overrides, risk appetite setting, portfolio steering and pricing could play. It also includes reflecting on the range of risk mitigants, such as insurance protection and governments’ more limited fiscal space to act as insurers of last resort. It also includes reflecting on climate adaptation and mitigation investment, and on how these investments can be deployed effectively to address longer-term risks. It also includes banks testing their reaction function regularly through scenarios and analysis of business model resilience to ensure their governance and decision-making structures are capable of responding swiftly when the risk landscape changes. This is at the heart of prudential transition planning.
+[
+18
+]
+Lessons for other macro trends subject to uncertainty
+And this brings me to my final point.
+Climate and nature-related risks are perhaps the clearest manifestation of non-linear dynamics and heightened uncertainty. But they are far from being the only one.
+The insights from addressing these challenges in climate risk are also relevant for other macro trends and risk drivers affecting banks, such as technological innovation, demographic change and geopolitical risks, to name just a few.
+As European banking supervision highlighted in its 2026-28 supervisory priorities, heightened uncertainty is a cross-cutting challenge spanning several risk areas, making the likelihood of extreme tail risks unprecedently high. Similarly to C&N risks, tackling these trends will require interdisciplinary cooperation well beyond prudential authorities.
+Take demography as a structural risk driver.
+[
+19
+]
+Now that supervisors have learned to analyse the drivers of C&N risk, they can build on the progress to interpret demographic trajectories as a structural risk driver affecting banks’ business models and risk profiles.
+Take rapid advances in artificial intelligence that have increased cyber and operational resilience risks. We know that these developments are already altering the cyber risk landscape, but we do not yet know the exact magnitude with which they will unfold. This is a classic known unknown for which backward-looking information alone is not useful. Yet this does not prevent supervisors from taking action.
+[
+20
+]
+Or take quantum computing as an example of a technology with non-linear effects. Quantum risk to cryptography is already a risk given that sensitive, encrypted information can be collected today and stored with the expectation that future technological advances may allow it to be decrypted in a “harvest now, decrypt later” fashion, leading to non-linear consequences.
+All these macro trends have a common denominator: uncertainty. There is uncertainty about the timing, impact, transmission channels and consequently the data and modelling challenges.
+[
+21
+]
+All of these macro trends could also have an impact on the sustainability of banks’ business models. They therefore all need an upscaled risk management framework, with scenario capabilities as a core pillar to help banks stay resilient and competitive over time.
+Conclusion
+Let me conclude.
+For much of modern finance, risk management has focused on understanding and measuring risks.
+That remains indispensable. But in an increasingly complex and interconnected world, building resilience requires more than that.
+If risk management is like driving along a winding mountain road, preparedness is not just about being able to react when a cliff suddenly appears. It is about having guardrails and contingency measures in place for when the road may veer dangerously close to the edge.
+For known knowns, our task is to measure.
+For known unknowns, our task is to prepare.
+And for unknown unknowns, our task is to build resilience.
+When reality repeatedly surprises us on the upside, prudence requires us to be careful about assuming that the risks we have not yet identified will somehow be benign.
+This conference, which brings together experts across disciplines, is an opportunity to deepen our understanding on all three fronts: on where we can sharpen our focus on what we can already identify and quantify, on where we need to further illuminate uncertainties that warrant further exploration, and on where we can strengthen resilience to weather radical uncertainty.
+Thank you for your attention and I look forward to the fruitful discussion.
+Kay, J. and King, M. (2020),
+Radical Uncertainty: Decision-making for an Unknowable Future
+, The Bridge Street Press.
+For more details on banks’ better preparedness to identify, quantify and manage C&N risks, see Elderson, F. (2025), “
+Banks have made good progress in managing climate and nature risks – and must continue
+”,
+The Supervision Blog
+, ECB, 11 July; and Elderson, F. (2025), “
+From charting the course to staying the course: the path ahead for climate and nature risk supervision
+”, keynote speech at the ECB industry dialogue on “Climate and nature risk management: taking stock and looking ahead”, Frankfurt am Main, 1 October.
+For more information about the increasingly sophisticated methods and tools developed by banks and shared by ECB Banking Supervision with banks across Europe, please see Elderson, F. (2026), “
+Good practices for advancing climate and nature-related risk management
+”,
+The Supervision Blog
+, ECB, 8 May; ECB (2026),
+Good practices for climate and nature risk management. Observations from the ECB’s five-year climate and nature risk programme (2020-25)
+, May; and ECB (2026),
+ECB report on good practices for climate and nature-related risk stress testing
+, May.
+This year’s droughts are already imposing significant economic costs across Europe. Initial estimates point to losses of at least €50 billion in the short term alone. The insurance firm Allianz estimates cumulative GDP losses of up to 7% between 2026 and 2030 in major European economies, equivalent to around USD 240 billion for France, USD 147 billion for Italy, USD 131 billion for Germany and USD 120 billion for Spain. For further details, see Allianz (2026),
+Too hot to grow. The economic costs of extreme heat
+, 28 May.
+According to United Nations estimates, workers' productivity declines by around 2% to 3% for every additional degree of heat above certain thresholds. Estimates suggest that the June heatwave alone may have resulted in €6.3 billion in productivity losses in Germany. For further details, see the World Health Organization’s web page on
+workplace heat stress
+.
+The exceptionally low water levels of the Rhine this summer, the lowest since records began in 1880, have not only disrupted transport and industrial production. They could also reduce Germany's economic recovery by up to 0.2 percentage points of GDP in the third quarter. In Romania, Hungary and France, low river levels have even disrupted electricity generation, affecting both nuclear and hydropower production.
+See Network for Greening the Financial System (2025),
+Leveraging physical climate risk data
+, September.
+Despite the notable strides made by banks under ECB supervision in integrating C&N risks into their risk management procedures, more still needs to be done to ensure they apply sound practices across all material portfolios, exposures and risk categories. For example, some banks may focus only on transition risks but not on physical risks – and vice versa – in certain portfolios. Some prudential transmission channels, such as operational or market risk, receive far less attention compared with credit risk. Furthermore, not all banks have included all material risk drivers, relevant portfolios or transmission channels in their C&N risk management. For more details on the lack of comprehensive coverage see Elderson, F. (2025), “
+Banks have made good progress in managing climate and nature risks – and must continue
+”,
+The Supervision Blog
+, ECB, 11 July
+The experience of a major German car manufacturer is a case in point. Back in 2024 flooding damaged an upstream aluminium supplier in Switzerland, disrupting production further down the supply chain. The flood itself was a known physical hazard. The broader consequence – namely, disruptions cascading through interconnected production networks – was much harder to model. For further details, see Arnold, M. and Dempsey, H (2024), “
+Porsche warns on profits as flooding hits aluminium supplier
+”,
+Financial Times
+, 23 July.
+See the Potsdam Institute for Climate Impact Research’s web page on
+Planetary Boundaries – defining a safe operating space for humanity
+.
+Dinneen, J. (2026), “
+A Missing Piece in Climate Models: Nature’s Own Emissions
+”,
+Yale Environment 360
+, 18 June.
+NGFS (2026),
+Guide to climate scenario analysis for central banks and supervisors – 2025 version
+, 24 September.
+Rantanen, M., Karpechko, A.Y., Lipponen, A. et al. (2022), ”
+The Arctic has warmed nearly four times faster than the globe since 1979
+”,
+Communications Earth and Environment,
+11 August; and World Meteorological Organization (2025),
+European State of the Climate – Report 2024
+, 15 April.
+Hodnebrog, Ø., Myhre, G., Jouan, C., et al. (2024). “Recent reductions in aerosol emissions have increased Earth’s energy imbalance”,
+Communications Earth and Environment
+, 3 April.
+https://wmo.int/news/media-centre/el-nino-set-become-very-strong-raising-risks-of-extreme-weather-2027
+World Meteorological Organization (2025),
+State of the Global Climate 2024
+, 19 March.
+Intergovernmental Panel on Climate Change (2022), “
+Climate Change 2022: Impacts, Adaptation and Vulnerability
+”,
+Working Group II contribution to the
+IPCC Sixth Assessment Report
+, 28 February.
+For more information about prudential transition planning as a key tool for managing risk along a range of possible pathways but also for capitalising on business opportunities, see Elderson, F. (2026), “
+Good practices for advancing climate and nature-related risk management
+”,
+The Supervision Blog
+, ECB, 8 May.
+Montagner, P. (2025), “
+Europe’s demographic shift: what could it mean for banking supervision?
+”,
+The Supervision Blog
+, ECB, 25 November.
+Buch, C. (2026), “
+Addressing AI-enabled cybersecurity threats
+”,
+letter to the CEO of the significant institution
+, European Banking Supervision, Frankfurt am Main, 7 July; and Financial Stability Board (2026), “
+FSB Chair warns of risks arising from frontier Artificial Intelligence (AI) models
+”,
+press release
+, 31 August.
+See also Angeloni, I. and Claessens, S. (2026), “
+An EU Prudential Framework for Slow-Burning Risk Drivers
+”,
+European Parliament
+, September, for more about slow-burning risk drivers (SBRDs), which are factors that build up risks incrementally over time, adversely affecting the viability of banks beyond normal supervisory timelines.
+Related topics
+Banking sector
+Resilience
+Disclaimer
+Please note that related topic tags are currently available for selected content only.
+CONTACT
+European Central Bank
+Directorate General Communications
+Sonnemannstrasse 20
+60314 Frankfurt am Main, Germany
++49 69 1344 7455
+media@ecb.europa.eu
+Reproduction is permitted provided that the source is acknowledged.
+Media contacts

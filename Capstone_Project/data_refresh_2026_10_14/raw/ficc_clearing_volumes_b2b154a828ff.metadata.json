@@ -1,0 +1,19 @@
+{
+  "source_id": "ficc_clearing_volumes",
+  "source_name": "FICC GSD and MBSD shared clearing-volume history",
+  "url": "https://cms-prod.dtcc.com/products/fi/ficc_clearingvolumes.txt",
+  "file": "raw/ficc_clearing_volumes_b2b154a828ff.xml",
+  "collected_at_utc": "2026-10-14T19:42:03+00:00",
+  "public_only": true,
+  "business_lines": [
+    "FICC",
+    "Data Services"
+  ],
+  "kind": "ficc_monthly_series",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://cms-prod.dtcc.com/products/fi/ficc_clearingvolumes.txt",
+  "content_type": "text/plain",
+  "bytes": 83817,
+  "sha256": "efcd1dec8a520ec92137db471627c61ef3bdb59a58183050f8d227bedc806c03"
+}

@@ -1,0 +1,17 @@
+{
+  "http_status": 200,
+  "final_url": "https://www.federalreserve.gov/feeds/press_all.xml",
+  "content_type": "text/xml",
+  "etag": "\"1129a2f26f4cdd1:0\"",
+  "last_modified": "Thu, 24 Sep 2026 21:59:18 GMT",
+  "sha256": "ca97908a70ef63b752bf67fc039bb1666d81107c3560663cd8a9509d4f4270b7",
+  "collected_at_utc": "2026-09-25T07:23:58+00:00",
+  "source": {
+    "id": "fed_press",
+    "name": "Federal Reserve Board",
+    "feed_url": "https://www.federalreserve.gov/feeds/press_all.xml",
+    "reference_url": "https://www.federalreserve.gov/feeds/feeds.htm",
+    "coverage": "US monetary policy, banking regulation and Board announcements",
+    "enabled": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "source_id": "article_643d15ab6c60ae0b",
+  "source_name": "fca_rss original document",
+  "url": "https://www.fca.org.uk/news/press-releases/liam-coleman-appointed-chair-financial-ombudsman-service",
+  "file": "raw/article_643d15ab6c60ae0b_643d15ab6c60.html",
+  "collected_at_utc": "2026-10-14T19:29:18+00:00",
+  "public_only": true,
+  "business_lines": [
+    "FICC",
+    "WIS"
+  ],
+  "kind": "article",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://www.fca.org.uk/news/press-releases/liam-coleman-appointed-chair-financial-ombudsman-service",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 174352,
+  "sha256": "37140bb889efc907e201ae5286818c9fee271484501fc34640ae7f6a4bc6e00b"
+}

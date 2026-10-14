@@ -1,0 +1,13 @@
+field,meaning,calculation,units
+revenue_usd,Total revenues,reported quarter or full year minus nine-month YTD,USD
+expenses_usd,Total expenses,reported quarter or full year minus nine-month YTD,USD
+operating_income_usd,Total operating income,"revenue minus operating expenses, not net income",USD
+net_income_usd,Net income / loss,includes non-operating items and taxes,USD
+operating_margin_pct,Operating profit margin,100 × operating_income / revenue,percent
+net_margin_pct,Net profit margin,100 × net_income / revenue,percent
+revenue_growth_pct,Quarterly revenue growth,100 × (revenue[q] / revenue[q−1] − 1),percent QoQ
+operating_margin_change_pp,Quarterly operating margin change,operating_margin_pct[q] − operating_margin_pct[q−1],percentage points
+net_margin_change_pp,Quarterly net margin change,net_margin_pct[q] − net_margin_pct[q−1],percentage points
+daily_notional_growth_pct,Quarterly daily clearing notional growth,100 × (daily_notional[q] / daily_notional[q−1] − 1),percent QoQ
+daily_sides_growth_pct,Quarterly daily clearing sides growth,100 × (daily_sides[q] / daily_sides[q−1] − 1),percent QoQ
+target_lag1,Previous quarter of the same target,"only this control is median-imputed within each training fold, with missingness indicator",same unit as target

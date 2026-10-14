@@ -1,0 +1,23 @@
+{
+  "snapshot_date": "2026-10-14",
+  "window_start": "2026-10-07",
+  "window_end": "2026-10-14",
+  "news_grain": "one canonical document URL; publication, event and collection times separate",
+  "market_grain": "series_id × original observation_date; measurement period retained",
+  "source_mapping_grain": "source_id × business_line",
+  "business_news_mapping_grain": "document_id × business_line × routing rule",
+  "nonadditive_dimensions": [
+    "RDS jurisdictions and single/dual-sided reports",
+    "industry fund totals and subtypes",
+    "business snapshots shared between products",
+    "NSCC/DTC legal entities and business segments"
+  ],
+  "no_zero_imputation": true,
+  "no_forward_fill": true,
+  "candidate_tags_are_not_impact": true,
+  "news_false_negatives_possible": true,
+  "models_retrained": false,
+  "source_hashes_and_prior_inputs": true,
+  "last_pqd_period": "2026Q2",
+  "last_financial_period": "2026Q2"
+}

@@ -1,0 +1,19 @@
+{
+  "source_id": "article_c9aac6a9a28ff26b",
+  "source_name": "European Securities and Markets Authority news original document",
+  "url": "https://www.esma.europa.eu/press-news/esma-news/esma-seeks-evidence-use-tokenised-collateral-central-clearing",
+  "file": "raw/article_c9aac6a9a28ff26b_c9aac6a9a28f.html",
+  "collected_at_utc": "2026-10-14T19:29:17+00:00",
+  "public_only": true,
+  "business_lines": [
+    "DAS",
+    "DDA"
+  ],
+  "kind": "article",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://www.esma.europa.eu/press-news/esma-news/esma-seeks-evidence-use-tokenised-collateral-central-clearing",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 64073,
+  "sha256": "0dfa83453e1c9675cecd54b3b09c84423a309403cfdb0e85560563c299357126"
+}

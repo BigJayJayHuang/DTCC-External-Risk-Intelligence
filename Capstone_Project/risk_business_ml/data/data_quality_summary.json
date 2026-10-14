@@ -1,0 +1,60 @@
+{
+  "prepared_at_utc": "2026-10-05T18:53:44.680815+00:00",
+  "collection_cutoff_date": "2026-10-05",
+  "financial_reports": 65,
+  "income_rows": 928,
+  "business_quarter_rows": 75,
+  "duplicate_value_conflicts": 0,
+  "derived_metric_values": 48,
+  "quarter_reconciliations": 164,
+  "max_reconciliation_error_usd": 1000.0,
+  "pqd_xlsx_reports": 22,
+  "operations_rows": 182,
+  "operations_model_excluded_scope": "NSCC OTC/ETD scope not aggregated",
+  "operations_missing_quarters": [
+    "2022Q3 GSD/MBSD daily notionals excluded: unresolved source units"
+  ],
+  "pqd_pdf_recovered_quarter": "2024Q4; rounded original PDF figures",
+  "nscc_scope_note": "OTC/Exchange explanatory notes change over history; kept separate and excluded from operational modeling",
+  "historical_fed_headlines": 1206,
+  "previous_feed_documents": 75,
+  "all_unique_news_documents": 1263,
+  "seed_date_start": "2026-04-20T00:00:00+00:00",
+  "seed_date_end": "2026-09-24T18:30:00+00:00",
+  "risk_series": 6,
+  "risk_observations": 11809,
+  "financial_coverage": [
+    {
+      "entity": "DTC",
+      "quarters": 25,
+      "first_quarter": "2020Q1",
+      "last_quarter": "2026Q2"
+    },
+    {
+      "entity": "FICC",
+      "quarters": 27,
+      "first_quarter": "2019Q4",
+      "last_quarter": "2026Q2"
+    },
+    {
+      "entity": "NSCC",
+      "quarters": 23,
+      "first_quarter": "2020Q1",
+      "last_quarter": "2026Q2"
+    }
+  ],
+  "not_modeled": [
+    "ECS as a separately reported financial segment",
+    "Remaining eight kickoff business lines",
+    "Cyber / operational / third-party / data-management incident severity",
+    "DTCC-specific event impact"
+  ],
+  "limits": [
+    "Small independent quarterly sample",
+    "Current-vintage retrospective inputs",
+    "Fed announcement counts measure communication, not risk severity",
+    "NSCC and DTC are legal entities with activities outside ECS",
+    "PQD 15.2 financial fields are annual, excluded as quarterly targets",
+    "PQD 17.3 incident figures are rolling 12 months, excluded as quarter-specific labels"
+  ]
+}

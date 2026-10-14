@@ -1,0 +1,18 @@
+{
+  "source_id": "article_19b375e1b09838b6",
+  "source_name": "Federal Register: SEC, CFTC and Federal Reserve publications original document",
+  "url": "https://www.federalregister.gov/documents/2026/10/09/2026-20713/self-regulatory-organizations-nyse-arca-inc-notice-of-filing-and-immediate-effectiveness-of-a",
+  "file": "raw/article_19b375e1b09838b6_19b375e1b098.html",
+  "collected_at_utc": "2026-10-14T19:29:19+00:00",
+  "public_only": true,
+  "business_lines": [
+    "Data Services"
+  ],
+  "kind": "article",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://unblock.federalregister.gov/",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 10596,
+  "sha256": "cc4fe8876621c6286206ac15030c0722afbfec86a7fbda593ad39d5a78776330"
+}

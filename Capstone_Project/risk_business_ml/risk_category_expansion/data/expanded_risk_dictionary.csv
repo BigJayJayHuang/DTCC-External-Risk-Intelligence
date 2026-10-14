@@ -1,0 +1,27 @@
+feature,family,label_zh,source,units,scope,entity_scope,interpretation_limit,primary,measurement_window
+vix_change_pct,clearing_financial,VIX季度均值增幅,FRED VIXCLS,percent,external,ALL,外部市场代理，不是会员违约、保证金不足或自身流动性缺口。,False,quarter
+rate_change_pp,clearing_financial,十年期国债收益率季度末变化,FRED DGS10,percentage points,external,ALL,外部市场代理，不是会员违约、保证金不足或自身流动性缺口。,False,quarter
+credit_change_index,clearing_financial,信用条件季度变化,FRED NFCICREDIT,index points,external,ALL,外部市场代理，不是会员违约、保证金不足或自身流动性缺口。,False,quarter
+funding_basis_max_bps,clearing_financial,SOFR−EFFR季度最大利差,FRED SOFR/EFFR,basis points,external,ALL,外部市场代理，不是会员违约、保证金不足或自身流动性缺口。,True,quarter
+fed_regulatory_announcements,legal_regulatory,美联储监管公告数量,Federal Reserve official press archives,count,external,ALL,公告数量不是风险严重度；并非所有公告与DTCC有关。,False,quarter
+fed_monetary_announcements,strategic,美联储货币政策公告数量,Federal Reserve official press archives,count,external,ALL,公告数量不是风险严重度；并非所有公告与DTCC有关。,False,quarter
+fema_major_declarations,business_continuity,美国重大灾害宣告数量,OpenFEMA DisasterDeclarationsSummaries v2,declarations,external,ALL,按宣告日期计数；全国外部中断触发代理，不证明DTCC服务中断。,True,quarter
+fema_nonbiological_declarations,business_continuity,排除生物类的重大灾害宣告,OpenFEMA DisasterDeclarationsSummaries v2,declarations,external,ALL,用于检验疫情宣告是否主导结果，不衡量受灾损失。,False,quarter
+kev_new_entries,cybersecurity,CISA已利用漏洞目录新增数量,CISA Known Exploited Vulnerabilities catalog,CVE entries,external,ALL,按dateAdded计数；排除2021Q4目录启动批量载入。没有DTCC软件清单，不能证明漏洞暴露或攻击。,True,quarter
+cloud_infrastructure_incidents,information_technology,外部云计算与网络服务事件公告,Google official product incident histories,unique incidents,external,ALL,选定产品的公开服务事件，可含中断、性能下降等，数量不区分严重程度或影响范围；公告政策可能变化。未验证DTCC使用这些服务，不能当作DTCC事件。GCP技术与数据两组可以重叠。,True,quarter
+cloud_data_service_incidents,data_management,外部云数据服务事件公告,Google official product incident histories,unique incidents,external,ALL,选定产品的公开服务事件，可含中断、性能下降等，数量不区分严重程度或影响范围；公告政策可能变化。未验证DTCC使用这些服务，不能当作DTCC事件。GCP技术与数据两组可以重叠。,True,quarter
+workspace_provider_incidents,third_party,外部办公服务提供商事件公告,Google official product incident histories,unique incidents,external,ALL,选定产品的公开服务事件，可含中断、性能下降等，数量不区分严重程度或影响范围；公告政策可能变化。未验证DTCC使用这些服务，不能当作DTCC事件。GCP技术与数据两组可以重叠。,True,quarter
+finance_sector_quit_rate,human_capital,金融保险行业主动离职率,FRED JTU5200QUR,percent,external,ALL,行业代理，非DTCC员工数据；未经季调，分析另控制季度季节性。,True,quarter
+economic_policy_uncertainty,strategic,美国经济政策不确定性,FRED USEPUINDXM,index,external,ALL,外部战略环境代理，不证明战略项目失败或竞争地位下降。,True,quarter
+treasury_bill_yield_volatility,corporate_financial,三个月国债收益率波动,FRED DGS3MO,percentage points,external,ALL,公司现金再投资环境代理，不测量DTCC实际投资、资本或资金缺口。,True,quarter
+financial_regulator_final_rules,legal_regulatory,SEC/CFTC/美联储最终规则发布数量,Federal Register API: SEC/CFTC/Federal Reserve RULE publications,documents,external,ALL,包含行政与其他金融业务规则，数量只测量监管变化活动；不证明FICC/ECS合规失败。,True,quarter
+margin_backtest_uncovered_pct,model_risk,保证金模型回测未覆盖比例,DTCC PQD 6.5.3,percent,own_disclosed_metric,FICC/GSD,过去12个月回测覆盖结果；与模型使用环境及市场波动有关，不等于设计或实现错误，也不是已实现损失。,True,trailing 12 months
+core_system_unavailability_pct,processing_operations,核心系统不可用比例,DTCC PQD 17.2.1,percent,own_disclosed_metric,FICC/GSD,系统聚合可用性口径，部分报告涉及共享系统；不能识别事故根因或直接归属每个业务。,False,specified availability window / system aggregate
+margin_backtest_uncovered_pct,model_risk,保证金模型回测未覆盖比例,DTCC PQD 6.5.3,percent,own_disclosed_metric,FICC/MBSD,过去12个月回测覆盖结果；与模型使用环境及市场波动有关，不等于设计或实现错误，也不是已实现损失。,True,trailing 12 months
+core_system_unavailability_pct,processing_operations,核心系统不可用比例,DTCC PQD 17.2.1,percent,own_disclosed_metric,FICC/MBSD,系统聚合可用性口径，部分报告涉及共享系统；不能识别事故根因或直接归属每个业务。,False,specified availability window / system aggregate
+margin_backtest_uncovered_pct,model_risk,保证金模型回测未覆盖比例,DTCC PQD 6.5.3,percent,own_disclosed_metric,NSCC,过去12个月回测覆盖结果；与模型使用环境及市场波动有关，不等于设计或实现错误，也不是已实现损失。,True,trailing 12 months
+core_system_unavailability_pct,processing_operations,核心系统不可用比例,DTCC PQD 17.2.1,percent,own_disclosed_metric,NSCC,系统聚合可用性口径，部分报告涉及共享系统；不能识别事故根因或直接归属每个业务。,False,specified availability window / system aggregate
+own_liquidity_buffer_pressure,corporate_financial,半年运营费用/自有流动净资产,DTCC PQD 15.1.1/15.1.2,ratio,own_disclosed_metric,FICC,比值越高缓冲相对越小；费用与财务表现机械相关，属于内生状态指标；早期年度重复数据已排除。,False,quarter end
+own_liquidity_buffer_pressure,corporate_financial,半年运营费用/自有流动净资产,DTCC PQD 15.1.1/15.1.2,ratio,own_disclosed_metric,NSCC,比值越高缓冲相对越小；费用与财务表现机械相关，属于内生状态指标；早期年度重复数据已排除。,False,quarter end
+clearing_core_failures_12m,processing_operations,清算核心系统过去12个月故障数,DTCC PQD 17.3.1,failures,shared_clearing_agency_metric,CLEARING,GSD/MBSD/NSCC共享清算系统口径；不能当作单季新增事件，不能分配给DTC或某单一业务。,True,trailing 12 months
+margin_backtest_uncovered_pct,model_risk,保证金模型回测未覆盖比例：FICC汇总,DTCC PQD 6.5.3 with 6.5.2 observation weights,percent,own_disclosed_metric,FICC,按GSD与MBSD回测观察数加权的研究汇总，非DTCC发布的独立FICC风险评级；不是已实现损失。,True,trailing 12 months

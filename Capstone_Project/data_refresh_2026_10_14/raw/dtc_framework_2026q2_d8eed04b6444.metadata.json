@@ -1,0 +1,20 @@
+{
+  "source_id": "dtc_framework_2026q2",
+  "source_name": "dtc_framework_2026q2",
+  "url": "https://files.dtcc.com/download/assets/DTC-DISCLOSURE-FRAMEWORK-2026-Q2.pdf/f72b1e04bc4211f193b7027f236bf70c",
+  "file": "raw/dtc_framework_2026q2_d8eed04b6444.pdf",
+  "collected_at_utc": "2026-10-14T19:23:13+00:00",
+  "public_only": true,
+  "business_lines": [
+    "ECS",
+    "Asset Services",
+    "DAS"
+  ],
+  "kind": "disclosure_framework",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://files.dtcc.com/download/assets/DTC-DISCLOSURE-FRAMEWORK-2026-Q2.pdf/f72b1e04bc4211f193b7027f236bf70c",
+  "content_type": "application/pdf",
+  "bytes": 933442,
+  "sha256": "f952525bb6d259e22a5d00f60b8926be0a09c8e067c90a7b33b1db7ba576754a"
+}

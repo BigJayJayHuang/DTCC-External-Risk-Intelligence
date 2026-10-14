@@ -5,11 +5,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/daily-data.yml'
-      - '*.py'
-      - 'schema.sql'
-      - 'sources.json'
-      - 'requirements.txt'
-      - 'tests/**'
+      - 'Capstone_Project/**'
   schedule:
     # 22:17 UTC = 18:17 New York during daylight time, 17:17 in winter.
     - cron: '17 22 * * *'
@@ -26,6 +22,9 @@ jobs:
   update:
     runs-on: ubuntu-latest
     timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: Capstone_Project/capstone_database
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
@@ -34,6 +33,7 @@ jobs:
         with:
           python-version: '3.12'
           cache: pip
+          cache-dependency-path: Capstone_Project/capstone_database/requirements.txt
       - run: python -m pip install -r requirements.txt
       - run: python -m unittest discover -s tests -v
       - name: Restore latest durable database
@@ -52,10 +52,10 @@ jobs:
           retention-days: 30
           if-no-files-found: warn
           path: |
-            data/capstone.sqlite3.gz
-            data/snapshot_manifest.json
-            exports/
-            logs/
+            Capstone_Project/capstone_database/data/capstone.sqlite3.gz
+            Capstone_Project/capstone_database/data/snapshot_manifest.json
+            Capstone_Project/capstone_database/exports/
+            Capstone_Project/capstone_database/logs/
       - name: Report partial collection failures
         run: |
           python - <<'PY'

@@ -1,0 +1,55 @@
+﻿series_id,observation_date,value,units,frequency,source_id,source_file,evidence_location,collected_at_utc,vintage_id,publication_date,measurement_period,measurement_period_end
+BAA10Y,2026-10-07,1.46,percentage points,daily,fred_BAA10Y,raw/fred_BAA10Y_3a911684fa52.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-07,2026-10-07
+BAA10Y,2026-10-08,1.48,percentage points,daily,fred_BAA10Y,raw/fred_BAA10Y_3a911684fa52.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-08,2026-10-08
+BAA10Y,2026-10-09,1.45,percentage points,daily,fred_BAA10Y,raw/fred_BAA10Y_3a911684fa52.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-09,2026-10-09
+BAMLC0A0CM,2026-10-07,0.82,percent,daily,fred_BAMLC0A0CM,raw/fred_BAMLC0A0CM_4ba94186b71c.csv,current_snapshot,2026-10-14T19:20:08+00:00,2026-10-14_current_retrieval,,2026-10-07,2026-10-07
+BAMLC0A0CM,2026-10-08,0.82,percent,daily,fred_BAMLC0A0CM,raw/fred_BAMLC0A0CM_4ba94186b71c.csv,current_snapshot,2026-10-14T19:20:08+00:00,2026-10-14_current_retrieval,,2026-10-08,2026-10-08
+BAMLC0A0CM,2026-10-09,0.83,percent,daily,fred_BAMLC0A0CM,raw/fred_BAMLC0A0CM_4ba94186b71c.csv,current_snapshot,2026-10-14T19:20:08+00:00,2026-10-14_current_retrieval,,2026-10-09,2026-10-09
+BAMLC0A0CM,2026-10-12,0.83,percent,daily,fred_BAMLC0A0CM,raw/fred_BAMLC0A0CM_4ba94186b71c.csv,current_snapshot,2026-10-14T19:20:08+00:00,2026-10-14_current_retrieval,,2026-10-12,2026-10-12
+BAMLC0A0CM,2026-10-13,0.83,percent,daily,fred_BAMLC0A0CM,raw/fred_BAMLC0A0CM_4ba94186b71c.csv,current_snapshot,2026-10-14T19:20:08+00:00,2026-10-14_current_retrieval,,2026-10-13,2026-10-13
+CBBTCUSD,2026-10-07,83239.49,USD per bitcoin,daily,fred_CBBTCUSD,raw/fred_CBBTCUSD_e455f4f3051b.csv,current_snapshot,2026-10-14T19:20:08+00:00,2026-10-14_current_retrieval,,2026-10-07,2026-10-07
+CBBTCUSD,2026-10-08,81657.19,USD per bitcoin,daily,fred_CBBTCUSD,raw/fred_CBBTCUSD_e455f4f3051b.csv,current_snapshot,2026-10-14T19:20:08+00:00,2026-10-14_current_retrieval,,2026-10-08,2026-10-08
+CBBTCUSD,2026-10-09,82543.3,USD per bitcoin,daily,fred_CBBTCUSD,raw/fred_CBBTCUSD_e455f4f3051b.csv,current_snapshot,2026-10-14T19:20:08+00:00,2026-10-14_current_retrieval,,2026-10-09,2026-10-09
+CBBTCUSD,2026-10-10,82926.27,USD per bitcoin,daily,fred_CBBTCUSD,raw/fred_CBBTCUSD_e455f4f3051b.csv,current_snapshot,2026-10-14T19:20:08+00:00,2026-10-14_current_retrieval,,2026-10-10,2026-10-10
+CBBTCUSD,2026-10-11,83683.56,USD per bitcoin,daily,fred_CBBTCUSD,raw/fred_CBBTCUSD_e455f4f3051b.csv,current_snapshot,2026-10-14T19:20:08+00:00,2026-10-14_current_retrieval,,2026-10-11,2026-10-11
+CBBTCUSD,2026-10-12,81782.78,USD per bitcoin,daily,fred_CBBTCUSD,raw/fred_CBBTCUSD_e455f4f3051b.csv,current_snapshot,2026-10-14T19:20:08+00:00,2026-10-14_current_retrieval,,2026-10-12,2026-10-12
+CBBTCUSD,2026-10-13,83159.9,USD per bitcoin,daily,fred_CBBTCUSD,raw/fred_CBBTCUSD_e455f4f3051b.csv,current_snapshot,2026-10-14T19:20:08+00:00,2026-10-14_current_retrieval,,2026-10-13,2026-10-13
+CBETHUSD,2026-10-07,2572.06,USD per ether,daily,fred_CBETHUSD,raw/fred_CBETHUSD_9dc1c6b08e33.csv,current_snapshot,2026-10-14T19:20:09+00:00,2026-10-14_current_retrieval,,2026-10-07,2026-10-07
+CBETHUSD,2026-10-08,2472.49,USD per ether,daily,fred_CBETHUSD,raw/fred_CBETHUSD_9dc1c6b08e33.csv,current_snapshot,2026-10-14T19:20:09+00:00,2026-10-14_current_retrieval,,2026-10-08,2026-10-08
+CBETHUSD,2026-10-09,2484.7,USD per ether,daily,fred_CBETHUSD,raw/fred_CBETHUSD_9dc1c6b08e33.csv,current_snapshot,2026-10-14T19:20:09+00:00,2026-10-14_current_retrieval,,2026-10-09,2026-10-09
+CBETHUSD,2026-10-10,2504.06,USD per ether,daily,fred_CBETHUSD,raw/fred_CBETHUSD_9dc1c6b08e33.csv,current_snapshot,2026-10-14T19:20:09+00:00,2026-10-14_current_retrieval,,2026-10-10,2026-10-10
+CBETHUSD,2026-10-11,2535.04,USD per ether,daily,fred_CBETHUSD,raw/fred_CBETHUSD_9dc1c6b08e33.csv,current_snapshot,2026-10-14T19:20:09+00:00,2026-10-14_current_retrieval,,2026-10-11,2026-10-11
+CBETHUSD,2026-10-12,2444.98,USD per ether,daily,fred_CBETHUSD,raw/fred_CBETHUSD_9dc1c6b08e33.csv,current_snapshot,2026-10-14T19:20:09+00:00,2026-10-14_current_retrieval,,2026-10-12,2026-10-12
+CBETHUSD,2026-10-13,2498.73,USD per ether,daily,fred_CBETHUSD,raw/fred_CBETHUSD_9dc1c6b08e33.csv,current_snapshot,2026-10-14T19:20:09+00:00,2026-10-14_current_retrieval,,2026-10-13,2026-10-13
+DGS10,2026-10-07,5.28,percent,daily,fred_DGS10,raw/fred_DGS10_b653a4cdbea1.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-07,2026-10-07
+DGS10,2026-10-08,5.22,percent,daily,fred_DGS10,raw/fred_DGS10_b653a4cdbea1.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-08,2026-10-08
+DGS10,2026-10-09,5.24,percent,daily,fred_DGS10,raw/fred_DGS10_b653a4cdbea1.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-09,2026-10-09
+DGS2,2026-10-07,4.77,percent,daily,fred_DGS2,raw/fred_DGS2_f1c42abaaad1.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-07,2026-10-07
+DGS2,2026-10-08,4.75,percent,daily,fred_DGS2,raw/fred_DGS2_f1c42abaaad1.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-08,2026-10-08
+DGS2,2026-10-09,4.8,percent,daily,fred_DGS2,raw/fred_DGS2_f1c42abaaad1.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-09,2026-10-09
+DGS3MO,2026-10-07,4.22,percent,daily,fred_DGS3MO,raw/fred_DGS3MO_eb23767bc57f.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-07,2026-10-07
+DGS3MO,2026-10-08,4.23,percent,daily,fred_DGS3MO,raw/fred_DGS3MO_eb23767bc57f.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-08,2026-10-08
+DGS3MO,2026-10-09,4.25,percent,daily,fred_DGS3MO,raw/fred_DGS3MO_eb23767bc57f.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-09,2026-10-09
+DTWEXBGS,2026-10-07,121.2558,index points,daily,fred_DTWEXBGS,raw/fred_DTWEXBGS_e4dbf5155844.csv,current_snapshot,2026-10-14T19:20:08+00:00,2026-10-14_current_retrieval,,2026-10-07,2026-10-07
+DTWEXBGS,2026-10-08,121.4469,index points,daily,fred_DTWEXBGS,raw/fred_DTWEXBGS_e4dbf5155844.csv,current_snapshot,2026-10-14T19:20:08+00:00,2026-10-14_current_retrieval,,2026-10-08,2026-10-08
+DTWEXBGS,2026-10-09,121.6023,index points,daily,fred_DTWEXBGS,raw/fred_DTWEXBGS_e4dbf5155844.csv,current_snapshot,2026-10-14T19:20:08+00:00,2026-10-14_current_retrieval,,2026-10-09,2026-10-09
+EFFR,2026-10-07,3.88,percent,daily,fred_EFFR,raw/fred_EFFR_33d8029ca9e4.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-07,2026-10-07
+EFFR,2026-10-08,3.88,percent,daily,fred_EFFR,raw/fred_EFFR_33d8029ca9e4.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-08,2026-10-08
+EFFR,2026-10-09,3.88,percent,daily,fred_EFFR,raw/fred_EFFR_33d8029ca9e4.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-09,2026-10-09
+EFFR,2026-10-12,,percent,daily,fred_EFFR,raw/fred_EFFR_33d8029ca9e4.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-12,2026-10-12
+EFFR,2026-10-13,3.88,percent,daily,fred_EFFR,raw/fred_EFFR_33d8029ca9e4.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-13,2026-10-13
+SOFR,2026-10-07,3.88,percent,daily,fred_SOFR,raw/fred_SOFR_2d213f151747.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-07,2026-10-07
+SOFR,2026-10-08,3.87,percent,daily,fred_SOFR,raw/fred_SOFR_2d213f151747.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-08,2026-10-08
+SOFR,2026-10-09,3.87,percent,daily,fred_SOFR,raw/fred_SOFR_2d213f151747.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-09,2026-10-09
+SOFR,2026-10-12,,percent,daily,fred_SOFR,raw/fred_SOFR_2d213f151747.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-12,2026-10-12
+SOFR,2026-10-13,3.89,percent,daily,fred_SOFR,raw/fred_SOFR_2d213f151747.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-13,2026-10-13
+SP500,2026-10-07,7801.77,index points,daily,fred_SP500,raw/fred_SP500_6351ecf87287.csv,current_snapshot,2026-10-14T19:20:08+00:00,2026-10-14_current_retrieval,,2026-10-07,2026-10-07
+SP500,2026-10-08,7765.36,index points,daily,fred_SP500,raw/fred_SP500_6351ecf87287.csv,current_snapshot,2026-10-14T19:20:08+00:00,2026-10-14_current_retrieval,,2026-10-08,2026-10-08
+SP500,2026-10-09,7811.54,index points,daily,fred_SP500,raw/fred_SP500_6351ecf87287.csv,current_snapshot,2026-10-14T19:20:08+00:00,2026-10-14_current_retrieval,,2026-10-09,2026-10-09
+SP500,2026-10-12,7807.24,index points,daily,fred_SP500,raw/fred_SP500_6351ecf87287.csv,current_snapshot,2026-10-14T19:20:08+00:00,2026-10-14_current_retrieval,,2026-10-12,2026-10-12
+SP500,2026-10-13,7805.45,index points,daily,fred_SP500,raw/fred_SP500_6351ecf87287.csv,current_snapshot,2026-10-14T19:20:08+00:00,2026-10-14_current_retrieval,,2026-10-13,2026-10-13
+VIXCLS,2026-10-07,15.08,index points,daily,fred_VIXCLS,raw/fred_VIXCLS_50f2e372ce9e.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-07,2026-10-07
+VIXCLS,2026-10-08,15.41,index points,daily,fred_VIXCLS,raw/fred_VIXCLS_50f2e372ce9e.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-08,2026-10-08
+VIXCLS,2026-10-09,14.84,index points,daily,fred_VIXCLS,raw/fred_VIXCLS_50f2e372ce9e.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-09,2026-10-09
+VIXCLS,2026-10-12,15.21,index points,daily,fred_VIXCLS,raw/fred_VIXCLS_50f2e372ce9e.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-12,2026-10-12
+VIXCLS,2026-10-13,15.27,index points,daily,fred_VIXCLS,raw/fred_VIXCLS_50f2e372ce9e.csv,current_snapshot,2026-10-14T19:20:07+00:00,2026-10-14_current_retrieval,,2026-10-13,2026-10-13

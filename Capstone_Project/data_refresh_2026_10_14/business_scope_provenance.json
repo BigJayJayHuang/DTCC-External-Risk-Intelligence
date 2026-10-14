@@ -1,0 +1,18 @@
+{
+  "scope_source": "/Users/shanpeiyuan/Capstone Project/DTCC_Duke_Capstone_Kickoff - Share.pptx",
+  "sha256": "254f31e5c029aa7cceeafcc1c7a0e033bcd457e58b1ac970c2f6b54d5ff86c61",
+  "business_scope_slide": 9,
+  "ten_business_lines": [
+    "FICC",
+    "ECS",
+    "RDS",
+    "WIS",
+    "ITP",
+    "Asset Services",
+    "DAS",
+    "DDA",
+    "Data Services",
+    "Consulting"
+  ],
+  "guardrail": "Public sources only; shared legal entities are not independently reported segments."
+}

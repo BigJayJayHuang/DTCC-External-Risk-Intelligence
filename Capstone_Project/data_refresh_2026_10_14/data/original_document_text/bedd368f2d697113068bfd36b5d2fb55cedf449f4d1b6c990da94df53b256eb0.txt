@@ -1,0 +1,39 @@
+    
+DTCC offers enhanced access to all important notices via a Web -based subscription service. 
+The notification system leverages RSS Newsfeeds, providing significant benefits including  
+real-time updates and customizable delivery. To learn more and to set up your own DTCC RSS  
+alerts, visit http://www.dtcc.com/subscription_form.php.     
+     
+1 
+IMPORTANT NOTICE 
+Fixed Income Clearing Corporation - MBSD 
+DTCC Public (White) 
+ 
+MBS #: MBS1606-26 
+Date: October 12, 2026 
+To: All Mortgage-Backed Securities Division Members 
+Category: Service Update 
+Subject: FICC Veterans Day Holiday Schedule 
+ 
+The Mortgage-Backed Securities Division (“MBSD”) of the Fixed Income Clearing Corporation 
+(“FICC”) will be closed Wednesday, November 11, 2026, in observance of Veterans Day.  
+The following changes in FICC's operations and schedules will be in effect: 
+ 
+MBS Division Clearing, Pool Netting, and EPN Services: 
+ 
+Users will receive output files from the Tuesday, November 10, 2026, evening pass by 2:00 
+AM EST on Wednesday, November 11, 2026. 
+ 
+Clearing System 
+No trade input will be accepted on Wednesday, November 11, 2026. Trades executed on 
+Wednesday, November 11, 2026, should be submitted on Thursday, November 12, 2026, 
+along with trades for that day. The Trade Date field should show the actual trade date that the 
+trade was executed. 
+ 
+Pool Netting System 
+No pool instructs will be accepted on Wednesday, November 11, 2026.  
+ 
+EPN System 
+No EPN messages will be accepted on Wednesday, November 11, 2026. 
+ 
+ 

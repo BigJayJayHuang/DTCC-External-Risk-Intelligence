@@ -1,0 +1,18 @@
+{
+  "source_id": "article_52595361f7fdb305",
+  "source_name": "Federal Register: SEC, CFTC and Federal Reserve publications original document",
+  "url": "https://www.federalregister.gov/documents/2026/10/07/2026-20506/self-regulatory-organizations-financial-industry-regulatory-authority-inc-order-approving-a-proposed",
+  "file": "raw/article_52595361f7fdb305_52595361f7fd.html",
+  "collected_at_utc": "2026-10-14T19:29:43+00:00",
+  "public_only": true,
+  "business_lines": [
+    "ECS"
+  ],
+  "kind": "article",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://unblock.federalregister.gov/",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 10596,
+  "sha256": "ea79ed3b2a8641309284d8f89c51e5cc9db7d251e38dd9a3abe02924a03094f2"
+}

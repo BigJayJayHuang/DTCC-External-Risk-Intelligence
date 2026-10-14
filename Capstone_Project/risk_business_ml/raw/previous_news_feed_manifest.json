@@ -1,0 +1,27 @@
+[
+  {
+    "original_raw_file": "runs/20260925T072746Z_db9e4cf3/raw/bis_press.xml",
+    "package_raw_file": "raw/previous_news_feed/runs/20260925T072746Z_db9e4cf3/raw/bis_press.xml",
+    "sha256": "af4b761faba582989ab2d9ef37f722898ee2b05bb38f50efa8aed08b7028c268"
+  },
+  {
+    "original_raw_file": "runs/20260925T072746Z_db9e4cf3/raw/cftc_press.xml",
+    "package_raw_file": "raw/previous_news_feed/runs/20260925T072746Z_db9e4cf3/raw/cftc_press.xml",
+    "sha256": "c7620aff1fa2dc3d9d374bac7bd7221bf1c0caf075801b94e83b5e3111eebdaa"
+  },
+  {
+    "original_raw_file": "runs/20260925T072746Z_db9e4cf3/raw/ecb_press.xml",
+    "package_raw_file": "raw/previous_news_feed/runs/20260925T072746Z_db9e4cf3/raw/ecb_press.xml",
+    "sha256": "a163405b717e652b3020181ba7a73bbcdf68bf9174c56b8582ecfdc389f8a734"
+  },
+  {
+    "original_raw_file": "runs/20260925T072746Z_db9e4cf3/raw/fed_press.xml",
+    "package_raw_file": "raw/previous_news_feed/runs/20260925T072746Z_db9e4cf3/raw/fed_press.xml",
+    "sha256": "ca97908a70ef63b752bf67fc039bb1666d81107c3560663cd8a9509d4f4270b7"
+  },
+  {
+    "original_raw_file": "runs/20260925T072746Z_db9e4cf3/raw/sec_press.xml",
+    "package_raw_file": "raw/previous_news_feed/runs/20260925T072746Z_db9e4cf3/raw/sec_press.xml",
+    "sha256": "5ad5b13e753f9175ab73f6bfc0c5691f038b57f3badc180fbb97afdd0b95cac6"
+  }
+]

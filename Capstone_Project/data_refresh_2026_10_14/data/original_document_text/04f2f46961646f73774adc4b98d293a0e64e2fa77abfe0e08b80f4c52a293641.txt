@@ -1,0 +1,170 @@
+    
+DTCC offers enhanced access to all important notices via a Web-based subscription service. 
+The notification system leverages RSS Newsfeeds, providing significant benefits including 
+real-time updates and customizable delivery. To learn more and to set up your own DTCC RSS 
+alerts, visit http://www.dtcc.com/subscription_form.php.     
+     
+1 
+IMPORTANT NOTICE 
+The Depository Trust Company 
+DTCC Public (White) 
+ 
+B #: 24848-26 
+Date: October 12, 2026 
+To: All Participants 
+Category: Depositary Services Fee 
+From: International Services 
+Attention: Operations, Reorg & Dividend Managers, Partners & Cashiers 
+Subject: 
+Depositary Fees Notification 
+Security: Metallium Limited 
+ 
+CUSIP: 59125U109 
+ 
+Bank of New York Mellon  
+ 
+ 
+The Depository Trust Company has received from The Bank of New York Mellon the attached 
+information regarding depositary fees. Charges will be processed through the billing statement on the 
+seventh business day of the month following the Record Date. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Important Legal Information: The Depository Trust Company (“DTC”) does not represent or warrant the accuracy, adequacy,  
+timeliness, completeness or fitness for any particular purpose of the information contained in this communication, which is based in part 
+on information obtained from third parties and not independently verified by DTC and which is provided as is. The information  contained 
+in this communication is not intended to be a substitute for obtaining tax advice from an appropriate professional advisor. In providing 
+this communication, DTC shall not be liable for (1) any loss resulting directly or indirectly from mistakes, errors, omissions, interruptions, 
+delays or defects in such communication, unless caused directly by gross negligence or willful misconduct on the part of DTC, and (2) any 
+special, consequential, exemplary, incidental or punitive damages. To ensure compliance with Internal Revenue Service Circular 230, you 
+are hereby notified that: (a) any discussion of federal tax issues contained or referred to herein is not intended or written to be used, and 
+cannot be used, for the purpose of avoiding penalties that may be imposed under the Internal Revenue Code; and (b) as a matter of policy, 
+DTC does not provide tax, legal or accounting advice and accordingly, you should consult your own tax, legal and accounting advisor  
+before engaging in any transaction. 
+
+PLEASE SEE INVESTOR DISCLOSURE ON LAST PAGE  
+  
+240 Greenwich Street, 8th Floor West, New York, NY 10286 
+ 
+October 9, 2026 
+ 
+ The Bank of New York Mellon  (the "Depositary") hereby represents and warrants to DTC,
+Euroclear, and Clearstream that it may collect and receive, pursuant to the terms and conditions of
+the Deposit Agreement (the "Agreement"), dated as of Jan 05, 2026 between Metallium Limited
+and the Depositary, a service fee per ADR share in accordance with the table below (the
+"Representation"):
+ 
+ Depositary: 
+ BNY
+ 
+ DTC #: 
+ 2504
+ Security Name: 
+ Metallium Limited  
+ CUSIP: 
+ 59125U109  
+ Security Type: 
+ DR
+ Fee: 
+ $0.03
+ Record Date: 
+ Nov 25, 2026
+ Billing Period: 
+ 
+ November 
+ 
+ 
+The Depositary hereby instructs DTC, Euroclear, and Clearstream to collect and pass-through
+such fees to the Depositary (the "Instruction").
+ 
+Depositary hereby agrees to indemnify and hold harmless DTC, Euroclear, and Clearstream and
+their respective officers, directors, employees and agents (the "Indemnitees") from and against any
+and all Losses1 and/or Legal Actions2 resulting from or arising out the Representation and/or the
+Instruction, provided, however that such indemnity shall not extend to any Losses or Legal Actions
+resulting from or arising out of the negligence, willful default or fraud of DTC, Euroclear, and
+Clearstream (or any of their respective officers, directors, agents or employees).
+ 
+Thank You, 
+ 
+The Bank of New York Mellon   
+1 "Losses" means and includes all losses, liabilities, damages, judgments, payments, costs and expenses (including without limitation any
+reasonable costs of investigation and reasonable legal fees and expenses incurred).  
+2 "Legal Action" means and includes any claim, counterclaim, demand, action, suit, counterclaim, arbitration, inquiry, proceeding or investigation
+before any federal, state or foreign court or other tribunal, or any investigative or regulatory agency or SRO. 
+Page 1
+of  2
+
+  
+240 Greenwich Street, 8th Floor West, New York, NY 10286 
+ 
+This notice and the information and data provided herein are provided for general informational purposes
+only. BNY does not warrant or guarantee the accuracy, timeliness or completeness of any such information or
+data. BNY does not undertake any obligation to update or amend this notice or any information or data, and
+may change, update or amend this notice or any information or data at any time without prior notice.  
+ 
+BNY provides no advice, recommendation or endorsement with respect to any company or securities. No
+information or data is intended to provide legal, tax, accounting, investment, financial, trading or other advice
+on any matter, and is not to be used as such. We expressly disclaim any liability whatsoever for any loss
+howsoever arising from or in reliance upon this notice or any information or data, including market value loss
+on the sale or purchase of securities or other instruments or obligations.  
+ 
+Nothing herein shall be deemed to constitute an offer to sell or a solicitation of an offer to buy securities.  
+ 
+BNY collects fees from DR holders pursuant to the terms and conditions of the DRs and any deposit
+agreement under which they are issued. From time to time, BNY may make payments to an issuer to
+reimburse and/or share revenue from the fees collected from DR holders, or waive fees and expenses to an
+issuer for services provided, generally related to costs and expenses arising out of establishment and
+maintenance of the DR program. BNY may pay a rebate to brokers in connection with unsponsored DR
+issuances; brokers may or may not disclose or pass back some or all of such rebate to the DR investor. BNY
+may also use brokers, dealers or other service providers that are affiliates and that may earn or share fees
+and commissions.  
+ 
+BNY may execute DR foreign currency transactions itself or through its affiliates, or the Custodian or the
+underlying Company may execute foreign currency transactions and pay US dollars to BNY.  In those
+instances where it executes DR foreign currency transactions itself or through its affiliates, BNY acts as
+principal counterparty and not as agent, advisor, broker or fiduciary.  In such cases, BNY has no obligation to
+obtain the most favorable exchange rate, makes no representation that the rate is a favorable rate and will not
+be liable for any direct or indirect losses associated with the rate. BNY earns and retains revenue on its
+executed foreign currency transactions based on, among other things, the difference between the rate it
+assigns to the transaction and the rate that it pays and receives for purchases and sales of currencies when
+buying or selling foreign currency for its own account. The methodology used by BNY to determine DR
+conversion rates is available to registered Owners upon request or can be accessed at  
+https://www.adrbny.com/content/dam/adr/documents/fees-and-disclosures-
+pdf/drs_foreign_exchange_pricing_disclosure.pdf. 
+In those instances where BNY's Custodian executes DR foreign currency transactions, the Custodian has no
+obligation to obtain the most favorable exchange rate or to ensure that the method by which the rate will be
+determined will be the most favorable rate, and BNY makes no representation that the rate is the most
+favorable rate and will not be liable for any direct or indirect losses associated with the rate.  In certain
+instances, BNY may receive dividends and other distributions from an issuer of securities underlying DRs in
+U.S. dollars rather than in a foreign currency.  In such cases, BNY will not engage in or be responsible for any
+foreign currency transactions and it makes no representation that the rate obtained by an issuer is the most
+favorable rate and it will not be liable for any direct or indirect losses associated with the rate. 
+ 
+This notice or any excerpt of this notice may not be copied or reproduced without the prior express written
+consent of BNY.  
+ 
+BNY is a global investments company dedicated to helping its clients manage and service their financial
+assets throughout the investment lifecycle. BNY is the corporate brand of The Bank of New York Mellon
+Corporation (NYSE: BNY).  
+ 
+BNY's name, brand and/or trademarks may not be used, copied or reproduced without the prior express
+written consent of BNY.  
+ 
+DEPOSITARY RECEIPTS ARE NOT INSURED BY THE FDIC OR ANY OTHER GOVERNMENT AGENCY, ARE
+NOT DEPOSITS OR OTHER OBLIGATIONS OF, AND ARE NOT GUARANTEED BY, BNY AND ARE SUBJECT
+TO INVESTMENT RISKS INCLUDING POSSIBLE LOSS OF PRINCIPAL AMOUNT INVESTED. 
+  
+Page 2
+of  2

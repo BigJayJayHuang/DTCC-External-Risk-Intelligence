@@ -1,0 +1,305 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/Presentation/Includes/css/jquery.kwicks.css" /><link href="/Presentation/Includes/css/sc-player-red.css" rel="stylesheet" /><link rel="stylesheet" media="print" href="/Presentation/Includes/css/print.css" /><link rel="stylesheet" type="text/css" href="/Presentation/Includes/css/FastFonts/ee57b89d-eea2-415d-b5e8-73b2e74ed476.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;display=swap" rel="stylesheet" /><link rel="stylesheet" type="text/css" href="/Presentation/Includes/css/vendors/slick/slick.css" /><link rel="stylesheet" type="text/css" href="/Presentation/Includes/css/vendors/slick/slick-theme.css" /><link href="/Presentation/Includes/css/main.min.css" rel="stylesheet" /><link href="/Presentation/Includes/css/selectric.css" rel="stylesheet" /><!--CL-DTCC2-7VWB03--><meta name="description" content="DTCC&#39;s Global Trade Repository (GTR) service supports a multitude of data submissions including real-time price reporting, transaction details, and much more!" />
+</head>
+<body>
+<div id="main_1_body_0_divRichText" class="rich-text">
+    <div id="gcfrepoindex">
+<p>A service offering of DTCC Solutions LLC</p>
+<p>The DTCC GCF Repo Index is the only index that tracks the average daily interest rate paid for the most-traded GCF Repo contracts for U.S. Treasury and mortgage-backed securities issued by Fannie Mae and Freddie Mac. These are instruments that clear at the Government Securities Division (GSD) of the Fixed Income Clearing Corporation (FICC). The index&rsquo;s rates are par-weighted averages of daily activity in the GCF Repo market and reflect actual daily funding costs experienced by banks and investors, per underlying asset class.</p>
+<p><strong><a rel="noopener noreferrer" href="http://online.wsj.com/mdc/public/page/2_3020-moneyrate.html" target="_blank"><span style="font-size: 12px;">View DTCC GCF Repo Index data for U.S. Treasury and MBS on Wall Street Journal&rsquo;s daily &ldquo;Money Rates&rdquo; table</span></a></strong></p>
+<p>&nbsp;</p>
+<p>DTCC GCF Repo Index data is provided under limited license, and your use of such data signifies your agreement to the <a href="https://www.dtcc.com/terms">Terms of Use.</a></p>
+<ul>
+    <li><a href="#qna">What do these charts show?</a> </li>
+    <li><a href="#download">Can I download the data in these charts?</a> </li>
+</ul>
+<link rel="stylesheet" type="text/css" href="/data/dojo/1.16.5/dijit/themes/claro/claro.css" />
+<link rel="stylesheet" type="text/css" href="/data/gcfindex/gcfindex.css" />
+
+<table style="padding: 0px; margin: 0px auto; width: 600px; border: 0px;">
+    <tbody>
+        <tr>
+            <td style="width: 200px; vertical-align: bottom;">
+            <div>
+            <table style="padding: 0px; margin: 0px; float: right; border: 0px;">
+                <tbody>
+                    <tr>
+                        <td><input style="visibility: hidden;" id="gcfiBtnPrev" class="gcfiButton" title="Previous month" value="&lt;&lt;" type="button" /></td>
+                        <td style="width: 50px;">
+                        <span style="visibility: hidden;" id="gcfiLblMonth" class="gcfiLabelCenterBold">&nbsp;</span>
+                        </td>
+                        <td><input style="visibility: hidden;" id="gcfiBtnNext" class="gcfiButton" title="Next month" value="&gt;&gt;" type="button" /></td>
+                        <td><input style="visibility: hidden;" id="gcfiBtnSwitch" class="gcfiButton" title="Show a single month" value="Monthly" type="button" /></td>
+                    </tr>
+                    <tr>
+                        <td style="height: 3px;"></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            </td>
+            <td style="width: 400px;">
+            <table style="padding: 0px; margin: 0px; border-spacing: 10px 0px; border-collapse: separate; float: right; border: 0px;">
+                <tbody>
+                    <tr>
+                        <td colspan="7">
+                        <span id="gcfiLblDate" class="gcfiLabelCenterBold">Indices:</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"><hr style="margin-top: 0px; margin-bottom: 0px;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td colspan="2">
+                        <span class="gcfiLabelCenter">52 WEEK</span>
+                        </td>
+                        <td>
+                        <span class="gcfiLabelCenter">PAR VALUE</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                        <span class="gcfiLabel">SECURITY</span>
+                        </td>
+                        <td>
+                        <span class="gcfiLabel">LATEST</span>
+                        </td>
+                        <td>
+                        <span class="gcfiLabel">1 WEEK</span>
+                        </td>
+                        <td>
+                        <span class="gcfiLabel">HIGH</span>
+                        </td>
+                        <td>
+                        <span class="gcfiLabel">LOW</span>
+                        </td>
+                        <td>
+                        <span class="gcfiLabelCenter">(BILLIONS USD)</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"><hr style="margin-top: 0px; margin-bottom: 0px;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input id="gcfiCheckMbs" title="Show rate/par" disabled="true" value="on" type="checkbox" /></td>
+                        <td>
+                        <span id="gcfiLblMbs" class="gcfiLabelBold" style="color: #7ac143;">MBS</span>
+                        </td>
+                        <td>
+                        <span id="gcfiStatMbsLatest" class="gcfiLabel">&nbsp;</span>
+                        </td>
+                        <td>
+                        <span id="gcfiStatMbs1Wk" class="gcfiLabel">&nbsp;</span>
+                        </td>
+                        <td>
+                        <span id="gcfiStatMbs52WkHi" class="gcfiLabel">&nbsp;</span>
+                        </td>
+                        <td>
+                        <span id="gcfiStatMbs52WkLo" class="gcfiLabel">&nbsp;</span>
+                        </td>
+                        <td>
+                        <span id="gcfiStatMbsPar" class="gcfiLabelCenter">&nbsp;</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input id="gcfiCheckTreasury" title="Show rate/par" disabled="true" value="on" type="checkbox" /></td>
+                        <td>
+                        <span id="gcfiLblTreasury" class="gcfiLabelBold" style="color: #fd3c0f;">TREASURY</span>
+                        </td>
+                        <td>
+                        <span id="gcfiStatTreasuryLatest" class="gcfiLabel">&nbsp;</span>
+                        </td>
+                        <td>
+                        <span id="gcfiStatTreasury1Wk" class="gcfiLabel">&nbsp;</span>
+                        </td>
+                        <td>
+                        <span id="gcfiStatTreasury52WkHi" class="gcfiLabel">&nbsp;</span>
+                        </td>
+                        <td>
+                        <span id="gcfiStatTreasury52WkLo" class="gcfiLabel">&nbsp;</span>
+                        </td>
+                        <td>
+                        <span id="gcfiStatTreasuryPar" class="gcfiLabelCenter">&nbsp;</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"><hr style="margin-top: 0px; margin-bottom: 0px;" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+            <div class="gcfiChartTitle">Weighted Average Rate</div>
+            <div id="gcfiChartRate" class="gcfiChartArea">&nbsp;</div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+            <div class="gcfiChartTitle">Total PAR Value (in billions USD)</div>
+            <div id="gcfiChartPar" class="gcfiChartArea">&nbsp;</div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>FAQs</h2>
+<hr />
+<div id="download">
+<p><strong>Can I download the data in these charts?</strong><br />
+Yes, the data in these charts, which display data going back one year from the most recent date, can be downloaded. By downloading the data you agree to DTCC&rsquo;s terms and conditions on this webpage and in the <a href="http://www.dtcc.com/terms">Terms of Use.</a> Download the data&nbsp;<a id="csvLink" href="/data/gcfindex.csv">here</a>.</p>
+<a id = "histlink" href="https://files.dtcc.com/download/assets/GCF-Index-Graph.xlsx/c7e6be84ca1f11f090703666cfebbd61">Historical index data can be found here: Historical Index Data</a>&nbsp;<br />
+<br />
+</div>
+<div id="qna">
+<p><strong>What is the composition of the DTCC GCF Repo Index?</strong><br />
+The DTCC GCF Repo Index is composed of the following two most traded GCF Repo-eligible CUSIPs: (1) U. S. Treasury &lt; 30-year maturity (371487AE9); and (2) Fannie Mae and Freddie Mac Fixed Rate MBS (371487AL3). The securities in the computation of the index include only overnight transactions that are completed on a daily basis for each of the two CUSIPs. </p>
+<p>Securities not in the computation of the index include term trades (transactions where settlement date equals trade date plus two business days or greater) and forward start repos. </p>
+<p>The volume is reflective of the repo and reverse transactions that are dealer executed and does not include the inter-dealer broker portion of the transactions. </p>
+<p>For each of the CUSIPs a weighted average rate is calculated on a daily basis using the following formula:<br />
+Par weighted rate = SUM (for each overnight trade: Dollar amount*GC rate/SUM (for each overnight trade: Dollar amount) .</p>
+<p><strong>Do the charts show the rates for more than just the previous day?</strong><br />
+Yes. You can chart rates for the previous day, week, month or the previous 12 months.</p>
+<p><strong>Do the charts show the value of the repo transactions?</strong><br />
+In addition to the rates, the charts also show the par value, that is, the total nominal value of GCF Repos submitted each day for clearing to Fixed Income Clearing Corporation. You can view par value by day, week, month or year.</p>
+<p><strong>What is a repo (or repurchase agreement)?</strong><br />
+A repo is generally a form of short-term secured loan that involves the sale of a security and the subsequent repurchase, typically on the same day, of the same security.</p>
+<p><strong>What's a GCF (General Collateral Finance) Repo?</strong><br />
+DTCC's Fixed Income Clearing Corporation developed the GCF Repo so that dealers could trade general collateral repos, based on rate, term and underlying product throughout the day without requiring intra-day, trade-for-trade settlement on a delivery-versus-payment basis.</p>
+<p><strong>What's the data source?</strong><br />
+DTCC's Fixed Income Clearing Corporation, which serves as the clearing house for trading in U.S. government securities.</p>
+</div>
+<div class="link-wrapper">
+<h2>Related Information</h2>
+<br />
+<ul>
+    <!--<li><a href="/news/2012/september/03/a-primer-on-the-dtcc-gcf-repo-index.aspx">A Primer on the DTCC GCF Repo Index</a> </li>
+    <li><a href="/news/2013/january/31/nyse-liffes-futures-based-on-the-dtcc-gcf-repo-index.aspx">NYSE Liffe&rsquo;s Futures Based On the DTCC GCF Repo Index</a> </li>-->
+    <li><a id = "factlink" href="https://files.dtcc.com/download/assets/GCF-Repo-Index-Fact-Sheet.pdf/ca09e472cadb11f0b83952ad2202b893" target="_blank" rel="noopener noreferrer">DTCC GCF Repo Index Fact Sheet</a> </li>
+</ul>
+</div>
+<hr />
+BY ACCESSING OR USING THIS WEBPAGE OR THE DTCC GCF REPO INDEX DATA YOU AGREE TO THE TERMS AND CONDITIONS ON THIS PAGE AND IN THE <a href="http://www.dtcc.com/terms">TERMS OF USE</a>. The DTCC GCF Repo Index&reg; and related data provided on this webpage are for personal use only, and except for the limited license expressly granted by DTCC Solutions LLC in the Terms of Use or with the written permission of DTCC, you may not publish, republish, redistribute, broadcast or retransmit the DTCC GCF Repo Index data, compile the data into a database or information service, create any analysis or derivative of the data for commercial distribution, use the data to compete with the business of DTCC or its affiliates, or use the data in the calculation of an index or as the basis of any financial instrument or investment product that is based on or seeks to match the performance of the values included in the data, and you may not authorize any other person to engage in any of these activities with respect to the data. The unauthorized use, reproduction or distribution of DTCC GCF Repo Index data is prohibited. DTCC&rsquo;s liability regarding use of the DTCC GCF Repo Index is limited as provided in the Terms of Use. You acknowledge and agree that the DTCC GCF Repo Index data has been developed, compiled, prepared, coordinated, selected and arranged by DTCC and that such efforts involve the expenditure of substantial time, effort, judgment and money, and thus that the DTCC GCF Repo Index constitutes valuable intellectual property of DTCC.
+</p>
+</div>
+</div>
+
+<p>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.7.1.min.js"></script>
+       
+        <script src="/Presentation/Includes/js/WaterMark.min.js"></script>
+
+        <script src="/Presentation/Includes/js/new-script.js"></script>
+       
+     
+        
+       <script src="/Presentation/Includes/js/jquery.kwicks.js"></script>
+        <script src="/Presentation/Includes/js/FlexSlider/jquery.flexslider.js"></script>
+        <script src="/Presentation/Includes/js/Vendor/soundcloud.player.api.js"></script>
+        <script src="/Presentation/Includes/js/Vendor/sc-player.js"></script>
+        <script src="/data/main.js"></script>
+
+        <!-- Scripts from redesign Project -->
+        <link href="/Presentation/Includes/css/FlexSlider/flexslider.css" rel="stylesheet" type="text/css" />
+       
+	<script type="text/javascript" src="/Presentation/Includes/js/all.min.js"></script>
+	
+	<script type="text/javascript">
+		// Configure Dojo BEFORE loading dojo.js
+		var dojoConfig = {
+			async: true, 
+			parseOnLoad: false, 
+			isDebug: false,
+			gfxRenderer: "svg,canvas,vml",
+			packages: [
+				{ name: "gcfindex", location: "/data/gcfindex" },
+				{ name: "fifails", location: "/data/fifails" },
+				{ name: "gcActivity", location: "/data/dojo/1.16.5/gcActivity" },
+				{ name: "spnsrActivity", location: "/data/dojo/1.16.5/spnsrActivity" }
+			]
+		};
+	</script>	
+
+<script src="/data/dojo/1.16.5/dojo/dojo.js"></script>	
+
+
+    <script type="text/javascript">
+		var date = new Date().getTime();
+		
+		document.getElementById('csvLink').href = "/data/gcfindex.csv?v=" + date;
+		document.getElementById('histlink').href = "https://files.dtcc.com/download/assets/GCF-Index-Graph.xlsx/c7e6be84ca1f11f090703666cfebbd61?v=" + date;
+		document.getElementById('factlink').href = "https://files.dtcc.com/download/assets/GCF-Repo-Index-Fact-Sheet.pdf/ca09e472cadb11f0b83952ad2202b893?v=" + date;
+
+
+		document.write('<link rel="stylesheet" type="text/css" href="/data/spnsrActivity/SpnsrActivityStyles.css?v=' + date + '" />');
+				
+		if($("#sponsor-chart").length > 0) {
+			$.getScript('/data/dojo/1.16.5/spnsrActivity/SpnsrStart.js?v=' + date);
+		}
+
+		if($("#gc-chart").length > 0) {
+			$.getScript('/data/dojo/1.16.5/gcActivity/GcStart.js?v=' + date);
+		}
+		
+		if($("#gcfrepoindex").length > 0) {
+	
+			require(["dojo/dom", "dojo/parser",	"dojo/ready", "dojo/domReady!", "gcfindex/GcfIndexInit"],
+			function(dom, parser, ready, domReady, GcfIndexInit){
+					 ready(function(){
+					   parser.parse();
+					   
+					   new GcfIndexInit("/data/gcfindex.csv?v=" + date).init();
+					});
+				});			
+		}
+		
+		if($("#failsdata").length > 0) {
+
+				require(["dojo/dom", "dojo/parser",	"dojo/ready", "dojo/domReady!", "fifails/FiFailsInit"],
+				function(dom, parser, ready, domReady, FiFailsInit){
+					ready(function(){
+						parser.parse();
+						new FiFailsInit("/data/failsdata.csv?v=" + date).init();
+					});
+				});
+
+		}
+		
+	</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'988c53e0fd7a7039',t:'MTc1OTQ5MzMzNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+
+<script>
+   function sendHeight() {
+     try {
+       const h = document.documentElement.scrollHeight || document.body.scrollHeight || 0;
+       const ref = document.referrer;
+       if (ref && ref.includes('dtcc.com')) {
+         const parentOrigin = new URL(ref).origin;
+         window.parent.postMessage({ type: 'CMS_HEIGHT', height: h}, parentOrigin);
+       }
+     } catch (e) {
+       console.warn('An error occurred while sending the height');
+     }
+   }
+   window.addEventListener('load', sendHeight);
+   window.addEventListener('resize', sendHeight);
+  window.addEventListener('hashchange', () => {
+const target = document.querySelector(location.hash);
+if (target) {
+target.scrollIntoView({
+behavior: 'smooth',
+block: 'start'});
+}
+});
+ </script>
+ 
+
+	</body>
+</html>

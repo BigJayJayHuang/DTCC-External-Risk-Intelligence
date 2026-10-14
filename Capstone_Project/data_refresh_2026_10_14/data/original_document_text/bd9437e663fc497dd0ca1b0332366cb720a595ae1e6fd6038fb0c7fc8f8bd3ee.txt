@@ -1,0 +1,245 @@
+DTCC offers enhanced access to all important notices via a Web -based subscription service. 
+The notification system leverages RSS Newsfeeds, providing significant benefits including  
+real-time updates and customizable delivery. To learn more and to set up your own DTCC RSS  
+alerts, visit http://www.dtcc.com/subscription_form.php.  
+IMPORTANT NOTICE 
+The Depository Trust Company 
+DTCC Public (White) 
+B #: 24781-26 
+Date: October 14, 2026 
+To: All Participants 
+Category: Tax Relief, Distributions 
+From: International Services 
+Attention: Operations, Reorg & Dividend Managers, Partners & Cashiers 
+Subject: 
+Tax Relief ‐ Country: SPAIN 
+Security: BANCO SANTANDER S.A. 
+CUSIP: 05964H105 
+Record Date: 10/30/2026 
+Payable Date:11/05/2026 
+This issue is NOT eligible through CA Web. 
+*** No CA Web Instructions*** 
+Questions regarding this Important Notice may be directed to Globe Tax at 1-212-747-9100. 
+Important Legal Information : The Depository Trust Company (“DTC”) does not represent or 
+warrant the accuracy, adequacy, timeliness, completeness or fitness for any particular purpose of the 
+information contained in this communication, which is based in part on information obtained from third 
+parties and not independently verified by DTC and which is provided as is. The information contained 
+in this communication is not intended to be a substitute for obtaining tax advice from an appropriate 
+professional advisor. In providing this communication, DTC shall not be liable for (1) any loss resulting 
+directly or indirectly from mistakes, errors, omissions, interruptions, delays or defects in such 
+communication, unless caused directly by gross negligence or willful misconduct on the part of DTC, 
+and (2) any special,  consequential, exemplary, incidental or punitive damages. To ensure compliance 
+with Internal Revenue Service Circular 230, you are hereby notified that: (a) any discussion of federal 
+tax issues contained or referred to herein is not intended or written to be used, and cannot be used, for 
+the purpose of avoiding penalties that may be imposed under the Internal Revenue Code; and (b) as a 
+matter of policy, DTC does not provide tax, legal or accounting advice and accordingly,  you should 
+consult your own tax, legal and accounting advisor before engaging in any transaction. 
+
+created by 
+Page 1 
+ 
+ 
+BANCO SANTANDER, S.A. has announced a cash dividend and Citibank, N.A. acts as Depositary  
+for the Depositary Receipt (“DR”) program. 
+Subsequent to the payment date on which the dividend less the 19% withholding tax will be paid, 
+beneficial owners may reclaim the difference between the statutory rate and the beneficial owner’s 
+rate of entitlement by submitting the required documentation to GlobeTax . This issue is NOT eligible 
+through CA Web. There will be one “Quick Refund” filing deadline as stipulated below; all claims 
+submitted after this date should be submitted through the Standard “Long-Form” filing procedure. 
+On DR Pay Date, all holders will receive this dividend net of the full Spanish staturtory withholding tax 
+rate of 19%. 
+ 
+ 
+DIVIDEND EVENT MATRIX 
+ISSUE CUSIP# UNDERLYING 
+ISIN 
+DR RECORD 
+DATE ORD PAY DATE DR PAY DATE RATIO 
+(DR to ORD) ORD RATE 
+BANCO 
+SANTANDER, S.A. 05964H105 ES0113900J37 Oct 30, 2026 Nov 02, 2026 Nov 05, 2026 1 : 1 EUR 0.12700 
+ 
+FEES & DEADLINES 
+FILING METHOD PAYMENT 
+METHOD 
+CUSTODIAL 
+FEE (EUR) 
+TAX RELIEF 
+FEE 
+MINIMUM FEE PER 
+BENEFICIAL OWNER FINAL SUBMISSION DEADLINE 
+ 
+ 
+QUICK REFUND 
+ 
+ 
+CHECK OR ACH 
+ 
+ 
+UP TO 30.00 
+ 
+ 
+UP TO $ 0.00750 PER DR 
+ 
+ 
+$ 125.00000 
+ESP ELECTION DEADLINE: 
+Nov 20, 2026 
+ORIGINAL DOCUMENT DEADLINE: 
+Nov 23, 2026 
+LONG FORM CHECK OR ACH UP TO 30.00 UP TO $ 0.01000 PER DR $ 125.00000 Aug 01, 2030 5:00 PM ET 
+ 
+MINIMUM SHARE AMOUNT REQUIRED TO FILE A CLAIM 
+(CLAIMS RECEIVED BELOW THE FILING MINIMUM WILL BE REJECTED) 
+FILING METHOD WITHHOLDING RATE RECLAIM RATE MINIMUM # OF DRs REQUIRED TO FILE 
+(BASED OFF AN APPROX. EXCHANGE RATE OF 1.132800 USD PER EUR) 
+QUICK REFUND 0.00000% 19.00000% 10,390 DRs 
+QUICK REFUND 5.00000% 14.00000% 14,100 DRs 
+ALL CERTIFICATES OF RESIDENCY AND 6166 DOCUMENTS MUST 
+BE ORIGINAL, VALID FOR THE ORDINARY PAY DATE AND CITE 
+THE TAX TREATY BETWEEN THE BENEFICIAL OWNER'S  
+COUNTRY OF RESIDENCE AND SPAIN. 
+INDIVIDUALS NEED TO PROVIDE PLACE AND DATE OF BIRTH 
+THROUGH ESP. 
+A DTC POSITION SCREENSHOT MUST BE INCLUDED WITH YOUR 
+QUICK REFUND SUBMISSION. SCANS OF ALL DOCUMENTS MUST 
+BE PROVIDED WITH YOUR ESP SUBMISSION TO BE CONSIDERED 
+VALID. 
+
+created by 
+Page 2 
+ 
+ 
+Agreements, Fees, Representations and Indemnification from Participants and Beneficial Owners 
+I/We have determined that the beneficial owner(s) of the shares (individual or legal entity) is eligible for the preferential  rates as stated herein and I declare that I have performed all the necessary due 
+diligence to satisfy myself as to the accuracy of the information submitted to me by these beneficial owners. 
+I/we hereby certify that I/we will indemnify Citibank, N.A. (and its agents) for any liability Citibank, N.A. (and its agents ) may incur, including without limitations any sanctions -related liability such as  
+fines, penalties, costs and/or fees relating to government inquiries, investigations, or enforcement actions, as a result of reliance upon information provided by such Participant in connection with a C.A. 
+Web election, a claim for refund, or a failure to provide information requested by the Tax Authorities. Citibank, N.A. shall not be liable for failure to secure the refund. The Participant shall be liable for 
+any loss due to foreign exchange fluctuation. The Participant agrees to immediately return to Citibank, N.A. any funds erroneously received as a result of an improper C.A. Web election or refund claim. 
+In addition, the Participant agrees to pay any interest, additions to tax or penalties thereon. This is not tax advice. Please consult your tax advisor. 
+Note: All information related to eligibility and documentation requirements can be found on the ESP site by visiting the relevant event and viewing the Eligibility 
+Matrix. If you need access to ESP, please complete the New User Registration form, and our team of market experts would be pleased to help you get set up. 
+For each Country’s general Eligibility Matrix, please see ESPs Reference Guide. 
+ELIGIBILITY MATRIX 
+ 
+MINIMUM SHARE AMOUNT REQUIRED TO FILE A CLAIM 
+(CLAIMS RECEIVED BELOW THE FILING MINIMUM WILL BE REJECTED) 
+FILING METHOD WITHHOLDING RATE RECLAIM RATE MINIMUM # OF DRs REQUIRED TO FILE 
+(BASED OFF AN APPROX. EXCHANGE RATE OF 1.132800 USD PER EUR) 
+QUICK REFUND 10.00000% 9.00000% 21,933 DRs 
+QUICK REFUND 12.00000% 7.00000% 28,200 DRs 
+QUICK REFUND 15.00000% 4.00000% 49,349 DRs 
+QUICK REFUND 18.00000% 1.00000% 197,396 DRs 
+LONG FORM 0.00000% 19.00000% 10,390 DRs 
+LONG FORM 5.00000% 14.00000% 14,100 DRs 
+LONG FORM 10.00000% 9.00000% 21,933 DRs 
+LONG FORM 12.00000% 7.00000% 28,200 DRs 
+LONG FORM 15.00000% 4.00000% 49,349 DRs 
+LONG FORM 18.00000% 1.00000% 197,396 DRs 
+ 
+ 
+
+created by 
+Page 3 
+ 
+ 
+ 
+ 
+ 
+ 
+FREQUENTLY ASKED QUESTIONS (FAQs) 
+QUICK REFUND 
+Is the Quick Refund process free of charge? No. This tax relief assistance service is wholly voluntary and discretionary and outside 
+the terms and conditions of any applicable deposit agreement. CITIBANK undertakes  
+no duty or obligation to provide this service and may reject or decline any or all 
+proposed electing participants or holders in its sole discretion. Fees will be charged for 
+this service of up to $0.0075 per DR with a $125.00 minimum, and any other charges, 
+fees or expenses payable by or due to CITIBANK or its agents, including the custodian 
+or to tax authorities or regulators. Fees paid to CITIBANK may be shared with its  
+agents. 
+ 
+ 
+ 
+ 
+ 
+CITIBANK offers ESP powered by GlobeTax, an electronic withholding tax submission 
+system. This system allows for the secure and simplified transfer of beneficial owner 
+level data from the Participant to GlobeTax and creates applicable documentation on 
+the Participants' behalf. 
+Submit the data online through the web site below, print out the documents on 
+letterhead, sign them, and mail them to GlobeTax, along with necessary required 
+documents. 
+These claims should be submitted through the following website. 
+https://ESP.GlobeTax.com 
+Please contact us via the ESP Service Desk at 212-747-9100 if you have any questions 
+about this process. 
+CONTACT DETAILS 
+PHONE NUMBER 800-628-4646 (+1 212 747 9100 from outside US) 
+FAX NUMBER 800-633-4646 
+GROUP EMAIL SpainESP@globetax.com 
+COMPANY GLOBETAX SERVICES INC. 
+STREET ADDRESS ONE NEW YORK PLAZA, 34TH FLOOR 
+CITY/STATE/ZIP NEW YORK, NY 10004 
+ 
+
+created by 
+Page 4 
+ 
+ 
+ 
+ 
+FREQUENTLY ASKED QUESTIONS (FAQs) 
+LONG FORM 
+Is the Long Form process free of charge? No. This tax relief assistance service is wholly voluntary and discretionary and outside 
+the terms and conditions of any applicable deposit agreement. CITIBANK undertakes  
+no duty or obligation to provide this service and may reject or decline any or all 
+proposed electing participants or holders in its sole discretion. Fees will be charged for 
+this service of up to $0.01 per DR with a $125.00 minimum, and any other charges,  
+fees or expenses payable by or due to CITIBANK or its agents, including the custodian 
+or to tax authorities or regulators. Fees paid to CITIBANK may be shared with its  
+agents. 
+Can I submit one IRS form 6166 or certificate of residency for the same 
+beneficiary for multiple pay dates? 
+Yes. As long as the COR has a tax year the same year as the local pay date it may be 
+used again. 
+What is the difference between the Peticion de Reduccion and the Peticion de 
+Devolucion? 
+The forms are similar; however, the Peticion de Reduccion is for the Quick Refund 
+process and the Peticion de Devolucion is for the standard Long Form process. 
+Will GlobeTax accept claims filed directly to them by beneficial owners? GlobeTax only accepts claims filed by the DTCC participant who was holding the 
+securities through DTC and only to the extent that DTC has reported these holdings to 
+us as valid. 
+Are there special requirements on the certificate of residency for Canadian, 
+Swiss, and UK pension funds? 
+The certificate of residency must explicitly mention the old DTT in which these type of 
+persons were not tax exempted. Example: “Certifies that the pension scheme is  
+resident in Canada in accordance of the article 10 of the DTT as modified by protocol 
+signed between Canada and Spain on mm/dd/year.” 
+ 
+ 
+ 
+FREQUENTLY ASKED QUESTIONS (FAQs) 
+GENERAL 
+What is changing regarding LEI requirements effective January 1, 2027? Effective January 1, 2027, LEI codes will be mandatory for all eligible entities that are 
+not individuals, regardless of the applicable pay date year. 
+
+created by 
+Page 5 
+ 
+ 
+Warning and Disclaimer: 
+The information and data contained in this Notice is based on information obtained from multiple sources believed to be relia ble. However, Citibank, N.A. and its 
+agents do not warrant or guarantee the accuracy or completeness of, nor undertake to update or amend, this information or dat a. We and our agents expressly 
+disclaim any liability whatsoever for any loss howsoever arising from or in reliance upon any of this information or data. Th e information contained in this Notice 
+is subject to change, includin g in the and subject to discretion of third parties, and/or pre -emption or being superseded by local market rules, and practices or 
+actions taken by non -U.S. agents or tax authorities. Deadlines often differ from statutory deadlines.You should file claims as soon as possible, a nd at least six 
+months prior to the specified deadline. 
+ 
+FREQUENTLY ASKED QUESTIONS (FAQs) 
+GENERAL 
+Where can I find information on obtaining a LEI (Legal Entity Identifier) code for a 
+beneficial owner? 
+General resource information regarding LEI codes can be found by visiting 
+https://www.gleif.org/en/about-lei/introducing-the-legal-entity-identifier-lei. 
+ 

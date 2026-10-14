@@ -1,0 +1,19 @@
+{
+  "source_id": "dtcc_previous_12_months_volume_for_gsd_embedded_f45759ae",
+  "source_name": "dtcc_previous_12_months_volume_for_gsd public chart",
+  "url": "https://cms-prod.dtcc.com/globalassets/ftp/ficc/previous_year_gsd.html",
+  "file": "raw/dtcc_previous_12_months_volume_for_gsd_embedded_f45759ae_f45759aed88d.html",
+  "collected_at_utc": "2026-10-14T19:40:41+00:00",
+  "public_only": true,
+  "business_lines": [
+    "FICC",
+    "Data Services"
+  ],
+  "kind": "embedded_ficc_data",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://cms-prod.dtcc.com/globalassets/ftp/ficc/previous_year_gsd.html",
+  "content_type": "text/html",
+  "bytes": 8477,
+  "sha256": "7bb416aa24140b9211699115ee5b044a8419bf2fd3efb95ebac01c6e0ff30e71"
+}

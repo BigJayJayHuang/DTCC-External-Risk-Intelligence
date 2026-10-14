@@ -1,0 +1,617 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>UK Public Data</title>
+	<link href="/PublicReports/css/dtcc_1010.css" rel="stylesheet"></link>
+    <link href="/PublicReports/css/RichTextEditor.css" rel="stylesheet"></link>
+    <link href="/PublicReports/css/jqueryui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+</head>
+<body style="font-size:10px;font-family:Trebuchet MS,sans-serif;">
+<div id="panel_menu">
+		<div id="deriv_menu_title">
+			<h3>Derivative Types</h3>
+				<form>
+				<div id="radio_btn_set_deriv_type" class="ui-buttonset">
+    					<input type="radio" id="btn_otc_and_etd" class="btn_deriv_type ui-helper-hidden-accessible" name="radio" checked="checked" value="otc_and_etd">
+    					<label for="btn_otc_and_etd" class="ui-state-active ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left ui-corner-right" role="button" aria-disabled="false">
+    					<span class="ui-button-text">Over the Counter &amp; Exchange Traded</span></label>
+					<!--input type="radio" id="btn_old" class="btn_deriv_type" name="radio" value="old"><label for="btn_old">Before 11/2014</label>-->
+				</div>
+			</form>
+		</div>
+		
+		<div id="accordian_otc_and_etd" class="accordion ui-accordion ui-widget ui-helper-reset" role="tablist">
+			<h3 id="accordion_header_otc_and_etd_weekly_fca_reports">Weekly UK EMIR Reports</h3>
+			<div id="ui-accordian-accordian_otc_and_etd-panel-0" style="padding-left: 10px;padding-right: 10px;"></div>
+			 <!-- //Commenting as there will be no files for legacy-History  -->
+			<!-- <h3 id="accordion_header_otc_weekly_fca_reports_old">Legacy FCA Reports (January 2015 and prior)</h3>
+			 <div id="ui-accordian-accordian_otc_and_etd-panel-1" style="padding-left: 5px;padding-right: 5px;">
+				<form>
+					<div id="radio_btn_set_deriv_type_old" class="ui-buttonset">
+						<input type="radio" id="btn_otc" class="btn_deriv_type ui-helper-hidden-accessible" name="radio" checked="checked" value="otc">
+						<label for="btn_otc" class="ui-state-active ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button" aria-disabled="false">
+							<span class="ui-button-text">Over The Counter</span>
+						</label>
+						<input type="radio" id="btn_etd" class="btn_deriv_type ui-helper-hidden-accessible" name="radio" value="etd">
+						<label for="btn_etd" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button" aria-disabled="false">
+							<span class="ui-button-text">Exchange Traded</span>
+						</label>
+					</div>
+				</form>
+				<div id="accordion_otc" class="accordion ui-accordion ui-widget ui-helper-reset" role="tablist"></div>
+				<div id="accordion_etd" class="accordion ui-accordion ui-widget ui-helper-reset" role="tablist" style="display:none;" ></div>
+			</div> -->
+	</div>
+</div>
+	
+	<div style="font-size: 1.1em;">
+	<b>Disclaimer:</b>
+	<br><u>Jan 12th</u> 
+	<br>At the end of the transition period, the first weekly public reported data for the EU EMIR TR (outstanding positions and transactions activity reported to DDRIE) and UK EMIR TR (outstanding positions and transactions activity reported to DDRL) will be published weekly from 12th January 2021. 
+	<br>As of this date the method of calculation for the public reports means that it is not possible to simply combine the two datasets to produce an amalgamated total for EU EMIR and UK EMIR reporting.
+ 
+	<br><br>For example an outstanding contract where both sides have been reported to DTCC between a UK-domiciled entity and an entity in a different EU jurisdiction would have been shown under &quot;dual-sided&quot; reporting but listed as a single trade. Post Brexit, this trade will be shown in the single sides bucket of both DDRL and DDRIE
+	<div id="disclaimer_note" style="display: none;">
+	<br>Disclaimer: It should be noted that Total Notional Quantity of Leg 1 is a newly added UK Refit field and not all relevant trades will have a value in this field until post UK Refit trade modifications have been submitted</br>
+	</div>
+	</div>
+	
+	<br/>
+	<div class="desc">
+        		<div style="font-size: 2em;"><b>DTCC Derivatives Repository PLC (DDRL)</b></div>
+	        	<div style="font-size: 1.5em;">Global Trade Repository</div>
+      </div>
+     <div id="panel_main">
+		<div id="panel_result"></div>
+	</div>
+	<div id="ajax_wait" style="display: none;"><img src="/PublicReports/images/ajax-loading.png"></div>
+
+	<div id="panel_main_report" style="display: none;">
+ 	 	<div id="panel_main_report_title"><h3>Choose a Report</h3></div>
+ 	 	
+        	<form id="form_report_date">
+                	<span>Change Report Date (YYYY-MM-DD):<input id="change_report_date" type="text"></span>
+					<div id="panel_main_report_table"></div>
+            </form>
+	 </div>
+</body>
+<script src="/PublicReports/js/jquery-2.1.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+
+$(function(){
+	var dtcc_app ={};
+	var menuArray = ["weekly","legacy"];
+	var reportLinkArray={
+			weekly:["Table 1:A breakdown of the aggregate open positions per derivative class","Table 2:A breakdown of the aggregate transaction volumes per derivative class","Table 3:A breakdown of the aggregate values per derivative class"],
+			legacy:["Table 5:All legacy Positions by Counterparty Region","Table 11:Weekly New legacy Transaction Activity by Counterparty Region"]
+	};
+	
+	var legacyMenuArray = {
+			 otc : ["Commodity","Credit","Equity","FX","Interest Rates"],
+			 etd : ["Commodity","Credit","Equity","FX","Interest Rates"]
+		 };
+	
+	$( "#change_report_date" ).datepicker({
+		dateFormat: 'yy-mm-dd',
+		changeYear: true,
+		maxDate: new Date(),
+		beforeShowDay: function(date){
+		if(date.getDay() == 5){
+            return [true];
+        } else {
+            return [false];
+        }
+		}
+	});
+	function reset_panel_main(){
+		$("#panel_main_report").hide();
+	}
+	function getLatestReportDate(){
+			var today=new Date();
+			var weekday=0;
+			var displayDate;
+						
+			if(today.getDay() == 5){
+				displayDate=today;
+			}else{
+				var startWeekDay=new Date(today.setDate(today.getDate()+weekday - today.getDay()));//day of the start of this week
+				startWeekDay.setDate(startWeekDay.getDate()-2);
+				displayDate=new Date(startWeekDay);
+			}
+				var dd=displayDate.getDate();
+				var mm=displayDate.getMonth()+1;
+				var yyyy=displayDate.getFullYear();
+				if(dd<10){
+			    	dd='0'+dd;
+				} 
+				if(mm<10){
+			    	mm='0'+mm;
+				} 
+			var fdisplayDate = yyyy+''+mm+''+dd;
+			dtcc_app.availableReportDates.unshift(fdisplayDate);
+		}
+	function init() {
+		$("#panel_main_report").hide();
+		dtcc_app.deriv_type = "otc_and_etd";
+		dtcc_app.deriv_type_old = "otc";
+		dtcc_app.asset_type = "Weekly_FCA_Reports";
+		dtcc_app.sub_type = "position";
+		dtcc_app.report_title = "choose a report";
+		dtcc_app.date_selected ="00000000";
+		dtcc_app.availableReportDates = ["20181026","20181019","20181012","20181005","20180928","20180921","20180914","20180907","20180831","20180824","20180817","20180810","20180803","20180727","20180720","20180713","20180706","20180629","20180622","20180615","20180608","20180601","20180525","20180518","20180511","20180504","20180427","20180420","20180413","20180406","20180330","20180323","20180316","20180309","20180302","20180223","20180216","20180209","20180202","20180126","20180119","20180112","20180105","20171229","20171222","20171215","20171208","20171201","20171124","20171117","20171110","20171103","20171027","20171020","20171013","20171006","20170929","20170922","20170915","20170908","20170901","20170825","20170818","20170811","20170804","20170728","20170721","20170714","20170707","20170630","20170623","20170616","20170609","20170602","20170526","20170519","20170512","20170505","20170428","20170421","20170414","20170407","20170331","20170324","20170317","20170310","20170303","20170224","20170217","20170210","20170203","20170127","20170120","20170113","20170106","20161230","20161223","20161216","20161209","20161202","20161125","20161118","20161111","20161104","20161028","20161021","20161014","20161007","20160930","20160923","20160916","20160909","20160902","20160826","20160819","20160812","20160805","20160729","20160722","20160715","20160708","20160701","20160624","20160617","20160610","20160603","20160527","20160520","20160513","20160506","20160429","20160422","20160415","20160408","20160401","20160325","20160318","20160311","20160304","20160226","20160219","20160212","20160205","20160129","20160122","20160115","20160108","20160101","20151225","20151218","20151211","20151204","20151127","20151120","20151113","20151106","20151030","20151023","20151016","20151009","20151002","20150925","20150918","20150911","20150904","20150828","20150821","20150814","20150807","20150731","20150724","20150717","20150710","20150703","20150626","20150619","20150612","20150605","20150529","20150522","20150515","20150508","20150501","20150424","20150417","20150410","20150403","20150327","20150320","20150313","20150306","20150227","20150220","20150213","20150206","20150130","20150123","20150116","20150109","20150102","20141226","20141219","20141212","20141205","20141128","20141121","20141114","20141107","20141031","20141024","20141017","20141010","20141003","20140926","20140919","20140912","20140905","20140829","20140822","20140815","20140808","20140801","20140725","20140718","20140711","20140704","20140627","20140620","20140613","20140606","20140530","20140523","20140516","20140509","20140502","20140425","20140418","20140411","20140404","20140328","20140321","20140314","20140307","20140228","20140221","20140214"];
+		getLatestReportDate();
+		dtcc_app.current_report_date = dtcc_app.availableReportDates[0];
+		reset_panel_main();
+			}
+	function addTablist(){
+		$('#accordion_header_otc_and_etd_weekly_fca_reports').addClass("bold ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons")
+															  .attr("asset_type","Weekly_FCA_Reports")
+															  .append($("<span/>").addClass("ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"));
+		/* $('#accordion_header_otc_weekly_fca_reports_old').addClass("bold ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons")
+		  													.attr("asset_type","Weekly_FCA_Reports_old")
+		  													.append($("<span/>").addClass("ui-accordion-header-icon ui-icon ui-icon-triangle-1-e")); */
+      	// Above Commenting as there will be no files for legacy-History		  													
+	    $.each(menuArray, function( index, value ) {
+	    	var divid;
+	    	if(value == "weekly"){
+	    		divid="ui-accordian-accordian_otc_and_etd-panel-0";
+	    		addReportLink(divid,value);
+	    	}/* else if (value == "legacy"){
+	    		divid="ui-accordian-accordian_otc_and_etd-panel-1";
+	    		addLegacyreportLink("otc",value);
+	    		addLegacyreportLink("etd",value);
+	    	} */// Above Commenting as there will be no files for legacy-History
+	    	$("#"+divid).addClass("ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom").css("display","none");
+	    });
+	}
+	function addReportLink(divid,panelid){
+		var displayId;
+		 $.each(reportLinkArray[panelid], function( index, value ) {
+			 if(panelid == "legacy"){
+				 value=value.replace("legacy",(dtcc_app.asset_type).toUpperCase()+ " "+dtcc_app.sub_type);
+			 }
+			 displayId=value.substring(6, value.indexOf(":"));	  			
+ 	 			$("#"+divid).append($("<div/>").addClass("report_link_block")
+ 	 							  .css("padding","0.2cm")
+ 	 							  .css("text-align","left")
+ 	 							  .append($("<span/>").addClass("table_name"))
+ 	 							  .append($("<span/>").addClass("report_link").attr("report_title",value).attr("display_id",displayId).attr("report_name","table"+displayId).attr("report_download_name","Table "+displayId).html(value))
+ 	 							  );
+ 	 			$("#"+divid).append($("<hr/>"));
+ 			});
+	}
+	function addLegacyreportLink(name,oldName){
+		//legacyMenuArray
+		dtcc_app.asset_type=name;
+		var changedValue;
+		$.each(legacyMenuArray[name], function( index, value ) {
+			dtcc_app.sub_type=value;
+			changedValue=value.replace(" ","_");//(value.toLowerCase()).replace(" ","_");
+			
+			$('#accordion_'+name).append($("<h3/>").addClass("bold ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons")
+					.attr("id","accordian_header_"+dtcc_app.asset_type+"_"+changedValue)
+					.attr("asset_type",changedValue)
+					.append($("<span/>").addClass("ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"))
+					.html(value));
+					
+			$('#accordion_'+name).append($("<div/>").addClass("ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom")
+					.attr("id","ui-accordian-accordian-otc_"+dtcc_app.asset_type+"_"+changedValue)
+					.css("display","none")
+					);
+			addReportLink("ui-accordian-accordian-otc_"+dtcc_app.asset_type+"_"+changedValue,oldName);
+		});
+	}
+	init();
+	addTablist();
+	$(".accordion").accordion({
+		collapsible: true,
+		//active: false,
+		heightStyle: 'content'
+	});
+	$("#accordion_otc_and_etd").accordion({
+		collapsible: false,
+		//active: false,
+		heightStyle: 'content'
+	});
+	$("#accordion_otc,#accordion_etd").accordion({
+		collapsible: true,
+		active: false,
+		heightStyle: 'content'
+	});
+	$(".ui-accordion-header").click(function(){
+                        dtcc_app.asset_type = $(this).attr("asset_type");
+                });
+                //Commenting as there will be no files for legacy-History
+	/* $("#accordion_header_otc_weekly_fca_reports_old").click(function(){
+                        dtcc_app.deriv_type = dtcc_app.deriv_type_old;
+                }); */
+	$("#accordion_header_otc_and_etd_weekly_fca_reports").click(function(){
+                        dtcc_app.deriv_type = "otc_and_etd";
+                });
+	$('label[for="btn_otc"]').css("color","#222222");
+	$(document).on('click', '.btn_deriv_type', function(){
+		
+		dtcc_app.deriv_type=$(this).attr("value");
+		$('label[for="btn_otc"]').removeClass("ui-state-active");
+		$('label[for="btn_etd"]').removeClass("ui-state-active");
+		$('label[for="'+$(this).attr("id")+'"]').addClass("ui-state-active");
+		if(dtcc_app.deriv_type == "otc")
+		{
+			$("#accordion_etd" ).hide();
+			$('label[for="btn_otc"]').css("color","#222222");
+			$('label[for="btn_etd"]').css("color","#212121");
+			$("#accordion_etd").accordion("option","active",false);
+		}
+		else if(dtcc_app.deriv_type == "etd")
+		{
+			$("#accordion_otc").hide();
+			$('label[for="btn_etd"]').css("color","#222222");
+			$('label[for="btn_otc"]').css("color","#212121");
+			$("#accordion_otc").accordion("option","active",false);
+		}
+		$("#accordion_" + dtcc_app.deriv_type).show();
+	});
+	function date2YYYYMMDD(date){
+		return date.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3');
+	}
+	function YYYYMMDD2date(date){
+		return date.replace(/-/g,'');
+	}
+	function setup_report(){
+			tmp_asset_type = dtcc_app.asset_type;
+			var changedAsset;
+			if(dtcc_app.asset_type == "Interest_Rates"){
+				changedAsset="Interest_Rate";
+			}else{
+				changedAsset=dtcc_app.asset_type;
+			}
+			if(dtcc_app.deriv_type == "otc_and_etd"){
+				dtcc_app.download_otc_report_url="/PublicReports/reports/fca/"+"FCA_Table_"+dtcc_app.display_id+"_"+"OTC_Agg"+"_"+dtcc_app.current_report_date + '.csv';
+				dtcc_app.download_etd_report_url="/PublicReports/reports/fca/"+"FCA_Table_"+dtcc_app.display_id+"_"+"ETD_Agg"+"_"+dtcc_app.current_report_date + '.csv';
+				dtcc_app.download_listed_report_url="/PublicReports/reports/fca/"+"FCA_Table_"+dtcc_app.display_id+"_"+"LISTED_Agg"+"_"+dtcc_app.current_report_date + '.csv';
+	            
+			}
+			 dtcc_app.download_legacy_report_url="/PublicReports/reports/fca/"+"FCA_Table_"+dtcc_app.display_id+"_"+dtcc_app.deriv_type.toUpperCase()+"_"+changedAsset+"_"+dtcc_app.current_report_date + '.csv';
+			var report_title = "<h3><b>"+ dtcc_app.report_title + "<br><br>Report Date (YYYY-MM-DD): " + date2YYYYMMDD(dtcc_app.current_report_date) + "</b></h3>";
+                $("#panel_main_report_title").html(report_title);
+		}
+	 $(document).on('click', '.bothLink', function(){
+		 downloadToCSV(makeData("ALL"),"FCA_Table_"+dtcc_app.display_id+"_"+ "All_Agg"+"_"+dtcc_app.current_report_date + ".csv");
+	 });
+	
+	 $(document).on( 'click', '.etdListedLink', function (e) {
+		 downloadToCSV(makeData("TWO"),"FCA_Table_"+dtcc_app.display_id+"_"+ "ETD_LISTED"+"_"+dtcc_app.current_report_date + ".csv");
+	 });
+	 function show_report(){
+         		reset_panel_main();
+         		var report_html;
+         		var download_link;
+         		if(dtcc_app.asset_type == "Interest_Rates"){
+    				changedAsset="Interest_Rate";
+    			}else{
+    				changedAsset=dtcc_app.asset_type;
+    			}
+	            if(dtcc_app.deriv_type == "otc_and_etd"){
+	            	report_html = displayCSV();
+				    download_link = csv_table = "<img width=\"17\" hspace=\"3\" height=\"16\" border=\"0\" src=\"/Presentation/Includes/images/icon_4.png\">"+
+					"<a style=\" color:#666666 \"  class=\"bothLink\" href=\"#\">Download Both Reports</a>";
+				    download_link = download_link+"<img width=\"17\" hspace=\"3\" height=\"16\" border=\"0\" src=\"/Presentation/Includes/images/icon_4.png\">"+
+					"<a style=\" color:#666666 \" href=\"/PublicReports/reports/fca/"+"FCA_Table_"+dtcc_app.display_id+"_"+ "OTC_Agg"+"_"+dtcc_app.current_report_date + ".csv"+"\">Download OTC Report</a>";
+				    download_link = download_link+"<img width=\"17\" hspace=\"3\" height=\"16\" border=\"0\" src=\"/Presentation/Includes/images/icon_4.png\">"+
+				    "<a style=\" color:#666666 \" class=\"etdListedLink\" href=\"#\">Download ETD and Listed Derivatives</a>"; 
+
+	            }else{
+	            	 report_html = generateHtmlTable(dtcc_app.legacy_data);
+	            	 download_link=csv_table = "<img width=\"17\" hspace=\"3\" height=\"16\" border=\"0\" src=\"/Presentation/Includes/images/icon_4.png\">"+
+					"<a style=\" color:#666666 \" href=\"/PublicReports/reports/fca/"+"FCA_Table_"+dtcc_app.display_id+"_"+dtcc_app.deriv_type.toUpperCase()+"_"+changedAsset+"_"+dtcc_app.current_report_date + ".csv"+"\">Download Report</a>"; 
+		            
+	            }
+	             $("#panel_main_report_table").html(download_link + report_html);
+	             $("#panel_main_report").show();
+	             $("tr:odd").css("background-color","#EEEEEE");
+	             $('#report_table tr:last').prev().find("tr").addClass("last_row");
+	             $('#report_table tr td:first-child').css("background-color", "#CCCCCC");
+	             
+	             if(dtcc_app.display_id == 1){
+	            	 $('#report_table tr:eq(8)').css("background-color", "#CCCCCC");
+	            	 $('#report_table tr:eq(8) td:first-child').attr("colspan","16").css("text-align","center");
+	             }else if(dtcc_app.display_id == 2){
+	            	 $('#report_table tr:eq(8)').css("background-color", "#CCCCCC");
+	            	 $('#report_table tr:eq(8) td:first-child').attr("colspan","16").css("text-align","center");
+	            	 $('#report_table tr:eq(14)').css("background-color", "#CCCCCC");
+	            	 $('#report_table tr:eq(14) td:first-child').attr("colspan","16").css("text-align","center");
+	             }
+	   }
+	 function makeData(mergeValue){
+		 var csv_merged_data;
+		 var strDelimiter =  ',';
+		 var otc_data=dtcc_app.otc_data.split(/\r?\n|\r/);
+			var etd_data=dtcc_app.etd_data.split(/\r?\n|\r/);
+			var listed_data=dtcc_app.listed_data.split(/\r?\n|\r/);
+		 for(var count = 0; count<otc_data.length; count++)
+		    {
+			 if(otc_data[count]){
+					
+					if(count ==0){
+						var tableTitle = otc_data[count].split(strDelimiter);
+						var tableTitle1 = etd_data[count].split(strDelimiter);
+						var tableTitle2 = listed_data[count].split(strDelimiter);
+						for(var t_title =0; t_title < tableTitle.length;t_title++) {//OTC
+							if(tableTitle[t_title]) {
+								if(mergeValue == "ALL")
+									csv_merged_data =tableTitle[t_title]+","+tableTitle1[t_title]+","+tableTitle2[t_title]+"\n";
+								else
+									csv_merged_data =tableTitle1[t_title]+","+tableTitle2[t_title]+"\n";
+							}
+						}
+					}
+					if(count == 1){
+						var tableHeaders = otc_data[count].split(strDelimiter);
+						var tableHeaders1 = etd_data[count].split(strDelimiter);
+						var tableHeaders2 = listed_data[count].split(strDelimiter);
+						var j;
+						if(mergeValue == "ALL"){
+							j=1;
+						for(var cel_header =0; cel_header < tableHeaders.length;cel_header++) {//OTC 
+							csv_merged_data +=tableHeaders[cel_header]+",";
+						}
+						}else{
+							j=0;
+						}
+						for(var cel_header =j; cel_header < tableHeaders1.length;cel_header++) {//ETD 
+							csv_merged_data +=tableHeaders1[cel_header]+",";
+						}
+						for(var cel_header =1; cel_header < tableHeaders2.length;cel_header++) {//Listed
+							csv_merged_data +=tableHeaders2[cel_header]+",";
+						}
+						csv_merged_data +="\n";
+					}
+					if(count == 2){
+						csv_merged_data +=otc_data[count];
+						csv_merged_data +="\n";
+					}
+					 if(count >2){
+						if(otc_data[count] !=null){
+							var cell_data = otc_data[count].match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
+							var cell_data1 = etd_data[count].match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
+							var cell_data2 = listed_data[count].match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
+							var k;
+							 if(cell_data != null){
+								 if(mergeValue == "ALL"){
+										k=1;
+							     for(var cell_count=0; cell_count<cell_data.length; cell_count++)
+							     {	
+							    		 csv_merged_data +=cell_data[cell_count]+",";
+							     }
+								 }else{
+									 k=0;
+								 }
+							     for(var cell_count=k; cell_count<cell_data1.length; cell_count++)
+							     {							    	
+							    		 csv_merged_data +=cell_data1[cell_count]+",";
+							     }
+							     for(var cell_count=1; cell_count<cell_data2.length; cell_count++)
+							     {							    	
+							    		 csv_merged_data +=cell_data2[cell_count]+",";
+							     }
+							     }
+						}
+						csv_merged_data +="\n";
+			 }
+			 }
+		    }
+		 return csv_merged_data;
+	 }
+	 function downloadToCSV(csv_data,name){
+		 var csvContent=csv_data; 
+		 var blob = new Blob([csvContent]);
+		 	if (window.navigator.msSaveOrOpenBlob)  
+			    window.navigator.msSaveOrOpenBlob(blob, name);
+			else
+			{
+				var a = window.document.createElement("a");
+			    a.href = window.URL.createObjectURL(blob, {type: "text/csv"});
+			    a.download = name;
+			    document.body.appendChild(a);
+			    a.click();  
+			    document.body.removeChild(a);
+			}
+	 }
+	  function getReportWithAjax(report_url,derivType){
+		   $.ajax({
+              url: report_url
+              ,dataType: 'text'
+              ,beforeSend: function() {$('#ajax_wait').show(); }
+              ,complete: function() { $('#ajax_wait').hide(); }
+              ,cache:false
+              ,success: function(data){
+                      if(0==data.length){
+                              reset_panel_main();
+                              var report_html="<h3><font color=\"#222222\"> Report for the chosen date is currently not available.</font></h3>";
+                              $("#panel_main_report_table").html(report_html) ;
+                              $("#panel_main_report").show();
+                         }
+                       else{
+	                        	if(derivType == "O"){
+	                        		dtcc_app.otc_data=data;
+	                        		getReportWithAjax(dtcc_app.download_etd_report_url,"E");
+	                        	}else if(derivType == "E"){
+	                        		dtcc_app.etd_data=data;
+	                        		getReportWithAjax(dtcc_app.download_listed_report_url,"L");
+	                        	}else if(derivType == "L"){
+	                        		dtcc_app.listed_data=data;
+	                        		 show_report();
+	                        	}else if(derivType == "H"){
+	                        		dtcc_app.legacy_data=data;
+	                        		 show_report();
+	                        	}
+                           }
+           	}
+              ,error: function(){
+                      reset_panel_main();
+                      var report_html="<h3><font color=\"#222222\"> Report for the chosen date is currently not available.</font></h3>";
+                      $("#panel_main_report_table").html(report_html) ;
+                      $("#panel_main_report").show();
+                  }
+		 });
+	   }
+	   $('#change_report_date').change(function(){
+			dtcc_app.current_report_date = YYYYMMDD2date($(this).val());
+			dtcc_app.date_selected = dtcc_app.current_report_date;
+			reset_panel_main();
+			setup_report();
+			if(dtcc_app.deriv_type =="otc_and_etd"){
+				getReportWithAjax(dtcc_app.download_otc_report_url,"O");
+			}else{
+				getReportWithAjax(dtcc_app.download_legacy_report_url,"H");
+			}
+		}); 
+	$(document).on('click', '.report_link', function(){
+		dtcc_app.report_name = $(this).attr("report_name");
+		dtcc_app.report_title = $(this).attr("report_title");
+		dtcc_app.report_download_name=(dtcc_app.report_title.substring((dtcc_app.report_title).indexOf(':')+1)).replace(/:/g," ");
+		dtcc_app.display_id = $(this).attr("display_id");
+		if(dtcc_app.date_selected == "00000000"){
+            dtcc_app.date_selected = dtcc_app.current_report_date;
+    }
+		if(dtcc_app.display_id==2){
+			$("#disclaimer_note").show();
+		}else{
+			$("#disclaimer_note").hide();
+		}
+    dtcc_app.current_report_date=dtcc_app.date_selected;
+    $('#change_report_date').val(date2YYYYMMDD(dtcc_app.date_selected));
+	reset_panel_main();
+	setup_report();
+	if(dtcc_app.deriv_type =="otc_and_etd"){
+		getReportWithAjax(dtcc_app.download_otc_report_url,"O");
+	}else{
+		getReportWithAjax(dtcc_app.download_legacy_report_url,"H");
+	}
+    }); 
+	function displayCSV(){
+		var strDelimiter =  ',';
+		var otc_data=dtcc_app.otc_data.split(/\r?\n|\r/);
+		var etd_data=dtcc_app.etd_data.split(/\r?\n|\r/);
+		var listed_data=dtcc_app.listed_data.split(/\r?\n|\r/);
+		var root_table='<table id="report_table" class="table table-condensed table-hover table-striped">';
+		for(var count = 0; count<otc_data.length; count++)
+	    {
+			if(otc_data[count]){
+				if(count ==0){
+					var tableTitle = otc_data[count].split(strDelimiter);
+					var tableTitle1 = etd_data[count].split(strDelimiter);
+					var tableTitle2 = listed_data[count].split(strDelimiter);
+					
+					root_table+='<thead><tr><th colspan="1" nowrap style=border-collapse:collapse;color:whitesmoke;background-color:#999;>  </th>';
+					for(var t_title =0; t_title < tableTitle.length;t_title++) {//OTC
+						if(tableTitle[t_title]) {
+							root_table +='<th colspan="5" nowrap style=border-collapse:collapse;color:whitesmoke;background-color:#999;>'+tableTitle[t_title]+'</th>';
+						}
+					}
+					for(var t_title =0; t_title < tableTitle1.length;t_title++) {//ETD
+						if(tableTitle1[t_title]) {
+							root_table +='<th colspan="5" nowrap style=border-collapse:collapse;color:whitesmoke;background-color:#999;>'+tableTitle1[t_title].replace(/"/g, "")+'</th>';
+						}
+					}
+					for(var t_title =0; t_title < tableTitle2.length;t_title++) {//Listed
+						if(tableTitle2[t_title]) {
+							root_table +='<th colspan="5" nowrap style=border-collapse:collapse;color:whitesmoke;background-color:#999;>'+tableTitle2[t_title].replace(/"/g, "")+'</th>';
+						}
+					}
+					root_table +='</tr></thead>';
+				}
+				if(count == 1) {
+					var tableHeaders = otc_data[count].split(strDelimiter);
+					var tableHeaders1 = etd_data[count].split(strDelimiter);
+					var tableHeaders2 = listed_data[count].split(strDelimiter);
+					root_table +='<tbody><tr style=background-color:rgb(238,238,238)>';
+					for(var cel_header =0; cel_header < tableHeaders.length;cel_header++) {//OTC 
+					
+						root_table +='<td nowrap class=last_row>'+tableHeaders[cel_header].replace(/"/g, "")+'</td>';
+					}
+					for(var cel_header =1; cel_header < tableHeaders1.length;cel_header++) {//ETD 
+						
+						root_table +='<td nowrap class=last_row>'+tableHeaders1[cel_header].replace(/"/g, "")+'</td>';
+					}
+					for(var cel_header =1; cel_header < tableHeaders2.length;cel_header++) {//Listed 
+						
+						root_table +='<td nowrap class=last_row>'+tableHeaders2[cel_header].replace(/"/g, "")+'</td>';
+					}
+					root_table +='</tr>';
+				}
+				if(count == 2) {
+					root_table +='<tr>';
+					var tablePara = otc_data[count].replace(/,/g, "");
+					if(tablePara){
+						root_table +='<td style=text-align:center colspan=16 class=last_row>'+tablePara+'</td></tr>';
+					}
+				}
+			}
+	    }
+		for(var count1 =3; count1 < otc_data.length;count1++){
+			if(otc_data[count1] !=null){
+			
+			console.log("listed_data[count1] :::;"+listed_data[count1]);
+			//var celldata3 = CSVToArray(fca_data[count1],strDelimiter);
+			var cell_data = otc_data[count1].match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
+			var cell_data1 = etd_data[count1].match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
+			var cell_data2 = listed_data[count1].match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
+			
+			root_table += '<tr>';
+		     if(cell_data != null){//OTC
+		         for(var cell_count=0; cell_count<cell_data.length; cell_count++)
+		         {
+		          root_table += '<td nowrap>'+cell_data[cell_count].replace(/"/g, "")+'</td>';
+		         }
+			     for(var cell_count=1; cell_count<cell_data1.length; cell_count++)
+			     {
+			       root_table += '<td nowrap>'+cell_data1[cell_count].replace(/"/g, "")+'</td>';
+			     }
+			     for(var cell_count=1; cell_count<cell_data2.length; cell_count++)
+			     {
+			       root_table += '<td nowrap>'+cell_data2[cell_count].replace(/"/g, "")+'</td>';
+			     }
+			  }
+		     root_table += '</tr>';
+			
+		}
+	}
+		root_table += '</tbody>';
+		root_table += '</table>';
+		return root_table;
+	}
+	function generateHtmlTable(data){
+		data=data.replace(/,(?=,)/g, '," "');
+		var report_data=data.split(/\r?\n|\r/);
+		var table_data = '<table id="report_table" class="table table-condensed table-hover table-striped">';
+		for(var count = 0; count<report_data.length; count++)
+	    {
+			var cell_data = report_data[count].match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
+			
+		     table_data += '<tr>';
+		     if(cell_data != null){
+		     for(var cell_count=0; cell_count<cell_data.length; cell_count++)
+		     {
+		    	 if(count === 0)
+		         {
+		          table_data += '<th nowrap colspan="1">'+cell_data[cell_count]+'</th>';
+		         }
+		         else
+		         {
+		          table_data += '<td nowrap>'+cell_data[cell_count].replace(/"/g, "")+'</td>';
+		         }
+		     }
+		     }
+		     table_data += '</tr>';
+	    }
+		     table_data += '</table>';
+	  return table_data;
+	}
+});
+</script>
+</html>

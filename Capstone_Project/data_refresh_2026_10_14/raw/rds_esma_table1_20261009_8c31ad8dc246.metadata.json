@@ -1,0 +1,19 @@
+{
+  "source_id": "rds_esma_table1_20261009",
+  "source_name": "rds_esma_table1_20261009",
+  "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_1_OTC_Agg_20261009.csv",
+  "file": "raw/rds_esma_table1_20261009_8c31ad8dc246.csv",
+  "collected_at_utc": "2026-10-14T19:23:12+00:00",
+  "public_only": true,
+  "business_lines": [
+    "RDS",
+    "Data Services"
+  ],
+  "kind": "repository_weekly",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_1_OTC_Agg_20261009.csv",
+  "content_type": "text/csv",
+  "bytes": 1110,
+  "sha256": "b244fe3fb222b3ca4ecbad8c0a932412cddf81c017ccb43f79cec0de144bb174"
+}

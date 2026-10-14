@@ -1,0 +1,20 @@
+{
+  "source_id": "fred_RMFSL",
+  "source_name": "Retail money market funds, monthly seasonally adjusted",
+  "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=RMFSL&cosd=2026-07-01&coed=2026-10-14",
+  "file": "raw/fred_RMFSL_1868411f70bc.csv",
+  "collected_at_utc": "2026-10-14T19:29:46+00:00",
+  "public_only": true,
+  "business_lines": [
+    "WIS",
+    "Asset Services",
+    "Data Services"
+  ],
+  "kind": "market_series",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=RMFSL&cosd=2026-07-01&coed=2026-10-14",
+  "content_type": "application/csv",
+  "bytes": 59,
+  "sha256": "1b88439a62294eec6effc534c6afdfc0c25b29e41123d29b42600c0c15c72205"
+}

@@ -1,0 +1,93 @@
+{
+  "version": "response-review-v1",
+  "prepared_at_utc": "2026-10-06T18:07:29.092317+00:00",
+  "scope": [
+    "GSD",
+    "MBSD",
+    "NSCC"
+  ],
+  "cutoff": "2026Q2",
+  "status": "exploratory revision after original outcomes and later-sample results were seen",
+  "external_indicators": "reuse original seven transformations and quarterly maxima; do not change event windows or event results",
+  "outcomes": {
+    "im_qoq": [
+      "Quarter-end IM growth",
+      "fraction",
+      "IM(t)/IM(t-1)-1"
+    ],
+    "im_call_usd": [
+      "Peak daily IM call",
+      "USD",
+      "PQD 6.8.1"
+    ],
+    "im_call_to_im": [
+      "Peak IM call / quarter-end IM",
+      "fraction",
+      "6.8.1(t)/6.1.1(t)"
+    ],
+    "im_call_to_prior_im": [
+      "Peak IM call / prior-quarter IM",
+      "fraction",
+      "6.8.1(t)/6.1.1(t-1); sensitivity"
+    ],
+    "vm_avg_usd": [
+      "Average daily VM",
+      "USD",
+      "PQD 6.6.1"
+    ],
+    "vm_peak_usd": [
+      "Peak daily VM",
+      "USD",
+      "PQD 6.7.1"
+    ],
+    "vm_peak_to_avg": [
+      "Peak / average VM",
+      "multiple",
+      "6.7.1(t)/6.6.1(t)"
+    ]
+  },
+  "lags": {
+    "0": "same-quarter association",
+    "1": "next-quarter association; not a deployable forecast"
+  },
+  "samples": {
+    "earlier": "target quarters through 2024Q4, no longer a fresh selection test",
+    "later": "2025Q1 through 2026Q2, already observed; only six quarters",
+    "all": "2020Q4 through 2026Q2"
+  },
+  "inference": "ordinary Spearman p, BH within all 294 comparisons of each sample; four-consecutive-quarter moving block bootstrap 2000 replicates for n>=12; calendar-respecting first differences",
+  "no_untouched_final_test": true,
+  "no_causal_or_calibrated_score": true,
+  "predefined_display_cases": [
+    [
+      "GSD",
+      "ust10_abs_change",
+      "im_qoq"
+    ],
+    [
+      "GSD",
+      "ust10_abs_change",
+      "im_call_to_im"
+    ],
+    [
+      "GSD",
+      "ust10_abs_change",
+      "vm_peak_usd"
+    ],
+    [
+      "MBSD",
+      "ust10_abs_change",
+      "vm_peak_usd"
+    ],
+    [
+      "NSCC",
+      "vix",
+      "vm_peak_usd"
+    ],
+    [
+      "GSD",
+      "sofr_effr_adjusted",
+      "vm_peak_to_avg"
+    ]
+  ]
+}

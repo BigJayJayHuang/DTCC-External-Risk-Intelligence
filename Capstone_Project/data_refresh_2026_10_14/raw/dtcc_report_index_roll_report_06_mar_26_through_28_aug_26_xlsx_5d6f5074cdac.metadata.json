@@ -1,0 +1,19 @@
+{
+  "source_id": "dtcc_report_index_roll_report_06_mar_26_through_28_aug_26_xlsx",
+  "source_name": "dtcc_report_index_roll_report_06_mar_26_through_28_aug_26_xlsx",
+  "url": "https://files.dtcc.com/download/assets/Index-Roll-Report-06-Mar-26-through-28-Aug-26.xlsx/f64c6dd4a64011f1a1870af3a20fdeaf",
+  "file": "raw/dtcc_report_index_roll_report_06_mar_26_through_28_aug_26_xlsx_5d6f5074cdac.xlsx",
+  "collected_at_utc": "2026-10-14T19:23:13+00:00",
+  "public_only": true,
+  "business_lines": [
+    "RDS",
+    "Data Services"
+  ],
+  "kind": "public_business_report",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://files.dtcc.com/download/assets/Index-Roll-Report-06-Mar-26-through-28-Aug-26.xlsx/f64c6dd4a64011f1a1870af3a20fdeaf",
+  "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "bytes": 69469,
+  "sha256": "fd4b431c5f06a8130cfe06c5f914c071cf7820e9bee61d8b9b3c71f2a62c6d33"
+}

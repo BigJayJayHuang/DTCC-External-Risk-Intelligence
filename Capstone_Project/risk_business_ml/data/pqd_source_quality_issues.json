@@ -1,0 +1,46 @@
+[
+  {
+    "quarter": "2021Q3",
+    "division": "GSD",
+    "metric": "daily_notional_usd",
+    "original_xlsx_value": 4046191.0,
+    "pdf_value_in_usd": 4046191000000.0,
+    "action": "unit normalized from PDF evidence",
+    "explanation": "PDF confirms original XLSX notional values were in USD millions",
+    "source_file": "quantitative_disclosures/DTCC_PQD_2021_Q3.pdf",
+    "source_page": 19
+  },
+  {
+    "quarter": "2021Q3",
+    "division": "MBSD",
+    "metric": "daily_notional_usd",
+    "original_xlsx_value": 357108.0,
+    "pdf_value_in_usd": 357108000000.0,
+    "action": "unit normalized from PDF evidence",
+    "explanation": "PDF confirms original XLSX notional values were in USD millions",
+    "source_file": "quantitative_disclosures/DTCC_PQD_2021_Q3.pdf",
+    "source_page": 19
+  },
+  {
+    "quarter": "2022Q3",
+    "division": "GSD",
+    "metric": "daily_notional_usd",
+    "original_xlsx_value": 4480576.0,
+    "pdf_value_in_usd": 4000000.0,
+    "action": "excluded; no invented replacement",
+    "explanation": "Both formats contain inconsistent notional magnitudes; cannot confirm intended unit",
+    "source_file": "quantitative_disclosures/DTCC_PQD_2022_Q3.pdf",
+    "source_page": 19
+  },
+  {
+    "quarter": "2022Q3",
+    "division": "MBSD",
+    "metric": "daily_notional_usd",
+    "original_xlsx_value": 317483.0,
+    "pdf_value_in_usd": 0.0,
+    "action": "excluded; no invented replacement",
+    "explanation": "Both formats contain inconsistent notional magnitudes; cannot confirm intended unit",
+    "source_file": "quantitative_disclosures/DTCC_PQD_2022_Q3.pdf",
+    "source_page": 19
+  }
+]

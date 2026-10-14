@@ -1,0 +1,14 @@
+{
+  "languages": [
+    "Chinese",
+    "English"
+  ],
+  "language_switch_verified": true,
+  "business_outcome_sample_filters_verified": true,
+  "scoped_source_preview_verified": true,
+  "case_pagination_verified": true,
+  "title_and_chart_labels_verified": true,
+  "default_restored": "Chinese",
+  "local_preview": "http://127.0.0.1:8878/?view=1",
+  "portable_html_export": "verified exporter; file protocol preview unavailable in browser policy"
+}

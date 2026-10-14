@@ -1,0 +1,46 @@
+    
+DTCC offers enhanced access to all important notices via a Web -based subscription service. 
+The notification system leverages RSS Newsfeeds, providing significant benefits including  
+real-time updates and customizable delivery. To learn more and to set up your own DTCC RSS  
+alerts, visit http://www.dtcc.com/subscription_form.php.     
+     
+1 
+IMPORTANT NOTICE 
+Fixed Income Clearing Corporation - GOV 
+DTCC Public (White) 
+ 
+GOV #: GOV2248-26 
+Date: October 12, 2026 
+To: All Government Securities Division Members 
+Category: Service Update 
+Subject: FICC Veterans Day Holiday Schedule 
+ 
+The Government Securities Division (“GSD”) of the Fixed Income Clearing Corporation 
+(“FICC”) will be closed Wednesday, November 11, 2026, in observance of Veterans Day. The 
+following changes in FICC's operations and schedules will be in effect: 
+ 
+Government Securities Division RTTM, Comparison, and Netting Systems: 
+ 
+Comparison System 
+All Regular Way, When-Issued, and Forward Settling Trades executed on Tuesday, 
+November 10, 2026, should be submitted on Tuesday, November 10, 2026, by the normal 
+cut-off time of 8:00 PM EST. 
+ 
+No trade input will be accepted on Wednesday, November 11, 2026. Trades executed on 
+Wednesday, November 11, 2026, should be submitted on Thursday, November 12, 2026, 
+along with trades of that day. 
+ 
+Netting System 
+All netted obligations resulting from compared Regular Way Trades among Netting Members 
+submitted on Tuesday, November 10, 2026, will settle on Thursday, November 12, 2026. 
+ 
+All output will be available by 2:00 AM EST, Wednesday, November 11, 2026.  
+ 
+Sponsored GC Service 
+No trade input will be accepted on Wednesday, November 11, 2026. 
+ 
+ 
+GCF Repo and CCIT Services 
+No trade input will be accepted on Wednesday, November 11, 2026. 
+ 
+ 

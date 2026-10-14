@@ -1,0 +1,16 @@
+[
+  {
+    "content_sha256": "642da8e9677d08f3f9a8f111bfc1127068833bef4dec57f9f6b7b3b09a32a6d4",
+    "documents": [
+      {
+        "document_id": "b459fdcb70dcc1b7cf71951db8a493582c6091bf76c55249f73c8f92856fd9ff",
+        "url": "https://files.dtcc.com/download/assets/24778-26/d52b86a2c68011f1ab6b7a5d1f723cab"
+      },
+      {
+        "document_id": "26e24eb729b7b884490f11a15ee2b64f85c54a2d89aa8c3a37ead0593e845d20",
+        "url": "https://files.dtcc.com/download/assets/24778-26/d572271ac68011f18b987a5d1f723cab"
+      }
+    ],
+    "interpretation": "Exact source-text match; preserve publication records but avoid treating these as separate information shocks."
+  }
+]

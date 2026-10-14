@@ -1,0 +1,16 @@
+{
+  "source_id": "article_08dfdbdaa9ce20cc",
+  "source_name": "Federal Reserve Board original document",
+  "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261007a.htm",
+  "file": "raw/article_08dfdbdaa9ce20cc_08dfdbdaa9ce.html",
+  "collected_at_utc": "2026-10-14T19:29:44+00:00",
+  "public_only": true,
+  "business_lines": [],
+  "kind": "article",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261007a.htm",
+  "content_type": "text/html",
+  "bytes": 82414,
+  "sha256": "ecd1a602969f2cc881f5705e1d247f789d04613a1c3f05e709ebacf38669f346"
+}

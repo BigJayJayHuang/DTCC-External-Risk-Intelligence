@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" href="http://www.dtcc.com/Presentation/Includes/images/favicon.ico">
+	<meta charset="ISO-8859-1">
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+	<title>UWC Plot</title>
+	<script type="text/javascript" src="/products/uw/resources/jquery/3.5.1/jquery.js"></script>
+	<script type="text/javascript" src="/products/uw/resources/jqplot/1.0.8r1250/jquery.jqplot.js"></script>
+	<script type="text/javascript"
+			src="/products/uw/resources/jqplot/1.0.8r1250/plugins/jqplot.logAxisRenderer.js"></script>
+	<script type="text/javascript"
+			src="/products/uw/resources/jqplot/1.0.8r1250/plugins/jqplot.dateAxisRenderer.js"></script>
+	<script type="text/javascript"
+			src="/products/uw/resources/jqplot/1.0.8r1250/plugins/jqplot.enhancedLegendRenderer.js"></script>
+	<script type="text/javascript"
+			src="/products/uw/resources/jqplot/1.0.8r1250/plugins/jqplot.highlighter.js"></script>
+	<script type="text/javascript" src="/products/uw/resources/momentjs/2.24.0/moment.js"></script>
+	<!-- <script type="text/javascript" src="../resources/uwc-data.js"></script> -->
+	<script type="text/javascript" src="/products/uw/resources/uw_data-xml.js"></script>
+	<link rel="stylesheet" type="text/css" href="/products/uw/resources/jqplot/1.0.8r1250/jquery.jqplot.css" />
+	<link href="https://use.typekit.net/isc5cxv.css" rel="stylesheet">
+	<style type="text/css">
+		.chartDiv {
+			min-height: 500px;
+			margin-top: 20px;
+			width: 612px;
+		}
+
+		.paging {
+			text-align: center;
+			font-family: 'acumin-pro';
+		}
+
+			.paging a {
+				text-decoration: none;
+				text-transform: uppercase;
+				font-family: 'acumin-pro';
+				color: #0BA67D;
+			}
+
+				.paging a:hover {
+					color: #000000 !important;
+				}
+		/*.jqplot-title {
+			margin-bottom: 30px;
+		}
+
+		.jqplot-xaxis {
+			position: relative;
+			top: 15px;
+		}*/
+	</style>
+</head>
+<body>
+	<div id="countschartdiv" class="chartDiv"></div>
+	<div class='paging'>
+		<a href="javascript:void(0)" onclick="scrollPlot(-1);return false">&lt;&lt;prev</a> &nbsp; <a href="javascript:void(0)" onclick="scrollPlot(+1);return false">next&gt;&gt;</a>
+	</div>
+	<script type="text/javascript">
+		//var transposedData = transposeUwcData();
+		var uwcCountsPlot;
+		var mdyFormat = 'MM/DD/YYYY';
+		if (location.protocol == "file:") {
+			init($.parseXML(uwcXmlData));
+		} else {
+			$.get("/products/uw/data/uw_data.xml?v=" + Date.now(), init);
+		}
+		function init(xmlDoc) {
+			var transposedData = transposeUwcXmlData(xmlDoc);
+
+			var optionsObj = {
+				highlighter: {
+					show: true,
+					tooltipLocation: 'n',
+					sizeAdjust: 7.5
+				},
+				series: [{
+					color: '#b8e0d5'
+				}, {
+					color: '#7d9891'
+				}, {
+					color: '#0ba67d'
+				}, {
+					color: '#0c221b'
+				}],
+				seriesToggle: 'normal'
+			};
+			var thisMonth = moment().startOf('month');
+			countsOptionsObj = JSON.parse(JSON.stringify(optionsObj));
+			countsOptionsObj.title = 'New Issuance Count';
+			countsOptionsObj.axes = {
+				yaxis: {
+					renderer: $.jqplot.LinearAxisRenderer,
+					min: 0,
+					max: transposedData.maxCount,
+					tickInterval: 250,
+					tickRenderer: $.jqplot.CanvasAxisTickRenderer
+				},
+				xaxis: {
+					renderer: $.jqplot.DateAxisRenderer,
+					min: moment(thisMonth).subtract(1, 'year').format(mdyFormat),
+					max: moment(thisMonth).format(mdyFormat),
+					tickInterval: '1 month',
+					tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+					tickOptions: {
+						formatString: '%b%n%Y'
+					}
+				}
+			};
+			countsOptionsObj.highlighter.tooltipContentEditor = function (str, seriesIndex, pointIndex, plot) {
+				// x-axis value
+				var date = transposedData[0][seriesIndex][pointIndex][0];
+				// jqPlot formatter function for date/time (used by $.jqplotDateTickFormatter)
+				var formatter = $.jqplot.DateTickFormatter;
+				// Do the formatting
+				var formattedDate = formatter('%b %Y', date);
+				// y-axis value for series hovered over
+				var seriesValue = transposedData[0][seriesIndex][pointIndex][1];
+				return seriesValue;
+			}
+
+			countsOptionsObj.legend = {
+				show: true,
+				labels: ['Municipal', 'Corporate Debt', 'Equity', 'Retail CD'],
+				location: 's',
+				placement: 'outsideGrid',
+				renderer: $.jqplot.EnhancedLegendRenderer,
+				rendererOptions: {
+					numberRows: 1,
+					seriesToggle: 'normal'
+				}
+			};
+
+			uwcCountsPlot = $.jqplot('countschartdiv', transposedData[0],
+				countsOptionsObj);
+		}
+		function scrollPlot(dist) {
+			var min = countsOptionsObj.axes.xaxis.min;
+			var max = countsOptionsObj.axes.xaxis.max;
+			var currentMonth = moment().startOf('month');
+			var currentDate = moment(currentMonth).format(mdyFormat);
+			var maxLimitCheck = moment(uwcCountsPlot.data.at(-1).at('-1')[0]).subtract(5, 'year').format(mdyFormat);
+			var operation = 'add';
+			if (dist < 0) {
+				if (new Date(min) <= new Date(maxLimitCheck)) {
+					return;
+				}
+				operation = 'subtract';
+				dist = 1;
+			}
+			else {
+				if (countsOptionsObj.axes.xaxis.tickInterval == '1 month' && new Date(max) >= new Date(currentDate)) {
+					return;
+				}
+			}
+			countsOptionsObj.axes.xaxis = {
+				min: moment(min, mdyFormat)[operation](dist, 'months').format(mdyFormat),
+				max: moment(max, mdyFormat)[operation](dist, 'months').format(mdyFormat),
+				tickInterval: '1 month'
+			};
+			uwcCountsPlot.replot(countsOptionsObj);
+		}
+	</script>
+</body>
+</html>

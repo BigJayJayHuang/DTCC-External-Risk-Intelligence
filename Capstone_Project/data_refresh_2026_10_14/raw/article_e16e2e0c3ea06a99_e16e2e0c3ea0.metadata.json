@@ -1,0 +1,16 @@
+{
+  "source_id": "article_e16e2e0c3ea06a99",
+  "source_name": "European Securities and Markets Authority news original document",
+  "url": "https://www.esma.europa.eu/press-news/esma-news/esma-appoints-carlos-san-basilio-new-member-its-management-board",
+  "file": "raw/article_e16e2e0c3ea06a99_e16e2e0c3ea0.html",
+  "collected_at_utc": "2026-10-14T19:29:17+00:00",
+  "public_only": true,
+  "business_lines": [],
+  "kind": "article",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://www.esma.europa.eu/press-news/esma-news/esma-appoints-carlos-san-basilio-new-member-its-management-board",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 57789,
+  "sha256": "5bfb1c20a4f5143e9302caa9e5f98fa0f16aafd2a51d807c157298308e6965ad"
+}

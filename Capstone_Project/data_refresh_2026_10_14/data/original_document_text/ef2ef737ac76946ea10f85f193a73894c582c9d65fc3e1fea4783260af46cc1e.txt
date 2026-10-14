@@ -1,0 +1,40 @@
+    
+DTCC offers enhanced access to all important notices via a Web -based subscription service. 
+The notification system leverages RSS Newsfeeds, providing significant benefits including  
+real-time updates and customizable delivery. To learn more and to set up your own DTCC RSS  
+alerts, visit http://www.dtcc.com/subscription_form.php.     
+     
+1 
+IMPORTANT NOTICE 
+The Depository Trust Company 
+DTCC Public (White) 
+ 
+B #: 25129-26 
+Date: December 12th, 2026 
+To: All Participants 
+Category: Service Updates 
+From: Client Account Services 
+Attention: AML, KYC, Compliance and Participant contacts 
+Subject: Legal Entity Identifier (LEI) Requirement Deadline - SR-DTC-2025-009 
+Following the Important Notice 21985-25, informing of the amendments to The Depository Trust 
+Company (“DTC”) Rules & Procedures (“DTC Rules”) relating to Legal Entity Identifier (“LEI”) 
+requirements, this notice is to notify DTC Participants that the deadline to provide a valid LEI is 
+December 12th, 2026. This notice applies to DTC Participants and does not apply to DTC Limited 
+Participants or CDS Participants.     
+The Rules provide that Participants that do not have a LEI on file with DTC shall have 60 calendar 
+days from the date that Participants are notified by Important Notice to submit their LEIs. Failure 
+to provide a valid LEI within 60 calendar days from the date that Participants are notified by 
+Important Notice could subject the Participant to disciplinary sanctions, including a fine. 
+DTC uses the Global Legal Entity Identifier Foundation ("GLEIF") as a reference source for LEI 
+information and encourages Participants to ensure their LEI records in GLEIF are accurate and 
+up to date.  
+Information about obtaining a LEI can be found in the LEI-FAQ 
+Action Required:  
+Provide the following information to dtccmembershipdocs@dtcc.com   
+• Your DTC account number  
+• A valid LEI  
+• Legal Entity Name 
+• Country and State of Incorporation 
+• Date of Formation (month and year) 
+• Principal Place of Business Address (city and country) 
+ 

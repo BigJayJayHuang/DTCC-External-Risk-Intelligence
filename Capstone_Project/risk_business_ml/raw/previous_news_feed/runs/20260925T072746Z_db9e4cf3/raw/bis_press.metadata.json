@@ -1,0 +1,17 @@
+{
+  "http_status": 200,
+  "final_url": "https://www.bis.org/doclist/all_pressrels.rss",
+  "content_type": "application/rss+xml; charset=utf-8",
+  "etag": "W/\"1790266562-gzip\"",
+  "last_modified": "Thu, 24 Sep 2026 16:16:02 GMT",
+  "sha256": "af4b761faba582989ab2d9ef37f722898ee2b05bb38f50efa8aed08b7028c268",
+  "collected_at_utc": "2026-09-25T07:27:50+00:00",
+  "source": {
+    "id": "bis_press",
+    "name": "Bank for International Settlements",
+    "feed_url": "https://www.bis.org/doclist/all_pressrels.rss",
+    "reference_url": "https://www.bis.org/rss",
+    "coverage": "Financial stability, capital, liquidity and financial market infrastructure",
+    "enabled": true
+  }
+}

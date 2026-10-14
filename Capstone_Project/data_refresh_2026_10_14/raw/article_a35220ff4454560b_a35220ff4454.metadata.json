@@ -1,0 +1,16 @@
+{
+  "source_id": "article_a35220ff4454560b",
+  "source_name": "fca_rss original document",
+  "url": "https://www.fca.org.uk/news/statements/motor-finance-legal-challenge-be-heard-february-2027",
+  "file": "raw/article_a35220ff4454560b_a35220ff4454.html",
+  "collected_at_utc": "2026-10-14T19:29:12+00:00",
+  "public_only": true,
+  "business_lines": [],
+  "kind": "article",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://www.fca.org.uk/news/statements/motor-finance-legal-challenge-be-heard-february-2027",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 175987,
+  "sha256": "3016b66248363927c8a8d0cb1b54a6195e1730328a133dcc87ce2a54eb70b1d4"
+}

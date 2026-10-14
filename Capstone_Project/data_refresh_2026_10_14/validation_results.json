@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "scope": "fixed public snapshot and data integrity; no predictive or causal validation",
+  "window_documents": 142,
+  "market_nonmissing_increment": 52,
+  "business_lines": 10,
+  "verified_current_raw_files": 248,
+  "verified_unchanged_prior_inputs": 11,
+  "news_content_counts": {
+    "publisher_automated_access_block": 66,
+    "available": 73,
+    "not_downloaded_or_access_denied": 2,
+    "structured_public_table_capture": 1
+  },
+  "all_regulatory_api_rows": 66,
+  "checks": [
+    "unique source IDs and exact URLs",
+    "raw and prior input hashes",
+    "news and market primary keys",
+    "requested publication/observation windows",
+    "no future publication timestamps",
+    "business relationship referential integrity",
+    "funding basis and past-only thresholds",
+    "underwriting and FICC monthly grains",
+    "shared GSD/MBSD source file",
+    "daily trailer counts",
+    "industry table rounding and nonadditive hierarchy",
+    "discontinued-series flags",
+    "Federal Register API pagination/count"
+  ],
+  "models_retrained": false,
+  "business_risk_scores_generated": false
+}

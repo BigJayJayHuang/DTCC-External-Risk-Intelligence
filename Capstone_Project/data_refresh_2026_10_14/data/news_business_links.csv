@@ -1,0 +1,155 @@
+﻿document_id,business_line,rule,matched_terms,risk_channel,review_status,business_impact_confirmed
+cbc5086320f83e3ead49f59b346729dd4f7b4c9486d63830307de5c8ff890895,Asset Services,custody,"[""dividend"", ""tax relief"", ""depositary"", ""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+c6d5f4b95d0819def3cf24668757763c6752d8665cce151170b2f3a47a70f83c,Asset Services,custody,"[""ipo""]",custody_corporate_actions,candidate_unreviewed,False
+bd9437e663fc497dd0ca1b0332366cb720a595ae1e6fd6038fb0c7fc8f8bd3ee,Asset Services,custody,"[""dividend"", ""tax relief"", ""depositary"", ""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+8dac74e8074181af5b7342609dd1c04cc11e733bd6f9cf7e05e2db0934000427,Asset Services,custody,"[""dividend"", ""tax relief"", ""depositary"", ""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+7208058fd586b7a278966ee963eeb61b7f3afa0b10be8b555e85d02ef0ab7fdf,ECS,equities,"[""equities""]",equity_market,candidate_unreviewed,False
+7208058fd586b7a278966ee963eeb61b7f3afa0b10be8b555e85d02ef0ab7fdf,Asset Services,custody,"[""dividend"", ""depositary"", ""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+61868b2f2f3e73397b97b429dd982ef41c89f98e2086708ff8dca6ef76adbb6a,Asset Services,custody,"[""dividend"", ""tax relief"", ""depositary"", ""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+580a7c13a3ef8e4f622d060343ec4d3c7b80fdd2d12c8f2982006caf62653d3b,Asset Services,custody,"[""dividend"", ""depositary"", ""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+30caf3b94138834d5e634ba1ec8e1f664baf609fa5d393c21263d17a50f7439a,RDS,reporting,"[""trade reporting"", ""derivatives""]",reporting_credit,candidate_unreviewed,False
+30caf3b94138834d5e634ba1ec8e1f664baf609fa5d393c21263d17a50f7439a,Data Services,data,"[""data quality""]",data_management,candidate_unreviewed,False
+30caf3b94138834d5e634ba1ec8e1f664baf609fa5d393c21263d17a50f7439a,Consulting,readiness,"[""regulatory reporting""]",regulatory_readiness,candidate_unreviewed,False
+fa42660c7db1369bb02d95b877b58d9305a10b13c94c1158a54006002987ec0c,ECS,equities,"[""equity""]",equity_market,candidate_unreviewed,False
+c57c0b7f6a3350d0444ee1bc85ba994d2170d1ddd1f68101331537e5394285e4,FICC,funding_rates,"[""repo"", ""ficc""]",funding_rates,candidate_unreviewed,False
+c57c0b7f6a3350d0444ee1bc85ba994d2170d1ddd1f68101331537e5394285e4,FICC,official_notice_prefix,"[""GOV2253-26""]",service_notice,candidate_unreviewed,False
+b957c0d943df5c67e2d4fcb396fcee00c7bbe3237e427f3d8d2919fabf5e498a,ECS,equities,"[""equity""]",equity_market,candidate_unreviewed,False
+b25591325d07de7047181086956f82d15b71be815540be8f0a6d75f83735bf0b,ECS,equities,"[""equity""]",equity_market,candidate_unreviewed,False
+9cc6074a74be77cfd107449d0967e6b0d170db1b50feb20771d0c0fca541a74a,FICC,funding_rates,"[""ficc""]",funding_rates,candidate_unreviewed,False
+9cc6074a74be77cfd107449d0967e6b0d170db1b50feb20771d0c0fca541a74a,FICC,official_notice_prefix,"[""GOV2250-26""]",service_notice,candidate_unreviewed,False
+9b6e93b48f207022f81de7eb4bdae1a5228aa479b8d2ad91fdc655c86ea05c87,WIS,wealth,"[""insurance""]",funds_insurance,candidate_unreviewed,False
+9b6e93b48f207022f81de7eb4bdae1a5228aa479b8d2ad91fdc655c86ea05c87,Asset Services,custody,"[""underwriting""]",custody_corporate_actions,candidate_unreviewed,False
+9b6e93b48f207022f81de7eb4bdae1a5228aa479b8d2ad91fdc655c86ea05c87,FICC,shared_cyber,"[""cyber"", ""operational resilience""]",cyber_third_party,candidate_unreviewed,False
+9b6e93b48f207022f81de7eb4bdae1a5228aa479b8d2ad91fdc655c86ea05c87,ECS,shared_cyber,"[""cyber"", ""operational resilience""]",cyber_third_party,candidate_unreviewed,False
+9b6e93b48f207022f81de7eb4bdae1a5228aa479b8d2ad91fdc655c86ea05c87,RDS,shared_cyber,"[""cyber"", ""operational resilience""]",cyber_third_party,candidate_unreviewed,False
+9b6e93b48f207022f81de7eb4bdae1a5228aa479b8d2ad91fdc655c86ea05c87,WIS,shared_cyber,"[""cyber"", ""operational resilience""]",cyber_third_party,candidate_unreviewed,False
+9b6e93b48f207022f81de7eb4bdae1a5228aa479b8d2ad91fdc655c86ea05c87,ITP,shared_cyber,"[""cyber"", ""operational resilience""]",cyber_third_party,candidate_unreviewed,False
+9b6e93b48f207022f81de7eb4bdae1a5228aa479b8d2ad91fdc655c86ea05c87,Asset Services,shared_cyber,"[""cyber"", ""operational resilience""]",cyber_third_party,candidate_unreviewed,False
+9b6e93b48f207022f81de7eb4bdae1a5228aa479b8d2ad91fdc655c86ea05c87,DAS,shared_cyber,"[""cyber"", ""operational resilience""]",cyber_third_party,candidate_unreviewed,False
+9b6e93b48f207022f81de7eb4bdae1a5228aa479b8d2ad91fdc655c86ea05c87,DDA,shared_cyber,"[""cyber"", ""operational resilience""]",cyber_third_party,candidate_unreviewed,False
+9b6e93b48f207022f81de7eb4bdae1a5228aa479b8d2ad91fdc655c86ea05c87,Data Services,shared_cyber,"[""cyber"", ""operational resilience""]",cyber_third_party,candidate_unreviewed,False
+9b6e93b48f207022f81de7eb4bdae1a5228aa479b8d2ad91fdc655c86ea05c87,Consulting,shared_cyber,"[""cyber"", ""operational resilience""]",cyber_third_party,candidate_unreviewed,False
+92bfe3cca51094e6176e3669e1082172ba894b7eac880ac631abf96e91a01a53,FICC,funding_rates,"[""repo"", ""ficc""]",funding_rates,candidate_unreviewed,False
+92bfe3cca51094e6176e3669e1082172ba894b7eac880ac631abf96e91a01a53,FICC,official_notice_prefix,"[""GOV2255-26""]",service_notice,candidate_unreviewed,False
+8ef4e58a44729c36149e190f00ad7afd5c282010963fe59a0a4d9dcb8e56e00a,FICC,funding_rates,"[""repo"", ""ficc""]",funding_rates,candidate_unreviewed,False
+8ef4e58a44729c36149e190f00ad7afd5c282010963fe59a0a4d9dcb8e56e00a,FICC,official_notice_prefix,"[""GOV2254-26""]",service_notice,candidate_unreviewed,False
+875e97b272b39eee977d77959821ae4cdc889b6d31d72b96b7fb7035f17b7d94,WIS,wealth,"[""private credit"", ""insurance""]",funds_insurance,candidate_unreviewed,False
+875e97b272b39eee977d77959821ae4cdc889b6d31d72b96b7fb7035f17b7d94,FICC,shared_cyber,"[""cyber"", ""operational resilience"", ""third-party""]",cyber_third_party,candidate_unreviewed,False
+875e97b272b39eee977d77959821ae4cdc889b6d31d72b96b7fb7035f17b7d94,ECS,shared_cyber,"[""cyber"", ""operational resilience"", ""third-party""]",cyber_third_party,candidate_unreviewed,False
+875e97b272b39eee977d77959821ae4cdc889b6d31d72b96b7fb7035f17b7d94,RDS,shared_cyber,"[""cyber"", ""operational resilience"", ""third-party""]",cyber_third_party,candidate_unreviewed,False
+875e97b272b39eee977d77959821ae4cdc889b6d31d72b96b7fb7035f17b7d94,WIS,shared_cyber,"[""cyber"", ""operational resilience"", ""third-party""]",cyber_third_party,candidate_unreviewed,False
+875e97b272b39eee977d77959821ae4cdc889b6d31d72b96b7fb7035f17b7d94,ITP,shared_cyber,"[""cyber"", ""operational resilience"", ""third-party""]",cyber_third_party,candidate_unreviewed,False
+875e97b272b39eee977d77959821ae4cdc889b6d31d72b96b7fb7035f17b7d94,Asset Services,shared_cyber,"[""cyber"", ""operational resilience"", ""third-party""]",cyber_third_party,candidate_unreviewed,False
+875e97b272b39eee977d77959821ae4cdc889b6d31d72b96b7fb7035f17b7d94,DAS,shared_cyber,"[""cyber"", ""operational resilience"", ""third-party""]",cyber_third_party,candidate_unreviewed,False
+875e97b272b39eee977d77959821ae4cdc889b6d31d72b96b7fb7035f17b7d94,DDA,shared_cyber,"[""cyber"", ""operational resilience"", ""third-party""]",cyber_third_party,candidate_unreviewed,False
+875e97b272b39eee977d77959821ae4cdc889b6d31d72b96b7fb7035f17b7d94,Data Services,shared_cyber,"[""cyber"", ""operational resilience"", ""third-party""]",cyber_third_party,candidate_unreviewed,False
+875e97b272b39eee977d77959821ae4cdc889b6d31d72b96b7fb7035f17b7d94,Consulting,shared_cyber,"[""cyber"", ""operational resilience"", ""third-party""]",cyber_third_party,candidate_unreviewed,False
+86d45ddd5252b0cc7d31664eaed6e34849f73f277c81ea21e1f743428d99c51b,Asset Services,custody,"[""dividend"", ""tax relief"", ""depositary"", ""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+818b3a081587b402b7baf9dd2c3db57abea39b8e70d28372f98fb72bc98c4a00,ECS,equities,"[""equity""]",equity_market,candidate_unreviewed,False
+75f27ade41e05f5defb48c3e8f0189af6920b8a69a5c9b714a67c756e9cab93e,ECS,equities,"[""equity""]",equity_market,candidate_unreviewed,False
+5a1c93b30bcfb40c595041e4deec0bbfe296d2c3361987f1b01763df3f255d86,FICC,funding_rates,"[""repo"", ""ficc""]",funding_rates,candidate_unreviewed,False
+5a1c93b30bcfb40c595041e4deec0bbfe296d2c3361987f1b01763df3f255d86,FICC,official_notice_prefix,"[""GOV2249-26""]",service_notice,candidate_unreviewed,False
+2c9018217f537673540d50878a513e8a2390a58a95aa8e70a3e90b010bc75157,ECS,equities,"[""equity""]",equity_market,candidate_unreviewed,False
+2c9018217f537673540d50878a513e8a2390a58a95aa8e70a3e90b010bc75157,WIS,wealth,"[""private credit""]",funds_insurance,candidate_unreviewed,False
+2c9018217f537673540d50878a513e8a2390a58a95aa8e70a3e90b010bc75157,FICC,shared_cyber,"[""cyber"", ""operational resilience""]",cyber_third_party,candidate_unreviewed,False
+2c9018217f537673540d50878a513e8a2390a58a95aa8e70a3e90b010bc75157,ECS,shared_cyber,"[""cyber"", ""operational resilience""]",cyber_third_party,candidate_unreviewed,False
+2c9018217f537673540d50878a513e8a2390a58a95aa8e70a3e90b010bc75157,RDS,shared_cyber,"[""cyber"", ""operational resilience""]",cyber_third_party,candidate_unreviewed,False
+2c9018217f537673540d50878a513e8a2390a58a95aa8e70a3e90b010bc75157,WIS,shared_cyber,"[""cyber"", ""operational resilience""]",cyber_third_party,candidate_unreviewed,False
+2c9018217f537673540d50878a513e8a2390a58a95aa8e70a3e90b010bc75157,ITP,shared_cyber,"[""cyber"", ""operational resilience""]",cyber_third_party,candidate_unreviewed,False
+2c9018217f537673540d50878a513e8a2390a58a95aa8e70a3e90b010bc75157,Asset Services,shared_cyber,"[""cyber"", ""operational resilience""]",cyber_third_party,candidate_unreviewed,False
+2c9018217f537673540d50878a513e8a2390a58a95aa8e70a3e90b010bc75157,DAS,shared_cyber,"[""cyber"", ""operational resilience""]",cyber_third_party,candidate_unreviewed,False
+2c9018217f537673540d50878a513e8a2390a58a95aa8e70a3e90b010bc75157,DDA,shared_cyber,"[""cyber"", ""operational resilience""]",cyber_third_party,candidate_unreviewed,False
+2c9018217f537673540d50878a513e8a2390a58a95aa8e70a3e90b010bc75157,Data Services,shared_cyber,"[""cyber"", ""operational resilience""]",cyber_third_party,candidate_unreviewed,False
+2c9018217f537673540d50878a513e8a2390a58a95aa8e70a3e90b010bc75157,Consulting,shared_cyber,"[""cyber"", ""operational resilience""]",cyber_third_party,candidate_unreviewed,False
+261713c1b99dc872f98753a14f1a36b0e925153121da8b1c821cd2f412608e1f,FICC,funding_rates,"[""ficc""]",funding_rates,candidate_unreviewed,False
+261713c1b99dc872f98753a14f1a36b0e925153121da8b1c821cd2f412608e1f,FICC,official_notice_prefix,"[""GOV2252-26""]",service_notice,candidate_unreviewed,False
+22a63a8f5d476b481cfe44a1de0492ff47f0d8350b24add7baaec84a347bc9d5,FICC,funding_rates,"[""ficc""]",funding_rates,candidate_unreviewed,False
+22a63a8f5d476b481cfe44a1de0492ff47f0d8350b24add7baaec84a347bc9d5,FICC,official_notice_prefix,"[""GOV2251-26""]",service_notice,candidate_unreviewed,False
+0bf5ff62507d1e4c790f66f8a391db6bc0548bc673d9c0cbc8329803cf341da0,WIS,wealth,"[""fund/serv"", ""insurance""]",funds_insurance,candidate_unreviewed,False
+0bf5ff62507d1e4c790f66f8a391db6bc0548bc673d9c0cbc8329803cf341da0,ECS,settlement,"[""nscc""]",processing_settlement,candidate_unreviewed,False
+fb13146bf2f3ebf0c88e61c83e9eb453b44382e036fd47ec5341f6f36ca43932,FICC,funding_rates,"[""mortgage-backed""]",funding_rates,candidate_unreviewed,False
+fb13146bf2f3ebf0c88e61c83e9eb453b44382e036fd47ec5341f6f36ca43932,FICC,official_notice_prefix,"[""MBS1605-26""]",service_notice,candidate_unreviewed,False
+ec0da774fac80138a170dee49e0c9b61a3f23d264f0bc86bb0bb4680367b627c,Asset Services,custody,"[""dividend"", ""tax relief"", ""depositary"", ""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+bedd368f2d697113068bfd36b5d2fb55cedf449f4d1b6c990da94df53b256eb0,FICC,funding_rates,"[""ficc"", ""mortgage-backed""]",funding_rates,candidate_unreviewed,False
+bedd368f2d697113068bfd36b5d2fb55cedf449f4d1b6c990da94df53b256eb0,FICC,official_notice_prefix,"[""MBS1606-26""]",service_notice,candidate_unreviewed,False
+b459fdcb70dcc1b7cf71951db8a493582c6091bf76c55249f73c8f92856fd9ff,Asset Services,custody,"[""dividend"", ""tax relief"", ""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+4a35a406aad951b48eadfc456c673a4652214a08e2f2d7941789b9f2fb4343ba,Asset Services,custody,"[""dividend"", ""depositary"", ""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+26e24eb729b7b884490f11a15ee2b64f85c54a2d89aa8c3a37ead0593e845d20,Asset Services,custody,"[""dividend"", ""tax relief"", ""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+068045ae81f279ab2fb794ebd48656c29abe1e3ccd7fd2d3fb2de0ef7a1b28f8,FICC,funding_rates,"[""repo"", ""ficc""]",funding_rates,candidate_unreviewed,False
+068045ae81f279ab2fb794ebd48656c29abe1e3ccd7fd2d3fb2de0ef7a1b28f8,FICC,official_notice_prefix,"[""GOV2248-26""]",service_notice,candidate_unreviewed,False
+04f2f46961646f73774adc4b98d293a0e64e2fa77abfe0e08b80f4c52a293641,Asset Services,custody,"[""dividend"", ""depositary"", ""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+ff5084ebbc0737c932b67ebf97f5e83159e6420c8d80d77138e493866a298270,DAS,tokenization,"[""tokenisation"", ""tokenised""]",digital_asset,candidate_unreviewed,False
+ff5084ebbc0737c932b67ebf97f5e83159e6420c8d80d77138e493866a298270,DDA,tokenization,"[""tokenisation"", ""tokenised""]",digital_asset,candidate_unreviewed,False
+f53ffaaf0919f59923b99725c8cf3225263fef3634a481a22543be0841cec0cd,RDS,reporting,"[""swap"", ""derivatives""]",reporting_credit,candidate_unreviewed,False
+c9aac6a9a28ff26b592b021a9ab8a1c7290f22a01930b2423ed28d4f448fed0f,DAS,tokenization,"[""tokenisation"", ""tokenised""]",digital_asset,candidate_unreviewed,False
+c9aac6a9a28ff26b592b021a9ab8a1c7290f22a01930b2423ed28d4f448fed0f,DDA,tokenization,"[""tokenisation"", ""tokenised""]",digital_asset,candidate_unreviewed,False
+c7e399c182d2eea72d3e68a31bab7553526fb39af381c3510335832d19d31684,WIS,wealth,"[""fund/serv"", ""insurance""]",funds_insurance,candidate_unreviewed,False
+c7e399c182d2eea72d3e68a31bab7553526fb39af381c3510335832d19d31684,ECS,settlement,"[""nscc""]",processing_settlement,candidate_unreviewed,False
+b6582caeec3f354098cb7bb1189a6cb725ab478573d2812a1880314c7d93d091,Asset Services,custody,"[""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+9126eb17cf14b3fdf3d0d78b1f59a70d60f8e050d4fea8be72117865435a9711,FICC,funding_rates,"[""repo"", ""ficc""]",funding_rates,candidate_unreviewed,False
+9126eb17cf14b3fdf3d0d78b1f59a70d60f8e050d4fea8be72117865435a9711,FICC,official_notice_prefix,"[""GOV2246-26""]",service_notice,candidate_unreviewed,False
+8ae1a863c66a78600f74f6d41cf1269b73f0bfd1ad3a4d1c4fd326c59a33e923,FICC,funding_rates,"[""repo"", ""ficc""]",funding_rates,candidate_unreviewed,False
+8ae1a863c66a78600f74f6d41cf1269b73f0bfd1ad3a4d1c4fd326c59a33e923,FICC,official_notice_prefix,"[""GOV2244-26""]",service_notice,candidate_unreviewed,False
+8759aaa76d2d8a0aee02bad97da21fd42bf9ab834d26bd7e89826824022a1f99,RDS,reporting,"[""swap"", ""swaps"", ""derivatives""]",reporting_credit,candidate_unreviewed,False
+8467e2124a16c5439120fe349559e1c9eb51a7fd67063141558aa433aa1bd926,WIS,wealth,"[""insurance""]",funds_insurance,candidate_unreviewed,False
+8049c1e2d225a87fceb4104a69196c93db939fc8d083125ba19c9af3eed6e3fc,ECS,equities,"[""equities""]",equity_market,candidate_unreviewed,False
+643d15ab6c60ae0bb81d6e3f78b064d52b6625dff21f3aebf4412459ea53e132,FICC,funding_rates,"[""treasury""]",funding_rates,candidate_unreviewed,False
+643d15ab6c60ae0bb81d6e3f78b064d52b6625dff21f3aebf4412459ea53e132,WIS,wealth,"[""insurance""]",funds_insurance,candidate_unreviewed,False
+634edda6cfcbbcdf927f1ae30ba59dbd909548ac17bb56348bed2311c648012f,Asset Services,custody,"[""dividend"", ""depositary"", ""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+5f011b753eba8300567f90273339478fb7e54c32698be7f6d06c2f58667b7c33,ECS,equities,"[""equity""]",equity_market,candidate_unreviewed,False
+5c530a3f841bc47535222435b8d1519b9679a3c38867363f6e0cfe1dd271c60a,Asset Services,custody,"[""dividend"", ""tax relief"", ""depositary"", ""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+31ff319bc7af4905cfc642aed2faca8d7c7485857cada54fe3a29137f8caba97,Asset Services,custody,"[""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+2fdb08e43b341226f57ea5fe189575eebf49dc3c8c2a7760d202d3afac11fdf1,Data Services,data,"[""market data""]",data_management,candidate_unreviewed,False
+2cdb5cb83e73e3fce8740ca0e7323a5327b3f0187abda6ed7b7806e35d64aeea,FICC,funding_rates,"[""repo"", ""ficc""]",funding_rates,candidate_unreviewed,False
+2cdb5cb83e73e3fce8740ca0e7323a5327b3f0187abda6ed7b7806e35d64aeea,FICC,official_notice_prefix,"[""GOV2247-26""]",service_notice,candidate_unreviewed,False
+19b375e1b09838b688b77ac88edc848a8b827ac6996da1002ecbc75deecb3a24,Data Services,data,"[""market data""]",data_management,candidate_unreviewed,False
+189d1019c6b7b9719eb21b00eaee36908d4d2285d0a1f6da3f3fdc34a69e28b4,Asset Services,custody,"[""dividend"", ""tax relief"", ""depositary"", ""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+dff909bce112168c58104592f118cfcaacae2c8386bbe3933e8f5f872643bac9,WIS,shared_industry_fund_assets,"[""official industry fund-asset table""]",funds_market_context,candidate_unreviewed,False
+dff909bce112168c58104592f118cfcaacae2c8386bbe3933e8f5f872643bac9,Asset Services,shared_industry_fund_assets,"[""official industry fund-asset table""]",funds_market_context,candidate_unreviewed,False
+dff909bce112168c58104592f118cfcaacae2c8386bbe3933e8f5f872643bac9,Data Services,shared_industry_fund_assets,"[""official industry fund-asset table""]",funds_market_context,candidate_unreviewed,False
+d55f21169d127f49c4db902a0be887a6949b369b137b17a71ec99ee9a80e7a47,Asset Services,custody,"[""custody"", ""dividend"", ""tax relief"", ""depositary"", ""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+b69cc246cd705d279d7132d5195b0a5b0e5036cc786eec86c7bdf962eaf45b22,Asset Services,custody,"[""custody"", ""dividend"", ""tax relief"", ""depositary"", ""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+a4a5debc8311c56ad59062e98386c6a6e1dd196dcbe7541f2b31a4285b1cfd7b,FICC,shared_cyber,"[""third-party""]",cyber_third_party,candidate_unreviewed,False
+a4a5debc8311c56ad59062e98386c6a6e1dd196dcbe7541f2b31a4285b1cfd7b,ECS,shared_cyber,"[""third-party""]",cyber_third_party,candidate_unreviewed,False
+a4a5debc8311c56ad59062e98386c6a6e1dd196dcbe7541f2b31a4285b1cfd7b,RDS,shared_cyber,"[""third-party""]",cyber_third_party,candidate_unreviewed,False
+a4a5debc8311c56ad59062e98386c6a6e1dd196dcbe7541f2b31a4285b1cfd7b,WIS,shared_cyber,"[""third-party""]",cyber_third_party,candidate_unreviewed,False
+a4a5debc8311c56ad59062e98386c6a6e1dd196dcbe7541f2b31a4285b1cfd7b,ITP,shared_cyber,"[""third-party""]",cyber_third_party,candidate_unreviewed,False
+a4a5debc8311c56ad59062e98386c6a6e1dd196dcbe7541f2b31a4285b1cfd7b,Asset Services,shared_cyber,"[""third-party""]",cyber_third_party,candidate_unreviewed,False
+a4a5debc8311c56ad59062e98386c6a6e1dd196dcbe7541f2b31a4285b1cfd7b,DAS,shared_cyber,"[""third-party""]",cyber_third_party,candidate_unreviewed,False
+a4a5debc8311c56ad59062e98386c6a6e1dd196dcbe7541f2b31a4285b1cfd7b,DDA,shared_cyber,"[""third-party""]",cyber_third_party,candidate_unreviewed,False
+a4a5debc8311c56ad59062e98386c6a6e1dd196dcbe7541f2b31a4285b1cfd7b,Data Services,shared_cyber,"[""third-party""]",cyber_third_party,candidate_unreviewed,False
+a4a5debc8311c56ad59062e98386c6a6e1dd196dcbe7541f2b31a4285b1cfd7b,Consulting,shared_cyber,"[""third-party""]",cyber_third_party,candidate_unreviewed,False
+a37490dc6bf90744a929d6f2230208f33645ab9df1217aab978b2d603c263492,ECS,equities,"[""equity""]",equity_market,candidate_unreviewed,False
+a37490dc6bf90744a929d6f2230208f33645ab9df1217aab978b2d603c263492,RDS,reporting,"[""swap""]",reporting_credit,candidate_unreviewed,False
+a37490dc6bf90744a929d6f2230208f33645ab9df1217aab978b2d603c263492,WIS,wealth,"[""private credit""]",funds_insurance,candidate_unreviewed,False
+75feef790b0a4624b1ce390c0661d29373c804ae1422e141ac42389318e91e15,Asset Services,custody,"[""dividend"", ""tax relief"", ""depositary"", ""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+6f447f0c71f54087fc47b661c78d374a56bf4e32429f48f94764fabb7da16384,Asset Services,custody,"[""custody""]",custody_corporate_actions,candidate_unreviewed,False
+667c43de185dbabcb34cdca9b3822bfeace2825c8b823904862421b6f1a115d6,Asset Services,custody,"[""custody"", ""dividend"", ""tax relief"", ""depositary"", ""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+5784e0d51d3afab44b319811423c83866d688d9929289f0dd04888f57c30fe0c,Asset Services,custody,"[""custody"", ""dividend"", ""tax relief"", ""depositary"", ""cusip""]",custody_corporate_actions,candidate_unreviewed,False
+39de758680dcfe5474d3d6dd0edc89a87c03aa648a411d4e5034354370fd2256,ECS,settlement,"[""dtc settlement""]",processing_settlement,candidate_unreviewed,False
+39de758680dcfe5474d3d6dd0edc89a87c03aa648a411d4e5034354370fd2256,FICC,shared_cyber,"[""third-party""]",cyber_third_party,candidate_unreviewed,False
+39de758680dcfe5474d3d6dd0edc89a87c03aa648a411d4e5034354370fd2256,ECS,shared_cyber,"[""third-party""]",cyber_third_party,candidate_unreviewed,False
+39de758680dcfe5474d3d6dd0edc89a87c03aa648a411d4e5034354370fd2256,RDS,shared_cyber,"[""third-party""]",cyber_third_party,candidate_unreviewed,False
+39de758680dcfe5474d3d6dd0edc89a87c03aa648a411d4e5034354370fd2256,WIS,shared_cyber,"[""third-party""]",cyber_third_party,candidate_unreviewed,False
+39de758680dcfe5474d3d6dd0edc89a87c03aa648a411d4e5034354370fd2256,ITP,shared_cyber,"[""third-party""]",cyber_third_party,candidate_unreviewed,False
+39de758680dcfe5474d3d6dd0edc89a87c03aa648a411d4e5034354370fd2256,Asset Services,shared_cyber,"[""third-party""]",cyber_third_party,candidate_unreviewed,False
+39de758680dcfe5474d3d6dd0edc89a87c03aa648a411d4e5034354370fd2256,DAS,shared_cyber,"[""third-party""]",cyber_third_party,candidate_unreviewed,False
+39de758680dcfe5474d3d6dd0edc89a87c03aa648a411d4e5034354370fd2256,DDA,shared_cyber,"[""third-party""]",cyber_third_party,candidate_unreviewed,False
+39de758680dcfe5474d3d6dd0edc89a87c03aa648a411d4e5034354370fd2256,Data Services,shared_cyber,"[""third-party""]",cyber_third_party,candidate_unreviewed,False
+39de758680dcfe5474d3d6dd0edc89a87c03aa648a411d4e5034354370fd2256,Consulting,shared_cyber,"[""third-party""]",cyber_third_party,candidate_unreviewed,False
+0ca50564546753b96ed32d15c3e4fcf88cafa9fcd89b2aef16f860c5314eae08,Asset Services,custody,"[""redemption""]",custody_corporate_actions,candidate_unreviewed,False
+dfb762420c981a428eeec3343be14ea52234915b7f388bfb65e7b0288c98138e,ECS,equities,"[""equity""]",equity_market,candidate_unreviewed,False
+dfb762420c981a428eeec3343be14ea52234915b7f388bfb65e7b0288c98138e,ECS,settlement,"[""nscc""]",processing_settlement,candidate_unreviewed,False
+cbb3dc898612e8a9c96e89d6a310037fcc907dbf0e168b22ad15e6d521ce8fe5,ECS,equities,"[""etf""]",equity_market,candidate_unreviewed,False
+a8eb6bf790b72864987dd0b36e1d3017121428a9bb6623b2d0007bd42cb272c2,ECS,equities,"[""equity"", ""equities""]",equity_market,candidate_unreviewed,False
+a8eb6bf790b72864987dd0b36e1d3017121428a9bb6623b2d0007bd42cb272c2,RDS,reporting,"[""derivatives""]",reporting_credit,candidate_unreviewed,False
+991631d2c0c562ccd2c2c3bbf0f79359b05c9904c39d74486aa634168cd8a920,ECS,equities,"[""equity""]",equity_market,candidate_unreviewed,False
+626effe5ecb6cc0b053eaa948dc0af07d8013737261bf21b00190901fcecd8ab,RDS,reporting,"[""emir""]",reporting_credit,candidate_unreviewed,False
+626effe5ecb6cc0b053eaa948dc0af07d8013737261bf21b00190901fcecd8ab,ITP,trade_processing,"[""t+1""]",processing_settlement,candidate_unreviewed,False
+626effe5ecb6cc0b053eaa948dc0af07d8013737261bf21b00190901fcecd8ab,Consulting,readiness,"[""t+1"", ""emir""]",regulatory_readiness,candidate_unreviewed,False
+626effe5ecb6cc0b053eaa948dc0af07d8013737261bf21b00190901fcecd8ab,ECS,settlement,"[""t+1""]",processing_settlement,candidate_unreviewed,False
+5551fe3167959efb8dfa78ac448ff674e6c436c78eb5ea645f7b5b8678afa469,ECS,equities,"[""etf""]",equity_market,candidate_unreviewed,False
+52595361f7fdb30557de8ba39f95587bbcce68b44e48cde73cf440b3901ae397,ECS,equities,"[""equity""]",equity_market,candidate_unreviewed,False
+3d6cdbbbcdaf29a5a762dfeda0f3d724f30f798fe2afe0a6a30d91482e0a55b9,FICC,funding_rates,"[""treasury""]",funding_rates,candidate_unreviewed,False
+3d6cdbbbcdaf29a5a762dfeda0f3d724f30f798fe2afe0a6a30d91482e0a55b9,ECS,equities,"[""equity""]",equity_market,candidate_unreviewed,False
+3d6cdbbbcdaf29a5a762dfeda0f3d724f30f798fe2afe0a6a30d91482e0a55b9,Asset Services,custody,"[""dividend"", ""redemption"", ""tax relief"", ""depositary"", ""cusip""]",custody_corporate_actions,candidate_unreviewed,False

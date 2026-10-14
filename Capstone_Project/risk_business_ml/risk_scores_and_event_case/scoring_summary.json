@@ -1,0 +1,48 @@
+{
+  "generated_at_utc": "2026-10-05T23:52:34.063542+00:00",
+  "business_data_latest_quarter": "2026Q2",
+  "reference_window": [
+    "2020Q1",
+    "2025Q2"
+  ],
+  "reference_quarters": 22,
+  "monitoring_history_window": [
+    "2020Q1",
+    "2026Q2"
+  ],
+  "history_quarters": 26,
+  "score_name": "Exploratory financial-pressure monitoring index",
+  "score_formula": "sum_i(100 * empirical_CDF_reference(nonnegative_pressure_i) * normalized_max_abs_Spearman_i), with zero score for nonpositive pressure",
+  "weight_selection": "Maximum absolute Spearman across 3 financial business metrics, normalized over 4 financial proxies separately for each legal entity",
+  "weights_use_existing_full_sample_associations": true,
+  "not_point_in_time_or_forecast": true,
+  "calibrated_loss_or_default_probability": false,
+  "ECS_proxy_formula": "max(NSCC legal entity monitoring index, DTC legal entity monitoring index)",
+  "ECS_standalone_score_available": false,
+  "policy_announcement_counts_excluded_from_financial_score": true,
+  "latest_indices": {
+    "FICC_financial_monitoring_index": 50.37063174910147,
+    "NSCC_financial_monitoring_index": 43.43103396223419,
+    "DTC_financial_monitoring_index": 33.353658823355666,
+    "ECS_related_proxy_index": 43.43103396223419,
+    "ECS_proxy_selected_entity": "NSCC",
+    "equal_weight_index": 38.63636363636364
+  },
+  "event_indices": {
+    "FICC_financial_monitoring_index": 98.44300220995075,
+    "NSCC_financial_monitoring_index": 98.00555772142081,
+    "DTC_financial_monitoring_index": 98.35443569239911,
+    "ECS_related_proxy_index": 98.35443569239911,
+    "ECS_proxy_selected_entity": "DTC",
+    "equal_weight_index": 97.72727272727272
+  },
+  "event_rank_by_FICC_and_ECS_proxy": 1,
+  "validation": {
+    "independent_percentile_calculation": "passed",
+    "weights_sum_to_one": "passed",
+    "scores_in_0_100_range": "passed",
+    "ECS_max_aggregation": "passed",
+    "same_highest_period_under_equal_weights": "passed",
+    "all_weight_associations_fail_exploratory_FDR_5pct": "confirmed"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "source_id": "article_c93921c3bcba117b",
+  "source_name": "Federal Register: SEC, CFTC and Federal Reserve publications original document",
+  "url": "https://www.federalregister.gov/documents/2026/10/13/2026-20888/regulation-crypto-asset-transactions-and-regulation-crypto-asset-markets",
+  "file": "raw/article_c93921c3bcba117b_c93921c3bcba.html",
+  "collected_at_utc": "2026-10-14T19:29:11+00:00",
+  "public_only": true,
+  "business_lines": [],
+  "kind": "article",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://unblock.federalregister.gov/",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 10596,
+  "sha256": "24f12c43ac5c54be53813302b61fe493946fe04feb026f29ad15adbcdae5d384"
+}

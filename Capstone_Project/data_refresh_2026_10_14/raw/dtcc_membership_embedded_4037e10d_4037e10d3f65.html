@@ -1,0 +1,232 @@
+ <html>
+<head>
+<link href="/Presentation/Includes/css/jquery.kwicks.css" rel="stylesheet" type="text/css"/><link href="/Presentation/Includes/css/sc-player-red.css" rel="stylesheet"/><link href="/Presentation/Includes/css/print.css" media="print" rel="stylesheet"/><link href="/Presentation/Includes/css/FastFonts/ee57b89d-eea2-415d-b5e8-73b2e74ed476.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+</head>
+<body>
+<script crossorigin="anonymous" integrity="sha512-F+u8eWHrfY8Xw9BLzZ8rG/0wIvs0y+JyRJrXjp3VjtFPylAEEGwKbua5Ip/oiVhaTDaDs4eU2Xtsxjs/9ag2bQ==" src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.min.js"></script>
+<link href="/data/dojo/1.16.5/dijit/themes/claro/claro.css" rel="stylesheet" type="text/css"/>
+
+<div class="sponsor-activity">
+<h3 class="sponsor-page-title font_tradegothic_bold">Sponsored DVP and Sponsored GC Activity</h3>
+<p class="sponsor-last-updated">Last updated through <span id="gc-updated"></span></p>
+<div class="sponsor-chart" id="gc-chart">
+<div class="sponsor-filters">
+<button class="sponsor-filters__btn" data-chart="gc" data-filter="week1">1W</button>
+<button class="sponsor-filters__btn" data-chart="gc" data-filter="month1">1M</button>
+<button class="sponsor-filters__btn" data-chart="gc" data-filter="month3">3M</button>
+<button class="sponsor-filters__btn" data-chart="gc" data-filter="month6">6M</button>
+<button class="sponsor-filters__btn" data-chart="gc" data-filter="year1">1Y</button>
+<button class="sponsor-filters__btn" data-chart="gc" data-filter="year5">5Y</button>
+<button class="sponsor-filters__btn" data-chart="gc" data-filter="ytd">YTD</button>
+</div>
+<div id="gcActivity"></div>
+<div class="sponsor-legend">
+<label class="sponsor-legend__item">
+<input checked="" class="sponsor-legend__checkbox" data-chart="gc" id="gcShow" type="checkbox"/>
+<div class="sponsor-legend__color" style="color: #016afb">
+<svg hidden aria-hidden="true" class="sponsor-legend__check" focusable="false" viewbox="0 0 512 512">
+<path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+</path>
+</svg>
+</div>
+<div class="sponsor-legend__title">GC</div>
+</label>
+<label class="sponsor-legend__item">
+<input checked="" class="sponsor-legend__checkbox" data-chart="gc" id="dvpShow" type="checkbox"/>
+<div class="sponsor-legend__color" style="color: #067F42">
+<svg hidden aria-hidden="true" class="sponsor-legend__check" focusable="false" viewbox="0 0 512 512">
+<path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+</path>
+</svg>
+</div>
+<div class="sponsor-legend__title">DVP</div>
+</label>
+<label class="sponsor-legend__item">
+<input checked="" class="sponsor-legend__checkbox" data-chart="gc" id="totalShow" type="checkbox"/>
+<div class="sponsor-legend__color" style="color: #AA5F08">
+<svg hidden aria-hidden="true" class="sponsor-legend__check" focusable="false" viewbox="0 0 512 512">
+<path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+</path>
+</svg>
+</div>
+<div class="sponsor-legend__title">Total</div>
+</label>
+</div>
+</div>
+<br/><br/><br/>
+<h3 class="sponsor-page-title font_tradegothic_bold">Sponsored Repo and Sponsored Reverse Repo Activity</h3>
+<p class="sponsor-last-updated">Last updated through <span id="sponsor-updated"></span></p>
+<div class="sponsor-chart" id="sponsor-chart">
+<div class="sponsor-filters">
+<button class="sponsor-filters__btn" data-chart="spnsr" data-filter="week1">1W</button>
+<button class="sponsor-filters__btn" data-chart="spnsr" data-filter="month1">1M</button>
+<button class="sponsor-filters__btn" data-chart="spnsr" data-filter="month3">3M</button>
+<button class="sponsor-filters__btn" data-chart="spnsr" data-filter="month6">6M</button>
+<button class="sponsor-filters__btn" data-chart="spnsr" data-filter="year1">1Y</button>
+<button class="sponsor-filters__btn" data-chart="spnsr" data-filter="year5">5Y</button>
+<button class="sponsor-filters__btn" data-chart="spnsr" data-filter="ytd">YTD</button>
+</div>
+<div id="spnsrActivity"></div>
+<div class="sponsor-legend">
+<label class="sponsor-legend__item">
+<input checked="" class="sponsor-legend__checkbox" data-chart="spnsr" id="repoShow" type="checkbox"/>
+<div class="sponsor-legend__color" style="color: #711773">
+<svg hidden aria-hidden="true" class="sponsor-legend__check" focusable="false" viewbox="0 0 512 512">
+<path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+</path>
+</svg>
+</div>
+<div class="sponsor-legend__title">Repo</div>
+</label>
+<label class="sponsor-legend__item">
+<input checked="" class="sponsor-legend__checkbox" data-chart="spnsr" id="reverseRepoShow" type="checkbox"/>
+<div class="sponsor-legend__color" style="color: #EA1031">
+<svg hidden aria-hidden="true" class="sponsor-legend__check" focusable="false" viewbox="0 0 512 512">
+<path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+</path>
+</svg>
+</div>
+<div class="sponsor-legend__title">Reverse Repo</div>
+</label>
+<label class="sponsor-legend__item">
+<input checked="" class="sponsor-legend__checkbox" data-chart="spnsr" id="totalShow" type="checkbox"/>
+<div class="sponsor-legend__color" style="color: #AA5F08">
+<svg hidden aria-hidden="true" class="sponsor-legend__check" focusable="false" viewbox="0 0 512 512">
+<path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
+</path>
+</svg>
+</div>
+<div class="sponsor-legend__title">Total</div>
+</label>
+</div>
+</div>
+<div class="sponsor-bottom-content">
+<strong>Can I download the data in these charts?</strong>
+<p>Yes, the data in these charts can be downloaded. By downloading the data you agree to DTCC's terms and
+            conditions on this webpage and in the <a href="https://www.dtcc.com/terms">Terms of Use</a>. To download
+            the data, click <a id="spnslink" href="/data/SponsoredVolume.csv">here</a>.</p>
+<p>To view the Sponsored Service Volume prior to April 1, 2020, click <a href="/data/historicdata.csv">here</a>.
+        </p>
+<strong>What do these charts show?</strong>
+<p>The charts show the amounts of repo and reverse repo activity of Sponsored Members on FICC's platform. The
+            amounts shown are from the Sponsored Member's perspective.</p>
+</div>
+</div>
+
+<section>
+</section>
+
+<script>
+  var dojoConfig = {
+    async: true,
+    cacheBust: "v=" + (new Date()).getTime(), // This will append ?v=timestamp to all modules
+    packages: [
+      { name: "gcActivity", location: "/data/dojo/1.16.5/gcActivity" }
+    ]
+  };
+</script>
+
+
+<script src="//code.jquery.com/jquery-3.7.1.min.js" type="text/javascript"></script>
+<script src="/Presentation/Includes/js/WaterMark.min.js"></script>
+<script src="/Presentation/Includes/js/new-script.js"></script>
+<script src="/Presentation/Includes/js/jquery.kwicks.js"></script>
+<script src="/Presentation/Includes/js/FlexSlider/jquery.flexslider.js"></script>
+<script src="/Presentation/Includes/js/Vendor/soundcloud.player.api.js"></script>
+<script src="/Presentation/Includes/js/Vendor/sc-player.js"></script>
+<script src="/data/main.js"></script>
+<!-- Scripts from redesign Project -->
+<link href="/Presentation/Includes/css/FlexSlider/flexslider.css" rel="stylesheet" type="text/css"/>
+<script src="/Presentation/Includes/js/all.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+		// Configure Dojo BEFORE loading dojo.js
+		var dojoConfig = {
+			async: true, 
+			parseOnLoad: false, 
+			isDebug: false,
+			gfxRenderer: "svg,canvas,vml",
+			packages: [
+				{ name: "gcfindex", location: "/data/gcfindex" },
+				{ name: "fifails", location: "/data/fifails" },
+				{ name: "gcActivity", location: "/data/dojo/1.16.5/gcActivity" },
+				{ name: "spnsrActivity", location: "/data/dojo/1.16.5/spnsrActivity" }
+			]
+		};
+	</script>
+<script src="/data/dojo/1.16.5/dojo/dojo.js"></script>
+<script type="text/javascript">
+		var date = new Date().getTime();
+		document.getElementById('spnslink').href = "/data/SponsoredVolume.csv?v=" + date;
+
+
+		document.write('<link rel="stylesheet" type="text/css" href="/data/spnsrActivity/SpnsrActivityStyles.css?v=' + date + '" />');
+				
+		if($("#sponsor-chart").length > 0) {
+			$.getScript('/data/dojo/1.16.5/spnsrActivity/SpnsrStart.js?v=' + date);
+		}
+
+		if($("#gc-chart").length > 0) {
+			$.getScript('/data/dojo/1.16.5/gcActivity/GcStart.js?v=' + date);
+		}
+		
+		if($("#gcfrepoindex").length > 0) {
+
+			require(["dojo/dom", "dojo/parser",	"dojo/ready", "dojo/domReady!", "gcfindex/GcfIndexInit"],
+			function(dom, parser, ready, domReady, GcfIndexInit){
+					 ready(function(){
+					   parser.parse();
+					   new GcfIndexInit("/data/gcfindex.csv").init();
+					});
+				});			
+		}
+		
+		if($("#failsdata").length > 0) {
+
+
+				require(["dojo/dom", "dojo/parser",	"dojo/ready", "dojo/domReady!", "fifails/FiFailsInit"],
+				function(dom, parser, ready, domReady, FiFailsInit){
+					ready(function(){
+						parser.parse();
+						new FiFailsInit("/data/failsdata.csv").init();
+					});
+				});
+
+		}
+
+
+
+	
+	</script>
+
+<script>
+   function sendHeight() {
+     try {
+       const h = document.documentElement.scrollHeight || document.body.scrollHeight || 0;
+       const ref = document.referrer;
+       if (ref && ref.includes('dtcc.com')) {
+         const parentOrigin = new URL(ref).origin;
+         document.body.style.overflowY = 'hidden';
+         window.parent.postMessage({ type: 'CMS_HEIGHT', height: h}, parentOrigin);
+       }
+     } catch (e) {
+       console.warn('An error occurred while sending the height');
+     }
+   }
+   window.addEventListener('load', sendHeight);
+   window.addEventListener('resize', sendHeight);
+   
+   
+   // --- Add this block for MutationObserver ---
+   const observer = new MutationObserver(() => {
+     sendHeight();
+   });
+   observer.observe(document.body, { childList: true, subtree: true });
+   // --- End MutationObserver block ---
+
+ </script>
+
+	
+</body>
+</html>

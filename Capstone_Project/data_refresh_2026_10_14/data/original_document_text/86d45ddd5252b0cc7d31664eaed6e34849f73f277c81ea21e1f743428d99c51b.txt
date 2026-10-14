@@ -1,0 +1,216 @@
+    
+Important Legal Information: The Depository Trust Company (“DTC”) does not represent or warrant the accuracy, adequacy, 
+timeliness, completeness or fitness for any particular purpose of the information contained in this communication, which is based in part on 
+information obtained from third parties and not independently verified by DTC and which is provided as is. The information contained in 
+this communication is not intended to be a substitute for obtaining tax advice from an appropriate professional advisor. In providing this 
+communication, DTC shall not be liable for (1) any loss resulting directly or indirectly from mistakes, errors, omissions, interruptions, 
+delays or defects in such communication, unless caused directly by gross negligence or willful misconduct on the part of DTC, and (2) any 
+special, consequential, exemplary, incidental or punitive damages. 
+ 
+To ensure compliance with Internal Revenue Service Circular 230, you are hereby notified that: (a) any discussion of federal tax issues 
+contained or referred to herein is not intended or written to be used, and cannot be used, for the purpose of avoiding penalties that may be 
+imposed under the Internal Revenue Code; and (b) as a matter of policy, DTC does not provide tax, legal or accounting advice and 
+accordingly, you should consult your own tax, legal and accounting advisor before engaging in any transaction. 
+ 
+ 
+DTCC offers enhanced access to all important notices via a Web -based subscription service. 
+The notification system leverages RSS Newsfeeds, providing significant benefits including  
+real-time updates and customizable delivery. To learn more and to set up your own DTCC RSS  
+alerts, visit http://www.dtcc.com/subscription_form.php.     
+     
+1 
+IMPORTANT NOTICE 
+The Depository Trust Company 
+DTCC Public (White) 
+ 
+B #: 25134-26 
+Date: October 13, 2026 
+To: All Participants 
+Category: Tax Relief, Distributions 
+From: International Services 
+Attention: Operations, Reorg & Dividend Managers, Partners & Cashiers 
+Subject: 
+Tax Relief Country: NORWAY 
+Security Name: TELENOR ASA                                CUSIP: 87944W105 
+Record Date: 10/16/2026                                             Payable Date: 11/03/2026 
+Relief at Source CA Web Cut-Off: 10/19/2026 8:00 PM ET 
+Quick Refund CA Web Instruction Deadline: 11/11/2026 8:00 P.M. ET   
+ 
+***ONE DAY WINDOW*** 
+ 
+Participants can use DTC’s Corporate Actions Web (CA Web) service to certify all, or a portion of their 
+position entitled to the applicable withholding tax rate. Participants are urged to consult TaxInfo 
+respectively before certifying their instructions over the CA Web. 
+Important: Prior to certifying tax withholding instructions, participants are urged to read, understand, 
+and comply with the information in the Legal Conditions category found on TaxInfo on the CA Web. 
+ 
+Questions regarding this Important Notice may be directed to GlobeTax 212-747-9100. 
+ 
+
+TELENOR ASA has announced a cash dividend and JPMorgan Chase Bank, N.A. acts as the Depositary for the Depositary Receipt
+("DR") program.
+A participant can use DTC's Corporate Actions Web ("CA Web") instructions tab to certify that all or a portion of his/her position is subject
+to the applicable withholding tax rate. Use of these instruction methods will permit entitlement amounts to be paid through DTC. By
+making submissions of such certification, the submitter represents and warrants that it has the required authority to make; that the party
+for which the submission is made is eligible therefore, and that the submitter will indemnify, as applicable, Globe Tax Services, Inc., the
+relevant Depositary custodian, and any other person acting, directly or indirectly, in reliance thereon, including for any loss, liability or
+expense which may arise in connection with any such representation and submission, including for any inaccuracy therein.
+On ADR Pay Date, all eligible holders will have the opportunity to receive their full treaty benefits as outlined in the “Eligibility Matrix.”
+Holders not certified at the favorable or exempt withholding rates through CA Web will receive the dividend net of the full Norwegian
+statutory withholding tax rate of 25.00000% with the possibility to reclaim through the quick refund or long form process.
+ INDIVIDUALS CLAIMING 1063 DRs
+OR MORE THROUGH RELIEF AT
+SOURCE/QUICK REFUND MUST
+PROVIDE A CERTIFICATE OF
+RESIDENCY (COR).
+CORS MUST BE CERTIFIED FOR A
+TAX YEAR WITHIN THREE YEARS
+OF THE YEAR OF ORD PAY DATE.
+PLEASE NOTE THAT SCANS ARE
+ACCEPTABLE FOR ALL
+DOCUMENTS AND MAY BE SENT
+TO NorwayESP@globetax.com
+DIVIDEND EVENT MATRIX
+ISSUE CUSIP# UNDERLYING
+ISIN
+DR RECORD
+DATE ORD PAY DATE DR PAY DATE RATIO
+(DR to ORD) ORD RATE
+TELENOR ASA 87944W105 NO0010063308 Oct 16, 2026 Oct 27, 2026 Nov 03, 2026 1 : 1 NOK 4.70000
+FEES & DEADLINES
+FILING METHOD PAYMENT
+METHOD
+CUSTODIAL
+FEE (NOK)
+TAX RELIEF
+FEE
+MINIMUM FEE PER
+BENEFICIAL OWNER FINAL SUBMISSION DEADLINE
+RELIEF AT SOURCE DTCC N/A UP TO $ 0.00550 PER DR N/A
+CA WEB / ESP ELECTION DEADLINE:
+Oct 19, 2026
+ORIGINAL DOCUMENT DEADLINE:
+Oct 19, 2026
+QUICK REFUND DTCC N/A UP TO $ 0.00550 PER DR N/A
+ESP ELECTION DEADLINE:
+Nov 11, 2026
+ORIGINAL DOCUMENT DEADLINE:
+Nov 11, 2026
+LONG FORM CHECK OR ACH UP TO 240.00 UP TO $ 0.01050 PER DR $ 125.00000 Oct 31, 2031 5:00 PM ET
+created by
+Page 1
+
+
+MINIMUM SHARE AMOUNT REQUIRED TO FILE A CLAIM
+(CLAIMS RECEIVED BELOW THE FILING MINIMUM WILL BE REJECTED)
+FILING METHOD WITHHOLDING RATE RECLAIM RATE MINIMUM # OF DRs REQUIRED TO FILE
+(BASED OFF AN APPROX. EXCHANGE RATE OF 0.1066144 USD PER NOK)
+LONG FORM 0.00000% 25.00000% 2,200 DRs
+LONG FORM 15.00000% 10.00000% 5,500 DRs
+Agreements, Fees, Representations and Indemnification from Participants and Beneficial Owners
+The undersigned hereby indemnifies J.P. Morgan Chase Bank, N.A. (“J.P. Morgan”), and its affiliates, agents, directors or employees acting in their capacities as such (each an “Indemnified Party”), for
+any losses or liabilities suffered by an Indemnified Party on account of (i) a failure to secure a refund; or (ii) funds erroneously received by J.P. Morgan or the undersigned or their clients; or (iii) funds
+claimed as a refund by J.P. Morgan or the undersigned or their clients, including any tax charges, penalties, interests that is or becomes payable by an Indemnified Party in respect thereon, (iv) funds
+claimed by any statutory or government authority or administrative department or tax authority as charges, penalties, interests or otherwise in respect of a tax reclaim by the undersigned, and agree that
+such amounts shall be promptly remitted by the undersigned to J. P. Morgan on request. This indemnity shall survive any termination of the letter. For the avoidance of doubt and notwithstanding the
+above, J. P. Morgan shall be entitled to require a prompt remittance by the undersigned of any amounts claimed by any statutory or government authority or administrative department or tax authority
+as charges, penalties, interests or otherwise in respect of a tax reclaim by the undersigned. J.P. Morgan is not liable for failure to secure a refund or for any charges, penalties, interests or otherwise
+payable or paid in respect of a tax reclaim by the undersigned. Any funds erroneously claimed or received shall be immediately returned to J.P. Morgan, including any interest, additions to tax or
+penalties or charges in respect thereon. Nothing herein constitutes tax advice. Please consult your tax advisor prior to engaging our services.
+ELIGIBILITY MATRIX
+Note: All information related to eligibility and documentation requirements can be found on the ESP site by visiting the relevant event and viewing the Eligibility
+Matrix. If you need access to ESP, please complete the New User Registration form, and our team of market experts would be pleased to help you get set up.
+For each Country’s general Eligibility Matrix, please see ESPs Reference Guide.
+created by
+Page 2
+
+
+J.P. MORGAN CHASE offers ESP powered by GlobeTax, an electronic withholding tax
+submission system. This system allows for the secure and simplified transfer of
+beneficial owner level data from the Participant to GlobeTax and creates applicable
+documentation on the Participants' behalf.
+Submit the data online through the web site below, print out the documents on
+letterhead, sign them, and mail them to GlobeTax, along with necessary required
+documents.
+These claims should be submitted through the following website.
+https://ESP.GlobeTax.com
+Please contact us via the ESP Service Desk at 212-747-9100 if you have any questions
+about this process.
+CONTACT DETAILS
+PHONE NUMBER 800-929-5484 (+1 212 747 9100 FROM OUTSIDE
+US)
+FAX NUMBER 800-929-9986
+GROUP EMAIL NorwayESP@globetax.com
+COMPANY GLOBETAX SERVICES INC.
+STREET ADDRESS ONE NEW YORK PLAZA, 34TH FLOOR
+CITY/STATE/ZIP NEW YORK, NY 10004
+FREQUENTLY ASKED QUESTIONS (FAQs)
+AT SOURCE / QUICK REFUND
+How is the threshold determined for each Norwegian event? The threshold is based on an annual dividend distribution of NOK 10,000 per beneficial
+owner per security. However, if a Norwegian issuing company expects to pay more than
+one dividend a year, the equivalent share threshold will be divided by the number of
+events.
+To convert the threshold to shares:
+• - If the local dividend pays in NOK the share threshold is determined based on the
+expected gross dividend.
+• - If the local dividend pays in USD, the gross dividend will be determined using the
+rate on DR announcement date posted by the Norwegian Central Bank.
+May Norwegian residents benefit from the favorable rate? No. Norwegian citizens and foreign citizens who are a tax resident of in Norway cannot
+benefit from quick refund.
+How do I know if I have proof of prior payment? Please contact NorwayESP@GlobeTax.com to determine if proof of payment is on file.
+Otherwise, pre-approval is required.
+created by
+Page 3
+
+
+FREQUENTLY ASKED QUESTIONS (FAQs)
+AT SOURCE / QUICK REFUND
+Why must pensions, multi-owner trust funds, and similar entities elect at the
+unfavorable rate?
+The NTA no longer recognizes these entities as “residents” under the U.S. – Norway
+Double Taxation Agreement. As a result, the Administration is rejecting any withholding
+tax reclaims filed for U.S. tax-exempt entities.
+Some investors disagree with the NTA’s interpretation and wish to continue submitting
+tax reclaims. GlobeTax will support these investors and continue to file tax reclaims for
+the impacted entities. However, all Depositary Service Charges and custodial fees (if
+applicable) must be paid upfront and are not contingent upon any particular outcome.
+Is the Relief at Source/Quick Refund process free of charge? No, this tax reclaim assistance service is wholly voluntary and discretionary and outside
+the terms and conditions of any applicable deposit agreement. undertakes no duty or
+obligation to provide this service, and may reject or decline any or all proposed electing
+participants or holders in its sole discretion. Fees will be charged for this service of up
+to $0.0055 per depositary receipt with no minimum, and any other charges, fees or
+expenses payable by or due to JPMorgan Chase Bank, N.A. or its agents, including the
+custodian or to tax authorities or regulators. Fees paid to may be shared with its agents
+and affiliates.
+Are U.S. Investment Funds eligible for Relief at Source/Quick Refund? Yes, U.S. Investment Funds are eligible for Relief at Source/Quick Refund. A
+Pre-Approval letter is required for submission. This letter confirms the dividend
+recipient’s entitlement. Please refer to the “Documentation requirements for corporate
+shareholders” section of this link for more information on the application process.
+FREQUENTLY ASKED QUESTIONS (FAQs)
+LONG FORM
+Does the process have a minimum position requirement per beneficial owner? No. There is a minimum fee of $125.00 per beneficial owner for standard Long Form
+claims which may be waived on an exceptional basis for clients reclaiming less than
+$250.00. In such instances a fee of 50% of the reclaimed amount will be applied.
+created by
+Page 4
+
+
+FREQUENTLY ASKED QUESTIONS (FAQs)
+LONG FORM
+Is this process free of charge? No. This tax relief assistance service is wholly voluntary and discretionary and outside
+the terms and conditions of any applicable deposit agreement. J.P. MORGAN CHASE
+undertakes no duty or obligation to provide this service and may reject or decline any or
+all proposed electing participants or holders in its sole discretion. Fees will be charged
+for this service of up to $0.0105 per DR with a $125.00 minimum, and any other
+charges, fees or expenses payable by or due to J.P. MORGAN CHASE or its agents,
+including the custodian or to tax authorities or regulators. Fees paid to J.P. MORGAN
+CHASE may be shared with its agents.
+Warning and Disclaimer:
+The information and data contained in this notice is based on information obtained from multiple sources believed to be reliable. However, JPMorgan Chase
+Bank, N.A. and its agents do not warrant or guarantee the accuracy or completeness of, nor undertake to update or amend this information or data. We and our
+agents expressly disclaim any liability whatsoever for any loss howsoever arising from or in reliance upon any of this information or data. The information
+contained in this notice is subject to change, including in the and subject to discretion of third parties, and/or pre-emption or being superseded by local market
+rules, and practices or actions taken by non-U.S. agents or tax authorities. Deadlines often differ from statutory deadlines. You should file claims as soon as
+possible, and at least six months prior to the specified deadline.
+created by
+Page 5

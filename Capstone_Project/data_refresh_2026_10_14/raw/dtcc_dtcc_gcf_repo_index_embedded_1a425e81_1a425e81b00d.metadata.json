@@ -1,0 +1,19 @@
+{
+  "source_id": "dtcc_dtcc_gcf_repo_index_embedded_1a425e81",
+  "source_name": "dtcc_dtcc_gcf_repo_index public chart",
+  "url": "https://cms-prod.dtcc.com/globalassets/ftp/ficc/gcfindex.html",
+  "file": "raw/dtcc_dtcc_gcf_repo_index_embedded_1a425e81_1a425e81b00d.html",
+  "collected_at_utc": "2026-10-14T19:40:41+00:00",
+  "public_only": true,
+  "business_lines": [
+    "FICC",
+    "Data Services"
+  ],
+  "kind": "embedded_ficc_data",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://cms-prod.dtcc.com/globalassets/ftp/ficc/gcfindex.html",
+  "content_type": "text/html",
+  "bytes": 18844,
+  "sha256": "230ee2a7b9c47b5d5c2a91dcae4b2518cc6b43392851d9e0d7d6149499813455"
+}

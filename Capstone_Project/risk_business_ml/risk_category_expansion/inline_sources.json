@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "risk-coverage",
+      "title": "新增风险数据覆盖全部十二类",
+      "queries": [
+        {
+          "id": "coverage",
+          "source": {
+            "label": "公开风险数据与 DTCC 季度指标",
+            "files": [
+              {
+                "label": "expanded_risk_dictionary.csv"
+              },
+              {
+                "label": "collection_coverage.csv"
+              },
+              {
+                "label": "expanded_risk_observations.csv"
+              },
+              {
+                "label": "source_manifest.json"
+              },
+              {
+                "label": "reused_input_manifest.json"
+              }
+            ],
+            "links": [
+              {
+                "label": "CISA 已利用漏洞目录",
+                "href": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+              },
+              {
+                "label": "OpenFEMA 灾害宣告",
+                "href": "https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries"
+              },
+              {
+                "label": "Cloud SQL 官方事件历史",
+                "href": "https://status.cloud.google.com/products/hV87iK5DcEXKgWU2kDri/history"
+              },
+              {
+                "label": "BLS 金融保险业主动离职率 via FRED",
+                "href": "https://fred.stlouisfed.org/series/JTU5200QUR"
+              },
+              {
+                "label": "Federal Register 官方接口",
+                "href": "https://www.federalregister.gov/reader-aids/developer-resources/rest-api"
+              }
+            ],
+            "metricDefinitions": [
+              {
+                "label": "风险指标",
+                "definition": "风险指标是公开风险信号或代理变量，并非真实 DTCC 损失、违约或事故标签。"
+              },
+              {
+                "label": "类别覆盖",
+                "definition": "类别覆盖表示该类别至少有一种可量化、可追溯的历史公开指标。"
+              }
+            ],
+            "filters": [
+              "风险分析截止：2026Q2",
+              "按来源有效覆盖期保留季度观测"
+            ],
+            "caveats": [
+              "12 类覆盖不代表全部 DTCC 真实风险暴露已取得。",
+              "尚未验证 DTCC 使用选定的云及办公服务提供商。",
+              "服务事件公告可包含中断、性能下降等，数量不区分严重程度，公告政策也可能变化。"
+            ]
+          },
+          "reportingPeriod": "各来源有效风险季度从 2019Q1 / 2020Q1 / 2020Q4 / 2021Q3 / 2022Q1 起，均分析至 2026Q2 内。",
+          "columns": [
+            "风险类别",
+            "主指标",
+            "来源",
+            "有效风险季度"
+          ],
+          "rows": [
+            {
+              "风险类别": "业务连续性",
+              "主指标": "美国重大灾害宣告数量",
+              "来源": "OpenFEMA DisasterDeclarationsSummaries v2",
+              "有效风险季度": "2019Q1—2026Q2；30期"
+            },
+            {
+              "风险类别": "网络安全与信息保护",
+              "主指标": "CISA已利用漏洞目录新增数量",
+              "来源": "CISA Known Exploited Vulnerabilities catalog",
+              "有效风险季度": "2022Q1—2026Q2；18期"
+            },
+            {
+              "风险类别": "信息技术",
+              "主指标": "外部云计算与网络服务事件公告",
+              "来源": "Google official product incident histories",
+              "有效风险季度": "2022Q1—2026Q2；18期"
+            },
+            {
+              "风险类别": "数据管理",
+              "主指标": "外部云数据服务事件公告",
+              "来源": "Google official product incident histories",
+              "有效风险季度": "2022Q1—2026Q2；18期"
+            },
+            {
+              "风险类别": "处理与运营",
+              "主指标": "清算核心系统过去12个月故障数",
+              "来源": "DTCC PQD 17.3.1",
+              "有效风险季度": "2021Q3—2025Q4；17期"
+            },
+            {
+              "风险类别": "清算与结算金融风险",
+              "主指标": "SOFR−EFFR季度最大利差",
+              "来源": "FRED SOFR/EFFR",
+              "有效风险季度": "2020Q1—2026Q2；26期"
+            },
+            {
+              "风险类别": "公司财务",
+              "主指标": "三个月国债收益率波动",
+              "来源": "FRED DGS3MO",
+              "有效风险季度": "2019Q1—2026Q2；30期"
+            },
+            {
+              "风险类别": "模型风险",
+              "主指标": "保证金模型回测未覆盖比例",
+              "来源": "DTCC PQD 6.5.3",
+              "有效风险季度": "2020Q4—2026Q2；22期"
+            },
+            {
+              "风险类别": "法律与监管合规",
+              "主指标": "SEC/CFTC/美联储最终规则发布数量",
+              "来源": "Federal Register API: SEC/CFTC/Federal Reserve RULE publications",
+              "有效风险季度": "2019Q1—2026Q2；30期"
+            },
+            {
+              "风险类别": "第三方风险",
+              "主指标": "外部办公服务提供商事件公告",
+              "来源": "Google official product incident histories",
+              "有效风险季度": "2022Q1—2026Q2；18期"
+            },
+            {
+              "风险类别": "人员与人力资本",
+              "主指标": "金融保险行业主动离职率",
+              "来源": "FRED JTU5200QUR",
+              "有效风险季度": "2019Q1—2026Q2；30期"
+            },
+            {
+              "风险类别": "战略风险",
+              "主指标": "美国经济政策不确定性",
+              "来源": "FRED USEPUINDXM",
+              "有效风险季度": "2019Q1—2026Q2；30期"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "revenue-associations",
+      "title": "十二类主指标与业务收入增幅的同期关联",
+      "queries": [
+        {
+          "id": "primary-revenue-matrix",
+          "source": {
+            "label": "风险与业务季度配对结果",
+            "files": [
+              {
+                "label": "twelve_family_revenue_association_matrix.csv"
+              },
+              {
+                "label": "expanded_risk_business_associations.csv"
+              },
+              {
+                "label": "business_quarterly_financials.csv"
+              },
+              {
+                "label": "business_metric_provenance.csv"
+              }
+            ],
+            "metricDefinitions": [
+              {
+                "label": "收入增幅",
+                "definition": "收入增幅为本季度收入相对于上一完整日历季度收入的百分比变化。"
+              },
+              {
+                "label": "Spearman ρ",
+                "definition": "Spearman ρ 是配对季度内风险指标与收入增幅排名的相关系数。"
+              },
+              {
+                "label": "n",
+                "definition": "n 是双方指标都有值的实际季度数。"
+              },
+              {
+                "label": "ECS 代理",
+                "definition": "NSCC 与 DTC 分别作为 ECS 的清算端和结算端法人代理，保持独立。"
+              }
+            ],
+            "filters": [
+              "业务指标：收入环比增长率",
+              "风险与业务配对：同一日历季度",
+              "每类指标：分析前固定的主指标",
+              "缺失值：不填充"
+            ],
+            "caveats": [
+              "不同风险类别有效时期不同，不能按系数绝对值排名业务风险。",
+              "DTC 的处理/运营与模型风险缺少适用主指标，N/A 不等于零。",
+              "全部 482 项扩展比较未通过探索性 BH 多重检验 5%，样本少且循环平移参考分辨率低。",
+              "相关性不是因果效应、损失概率或校准风险分数。"
+            ],
+            "evidenceFlow": [
+              {
+                "kind": "calculation",
+                "title": "计算方法",
+                "detail": "按完整日历季度对齐，计算排名相关；同时保留滞后一季度、四季度分块重抽样、季节/趋势调整及共同季度复核。"
+              }
+            ]
+          },
+          "reportingPeriod": "有效业务配对季度从 2020 年起，截止 2026Q2；n 因指标与业务覆盖而异。",
+          "columns": [
+            "风险类别",
+            "FICC ρ",
+            "FICC n",
+            "NSCC ρ",
+            "NSCC n",
+            "DTC ρ",
+            "DTC n"
+          ],
+          "rows": [
+            {
+              "风险类别": "业务连续性",
+              "FICC ρ": 0.264,
+              "FICC n": 26,
+              "NSCC ρ": -0.226,
+              "NSCC n": 20,
+              "DTC ρ": -0.061,
+              "DTC n": 23
+            },
+            {
+              "风险类别": "网络安全与信息保护",
+              "FICC ρ": -0.249,
+              "FICC n": 18,
+              "NSCC ρ": 0.241,
+              "NSCC n": 16,
+              "DTC ρ": 0.026,
+              "DTC n": 16
+            },
+            {
+              "风险类别": "信息技术",
+              "FICC ρ": 0.214,
+              "FICC n": 18,
+              "NSCC ρ": -0.495,
+              "NSCC n": 16,
+              "DTC ρ": -0.195,
+              "DTC n": 16
+            },
+            {
+              "风险类别": "数据管理",
+              "FICC ρ": 0.225,
+              "FICC n": 18,
+              "NSCC ρ": -0.432,
+              "NSCC n": 16,
+              "DTC ρ": -0.209,
+              "DTC n": 16
+            },
+            {
+              "风险类别": "处理与运营",
+              "FICC ρ": -0.046,
+              "FICC n": 17,
+              "NSCC ρ": -0.101,
+              "NSCC n": 16,
+              "DTC ρ": null,
+              "DTC n": 0
+            },
+            {
+              "风险类别": "清算与结算金融风险",
+              "FICC ρ": 0.455,
+              "FICC n": 26,
+              "NSCC ρ": 0.38,
+              "NSCC n": 20,
+              "DTC ρ": 0.048,
+              "DTC n": 23
+            },
+            {
+              "风险类别": "公司财务",
+              "FICC ρ": 0.381,
+              "FICC n": 26,
+              "NSCC ρ": -0.059,
+              "NSCC n": 20,
+              "DTC ρ": 0.052,
+              "DTC n": 23
+            },
+            {
+              "风险类别": "模型风险",
+              "FICC ρ": 0.287,
+              "FICC n": 22,
+              "NSCC ρ": -0.235,
+              "NSCC n": 18,
+              "DTC ρ": null,
+              "DTC n": 0
+            },
+            {
+              "风险类别": "法律与监管合规",
+              "FICC ρ": 0.116,
+              "FICC n": 26,
+              "NSCC ρ": -0.017,
+              "NSCC n": 20,
+              "DTC ρ": -0.074,
+              "DTC n": 23
+            },
+            {
+              "风险类别": "第三方风险",
+              "FICC ρ": 0.177,
+              "FICC n": 18,
+              "NSCC ρ": -0.385,
+              "NSCC n": 16,
+              "DTC ρ": 0.597,
+              "DTC n": 16
+            },
+            {
+              "风险类别": "人员与人力资本",
+              "FICC ρ": -0.046,
+              "FICC n": 26,
+              "NSCC ρ": -0.248,
+              "NSCC n": 20,
+              "DTC ρ": 0.062,
+              "DTC n": 23
+            },
+            {
+              "风险类别": "战略风险",
+              "FICC ρ": -0.156,
+              "FICC n": 26,
+              "NSCC ρ": 0.003,
+              "NSCC n": 20,
+              "DTC ρ": -0.11,
+              "DTC n": 23
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

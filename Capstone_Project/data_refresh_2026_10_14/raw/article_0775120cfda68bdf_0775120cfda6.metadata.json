@@ -1,0 +1,16 @@
+{
+  "source_id": "article_0775120cfda68bdf",
+  "source_name": "Federal Register: SEC, CFTC and Federal Reserve publications original document",
+  "url": "https://www.federalregister.gov/documents/2026/10/07/2026-20509/loans-to-executive-officers-directors-and-principal-shareholders-of-member-banks-bank-holding",
+  "file": "raw/article_0775120cfda68bdf_0775120cfda6.html",
+  "collected_at_utc": "2026-10-14T19:29:44+00:00",
+  "public_only": true,
+  "business_lines": [],
+  "kind": "article",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://unblock.federalregister.gov/",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 10596,
+  "sha256": "cc4fe8876621c6286206ac15030c0722afbfec86a7fbda593ad39d5a78776330"
+}

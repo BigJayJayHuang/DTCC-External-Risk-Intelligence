@@ -1,0 +1,19 @@
+{
+  "source_id": "dtcc_membership_embedded_4037e10d",
+  "source_name": "dtcc_membership public chart",
+  "url": "https://cms-prod.dtcc.com/globalassets/ftp/ficc/sponsor_activity.html",
+  "file": "raw/dtcc_membership_embedded_4037e10d_4037e10d3f65.html",
+  "collected_at_utc": "2026-10-14T19:40:42+00:00",
+  "public_only": true,
+  "business_lines": [
+    "FICC",
+    "Data Services"
+  ],
+  "kind": "embedded_ficc_data",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://cms-prod.dtcc.com/globalassets/ftp/ficc/sponsor_activity.html",
+  "content_type": "text/html",
+  "bytes": 11203,
+  "sha256": "36b5ba0fa211adb9e8eca5d4ffe685c600bd34e5ff0dd906cd56b455b4a5f37c"
+}

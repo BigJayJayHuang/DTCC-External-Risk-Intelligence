@@ -1,0 +1,30 @@
+{
+  "checked_at_utc": "2026-10-14T19:32:43.432809+00:00",
+  "method": "Rendered official browser listings; values recorded from visible table/card entries",
+  "pqd": {
+    "url": "https://www.dtcc.com/legal/policy-and-compliance",
+    "latest_period": "2026Q2",
+    "listed_date": "2026-09-01",
+    "latest_xlsx": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655",
+    "q3_visible": false
+  },
+  "financials": {
+    "url": "https://www.dtcc.com/legal/financial-statements",
+    "latest_period": "2026Q2",
+    "group_listed_date": "2026-08-06",
+    "ficc_nscc_dtc_listed_date": "2026-07-30",
+    "q3_visible": false
+  },
+  "dtcc_press": {
+    "url": "https://www.dtcc.com/press-releases",
+    "latest_visible_date": "2026-09-29",
+    "note": "No post-October-6 press releases shown in latest list; does not imply no operational notices or social posts."
+  },
+  "dtcc_insights": {
+    "url": "https://www.dtcc.com/insights",
+    "latest_visible_date": "2026-10-14",
+    "latest_title": "Why Data Quality Will Shape the Next Era of Regulatory Reporting",
+    "latest_article_url": "https://www.dtcc.com/insights/2026/why-data-quality-will-shape-the-next-era-of-regulatory-reporting"
+  },
+  "not_historical_release_verification": true
+}

@@ -1,6 +1,6 @@
 __pycache__/
 .venv/
-*.sqlite3
+Capstone_Project/capstone_database/data/*.sqlite3
 *.sqlite3-wal
 *.sqlite3-shm
 *.sqlite3.lock
@@ -9,3 +9,14 @@ __pycache__/
 .DS_Store
 *.zip
 logs/local_*.json
+**/logs/local_*.json
+**/node_modules/
+**/.venv/
+**/.build/
+**/.data-app-offline/
+distribution/
+*.headers.txt
+*.lock
+*.part
+.env
+.env.*

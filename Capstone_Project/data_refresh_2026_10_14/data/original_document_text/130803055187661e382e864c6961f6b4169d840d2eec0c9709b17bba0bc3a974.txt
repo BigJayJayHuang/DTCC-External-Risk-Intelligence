@@ -1,0 +1,124 @@
+    
+DTCC offers enhanced access to all important notices via a Web -based subscription service. 
+The notification system leverages RSS Newsfeeds, providing significant benefits including  
+real-time updates and customizable delivery. To learn more and to set up your own DTCC RSS  
+alerts, visit http://www.dtcc.com/subscription_form.php.     
+     
+1 
+IMPORTANT NOTICE 
+The Depository Trust Company 
+DTCC Public (White) 
+ 
+B #: 25130-26 
+Date: October 9, 2026 
+To: FAST Transfer Agents 
+Category: Securities Processing Service Update 
+From: DTC Asset Services Product Management Team 
+Attention: Officers / Operations Managers / Business Continuity Managers   
+Subject: Direct Registration System (DRS) Transformation - DRS Centralized Billing   
+ 
+Direct Registration System Transformation (DRS)  
+ 
+On November 21, 2024, through Important Notice B#21022-24, The Depository Trust Company (“DTC”) 
+announced its next phase of DTC’s multi-year, multi-phase Securities Processing Transformation 
+program, Direct Registration System (“DRS”) transformation.   
+ 
+The transformation of the DRS system, pending regulatory approval, includes DRS Transaction 
+Processing and DRS Centralized Billing. 
+ 
+DRS Profile Deposits, DRS Withdrawal by Transfer and DRS Centralized Billing will transition to the 
+SPA system on November 13, 2026.  
+ 
+DRS Centralized Billing 
+ 
+DRS Reject Centralized Billing is being expanded to include centralized billing for DRS Profile Deposits, 
+DRS Deliver Orders (“DO’s”) and DRS Withdrawal by Transfer transactions and will become a 
+mandatory use service, on the SPA system. 
+ 
+These fees are currently invoiced by FAST transfer agents to Participants outside DTC. The expansion 
+will digitize collection and remittance and reduce the operational burden of manual invoicing. 
+ 
+FAST transfer agents will be required to establish their fees on SPA prior to DRS processing 
+transitioning to SPA.  Please enter all DRS fees by November 5
+th, 2026.  
+ 
+How it works 
+ 
+Entitlements 
+ 
+Obtain the DRS Centralized Billing user entitlements.   
+ 
+Access and entitlements to the SPA system must be provisioned by the user’s designated Super 
+Access Coordinator (“SAC”). If SACs have any questions about how to provision access through the 
+DTCC Portal in the Customer Registration System (CRS), they can email DTCIntegration@dtcc.com for 
+assistance. 
+ 
+
+DTCC Non-Confidential 
+ 
+DTCC Public (White) 
+The following DRS entitlements are listed in SPA (see chart below for details): 
+ 
+• SPA DRS Fee Transfer Agent Inquiry  
+• SPA DRS Fee Transfer Agent Update   
+• SPA DRS Fee Transfer Agent Approver 
+ 
+SACs should provision access for their Users (Operators) to both DTC’s PSE (Test) and 
+Production regions. 
+ 
+ 
+New SPA Role  SPA Description  SPA Navigation  
+SPA DRS Fee 
+Transfer Agent 
+Inquiry 
+Users (FAST Transfer Agent) 
+that request this role will be 
+allowed to view DRS Fees 
+within Securities Processing 
+application. 
+MyDTCC.com>Securities Processing 
+Application>Billing Fee>Centralized 
+Billing>Inquiry   
+SPA DRS Fee 
+Transfer Agent 
+Update 
+Users (FAST Transfer Agent) 
+that request this role will be 
+allowed to create and maintain 
+DRS Fees within Securities 
+Processing application. 
+MyDTCC.com>Securities Processing 
+Application>Billing Fee>Centralized 
+Billing>ADD FEE   
+SPA DRS Fee 
+Transfer Agent 
+Approver 
+Users (FAST Transfer Agent) 
+that request this role will be 
+allowed to approve DRS Fees 
+within Securities Processing 
+application. 
+MyDTCC.com>Securities Processing 
+Application>Billing Fee>Centralized 
+Billing>A  
+ 
+Navigation 
+ 
+Follow the link below to the SPA portal Production region. 
+ 
+https://myportal.dtcc.com  
+ 
+From the SPA Menu click BILLING/FEE  
+ 
+>Centralized Billing>Billing Fee List>ADD FEE (top right button)>Select Product>DRS and DRSWT 
+ 
+Populate all required fields with a red asterisk (*).  Press SUBMIT.  A second operator will be required 
+to APPROVE the first operator’s input.  Once approved the fee will take effect in 5 calendar days.   
+ 
+Follow the link below to DTCC Learning for more Centralized Billing guidance.   
+ 
+ https://dtcclearning.com/helpfiles_secure/as/sec_proc/agent/Content/Topics/cntrl_bill_agent/ce
+ntrl_billing_ovw.htm 
+ 
+Please direct any questions you may have to your Relationship Manager. 
+ 

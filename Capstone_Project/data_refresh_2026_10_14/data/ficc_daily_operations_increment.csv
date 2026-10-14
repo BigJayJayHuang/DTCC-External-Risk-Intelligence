@@ -1,0 +1,29 @@
+﻿date,metric,value,unit,raw_value,source_id,source_file,measurement_scope
+2026-10-07,Treasury Fails Amount,24726360815.56,as reported in original CSV,24726360815.56,ficc_failsdata,raw/ficc_failsdata_0f7f8146249c.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-07,Agency Fails Amount,16393225.98,as reported in original CSV,16393225.98 ,ficc_failsdata,raw/ficc_failsdata_0f7f8146249c.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-08,Treasury Fails Amount,28769587182.35,as reported in original CSV,28769587182.35,ficc_failsdata,raw/ficc_failsdata_0f7f8146249c.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-08,Agency Fails Amount,40601874.52,as reported in original CSV,40601874.52 ,ficc_failsdata,raw/ficc_failsdata_0f7f8146249c.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-09,Treasury Fails Amount,26283887830.69,as reported in original CSV,26283887830.69,ficc_failsdata,raw/ficc_failsdata_0f7f8146249c.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-09,Agency Fails Amount,15457723.6,as reported in original CSV,15457723.6 ,ficc_failsdata,raw/ficc_failsdata_0f7f8146249c.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-07,MBS Total PAR Value,120686000000.0,as reported in original CSV,120686000000,ficc_gcfindex,raw/ficc_gcfindex_4bfa6ffeea6f.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-07,MBS Weighted Average,3.916,as reported in original CSV,  3.916,ficc_gcfindex,raw/ficc_gcfindex_4bfa6ffeea6f.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-07,Treasury Total PAR Value,96986000000.0,as reported in original CSV,96986000000,ficc_gcfindex,raw/ficc_gcfindex_4bfa6ffeea6f.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-07,Treasury Weighted Average,3.901,as reported in original CSV,  3.901 ,ficc_gcfindex,raw/ficc_gcfindex_4bfa6ffeea6f.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-08,MBS Total PAR Value,102126000000.0,as reported in original CSV,102126000000,ficc_gcfindex,raw/ficc_gcfindex_4bfa6ffeea6f.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-08,MBS Weighted Average,3.906,as reported in original CSV,  3.906,ficc_gcfindex,raw/ficc_gcfindex_4bfa6ffeea6f.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-08,Treasury Total PAR Value,76820000000.0,as reported in original CSV,76820000000,ficc_gcfindex,raw/ficc_gcfindex_4bfa6ffeea6f.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-08,Treasury Weighted Average,3.909,as reported in original CSV,  3.909 ,ficc_gcfindex,raw/ficc_gcfindex_4bfa6ffeea6f.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-09,MBS Total PAR Value,109722000000.0,as reported in original CSV,109722000000,ficc_gcfindex,raw/ficc_gcfindex_4bfa6ffeea6f.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-09,MBS Weighted Average,3.91,as reported in original CSV,  3.910,ficc_gcfindex,raw/ficc_gcfindex_4bfa6ffeea6f.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-09,Treasury Total PAR Value,87520000000.0,as reported in original CSV,87520000000,ficc_gcfindex,raw/ficc_gcfindex_4bfa6ffeea6f.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-09,Treasury Weighted Average,3.904,as reported in original CSV,  3.904 ,ficc_gcfindex,raw/ficc_gcfindex_4bfa6ffeea6f.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-08,DVP_TOTAL_AMOUNT,1595407856291.42,USD,"$1,595,407,856,291.42",ficc_sponsoredvolume,raw/ficc_sponsoredvolume_44e16da0d059.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-08,GC_TOTAL_AMOUNT,810953917216.76,USD,"$810,953,917,216.76",ficc_sponsoredvolume,raw/ficc_sponsoredvolume_44e16da0d059.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-08,TOTAL_REPO_AMOUNT,1022400827673.75,USD,"$1,022,400,827,673.75",ficc_sponsoredvolume,raw/ficc_sponsoredvolume_44e16da0d059.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-08,TOTAL_REVERSE_REPO_AMOUNT,1383960945834.43,USD,"$1,383,960,945,834.43",ficc_sponsoredvolume,raw/ficc_sponsoredvolume_44e16da0d059.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-08,TOTAL_AMOUNT,2406361773508.18,USD,"$2,406,361,773,508.18 ",ficc_sponsoredvolume,raw/ficc_sponsoredvolume_44e16da0d059.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-07,DVP_TOTAL_AMOUNT,1630717359301.63,USD,"$1,630,717,359,301.63",ficc_sponsoredvolume,raw/ficc_sponsoredvolume_44e16da0d059.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-07,GC_TOTAL_AMOUNT,808551384068.5,USD,"$808,551,384,068.50",ficc_sponsoredvolume,raw/ficc_sponsoredvolume_44e16da0d059.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-07,TOTAL_REPO_AMOUNT,1049474885636.01,USD,"$1,049,474,885,636.01",ficc_sponsoredvolume,raw/ficc_sponsoredvolume_44e16da0d059.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-07,TOTAL_REVERSE_REPO_AMOUNT,1389793857734.12,USD,"$1,389,793,857,734.12",ficc_sponsoredvolume,raw/ficc_sponsoredvolume_44e16da0d059.csv,FICC public market/service activity; not business revenue or realized loss
+2026-10-07,TOTAL_AMOUNT,2439268743370.13,USD,"$2,439,268,743,370.13 ",ficc_sponsoredvolume,raw/ficc_sponsoredvolume_44e16da0d059.csv,FICC public market/service activity; not business revenue or realized loss

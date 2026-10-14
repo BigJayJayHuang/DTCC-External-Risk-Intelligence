@@ -1,0 +1,25 @@
+{
+  "saved_at_utc": "2026-10-05T18:24:11.608795+00:00",
+  "request": "Download all available historical public financial statements for FICC, NSCC and DTC, and CPMI-IOSCO quantitative disclosures; user requested saving current progress before leaving.",
+  "downloaded_and_verified_files": 110,
+  "financial_listing_records_captured": 95,
+  "policy_listing_records_captured": 94,
+  "relevant_listing_records": 118,
+  "pending_listing_records": 0,
+  "earliest_financial_report_listed": "2020 annuals downloaded for FICC/NSCC, with 2019 comparative data; DTC 2020 annual link is inaccessible.",
+  "earliest_quantitative_disclosure_listed": "2020 Q4 XLSX downloaded and checked.",
+  "next_steps": [
+    "If missing original reports are needed, ask the project contact for fresh public download links; do not bypass Access Denied.",
+    "Extract and normalize selected metrics with page/sheet evidence, units and observation windows before analysis."
+  ],
+  "scope_notes": [
+    "FICC is the project business line. ECS maps to NSCC clearing and DTC settlement.",
+    "Entity-wide NSCC and DTC financial results must not be described as standalone ECS profit or summed as ECS-only performance.",
+    "CPMI-IOSCO PQD contains NSCC and FICC GSD/MBSD; preserve original scopes and observation windows.",
+    "Portal dates, reporting periods and actual collection timestamps are separate fields.",
+    "No AWS resources created, no private data transferred; only public official downloads."
+  ],
+  "status": "all_identified_links_attempted_available_files_collected",
+  "downloaded_source_urls": 111,
+  "failed_source_urls": 6
+}

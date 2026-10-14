@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "financial-monitoring-score",
+      "title": "FICC 与 ECS 相关业务金融压力监测",
+      "queries": [
+        {
+          "id": "computed-scores",
+          "source": {
+            "label": "本地公开数据与探索性关联结果",
+            "files": [
+              "risk_quarterly.csv",
+              "risk_business_associations.csv",
+              "scoring_summary.json"
+            ],
+            "links": [
+              "https://fred.stlouisfed.org/series/VIXCLS",
+              "https://fred.stlouisfed.org/series/DGS10",
+              "https://fred.stlouisfed.org/series/NFCICREDIT",
+              "https://fred.stlouisfed.org/series/SOFR",
+              "https://fred.stlouisfed.org/series/EFFR"
+            ],
+            "metricDefinitions": [
+              {
+                "label": "金融压力监测指数",
+                "definition": "四项历史压力分位按探索性业务关联权重加权，范围为0至100。"
+              },
+              {
+                "label": "ECS相关代理",
+                "definition": "NSCC与DTC法律实体金融监测指数较大值。"
+              }
+            ],
+            "filters": [
+              "参考分布：2020Q1至2025Q2，共22个季度",
+              "业务关联：三个财务变化指标的最大Spearman绝对值，按四项金融代理归一化"
+            ],
+            "caveats": [
+              "分数是新增的事后监测规则，不是校准的违约概率、真实损失或正式风险等级。",
+              "NSCC和DTC包含ECS以外业务，ECS没有独立分部数据。",
+              "已有78项关联比较均未通过探索性FDR 5%检查；权重使用截至2026Q2的描述性关联。"
+            ],
+            "executedAt": "2026-10-05T23:52:34.063542+00:00",
+            "evidenceFlow": [
+              {
+                "kind": "validation",
+                "title": "计算复核",
+                "body": "独立排序计数与原分位计算一致，权重和为1，分数在0至100范围，ECS聚合一致；等权评分也将2020Q1列为最高季度。"
+              }
+            ]
+          },
+          "reportingPeriod": "最新业务季度2026Q2；历史事件季度2020Q1",
+          "columns": [
+            "季度",
+            "FICC监测指数",
+            "ECS相关代理指数",
+            "NSCC监测指数",
+            "DTC监测指数"
+          ],
+          "rows": [
+            {
+              "季度": "2026Q2",
+              "FICC监测指数": 50.4,
+              "ECS相关代理指数": 43.4,
+              "NSCC监测指数": 43.4,
+              "DTC监测指数": 33.4
+            },
+            {
+              "季度": "2020Q1",
+              "FICC监测指数": 98.4,
+              "ECS相关代理指数": 98.4,
+              "NSCC监测指数": 98.0,
+              "DTC监测指数": 98.4
+            }
+          ],
+          "methods": [
+            {
+              "language": "calculation",
+              "code": "压力分位=100×参考季度中压力不高于当前值的比例；非正压力分位为0。业务指数=Σ(压力分位×归一化最大绝对Spearman权重)。ECS相关代理=max(NSCC指数,DTC指数)。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "march-2020-ficc-event",
+      "title": "2020年3月压力进入FICC清算业务",
+      "queries": [
+        {
+          "id": "fed-market-review",
+          "source": {
+            "label": "美联储2020年金融稳定报告",
+            "links": [
+              "https://www.federalreserve.gov/publications/2020-november-financial-stability-report-borrowing.htm"
+            ],
+            "caveats": [
+              "市场机制回顾不能量化某个FICC会员的敞口或损失。"
+            ]
+          },
+          "summary": "2020年3月国债与机构MBS市场流动性恶化，卖出压力与交易商中介能力受到约束。",
+          "reportingPeriod": "2020年3月"
+        },
+        {
+          "id": "dtcc-ficc-review",
+          "source": {
+            "label": "DTCC对FICC疫情市场波动的回顾",
+            "links": [
+              "https://www.dtcc.com/insights/2022/making-the-us-treasury-market-safer-for-all-participants"
+            ],
+            "caveats": [
+              "约43%的增幅比较通常日均，不能视为季度均值或净风险敞口。"
+            ]
+          },
+          "summary": "FICC国债日清算量超过6万亿美元，约高于通常日均43%；保持有序处理与结算，停止为一名会员服务没有导致其他会员损失分摊。",
+          "reportingPeriod": "2020年3月事件；回顾发表于2022年2月22日"
+        }
+      ]
+    },
+    {
+      "id": "ecs-transmission-and-evidence-limit",
+      "title": "ECS的风险机制与可核实结果",
+      "queries": [
+        {
+          "id": "nscc-financial-statement",
+          "source": {
+            "label": "NSCC 2020与2019年审计年报",
+            "links": [
+              "https://www.dtcc.com/-/media/Files/Downloads/legal/financials/2020/NSCC-Annual-Financial-Statements-2020-and-2019.pdf"
+            ],
+            "files": [
+              "NSCC_Annual_2020_2019.pdf"
+            ],
+            "caveats": [
+              "全年没有对所述担保义务的参与者违约，不代表所有交易零延迟，也不能推断DTC零事故。",
+              "本案没有3月独立ECS保证金、DTC失败率或损失的量化证据。"
+            ],
+            "evidenceFlow": [
+              {
+                "kind": "source",
+                "title": "年报附注15与16",
+                "body": "读取本地原件PDF第24页的担保义务及无参与者违约表述，第26页的日内组合计算和追加保证金机制。"
+              }
+            ]
+          },
+          "summary": "NSCC的交易担保及风险保证金连接市场波动与会员资金准备；2020和2019年对附注15所述担保义务没有参与者违约。",
+          "reportingPeriod": "2020与2019年度；3月案例的月度结果存在数据缺口"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "source_id": "article_8fbb18afd13a46e5",
+  "source_name": "Federal Reserve Board original document",
+  "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261008a.htm",
+  "file": "raw/article_8fbb18afd13a46e5_8fbb18afd13a.html",
+  "collected_at_utc": "2026-10-14T19:29:23+00:00",
+  "public_only": true,
+  "business_lines": [],
+  "kind": "article",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261008a.htm",
+  "content_type": "text/html",
+  "bytes": 84414,
+  "sha256": "59b0298d003988d30d63ce9cef053614f5bc5014d78f048e2e8e4f7aa4dc844b"
+}

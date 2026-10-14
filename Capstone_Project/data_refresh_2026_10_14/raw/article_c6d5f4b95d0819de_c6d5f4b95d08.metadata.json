@@ -1,0 +1,17 @@
+{
+  "source_id": "article_c6d5f4b95d0819de",
+  "source_name": "US Securities and Exchange Commission original document",
+  "url": "https://www.sec.gov/newsroom/press-releases/2026-105-sec-small-business-advisory-committee-discuss-ipo-modernization-regulation-crowdfunding",
+  "file": "raw/article_c6d5f4b95d0819de_c6d5f4b95d08.html",
+  "collected_at_utc": "2026-10-14T19:29:10+00:00",
+  "public_only": true,
+  "business_lines": [
+    "Asset Services"
+  ],
+  "kind": "article",
+  "status": "failed",
+  "http_status": 403,
+  "final_url": "https://www.sec.gov/newsroom/press-releases/2026-105-sec-small-business-advisory-committee-discuss-ipo-modernization-regulation-crowdfunding",
+  "content_type": "text/html",
+  "error": "curl: (22) The requested URL returned error: 403"
+}

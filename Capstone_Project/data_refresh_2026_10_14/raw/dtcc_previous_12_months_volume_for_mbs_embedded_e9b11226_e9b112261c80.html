@@ -1,0 +1,179 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="/products/css/site.css" media="screen" />
+
+
+
+</head>
+
+<body>
+
+<div id="container">
+
+<div class="lpMain">
+
+
+<div id="highlightedText">
+
+		<H3>Previous 12 Months Volume for Government Securities</H3>
+
+</div>
+
+<div class="lpContentBlock">
+
+
+<h4><a href=""></a></h4>
+
+
+<link rel="stylesheet" type="text/css" href="/products/css/fixedIncome.css" media="screen" />
+
+<link rel="stylesheet" type="text/css" href="/products/css/prtfixedIncome.css" media="print" />
+
+<h4>12-Month Volume Data (U.S. Dollars in Trillions)</h4>
+
+ 
+              <div id="chartArea"></div>
+            <div id="yearsList"></div>
+
+            <script>
+                const target_file = "/products/fi/ficc_clearingvolumes.txt?v=" + Date.now();
+                let xmlDoc, yearsArr = [];
+                const monthsConverter = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+                function getQueryParam(param) {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    return urlParams.get(param);
+                }
+
+                function renderChart(yearId, isMostRecent) {
+                    let graphHTML = '<ul id="graph">';
+                    let totalClearPar = 0, totalFaceVal = 0;
+                    let months = [];
+
+                    if (isMostRecent) {
+                        let currentYearNode = Array.from(xmlDoc.querySelectorAll("mbs > year")).find(y => y.getAttribute("id") === yearId);
+                        let currentMonths = Array.from(currentYearNode.querySelectorAll("month"));
+                        let lastMonthId = Math.max(...currentMonths.map(m => parseInt(m.getAttribute("id"))));
+
+                        let allMonths = [];
+                        let monthCount = 0;
+
+                        for (let y = parseInt(yearId); y >= parseInt(yearId) - 1 && monthCount < 12; y--) {
+                            let yNode = Array.from(xmlDoc.querySelectorAll("mbs > year")).find(yn => yn.getAttribute("id") === String(y));
+                            if (!yNode) continue;
+                            let yMonths = Array.from(yNode.querySelectorAll("month")).sort((a, b) => parseInt(b.getAttribute("id")) - parseInt(a.getAttribute("id")));
+                            for (let m of yMonths) {
+                                if (monthCount >= 12) break;
+                                allMonths.push({ month: m, year: y });
+                                monthCount++;
+                            }
+                        }
+                        months = allMonths.reverse();
+                    } else {
+                        let yearNode = Array.from(xmlDoc.querySelectorAll("mbs > year")).find(y => y.getAttribute("id") === yearId);
+                        months = Array.from(yearNode.querySelectorAll("month")).map(m => ({ month: m, year: yearId }));
+                    }
+
+                    for (let i = 0; i < months.length; i++) {
+                        let m = months[i].month;
+                        let y = months[i].year;
+                        let monthLabel = monthsConverter[parseInt(m.getAttribute("id")) - 1];
+                        let clearingParVal = parseFloat(m.querySelector("clearingpar").textContent);
+                        let currentFaceVal = parseFloat(m.querySelector("currentface").textContent);
+                        let clearingParHeight = Math.floor(clearingParVal * 13.33);
+                        let currentFaceHeight = Math.floor(currentFaceVal * 13.33);
+                        graphHTML += `<li class="month" id="mon${i+1}">${monthLabel}-${y}<ul><li class="left bar" style="height:${clearingParHeight}px;"><p>${clearingParVal.toFixed(1)}</p></li><li class="right bar" style="height:${currentFaceHeight}px;"><p>${currentFaceVal.toFixed(1)}</p></li></ul></li>`;
+                        totalClearPar += clearingParVal;
+                        totalFaceVal += currentFaceVal;
+                    }
+
+                    graphHTML += '<li id="ticks">';
+                    for (let i = 15; i > 0; i--) {
+                        graphHTML += `<div class="tick" style="height: 20px;"><p>$${i * 20}</p></div>`;
+                    }
+                    graphHTML += '</li></ul>';
+
+                    graphHTML += `<table id="key">
+                        <tr id="key01">
+                            <td class="key_item">Total Clearing Par</td>
+                            <td class="key_number">&nbsp;<strong>$${Math.round(totalClearPar * 1e12).toLocaleString()}</strong></td>
+                        </tr>
+                        <tr id="key02">
+                            <td class="key_item">EPN Current Face</td>
+                            <td class="key_number">&nbsp;<strong>$${Math.round(totalFaceVal * 1e12).toLocaleString()}</strong></td>
+                        </tr>
+                    </table><p>&nbsp;</p>`;
+
+                    document.getElementById("chartArea").innerHTML = graphHTML;
+                }
+
+                function renderYearsList(latestYear) {
+                    const queryYear = getQueryParam("year");
+                    const latestYearNum = parseInt(latestYear);
+
+                    let displayYears = [...new Set(yearsArr)]
+                        .map(Number)
+                        .filter(y => {
+                            let yNode = Array.from(xmlDoc.querySelectorAll("mbs > year")).find(yn => yn.getAttribute("id") === String(y));
+                            return yNode && yNode.querySelectorAll("month").length === 12 && y < latestYearNum;
+                        })
+                        .sort((a, b) => a - b);
+
+                    let yearsHTML = "<h4>Previous 12-Month Volumes</h4><p>";
+
+                    for (let i = 0; i < displayYears.length; i++) {
+                        let yearId = displayYears[i].toString();
+                        if (yearId === queryYear) {
+                            yearsHTML += `<strong>${yearId}</strong>`;
+                        } else {
+                            yearsHTML += `<a href="?year=${yearId}">${yearId}</a>`;
+                        }
+                        yearsHTML += `&nbsp;<strong>|</strong>&nbsp;`;
+                    }
+
+                    if (queryYear === null || queryYear === latestYear) {
+                        yearsHTML += `<strong>Most Recent</strong>`;
+                    } else {
+                        yearsHTML += `<a href="?year=${latestYear}">Most Recent</a>`;
+                    }
+
+                    yearsHTML += "</p>";
+                    document.getElementById("yearsList").innerHTML = yearsHTML;
+                }
+
+                fetch(target_file)
+                    .then(response => {
+                        if (response.ok) {
+                            return response.text();
+                        } else {
+                            document.getElementById("chartArea").innerHTML =
+                                "<p>This section is being updated. Please check back soon.</p>";
+                            throw new Error("File not accessible");
+                        }
+                    })
+                    .then(data => {
+                        const parser = new DOMParser();
+                        xmlDoc = parser.parseFromString(data, "application/xml");
+                        yearsArr = Array.from(xmlDoc.querySelectorAll("mbs > year")).map(y => y.getAttribute("id"));
+                        const queryYear = getQueryParam("year");
+                        const latestYear = yearsArr.map(Number).sort((a, b) => a - b).pop().toString();
+                        const selectedYear = queryYear && yearsArr.includes(queryYear) ? queryYear : latestYear;
+                        window.renderChart = renderChart;
+                        renderChart(selectedYear, selectedYear === latestYear);
+                        renderYearsList(latestYear);
+                    })
+                    .catch(() => {
+                        // already handled above
+                    });
+            </script>
+   
+        </div>
+    </div>
+</div>
+</body>
+</html>

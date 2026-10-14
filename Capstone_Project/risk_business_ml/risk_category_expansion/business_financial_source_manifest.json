@@ -1,0 +1,2345 @@
+{
+  "documents": [
+    {
+      "file": "financial_statements/DTC_Q2_2026.pdf",
+      "sha256": "fa938f3177219a7662e92637b96a1aefda94f2f28ad6dad8eff1ec9b733ce0cd",
+      "bytes": 615490,
+      "actual_format": "pdf",
+      "actual_entity": "DTC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2026,
+      "reporting_quarter": 2,
+      "reporting_period": "2026 Q2",
+      "comparative_year": 2025,
+      "report_period_end": "2026-06-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T17:24:06.932134+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTC+Q2+2026+Financial+Statements/a509d01e957a11f1bfa08a63c041fd82"
+      ],
+      "source_listing_records": [
+        {
+          "title": "DTC Financial Statements Q2 2026",
+          "download_url": "https://files.dtcc.com/download/assets/DTC+Q2+2026+Financial+Statements/a509d01e957a11f1bfa08a63c041fd82",
+          "listed_date": "Jul 30, 2026",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 18,
+      "sheet_names": null,
+      "cover_excerpt": "The Depository \nTrust Company\nFinancial Statements (Unaudited) as of June 30, 2026 and \nDecember 31, 2025 and for the three and six months ended \nJune 30, 2026 and 2025\nDTCC Public (White)   \nTHE DEPOSITORY TRUST COMPANY\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF JUNE 30, 2026 AND DECEMBER 31, \n2025 AND FOR THE THREE AND SIX MONTHS ENDED JUNE 30, 2026 AND 2025:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholders’ Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5-16\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/DTC_Q1_2026.pdf",
+      "sha256": "4780782b0097688d9656d30922925640555d4df6d8d63c88cad1a48cddb58c8d",
+      "bytes": 749971,
+      "actual_format": "pdf",
+      "actual_entity": "DTC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2026,
+      "reporting_quarter": 1,
+      "reporting_period": "2026 Q1",
+      "comparative_year": 2025,
+      "report_period_end": "2026-03-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T17:24:07.365559+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTC-Q1-2026-Financial-Statements/ad89ee5e957a11f1a15a4ec37e043074"
+      ],
+      "source_listing_records": [
+        {
+          "title": "DTC Financial Statements Q1 2026",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Q1-2026-Financial-Statements/ad89ee5e957a11f1a15a4ec37e043074",
+          "listed_date": "Apr 30, 2026",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 17,
+      "sheet_names": null,
+      "cover_excerpt": "The Depository \nTrust Company\nFinancial Statements (Unaudited) as of March 31, 2026 and \nDecember 31, 2025 and for the three months ended \nMarch 31, 2026 and 2025\nDTCC Public (White)   \nTHE DEPOSITORY TRUST COMPANY\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF MARCH 31, 2026 AND DECEMBER 31, \n2025 AND FOR THE THREE MONTHS ENDED MARCH 31, 2026 AND 2025:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholders’ Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5-15\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/DTC_Annual_2025_2024.pdf",
+      "sha256": "4dbb32a1f60d025a82e31c11e862b87cdd6e1f10c04c6c600fe6ed163fd60445",
+      "bytes": 938292,
+      "actual_format": "pdf",
+      "actual_entity": "DTC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2025,
+      "reporting_quarter": 4,
+      "reporting_period": "2025/2024 Annual",
+      "comparative_year": 2024,
+      "report_period_end": "2025-12-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T17:24:07.749077+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Annual-2025/adbc48e0957a11f1bc7b8a63c041fd82"
+      ],
+      "source_listing_records": [
+        {
+          "title": "DTC Annual Financial Statements 2025 and 2024",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Annual-2025/adbc48e0957a11f1bc7b8a63c041fd82",
+          "listed_date": "Feb 27, 2026",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 24,
+      "sheet_names": null,
+      "cover_excerpt": "The Depository \nTrust Company\nFinancial Statements as of and for the Years Ended \nDecember 31, 2025 and 2024, and Report of Independent\nRegistered Public Accounting Firm \nDTCC Public (White)   \nTHE DEPOSITORY TRUST COMPANY\nTABLE OF CONTENTS\nPage\nREPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM\n1\n   FINANCIAL STATEMENTS AS OF AND FOR THE YEARS ENDED  \n    DECEMBER 31, 2025 AND 2024:\nStatements of Financial Condition 2\nStatements of Income 3\nStatements of Changes in Shareholders’ Equity 4\nStatements of Cash Flows 5\nNotes to Financial Statements 6-22\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/DTC_Q3_2025.pdf",
+      "sha256": "2e895365bfa623a016780d707f40ee1fec0316c0a1efdd61e5359c671abfce67",
+      "bytes": 846682,
+      "actual_format": "pdf",
+      "actual_entity": "DTC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2025,
+      "reporting_quarter": 3,
+      "reporting_period": "2025 Q3",
+      "comparative_year": 2024,
+      "report_period_end": "2025-09-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:20.685555+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q3-2025/5f566e6ccea911f08977de3dd66d09b0"
+      ],
+      "source_listing_records": [
+        {
+          "title": "DTC Financial Statements Q3 2025",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q3-2025/5f566e6ccea911f08977de3dd66d09b0",
+          "listed_date": "Oct 30, 2025",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 15,
+      "sheet_names": null,
+      "cover_excerpt": "The Depository \nTrust Company\nFinancial Statements (Unaudited) as of September 30, 2025 and \nDecember 31, 2024 and for the three and nine months ended\nSeptember 30, 2025 and 2024\nDTCC Public (White)   \nTHE DEPOSITORY TRUST COMPANY\nTABLE OF CONTENTS\nPage\n   FINANCIAL STATEMENTS (UNAUDITED) AS OF SEPTEMBER 30, 2025 AND DECEMBER\n     31, 2024 AND FOR THE THREE AND NINE MONTHS ENDED SEPTEMBER 30, 2025 AND \n     2024:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholders’ Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5-13\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/DTC_Q2_2025.pdf",
+      "sha256": "7da36f254130906ff85f761f0fce15bebc5f093f15edd5646924ab6444a9e3b7",
+      "bytes": 843455,
+      "actual_format": "pdf",
+      "actual_entity": "DTC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2025,
+      "reporting_quarter": 2,
+      "reporting_period": "2025 Q2",
+      "comparative_year": 2024,
+      "report_period_end": "2025-06-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:20.807300+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q2-2025/5cef1318cea911f0931632bd0f351ae2"
+      ],
+      "source_listing_records": [
+        {
+          "title": "DTC Financial Statements Q2 2025",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q2-2025/5cef1318cea911f0931632bd0f351ae2",
+          "listed_date": "Jul 31, 2025",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 15,
+      "sheet_names": null,
+      "cover_excerpt": "The Depository \nTrust Company\nFinancial Statements (Unaudited) as of June 30, 2025 and \nDecember 31, 2024 and for the three and six months ended\nJune 30, 2025 and 2024\nDTCC Public (White)   \nTHE DEPOSITORY TRUST COMPANY\nTABLE OF CONTENTS\nPage\nF FINANCIAL STATEMENTS (UNAUDITED) AS OF JUNE 30, 2025 AND DECEMBER 31,\n      2024 AND FOR THE THREE AND SIX MONTHS ENDED JUNE 30, 2025 AND 2024:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholders’ Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5-13\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/DTC_Q1_2025.pdf",
+      "sha256": "37271a405fd12c266502626f15796ad101663077f2ec19b17a341767e357223e",
+      "bytes": 829829,
+      "actual_format": "pdf",
+      "actual_entity": "DTC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2025,
+      "reporting_quarter": 1,
+      "reporting_period": "2025 Q1",
+      "comparative_year": 2024,
+      "report_period_end": "2025-03-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:22.124350+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q1-2025/5a34a714cea911f0bc13de3dd66d09b0"
+      ],
+      "source_listing_records": [
+        {
+          "title": "DTC Financial Statements Q1 2025",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q1-2025/5a34a714cea911f0bc13de3dd66d09b0",
+          "listed_date": "Apr 30, 2025",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 14,
+      "sheet_names": null,
+      "cover_excerpt": "The Depository \nTrust Company\nFinancial Statements (Unaudited) as of March 31, 2025 and \nDecember 31, 2024 and for the three months ended\nMarch 31, 2025 and 2024\nDTCC Public (White)   \nTHE DEPOSITORY TRUST COMPANY\nTABLE OF CONTENTS\nPage\nF FINANCIAL STATEMENTS (UNAUDITED) AS OF MARCH 31, 2025 AND DECEMBER 31,\n      2024 AND FOR THE THREE MONTHS ENDED MARCH 31, 2025 AND 2024:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholders’ Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5-12\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/DTC_Annual_2024_2023.pdf",
+      "sha256": "c8cf14e7b703c547dc508fb05fdbfd1feafb86288ef2c246e3581cee4b705ce0",
+      "bytes": 992956,
+      "actual_format": "pdf",
+      "actual_entity": "DTC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2024,
+      "reporting_quarter": 4,
+      "reporting_period": "2024/2023 Annual",
+      "comparative_year": 2023,
+      "report_period_end": "2024-12-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:22.798119+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Annual-2024/0291821c369611f09182820bd5ac0897"
+      ],
+      "source_listing_records": [
+        {
+          "title": "DTC Annual Financial Statements 2024 and 2023",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Annual-2024/0291821c369611f09182820bd5ac0897",
+          "listed_date": "Feb 28, 2025",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 24,
+      "sheet_names": null,
+      "cover_excerpt": "The Depository \nTrust Company\nFinancial Statements as of and for the Years Ended             \nDecember 31, 2024 and 2023, and Report of Independent \nRegistered Public Accounting Firm\nDTCC Public (White)   \nTHE DEPOSITORY TRUST COMPANY\nTABLE OF CONTENTS\nPage\nREPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM\n1\nFINANCIAL STATEMENTS AS OF AND FOR THE YEARS ENDED \n DECEMBER 31, 2024 AND 2023:\nStatements of Financial Condition 2\nStatements of Income 3\nStatements of Changes in Shareholders’ Equity 4\nStatements of Cash Flows 5\nNotes to Financial Statements 6 - 22\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/DTC_Q3_2024.pdf",
+      "sha256": "f358ecd2cc50b47fa970a44fb9e2aa42c52abc59c8e38bbe13c7809028953803",
+      "bytes": 833275,
+      "actual_format": "pdf",
+      "actual_entity": "DTC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2024,
+      "reporting_quarter": 3,
+      "reporting_period": "2024 Q3",
+      "comparative_year": 2023,
+      "report_period_end": "2024-09-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:23.125157+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q3-2024/1cbf9ed2369911f0bf68c204a2f8334f"
+      ],
+      "source_listing_records": [
+        {
+          "title": "DTC Financial Statements Q3 2024",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q3-2024/1cbf9ed2369911f0bf68c204a2f8334f",
+          "listed_date": "Oct 29, 2024",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 14,
+      "sheet_names": null,
+      "cover_excerpt": "The Depository \nTrust Company\nFinancial Statements (Unaudited) as of September 30, 2024 and \nDecember 31, 2023 and for the three and nine months ended             \nSeptember 30, 2024 and 2023\nDTCC Public (White)   \nTHE DEPOSITORY TRUST COMPANY\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF SEPTEMBER 30, 2024 AND DECEMBER \n  31, 2023 AND FOR THE THREE AND NINE MONTHS ENDED SEPTEMBER 30, 2024 AND \n  2023:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholders’ Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 12\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/DTC_Q2_2024.pdf",
+      "sha256": "d416dfb081b40ce187390c903f47326f50b5105ab8594c4c820fbf8366a9bbba",
+      "bytes": 820461,
+      "actual_format": "pdf",
+      "actual_entity": "DTC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2024,
+      "reporting_quarter": 2,
+      "reporting_period": "2024 Q2",
+      "comparative_year": 2023,
+      "report_period_end": "2024-06-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:23.923043+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q2-2024/0502cb8c369611f0bcd7820bd5ac0897"
+      ],
+      "source_listing_records": [
+        {
+          "title": "DTC Financial Statements Q2 2024",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q2-2024/0502cb8c369611f0bcd7820bd5ac0897",
+          "listed_date": "Jul 26, 2024",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 13,
+      "sheet_names": null,
+      "cover_excerpt": "The Depository \nTrust Company\nFinancial Statements (Unaudited) as of June 30, 2024 and \nDecember 31, 2023 and for the three and six months ended             \nJune 30, 2024 and 2023\nDTCC Public (White)   \nTHE DEPOSITORY TRUST COMPANY\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF JUNE 30, 2024 AND DECEMBER 31, 2023\n  AND FOR THE THREE AND SIX MONTHS ENDED JUNE 30, 2024 AND 2023:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholders’ Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 11\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/DTC_Q1_2024.pdf",
+      "sha256": "d37b85c323f85efea56a22cf84532aa8515b2d8c500d8e33065b7bb553d77c8f",
+      "bytes": 809637,
+      "actual_format": "pdf",
+      "actual_entity": "DTC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2024,
+      "reporting_quarter": 1,
+      "reporting_period": "2024 Q1",
+      "comparative_year": 2023,
+      "report_period_end": "2024-03-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:24.166626+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q1-2024/fd02c32e369511f09d3a92d5ae67c534"
+      ],
+      "source_listing_records": [
+        {
+          "title": "DTC Financial Statements Q1 2024",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q1-2024/fd02c32e369511f09d3a92d5ae67c534",
+          "listed_date": "Apr 26, 2024",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 13,
+      "sheet_names": null,
+      "cover_excerpt": "The Depository \nTrust Company\nFinancial Statements (Unaudited) as of March 31, 2024 and \nDecember 31, 2023 and for the three months ended             \nMarch 31, 2024 and 2023\nDTCC Public (White)   \nTHE DEPOSITORY TRUST COMPANY\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF MARCH 31, 2024 AND DECEMBER 31,\n  2023 AND FOR THE THREE MONTHS ENDED MARCH 31, 2024 AND 2023:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholders’ Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 11\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/DTC_Q3_2023.pdf",
+      "sha256": "e3553e35152542ac9cd8edc6b396a1ea6756ad6acd33635667afcc0a81091428",
+      "bytes": 701144,
+      "actual_format": "pdf",
+      "actual_entity": "DTC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2023,
+      "reporting_quarter": 3,
+      "reporting_period": "2023 Q3",
+      "comparative_year": 2022,
+      "report_period_end": "2023-09-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:25.203085+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q3-2023/c5c65f60369511f0b16f526112f6cc5f"
+      ],
+      "source_listing_records": [
+        {
+          "title": "DTC Financial Statements Q3 2023",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q3-2023/c5c65f60369511f0b16f526112f6cc5f",
+          "listed_date": "Oct 31, 2023",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 13,
+      "sheet_names": null,
+      "cover_excerpt": "The Depository \nTrust Company\nFinancial Statements (Unaudited) as of September 30, 2023 and \nDecember 31, 2022 and for the three and nine months ended \nSeptember 30, 2023 and 2022\nDTCC Public (White) THE DEPOSITORY TRUST COMPANY\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF SEPTEMBER 30, 2023 AND DECEMBER\n  31, 2022 AND FOR THE THREE AND NINE MONTHS ENDED SEPTEMBER 30, 2023 AND\n  2022:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholders' Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 11\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/DTC_Q2_2023.pdf",
+      "sha256": "e493ca8dc8d8cbb84defa7dd12c363647bba1f94e1ab274eb2f0f780c0ada93c",
+      "bytes": 810688,
+      "actual_format": "pdf",
+      "actual_entity": "DTC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2023,
+      "reporting_quarter": 2,
+      "reporting_period": "2023 Q2",
+      "comparative_year": 2022,
+      "report_period_end": "2023-06-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:25.976152+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q2-2023/11688ae6369211f0b16f526112f6cc5f"
+      ],
+      "source_listing_records": [
+        {
+          "title": "DTC Financial Statements Q2 2023",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q2-2023/11688ae6369211f0b16f526112f6cc5f",
+          "listed_date": "Jul 28, 2023",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 13,
+      "sheet_names": null,
+      "cover_excerpt": "The Depository \nTrust Company\nFinancial Statements (Unaudited) as of June 30, 2023 and \nDecember 31, 2022 and for the three months and six months \nended June 30, 2023 and 2022\nDTCC Public (White)   \nTHE DEPOSITORY TRUST COMPANY\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF JUNE 30, 2023 AND DECEMBER 31, 2022\n   AND FOR THE THREE AND SIX MONTHS ENDED JUNE 30, 2023 AND 2022:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholders' Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 11\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/DTC_Q1_2023.pdf",
+      "sha256": "64dfc911d8bd42322894019b3480bdb14e92d9350c3b3e1dd73cb2012322d894",
+      "bytes": 801294,
+      "actual_format": "pdf",
+      "actual_entity": "DTC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2023,
+      "reporting_quarter": 1,
+      "reporting_period": "2023 Q1",
+      "comparative_year": 2022,
+      "report_period_end": "2023-03-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:26.509450+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q1-2023/cb8f389a369511f0bf68c204a2f8334f"
+      ],
+      "source_listing_records": [
+        {
+          "title": "DTC Financial Statements Q1 2023",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q1-2023/cb8f389a369511f0bf68c204a2f8334f",
+          "listed_date": "Apr 28, 2023",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 13,
+      "sheet_names": null,
+      "cover_excerpt": "The Depository \nTrust Company\nFinancial Statements (Unaudited) as March 31, 2023 and \nDecember 31, 2022 and for the three months ended           \nMarch 31, 2023 and 2022\nDTCC Public (White)   \nTHE DEPOSITORY TRUST COMPANY\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF MARCH 31, 2023 AND DECEMBER 31, \n2022 AND FOR THE THREE MONTHS ENDED MARCH 31, 2023 AND 2022:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholders' Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5-11\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/DTC_Q3_2022.pdf",
+      "sha256": "95ef5316d2833297f8fc54185e309bd3c3f2b9c7ce7fe7f5614fed15ec62ab06",
+      "bytes": 830701,
+      "actual_format": "pdf",
+      "actual_entity": "DTC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2022,
+      "reporting_quarter": 3,
+      "reporting_period": "2022 Q3",
+      "comparative_year": 2021,
+      "report_period_end": "2022-09-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:27.664714+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q3-2022/20e9a9da369911f0b84192d5ae67c534"
+      ],
+      "source_listing_records": [
+        {
+          "title": "DTC Financial Statements Q3 2022",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q3-2022/20e9a9da369911f0b84192d5ae67c534",
+          "listed_date": "Oct 31, 2022",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 14,
+      "sheet_names": null,
+      "cover_excerpt": "The Depository \nTrust Company\nFinancial Statements (Unaudited) as of September 30, 2022 and \nDecember 31, 2021 and for the three and nine months ended \nSeptember 30, 2022 and 2021\nDTCC Public (White) THE DEPOSITORY TRUST COMPANY\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF SEPTEMBER 30, 2022 AND DECEMBER 31, 2021 \nAND FOR THE THREE AND NINE MONTHS ENDED SEPTEMBER 30, 2022 AND 2021: \nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholders' Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5-12\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/DTC_Q2_2022.pdf",
+      "sha256": "519ce8b4c933e4af1e89d0dbdfc244f2e8d9de06aaa72686fac97463cf713507",
+      "bytes": 832155,
+      "actual_format": "pdf",
+      "actual_entity": "DTC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2022,
+      "reporting_quarter": 2,
+      "reporting_period": "2022 Q2",
+      "comparative_year": 2021,
+      "report_period_end": "2022-06-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:28.593684+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q2-2022/d1b51732369311f0b606526112f6cc5f"
+      ],
+      "source_listing_records": [
+        {
+          "title": "DTC Financial Statements Q2 2022",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q2-2022/d1b51732369311f0b606526112f6cc5f",
+          "listed_date": "Aug 1, 2022",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 14,
+      "sheet_names": null,
+      "cover_excerpt": "The Depository \nTrust Company\nFinancial Statements (Unaudited) as of June 30,2022 and\nDecember 31, 2021 and for the three months and six months \nended June 30, 2022 and 2021\nDTCC Public (White) THE DEPOSITORY TRUST COMPANY\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF JUNE 30, 2022 AND DECEMBER 31, 2021 \nAND FOR THE THREE AND SIX MONTHS ENDED JUNE 30, 2022 AND 2021: \nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholders' Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5-12\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/DTC_Q1_2022.pdf",
+      "sha256": "948af21d30836fff36d36556077ac916b799e5188a642e463979ee28d9a92673",
+      "bytes": 713569,
+      "actual_format": "pdf",
+      "actual_entity": "DTC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2022,
+      "reporting_quarter": 1,
+      "reporting_period": "2022 Q1",
+      "comparative_year": 2021,
+      "report_period_end": "2022-03-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:28.670920+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q1-2022/c4eab9f0369111f0b7631282bb7fa251"
+      ],
+      "source_listing_records": [
+        {
+          "title": "DTC Financial Statements Q1 2022",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q1-2022/c4eab9f0369111f0b7631282bb7fa251",
+          "listed_date": "May 2, 2022",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 14,
+      "sheet_names": null,
+      "cover_excerpt": "The Depository \nTrust Company\nFinancial Statements (Unaudited) as March 31,2022 and\nDecember 31, 2021 and for the three months ended\nMarch 31, 2022 and 2021\nDTCC Public (White) THE DEPOSITORY TRUST COMPANY\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF MARCH 31, 2022 AND DECEMBER 31, \n2021 AND FOR THE THREE MONTHS ENDED MARCH 31, 2022 AND 2021: \nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholders' Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5-12\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/DTC_Annual_2021_2020.pdf",
+      "sha256": "6fe3292982883779cf3a89fbe1f639765f6a4a743d770852b849c31426c68dd2",
+      "bytes": 1833765,
+      "actual_format": "pdf",
+      "actual_entity": "DTC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2021,
+      "reporting_quarter": 4,
+      "reporting_period": "2021/2020 Annual",
+      "comparative_year": 2020,
+      "report_period_end": "2021-12-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:29.868919+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTC-Annual-Financial-Statements-2021-and-2020/ea4331be369111f0af855e09fb65ecc7"
+      ],
+      "source_listing_records": [
+        {
+          "title": "DTC Annual Financial Statements 2021 and 2020",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Annual-Financial-Statements-2021-and-2020/ea4331be369111f0af855e09fb65ecc7",
+          "listed_date": "Mar 1, 2022",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 23,
+      "sheet_names": null,
+      "cover_excerpt": "The Depository \nTrust Company\nFinancial Statements as of and for the Years Ended\nDecember 31, 2021 and 2020, and Report of Independent \nRegistered Public Accounting Firm\nDTCC Public (White)   \nTHE DEPOSITORY TRUST COMPANY\nTABLE OF CONTENTS\nPage\nREPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM 1\nFINANCIAL STATEMENTS AS OF AND FOR THE YEARS ENDED\n  DECEMBER 31, 2021 AND 2020: \nStatements of Financial Condition 2\nStatements of Income 3\nStatements of Changes in Shareholders' Equity 4\nStatements of Cash Flows 5\nNotes to Financial Statements 6-21\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/DTC_Q3_2021.pdf",
+      "sha256": "cbc8b6245b7fe673c8a59b3f6c5ed1b5ef11b592ec68a718625e7578335c5ca2",
+      "bytes": 797217,
+      "actual_format": "pdf",
+      "actual_entity": "DTC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2021,
+      "reporting_quarter": 3,
+      "reporting_period": "2021 Q3",
+      "comparative_year": 2020,
+      "report_period_end": "2021-09-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:30.447758+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q3-2021/200ba772369211f0ad831282bb7fa251"
+      ],
+      "source_listing_records": [
+        {
+          "title": "DTC Financial Statements Q3 2021",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q3-2021/200ba772369211f0ad831282bb7fa251",
+          "listed_date": "Oct 29, 2021",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 14,
+      "sheet_names": null,
+      "cover_excerpt": "The Depository \nTrust Company\nFinancial Statements (Unaudited) as of September 30, 2021 and \nDecember 31, 2020 and for the three and nine months ended \nSeptember 30, 2021 and 2020\nDTCC Public (White) THE DEPOSITORY TRUST COMPANY\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF SEPTEMBER 30, 2021 AND DECEMBER \n31, 2020 AND FOR THE THREE AND NINE MONTHS ENDED SEPTEMBER 30, 2021 AND \n2020:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholders' Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 12\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/DTC_Q2_2021.pdf",
+      "sha256": "c2cb10f81001810b487b42baf08ac77b501454cd694fdc38084f9f8e6fd507c4",
+      "bytes": 788139,
+      "actual_format": "pdf",
+      "actual_entity": "DTC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2021,
+      "reporting_quarter": 2,
+      "reporting_period": "2021 Q2",
+      "comparative_year": 2020,
+      "report_period_end": "2021-06-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:30.977821+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q2-2021/1e87a822369911f08aca526112f6cc5f"
+      ],
+      "source_listing_records": [
+        {
+          "title": "DTC Financial Statements Q2 2021",
+          "download_url": "https://files.dtcc.com/download/assets/DTC-Financial-Statements-Q2-2021/1e87a822369911f08aca526112f6cc5f",
+          "listed_date": "Jul 30, 2021",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 14,
+      "sheet_names": null,
+      "cover_excerpt": "The Depository \nTrust Company\nFinancial Statements (Unaudited) as of June 30, 2021 and \nDecember 31, 2020 and for the three months and six months \nended June 30, 2021 and 2020\nDTCC Public (White) THE DEPOSITORY TRUST COMPANY\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF JUNE 30, 2021 AND DECEMBER 31,\n  2020 AND FOR THE THREE AND SIX MONTHS ENDED JUNE 30, 2021 AND 2020:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholders' Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 12\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Q2_2026.pdf",
+      "sha256": "db6ad9f8356dca918c1bc8b347bf7b82a1f40de7718644cb25ca6bca52645f49",
+      "bytes": 608959,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2026,
+      "reporting_quarter": 2,
+      "reporting_period": "2026 Q2",
+      "comparative_year": 2025,
+      "report_period_end": "2026-06-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T17:24:06.724769+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC+Q2+2026+Financial+Statements/f63281b6957a11f1bc7b8a63c041fd82"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Financial Statements Q2 2026",
+          "download_url": "https://files.dtcc.com/download/assets/FICC+Q2+2026+Financial+Statements/f63281b6957a11f1bc7b8a63c041fd82",
+          "listed_date": "Jul 30, 2026",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 17,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income      \nClearing Corporation\nFinancial Statements (Unaudited) as of June 30, 2026 and \nDecember 31, 2025 and for the three and six months ended \nJune 30, 2026 and 2025\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nF FINANCIAL STATEMENTS (UNAUDITED) AS OF JUNE 30, 2026 AND DECEMBER 31,\n      2025 AND FOR THE THREE AND SIX MONTHS ENDED JUNE 30, 2026 AND 2025:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5-15\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Q1_2026.pdf",
+      "sha256": "60fd41270a6d17c7d6306269cec9d7ab817944328c0e1ccaacdcda7da440deb4",
+      "bytes": 737169,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2026,
+      "reporting_quarter": 1,
+      "reporting_period": "2026 Q1",
+      "comparative_year": 2025,
+      "report_period_end": "2026-03-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T17:24:06.880849+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Q1-2026-Financial-Statements.pdf/32e6ce008c1b11f1adced2e68063bdff"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Financial Statements Q1 2026",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Q1-2026-Financial-Statements.pdf/32e6ce008c1b11f1adced2e68063bdff",
+          "listed_date": "Apr 30, 2026",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 16,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income      \nClearing Corporation\nFinancial Statements (Unaudited) as of March 31, 2026 and \nDecember 31, 2025 and for the three months ended \nMarch 31, 2026 and 2025\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nF FINANCIAL STATEMENTS (UNAUDITED) AS OF MARCH 31, 2026 AND DECEMBER 31,\n      2025 AND FOR THE THREE MONTHS ENDED MARCH 31, 2026 AND 2025:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5-14\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Annual_2025_2024.pdf",
+      "sha256": "9e2aa16a4e8f13ef9dd6489f4b6ea6f857036c2d86a41110181f788713a81d98",
+      "bytes": 950339,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2025,
+      "reporting_quarter": 4,
+      "reporting_period": "2025/2024 Annual",
+      "comparative_year": 2024,
+      "report_period_end": "2025-12-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T17:24:07.470312+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Annual-2025/068fecf6957b11f190ec6a7a18072738"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Annual Financial Statements 2025 and 2024",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Annual-2025/068fecf6957b11f190ec6a7a18072738",
+          "listed_date": "Feb 27, 2026",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 27,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income      \nClearing Corporation\nFinancial Statements as of and for the Years Ended \nDecember 31, 2025 and 2024, and Report of Independent\nRegistered Public Accounting Firm\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nREPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM\n1\nF FINANCIAL STATEMENTS AS OF AND FOR THE YEARS ENDED \n     DECEMBER 31, 2025 AND 2024:\nStatements of Financial Condition 2\nStatements of Income 3\nStatements of Changes in Shareholder’s Equity 4\nStatements of Cash Flows 5\nNotes to Financial Statements 6 - 25\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Q4_2025.pdf",
+      "sha256": "314ca8de0dbfe9481b488c81e59776b8d56f1ccf34502cb3758275468dd49a01",
+      "bytes": 723198,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2025,
+      "reporting_quarter": 4,
+      "reporting_period": "2025 Q4",
+      "comparative_year": 2024,
+      "report_period_end": "2025-12-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:20.319512+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q4-2025/06523f78957b11f197c9fe5809e33e04"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Financial Statements Q4 2025",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q4-2025/06523f78957b11f197c9fe5809e33e04",
+          "listed_date": "Feb 27, 2026",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 6,
+      "sheet_names": null,
+      "cover_excerpt": " \nFixed Income      \nClearing Corporation\nFinancial Statements (Unaudited) as of and for the Years Ended \nDecember 31, 2025 and 2024, and for the three Months Ended \nDecember 31, 2025 and 2024\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF AND FOR THE YEARS ENDED\n  DECEMBER 31, 2025 AND 2024, AND FOR THE THREE MONTHS ENDED\n  DECEMBER 31, 2025 AND 2024:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Q3_2025.pdf",
+      "sha256": "34858268f67997ea70fe8323cbd841a744013f1edd85dabfc3b1ef5f70753df3",
+      "bytes": 849847,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2025,
+      "reporting_quarter": 3,
+      "reporting_period": "2025 Q3",
+      "comparative_year": 2024,
+      "report_period_end": "2025-09-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:20.685138+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q3-2025/94f118c2ceab11f08725824dba2f033c"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Financial Statements Q3 2025",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q3-2025/94f118c2ceab11f08725824dba2f033c",
+          "listed_date": "Oct 30, 2025",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 15,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income      \nClearing Corporation\nFinancial Statements (Unaudited) as of September 30, 2025 and \nDecember 31, 2024 and for the three and nine months ended\nSeptember 30, 2025 and 2024  \nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nF FINANCIAL STATEMENTS (UNAUDITED) AS OF SEPTEMBER 30, 2025 AND DECEMBER \n      31, 2024 AND FOR THE THREE AND NINE MONTHS ENDED SEPTEMBER 30, 2025 AND \n      2024:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 13\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Q2_2025.pdf",
+      "sha256": "a136f9d7c6943ec2228cb4da2d2b99f1192c9a5ea136be6df2e019ae4785abca",
+      "bytes": 845693,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2025,
+      "reporting_quarter": 2,
+      "reporting_period": "2025 Q2",
+      "comparative_year": 2024,
+      "report_period_end": "2025-06-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:21.620081+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q2-2025/9234eadcceab11f09c9062cd3fe05a01"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Financial Statements Q2 2025",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q2-2025/9234eadcceab11f09c9062cd3fe05a01",
+          "listed_date": "Jul 31, 2025",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 15,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income      \nClearing Corporation\nFinancial Statements (Unaudited) as of June 30, 2025 and \nDecember 31, 2024 and for the three and six months ended\nJune 30, 2025 and 2024  \nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nF FINANCIAL STATEMENTS (UNAUDITED) AS OF JUNE 30, 2025 AND DECEMBER 31,\n      2024 AND FOR THE THREE AND SIX MONTHS ENDED JUNE 30, 2025 AND 2024:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 13\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Q1_2025.pdf",
+      "sha256": "8c116a53cf8e161a0eb0a07505b8c7c056e9044ff4a852a7ea8aac54db65f088",
+      "bytes": 838086,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2025,
+      "reporting_quarter": 1,
+      "reporting_period": "2025 Q1",
+      "comparative_year": 2024,
+      "report_period_end": "2025-03-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:21.687636+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q1-2025/8fbd271aceab11f086f70aec4933d5f6"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Financial Statements Q1 2025",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q1-2025/8fbd271aceab11f086f70aec4933d5f6",
+          "listed_date": "Apr 30, 2025",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 15,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income      \nClearing Corporation\nFinancial Statements (Unaudited) as of March 31, 2025 and \nDecember 31, 2024 and for the three months ended\nMarch 31, 2025 and 2024  \nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nF FINANCIAL STATEMENTS (UNAUDITED) AS OF MARCH 31, 2025 AND DECEMBER 31,\n      2024 AND FOR THE THREE MONTHS ENDED MARCH 31, 2025 AND 2024:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 13\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Annual_2024_2023.pdf",
+      "sha256": "cbcf13c7ca51e746fbd5d9dc6fab83641932e329d951945b4eb579474bbd1fb8",
+      "bytes": 973884,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2024,
+      "reporting_quarter": 4,
+      "reporting_period": "2024/2023 Annual",
+      "comparative_year": 2023,
+      "report_period_end": "2024-12-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:22.791746+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Annual-2024/587c4090369611f09d3a92d5ae67c534"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Annual Financial Statements 2024 and 2023",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Annual-2024/587c4090369611f09d3a92d5ae67c534",
+          "listed_date": "Feb 28, 2025",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 25,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income      \nClearing Corporation\nFinancial Statements as of and for the Years Ended \nDecember 31, 2024 and 2023, and Report of Independent \nRegistered Public Accounting Firm\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nREPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM\n1\nFINANCIAL STATEMENTS AS OF AND FOR THE YEARS ENDED\n  DECEMBER 31, 2024 AND 2023:\nStatements of Financial Condition 2\nStatements of Income 3\nStatements of Changes in Shareholder’s Equity 4\nStatements of Cash Flows 5\nNotes to Financial Statements 6 - 23\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Q4_2024.pdf",
+      "sha256": "f1c43c642accee40c70ba087c4560f212efb968da9a167d83e918cacbf1cea56",
+      "bytes": 672173,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2024,
+      "reporting_quarter": 4,
+      "reporting_period": "2024 Q4",
+      "comparative_year": 2023,
+      "report_period_end": "2024-12-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:22.760738+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q4-2024/0fa61604369411f0b606526112f6cc5f"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Financial Statements Q4 2024",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q4-2024/0fa61604369411f0b606526112f6cc5f",
+          "listed_date": "Feb 28, 2025",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 6,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income      \nClearing Corporation\nFinancial Statements (Unaudited) as of and for the Years Ended \nDecember 31, 2024 and 2023, and for the three Months Ended \nDecember 31, 2024 and 2023\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF AND FOR THE YEARS ENDED\n  DECEMBER 31, 2024 AND 2023, AND FOR THE THREE\n  MONTHS ENDED DECEMBER 31, 2024 AND 2023:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Q3_2024.pdf",
+      "sha256": "c87cc3c2bc8d35404cc261f04b5e724f6958c2ee98552029b8f42ebbcdba50e0",
+      "bytes": 838659,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2024,
+      "reporting_quarter": 3,
+      "reporting_period": "2024 Q3",
+      "comparative_year": 2023,
+      "report_period_end": "2024-09-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:23.476126+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q3-2024/d1c9020a368f11f096905e09fb65ecc7"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Financial Statements Q3 2024",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q3-2024/d1c9020a368f11f096905e09fb65ecc7",
+          "listed_date": "Oct 29, 2024",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 14,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income      \nClearing Corporation\nFinancial Statements (Unaudited) as of September 30, 2024 and \nDecember 31, 2023 and for the three and nine months ended\nSeptember 30, 2024 and 2023\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF SEPTEMBER 30, 2024 AND DECEMBER\n  31, 2023 AND FOR THE THREE AND NINE MONTHS ENDED SEPTEMBER 30, 2024 AND\n  2023:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 12\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Q2_2024.pdf",
+      "sha256": "d5b689b7a75aebea20df6630073298d1871739a0e61c532dbe2daac3e6834de4",
+      "bytes": 830304,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2024,
+      "reporting_quarter": 2,
+      "reporting_period": "2024 Q2",
+      "comparative_year": 2023,
+      "report_period_end": "2024-06-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:23.844412+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q2-2024/5c2938b0369611f09a845e09fb65ecc7"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Financial Statements Q2 2024",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q2-2024/5c2938b0369611f09a845e09fb65ecc7",
+          "listed_date": "Jul 26, 2024",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 14,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income      \nClearing Corporation\nFinancial Statements (Unaudited) as of June 30, 2024 and \nDecember 31, 2023 and for the three and six months ended\nJune 30, 2024 and 2023\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF JUNE 30, 2024 AND DECEMBER 31,\n  2023 AND FOR THE THREE AND SIX MONTHS ENDED JUNE 30, 2024 AND 2023:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 12\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Q1_2024.pdf",
+      "sha256": "b7d857116cc1f7e1f54f39c9d0c37cce80e80006415e866d9302284629e82fe8",
+      "bytes": 815510,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2024,
+      "reporting_quarter": 1,
+      "reporting_period": "2024 Q1",
+      "comparative_year": 2023,
+      "report_period_end": "2024-03-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:24.385530+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q1-2024/e1d3e7d0369111f09e5592d5ae67c534"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Financial Statements Q1 2024",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q1-2024/e1d3e7d0369111f09e5592d5ae67c534",
+          "listed_date": "Apr 26, 2024",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 13,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income      \nClearing Corporation\nFinancial Statements (Unaudited) as of March 31, 2024 and \nDecember 31, 2023 and for the three months ended\nMarch 31, 2024 and 2023\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF MARCH 31, 2024 AND DECEMBER 31,\n  2023 AND FOR THE THREE MONTHS ENDED MARCH 31, 2024 AND 2023:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 11\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Annual_2023_2022.pdf",
+      "sha256": "2e5a9c28b60b89577ecfd4b7d85524e79a49295aa7e1880d181ef2d343335add",
+      "bytes": 930756,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2023,
+      "reporting_quarter": 4,
+      "reporting_period": "2023/2022 Annual",
+      "comparative_year": 2022,
+      "report_period_end": "2023-12-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:25.236726+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Annual-Financial-Statements-2023-and-2022/6c3442c6369211f09a845e09fb65ecc7"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Annual Financial Statements 2023 and 2022",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Annual-Financial-Statements-2023-and-2022/6c3442c6369211f09a845e09fb65ecc7",
+          "listed_date": "Mar 1, 2024",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 23,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income      \nClearing Corporation\nFinancial Statements as of and for the Years Ended \nDecember 31, 2023 and 2022, and Report of Independent \nRegistered Public Accounting Firm\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nREPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM\n1\nFINANCIAL STATEMENTS AS OF AND FOR THE YEARS ENDED \n  DECEMBER 31, 2023 AND 2022:\nStatements of Financial Condition 2\nStatements of Income 3\nStatements of Changes in Shareholder’s Equity 4\nStatements of Cash Flows 5\nNotes to Financial Statements 6 - 21\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Q3_2023.pdf",
+      "sha256": "d40a0827280451084c4a62956a80f1d8b39929d974a5c6075a97365760b16d36",
+      "bytes": 704309,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2023,
+      "reporting_quarter": 3,
+      "reporting_period": "2023 Q3",
+      "comparative_year": 2022,
+      "report_period_end": "2023-09-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:25.675876+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q3-2023/cb35f79e369511f0a787c204a2f8334f"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Financial Statements Q3 2023",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q3-2023/cb35f79e369511f0a787c204a2f8334f",
+          "listed_date": "Oct 31, 2023",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 13,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income      \nClearing Corporation\nFinancial Statements (Unaudited) as of September 30, 2023 and  \nDecember 31, 2022 and for the three and nine months ended    \nSeptember 30, 2023 and 2022\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF SEPTEMBER 30, 2023 AND DECEMBER\n   31, 2022 AND FOR THE THREE AND NINE MONTHS ENDED SEPTEMBER 30, 2023 AND\n   2022:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 11\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Q2_2023.pdf",
+      "sha256": "3a19a586a315d560d1d466de040ef1f27447ed4737501610844abab559497388",
+      "bytes": 817658,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2023,
+      "reporting_quarter": 2,
+      "reporting_period": "2023 Q2",
+      "comparative_year": 2022,
+      "report_period_end": "2023-06-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:26.070348+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q2-2023/0bb70d1e369411f096905e09fb65ecc7"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Financial Statements Q2 2023",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q2-2023/0bb70d1e369411f096905e09fb65ecc7",
+          "listed_date": "Jul 28, 2023",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 13,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income      \nClearing Corporation\nFinancial Statements (Unaudited) as of June 30, 2023 and  \nDecember 31, 2022 and for the three and six months ended    \nJune 30, 2023 and 2022\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF JUNE 30, 2023 AND DECEMBER 31, 2022\n   AND FOR THE THREE AND SIX MONTHS ENDED JUNE 30, 2023 AND 2022:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 11\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Q1_2023.pdf",
+      "sha256": "37565e4e3c9355b769b9f9ad72030fdb0ecf2b84b5bc2360315fc68a65b199e9",
+      "bytes": 808279,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2023,
+      "reporting_quarter": 1,
+      "reporting_period": "2023 Q1",
+      "comparative_year": 2022,
+      "report_period_end": "2023-03-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:27.040139+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q1-2023/19aac4d4369311f096cf526112f6cc5f"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Financial Statements Q1 2023",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q1-2023/19aac4d4369311f096cf526112f6cc5f",
+          "listed_date": "Apr 28, 2023",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 13,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income      \nClearing Corporation\nFinancial Statements (Unaudited) as of March 31, 2023 and  \nDecember 31, 2022 and for the three months ended\nMarch 31, 2023 and 2022\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF MARCH 31, 2023 AND DECEMBER 31, \n2022 AND FOR THE THREE MONTHS ENDED MARCH 31, 2023 AND 2022:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 11\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Annual_2022_2021.pdf",
+      "sha256": "7b997cb982ff52d33d682b599146449427db7c68ffceea395a5bf9594cddf180",
+      "bytes": 1726560,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2022,
+      "reporting_quarter": 4,
+      "reporting_period": "2022/2021 Annual",
+      "comparative_year": 2021,
+      "report_period_end": "2022-12-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:27.474928+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Annual-Financial-Statements-2022-and-2021/58a75c30369611f0a96e92d5ae67c534"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Annual Financial Statements 2022 and 2021",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Annual-Financial-Statements-2022-and-2021/58a75c30369611f0a96e92d5ae67c534",
+          "listed_date": "Feb 28, 2023",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 23,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income      \nClearing Corporation\nFinancial Statements as of  and for the Years Ended \nDecember 31, 2022 and 2021, and Report of Independent \nRegistered Public Accounting Firm\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nREPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM\n1\nFINANCIAL STATEMENTS AS OF AND FOR THE YEARS ENDED\n  DECEMBER 31, 2022 AND 2021:\nStatements of Financial Condition 2\nStatements of Income 3\nStatements of Changes in Shareholder’s Equity 4\nStatements of Cash Flows 5\nNotes to Financial Statements 6 - 21\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Q3_2022.pdf",
+      "sha256": "8dedbd0a8436c71329646f26437d3d0b31a3cac44c6a62543f5d60b8b4f9a531",
+      "bytes": 834208,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2022,
+      "reporting_quarter": 3,
+      "reporting_period": "2022 Q3",
+      "comparative_year": 2021,
+      "report_period_end": "2022-09-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:27.582511+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q3-2022/5bf6f2a6369611f0ad831282bb7fa251"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Financial Statements Q3 2022",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q3-2022/5bf6f2a6369611f0ad831282bb7fa251",
+          "listed_date": "Oct 31, 2022",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 14,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income      \nClearing Corporation\nFinancial Statements (Unaudited) as of September 30, 2022 and \nDecember 31, 2021 and for the three and nine months ended            \nSeptember 30, 2022 and 2021\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF SEPTEMBER 30, 2022 AND DECEMBER \n31, 2021 AND FOR THE THREE AND NINE MONTHS ENDED SEPTEMBER 30, 2022 AND \n2021:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 12\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Q2_2022.pdf",
+      "sha256": "8e1b0a3ebb4627c5deb7ce0ee51ffa06907c195b0b61a35576753a56b8a4596a",
+      "bytes": 832849,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2022,
+      "reporting_quarter": 2,
+      "reporting_period": "2022 Q2",
+      "comparative_year": 2021,
+      "report_period_end": "2022-06-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:28.646187+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q2-2022/5f511026369611f091ee1282bb7fa251"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Financial Statements Q2 2022",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q2-2022/5f511026369611f091ee1282bb7fa251",
+          "listed_date": "Aug 1, 2022",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 14,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income      \nClearing Corporation\nFinancial Statements (Unaudited) as of June 30,2022 and \nDecember 31, 2021 and for the three and six months ended       \nJune 30, 2022 and 2021\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF JUNE 30, 2022 AND DECEMBER 31,\n 2021 AND FOR THE THREE AND SIX MONTHS ENDED JUNE 30, 2022 AND 2021:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 12\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Q1_2022.pdf",
+      "sha256": "82ba1b36c6073d42de25ba43bcc7f2842faa868708943cb42afe97c90cc08655",
+      "bytes": 737168,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2022,
+      "reporting_quarter": 1,
+      "reporting_period": "2022 Q1",
+      "comparative_year": 2021,
+      "report_period_end": "2022-03-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:29.447689+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q1-2022/5b138cbe369611f0b7631282bb7fa251"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Financial Statements Q1 2022",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q1-2022/5b138cbe369611f0b7631282bb7fa251",
+          "listed_date": "May 2, 2022",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 14,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income      \nClearing Corporation\nFinancial Statements (Unaudited) as of March 31,2022 and \nDecember 31, 2021 and for the three months ended            \nMarch 31, 2022 and 2021\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF MARCH 31, 2022 AND DECEMBER 31,\n 2021 AND FOR THE THREE MONTHS ENDED MARCH 31, 2022 AND 2021:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 12\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Annual_2021_2020.pdf",
+      "sha256": "23aba3c6ea6581b91fdb3c035202757a2838b85a3c0a0fcb9a45eddaa65d2127",
+      "bytes": 1845950,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2021,
+      "reporting_quarter": 4,
+      "reporting_period": "2021/2020 Annual",
+      "comparative_year": 2020,
+      "report_period_end": "2021-12-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:30.063473+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Annual-Financial-Statements-2021-and-2020/53e28dbe369611f09a6b820bd5ac0897"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Annual Financial Statements 2021 and 2020",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Annual-Financial-Statements-2021-and-2020/53e28dbe369611f09a6b820bd5ac0897",
+          "listed_date": "Mar 1, 2022",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 24,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income      \nClearing Corporation\nFinancial Statements as of and for the Years Ended      \nDecember 31, 2021 and 2020, and Report of Independent \nRegistered Public Accounting Firm\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nREPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM 1\nFINANCIAL STATEMENTS AS OF AND FOR THE YEARS ENDED\n  DECEMBER 31, 2021 AND 2020:\nStatements of Financial Condition 2\nStatements of Income 3\nStatements of Changes in Shareholder’s Equity 4\nStatements of Cash Flows 5\nNotes to Financial Statements 6 - 22\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Q3_2021.pdf",
+      "sha256": "b397b6b089fa50039f9ce1bf3dda5f9240f2b83e10baf3b7d2ae88aefca338e6",
+      "bytes": 797660,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2021,
+      "reporting_quarter": 3,
+      "reporting_period": "2021 Q3",
+      "comparative_year": 2020,
+      "report_period_end": "2021-09-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:30.672044+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q3-2021/7b4e7d68369611f093d0c204a2f8334f"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Financial Statements Q3 2021",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q3-2021/7b4e7d68369611f093d0c204a2f8334f",
+          "listed_date": "Oct 29, 2021",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 14,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income      \nClearing Corporation\nFinancial Statements (Unaudited) as of September 30, 2021 and \nDecember 31, 2020 and for the three and nine months ended \nSeptember 30, 2021 and 2020\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF SEPTEMBER 30, 2021 AND DECEMBER \n31, 2020 AND FOR THE THREE AND NINE MONTHS ENDED SEPTEMBER 30, 2021 AND \n2020:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 12\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Q2_2021.pdf",
+      "sha256": "31d6f16eac427a260cc780a5b222245999dfdc02bcd281696ccb7da31e45f5af",
+      "bytes": 794409,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2021,
+      "reporting_quarter": 2,
+      "reporting_period": "2021 Q2",
+      "comparative_year": 2020,
+      "report_period_end": "2021-06-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:30.813836+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q2-2021/54db61b4369611f096cf526112f6cc5f"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Financial Statements Q2 2021",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q2-2021/54db61b4369611f096cf526112f6cc5f",
+          "listed_date": "Jul 30, 2021",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 14,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income    \nClearing Corporation\nFinancial Statements (Unaudited) as of June 30, 2021 and \nDecember 31, 2020 and for the three and six months ended \nJune 30, 2021 and 2020\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF JUNE 30, 2021 AND DECEMBER 31,\n  2020 AND FOR THE THREE AND SIX MONTHS ENDED JUNE 30, 2021 AND 2020:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 12\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Q1_2021.pdf",
+      "sha256": "e404053d9afdc26c6e8c7ac4072a9b3b13130dcd676012aab541b65919ecd2f8",
+      "bytes": 784068,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2021,
+      "reporting_quarter": 1,
+      "reporting_period": "2021 Q1",
+      "comparative_year": 2020,
+      "report_period_end": "2021-03-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:31.737437+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Financial-Statements-2021-and-2020/f05fd82c369111f0b0f15e09fb65ecc7"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Financial Statement Q1 2021",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-2021-and-2020/f05fd82c369111f0b0f15e09fb65ecc7",
+          "listed_date": "Apr 30, 2021",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 14,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income    \nClearing Corporation\nFinancial Statements as of March 31, 2021 and \nDecember 31, 2020 and for the three months ended \nMarch 31, 2021 and 2020\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF MARCH 31, 2021 AND DECEMBER 31,\n  2020 AND FOR THE THREE MONTHS ENDED MARCH 31, 2021 AND 2020:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 12\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Annual_2020_2019.pdf",
+      "sha256": "8b52b4de13adebf3ce4dd7e59c4efa38e95b111d651d0d7d016b14fc4377aec5",
+      "bytes": 1142411,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2020,
+      "reporting_quarter": 4,
+      "reporting_period": "2020/2019 Annual",
+      "comparative_year": 2019,
+      "report_period_end": "2020-12-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:32.370738+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Annual-Financial-Statements-2020-and-2019/c2a0b808369511f09a845e09fb65ecc7"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Financial Statements 2020 and 2019",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Annual-Financial-Statements-2020-and-2019/c2a0b808369511f09a845e09fb65ecc7",
+          "listed_date": "Mar 1, 2021",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 24,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income    \nClearing Corporation\nFinancial Statements as of and for the Years Ended \nDecember 31, 2020 and 2019, and Report of Independent \nRegistered Public Accounting Firm\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nREPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM 1\nFINANCIAL STATEMENTS AS OF AND FOR THE YEARS ENDED\n  DECEMBER 31, 2020 AND 2019:\nStatements of Financial Condition 2\nStatements of Income 3\nStatements of Changes in Shareholder’s Equity 4\nStatements of Cash Flows 5\nNotes to Financial Statements 6 - 22\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/FICC_Q4_2020.pdf",
+      "sha256": "a833531cda376edfe9d62dff2cdd191fddf1ac06e710ab143d4ad6df2b515b32",
+      "bytes": 814711,
+      "actual_format": "pdf",
+      "actual_entity": "FICC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2020,
+      "reporting_quarter": 4,
+      "reporting_period": "2020 Q4",
+      "comparative_year": 2019,
+      "report_period_end": "2020-12-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:32.164629+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q4-2020/59527746369611f0bcd7820bd5ac0897"
+      ],
+      "source_listing_records": [
+        {
+          "title": "FICC Financial Statements Q4 2020",
+          "download_url": "https://files.dtcc.com/download/assets/FICC-Financial-Statements-Q4-2020/59527746369611f0bcd7820bd5ac0897",
+          "listed_date": "Mar 1, 2021",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 15,
+      "sheet_names": null,
+      "cover_excerpt": "Fixed Income    \nClearing Corporation\nAudited Financial Statements as of and for the Years Ended \nDecember 31, 2020 and 2019, and Unaudited Condensed for \nthe three Months Ended December 31, 2020 and 2019\nDTCC Public (White) FIXED INCOME CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nAUDITED FINANCIAL STATEMENTS AS OF AND FOR THE YEARS ENDED\n  DECEMBER 31, 2020 AND 2019, AND UNAUDITED CONDENSED FOR THE THREE\n  MONTHS ENDED DECEMBER 31, 2020 AND 2019:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 13\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/NSCC_Q2_2026.pdf",
+      "sha256": "c8fb71841dd187bdc902b7053f76b289fb3ce55a925ba1c7e390a110af62c900",
+      "bytes": 614734,
+      "actual_format": "pdf",
+      "actual_entity": "NSCC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2026,
+      "reporting_quarter": 2,
+      "reporting_period": "2026 Q2",
+      "comparative_year": 2025,
+      "report_period_end": "2026-06-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T17:24:06.656284+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/NSCC+Q2+2026+Financial+Statements/1143c522957c11f1ac53c258faf12821"
+      ],
+      "source_listing_records": [
+        {
+          "title": "NSCC Financial Statements Q2 2026",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC+Q2+2026+Financial+Statements/1143c522957c11f1ac53c258faf12821",
+          "listed_date": "Jul 30, 2026",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 19,
+      "sheet_names": null,
+      "cover_excerpt": "National Securities \nClearing Corporation\nFinancial Statements (Unaudited) as of June 30, 2026 and \nDecember 31, 2025 and for the three and six months ended\nJune 30, 2026 and 2025\nDTCC Public (White) NATIONAL SECURITIES CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF JUNE 30, 2026 AND DECEMBER 31,\n   2025 AND FOR THE THREE AND SIX MONTHS ENDED JUNE 30, 2026 AND 2025:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5-17\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/NSCC_Q1_2026.pdf",
+      "sha256": "d7d4f5ddde57b95ac0039aaa632175388f0a93a70ad99821a1bfb4b9f3c2f029",
+      "bytes": 755625,
+      "actual_format": "pdf",
+      "actual_entity": "NSCC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2026,
+      "reporting_quarter": 1,
+      "reporting_period": "2026 Q1",
+      "comparative_year": 2025,
+      "report_period_end": "2026-03-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T17:24:07.407246+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/NSCC-Q1-2026-Financial-Statements.pdf/32bd4e908c1b11f1b385da7b8d447cd5"
+      ],
+      "source_listing_records": [
+        {
+          "title": "NSCC Financial Statements Q1 2026",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC-Q1-2026-Financial-Statements.pdf/32bd4e908c1b11f1b385da7b8d447cd5",
+          "listed_date": "Apr 30, 2026",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 18,
+      "sheet_names": null,
+      "cover_excerpt": "National Securities \nClearing Corporation\nFinancial Statements (Unaudited) as of March 31, 2026 and \nDecember 31, 2025 and for the three months ended\nMarch 31, 2026 and 2025\nDTCC Public (White) NATIONAL SECURITIES CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF MARCH 31, 2026 AND DECEMBER 31,\n   2025 AND FOR THE THREE MONTHS ENDED MARCH 31, 2026 AND 2025:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5-16\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/NSCC_Q3_2025.pdf",
+      "sha256": "6b95725b504cbce415e8f5754e630f0a0985f49d638c66d592daf27d1be60800",
+      "bytes": 870127,
+      "actual_format": "pdf",
+      "actual_entity": "NSCC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2025,
+      "reporting_quarter": 3,
+      "reporting_period": "2025 Q3",
+      "comparative_year": 2024,
+      "report_period_end": "2025-09-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:20.834405+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q3-2025/08ca0feeceaf11f0b26932bd0f351ae2"
+      ],
+      "source_listing_records": [
+        {
+          "title": "NSCC Financial Statements Q3 2025",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q3-2025/08ca0feeceaf11f0b26932bd0f351ae2",
+          "listed_date": "Oct 30, 2025",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 17,
+      "sheet_names": null,
+      "cover_excerpt": "National Securities \nClearing Corporation\nFinancial Statements (Unaudited) as of September 30, 2025 and \nDecember 31, 2024 and for the three and nine months ended\nSeptember 30, 2025 and 2024\nDTCC Public (White) NATIONAL SECURITIES CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF SEPTEMBER 30, 2025 AND DECEMBER\n   31, 2024 AND FOR THE THREE AND NINE MONTHS ENDED SEPTEMBER 30, 2025 AND\n   2024:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5-15\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/NSCC_Q2_2025.pdf",
+      "sha256": "a684566cc63c053aaf26258fed5d9d85d0ec0b475f6b9f2f0b4ca004c383d3f7",
+      "bytes": 864585,
+      "actual_format": "pdf",
+      "actual_entity": "NSCC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2025,
+      "reporting_quarter": 2,
+      "reporting_period": "2025 Q2",
+      "comparative_year": 2024,
+      "report_period_end": "2025-06-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:21.143796+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q2-2025/0633b73aceaf11f0a4824e47afc2fc16"
+      ],
+      "source_listing_records": [
+        {
+          "title": "NSCC Financial Statements Q2 2025",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q2-2025/0633b73aceaf11f0a4824e47afc2fc16",
+          "listed_date": "Jul 31, 2025",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 17,
+      "sheet_names": null,
+      "cover_excerpt": "National Securities \nClearing Corporation\nFinancial Statements (Unaudited) as of June 30, 2025 and \nDecember 31, 2024 and for the three and six months ended\nJune 30, 2025 and 2024\nDTCC Public (White) NATIONAL SECURITIES CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nF FINANCIAL STATEMENTS (UNAUDITED) AS OF JUNE 30, 2025 AND DECEMBER 31,\n      2024 AND FOR THE THREE AND SIX MONTHS ENDED JUNE 30, 2025 AND 2024:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5-15\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/NSCC_Q1_2025.pdf",
+      "sha256": "f6ddf478a7049400de66033c3d6501eb91bed15598831d4f225074c0775a1680",
+      "bytes": 853822,
+      "actual_format": "pdf",
+      "actual_entity": "NSCC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2025,
+      "reporting_quarter": 1,
+      "reporting_period": "2025 Q1",
+      "comparative_year": 2024,
+      "report_period_end": "2025-03-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:22.125208+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q1-2025/03d27378ceaf11f086ef824dba2f033c"
+      ],
+      "source_listing_records": [
+        {
+          "title": "NSCC Financial Statements Q1 2025",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q1-2025/03d27378ceaf11f086ef824dba2f033c",
+          "listed_date": "Apr 30, 2025",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 16,
+      "sheet_names": null,
+      "cover_excerpt": "National Securities \nClearing Corporation\nFinancial Statements (Unaudited) as of March 31, 2025 and \nDecember 31, 2024 and for the three months ended\nMarch 31, 2025 and 2024\nDTCC Public (White) NATIONAL SECURITIES CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nF FINANCIAL STATEMENTS (UNAUDITED) AS OF MARCH 31, 2025 AND DECEMBER 31,\n      2024 AND FOR THE THREE MONTHS ENDED MARCH 31, 2025 AND 2024:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5-14\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/NSCC_Annual_2024_2023.pdf",
+      "sha256": "66b4861c3f1177e694d98ce8bca27017f2880f071ca09a45d50257b463b4a3d4",
+      "bytes": 995840,
+      "actual_format": "pdf",
+      "actual_entity": "NSCC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2024,
+      "reporting_quarter": 4,
+      "reporting_period": "2024/2023 Annual",
+      "comparative_year": 2023,
+      "report_period_end": "2024-12-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T17:24:08.410846+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Annual-2024/a256a1ce369b11f0b16f526112f6cc5f"
+      ],
+      "source_listing_records": [
+        {
+          "title": "NSCC Annual Financial Statements 2024 and 2023",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Annual-2024/a256a1ce369b11f0b16f526112f6cc5f",
+          "listed_date": "Feb 28, 2025",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 27,
+      "sheet_names": null,
+      "cover_excerpt": "National Securities \nClearing Corporation\nFinancial Statements as of and for the Years Ended \nDecember 31, 2024 and 2023, and Report of Independent \nRegistered Public Accounting Firm\nDTCC Public (White) NATIONAL SECURITIES CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nREPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM 1\nF FINANCIAL STATEMENTS AS OF AND FOR THE YEARS ENDED\n      DECEMBER 31, 2024 AND 2023:\nStatements of Financial Condition 2\nStatements of Income 3\nStatements of Changes in Shareholder’s Equity 4\nStatements of Cash Flows 5\nNotes to Financial Statements 6-25\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/NSCC_Q2_2024.pdf",
+      "sha256": "3a77c59d57055d1ccbd24ce223a4da0502a84da3488092bd9a511f5db925baa0",
+      "bytes": 851256,
+      "actual_format": "pdf",
+      "actual_entity": "NSCC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2024,
+      "reporting_quarter": 2,
+      "reporting_period": "2024 Q2",
+      "comparative_year": 2023,
+      "report_period_end": "2024-06-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:23.809297+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q2-2024/ff4f2178369911f09182820bd5ac0897"
+      ],
+      "source_listing_records": [
+        {
+          "title": "NSCC Financial Statements Q2 2024",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q2-2024/ff4f2178369911f09182820bd5ac0897",
+          "listed_date": "Jul 26, 2024",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 16,
+      "sheet_names": null,
+      "cover_excerpt": "National Securities \nClearing Corporation\nFinancial Statements (Unaudited) as of June 30, 2024 and \nDecember 31, 2023 and for the three and six months ended\nJune 30, 2024 and 2023\nDTCC Public (White) NATIONAL SECURITIES CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nF FINANCIAL STATEMENTS (UNAUDITED) AS OF JUNE 30, 2024 AND DECEMBER 31,     \n     2023 AND FOR THE THREE AND SIX MONTHS ENDED JUNE 30, 2024 AND 2023:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 14\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/NSCC_Q1_2024.pdf",
+      "sha256": "0bd8a606e87688e9940c02910df87162cd6a5b75cbaaa650061eaafdf534eb9c",
+      "bytes": 841899,
+      "actual_format": "pdf",
+      "actual_entity": "NSCC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2024,
+      "reporting_quarter": 1,
+      "reporting_period": "2024 Q1",
+      "comparative_year": 2023,
+      "report_period_end": "2024-03-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:24.672797+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q1-2024/e5260f06369811f09a6b820bd5ac0897"
+      ],
+      "source_listing_records": [
+        {
+          "title": "NSCC Financial Statements Q1 2024",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q1-2024/e5260f06369811f09a6b820bd5ac0897",
+          "listed_date": "Apr 26, 2024",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 16,
+      "sheet_names": null,
+      "cover_excerpt": "National Securities \nClearing Corporation\nFinancial Statements (Unaudited) as of March 31, 2024 and \nDecember 31, 2023 and for the three months ended\nMarch 31, 2024 and 2023\nDTCC Public (White) NATIONAL SECURITIES CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nF FINANCIAL STATEMENTS (UNAUDITED) AS OF MARCH 31, 2024 AND DECEMBER 31,     \n     2023 AND FOR THE THREE MONTHS ENDED MARCH 31, 2024 AND 2023:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 14\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/NSCC_Annual_2023_2022.pdf",
+      "sha256": "e310540a282a286e66a6231acc92850a93e5c6b657aa47e9947f2d708c5b84de",
+      "bytes": 963332,
+      "actual_format": "pdf",
+      "actual_entity": "NSCC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2023,
+      "reporting_quarter": 4,
+      "reporting_period": "2023/2022 Annual",
+      "comparative_year": 2022,
+      "report_period_end": "2023-12-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:24.845710+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/NSCC-Annual-Financial-Statements-2023-and-2022/fc0e83dc369911f09182820bd5ac0897"
+      ],
+      "source_listing_records": [
+        {
+          "title": "NSCC Annual Financial Statements 2023 and 2022",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC-Annual-Financial-Statements-2023-and-2022/fc0e83dc369911f09182820bd5ac0897",
+          "listed_date": "Mar 1, 2024",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 26,
+      "sheet_names": null,
+      "cover_excerpt": "National Securities \nClearing Corporation\nFinancial Statements as of and for the Years Ended\nDecember 31, 2023 and 2022, and Report of Independent \nRegistered Public Accounting Firm\nDTCC Public (White) NATIONAL SECURITIES CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nREPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM 1\nF FINANCIAL STATEMENTS AS OF AND FOR THE YEARS ENDED \n     DECEMBER 31, 2023 AND 2022:\nStatements of Financial Condition 2\nStatements of Income 3\nStatements of Changes in Shareholder’s Equity 4\nStatements of Cash Flows 5\nNotes to Financial Statements 6 - 24\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/NSCC_Q3_2023.pdf",
+      "sha256": "940c70474517af68e0a6d29d640135887fec94701671d2c2f0fb9be030cab242",
+      "bytes": 709387,
+      "actual_format": "pdf",
+      "actual_entity": "NSCC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2023,
+      "reporting_quarter": 3,
+      "reporting_period": "2023 Q3",
+      "comparative_year": 2022,
+      "report_period_end": "2023-09-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:25.422767+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q3-2023/149c381e369411f09a845e09fb65ecc7"
+      ],
+      "source_listing_records": [
+        {
+          "title": "NSCC Financial Statements Q3 2023",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q3-2023/149c381e369411f09a845e09fb65ecc7",
+          "listed_date": "Oct 31, 2023",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 16,
+      "sheet_names": null,
+      "cover_excerpt": "National Securities \nClearing Corporation\nFinancial Statements (Unaudited) as of September 30, 2023 and\nDecember 31, 2022 and for the three and nine months ended  \nSeptember 30, 2023 and 2022\n \nDTCC Public (White) NATIONAL SECURITIES CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nF FINANCIAL STATEMENTS (UNAUDITED) AS OF SEPTEMBER 30, 2023 AND DECEMBER\n      31, 2022 AND FOR THE THREE AND NINE MONTHS ENDED SEPTEMBER 30, 2023 AND\n      2022:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 14\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/NSCC_Q2_2023.pdf",
+      "sha256": "6d9fa71bf26345a3350393d717265927915439fced5e69a33e6ef4f00f28bb31",
+      "bytes": 843121,
+      "actual_format": "pdf",
+      "actual_entity": "NSCC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2023,
+      "reporting_quarter": 2,
+      "reporting_period": "2023 Q2",
+      "comparative_year": 2022,
+      "report_period_end": "2023-06-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:26.282372+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q2-2023/d60785f6369111f096905e09fb65ecc7"
+      ],
+      "source_listing_records": [
+        {
+          "title": "NSCC Financial Statements Q2 2023",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q2-2023/d60785f6369111f096905e09fb65ecc7",
+          "listed_date": "Jul 28, 2023",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 16,
+      "sheet_names": null,
+      "cover_excerpt": "National Securities \nClearing Corporation\nFinancial Statements (Unaudited) as of June 30, 2023 and\nDecember 31, 2022 and for the three and six months ended  \nJune 30, 2023 and 2022\nDTCC Public (White) NATIONAL SECURITIES CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nF FINANCIAL STATEMENTS (UNAUDITED) AS OF JUNE 30, 2023 AND DECEMBER 31, 2022\n      AND FOR THE THREE AND SIX MONTHS ENDED JUNE 30, 2023 AND 2022:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 14\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/NSCC_Q1_2023.pdf",
+      "sha256": "538ff5a6a46e22d5540040b20390f77e331296fa07b5148623b6a2f3e90182d3",
+      "bytes": 827297,
+      "actual_format": "pdf",
+      "actual_entity": "NSCC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2023,
+      "reporting_quarter": 1,
+      "reporting_period": "2023 Q1",
+      "comparative_year": 2022,
+      "report_period_end": "2023-03-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:26.612051+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q1-2023/2fef7516369611f09a845e09fb65ecc7"
+      ],
+      "source_listing_records": [
+        {
+          "title": "NSCC Financial Statements Q1 2023",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q1-2023/2fef7516369611f09a845e09fb65ecc7",
+          "listed_date": "Apr 28, 2023",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 15,
+      "sheet_names": null,
+      "cover_excerpt": "National Securities \nClearing Corporation\nFinancial Statements (Unaudited) as of March 31, 2023 and\nDecember 31, 2022 and for the three months ended             \nMarch 31, 2023 and 2022\nDTCC Public (White) NATIONAL SECURITIES CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nF FINANCIAL STATEMENTS (UNAUDITED) AS OF MARCH 31, 2023 AND DECEMBER 31, \n2022 AND FOR THE THREE MONTHS ENDED MARCH 31, 2023 AND 2022:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 13\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/NSCC_Annual_2022_2021.pdf",
+      "sha256": "5c7528c757d09937ce57814850c4bbbfef25098794aec12a3d83ef7b8ba4aab2",
+      "bytes": 1716418,
+      "actual_format": "pdf",
+      "actual_entity": "NSCC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2022,
+      "reporting_quarter": 4,
+      "reporting_period": "2022/2021 Annual",
+      "comparative_year": 2021,
+      "report_period_end": "2022-12-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:27.610203+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/NSCC-Annual-Financial-Statements-2022-and-2021/c2a339fc369a11f0b16f526112f6cc5f"
+      ],
+      "source_listing_records": [
+        {
+          "title": "NSCC Annual Financial Statements 2022 and 2021",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC-Annual-Financial-Statements-2022-and-2021/c2a339fc369a11f0b16f526112f6cc5f",
+          "listed_date": "Feb 28, 2023",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 26,
+      "sheet_names": null,
+      "cover_excerpt": "National Securities \nClearing Corporation\nFinancial Statements as of and for the Years Ended \nDecember 31, 2022 and 2021, and Report of Independent \nRegistered Public Accounting Firm\n \nDTCC Public (White) NATIONAL SECURITIES CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nREPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM 1\nFINANCIAL STATEMENTS AS OF AND FOR THE YEARS ENDED \n  DECEMBER 31, 2022 AND 2021:\nStatements of Financial Condition 2\nStatements of Income 3\nStatements of Changes in Shareholder’s Equity 4\nStatements of Cash Flows 5\nNotes to Financial Statements 6 - 24\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/NSCC_Q3_2022.pdf",
+      "sha256": "d8a0d12638a38aeae440ae9ba99b95d8397e180b1325d3b18e4a58dd6e1078be",
+      "bytes": 846551,
+      "actual_format": "pdf",
+      "actual_entity": "NSCC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2022,
+      "reporting_quarter": 3,
+      "reporting_period": "2022 Q3",
+      "comparative_year": 2021,
+      "report_period_end": "2022-09-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:28.078335+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q3-2022/55c442ac369211f091ee1282bb7fa251"
+      ],
+      "source_listing_records": [
+        {
+          "title": "NSCC Financial Statements Q3 2022",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q3-2022/55c442ac369211f091ee1282bb7fa251",
+          "listed_date": "Oct 31, 2022",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 15,
+      "sheet_names": null,
+      "cover_excerpt": "National Securities \nClearing Corporation\nFinancial Statements (Unaudited) as of September 30, 2022 and\nDecember 31, 2021 and for the three and nine months ended\nSeptember 30, 2022 and 2021\nDTCC Public (White) NATIONAL SECURITIES CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF SEPTEMBER 30, 2022 AND DECEMBER \n31, 2021 AND FOR THE THREE AND NINE MONTHS ENDED SEPTEMBER 30, 2022 AND \n2021:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 13\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/NSCC_Q2_2022.pdf",
+      "sha256": "b123d2e697a33a98cd766e5593662d8dfed948d305183395e56d008749d40273",
+      "bytes": 846402,
+      "actual_format": "pdf",
+      "actual_entity": "NSCC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2022,
+      "reporting_quarter": 2,
+      "reporting_period": "2022 Q2",
+      "comparative_year": 2021,
+      "report_period_end": "2022-06-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:28.670858+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q2-2022/34dadf8e369611f09b43c204a2f8334f"
+      ],
+      "source_listing_records": [
+        {
+          "title": "NSCC Financial Statements Q2 2022",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q2-2022/34dadf8e369611f09b43c204a2f8334f",
+          "listed_date": "Aug 1, 2022",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 15,
+      "sheet_names": null,
+      "cover_excerpt": "National Securities \nClearing Corporation\nFinancial Statements (Unaudited) as of June 30, 2022 and\nDecember 31, 2021 and for the three and six months ended\nJune 30, 2022 and 2021\nDTCC Public (White) NATIONAL SECURITIES CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF JUNE 30, 2022 AND DECEMBER 31, 2021 \nAND FOR THE THREE AND SIX MONTHS ENDED JUNE 30, 2022 AND 2021:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 13\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/NSCC_Q1_2022.pdf",
+      "sha256": "afed20a9d9d44edc1b6451119d8b49d3dc60faac3747e88c6a0e9663a835ca6e",
+      "bytes": 721759,
+      "actual_format": "pdf",
+      "actual_entity": "NSCC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2022,
+      "reporting_quarter": 1,
+      "reporting_period": "2022 Q1",
+      "comparative_year": 2021,
+      "report_period_end": "2022-03-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:29.436749+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q1-2022/3aa39344369511f09182820bd5ac0897"
+      ],
+      "source_listing_records": [
+        {
+          "title": "NSCC Financial Statements Q1 2022",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q1-2022/3aa39344369511f09182820bd5ac0897",
+          "listed_date": "May 2, 2022",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 15,
+      "sheet_names": null,
+      "cover_excerpt": "National Securities \nClearing Corporation\nFinancial Statements (Unaudited) as of March 31, 2022 and\nDecember 31, 2021 and for the three months ended\nMarch 31, 2022 and 2021\nDTCC Public (White) NATIONAL SECURITIES CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF MARCH 31, 2022 AND DECEMBER 31, \n2021 AND FOR THE THREE MONTHS ENDED MARCH 31, 2022 AND 2021:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 13\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/NSCC_Annual_2021_2020.pdf",
+      "sha256": "c796fc45d6b952326f700a2b2916b0dc290c8e4659e60e7718d8df98486808e9",
+      "bytes": 1869003,
+      "actual_format": "pdf",
+      "actual_entity": "NSCC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2021,
+      "reporting_quarter": 4,
+      "reporting_period": "2021/2020 Annual",
+      "comparative_year": 2020,
+      "report_period_end": "2021-12-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:29.680185+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/NSCC-Annual-Financial-Statements-2021-and-2020/713a8d42369311f0bf68c204a2f8334f"
+      ],
+      "source_listing_records": [
+        {
+          "title": "NSCC Annual Financial Statements 2021 and 2020",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC-Annual-Financial-Statements-2021-and-2020/713a8d42369311f0bf68c204a2f8334f",
+          "listed_date": "Mar 1, 2022",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 26,
+      "sheet_names": null,
+      "cover_excerpt": "National Securities \nClearing Corporation\nFinancial Statements as of and for the Years Ended     \nDecember 31, 2021 and 2020, and Report of Independent \nRegistered Public Accounting Firm\n \nDTCC Public (White) NATIONAL SECURITIES CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nREPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM 1\nFINANCIAL STATEMENTS AS OF AND FOR THE YEARS ENDED \n  DECEMBER 31, 2021 AND 2020: \nStatements of Financial Condition 2\nStatements of Income 3\nStatements of Changes in Shareholder’s Equity 4\nStatements of Cash Flows 5\nNotes to Financial Statements 6 - 24\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/NSCC_Q2_2021.pdf",
+      "sha256": "318e2407b2ebbd6142043dedff0815d62289244925bccc3d63f67be17f87e6e0",
+      "bytes": 808768,
+      "actual_format": "pdf",
+      "actual_entity": "NSCC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2021,
+      "reporting_quarter": 2,
+      "reporting_period": "2021 Q2",
+      "comparative_year": 2020,
+      "report_period_end": "2021-06-30",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:31.111015+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q2-2021/32f362a4369611f0a96e92d5ae67c534"
+      ],
+      "source_listing_records": [
+        {
+          "title": "NSCC Financial Statements Q2 2021",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-Q2-2021/32f362a4369611f0a96e92d5ae67c534",
+          "listed_date": "Jul 30, 2021",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 15,
+      "sheet_names": null,
+      "cover_excerpt": "National Securities \nClearing Corporation\nFinancial Statements (Unaudited) as of June 30, 2021 and \nDecember 31, 2020 and for the three and six months ended \nJune 30, 2021 and 2020\nDTCC Public (White) NATIONAL SECURITIES CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF JUNE 30, 2021 AND DECEMBER 31,\n  2020 AND FOR THE THREE AND SIX MONTHS ENDED JUNE 30, 2021 AND 2020:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 13\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/NSCC_Q1_2021.pdf",
+      "sha256": "f6824ae623f7c290ad05d0fffed4d43bf15cc59a66601babe6c39a6a4ce66186",
+      "bytes": 797565,
+      "actual_format": "pdf",
+      "actual_entity": "NSCC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2021,
+      "reporting_quarter": 1,
+      "reporting_period": "2021 Q1",
+      "comparative_year": 2020,
+      "report_period_end": "2021-03-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:31.497180+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-2021-and-2020/6ee8d22e369311f09d3a92d5ae67c534"
+      ],
+      "source_listing_records": [
+        {
+          "title": "NSCC Financial Statement Q1 2021",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC-Financial-Statements-2021-and-2020/6ee8d22e369311f09d3a92d5ae67c534",
+          "listed_date": "Apr 30, 2021",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 15,
+      "sheet_names": null,
+      "cover_excerpt": "National Securities \nClearing Corporation\nFinancial Statements as of March 31, 2021 and \nDecember 31, 2020 and for the three months ended \nMarch 31, 2021 and 2020\nDTCC Public (White) NATIONAL SECURITIES CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nFINANCIAL STATEMENTS (UNAUDITED) AS OF MARCH 31, 2021 AND DECEMBER 31,\n  2020 AND FOR THE THREE MONTHS ENDED MARCH 31, 2021 AND 2020:\nStatements of Financial Condition 1\nStatements of Income 2\nStatements of Changes in Shareholder’s Equity 3\nStatements of Cash Flows 4\nNotes to Financial Statements 5 - 13\nDTCC Public (White)"
+    },
+    {
+      "file": "financial_statements/NSCC_Annual_2020_2019.pdf",
+      "sha256": "3554b17d65633b2cdbac5053bf98e0df589213f00e7be81dd9ec28c7cde61705",
+      "bytes": 1166777,
+      "actual_format": "pdf",
+      "actual_entity": "NSCC",
+      "document_kind": "financial_statements",
+      "reporting_year": 2020,
+      "reporting_quarter": 4,
+      "reporting_period": "2020/2019 Annual",
+      "comparative_year": 2019,
+      "report_period_end": "2020-12-31",
+      "collection_timestamps_utc": [
+        "2026-10-05T18:17:32.296004+00:00"
+      ],
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/NSCC-Annual-Financial-Statements-2020-and-2019/3ba14682369611f0aeb3820bd5ac0897"
+      ],
+      "source_listing_records": [
+        {
+          "title": "NSCC Financial Statements 2020 and 2019",
+          "download_url": "https://files.dtcc.com/download/assets/NSCC-Annual-Financial-Statements-2020-and-2019/3ba14682369611f0aeb3820bd5ac0897",
+          "listed_date": "Mar 1, 2021",
+          "format": "pdf",
+          "category": "financial_statements",
+          "metadata_issues": [],
+          "listing_matches_document": true
+        }
+      ],
+      "usable_for_requested_business": true,
+      "scope": "Legal entity; not a standalone ECS segment",
+      "verification": "Original file format, readability/integrity, entity and reporting period checked",
+      "pages": 27,
+      "sheet_names": null,
+      "cover_excerpt": "National Securities \nClearing Corporation\nFinancial Statements as of and for the Years Ended \nDecember 31, 2020 and 2019, and Report of Independent \nRegistered Public Accounting Firm\nDTCC Public (White) NATIONAL SECURITIES CLEARING CORPORATION\nTABLE OF CONTENTS\nPage\nREPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM 1\nFINANCIAL STATEMENTS AS OF AND FOR THE YEARS ENDED\n  DECEMBER 31, 2020 AND 2019:\nStatements of Financial Condition 2\nStatements of Income 3\nStatements of Changes in Shareholder’s Equity 4\nStatements of Cash Flows 5\nNotes to Financial Statements 6 - 25\nDTCC Public (White)"
+    }
+  ],
+  "raw_pdf_location_note": "Original PDFs are preserved in the parent project; this package carries processed financial inputs and source provenance, not duplicate PDFs."
+}

@@ -1,0 +1,24 @@
+{
+  "reviewed_figures": [
+    {
+      "file": "results/figures/expanded_risk_signal_history.png",
+      "sha256": "ecc38a6e91c159bb3c56b05e6e2e0b59ea315098406efbe3c7be2b05a7d62c6c"
+    },
+    {
+      "file": "results/figures/same_vs_next_quarter_associations.png",
+      "sha256": "342df8d483ab1870678de7a5c199b5ee98b004ac9992e3f9921232c27f4cba91"
+    },
+    {
+      "file": "results/figures/twelve_family_revenue_heatmap.png",
+      "sha256": "d215f7d090b02fe3133bff29fdbeee55589dd2aee3bb8355675715995ef4d1ae"
+    }
+  ],
+  "reviewed_at_utc": "2026-10-06T00:40:50.976459+00:00",
+  "layout_issues_remaining": 0,
+  "observed_checks": [
+    "Heatmap labels, coefficients, sample counts and two missing DTC cells inspected; footer overlap repaired and final image re-inspected.",
+    "Same/next-quarter chart inspected for readable category labels, distinct colors, zero line and retrospective caveat.",
+    "Risk history inspected for source units, visible early missing data and the missing PQD quarter gap."
+  ],
+  "scope": "Local PNG visual inspection; no full HTML/browser review."
+}

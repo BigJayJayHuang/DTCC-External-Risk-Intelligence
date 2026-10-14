@@ -1,0 +1,275 @@
+{
+  "pqd_workbooks": [
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2026_Q2.xlsx",
+      "sha256": "3eac77a44ac19d2debf723574bdc52e91e323387f0bc75d8a7820ef0fd502691",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T17:24:08.195513+00:00"
+      ],
+      "reporting_period": "2026 Q2"
+    },
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2026_Q1.xlsx",
+      "sha256": "c298485c2c2289ecd521885ef83e945b1fe4fd995667c35292627860fec7df92",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTCC-PQD-026Q1.xlsx/6f3986768c1c11f1897116f61497a0ac",
+        "https://files.dtcc.com/download/assets/DTCC-PQD-026Q1/cf4db142957a11f199296a7a18072738"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T17:24:08.320131+00:00",
+        "2026-10-05T18:18:43.688025+00:00"
+      ],
+      "reporting_period": "2026 Q1"
+    },
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2025_Q4.xlsx",
+      "sha256": "06d41f277a97d4e578d88660dfd363cbdabc6e8f6062bbdf5df4e1fae5019764",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/CPMI-IOSCO+Public+Quantitative+Disclosures+-+Q4+2025+excel/7c70ac18957a11f1ab3f4ec37e043074"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T17:24:08.857334+00:00"
+      ],
+      "reporting_period": "2025 Q4"
+    },
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2025_Q3.xlsx",
+      "sha256": "6f100c4cab708dbaceb2ae3ac2eedac00903020cb3d6c8d041853d43dfa505ba",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTCC_PQD_2025Q3/e1223740957e11f190d7a2e4b146feca"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T18:18:43.991005+00:00"
+      ],
+      "reporting_period": "2025 Q3"
+    },
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2025_Q2.xlsx",
+      "sha256": "db9e3f261e4f2ef56ce16ca043237c6825374c2c0791b33911140073af867eda",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTCC-PQD-2025Q2/dbce3fb0cea911f0931632bd0f351ae2"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T18:18:44.029588+00:00"
+      ],
+      "reporting_period": "2025 Q2"
+    },
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2025_Q1.xlsx",
+      "sha256": "bfe1930c7e07c97fbc9a0468b7ce3ac078b3f24ba4f4b9f7d2c3b70a063cd675",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTCC-PQD-2025Q1/d94aae4acea911f0896d32bd0f351ae2"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T18:18:44.082042+00:00"
+      ],
+      "reporting_period": "2025 Q1"
+    },
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2024_Q3.xlsx",
+      "sha256": "7885bb7b5f85dfbfb278bb07e636c60a66177ccfefdbd06e7a3b03d820ad16ee",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-xl-2024-Q3/a5a516aa369911f0bf68c204a2f8334f"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T18:18:44.319600+00:00"
+      ],
+      "reporting_period": "2024 Q3"
+    },
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2024_Q2.xlsx",
+      "sha256": "dce3803601ae6a1ef14bd3ac7d233f36187c8d46d6c22a3a68b85b02dfdf7a67",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTCC-PQD-2024Q2/727ab8b8369211f09d3a92d5ae67c534"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T18:18:44.315458+00:00"
+      ],
+      "reporting_period": "2024 Q2"
+    },
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2024_Q1.xlsx",
+      "sha256": "88e51f790b86e305c376f6639feb68d9496b9e17163b4aeb1eb9ff29211c8990",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTCC-PQD-2024Q1/ef1ce6c6369111f086be1282bb7fa251"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T18:18:44.432556+00:00"
+      ],
+      "reporting_period": "2024 Q1"
+    },
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2023_Q4.xlsx",
+      "sha256": "bd6f0058ff2771a6af6d6c4877eb86c21bc39d9a6def6b84de63d32561e6076d",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTCC_PQD_2023Q4/ded45e40369411f09d3a92d5ae67c534"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T18:18:44.506438+00:00"
+      ],
+      "reporting_period": "2023 Q4"
+    },
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2023_Q3.xlsx",
+      "sha256": "58afa72fd733ff0f346503aaf0cb668e16dad04a908dd5637da725e123307ccf",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTCC-PQD-2023Q3/215a13e6369911f09d3a92d5ae67c534"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T18:18:44.539056+00:00"
+      ],
+      "reporting_period": "2023 Q3"
+    },
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2023_Q2.xlsx",
+      "sha256": "8c3a6abdf15e48c9509913894ef605f44244bba12a2ba96fa76cadcdc6313acc",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/CPMI_IOSCO_Quantitative_Disclosure_Results_2023_Q2-2/a72d7634369911f09a845e09fb65ecc7"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T18:18:44.560300+00:00"
+      ],
+      "reporting_period": "2023 Q2"
+    },
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2023_Q1.xlsx",
+      "sha256": "4ccaa3f84cd09ee8bf4b9a6e7a4b01e381c606ab5d44e3a8673ee320353ccc6b",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTCC-PQD-2023-Q1/6c074810369311f09a845e09fb65ecc7"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T18:18:44.658809+00:00"
+      ],
+      "reporting_period": "2023 Q1"
+    },
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2022_Q4.xlsx",
+      "sha256": "0c9744f3795b692de4c5114f26c3a11ff54eee7eb19564a9e9f0269517601ea5",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/DTCC-PQD-2022Q4/ca4a53ac369511f0a96e92d5ae67c534"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T18:18:44.748475+00:00"
+      ],
+      "reporting_period": "2022 Q4"
+    },
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2022_Q3.xlsx",
+      "sha256": "dc44890aa415b65f42d9beaa423266546393cbda3bc93c2c6e77b8fdda07747a",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2022-Q3-2/c73bba74369111f0a787c204a2f8334f"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T18:18:44.922336+00:00"
+      ],
+      "reporting_period": "2022 Q3"
+    },
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2022_Q2.xlsx",
+      "sha256": "214818d0ed10ac81e9558c752bf84763bbddf866b570d0eccc0c612c299cbe0d",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2022Q2-2/d000c416369511f096905e09fb65ecc7"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T18:18:44.939968+00:00"
+      ],
+      "reporting_period": "2022 Q2"
+    },
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2022_Q1.xlsx",
+      "sha256": "258822dcc1c5fff9a152694e28eb0135a5df21c52bdc398bdfdc9a16d438040d",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2022Q1-2/f64a283e369411f0b16f526112f6cc5f"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T18:18:45.017757+00:00"
+      ],
+      "reporting_period": "2022 Q1"
+    },
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2021_Q4.xlsx",
+      "sha256": "a1f8036c7767a19a2f3888d781eafa1cb390cc96cf337b40da7b9b629067a495",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2021-Q4-Excel/a0ba456e369b11f0bcd7820bd5ac0897"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T18:18:45.137497+00:00"
+      ],
+      "reporting_period": "2021 Q4"
+    },
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2021_Q3.xlsx",
+      "sha256": "a9a447ccf0c7d6f5a0981ef8d56140d5d00117fda8f1bc54b47346c29533b60e",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2021-Q3-Excel/c428f726369a11f0ad831282bb7fa251"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T18:18:45.195749+00:00"
+      ],
+      "reporting_period": "2021 Q3"
+    },
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2021_Q2.xlsx",
+      "sha256": "b3b6936ddc9fbfd6b73735ff33396b73e6c3f7d2c1c0a73e199d7d7d8bb26734",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2021-Q2-2/aaaaf5c0369911f0b7631282bb7fa251"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T18:18:45.357476+00:00"
+      ],
+      "reporting_period": "2021 Q2"
+    },
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2021_Q1.xlsx",
+      "sha256": "c9ea0160ce1c58568001230d642fa60d82bbcc035f070c08ba8d9308be57ce52",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/CPMI_IOSCO_Quantitative_Disclosure_Results_2021_Q1_2/f7eec6a4369411f091ee1282bb7fa251"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T18:18:45.465850+00:00"
+      ],
+      "reporting_period": "2021 Q1"
+    },
+    {
+      "file": "raw/pqd_sources/DTCC_PQD_2020_Q4.xlsx",
+      "sha256": "e25aebd08fbe3c5f12fe2d1fd93a239ad879fd47f0edab8de0a41e44589c7f0f",
+      "source_urls": [
+        "https://files.dtcc.com/download/assets/CPMI-IOSCO-Quantitative-Disclosure-Results-2020-Q4-2/d28f0c96369111f09a845e09fb65ecc7"
+      ],
+      "collection_timestamps_utc": [
+        "2026-10-05T18:18:45.489286+00:00"
+      ],
+      "reporting_period": "2020 Q4"
+    }
+  ],
+  "preserved_inputs": [
+    {
+      "file": "data/legacy_risk_quarterly.csv",
+      "sha256": "9ed8b5b7676509b49d23fd92e063c06c8f6a56794ffaf7ca0cd61fa9946fdaba",
+      "role": "Preserved input from the previous verified local public-data analysis"
+    },
+    {
+      "file": "data/legacy_analysis_panel.csv",
+      "sha256": "31a769bdfd364a2f636aa604fe1a54c3dcf175691aa57531eed5f31d1b29aa96",
+      "role": "Preserved input from the previous verified local public-data analysis"
+    },
+    {
+      "file": "data/business_quarterly_financials.csv",
+      "sha256": "6e34553eb7079b441abf4be38aae24f5cc62da7b3e562af38e6f4112545199dd",
+      "role": "Preserved input from the previous verified local public-data analysis"
+    },
+    {
+      "file": "data/business_quarterly_operations.csv",
+      "sha256": "71882bf51982220d2dba47ed1148b4d9a0e213971e8adaa212ee3e2b31df0232",
+      "role": "Preserved input from the previous verified local public-data analysis"
+    },
+    {
+      "file": "data/business_metric_provenance.csv",
+      "sha256": "f25fcd99c7d796ee5b60e57f8530d0f4934cafb50268a59248196d68efe8eb69",
+      "role": "Preserved input from the previous verified local public-data analysis"
+    }
+  ]
+}

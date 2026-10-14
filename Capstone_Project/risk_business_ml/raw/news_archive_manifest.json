@@ -1,0 +1,74 @@
+[
+  {
+    "year": 2019,
+    "accepted_headlines": 204,
+    "date_mismatches": 0,
+    "raw_file": "raw/official_news/fed_2019.html",
+    "sha256": "be6be6e989d78b25d96c4ad4f52e251275c39a24eff987593b8d83ead252c334",
+    "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/2019-press.htm",
+    "coverage": "Year archive fetched and parsed; validated displayed dates, not a guarantee of every historical revision"
+  },
+  {
+    "year": 2020,
+    "accepted_headlines": 220,
+    "date_mismatches": 0,
+    "raw_file": "raw/official_news/fed_2020.html",
+    "sha256": "0eb20d930b25b3be63c0342a929f36e5ac3f3fea60ca83f7e8673098b33a15f6",
+    "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/2020-press.htm",
+    "coverage": "Year archive fetched and parsed; validated displayed dates, not a guarantee of every historical revision"
+  },
+  {
+    "year": 2021,
+    "accepted_headlines": 145,
+    "date_mismatches": 0,
+    "raw_file": "raw/official_news/fed_2021.html",
+    "sha256": "7685dff549eec0d1eb01d112be084de5d53bf0611b4cf13f05f426c6de564859",
+    "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/2021-press.htm",
+    "coverage": "Year archive fetched and parsed; validated displayed dates, not a guarantee of every historical revision"
+  },
+  {
+    "year": 2022,
+    "accepted_headlines": 147,
+    "date_mismatches": 0,
+    "raw_file": "raw/official_news/fed_2022.html",
+    "sha256": "2e7bfd3cbaa211658520bf7c754438e388703c6fc09d624dd5dede1f14220b86",
+    "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/2022-press.htm",
+    "coverage": "Year archive fetched and parsed; validated displayed dates, not a guarantee of every historical revision"
+  },
+  {
+    "year": 2023,
+    "accepted_headlines": 127,
+    "date_mismatches": 0,
+    "raw_file": "raw/official_news/fed_2023.html",
+    "sha256": "788972dd77e25cf011fd2df092d44b1da067e200ea804e831660ed26d739f58f",
+    "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/2023-press.htm",
+    "coverage": "Year archive fetched and parsed; validated displayed dates, not a guarantee of every historical revision"
+  },
+  {
+    "year": 2024,
+    "accepted_headlines": 120,
+    "date_mismatches": 0,
+    "raw_file": "raw/official_news/fed_2024.html",
+    "sha256": "3a037bf96c8f91a23534221cf8d53bdbcc41b1ce11052b0c64836ef2352f64e2",
+    "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/2024-press.htm",
+    "coverage": "Year archive fetched and parsed; validated displayed dates, not a guarantee of every historical revision"
+  },
+  {
+    "year": 2025,
+    "accepted_headlines": 135,
+    "date_mismatches": 0,
+    "raw_file": "raw/official_news/fed_2025.html",
+    "sha256": "6ade615de129dbf10f8cb4faf9687da8c09fe7568779780b0c8964f474351dbc",
+    "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/2025-press.htm",
+    "coverage": "Year archive fetched and parsed; validated displayed dates, not a guarantee of every historical revision"
+  },
+  {
+    "year": 2026,
+    "accepted_headlines": 108,
+    "date_mismatches": 0,
+    "raw_file": "raw/official_news/fed_2026.html",
+    "sha256": "dc9641d07dc5fe2798638979e6dc79912db82f4eb9b1ab44034b4d4d9d0ab18f",
+    "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/2026-press.htm",
+    "coverage": "Year archive fetched and parsed; validated displayed dates, not a guarantee of every historical revision"
+  }
+]

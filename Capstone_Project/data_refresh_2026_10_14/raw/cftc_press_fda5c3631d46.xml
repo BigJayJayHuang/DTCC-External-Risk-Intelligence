@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:schema="http://schema.org/" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" version="2.0" xml:base="https://www.cftc.gov/">
+  <channel>
+    <title>Press Releases</title>
+    <link>https://www.cftc.gov/</link>
+    <description/>
+    <language>en</language>
+    
+    <item>
+  <title>CFTC Seeks Public Comment on Notice of Proposed Rulemaking Concerning the Inclusion of Certain Event Contracts in the Definition of Swap  </title>
+  <link>https://www.cftc.gov/PressRoom/PressReleases/9310-26</link>
+  <description/>
+  <pubDate>Fri, 09 Oct 2026 20:00:26 +0000</pubDate>
+    <dc:creator>dfaulk-white</dc:creator>
+    <guid isPermaLink="true">https://www.cftc.gov/PressRoom/PressReleases/9310-26</guid>
+    </item>
+<item>
+  <title>CFTC Issues Interim Final Rule Excluding Certain Activity from the Definition of Swap  </title>
+  <link>https://www.cftc.gov/PressRoom/PressReleases/9309-26</link>
+  <description/>
+  <pubDate>Fri, 09 Oct 2026 19:30:51 +0000</pubDate>
+    <dc:creator>dfaulk-white</dc:creator>
+    <guid isPermaLink="true">https://www.cftc.gov/PressRoom/PressReleases/9309-26</guid>
+    </item>
+<item>
+  <title>CFTC Issues No-Action Letter for DCMs Regarding Converting Existing Perpetual-Style Broad-Based Security Index Futures into True Perpetual Futures  </title>
+  <link>https://www.cftc.gov/PressRoom/PressReleases/9308-26</link>
+  <description/>
+  <pubDate>Mon, 05 Oct 2026 17:00:00 +0000</pubDate>
+    <dc:creator>dfaulk-white</dc:creator>
+    <guid isPermaLink="true">https://www.cftc.gov/PressRoom/PressReleases/9308-26</guid>
+    </item>
+<item>
+  <title>CFTC Seeks Public Comment on Advanced Notice of Proposed Rulemaking Relating to Regulation Crypto Asset Transactions and Regulation Crypto Asset Markets</title>
+  <link>https://www.cftc.gov/PressRoom/PressReleases/9307-26</link>
+  <description/>
+  <pubDate>Mon, 05 Oct 2026 15:40:00 +0000</pubDate>
+    <dc:creator>CCollins</dc:creator>
+    <guid isPermaLink="true">https://www.cftc.gov/PressRoom/PressReleases/9307-26</guid>
+    </item>
+<item>
+  <title>CFTC Staff Extends Brexit-Related No-Action Positions  </title>
+  <link>https://www.cftc.gov/PressRoom/PressReleases/9306-26</link>
+  <description/>
+  <pubDate>Thu, 01 Oct 2026 13:06:31 +0000</pubDate>
+    <dc:creator>dfaulk-white</dc:creator>
+    <guid isPermaLink="true">https://www.cftc.gov/PressRoom/PressReleases/9306-26</guid>
+    </item>
+<item>
+  <title>CFTC Staff Releases Updates to FAQs Concerning Registrants and Registered Entity Activities Relating to Crypto Assets and Blockchain Technologies </title>
+  <link>https://www.cftc.gov/PressRoom/PressReleases/9303-26</link>
+  <description/>
+  <pubDate>Thu, 24 Sep 2026 14:46:00 +0000</pubDate>
+    <dc:creator>dfaulk-white</dc:creator>
+    <guid isPermaLink="true">https://www.cftc.gov/PressRoom/PressReleases/9303-26</guid>
+    </item>
+<item>
+  <title>CFTC Releases Staff Advisory on Mention Markets</title>
+  <link>https://www.cftc.gov/PressRoom/PressReleases/9302-26</link>
+  <description/>
+  <pubDate>Tue, 22 Sep 2026 20:38:00 +0000</pubDate>
+    <dc:creator>aturner</dc:creator>
+    <guid isPermaLink="true">https://www.cftc.gov/PressRoom/PressReleases/9302-26</guid>
+    </item>
+<item>
+  <title>CFTC Innovation Task Force to Host Frontier Forum Series on Innovative Financial Technologies</title>
+  <link>https://www.cftc.gov/PressRoom/PressReleases/9301-26</link>
+  <description/>
+  <pubDate>Mon, 21 Sep 2026 13:00:57 +0000</pubDate>
+    <dc:creator>aturner</dc:creator>
+    <guid isPermaLink="true">https://www.cftc.gov/PressRoom/PressReleases/9301-26</guid>
+    </item>
+<item>
+  <title>CFTC Staff Issues No-Action Position to Providers of Passive Software</title>
+  <link>https://www.cftc.gov/PressRoom/PressReleases/9300-26</link>
+  <description/>
+  <pubDate>Thu, 17 Sep 2026 13:08:32 +0000</pubDate>
+    <dc:creator>dfaulk-white</dc:creator>
+    <guid isPermaLink="true">https://www.cftc.gov/PressRoom/PressReleases/9300-26</guid>
+    </item>
+<item>
+  <title>CFTC Approves Final Rule Concerning Whistleblower Awards  </title>
+  <link>https://www.cftc.gov/PressRoom/PressReleases/9297-26</link>
+  <description/>
+  <pubDate>Fri, 11 Sep 2026 18:08:58 +0000</pubDate>
+    <dc:creator>dfaulk-white</dc:creator>
+    <guid isPermaLink="true">https://www.cftc.gov/PressRoom/PressReleases/9297-26</guid>
+    </item>
+
+  </channel>
+</rss>

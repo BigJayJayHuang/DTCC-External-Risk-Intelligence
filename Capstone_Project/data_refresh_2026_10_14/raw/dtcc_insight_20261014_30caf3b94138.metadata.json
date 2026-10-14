@@ -1,0 +1,20 @@
+{
+  "source_id": "dtcc_insight_20261014",
+  "source_name": "DTCC Insights",
+  "url": "https://www.dtcc.com/insights/2026/why-data-quality-will-shape-the-next-era-of-regulatory-reporting",
+  "file": "raw/dtcc_insight_20261014_30caf3b94138.html",
+  "collected_at_utc": "2026-10-14T19:29:46+00:00",
+  "public_only": true,
+  "business_lines": [
+    "RDS",
+    "Data Services",
+    "Consulting"
+  ],
+  "kind": "dated_article",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://www.dtcc.com/insights/2026/why-data-quality-will-shape-the-next-era-of-regulatory-reporting",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 321649,
+  "sha256": "2c455f3801196289068be4dab267afd9b10c3579e027e5571eb71a26aac91317"
+}

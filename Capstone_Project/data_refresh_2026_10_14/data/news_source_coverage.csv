@@ -1,0 +1,10 @@
+﻿source_id,parsed_records,last_publication_date,coverage_limit,reported_count,next_page_url
+bis_press,10,2026-10-13,publisher current feed window; not complete historical coverage,,
+cftc_press,10,2026-10-09,publisher current feed window; not complete historical coverage,,
+dtcc_notice_feed,1000,2026-10-14,publisher current feed window; not complete historical coverage,,
+ecb_press,15,2026-10-13,publisher current feed window; not complete historical coverage,,
+esma_news,10,2026-10-14,first public news-index page; date-only timestamps,,
+fca_rss,20,2026-10-13,publisher current feed window; not complete historical coverage,,
+fed_press,20,2026-10-13,publisher current feed window; not complete historical coverage,,
+federal_register,66,2026-10-14,"Only SEC, CFTC and Federal Reserve publications; count is not risk severity",66.0,
+sec_press,25,2026-10-14,publisher current feed window; not complete historical coverage,,

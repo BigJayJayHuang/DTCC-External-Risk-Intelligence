@@ -1,0 +1,19 @@
+{
+  "source_id": "rds_fca_table1_20261009",
+  "source_name": "rds_fca_table1_20261009",
+  "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_1_OTC_Agg_20261009.csv",
+  "file": "raw/rds_fca_table1_20261009_f4940a2e36e7.csv",
+  "collected_at_utc": "2026-10-14T19:23:12+00:00",
+  "public_only": true,
+  "business_lines": [
+    "RDS",
+    "Data Services"
+  ],
+  "kind": "repository_weekly",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_1_OTC_Agg_20261009.csv",
+  "content_type": "text/csv",
+  "bytes": 1024,
+  "sha256": "3a8106768b2e9941a3eeb83f3e057b627bd5cb28eaa91b21a60ba57dddcb6fc4"
+}

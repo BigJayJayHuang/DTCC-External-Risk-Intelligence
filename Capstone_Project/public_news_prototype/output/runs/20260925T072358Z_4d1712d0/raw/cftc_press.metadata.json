@@ -1,0 +1,17 @@
+{
+  "http_status": 200,
+  "final_url": "https://www.cftc.gov/RSS/RSSGP/rssgp.xml",
+  "content_type": "application/rss+xml; charset=utf-8",
+  "etag": "\"1790307553\"",
+  "last_modified": "Fri, 25 Sep 2026 03:39:13 GMT",
+  "sha256": "c7620aff1fa2dc3d9d374bac7bd7221bf1c0caf075801b94e83b5e3111eebdaa",
+  "collected_at_utc": "2026-09-25T07:24:00+00:00",
+  "source": {
+    "id": "cftc_press",
+    "name": "US Commodity Futures Trading Commission",
+    "feed_url": "https://www.cftc.gov/RSS/RSSGP/rssgp.xml",
+    "reference_url": "https://www.cftc.gov/RSS/index.htm",
+    "coverage": "Derivatives regulation, clearing and reporting announcements",
+    "enabled": true
+  }
+}

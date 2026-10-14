@@ -1,0 +1,68 @@
+[
+  {
+    "group": "it",
+    "product": "Google Compute Engine",
+    "url": "https://status.cloud.google.com/products/L3ggmi3Jy4xJmgodFA9K/history",
+    "file": "raw/history_it_google_compute_engine.html"
+  },
+  {
+    "group": "it",
+    "product": "Google Cloud Networking",
+    "url": "https://status.cloud.google.com/products/VNJxzcH58QmTt5H6pnT6/history",
+    "file": "raw/history_it_google_cloud_networking.html"
+  },
+  {
+    "group": "it",
+    "product": "Virtual Private Cloud (VPC)",
+    "url": "https://status.cloud.google.com/products/BSGtCUnz6ZmyajsjgTKv/history",
+    "file": "raw/history_it_virtual_private_cloud_vpc.html"
+  },
+  {
+    "group": "data",
+    "product": "Google Cloud Storage",
+    "url": "https://status.cloud.google.com/products/UwaYoXQ5bHYHG6EdiPB8/history",
+    "file": "raw/history_data_google_cloud_storage.html"
+  },
+  {
+    "group": "data",
+    "product": "Google Cloud SQL",
+    "url": "https://status.cloud.google.com/products/hV87iK5DcEXKgWU2kDri/history",
+    "file": "raw/history_data_google_cloud_sql.html"
+  },
+  {
+    "group": "data",
+    "product": "Google BigQuery",
+    "url": "https://status.cloud.google.com/products/9CcrhHUcFevXPSVaSxkf/history",
+    "file": "raw/history_data_google_bigquery.html"
+  },
+  {
+    "group": "data",
+    "product": "Cloud Spanner",
+    "url": "https://status.cloud.google.com/products/EcNGGUgBtBLrtm4mWvqC/history",
+    "file": "raw/history_data_cloud_spanner.html"
+  },
+  {
+    "group": "third_party",
+    "product": "Gmail",
+    "url": "https://www.google.com/appsstatus/dashboard/products/prPt2Yra2CbGsbEm9cpC/history",
+    "file": "raw/history_third_party_gmail.html"
+  },
+  {
+    "group": "third_party",
+    "product": "Google Drive",
+    "url": "https://www.google.com/appsstatus/dashboard/products/VHNA7p3Z5p3iakj5sA8V/history",
+    "file": "raw/history_third_party_google_drive.html"
+  },
+  {
+    "group": "third_party",
+    "product": "Google Calendar",
+    "url": "https://www.google.com/appsstatus/dashboard/products/n5hVexuq1PM9onY9qrmo/history",
+    "file": "raw/history_third_party_google_calendar.html"
+  },
+  {
+    "group": "third_party",
+    "product": "Google Meet",
+    "url": "https://www.google.com/appsstatus/dashboard/products/sUH4BQXzYXma7NiS94Hi/history",
+    "file": "raw/history_third_party_google_meet.html"
+  }
+]

@@ -1,0 +1,50 @@
+DTCC Public (White)  
+Important Notice 
+Fixed Income Clearing Corporation –MBS 
+ 
+ 
+MBS #: MBS1605-26 
+Date: October 12th, 2026 
+To: Mortgage-Backed Securities Division Clearing Members 
+Category: Membership Updates 
+Subject: 2026 EPN Sub-Accounts Addition 
+Effective October 12th, 2026, the following participants will be added to the EPN Sub-Accounts list: 
+Participant Sub ID Account Name 
+T. ROWE PRICE ASSOCIATES, INC. 
+Noreen Elsner 
+Noreen.elsner@troweprice.com 
+9H37 9H37 
+NEUBERGER BERMAN 
+INVESTMENT ADVISERS LLC 
+Patrick Fundell (312) 325-7705 
+PFZD 
+EQBS 
+3MUF 
+PFZC 
+ 
+AMUNDI PIONEER INSTITUTIONAL 
+ASSET MANAGEMENT, INC. 
+Brandan Hagan (919) 328-4670 
+BSPM 
+M31C 
+AMOR 
+VPAC 
+  
+PGIM, INC. 
+Harry Tan (973) 367-0084 
+Nicole Del Rosso (973) 802-6230 
+TLBT 
+FLSB 
+TOLIABRET 
+FLSBADC 
+If you have any questions regarding this Important Notice, please contact your DTCC 
+Relationship Manager or the firm’s direct contact located on the EPN Contact list. 
+ 
+ 
+ 
+ 
+DTCC offers enhanced access to all important notices via a Web-based subscription service. 
+The notification system leverages RSS Newsfeeds, providing significant benefits including 
+real-time updates and customizable delivery. To learn more and to set up your own DTCC 
+RSS alerts, visit http://www.dtcc.com/subscription_form.php. 
+Non-Confidential 

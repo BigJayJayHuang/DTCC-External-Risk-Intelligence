@@ -1,0 +1,13 @@
+entity,risk_feature,risk_label_zh,selected_business_metric,signed_spearman_rho,absolute_spearman_rho,weight,n_quarters,association_first_quarter,association_last_quarter,passes_exploratory_fdr_5pct
+FICC,vix_change_pct,市场波动上升,operating_margin_change_pp,0.1924786324786324,0.1924786324786324,0.19638467034165027,26,2020Q1,2026Q2,False
+FICC,rate_change_pp,利率重新定价,revenue_growth_pct,-0.1644444444444444,0.1644444444444444,0.167781574483719,26,2020Q1,2026Q2,False
+FICC,credit_change_index,信用条件收紧,revenue_growth_pct,-0.1678632478632478,0.1678632478632478,0.17126975690541793,26,2020Q1,2026Q2,False
+FICC,funding_basis_max_bps,资金市场利差压力,revenue_growth_pct,0.4553239462637398,0.4553239462637398,0.46456399826921274,26,2020Q1,2026Q2,False
+NSCC,vix_change_pct,市场波动上升,revenue_growth_pct,0.2406015037593984,0.2406015037593984,0.20648343589996276,20,2020Q2,2026Q2,False
+NSCC,rate_change_pp,利率重新定价,operating_margin_change_pp,-0.2887218045112781,0.2887218045112781,0.24778012307995534,20,2020Q2,2026Q2,False
+NSCC,credit_change_index,信用条件收紧,operating_margin_change_pp,-0.2556390977443609,0.2556390977443609,0.21938865064371052,20,2020Q2,2026Q2,False
+NSCC,funding_basis_max_bps,资金市场利差压力,revenue_growth_pct,0.3802715155861373,0.3802715155861373,0.32634779037637135,20,2020Q2,2026Q2,False
+DTC,vix_change_pct,市场波动上升,revenue_growth_pct,-0.2519762845849803,0.2519762845849803,0.2977940569561607,23,2020Q2,2026Q2,False
+DTC,rate_change_pp,利率重新定价,revenue_growth_pct,-0.2717391304347826,0.2717391304347826,0.32115045358017325,23,2020Q2,2026Q2,False
+DTC,credit_change_index,信用条件收紧,operating_margin_change_pp,-0.1531620553359683,0.1531620553359683,0.18101207383609755,23,2020Q2,2026Q2,False
+DTC,funding_basis_max_bps,资金市场利差压力,operating_margin_change_pp,0.1692652873624813,0.1692652873624813,0.20004341562756842,23,2020Q2,2026Q2,False

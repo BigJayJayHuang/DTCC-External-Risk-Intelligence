@@ -1,0 +1,11 @@
+﻿business_line,candidate_window_documents,shared_sources_mapped,data_state,internal_gap
+FICC,20,40,public data and candidates; internal gaps retained,最新 PQD 仍为 2026Q2；公开季度数据不能给出本周内部脆弱度
+ECS,24,54,public data and candidates; internal gaps retained,NSCC 财务包含其他服务；DTC 财务包含 Asset Services 等；不能把法律实体收入作为纯 ECS 收入
+RDS,11,68,public data and candidates; internal gaps retained,公开市场报告不等于 GTR 的全部服务消息量、内部报告质量或 RDS 收入；EU/UK 总数不能简单相加
+WIS,11,41,public data and candidates; internal gaps retained,NSCC 的 CCP 保证金指标不能直接作为 WIS 脆弱度；WIS 独立收入、处理质量和客户集中度未公开取得
+ITP,6,50,public data and candidates; internal gaps retained,客户级 ITP Data Analytics 需要订阅/访问权限；当前不能取得完整每月异常率或业务利润
+Asset Services,32,59,public data and candidates; internal gaps retained,承销活动代表业务流量；不能替代服务收入或操作损失；DTC 整体财务不可直接分配为 Asset Services 利润
+DAS,7,27,public data and candidates; internal gaps retained,没有公开取得持续的 DAS 业务交易量、服务失败率或分部收入；BTC/ETH 价格不是 DTC 代币化证券风险指标
+DDA,7,25,public data and candidates; internal gaps retained,外部漏洞和云公告未验证 DDA 具体暴露；公开新闻不能代替平台业务性能和分部财务
+Data Services,9,88,public data and candidates; internal gaps retained,Kinetics 付费数据流与订阅量、业务收入没有公开完整时序；底层市场交易量不等于 Data Services 销售
+Consulting,7,26,public data and candidates; internal gaps retained,上述业务 KPI 未公开取得；监管新闻数量不能当作咨询收入、订单或风险强度

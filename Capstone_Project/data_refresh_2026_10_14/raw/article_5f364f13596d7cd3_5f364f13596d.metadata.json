@@ -1,0 +1,16 @@
+{
+  "source_id": "article_5f364f13596d7cd3",
+  "source_name": "Federal Register: SEC, CFTC and Federal Reserve publications original document",
+  "url": "https://www.federalregister.gov/documents/2026/10/08/2026-20668/change-in-bank-control-notices-acquisitions-of-shares-of-a-bank-or-bank-holding-company",
+  "file": "raw/article_5f364f13596d7cd3_5f364f13596d.html",
+  "collected_at_utc": "2026-10-14T19:29:26+00:00",
+  "public_only": true,
+  "business_lines": [],
+  "kind": "article",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://unblock.federalregister.gov/",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 10596,
+  "sha256": "ea79ed3b2a8641309284d8f89c51e5cc9db7d251e38dd9a3abe02924a03094f2"
+}

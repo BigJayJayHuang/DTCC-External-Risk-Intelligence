@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>SFTR Public Data</title>
+
+	 <link href="/PublicReports/css/dtcc_1010.css" rel="stylesheet"></link>
+     <link href="/PublicReports/css/RichTextEditor.css" rel="stylesheet"></link>
+      <link href="/PublicReports/css/jqueryui.css" rel="stylesheet">
+     <!--  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+    
+</head>
+<body style="font-size:10px;font-family:Trebuchet MS,sans-serif;">
+<div id="panel_menu">
+		<!--<div id="deriv_menu_title">
+			<h3>Derivative Types</h3>
+				<form>
+				<div id="radio_btn_set_deriv_type" class="ui-buttonset">
+    					<input type="radio" id="btn_otc_and_etd" class="btn_deriv_type ui-helper-hidden-accessible" name="radio" checked="checked" value="otc_and_etd">
+    					<label for="btn_otc_and_etd" class="ui-state-active ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left ui-corner-right" role="button" aria-disabled="false">
+    					<!-- <span class="ui-button-text">SFT</span></label> 
+					<!--input type="radio" id="btn_old" class="btn_deriv_type" name="radio" value="old"><label for="btn_old">Before 11/2014</label>
+				</div>
+			</form>
+		</div>-->
+		
+		<div id="accordian_otc_and_etd" class="accordion ui-accordion ui-widget ui-helper-reset" role="tablist">
+			<h3 id="accordion_header_weekly_sftr_reports">Weekly EU SFTR Public Reports</h3>
+			<div id="ui-accordian-accordian_sftr_panel-0" style="padding-left: 10px;padding-right: 10px;"></div>
+
+	</div>
+</div>
+	<div class="desc">
+        		<div style="font-size: 2em;"><b>DTCC Data Repository (Ireland) PLC (DDRIE)</b></div>
+	        	<div style="font-size: 1.5em;">Global Trade Repository</div>
+      </div>
+     <div id="panel_main">
+		<div id="panel_result"></div>
+	</div>
+	<div id="ajax_wait" style="display: none;"><img src="/PublicReports/images/ajax-loading.png"></div>
+
+	<div id="panel_main_report" style="display: none;">
+ 	 	<div id="panel_main_report_title"><h3>Choose a Report</h3></div>
+ 	 	
+        	<form id="form_report_date">
+                	<span>Change Report Date (YYYY-MM-DD):<input id="change_report_date" type="text"></span>
+					<div id="panel_main_report_table"></div>
+            </form>
+	 </div>
+</body>
+<script src="/PublicReports/js/jquery-2.1.3.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+var script = document.createElement('script');
+script.src = '/PublicReports/js/sftr.js?v=' + Date.now();
+document.head.appendChild(script);
+</script>
+</html>
