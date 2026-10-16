@@ -1,6 +1,6 @@
-# Weekly scoring spec, v1
+# Weekly scoring spec, v1 (current: v1.1, see §11)
 
-Status: **FROZEN v1**. Written 2026-10-16 (~08:40 UTC) and committed **before any score was computed**. Rules are not tuned after seeing scores; ideas go in §10 "Proposed changes" and are not applied.
+Status: **FROZEN v1**. Written 2026-10-16 and committed (`8d75706`, 08:37 UTC) **before any score was computed**. Rules are not tuned after seeing scores; ideas go in §10 "Proposed changes" and are not applied.
 
 Inputs come from validation round 1 (closed 2026-10-16T07:58Z): `results/chain_tests/chain_confidence.json`.
 
@@ -129,12 +129,53 @@ Each event in the register has three levels, each 0–2:
 - It writes only to `results/scoring/` and `data/events/`, and never overwrites existing project files.
 - If `data/events/event_register.csv` already exists, it is read rather than re-seeded.
 
+## 11. Version 1.1: calibration fixes (owner-approved; written 2026-10-16T08:44:54Z, before re-running)
+
+These rules replace the v1.0 rules where stated and fix structural problems found in v1.0 (§10 items 1–4). They were not chosen to get a particular ranking. The v1.0 outputs are kept as `*_v1.0.*`.
+
+1. **NSCC-03 signal (replaces §3A for this chain).**
+   - Ratio = weekly peak consolidated volume ÷ median of the **prior 52 weekly peaks** (current week excluded). The full 52 prior weeks are required, else null.
+   - The ratio then goes through the same expanding percentile (≥ 104 prior ratio weeks, midrank) and the same 1–5 map.
+   - The ratio first exists in Jan 2019, so the first scorable week is around Jan 2021; the 2020 sanity week is null for NSCC-03.
+2. **Floor rule (all market-indicator chains).**
+   - If a chain's weekly signal (the weekly peak used for scoring; the ratio for NSCC-03) is ≤ 0, then S = 1, whatever its percentile.
+   - It is applied literally to every market-indicator chain. In practice it binds where the signal can be ≤ 0: GSD-04 (Baa widening clipped at 0), GSD-02 / NSCC-02 (adjusted SOFR−EFFR can be negative), and any zero-change week of GSD-01 / MBSD-01.
+   - VIX ratio and volume ratio are always > 0.
+3. **Rubric timing cap.** For each event, if timing = 0 (effect more than 12 weeks ahead or past), that event's S ≤ 2. The cap is applied per event, before taking the max. Announcements stay separate register events dated on their announcement day.
+4. **As-of V for history (replaces the history rule in §5).**
+   - For each week, take the latest PQD quarter publicly available by week_end. Available date = the DTCC catalogue `listed_date` in the PQD panel where known (all 23 quarters have one); otherwise quarter end + 90 days.
+   - V = ceil(pct × 5), with pct = share of the chain's own history up to and including that quarter that is ≤ its value. This is the same formula as round 1.
+   - Weeks before any PQD is available have V = null and severity = null ("no PQD public yet").
+   - vuln_reliability = "low (<8 quarters of history)" when fewer than 8 quarters are available as of that week.
+   - The latest week must reproduce the chain_confidence.json V; the code asserts this.
+   - History rows carry `v_basis = as_of_<quarter>`.
+5. **Output fields.**
+   - `driver` per card in weekly_scores.json: "shock" if S > V, "vulnerability" if V > S, "both" if equal; "n/a" if S or V is null.
+   - The v1.0 field that named the NSCC liquidity driving chain is renamed `shock_driver_chain`.
+6. **Event register v1.1** (owner instructions; evidence fetched before re-running):
+   - EV0001 and EV0004: quotes added; certainty 2, reach 2; needs_review N.
+   - EV0003: certainty 2, reach 1 if the 2026-06-28 go-live is confirmed by a DTCC notice or press; otherwise needs_review stays Y.
+   - EV0006 and EV0007: certainty 2 unless a 2026 SEC proposal or statement about a further extension is found (then 1, with a quote).
+   - EV0008: reach 2, needs_review N.
+   - The v1.0 register is kept as `data/events/event_register_v1.0.csv`.
+
 ## 10. Proposed changes (not applied)
 
-*(Empty at freeze. Filled after the run, if any.)*
+Written after the first run (2026-10-16 08:39 UTC). **None of these is applied**; each needs owner approval and a v2 of this spec.
+
+1. **Trending signals under an expanding percentile (NSCC-03, also GSD-02 / NSCC-02).**
+   - NSCC-03 consolidated volume has risen since 2018, so recent weeks rank high almost automatically: S = 5 in 158 of 301 weeks since 2021, and S = 1 in none.
+   - Adjusted SOFR−EFFR scores S = 5 in 44% of 2024 weeks and 58% of 2025 weeks.
+   - **Option:** score these on a trailing window (e.g., the prior 104 weeks only), or on a detrended signal (weekly peak ÷ trailing 52-week median).
+2. **Zero-inflated signal (GSD-04, Baa 20-day widening clipped at 0).** Most weeks are 0, and midrank puts a zero week near the 20th–40th percentile. So S never falls below 2 (136 of 301 weeks at S = 2). **Option:** assign S = 1 when the weekly peak equals the series minimum (0).
+3. **Rubric "active" window for announced future events.** An event counts from announcement with timing 0, so SET-01 holds S = 3 for about 15 months between the T+1 adoption and the go-live, and GSD-03 holds S = 2 while compliance dates are more than 12 weeks away. **Option:** make an event active only when timing ≥ 1, or when there is new news about it that week.
+4. **History V is not point-in-time (§5).** For backtests, use the PQD quarter whose `listed_date` ≤ week_end, with the percentile computed on history available then.
+5. **Insufficient history before late 2020 for the SOFR−EFFR chains** (104-week minimum; the adjusted series starts 2018-10). The 2019 repo and 2020 COVID weeks therefore have no S. This affects only the sanity print, not current scoring.
 
 ## Change log
 
 | Time (UTC) | Change | Before or after scores |
 |---|---|---|
-| 2026-10-16 ~08:40 | v1 written and frozen | Before |
+| 2026-10-16 08:37:13 | v1 written and frozen; committed as `8d75706` on branch `weekly-scoring` | Before |
+| 2026-10-16 08:39 | §10 proposed changes added (not applied) | After |
+| 2026-10-16T08:44:54Z | v1.1 calibration fixes (§11) written and committed before re-running | Before v1.1 scores (after v1.0 scores) |
