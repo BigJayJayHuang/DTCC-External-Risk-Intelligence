@@ -1,0 +1,41 @@
+[
+  {
+    "entity": "GSD",
+    "latest_quarter": "2026Q2",
+    "latest_value": 0.769411895310965,
+    "own_history_quarters": 22,
+    "percentile": 0.8636363636363636,
+    "V": 5,
+    "min": 0.5255352324361077,
+    "max": 0.9385369063812373,
+    "missing_quarters": [
+      "2022Q1"
+    ]
+  },
+  {
+    "entity": "NSCC",
+    "latest_quarter": "2026Q2",
+    "latest_value": 1.1781897547286229,
+    "own_history_quarters": 22,
+    "percentile": 0.4090909090909091,
+    "V": 3,
+    "min": 0.3108992286553074,
+    "max": 1.7075586756700478,
+    "missing_quarters": [
+      "2022Q1"
+    ]
+  },
+  {
+    "entity": "MBSD",
+    "latest_quarter": "2026Q2",
+    "latest_value": 0.44477588957015146,
+    "own_history_quarters": 22,
+    "percentile": 0.4090909090909091,
+    "V": 3,
+    "min": 0.37684018538417896,
+    "max": 0.7284714716034134,
+    "missing_quarters": [
+      "2022Q1"
+    ]
+  }
+]

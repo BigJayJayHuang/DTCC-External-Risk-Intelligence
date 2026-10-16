@@ -1,0 +1,138 @@
+{
+  "chain_id": "ECS-SET-01",
+  "name": "Shorter settlement cycle → NSCC and DTC fails",
+  "version": "v2",
+  "entity": "NSCC/DTC",
+  "spec": "results/chain_tests/TEST_SPEC.md v1 (frozen 2026-10-16)",
+  "prior_results_seen": "No",
+  "run_utc": "2026-10-16T07:52:30+00:00",
+  "bootstrap_seed": 20261016,
+  "test1": {
+    "method": "No statistical test; confirm each milestone has a public source",
+    "milestones": [
+      {
+        "date": "2023-02-15",
+        "event": "SEC adopts T+1",
+        "sources": [
+          "https://www.sec.gov/news/press-release/2023-29"
+        ]
+      },
+      {
+        "date": "2024-05-28",
+        "event": "US T+1 go-live",
+        "sources": [
+          "https://www.dtcc.com/news/2024/september/12/sifma-ici-and-dtcc-release-t1-after-action-report"
+        ]
+      },
+      {
+        "date": "2026-06-28",
+        "event": "NSCC 24x5 clearing go-live",
+        "sources": [
+          "https://www.dtcc.com/-/media/Files/pdf/2025/11/5/A9670.pdf (DTCC notice, planned date)",
+          "https://www.ftfnews.com/nscc-extends-clearing-hours-to-24x5-availability/"
+        ],
+        "note": "go-live date from trade press; DTCC confirmation to be checked"
+      },
+      {
+        "date": null,
+        "event": "T+0",
+        "sources": [],
+        "note": "no adopted milestone found"
+      }
+    ],
+    "result": "SOURCED — owner to verify"
+  },
+  "test2": {
+    "method": "Before/after check only: no monthly fail-rate history (After-Action Report has post-T+1 points only; no Wayback snapshots)",
+    "points": [
+      {
+        "series": "NSCC/CNS",
+        "period": "May (historic avg, T+2)",
+        "value_pct": 2.01,
+        "side": "before",
+        "milestone": "2024-05-28",
+        "source": "https://www.dtcc.com/dtcc-connection/articles/2024/august/26/what-insights-can-be-applied-to-other-markets"
+      },
+      {
+        "series": "NSCC/CNS",
+        "period": "post T+1 (to Aug 2024)",
+        "value_pct": 2.3,
+        "side": "after",
+        "milestone": "2024-05-28",
+        "source": "https://www.dtcc.com/dtcc-connection/articles/2024/august/26/what-insights-can-be-applied-to-other-markets"
+      },
+      {
+        "series": "NSCC",
+        "period": "May 2024 (pre-T+1 baseline)",
+        "value_pct": 2.0,
+        "side": "before",
+        "milestone": "2024-05-28",
+        "source": "DTCC Equities by the Numbers snapshot (repo: data_refresh_2026_10_14/data/ecs_itp_monthly_operations_snapshot.csv)"
+      },
+      {
+        "series": "DTC",
+        "period": "May 2024 (pre-T+1 baseline)",
+        "value_pct": 2.83,
+        "side": "before",
+        "milestone": "2024-05-28",
+        "source": "same snapshot"
+      },
+      {
+        "series": "NSCC",
+        "period": "Aug 2026",
+        "value_pct": 2.21,
+        "side": "after",
+        "milestone": "2026-06-28",
+        "source": "same snapshot"
+      },
+      {
+        "series": "DTC",
+        "period": "Aug 2026",
+        "value_pct": 3.18,
+        "side": "after",
+        "milestone": "2026-06-28",
+        "source": "same snapshot"
+      },
+      {
+        "series": "NSCC/CNS",
+        "period": "first day after T+1 (May 29, 2024)",
+        "value_pct": 1.9,
+        "side": "after",
+        "milestone": "2024-05-28",
+        "source": "T+1 After-Action Report (Sept 2024), PDF p.7 \"Fail Rates Overview\""
+      },
+      {
+        "series": "NSCC/CNS",
+        "period": "July 2024 average",
+        "value_pct": 2.12,
+        "side": "after",
+        "milestone": "2024-05-28",
+        "source": "T+1 After-Action Report (Sept 2024), PDF p.7 \"Fail Rates Overview\""
+      },
+      {
+        "series": "DTC non-CNS",
+        "period": "July 2024 average",
+        "value_pct": 3.31,
+        "side": "after",
+        "milestone": "2024-05-28",
+        "source": "T+1 After-Action Report (Sept 2024), PDF p.7 \"Fail Rates Overview\""
+      }
+    ],
+    "report_quotes": [
+      {
+        "page": "PDF p.7, \"Fail Rates Overview\"",
+        "text": "\"On the first day following transition to T+1, Continuous Net Settlement (CNS) fail rates decreased to 1.9% and remain low at around 2%. CNS Fail Rate: The average CNS Fail Rate for July 2024 was 2.12%. This rate is consistent with T+2 settlement rates. DTC Non-CNS Fails Rate: The average non-CNS Fail Rate for July 2024 was 3.31%. Again, this rate is consistent with T+2 settlement averages.\""
+      },
+      {
+        "page": "PDF p.6, footnote 12",
+        "text": "Source of the transition metrics: \"DTCC Metrics: Daily Metrics\". The report gives no numeric pre-T+1 fail rate; \"before\" points come from other DTCC publications."
+      }
+    ],
+    "result": "BEFORE/AFTER CHECK ONLY — owner to verify"
+  },
+  "vulnerability": {
+    "variable": "vulnerability: no data (shock-only)",
+    "status": "no data (shock-only rule)"
+  },
+  "confidence": "Low/Medium (no market indicator; logic + cases, pending owner verification)"
+}

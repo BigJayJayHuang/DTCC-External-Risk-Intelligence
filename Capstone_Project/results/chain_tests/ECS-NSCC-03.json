@@ -1,0 +1,131 @@
+{
+  "chain_id": "ECS-NSCC-03",
+  "name": "Volume surge → NSCC settlement fails",
+  "version": "v1",
+  "entity": "NSCC",
+  "spec": "results/chain_tests/TEST_SPEC.md v1 (frozen 2026-10-16)",
+  "prior_results_seen": "No",
+  "run_utc": "2026-10-16T07:52:30+00:00",
+  "bootstrap_seed": 20261016,
+  "signal": "US consolidated equity volume, shares (Cboe, all venues incl. TRFs)",
+  "test1": {
+    "frequency": "daily",
+    "windows": [
+      {
+        "window": "COVID shock",
+        "start": "2020-03-09",
+        "end": "2020-03-23",
+        "testable_obs": 11,
+        "hit": true,
+        "alert_share": 1.0,
+        "peak_value": 18961326360.0
+      },
+      {
+        "window": "Meme-stock week",
+        "start": "2021-01-25",
+        "end": "2021-01-29",
+        "testable_obs": 5,
+        "hit": true,
+        "alert_share": 0.8,
+        "peak_value": 24481434014.0
+      },
+      {
+        "window": "2025 Treasury/tariff shock",
+        "start": "2025-04-02",
+        "end": "2025-04-11",
+        "testable_obs": 8,
+        "hit": true,
+        "alert_share": 1.0,
+        "peak_value": 30976593073.0
+      }
+    ],
+    "criteria": {
+      "hit_fraction": {
+        "value": 1.0,
+        "rule": ">= 0.667",
+        "pass": true
+      },
+      "outside_alert_rate": {
+        "value": 0.1352185089974293,
+        "rule": "<= 0.15",
+        "pass": true
+      },
+      "median_in_window_alert_share": {
+        "value": 1.0,
+        "rule": ">= 0.25",
+        "pass": true
+      }
+    },
+    "outside_obs": 1945,
+    "sample_start": "2018-07-03",
+    "sample_end": "2026-10-15",
+    "result": "PASS",
+    "fail_reasons": []
+  },
+  "test2": {
+    "method": "OLS weekly mean fail value ~ shock_week + month_end_week + quarter_end_week + T+1 regime, Newey–West HAC 4 lags",
+    "primary": {
+      "label": "shock week, same week",
+      "n": 431,
+      "shock_obs": 61,
+      "hac_maxlags": 4,
+      "coef_shock": 496191520.74213326,
+      "se_shock": 423112269.8700776,
+      "p": 0.24090877242132558,
+      "ci95": [
+        -333093289.62021077,
+        1325476331.1044774
+      ],
+      "mean_y_shock": 3850121121.6315904,
+      "mean_y_other": 3183622004.715764,
+      "coefficients": {
+        "const": 2620397904.832547,
+        "shock": 496191520.74213326,
+        "month_end_week": -417862198.4607158,
+        "quarter_end_week": 3601436956.891725,
+        "t1_regime": 1428124296.6377668
+      },
+      "sample": "2018-07-06–2026-10-02",
+      "status": "INCONCLUSIVE"
+    },
+    "secondary_next_week": {
+      "label": "shock week vs next week fails (secondary)",
+      "n": 430,
+      "shock_obs": 61,
+      "hac_maxlags": 4,
+      "coef_shock": 3120584677.460474,
+      "se_shock": 1714439628.0984423,
+      "p": 0.06873195696982531,
+      "ci95": [
+        -239655247.28071737,
+        6480824602.201666
+      ],
+      "mean_y_shock": 6093934900.115476,
+      "mean_y_other": 2814718072.2843246,
+      "coefficients": {
+        "const": 2535262808.994979,
+        "shock": 3120584677.460474,
+        "month_end_week": -77981773.91422907,
+        "quarter_end_week": -625745208.3011978,
+        "t1_regime": 1291052335.215269
+      },
+      "sample": "2018-07-06–2026-09-25",
+      "status": "INCONCLUSIVE"
+    },
+    "result": "INCONCLUSIVE",
+    "bh": [
+      {
+        "test": "shock week, same week",
+        "p_raw": 0.24090877242132558,
+        "q_bh": 0.3854540358741209,
+        "family_size": 8
+      }
+    ]
+  },
+  "test_variable": "SEC CNS fails-to-deliver, weekly mean of daily Σ qty×price (USD)",
+  "vulnerability": {
+    "variable": "vulnerability: no data (shock-only)",
+    "status": "no data (shock-only rule)"
+  },
+  "confidence": "Medium (Test 1 pass, Test 2 inconclusive)"
+}

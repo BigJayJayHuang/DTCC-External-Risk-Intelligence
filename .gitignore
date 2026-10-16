@@ -20,3 +20,4 @@ distribution/
 *.part
 .env
 .env.*
+**/.venv-validation/

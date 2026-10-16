@@ -152,6 +152,7 @@ These rules replace the v1.0 rules where stated and fix structural problems foun
 5. **Output fields.**
    - `driver` per card in weekly_scores.json: "shock" if S > V, "vulnerability" if V > S, "both" if equal; "n/a" if S or V is null.
    - The v1.0 field that named the NSCC liquidity driving chain is renamed `shock_driver_chain`.
+5b. **Clarification (2026-10-16T08:46:38Z, before re-running):** the floor rule (item 2) applies only where §3A would otherwise give a percentile S. A week with insufficient history (fewer than 104 prior weeks) stays null even if its signal is ≤ 0.
 6. **Event register v1.1** (owner instructions; evidence fetched before re-running):
    - EV0001 and EV0004: quotes added; certainty 2, reach 2; needs_review N.
    - EV0003: certainty 2, reach 1 if the 2026-06-28 go-live is confirmed by a DTCC notice or press; otherwise needs_review stays Y.
@@ -179,3 +180,5 @@ Written after the first run (2026-10-16 08:39 UTC). **None of these is applied**
 | 2026-10-16 08:37:13 | v1 written and frozen; committed as `8d75706` on branch `weekly-scoring` | Before |
 | 2026-10-16 08:39 | §10 proposed changes added (not applied) | After |
 | 2026-10-16T08:44:54Z | v1.1 calibration fixes (§11) written and committed before re-running | Before v1.1 scores (after v1.0 scores) |
+| 2026-10-16T08:46:38Z | §11 item 5b clarification (floor rule vs insufficient history) | Before v1.1 scores |
+| 2026-10-16T08:48:35Z | v1.1 run: event register v1.1 applied (EV0001/04 quotes; EV0003 confirmed go-live 2026-06-28; EV0006/07 certainty 2, no 2026 extension found; EV0008 reach 2); v1.0 outputs kept as *_v1.0.* | After v1.1 rules committed (2d0f9db) |

@@ -1,0 +1,84 @@
+{
+  "chain_id": "ECS-NSCC-04.v2",
+  "name": "Broker distress → NSCC default management",
+  "version": "v2 (post-hoc)",
+  "entity": "NSCC",
+  "spec": "results/chain_tests/TEST_SPEC.md v1 (frozen 2026-10-16)",
+  "prior_results_seen": "Yes: v1 Test 1 FAIL seen before this change",
+  "run_utc": "2026-10-16T07:52:31+00:00",
+  "bootstrap_seed": 20261016,
+  "post_hoc": {
+    "label": "post-hoc v2",
+    "base_chain": "ECS-NSCC-04",
+    "reason": "v1 Test 1 failed: Baa is a broad credit index and Jan 2021 broker stress was broker-specific; reclassified as without market indicator (rubric + case evidence); no new signal searched",
+    "spec": "TEST_SPEC.md §13 (written after v1 results)"
+  },
+  "test1": {
+    "method": "No statistical test; confirm each milestone has a public source",
+    "milestones": [
+      {
+        "date": "2021-01-25",
+        "event": "Meme-stock week (Jan 25–29, 2021)",
+        "sources": [
+          "https://www.sec.gov/files/staff-report-equity-options-market-struction-conditions-early-2021.pdf"
+        ]
+      },
+      {
+        "date": "2023-03-08",
+        "event": "Bank stress (SVB failure, Mar 10, 2023)",
+        "sources": [
+          "https://www.fdic.gov/news/press-releases/2023/pr23016.html"
+        ],
+        "note": "source confirms the event; no public evidence found of an NSCC member-requirement change in this window"
+      }
+    ],
+    "result": "SOURCED — owner to verify"
+  },
+  "test2": {
+    "method": "Case evidence (card rule); never auto-passed",
+    "candidates": [
+      {
+        "event": "Meme-stock week, Jan 27–28, 2021",
+        "source": "SEC Staff Report on Equity and Options Market Structure Conditions in Early 2021 (Oct 14, 2021), https://www.sec.gov/files/staff-report-equity-options-market-struction-conditions-early-2021.pdf; local copy data/raw/case_evidence/SEC_staff_report_early_2021.pdf",
+        "passages": [
+          {
+            "page": "PDF p.16 (printed p.15), §2",
+            "text": "\"Pursuant to its existing rules, NSCC can also impose excess capital premium ('ECP') charges for members who present a degree of margin exposure for their cleared positions that exceed those members' excess net capital.\""
+          },
+          {
+            "page": "PDF p.32 (printed p.31), §3.5 Clearing Agency Margin and Capital Issues",
+            "text": "\"On January 27, 2021, in response to market activity during the trading session, NSCC made intraday margin calls from 36 clearing members totaling $6.9 billion, bringing the total required margin across all members to $25.5 billion. Of the $6.9 billion, $2.1 billion were intraday mark-to-market calls, while the remaining $4.8 billion was a special ECP charge.\""
+          },
+          {
+            "page": "PDF p.32 (printed p.31), §3.5",
+            "text": "\"NSCC imposed this charge on 18 members, all of whom provided the additional margin. NSCC subjected one additional member to the special charge, but that member ultimately did not have to meet that charge after offsetting its exposure with a transfer from an affiliate.\""
+          },
+          {
+            "page": "PDF p.32 (printed p.31), §3.5",
+            "text": "\"In addition, several NSCC members were subject to an ECP charge based on the ratio of the excess risk in their portfolios relative to their capital. Because these members' ratios of excess risk versus capital were not driven by individual clearing member actions, but by extreme volatility in individual cleared equities, NSCC exercised its rules-based discretion to waive the ECP charge for all members on January 28, 2021. Absent this waiver, one retail broker-dealer would have had an additional ECP charge of more than double its margin requirement of $1.4 billion on January 28, 2021. NSCC removed this waiver on February 2, 2021\""
+          },
+          {
+            "page": "PDF p.33 (printed p.32), §3.5",
+            "text": "\"some broker-dealers restricted activities in a limited number of individual stocks in reaction to margin calls and capital charges imposed by NSCC.\""
+          }
+        ],
+        "gaps": "No member default and no default management: the case is about changed member requirements. The report attributes the trigger to \"extreme volatility in individual cleared equities\", not to a member's own actions.",
+        "proposed_verdict": "PASS (proposed) on the \"changed a member's requirements\" leg: NSCC raised requirements on specific members ($4.8bn special charge on 18 members, and capital-based ECP charges whose basis is members' excess risk relative to their capital), and members restricted trading in reaction. Caveat for the owner: the trigger was security-level volatility interacting with member capital, which is narrower than \"member stress\" in the usual credit sense. Owner to confirm."
+      }
+    ],
+    "proposed_verdict": "PASS (proposed) on the \"changed a member's requirements\" leg: NSCC raised requirements on specific members ($4.8bn special charge on 18 members, and capital-based ECP charges whose basis is members' excess risk relative to their capital), and members restricted trading in reaction. Caveat for the owner: the trigger was security-level volatility interacting with member capital, which is narrower than \"member stress\" in the usual credit sense. Owner to confirm.",
+    "result": "CANDIDATE EVIDENCE — owner to verify"
+  },
+  "vulnerability": {
+    "variable": "Top-5 share of open positions (PQD 18.2.2)",
+    "field": "top5_open_share",
+    "direction": "higher = more vulnerable",
+    "latest_quarter": "2026Q2",
+    "latest_value": 0.3649,
+    "own_history_quarters": 23,
+    "own_history_percentile": 0.391304347826087,
+    "score_1to5": 2,
+    "use": "scoring only; not used in Test 2"
+  },
+  "confidence": "Low/Medium (no market indicator; logic + cases, pending owner verification)"
+}

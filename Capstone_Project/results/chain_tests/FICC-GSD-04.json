@@ -1,0 +1,102 @@
+{
+  "chain_id": "FICC-GSD-04",
+  "name": "Member credit deterioration",
+  "version": "v1",
+  "entity": "GSD",
+  "spec": "results/chain_tests/TEST_SPEC.md v1 (frozen 2026-10-16)",
+  "prior_results_seen": "Yes for the signal",
+  "run_utc": "2026-10-16T07:52:29+00:00",
+  "bootstrap_seed": 20261016,
+  "signal": "Baa−10Y 20-day widening, bp",
+  "test1": {
+    "frequency": "weekly",
+    "windows": [
+      {
+        "window": "COVID shock",
+        "start": "2020-03-09",
+        "end": "2020-03-23",
+        "testable_obs": 3,
+        "hit": true,
+        "alert_share": 1.0,
+        "peak_value": 217.99999999999997
+      },
+      {
+        "window": "Bank stress (SVB)",
+        "start": "2023-03-08",
+        "end": "2023-03-17",
+        "testable_obs": 2,
+        "hit": true,
+        "alert_share": 0.5,
+        "peak_value": 41.000000000000014
+      }
+    ],
+    "criteria": {
+      "hit_fraction": {
+        "value": 1.0,
+        "rule": ">= 1.000",
+        "pass": true
+      },
+      "outside_alert_rate": {
+        "value": 0.11056511056511056,
+        "rule": "<= 0.15",
+        "pass": true
+      }
+    },
+    "outside_obs": 407,
+    "sample_start": "2018-08-03",
+    "sample_end": "2026-10-09",
+    "result": "PASS",
+    "fail_reasons": []
+  },
+  "test2": {
+    "method": "Case evidence (card rule); never auto-passed",
+    "candidates": [
+      {
+        "event": "Lehman Brothers Inc. bankruptcy, Sept 2008 (member credit event)",
+        "source": "DTCC press release \"DTCC closes out Lehman bankruptcy\", 30 Oct 2008 (Finextra reprint). Original URL https://finextra.com/pressarticle/24287/dtcc-closes-out-lehman-bankruptcy; automated fetch BLOCKED (Cloudflare 403); owner-supplied browser print data/raw/DTCC closes out Lehman bankruptcy.pdf",
+        "passages": [
+          {
+            "page": "PDF p.1",
+            "text": "DTCC \"announced today that it successfully closed out over $500 billion in market participants' exposure from the Lehman Brothers, Inc. (Lehman) bankruptcy which occurred the week of Sept. 22.\" Dated 30 October 2008."
+          },
+          {
+            "page": "PDF p.1",
+            "text": "\"DTCC reports it does not expect there to be any impact to its retained earnings or to market participants' clearing fund deposits as a result of closing out these pending trade obligations.\""
+          },
+          {
+            "page": "PDF p.2",
+            "text": "Lehman \"ranked as a top three user of DTCC's Mortgage Backed Securities Division (MBSD); in the top five largest users of the Government Securities Division (GSD)\"."
+          },
+          {
+            "page": "PDF p.2, \"Mortgage-backed and Government Securities\"",
+            "text": "\"Lehman's pending U.S. Government securities trades ran to $190 billion (gross positions) at the time of the bankruptcy. FICC's GSD guarantees the settlement of these trades once it accepts them for clearing. In order to make good on its guarantee, FICC had to close out the various positions, which ranged from repos to government bonds. FICC successfully closed out these positions without impact on customers.\""
+          },
+          {
+            "page": "PDF p.2, \"Mortgage-backed and Government Securities\"",
+            "text": "\"FICC's MBSD handled the liquidation of a gross position of $329 billion in par value of Lehman's book of 'to be announced' mortgage-backed securities trades ... FICC gradually sold the remaining net obligations into the market with no losses assessed against MBSD members' clearing deposits and with no observed market impact.\""
+          },
+          {
+            "page": "PDF p.3",
+            "text": "\"FICC and NSCC retained a third party adviser to assist in liquidating positions held by the clearing corporations.\""
+          }
+        ],
+        "gaps": "DTCC 2008 annual report (sechistorical part 1) was not found in data/raw (MISSING); the press release alone covers the ~$500bn total and the Oct 30, 2008 announcement. The release says the bankruptcy \"occurred the week of Sept. 22\"; Lehman Brothers Holdings filed Sept 15 and the SIPA proceeding for Lehman Brothers Inc. began Sept 19, 2008, so the week reference is imprecise but not material to the case.",
+        "proposed_verdict": "PASS (proposed): FICC GSD closed out ~$190bn of Lehman's gross pending government securities trades to honour its settlement guarantee, and MBSD liquidated a $329bn TBA book, after a member's bankruptcy. This is default management triggered by a member credit event, which is the card rule. Owner to confirm."
+      }
+    ],
+    "proposed_verdict": "PASS (proposed): FICC GSD closed out ~$190bn of Lehman's gross pending government securities trades to honour its settlement guarantee, and MBSD liquidated a $329bn TBA book, after a member's bankruptcy. This is default management triggered by a member credit event, which is the card rule. Owner to confirm.",
+    "result": "CANDIDATE EVIDENCE — owner to verify"
+  },
+  "vulnerability": {
+    "variable": "Top-5 share of open positions (PQD 18.2.2)",
+    "field": "top5_open_share",
+    "direction": "higher = more vulnerable",
+    "latest_quarter": "2026Q2",
+    "latest_value": 0.2655,
+    "own_history_quarters": 23,
+    "own_history_percentile": 0.43478260869565216,
+    "score_1to5": 3,
+    "use": "scoring only; not used in Test 2"
+  },
+  "confidence": "Pending: Medium if owner verifies case evidence (Test 1 passed)"
+}
