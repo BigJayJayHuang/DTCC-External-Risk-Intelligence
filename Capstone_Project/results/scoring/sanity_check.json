@@ -2012,7 +2012,7 @@
                   "card_ids": [
                     "FICC-GSD-03"
                   ],
-                  "needs_review": true,
+                  "needs_review": false,
                   "review_reasons": [
                     "S >= 4: human check before publishing"
                   ],
@@ -2022,7 +2022,8 @@
                   "effect_date": "2026-12-31",
                   "scoring_cards": [
                     "FICC-GSD-03"
-                  ]
+                  ],
+                  "signed_off_by": "owner (wc232) 2026-10-23T03:44Z"
                 },
                 {
                   "event_id": "EV0007",
@@ -2053,7 +2054,7 @@
               "driving_event_ids": [
                 "EV0006"
               ],
-              "needs_review": true,
+              "needs_review": false,
               "rubric_version": "event-rubric-v1.2",
               "active_events": 2
             }
@@ -2068,7 +2069,6 @@
         "severity": 12,
         "confidence": "Low",
         "flags": [
-          "event_needs_human_check",
           "shock_score_from_rubric"
         ],
         "vuln_reliability": "low (<8 quarters of history)",

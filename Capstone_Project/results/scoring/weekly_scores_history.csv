@@ -2999,7 +2999,7 @@ week,week_end,card_id,S,S_source,V,V_base,V_override_reason,severity,confidence,
 2026-09-28,2026-10-02,ECS-NSCC-04,1,events,2.0,2.0,,2.0,Low,post_hoc_version|shock_score_from_rubric,ok,severity,7,as_of_2026Q2,vulnerability,,ECS-NSCC-04,1,rubric v1.2,,,,,no active event
 2026-09-28,2026-10-02,ECS-NSCC-03,1,market,,,,,Medium,,n/a,shock-only,1,,n/a,,ECS-NSCC-03,1,percentile,0.8812263381187263,0.1485148514851485,404.0,,
 2026-09-28,2026-10-02,ECS-SET-01,1,events,,,,,Low,shock_score_from_rubric,n/a,shock-only,2,,n/a,,ECS-SET-01,1,rubric v1.2,,,,,no active event
-2026-10-05,2026-10-09,FICC-GSD-03,4,events,3.0,3.0,,12.0,Low,event_needs_human_check|shock_score_from_rubric,low (<8 quarters of history),severity,1,as_of_2026Q2,shock,,FICC-GSD-03,4,rubric v1.2,,,,EV0006(c2r2t1=S4);EV0007(c2r2t0=S2),
+2026-10-05,2026-10-09,FICC-GSD-03,4,events,3.0,3.0,,12.0,Low,shock_score_from_rubric,low (<8 quarters of history),severity,1,as_of_2026Q2,shock,,FICC-GSD-03,4,rubric v1.2,,,,EV0006(c2r2t1=S4);EV0007(c2r2t0=S2),
 2026-10-05,2026-10-09,FICC-GSD-02,3,market,4.0,4.0,,12.0,Medium,post_hoc_version|watch,ok,severity,2,as_of_2026Q2,vulnerability,,FICC-GSD-02,3,percentile,0.9999999999999787,0.40789473684210525,418.0,,
 2026-10-05,2026-10-09,NSCC liquidity,3,market,3.0,3.0,,9.0,Medium,v2_candidate_needs_2026Q3_confirmation,ok,severity,3,as_of_2026Q2,both,ECS-NSCC-02,ECS-NSCC-01,2,percentile,0.9813098990670869,0.31788079470198677,453.0,,
 2026-10-05,2026-10-09,NSCC liquidity,3,market,3.0,3.0,,9.0,Medium,v2_candidate_needs_2026Q3_confirmation,ok,severity,3,as_of_2026Q2,both,ECS-NSCC-02,ECS-NSCC-02,3,percentile,0.9999999999999787,0.40789473684210525,418.0,,
@@ -3011,7 +3011,7 @@ week,week_end,card_id,S,S_source,V,V_base,V_override_reason,severity,confidence,
 2026-10-05,2026-10-09,ECS-SET-01,1,events,,,,,Low,shock_score_from_rubric,n/a,shock-only,2,,n/a,,ECS-SET-01,1,rubric v1.2,,,,,no active event
 2026-10-12,2026-10-16,NSCC liquidity,5,market,3.0,3.0,,15.0,Medium,v2_candidate_needs_2026Q3_confirmation,ok,severity,1,as_of_2026Q2,shock,ECS-NSCC-01,ECS-NSCC-01,5,percentile,1.2707796954960107,0.8678414096916299,454.0,,
 2026-10-12,2026-10-16,NSCC liquidity,5,market,3.0,3.0,,15.0,Medium,v2_candidate_needs_2026Q3_confirmation,ok,severity,1,as_of_2026Q2,shock,ECS-NSCC-01,ECS-NSCC-02,1,floor (signal <= 0),0.0,0.2935560859188544,419.0,,
-2026-10-12,2026-10-16,FICC-GSD-03,4,events,3.0,3.0,,12.0,Low,event_needs_human_check|shock_score_from_rubric,low (<8 quarters of history),severity,2,as_of_2026Q2,shock,,FICC-GSD-03,4,rubric v1.2,,,,EV0006(c2r2t1=S4);EV0007(c2r2t0=S2),
+2026-10-12,2026-10-16,FICC-GSD-03,4,events,3.0,3.0,,12.0,Low,shock_score_from_rubric,low (<8 quarters of history),severity,2,as_of_2026Q2,shock,,FICC-GSD-03,4,rubric v1.2,,,,EV0006(c2r2t1=S4);EV0007(c2r2t0=S2),
 2026-10-12,2026-10-16,FICC-GSD-04,3,market,3.0,3.0,,9.0,Medium,,ok,severity,3,as_of_2026Q2,both,,FICC-GSD-04,3,percentile,2.0000000000000018,0.5044052863436124,454.0,,
 2026-10-12,2026-10-16,FICC-GSD-01,4,market,1.0,1.0,,4.0,Medium,,ok,severity,4,as_of_2026Q2,shock,,FICC-GSD-01,4,percentile,9.000000000000075,0.7063318777292577,458.0,,
 2026-10-12,2026-10-16,FICC-MBSD-01,4,market,1.0,1.0,,4.0,Medium,,ok,severity,5,as_of_2026Q2,shock,,FICC-MBSD-01,4,percentile,12.0,0.700218818380744,457.0,,

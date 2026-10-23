@@ -135,9 +135,23 @@ def active_events(reg, week_end):
     return out
 
 
+SIGNOFFS = PROJECT / 'data' / 'events' / 'event_signoffs.csv'
+S4_REASON = f'S >= {E.HUMAN_REVIEW_S}: human check before publishing'
+
+
+def apply_signoff(r, signoffs):
+    """§12.3: a sign-off clears only the S >= 4 check, while certainty and reach match and S <= max_S."""
+    s = signoffs.get(r['event_id'])
+    if s is not None and r['review_reasons'] == [S4_REASON] and (r['certainty'], r['reach']) == (int(s.certainty), int(s.reach)) \
+            and r['S'] <= int(s.max_S):
+        return {**r, 'needs_review': False, 'signed_off_by': f'{s.reviewed_by} {s.reviewed_utc}'}
+    return r
+
+
 def card_event_score(reg, card_id, week_end):
     """Highest S among active events mapped to the card (ties: certainty, reach, recency) and the driving event."""
-    mine = [r for r in active_events(reg, week_end) if card_id in r['scoring_cards']]
+    signoffs = {s.event_id: s for s in pd.read_csv(SIGNOFFS, dtype=str).itertuples()} if SIGNOFFS.exists() else {}
+    mine = [apply_signoff(r, signoffs) for r in active_events(reg, week_end) if card_id in r['scoring_cards']]
     if not mine:
         return {'S': 1, 'method': 'rubric v1.2', 'reason': 'no active event', 'events': [], 'active_events': 0}
     d = mine[0]

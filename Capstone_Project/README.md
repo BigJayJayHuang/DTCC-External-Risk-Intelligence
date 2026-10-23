@@ -56,6 +56,7 @@ Chain validation and weekly scoring:
 - **Weekly scoring:** [results/scoring](results/scoring/SCORING_SPEC.md) holds the weekly shock × vulnerability scores and card ranking (current spec v1.2; earlier outputs kept as `*_v1.0.*` / `*_v1.1.*`).
 - **Code:** in [validation](validation/). Each spec was frozen and committed before its scores were computed.
 - **To re-run**, from `Capstone_Project/`: `.venv-validation/bin/python -m validation.scoring --run-date YYYY-MM-DD`.
+- **SEC downloads:** `python -m validation.fetch --source sec_ftd` needs `SEC_USER_AGENT="Organisation contact@email"` in your environment (SEC fair-access policy). Don't commit it.
 - **Limits:** these scores are rule-based screening scores, not calibrated risk probabilities.
 
 The daily workflow updates the current database and republishes the complete ZIP. Historical studies retain their original inputs, dates and limitations; they are not retrained by this job. Source-provided project documents and full presentation decks remain in the original workspace. Redundant old archives, installed dependencies, credentials and temporary caches are excluded.

@@ -7,19 +7,23 @@ Files land in data/raw/<source>/; every request is appended to data/raw/SOURCES_
 re-downloaded unless --refresh is given. A source that cannot be reached is logged as
 BLOCKED and the run continues.
 """
-import argparse, csv, datetime as dt, hashlib, io, json, re, time, urllib.error, urllib.request, zipfile
+import argparse, csv, datetime as dt, hashlib, io, json, os, re, time, urllib.error, urllib.request, zipfile
 
 from .paths import RAW, SOURCES_LOG
 
 GENERIC_UA = 'Python-urllib/3.12'   # default client UA; FRED stalls custom UA strings
-SEC_UA = 'Duke FinTech Capstone wc232@duke.edu'   # approved for sec.gov only
+SEC_UA = os.environ.get('SEC_USER_AGENT', '')     # sec.gov only: "Organisation contact@email", set locally, never committed
 SEC_PAUSE = 0.5                                     # well under SEC's 10 requests/second
 LOG_FIELDS = ['source', 'url', 'local_file', 'downloaded_utc', 'http_status', 'bytes', 'sha256',
               'coverage_start', 'coverage_end', 'status', 'note']
 
 
 def _ua(url):
-    return SEC_UA if 'sec.gov' in url.split('/')[2] else GENERIC_UA
+    if 'sec.gov' not in url.split('/')[2]:
+        return GENERIC_UA
+    if not SEC_UA:
+        raise SystemExit('Set SEC_USER_AGENT ("Organisation contact@email", per SEC fair-access policy) before fetching sec.gov')
+    return SEC_UA
 
 
 def log(row):
