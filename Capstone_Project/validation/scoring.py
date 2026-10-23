@@ -1,22 +1,32 @@
-"""Weekly scoring step (results/scoring/SCORING_SPEC.md v1.1: v1 frozen at 8d75706, v1.1 rules §11 at 2d0f9db).
+"""Weekly scoring step (results/scoring/SCORING_SPEC.md v1.2: v1 frozen at 8d75706, v1.1 rules §11 at 2d0f9db,
+v1.2 rules §12 at f7c0d24).
 
     python -m validation.scoring [--run-date YYYY-MM-DD]
 """
-import argparse, datetime as dt, json, math
+import argparse, datetime as dt, hashlib, json, math, re
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
 from . import data as D
+from . import event_scoring as E
 from .chains import CHAINS
 from .paths import PROJECT, RESULTS
 from .run import SIGNALS
 
 OUT = PROJECT / 'results' / 'scoring'
 REGISTER = PROJECT / 'data' / 'events' / 'event_register.csv'
+MAJOR_PARTICIPANTS = PROJECT / 'data' / 'events' / 'major_participants.csv'
+PROMPT = Path(__file__).with_name('llm_event_classifier_prompt.md')
+PROMPT_VERSION = hashlib.sha256(PROMPT.read_bytes()).hexdigest()[:12]
 HISTORY_START = pd.Timestamp('2021-01-08')          # Friday of the week of 2021-01-04
 MIN_PRIOR_WEEKS = 104
-SPEC_VERSION = 'v1.1'
+SPEC_VERSION = 'v1.2'
+SLD_FLOOR = 4                                        # §12.2
+# §12.3: prompt catalog ids -> scoring cards; v1.2 scores the existing 9 cards only
+CATALOG_TO_CARDS = {'ECS-NSCC-LIQ': ['NSCC liquidity'], 'XE-MEMBER': ['FICC-GSD-04', 'ECS-NSCC-04']}
+MEMBER_CARDS = {'XE-MEMBER', 'FICC-GSD-04', 'ECS-NSCC-04'}
 ACTIVE = {'FICC-GSD-02': 'FICC-GSD-02.v2', 'ECS-NSCC-04': 'ECS-NSCC-04.v2'}
 SANITY_DATES = ['2020-03-16', '2021-01-25', '2023-03-13', '2024-05-27', '2025-04-07']
 CARD_ORDER = ['FICC-GSD-01', 'FICC-GSD-02', 'FICC-GSD-03', 'FICC-GSD-04', 'FICC-MBSD-01', 'NSCC liquidity',
@@ -61,36 +71,78 @@ def percentile_scores(peaks):
     return out
 
 
-# ------------------------------------------------------------------ 3B rubric S
+# ------------------------------------------------------------------ 3B rubric S (v1.2 §12.3: event_scoring.py)
 def load_register():
     r = pd.read_csv(REGISTER, dtype=str).fillna('')
     for c in ['certainty', 'reach']:
         r[c] = r[c].astype(int)
     r['effect'] = pd.to_datetime(r.effect_date)
     r['announced'] = pd.to_datetime(r.announced_date.where(r.announced_date != '', r.effect_date))
+    r['card_ids'] = r.card_ids.where(r.card_ids != '', r.chain_id)
     return r
 
 
-def rubric_score(reg, chain_id, week_end):
-    ev = reg[(reg.chain_id == chain_id) & (reg.announced <= week_end) & (reg.effect >= week_end - pd.Timedelta(days=84))]
-    if ev.empty:
-        return {'S': 1, 'method': 'rubric', 'reason': 'no active event', 'events': []}
+def scoring_cards(card_ids):
+    return sorted({s for c in card_ids for s in CATALOG_TO_CARDS.get(c, [c]) if s in CARD_ORDER})
+
+
+def load_events(reg):
+    """Register rows -> event_scoring.Event. LLM rows go through validate(); human rows keep their register review flag."""
+    catalog = set(CARD_ORDER) | set(re.findall(r'^\| ((?:FICC|ECS|XE)-[A-Z0-9-]+) \|', PROMPT.read_text(), re.M))
+    major = set(pd.read_csv(MAJOR_PARTICIPANTS, dtype=str).name.dropna())
     events = []
-    for _, e in ev.iterrows():
-        days = (e.effect - week_end).days
-        timing = 2 if abs(days) <= 28 else 1 if abs(days) <= 84 else 0
-        total = int(e.certainty) + int(e.reach) + timing
-        s = total_to_s(total)
-        if e.certainty == 0:
-            s = min(s, 2)
-        if timing == 0:   # v1.1 §11.3
-            s = min(s, 2)
-        events.append({'event_id': e.event_id, 'title': e.title, 'effect_date': e.effect_date, 'days_to_effect': days,
-                       'certainty': int(e.certainty), 'reach': int(e.reach), 'timing': timing, 'total': total, 'S': s,
-                       'needs_review': e.needs_review})
-    best = max(e['S'] for e in events)
-    return {'S': best, 'method': 'rubric', 'events': events,
-            'driving_event_ids': [e['event_id'] for e in events if e['S'] == best]}
+    for _, r in reg.iterrows():
+        ev = E.Event(event_id=r.event_id, card_ids=r.card_ids.split('|'), title=r.title,
+                     announced_date=r.announced.date(), effect_date=r.effect.date(),
+                     certainty=int(r.certainty), reach=int(r.reach),
+                     evidence_quotes=[q.strip() for q in r.evidence_quote.split('||') if q.strip()],
+                     sources=[{'url': u.strip(), 'outlet': r.outlet, 'tier': r.source_tier} for u in r.source_url.split(';') if u.strip()],
+                     llm_confidence=float(r.llm_confidence) if r.llm_confidence else 1.0,
+                     stage=int(r.stage) if r.stage else None,
+                     named_participants=[x for x in r.named_participants.split('|') if x], reach_basis=r.reach_basis,
+                     updated_date=pd.Timestamp(r.updated_date).date() if r.updated_date else None)
+        if r.entered_by == 'llm':
+            path = PROJECT / r.article_file if r.article_file else None
+            texts = [path.read_text()] if path and path.is_file() else []
+            ev = E.validate(ev, texts, catalog, major)
+            if not texts:
+                ev.review_reasons.append('article text not stored (article_file)')
+        elif r.needs_review == 'Y':
+            ev.review_reasons = ['register needs_review = Y']
+        if ev.stage is not None and not set(ev.card_ids) <= MEMBER_CARDS:
+            ev.stage = None
+            ev.review_reasons.append('stage removed: not a member-card event')
+        events.append(ev)
+    return events
+
+
+EVENTS = None
+
+
+def register_events(reg):
+    global EVENTS
+    if EVENTS is None:
+        EVENTS = load_events(reg)
+    return EVENTS
+
+
+def active_events(reg, week_end):
+    """Ranked active events of the week (event_scoring.rank_events), each with the scoring cards it maps to."""
+    by_id = {e.event_id: e for e in register_events(reg)}
+    out = []
+    for r in E.rank_events(list(by_id.values()), (week_end - pd.Timedelta(days=4)).date()):
+        out.append({**r, 'effect_date': str(by_id[r['event_id']].effect_date), 'scoring_cards': scoring_cards(r['card_ids'])})
+    return out
+
+
+def card_event_score(reg, card_id, week_end):
+    """Highest S among active events mapped to the card (ties: certainty, reach, recency) and the driving event."""
+    mine = [r for r in active_events(reg, week_end) if card_id in r['scoring_cards']]
+    if not mine:
+        return {'S': 1, 'method': 'rubric v1.2', 'reason': 'no active event', 'events': [], 'active_events': 0}
+    d = mine[0]
+    return {'S': d['S'], 'method': 'rubric v1.2', 'events': mine, 'driving_event_ids': [d['event_id']],
+            'needs_review': d['needs_review'], 'rubric_version': E.RUBRIC_VERSION, 'active_events': len(mine)}
 
 
 # ------------------------------------------------------------------ cards
@@ -119,7 +171,7 @@ def chain_rows(conf, reg, week_ends):
             if c['signal']['field']:
                 rec = pct[cid].get(we) or {'S': None, 'reason': 'no data this week'}
             else:
-                rec = rubric_score(reg, cid, we)
+                rec = card_event_score(reg, cid, we)
             rows[(cid, we)] = rec
     return rows
 
@@ -153,22 +205,57 @@ def vuln(cid, c, we):
     return max(1, math.ceil(pct * 5)), ('low (<8 quarters of history)' if len(s) < 8 else 'ok'), f'as_of_{s.index[-1]}'
 
 
-def build_cards(conf, rows, we):
+def sld_override(we):
+    """v1.2 §12.2: NSCC 7.3.2 > 0 in the latest PQD quarter public by week_end -> V >= 4 for NSCC liquidity."""
+    p = PQD_AVAIL[(PQD_AVAIL.entity == 'NSCC') & (PQD_AVAIL.available_date <= we)].sort_values('quarter')
+    if p.empty or not p.liquidity_breach_days.iloc[-1] > 0:
+        return None
+    q = p.iloc[-1]
+    return f'SLD needed this quarter (NSCC 7.3.2 = {int(q.liquidity_breach_days)} days in {q.quarter})'
+
+
+def combine_s(S_market, ev):
+    """v1.2 §12.4: S = max(market S, event S) when an event is active on the card; records the source."""
+    if not ev['active_events']:
+        return S_market, 'market'
+    if S_market is None:
+        return ev['S'], 'events (market null)'
+    S = max(S_market, ev['S'])
+    return S, 'market=events' if S_market == ev['S'] else 'market' if S_market > ev['S'] else 'events'
+
+
+def build_cards(conf, rows, we, reg=None):
+    reg = load_register() if reg is None else reg
     cards = []
     def card(card_id, members):
         c0 = conf[members[0]]
         V, rel, basis = vuln(members[0], c0, we)
+        V_base, override = V, None
+        if card_id == 'NSCC liquidity' and V is not None:
+            override = sld_override(we)
+            if override:
+                V = max(V, SLD_FLOOR)
         recs = {m: rows[(m, we)] for m in members}
         Ss = {m: r['S'] for m, r in recs.items()}
         valid = {m: s for m, s in Ss.items() if s is not None}
         S = max(valid.values()) if valid else None
-        flags = sorted({f for m in members for f in conf[m]['flags']})
+        if c0['signal']['field']:
+            ev = card_event_score(reg, card_id, we)
+            S, S_source = combine_s(S, ev)
+        else:
+            ev, S_source = recs[members[0]], 'events'
+        flags = {f for m in members for f in conf[m]['flags']}
+        if S_source != 'market' and ev.get('needs_review'):
+            flags.add('event_needs_human_check')
         out = {'id': card_id, 'week': str((we - pd.Timedelta(days=4)).date()), 'week_end': str(we.date()),
                'chains': [{'chain_id': m, 'version': conf[m]['version'], 'signal': conf[m]['signal']['description'],
                            'S': recs[m]['S'], 'S_computation': recs[m]} for m in members],
-               'S': S, 'V': V, 'vulnerability_variable': c0['vulnerability_variable']['description'],
+               'S': S, 'S_source': S_source, 'V': V, 'V_base': V_base, 'V_override_reason': override,
+               'vulnerability_variable': c0['vulnerability_variable']['description'],
                'severity': S * V if (S is not None and V is not None) else None,
-               'confidence': c0['confidence'], 'flags': flags, 'vuln_reliability': rel, 'v_basis': basis}
+               'confidence': c0['confidence'], 'flags': sorted(flags), 'vuln_reliability': rel, 'v_basis': basis}
+        if c0['signal']['field'] and ev['active_events']:
+            out['S_events'] = ev
         out['driver'] = ('n/a' if S is None or V is None else 'shock' if S > V else 'vulnerability' if V > S else 'both')
         if not c0['vulnerability_variable']['field']:
             out['label'] = 'vulnerability: no data'
@@ -210,7 +297,8 @@ def _clean(o):
 def flat(cards):
     out = []
     for c in cards:
-        base = {'week': c['week'], 'week_end': c['week_end'], 'card_id': c['id'], 'S': c['S'], 'V': c['V'], 'severity': c['severity'],
+        base = {'week': c['week'], 'week_end': c['week_end'], 'card_id': c['id'], 'S': c['S'], 'S_source': c['S_source'],
+                'V': c['V'], 'V_base': c['V_base'], 'V_override_reason': c['V_override_reason'] or '', 'severity': c['severity'],
                 'confidence': c['confidence'], 'flags': '|'.join(c['flags']), 'vuln_reliability': c['vuln_reliability'],
                 'group': c['group'], 'rank_in_group': c['rank_in_group'], 'v_basis': c['v_basis'], 'driver': c['driver'],
                 'shock_driver_chain': '|'.join(c.get('shock_driver_chain', []))}
@@ -261,21 +349,24 @@ def main(run_date):
     rows = chain_rows(conf, reg, sorted(set(weeks) | set(sanity_weeks)))
     OUT.mkdir(parents=True, exist_ok=True)
 
-    cards_latest = build_cards(conf, rows, latest)
+    cards_latest = build_cards(conf, rows, latest, reg)
+    unscored = [{k: e[k] for k in ('event_id', 'title', 'card_ids', 'S')} for e in active_events(reg, latest) if not e['scoring_cards']]
     (OUT / 'weekly_scores.json').write_text(json.dumps(_clean({
-        'spec': 'results/scoring/SCORING_SPEC.md v1.1 (v1 commit 8d75706; v1.1 rules commit 2d0f9db)', 'spec_version': SPEC_VERSION,
+        'spec': 'results/scoring/SCORING_SPEC.md v1.2 (v1 commit 8d75706; v1.1 rules commit 2d0f9db; v1.2 rules commit f7c0d24)',
+        'spec_version': SPEC_VERSION, 'rubric_version': E.RUBRIC_VERSION, 'prompt_version': PROMPT_VERSION,
         'run_date': str(run_date.date()),
         'week': str((latest - pd.Timedelta(days=4)).date()), 'week_end': str(latest.date()),
-        'v_basis': 'as-of V (latest PQD public by week_end)', 'cards': cards_latest}), indent=2, ensure_ascii=False))
-    for c in cards_latest:   # §11.4: the latest week must reproduce chain_confidence.json V
+        'v_basis': 'as-of V (latest PQD public by week_end)', 'cards': cards_latest,
+        'unscored_events': unscored}), indent=2, ensure_ascii=False))
+    for c in cards_latest:   # §11.4 / §12.2: the latest week's V before the SLD override must reproduce chain_confidence.json
         cid = c['chains'][0]['chain_id']
-        assert c['V'] == conf[cid]['vulnerability_variable']['latest_score_1to5'], (cid, c['V'])
+        assert c['V_base'] == conf[cid]['vulnerability_variable']['latest_score_1to5'], (cid, c['V_base'])
 
-    hist = pd.DataFrame([r for we in weeks for r in flat(build_cards(conf, rows, we))])
+    hist = pd.DataFrame([r for we in weeks for r in flat(build_cards(conf, rows, we, reg))])
     hist.to_csv(OUT / 'weekly_scores_history.csv', index=False)
     figure(hist, reg)
 
-    sanity = {str(we.date()): build_cards(conf, rows, we) for we in sanity_weeks}
+    sanity = {str(we.date()): build_cards(conf, rows, we, reg) for we in sanity_weeks}
     # known stress events: validation windows + rubric event effect dates
     misses = []
     active = {'FICC-GSD-02': 'FICC-GSD-02.v2', 'ECS-NSCC-04': 'ECS-NSCC-04.v2'}
@@ -286,7 +377,7 @@ def main(run_date):
             events = [(f"{e.event_id} {e.title}", e.effect, e.effect) for _, e in reg[reg.chain_id == cid].iterrows()]
         for label, a, b in events:
             for we in pd.date_range(friday(a), friday(b), freq='W-FRI'):
-                rec = all_pct[cid].get(we, {'S': None, 'reason': 'no data this week'}) if cid in all_pct else rubric_score(reg, cid, we)
+                rec = all_pct[cid].get(we, {'S': None, 'reason': 'no data this week'}) if cid in all_pct else card_event_score(reg, cid, we)
                 if rec['S'] is None or rec['S'] <= 2:
                     misses.append({'chain_id': cid, 'event': label, 'week_end': str(we.date()), 'S': rec['S'],
                                    'detail': rec.get('reason') or (f"pct {rec.get('percentile'):.2f}" if rec.get('percentile') is not None else '')})
@@ -303,9 +394,9 @@ def show(cards):
               + (f" | {c.get('S_null_reason')}" if c['S'] is None else ''))
 
 
-# ------------------------------------------------------------------ v1.1 extras
-def plot_peak_payment_to_qlr():
-    """Full history of PQD 7.3.4 / 7.1 (peak_payment_to_qlr) behind the V of GSD-02 and NSCC liquidity."""
+# ------------------------------------------------------------------ v1.1 / v1.2 extras
+def plot_payment_to_qlr():
+    """Full history of PQD 7.3.1 / 7.1 (payment_to_qlr) behind the V of GSD-02 and NSCC liquidity (v1.2 §12.1)."""
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
@@ -313,7 +404,7 @@ def plot_peak_payment_to_qlr():
     fig, ax = plt.subplots(figsize=(11, 4))
     rows = []
     for ent, col in [('GSD', '#3b6ea5'), ('NSCC', '#c0504d'), ('MBSD', '#9bbbd9')]:
-        s = p[p.entity == ent].set_index('quarter').peak_payment_to_qlr
+        s = p[p.entity == ent].set_index('quarter').payment_to_qlr
         x = pd.PeriodIndex(s.index, freq='Q').end_time
         ax.plot(x, s.values, marker='o', ms=3, lw=1.2 if ent != 'MBSD' else .8, color=col, label=f'{ent}' + (' (context)' if ent == 'MBSD' else ''))
         sd = s.dropna()
@@ -324,31 +415,27 @@ def plot_peak_payment_to_qlr():
         ax.annotate(f'{ent} {sd.index[-1]}: {sd.iloc[-1]:.2f} (pct {pct:.0%}, V={max(1, math.ceil(pct * 5))})',
                     (x[-1], sd.iloc[-1]), xytext=(6, 0), textcoords='offset points', fontsize=7, color=col)
     ax.axhline(1, color='grey', lw=.6, ls=':')
-    ax.set_title('PQD 7.3.4 ÷ 7.1 (peak payment obligation ÷ quantified qualifying liquid resources), 2020Q4–2026Q2; 2022Q1 missing (7.1 blanks)', fontsize=9)
+    ax.set_title('PQD 7.3.1 ÷ 7.1 (estimated largest payment obligation ÷ quantified qualifying liquid resources), 2020Q4–2026Q2; '
+                 '2022Q1 missing (7.1 blanks)', fontsize=9)
     ax.set_ylabel('ratio'); ax.legend(fontsize=8)
     fig.tight_layout()
     (OUT / 'figures').mkdir(parents=True, exist_ok=True)
-    fig.savefig(OUT / 'figures' / 'peak_payment_to_qlr_history.png', dpi=130)
+    fig.savefig(OUT / 'figures' / 'payment_to_qlr_history.png', dpi=130)
     plt.close(fig)
     return rows
 
 
+COMPARE_FROM = '2026-10-05'
+
+
 def compare_versions():
-    """v1.0 vs v1.1 for the latest week and the sanity weeks (from the saved v1.0 files)."""
-    v10 = json.loads((OUT / 'sanity_check_v1.0.json').read_text())['weeks']
-    v11 = json.loads((OUT / 'sanity_check.json').read_text())['weeks']
-    rows = []
-    for wk in v11:
-        old = {c['id']: c for c in v10.get(wk, [])}
-        for c in v11[wk]:
-            o = old.get(c['id'], {})
-            rows.append({'week_end': wk, 'card': c['id'],
-                         'S_v1.0': o.get('S'), 'V_v1.0': o.get('V'), 'severity_v1.0': o.get('severity'),
-                         'rank_v1.0': f"{o.get('group', '')} #{o.get('rank_in_group', '')}",
-                         'S_v1.1': c['S'], 'V_v1.1': c['V'], 'severity_v1.1': c['severity'],
-                         'rank_v1.1': f"{c['group']} #{c['rank_in_group']}", 'driver_v1.1': c['driver'], 'v_basis_v1.1': c['v_basis']})
-    df = pd.DataFrame(rows)
-    df.to_csv(OUT / 'compare_v1.0_v1.1.csv', index=False)
+    """v1.1 (re-run on the same inputs, results/scoring/v1.1_rerun/) vs v1.2, card level, weeks from COMPARE_FROM (§12.5)."""
+    keep = ['week', 'card_id', 'S', 'V', 'severity', 'group', 'rank_in_group']
+    v11 = pd.read_csv(OUT / 'v1.1_rerun' / 'weekly_scores_history.csv').drop_duplicates(['week', 'card_id'])[keep]
+    v12 = pd.read_csv(OUT / 'weekly_scores_history.csv').drop_duplicates(['week', 'card_id'])[keep + ['S_source', 'V_base', 'V_override_reason']]
+    df = v11.merge(v12, on=['week', 'card_id'], how='outer', suffixes=('_v1.1', '_v1.2'))
+    df = df[df.week >= COMPARE_FROM].sort_values(['week', 'group_v1.2', 'rank_in_group_v1.2'])
+    df.to_csv(OUT / 'compare_v1.1_v1.2.csv', index=False)
     return df
 
 
@@ -357,8 +444,8 @@ if __name__ == '__main__':
     ap.add_argument('--run-date', default=str(dt.date.today()))
     a = ap.parse_args()
     latest, sanity, misses, reg = main(a.run_date)
-    ppq = plot_peak_payment_to_qlr()
-    (OUT / 'peak_payment_to_qlr_summary.json').write_text(json.dumps(_clean(ppq), indent=2))
+    ppq = plot_payment_to_qlr()
+    (OUT / 'payment_to_qlr_summary.json').write_text(json.dumps(_clean(ppq), indent=2))
     cmp = compare_versions()
     for wk, cards in sanity.items():
         print(f'== week ending {wk}')
@@ -366,10 +453,10 @@ if __name__ == '__main__':
     print('== stress-event weeks with S <= 2 (or null)')
     for m in misses:
         print('  ', m)
-    print('== 7.3.4 / 7.1 history summary')
+    print('== 7.3.1 / 7.1 history summary')
     for r_ in ppq:
         print('  ', r_)
-    print('== v1.0 vs v1.1')
+    print('== v1.1 vs v1.2')
     print(cmp.to_string(index=False))
     print('== needs_review = Y')
     for _, e in reg[reg.needs_review == 'Y'].iterrows():

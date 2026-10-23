@@ -45,3 +45,10 @@ FINAL = {
                  'pp.31-32 - $4.8bn special charge on 18 members (Jan 27, 2021); capital-based ECP charges waived Jan 28. '
                  'Confidence Low: trigger was concentrated positions vs member capital, not credit stress or default.'),
 }
+
+# Scoring v1.2 (results/scoring/SCORING_SPEC.md §12.1; owner-approved 2026-10-23): liquidity V from same-quarter
+# PQD 7.3.1 ÷ 7.1 instead of 7.3.4 ÷ 7.1. Validation results are unchanged; only the scoring field is replaced.
+SCORING_VULN = {cid: dict(field='payment_to_qlr', scoring_version='v1.2',
+                          label='Estimated largest payment obligation ÷ qualifying liquid resources (7.3.1 ÷ 7.1)',
+                          replaces='peak_payment_to_qlr (7.3.4 ÷ 7.1)')
+                for cid in ('FICC-GSD-02', 'ECS-NSCC-01', 'ECS-NSCC-02')}

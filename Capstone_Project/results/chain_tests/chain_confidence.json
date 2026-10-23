@@ -45,13 +45,15 @@
       },
       "test_variable": "OFR GCF (Treasury collateral, all tenors) − DVP overnight, bp (Final)",
       "vulnerability_variable": {
-        "field": "peak_payment_to_qlr",
-        "description": "Peak payment obligation ÷ qualifying liquid resources (7.3.4 ÷ 7.1)",
+        "field": "payment_to_qlr",
+        "description": "Estimated largest payment obligation ÷ qualifying liquid resources (7.3.1 ÷ 7.1)",
         "direction": "higher = more vulnerable",
         "latest_quarter": "2026Q2",
-        "latest_percentile": 0.8636363636363636,
-        "latest_score_1to5": 5,
-        "warning": null
+        "latest_percentile": 0.7727272727272727,
+        "latest_score_1to5": 4,
+        "warning": null,
+        "scoring_version": "v1.2",
+        "replaces": "peak_payment_to_qlr (7.3.4 ÷ 7.1)"
       },
       "mechanism_override": null,
       "flags": [
@@ -152,13 +154,15 @@
       },
       "test_variable": "Peak ÷ average daily VM (6.7.1 ÷ 6.6.1)",
       "vulnerability_variable": {
-        "field": "peak_payment_to_qlr",
-        "description": "Peak payment obligation ÷ qualifying liquid resources (7.3.4 ÷ 7.1)",
+        "field": "payment_to_qlr",
+        "description": "Estimated largest payment obligation ÷ qualifying liquid resources (7.3.1 ÷ 7.1)",
         "direction": "higher = more vulnerable",
         "latest_quarter": "2026Q2",
-        "latest_percentile": 0.4090909090909091,
+        "latest_percentile": 0.5454545454545454,
         "latest_score_1to5": 3,
-        "warning": null
+        "warning": null,
+        "scoring_version": "v1.2",
+        "replaces": "peak_payment_to_qlr (7.3.4 ÷ 7.1)"
       },
       "mechanism_override": null,
       "flags": [
@@ -179,13 +183,15 @@
       },
       "test_variable": "Peak ÷ average daily VM (6.7.1 ÷ 6.6.1)",
       "vulnerability_variable": {
-        "field": "peak_payment_to_qlr",
-        "description": "Peak payment obligation ÷ qualifying liquid resources (7.3.4 ÷ 7.1)",
+        "field": "payment_to_qlr",
+        "description": "Estimated largest payment obligation ÷ qualifying liquid resources (7.3.1 ÷ 7.1)",
         "direction": "higher = more vulnerable",
         "latest_quarter": "2026Q2",
-        "latest_percentile": 0.4090909090909091,
+        "latest_percentile": 0.5454545454545454,
         "latest_score_1to5": 3,
-        "warning": null
+        "warning": null,
+        "scoring_version": "v1.2",
+        "replaces": "peak_payment_to_qlr (7.3.4 ÷ 7.1)"
       },
       "mechanism_override": null,
       "flags": [

@@ -4,6 +4,8 @@
 
 Read only: does not touch active scoring, chain_confidence.json or any committed output.
 Writes results/scoring/proposals/ (quarters table, ranking comparison, evidence).
+Written against scoring v1.1 (2026-10-23T03:02Z); A and B became v1.2 (§12), so re-running it now fails its v1.1
+baseline check. The committed outputs are the record of the approval.
 """
 import argparse, copy, json, math, re
 

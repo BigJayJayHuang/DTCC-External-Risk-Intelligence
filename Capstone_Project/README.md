@@ -15,6 +15,9 @@
 | **事件与 PQD 两项检验** | [中文结果](risk_business_ml/event_vulnerability_tests_2026_10_06/两个检验与脆弱度框架_中文结果.md) | 事件检验、PQD 关联检验及外部冲击 × 内部脆弱度框架 |
 | **后续修订与中英文报告** | [feedback_revision_report](risk_business_ml/feedback_revision_report_2026_10_06/README.md) | 区分业务反应与缓冲充足度的补充检验 |
 | **逻辑链、数据索要清单与演讲稿** | [reports](reports/) | FICC 九条中英逻辑链、十业务线中英文清单、第五页演讲稿与预览 |
+| **核心逻辑链检验（第一轮已签字）** | [results/chain_tests](results/chain_tests/REPORT.md) | FICC、ECS 共 10 条核心链的两项检验、最终可信度（`chain_confidence.json`）和图表；检验规则先定稿后计算（`TEST_SPEC.md`） |
+| **每周打分（当前 v1.2）** | [results/scoring](results/scoring/SCORING_SPEC.md) | 每周冲击分 S × 脆弱度 V 与卡片排名：`weekly_scores.json`（最新一周）、`weekly_scores_history.csv`（2021 年起）、v1.1 与 v1.2 对比；旧版本输出保留为 `*_v1.0.*`、`*_v1.1.*` |
+| **检验与打分程序** | [validation](validation/) | 数据下载（`fetch.py`）、逻辑链检验（`run.py`）、可信度导出（`export.py`）、每周打分（`scoring.py`）、事件评分规则 v1.2（`event_scoring.py`）与 LLM 事件分类提示词 |
 
 ## 队友如何使用
 
@@ -47,5 +50,12 @@ python3 download_latest.py
 ## English
 
 This folder is the single entry point for the team's previous collection work, historical public disclosures, exploratory models and validation, bilingual reports, speaking materials, and the current shared database. Download **one complete ZIP** from the release page. Unzip it and run `python3 query.py` from `Capstone_Project/capstone_database`; use `python3 download_latest.py` later to refresh only your local database copy.
+
+Chain validation and weekly scoring:
+- **Validation:** [results/chain_tests](results/chain_tests/REPORT.md) holds validation round 1 (10 core FICC/ECS chains, signed off 2026-10-16).
+- **Weekly scoring:** [results/scoring](results/scoring/SCORING_SPEC.md) holds the weekly shock × vulnerability scores and card ranking (current spec v1.2; earlier outputs kept as `*_v1.0.*` / `*_v1.1.*`).
+- **Code:** in [validation](validation/). Each spec was frozen and committed before its scores were computed.
+- **To re-run**, from `Capstone_Project/`: `.venv-validation/bin/python -m validation.scoring --run-date YYYY-MM-DD`.
+- **Limits:** these scores are rule-based screening scores, not calibrated risk probabilities.
 
 The daily workflow updates the current database and republishes the complete ZIP. Historical studies retain their original inputs, dates and limitations; they are not retrained by this job. Source-provided project documents and full presentation decks remain in the original workspace. Redundant old archives, installed dependencies, credentials and temporary caches are excluded.

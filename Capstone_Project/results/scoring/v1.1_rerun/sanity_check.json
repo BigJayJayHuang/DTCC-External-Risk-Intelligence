@@ -1,0 +1,2092 @@
+{
+  "weeks": {
+    "2020-03-20": [
+      {
+        "id": "FICC-GSD-01",
+        "week": "2020-03-16",
+        "week_end": "2020-03-20",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-01",
+            "version": "v1",
+            "signal": "|\u0394DGS10| daily, bp (FRED)",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 29.000000000000004,
+              "percentile": 1.0,
+              "prior_weeks": 115
+            }
+          }
+        ],
+        "S": 5,
+        "V": null,
+        "vulnerability_variable": "Cover-1 stress loss \u00f7 margin (4.4.3 \u00f7 6.1.1)",
+        "severity": null,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "no PQD public yet",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no PQD public yet",
+        "group": "shock-only",
+        "rank_in_group": 1
+      },
+      {
+        "id": "FICC-GSD-04",
+        "week": "2020-03-16",
+        "week_end": "2020-03-20",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-04",
+            "version": "v1",
+            "signal": "Baa\u221210Y 20-day widening, bp",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 214.00000000000006,
+              "percentile": 1.0,
+              "prior_weeks": 111
+            }
+          }
+        ],
+        "S": 5,
+        "V": null,
+        "vulnerability_variable": "Top-5 share of open positions (PQD 18.2.2)",
+        "severity": null,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "no PQD public yet",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no PQD public yet",
+        "group": "shock-only",
+        "rank_in_group": 2
+      },
+      {
+        "id": "NSCC liquidity",
+        "week": "2020-03-16",
+        "week_end": "2020-03-20",
+        "chains": [
+          {
+            "chain_id": "ECS-NSCC-01",
+            "version": "v2",
+            "signal": "VIX \u00f7 20-day average",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 2.1284427284427285,
+              "percentile": 0.972972972972973,
+              "prior_weeks": 111
+            }
+          },
+          {
+            "chain_id": "ECS-NSCC-02",
+            "version": "v2",
+            "signal": "SOFR\u2212EFFR quarter-end adjusted, bp",
+            "S": null,
+            "S_computation": {
+              "S": null,
+              "reason": "insufficient history (76 < 104 prior weeks)",
+              "weekly_peak": 28.000000000000004,
+              "prior_weeks": 76
+            }
+          }
+        ],
+        "S": 5,
+        "V": null,
+        "vulnerability_variable": "Peak payment obligation \u00f7 qualifying liquid resources (7.3.4 \u00f7 7.1)",
+        "severity": null,
+        "confidence": "Medium",
+        "flags": [
+          "v2_candidate_needs_2026Q3_confirmation"
+        ],
+        "vuln_reliability": "no PQD public yet",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no PQD public yet",
+        "shock_driver_chain": [
+          "ECS-NSCC-01"
+        ],
+        "group": "shock-only",
+        "rank_in_group": 3
+      },
+      {
+        "id": "FICC-MBSD-01",
+        "week": "2020-03-16",
+        "week_end": "2020-03-20",
+        "chains": [
+          {
+            "chain_id": "FICC-MBSD-01",
+            "version": "v1",
+            "signal": "|\u0394(MORTGAGE30US \u2212 DGS10)| weekly, bp",
+            "S": 3,
+            "S_computation": {
+              "S": 3,
+              "method": "percentile",
+              "weekly_peak": 4.999999999999972,
+              "percentile": 0.42105263157894735,
+              "prior_weeks": 114
+            }
+          }
+        ],
+        "S": 3,
+        "V": null,
+        "vulnerability_variable": "Cover-1 stress loss \u00f7 margin (4.4.3 \u00f7 6.1.1)",
+        "severity": null,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "no PQD public yet",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no PQD public yet",
+        "group": "shock-only",
+        "rank_in_group": 4
+      },
+      {
+        "id": "ECS-NSCC-04",
+        "week": "2020-03-16",
+        "week_end": "2020-03-20",
+        "chains": [
+          {
+            "chain_id": "ECS-NSCC-04",
+            "version": "v2 (post-hoc)",
+            "signal": "none; shock score from rubric (to be designed)",
+            "S": 1,
+            "S_computation": {
+              "S": 1,
+              "method": "rubric",
+              "reason": "no active event",
+              "events": []
+            }
+          }
+        ],
+        "S": 1,
+        "V": null,
+        "vulnerability_variable": "Top-5 share of open positions (PQD 18.2.2)",
+        "severity": null,
+        "confidence": "Low",
+        "flags": [
+          "post_hoc_version",
+          "shock_score_from_rubric"
+        ],
+        "vuln_reliability": "no PQD public yet",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no PQD public yet",
+        "group": "shock-only",
+        "rank_in_group": 5
+      },
+      {
+        "id": "ECS-SET-01",
+        "week": "2020-03-16",
+        "week_end": "2020-03-20",
+        "chains": [
+          {
+            "chain_id": "ECS-SET-01",
+            "version": "v2",
+            "signal": "none; shock score from rubric (to be designed)",
+            "S": 1,
+            "S_computation": {
+              "S": 1,
+              "method": "rubric",
+              "reason": "no active event",
+              "events": []
+            }
+          }
+        ],
+        "S": 1,
+        "V": null,
+        "vulnerability_variable": "vulnerability: no data (shock-only)",
+        "severity": null,
+        "confidence": "Low",
+        "flags": [
+          "shock_score_from_rubric"
+        ],
+        "vuln_reliability": "n/a",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no data",
+        "group": "shock-only",
+        "rank_in_group": 6
+      },
+      {
+        "id": "FICC-GSD-03",
+        "week": "2020-03-16",
+        "week_end": "2020-03-20",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-03",
+            "version": "v1",
+            "signal": "none; shock score from rubric (to be designed)",
+            "S": 1,
+            "S_computation": {
+              "S": 1,
+              "method": "rubric",
+              "reason": "no active event",
+              "events": []
+            }
+          }
+        ],
+        "S": 1,
+        "V": null,
+        "vulnerability_variable": "Top-5 share of client transactions (PQD 19.1.3.2, avg)",
+        "severity": null,
+        "confidence": "Low",
+        "flags": [
+          "shock_score_from_rubric"
+        ],
+        "vuln_reliability": "no PQD public yet",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no PQD public yet",
+        "group": "shock-only",
+        "rank_in_group": 7
+      },
+      {
+        "id": "ECS-NSCC-03",
+        "week": "2020-03-16",
+        "week_end": "2020-03-20",
+        "chains": [
+          {
+            "chain_id": "ECS-NSCC-03",
+            "version": "v1",
+            "signal": "US consolidated equity volume, shares (Cboe, all venues incl. TRFs)",
+            "S": null,
+            "S_computation": {
+              "S": null,
+              "reason": "insufficient history (63 < 104 prior weeks)",
+              "weekly_peak": 2.3660381226902434,
+              "prior_weeks": 63
+            }
+          }
+        ],
+        "S": null,
+        "V": null,
+        "vulnerability_variable": "vulnerability: no data (shock-only)",
+        "severity": null,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "n/a",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no data",
+        "S_null_reason": "ECS-NSCC-03: insufficient history (63 < 104 prior weeks)",
+        "group": "no score",
+        "rank_in_group": 1
+      },
+      {
+        "id": "FICC-GSD-02",
+        "week": "2020-03-16",
+        "week_end": "2020-03-20",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-02",
+            "version": "v2 (post-hoc)",
+            "signal": "SOFR\u2212EFFR quarter-end adjusted, bp",
+            "S": null,
+            "S_computation": {
+              "S": null,
+              "reason": "insufficient history (76 < 104 prior weeks)",
+              "weekly_peak": 28.000000000000004,
+              "prior_weeks": 76
+            }
+          }
+        ],
+        "S": null,
+        "V": null,
+        "vulnerability_variable": "Peak payment obligation \u00f7 qualifying liquid resources (7.3.4 \u00f7 7.1)",
+        "severity": null,
+        "confidence": "Medium",
+        "flags": [
+          "post_hoc_version",
+          "watch"
+        ],
+        "vuln_reliability": "no PQD public yet",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no PQD public yet",
+        "S_null_reason": "FICC-GSD-02: insufficient history (76 < 104 prior weeks)",
+        "group": "no score",
+        "rank_in_group": 2
+      }
+    ],
+    "2021-01-29": [
+      {
+        "id": "ECS-NSCC-03",
+        "week": "2021-01-25",
+        "week_end": "2021-01-29",
+        "chains": [
+          {
+            "chain_id": "ECS-NSCC-03",
+            "version": "v1",
+            "signal": "US consolidated equity volume, shares (Cboe, all venues incl. TRFs)",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 1.9807149524653302,
+              "percentile": 0.9166666666666666,
+              "prior_weeks": 108
+            }
+          }
+        ],
+        "S": 5,
+        "V": null,
+        "vulnerability_variable": "vulnerability: no data (shock-only)",
+        "severity": null,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "n/a",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no data",
+        "group": "shock-only",
+        "rank_in_group": 1
+      },
+      {
+        "id": "ECS-NSCC-04",
+        "week": "2021-01-25",
+        "week_end": "2021-01-29",
+        "chains": [
+          {
+            "chain_id": "ECS-NSCC-04",
+            "version": "v2 (post-hoc)",
+            "signal": "none; shock score from rubric (to be designed)",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "rubric",
+              "events": [
+                {
+                  "event_id": "EV0008",
+                  "title": "NSCC special ECP charge on 18 members (meme-stock week)",
+                  "effect_date": "2021-01-27",
+                  "days_to_effect": -2,
+                  "certainty": 2,
+                  "reach": 2,
+                  "timing": 2,
+                  "total": 6,
+                  "S": 5,
+                  "needs_review": "N"
+                },
+                {
+                  "event_id": "EV0009",
+                  "title": "NSCC waives ECP charge for all members",
+                  "effect_date": "2021-01-28",
+                  "days_to_effect": -1,
+                  "certainty": 2,
+                  "reach": 2,
+                  "timing": 2,
+                  "total": 6,
+                  "S": 5,
+                  "needs_review": "N"
+                }
+              ],
+              "driving_event_ids": [
+                "EV0008",
+                "EV0009"
+              ]
+            }
+          }
+        ],
+        "S": 5,
+        "V": null,
+        "vulnerability_variable": "Top-5 share of open positions (PQD 18.2.2)",
+        "severity": null,
+        "confidence": "Low",
+        "flags": [
+          "post_hoc_version",
+          "shock_score_from_rubric"
+        ],
+        "vuln_reliability": "no PQD public yet",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no PQD public yet",
+        "group": "shock-only",
+        "rank_in_group": 2
+      },
+      {
+        "id": "NSCC liquidity",
+        "week": "2021-01-25",
+        "week_end": "2021-01-29",
+        "chains": [
+          {
+            "chain_id": "ECS-NSCC-01",
+            "version": "v2",
+            "signal": "VIX \u00f7 20-day average",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 1.5549844334398963,
+              "percentile": 0.9487179487179487,
+              "prior_weeks": 156
+            }
+          },
+          {
+            "chain_id": "ECS-NSCC-02",
+            "version": "v2",
+            "signal": "SOFR\u2212EFFR quarter-end adjusted, bp",
+            "S": 1,
+            "S_computation": {
+              "S": 1,
+              "method": "floor (signal <= 0)",
+              "weekly_peak": -1.0000000000000009,
+              "percentile": 0.1487603305785124,
+              "prior_weeks": 121
+            }
+          }
+        ],
+        "S": 5,
+        "V": null,
+        "vulnerability_variable": "Peak payment obligation \u00f7 qualifying liquid resources (7.3.4 \u00f7 7.1)",
+        "severity": null,
+        "confidence": "Medium",
+        "flags": [
+          "v2_candidate_needs_2026Q3_confirmation"
+        ],
+        "vuln_reliability": "no PQD public yet",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no PQD public yet",
+        "shock_driver_chain": [
+          "ECS-NSCC-01"
+        ],
+        "group": "shock-only",
+        "rank_in_group": 3
+      },
+      {
+        "id": "FICC-GSD-01",
+        "week": "2021-01-25",
+        "week_end": "2021-01-29",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-01",
+            "version": "v1",
+            "signal": "|\u0394DGS10| daily, bp (FRED)",
+            "S": 3,
+            "S_computation": {
+              "S": 3,
+              "method": "percentile",
+              "weekly_peak": 5.000000000000004,
+              "percentile": 0.4375,
+              "prior_weeks": 160
+            }
+          }
+        ],
+        "S": 3,
+        "V": null,
+        "vulnerability_variable": "Cover-1 stress loss \u00f7 margin (4.4.3 \u00f7 6.1.1)",
+        "severity": null,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "no PQD public yet",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no PQD public yet",
+        "group": "shock-only",
+        "rank_in_group": 4
+      },
+      {
+        "id": "ECS-SET-01",
+        "week": "2021-01-25",
+        "week_end": "2021-01-29",
+        "chains": [
+          {
+            "chain_id": "ECS-SET-01",
+            "version": "v2",
+            "signal": "none; shock score from rubric (to be designed)",
+            "S": 1,
+            "S_computation": {
+              "S": 1,
+              "method": "rubric",
+              "reason": "no active event",
+              "events": []
+            }
+          }
+        ],
+        "S": 1,
+        "V": null,
+        "vulnerability_variable": "vulnerability: no data (shock-only)",
+        "severity": null,
+        "confidence": "Low",
+        "flags": [
+          "shock_score_from_rubric"
+        ],
+        "vuln_reliability": "n/a",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no data",
+        "group": "shock-only",
+        "rank_in_group": 5
+      },
+      {
+        "id": "FICC-GSD-02",
+        "week": "2021-01-25",
+        "week_end": "2021-01-29",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-02",
+            "version": "v2 (post-hoc)",
+            "signal": "SOFR\u2212EFFR quarter-end adjusted, bp",
+            "S": 1,
+            "S_computation": {
+              "S": 1,
+              "method": "floor (signal <= 0)",
+              "weekly_peak": -1.0000000000000009,
+              "percentile": 0.1487603305785124,
+              "prior_weeks": 121
+            }
+          }
+        ],
+        "S": 1,
+        "V": null,
+        "vulnerability_variable": "Peak payment obligation \u00f7 qualifying liquid resources (7.3.4 \u00f7 7.1)",
+        "severity": null,
+        "confidence": "Medium",
+        "flags": [
+          "post_hoc_version",
+          "watch"
+        ],
+        "vuln_reliability": "no PQD public yet",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no PQD public yet",
+        "group": "shock-only",
+        "rank_in_group": 6
+      },
+      {
+        "id": "FICC-GSD-03",
+        "week": "2021-01-25",
+        "week_end": "2021-01-29",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-03",
+            "version": "v1",
+            "signal": "none; shock score from rubric (to be designed)",
+            "S": 1,
+            "S_computation": {
+              "S": 1,
+              "method": "rubric",
+              "reason": "no active event",
+              "events": []
+            }
+          }
+        ],
+        "S": 1,
+        "V": null,
+        "vulnerability_variable": "Top-5 share of client transactions (PQD 19.1.3.2, avg)",
+        "severity": null,
+        "confidence": "Low",
+        "flags": [
+          "shock_score_from_rubric"
+        ],
+        "vuln_reliability": "no PQD public yet",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no PQD public yet",
+        "group": "shock-only",
+        "rank_in_group": 7
+      },
+      {
+        "id": "FICC-GSD-04",
+        "week": "2021-01-25",
+        "week_end": "2021-01-29",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-04",
+            "version": "v1",
+            "signal": "Baa\u221210Y 20-day widening, bp",
+            "S": 1,
+            "S_computation": {
+              "S": 1,
+              "method": "floor (signal <= 0)",
+              "weekly_peak": 0.0,
+              "percentile": 0.22756410256410256,
+              "prior_weeks": 156
+            }
+          }
+        ],
+        "S": 1,
+        "V": null,
+        "vulnerability_variable": "Top-5 share of open positions (PQD 18.2.2)",
+        "severity": null,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "no PQD public yet",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no PQD public yet",
+        "group": "shock-only",
+        "rank_in_group": 8
+      },
+      {
+        "id": "FICC-MBSD-01",
+        "week": "2021-01-25",
+        "week_end": "2021-01-29",
+        "chains": [
+          {
+            "chain_id": "FICC-MBSD-01",
+            "version": "v1",
+            "signal": "|\u0394(MORTGAGE30US \u2212 DGS10)| weekly, bp",
+            "S": 1,
+            "S_computation": {
+              "S": 1,
+              "method": "percentile",
+              "weekly_peak": 1.0,
+              "percentile": 0.0880503144654088,
+              "prior_weeks": 159
+            }
+          }
+        ],
+        "S": 1,
+        "V": null,
+        "vulnerability_variable": "Cover-1 stress loss \u00f7 margin (4.4.3 \u00f7 6.1.1)",
+        "severity": null,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "no PQD public yet",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no PQD public yet",
+        "group": "shock-only",
+        "rank_in_group": 9
+      }
+    ],
+    "2023-03-17": [
+      {
+        "id": "FICC-GSD-02",
+        "week": "2023-03-13",
+        "week_end": "2023-03-17",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-02",
+            "version": "v2 (post-hoc)",
+            "signal": "SOFR\u2212EFFR quarter-end adjusted, bp",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 4.0000000000000036,
+              "percentile": 0.8491379310344828,
+              "prior_weeks": 232
+            }
+          }
+        ],
+        "S": 5,
+        "V": 4,
+        "vulnerability_variable": "Peak payment obligation \u00f7 qualifying liquid resources (7.3.4 \u00f7 7.1)",
+        "severity": 20,
+        "confidence": "Medium",
+        "flags": [
+          "post_hoc_version",
+          "watch"
+        ],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2022Q4",
+        "driver": "shock",
+        "group": "severity",
+        "rank_in_group": 1
+      },
+      {
+        "id": "FICC-GSD-04",
+        "week": "2023-03-13",
+        "week_end": "2023-03-17",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-04",
+            "version": "v1",
+            "signal": "Baa\u221210Y 20-day widening, bp",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 41.000000000000014,
+              "percentile": 0.9662921348314607,
+              "prior_weeks": 267
+            }
+          }
+        ],
+        "S": 5,
+        "V": 3,
+        "vulnerability_variable": "Top-5 share of open positions (PQD 18.2.2)",
+        "severity": 15,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2022Q4",
+        "driver": "shock",
+        "group": "severity",
+        "rank_in_group": 2
+      },
+      {
+        "id": "NSCC liquidity",
+        "week": "2023-03-13",
+        "week_end": "2023-03-17",
+        "chains": [
+          {
+            "chain_id": "ECS-NSCC-01",
+            "version": "v2",
+            "signal": "VIX \u00f7 20-day average",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 1.2686567164179101,
+              "percentile": 0.846441947565543,
+              "prior_weeks": 267
+            }
+          },
+          {
+            "chain_id": "ECS-NSCC-02",
+            "version": "v2",
+            "signal": "SOFR\u2212EFFR quarter-end adjusted, bp",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 4.0000000000000036,
+              "percentile": 0.8491379310344828,
+              "prior_weeks": 232
+            }
+          }
+        ],
+        "S": 5,
+        "V": 3,
+        "vulnerability_variable": "Peak payment obligation \u00f7 qualifying liquid resources (7.3.4 \u00f7 7.1)",
+        "severity": 15,
+        "confidence": "Medium",
+        "flags": [
+          "v2_candidate_needs_2026Q3_confirmation"
+        ],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2022Q4",
+        "driver": "shock",
+        "shock_driver_chain": [
+          "ECS-NSCC-01",
+          "ECS-NSCC-02"
+        ],
+        "group": "severity",
+        "rank_in_group": 3
+      },
+      {
+        "id": "FICC-MBSD-01",
+        "week": "2023-03-13",
+        "week_end": "2023-03-17",
+        "chains": [
+          {
+            "chain_id": "FICC-MBSD-01",
+            "version": "v1",
+            "signal": "|\u0394(MORTGAGE30US \u2212 DGS10)| weekly, bp",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 23.999999999999943,
+              "percentile": 0.9222222222222223,
+              "prior_weeks": 270
+            }
+          }
+        ],
+        "S": 5,
+        "V": 2,
+        "vulnerability_variable": "Cover-1 stress loss \u00f7 margin (4.4.3 \u00f7 6.1.1)",
+        "severity": 10,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2022Q4",
+        "driver": "shock",
+        "group": "severity",
+        "rank_in_group": 4
+      },
+      {
+        "id": "FICC-GSD-01",
+        "week": "2023-03-13",
+        "week_end": "2023-03-17",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-01",
+            "version": "v1",
+            "signal": "|\u0394DGS10| daily, bp (FRED)",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 16.999999999999993,
+              "percentile": 0.9630996309963099,
+              "prior_weeks": 271
+            }
+          }
+        ],
+        "S": 5,
+        "V": 1,
+        "vulnerability_variable": "Cover-1 stress loss \u00f7 margin (4.4.3 \u00f7 6.1.1)",
+        "severity": 5,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2022Q4",
+        "driver": "shock",
+        "group": "severity",
+        "rank_in_group": 5
+      },
+      {
+        "id": "ECS-NSCC-04",
+        "week": "2023-03-13",
+        "week_end": "2023-03-17",
+        "chains": [
+          {
+            "chain_id": "ECS-NSCC-04",
+            "version": "v2 (post-hoc)",
+            "signal": "none; shock score from rubric (to be designed)",
+            "S": 1,
+            "S_computation": {
+              "S": 1,
+              "method": "rubric",
+              "reason": "no active event",
+              "events": []
+            }
+          }
+        ],
+        "S": 1,
+        "V": 4,
+        "vulnerability_variable": "Top-5 share of open positions (PQD 18.2.2)",
+        "severity": 4,
+        "confidence": "Low",
+        "flags": [
+          "post_hoc_version",
+          "shock_score_from_rubric"
+        ],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2022Q4",
+        "driver": "vulnerability",
+        "group": "severity",
+        "rank_in_group": 6
+      },
+      {
+        "id": "ECS-NSCC-03",
+        "week": "2023-03-13",
+        "week_end": "2023-03-17",
+        "chains": [
+          {
+            "chain_id": "ECS-NSCC-03",
+            "version": "v1",
+            "signal": "US consolidated equity volume, shares (Cboe, all venues incl. TRFs)",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 1.5996269969821744,
+              "percentile": 0.9269406392694064,
+              "prior_weeks": 219
+            }
+          }
+        ],
+        "S": 5,
+        "V": null,
+        "vulnerability_variable": "vulnerability: no data (shock-only)",
+        "severity": null,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "n/a",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no data",
+        "group": "shock-only",
+        "rank_in_group": 1
+      },
+      {
+        "id": "ECS-SET-01",
+        "week": "2023-03-13",
+        "week_end": "2023-03-17",
+        "chains": [
+          {
+            "chain_id": "ECS-SET-01",
+            "version": "v2",
+            "signal": "none; shock score from rubric (to be designed)",
+            "S": 4,
+            "S_computation": {
+              "S": 4,
+              "method": "rubric",
+              "events": [
+                {
+                  "event_id": "EV0001",
+                  "title": "SEC adopts T+1 settlement cycle",
+                  "effect_date": "2023-02-15",
+                  "days_to_effect": -30,
+                  "certainty": 2,
+                  "reach": 2,
+                  "timing": 1,
+                  "total": 5,
+                  "S": 4,
+                  "needs_review": "N"
+                },
+                {
+                  "event_id": "EV0002",
+                  "title": "US T+1 go-live",
+                  "effect_date": "2024-05-28",
+                  "days_to_effect": 438,
+                  "certainty": 2,
+                  "reach": 2,
+                  "timing": 0,
+                  "total": 4,
+                  "S": 2,
+                  "needs_review": "N"
+                }
+              ],
+              "driving_event_ids": [
+                "EV0001"
+              ]
+            }
+          }
+        ],
+        "S": 4,
+        "V": null,
+        "vulnerability_variable": "vulnerability: no data (shock-only)",
+        "severity": null,
+        "confidence": "Low",
+        "flags": [
+          "shock_score_from_rubric"
+        ],
+        "vuln_reliability": "n/a",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no data",
+        "group": "shock-only",
+        "rank_in_group": 2
+      },
+      {
+        "id": "FICC-GSD-03",
+        "week": "2023-03-13",
+        "week_end": "2023-03-17",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-03",
+            "version": "v1",
+            "signal": "none; shock score from rubric (to be designed)",
+            "S": 1,
+            "S_computation": {
+              "S": 1,
+              "method": "rubric",
+              "reason": "no active event",
+              "events": []
+            }
+          }
+        ],
+        "S": 1,
+        "V": null,
+        "vulnerability_variable": "Top-5 share of client transactions (PQD 19.1.3.2, avg)",
+        "severity": null,
+        "confidence": "Low",
+        "flags": [
+          "shock_score_from_rubric"
+        ],
+        "vuln_reliability": "no PQD public yet",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no PQD public yet",
+        "group": "shock-only",
+        "rank_in_group": 3
+      }
+    ],
+    "2024-05-31": [
+      {
+        "id": "FICC-GSD-02",
+        "week": "2024-05-27",
+        "week_end": "2024-05-31",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-02",
+            "version": "v2 (post-hoc)",
+            "signal": "SOFR\u2212EFFR quarter-end adjusted, bp",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 3.000000000000025,
+              "percentile": 0.8288135593220339,
+              "prior_weeks": 295
+            }
+          }
+        ],
+        "S": 5,
+        "V": 5,
+        "vulnerability_variable": "Peak payment obligation \u00f7 qualifying liquid resources (7.3.4 \u00f7 7.1)",
+        "severity": 25,
+        "confidence": "Medium",
+        "flags": [
+          "post_hoc_version",
+          "watch"
+        ],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2023Q4",
+        "driver": "both",
+        "group": "severity",
+        "rank_in_group": 1
+      },
+      {
+        "id": "NSCC liquidity",
+        "week": "2024-05-27",
+        "week_end": "2024-05-31",
+        "chains": [
+          {
+            "chain_id": "ECS-NSCC-01",
+            "version": "v2",
+            "signal": "VIX \u00f7 20-day average",
+            "S": 4,
+            "S_computation": {
+              "S": 4,
+              "method": "percentile",
+              "weekly_peak": 1.124494870997824,
+              "percentile": 0.703030303030303,
+              "prior_weeks": 330
+            }
+          },
+          {
+            "chain_id": "ECS-NSCC-02",
+            "version": "v2",
+            "signal": "SOFR\u2212EFFR quarter-end adjusted, bp",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 3.000000000000025,
+              "percentile": 0.8288135593220339,
+              "prior_weeks": 295
+            }
+          }
+        ],
+        "S": 5,
+        "V": 4,
+        "vulnerability_variable": "Peak payment obligation \u00f7 qualifying liquid resources (7.3.4 \u00f7 7.1)",
+        "severity": 20,
+        "confidence": "Medium",
+        "flags": [
+          "v2_candidate_needs_2026Q3_confirmation"
+        ],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2023Q4",
+        "driver": "shock",
+        "shock_driver_chain": [
+          "ECS-NSCC-02"
+        ],
+        "group": "severity",
+        "rank_in_group": 2
+      },
+      {
+        "id": "FICC-GSD-04",
+        "week": "2024-05-27",
+        "week_end": "2024-05-31",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-04",
+            "version": "v1",
+            "signal": "Baa\u221210Y 20-day widening, bp",
+            "S": 3,
+            "S_computation": {
+              "S": 3,
+              "method": "percentile",
+              "weekly_peak": 3.0000000000000027,
+              "percentile": 0.5545454545454546,
+              "prior_weeks": 330
+            }
+          }
+        ],
+        "S": 3,
+        "V": 5,
+        "vulnerability_variable": "Top-5 share of open positions (PQD 18.2.2)",
+        "severity": 15,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2023Q4",
+        "driver": "vulnerability",
+        "group": "severity",
+        "rank_in_group": 3
+      },
+      {
+        "id": "ECS-NSCC-04",
+        "week": "2024-05-27",
+        "week_end": "2024-05-31",
+        "chains": [
+          {
+            "chain_id": "ECS-NSCC-04",
+            "version": "v2 (post-hoc)",
+            "signal": "none; shock score from rubric (to be designed)",
+            "S": 1,
+            "S_computation": {
+              "S": 1,
+              "method": "rubric",
+              "reason": "no active event",
+              "events": []
+            }
+          }
+        ],
+        "S": 1,
+        "V": 5,
+        "vulnerability_variable": "Top-5 share of open positions (PQD 18.2.2)",
+        "severity": 5,
+        "confidence": "Low",
+        "flags": [
+          "post_hoc_version",
+          "shock_score_from_rubric"
+        ],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2023Q4",
+        "driver": "vulnerability",
+        "group": "severity",
+        "rank_in_group": 4
+      },
+      {
+        "id": "FICC-MBSD-01",
+        "week": "2024-05-27",
+        "week_end": "2024-05-31",
+        "chains": [
+          {
+            "chain_id": "FICC-MBSD-01",
+            "version": "v1",
+            "signal": "|\u0394(MORTGAGE30US \u2212 DGS10)| weekly, bp",
+            "S": 1,
+            "S_computation": {
+              "S": 1,
+              "method": "percentile",
+              "weekly_peak": 1.0,
+              "percentile": 0.08708708708708708,
+              "prior_weeks": 333
+            }
+          }
+        ],
+        "S": 1,
+        "V": 4,
+        "vulnerability_variable": "Cover-1 stress loss \u00f7 margin (4.4.3 \u00f7 6.1.1)",
+        "severity": 4,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2023Q4",
+        "driver": "vulnerability",
+        "group": "severity",
+        "rank_in_group": 5
+      },
+      {
+        "id": "FICC-GSD-01",
+        "week": "2024-05-27",
+        "week_end": "2024-05-31",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-01",
+            "version": "v1",
+            "signal": "|\u0394DGS10| daily, bp (FRED)",
+            "S": 3,
+            "S_computation": {
+              "S": 3,
+              "method": "percentile",
+              "weekly_peak": 8.000000000000007,
+              "percentile": 0.5733532934131736,
+              "prior_weeks": 334
+            }
+          }
+        ],
+        "S": 3,
+        "V": 1,
+        "vulnerability_variable": "Cover-1 stress loss \u00f7 margin (4.4.3 \u00f7 6.1.1)",
+        "severity": 3,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2023Q4",
+        "driver": "shock",
+        "group": "severity",
+        "rank_in_group": 6
+      },
+      {
+        "id": "ECS-SET-01",
+        "week": "2024-05-27",
+        "week_end": "2024-05-31",
+        "chains": [
+          {
+            "chain_id": "ECS-SET-01",
+            "version": "v2",
+            "signal": "none; shock score from rubric (to be designed)",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "rubric",
+              "events": [
+                {
+                  "event_id": "EV0002",
+                  "title": "US T+1 go-live",
+                  "effect_date": "2024-05-28",
+                  "days_to_effect": -3,
+                  "certainty": 2,
+                  "reach": 2,
+                  "timing": 2,
+                  "total": 6,
+                  "S": 5,
+                  "needs_review": "N"
+                }
+              ],
+              "driving_event_ids": [
+                "EV0002"
+              ]
+            }
+          }
+        ],
+        "S": 5,
+        "V": null,
+        "vulnerability_variable": "vulnerability: no data (shock-only)",
+        "severity": null,
+        "confidence": "Low",
+        "flags": [
+          "shock_score_from_rubric"
+        ],
+        "vuln_reliability": "n/a",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no data",
+        "group": "shock-only",
+        "rank_in_group": 1
+      },
+      {
+        "id": "ECS-NSCC-03",
+        "week": "2024-05-27",
+        "week_end": "2024-05-31",
+        "chains": [
+          {
+            "chain_id": "ECS-NSCC-03",
+            "version": "v1",
+            "signal": "US consolidated equity volume, shares (Cboe, all venues incl. TRFs)",
+            "S": 4,
+            "S_computation": {
+              "S": 4,
+              "method": "percentile",
+              "weekly_peak": 1.2184258448929104,
+              "percentile": 0.7695035460992907,
+              "prior_weeks": 282
+            }
+          }
+        ],
+        "S": 4,
+        "V": null,
+        "vulnerability_variable": "vulnerability: no data (shock-only)",
+        "severity": null,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "n/a",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no data",
+        "group": "shock-only",
+        "rank_in_group": 2
+      },
+      {
+        "id": "FICC-GSD-03",
+        "week": "2024-05-27",
+        "week_end": "2024-05-31",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-03",
+            "version": "v1",
+            "signal": "none; shock score from rubric (to be designed)",
+            "S": 1,
+            "S_computation": {
+              "S": 1,
+              "method": "rubric",
+              "reason": "no active event",
+              "events": []
+            }
+          }
+        ],
+        "S": 1,
+        "V": null,
+        "vulnerability_variable": "Top-5 share of client transactions (PQD 19.1.3.2, avg)",
+        "severity": null,
+        "confidence": "Low",
+        "flags": [
+          "shock_score_from_rubric"
+        ],
+        "vuln_reliability": "no PQD public yet",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no PQD public yet",
+        "group": "shock-only",
+        "rank_in_group": 3
+      }
+    ],
+    "2025-04-11": [
+      {
+        "id": "FICC-GSD-04",
+        "week": "2025-04-07",
+        "week_end": "2025-04-11",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-04",
+            "version": "v1",
+            "signal": "Baa\u221210Y 20-day widening, bp",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 38.000000000000014,
+              "percentile": 0.9653333333333334,
+              "prior_weeks": 375
+            }
+          }
+        ],
+        "S": 5,
+        "V": 5,
+        "vulnerability_variable": "Top-5 share of open positions (PQD 18.2.2)",
+        "severity": 25,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2024Q4",
+        "driver": "both",
+        "group": "severity",
+        "rank_in_group": 1
+      },
+      {
+        "id": "NSCC liquidity",
+        "week": "2025-04-07",
+        "week_end": "2025-04-11",
+        "chains": [
+          {
+            "chain_id": "ECS-NSCC-01",
+            "version": "v2",
+            "signal": "VIX \u00f7 20-day average",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 2.0710398733551,
+              "percentile": 0.9866666666666667,
+              "prior_weeks": 375
+            }
+          },
+          {
+            "chain_id": "ECS-NSCC-02",
+            "version": "v2",
+            "signal": "SOFR\u2212EFFR quarter-end adjusted, bp",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 8.999999999999986,
+              "percentile": 0.9338235294117647,
+              "prior_weeks": 340
+            }
+          }
+        ],
+        "S": 5,
+        "V": 5,
+        "vulnerability_variable": "Peak payment obligation \u00f7 qualifying liquid resources (7.3.4 \u00f7 7.1)",
+        "severity": 25,
+        "confidence": "Medium",
+        "flags": [
+          "v2_candidate_needs_2026Q3_confirmation"
+        ],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2024Q4",
+        "driver": "both",
+        "shock_driver_chain": [
+          "ECS-NSCC-01",
+          "ECS-NSCC-02"
+        ],
+        "group": "severity",
+        "rank_in_group": 2
+      },
+      {
+        "id": "FICC-GSD-02",
+        "week": "2025-04-07",
+        "week_end": "2025-04-11",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-02",
+            "version": "v2 (post-hoc)",
+            "signal": "SOFR\u2212EFFR quarter-end adjusted, bp",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 8.999999999999986,
+              "percentile": 0.9338235294117647,
+              "prior_weeks": 340
+            }
+          }
+        ],
+        "S": 5,
+        "V": 3,
+        "vulnerability_variable": "Peak payment obligation \u00f7 qualifying liquid resources (7.3.4 \u00f7 7.1)",
+        "severity": 15,
+        "confidence": "Medium",
+        "flags": [
+          "post_hoc_version",
+          "watch"
+        ],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2024Q4",
+        "driver": "shock",
+        "group": "severity",
+        "rank_in_group": 3
+      },
+      {
+        "id": "FICC-MBSD-01",
+        "week": "2025-04-07",
+        "week_end": "2025-04-11",
+        "chains": [
+          {
+            "chain_id": "FICC-MBSD-01",
+            "version": "v1",
+            "signal": "|\u0394(MORTGAGE30US \u2212 DGS10)| weekly, bp",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 36.00000000000003,
+              "percentile": 0.9841269841269841,
+              "prior_weeks": 378
+            }
+          }
+        ],
+        "S": 5,
+        "V": 2,
+        "vulnerability_variable": "Cover-1 stress loss \u00f7 margin (4.4.3 \u00f7 6.1.1)",
+        "severity": 10,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2024Q4",
+        "driver": "shock",
+        "group": "severity",
+        "rank_in_group": 4
+      },
+      {
+        "id": "FICC-GSD-01",
+        "week": "2025-04-07",
+        "week_end": "2025-04-11",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-01",
+            "version": "v1",
+            "signal": "|\u0394DGS10| daily, bp (FRED)",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 14.000000000000057,
+              "percentile": 0.9036939313984169,
+              "prior_weeks": 379
+            }
+          }
+        ],
+        "S": 5,
+        "V": 1,
+        "vulnerability_variable": "Cover-1 stress loss \u00f7 margin (4.4.3 \u00f7 6.1.1)",
+        "severity": 5,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2024Q4",
+        "driver": "shock",
+        "group": "severity",
+        "rank_in_group": 5
+      },
+      {
+        "id": "ECS-NSCC-04",
+        "week": "2025-04-07",
+        "week_end": "2025-04-11",
+        "chains": [
+          {
+            "chain_id": "ECS-NSCC-04",
+            "version": "v2 (post-hoc)",
+            "signal": "none; shock score from rubric (to be designed)",
+            "S": 1,
+            "S_computation": {
+              "S": 1,
+              "method": "rubric",
+              "reason": "no active event",
+              "events": []
+            }
+          }
+        ],
+        "S": 1,
+        "V": 3,
+        "vulnerability_variable": "Top-5 share of open positions (PQD 18.2.2)",
+        "severity": 3,
+        "confidence": "Low",
+        "flags": [
+          "post_hoc_version",
+          "shock_score_from_rubric"
+        ],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2024Q4",
+        "driver": "vulnerability",
+        "group": "severity",
+        "rank_in_group": 6
+      },
+      {
+        "id": "ECS-NSCC-03",
+        "week": "2025-04-07",
+        "week_end": "2025-04-11",
+        "chains": [
+          {
+            "chain_id": "ECS-NSCC-03",
+            "version": "v1",
+            "signal": "US consolidated equity volume, shares (Cboe, all venues incl. TRFs)",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 2.083569406091418,
+              "percentile": 0.981651376146789,
+              "prior_weeks": 327
+            }
+          }
+        ],
+        "S": 5,
+        "V": null,
+        "vulnerability_variable": "vulnerability: no data (shock-only)",
+        "severity": null,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "n/a",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no data",
+        "group": "shock-only",
+        "rank_in_group": 1
+      },
+      {
+        "id": "FICC-GSD-03",
+        "week": "2025-04-07",
+        "week_end": "2025-04-11",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-03",
+            "version": "v1",
+            "signal": "none; shock score from rubric (to be designed)",
+            "S": 4,
+            "S_computation": {
+              "S": 4,
+              "method": "rubric",
+              "events": [
+                {
+                  "event_id": "EV0005",
+                  "title": "SEC extends Treasury clearing compliance dates by one year (Rel. 34-102487)",
+                  "effect_date": "2025-02-25",
+                  "days_to_effect": -45,
+                  "certainty": 2,
+                  "reach": 2,
+                  "timing": 1,
+                  "total": 5,
+                  "S": 4,
+                  "needs_review": "N"
+                },
+                {
+                  "event_id": "EV0006",
+                  "title": "Treasury clearing compliance date: eligible cash transactions",
+                  "effect_date": "2026-12-31",
+                  "days_to_effect": 629,
+                  "certainty": 2,
+                  "reach": 2,
+                  "timing": 0,
+                  "total": 4,
+                  "S": 2,
+                  "needs_review": "N"
+                },
+                {
+                  "event_id": "EV0007",
+                  "title": "Treasury clearing compliance date: eligible repo transactions",
+                  "effect_date": "2027-06-30",
+                  "days_to_effect": 810,
+                  "certainty": 2,
+                  "reach": 2,
+                  "timing": 0,
+                  "total": 4,
+                  "S": 2,
+                  "needs_review": "N"
+                }
+              ],
+              "driving_event_ids": [
+                "EV0005"
+              ]
+            }
+          }
+        ],
+        "S": 4,
+        "V": null,
+        "vulnerability_variable": "Top-5 share of client transactions (PQD 19.1.3.2, avg)",
+        "severity": null,
+        "confidence": "Low",
+        "flags": [
+          "shock_score_from_rubric"
+        ],
+        "vuln_reliability": "no PQD public yet",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no PQD public yet",
+        "group": "shock-only",
+        "rank_in_group": 2
+      },
+      {
+        "id": "ECS-SET-01",
+        "week": "2025-04-07",
+        "week_end": "2025-04-11",
+        "chains": [
+          {
+            "chain_id": "ECS-SET-01",
+            "version": "v2",
+            "signal": "none; shock score from rubric (to be designed)",
+            "S": 1,
+            "S_computation": {
+              "S": 1,
+              "method": "rubric",
+              "reason": "no active event",
+              "events": []
+            }
+          }
+        ],
+        "S": 1,
+        "V": null,
+        "vulnerability_variable": "vulnerability: no data (shock-only)",
+        "severity": null,
+        "confidence": "Low",
+        "flags": [
+          "shock_score_from_rubric"
+        ],
+        "vuln_reliability": "n/a",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no data",
+        "group": "shock-only",
+        "rank_in_group": 3
+      }
+    ],
+    "2026-10-16": [
+      {
+        "id": "NSCC liquidity",
+        "week": "2026-10-12",
+        "week_end": "2026-10-16",
+        "chains": [
+          {
+            "chain_id": "ECS-NSCC-01",
+            "version": "v2",
+            "signal": "VIX \u00f7 20-day average",
+            "S": 5,
+            "S_computation": {
+              "S": 5,
+              "method": "percentile",
+              "weekly_peak": 1.2707796954960107,
+              "percentile": 0.8678414096916299,
+              "prior_weeks": 454
+            }
+          },
+          {
+            "chain_id": "ECS-NSCC-02",
+            "version": "v2",
+            "signal": "SOFR\u2212EFFR quarter-end adjusted, bp",
+            "S": 1,
+            "S_computation": {
+              "S": 1,
+              "method": "floor (signal <= 0)",
+              "weekly_peak": 0.0,
+              "percentile": 0.2935560859188544,
+              "prior_weeks": 419
+            }
+          }
+        ],
+        "S": 5,
+        "V": 3,
+        "vulnerability_variable": "Peak payment obligation \u00f7 qualifying liquid resources (7.3.4 \u00f7 7.1)",
+        "severity": 15,
+        "confidence": "Medium",
+        "flags": [
+          "v2_candidate_needs_2026Q3_confirmation"
+        ],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2026Q2",
+        "driver": "shock",
+        "shock_driver_chain": [
+          "ECS-NSCC-01"
+        ],
+        "group": "severity",
+        "rank_in_group": 1
+      },
+      {
+        "id": "FICC-GSD-03",
+        "week": "2026-10-12",
+        "week_end": "2026-10-16",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-03",
+            "version": "v1",
+            "signal": "none; shock score from rubric (to be designed)",
+            "S": 4,
+            "S_computation": {
+              "S": 4,
+              "method": "rubric",
+              "events": [
+                {
+                  "event_id": "EV0006",
+                  "title": "Treasury clearing compliance date: eligible cash transactions",
+                  "effect_date": "2026-12-31",
+                  "days_to_effect": 76,
+                  "certainty": 2,
+                  "reach": 2,
+                  "timing": 1,
+                  "total": 5,
+                  "S": 4,
+                  "needs_review": "N"
+                },
+                {
+                  "event_id": "EV0007",
+                  "title": "Treasury clearing compliance date: eligible repo transactions",
+                  "effect_date": "2027-06-30",
+                  "days_to_effect": 257,
+                  "certainty": 2,
+                  "reach": 2,
+                  "timing": 0,
+                  "total": 4,
+                  "S": 2,
+                  "needs_review": "N"
+                }
+              ],
+              "driving_event_ids": [
+                "EV0006"
+              ]
+            }
+          }
+        ],
+        "S": 4,
+        "V": 3,
+        "vulnerability_variable": "Top-5 share of client transactions (PQD 19.1.3.2, avg)",
+        "severity": 12,
+        "confidence": "Low",
+        "flags": [
+          "shock_score_from_rubric"
+        ],
+        "vuln_reliability": "low (<8 quarters of history)",
+        "v_basis": "as_of_2026Q2",
+        "driver": "shock",
+        "group": "severity",
+        "rank_in_group": 2
+      },
+      {
+        "id": "FICC-GSD-04",
+        "week": "2026-10-12",
+        "week_end": "2026-10-16",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-04",
+            "version": "v1",
+            "signal": "Baa\u221210Y 20-day widening, bp",
+            "S": 3,
+            "S_computation": {
+              "S": 3,
+              "method": "percentile",
+              "weekly_peak": 2.0000000000000018,
+              "percentile": 0.5044052863436124,
+              "prior_weeks": 454
+            }
+          }
+        ],
+        "S": 3,
+        "V": 3,
+        "vulnerability_variable": "Top-5 share of open positions (PQD 18.2.2)",
+        "severity": 9,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2026Q2",
+        "driver": "both",
+        "group": "severity",
+        "rank_in_group": 3
+      },
+      {
+        "id": "FICC-GSD-02",
+        "week": "2026-10-12",
+        "week_end": "2026-10-16",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-02",
+            "version": "v2 (post-hoc)",
+            "signal": "SOFR\u2212EFFR quarter-end adjusted, bp",
+            "S": 1,
+            "S_computation": {
+              "S": 1,
+              "method": "floor (signal <= 0)",
+              "weekly_peak": 0.0,
+              "percentile": 0.2935560859188544,
+              "prior_weeks": 419
+            }
+          }
+        ],
+        "S": 1,
+        "V": 5,
+        "vulnerability_variable": "Peak payment obligation \u00f7 qualifying liquid resources (7.3.4 \u00f7 7.1)",
+        "severity": 5,
+        "confidence": "Medium",
+        "flags": [
+          "post_hoc_version",
+          "watch"
+        ],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2026Q2",
+        "driver": "vulnerability",
+        "group": "severity",
+        "rank_in_group": 4
+      },
+      {
+        "id": "FICC-GSD-01",
+        "week": "2026-10-12",
+        "week_end": "2026-10-16",
+        "chains": [
+          {
+            "chain_id": "FICC-GSD-01",
+            "version": "v1",
+            "signal": "|\u0394DGS10| daily, bp (FRED)",
+            "S": 4,
+            "S_computation": {
+              "S": 4,
+              "method": "percentile",
+              "weekly_peak": 9.000000000000075,
+              "percentile": 0.7063318777292577,
+              "prior_weeks": 458
+            }
+          }
+        ],
+        "S": 4,
+        "V": 1,
+        "vulnerability_variable": "Cover-1 stress loss \u00f7 margin (4.4.3 \u00f7 6.1.1)",
+        "severity": 4,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2026Q2",
+        "driver": "shock",
+        "group": "severity",
+        "rank_in_group": 5
+      },
+      {
+        "id": "FICC-MBSD-01",
+        "week": "2026-10-12",
+        "week_end": "2026-10-16",
+        "chains": [
+          {
+            "chain_id": "FICC-MBSD-01",
+            "version": "v1",
+            "signal": "|\u0394(MORTGAGE30US \u2212 DGS10)| weekly, bp",
+            "S": 4,
+            "S_computation": {
+              "S": 4,
+              "method": "percentile",
+              "weekly_peak": 12.0,
+              "percentile": 0.700218818380744,
+              "prior_weeks": 457
+            }
+          }
+        ],
+        "S": 4,
+        "V": 1,
+        "vulnerability_variable": "Cover-1 stress loss \u00f7 margin (4.4.3 \u00f7 6.1.1)",
+        "severity": 4,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2026Q2",
+        "driver": "shock",
+        "group": "severity",
+        "rank_in_group": 6
+      },
+      {
+        "id": "ECS-NSCC-04",
+        "week": "2026-10-12",
+        "week_end": "2026-10-16",
+        "chains": [
+          {
+            "chain_id": "ECS-NSCC-04",
+            "version": "v2 (post-hoc)",
+            "signal": "none; shock score from rubric (to be designed)",
+            "S": 1,
+            "S_computation": {
+              "S": 1,
+              "method": "rubric",
+              "reason": "no active event",
+              "events": []
+            }
+          }
+        ],
+        "S": 1,
+        "V": 2,
+        "vulnerability_variable": "Top-5 share of open positions (PQD 18.2.2)",
+        "severity": 2,
+        "confidence": "Low",
+        "flags": [
+          "post_hoc_version",
+          "shock_score_from_rubric"
+        ],
+        "vuln_reliability": "ok",
+        "v_basis": "as_of_2026Q2",
+        "driver": "vulnerability",
+        "group": "severity",
+        "rank_in_group": 7
+      },
+      {
+        "id": "ECS-NSCC-03",
+        "week": "2026-10-12",
+        "week_end": "2026-10-16",
+        "chains": [
+          {
+            "chain_id": "ECS-NSCC-03",
+            "version": "v1",
+            "signal": "US consolidated equity volume, shares (Cboe, all venues incl. TRFs)",
+            "S": 3,
+            "S_computation": {
+              "S": 3,
+              "method": "percentile",
+              "weekly_peak": 1.005585759102226,
+              "percentile": 0.41625615763546797,
+              "prior_weeks": 406
+            }
+          }
+        ],
+        "S": 3,
+        "V": null,
+        "vulnerability_variable": "vulnerability: no data (shock-only)",
+        "severity": null,
+        "confidence": "Medium",
+        "flags": [],
+        "vuln_reliability": "n/a",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no data",
+        "group": "shock-only",
+        "rank_in_group": 1
+      },
+      {
+        "id": "ECS-SET-01",
+        "week": "2026-10-12",
+        "week_end": "2026-10-16",
+        "chains": [
+          {
+            "chain_id": "ECS-SET-01",
+            "version": "v2",
+            "signal": "none; shock score from rubric (to be designed)",
+            "S": 1,
+            "S_computation": {
+              "S": 1,
+              "method": "rubric",
+              "reason": "no active event",
+              "events": []
+            }
+          }
+        ],
+        "S": 1,
+        "V": null,
+        "vulnerability_variable": "vulnerability: no data (shock-only)",
+        "severity": null,
+        "confidence": "Low",
+        "flags": [
+          "shock_score_from_rubric"
+        ],
+        "vuln_reliability": "n/a",
+        "v_basis": "",
+        "driver": "n/a",
+        "label": "vulnerability: no data",
+        "group": "shock-only",
+        "rank_in_group": 2
+      }
+    ]
+  },
+  "stress_weeks_with_S_le_2_or_null": [
+    {
+      "chain_id": "FICC-GSD-02",
+      "event": "Repo spike",
+      "week_end": "2019-09-20",
+      "S": null,
+      "detail": "insufficient history (50 < 104 prior weeks)"
+    },
+    {
+      "chain_id": "FICC-GSD-02",
+      "event": "COVID shock",
+      "week_end": "2020-03-13",
+      "S": null,
+      "detail": "insufficient history (75 < 104 prior weeks)"
+    },
+    {
+      "chain_id": "FICC-GSD-02",
+      "event": "COVID shock",
+      "week_end": "2020-03-20",
+      "S": null,
+      "detail": "insufficient history (76 < 104 prior weeks)"
+    },
+    {
+      "chain_id": "FICC-GSD-02",
+      "event": "COVID shock",
+      "week_end": "2020-03-27",
+      "S": null,
+      "detail": "insufficient history (77 < 104 prior weeks)"
+    },
+    {
+      "chain_id": "FICC-MBSD-01",
+      "event": "Rate hikes / gilt stress (D3)",
+      "week_end": "2022-09-23",
+      "S": 1,
+      "detail": "pct 0.20"
+    },
+    {
+      "chain_id": "ECS-NSCC-02",
+      "event": "Repo spike",
+      "week_end": "2019-09-20",
+      "S": null,
+      "detail": "insufficient history (50 < 104 prior weeks)"
+    },
+    {
+      "chain_id": "ECS-NSCC-02",
+      "event": "COVID shock",
+      "week_end": "2020-03-13",
+      "S": null,
+      "detail": "insufficient history (75 < 104 prior weeks)"
+    },
+    {
+      "chain_id": "ECS-NSCC-02",
+      "event": "COVID shock",
+      "week_end": "2020-03-20",
+      "S": null,
+      "detail": "insufficient history (76 < 104 prior weeks)"
+    },
+    {
+      "chain_id": "ECS-NSCC-02",
+      "event": "COVID shock",
+      "week_end": "2020-03-27",
+      "S": null,
+      "detail": "insufficient history (77 < 104 prior weeks)"
+    },
+    {
+      "chain_id": "ECS-NSCC-03",
+      "event": "COVID shock",
+      "week_end": "2020-03-13",
+      "S": null,
+      "detail": "insufficient history (62 < 104 prior weeks)"
+    },
+    {
+      "chain_id": "ECS-NSCC-03",
+      "event": "COVID shock",
+      "week_end": "2020-03-20",
+      "S": null,
+      "detail": "insufficient history (63 < 104 prior weeks)"
+    },
+    {
+      "chain_id": "ECS-NSCC-03",
+      "event": "COVID shock",
+      "week_end": "2020-03-27",
+      "S": null,
+      "detail": "insufficient history (64 < 104 prior weeks)"
+    }
+  ]
+}
