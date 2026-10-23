@@ -1,0 +1,10 @@
+card,current_group,current_rank,current_S,current_V,current_severity,A_group,A_rank,A_S,A_V,A_severity,A+B_group,A+B_rank,A+B_S,A+B_V,A+B_severity
+FICC-GSD-02,severity,1,3,5.0,15.0,severity,2,3,4.0,12.0,severity,2,3,4.0,12.0
+FICC-GSD-03,severity,2,4,3.0,12.0,severity,1,4,3.0,12.0,severity,1,4,3.0,12.0
+NSCC liquidity,severity,3,3,3.0,9.0,severity,3,3,3.0,9.0,severity,3,3,3.0,9.0
+FICC-MBSD-01,severity,4,4,1.0,4.0,severity,4,4,1.0,4.0,severity,4,4,1.0,4.0
+FICC-GSD-01,severity,5,3,1.0,3.0,severity,5,3,1.0,3.0,severity,5,3,1.0,3.0
+FICC-GSD-04,severity,6,1,3.0,3.0,severity,6,1,3.0,3.0,severity,6,1,3.0,3.0
+ECS-NSCC-04,severity,7,1,2.0,2.0,severity,7,1,2.0,2.0,severity,7,1,2.0,2.0
+ECS-NSCC-03,shock-only,1,1,,,shock-only,1,1,,,shock-only,1,1,,
+ECS-SET-01,shock-only,2,1,,,shock-only,2,1,,,shock-only,2,1,,

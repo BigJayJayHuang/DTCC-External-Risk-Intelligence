@@ -1,0 +1,90 @@
+{
+  "spec": "SCORING_SPEC.md \u00a710 items 6\u20137 (proposed, not active)",
+  "week_end": "2026-10-09",
+  "method_break_check": {
+    "GSD": {
+      "7.3.4_equals_trailing4q_max_of_7.3.1": {
+        "2020Q4": false,
+        "2021Q1": false,
+        "2021Q2": false,
+        "2021Q3": true,
+        "2021Q4": true,
+        "2022Q1": true,
+        "2022Q2": true,
+        "2022Q3": true,
+        "2022Q4": true,
+        "2023Q1": true,
+        "2023Q2": true,
+        "2023Q3": true,
+        "2023Q4": true,
+        "2024Q1": true,
+        "2024Q2": true,
+        "2024Q3": true,
+        "2024Q4": true,
+        "2025Q1": true,
+        "2025Q2": true,
+        "2025Q3": true,
+        "2025Q4": true,
+        "2026Q1": true,
+        "2026Q2": true
+      },
+      "7.3.4_below_same_quarter_7.3.1": [],
+      "7.3.1_bn_early_vs_later": {
+        "2020Q4-2021Q2": [
+          98.7,
+          63.5,
+          71.4
+        ],
+        "2021Q3+ min/median/max": [
+          53.1,
+          67.7,
+          98.0
+        ]
+      }
+    },
+    "NSCC": {
+      "7.3.4_equals_trailing4q_max_of_7.3.1": {
+        "2020Q4": false,
+        "2021Q1": false,
+        "2021Q2": false,
+        "2021Q3": true,
+        "2021Q4": true,
+        "2022Q1": true,
+        "2022Q2": true,
+        "2022Q3": true,
+        "2022Q4": true,
+        "2023Q1": true,
+        "2023Q2": true,
+        "2023Q3": true,
+        "2023Q4": true,
+        "2024Q1": true,
+        "2024Q2": true,
+        "2024Q3": true,
+        "2024Q4": true,
+        "2025Q1": true,
+        "2025Q2": true,
+        "2025Q3": true,
+        "2025Q4": true,
+        "2026Q1": true,
+        "2026Q2": true
+      },
+      "7.3.4_below_same_quarter_7.3.1": [
+        "2020Q4",
+        "2021Q1",
+        "2021Q2"
+      ],
+      "7.3.1_bn_early_vs_later": {
+        "2020Q4-2021Q2": [
+          37.4,
+          40.7,
+          36.0
+        ],
+        "2021Q3+ min/median/max": [
+          29.8,
+          38.1,
+          66.0
+        ]
+      }
+    }
+  }
+}
