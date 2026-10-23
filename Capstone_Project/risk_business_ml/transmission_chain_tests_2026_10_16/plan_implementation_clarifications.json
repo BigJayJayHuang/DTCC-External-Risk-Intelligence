@@ -1,0 +1,9 @@
+{
+  "recorded_at_utc": "2026-10-16T14:10:18.040738+00:00",
+  "before_any_new_test_output": true,
+  "weekly_event_censoring": "Compare only indicator observations inside the exact event window against that week frozen threshold computed from prior completed weeks; do not let later dates in a partially overlapping week cause an event hit. Non-event proxy uses completed weekly peaks.",
+  "weekly_quarter_minimum": 9,
+  "daily_quarter_minimum": 45,
+  "post_cutoff": "Use existing market history through 2026-10-13, new data no later than 2026-10-15; Test2 common complete quarters end2026Q2. Exclude incomplete latest week.",
+  "scope17": "Read ValueN header per file, not fixed column indices, because schema changes after2023Q2. Operational core-system identifier is not a legal-entity identifier. Preserve strings like count/duration and shared notes."
+}

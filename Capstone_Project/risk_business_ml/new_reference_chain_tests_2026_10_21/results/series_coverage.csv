@@ -1,0 +1,8 @@
+series_id,n,first,last,source_type
+funding,2004,2018-10-01,2026-10-13,frozen market snapshot or new OFR final-vintage data
+ust10_abs_change,2193,2018-01-03,2026-10-09,frozen market snapshot or new OFR final-vintage data
+vix,2240,2018-01-02,2026-10-13,frozen market snapshot or new OFR final-vintage data
+cp_bill_spread,1555,2018-01-02,2026-10-13,frozen market snapshot or new OFR final-vintage data
+triparty_withdrawal,2110,2018-01-09,2026-06-30,frozen market snapshot or new OFR final-vintage data
+gcf_volume,2034,2018-05-07,2026-06-30,new OFR final-vintage transaction volume
+triparty_volume,2115,2018-01-02,2026-06-30,new OFR final-vintage transaction volume

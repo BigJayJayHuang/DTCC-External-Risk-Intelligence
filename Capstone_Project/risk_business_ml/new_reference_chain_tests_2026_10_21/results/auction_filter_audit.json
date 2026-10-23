@@ -1,0 +1,16 @@
+{
+  "response_records": 11158,
+  "selected_records": 3594,
+  "server_date_predicate_ignored": true,
+  "analysis_date_field": "competitiveAuctionCloseDate",
+  "month_alignment": "issueDate",
+  "completed_results_required": true,
+  "security_types": {
+    "Bill": 2669,
+    "Note": 722,
+    "Bond": 203
+  },
+  "offering_amount_is_not_total_actual_award": true,
+  "last_full_month": "2026-09",
+  "future_announcements_excluded": true
+}

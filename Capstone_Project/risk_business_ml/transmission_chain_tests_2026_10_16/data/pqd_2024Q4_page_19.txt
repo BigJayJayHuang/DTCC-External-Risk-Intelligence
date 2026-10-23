@@ -1,0 +1,90 @@
+CPMI-IOSCO Quantitative Disclosures - DTCC
+As of December 31, 2024
+Disclosure
+Disclosure Description
+Frequency
+Data Type
+FICC
+NSCC
+Explanatory Notes
+Reference
+GSD
+MBSD
+17.1.1
+Operational availability target for the core system(s) involved in clearing (whether or not outsourced) over specified 
+period for the system
+Quarterly
+Percentage
+99.60%
+99.60%
+99.60%
+This target and the actual results below are calculated at the 
+individual product-line level and then averaged across all of the 
+systems identified below, in accordance with the established 
+calculation for the applicable SLA.
+Disclosure 17.2 - Actual availability of the core system(s) over the previous twelve month period
+17.2.1
+Actual availability of the core system(s) over the previous twelve month period
+Quarterly
+Percentage
+99.97%
+99.84%
+Availability is calculated across multiple systems. Specifically, 
+CMU, CNS, NSCC Risk Management, FICC Risk Management, 
+GSD, MBSD and Trade Capture.
+Disclosure 17.3 - Total number  of failures
+17.3.1
+Total number of failures  and duration affecting the core system(s) involved in clearing over the previous twelve month 
+period (Duration of Failure)
+Quarterly
+Count /
+hh:mm:ss
+0 / 0:00:00
+Regulation Systems Compliance and Integrity (Regulation SCI) 
+events for NSCC, GSD, and MBSD over the previous twelve 
+month period are reviewed for Disclosure 17.3 reporting. 
+Regulation SCI events that impact core systems used in clearing 
+that enable the acceptance and novation of trades, and enable 
+the calculation of margin and settlement obligations are 
+assessed by Risk Management, Product Management, 
+Regulation SCI personnel, and Legal to confirm total number of 
+incidents and duration of failures. Incidents that do not result 
+in a direct business impact to clients are not reported as a 
+failure for Disclosure 17.3.
+Disclosure 17.4 - Recovery time objective(s)
+17.4.1
+Recovery time objective(s) (e.g. within two hours)
+Quarterly
+Time
+Within 2 
+hours
+Within 2 
+hours
+Within 2 
+hours
+Recovery time objective is within 2 hours.
+Disclosure 18.1 - Number of clearing members, by clearing service
+For GSD, there are Broker/Dealers, Government Sponsored 
+Entities, Banks, and Hedge Funds
+For MBSD, there are Broker/Dealers, Hedge Fund, Mortgage 
+Companies, Government Sponsored Entities, Registered 
+Investment Companies, etc.
+For NSCC there are Broker/Dealers, certain stock exchanges 
+(for omnibus account reporting), and one CSD.
+18.1.1.1
+Number of general clearing members
+Quarterly/
+Quarter End
+Count
+147
+74
+67
+FICC does not distinguish membership categories between 
+members that clear for others and members that are self-
+clearing.  Accordingly, the total number of FICC members are 
+reported as general clearing members and will include all GSD 
+Netting Members, GSD CCIT Members, and MBSD Clearing 
+Members. For NSCC, general clearing members are full service 
+clear for others members.
+Page 19 of 26
+DTCC Public (White)

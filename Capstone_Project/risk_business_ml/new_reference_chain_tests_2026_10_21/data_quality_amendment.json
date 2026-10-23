@@ -1,0 +1,21 @@
+{
+  "reason": "Independent source reconciliation found early PQD23.2.1 values about1000times smaller than FICC financial guarantee notes; no threshold change.",
+  "affected_test": "TBA_PIPELINE",
+  "repair": "Use financial note USD when PQD does not reconcile within its rounding precision; retain exact source, page and raw value. Fill2024Q4 from actual financial note, explicitly not inferred PQD.",
+  "valid_comparison_tolerance_usd": 501000000,
+  "cleared_notional_repair": {
+    "periods": [
+      "2021Q3",
+      "2022Q3"
+    ],
+    "field": "MBSD23.1.2",
+    "interpretation": "million-USD encoding supported by independently collected monthly clearing-par totals divided by64 Treasury-observation dates in each quarter",
+    "factor": 1000000,
+    "match_tolerance_usd": 501000,
+    "uncertainty": "Treasury observation-day count is a calendar proxy; retain sensitivity excluding both repaired cells",
+    "separate_exclusion_sensitivity": true
+  },
+  "results_unchanged_elsewhere": true,
+  "not_a_new_hypothesis": true,
+  "quarterly_fund_flows_source": "Federal Reserve September11 2026 Z1 archive, same FU series as FRED; retrieved after FRED failures"
+}

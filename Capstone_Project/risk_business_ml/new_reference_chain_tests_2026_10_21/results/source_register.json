@@ -1,0 +1,134 @@
+[
+  {
+    "id": "OFR",
+    "url": "https://data.financialresearch.gov/",
+    "local": "raw/REPO-GCF_TV_TOT-F_metadata.json",
+    "note": "New final-vintage repo data with separately downloaded metadata. Final series end2026-06-30; rate matched sample is much shorter than volume history."
+  },
+  {
+    "id": "TREASURY",
+    "url": "https://www.treasurydirect.gov/legal-information/developers/web-api-security/",
+    "local": "raw/treasury_auctions_all.json",
+    "note": "Server ignored request date filter; 11158 records received; local completed-auction and date filters retained3594 records. Offering amount is not actual awarded amount or auction tail."
+  },
+  {
+    "id": "FED_Z1",
+    "url": "https://www.federalreserve.gov/releases/z1/20260911/z1_csv_files.zip",
+    "local": "raw/fed_z1_20260911.zip",
+    "note": "September11 2026 release. FU632051000.Q MMF repo asset transactions and FU653164205.Q mutual-fund net share issuance, USD million, not seasonally adjusted."
+  },
+  {
+    "id": "PQD",
+    "url": "https://www.dtcc.com/legal/policy-and-compliance",
+    "local": "inputs/pqd/",
+    "note": "Frozen2020Q4–2026Q2 sources;22 XLSX plus one2024Q4 PDF. Additional cell extraction covers22 quarters, not an invented23rd spreadsheet."
+  },
+  {
+    "id": "FINANCIALS",
+    "url": "https://www.dtcc.com/legal/financial-statements",
+    "local": "inputs/financials/",
+    "note": "23 FICC financial statement guarantee-note tables, with page evidence;23.2.1 early scale discrepancies and missing2024Q4 spreadsheet outcome reconciled explicitly."
+  },
+  {
+    "id": "LEGACY_MARKET",
+    "url": "https://fred.stlouisfed.org/",
+    "local": "inputs/market_daily.csv",
+    "note": "Frozen prior market observations; individual dates differ. Not a fresh daily market update. DCPF3M/DTB3 frozen separately."
+  },
+  {
+    "id": "RULES_INDEX",
+    "url": "https://www.dtcc.com/legal/rules-and-procedures",
+    "local": "raw/dtcc_rules_index.html",
+    "note": "Official current links resolve to files.dtcc.com. Current rules support mechanisms, not historical incidents or historical rule versions."
+  },
+  {
+    "id": "NSCC_RULES",
+    "url": "https://files.dtcc.com/download/assets/nscc_rules.pdf/85bda02a369211f0a3ae820bd5ac0897",
+    "local": "raw/nscc_rules_current.pdf",
+    "note": "Rule4A SLD, Rule9 ESS, ACATS, I&RS, AIP, SFT and international-link provisions; September21 2026 version."
+  },
+  {
+    "id": "GSD_RULES",
+    "url": "https://files.dtcc.com/download/assets/FICC-GSD%2BRulebook%2B%E2%80%93%2B2026-0826%2BFinal.pdf/b6c07124ceb411f09c9062cd3fe05a01",
+    "local": "raw/gsd_rules_current.pdf",
+    "note": "GCF, CCIT, auction purchases, cross-margining and ACS definitions."
+  },
+  {
+    "id": "MBSD_RULES",
+    "url": "https://files.dtcc.com/download/assets/ficc_mbsd_rules.pdf/d410be52369111f0b606526112f6cc5f",
+    "local": "raw/ficc_mbsd_rules.pdf",
+    "note": "Watch List, pool settlement/fails, options, market/system disruption rules."
+  },
+  {
+    "id": "EPN_RULES",
+    "url": "https://files.dtcc.com/download/assets/ficc_mbsd_epnrules.pdf/4c561ca4369211f09a845e09fb65ecc7",
+    "local": "raw/epn_rules.pdf",
+    "note": "EPN message and cybersecurity obligations; no message-error or attack history inferred."
+  },
+  {
+    "id": "DTC_RULES",
+    "url": "https://files.dtcc.com/download/assets/dtc_rules.pdf/6064c95e369511f09a845e09fb65ecc7",
+    "local": "raw/dtc_rules_current.pdf",
+    "note": "MMI, settling banks, Canadian-Link, chills/locks, segregation and disruption provisions; April28 2026 version."
+  },
+  {
+    "id": "DTC_SETTLEMENT",
+    "url": "https://files.dtcc.com/download/assets/Settlement.pdf/c83a99be369a11f093d0c204a2f8334f",
+    "local": "raw/dtc_settlement_guide.pdf",
+    "note": "Funding acknowledgments, NDC and Collateral Monitor controls. No participant exception logs collected."
+  },
+  {
+    "id": "SEC_CHILL",
+    "url": "https://public-inspection.federalregister.gov/2014-06459.pdf",
+    "local": "raw/sec_dtc_chill_2014.pdf",
+    "note": "Historical SEC procedural discussion of DTC restrictions and International Power; does not establish a matched suspension-to-lock event series."
+  },
+  {
+    "id": "SEC_IPWG",
+    "url": "https://www.sec.gov/news/digest/2012/dig031512.htm",
+    "local": null,
+    "note": "Web text reviewed, lines101–103; confirms DTC suspension/procedural remand for IPWG; direct local request403. No inference that every SEC halt causes a lock."
+  },
+  {
+    "id": "ACATS_LEHMAN",
+    "url": "https://www.dtcc.com/-/media/Files/pdf/2008/9/22/a6705.pdf",
+    "local": null,
+    "note": "Official search-index excerpt only; body404. Describes no new Lehman ACATS initiation requests after September22 2008. Not a complete volume/duration test."
+  },
+  {
+    "id": "ACATS_PROJECT",
+    "url": "https://www.dtcc.com/-/media/Files/pdf/2012/12/21/a7556.pdf",
+    "local": null,
+    "note": "Official search-index excerpt only; body404. Describes Lehman-related ACATS process initiatives, not quantitative volumes."
+  },
+  {
+    "id": "CARTER_CLOSURE",
+    "url": "https://www.dtcc.com/-/media/Files/pdf/2024/12/30/0275.pdf",
+    "local": null,
+    "note": "Official search-index excerpt only; body404. Announcement that DTCC subsidiaries remain open for available settlement on January9 2025; condition check, not a post-event outage log."
+  },
+  {
+    "id": "ACS_LAUNCH",
+    "url": "https://www.dtcc.com/press-releases/2025/dtccs-ficc-now-live-with-new-treasury-clearing-capabilities",
+    "local": "raw/acs_launch_2025.html",
+    "note": "Enhanced ACS launch March2025. Do not assign pre-launch crisis outcomes to this configuration."
+  },
+  {
+    "id": "SFT_ACCESS",
+    "url": "https://www.dtcc.com/press-releases/2026/dtcc-receives-regulatory-approval-to-launch-new-client-access-model-for-nsccs-sft-clearing-service",
+    "local": "raw/sft_access_2026.html",
+    "note": "May13 2026 access-model extension; not an adverse outcome or time series. SFT launched2022 per DTCC2022 annual-report indexed text."
+  },
+  {
+    "id": "CDS",
+    "url": "https://www.cds.ca/resource/en/56",
+    "local": "raw/cds_financial_risk_model_2025.pdf",
+    "note": "CDS link risk model; infrastructure CDS is not a credit-default swap. No link-outage history collected."
+  },
+  {
+    "id": "CFTC_MFG",
+    "url": "https://www.cftc.gov/PressRoom/PressReleases/6626-13",
+    "local": "raw/cftc_mfglobal.html",
+    "note": "MF Global customer-fund enforcement history. Does not establish involvement of DTC Rule36/37 accounts."
+  }
+]

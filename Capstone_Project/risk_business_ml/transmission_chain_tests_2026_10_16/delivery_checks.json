@@ -1,0 +1,22 @@
+{
+  "numeric_pairs_and_past_only_thresholds": "pass",
+  "all_supplied_chain_ids_covered": "22of22",
+  "ftd_scope_and_halfmonth_boundary": "pass;210archives;2185dailybalances;15thpreserved",
+  "notebook_execution": {
+    "code_cells": 7,
+    "error_outputs": 0,
+    "embedded_chart": true
+  },
+  "visual_qa": {
+    "chart": "Full-size PNG inspected; labels and intervals clear",
+    "whole_notebook": "HTML generated; whole-page browser inspection blocked by browser file-protocol policy. No workaround attempted."
+  },
+  "frozen_input_integrity": "pass",
+  "primary_gate_passes": [
+    "ECS-NSCC-02A",
+    "ECS-NSCC-03B"
+  ],
+  "risk_score_generated": false,
+  "original_models_retrained": false,
+  "git_push_performed": false
+}

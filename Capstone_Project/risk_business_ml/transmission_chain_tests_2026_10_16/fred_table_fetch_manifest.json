@@ -1,0 +1,26 @@
+[
+  {
+    "name": "MORTGAGE30US_table.html",
+    "url": "https://fred.stlouisfed.org/data/MORTGAGE30US",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:07:38.867819+00:00",
+    "status": "failed",
+    "error": "URLError(gaierror(8, 'nodename nor servname provided, or not known'))"
+  },
+  {
+    "name": "DCPF3M_table.html",
+    "url": "https://fred.stlouisfed.org/data/DCPF3M",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:07:38.868040+00:00",
+    "status": "failed",
+    "error": "URLError(gaierror(8, 'nodename nor servname provided, or not known'))"
+  },
+  {
+    "name": "DTB3_table.html",
+    "url": "https://fred.stlouisfed.org/data/DTB3",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:07:38.868161+00:00",
+    "status": "failed",
+    "error": "TimeoutError('The read operation timed out')"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "REPO-GCF_AR_OO-F.json",
+    "url": "https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-GCF_AR_OO-F&start_date=2018-01-01&end_date=2026-10-15",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:06:09.459444+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "application/json",
+    "final_url": "https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-GCF_AR_OO-F&start_date=2018-01-01&end_date=2026-10-15",
+    "bytes": 44713,
+    "sha256": "37bb1fedb576425086dd069cc4f5f9e9493337aa31a3215b5a78809b4a532656"
+  },
+  {
+    "name": "REPO-GCF_AR_OO-F_metadata.json",
+    "url": "https://data.financialresearch.gov/v1/metadata/query?mnemonic=REPO-GCF_AR_OO-F",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:06:09.459935+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "application/json",
+    "final_url": "https://data.financialresearch.gov/v1/metadata/query?mnemonic=REPO-GCF_AR_OO-F",
+    "bytes": 1404,
+    "sha256": "ef2fd378802e7d5709fefdd8a170f35325d16fc4959e4ec72eb20e9e23d92173"
+  },
+  {
+    "name": "REPO-DVP_AR_OO-F.json",
+    "url": "https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-DVP_AR_OO-F&start_date=2018-01-01&end_date=2026-10-15",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:06:09.460088+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "application/json",
+    "final_url": "https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-DVP_AR_OO-F&start_date=2018-01-01&end_date=2026-10-15",
+    "bytes": 44623,
+    "sha256": "e488a783983a0d0ec0dbc9fa76b93640d2ed085ad0e2340e8501788958a4bb94"
+  },
+  {
+    "name": "REPO-DVP_AR_OO-F_metadata.json",
+    "url": "https://data.financialresearch.gov/v1/metadata/query?mnemonic=REPO-DVP_AR_OO-F",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:06:09.460157+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "application/json",
+    "final_url": "https://data.financialresearch.gov/v1/metadata/query?mnemonic=REPO-DVP_AR_OO-F",
+    "bytes": 1370,
+    "sha256": "44303f9b59e62b3abcb7536e84ca2b439604a75561b39d90b4c424aa9b504c3c"
+  }
+]

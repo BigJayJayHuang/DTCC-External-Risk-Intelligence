@@ -1,0 +1,53 @@
+{
+  "prepared_date": "2026-10-15",
+  "frozen_model_observation_cutoff": "2026Q2",
+  "new_model_training": false,
+  "ridge_targets": 13,
+  "ridge_targets_with_lower_holdout_mae": 5,
+  "event_candidates": 7,
+  "event_passes": 4,
+  "expanded_associations": 482,
+  "expanded_fdr_passes": 0,
+  "supplemental_records": 882,
+  "supplemental_full_sample_ordinary_bh_passes": 48,
+  "svb_window_market_peaks": {
+    "sofr_effr": 0.0,
+    "sofr_effr_adjusted": 4.0000000000000036,
+    "ust10_abs_change": 23.0,
+    "ust10_rv20": 9.62056459662815,
+    "baa_spread": 222.00000000000003,
+    "baa_widen20": 41.000000000000014,
+    "vix": 26.52
+  },
+  "teaching_example": "Hypothetical S/E/V inputs; not fitted data or actual risk scores",
+  "inputs": [
+    {
+      "project_relative_path": "risk_business_ml/results/model_comparison.csv",
+      "sha256": "3d03fc27dca8516ee183895d3eedf9a1cce5cf240e6d526d3a5d1726ddb44587"
+    },
+    {
+      "project_relative_path": "risk_business_ml/models/model_manifest.json",
+      "sha256": "48ba35e3e0c6bfa3ceffae93b82d594cc688eeee912d01d43b75a5fbfc3807bf"
+    },
+    {
+      "project_relative_path": "risk_business_ml/risk_category_expansion/results/expanded_analysis_summary.json",
+      "sha256": "7c3853cb4aa5cb30cd57a4102ad5c8e6e7dbb9a5dbb0d1536a72765c66f5bf3e"
+    },
+    {
+      "project_relative_path": "risk_business_ml/event_vulnerability_tests_2026_10_06/analysis_plan.json",
+      "sha256": "5282788d2412518b06130619b75d15154d0f18fe36ca4128913a7df0ac7eea68"
+    },
+    {
+      "project_relative_path": "risk_business_ml/event_vulnerability_tests_2026_10_06/results/event_detail.csv",
+      "sha256": "2f722d15f2faad959b317ae170ab8d00f4e8fd1c5cb40abb6895d0dcdfc51e1e"
+    },
+    {
+      "project_relative_path": "risk_business_ml/event_vulnerability_tests_2026_10_06/results/event_screen.csv",
+      "sha256": "c4994b7bd05d54be48d5d0914946b6614637d773e6742356813fea7dbd4da821"
+    },
+    {
+      "project_relative_path": "risk_business_ml/feedback_revision_report_2026_10_06/results/analysis_summary.json",
+      "sha256": "6282b4350187ed4287a8327290b662faeec2aaee514ff56dd96d95a6481b5b52"
+    }
+  ]
+}

@@ -2,6 +2,10 @@
 
 这是**每天更新、供团队下载查询的数据库快照**。GitHub 保存采集代码，并通过 GitHub Actions 自动采集；它不是一个可远程连接的 SQL 数据库服务器。
 
+最新本地同步已将线上发布版与研究批次合并，共 **63,344 条记录**。合并凭证见 `logs/latest_github_sync.json`，快照校验值和实际记录数见 `data/snapshot_manifest.json`。下文10月21日导入凭证保留当时的批次记录数。
+
+**10月21日研究数据导入：** 新增12,714条回购、国债拍卖、基金流量和PQD证据记录，本地数据库共55,436条。详见[中英文导入说明](../risk_business_ml/new_reference_chain_tests_2026_10_21/DATABASE_UPDATE_CN_EN.md)与[SQL示例](research_queries.sql)。本次新增来源是批次导入，尚未新增每日采集适配器；本地快照更新不表示GitHub发布包已更新。
+
 ## 队友怎么使用
 
 打开 [完整项目下载页](https://github.com/BigJayJayHuang/DTCC-External-Risk-Intelligence/releases/tag/data-latest)，只下载 **`Capstone_Project_Complete.zip`**。解压后，数据库、校验文件、CSV 和日志都在 `Capstone_Project/capstone_database/` 内。`logs/latest_update.json` 说明更新时间、失败来源及需要人工复核的来源。

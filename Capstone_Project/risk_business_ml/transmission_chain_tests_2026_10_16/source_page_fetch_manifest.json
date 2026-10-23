@@ -1,0 +1,62 @@
+[
+  {
+    "name": "sec_ftd_canonical_index.html",
+    "url": "https://www.sec.gov/data-research/sec-markets-data/fails-deliver-data",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:11:06.605569+00:00",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "freddie_pmms_archive.html",
+    "url": "https://www.freddiemac.com/pmms/pmms_archives",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:11:06.605968+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "final_url": "https://www.freddiemac.com/pmms/pmms_archives",
+    "bytes": 89309,
+    "sha256": "04dcd8247bd5dbab20f607ca2451a92272944f794200215dabe6a44115655c20"
+  },
+  {
+    "name": "freddie_pmms_history.xlsx",
+    "url": "https://www.freddiemac.com/pmms/docs/historicalweeklydata.xlsx",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:11:06.606068+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "final_url": "https://www.freddiemac.com/pmms/docs/historicalweeklydata.xlsx",
+    "bytes": 218792,
+    "sha256": "4ca6e5d3dff3e8b769cb780ce61911610d28babde2a6f887825cede5c890a285"
+  },
+  {
+    "name": "fred_mortgage_alt.csv",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?cosd=2018-01-01&coed=2026-10-15&id=MORTGAGE30US",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:11:06.606177+00:00",
+    "status": "failed",
+    "error": "TimeoutError('The read operation timed out')"
+  },
+  {
+    "name": "dtcc_sponsored_survey.html",
+    "url": "https://www.dtcc.com/press-releases/2024/dtcc-survey-significant-improvements-in-industry-preparedness-around-expanded-us-treasury-clearing",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:11:06.606253+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "final_url": "https://www.dtcc.com/press-releases/2024/dtcc-survey-significant-improvements-in-industry-preparedness-around-expanded-us-treasury-clearing",
+    "bytes": 309668,
+    "sha256": "1cdbd9e34c162d8664ccce0fe39ab701d42e722331cccc57ef77af63a00fb3eb"
+  },
+  {
+    "name": "finra_agency_mbs_probe.json",
+    "url": "https://api.finra.org/data/group/fixedIncomeMarket/name/agencyMbsTradingActivity",
+    "method": "POST",
+    "collected_at_utc": "2026-10-16T14:11:31.816421+00:00",
+    "status": "failed",
+    "error": "<HTTPError 401: 'Unauthorized'>"
+  }
+]

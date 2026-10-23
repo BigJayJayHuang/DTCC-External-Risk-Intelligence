@@ -1,0 +1,9 @@
+{
+  "source": "Freddie Mac PMMS original source, used when FRED CSV and tables were unreachable",
+  "url": "https://www.freddiemac.com/pmms/docs/PMMS_history.csv",
+  "mapping": "pmms30 -> mortgage30_percent; assigned MORTGAGE30US column for existing test specification, not a claim of successful FRED retrieval",
+  "first": "2018-01-04",
+  "last": "2026-10-15",
+  "n": 459,
+  "methodology_break": "2022-11-17 PMMS methodology revision; quoted mortgage spread is not an agency MBS OAS"
+}

@@ -1,0 +1,254 @@
+[
+  {
+    "name": "MORTGAGE30US.csv",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MORTGAGE30US&cosd=2018-01-01",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:05:03.562970+00:00",
+    "status": "failed",
+    "error": "TimeoutError('The read operation timed out')"
+  },
+  {
+    "name": "DCPF3M.csv",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCPF3M&cosd=2018-01-01",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:05:03.563333+00:00",
+    "status": "failed",
+    "error": "TimeoutError('The read operation timed out')"
+  },
+  {
+    "name": "DTB3.csv",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTB3&cosd=2018-01-01",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:05:03.563451+00:00",
+    "status": "failed",
+    "error": "URLError(gaierror(8, 'nodename nor servname provided, or not known'))"
+  },
+  {
+    "name": "ofr_repo_mnemonics.json",
+    "url": "https://data.financialresearch.gov/v1/metadata/mnemonics?dataset=repo",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:03:44.712677+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "application/json",
+    "final_url": "https://data.financialresearch.gov/v1/metadata/mnemonics?dataset=repo",
+    "bytes": 19888,
+    "sha256": "7c6bbf5a476787040999e387fc870cdc1868d497fe23d6d0bf5a0ba9d6bf11c5"
+  },
+  {
+    "name": "cboe_2018.csv",
+    "url": "https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2018.csv",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:03:45.391105+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/csv",
+    "final_url": "https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2018.csv",
+    "bytes": 606102,
+    "sha256": "c74e6dc17777a2ac98199f4cd967bd05fbe5acaf0396510e0019881c40dd2c9b"
+  },
+  {
+    "name": "sec_ftd_index.html",
+    "url": "https://www.sec.gov/data/foiadocsfailsdatahtm",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:03:45.747073+00:00",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "dtcc_2008_report.pdf",
+    "url": "https://www.dtcc.com/-/media/Files/Downloads/About/Annual-Reports/2008_report.pdf",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:03:46.038605+00:00",
+    "status": "failed",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "name": "treasury_icbc_2024.html",
+    "url": "https://home.treasury.gov/news/press-releases/jy2114",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:03:46.923755+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "final_url": "https://home.treasury.gov/news/press-releases/jy2114",
+    "bytes": 74857,
+    "sha256": "b73c1256d57c7f767c782ab9fd3b87f118b174f1214b9b2481cc43ea65472391"
+  },
+  {
+    "name": "dtcc_t1_20240530.html",
+    "url": "https://www.dtcc.com/press-releases/2024/dtcc-comments-on-industrys-t1-progress",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:03:47.347158+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "final_url": "https://www.dtcc.com/press-releases/2024/dtcc-comments-on-industrys-t1-progress",
+    "bytes": 302906,
+    "sha256": "3508c7396afd9b1ec64afcf65817d468ba095e980940012a49860d2009420995"
+  },
+  {
+    "name": "ofr_annual_2024.pdf",
+    "url": "https://www.financialresearch.gov/annual-reports/files/OFR-AR-2024_web.pdf",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:03:49.466139+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "final_url": "https://www.financialresearch.gov/annual-reports/files/OFR-AR-2024_web.pdf",
+    "bytes": 3954475,
+    "sha256": "6b76fad9fce8c46b4fb51c5f3ceabbd606c1a5ca1cc69b2caa42d22ad2e97b73"
+  },
+  {
+    "name": "sec_treasury_2023.html",
+    "url": "https://www.sec.gov/newsroom/press-releases/2023-247",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:03:50.527312+00:00",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "sec_treasury_extension_2025.pdf",
+    "url": "https://www.sec.gov/files/rules/final/2025/34-102487.pdf",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:03:50.726286+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "final_url": "https://www.sec.gov/files/rules/final/2025/34-102487.pdf",
+    "bytes": 251160,
+    "sha256": "50954519b11b2d5f4e4c5ef30431469e5c6d24d415c27ed42272be9a935053dc"
+  },
+  {
+    "name": "cboe_2019.csv",
+    "url": "https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2019.csv",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:05:03.563508+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/csv",
+    "final_url": "https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2019.csv",
+    "bytes": 659899,
+    "sha256": "a4f2495c952fff817f5d6d8b8b28ee940e38a889edf8dcf92646cc05fec960c4"
+  },
+  {
+    "name": "cboe_2020.csv",
+    "url": "https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2020.csv",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:05:03.563596+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/csv",
+    "final_url": "https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2020.csv",
+    "bytes": 711931,
+    "sha256": "d43803accac82145271045f062d6e0af57cc9aa40da4b904fc9b90d30a869a0d"
+  },
+  {
+    "name": "cboe_2021.csv",
+    "url": "https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2021.csv",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:05:03.638552+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/csv",
+    "final_url": "https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2021.csv",
+    "bytes": 793239,
+    "sha256": "bb67715fe2bf9c52067b69a6a280fe7b4e827d0ec335d177b2dad3d86d4dc3ad"
+  },
+  {
+    "name": "cboe_2022.csv",
+    "url": "https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2022.csv",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:05:03.783783+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/csv",
+    "final_url": "https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2022.csv",
+    "bytes": 796546,
+    "sha256": "61051498e02558ee1387ae66ca994d9e678342c89c8c1a56a43e513a7aba9788"
+  },
+  {
+    "name": "cboe_2023.csv",
+    "url": "https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2023.csv",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:05:03.841545+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/csv",
+    "final_url": "https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2023.csv",
+    "bytes": 788268,
+    "sha256": "17d673f4ea93a6938e74f41ba70e4aa8477a73e178026b27deb5fe8d704f4500"
+  },
+  {
+    "name": "cboe_2024.csv",
+    "url": "https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2024.csv",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:05:03.959841+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/csv",
+    "final_url": "https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2024.csv",
+    "bytes": 796422,
+    "sha256": "da755580ecf801b6fe89854c58ead811e320f542e5b0c1dc03513c48487b0537"
+  },
+  {
+    "name": "cboe_2025.csv",
+    "url": "https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2025.csv",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:05:04.065727+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text/csv",
+    "final_url": "https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2025.csv",
+    "bytes": 833780,
+    "sha256": "3f297d33729dc427e1f08f0ae9c6e05a95334ed9253211c97c2e8d4ce8183578"
+  },
+  {
+    "name": "cboe_2026.csv",
+    "url": "https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2026.csv",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:05:04.283221+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "text",
+    "final_url": "https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2026.csv",
+    "bytes": 789337,
+    "sha256": "88219b648512701ce33c092e988d41a3e90babea532f6663e3b484c0e7e6eda5"
+  },
+  {
+    "name": "ofr_repo_metadata.json",
+    "url": "https://data.financialresearch.gov/v1/metadata/dataset?dataset=repo",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:05:04.397171+00:00",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "sec_ftd_202001a.zip",
+    "url": "https://www.sec.gov/files/data/fails-deliver-data/cnsfails202001a.zip",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:05:04.438431+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "application/octet-stream",
+    "final_url": "https://www.sec.gov/files/data/fails-deliver-data/cnsfails202001a.zip",
+    "bytes": 796920,
+    "sha256": "e20c6809cac7a7adcfb434d60b097b1a51a323b6492df960f8edb0ee8762a6e4"
+  },
+  {
+    "name": "dtcc_2008_report_cms.pdf",
+    "url": "https://cms-prod.dtcc.com/globalassets/downloads/about/annual-reports/2008_report.pdf",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:05:04.743673+00:00",
+    "status": "failed",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "name": "ficc_2016_q4.pdf",
+    "url": "https://www.dtcc.com/-/media/Files/Downloads/legal/financials/2016/FICC-Q4-Statement-of-Income-with-2016-and-2015.pdf",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:05:04.771240+00:00",
+    "status": "failed",
+    "error": "<HTTPError 404: 'Not Found'>"
+  }
+]

@@ -3714,5 +3714,672 @@
     "extension": "csv",
     "enabled": true,
     "refresh_hours": 20
+  },
+  {
+    "id": "research_ae16487e8922464f6693",
+    "name": "Reviewed public source: REPO-GCF_AR_OO-F.json",
+    "url": "https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-GCF_AR_OO-F&start_date=2018-01-01&end_date=2026-10-20",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_afaf169b5295036e348f",
+    "name": "Reviewed public source: REPO-GCF_AR_OO-F_metadata.json",
+    "url": "https://data.financialresearch.gov/v1/metadata/query?mnemonic=REPO-GCF_AR_OO-F",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_3fba1249b83402747429",
+    "name": "Reviewed public source: REPO-DVP_AR_OO-F.json",
+    "url": "https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-DVP_AR_OO-F&start_date=2018-01-01&end_date=2026-10-20",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_897661053e63e075af7e",
+    "name": "Reviewed public source: REPO-DVP_AR_OO-F_metadata.json",
+    "url": "https://data.financialresearch.gov/v1/metadata/query?mnemonic=REPO-DVP_AR_OO-F",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_5e0cd40b8bd25f7cef1b",
+    "name": "Reviewed public source: REPO-GCF_TV_TOT-F.json",
+    "url": "https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-GCF_TV_TOT-F&start_date=2018-01-01&end_date=2026-10-20",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_0e31e89e1b04cb8735d8",
+    "name": "Reviewed public source: REPO-GCF_TV_TOT-F_metadata.json",
+    "url": "https://data.financialresearch.gov/v1/metadata/query?mnemonic=REPO-GCF_TV_TOT-F",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_3346bc06314cd09c50ba",
+    "name": "Reviewed public source: REPO-TRIV1_TV_TOT-F.json",
+    "url": "https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-TRIV1_TV_TOT-F&start_date=2018-01-01&end_date=2026-10-20",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_bccb3de490bd81eaf3d2",
+    "name": "Reviewed public source: REPO-TRIV1_TV_TOT-F_metadata.json",
+    "url": "https://data.financialresearch.gov/v1/metadata/query?mnemonic=REPO-TRIV1_TV_TOT-F",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_c1f1a264192a7a6210af",
+    "name": "Reviewed public source: treasury_auctions_2018.json",
+    "url": "https://www.treasurydirect.gov/TA_WS/securities/search?auctionDate=2018-01-01%2C2018-12-31&format=json",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_dea44b303bc02c4d58bd",
+    "name": "Reviewed public source: treasury_auctions_2019.json",
+    "url": "https://www.treasurydirect.gov/TA_WS/securities/search?auctionDate=2019-01-01%2C2019-12-31&format=json",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_08bd4a95d507d283a0cf",
+    "name": "Reviewed public source: treasury_auctions_2020.json",
+    "url": "https://www.treasurydirect.gov/TA_WS/securities/search?auctionDate=2020-01-01%2C2020-12-31&format=json",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_340519768a34081abd2d",
+    "name": "Reviewed public source: treasury_auctions_2021.json",
+    "url": "https://www.treasurydirect.gov/TA_WS/securities/search?auctionDate=2021-01-01%2C2021-12-31&format=json",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_287a245b6019ea05393c",
+    "name": "Reviewed public source: treasury_auctions_2022.json",
+    "url": "https://www.treasurydirect.gov/TA_WS/securities/search?auctionDate=2022-01-01%2C2022-12-31&format=json",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_4fabff88e3d0a6c73a95",
+    "name": "Reviewed public source: treasury_auctions_2023.json",
+    "url": "https://www.treasurydirect.gov/TA_WS/securities/search?auctionDate=2023-01-01%2C2023-12-31&format=json",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_67ceee6866e36f474f9b",
+    "name": "Reviewed public source: treasury_auctions_2024.json",
+    "url": "https://www.treasurydirect.gov/TA_WS/securities/search?auctionDate=2024-01-01%2C2024-12-31&format=json",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_239eaf8ece4603d0cb56",
+    "name": "Reviewed public source: treasury_auctions_2025.json",
+    "url": "https://www.treasurydirect.gov/TA_WS/securities/search?auctionDate=2025-01-01%2C2025-12-31&format=json",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_43693e873af12de5db95",
+    "name": "Reviewed public source: treasury_auctions_2026.json",
+    "url": "https://www.treasurydirect.gov/TA_WS/securities/search?auctionDate=2026-01-01%2C2026-10-20&format=json",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_de5c1805a999e8e4e3f9",
+    "name": "Reviewed public source: acats_lehman_2008.pdf",
+    "url": "https://www.dtcc.com/-/media/Files/pdf/2008/9/24/a6712.pdf",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "ECS",
+      "WIS"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_af0df49594f44de34a9d",
+    "name": "Reviewed public source: acats_project_2012.pdf",
+    "url": "https://www.dtcc.com/-/media/Files/pdf/2012/12/21/a7556.pdf",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "ECS",
+      "WIS"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_911117313c63873db132",
+    "name": "Reviewed public source: dtc_chill_2016.pdf",
+    "url": "https://www.dtcc.com/-/media/Files/Downloads/legal/rule-filings/2016/dtc/SR-DTC-2016-003.pdf",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "ECS",
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_286cf6dea6ef63d649df",
+    "name": "Reviewed public source: epn_rules.pdf",
+    "url": "https://www.dtcc.com/~/media/files/downloads/legal/rules/ficc_mbsd_epnrules.pdf",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_6465d450c1dd080c3d90",
+    "name": "Reviewed public source: dtc_settlement_guide.pdf",
+    "url": "https://www.dtcc.com/~/media/Files/Downloads/legal/service-guides/Settlement.pdf",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "ECS",
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_0b267502cff444713609",
+    "name": "Reviewed public source: ficc_mbsd_rules.pdf",
+    "url": "https://www.dtcc.com/~/media/Files/Downloads/legal/rules/ficc_mbsd_rules.pdf",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_5def747509be9aae6ff0",
+    "name": "Reviewed public source: nscc_rules.pdf",
+    "url": "https://www.dtcc.com/~/media/Files/Downloads/legal/rules/nscc_rules.pdf",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "ECS",
+      "WIS"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_38f8a1ce659e50274793",
+    "name": "Reviewed public source: dtc_rules.pdf",
+    "url": "https://www.dtcc.com/~/media/Files/Downloads/legal/rules/dtc_rules.pdf",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "ECS",
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_4827b17f12ca3cf4bee0",
+    "name": "Reviewed public source: dtcc_2025_annual.pdf",
+    "url": "https://www.dtcc.com/about/-/media/Files/Downloads/Annual%20Report/2025/DTCC-Annual-Report-2025-Print.pdf",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC",
+      "ECS",
+      "WIS",
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_c18c97ceb1cfbd73330e",
+    "name": "Reviewed public source: dtcc_2020_annual.pdf",
+    "url": "https://www.dtcc.com/annuals/2020/pdf/DTCC_2020_AR_Print.pdf",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC",
+      "ECS",
+      "WIS",
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_042679e0f28ad12bbef5",
+    "name": "Reviewed public source: dtcc_2022_annual.pdf",
+    "url": "https://www.dtcc.com/about/-/media/Files/Downloads/Annual-Report-2022/DTCC2022AR-PRINT.pdf",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC",
+      "ECS",
+      "WIS",
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_e3877ffefbc5f7962c94",
+    "name": "Reviewed public source: dtcc_sandy_financials_2012.pdf",
+    "url": "https://www.dtcc.com/annuals/2012/images/auditors-report/DTCC-Consolidated_Financial-Statements-Jai.pdf",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC",
+      "ECS",
+      "WIS",
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_ca3243e9ca4fdebccbfb",
+    "name": "Reviewed public source: cds_financial_risk_model_2025.pdf",
+    "url": "https://www.cds.ca/resource/en/56",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "ECS",
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_bf8fdf5321c8ea71acd6",
+    "name": "Reviewed public source: sft_access_2026.html",
+    "url": "https://www.dtcc.com/press-releases/2026/dtcc-receives-regulatory-approval-to-launch-new-client-access-model-for-nsccs-sft-clearing-service",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "ECS",
+      "WIS"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_112775683749bf1ed0e8",
+    "name": "Reviewed public source: treasury_auctions_all.json",
+    "url": "https://www.treasurydirect.gov/TA_WS/securities/search?auctionDate=2025-01-01,2025-12-31&format=json",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_07bb9cf2acd404577f83",
+    "name": "Reviewed public source: BOGZ1FU632051000Q.csv",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BOGZ1FU632051000Q&cosd=2000-01-01&coed=2026-10-20",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC",
+      "ECS",
+      "WIS",
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_7f047351a47f01acd7ca",
+    "name": "Reviewed public source: BOGZ1FU653164205Q.csv",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BOGZ1FU653164205Q&cosd=2000-01-01&coed=2026-10-20",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC",
+      "ECS",
+      "WIS",
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_97da099b4bb532502522",
+    "name": "Reviewed public source: unscheduled_closing.pdf",
+    "url": "https://www.dtcc.com/~/media/Files/Downloads/issues/Unscheduled_Close.pdf",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC",
+      "ECS",
+      "WIS",
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_bca4794c567bf057c08b",
+    "name": "Reviewed public source: carter_2025_notice.pdf",
+    "url": "https://www.dtcc.com/-/media/Files/pdf/2024/12/30/0275.pdf",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC",
+      "ECS",
+      "WIS",
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_7a3c01aaaa1a66c2bf84",
+    "name": "Reviewed public source: acats_2008_stop.pdf",
+    "url": "https://www.dtcc.com/-/media/Files/pdf/2008/9/22/a6705.pdf",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "ECS",
+      "WIS"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_0c2368ec1ee3f7211203",
+    "name": "Reviewed public source: BOGZ1FU632051000Q.txt",
+    "url": "https://fred.stlouisfed.org/data/BOGZ1FU632051000Q.txt",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC",
+      "ECS",
+      "WIS",
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_db43cd8798e46d2a6dba",
+    "name": "Reviewed public source: BOGZ1FU653164205Q.txt",
+    "url": "https://fred.stlouisfed.org/data/BOGZ1FU653164205Q.txt",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC",
+      "ECS",
+      "WIS",
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_4fd36ba7d805e07f67cf",
+    "name": "Reviewed public source: sec_dtc_chill_2014.pdf",
+    "url": "https://public-inspection.federalregister.gov/2014-06459.pdf",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "ECS",
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_17b559edd28efd5a4969",
+    "name": "Reviewed public source: sec_suspension_2012.html",
+    "url": "https://www.sec.gov/news/digest/2012/dig031512.htm",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC",
+      "ECS",
+      "WIS",
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_8efaec7139f44ea4cefe",
+    "name": "Reviewed public source: dtcc_2022_annual_alternative.pdf",
+    "url": "https://www.dtcc.com/-/media/Files/Downloads/Annual-Report-2022/DTCC2022AR-PRINT.pdf",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC",
+      "ECS",
+      "WIS",
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_6e11a436d31d09e4cb0a",
+    "name": "Reviewed public source: fed_z1_20260911.zip",
+    "url": "https://www.federalreserve.gov/releases/z1/20260911/z1_csv_files.zip",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC",
+      "WIS"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_e9c459530acab3c8bac3",
+    "name": "Reviewed public source: nscc_rules_current.pdf",
+    "url": "https://files.dtcc.com/download/assets/nscc_rules.pdf/85bda02a369211f0a3ae820bd5ac0897",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "ECS",
+      "WIS"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_caa887b19d3cfd59a148",
+    "name": "Reviewed public source: gsd_rules_current.pdf",
+    "url": "https://files.dtcc.com/download/assets/FICC-GSD%2BRulebook%2B%E2%80%93%2B2026-0826%2BFinal.pdf/b6c07124ceb411f09c9062cd3fe05a01",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_34b8eba7817e07848b5a",
+    "name": "Reviewed public source: dtc_rules_current.pdf",
+    "url": "https://files.dtcc.com/download/assets/dtc_rules.pdf/6064c95e369511f09a845e09fb65ecc7",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "ECS",
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_ae649b51ffaaa991211c",
+    "name": "Reviewed public source: custody_guide_current.pdf",
+    "url": "https://files.dtcc.com/download/assets/Custody.pdf/faa7f57c369511f0bf68c204a2f8334f",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_59132c112ba83b56431c",
+    "name": "Reviewed public source: deposits_guide_current.pdf",
+    "url": "https://files.dtcc.com/download/assets/Deposits.pdf/6f4ff35c369111f0a96e92d5ae67c534",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_5a8bba3e8af93bfe2c83",
+    "name": "Reviewed public source: acs_launch_2025.html",
+    "url": "https://www.dtcc.com/press-releases/2025/dtccs-ficc-now-live-with-new-treasury-clearing-capabilities",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_2fdb8da736499ed99465",
+    "name": "Reviewed public source: cftc_mfglobal.html",
+    "url": "https://www.cftc.gov/PressRoom/PressReleases/6626-13",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC",
+      "ECS",
+      "WIS",
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "research_d2cb23fd8c97f76b0bb9",
+    "name": "Reviewed public source: dtcc_rules_index.html",
+    "url": "https://www.dtcc.com/legal/rules-and-procedures",
+    "kind": "reviewed_research_batch",
+    "enabled": false,
+    "refresh_hours": null,
+    "business_lines": [
+      "FICC",
+      "ECS",
+      "WIS",
+      "Asset Services"
+    ],
+    "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
   }
 ]

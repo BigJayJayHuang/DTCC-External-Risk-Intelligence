@@ -1,0 +1,51 @@
+104
+36 Dasol Kim, Luke M. Olson, and Toan Phan, “Bank Competition and Strategic Adaptation to Climate Change,” Office of Financial 
+Research Working Paper No. 24-03, June 21, 2024, https://www.financialresearch.gov/working-papers/files/OFRwp-24-03_Bank-Competition-
+and-Strategic-Adaptation-to-Climate-Change.pdf.
+37 Allen Berger et al., “Climate Risks in the U.S. Banking Sector: Evidence from Operational Losses and Extreme Storms,” Federal Reserve 
+Bank of Philadelphia Working Paper No. 23-31, November 20, 2023, http://dx.doi.org/10.21799/frbp.wp.2023.31.
+38 Kristian S. Blickle, Sarah N. Hamerling, and Donald P . Morgan, “How Bad Are Weather Disasters for Banks?,” Federal Reserve Bank of 
+New York Staff Report No. 990, revised January 2022, https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr990.pdf.
+39 Hyeyoon Jung, João A. C. Santos, and Lee Seltzer, “U.S. Banks’ Exposures to Climate Transition Risks,” Federal Reserve Bank of New 
+York Staff Report No. 1058, revised January 2024, https://www.newyorkfed.org/medialibrary/media/research/staff_reports/sr1058.pdf.
+40 Fang Cai and Sharjil Haque, “Private Credit: Characteristics and Risks,” FEDS Notes, Board of Governors of the Federal Reserve 
+System, February 23, 2024, https://doi.org/10.17016/2380-7172.3462.
+41 Noele Illien and John Revill, “UBS Agrees to Pay $388 Million over Credit Suisse’s Archegos Failings,” Reuters, July 24, 2023, https://
+www.reuters.com/business/finance/ubs-agrees-pay-388-million-over-credit-suisses-archegos-failings-2023-07-24/ .
+42 Financial institutions are subject to oversight of their operations and cyber defenses by their respective regulators and through 
+different rules. One example is the Federal Reserve’s rules regarding FMUs. For example, Board of Governors of the Federal Reserve 
+System, “Financial Market Utilities,” Final Rule, Federal Register 89, no. 52 (March 15, 2024): 18749-19767, https://www.govinfo.gov/content/
+pkg/FR-2024-03-15/pdf/2024-05322.pdf.
+43 Munich Re, “Cyber Insurance Risks and Trends 2024,” April 4, 2024, https://www.munichre.com/en/insights/cyber/cyber-insurance-risks-
+and-trends-2024.html.
+44 Department of the Treasury, “Potential Federal Insurance Response to Catastrophic Cyber Incidents,” Final Rule, Federal Register 87, 
+no. 188 (September 29, 2022): 59161- 59163, https://www.govinfo.gov/content/pkg/FR-2022-09-29/pdf/2022-21133.pdf.
+45 Jacob Bunge, Anupreeta Das, and Telis Demos, “Loyalty, Profit Drive Knight Rescue,” The Wall Street Journal, August 7, 2012, https://
+www.wsj.com/articles/SB10000872396390444246904577572752865497064 .
+46 Reuters, “Exclusive: ICBC Hack Led to Unit Temporarily Owing Bank of New York Mellon $9 Billion, Sources Say,” Reuters, November 
+10, 2023, https://www.reuters.com/technology/cybersecurity/icbc-hack-led-unit-temporarily-owing-bny-9-bln-sources-2023-11-10/ .
+47 Datos Insights, “How Is ICBC in the Aftermath of a Ransomware Attack?,” Datos Insights, November 27, 2023, https://datos-insights.
+com/blog/datos/how-is-icbc-in-the-aftermath-of-a-ransomware-attack/; and Paritosh Bansal, “Inside Wall Street’s Scramble After ICBC 
+Hack,” Reuters, November 17, 2023, https://www.reuters.com/technology/cybersecurity/market-inside-wall-streets-scramble-after-icbc-
+hack-2023-11-13/.
+48 Laura Matthews, “EquiLend Hack Raised Costs as Traders Flew Blind, Sources Say,” Reuters, February 26, 2024, https://www.reuters.
+com/technology/cybersecurity/equilend-hack-raised-costs-traders-flew-blind-sources-say-2024-02-26/ ; Matt Egan, “Wall Street Firm Hit 
+by Cyberattack That Has Knocked Systems Offline,” CNN, January 24, 2024, https://www.cnn.com/2024/01/24/business/wall-street-firm-
+cyberattack/index.html; and Katherine Doherty and Donal Griffin, “Latest Cyberattack Leaves Banks Stuck with Excel and a Headache,” 
+Bloomberg News, January 24, 2024, https://www.bloomberg.com/news/articles/2024-01-24/latest-cyberattack-leaves-banks-stuck-with-
+excel-and-a-headache.
+49 Heather Chen and Kathleen Magramo, “Finance Worker Pays Out $25 Million After Video Call with Deepfake ‘Chief Financial Officer’,” 
+February 4, 2024, https://www.cnn.com/2024/02/04/asia/deepfake-cfo-scam-hong-kong-intl-hnk/index.html .
+50 LexisNexis, “7th Annual LexisNexis® True Cost of Fraud™ Study: Financial Services and Lending Report,” online content, 2023, https://
+risk.lexisnexis.com/insights-resources/research/us-ca-true-cost-of-fraud-study .
+51 PYMNTS Intelligence, “The State of Fraud and Financial Crime in the U.S. 2023,” online content, September 2023, https://www.pymnts.
+com/wp-content/uploads/2023/09/PYMNTS-The-State-of-Fraud-and-Financial-Crime-in-the-US-2023-September-2023.pdf .
+52 U.S. Department of the Treasury, Managing Artificial Intelligence-Specific Cybersecurity Risks in the Financial Services Sector  
+(Washington: U.S. Department of the Treasury, March 2024), https://home.treasury.gov/system/files/136/Managing-Artificial-Intelligence-
+Specific-Cybersecurity-Risks-In-The-Financial-Services-Sector.pdf.
+53 Samuel J. Hempel et al., “Non-Centrally Cleared Bilateral Repo,” The OFR Blog, Office of Financial Research, August 24, 2022, https://
+www.financialresearch.gov/the-ofr-blog/2022/08/24/non-centrally-cleared-bilateral-repo/.
+54 Samuel J. Hempel et al., “Repo Market Intermediation: Dealer Cash and Collateral Flow Management across the U.S. Repo Market,” 
+Office of Financial Research Brief No. 24-07, November 14, 2024, https://www.financialresearch.gov/briefs/files/OFRBrief-24-07-repo-market-
+intermediation.pdf.
+55 Samuel Hempel et al., “Why Is So Much Repo Not Centrally Cleared?,” Office of Financial Research Brief No. 23-01, May 12, 2023, 

@@ -38,6 +38,8 @@ jobs:
       - run: python -m unittest discover -s tests -v
       - name: Restore latest durable database
         run: python github_release.py restore
+      - name: Integrate committed reviewed research inputs
+        run: python github_release.py import-reviewed
       - name: Collect and preserve incremental revisions
         run: python update.py
       - name: Validate source evidence and database

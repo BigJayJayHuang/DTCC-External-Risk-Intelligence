@@ -1,0 +1,1734 @@
+{
+  "version": "v2",
+  "definition_revision_date": "2026-10-21",
+  "evidence_snapshot_date": "2026-10-16",
+  "scores_computed": false,
+  "statistical_tests_rerun": false,
+  "formula": "risk priority = external shock S * internal vulnerability V",
+  "chains": [
+    {
+      "chain_id": "FICC-GSD-01",
+      "namespace": "supplied_reference",
+      "legacy_ids": [
+        "FICC-GSD-01"
+      ],
+      "world_event": {
+        "CN": "国债抛售或收益率剧烈波动。",
+        "EN": "Treasury selloff or sharp yield swings."
+      },
+      "mechanism": {
+        "CN": "会员已清算头寸的价格变动加大，改变其所需保证金。",
+        "EN": "Larger price moves on members' cleared positions change required margin."
+      },
+      "dtcc_process": {
+        "CN": "GSD 保证金要求。",
+        "EN": "GSD margin requirements."
+      },
+      "indicator_to_watch": {
+        "CN": "十年期国债收益率日变动绝对值；GSD PQD 6.1.1 环比。",
+        "EN": "Absolute daily changes in the 10-year Treasury yield; GSD PQD 6.1.1 quarter-over-quarter."
+      },
+      "display_group": "FICC-GSD-01"
+    },
+    {
+      "chain_id": "FICC-GSD-02",
+      "namespace": "supplied_reference",
+      "legacy_ids": [
+        "FICC-GSD-02"
+      ],
+      "world_event": {
+        "CN": "回购利率飙升或短期融资收紧。",
+        "EN": "Repo rates spike or short-term funding tightens."
+      },
+      "mechanism": {
+        "CN": "会员融资成本上升，每日结算支付更难筹集资金。",
+        "EN": "Members' funding costs rise, making daily settlement payments harder to fund."
+      },
+      "dtcc_process": {
+        "CN": "GSD 结算支付和流动性。",
+        "EN": "GSD settlement payments and liquidity."
+      },
+      "indicator_to_watch": {
+        "CN": "季末校正 SOFR−EFFR；OFR GCF−DVP 仅作间接市场反应。",
+        "EN": "Quarter-end-adjusted SOFR−EFFR; OFR GCF−DVP is an indirect market response only."
+      },
+      "display_group": "FICC-GSD-02"
+    },
+    {
+      "chain_id": "FICC-GSD-03",
+      "namespace": "supplied_reference",
+      "legacy_ids": [
+        "FICC-GSD-03"
+      ],
+      "world_event": {
+        "CN": "国债集中清算合规节点临近、延期或调整。",
+        "EN": "Treasury central clearing deadlines approach, are extended, or change."
+      },
+      "mechanism": {
+        "CN": "机构为满足规则接入清算，包括通过 Sponsored 模式接入，改变接入工作量和业务量。",
+        "EN": "Firms onboard to meet the rule, including through Sponsored clearing, changing onboarding demand and volume."
+      },
+      "dtcc_process": {
+        "CN": "GSD 客户接入和 Sponsored 业务量。",
+        "EN": "GSD onboarding and Sponsored volume."
+      },
+      "indicator_to_watch": {
+        "CN": "SEC 官方节点；Sponsored 活动；实际接入数量。",
+        "EN": "Official SEC milestones; Sponsored activity; actual onboarding counts."
+      },
+      "display_group": "FICC-GSD-03"
+    },
+    {
+      "chain_id": "FICC-GSD-04",
+      "namespace": "supplied_reference",
+      "legacy_ids": [
+        "FICC-GSD-04"
+      ],
+      "world_event": {
+        "CN": "银行或交易商会员被降级、出现亏损或信用恶化，尚未确认违约。",
+        "EN": "A bank or dealer member is downgraded, reports losses, or deteriorates in credit without a confirmed default."
+      },
+      "mechanism": {
+        "CN": "会员违约风险上升，增加风险监测和违约管理准备需求；实际违约另归 GSD-06。",
+        "EN": "Higher member default risk increases surveillance and default-management preparedness; an actual default routes to GSD-06."
+      },
+      "dtcc_process": {
+        "CN": "FICC 会员信用监测及违约管理准备。",
+        "EN": "FICC member credit surveillance and default-management preparedness."
+      },
+      "indicator_to_watch": {
+        "CN": "具名会员评级、展望及公告；Baa 利差只作宏观背景。",
+        "EN": "Named-member ratings, outlooks, and disclosures; Baa spreads provide macro context only."
+      },
+      "display_group": "FICC-GSD-04"
+    },
+    {
+      "chain_id": "FICC-GSD-06",
+      "namespace": "supplied_reference",
+      "legacy_ids": [
+        "FICC-GSD-04"
+      ],
+      "world_event": {
+        "CN": "GSD 清算会员实际违约或 FICC 宣布停止为其提供服务。",
+        "EN": "A GSD clearing member actually defaults or FICC ceases to act for it."
+      },
+      "mechanism": {
+        "CN": "FICC 按违约程序动用违约会员资源；剩余缺口才按损失分摊规则处理，可能涉及存续会员清算基金。",
+        "EN": "FICC applies the defaulting member's resources; any remaining shortfall is handled under loss-allocation rules and may involve surviving members' Clearing Fund deposits."
+      },
+      "dtcc_process": {
+        "CN": "GSD 损失分摊与清算基金互助机制。",
+        "EN": "GSD loss allocation and Clearing Fund mutualization."
+      },
+      "indicator_to_watch": {
+        "CN": "具名会员违约及停止服务公告；实际资源使用和缺口。",
+        "EN": "Named-member default and cease-to-act notices; actual resource use and shortfalls."
+      },
+      "display_group": "FICC-GSD-06"
+    },
+    {
+      "chain_id": "FICC-MBSD-01",
+      "namespace": "supplied_reference",
+      "legacy_ids": [
+        "FICC-MBSD-01"
+      ],
+      "world_event": {
+        "CN": "房贷利率骤变或 MBS 利差扩大。",
+        "EN": "Mortgage rates jump or MBS spreads widen."
+      },
+      "mechanism": {
+        "CN": "TBA 价格波动改变会员头寸的盯市价值，带动变动保证金和保证金要求变化。",
+        "EN": "TBA price swings change marked-to-market positions and affect variation margin and margin requirements."
+      },
+      "dtcc_process": {
+        "CN": "MBSD 保证金及变动保证金。",
+        "EN": "MBSD margin and variation margin."
+      },
+      "indicator_to_watch": {
+        "CN": "PMMS 房贷利率减国债收益率的周变化代理；MBSD PQD 6.7.1。",
+        "EN": "Weekly changes in the PMMS mortgage-rate-minus-Treasury proxy; MBSD PQD 6.7.1."
+      },
+      "display_group": "FICC-MBSD-01"
+    },
+    {
+      "chain_id": "FICC-GSD-08",
+      "namespace": "supplied_reference",
+      "legacy_ids": [
+        "FICC-GSD-06"
+      ],
+      "world_event": {
+        "CN": "承担 GSD 结算职能的清算银行出现运营或信用问题。",
+        "EN": "A clearing bank performing a GSD settlement role has an operational or credit problem."
+      },
+      "mechanism": {
+        "CN": "经该银行完成的证券交收与 Fedwire 付款无法按时衔接，使对应 GSD 结算受阻。",
+        "EN": "Securities delivery and Fedwire payment through that bank cannot complete on time, interrupting the affected GSD settlement."
+      },
+      "dtcc_process": {
+        "CN": "GSD 经清算银行进行的证券结算。",
+        "EN": "GSD securities settlement via clearing banks."
+      },
+      "indicator_to_watch": {
+        "CN": "清算银行角色和故障公告；Fedwire 状态；GSD 直接结算证据。",
+        "EN": "Verified clearing-bank role and incident notices; Fedwire status; direct GSD settlement evidence."
+      },
+      "display_group": "FICC-GSD-08"
+    },
+    {
+      "chain_id": "TEAM-FICC-01",
+      "namespace": "team",
+      "legacy_ids": [
+        "FICC-GSD-05"
+      ],
+      "world_event": {
+        "CN": "CME、ICE 等竞争对手推出国债清算服务、功能或客户接入。",
+        "EN": "A competitor such as CME or ICE launches Treasury clearing services, features, or onboarding."
+      },
+      "mechanism": {
+        "CN": "同一客户群可选择其他服务；只有客户迁移或可比业务量证据才能判断 FICC 份额变化。",
+        "EN": "Customers may choose competing services; migration or comparable volume evidence is needed to assess changes in FICC share."
+      },
+      "dtcc_process": {
+        "CN": "GSD 新增业务获取与竞争地位。",
+        "EN": "GSD new-business acquisition and competitive position."
+      },
+      "indicator_to_watch": {
+        "CN": "竞争对手官方公告、实际清算量及客户迁移；非审批消息本身。",
+        "EN": "Competitor disclosures, actual cleared volumes, and customer migration; approval alone is insufficient."
+      },
+      "display_group": "TEAM-FICC-01"
+    },
+    {
+      "chain_id": "TEAM-FICC-02",
+      "namespace": "team",
+      "legacy_ids": [
+        "FICC-GSD-06"
+      ],
+      "world_event": {
+        "CN": "GSD 会员或其供应商发生网络攻击或系统故障。",
+        "EN": "A GSD member or its vendor suffers a cyberattack or system outage."
+      },
+      "mechanism": {
+        "CN": "若故障确实影响该会员的 GSD 连接、提交或履约能力，交易提交或结算可能延迟。",
+        "EN": "If the incident impairs that member's GSD connection, submissions, or obligations, trade submission or settlement may be delayed."
+      },
+      "dtcc_process": {
+        "CN": "GSD 会员交易提交及结算；银行结算通道问题另归 GSD-08。",
+        "EN": "GSD member submissions and settlement; clearing-bank disruptions route separately to GSD-08."
+      },
+      "indicator_to_watch": {
+        "CN": "具名会员故障与 GSD 依赖证据；直接服务通知。",
+        "EN": "Named-member incidents and evidence of GSD dependencies; direct service notices."
+      },
+      "display_group": "TEAM-FICC-02"
+    },
+    {
+      "chain_id": "TEAM-FICC-03",
+      "namespace": "team",
+      "legacy_ids": [
+        "FICC-MBSD-02"
+      ],
+      "world_event": {
+        "CN": "GSE 托管、私有化或机构 MBS 担保安排出现实质变化。",
+        "EN": "A substantive change occurs in GSE conservatorship, privatization, or agency-MBS guarantees."
+      },
+      "mechanism": {
+        "CN": "担保预期或交易约定变化可能改变机构 MBS 定价和 TBA 活动，进而影响 MBSD 清算及风险参数。",
+        "EN": "Changes in guarantee expectations or trading conventions may alter agency-MBS pricing and TBA activity, affecting MBSD clearing and risk parameters."
+      },
+      "dtcc_process": {
+        "CN": "MBSD TBA 清算活动及相关风险参数。",
+        "EN": "MBSD TBA clearing activity and related risk parameters."
+      },
+      "indicator_to_watch": {
+        "CN": "官方改革节点、TRACE 机构 MBS 活动及 MBSD 直接反应。",
+        "EN": "Official reform milestones, TRACE agency-MBS activity, and direct MBSD responses."
+      },
+      "display_group": "TEAM-FICC-03"
+    },
+    {
+      "chain_id": "ECS-NSCC-01",
+      "namespace": "supplied_reference",
+      "legacy_ids": [
+        "ECS-NSCC-01B"
+      ],
+      "world_event": {
+        "CN": "股市急跌或价格剧烈波动。",
+        "EN": "A sharp equity selloff or large price swings."
+      },
+      "mechanism": {
+        "CN": "每日盯市现金流大幅变化，会员需要当日调动更多现金。",
+        "EN": "Daily mark-to-market payments change sharply, requiring members to move more cash that day."
+      },
+      "dtcc_process": {
+        "CN": "NSCC 变动保证金。",
+        "EN": "NSCC variation margin."
+      },
+      "indicator_to_watch": {
+        "CN": "VIX；VM 单日峰值与日均值之比；VIX jump 只作探索。",
+        "EN": "VIX; peak-to-average daily VM; VIX jump remains exploratory."
+      },
+      "display_group": "NSCC_VM_LIQUIDITY"
+    },
+    {
+      "chain_id": "ECS-NSCC-02",
+      "namespace": "supplied_reference",
+      "legacy_ids": [
+        "ECS-NSCC-03B"
+      ],
+      "world_event": {
+        "CN": "短期融资紧张，券商筹资成本上升。",
+        "EN": "Short-term funding tightens and brokers face higher funding costs."
+      },
+      "mechanism": {
+        "CN": "券商可用于每日付款的现金减少，变动保证金和结算付款更难筹集。",
+        "EN": "Brokers have less spare cash for daily payments, making variation margin and settlement payments harder to fund."
+      },
+      "dtcc_process": {
+        "CN": "NSCC 变动保证金和流动性。",
+        "EN": "NSCC variation margin and liquidity."
+      },
+      "indicator_to_watch": {
+        "CN": "校正 SOFR−EFFR；直接 VM 或流动性反应；IM 追缴仅为相关代理。",
+        "EN": "Adjusted SOFR−EFFR; direct VM or liquidity responses; IM calls are a related proxy only."
+      },
+      "display_group": "NSCC_VM_LIQUIDITY"
+    },
+    {
+      "chain_id": "ECS-NSCC-03",
+      "namespace": "supplied_reference",
+      "legacy_ids": [
+        "ECS-NSCC-02A"
+      ],
+      "world_event": {
+        "CN": "市场股票成交量异常激增。",
+        "EN": "Equity-market trading volume surges."
+      },
+      "mechanism": {
+        "CN": "交付需求和证券可得性压力加大，可能留下更多尚未完成交收的头寸。",
+        "EN": "Higher delivery demand and securities-availability pressures may leave more positions undelivered."
+      },
+      "dtcc_process": {
+        "CN": "NSCC CNS 证券交收及未交割余额。",
+        "EN": "NSCC CNS settlement and outstanding fails."
+      },
+      "indicator_to_watch": {
+        "CN": "Cboe 成交量；SEC CNS FTD 未交割余额，不是失败率。",
+        "EN": "Cboe volume; SEC CNS outstanding FTD balances, not a fail rate."
+      },
+      "display_group": "ECS-NSCC-03"
+    },
+    {
+      "chain_id": "ECS-SET-01",
+      "namespace": "supplied_reference",
+      "legacy_ids": [
+        "ECS-NSCC-04",
+        "ECS-DTC-01"
+      ],
+      "world_event": {
+        "CN": "结算周期缩短或交易时段延长，例如 T+1、T+0 或 24x5。",
+        "EN": "A shorter settlement cycle or longer trading hours, such as T+1, T+0, or 24x5."
+      },
+      "mechanism": {
+        "CN": "处理、确认和筹资窗口变化，迟到或手工步骤可能成为瓶颈；是否增加失败须看实际结果。",
+        "EN": "Changed processing, affirmation, and funding windows may make late or manual steps bottlenecks; any increase in fails requires evidence."
+      },
+      "dtcc_process": {
+        "CN": "NSCC 与 DTC 结算；分别记录 CNS 和非 CNS 结果。",
+        "EN": "NSCC and DTC settlement; retain separate CNS and non-CNS outcomes."
+      },
+      "indicator_to_watch": {
+        "CN": "官方实施节点；两套连续月度失败率。",
+        "EN": "Official implementation milestones; two distinct continuous monthly fail-rate series."
+      },
+      "display_group": "ECS-SET-01"
+    },
+    {
+      "chain_id": "ECS-NSCC-06",
+      "namespace": "supplied_reference",
+      "legacy_ids": [
+        "ECS-NSCC-03A"
+      ],
+      "world_event": {
+        "CN": "NSCC 清算会员实际违约或 NSCC 停止为其提供服务。",
+        "EN": "An NSCC clearing member actually defaults or NSCC ceases to act for it."
+      },
+      "mechanism": {
+        "CN": "NSCC 处理该会员未平仓 CNS 多空头寸，面临买入及平仓期间的市场价格风险。",
+        "EN": "NSCC closes out the member's open CNS long and short positions, facing market-price risk during buy-ins and liquidation."
+      },
+      "dtcc_process": {
+        "CN": "NSCC 停止服务后的 CNS 平仓。",
+        "EN": "NSCC CNS close-out after ceasing to act."
+      },
+      "indicator_to_watch": {
+        "CN": "具名会员违约、停止服务及 CNS 平仓的直接证据。",
+        "EN": "Direct evidence of named-member default, cease-to-act action, and CNS close-out."
+      },
+      "display_group": "ECS-NSCC-06"
+    },
+    {
+      "chain_id": "ECS-DTC-02",
+      "namespace": "supplied_reference",
+      "legacy_ids": [
+        "ECS-DTC-04"
+      ],
+      "world_event": {
+        "CN": "DTC 结算银行出现融资、信用或运营问题。",
+        "EN": "A DTC settling bank has a funding, credit, or operational problem."
+      },
+      "mechanism": {
+        "CN": "若该银行拒绝或无法通过 Fedwire 完成汇总净额支付，其所代表参与者的日终资金结算不能按时完成。",
+        "EN": "If the bank refuses or fails to settle its aggregate net-net balance over Fedwire, end-of-day money settlement cannot complete on time for the participants it represents."
+      },
+      "dtcc_process": {
+        "CN": "DTC 结算银行日终资金结算。",
+        "EN": "DTC settling-bank money settlement."
+      },
+      "indicator_to_watch": {
+        "CN": "具名结算银行及 Fedwire 通知；CP−国库券利差仅作背景。",
+        "EN": "Named settling-bank and Fedwire notices; the CP-minus-bill spread is context only."
+      },
+      "display_group": "ECS-DTC-02"
+    },
+    {
+      "chain_id": "ECS-DTC-05",
+      "namespace": "supplied_reference",
+      "legacy_ids": [
+        "ECS-DTC-02A"
+      ],
+      "world_event": {
+        "CN": "大型 DTC 参与者遭遇网络攻击或重大系统故障。",
+        "EN": "A large DTC participant suffers a cyber event or major system outage."
+      },
+      "mechanism": {
+        "CN": "参与者与 DTC 的连接或指令传输受损，使其账簿划转和结算受阻，可涉及参与者系统中断处理。",
+        "EN": "Impaired participant connectivity or instruction transmission disrupts book-entry transfers and settlement, potentially invoking participant-system-disruption handling."
+      },
+      "dtcc_process": {
+        "CN": "DTC 参与者系统中断及相关指令处理。",
+        "EN": "DTC participant system disruption and affected instructions."
+      },
+      "indicator_to_watch": {
+        "CN": "具名参与者故障、适用软件及 DTC 服务证据；KEV 计数仅作线索。",
+        "EN": "Named-participant incidents, applicable software, and DTC service evidence; KEV counts are leads only."
+      },
+      "display_group": "ECS-DTC-05"
+    },
+    {
+      "chain_id": "TEAM-ECS-01",
+      "namespace": "team",
+      "legacy_ids": [
+        "ECS-NSCC-01A"
+      ],
+      "world_event": {
+        "CN": "股市急跌或价格剧烈波动。",
+        "EN": "A sharp equity selloff or large price swings."
+      },
+      "mechanism": {
+        "CN": "头寸风险重估可能改变 Clearing Fund 要求，引发追加保证金需求。",
+        "EN": "Reassessment of position risk may change Clearing Fund requirements and generate additional margin calls."
+      },
+      "dtcc_process": {
+        "CN": "NSCC Clearing Fund 追缴；区别于每日 VM 付款。",
+        "EN": "NSCC Clearing Fund calls, distinct from daily VM payments."
+      },
+      "indicator_to_watch": {
+        "CN": "VIX；追缴额除以上季 IM。",
+        "EN": "VIX; margin calls divided by prior-quarter IM."
+      },
+      "display_group": "TEAM-ECS-01"
+    },
+    {
+      "chain_id": "TEAM-ECS-02",
+      "namespace": "team",
+      "legacy_ids": [
+        "ECS-NSCC-01C"
+      ],
+      "world_event": {
+        "CN": "股市波动超过保证金模型覆盖预期。",
+        "EN": "Equity-market moves exceed the margin model's expected coverage."
+      },
+      "mechanism": {
+        "CN": "部分历史头寸损失超过模型所需保证金，产生回测突破并提示覆盖偏差。",
+        "EN": "Losses on some historical positions exceed model-required margin, producing backtesting breaches that indicate coverage gaps."
+      },
+      "dtcc_process": {
+        "CN": "NSCC 保证金模型覆盖及回测。",
+        "EN": "NSCC margin-model coverage and backtesting."
+      },
+      "indicator_to_watch": {
+        "CN": "VIX；回测突破数；保留过去十二个月重叠口径。",
+        "EN": "VIX; backtesting breach counts; retain the overlapping trailing-12-month definition."
+      },
+      "display_group": "TEAM-ECS-02"
+    },
+    {
+      "chain_id": "TEAM-ECS-03",
+      "namespace": "team",
+      "legacy_ids": [
+        "ECS-NSCC-02B"
+      ],
+      "world_event": {
+        "CN": "股票成交量异常激增。",
+        "EN": "Equity trading volume surges."
+      },
+      "mechanism": {
+        "CN": "若交易捕获和净额处理负荷接近实际容量，可能出现延迟或故障；须有独立运营证据。",
+        "EN": "If trade-capture and netting loads approach actual capacity, delays or outages may occur; separate operational evidence is required."
+      },
+      "dtcc_process": {
+        "CN": "NSCC 交易捕获及净额处理系统。",
+        "EN": "NSCC trade-capture and netting systems."
+      },
+      "indicator_to_watch": {
+        "CN": "复用 Cboe 成交量；另需 NSCC 独立延迟或故障序列。",
+        "EN": "Reuse Cboe volume; obtain separate NSCC-specific latency or outage data."
+      },
+      "display_group": "TEAM-ECS-03"
+    },
+    {
+      "chain_id": "TEAM-ECS-04",
+      "namespace": "team",
+      "legacy_ids": [
+        "ECS-NSCC-03A"
+      ],
+      "world_event": {
+        "CN": "具名券商或银行会员信用恶化，尚未确认违约。",
+        "EN": "A named broker or bank member deteriorates in credit without a confirmed default."
+      },
+      "mechanism": {
+        "CN": "信用风险增加可能触发会员监测或风险措施；实际违约后的 CNS 平仓另归 NSCC-06。",
+        "EN": "Higher credit risk may prompt surveillance or risk measures; CNS close-out following actual default routes to NSCC-06."
+      },
+      "dtcc_process": {
+        "CN": "NSCC 会员信用监测与风险措施。",
+        "EN": "NSCC member credit surveillance and risk measures."
+      },
+      "indicator_to_watch": {
+        "CN": "具名会员评级及风险措施；Baa 利差仅作背景。",
+        "EN": "Named-member ratings and risk actions; Baa spreads provide context only."
+      },
+      "display_group": "TEAM-ECS-04"
+    },
+    {
+      "chain_id": "TEAM-ECS-05",
+      "namespace": "team",
+      "legacy_ids": [
+        "ECS-NSCC-05"
+      ],
+      "world_event": {
+        "CN": "三巫日、Russell 调整或 S&P 指数再平衡等已知高峰日期。",
+        "EN": "Known peaks such as triple witching, Russell reconstitution, or S&P index rebalances."
+      },
+      "mechanism": {
+        "CN": "活动集中到可预知日期，增加当日处理负荷；额外失败或故障需单独验证。",
+        "EN": "Activity bunches on predictable dates, raising processing load; additional fails or outages require separate validation."
+      },
+      "dtcc_process": {
+        "CN": "NSCC 高峰日交易处理和后续交收。",
+        "EN": "NSCC peak-date processing and subsequent settlement."
+      },
+      "indicator_to_watch": {
+        "CN": "权威事件日历；复用成交量与 FTD；不等同补充流动性存款。",
+        "EN": "Authoritative event calendars; reuse volume and FTD; distinct from supplemental liquidity deposits."
+      },
+      "display_group": "TEAM-ECS-05"
+    },
+    {
+      "chain_id": "TEAM-ECS-06",
+      "namespace": "team",
+      "legacy_ids": [
+        "ECS-DTC-02B"
+      ],
+      "world_event": {
+        "CN": "云、网络或共享供应商发生广泛故障。",
+        "EN": "A cloud, network, or shared vendor has a widespread outage."
+      },
+      "mechanism": {
+        "CN": "只有确认 DTC 或参与者依赖该服务、且相关连接或指令受阻，才能判断其向 DTC 传导。",
+        "EN": "Transmission requires a verified DTC or participant dependency and evidence that relevant connections or instructions were impaired."
+      },
+      "dtcc_process": {
+        "CN": "DTC 依赖服务及指令处理；参与者中断与 DTC-05 关联去重。",
+        "EN": "DTC service dependencies and instructions; link participant disruptions to DTC-05 without duplication."
+      },
+      "indicator_to_watch": {
+        "CN": "供应商历史及持续时长、依赖关系和 DTC 直接通知。",
+        "EN": "Vendor incident histories and durations, dependencies, and direct DTC notices."
+      },
+      "display_group": "TEAM-ECS-06"
+    },
+    {
+      "chain_id": "TEAM-ECS-07",
+      "namespace": "team",
+      "legacy_ids": [
+        "ECS-DTC-03"
+      ],
+      "world_event": {
+        "CN": "IPO 或债券发行量显著增加。",
+        "EN": "IPO or bond issuance rises sharply."
+      },
+      "mechanism": {
+        "CN": "新券资格审查和首次交收需求增加；是否形成积压取决于容量与实际处理情况。",
+        "EN": "More issues increase eligibility-review and initial-settlement demand; backlogs depend on capacity and observed processing."
+      },
+      "dtcc_process": {
+        "CN": "DTC 新券资格及初始交收；业务归属暂沿用 ECS。",
+        "EN": "DTC new-issue eligibility and initial settlement; provisionally classified under ECS."
+      },
+      "indicator_to_watch": {
+        "CN": "市场范围 424B 计数；DTC 月度发行数量及处理延迟。",
+        "EN": "Market-wide 424B counts; monthly DTC issuance counts and processing delays."
+      },
+      "display_group": "TEAM-ECS-07"
+    },
+    {
+      "chain_id": "TEAM-ECS-08",
+      "namespace": "team",
+      "legacy_ids": [
+        "ECS-DTC-02A"
+      ],
+      "world_event": {
+        "CN": "网络攻击或重大故障直接影响 DTC 自身的相关系统。",
+        "EN": "A cyberattack or major outage directly affects relevant DTC systems."
+      },
+      "mechanism": {
+        "CN": "若 DTC 的指令接收、处理或连接服务确实不可用，相关参与者的账簿划转与结算可能延迟。",
+        "EN": "If DTC instruction intake, processing, or connectivity is unavailable, affected participants may experience delayed book-entry transfers and settlement."
+      },
+      "dtcc_process": {
+        "CN": "DTC 自身服务连续性；区别于 DTC-05 的参与者系统中断。",
+        "EN": "DTC service continuity, distinct from participant system disruption under DTC-05."
+      },
+      "indicator_to_watch": {
+        "CN": "DTC 直接服务及恢复通知；不得仅凭行业漏洞数量推断。",
+        "EN": "Direct DTC service and restoration notices; sector vulnerability counts alone are insufficient."
+      },
+      "display_group": "TEAM-ECS-08"
+    }
+  ],
+  "mappings": [
+    {
+      "legacy_id": "FICC-GSD-01",
+      "revised_ids": [
+        "FICC-GSD-01"
+      ],
+      "action": {
+        "CN": "相似，按示例收敛到保证金；保留原检验。",
+        "EN": "Aligned to margin requirements; retain the original test."
+      },
+      "validation_transfer": "same_specification"
+    },
+    {
+      "legacy_id": "FICC-GSD-02",
+      "revised_ids": [
+        "FICC-GSD-02"
+      ],
+      "action": {
+        "CN": "相似，按示例写结算流动性；利差结果仅为间接代理。",
+        "EN": "Aligned to settlement liquidity; the spread result remains an indirect proxy."
+      },
+      "validation_transfer": "proxy_only"
+    },
+    {
+      "legacy_id": "FICC-GSD-03",
+      "revised_ids": [
+        "FICC-GSD-03"
+      ],
+      "action": {
+        "CN": "相似，保留接入和 Sponsored；移除必然集中于少数担保会员的结论。",
+        "EN": "Aligned to onboarding and Sponsored activity; remove inevitable sponsor-concentration claims."
+      },
+      "validation_transfer": "descriptive_only"
+    },
+    {
+      "legacy_id": "FICC-GSD-04",
+      "revised_ids": [
+        "FICC-GSD-04",
+        "FICC-GSD-06"
+      ],
+      "action": {
+        "CN": "按示例拆分信用恶化与实际违约；不再把降级直接写成共同分摊损失。",
+        "EN": "Split credit deterioration from actual default; a downgrade does not directly imply mutualized losses."
+      },
+      "validation_transfer": "split_event_stages"
+    },
+    {
+      "legacy_id": "FICC-MBSD-01",
+      "revised_ids": [
+        "FICC-MBSD-01"
+      ],
+      "action": {
+        "CN": "相似，按示例保留 TBA 价格到保证金；保留代理及检验限制。",
+        "EN": "Aligned to TBA prices and margin; retain proxy and test limitations."
+      },
+      "validation_transfer": "same_specification"
+    },
+    {
+      "legacy_id": "FICC-GSD-05",
+      "revised_ids": [
+        "TEAM-FICC-01"
+      ],
+      "action": {
+        "CN": "不同机制且不冲突，保留竞争链；新 GSD-05 专指 GCF 履约。",
+        "EN": "Retain competition as a separate extension; reference GSD-05 concerns GCF obligations."
+      },
+      "validation_transfer": "unrun_outcome"
+    },
+    {
+      "legacy_id": "FICC-GSD-06",
+      "revised_ids": [
+        "FICC-GSD-08",
+        "TEAM-FICC-02"
+      ],
+      "action": {
+        "CN": "清算银行分支按示例 GSD-08；会员或供应商分支另保留。旧编号让给实际违约。",
+        "EN": "Align the clearing-bank branch to GSD-08; retain member/vendor operations separately. Reference GSD-06 means actual default."
+      },
+      "validation_transfer": "split_actor_roles"
+    },
+    {
+      "legacy_id": "FICC-MBSD-02",
+      "revised_ids": [
+        "TEAM-FICC-03"
+      ],
+      "action": {
+        "CN": "保留 GSE 改革；示例 MBSD-02 是池交付失败，不能按同号替换。",
+        "EN": "Retain GSE reform; reference MBSD-02 concerns pool-delivery fails, a different mechanism."
+      },
+      "validation_transfer": "unrun_outcome"
+    },
+    {
+      "legacy_id": "ECS-NSCC-01A",
+      "revised_ids": [
+        "TEAM-ECS-01"
+      ],
+      "action": {
+        "CN": "IM 追缴与 VM 是不同流程，不冲突，单独保留。",
+        "EN": "Retain IM calls separately because they differ from VM payments."
+      },
+      "validation_transfer": "same_specification"
+    },
+    {
+      "legacy_id": "ECS-NSCC-01B",
+      "revised_ids": [
+        "ECS-NSCC-01"
+      ],
+      "action": {
+        "CN": "与示例股市波动到 VM 相同，采用其编号与流程。",
+        "EN": "Align equity volatility to VM using the reference ID and process."
+      },
+      "validation_transfer": "same_specification"
+    },
+    {
+      "legacy_id": "ECS-NSCC-01C",
+      "revised_ids": [
+        "TEAM-ECS-02"
+      ],
+      "action": {
+        "CN": "回测覆盖是不同流程，保留；不把突破等同实际损失。",
+        "EN": "Retain backtesting coverage separately; breaches do not establish realized loss."
+      },
+      "validation_transfer": "same_specification"
+    },
+    {
+      "legacy_id": "ECS-NSCC-02A",
+      "revised_ids": [
+        "ECS-NSCC-03"
+      ],
+      "action": {
+        "CN": "与示例成交量到 CNS 失败相似，改号；FTD 仍是未交割余额。",
+        "EN": "Align volume to CNS fails and renumber; FTD remains an outstanding balance."
+      },
+      "validation_transfer": "same_specification"
+    },
+    {
+      "legacy_id": "ECS-NSCC-02B",
+      "revised_ids": [
+        "TEAM-ECS-03"
+      ],
+      "action": {
+        "CN": "系统容量与交割失败不同，不冲突，保留容量链。",
+        "EN": "Retain capacity separately from settlement fails."
+      },
+      "validation_transfer": "unrun_outcome"
+    },
+    {
+      "legacy_id": "ECS-NSCC-03A",
+      "revised_ids": [
+        "TEAM-ECS-04",
+        "ECS-NSCC-06"
+      ],
+      "action": {
+        "CN": "保留违约前信用链；实际违约按示例 CNS 平仓链。",
+        "EN": "Retain pre-default credit risk; align actual default to the reference CNS close-out chain."
+      },
+      "validation_transfer": "split_event_stages"
+    },
+    {
+      "legacy_id": "ECS-NSCC-03B",
+      "revised_ids": [
+        "ECS-NSCC-02"
+      ],
+      "action": {
+        "CN": "按示例定位 VM 和流动性；旧 IM 比例通过不等于新目标已通过。",
+        "EN": "Align to VM and liquidity; a legacy IM-ratio pass does not validate the revised target."
+      },
+      "validation_transfer": "target_changed"
+    },
+    {
+      "legacy_id": "ECS-NSCC-04",
+      "revised_ids": [
+        "ECS-SET-01"
+      ],
+      "action": {
+        "CN": "与旧 DTC-01 合并事件链，NSCC 结果单独保留；不预设失败增加。",
+        "EN": "Merge the shared event with legacy DTC-01, retaining a separate NSCC outcome; do not presume rising fails."
+      },
+      "validation_transfer": "merged_separate_outcomes"
+    },
+    {
+      "legacy_id": "ECS-NSCC-05",
+      "revised_ids": [
+        "TEAM-ECS-05"
+      ],
+      "action": {
+        "CN": "已知高峰日不等于示例的补充流动性存款，不冲突，保留并改号。",
+        "EN": "Retain known peak dates separately from the reference supplemental-liquidity-deposit mechanism."
+      },
+      "validation_transfer": "unrun_outcome"
+    },
+    {
+      "legacy_id": "ECS-DTC-01",
+      "revised_ids": [
+        "ECS-SET-01"
+      ],
+      "action": {
+        "CN": "并入共同制度事件链，但 DTC 非 CNS 结果不与 NSCC 混合。",
+        "EN": "Merge the rule-change event while retaining the separate DTC non-CNS outcome."
+      },
+      "validation_transfer": "merged_separate_outcomes"
+    },
+    {
+      "legacy_id": "ECS-DTC-02A",
+      "revised_ids": [
+        "ECS-DTC-05",
+        "TEAM-ECS-08"
+      ],
+      "action": {
+        "CN": "参与者分支按示例 DTC-05；DTC 自身系统分支另保留。KEV 入库不证明暴露。",
+        "EN": "Align the participant branch to DTC-05 and retain DTC-owned system disruption separately. KEV additions do not establish exposure."
+      },
+      "validation_transfer": "split_actor_roles"
+    },
+    {
+      "legacy_id": "ECS-DTC-02B",
+      "revised_ids": [
+        "TEAM-ECS-06"
+      ],
+      "action": {
+        "CN": "供应商根因不冲突，保留；若归入同一参与者中断，仅链接一次事件。",
+        "EN": "Retain vendor causes; link once when they lead to the same participant disruption."
+      },
+      "validation_transfer": "unrun_outcome"
+    },
+    {
+      "legacy_id": "ECS-DTC-03",
+      "revised_ids": [
+        "TEAM-ECS-07"
+      ],
+      "action": {
+        "CN": "新券处理与示例的市场中断不同，不冲突，保留并改号。",
+        "EN": "Retain new-issue processing separately from market disruption and renumber."
+      },
+      "validation_transfer": "unrun_outcome"
+    },
+    {
+      "legacy_id": "ECS-DTC-04",
+      "revised_ids": [
+        "ECS-DTC-02"
+      ],
+      "action": {
+        "CN": "按结算银行付款链改写；删除 DTC 必须补缺口的断言，须先证实银行角色。",
+        "EN": "Align to settling-bank payments; remove automatic DTC gap-funding claims and verify the bank role first."
+      },
+      "validation_transfer": "scope_changed"
+    }
+  ],
+  "legacy_status_CN": [
+    {
+      "编号": "FICC-GSD-01",
+      "名称": "国债市场波动",
+      "执行范围": "两项统计已跑",
+      "检验一": "通过；命中3/3，非事件报警12.2%",
+      "检验二": "未达标；ρ=0.408，95%区间[-0.014, 0.764]，n=22",
+      "卡片置信度": "证据不足",
+      "版本": "v1执行版2026-10-16",
+      "备注": "方向正，但区间跨零；变化量ρ=0.186，不能宣称链已验证。",
+      "仍需补充": "",
+      "角色": ""
+    },
+    {
+      "编号": "FICC-GSD-02",
+      "名称": "回购资金压力",
+      "执行范围": "两项统计已跑",
+      "检验一": "通过；命中3/3，非事件报警12.4%",
+      "检验二": "未达标；GCF−DVP冲击日系数0.021bp，HAC p=0.976，n=246",
+      "卡片置信度": "证据不足",
+      "版本": "v1执行版2026-10-16",
+      "备注": "OFR没有所需DVP百分位序列，按卡片备选选同期限隔夜GCF−DVP；选择记录早于结果。GCF有效值稀疏，且利差并非FICC实际流动性需要。",
+      "仍需补充": "更多可比清算回购利率或GSD支付反应证据",
+      "角色": ""
+    },
+    {
+      "编号": "FICC-GSD-03",
+      "名称": "国债清算强制令",
+      "执行范围": "事件与描述核对",
+      "检验一": "SEC规则及延期节点已核实",
+      "检验二": "Sponsored节点前后各20个观测均值变化：2023年+17.5%，2025年+4.9%；描述支持",
+      "卡片置信度": "Medium 机制及描述",
+      "版本": "v1执行版2026-10-16",
+      "备注": "已有Sponsored业务量，不需要重抓。公告后变化不等于公告造成；调查的预计量不是已实现量。",
+      "仍需补充": "真实接入与未来合规节点结果；V的19.1.3仅近5季度有数值",
+      "角色": ""
+    },
+    {
+      "编号": "FICC-GSD-04",
+      "名称": "会员信用恶化",
+      "执行范围": "信号与历史案例核对",
+      "检验一": "通过；命中2/2，非事件报警11.1%",
+      "检验二": "2008雷曼FICC处置案例支持；不是当前季度回归",
+      "卡片置信度": "Medium 案例",
+      "版本": "v1执行版2026-10-16",
+      "备注": "支持违约处置路径；不证明Baa能识别具体会员，也不意味着共同基金发生损失。",
+      "仍需补充": "更近的会员事件与业务直接证据",
+      "角色": ""
+    },
+    {
+      "编号": "FICC-MBSD-01",
+      "名称": "MBS利差冲击",
+      "执行范围": "两项统计已跑",
+      "检验一": "通过；命中2/3，非事件报警11.5%",
+      "检验二": "未达标；ρ=0.150，95%区间[-0.157, 0.594]，n=22",
+      "卡片置信度": "证据不足",
+      "版本": "v1执行版2026-10-16",
+      "备注": "已从Freddie Mac原始PMMS补取房贷利率；房贷利差不是MBS OAS。2022窗口预先按下半年处理，且11月存在PMMS方法变更。",
+      "仍需补充": "",
+      "角色": ""
+    },
+    {
+      "编号": "FICC-GSD-05",
+      "名称": "竞争对手进入",
+      "执行范围": "事件核对完成 结果待补",
+      "检验一": "CME批准与ICE服务材料已核实",
+      "检验二": "未完成；未核实客户迁移或可比份额",
+      "卡片置信度": "Low",
+      "版本": "v1执行版2026-10-16",
+      "备注": "批准或上线消息本身不能证明FICC丢失业务。",
+      "仍需补充": "客户迁移、同口径份额；脆弱度定义",
+      "角色": ""
+    },
+    {
+      "编号": "FICC-GSD-06",
+      "名称": "运营或网络事件",
+      "执行范围": "案例与PQD字段部分完成",
+      "检验一": "ICBC网络事件有官方来源",
+      "检验二": "未完整通过；有国债市场及BNY影响，缺GSD直接结果",
+      "卡片置信度": "Low 直接证据不足",
+      "版本": "v1执行版2026-10-16",
+      "备注": "17.2/17.3已补提取；共享系统口径不能当成各业务独立故障序列。",
+      "仍需补充": "GSD直接服务影响、会员依赖和可比运营口径",
+      "角色": ""
+    },
+    {
+      "编号": "FICC-MBSD-02",
+      "名称": "GSE改革",
+      "执行范围": "来源核对 结果未跑",
+      "检验一": "找到历史UMBS节点，不能替代退出托管/私有化事件",
+      "检验二": "未完成；FINRA接口401，且v1节点未冻结",
+      "卡片置信度": "Low",
+      "版本": "v1执行版2026-10-16",
+      "备注": "UMBS历史材料仅支持相邻机制，不冒充当前假设已通过。",
+      "仍需补充": "明确改革节点、FINRA授权或官方导出、MBSD反应",
+      "角色": ""
+    },
+    {
+      "编号": "ECS-NSCC-01A",
+      "名称": "股市波动到保证金追缴",
+      "执行范围": "两项统计已跑",
+      "检验一": "通过；命中3/4，非事件报警7.7%",
+      "检验二": "未达标；ρ=0.195，95%区间[-0.241, 0.609]，n=22",
+      "卡片置信度": "证据不足",
+      "版本": "v1执行版2026-10-16",
+      "备注": "按卡片用上季保证金分母；不是旧试跑中的当季分母。",
+      "仍需补充": "",
+      "角色": "R1主链"
+    },
+    {
+      "编号": "ECS-NSCC-01B",
+      "名称": "股市波动到变动保证金现金波动",
+      "执行范围": "两项统计已跑",
+      "检验一": "通过；命中3/4，非事件报警7.7%",
+      "检验二": "未达标；ρ=0.081，95%区间[-0.359, 0.493]，n=23",
+      "卡片置信度": "证据不足",
+      "版本": "v1执行版2026-10-16",
+      "备注": "主检验保留VIX水平及同季度；不拿改信号后的较好结果替换。",
+      "仍需补充": "",
+      "角色": "R1次链"
+    },
+    {
+      "编号": "ECS-NSCC-01C",
+      "名称": "股市波动到保证金回测突破",
+      "执行范围": "两项统计已跑",
+      "检验一": "通过；命中3/4，非事件报警7.7%",
+      "检验二": "未达标；ρ=0.414，95%区间[-0.067, 0.689]，n=23",
+      "卡片置信度": "证据不足",
+      "版本": "v1执行版2026-10-16",
+      "备注": "变化量ρ=0.095；该结果变量为过去12个月累计，季度重叠。",
+      "仍需补充": "",
+      "角色": "R1次链"
+    },
+    {
+      "编号": "ECS-NSCC-02A",
+      "名称": "成交量激增到交割失败余额",
+      "执行范围": "两项统计已跑",
+      "检验一": "通过；命中4/4，非事件报警13.4%",
+      "检验二": "达标；高量周多30.4百万股未交割余额，HAC p=1.3e-05，n=413周",
+      "卡片置信度": "High 按卡片门槛",
+      "版本": "v1执行版2026-10-16",
+      "备注": "只是市场量与CNS未交割余额关联；不是新增失败流量、失败率、系统故障或DTCC损失。月季末控制不能排除所有混杂。",
+      "仍需补充": "容量脆弱度与共同趋势/其他混杂控制",
+      "角色": "R2主链"
+    },
+    {
+      "编号": "ECS-NSCC-02B",
+      "名称": "成交量激增到系统压力",
+      "执行范围": "检验一已跑 检验二未跑",
+      "检验一": "通过；命中4/4，非事件报警13.4%",
+      "检验二": "未跑；没有连续可比NSCC独立17.3序列",
+      "卡片置信度": "Medium 仅信号",
+      "版本": "v1执行版2026-10-16",
+      "备注": "成交量数据复用02A；共享核心系统及T12m口径不能直接当作NSCC季度故障次数。",
+      "仍需补充": "NSCC独立故障及容量指标",
+      "角色": "R2次链"
+    },
+    {
+      "编号": "ECS-NSCC-03A",
+      "名称": "券商信用恶化到违约处置",
+      "执行范围": "信号与历史案例核对",
+      "检验一": "通过；命中2/2，非事件报警11.1%",
+      "检验二": "雷曼NSCC处置案例支持；不把2021价格驱动追缴当成违约",
+      "卡片置信度": "Medium 案例",
+      "版本": "v1执行版2026-10-16",
+      "备注": "宏观信用代理不等于具体会员信用恶化；个案不构成量化因果验证。",
+      "仍需补充": "",
+      "角色": "R3信用通道"
+    },
+    {
+      "编号": "ECS-NSCC-03B",
+      "名称": "资金紧张到NSCC支付与追缴",
+      "执行范围": "两项统计已跑",
+      "检验一": "通过；命中4/4，非事件报警11.9%",
+      "检验二": "达标；ρ=0.454，95%区间[0.197, 0.680]，n=23",
+      "卡片置信度": "High 按卡片门槛",
+      "版本": "v1执行版2026-10-16",
+      "备注": "变化量ρ=0.154，2025Q1后ρ=0.086；六项季度主检验BH q=0.119。暂不称稳健或可靠风险评分。",
+      "仍需补充": "",
+      "角色": "R3流动性通道"
+    },
+    {
+      "编号": "ECS-NSCC-04",
+      "名称": "T加1等制度变更到NSCC失败率",
+      "执行范围": "事件及即时证据核对",
+      "检验一": "2024-05-28 T+1实施已核实",
+      "检验二": "未跑指定前后3个月；即时官方数据不支持必然上升",
+      "卡片置信度": "Low 至 Medium",
+      "版本": "v1执行版2026-10-16",
+      "备注": "首日CNS为1.90%，对应5月T+2平均2.01%；不是连续三个月事件研究。",
+      "仍需补充": "连续NSCC月度失败率、V与其他制度节点",
+      "角色": ""
+    },
+    {
+      "编号": "ECS-NSCC-05",
+      "名称": "已知高峰日期到处理负荷",
+      "执行范围": "数据补齐 检验未跑",
+      "检验一": "未跑；事件日历与通过规则未冻结",
+      "检验二": "未跑；SEC FTD现已备好",
+      "卡片置信度": "待定",
+      "版本": "v1执行版2026-10-16",
+      "备注": "Triple witching、Russell和S&P事件需分别固定日期与比较窗口，不能事后挑日期。",
+      "仍需补充": "权威事件日历、成功标准及V",
+      "角色": ""
+    },
+    {
+      "编号": "ECS-DTC-01",
+      "名称": "T加1等制度变更到DTC失败率",
+      "执行范围": "事件及即时证据核对",
+      "检验一": "与NSCC-04复用同一事件",
+      "检验二": "未跑指定前后3个月；有首日非CNS观察",
+      "卡片置信度": "Low 至 Medium",
+      "版本": "v1执行版2026-10-16",
+      "备注": "首日DTC非CNS为2.92%，对应5月T+2平均3.24%；SEC CNS FTD不能代替DTC非CNS失败率。",
+      "仍需补充": "连续DTC非CNS月度失败率与V",
+      "角色": ""
+    },
+    {
+      "编号": "ECS-DTC-02A",
+      "名称": "新增已利用漏洞到DTC中断",
+      "执行范围": "数据与案例核对 未完整跑",
+      "检验一": "未完整跑；KEV入库日期不是攻击发生日期",
+      "检验二": "未跑；未核实DTC直接服务影响",
+      "卡片置信度": "Low",
+      "版本": "v1执行版2026-10-16",
+      "备注": "仓库有KEV数据，但不是DTC暴露清单。ICBC国债事件不能直接证明DTC系统受损。",
+      "仍需补充": "适用事件窗口、软件依赖、DTC服务证据与V",
+      "角色": "R6主链"
+    },
+    {
+      "编号": "ECS-DTC-02B",
+      "名称": "云或供应商故障到DTC中断",
+      "执行范围": "数据与案例核对 未完整跑",
+      "检验一": "未完整跑；历史和持续时长不足",
+      "检验二": "未跑；缺DTC依赖与直接服务证据",
+      "卡片置信度": "Low",
+      "版本": "v1执行版2026-10-16",
+      "备注": "仓库只有Google相关部分事件，不能说已覆盖主要云厂商完整历史。",
+      "仍需补充": "完整供应商故障历史、DTC依赖/服务证据与V",
+      "角色": "R6次链"
+    },
+    {
+      "编号": "ECS-DTC-03",
+      "名称": "发行激增到新券处理",
+      "执行范围": "输入核对 检验未跑",
+      "检验一": "未跑；未采集市场范围424B计数",
+      "检验二": "未跑；DTC月度发行数量已具备",
+      "卡片置信度": "待定",
+      "版本": "v1执行版2026-10-16",
+      "备注": "2011年起DTC发行数据已有；仍需定义424B子类型、重复修订与日期口径。业务归属暂沿用ECS。",
+      "仍需补充": "市场范围424B历史、事件窗口与V",
+      "角色": ""
+    },
+    {
+      "编号": "ECS-DTC-04",
+      "名称": "融资压力到DTC日终资金结算",
+      "执行范围": "检验一已跑 案例待补",
+      "检验一": "未通过；命中1/2，非事件报警10.1%",
+      "检验二": "未完成；未核实DTC直接资金结算案例",
+      "卡片置信度": "修改候选",
+      "版本": "v1执行版2026-10-16",
+      "备注": "已从美联储原始XML补取与DCPF3M/DTB3对应的日度利率；未拿DGS3MO冒充DTB3。",
+      "仍需补充": "直接结算案例；Participants Fund的缓冲定义",
+      "角色": ""
+    }
+  ],
+  "legacy_status_EN": [
+    {
+      "chain_id": "FICC-GSD-01",
+      "chain_name": "Treasury market volatility",
+      "execution_scope": "Both statistical tests executed",
+      "test_1": "Passed; 3/3 events detected; non-event alert rate 12.2%",
+      "test_2": "Did not meet threshold; ρ=0.408, 95% interval [-0.014, 0.764], n=22",
+      "card_confidence": "Insufficient evidence",
+      "version": "v1 execution 2026-10-16",
+      "notes": "The direction is positive, but the interval crosses zero. Correlation in changes: ρ=0.186. The chain cannot be described as validated.",
+      "remaining_requirements": "",
+      "route_role": ""
+    },
+    {
+      "chain_id": "FICC-GSD-02",
+      "chain_name": "Repo funding stress",
+      "execution_scope": "Both statistical tests executed",
+      "test_1": "Passed; 3/3 events detected; non-event alert rate 12.4%",
+      "test_2": "Did not meet threshold; GCF−DVP shock-day coefficient 0.021 bp, HAC p=0.976, n=246",
+      "card_confidence": "Insufficient evidence",
+      "version": "v1 execution 2026-10-16",
+      "notes": "OFR lacks the required DVP percentile series. The same-tenor overnight GCF−DVP alternative permitted by the card was selected and recorded before results were inspected. Valid GCF observations are sparse, and the spread does not measure actual FICC liquidity needs.",
+      "remaining_requirements": "More comparable cleared-repo rates or evidence of GSD payment responses",
+      "route_role": ""
+    },
+    {
+      "chain_id": "FICC-GSD-03",
+      "chain_name": "Treasury central clearing mandate",
+      "execution_scope": "Event and descriptive review",
+      "test_1": "SEC rule and extension dates verified",
+      "test_2": "Change in mean Sponsored activity over 20 observations before and after each milestone: +17.5% in 2023 and +4.9% in 2025; descriptive support",
+      "card_confidence": "Medium: mechanism and descriptive evidence",
+      "version": "v1 execution 2026-10-16",
+      "notes": "Sponsored volume data already exist and do not need to be collected again. A post-announcement change does not establish that the announcement caused it. Survey forecasts are not realized volumes.",
+      "remaining_requirements": "Actual onboarding and outcomes around future compliance milestones; only the latest 5 quarters contain numeric values for vulnerability field 19.1.3",
+      "route_role": ""
+    },
+    {
+      "chain_id": "FICC-GSD-04",
+      "chain_name": "Member credit deterioration",
+      "execution_scope": "Signal screening and historical case review",
+      "test_1": "Passed; 2/2 events detected; non-event alert rate 11.1%",
+      "test_2": "Supported by the 2008 Lehman FICC default-management case; not a regression on current quarterly data",
+      "card_confidence": "Medium: case evidence",
+      "version": "v1 execution 2026-10-16",
+      "notes": "Supports the default-management pathway. It does not show that Baa identifies individual members or imply losses to the mutualized clearing fund.",
+      "remaining_requirements": "More recent member events and direct business evidence",
+      "route_role": ""
+    },
+    {
+      "chain_id": "FICC-MBSD-01",
+      "chain_name": "MBS spread shock",
+      "execution_scope": "Both statistical tests executed",
+      "test_1": "Passed; 2/3 events detected; non-event alert rate 11.5%",
+      "test_2": "Did not meet threshold; ρ=0.150, 95% interval [-0.157, 0.594], n=22",
+      "card_confidence": "Insufficient evidence",
+      "version": "v1 execution 2026-10-16",
+      "notes": "Mortgage rates were added from Freddie Mac's original PMMS data. The mortgage-rate spread is not MBS OAS. The 2022 window was fixed in advance as the second half of the year; PMMS methodology changed in November.",
+      "remaining_requirements": "",
+      "route_role": ""
+    },
+    {
+      "chain_id": "FICC-GSD-05",
+      "chain_name": "Competitor entry",
+      "execution_scope": "Event confirmed; outcome evidence missing",
+      "test_1": "CME approval and ICE service materials verified",
+      "test_2": "Incomplete; customer migration or comparable market shares have not been verified",
+      "card_confidence": "Low",
+      "version": "v1 execution 2026-10-16",
+      "notes": "An approval or launch announcement alone does not establish that FICC lost business.",
+      "remaining_requirements": "Customer migration, consistently defined market shares, and a vulnerability definition",
+      "route_role": ""
+    },
+    {
+      "chain_id": "FICC-GSD-06",
+      "chain_name": "Operational or cyber event",
+      "execution_scope": "Partial case review and PQD extraction",
+      "test_1": "Official sources document the ICBC cyber event",
+      "test_2": "Not fully established; Treasury market and BNY effects are documented, but direct GSD outcomes are missing",
+      "card_confidence": "Low: insufficient direct evidence",
+      "version": "v1 execution 2026-10-16",
+      "notes": "Fields 17.2/17.3 were extracted. Shared-system measures cannot be treated as separate outage series for each business.",
+      "remaining_requirements": "Direct GSD service effects, member dependencies, and comparable operational measures",
+      "route_role": ""
+    },
+    {
+      "chain_id": "FICC-MBSD-02",
+      "chain_name": "GSE reform",
+      "execution_scope": "Source checks completed; outcome test not run",
+      "test_1": "A historical UMBS milestone was identified; it cannot substitute for a conservatorship-exit or privatization event",
+      "test_2": "Incomplete; the FINRA endpoint returned HTTP 401, and the v1 milestone was not frozen",
+      "card_confidence": "Low",
+      "version": "v1 execution 2026-10-16",
+      "notes": "Historical UMBS materials support a related mechanism only; they do not establish that the current hypothesis passed.",
+      "remaining_requirements": "A clearly defined reform milestone, FINRA authorization or an official export, and MBSD response data",
+      "route_role": ""
+    },
+    {
+      "chain_id": "ECS-NSCC-01A",
+      "chain_name": "Equity volatility to margin calls",
+      "execution_scope": "Both statistical tests executed",
+      "test_1": "Passed; 3/4 events detected; non-event alert rate 7.7%",
+      "test_2": "Did not meet threshold; ρ=0.195, 95% interval [-0.241, 0.609], n=22",
+      "card_confidence": "Insufficient evidence",
+      "version": "v1 execution 2026-10-16",
+      "notes": "Uses prior-quarter margin as the denominator, as specified in the card, rather than the current-quarter denominator used in an earlier trial.",
+      "remaining_requirements": "",
+      "route_role": "R1 primary chain"
+    },
+    {
+      "chain_id": "ECS-NSCC-01B",
+      "chain_name": "Equity volatility to variation-margin cash fluctuations",
+      "execution_scope": "Both statistical tests executed",
+      "test_1": "Passed; 3/4 events detected; non-event alert rate 7.7%",
+      "test_2": "Did not meet threshold; ρ=0.081, 95% interval [-0.359, 0.493], n=23",
+      "card_confidence": "Insufficient evidence",
+      "version": "v1 execution 2026-10-16",
+      "notes": "The primary test retains the VIX level and same-quarter alignment. Better results from a modified signal do not replace the primary result.",
+      "remaining_requirements": "",
+      "route_role": "R1 secondary chain"
+    },
+    {
+      "chain_id": "ECS-NSCC-01C",
+      "chain_name": "Equity volatility to margin backtesting breaches",
+      "execution_scope": "Both statistical tests executed",
+      "test_1": "Passed; 3/4 events detected; non-event alert rate 7.7%",
+      "test_2": "Did not meet threshold; ρ=0.414, 95% interval [-0.067, 0.689], n=23",
+      "card_confidence": "Insufficient evidence",
+      "version": "v1 execution 2026-10-16",
+      "notes": "Correlation in changes: ρ=0.095. The outcome is a trailing-12-month count, so quarterly observations overlap.",
+      "remaining_requirements": "",
+      "route_role": "R1 secondary chain"
+    },
+    {
+      "chain_id": "ECS-NSCC-02A",
+      "chain_name": "Volume surge to outstanding settlement fails",
+      "execution_scope": "Both statistical tests executed",
+      "test_1": "Passed; 4/4 events detected; non-event alert rate 13.4%",
+      "test_2": "Met threshold; high-volume weeks were associated with 30.4 million more outstanding FTD shares, HAC p=1.3e-05, n=413 weeks",
+      "card_confidence": "High: card thresholds met",
+      "version": "v1 execution 2026-10-16",
+      "notes": "This is an association between market volume and CNS outstanding FTD balances. It does not measure new fail flows, fail rates, system outages, or DTCC losses. Month-end and quarter-end controls do not eliminate all confounding.",
+      "remaining_requirements": "A capacity-vulnerability measure and controls for common trends and other confounders",
+      "route_role": "R2 primary chain"
+    },
+    {
+      "chain_id": "ECS-NSCC-02B",
+      "chain_name": "Volume surge to system stress",
+      "execution_scope": "Test 1 executed; Test 2 not run",
+      "test_1": "Passed; 4/4 events detected; non-event alert rate 13.4%",
+      "test_2": "Not run; there is no continuous, comparable NSCC-only series for field 17.3",
+      "card_confidence": "Medium: signal only",
+      "version": "v1 execution 2026-10-16",
+      "notes": "Reuses volume data from 02A. Shared core-system measures and trailing-12-month reporting cannot directly represent quarterly NSCC outage counts.",
+      "remaining_requirements": "NSCC-specific outage and capacity measures",
+      "route_role": "R2 secondary chain"
+    },
+    {
+      "chain_id": "ECS-NSCC-03A",
+      "chain_name": "Broker credit deterioration to default management",
+      "execution_scope": "Signal screening and historical case review",
+      "test_1": "Passed; 2/2 events detected; non-event alert rate 11.1%",
+      "test_2": "Supported by the Lehman NSCC default-management case; price-driven margin calls in 2021 are not treated as a default",
+      "card_confidence": "Medium: case evidence",
+      "version": "v1 execution 2026-10-16",
+      "notes": "A macro credit proxy does not establish deterioration in a particular member's credit. A case study is not quantitative causal validation.",
+      "remaining_requirements": "",
+      "route_role": "R3 credit channel"
+    },
+    {
+      "chain_id": "ECS-NSCC-03B",
+      "chain_name": "Funding stress to NSCC payments and margin calls",
+      "execution_scope": "Both statistical tests executed",
+      "test_1": "Passed; 4/4 events detected; non-event alert rate 11.9%",
+      "test_2": "Met threshold; ρ=0.454, 95% interval [0.197, 0.680], n=23",
+      "card_confidence": "High: card thresholds met",
+      "version": "v1 execution 2026-10-16",
+      "notes": "Correlation in changes: ρ=0.154; from 2025Q1 onward: ρ=0.086. Across the six primary quarterly tests, BH q=0.119. This does not yet support a claim of robustness or reliable risk scoring.",
+      "remaining_requirements": "",
+      "route_role": "R3 liquidity channel"
+    },
+    {
+      "chain_id": "ECS-NSCC-04",
+      "chain_name": "T+1 and other rule changes to the NSCC fail rate",
+      "execution_scope": "Event and immediate-outcome evidence reviewed",
+      "test_1": "T+1 implementation on 2024-05-28 verified",
+      "test_2": "The specified 3-month-before/after test was not run; immediate official data do not support an inevitable increase",
+      "card_confidence": "Low to Medium",
+      "version": "v1 execution 2026-10-16",
+      "notes": "First-day CNS fail rate: 1.90%, versus the May T+2 average of 2.01%. This is not a continuous three-month event study.",
+      "remaining_requirements": "A continuous monthly NSCC fail-rate history, V, and other rule-change milestones",
+      "route_role": ""
+    },
+    {
+      "chain_id": "ECS-NSCC-05",
+      "chain_name": "Known peak dates to processing load",
+      "execution_scope": "Data obtained; tests not run",
+      "test_1": "Not run; the event calendar and pass criteria were not frozen",
+      "test_2": "Not run; SEC FTD data are now available",
+      "card_confidence": "Pending",
+      "version": "v1 execution 2026-10-16",
+      "notes": "Triple witching, Russell, and S&P events each require fixed dates and comparison windows. Dates must not be selected after inspecting results.",
+      "remaining_requirements": "An authoritative event calendar, success criteria, and V",
+      "route_role": ""
+    },
+    {
+      "chain_id": "ECS-DTC-01",
+      "chain_name": "T+1 and other rule changes to the DTC fail rate",
+      "execution_scope": "Event and immediate-outcome evidence reviewed",
+      "test_1": "Reuses the same event as NSCC-04",
+      "test_2": "The specified 3-month-before/after test was not run; first-day non-CNS observations are available",
+      "card_confidence": "Low to Medium",
+      "version": "v1 execution 2026-10-16",
+      "notes": "First-day DTC non-CNS fail rate: 2.92%, versus the May T+2 average of 3.24%. SEC CNS FTD data cannot substitute for the DTC non-CNS fail rate.",
+      "remaining_requirements": "A continuous monthly DTC non-CNS fail-rate history and V",
+      "route_role": ""
+    },
+    {
+      "chain_id": "ECS-DTC-02A",
+      "chain_name": "Newly listed exploited vulnerabilities to DTC disruption",
+      "execution_scope": "Data and case checks; testing incomplete",
+      "test_1": "Incomplete; a KEV catalog addition date is not the date an attack occurred",
+      "test_2": "Not run; direct effects on DTC services have not been verified",
+      "card_confidence": "Low",
+      "version": "v1 execution 2026-10-16",
+      "notes": "The repository contains KEV data, but these are not a list of DTC exposures. The ICBC Treasury-market incident does not directly establish damage to DTC systems.",
+      "remaining_requirements": "Applicable event windows, software dependencies, DTC service evidence, and V",
+      "route_role": "R6 primary chain"
+    },
+    {
+      "chain_id": "ECS-DTC-02B",
+      "chain_name": "Cloud or vendor outages to DTC disruption",
+      "execution_scope": "Data and case checks; testing incomplete",
+      "test_1": "Incomplete; historical coverage and outage-duration data are insufficient",
+      "test_2": "Not run; DTC dependencies and direct service evidence are missing",
+      "card_confidence": "Low",
+      "version": "v1 execution 2026-10-16",
+      "notes": "The repository contains only some Google-related events, not a complete history covering major cloud providers.",
+      "remaining_requirements": "Complete vendor outage histories, DTC dependency/service evidence, and V",
+      "route_role": "R6 secondary chain"
+    },
+    {
+      "chain_id": "ECS-DTC-03",
+      "chain_name": "Issuance surge to new-issue processing",
+      "execution_scope": "Inputs reviewed; tests not run",
+      "test_1": "Not run; market-wide 424B filing counts have not been collected",
+      "test_2": "Not run; monthly DTC issuance counts are available",
+      "card_confidence": "Pending",
+      "version": "v1 execution 2026-10-16",
+      "notes": "DTC issuance data are available from 2011 onward. Definitions of 424B subtypes, duplicate amendments, and dates are still needed. Business classification provisionally remains under ECS.",
+      "remaining_requirements": "Market-wide 424B history, event windows, and V",
+      "route_role": ""
+    },
+    {
+      "chain_id": "ECS-DTC-04",
+      "chain_name": "Funding stress to DTC end-of-day money settlement",
+      "execution_scope": "Test 1 executed; case evidence missing",
+      "test_1": "Failed; 1/2 events detected; non-event alert rate 10.1%",
+      "test_2": "Incomplete; no direct DTC money-settlement case has been verified",
+      "card_confidence": "Candidate for revision",
+      "version": "v1 execution 2026-10-16",
+      "notes": "Daily rates corresponding to DCPF3M/DTB3 were added from original Federal Reserve XML files. DGS3MO was not used as a substitute for DTB3.",
+      "remaining_requirements": "Direct settlement cases and a definition of how the Participants Fund acts as a buffer",
+      "route_role": ""
+    }
+  ],
+  "reference_catalog": {
+    "FICC-GSD-01": {
+      "ID": "FICC-GSD-01",
+      "World event": "Treasury selloff, sharp yield swings",
+      "Mechanism": "Bigger price moves on members' cleared positions",
+      "DTCC process touched": "GSD margin requirements"
+    },
+    "FICC-GSD-02": {
+      "ID": "FICC-GSD-02",
+      "World event": "Repo rates spike, funding tightens",
+      "Mechanism": "Members' funding costs rise; settlement payments harder to fund",
+      "DTCC process touched": "GSD settlement liquidity"
+    },
+    "FICC-GSD-03": {
+      "ID": "FICC-GSD-03",
+      "World event": "Treasury clearing mandate deadlines",
+      "Mechanism": "Firms rush to onboard, mostly via sponsored clearing",
+      "DTCC process touched": "GSD onboarding and Sponsored volume"
+    },
+    "FICC-GSD-04": {
+      "ID": "FICC-GSD-04",
+      "World event": "A bank or dealer is downgraded or fails",
+      "Mechanism": "Member default risk rises",
+      "DTCC process touched": "FICC default management and shared resources"
+    },
+    "FICC-MBSD-01": {
+      "ID": "FICC-MBSD-01",
+      "World event": "Mortgage rates jump, MBS spreads widen",
+      "Mechanism": "TBA prices swing; members' variation margin rises",
+      "DTCC process touched": "MBSD margin and variation margin"
+    },
+    "ECS-NSCC-01": {
+      "ID": "ECS-NSCC-01",
+      "World event": "Sharp equity selloff",
+      "Mechanism": "Daily mark-to-market payments jump",
+      "DTCC process touched": "NSCC variation margin"
+    },
+    "ECS-NSCC-02": {
+      "ID": "ECS-NSCC-02",
+      "World event": "Short-term funding squeeze",
+      "Mechanism": "Brokers hold less spare cash for daily payments",
+      "DTCC process touched": "NSCC variation margin and liquidity"
+    },
+    "ECS-NSCC-03": {
+      "ID": "ECS-NSCC-03",
+      "World event": "Record trading volume",
+      "Mechanism": "More trades miss delivery",
+      "DTCC process touched": "NSCC CNS settlement (fails)"
+    },
+    "ECS-SET-01": {
+      "ID": "ECS-SET-01",
+      "World event": "Shorter settlement cycle or longer hours (T+1, 24x5, T+0)",
+      "Mechanism": "Less time to settle; late steps become bottlenecks",
+      "DTCC process touched": "NSCC and DTC settlement (fails)"
+    },
+    "ECS-NSCC-04": {
+      "ID": "ECS-NSCC-04",
+      "World event": "Large concentrated positions at a member",
+      "Mechanism": "Member capital or liquidity is strained",
+      "DTCC process touched": "NSCC raises that member's requirements"
+    },
+    "FICC-MBSD-02": {
+      "ID": "FICC-MBSD-02",
+      "Business line": "FICC (MBSD)",
+      "World event": "Mortgage-backed pool supply or reference data breaks down (for example pool allocation or data errors around month-end settlement)",
+      "Mechanism": "Members cannot satisfy their Pool Deliver Obligations on time, so deliveries fail and the Corporation applies the fails charge to the funds amount of each failed position",
+      "DTCC process touched": "MBSD pool settlement and fails charge",
+      "Indicator to watch (optional)": "SIFMA monthly settlement cycle; share of Pool Deliver Obligations failing"
+    },
+    "FICC-MBSD-03": {
+      "ID": "FICC-MBSD-03",
+      "Business line": "FICC (MBSD)",
+      "World event": "A clearing member comes under financial stress (a downgrade, adverse news, or weaker results)",
+      "Mechanism": "The member is placed on the Watch List, so the Corporation can require a Clearing Fund deposit above the Rule 4 amount and the member must meet every margin call regardless of size",
+      "DTCC process touched": "MBSD Watch List surveillance and Clearing Fund requirements",
+      "Indicator to watch (optional)": "Member credit rating and outlook; adverse news on a named member"
+    },
+    "FICC-GSD-05": {
+      "ID": "FICC-GSD-05",
+      "Business line": "FICC (GSD)",
+      "World event": "Collateral and funding markets tighten during the day (tri-party or general-collateral stress)",
+      "Mechanism": "A netting member cannot meet its GCF Repo Collateral Allocation Obligation or cash obligation by the scheduled deadline, so it is deemed to fail on its net position and owes late fees and interest",
+      "DTCC process touched": "GSD GCF Repo collateral allocation and funds settlement",
+      "Indicator to watch (optional)": "SOFR and general-collateral repo rates; GCF Repo late-fee deadlines"
+    },
+    "FICC-GSD-06": {
+      "ID": "FICC-GSD-06",
+      "Business line": "FICC (GSD)",
+      "World event": "A clearing member actually defaults (not just elevated risk)",
+      "Mechanism": "The Corporation ceases to act for the member and applies its deposit; any remaining shortfall is allocated across surviving members’ Clearing Fund deposits",
+      "DTCC process touched": "GSD loss allocation and Clearing Fund mutualization",
+      "Indicator to watch (optional)": "Member default news; CDS or credit spreads on named members"
+    },
+    "FICC-GSD-07": {
+      "ID": "FICC-GSD-07",
+      "Business line": "FICC (GSD)",
+      "World event": "Cash investors (money market funds, corporates) pull back from repo",
+      "Mechanism": "CCIT tri-party volume and the netting-member counterparties facing those cash lenders contract, shifting funding into or out of the GCF Repo service",
+      "DTCC process touched": "GSD CCIT tri-party service and GCF Repo",
+      "Indicator to watch (optional)": "Money market fund repo allocations; tri-party repo volumes (OFR)"
+    },
+    "FICC-MBSD-04": {
+      "ID": "FICC-MBSD-04",
+      "Business line": "FICC (MBSD)",
+      "World event": "Market-wide disruption (exchange trading halt, banking moratorium, or declared emergency)",
+      "Mechanism": "The Corporation invokes its market-disruption / force-majeure powers to suspend, extend, or modify settlement timeframes and obligations",
+      "DTCC process touched": "MBSD settlement timeframes under market disruption",
+      "Indicator to watch (optional)": "Exchange halt or trading-moratorium declarations; emergency orders"
+    },
+    "FICC-MBSD-05": {
+      "ID": "FICC-MBSD-05",
+      "Business line": "FICC (MBSD)",
+      "World event": "A cyber event or major outage hits a large member’s systems",
+      "Mechanism": "The member’s connectivity to DTCC systems is impaired, so its submissions and deliveries are disrupted and the Corporation can act under the participant-system-disruption rule",
+      "DTCC process touched": "MBSD participant system disruption",
+      "Indicator to watch (optional)": "Sector cyber advisories (CISA); member outage disclosures"
+    },
+    "FICC-GSD-08": {
+      "ID": "FICC-GSD-08",
+      "Business line": "FICC (GSD)",
+      "World event": "A clearing bank or settlement bank has an operational or credit problem",
+      "Mechanism": "Deliver and Receive Obligations that must settle against Fedwire payment cannot complete through the designated clearing bank, so settlement stalls",
+      "DTCC process touched": "GSD securities settlement via clearing banks",
+      "Indicator to watch (optional)": "Clearing-bank credit or outage news; Fedwire disruption notices"
+    },
+    "FICC-GSD-09": {
+      "ID": "FICC-GSD-09",
+      "Business line": "FICC (GSD)",
+      "World event": "A sharp move hits futures markets alongside Treasuries",
+      "Mechanism": "Under a cross-margining arrangement, offsetting positions at the linked futures clearing organization change the member’s net risk, so GSD Required Fund Deposit moves with the combined book",
+      "DTCC process touched": "GSD cross-margining and Required Fund Deposit",
+      "Indicator to watch (optional)": "Treasury-futures volatility; CME-FICC cross-margin program notices"
+    },
+    "FICC-GSD-10": {
+      "ID": "FICC-GSD-10",
+      "Business line": "FICC (GSD)",
+      "World event": "A Treasury auction cycle is heavy or an auction settles poorly",
+      "Mechanism": "Netting-eligible auction purchases flow into netting and must settle on the issue date, concentrating delivery and funding obligations on that day",
+      "DTCC process touched": "GSD netting and settlement of auction purchases",
+      "Indicator to watch (optional)": "Treasury auction calendar and sizes; auction tail / bid-to-cover"
+    },
+    "FICC-MBSD-06": {
+      "ID": "FICC-MBSD-06",
+      "Business line": "FICC (MBSD)",
+      "World event": "A large forward pipeline builds (heavy TBA origination into future months)",
+      "Mechanism": "Forward net settlement positions accumulate and are margined until they settle, so a later rate move can swing margin and settlement on a large forward book",
+      "DTCC process touched": "MBSD TBA netting and forward settlement positions",
+      "Indicator to watch (optional)": "TBA issuance / forward pipeline; mortgage origination volume"
+    },
+    "FICC-MBSD-07": {
+      "ID": "FICC-MBSD-07",
+      "Business line": "FICC (MBSD)",
+      "World event": "A rate move around options expiry makes many MBS options go in or out of the money",
+      "Mechanism": "On expiration or exercise, members must submit cancellations and resulting trades, and open option contracts keep drawing Required Fund Deposits until settled",
+      "DTCC process touched": "MBSD options expiration and exercise",
+      "Indicator to watch (optional)": "MBS options open interest and expiry calendar; rate moves near expiry"
+    },
+    "FICC-MBSD-08": {
+      "ID": "FICC-MBSD-08",
+      "Business line": "FICC (MBSD / EPN)",
+      "World event": "Pool-allocation details are sent late or with errors through the pool-notification messaging service",
+      "Mechanism": "EPN messages miss good-delivery (T2) time stamps or carry inaccurate pool data, so counterparties cannot confirm allocations in time and downstream pool settlement is disrupted",
+      "DTCC process touched": "MBSD Electronic Pool Notification (EPN) messaging and good delivery",
+      "Indicator to watch (optional)": "EPN message volumes near SIFMA notification cut-offs; reported message errors or discrepancies"
+    },
+    "FICC-MBSD-09": {
+      "ID": "FICC-MBSD-09",
+      "Business line": "FICC (MBSD / EPN)",
+      "World event": "A cyber threat targets the pool-notification messaging rail or its users",
+      "Mechanism": "EPN users must maintain a cybersecurity program and confirmation; a cyber event can impair message submission or receipt and the Corporation can decline to act on non-conforming messages",
+      "DTCC process touched": "MBSD EPN cybersecurity and message eligibility",
+      "Indicator to watch (optional)": "Financial-sector cyber advisories (CISA / FS-ISAC); EPN user outage or breach disclosures"
+    },
+    "ECS-NSCC-05": {
+      "ID": "ECS-NSCC-05",
+      "Business line": "ECS (NSCC)",
+      "World event": "A large intraday payment or liquidity stress hits the equity market",
+      "Mechanism": "The Corporation’s daily liquidity need rises, so it can call Supplemental Liquidity Deposits from members (and affiliated families) with the largest liquidity exposure",
+      "DTCC process touched": "NSCC supplemental liquidity deposits",
+      "Indicator to watch (optional)": "Equity market volatility near expiry/roll dates; large single-member liquidity exposure"
+    },
+    "ECS-NSCC-06": {
+      "ID": "ECS-NSCC-06",
+      "Business line": "ECS (NSCC)",
+      "World event": "A clearing member actually defaults",
+      "Mechanism": "The Corporation ceases to act for the member and closes out its open CNS short and long positions in the market, absorbing the price risk of the buy-in / liquidation",
+      "DTCC process touched": "NSCC CNS close-out when the Corporation ceases to act",
+      "Indicator to watch (optional)": "Member default news; equity volatility during the close-out window"
+    },
+    "ECS-NSCC-07": {
+      "ID": "ECS-NSCC-07",
+      "Business line": "ECS (NSCC)",
+      "World event": "A settling bank has an operational or credit problem",
+      "Mechanism": "The settling bank refuses or fails to settle a member’s net-net balance over Fedwire, so NSCC money settlement for that member cannot complete on time",
+      "DTCC process touched": "NSCC settling-bank money settlement",
+      "Indicator to watch (optional)": "Settling-bank credit or outage news; Fedwire disruption notices"
+    },
+    "ECS-NSCC-08": {
+      "ID": "ECS-NSCC-08",
+      "Business line": "ECS (NSCC)",
+      "World event": "A retail broker fails or exits abruptly",
+      "Mechanism": "A wave of customer accounts is moved through the Automated Customer Account Transfer Service (ACATS) within fixed timeframes, concentrating transfer and settlement activity",
+      "DTCC process touched": "NSCC ACATS customer account transfers",
+      "Indicator to watch (optional)": "Broker failures / FINRA actions; ACATS transfer volumes"
+    },
+    "ECS-NSCC-09": {
+      "ID": "ECS-NSCC-09",
+      "Business line": "ECS (NSCC)",
+      "World event": "Securities-financing (repo / stock-loan) markets come under stress",
+      "Mechanism": "Novated Securities Financing Transactions in the SFT clearing service reprice and remargin, so member collateral and settlement obligations on the SFT book move sharply",
+      "DTCC process touched": "NSCC Securities Financing Transaction clearing service",
+      "Indicator to watch (optional)": "Repo / securities-lending spreads; SFT cleared volumes"
+    },
+    "ECS-DTC-01": {
+      "ID": "ECS-DTC-01",
+      "Business line": "ECS (DTC)",
+      "World event": "A money-market issuer or its issuing/paying agent has a funding problem",
+      "Mechanism": "The issuing and paying agent cannot give the MMI funding acknowledgment for the day’s presentments, so MMI maturity and issuance settlement for that acronym stalls",
+      "DTCC process touched": "DTC MMI settlement (funding acknowledgment)",
+      "Indicator to watch (optional)": "Short-term funding stress (CP / MMI); issuer or IPA credit news"
+    },
+    "ECS-DTC-02": {
+      "ID": "ECS-DTC-02",
+      "Business line": "ECS (DTC)",
+      "World event": "A settling bank has an operational or credit problem",
+      "Mechanism": "The settling bank refuses or fails to settle the aggregated net-net balance over Fedwire, so DTC end-of-day money settlement cannot complete for the participants it represents",
+      "DTCC process touched": "DTC settling-bank money settlement",
+      "Indicator to watch (optional)": "Settling-bank credit or outage news; Fedwire disruption notices"
+    },
+    "ECS-DTC-03": {
+      "ID": "ECS-DTC-03",
+      "Business line": "ECS (DTC)",
+      "World event": "Market-wide disruption (exchange halt, banking moratorium, or declared emergency)",
+      "Mechanism": "The Corporation invokes its market-disruption / force-majeure powers to suspend, extend, or modify DTC settlement obligations and timeframes",
+      "DTCC process touched": "DTC settlement timeframes under market disruption",
+      "Indicator to watch (optional)": "Exchange halt or trading-moratorium declarations; emergency orders"
+    },
+    "AssetSvc-DTC-01": {
+      "ID": "AssetSvc-DTC-01",
+      "Business line": "Asset Services (DTC)",
+      "World event": "A regulator halts or suspends trading in a security, or fraud is identified",
+      "Mechanism": "The Corporation imposes a Deposit Chill or Global Lock, restricting deposits or book-entry services for that security across all participants",
+      "DTCC process touched": "DTC deposit chills and global locks",
+      "Indicator to watch (optional)": "FINRA trading halts / SEC trading suspensions; court orders on a security"
+    },
+    "AssetSvc-DTC-02": {
+      "ID": "AssetSvc-DTC-02",
+      "Business line": "Asset Services (DTC)",
+      "World event": "An issuer or transfer agent has transfer or registration problems",
+      "Mechanism": "The Corporation may decline to credit deposits of that issue until registration into its nominee is confirmed, so custody and asset-servicing of the affected security are disrupted",
+      "DTCC process touched": "DTC custody / deposit and transfer services",
+      "Indicator to watch (optional)": "Transfer-agent problems; issuer registration or re-org events"
+    },
+    "FICC-GSD-11": {
+      "ID": "FICC-GSD-11",
+      "Business line": "FICC (GSD)",
+      "World event": "A buy-side executing-firm customer (for example a hedge fund) comes under stress or fails",
+      "Mechanism": "The Agent Clearing Member that submitted the customer’s trades remains responsible to the Corporation for them, so the stress is concentrated on that agent member",
+      "DTCC process touched": "GSD Agent Clearing Service",
+      "Indicator to watch (optional)": "Hedge-fund / leveraged-investor stress; agent-cleared Treasury volumes"
+    },
+    "ECS-NSCC-10": {
+      "ID": "ECS-NSCC-10",
+      "Business line": "ECS (NSCC)",
+      "World event": "Physical processing or back-office operations are disrupted (for example a site event)",
+      "Mechanism": "Envelope Settlement Service deliveries, money-only charges, and dividend/interest claims back up, delaying associated money settlement",
+      "DTCC process touched": "NSCC Envelope Settlement Service",
+      "Indicator to watch (optional)": "Operations-site disruption notices; ESS envelope / claim volumes"
+    },
+    "WIS-NSCC-01": {
+      "ID": "WIS-NSCC-01",
+      "Business line": "WIS (NSCC)",
+      "World event": "An insurance carrier or retirement-services member comes under stress",
+      "Mechanism": "Insurance & Retirement Solutions (I&RS) data and the related I&RS payments between members are disrupted, affecting that settlement flow for annuities, life insurance and retirement products",
+      "DTCC process touched": "NSCC Insurance & Retirement Solutions settlement",
+      "Indicator to watch (optional)": "Insurer credit stress; I&RS payment volumes"
+    },
+    "ECS-DTC-04": {
+      "ID": "ECS-DTC-04",
+      "Business line": "ECS (DTC)",
+      "World event": "A disruption hits the Canadian market or the CDS link",
+      "Mechanism": "Canadian-Link cross-border transactions through the DTC-CDS interface cannot settle normally, so cross-border delivery and settlement stall",
+      "DTCC process touched": "DTC Canadian-Link cross-border settlement",
+      "Indicator to watch (optional)": "Canadian market stress; CDS link status / cross-border volumes"
+    },
+    "ECS-DTC-05": {
+      "ID": "ECS-DTC-05",
+      "Business line": "ECS (DTC)",
+      "World event": "A cyber event or major outage hits a large participant’s systems",
+      "Mechanism": "The participant’s connectivity to DTC systems is impaired, so its book-entry instructions and settlement are disrupted and the Corporation can act under the participant-system-disruption rule",
+      "DTCC process touched": "DTC participant system disruption",
+      "Indicator to watch (optional)": "Financial-sector cyber advisories (CISA / FS-ISAC); participant outage disclosures"
+    },
+    "AssetSvc-DTC-03": {
+      "ID": "AssetSvc-DTC-03",
+      "Business line": "Asset Services (DTC)",
+      "World event": "A derivatives clearing organization or futures broker comes under stress",
+      "Mechanism": "Instructions on swap-margin segregated accounts (pledgee / pledgor access) are disrupted, affecting the collateral held in those segregated accounts",
+      "DTCC process touched": "DTC segregated accounts for swap margin",
+      "Indicator to watch (optional)": "Futures / swaps CCP or FCM stress; segregated swap-margin balances"
+    },
+    "AssetSvc-DTC-04": {
+      "ID": "AssetSvc-DTC-04",
+      "Business line": "Asset Services (DTC)",
+      "World event": "A futures commission merchant that holds customer property fails or is stressed",
+      "Mechanism": "Customer-property segregated accounts held under CFTC segregation rules must be moved or protected, concentrating activity on that custody flow",
+      "DTCC process touched": "DTC segregated accounts for customer property",
+      "Indicator to watch (optional)": "FCM failures / CFTC actions; customer-property segregated balances"
+    },
+    "WIS-NSCC-02": {
+      "ID": "WIS-NSCC-02",
+      "Business line": "WIS (NSCC)",
+      "World event": "A stress or run hits mutual funds (large redemptions, a pricing or NAV problem)",
+      "Mechanism": "Fund/SERV purchase and redemption orders and the associated money settlement between funds and distributors spike or break, straining that automated settlement flow",
+      "DTCC process touched": "NSCC Fund/SERV mutual fund order and settlement",
+      "Indicator to watch (optional)": "Mutual fund flows / large redemptions; Fund/SERV order and settlement volumes"
+    },
+    "WIS-NSCC-03": {
+      "ID": "WIS-NSCC-03",
+      "Business line": "WIS (NSCC)",
+      "World event": "Private-markets / alternative investments come under stress (valuation, liquidity or a fund-administrator problem)",
+      "Mechanism": "Alternative Investment Product (AIP) data and AIP payments between members are disrupted, affecting that private-markets settlement and reporting flow",
+      "DTCC process touched": "NSCC Alternative Investment Product (AIP) service",
+      "Indicator to watch (optional)": "Private-markets / alternatives stress; AIP data and payment volumes"
+    },
+    "ECS-DTC-06": {
+      "ID": "ECS-DTC-06",
+      "Business line": "ECS (DTC)",
+      "World event": "A sharp intraday price move or a participant liquidity squeeze",
+      "Mechanism": "A receiving participant’s intraday net debit approaches its Net Debit Cap or its Collateral Monitor turns insufficient, so DTC blocks the DVP book-entry delivery until collateral or funding is restored",
+      "DTCC process touched": "DTC risk management controls (Net Debit Cap and Collateral Monitor)",
+      "Indicator to watch (optional)": "Intraday equity/fixed-income volatility; participant funding stress"
+    },
+    "ECS-NSCC-12": {
+      "ID": "ECS-NSCC-12",
+      "Business line": "ECS (NSCC)",
+      "World event": "A foreign financial institution linked to NSCC comes under stress or its market is disrupted",
+      "Mechanism": "Cross-border link transactions between that foreign institution’s participants and NSCC Members cannot clear or settle normally under the International Links arrangement",
+      "DTCC process touched": "NSCC International Links",
+      "Indicator to watch (optional)": "Foreign-market or foreign-FI stress; cross-border link transaction volumes"
+    }
+  },
+  "status_note": "Legacy evidence is retained without assigning any inherited pass label to a changed target or scope."
+}

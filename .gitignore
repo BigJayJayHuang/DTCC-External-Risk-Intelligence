@@ -1,4 +1,9 @@
 __pycache__/
+**/.qa/
+.ipynb_checkpoints/
+Capstone_Project/risk_business_ml/New_Chain_Tests_and_Database_2026-10-21_manifest.json
+Capstone_Project/reports/transmission_chain_alignment_2026_10_21/inputs/*.docx
+Capstone_Project/risk_business_ml/transmission_chain_tests_2026_10_16/inputs/*.docx
 .venv/
 Capstone_Project/capstone_database/data/*.sqlite3
 *.sqlite3-wal

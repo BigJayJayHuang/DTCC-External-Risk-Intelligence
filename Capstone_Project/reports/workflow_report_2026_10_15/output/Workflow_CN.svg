@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2110" viewBox="0 0 1600 2110"><rect width="1600" height="2110" fill="white"/>
+<text x="800" y="45" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="43" font-weight="700" fill="#142236">从公开信息到业务影响评估</text>
+<text x="800" y="94" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="28" font-weight="400" fill="#142236">数据与历史检验已完成  业务评分仍需验证</text>
+<rect x="60" y="135" width="460" height="155" rx="16" fill="#edf4fc" stroke="#295e93" stroke-width="3"/>
+<text x="290.0" y="171" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="34" font-weight="700" fill="#142236">公开新闻与通知</text>
+<text x="290.0" y="216" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">官方新闻 监管文件</text>
+<text x="290.0" y="251" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">保留来源和发布时间</text>
+<rect x="570" y="135" width="460" height="155" rx="16" fill="#edf4fc" stroke="#295e93" stroke-width="3"/>
+<text x="800.0" y="171" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="34" font-weight="700" fill="#142236">市场与外部信息</text>
+<text x="800.0" y="216" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">利率 利差 波动</text>
+<text x="800.0" y="251" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">公开技术和行业资料</text>
+<rect x="1080" y="135" width="460" height="155" rx="16" fill="#edf4fc" stroke="#295e93" stroke-width="3"/>
+<text x="1310.0" y="171" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="34" font-weight="700" fill="#142236">业务与风险披露</text>
+<text x="1310.0" y="216" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">PQD 财务与运营</text>
+<text x="1310.0" y="251" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">保留服务 期间和单位</text>
+<polyline points="290,290 290,315 800,315 800,335" fill="none" stroke="#506780" stroke-width="4"/><polygon points="800,335 792.6115331913363,320.80808123553146 807.3884668086637,320.80808123553146" fill="#506780"/>
+<polyline points="800,290 800,315 800,315 800,335" fill="none" stroke="#506780" stroke-width="4"/><polygon points="800,335 792.6115331913363,320.80808123553146 807.3884668086637,320.80808123553146" fill="#506780"/>
+<polyline points="1310,290 1310,315 800,315 800,335" fill="none" stroke="#506780" stroke-width="4"/><polygon points="800,335 792.6115331913363,320.80808123553146 807.3884668086637,320.80808123553146" fill="#506780"/>
+<rect x="190" y="340" width="1220" height="115" rx="16" fill="#edf4fc" stroke="#295e93" stroke-width="3"/>
+<text x="800.0" y="376" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="34" font-weight="700" fill="#142236">共享数据库与来源版本</text>
+<text x="800.0" y="421" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">同源只采一次 文档与事件分层 保存原值 证据和时间</text>
+<polyline points="800,455 800,488" fill="none" stroke="#506780" stroke-width="4"/><polygon points="800,488 792.6115331913363,473.80808123553146 807.3884668086637,473.80808123553146" fill="#506780"/>
+<rect x="190" y="490" width="1220" height="115" rx="16" fill="#edf4fc" stroke="#295e93" stroke-width="3"/>
+<text x="800.0" y="526" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="34" font-weight="700" fill="#142236">清洗 去重 时间与单位对齐</text>
+<text x="800.0" y="571" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">缺失不填零 日季频率分开 仅使用当时可用信息</text>
+<polyline points="800,605 800,625 410,625 410,652" fill="none" stroke="#506780" stroke-width="4"/><polygon points="410,652 402.61153319133626,637.8080812355314 417.38846680866374,637.8080812355314" fill="#506780"/>
+<polyline points="800,605 800,625 1190,625 1190,652" fill="none" stroke="#506780" stroke-width="4"/><polygon points="1190,652 1182.6115331913363,637.8080812355314 1197.3884668086637,637.8080812355314" fill="#506780"/>
+<rect x="60" y="655" width="700" height="165" rx="16" fill="#edf4fc" stroke="#295e93" stroke-width="3"/>
+<text x="410.0" y="691" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="34" font-weight="700" fill="#142236">事件与通道特征</text>
+<text x="410.0" y="736" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">复核事件 ID 与风险通道</text>
+<text x="410.0" y="771" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">各通道分别计算外部冲击 S</text>
+<rect x="840" y="655" width="700" height="165" rx="16" fill="#edf4fc" stroke="#295e93" stroke-width="3"/>
+<text x="1190.0" y="691" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="34" font-weight="700" fill="#142236">业务画像与已公开状态</text>
+<text x="1190.0" y="736" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">区分业务 实体和流程</text>
+<text x="1190.0" y="771" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">核实暴露 E 与业务专属脆弱度 V</text>
+<polyline points="410,820 410,842 800,842 800,862" fill="none" stroke="#506780" stroke-width="4"/><polygon points="800,862 792.6115331913363,847.8080812355314 807.3884668086637,847.8080812355314" fill="#506780"/>
+<polyline points="1190,820 1190,842 800,842 800,862" fill="none" stroke="#506780" stroke-width="4"/><polygon points="800,862 792.6115331913363,847.8080812355314 807.3884668086637,847.8080812355314" fill="#506780"/>
+<rect x="190" y="865" width="1220" height="145" rx="16" fill="#edf4fc" stroke="#295e93" stroke-width="3"/>
+<text x="800.0" y="901" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="34" font-weight="700" fill="#142236">先定义逻辑链和具体传导路径</text>
+<text x="800.0" y="946" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">事件 → 通道 → 会员或资产 → 业务步骤 → 可观察结果</text>
+<text x="800.0" y="981" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">逐个箭头记录证据 缺口与适用范围</text>
+<polyline points="800,1010 800,1020 410,1020 410,1040" fill="none" stroke="#506780" stroke-width="4"/><polygon points="410,1040 402.61153319133626,1025.8080812355315 417.38846680866374,1025.8080812355315" fill="#506780"/>
+<polyline points="800,1010 800,1020 1190,1020 1190,1040" fill="none" stroke="#506780" stroke-width="4"/><polygon points="1190,1040 1182.6115331913363,1025.8080812355315 1197.3884668086637,1025.8080812355315" fill="#506780"/>
+<rect x="60" y="1045" width="700" height="250" rx="16" fill="#edf4fc" stroke="#295e93" stroke-width="3"/>
+<text x="410.0" y="1081" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="34" font-weight="700" fill="#142236">历史训练与指标验证</text>
+<text x="410.0" y="1126" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">Ridge 与基准模型比较</text>
+<text x="410.0" y="1161" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">事件检验 同季及下一季 PQD 关联</text>
+<text x="410.0" y="1196" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">检查多重检验 样本和时期稳定性</text>
+<text x="410.0" y="1231" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">已执行检验 不等于已验证传导</text>
+<rect x="840" y="1045" width="700" height="250" rx="16" fill="#f5f7f9" stroke="#8190a0" stroke-width="3" stroke-dasharray="11 7"/>
+<text x="1190.0" y="1081" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="34" font-weight="700" fill="#142236">拟整合的日常业务评估</text>
+<text x="1190.0" y="1126" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">先核实相关性与真实暴露</text>
+<text x="1190.0" y="1161" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">按通道研究 S × E × V</text>
+<text x="1190.0" y="1196" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">仅采用有支持的规则与参数</text>
+<text x="1190.0" y="1231" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">数据不足时暂不评分</text>
+<polyline points="760,1170 839,1170" fill="none" stroke="#506780" stroke-width="4" stroke-dasharray="11 8"/><polygon points="839,1170 824.8080812355314,1177.3884668086637 824.8080812355314,1162.6115331913363" fill="#506780"/>
+<polyline points="1190,1295 1190,1322 800,1322 800,1350" fill="none" stroke="#506780" stroke-width="4"/><polygon points="800,1350 792.6115331913363,1335.8080812355315 807.3884668086637,1335.8080812355315" fill="#506780"/>
+<rect x="190" y="1355" width="1220" height="165" rx="16" fill="#f5f7f9" stroke="#8190a0" stroke-width="3" stroke-dasharray="11 7"/>
+<text x="800.0" y="1391" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="34" font-weight="700" fill="#142236">事件 × 业务 × 影响维度</text>
+<text x="800.0" y="1436" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">分别报告财务负担 流动性 操作质量和商业机会</text>
+<text x="800.0" y="1471" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">展示方向 幅度 单位 时间窗与证据等级</text>
+<polyline points="800,1520 800,1560" fill="none" stroke="#506780" stroke-width="4"/><polygon points="800,1560 792.6115331913363,1545.8080812355315 807.3884668086637,1545.8080812355315" fill="#506780"/>
+<rect x="190" y="1565" width="1220" height="145" rx="16" fill="#f5f7f9" stroke="#8190a0" stroke-width="3" stroke-dasharray="11 7"/>
+<text x="800.0" y="1601" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="34" font-weight="700" fill="#142236">跟踪真实业务反应</text>
+<text x="800.0" y="1646" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">与本业务基线比较 保留其他解释</text>
+<text x="800.0" y="1681" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">季度峰值不能直接定位事件日影响</text>
+<polyline points="800,1710 800,1750" fill="none" stroke="#506780" stroke-width="4"/><polygon points="800,1750 792.6115331913363,1735.8080812355315 807.3884668086637,1735.8080812355315" fill="#506780"/>
+<rect x="190" y="1755" width="1220" height="145" rx="16" fill="#f5f7f9" stroke="#8190a0" stroke-width="3" stroke-dasharray="11 7"/>
+<text x="800.0" y="1791" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="34" font-weight="700" fill="#142236">用新增未见数据择期再验证</text>
+<text x="800.0" y="1836" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">冻结定义 后续分期验证 控制过拟合</text>
+<text x="800.0" y="1871" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="29" font-weight="400" fill="#142236">每日采集不会自动重训练历史模型</text>
+<polyline points="800,1900 800,1940 25,1940 25,1170 60,1170" fill="none" stroke="#506780" stroke-width="4" stroke-dasharray="11 8"/><polygon points="60,1170 45.80808123553145,1177.3884668086637 45.80808123553145,1162.6115331913363" fill="#506780"/>
+<text x="800" y="1983" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="26" font-weight="400" fill="#142236">反馈到验证 而不是用已看过的测试集反复调参</text>
+<text x="800" y="2045" dominant-baseline="middle" text-anchor="middle" font-family="Hiragino Sans GB,Arial Unicode MS,sans-serif" font-size="25" font-weight="400" fill="#142236">蓝色 已有工作   灰色虚线 待整合或验证   整理日期 2026-10-15</text>
+</svg>

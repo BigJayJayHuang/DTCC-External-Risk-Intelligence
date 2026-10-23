@@ -1,0 +1,26 @@
+{
+  "run_at_utc": "2026-10-21T20:30:19.029804+00:00",
+  "definition_version": "v3",
+  "new_chains": 31,
+  "event_screened_chains": 7,
+  "association_specs": 8,
+  "data_quality_sensitivities": 1,
+  "association_chain_count": 7,
+  "primary_association_tests": 6,
+  "complete_chain_validation_count": 0,
+  "scores_computed": false,
+  "old_files_modified": false,
+  "plan_sha256": "cfdb0f352efcf355c00216cbe46f51a43169d784113c8cb5d16ad256eacc944e",
+  "freshness": "see series_coverage.csv; market snapshot not relabeled current, OFR final data ends June2026",
+  "no_holdout": true,
+  "status_counts": {
+    "PARTIAL_NUMERIC": 10,
+    "NOT_RUN_DATA_GAP": 17,
+    "CASE_REVIEW_ONLY": 4
+  },
+  "reviewed_chains": 31,
+  "distinct_numerically_screened_chains": 10,
+  "event_component_passes": 5,
+  "unique_event_signals": 5,
+  "full_chain_validations": 0
+}

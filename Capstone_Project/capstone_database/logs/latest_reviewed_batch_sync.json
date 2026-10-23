@@ -1,0 +1,65 @@
+{
+  "status": "success",
+  "bundle": "new_reference_chain_tests_2026_10_21",
+  "batch_fingerprint": "9053efc9f7e230ff651ae4efe179a0f93fa8e0ba12c02ccd1ea78ca48de6f899",
+  "input_hashes": {
+    "fetch_manifest.json": "6b9d29373d1f97a1902733f38172a41fc0405729d81aba11f78eafd33fb4b7d9",
+    "input_manifest.json": "56f9dbd8c2db016b47d5080522bf682d12637484227ade4b888a44ab01f799a1",
+    "data/treasury_auction_observations.csv": "aab71292edc815a9650c517e19d2093c1ca67203308ca9d975d8a3704067a3c4",
+    "results/auction_filter_audit.json": "c2d4fe5058bb0533fb840185512d5fce4c76072d83abb7d4ee04c54842039381",
+    "data/mmf_repo_flow_million_usd.csv": "cca37468f279c2fb3996359f1fcc83c3f801fbe5164c4e8eea8cf58a9548d209",
+    "data/mutual_fund_net_issuance_million_usd.csv": "3634e137ca5ea0a146473618e7c3c8de3edb77070f2b4825d43a25e3ad3e296d",
+    "data/financial_guarantee_reconciliation.csv": "aa1eb4c43451ed5a05b57800091cb70085f486803cbfd02e770a6d6b76cd0080",
+    "data/mbsd_cleared_notional_reconciliation.csv": "b54b8bec9be7d12f6135b0b4e9e713ce747dd39364f8c58d076efdb5ff6983d3",
+    "data/new_pqd_cell_evidence.csv": "f8b6d7f9ba1688af3ec778500a8ff22348740b0748567b1eb962a1a59ae9f242",
+    "data/new_pqd_fields.csv": "348897ffef112c4cbdffe77ca0870fff04f63c40a256826a6ffa343e6fbae5c1"
+  },
+  "applied_at_utc": "2026-10-23T14:02:24+00:00",
+  "import": {
+    "imported_at_utc": "2026-10-23T14:02:21+00:00",
+    "bundle": "new_reference_chain_tests_2026_10_21",
+    "scope": "Reviewed public sources only; provided reference-chain text is not imported.",
+    "refresh_mode": "Explicit batch import; these added source adapters are not enabled for daily refresh.",
+    "run_id": "2026-10-23T14:02:21+00:00_e5817cae",
+    "before": {
+      "records": 50630,
+      "versions": 69520
+    },
+    "changes": {
+      "new": 12714
+    },
+    "new_fetch_logs": 51,
+    "dataset_counts": {
+      "business_scale": 20,
+      "cds_reference": 1653,
+      "chain_pqd_cell_evidence": 531,
+      "chain_pqd_observations": 68,
+      "equity_operations": 32,
+      "etf_reference": 12330,
+      "external_events": 1815,
+      "ficc_daily": 7980,
+      "ficc_monthly": 1236,
+      "financial_guarantee_reconciliation": 46,
+      "financial_metric_evidence": 300,
+      "financials": 75,
+      "fund_flow_quarterly": 212,
+      "market_observations": 18108,
+      "mbsd_activity_reconciliation": 22,
+      "news": 1376,
+      "ofr_repo_observations": 8217,
+      "pqd_cell_evidence": 1644,
+      "pqd_quarterly": 69,
+      "public_source_documents": 24,
+      "quarterly_operations": 182,
+      "rds_reports": 2815,
+      "response_cell_evidence": 207,
+      "treasury_auctions": 3594,
+      "underwriting": 752,
+      "wis_industry": 36
+    },
+    "after": {
+      "records": 63344,
+      "versions": 82234
+    }
+  }
+}

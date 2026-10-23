@@ -1,0 +1,47 @@
+{
+  "imported_at_utc": "2026-10-21T20:39:15+00:00",
+  "bundle": "new_reference_chain_tests_2026_10_21",
+  "scope": "Reviewed public sources only; provided reference-chain text is not imported.",
+  "refresh_mode": "Explicit batch import; these added source adapters are not enabled for daily refresh.",
+  "run_id": "2026-10-21T20:39:15+00:00_439e885c",
+  "before": {
+    "records": 55436,
+    "versions": 74182
+  },
+  "changes": {
+    "unchanged": 12714
+  },
+  "new_fetch_logs": 0,
+  "dataset_counts": {
+    "business_scale": 20,
+    "cds_reference": 1653,
+    "chain_pqd_cell_evidence": 531,
+    "chain_pqd_observations": 68,
+    "equity_operations": 18,
+    "etf_reference": 6156,
+    "external_events": 1803,
+    "ficc_daily": 7925,
+    "ficc_monthly": 1236,
+    "financial_guarantee_reconciliation": 46,
+    "financial_metric_evidence": 300,
+    "financials": 75,
+    "fund_flow_quarterly": 212,
+    "market_observations": 18023,
+    "mbsd_activity_reconciliation": 22,
+    "news": 1221,
+    "ofr_repo_observations": 8217,
+    "pqd_cell_evidence": 1644,
+    "pqd_quarterly": 69,
+    "public_source_documents": 24,
+    "quarterly_operations": 182,
+    "rds_reports": 1402,
+    "response_cell_evidence": 207,
+    "treasury_auctions": 3594,
+    "underwriting": 752,
+    "wis_industry": 36
+  },
+  "after": {
+    "records": 55436,
+    "versions": 74182
+  }
+}

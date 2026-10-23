@@ -1,0 +1,17 @@
+[
+  {
+    "input": "market_daily.csv",
+    "original_project_relative_path": "capstone_database/exports/market_daily.csv",
+    "sha256": "715596cd33c3f711c3864138427faefab7e8437cebadcbea82a0f8b2a437fc47"
+  },
+  {
+    "input": "response_quarterly.csv",
+    "original_project_relative_path": "risk_business_ml/feedback_revision_report_2026_10_06/data/response_quarterly.csv",
+    "sha256": "bf2ed57cbde32c7ae246ff89120e107dd0625dd9b1a8f7e39c36489e40fb561f"
+  },
+  {
+    "input": "ficc_daily_operations_history.csv",
+    "original_project_relative_path": "data_refresh_2026_10_14/data/ficc_daily_operations_history.csv",
+    "sha256": "efe8d99be961f95b75696384071e03229183fea0b07b5977437a061605e4133d"
+  }
+]

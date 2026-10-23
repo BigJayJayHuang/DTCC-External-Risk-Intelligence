@@ -1,0 +1,107 @@
+CPMI-IOSCO Quantitative Disclosures - DTCC
+As of December 31, 2024
+Disclosure
+Disclosure Description
+Frequency
+Data Type
+FICC
+NSCC
+Explanatory Notes
+Reference
+GSD
+MBSD
+19.1.3.1
+Percent of client transactions attributable to the top five clearing members (if CCP has 10+ clearing members); Peak
+Percentage
+N/A
+N/A
+N/A
+See Explanatory Note from 14.1
+19.1.3.2
+Percent of client transactions attributable to the top ten clearing members (if CCP has 10+ clearing members); Average
+Percentage
+N/A
+N/A
+N/A
+See Explanatory Note from 14.1
+19.1.4.1
+Percent of client transactions attributable to the top five clearing members (if CCP has 25+ clearing members); Peak
+Percentage
+N/A
+N/A
+N/A
+See Explanatory Note from 14.1
+19.1.4.2
+Percent of client transactions attributable to the top ten clearing members (if CCP has 25+ clearing members); Average
+Percentage
+N/A
+N/A
+N/A
+See Explanatory Note from 14.1
+Disclosure 20.1 - FMI Links, Value of Trades
+20.1.1
+Value of trades cleared through each link 
+– 
+as a share of total trade values/total notional values cleared in that service
+Quarterly
+USD $MM
+N/A
+N/A
+N/A
+NSCC does not maintain any interoperable links as described by 
+these items.  CDS Clearing and Depository Services, Inc. (the 
+Canadian CSD) is a full service member of NSCC, and is subject 
+to margining and the other requirements of membership as a 
+member.  The CDS relationship is described in NSCC
+’
+s 
+Disclosure Framework under Principle 20.  The GSD/CME Cross-
+Margining Agreement, which is described in GSD
+’
+s disclosure 
+with respect to PFMI Principle 20, is not an interoperable link as 
+described by sections 20.1 through 20.6 of the quantitative 
+disclosure.
+Disclosure 20.2 - FMI Links, Initial Margin or equivalent financial resources provided
+See Explanatory Note from 20.1
+Disclosure 20.3 - FMI Links, Initial Margin or equivalent financial resources collected
+See Explanatory Note from 20.1
+Disclosure 20.4 - FMI Links, Results of Back-testing coverage
+See Explanatory Note from 20.1
+Disclosure 20.5 - FMI Links, Additional pre-funded financial resources provided to
+See Explanatory Note from 20.1
+Disclosure 20.6 - FMI Links, Additional pre-funded financial resources collected from
+See Explanatory Note from 20.1
+Disclosure 20.7 - FMI Links, Cross Margining
+20.7.1
+Value of trades subject to cross margining, by clearing service, as a percentage of total trade values/total notional values 
+cleared
+Quarter End
+Percentage
+5.73%
+N/A
+N/A
+NSCC does not maintain any cross margining arrangements. 
+NSCC does maintain an arrangement with OCC for the 
+settlement of exercised and assigned options, which is 
+described in NSCC
+’
+s Disclosure Framework under Principle 20.  
+GSD has a cross-margining arrangement with the Chicago 
+Mercantile Exchange.  For GSD under section 20.7, disclosures 
+are quarter end.
+20.7.2
+Reduction in total initial margin held by the CCP as a result of cross margining, as a percentage of total initial margin that 
+would otherwise have been held.
+Percentage
+0.57%
+N/A
+N/A
+During the 4th Quarter of 2024, the average end-of-day savings 
+rate for participating firms receiving savings in the CME-FICC 
+program was 57%. The average daily savings in dollar amounts 
+was $392.2M during the 4th quarter. There were 10 firms 
+participating in the CME-FICC program during the quarter.
+Disclosure 23.1 - Disclosure of rules, key procedures, and market data; Average Daily Volumes
+Page 22 of 26
+DTCC Public (White)

@@ -7,6 +7,7 @@
 | 内容 | 入口 | 说明 |
 |---|---|---|
 | **当前数据库与每日更新** | [capstone_database](capstone_database/README_CN.md) · [English](capstone_database/README.md) | 最新共享快照、CSV、查询程序、来源映射与更新日志 |
+| **10月21日新增传导链检验** | [中文汇总](risk_business_ml/new_reference_chain_tests_2026_10_21/Concise_Test_Summary_CN.md) · [English](risk_business_ml/new_reference_chain_tests_2026_10_21/Concise_Test_Summary_EN.md) | 31条证据核对、逐链状态、Notebook及新增12,714条研究数据的入库记录 |
 | **10 月 14 日的数据更新** | [data_refresh_2026_10_14](data_refresh_2026_10_14/README_CN_EN.md) | 十条业务线的公开数据、新闻、业务信息需求及覆盖缺口 |
 | **历史业务原始资料** | [public_performance_data](public_performance_data/) | 公开 PQD、财务披露、来源记录及采集支持文件 |
 | **最早的新闻采集原型** | [public_news_prototype](public_news_prototype/README.md) | 五个官方来源、原始 RSS、历史新闻和原型代码 |

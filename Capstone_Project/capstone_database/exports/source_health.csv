@@ -1,34 +1,34 @@
 source_id,name,kind,enabled,last_checked,last_success,last_status,last_error,linked_businesses
-fed_press,Federal Reserve Board,rss,1,2026-10-14T20:18:32+00:00,2026-10-14T20:18:32+00:00,downloaded,,10
-sec_press,US Securities and Exchange Commission,rss,1,2026-10-14T20:18:32+00:00,2026-10-14T20:18:32+00:00,downloaded,,10
-cftc_press,US Commodity Futures Trading Commission,rss,1,2026-10-14T20:18:32+00:00,2026-10-14T20:18:32+00:00,downloaded,,10
-ecb_press,European Central Bank,rss,1,2026-10-14T20:18:32+00:00,2026-10-14T20:18:32+00:00,downloaded,,10
-bis_press,Bank for International Settlements,rss,1,2026-10-14T20:18:33+00:00,2026-10-14T20:18:33+00:00,downloaded,,10
-fred_SOFR,Secured Overnight Financing Rate,market_series,1,2026-10-14T20:20:34+00:00,2026-10-14T20:20:34+00:00,downloaded,,7
-fred_EFFR,Effective Federal Funds Rate,market_series,1,2026-10-14T20:18:33+00:00,2026-10-14T20:18:33+00:00,downloaded,,7
-fred_DGS10,10-year Treasury yield,market_series,1,2026-10-14T20:18:33+00:00,2026-10-14T20:18:33+00:00,downloaded,,5
-fred_DGS2,2-year Treasury yield,market_series,1,2026-10-14T20:18:33+00:00,2026-10-14T20:18:33+00:00,downloaded,,4
-fred_DGS3MO,3-month Treasury yield,market_series,1,2026-10-14T20:18:33+00:00,2026-10-14T20:18:33+00:00,downloaded,,10
-fred_BAA10Y,Baa corporate yield minus 10-year Treasury yield,market_series,1,2026-10-14T20:18:33+00:00,2026-10-14T20:18:33+00:00,downloaded,,5
-fred_VIXCLS,CBOE equity volatility index,market_series,1,2026-10-14T20:18:33+00:00,2026-10-14T20:18:33+00:00,downloaded,,4
-fred_NFCICREDIT,Chicago Fed credit subindex,market_series,1,2026-10-14T20:18:33+00:00,2026-10-14T20:18:33+00:00,downloaded,,5
-fred_BAMLC0A0CM,ICE BofA US Corporate Index option-adjusted spread,market_series,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,4
-fred_SP500,S&P 500 index,market_series,1,2026-10-14T20:18:33+00:00,2026-10-14T20:18:33+00:00,downloaded,,4
-fred_DTWEXBGS,Nominal broad US dollar index,market_series,1,2026-10-14T20:18:33+00:00,2026-10-14T20:18:33+00:00,downloaded,,4
+fed_press,Federal Reserve Board,rss,1,2026-10-23T00:39:35+00:00,2026-10-23T00:39:35+00:00,downloaded,,10
+sec_press,US Securities and Exchange Commission,rss,1,2026-10-23T00:39:36+00:00,2026-10-23T00:39:36+00:00,downloaded,,10
+cftc_press,US Commodity Futures Trading Commission,rss,1,2026-10-23T00:39:35+00:00,2026-10-23T00:39:35+00:00,downloaded,,10
+ecb_press,European Central Bank,rss,1,2026-10-23T00:39:36+00:00,2026-10-23T00:39:36+00:00,downloaded,,10
+bis_press,Bank for International Settlements,rss,1,2026-10-23T00:39:36+00:00,2026-10-23T00:39:36+00:00,downloaded,,10
+fred_SOFR,Secured Overnight Financing Rate,market_series,1,2026-10-23T00:39:36+00:00,2026-10-23T00:39:36+00:00,downloaded,,7
+fred_EFFR,Effective Federal Funds Rate,market_series,1,2026-10-23T00:39:36+00:00,2026-10-23T00:39:36+00:00,downloaded,,7
+fred_DGS10,10-year Treasury yield,market_series,1,2026-10-23T00:39:36+00:00,2026-10-23T00:39:36+00:00,downloaded,,5
+fred_DGS2,2-year Treasury yield,market_series,1,2026-10-23T00:39:36+00:00,2026-10-23T00:39:36+00:00,downloaded,,4
+fred_DGS3MO,3-month Treasury yield,market_series,1,2026-10-23T00:39:36+00:00,2026-10-23T00:39:36+00:00,downloaded,,10
+fred_BAA10Y,Baa corporate yield minus 10-year Treasury yield,market_series,1,2026-10-23T00:39:36+00:00,2026-10-23T00:39:36+00:00,downloaded,,5
+fred_VIXCLS,CBOE equity volatility index,market_series,1,2026-10-23T00:39:36+00:00,2026-10-23T00:39:36+00:00,downloaded,,4
+fred_NFCICREDIT,Chicago Fed credit subindex,market_series,1,2026-10-23T00:39:37+00:00,2026-10-23T00:39:37+00:00,downloaded,,5
+fred_BAMLC0A0CM,ICE BofA US Corporate Index option-adjusted spread,market_series,1,2026-10-23T00:39:37+00:00,2026-10-23T00:39:37+00:00,downloaded,,4
+fred_SP500,S&P 500 index,market_series,1,2026-10-23T00:39:37+00:00,2026-10-23T00:39:37+00:00,downloaded,,4
+fred_DTWEXBGS,Nominal broad US dollar index,market_series,1,2026-10-23T00:39:37+00:00,2026-10-23T00:39:37+00:00,downloaded,,4
 fred_WRMFSL,Retail money market funds,market_series,0,,2026-10-14T19:20:08+00:00,imported,,3
 fred_WIMFSL,Institutional money market funds,market_series,0,,2026-10-14T19:20:08+00:00,imported,,3
-fred_CBBTCUSD,Coinbase Bitcoin price,market_series,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,3
-fred_CBETHUSD,Coinbase Ethereum price,market_series,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,3
-fred_USEPUINDXM,US economic policy uncertainty,market_series,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,10
-fred_JTU5200QUR,"Finance and insurance quits rate, not seasonally adjusted",market_series,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,10
-dtcc_asset_services,Asset Services,business_reference,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,3
-dtcc_wealth,Wealth,business_reference,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,1
-dtcc_rds,Rds,business_reference,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,1
-dtcc_itp,Itp,business_reference,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,1
-dtcc_digital,Digital,business_reference,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,2
-dtcc_data_services,Data Services,business_reference,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,3
-dtcc_consulting,Consulting,business_reference,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,1
-dtcc_clearing,Clearing,business_reference,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,2
+fred_CBBTCUSD,Coinbase Bitcoin price,market_series,1,2026-10-23T00:39:37+00:00,2026-10-23T00:39:37+00:00,downloaded,,3
+fred_CBETHUSD,Coinbase Ethereum price,market_series,1,2026-10-23T00:39:37+00:00,2026-10-23T00:39:37+00:00,downloaded,,3
+fred_USEPUINDXM,US economic policy uncertainty,market_series,1,2026-10-23T00:39:37+00:00,2026-10-23T00:39:37+00:00,downloaded,,10
+fred_JTU5200QUR,"Finance and insurance quits rate, not seasonally adjusted",market_series,1,2026-10-23T00:39:37+00:00,2026-10-23T00:39:37+00:00,downloaded,,10
+dtcc_asset_services,Asset Services,business_reference,1,2026-10-22T00:41:08+00:00,2026-10-22T00:41:08+00:00,downloaded,,3
+dtcc_wealth,Wealth,business_reference,1,2026-10-22T00:41:07+00:00,2026-10-22T00:41:07+00:00,downloaded,,1
+dtcc_rds,Rds,business_reference,1,2026-10-22T00:41:07+00:00,2026-10-22T00:41:07+00:00,downloaded,,1
+dtcc_itp,Itp,business_reference,1,2026-10-22T00:41:07+00:00,2026-10-22T00:41:07+00:00,downloaded,,1
+dtcc_digital,Digital,business_reference,1,2026-10-22T00:41:07+00:00,2026-10-22T00:41:07+00:00,downloaded,,2
+dtcc_data_services,Data Services,business_reference,1,2026-10-22T00:41:07+00:00,2026-10-22T00:41:07+00:00,downloaded,,3
+dtcc_consulting,Consulting,business_reference,1,2026-10-22T00:41:07+00:00,2026-10-22T00:41:07+00:00,downloaded,,1
+dtcc_clearing,Clearing,business_reference,1,2026-10-22T00:41:08+00:00,2026-10-22T00:41:08+00:00,downloaded,,2
 dtcc_press,Dtcc Press,news_index,0,,2026-10-14T19:15:11+00:00,imported,,10
 dtcc_insights,Dtcc Insights,news_index,0,,2026-10-14T19:15:11+00:00,imported,,10
 dtcc_notices,Dtcc Notices,notice_index,0,,2026-10-14T19:15:12+00:00,imported,,10
@@ -39,14 +39,14 @@ dtcc_market_data,Dtcc Market Data,public_market_index,0,,2026-10-14T19:15:12+00:
 dtcc_money_market,Dtcc Money Market,public_market_index,0,,2026-10-14T19:15:12+00:00,imported,,3
 ici_fund_flows,ICI weekly long-term mutual fund flows,industry_data_index,0,,,,,3
 fca_publications,Financial Conduct Authority news and publications,regulator_index,0,,2026-10-14T19:15:12+00:00,imported,,6
-esma_news,European Securities and Markets Authority news,esma_news,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,7
-cisa_kev,CISA Known Exploited Vulnerabilities,cyber_catalog,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,10
-google_cloud,Google Cloud public service incidents,provider_incidents,1,2026-10-14T20:18:34+00:00,2026-10-14T20:18:34+00:00,downloaded,,10
-google_workspace,Google Workspace public service incidents,provider_incidents,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,10
-federal_register,"Federal Register: SEC, CFTC and Federal Reserve publications",regulatory_documents,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,10
-fema,FEMA disaster declarations,disaster_declarations,1,2026-10-14T20:20:34+00:00,2026-10-14T20:20:34+00:00,downloaded,,10
+esma_news,European Securities and Markets Authority news,esma_news,1,2026-10-23T00:39:37+00:00,2026-10-21T00:36:51+00:00,failed,curl: (22) The requested URL returned error: 403,7
+cisa_kev,CISA Known Exploited Vulnerabilities,cyber_catalog,1,2026-10-23T00:39:37+00:00,2026-10-23T00:39:37+00:00,downloaded,,10
+google_cloud,Google Cloud public service incidents,provider_incidents,1,2026-10-23T00:39:37+00:00,2026-10-23T00:39:37+00:00,downloaded,,10
+google_workspace,Google Workspace public service incidents,provider_incidents,1,2026-10-23T00:39:37+00:00,2026-10-23T00:39:37+00:00,downloaded,,10
+federal_register,"Federal Register: SEC, CFTC and Federal Reserve publications",regulatory_documents,1,2026-10-23T00:39:37+00:00,2026-10-23T00:39:37+00:00,downloaded,,10
+fema,FEMA disaster declarations,disaster_declarations,1,2026-10-23T00:39:38+00:00,2026-10-23T00:39:38+00:00,downloaded,,10
 dtcc_rss_index,dtcc_rss_index,discovery,0,,,,,10
-dtcc_notice_feed,dtcc_notice_feed,rss,1,2026-10-14T20:20:34+00:00,2026-10-14T20:20:34+00:00,downloaded,,10
+dtcc_notice_feed,dtcc_notice_feed,rss,1,2026-10-23T00:39:38+00:00,2026-10-23T00:39:38+00:00,downloaded,,10
 dtcc_equity_trade_volume_insights,dtcc_equity_trade_volume_insights,public_market_index,0,,2026-10-14T19:16:59+00:00,imported,,5
 dtcc_exchange_traded_funds,dtcc_exchange_traded_funds,public_market_index,0,,2026-10-14T19:16:59+00:00,imported,,5
 dtcc_dtcc_gcf_repo_index,dtcc_dtcc_gcf_repo_index,public_market_index,0,,2026-10-14T19:20:09+00:00,imported,,5
@@ -61,10 +61,10 @@ dtcc_emir_public_reports_uk,dtcc_emir_public_reports_uk,public_market_index,0,,2
 dtcc_sftr_public_reports_uk,dtcc_sftr_public_reports_uk,public_market_index,0,,2026-10-14T19:16:59+00:00,imported,,5
 dtcc_sftr_public_reports,dtcc_sftr_public_reports,public_market_index,0,,2026-10-14T19:17:01+00:00,imported,,5
 dtcc_public_page_js,dtcc_public_page_js,discovery,0,,,,,10
-fca_rss,fca_rss,rss,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,6
+fca_rss,fca_rss,rss,1,2026-10-23T00:39:37+00:00,2026-10-23T00:39:37+00:00,downloaded,,6
 dtcc_underwriting_data_report_embedded_f5297c0e,dtcc_underwriting_data_report_embedded,embedded_market_data,0,,2026-10-14T19:18:24+00:00,imported,,5
 dtcc_underwriting_data_report_embedded_22d8238f,dtcc_underwriting_data_report_embedded,embedded_market_data,0,,2026-10-14T19:18:24+00:00,imported,,5
-dtcc_equity_trade_volume_insights_embedded,dtcc_equity_trade_volume_insights_embedded,equity_operations,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,5
+dtcc_equity_trade_volume_insights_embedded,dtcc_equity_trade_volume_insights_embedded,equity_operations,1,2026-10-23T00:39:38+00:00,2026-10-23T00:39:38+00:00,downloaded,,5
 dtcc_exchange_traded_funds_embedded,dtcc_exchange_traded_funds_embedded,embedded_market_data,0,,2026-10-14T19:18:24+00:00,imported,,5
 dtcc_emir_public_reports_embedded,dtcc_emir_public_reports_embedded,embedded_market_data,0,,2026-10-14T19:18:25+00:00,imported,,5
 dtcc_emir_public_reports_uk_embedded,dtcc_emir_public_reports_uk_embedded,embedded_market_data,0,,2026-10-14T19:18:25+00:00,imported,,5
@@ -81,9 +81,9 @@ dtcc_js_8918,dtcc_js_8918,discovery,0,,,,,10
 dtcc_js_2330,dtcc_js_2330,discovery,0,,,,,10
 dtcc_feed_catalog,dtcc_feed_catalog,feed_catalog,0,,,,,10
 dtcc_report_js_emir_js,dtcc_report_js_emir_js,discovery,0,,,,,2
-dtcc_etf_listing_csv,dtcc_etf_listing_csv,etf_reference,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,4
+dtcc_etf_listing_csv,dtcc_etf_listing_csv,etf_reference,1,2026-10-22T00:41:08+00:00,2026-10-22T00:41:08+00:00,downloaded,,4
 dtcc_report_js_sftrfca_js,dtcc_report_js_sftrfca_js,discovery,0,,,,,2
-dtcc_underwriting_xml,dtcc_underwriting_xml,business_timeseries,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,3
+dtcc_underwriting_xml,dtcc_underwriting_xml,business_timeseries,1,2026-10-23T00:39:38+00:00,2026-10-23T00:39:38+00:00,downloaded,,3
 rds_esma_table1_20261009,rds_esma_table1_20261009,repository_weekly,0,,2026-10-14T19:23:12+00:00,imported,,2
 rds_esma_table2_20261009,rds_esma_table2_20261009,repository_weekly,0,,2026-10-14T19:23:12+00:00,imported,,2
 rds_esma_table3_20261009,rds_esma_table3_20261009,repository_weekly,0,,2026-10-14T19:23:12+00:00,imported,,2
@@ -240,23 +240,74 @@ article_3d6cdbbbcdaf29a5,dtcc_notice_feed original document,article,0,,2026-10-1
 article_08dfdbdaa9ce20cc,Federal Reserve Board original document,article,0,,2026-10-14T19:29:44+00:00,imported,,0
 article_0775120cfda68bdf,"Federal Register: SEC, CFTC and Federal Reserve publications original document",article,0,,2026-10-14T19:29:44+00:00,imported,,0
 dtcc_insight_20261014,DTCC Insights,dated_article,0,,2026-10-14T19:29:46+00:00,imported,,3
-fred_RMFSL,"Retail money market funds, monthly seasonally adjusted",market_series,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,3
-fred_MMMFFAQ027S,Money market funds total financial assets,market_series,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,3
+fred_RMFSL,"Retail money market funds, monthly seasonally adjusted",market_series,1,2026-10-23T00:39:38+00:00,2026-10-23T00:39:38+00:00,downloaded,,3
+fred_MMMFFAQ027S,Money market funds total financial assets,market_series,1,2026-10-23T00:39:38+00:00,2026-10-23T00:39:38+00:00,downloaded,,3
 ici_money_market_release,Investment Company Institute weekly money market fund assets,industry_data_release,0,,2026-10-14T19:32:43+00:00,imported,,3
 dtcc_previous_12_months_volume_for_gsd_embedded_f45759ae,dtcc_previous_12_months_volume_for_gsd public chart,embedded_ficc_data,0,,2026-10-14T19:40:41+00:00,imported,,2
 dtcc_previous_12_months_volume_for_mbs_embedded_e9b11226,dtcc_previous_12_months_volume_for_mbs public chart,embedded_ficc_data,0,,2026-10-14T19:40:41+00:00,imported,,2
 dtcc_dtcc_gcf_repo_index_embedded_1a425e81,dtcc_dtcc_gcf_repo_index public chart,embedded_ficc_data,0,,2026-10-14T19:40:41+00:00,imported,,2
 dtcc_daily_total_us_treasury_trade_fails_embedded_7adec5d9,dtcc_daily_total_us_treasury_trade_fails public chart,embedded_ficc_data,0,,2026-10-14T19:40:41+00:00,imported,,2
 dtcc_membership_embedded_4037e10d,dtcc_membership public chart,embedded_ficc_data,0,,2026-10-14T19:40:42+00:00,imported,,2
-ficc_gcfindex,FICC public gcfindex.csv,ficc_daily_series,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,2
-ficc_failsdata,FICC public failsdata.csv,ficc_daily_series,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,2
-ficc_sponsoredvolume,FICC public SponsoredVolume.csv,ficc_daily_series,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,2
-ficc_clearing_volumes,FICC GSD and MBSD shared clearing-volume history,ficc_monthly_series,1,2026-10-14T20:18:35+00:00,2026-10-14T20:18:35+00:00,downloaded,,2
-rds_esma_table1,rds_esma_table1_20261009,repository_weekly,1,2026-10-14T20:18:36+00:00,2026-10-14T20:18:36+00:00,downloaded,,2
-rds_esma_table2,rds_esma_table2_20261009,repository_weekly,1,2026-10-14T20:18:36+00:00,2026-10-14T20:18:36+00:00,downloaded,,2
-rds_esma_table3,rds_esma_table3_20261009,repository_weekly,1,2026-10-14T20:18:36+00:00,2026-10-14T20:18:36+00:00,downloaded,,2
-rds_fca_table1,rds_fca_table1_20261009,repository_weekly,1,2026-10-14T20:18:36+00:00,2026-10-14T20:18:36+00:00,downloaded,,2
-rds_fca_table2,rds_fca_table2_20261009,repository_weekly,1,2026-10-14T20:18:36+00:00,2026-10-14T20:18:36+00:00,downloaded,,2
-rds_fca_table3,rds_fca_table3_20261009,repository_weekly,1,2026-10-14T20:18:36+00:00,2026-10-14T20:18:36+00:00,downloaded,,2
-rds_uk_sftr_table1,rds_uk_sftr_table1_20261009,repository_weekly,1,2026-10-14T20:18:36+00:00,2026-10-14T20:18:36+00:00,downloaded,,3
-rds_uk_sftr_table2,rds_uk_sftr_table2_20261009,repository_weekly,1,2026-10-14T20:18:36+00:00,2026-10-14T20:18:36+00:00,downloaded,,3
+ficc_gcfindex,FICC public gcfindex.csv,ficc_daily_series,1,2026-10-23T00:39:38+00:00,2026-10-23T00:39:38+00:00,downloaded,,2
+ficc_failsdata,FICC public failsdata.csv,ficc_daily_series,1,2026-10-23T00:39:38+00:00,2026-10-23T00:39:38+00:00,downloaded,,2
+ficc_sponsoredvolume,FICC public SponsoredVolume.csv,ficc_daily_series,1,2026-10-23T00:39:38+00:00,2026-10-23T00:39:38+00:00,downloaded,,2
+ficc_clearing_volumes,FICC GSD and MBSD shared clearing-volume history,ficc_monthly_series,1,2026-10-23T00:39:38+00:00,2026-10-23T00:39:38+00:00,downloaded,,2
+rds_esma_table1,rds_esma_table1_20261009,repository_weekly,1,2026-10-23T00:39:38+00:00,2026-10-23T00:39:38+00:00,downloaded,,2
+rds_esma_table2,rds_esma_table2_20261009,repository_weekly,1,2026-10-23T00:39:38+00:00,2026-10-23T00:39:38+00:00,downloaded,,2
+rds_esma_table3,rds_esma_table3_20261009,repository_weekly,1,2026-10-23T00:39:38+00:00,2026-10-23T00:39:38+00:00,downloaded,,2
+rds_fca_table1,rds_fca_table1_20261009,repository_weekly,1,2026-10-23T00:39:38+00:00,2026-10-23T00:39:38+00:00,downloaded,,2
+rds_fca_table2,rds_fca_table2_20261009,repository_weekly,1,2026-10-23T00:39:39+00:00,2026-10-23T00:39:39+00:00,downloaded,,2
+rds_fca_table3,rds_fca_table3_20261009,repository_weekly,1,2026-10-23T00:39:39+00:00,2026-10-23T00:39:39+00:00,downloaded,,2
+rds_uk_sftr_table1,rds_uk_sftr_table1_20261009,repository_weekly,1,2026-10-23T00:39:39+00:00,2026-10-23T00:39:39+00:00,downloaded,,3
+rds_uk_sftr_table2,rds_uk_sftr_table2_20261009,repository_weekly,1,2026-10-23T00:39:39+00:00,2026-10-23T00:39:39+00:00,downloaded,,3
+research_ae16487e8922464f6693,Reviewed public source: REPO-GCF_AR_OO-F.json,reviewed_research_batch,0,2026-10-21T20:01:59.038630+00:00,2026-10-21T20:01:59.038630+00:00,downloaded,,1
+research_afaf169b5295036e348f,Reviewed public source: REPO-GCF_AR_OO-F_metadata.json,reviewed_research_batch,0,2026-10-21T20:01:59.038894+00:00,2026-10-21T20:01:59.038894+00:00,downloaded,,1
+research_3fba1249b83402747429,Reviewed public source: REPO-DVP_AR_OO-F.json,reviewed_research_batch,0,2026-10-21T20:01:59.039143+00:00,2026-10-21T20:01:59.039143+00:00,downloaded,,1
+research_897661053e63e075af7e,Reviewed public source: REPO-DVP_AR_OO-F_metadata.json,reviewed_research_batch,0,2026-10-21T20:01:59.039234+00:00,2026-10-21T20:01:59.039234+00:00,downloaded,,1
+research_5e0cd40b8bd25f7cef1b,Reviewed public source: REPO-GCF_TV_TOT-F.json,reviewed_research_batch,0,2026-10-21T20:01:59.039377+00:00,2026-10-21T20:01:59.039377+00:00,downloaded,,1
+research_0e31e89e1b04cb8735d8,Reviewed public source: REPO-GCF_TV_TOT-F_metadata.json,reviewed_research_batch,0,2026-10-21T20:01:59.521106+00:00,2026-10-21T20:01:59.521106+00:00,downloaded,,1
+research_3346bc06314cd09c50ba,Reviewed public source: REPO-TRIV1_TV_TOT-F.json,reviewed_research_batch,0,2026-10-21T20:01:59.722960+00:00,2026-10-21T20:01:59.722960+00:00,downloaded,,1
+research_bccb3de490bd81eaf3d2,Reviewed public source: REPO-TRIV1_TV_TOT-F_metadata.json,reviewed_research_batch,0,2026-10-21T20:02:00.227777+00:00,2026-10-21T20:02:00.227777+00:00,downloaded,,1
+research_c1f1a264192a7a6210af,Reviewed public source: treasury_auctions_2018.json,reviewed_research_batch,0,2026-10-21T20:02:01.086790+00:00,,failed,"URLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)'))",1
+research_dea44b303bc02c4d58bd,Reviewed public source: treasury_auctions_2019.json,reviewed_research_batch,0,2026-10-21T20:02:01.290039+00:00,,failed,"URLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)'))",1
+research_08bd4a95d507d283a0cf,Reviewed public source: treasury_auctions_2020.json,reviewed_research_batch,0,2026-10-21T20:02:01.295759+00:00,,failed,"URLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)'))",1
+research_340519768a34081abd2d,Reviewed public source: treasury_auctions_2021.json,reviewed_research_batch,0,2026-10-21T20:02:01.347905+00:00,,failed,"URLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)'))",1
+research_287a245b6019ea05393c,Reviewed public source: treasury_auctions_2022.json,reviewed_research_batch,0,2026-10-21T20:02:01.348324+00:00,,failed,"URLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)'))",1
+research_4fabff88e3d0a6c73a95,Reviewed public source: treasury_auctions_2023.json,reviewed_research_batch,0,2026-10-21T20:02:01.386595+00:00,,failed,"URLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)'))",1
+research_67ceee6866e36f474f9b,Reviewed public source: treasury_auctions_2024.json,reviewed_research_batch,0,2026-10-21T20:02:01.394790+00:00,,failed,"URLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)'))",1
+research_239eaf8ece4603d0cb56,Reviewed public source: treasury_auctions_2025.json,reviewed_research_batch,0,2026-10-21T20:02:01.398318+00:00,,failed,"URLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)'))",1
+research_43693e873af12de5db95,Reviewed public source: treasury_auctions_2026.json,reviewed_research_batch,0,2026-10-21T20:02:01.438183+00:00,,failed,"URLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)'))",1
+research_de5c1805a999e8e4e3f9,Reviewed public source: acats_lehman_2008.pdf,reviewed_research_batch,0,2026-10-21T20:02:01.447277+00:00,,failed,<HTTPError 404: 'Not Found'>,2
+research_af0df49594f44de34a9d,Reviewed public source: acats_project_2012.pdf,reviewed_research_batch,0,2026-10-21T20:02:01.447432+00:00,,failed,<HTTPError 404: 'Not Found'>,2
+research_911117313c63873db132,Reviewed public source: dtc_chill_2016.pdf,reviewed_research_batch,0,2026-10-21T20:02:01.455428+00:00,,failed,<HTTPError 404: 'Not Found'>,2
+research_286cf6dea6ef63d649df,Reviewed public source: epn_rules.pdf,reviewed_research_batch,0,2026-10-21T20:02:01.494424+00:00,2026-10-21T20:02:01.494424+00:00,downloaded,,1
+research_6465d450c1dd080c3d90,Reviewed public source: dtc_settlement_guide.pdf,reviewed_research_batch,0,2026-10-21T20:02:02.011356+00:00,2026-10-21T20:02:02.011356+00:00,downloaded,,2
+research_0b267502cff444713609,Reviewed public source: ficc_mbsd_rules.pdf,reviewed_research_batch,0,2026-10-21T20:02:02.327102+00:00,2026-10-21T20:02:02.327102+00:00,downloaded,,1
+research_5def747509be9aae6ff0,Reviewed public source: nscc_rules.pdf,reviewed_research_batch,0,2026-10-21T20:02:02.387115+00:00,,failed,<HTTPError 404: 'Not Found'>,2
+research_38f8a1ce659e50274793,Reviewed public source: dtc_rules.pdf,reviewed_research_batch,0,2026-10-21T20:02:02.442886+00:00,,failed,<HTTPError 404: 'Not Found'>,2
+research_4827b17f12ca3cf4bee0,Reviewed public source: dtcc_2025_annual.pdf,reviewed_research_batch,0,2026-10-21T20:02:02.626635+00:00,,failed,<HTTPError 404: 'Not Found'>,4
+research_c18c97ceb1cfbd73330e,Reviewed public source: dtcc_2020_annual.pdf,reviewed_research_batch,0,2026-10-21T20:02:02.689559+00:00,,failed,<HTTPError 404: 'Not Found'>,4
+research_042679e0f28ad12bbef5,Reviewed public source: dtcc_2022_annual.pdf,reviewed_research_batch,0,2026-10-21T20:02:02.950402+00:00,,failed,<HTTPError 404: 'Not Found'>,4
+research_e3877ffefbc5f7962c94,Reviewed public source: dtcc_sandy_financials_2012.pdf,reviewed_research_batch,0,2026-10-21T20:02:03.219615+00:00,,failed,<HTTPError 404: 'Not Found'>,4
+research_ca3243e9ca4fdebccbfb,Reviewed public source: cds_financial_risk_model_2025.pdf,reviewed_research_batch,0,2026-10-21T20:02:03.229825+00:00,2026-10-21T20:02:03.229825+00:00,downloaded,,2
+research_bf8fdf5321c8ea71acd6,Reviewed public source: sft_access_2026.html,reviewed_research_batch,0,2026-10-21T20:02:03.283505+00:00,2026-10-21T20:02:03.283505+00:00,downloaded,,2
+research_112775683749bf1ed0e8,Reviewed public source: treasury_auctions_all.json,reviewed_research_batch,0,2026-10-21T20:05:20.780622+00:00,2026-10-21T20:05:20.780622+00:00,downloaded,,1
+research_07bb9cf2acd404577f83,Reviewed public source: BOGZ1FU632051000Q.csv,reviewed_research_batch,0,2026-10-21T20:05:20.813384+00:00,,failed,RemoteDisconnected('Remote end closed connection without response'),4
+research_7f047351a47f01acd7ca,Reviewed public source: BOGZ1FU653164205Q.csv,reviewed_research_batch,0,2026-10-21T20:05:20.813563+00:00,,failed,RemoteDisconnected('Remote end closed connection without response'),4
+research_97da099b4bb532502522,Reviewed public source: unscheduled_closing.pdf,reviewed_research_batch,0,2026-10-21T20:05:20.813897+00:00,,failed,<HTTPError 404: 'Not Found'>,4
+research_bca4794c567bf057c08b,Reviewed public source: carter_2025_notice.pdf,reviewed_research_batch,0,2026-10-21T20:05:20.814019+00:00,,failed,<HTTPError 404: 'Not Found'>,4
+research_7a3c01aaaa1a66c2bf84,Reviewed public source: acats_2008_stop.pdf,reviewed_research_batch,0,2026-10-21T20:05:20.814155+00:00,,failed,<HTTPError 404: 'Not Found'>,2
+research_0c2368ec1ee3f7211203,Reviewed public source: BOGZ1FU632051000Q.txt,reviewed_research_batch,0,2026-10-21T20:06:13.505799+00:00,,failed,TimeoutError('The read operation timed out'),4
+research_db43cd8798e46d2a6dba,Reviewed public source: BOGZ1FU653164205Q.txt,reviewed_research_batch,0,2026-10-21T20:06:13.506445+00:00,,failed,TimeoutError('The read operation timed out'),4
+research_4fd36ba7d805e07f67cf,Reviewed public source: sec_dtc_chill_2014.pdf,reviewed_research_batch,0,2026-10-21T20:06:13.506549+00:00,2026-10-21T20:06:13.506549+00:00,downloaded,,2
+research_17b559edd28efd5a4969,Reviewed public source: sec_suspension_2012.html,reviewed_research_batch,0,2026-10-21T20:06:13.506649+00:00,,failed,<HTTPError 403: 'Forbidden'>,4
+research_8efaec7139f44ea4cefe,Reviewed public source: dtcc_2022_annual_alternative.pdf,reviewed_research_batch,0,2026-10-21T20:06:13.506698+00:00,,failed,<HTTPError 404: 'Not Found'>,4
+research_6e11a436d31d09e4cb0a,Reviewed public source: fed_z1_20260911.zip,reviewed_research_batch,0,2026-10-21T20:08:11.394010+00:00,2026-10-21T20:08:11.394010+00:00,downloaded,,2
+research_e9c459530acab3c8bac3,Reviewed public source: nscc_rules_current.pdf,reviewed_research_batch,0,2026-10-21T20:15:18.012654+00:00,2026-10-21T20:15:18.012654+00:00,downloaded,,2
+research_caa887b19d3cfd59a148,Reviewed public source: gsd_rules_current.pdf,reviewed_research_batch,0,2026-10-21T20:15:18.013149+00:00,2026-10-21T20:15:18.013149+00:00,downloaded,,1
+research_34b8eba7817e07848b5a,Reviewed public source: dtc_rules_current.pdf,reviewed_research_batch,0,2026-10-21T20:15:18.013274+00:00,2026-10-21T20:15:18.013274+00:00,downloaded,,2
+research_ae649b51ffaaa991211c,Reviewed public source: custody_guide_current.pdf,reviewed_research_batch,0,2026-10-21T20:15:18.013374+00:00,2026-10-21T20:15:18.013374+00:00,downloaded,,1
+research_59132c112ba83b56431c,Reviewed public source: deposits_guide_current.pdf,reviewed_research_batch,0,2026-10-21T20:15:18.013477+00:00,2026-10-21T20:15:18.013477+00:00,downloaded,,1
+research_5a8bba3e8af93bfe2c83,Reviewed public source: acs_launch_2025.html,reviewed_research_batch,0,2026-10-21T20:15:18.581782+00:00,2026-10-21T20:15:18.581782+00:00,downloaded,,1
+research_2fdb8da736499ed99465,Reviewed public source: cftc_mfglobal.html,reviewed_research_batch,0,2026-10-21T20:15:18.659048+00:00,2026-10-21T20:15:18.659048+00:00,downloaded,,4
+research_d2cb23fd8c97f76b0bb9,Reviewed public source: dtcc_rules_index.html,reviewed_research_batch,0,2026-10-21T20:15:18.688825+00:00,2026-10-21T20:15:18.688825+00:00,downloaded,,4

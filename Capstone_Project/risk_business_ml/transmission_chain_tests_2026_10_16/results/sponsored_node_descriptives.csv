@@ -1,0 +1,3 @@
+node,before_n,after_n,before_mean_usd,after_mean_usd,change_pct,interpretation
+2023-12-13,20,20,864608007958.8821,1015541674183.7458,17.45688969284236,observed change only; no causal attribution to rule announcement
+2025-02-25,20,20,1715724658397.428,1799778251364.8257,4.89901410205924,observed change only; no causal attribution to rule announcement

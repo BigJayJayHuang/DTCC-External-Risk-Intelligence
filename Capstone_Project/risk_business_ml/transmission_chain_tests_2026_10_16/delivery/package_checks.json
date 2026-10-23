@@ -1,0 +1,8 @@
+{
+  "bundle": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/risk_business_ml/transmission_chain_tests_2026_10_16/delivery/Transmission_Chain_Tests_2026-10-16.zip",
+  "files": 369,
+  "bytes": 290282526,
+  "sha256": "bca9bacf80df4dda69898e2513540312792e94931a8dd10ee08c84a8c23a3a55",
+  "integrity": "ZIPtestpassed",
+  "excluded": "internal QA, Jupyter connection files, caches, delivery folder"
+}

@@ -1,0 +1,12 @@
+{
+  "n": 104,
+  "coefficient": 2.1989130995959307,
+  "hac_p": 0.2035378286533659,
+  "ci": [
+    -1.1905218619975741,
+    5.588348061189436
+  ],
+  "scope": "aggregate throughput, not auction-specific disruption",
+  "seasonality": "calendar-month dummy variables",
+  "full_chain_validated": false
+}

@@ -1,0 +1,16 @@
+{
+  "run_at_utc": "2026-10-21T20:30:19.029804+00:00",
+  "definition_version": "v3",
+  "new_chains": 31,
+  "event_screened_chains": 7,
+  "association_specs": 8,
+  "data_quality_sensitivities": 1,
+  "association_chain_count": 7,
+  "primary_association_tests": 6,
+  "complete_chain_validation_count": 0,
+  "scores_computed": false,
+  "old_files_modified": false,
+  "plan_sha256": "cfdb0f352efcf355c00216cbe46f51a43169d784113c8cb5d16ad256eacc944e",
+  "freshness": "see series_coverage.csv; market snapshot not relabeled current, OFR final data ends June2026",
+  "no_holdout": true
+}

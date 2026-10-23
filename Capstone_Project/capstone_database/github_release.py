@@ -44,6 +44,44 @@ def restore(repository):
         with c:c.execute('UPDATE sources SET last_checked=NULL WHERE enabled=1')
         c.close()
 
+def import_reviewed(repository=None, *, bundle=None, database=None, log_dir=None):
+    """Add a committed frozen batch to restored durable state, once per content.
+
+    Never restore the repository seed over remote state or rerun frozen analysis.
+    The successful marker also prevents an old frozen batch from overwriting
+    later revisions to its keys when the daily workflow runs again.
+    """
+    from import_chain_research import DEFAULT_BUNDLE, import_bundle
+    bundle=Path(bundle) if bundle is not None else DEFAULT_BUNDLE
+    path=Path(database) if database is not None else db.DEFAULT_DB
+    log_dir=Path(log_dir) if log_dir is not None else db.ROOT/'logs'
+    inputs=['fetch_manifest.json','input_manifest.json',
+            'data/treasury_auction_observations.csv','results/auction_filter_audit.json',
+            'data/mmf_repo_flow_million_usd.csv','data/mutual_fund_net_issuance_million_usd.csv',
+            'data/financial_guarantee_reconciliation.csv','data/mbsd_cleared_notional_reconciliation.csv',
+            'data/new_pqd_cell_evidence.csv','data/new_pqd_fields.csv']
+    hashes={name:db.sha((bundle/name).read_bytes()) for name in inputs}
+    fingerprint=db.sha(db.dumps(hashes))
+    c=db.connect(path)
+    try:
+        prior=c.execute("SELECT summary FROM runs WHERE kind='reviewed_batch_sync' AND status='success' AND CASE WHEN json_valid(summary) THEN json_extract(summary,'$.batch_fingerprint') END=? ORDER BY finished_at DESC LIMIT 1",(fingerprint,)).fetchone()
+        if prior:
+            result={'status':'already_applied','bundle':bundle.name,'batch_fingerprint':fingerprint,'checked_at_utc':db.now(),'reason':'Frozen batch already integrated; preserve subsequent remote revisions.'}
+        else:
+            rid=db.start_run(c,'reviewed_batch_sync')
+            try:
+                receipt=import_bundle(bundle=bundle,path=path,make_snapshot=False)
+                result={'status':'success','bundle':bundle.name,'batch_fingerprint':fingerprint,'input_hashes':hashes,'applied_at_utc':db.now(),'import':receipt}
+                with c:c.execute('UPDATE runs SET finished_at=?,status=?,summary=? WHERE run_id=?',(db.now(),'success',db.dumps(result),rid))
+            except Exception as exc:
+                with c:c.execute('UPDATE runs SET finished_at=?,status=?,summary=? WHERE run_id=?',(db.now(),'failed',db.dumps({'batch_fingerprint':fingerprint,'error':str(exc)}),rid))
+                raise
+    finally:c.close()
+    log_dir.mkdir(parents=True,exist_ok=True)
+    (log_dir/'latest_reviewed_batch_sync.json').write_text(json.dumps(result,indent=2)+'\n')
+    print('Reviewed research batch: '+result['status']+'; normal incremental update follows.')
+    return result
+
 def publish(repository):
     from validate import validate
     source_result=validate(db.DEFAULT_DB)
@@ -77,5 +115,5 @@ def publish(repository):
     print('Published one complete project package to '+repository+'/releases/tag/'+TAG)
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('command',choices=['restore','publish']);p.add_argument('--repo',default=os.environ.get('GITHUB_REPOSITORY','BigJayJayHuang/DTCC-External-Risk-Intelligence'))
-    args=p.parse_args();globals()[args.command](args.repo)
+    p=argparse.ArgumentParser();p.add_argument('command',choices=['restore','import-reviewed','publish']);p.add_argument('--repo',default=os.environ.get('GITHUB_REPOSITORY','BigJayJayHuang/DTCC-External-Risk-Intelligence'))
+    args=p.parse_args();globals()[args.command.replace('-','_')](args.repo)

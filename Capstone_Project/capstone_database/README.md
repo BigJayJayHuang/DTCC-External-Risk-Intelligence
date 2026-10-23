@@ -2,6 +2,10 @@
 
 One database snapshot for the team's public news, market history and business data. Shared inputs are stored once and linked to the ten business lines. This is a daily **read-only snapshot workflow**, not a live SQL server.
 
+The latest local synchronization combines the online release with the reviewed research batch: **63,344 records**. See `logs/latest_github_sync.json` for the merge receipt and `data/snapshot_manifest.json` for the actual snapshot checksum and counts. The original October21 import receipt below remains a dated record of that batch.
+
+The reviewed **October21 research import** adds12,714 records (OFR repo observations, Treasury auctions, Financial Accounts fund flows and additional PQD evidence). See [the bilingual import note](../risk_business_ml/new_reference_chain_tests_2026_10_21/DATABASE_UPDATE_CN_EN.md) and [example SQL](research_queries.sql). These extra sources are currently batch imports, not new daily adapters. The local snapshot is updated; this does not imply that the GitHub release has been republished.
+
 ## Team access
 
 1. Open [Complete project download](https://github.com/BigJayJayHuang/DTCC-External-Risk-Intelligence/releases/tag/data-latest) and download **`Capstone_Project_Complete.zip`**. Inside its single `Capstone_Project` folder, the database, manifest, CSV exports and update logs are under `capstone_database/`. Inspect `capstone_database/logs/latest_update.json` for failures and the collection date.

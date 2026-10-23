@@ -1,0 +1,82 @@
+29
+technology is widely used and provides the 
+intended services, herd behavior can occur and 
+increase price volatility.
+In this section, a few of the channels through 
+which a technology vulnerability can stress 
+asset markets and possibly transmit stress 
+across the financial system are discussed.
+Trading
+Market functioning requires the ability to trade, 
+clear, and settle. More trading venues means 
+more places to trade during a technology 
+outage. It also means greater reliance on TSPs 
+that are essential for moving funds across 
+venues and asset market functioning.
+Technology-related disruptions in asset markets 
+can affect a large share of market activity. The 
+digitization of asset markets has enabled the 
+provision of technology as a service—and 
+with it, the rise of TSPs. Digital services can be 
+provided at little to no marginal cost, which 
+leads to concentration in their provision. As 
+a result, TSPs can play a critical role in asset 
+markets, and a technology service outage at 
+one can disrupt a larger share of trading.
+For example, in November 2023, Industrial 
+and Commercial Bank of China Financial 
+Services (ICBCFS) experienced a ransomware 
+attack.
+13 ICBCFS provides clearing, execution, 
+and financing services for institutional clients 
+globally. It immediately took affected systems 
+offline. Bank of New York Mellon (BNY), which 
+is the sole settlement agent for Treasury 
+securities, separately disconnected ICBCFS 
+from its platform. ICBCFS’s customers resorted 
+to manual methods to determine the status of 
+their trades and rerouted new trades, but the 
+outage was felt in Treasury markets. The day 
+after ICBCFS went offline, Treasury failures-
+to-deliver rose 144% from the day before and 
+hit an eight-month high. Although ICBCFS 
+CCPs can also create stress in a market due to 
+the liquidity demands they place on clearing 
+members and their clients. For example, when 
+volatility increases, calls for additional variation 
+margin increase due to the larger moves in 
+asset prices. Simultaneously, CCPs increase 
+their initial margin requirements, and these 
+are passed on to clearing members and their 
+clients. During the market uncertainty at the 
+onset of the COVID-19 pandemic, clearing 
+members were able to meet demands for more 
+margin, but some of their clients struggled.
+Technology
+Technology is essential to asset markets. 
+Since the 1971 launch of the Nasdaq, the 
+first electronic share market, technological 
+advances have transformed financial markets 
+with increasing speed. Electronic trading 
+brings speed to markets, and with each 
+advancement, information like prices and 
+quotes is exchanged at a faster clip. Networked 
+computer systems expand access to the 
+financial system, connecting traders across the 
+globe. Technology also offers a certain degree 
+of operational resilience by shifting steps in the 
+provision of digital services to companies that 
+specialize in providing those steps.
+Despite these benefits, technology makes 
+asset markets vulnerable to disruption if it 
+fails to operate as expected. The existence 
+of systemically important elements in asset 
+markets amplifies the vulnerabilities. As 
+bellwethers, Treasury markets and the S&P 500 
+index are systemically important. So too are 
+FMUs, CCPs, exchanges, and trading platforms. 
+Technology outages that prevent one of these 
+single points of failure from functioning can 
+disrupt financial stability.
+Technology can cause vulnerabilities even 
+if it operates as expected. When the same 

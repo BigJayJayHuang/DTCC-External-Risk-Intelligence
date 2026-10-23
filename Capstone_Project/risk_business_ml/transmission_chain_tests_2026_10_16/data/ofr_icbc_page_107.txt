@@ -1,0 +1,45 @@
+102
+1 This report uses data available through September 30, 2024, unless otherwise indicated.
+2 U.S. Department of the Treasury, Board of Governors of the Federal Reserve System, Federal Reserve Bank of New York, U.S. Securities 
+and Exchange Commission, and U.S. Commodity Futures Trading Commission, Enhancing the Resilience of the U.S. Treasury Market: 2023 
+Staff Progress Report (Washington: Interagency Working Group on Treasury Market Surveillance (IAWG), November 6, 2023), https://home.
+treasury.gov/system/files/136/20231106_IAWG_report.pdf.
+3 Daniel Barth, R. Jay Kahn, and Robert Mann, “Recent Developments in Hedge Funds’ Treasury Futures and Repo Positions: Is the Basis 
+Trade ‘Back’?,” FEDS Notes, Board of Governors of the Federal Reserve System, August 30, 2023, https://doi.org/10.17016/2380-7172.3355.
+4 Lee M. Shaiman and Bridget K. Marsh, eds., The Handbook of Loan Syndications and Trading, Second Edition (McGraw Hill, 2022), 452.
+5 Data providers have different methodologies for estimating property prices. Some of those methods show a much larger decline in the 
+value of office properties than what is depicted in the figure.
+6 FTX Trading Ltd. et al., U.S. Bankruptcy Court, District of Delaware, Case No. 22-11068-JTD, Doc 574, Filed January 25, 2023, https://
+restructuring.ra.kroll.com/FTX/Home-DocketInfo.
+7 Federal Deposit Insurance Corporation, “BankFind Suite: Bank Failures & Assistance Data,” online content, https://banks.data.fdic.
+gov/explore/failures; and Paul Tierno, “The Role of Cryptocurrency in the Failures of Silvergate, Silicon Valley, and Signature Banks,” 
+Congressional Research Service, April 25, 2023, https://crsreports.congress.gov/product/pdf/IN/IN12148 .
+8 Financial Stability Oversight Council (FSOC), Report on Digital Asset Financial Stability Risks and Regulation 2022 (Washington: FSOC, 
+October 2022), https://home.treasury.gov/system/files/261/FSOC-Digital-Assets-Report-2022.pdf .
+9 Samuel Hempel, Gregory Phelan, and Thomas Ruchti, “Does Lock-Up Lead to Stability? Implications For Runs in the Proof-of-Stake 
+Protocol,” Office of Financial Research Working Paper No. 24-08, October 31, 2024, https://www.financialresearch.gov/working-papers/files/
+OFRwp-24-08_does-lock-up-lead-to-stability.pdf.
+10 Carole Gresse, “Effects of Lit and Dark Market Fragmentation on Liquidity,” Journal of Financial Markets 35 (September 2017): 1-20, 
+https://www.sciencedirect.com/science/article/pii/S1386418116301690?via%3Dihub ; and James Upson and Robert A. Van Ness, “Multiple 
+Markets, Algorithmic Trading, and Market Liquidity,” Journal of Financial Markets 32 (January 2017): 49-68, https://www.sciencedirect.com/
+science/article/pii/S1386418115300148.
+11 Hans Degryse, Frank de Jong, and Vincent van Kervel, “The Impact of Dark Trading and Visible Fragmentation on Market Quality,” 
+Review of Finance 19, no. 4 (July 2015): 1587–1622, https://doi.org/10.1093/rof/rfu027 .
+12 Kevin McPartland and Katie Kolchin, “Understanding Fixed Income Markets in 2023,” Greenwich Associates & SIFMA Insights, May 9, 
+2023, https://www.sifma.org/resources/research/understanding-fixed-income-markets-in-2023/.
+13 Alex Harris, “ICBC Hack Kept Repo Market Open, Fueled Bond Delivery Failures,” Bloomberg News, November 10, 2023, https://
+www.bloomberg.com/news/articles/2023-11-10/icbc-hack-kept-repo-market-open-fueled-bond-delivery-failures?sref=UaY5GSBd ; and Eric 
+Wallerstein, Rebecca Feng, and David Uberti, “Hack at ICBC Targeted the Digital Underbelly of Financial Markets,” The Wall Street Journal, 
+November 10, 2023, https://www.wsj.com/finance/hackers-hit-u-s-arm-of-chinese-bank-e37768e6 .
+14 Joshua Walker, “LCH Suffered Nearly 13 Hours of Op Failures in Q1,” Risk.net, June 12, 2024, https://www.risk.net/risk-
+quantum/7959538/lch-suffered-nearly-13-hours-of-op-failures-in-q1.
+15 Securities and Exchange Commission, “Shortening the Securities Transaction Settlement Cycle,” Final Rule, Federal Register 88, no. 43 
+(March 6, 2023): 13872-13954, https://www.govinfo.gov/content/pkg/FR-2023-03-06/pdf/2023-03566.pdf .
+16 For equity markets, see Austin Gerig, “High-Frequency Trading Synchronizes Prices in Financial Markets,” Securities and Exchange 
+Commission Working Paper, January 2015, https://www.sec.gov/about/divisions-offices/division-economic-risk-analysis/staff-papers-
+analyses/21jan15_gerig_high-frequency-trading. For foreign exchange markets, see Wenqian Huang et al., “HFTs and Dealer Banks: 
+Liquidity and Price Discovery in FX Trading,” Financial Conduct Authority Occasional Paper 63, January 2023, https://www.fca.org.uk/
+publications/occasional-papers/op-63-hfts-dealer-banks-liquidity-fx-trading. For Treasury markets, see Dobrislav Dobrev and Ernst 
+Schaumburg, “High-Frequency Cross-Market Trading in U.S. Treasury Markets,” Federal Reserve Bank of New York Liberty Street Economics,  
+August 19, 2015, https://libertystreeteconomics.newyorkfed.org/2015/08/high-frequency-cross-market-trading-in-us-treasury-markets/ .
+APPENDIX D: ENDNOTES

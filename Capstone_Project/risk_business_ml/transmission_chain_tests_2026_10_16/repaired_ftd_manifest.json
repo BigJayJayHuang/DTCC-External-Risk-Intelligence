@@ -1,0 +1,38 @@
+[
+  {
+    "name": "sec_ftd_201910a.zip",
+    "url": "https://www.sec.gov/files/data/fails-deliver-data/cnsfails201910a_0.zip",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:15:53.061968+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "application/octet-stream",
+    "final_url": "https://www.sec.gov/files/data/fails-deliver-data/cnsfails201910a_0.zip",
+    "bytes": 776219,
+    "sha256": "00f2d3913a3d470773decb3f0be117283a624fc7053223ee3ef783007a461ab5"
+  },
+  {
+    "name": "sec_ftd_202605a.zip",
+    "url": "https://www.sec.gov/files/data/other/fails-deliver-data/cnsfails202605a.zip",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:15:53.812471+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "application/octet-stream",
+    "final_url": "https://www.sec.gov/files/data/other/fails-deliver-data/cnsfails202605a.zip",
+    "bytes": 1283728,
+    "sha256": "2aefd16e5c39206a108aac53a4076572930ba84581a0e0981dcd136f1958a72e"
+  },
+  {
+    "name": "sec_ftd_202605b.zip",
+    "url": "https://www.sec.gov/files/data/other/fails-deliver-data/cnsfails202605b.zip",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:15:54.369213+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "application/octet-stream",
+    "final_url": "https://www.sec.gov/files/data/other/fails-deliver-data/cnsfails202605b.zip",
+    "bytes": 1269388,
+    "sha256": "53f95c33fe5b1e427e02ea5a6c8206d06e9f781a25838b47cca6545f5c2b0364"
+  }
+]

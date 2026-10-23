@@ -1,0 +1,54 @@
+{
+  "run_date": "2026-10-16",
+  "framework": "S*V with chain applicability gate; no E multiplier",
+  "signal_ranges": {
+    "ust10_abs_change": {
+      "n": 2193,
+      "first": "2018-01-03",
+      "last": "2026-10-09"
+    },
+    "sofr_effr_adjusted": {
+      "n": 2004,
+      "first": "2018-10-01",
+      "last": "2026-10-13"
+    },
+    "baa_widen20": {
+      "n": 2170,
+      "first": "2018-01-31",
+      "last": "2026-10-09"
+    },
+    "vix": {
+      "n": 2240,
+      "first": "2018-01-02",
+      "last": "2026-10-13"
+    },
+    "vix_jump": {
+      "n": 2220,
+      "first": "2018-01-31",
+      "last": "2026-10-13"
+    },
+    "mortgage_spread_change": {
+      "n": 457,
+      "first": "2018-01-11",
+      "last": "2026-10-08"
+    },
+    "cp_bill_spread": {
+      "n": 1555,
+      "first": "2018-01-02",
+      "last": "2026-10-13"
+    },
+    "equity_volume": {
+      "n": 2209,
+      "first": "2018-01-02",
+      "last": "2026-10-15"
+    }
+  },
+  "new_numeric_tests_primary": 7,
+  "no_blind_holdout": true,
+  "input_hashes": {
+    "inputs/market_daily.csv": "715596cd33c3f711c3864138427faefab7e8437cebadcbea82a0f8b2a437fc47",
+    "inputs/response_quarterly.csv": "bf2ed57cbde32c7ae246ff89120e107dd0625dd9b1a8f7e39c36489e40fb561f",
+    "analysis_plan.json": "568ba6c14d80e56e3072ed46eb7e70c48d1d9f20fcfc454e76bbf52428f6983d",
+    "plan_availability_amendment.json": "1e8c093452a1861eaa0ccadecd746bb974afd8878046ddccbffbf1d067687218"
+  }
+}

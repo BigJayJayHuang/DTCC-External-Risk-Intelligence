@@ -1,0 +1,12 @@
+{
+  "checked_at_utc": "2026-10-23T14:02:32+00:00",
+  "online_release_generated_at": "2026-10-23T03:51:33+00:00",
+  "online_records": 50630,
+  "local_records_before": 55436,
+  "local_research_records_preserved": 12714,
+  "merged_records": 63344,
+  "remote_git_commit": "207748ec27a45f56602cd9cff9c2738643f6d16a",
+  "backup": ".qa/online_sync/local_before_sync.sqlite3",
+  "integrity": "ok",
+  "foreign_keys": "ok"
+}

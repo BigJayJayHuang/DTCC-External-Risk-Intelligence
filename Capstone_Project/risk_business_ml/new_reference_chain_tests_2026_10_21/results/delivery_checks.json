@@ -1,0 +1,30 @@
+{
+  "frozen_input_hashes_verified": 56,
+  "existing_original_sources_unchanged": 56,
+  "legacy_source_hashes_unchanged": 16,
+  "bilingual_rows": 31,
+  "bilingual_columns": 10,
+  "legacy_25_definitions_preserved": true,
+  "legacy_22_mappings_preserved": true,
+  "independently_recomputed_rank_associations": 15,
+  "independent_numpy_OLS_and_manual_Newey_West_HAC5": "passed",
+  "BH_primary_family_size": 6,
+  "independent_past_only_threshold_spot_checks": 2,
+  "financial_scale_discrepancies_reconciled": 8,
+  "activity_scale_cells_reconciled": 2,
+  "activity_repair_exclusion_sensitivity_present": true,
+  "executed_notebook_code_cells": 8,
+  "notebook_errors": 0,
+  "embedded_figure_outputs": 2,
+  "complete_new_chain_validations": 0,
+  "bilingual_summary_result_consistency": "passed",
+  "claim_limit": "31 evidence reviews;10 partial numerical views,4 case/condition reviews,17 unrun data gaps; no causal/predictive/calibrated-score claim",
+  "visual_notebook_QA": "Passed: beginning, event table, association tables, figures and closing takeaway inspected in local browser; charts separately inspected.",
+  "database_import": {
+    "new_records": 12714,
+    "total_records": 55436,
+    "duplicate_import": "12714 unchanged; zero added records/versions/fetch logs",
+    "local_and_shared_snapshot_integrity": "passed",
+    "pipeline_tests": 18
+  }
+}

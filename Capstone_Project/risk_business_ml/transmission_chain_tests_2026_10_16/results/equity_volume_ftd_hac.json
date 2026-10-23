@@ -1,0 +1,17 @@
+{
+  "chain_id": "ECS-NSCC-02A",
+  "n_weeks": 413,
+  "shock_weeks": 150,
+  "first_week": "2018-06-30/2018-07-06",
+  "last_week": "2026-09-19/2026-09-25",
+  "coefficient_million_outstanding_shares": 30.404069256187434,
+  "hac_p": 1.320593025933033e-05,
+  "ci_low": 16.7259727809274,
+  "ci_high": 44.08216573144747,
+  "pass_card": true,
+  "interpretation": "association with outstanding fail balances, not a failure rate, causal effect or new fail flows",
+  "files": 210,
+  "raw_security_day_rows": 11464312,
+  "daily_observations": 2185,
+  "source_quality_flags": []
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "fed_cp_xml.zip",
+    "url": "https://www.federalreserve.gov/releases/cp/data/FRB_CP_xml.zip",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:13:25.468351+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "application/x-zip-compressed",
+    "final_url": "https://www.federalreserve.gov/releases/cp/data/FRB_CP_xml.zip",
+    "bytes": 6289977,
+    "sha256": "282a0958b59fae6438e1cbb7c1cc456ba04788ea4a084d9bee799be3819e400c"
+  },
+  {
+    "name": "fed_h15_xml.zip",
+    "url": "https://www.federalreserve.gov/releases/h15/data/FRB_h15_xml.zip",
+    "method": "GET",
+    "collected_at_utc": "2026-10-16T14:13:25.468596+00:00",
+    "status": "downloaded",
+    "http_status": 200,
+    "content_type": "application/x-zip-compressed",
+    "final_url": "https://www.federalreserve.gov/releases/h15/data/FRB_h15_xml.zip",
+    "bytes": 4285898,
+    "sha256": "37112e0a45c8f2ca9fa86e526519fbc3af14ffa91ce6952388b28ddc2c9785ea"
+  }
+]

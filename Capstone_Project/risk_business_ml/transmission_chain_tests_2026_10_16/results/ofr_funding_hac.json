@@ -1,0 +1,14 @@
+{
+  "chain_id": "FICC-GSD-02",
+  "outcome": "GCF-DVP overnight/open final-vintage rate spread bp",
+  "n": 246,
+  "shock_days": 46,
+  "coefficient_bp": 0.020989752644338,
+  "hac_p": 0.9756619934809749,
+  "ci_low": -1.3274858879689937,
+  "ci_high": 1.36946539325767,
+  "r_squared": 0.004209754002596489,
+  "pass_card": false,
+  "first": "2019-04-05",
+  "last": "2026-06-30"
+}

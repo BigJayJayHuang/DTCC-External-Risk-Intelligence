@@ -10,29 +10,44 @@
     "latest": null
   },
   {
+    "dataset_id": "chain_pqd_cell_evidence",
+    "n": 531,
+    "latest": "2026Q2"
+  },
+  {
+    "dataset_id": "chain_pqd_observations",
+    "n": 68,
+    "latest": "2026Q2"
+  },
+  {
     "dataset_id": "equity_operations",
-    "n": 18,
-    "latest": "2026-08"
+    "n": 32,
+    "latest": "2026-09"
   },
   {
     "dataset_id": "etf_reference",
-    "n": 6156,
-    "latest": "2026-10-09"
+    "n": 12330,
+    "latest": "2026-10-15"
   },
   {
     "dataset_id": "external_events",
-    "n": 1803,
-    "latest": "2026-10-14"
+    "n": 1815,
+    "latest": "2026-10-22"
   },
   {
     "dataset_id": "ficc_daily",
-    "n": 7925,
-    "latest": "2026-10-09"
+    "n": 7980,
+    "latest": "2026-10-20"
   },
   {
     "dataset_id": "ficc_monthly",
     "n": 1236,
     "latest": "2026-09"
+  },
+  {
+    "dataset_id": "financial_guarantee_reconciliation",
+    "n": 46,
+    "latest": "2026Q2"
   },
   {
     "dataset_id": "financial_metric_evidence",
@@ -45,14 +60,29 @@
     "latest": "2026Q2"
   },
   {
+    "dataset_id": "fund_flow_quarterly",
+    "n": 212,
+    "latest": "2026Q2"
+  },
+  {
     "dataset_id": "market_observations",
-    "n": 18023,
-    "latest": "2026-10-13"
+    "n": 18108,
+    "latest": "2026-10-22"
+  },
+  {
+    "dataset_id": "mbsd_activity_reconciliation",
+    "n": 22,
+    "latest": "2026Q2"
   },
   {
     "dataset_id": "news",
-    "n": 1221,
-    "latest": "2026-10-14"
+    "n": 1376,
+    "latest": "2026-10-22"
+  },
+  {
+    "dataset_id": "ofr_repo_observations",
+    "n": 8217,
+    "latest": "2026-06-30"
   },
   {
     "dataset_id": "pqd_cell_evidence",
@@ -65,19 +95,29 @@
     "latest": "2026Q2"
   },
   {
+    "dataset_id": "public_source_documents",
+    "n": 24,
+    "latest": null
+  },
+  {
     "dataset_id": "quarterly_operations",
     "n": 182,
     "latest": "2026Q2"
   },
   {
     "dataset_id": "rds_reports",
-    "n": 1402,
-    "latest": "2026-10-09"
+    "n": 2815,
+    "latest": "2026-10-16"
   },
   {
     "dataset_id": "response_cell_evidence",
     "n": 207,
     "latest": "2026Q2"
+  },
+  {
+    "dataset_id": "treasury_auctions",
+    "n": 3594,
+    "latest": "2026-10-15"
   },
   {
     "dataset_id": "underwriting",

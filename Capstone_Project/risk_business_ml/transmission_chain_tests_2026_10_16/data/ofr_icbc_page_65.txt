@@ -1,0 +1,88 @@
+60
+spread of any malware. Its customers remain 
+open, with their computer systems online. Their 
+operations are impaired, and they implement 
+their business continuity plans in an attempt 
+to continue doing business without the TSP’s 
+services. This may involve switching to more 
+manual and costly processes. An institution in a 
+weak financial position might face considerable 
+stress from the event. In this case, however, 
+the financial institution is not more likely to 
+experience a run because it did not experience 
+a cyberattack itself.
+The January 2024 ransomware event at 
+EquiLend is an example. EquiLend provides a 
+centralized securities lending platform for many 
+large, global financial institutions. The platform 
+normally handled more than $2 trillion in 
+transactions monthly and provided regulatory 
+reporting services. EquiLend went offline after 
+a cyberattack. During the service outage, 
+customers resorted to manually tracking 
+their transactions. Unable to see their actual 
+securities lending, they allocated additional 
+capital against their positions. Delayed 
+regulatory reporting provided less visibility into 
+market developments. EquiLend was offline 
+for 10 days due to the attack, but its customers 
+needed more time to be assured of its security 
+and reconnect.
+48
+Fraud
+The many cyberattacks within and outside 
+the financial sector have put almost every 
+household’s personal and financial information 
+in unauthorized hands. The data are being 
+used to make fraudulent transactions on 
+existing financial accounts, take over those 
+accounts, and open new accounts in another’s 
+name. They also are used to commit fraud by 
+creating convincing impersonations of real 
+people and wholly synthetic identities with 
+authentic documentation.
+49
+in its HFT algorithm caused a $440 million loss 
+within minutes, wiping out its capital. The firm 
+received a capital injection of $400 million from 
+a group of financial firms, and it took a draw of 
+$200 million on a bank line of credit.
+45
+Events like those at Knight tend to be firm 
+specific. As a result, investors are unlikely to 
+worry that other institutions are at risk of the 
+same event, making the risk of widespread runs 
+low. In the longer run, knowledge of an incident 
+at one institution can lead other institutions to 
+take steps to reduce their risk of a similar event.
+A cyberattack directly on a financial institution, 
+like those that involve malware or ransomware, 
+will force the victim to take affected computer 
+systems offline. If some systems remain online, 
+the institution could be subject to run risk 
+when the attack becomes public. If all systems 
+are offline, preventing account holders from 
+withdrawing funds, run risk still exists for other 
+financial institutions viewed as potential victims.
+Even without run risk, a financial institution that 
+suffers a cyberattack can experience a liquidity 
+event. The attack on ICBCFS, described 
+previously, is an example. The day after the 
+attack was discovered, ICBCFS ended up 
+owing BNY $9 billion for unsettled trades. What 
+was effectively an emergency loan from BNY 
+kept ICBCFS going until its parent was able to 
+provide a capital injection sufficient to repay 
+BNY.
+46 A financial institution without such a 
+well-capitalized parent might have been forced 
+to default. ICBCFS is considered a mid-size 
+broker, but its default could have triggered a 
+chain of defaults. Two weeks later, ICBCFS was 
+still recovering from the attack.
+47
+Cyberattacks on TSPs to financial institutions 
+have the potential to be more disruptive 
+than attacks directly on a financial institution. 
+Typically, a TSP takes its computer systems 
+offline to protect its customers against the 

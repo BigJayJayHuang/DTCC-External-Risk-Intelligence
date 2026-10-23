@@ -1,0 +1,64 @@
+{
+  "prepared_date": "2026-10-15",
+  "visual_qa": "All 14 pages in each language inspected at original image size; no clipping, missing CJK glyphs or table overflow found.",
+  "documents": {
+    "CN": {
+      "pages": 14,
+      "main_sections": 14,
+      "tables": 13,
+      "inline_flowcharts": 1,
+      "ficc_chains": 9,
+      "business_lines": 10
+    },
+    "EN": {
+      "pages": 14,
+      "main_sections": 14,
+      "tables": 13,
+      "inline_flowcharts": 1,
+      "ficc_chains": 9,
+      "business_lines": 10
+    }
+  },
+  "files": [
+    {
+      "name": "DTCC_End_to_End_Workflow_Report_CN.docx",
+      "bytes": 535268,
+      "sha256": "e2156eb1fa50f5bdb9966b3ff34d126873373521a310db2ff5ac205c32881e3a"
+    },
+    {
+      "name": "DTCC_End_to_End_Workflow_Report_EN.docx",
+      "bytes": 306542,
+      "sha256": "9cdf05f9162ffc83ba273a391096043cbb1f6e2f6fc512da3c41be4d834414f0"
+    },
+    {
+      "name": "Workflow_CN.png",
+      "bytes": 494368,
+      "sha256": "7e30b877327a325c278eba8cb7a898f743a4bdefc48a5a5ab267092e5fa5eda1"
+    },
+    {
+      "name": "Workflow_EN.png",
+      "bytes": 271869,
+      "sha256": "e71a5bc5782a6b08e717a83acfde3a786bf1a54ed9ea220929b586cdc143615e"
+    },
+    {
+      "name": "Workflow_CN.svg",
+      "bytes": 15019,
+      "sha256": "86868f420db3cd9e5864ac9757b3fccf9c9d1db4b90a3b0615c589958c304028"
+    },
+    {
+      "name": "Workflow_EN.svg",
+      "bytes": 13951,
+      "sha256": "5ea3908033123bcccabb822f5896f7a3ee0107dddf986528627d509576607bd6"
+    },
+    {
+      "name": "README_CN_EN.md",
+      "bytes": 2599,
+      "sha256": "d115c8c93693db3acbf8e7796c870468614bf31f2d1d5b316982add1091f9bf9"
+    }
+  ],
+  "bundle": {
+    "name": "DTCC_Workflow_Reports_and_Flowcharts_CN_EN_2026-10-15.zip",
+    "bytes": 1574711,
+    "sha256": "326a980ec0462c65fb5f96485e359d4ab75398c37aea1b1252a6e0d9bc24a7f9"
+  }
+}

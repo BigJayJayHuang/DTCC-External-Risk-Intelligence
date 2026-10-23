@@ -1,0 +1,30 @@
+[
+  {
+    "series_id": "DCPF3M",
+    "source_zip": "fed_cp_xml.zip",
+    "xml_file": "CP_data.xml",
+    "attributes": {
+      "CP_TERM": "90",
+      "CP_TYPE": "FAA",
+      "CURRENCY": "NA",
+      "FREQ": "9",
+      "SERIES_NAME": "RIFSPPFAAD90_N.B",
+      "UNIT": "Percent",
+      "UNIT_MULT": "1"
+    }
+  },
+  {
+    "series_id": "DTB3",
+    "source_zip": "fed_h15_xml.zip",
+    "xml_file": "H15_data.xml",
+    "attributes": {
+      "CURRENCY": "NA",
+      "FREQ": "9",
+      "INSTRUMENT": "TB",
+      "MATURITY": "M3",
+      "SERIES_NAME": "RIFSGFSM03_N.B",
+      "UNIT": "Percent:_Per_Year",
+      "UNIT_MULT": "1"
+    }
+  }
+]

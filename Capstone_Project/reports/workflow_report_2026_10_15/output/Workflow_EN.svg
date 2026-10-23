@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2110" viewBox="0 0 1600 2110"><rect width="1600" height="2110" fill="white"/>
+<text x="800" y="45" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="43" font-weight="700" fill="#142236">From public information to business assessment</text>
+<text x="800" y="94" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="400" fill="#142236">Data and historical tests exist; business scoring needs validation</text>
+<rect x="60" y="135" width="460" height="155" rx="16" fill="#edf4fc" stroke="#295e93" stroke-width="3"/>
+<text x="290.0" y="171" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#142236">News and notices</text>
+<text x="290.0" y="216" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Official news and rules</text>
+<text x="290.0" y="251" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Sources and publication times</text>
+<rect x="570" y="135" width="460" height="155" rx="16" fill="#edf4fc" stroke="#295e93" stroke-width="3"/>
+<text x="800.0" y="171" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#142236">Markets and external data</text>
+<text x="800.0" y="216" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Rates, spreads, volatility</text>
+<text x="800.0" y="251" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Public industry/technology data</text>
+<rect x="1080" y="135" width="460" height="155" rx="16" fill="#edf4fc" stroke="#295e93" stroke-width="3"/>
+<text x="1310.0" y="171" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#142236">Business disclosures</text>
+<text x="1310.0" y="216" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">PQD, financials, operations</text>
+<text x="1310.0" y="251" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Service, period and units</text>
+<polyline points="290,290 290,315 800,315 800,335" fill="none" stroke="#506780" stroke-width="4"/><polygon points="800,335 792.6115331913363,320.80808123553146 807.3884668086637,320.80808123553146" fill="#506780"/>
+<polyline points="800,290 800,315 800,315 800,335" fill="none" stroke="#506780" stroke-width="4"/><polygon points="800,335 792.6115331913363,320.80808123553146 807.3884668086637,320.80808123553146" fill="#506780"/>
+<polyline points="1310,290 1310,315 800,315 800,335" fill="none" stroke="#506780" stroke-width="4"/><polygon points="800,335 792.6115331913363,320.80808123553146 807.3884668086637,320.80808123553146" fill="#506780"/>
+<rect x="190" y="340" width="1220" height="115" rx="16" fill="#edf4fc" stroke="#295e93" stroke-width="3"/>
+<text x="800.0" y="376" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#142236">Shared database and source versions</text>
+<text x="800.0" y="421" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Fetch shared sources once; separate documents/events; preserve evidence and times</text>
+<polyline points="800,455 800,488" fill="none" stroke="#506780" stroke-width="4"/><polygon points="800,488 792.6115331913363,473.80808123553146 807.3884668086637,473.80808123553146" fill="#506780"/>
+<rect x="190" y="490" width="1220" height="115" rx="16" fill="#edf4fc" stroke="#295e93" stroke-width="3"/>
+<text x="800.0" y="526" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#142236">Clean deduplicate and align</text>
+<text x="800.0" y="571" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Missing is not zero; preserve frequencies and information available at the time</text>
+<polyline points="800,605 800,625 410,625 410,652" fill="none" stroke="#506780" stroke-width="4"/><polygon points="410,652 402.61153319133626,637.8080812355314 417.38846680866374,637.8080812355314" fill="#506780"/>
+<polyline points="800,605 800,625 1190,625 1190,652" fill="none" stroke="#506780" stroke-width="4"/><polygon points="1190,652 1182.6115331913363,637.8080812355314 1197.3884668086637,637.8080812355314" fill="#506780"/>
+<rect x="60" y="655" width="700" height="165" rx="16" fill="#edf4fc" stroke="#295e93" stroke-width="3"/>
+<text x="410.0" y="691" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#142236">Events and channel features</text>
+<text x="410.0" y="736" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Review event IDs and channels</text>
+<text x="410.0" y="771" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Measure shock S by channel</text>
+<rect x="840" y="655" width="700" height="165" rx="16" fill="#edf4fc" stroke="#295e93" stroke-width="3"/>
+<text x="1190.0" y="691" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#142236">Business profiles and available state</text>
+<text x="1190.0" y="736" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Separate business, entity and process</text>
+<text x="1190.0" y="771" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Verify exposure E and vulnerability V</text>
+<polyline points="410,820 410,842 800,842 800,862" fill="none" stroke="#506780" stroke-width="4"/><polygon points="800,862 792.6115331913363,847.8080812355314 807.3884668086637,847.8080812355314" fill="#506780"/>
+<polyline points="1190,820 1190,842 800,842 800,862" fill="none" stroke="#506780" stroke-width="4"/><polygon points="800,862 792.6115331913363,847.8080812355314 807.3884668086637,847.8080812355314" fill="#506780"/>
+<rect x="190" y="865" width="1220" height="145" rx="16" fill="#edf4fc" stroke="#295e93" stroke-width="3"/>
+<text x="800.0" y="901" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#142236">Define logic chains and transmission pathways first</text>
+<text x="800.0" y="946" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Event → channel → member/asset → process → observable outcome</text>
+<text x="800.0" y="981" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Attach evidence, gaps and scope to every arrow</text>
+<polyline points="800,1010 800,1020 410,1020 410,1040" fill="none" stroke="#506780" stroke-width="4"/><polygon points="410,1040 402.61153319133626,1025.8080812355315 417.38846680866374,1025.8080812355315" fill="#506780"/>
+<polyline points="800,1010 800,1020 1190,1020 1190,1040" fill="none" stroke="#506780" stroke-width="4"/><polygon points="1190,1040 1182.6115331913363,1025.8080812355315 1197.3884668086637,1025.8080812355315" fill="#506780"/>
+<rect x="60" y="1045" width="700" height="250" rx="16" fill="#edf4fc" stroke="#295e93" stroke-width="3"/>
+<text x="410.0" y="1081" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#142236">Historical training and validation</text>
+<text x="410.0" y="1126" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Ridge versus baseline models</text>
+<text x="410.0" y="1161" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Event tests; same/next-quarter PQD tests</text>
+<text x="410.0" y="1196" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Check multiplicity and time stability</text>
+<text x="410.0" y="1231" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Tests run ≠ transmission established</text>
+<rect x="840" y="1045" width="700" height="250" rx="16" fill="#f5f7f9" stroke="#8190a0" stroke-width="3" stroke-dasharray="11 7"/>
+<text x="1190.0" y="1081" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#142236">Proposed daily business assessment</text>
+<text x="1190.0" y="1126" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Verify relevance and actual exposure</text>
+<text x="1190.0" y="1161" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Test S × E × V by channel</text>
+<text x="1190.0" y="1196" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Use only supported rules/parameters</text>
+<text x="1190.0" y="1231" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Do not score missing evidence</text>
+<polyline points="760,1170 839,1170" fill="none" stroke="#506780" stroke-width="4" stroke-dasharray="11 8"/><polygon points="839,1170 824.8080812355314,1177.3884668086637 824.8080812355314,1162.6115331913363" fill="#506780"/>
+<polyline points="1190,1295 1190,1322 800,1322 800,1350" fill="none" stroke="#506780" stroke-width="4"/><polygon points="800,1350 792.6115331913363,1335.8080812355315 807.3884668086637,1335.8080812355315" fill="#506780"/>
+<rect x="190" y="1355" width="1220" height="165" rx="16" fill="#f5f7f9" stroke="#8190a0" stroke-width="3" stroke-dasharray="11 7"/>
+<text x="800.0" y="1391" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#142236">Event × business × outcome dimension</text>
+<text x="800.0" y="1436" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Separate financial burden, liquidity, service quality and opportunity</text>
+<text x="800.0" y="1471" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Report direction, magnitude, units, horizon and evidence status</text>
+<polyline points="800,1520 800,1560" fill="none" stroke="#506780" stroke-width="4"/><polygon points="800,1560 792.6115331913363,1545.8080812355315 807.3884668086637,1545.8080812355315" fill="#506780"/>
+<rect x="190" y="1565" width="1220" height="145" rx="16" fill="#f5f7f9" stroke="#8190a0" stroke-width="3" stroke-dasharray="11 7"/>
+<text x="800.0" y="1601" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#142236">Track observed business responses</text>
+<text x="800.0" y="1646" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Compare with business-specific baselines; retain alternative explanations</text>
+<text x="800.0" y="1681" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Quarterly peaks do not identify event-day impacts</text>
+<polyline points="800,1710 800,1750" fill="none" stroke="#506780" stroke-width="4"/><polygon points="800,1750 792.6115331913363,1735.8080812355315 807.3884668086637,1735.8080812355315" fill="#506780"/>
+<rect x="190" y="1755" width="1220" height="145" rx="16" fill="#f5f7f9" stroke="#8190a0" stroke-width="3" stroke-dasharray="11 7"/>
+<text x="800.0" y="1791" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#142236">Revalidate with genuinely new observations</text>
+<text x="800.0" y="1836" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Freeze definitions; validate later periods; control overfitting</text>
+<text x="800.0" y="1871" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="400" fill="#142236">Daily collection does not automatically retrain the models</text>
+<polyline points="800,1900 800,1940 25,1940 25,1170 60,1170" fill="none" stroke="#506780" stroke-width="4" stroke-dasharray="11 8"/><polygon points="60,1170 45.80808123553145,1177.3884668086637 45.80808123553145,1162.6115331913363" fill="#506780"/>
+<text x="800" y="1983" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" font-weight="400" fill="#142236">Feed new evidence into validation, not repeated tuning on a seen test set</text>
+<text x="800" y="2045" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" font-weight="400" fill="#142236">Blue: existing work   Dashed gray: proposed/unvalidated   Prepared 2026-10-15</text>
+</svg>

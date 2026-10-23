@@ -1,0 +1,6 @@
+{
+  "date": "2026-10-16",
+  "defect": "Some official second-half files begin on the15th. Enforcing day>15 discarded valid observations.",
+  "repair": "Use actual valid settlement dates within the correct month, then reconcile any overlapping dates from both half-month archives and deduplicate only identical aggregates. No threshold, feature, direction or regression changes.",
+  "old_run": "diagnostics/rejected_ftd_halfmonth_filter_run.json is superseded and must not be used"
+}

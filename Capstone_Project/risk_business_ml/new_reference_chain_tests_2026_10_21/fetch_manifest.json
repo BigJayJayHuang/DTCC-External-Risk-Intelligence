@@ -1,0 +1,458 @@
+[
+  {
+    "name": "REPO-GCF_AR_OO-F.json",
+    "url": "https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-GCF_AR_OO-F&start_date=2018-01-01&end_date=2026-10-20",
+    "retrieved_at_utc": "2026-10-21T20:01:59.038630+00:00",
+    "http_status": 200,
+    "content_type": "application/json",
+    "final_url": "https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-GCF_AR_OO-F&start_date=2018-01-01&end_date=2026-10-20",
+    "status": "downloaded",
+    "bytes": 44713,
+    "sha256": "37bb1fedb576425086dd069cc4f5f9e9493337aa31a3215b5a78809b4a532656"
+  },
+  {
+    "name": "REPO-GCF_AR_OO-F_metadata.json",
+    "url": "https://data.financialresearch.gov/v1/metadata/query?mnemonic=REPO-GCF_AR_OO-F",
+    "retrieved_at_utc": "2026-10-21T20:01:59.038894+00:00",
+    "http_status": 200,
+    "content_type": "application/json",
+    "final_url": "https://data.financialresearch.gov/v1/metadata/query?mnemonic=REPO-GCF_AR_OO-F",
+    "status": "downloaded",
+    "bytes": 1404,
+    "sha256": "ef2fd378802e7d5709fefdd8a170f35325d16fc4959e4ec72eb20e9e23d92173"
+  },
+  {
+    "name": "REPO-DVP_AR_OO-F.json",
+    "url": "https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-DVP_AR_OO-F&start_date=2018-01-01&end_date=2026-10-20",
+    "retrieved_at_utc": "2026-10-21T20:01:59.039143+00:00",
+    "http_status": 200,
+    "content_type": "application/json",
+    "final_url": "https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-DVP_AR_OO-F&start_date=2018-01-01&end_date=2026-10-20",
+    "status": "downloaded",
+    "bytes": 44623,
+    "sha256": "e488a783983a0d0ec0dbc9fa76b93640d2ed085ad0e2340e8501788958a4bb94"
+  },
+  {
+    "name": "REPO-DVP_AR_OO-F_metadata.json",
+    "url": "https://data.financialresearch.gov/v1/metadata/query?mnemonic=REPO-DVP_AR_OO-F",
+    "retrieved_at_utc": "2026-10-21T20:01:59.039234+00:00",
+    "http_status": 200,
+    "content_type": "application/json",
+    "final_url": "https://data.financialresearch.gov/v1/metadata/query?mnemonic=REPO-DVP_AR_OO-F",
+    "status": "downloaded",
+    "bytes": 1370,
+    "sha256": "44303f9b59e62b3abcb7536e84ca2b439604a75561b39d90b4c424aa9b504c3c"
+  },
+  {
+    "name": "REPO-GCF_TV_TOT-F.json",
+    "url": "https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-GCF_TV_TOT-F&start_date=2018-01-01&end_date=2026-10-20",
+    "retrieved_at_utc": "2026-10-21T20:01:59.039377+00:00",
+    "http_status": 200,
+    "content_type": "application/json",
+    "final_url": "https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-GCF_TV_TOT-F&start_date=2018-01-01&end_date=2026-10-20",
+    "status": "downloaded",
+    "bytes": 64603,
+    "sha256": "1f5cca62b9d5bb338fc868b467385980186deb5ae447e528e79d770ca76803a8"
+  },
+  {
+    "name": "REPO-GCF_TV_TOT-F_metadata.json",
+    "url": "https://data.financialresearch.gov/v1/metadata/query?mnemonic=REPO-GCF_TV_TOT-F",
+    "retrieved_at_utc": "2026-10-21T20:01:59.521106+00:00",
+    "http_status": 200,
+    "content_type": "application/json",
+    "final_url": "https://data.financialresearch.gov/v1/metadata/query?mnemonic=REPO-GCF_TV_TOT-F",
+    "status": "downloaded",
+    "bytes": 1529,
+    "sha256": "4212da4571f78f26a0b0d92a16c599921e9490878c2887cbc91cb4ae5e69c32a"
+  },
+  {
+    "name": "REPO-TRIV1_TV_TOT-F.json",
+    "url": "https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-TRIV1_TV_TOT-F&start_date=2018-01-01&end_date=2026-10-20",
+    "retrieved_at_utc": "2026-10-21T20:01:59.722960+00:00",
+    "http_status": 200,
+    "content_type": "application/json",
+    "final_url": "https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-TRIV1_TV_TOT-F&start_date=2018-01-01&end_date=2026-10-20",
+    "status": "downloaded",
+    "bytes": 71127,
+    "sha256": "10c18b134d9df21c13f32256daa839a2c889641288e0163520bfe4cc9ba6758e"
+  },
+  {
+    "name": "REPO-TRIV1_TV_TOT-F_metadata.json",
+    "url": "https://data.financialresearch.gov/v1/metadata/query?mnemonic=REPO-TRIV1_TV_TOT-F",
+    "retrieved_at_utc": "2026-10-21T20:02:00.227777+00:00",
+    "http_status": 200,
+    "content_type": "application/json",
+    "final_url": "https://data.financialresearch.gov/v1/metadata/query?mnemonic=REPO-TRIV1_TV_TOT-F",
+    "status": "downloaded",
+    "bytes": 1654,
+    "sha256": "ddc367eeec7c08aa8cb22be8eb8db44f0098c5d75001eb1e0ff6fe1deda76032"
+  },
+  {
+    "name": "treasury_auctions_2018.json",
+    "url": "https://www.treasurydirect.gov/TA_WS/securities/search?auctionDate=2018-01-01%2C2018-12-31&format=json",
+    "retrieved_at_utc": "2026-10-21T20:02:01.086790+00:00",
+    "status": "failed",
+    "error": "URLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)'))"
+  },
+  {
+    "name": "treasury_auctions_2019.json",
+    "url": "https://www.treasurydirect.gov/TA_WS/securities/search?auctionDate=2019-01-01%2C2019-12-31&format=json",
+    "retrieved_at_utc": "2026-10-21T20:02:01.290039+00:00",
+    "status": "failed",
+    "error": "URLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)'))"
+  },
+  {
+    "name": "treasury_auctions_2020.json",
+    "url": "https://www.treasurydirect.gov/TA_WS/securities/search?auctionDate=2020-01-01%2C2020-12-31&format=json",
+    "retrieved_at_utc": "2026-10-21T20:02:01.295759+00:00",
+    "status": "failed",
+    "error": "URLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)'))"
+  },
+  {
+    "name": "treasury_auctions_2021.json",
+    "url": "https://www.treasurydirect.gov/TA_WS/securities/search?auctionDate=2021-01-01%2C2021-12-31&format=json",
+    "retrieved_at_utc": "2026-10-21T20:02:01.347905+00:00",
+    "status": "failed",
+    "error": "URLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)'))"
+  },
+  {
+    "name": "treasury_auctions_2022.json",
+    "url": "https://www.treasurydirect.gov/TA_WS/securities/search?auctionDate=2022-01-01%2C2022-12-31&format=json",
+    "retrieved_at_utc": "2026-10-21T20:02:01.348324+00:00",
+    "status": "failed",
+    "error": "URLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)'))"
+  },
+  {
+    "name": "treasury_auctions_2023.json",
+    "url": "https://www.treasurydirect.gov/TA_WS/securities/search?auctionDate=2023-01-01%2C2023-12-31&format=json",
+    "retrieved_at_utc": "2026-10-21T20:02:01.386595+00:00",
+    "status": "failed",
+    "error": "URLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)'))"
+  },
+  {
+    "name": "treasury_auctions_2024.json",
+    "url": "https://www.treasurydirect.gov/TA_WS/securities/search?auctionDate=2024-01-01%2C2024-12-31&format=json",
+    "retrieved_at_utc": "2026-10-21T20:02:01.394790+00:00",
+    "status": "failed",
+    "error": "URLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)'))"
+  },
+  {
+    "name": "treasury_auctions_2025.json",
+    "url": "https://www.treasurydirect.gov/TA_WS/securities/search?auctionDate=2025-01-01%2C2025-12-31&format=json",
+    "retrieved_at_utc": "2026-10-21T20:02:01.398318+00:00",
+    "status": "failed",
+    "error": "URLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)'))"
+  },
+  {
+    "name": "treasury_auctions_2026.json",
+    "url": "https://www.treasurydirect.gov/TA_WS/securities/search?auctionDate=2026-01-01%2C2026-10-20&format=json",
+    "retrieved_at_utc": "2026-10-21T20:02:01.438183+00:00",
+    "status": "failed",
+    "error": "URLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)'))"
+  },
+  {
+    "name": "acats_lehman_2008.pdf",
+    "url": "https://www.dtcc.com/-/media/Files/pdf/2008/9/24/a6712.pdf",
+    "retrieved_at_utc": "2026-10-21T20:02:01.447277+00:00",
+    "status": "failed",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "name": "acats_project_2012.pdf",
+    "url": "https://www.dtcc.com/-/media/Files/pdf/2012/12/21/a7556.pdf",
+    "retrieved_at_utc": "2026-10-21T20:02:01.447432+00:00",
+    "status": "failed",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "name": "dtc_chill_2016.pdf",
+    "url": "https://www.dtcc.com/-/media/Files/Downloads/legal/rule-filings/2016/dtc/SR-DTC-2016-003.pdf",
+    "retrieved_at_utc": "2026-10-21T20:02:01.455428+00:00",
+    "status": "failed",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "name": "epn_rules.pdf",
+    "url": "https://www.dtcc.com/~/media/files/downloads/legal/rules/ficc_mbsd_epnrules.pdf",
+    "retrieved_at_utc": "2026-10-21T20:02:01.494424+00:00",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "final_url": "https://files.dtcc.com/download/assets/ficc_mbsd_epnrules.pdf/4c561ca4369211f09a845e09fb65ecc7",
+    "status": "downloaded",
+    "bytes": 297212,
+    "sha256": "99e4bb7f78d0ca6324fba08eefed5a958ab4f683aa6fe7723a51495f082a2a6f"
+  },
+  {
+    "name": "dtc_settlement_guide.pdf",
+    "url": "https://www.dtcc.com/~/media/Files/Downloads/legal/service-guides/Settlement.pdf",
+    "retrieved_at_utc": "2026-10-21T20:02:02.011356+00:00",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "final_url": "https://files.dtcc.com/download/assets/Settlement.pdf/c83a99be369a11f093d0c204a2f8334f",
+    "status": "downloaded",
+    "bytes": 590193,
+    "sha256": "61dadbf7370a4c6238c11d6fac29b79cbd6fbc68f445638100f08b7572ddd029"
+  },
+  {
+    "name": "ficc_mbsd_rules.pdf",
+    "url": "https://www.dtcc.com/~/media/Files/Downloads/legal/rules/ficc_mbsd_rules.pdf",
+    "retrieved_at_utc": "2026-10-21T20:02:02.327102+00:00",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "final_url": "https://files.dtcc.com/download/assets/ficc_mbsd_rules.pdf/d410be52369111f0b606526112f6cc5f",
+    "status": "downloaded",
+    "bytes": 984463,
+    "sha256": "8f2f9dfed34bf60a312df2243b4d73841c99053fb417f04f441db9075cbcab16"
+  },
+  {
+    "name": "nscc_rules.pdf",
+    "url": "https://www.dtcc.com/~/media/Files/Downloads/legal/rules/nscc_rules.pdf",
+    "retrieved_at_utc": "2026-10-21T20:02:02.387115+00:00",
+    "status": "failed",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "name": "dtc_rules.pdf",
+    "url": "https://www.dtcc.com/~/media/Files/Downloads/legal/rules/dtc_rules.pdf",
+    "retrieved_at_utc": "2026-10-21T20:02:02.442886+00:00",
+    "status": "failed",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "name": "dtcc_2025_annual.pdf",
+    "url": "https://www.dtcc.com/about/-/media/Files/Downloads/Annual%20Report/2025/DTCC-Annual-Report-2025-Print.pdf",
+    "retrieved_at_utc": "2026-10-21T20:02:02.626635+00:00",
+    "status": "failed",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "name": "dtcc_2020_annual.pdf",
+    "url": "https://www.dtcc.com/annuals/2020/pdf/DTCC_2020_AR_Print.pdf",
+    "retrieved_at_utc": "2026-10-21T20:02:02.689559+00:00",
+    "status": "failed",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "name": "dtcc_2022_annual.pdf",
+    "url": "https://www.dtcc.com/about/-/media/Files/Downloads/Annual-Report-2022/DTCC2022AR-PRINT.pdf",
+    "retrieved_at_utc": "2026-10-21T20:02:02.950402+00:00",
+    "status": "failed",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "name": "dtcc_sandy_financials_2012.pdf",
+    "url": "https://www.dtcc.com/annuals/2012/images/auditors-report/DTCC-Consolidated_Financial-Statements-Jai.pdf",
+    "retrieved_at_utc": "2026-10-21T20:02:03.219615+00:00",
+    "status": "failed",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "name": "cds_financial_risk_model_2025.pdf",
+    "url": "https://www.cds.ca/resource/en/56",
+    "retrieved_at_utc": "2026-10-21T20:02:03.229825+00:00",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "final_url": "https://www.cds.ca/resource/en/56",
+    "status": "downloaded",
+    "bytes": 1715620,
+    "sha256": "d287c659599876829e199e44f233b598ad833e30650dfcd050b969c27c2965af"
+  },
+  {
+    "name": "sft_access_2026.html",
+    "url": "https://www.dtcc.com/press-releases/2026/dtcc-receives-regulatory-approval-to-launch-new-client-access-model-for-nsccs-sft-clearing-service",
+    "retrieved_at_utc": "2026-10-21T20:02:03.283505+00:00",
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "final_url": "https://www.dtcc.com/press-releases/2026/dtcc-receives-regulatory-approval-to-launch-new-client-access-model-for-nsccs-sft-clearing-service",
+    "status": "downloaded",
+    "bytes": 305503,
+    "sha256": "21902ff7600a235cef8c6d402ccea4a5c8425df5535429df4605d3e961b2574e"
+  },
+  {
+    "name": "treasury_auctions_all.json",
+    "url": "https://www.treasurydirect.gov/TA_WS/securities/search?auctionDate=2025-01-01,2025-12-31&format=json",
+    "status": "downloaded",
+    "transport": "system curl; TLS verification enabled",
+    "retrieved_at_utc": "2026-10-21T20:05:20.780622+00:00",
+    "sha256": "a15e4b28489641d8dc85db1d0d347f4057888e5e292ff7b37de07d3a14490426",
+    "bytes": 73898691,
+    "server_filter_ignored": true,
+    "n_records": 11158,
+    "actual_date_field": "competitiveAuctionCloseDate",
+    "observed_min": "1979-10-31T00:00:00",
+    "observed_max": "2026-10-22T00:00:00",
+    "handling": "one full response; date and completed-auction filtering performed locally"
+  },
+  {
+    "name": "BOGZ1FU632051000Q.csv",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BOGZ1FU632051000Q&cosd=2000-01-01&coed=2026-10-20",
+    "retrieved_at_utc": "2026-10-21T20:05:20.813384+00:00",
+    "status": "failed",
+    "error": "RemoteDisconnected('Remote end closed connection without response')"
+  },
+  {
+    "name": "BOGZ1FU653164205Q.csv",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BOGZ1FU653164205Q&cosd=2000-01-01&coed=2026-10-20",
+    "retrieved_at_utc": "2026-10-21T20:05:20.813563+00:00",
+    "status": "failed",
+    "error": "RemoteDisconnected('Remote end closed connection without response')"
+  },
+  {
+    "name": "unscheduled_closing.pdf",
+    "url": "https://www.dtcc.com/~/media/Files/Downloads/issues/Unscheduled_Close.pdf",
+    "retrieved_at_utc": "2026-10-21T20:05:20.813897+00:00",
+    "status": "failed",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "name": "carter_2025_notice.pdf",
+    "url": "https://www.dtcc.com/-/media/Files/pdf/2024/12/30/0275.pdf",
+    "retrieved_at_utc": "2026-10-21T20:05:20.814019+00:00",
+    "status": "failed",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "name": "acats_2008_stop.pdf",
+    "url": "https://www.dtcc.com/-/media/Files/pdf/2008/9/22/a6705.pdf",
+    "retrieved_at_utc": "2026-10-21T20:05:20.814155+00:00",
+    "status": "failed",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "name": "BOGZ1FU632051000Q.txt",
+    "url": "https://fred.stlouisfed.org/data/BOGZ1FU632051000Q.txt",
+    "retrieved_at_utc": "2026-10-21T20:06:13.505799+00:00",
+    "status": "failed",
+    "error": "TimeoutError('The read operation timed out')"
+  },
+  {
+    "name": "BOGZ1FU653164205Q.txt",
+    "url": "https://fred.stlouisfed.org/data/BOGZ1FU653164205Q.txt",
+    "retrieved_at_utc": "2026-10-21T20:06:13.506445+00:00",
+    "status": "failed",
+    "error": "TimeoutError('The read operation timed out')"
+  },
+  {
+    "name": "sec_dtc_chill_2014.pdf",
+    "url": "https://public-inspection.federalregister.gov/2014-06459.pdf",
+    "retrieved_at_utc": "2026-10-21T20:06:13.506549+00:00",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "final_url": "https://public-inspection.federalregister.gov/2014-06459.pdf",
+    "status": "downloaded",
+    "bytes": 218048,
+    "sha256": "2168ab9b053c5af42125681e821c74b978b3ac7866b7e37b63e23cd715bb0050"
+  },
+  {
+    "name": "sec_suspension_2012.html",
+    "url": "https://www.sec.gov/news/digest/2012/dig031512.htm",
+    "retrieved_at_utc": "2026-10-21T20:06:13.506649+00:00",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "dtcc_2022_annual_alternative.pdf",
+    "url": "https://www.dtcc.com/-/media/Files/Downloads/Annual-Report-2022/DTCC2022AR-PRINT.pdf",
+    "retrieved_at_utc": "2026-10-21T20:06:13.506698+00:00",
+    "status": "failed",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "name": "fed_z1_20260911.zip",
+    "url": "https://www.federalreserve.gov/releases/z1/20260911/z1_csv_files.zip",
+    "retrieved_at_utc": "2026-10-21T20:08:11.394010+00:00",
+    "http_status": 200,
+    "content_type": "application/x-zip-compressed",
+    "final_url": "https://www.federalreserve.gov/releases/z1/20260911/z1_csv_files.zip",
+    "status": "downloaded",
+    "bytes": 8336582,
+    "sha256": "b63af9755437df0fb88b7cf346f8f9eaeb22bf1aa2b5df1709334135c43de4b6"
+  },
+  {
+    "name": "nscc_rules_current.pdf",
+    "url": "https://files.dtcc.com/download/assets/nscc_rules.pdf/85bda02a369211f0a3ae820bd5ac0897",
+    "retrieved_at_utc": "2026-10-21T20:15:18.012654+00:00",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "final_url": "https://files.dtcc.com/download/assets/nscc_rules.pdf/85bda02a369211f0a3ae820bd5ac0897",
+    "status": "downloaded",
+    "bytes": 1489193,
+    "sha256": "8db8b5201cc665e7b74054058e9fb20cc2a36f49b33ad84a936e33f0cd57da06"
+  },
+  {
+    "name": "gsd_rules_current.pdf",
+    "url": "https://files.dtcc.com/download/assets/FICC-GSD%2BRulebook%2B%E2%80%93%2B2026-0826%2BFinal.pdf/b6c07124ceb411f09c9062cd3fe05a01",
+    "retrieved_at_utc": "2026-10-21T20:15:18.013149+00:00",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "final_url": "https://files.dtcc.com/download/assets/FICC-GSD%2BRulebook%2B%E2%80%93%2B2026-0826%2BFinal.pdf/b6c07124ceb411f09c9062cd3fe05a01",
+    "status": "downloaded",
+    "bytes": 1825028,
+    "sha256": "d710d584501f93934277c294c1c6b1350010839bdeb2edca4280c2b2c80968a6"
+  },
+  {
+    "name": "dtc_rules_current.pdf",
+    "url": "https://files.dtcc.com/download/assets/dtc_rules.pdf/6064c95e369511f09a845e09fb65ecc7",
+    "retrieved_at_utc": "2026-10-21T20:15:18.013274+00:00",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "final_url": "https://files.dtcc.com/download/assets/dtc_rules.pdf/6064c95e369511f09a845e09fb65ecc7",
+    "status": "downloaded",
+    "bytes": 863045,
+    "sha256": "129d15810713a064d4de9aaf0bdd60319ae9065260268caa4f66976f84a1bf6e"
+  },
+  {
+    "name": "custody_guide_current.pdf",
+    "url": "https://files.dtcc.com/download/assets/Custody.pdf/faa7f57c369511f0bf68c204a2f8334f",
+    "retrieved_at_utc": "2026-10-21T20:15:18.013374+00:00",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "final_url": "https://files.dtcc.com/download/assets/Custody.pdf/faa7f57c369511f0bf68c204a2f8334f",
+    "status": "downloaded",
+    "bytes": 327734,
+    "sha256": "61244f56d4fb6ac2e793f4026417dbdf48f38ccf4ae44f378c525c28fac05c5c"
+  },
+  {
+    "name": "deposits_guide_current.pdf",
+    "url": "https://files.dtcc.com/download/assets/Deposits.pdf/6f4ff35c369111f0a96e92d5ae67c534",
+    "retrieved_at_utc": "2026-10-21T20:15:18.013477+00:00",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "final_url": "https://files.dtcc.com/download/assets/Deposits.pdf/6f4ff35c369111f0a96e92d5ae67c534",
+    "status": "downloaded",
+    "bytes": 398027,
+    "sha256": "c290c8820989c39e5f68492ebd51240fe7f1e61249ad0d98b0021c6a4e34f83a"
+  },
+  {
+    "name": "acs_launch_2025.html",
+    "url": "https://www.dtcc.com/press-releases/2025/dtccs-ficc-now-live-with-new-treasury-clearing-capabilities",
+    "retrieved_at_utc": "2026-10-21T20:15:18.581782+00:00",
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "final_url": "https://www.dtcc.com/press-releases/2025/dtccs-ficc-now-live-with-new-treasury-clearing-capabilities",
+    "status": "downloaded",
+    "bytes": 309785,
+    "sha256": "42764b4901eba85bc47e0c935e80f9cd5f7cc751037f10a083b0ef0e6db5c6d7"
+  },
+  {
+    "name": "cftc_mfglobal.html",
+    "url": "https://www.cftc.gov/PressRoom/PressReleases/6626-13",
+    "retrieved_at_utc": "2026-10-21T20:15:18.659048+00:00",
+    "status": "downloaded",
+    "transport": "system curl; TLS verification enabled",
+    "python_tls_error": "URLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)'))",
+    "bytes": 41419,
+    "sha256": "a58a0cc2dc4eb2fd0933d1b23fe1bb791fc0054c7fa4ce0be51935379bf14e05"
+  },
+  {
+    "name": "dtcc_rules_index.html",
+    "url": "https://www.dtcc.com/legal/rules-and-procedures",
+    "retrieved_at_utc": "2026-10-21T20:15:18.688825+00:00",
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "final_url": "https://www.dtcc.com/legal/rules-and-procedures",
+    "status": "downloaded",
+    "bytes": 306510,
+    "sha256": "2ba9d47ef105d2108c4d459a1fc90e24cc7c4eb4cf6c5cdbbc59ee4d5606e61d"
+  }
+]

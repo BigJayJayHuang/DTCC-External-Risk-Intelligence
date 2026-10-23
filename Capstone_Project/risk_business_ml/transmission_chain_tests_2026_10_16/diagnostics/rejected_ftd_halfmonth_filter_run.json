@@ -1,0 +1,515 @@
+{
+  "chain_id": "ECS-NSCC-02A",
+  "n_weeks": 354,
+  "shock_weeks": 120,
+  "first_week": "2018-06-30/2018-07-06",
+  "last_week": "2026-09-19/2026-09-25",
+  "coefficient_million_outstanding_shares": 30.03086219523367,
+  "hac_p": 0.0002185643510333744,
+  "ci_low": 14.107991383957115,
+  "ci_high": 45.95373300651023,
+  "pass_card": true,
+  "interpretation": "association with outstanding fail balances, not a failure rate, causal effect or new fail flows",
+  "files": 210,
+  "raw_security_day_rows": 11086445,
+  "daily_observations": 2114,
+  "source_quality_flags": [
+    {
+      "file": "sec_ftd_201802b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 4746,
+      "observed_first": "2018-02-15",
+      "observed_last": "2018-02-28"
+    },
+    {
+      "file": "sec_ftd_201803b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5287,
+      "observed_first": "2018-03-15",
+      "observed_last": "2018-03-29"
+    },
+    {
+      "file": "sec_ftd_201805b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 4513,
+      "observed_first": "2018-05-15",
+      "observed_last": "2018-05-31"
+    },
+    {
+      "file": "sec_ftd_201806b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5162,
+      "observed_first": "2018-06-15",
+      "observed_last": "2018-06-29"
+    },
+    {
+      "file": "sec_ftd_201808b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 4661,
+      "observed_first": "2018-08-15",
+      "observed_last": "2018-08-31"
+    },
+    {
+      "file": "sec_ftd_201810b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 4579,
+      "observed_first": "2018-10-15",
+      "observed_last": "2018-10-31"
+    },
+    {
+      "file": "sec_ftd_201811b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 4357,
+      "observed_first": "2018-11-15",
+      "observed_last": "2018-11-30"
+    },
+    {
+      "file": "sec_ftd_201901b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 4512,
+      "observed_first": "2019-01-15",
+      "observed_last": "2019-01-31"
+    },
+    {
+      "file": "sec_ftd_201902b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 4984,
+      "observed_first": "2019-02-15",
+      "observed_last": "2019-02-28"
+    },
+    {
+      "file": "sec_ftd_201903b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 4292,
+      "observed_first": "2019-03-15",
+      "observed_last": "2019-03-29"
+    },
+    {
+      "file": "sec_ftd_201904b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 4194,
+      "observed_first": "2019-04-15",
+      "observed_last": "2019-04-30"
+    },
+    {
+      "file": "sec_ftd_201905b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 4751,
+      "observed_first": "2019-05-15",
+      "observed_last": "2019-05-31"
+    },
+    {
+      "file": "sec_ftd_201907b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 4220,
+      "observed_first": "2019-07-15",
+      "observed_last": "2019-07-31"
+    },
+    {
+      "file": "sec_ftd_201908b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 4112,
+      "observed_first": "2019-08-15",
+      "observed_last": "2019-08-30"
+    },
+    {
+      "file": "sec_ftd_201910b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 3704,
+      "observed_first": "2019-10-15",
+      "observed_last": "2019-10-31"
+    },
+    {
+      "file": "sec_ftd_201911b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 3678,
+      "observed_first": "2019-11-15",
+      "observed_last": "2019-11-29"
+    },
+    {
+      "file": "sec_ftd_202001b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 3860,
+      "observed_first": "2020-01-15",
+      "observed_last": "2020-01-31"
+    },
+    {
+      "file": "sec_ftd_202004b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5117,
+      "observed_first": "2020-04-15",
+      "observed_last": "2020-04-30"
+    },
+    {
+      "file": "sec_ftd_202005b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 4608,
+      "observed_first": "2020-05-15",
+      "observed_last": "2020-05-29"
+    },
+    {
+      "file": "sec_ftd_202006b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5177,
+      "observed_first": "2020-06-15",
+      "observed_last": "2020-06-30"
+    },
+    {
+      "file": "sec_ftd_202007b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 4795,
+      "observed_first": "2020-07-15",
+      "observed_last": "2020-07-31"
+    },
+    {
+      "file": "sec_ftd_202009b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 4634,
+      "observed_first": "2020-09-15",
+      "observed_last": "2020-09-30"
+    },
+    {
+      "file": "sec_ftd_202010b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5014,
+      "observed_first": "2020-10-15",
+      "observed_last": "2020-10-30"
+    },
+    {
+      "file": "sec_ftd_202012b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5426,
+      "observed_first": "2020-12-15",
+      "observed_last": "2020-12-31"
+    },
+    {
+      "file": "sec_ftd_202101b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5562,
+      "observed_first": "2021-01-15",
+      "observed_last": "2021-01-29"
+    },
+    {
+      "file": "sec_ftd_202103b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5850,
+      "observed_first": "2021-03-15",
+      "observed_last": "2021-03-31"
+    },
+    {
+      "file": "sec_ftd_202104b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5354,
+      "observed_first": "2021-04-15",
+      "observed_last": "2021-04-30"
+    },
+    {
+      "file": "sec_ftd_202106b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 6489,
+      "observed_first": "2021-06-15",
+      "observed_last": "2021-06-30"
+    },
+    {
+      "file": "sec_ftd_202107b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5659,
+      "observed_first": "2021-07-15",
+      "observed_last": "2021-07-30"
+    },
+    {
+      "file": "sec_ftd_202109b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5490,
+      "observed_first": "2021-09-15",
+      "observed_last": "2021-09-30"
+    },
+    {
+      "file": "sec_ftd_202110b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5464,
+      "observed_first": "2021-10-15",
+      "observed_last": "2021-10-29"
+    },
+    {
+      "file": "sec_ftd_202111b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 6431,
+      "observed_first": "2021-11-15",
+      "observed_last": "2021-11-30"
+    },
+    {
+      "file": "sec_ftd_202112b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5760,
+      "observed_first": "2021-12-15",
+      "observed_last": "2021-12-31"
+    },
+    {
+      "file": "sec_ftd_202202b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 6263,
+      "observed_first": "2022-02-15",
+      "observed_last": "2022-02-28"
+    },
+    {
+      "file": "sec_ftd_202203b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 6406,
+      "observed_first": "2022-03-15",
+      "observed_last": "2022-03-31"
+    },
+    {
+      "file": "sec_ftd_202206b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 6280,
+      "observed_first": "2022-06-15",
+      "observed_last": "2022-06-30"
+    },
+    {
+      "file": "sec_ftd_202207b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5763,
+      "observed_first": "2022-07-15",
+      "observed_last": "2022-07-29"
+    },
+    {
+      "file": "sec_ftd_202208b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 6085,
+      "observed_first": "2022-08-15",
+      "observed_last": "2022-08-31"
+    },
+    {
+      "file": "sec_ftd_202209b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5869,
+      "observed_first": "2022-09-15",
+      "observed_last": "2022-09-30"
+    },
+    {
+      "file": "sec_ftd_202211b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 6454,
+      "observed_first": "2022-11-15",
+      "observed_last": "2022-11-30"
+    },
+    {
+      "file": "sec_ftd_202212b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5965,
+      "observed_first": "2022-12-15",
+      "observed_last": "2022-12-30"
+    },
+    {
+      "file": "sec_ftd_202302b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5604,
+      "observed_first": "2023-02-15",
+      "observed_last": "2023-02-28"
+    },
+    {
+      "file": "sec_ftd_202303b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5965,
+      "observed_first": "2023-03-15",
+      "observed_last": "2023-03-31"
+    },
+    {
+      "file": "sec_ftd_202305b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5805,
+      "observed_first": "2023-05-15",
+      "observed_last": "2023-05-31"
+    },
+    {
+      "file": "sec_ftd_202306b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5699,
+      "observed_first": "2023-06-15",
+      "observed_last": "2023-06-30"
+    },
+    {
+      "file": "sec_ftd_202308b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 6561,
+      "observed_first": "2023-08-15",
+      "observed_last": "2023-08-31"
+    },
+    {
+      "file": "sec_ftd_202309b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5533,
+      "observed_first": "2023-09-15",
+      "observed_last": "2023-09-29"
+    },
+    {
+      "file": "sec_ftd_202311b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 4762,
+      "observed_first": "2023-11-15",
+      "observed_last": "2023-11-30"
+    },
+    {
+      "file": "sec_ftd_202312b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5425,
+      "observed_first": "2023-12-15",
+      "observed_last": "2023-12-29"
+    },
+    {
+      "file": "sec_ftd_202402b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5280,
+      "observed_first": "2024-02-15",
+      "observed_last": "2024-02-29"
+    },
+    {
+      "file": "sec_ftd_202403b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5247,
+      "observed_first": "2024-03-15",
+      "observed_last": "2024-03-28"
+    },
+    {
+      "file": "sec_ftd_202404b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 4859,
+      "observed_first": "2024-04-15",
+      "observed_last": "2024-04-30"
+    },
+    {
+      "file": "sec_ftd_202405b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 4586,
+      "observed_first": "2024-05-15",
+      "observed_last": "2024-05-31"
+    },
+    {
+      "file": "sec_ftd_202407b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5492,
+      "observed_first": "2024-07-15",
+      "observed_last": "2024-07-31"
+    },
+    {
+      "file": "sec_ftd_202408b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 4624,
+      "observed_first": "2024-08-15",
+      "observed_last": "2024-08-30"
+    },
+    {
+      "file": "sec_ftd_202410b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 8112,
+      "observed_first": "2024-10-15",
+      "observed_last": "2024-10-31"
+    },
+    {
+      "file": "sec_ftd_202411b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 4955,
+      "observed_first": "2024-11-15",
+      "observed_last": "2024-11-29"
+    },
+    {
+      "file": "sec_ftd_202501b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5174,
+      "observed_first": "2025-01-15",
+      "observed_last": "2025-01-31"
+    },
+    {
+      "file": "sec_ftd_202504b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5337,
+      "observed_first": "2025-04-15",
+      "observed_last": "2025-04-30"
+    },
+    {
+      "file": "sec_ftd_202505b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5480,
+      "observed_first": "2025-05-15",
+      "observed_last": "2025-05-30"
+    },
+    {
+      "file": "sec_ftd_202507b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5199,
+      "observed_first": "2025-07-15",
+      "observed_last": "2025-07-31"
+    },
+    {
+      "file": "sec_ftd_202508b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5048,
+      "observed_first": "2025-08-15",
+      "observed_last": "2025-08-29"
+    },
+    {
+      "file": "sec_ftd_202509b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5103,
+      "observed_first": "2025-09-15",
+      "observed_last": "2025-09-30"
+    },
+    {
+      "file": "sec_ftd_202510b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5776,
+      "observed_first": "2025-10-15",
+      "observed_last": "2025-10-31"
+    },
+    {
+      "file": "sec_ftd_202512b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5506,
+      "observed_first": "2025-12-15",
+      "observed_last": "2025-12-31"
+    },
+    {
+      "file": "sec_ftd_202601b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5400,
+      "observed_first": "2026-01-15",
+      "observed_last": "2026-01-30"
+    },
+    {
+      "file": "sec_ftd_202604b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5748,
+      "observed_first": "2026-04-15",
+      "observed_last": "2026-04-30"
+    },
+    {
+      "file": "sec_ftd_202605b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5662,
+      "observed_first": "2026-05-15",
+      "observed_last": "2026-05-29"
+    },
+    {
+      "file": "sec_ftd_202606b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 7230,
+      "observed_first": "2026-06-15",
+      "observed_last": "2026-06-30"
+    },
+    {
+      "file": "sec_ftd_202607b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5356,
+      "observed_first": "2026-07-15",
+      "observed_last": "2026-07-31"
+    },
+    {
+      "file": "sec_ftd_202609b.zip",
+      "issue": "rows_outside_filename_period",
+      "n": 5812,
+      "observed_first": "2026-09-15",
+      "observed_last": "2026-09-30"
+    }
+  ]
+}

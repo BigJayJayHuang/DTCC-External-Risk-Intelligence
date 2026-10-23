@@ -1,0 +1,7 @@
+{
+  "amended_at_utc": "2026-10-16T14:06:09.419530+00:00",
+  "stage": "Before collecting OFR outcome series or calculating any new correlations",
+  "reason": "Official OFR repo mnemonic catalogue has no DVP percentile-rate series. Card explicitly permits choosing GCF minus DVP instead.",
+  "GSD02_outcome": "100*(REPO-GCF_AR_OO-F minus REPO-DVP_AR_OO-F) in bp; same overnight/open tenor, final vintage; separate service mixes remain a limitation.",
+  "supersedes": "Original execution plan first-alternative P99-P1 outcome only; no threshold or significance changes."
+}
