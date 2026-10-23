@@ -1,5 +1,7 @@
 # Capstone Project · 总入口
 
+**[传导链统一工作台 / Transmission Chain Board](Capstone_Project/TRANSMISSION_CHAIN_INDEX.md)** — 新增31条链的定义、检验、数据缺口、数据库与队友评分入口。
+
 所有内容已统一放进 **[Capstone_Project](Capstone_Project/README.md)**，包括之前的数据采集、机器学习与验证、中英文报告，以及当前共享数据库和每日更新程序。
 
 **[下载一个完整大包 / Download the complete project ZIP](https://github.com/BigJayJayHuang/DTCC-External-Risk-Intelligence/releases/download/data-latest/Capstone_Project_Complete.zip)**

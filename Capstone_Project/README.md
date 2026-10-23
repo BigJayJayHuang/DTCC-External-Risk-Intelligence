@@ -1,5 +1,7 @@
 # Capstone Project · 统一项目文件夹
 
+**[传导链统一工作台 / Transmission Chain Board](TRANSMISSION_CHAIN_INDEX.md)** — 按定义、检验、数据缺口、数据库和队友周度评分集中导航。
+
 这里集中保存我们已经完成的数据采集、处理、指标检验、报告和共享数据库。先从此页进入，无需逐个寻找散落文件。
 
 ## 从哪里开始
