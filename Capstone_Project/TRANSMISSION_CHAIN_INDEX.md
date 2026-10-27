@@ -6,7 +6,10 @@ Use this board to navigate **definitions → tests → data gaps → database �
 
 ## 先看什么 / Start here
 
-**当前补缺范围 / Current missing-data scope：** [真实数据优先修正版 / Real-data-first revision](risk_business_ml/synthetic_data_scope_revision_2026_10_27/README.md) · [56条逐环节清单 / 56-chain source priority](risk_business_ml/synthetic_data_scope_revision_2026_10_27/SOURCE_PRIORITY_CN.md) · [English](risk_business_ml/synthetic_data_scope_revision_2026_10_27/SOURCE_PRIORITY_EN.md)。9条沿用真实数据、22条仅允许模拟缺失环节、18条为缺专属数据的模拟候选、7条先补事实／定义。当前只重跑3个固定真实输入的缺口示范；此前131种广泛假设情景保留为历史程序实验，不再作为当前补缺覆盖口径。Observed data take priority; weak empirical results are not missing data. The real database, empirical statuses and weekly scores remain unchanged.
+**当前模型输入 / Current model inputs：** [16卡季度V总入口](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/README.md) · [中文说明](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/README_CN.md) · [English](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/README_EN.md) · [模拟季度V](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/data/quarterly_vulnerability_SIMULATED.csv) · [团队卡片ID对照](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/results/card_id_map.csv)。10张缺少真实V的卡片各23季度，2020Q4–2026Q2，共230条模拟V；6张卡沿用真实PQD V及原有缺失值。5条链已纳入，当前16张卡、31条已确认组成链。模拟/真实逐行标记、分文件保存；提供按可用日期读取及S×V接口。历史发布时间及数据修订版本未核实，模拟不是已观测内部缓冲或损失概率。10 cards have explicitly simulated quarterly V;6 retain observed-PQD V. All31 component assignments are confirmed.
+
+
+**历史56条补缺范围 / Historical56-chain missing-data scope：** [真实数据优先修正版 / Real-data-first revision](risk_business_ml/synthetic_data_scope_revision_2026_10_27/README.md) · [56条逐环节清单 / 56-chain source priority](risk_business_ml/synthetic_data_scope_revision_2026_10_27/SOURCE_PRIORITY_CN.md) · [English](risk_business_ml/synthetic_data_scope_revision_2026_10_27/SOURCE_PRIORITY_EN.md)。9条沿用真实数据、22条仅允许模拟缺失环节、18条为缺专属数据的模拟候选、7条先补事实／定义。该历史批次重跑3个固定真实输入的缺口示范；此前131种广泛假设情景保留为历史程序实验，不再作为当前补缺覆盖口径。Observed data take priority; weak empirical results are not missing data. The real database, empirical statuses and weekly scores remain unchanged.
 
 | 目的 / Purpose | 入口 / Open | 阅读提示 / What it means |
 |---|---|---|
