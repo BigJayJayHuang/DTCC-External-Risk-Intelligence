@@ -1,0 +1,745 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-05T08:00:00-04:00",
+  "model_version": "sample",
+  "sample": true,
+  "snapshots": [
+    {
+      "id": "2026-10-05",
+      "date": "2026-10-05",
+      "label": "Week of Oct 5, 2026"
+    },
+    {
+      "id": "2026-09-28",
+      "date": "2026-09-28",
+      "label": "Week of Sep 28, 2026"
+    }
+  ],
+  "lines": {
+    "FICC": {
+      "summary": {
+        "2026-10-05": "Two items hit GSD this week: repo funding pressure and the Dec 31 cash-clearing deadline. Mortgage markets are calm, but MBSD is FICC's most fragile spot, so even a small move there scores Medium.",
+        "2026-09-28": "The Dec 31 cash-clearing deadline is the main item for GSD. Funding markets looked steady."
+      },
+      "coming": [
+        {
+          "date": "2026-12-31",
+          "title": "Cash Treasury clearing compliance"
+        },
+        {
+          "date": "2027-06-30",
+          "title": "Repo clearing compliance"
+        }
+      ],
+      "review": [
+        {
+          "title": "CME Securities Clearing announces new sponsored-access participants",
+          "risk_family": "Strategic",
+          "reason": "competitor impact not yet assessed",
+          "snapshot": "2026-10-05"
+        },
+        {
+          "title": "CISA advisory on a flaw in widely used trading software",
+          "risk_family": "Cyber",
+          "reason": "unclear whether FICC members use the affected product",
+          "snapshot": "2026-10-05"
+        }
+      ]
+    },
+    "ECS": {
+      "summary": {
+        "2026-10-05": "Equity volatility jumped, so NSCC members face larger margin calls this week. A cloud outage at several brokers is the other item to watch before the Dec 18 peak day.",
+        "2026-09-28": "Quiet week. The main item is planning for Dec 18, when triple witching and the S&P quarterly rebalance fall on the same day."
+      },
+      "coming": [
+        {
+          "date": "2026-12-18",
+          "title": "Triple witching and S&P quarterly rebalance"
+        },
+        {
+          "date": "2026-12-31",
+          "title": "Year-end settlement peak"
+        }
+      ],
+      "review": [
+        {
+          "title": "Fintech announces a blockchain-based equity settlement pilot",
+          "risk_family": "Strategic",
+          "reason": "early announcement; no regulatory filing found",
+          "snapshot": "2026-10-05"
+        }
+      ]
+    },
+    "WIS": {
+      "summary": {
+        "2026-10-05": "One item: bond-fund redemptions picked up. WIS has no public PQD buffer, so it shows Shock only."
+      }
+    }
+  },
+  "items": [
+    {
+      "id": "ficc-mandate",
+      "snapshot": "2026-10-05",
+      "business_line": "FICC",
+      "sub_line": "GSD",
+      "region": "US",
+      "risk_family": "Regulatory",
+      "confidence": "High",
+      "shock": 4,
+      "vulnerability": 4,
+      "shock_method": "Event rubric",
+      "shock_basis": "Scheduled and certain, covers all eligible cash Treasury trades, under 90 days away",
+      "vulnerability_basis": "Client-transaction concentration (PQD 19.1.3) at the 72nd percentile of past PQDs",
+      "updated_at": "2026-10-05T07:45:00-04:00",
+      "title": "Treasury cash-clearing deadline is under 90 days away (Dec 31, 2026)",
+      "summary_line": "Firms that do not clear today must onboard before year-end, and client activity is already concentrated in a few sponsoring members.",
+      "what_happened": "The SEC's Treasury clearing rule requires eligible cash Treasury trades to be centrally cleared from Dec 31, 2026, and repo from Jun 30, 2027.",
+      "transmission": {
+        "event": "SEC compliance date for cash Treasury clearing approaches",
+        "mechanism": "Firms that do not clear today onboard through sponsored or agent clearing before year-end",
+        "dtcc_process": "GSD onboarding and sponsored volume. The top 5 members already handle about 70–76% of client transactions"
+      },
+      "so_what": "A late onboarding rush lands on a small group of sponsoring members, while CME and ICE pitch the same clients.",
+      "so_now_what": "Review onboarding progress weekly against the deadline. Escalate if a large client publicly picks a competing clearinghouse.",
+      "time_phased": {
+        "now": "Onboarding wave across sponsoring members",
+        "next": "Dec 31, 2026: cash compliance date",
+        "later": "Jun 30, 2027: repo compliance date"
+      },
+      "why_this_line": "Tagged FICC · GSD because the rule covers US Treasury cash and repo, which GSD clears.",
+      "key_unknowns": [
+        "How many firms still need to onboard (not public)",
+        "Whether the SEC extends the dates again"
+      ],
+      "where_we_stand": "Competition is real here. CME Securities Clearing is an SEC-approved clearing agency and ICE has publicly signaled a Treasury clearing service, so the question is share of newly cleared activity.",
+      "shareable_line": "With the Dec 31 cash-clearing deadline under 90 days away, sponsored-clearing onboarding at FICC is the item to watch.",
+      "sources": [
+        {
+          "name": "SEC: Treasury clearing rule and compliance dates",
+          "url": "https://www.sec.gov"
+        },
+        {
+          "name": "DTCC PQD Q2 2026, 19.1.3",
+          "url": "https://www.dtcc.com/legal/policy-and-compliance"
+        },
+        {
+          "name": "CME Group and ICE public releases",
+          "url": ""
+        }
+      ],
+      "ai_generated_fields": [
+        "summary_line",
+        "so_what",
+        "so_now_what",
+        "shareable_line"
+      ],
+      "review_status": "AI-drafted, analyst-checked"
+    },
+    {
+      "id": "ficc-funding",
+      "snapshot": "2026-10-05",
+      "business_line": "FICC",
+      "sub_line": "GSD",
+      "region": "US",
+      "risk_family": "Liquidity",
+      "confidence": "Medium",
+      "shock": 5,
+      "vulnerability": 3,
+      "shock_method": "Market indicator",
+      "shock_basis": "This week's peak SOFR–EFFR spread, at the 85th percentile of its own history",
+      "vulnerability_basis": "GSD largest payment obligation ÷ qualifying liquidity resources (PQD 7.3.4 ÷ 7.1) at the 55th percentile of past PQDs",
+      "updated_at": "2026-10-05T07:30:00-04:00",
+      "title": "Repo funding pressure: SOFR–EFFR spread in its top 15% historically",
+      "summary_line": "Repo stress raises members' settlement payments; GSD covers its largest member obligation 1.3×, mostly with member-committed CCLF.",
+      "what_happened": "The SOFR–EFFR spread rose into the top 15% of its own history (sample reading).",
+      "transmission": {
+        "event": "Overnight repo rates move well above the fed funds rate",
+        "mechanism": "Members pay more to fund Treasury positions, so daily settlement payments at GSD get larger and harder to fund",
+        "dtcc_process": "GSD liquidity: largest single-member obligation $98B vs $127B in qualifying resources (1.3×)"
+      },
+      "so_what": "87% of GSD's liquidity cover is CCLF, which members themselves commit. In a funding squeeze, the firms providing that cover are the same firms under pressure.",
+      "so_now_what": "No decision needed this week. If the spread stays elevated for more than 3 business days, raise it with the liquidity-risk team before month-end.",
+      "time_phased": {
+        "now": "Spread elevated; watch whether it fades after the quarter turn",
+        "next": "Year-end funding squeeze lands with the Dec 31 cash-clearing deadline",
+        "later": "Repo clearing mandate (Jun 30, 2027) brings more repo into GSD"
+      },
+      "why_this_line": "Tagged FICC · GSD because repo funding drives GSD members' daily settlement payments.",
+      "key_unknowns": [
+        "The spike may be calendar-driven rather than real stress",
+        "Member-level funding exposures are not public",
+        "Vulnerability uses the Q2 2026 PQD; Q3 is not yet published"
+      ],
+      "where_we_stand": "Funding stress hits every Treasury clearinghouse. With CME and ICE entering, clients will compare how each one handles it.",
+      "shareable_line": "Repo funding costs rose this week. As of Q2 2026, FICC's liquidity resources covered its largest member obligation 1.3×.",
+      "sources": [
+        {
+          "name": "FRED: SOFR",
+          "url": "https://fred.stlouisfed.org/series/SOFR"
+        },
+        {
+          "name": "FRED: EFFR",
+          "url": "https://fred.stlouisfed.org/series/EFFR"
+        },
+        {
+          "name": "DTCC PQD Q2 2026, 7.1 and 7.3.4",
+          "url": "https://www.dtcc.com/legal/policy-and-compliance"
+        }
+      ],
+      "ai_generated_fields": [
+        "summary_line",
+        "so_what",
+        "so_now_what",
+        "shareable_line"
+      ],
+      "review_status": "AI-drafted, analyst-checked"
+    },
+    {
+      "id": "ficc-mbs",
+      "snapshot": "2026-10-05",
+      "business_line": "FICC",
+      "sub_line": "MBSD",
+      "region": "US",
+      "risk_family": "Market",
+      "confidence": "Medium",
+      "shock": 2,
+      "vulnerability": 5,
+      "shock_method": "Market indicator",
+      "shock_basis": "Weekly change in the 30-year mortgage rate minus 10-year Treasury yield at the 35th percentile",
+      "vulnerability_basis": "MBSD Cover-1 stress loss ÷ initial margin (PQD 4.4.3 ÷ 6.1.1) at the top of past PQDs",
+      "updated_at": "2026-10-05T07:30:00-04:00",
+      "title": "Mortgage spreads edge wider as refinancing talk picks up",
+      "summary_line": "A small move this week, but MBSD absorbs shocks poorly: its worst-case stress loss is 24.8% of margin, against 4.0% at GSD.",
+      "what_happened": "The gap between the 30-year mortgage rate and the 10-year Treasury yield widened slightly this week (sample reading).",
+      "transmission": {
+        "event": "Mortgage rates fall and refinancing expectations rise",
+        "mechanism": "Faster expected prepayments move TBA prices and widen spreads, raising margin needs for MBSD members",
+        "dtcc_process": "MBSD margin and stress losses: worst-case stress loss 24.8% of margin; top 5 members hold about 51% of open positions"
+      },
+      "so_what": "MBSD is small next to GSD, but the same market move costs it far more relative to the margin it holds.",
+      "so_now_what": "No action this week. Flag it if spreads widen for a second straight week.",
+      "time_phased": {
+        "now": "Spreads drifting wider",
+        "next": "Monthly TBA settlement dates concentrate exposure",
+        "later": "Prepayment speeds feed through over the next quarters"
+      },
+      "why_this_line": "Tagged FICC · MBSD because agency MBS and the TBA market clear through MBSD.",
+      "key_unknowns": [
+        "No free MBS spread series with long history; the mortgage-rate gap is a proxy",
+        "Member-level mortgage exposures are not public"
+      ],
+      "where_we_stand": "MBSD is the sole automated post-trade provider for agency MBS, so the question is resilience, not share.",
+      "shareable_line": "MBSD's worst-case stress loss was 24.8% of margin in Q2 2026, against 4.0% at GSD, so mortgage-market moves deserve attention.",
+      "sources": [
+        {
+          "name": "FRED: MORTGAGE30US",
+          "url": "https://fred.stlouisfed.org/series/MORTGAGE30US"
+        },
+        {
+          "name": "FRED: DGS10",
+          "url": "https://fred.stlouisfed.org/series/DGS10"
+        },
+        {
+          "name": "DTCC PQD Q2 2026, 4.4.3, 6.1.1 and 18.2",
+          "url": "https://www.dtcc.com/legal/policy-and-compliance"
+        }
+      ],
+      "ai_generated_fields": [
+        "summary_line",
+        "so_what",
+        "so_now_what",
+        "shareable_line"
+      ],
+      "review_status": "AI-drafted, analyst-checked"
+    },
+    {
+      "id": "ecs-volatility",
+      "snapshot": "2026-10-05",
+      "business_line": "ECS",
+      "sub_line": "NSCC",
+      "region": "US",
+      "risk_family": "Market",
+      "confidence": "Medium",
+      "shock": 5,
+      "vulnerability": 3,
+      "shock_method": "Market indicator",
+      "shock_basis": "This week's peak VIX, at the 92nd percentile of the past year",
+      "vulnerability_basis": "Peak ÷ average daily variation margin (PQD 6.7.1 ÷ 6.6.1) at the 55th percentile of past PQDs",
+      "updated_at": "2026-10-05T07:30:00-04:00",
+      "title": "Equity volatility jumps: VIX hit its top 10% of the past year this week",
+      "summary_line": "Bigger price swings mean bigger margin calls; NSCC's largest single-day margin call over the reporting period was $29.1B.",
+      "what_happened": "The VIX closed in the top 10% of the past 252 trading days (sample reading).",
+      "transmission": {
+        "event": "Equity prices swing sharply",
+        "mechanism": "Larger daily price moves raise members' mark-to-market payments and clearing fund requirements",
+        "dtcc_process": "NSCC margin calls: peak daily variation margin $9.1B against a $1.1B daily average"
+      },
+      "so_what": "Large calls hit members' liquidity at the same moment markets are stressed.",
+      "so_now_what": "If the VIX stays elevated through Friday, tell client teams to expect larger clearing fund calls.",
+      "time_phased": {
+        "now": "Elevated margin calls this week",
+        "next": "Dec 18 triple witching adds volume",
+        "later": "Year-end settlement peak"
+      },
+      "why_this_line": "Tagged ECS · NSCC because NSCC clears US equities and sets the related margin.",
+      "key_unknowns": [
+        "Which members carry the largest equity exposures (not public)",
+        "Whether the move lasts beyond this week"
+      ],
+      "where_we_stand": "No confirmed US competitor in equity clearing. The question is capacity and resilience under stress.",
+      "shareable_line": "NSCC's largest single-day margin call over the reporting period was $29.1B, according to its Q2 2026 public disclosure.",
+      "sources": [
+        {
+          "name": "FRED: VIXCLS",
+          "url": "https://fred.stlouisfed.org/series/VIXCLS"
+        },
+        {
+          "name": "DTCC PQD Q2 2026, 6.6.1, 6.7.1 and 6.8.1",
+          "url": "https://www.dtcc.com/legal/policy-and-compliance"
+        }
+      ],
+      "ai_generated_fields": [
+        "summary_line",
+        "so_what",
+        "so_now_what",
+        "shareable_line"
+      ],
+      "review_status": "AI-drafted, analyst-checked"
+    },
+    {
+      "id": "ecs-outage",
+      "snapshot": "2026-10-05",
+      "business_line": "ECS",
+      "sub_line": "NSCC · DTC",
+      "region": "US",
+      "risk_family": "Operational",
+      "confidence": "Medium",
+      "shock": 3,
+      "vulnerability": 4,
+      "shock_method": "Event rubric",
+      "shock_basis": "Several firms affected, resolved within hours, spillover to settlement unclear",
+      "vulnerability_basis": "Core-system availability 99.77% against a 99.75% target, with 2 reportable failures totaling 21h55m over 12 months (PQD 17.1–17.3)",
+      "updated_at": "2026-10-05T07:40:00-04:00",
+      "title": "Cloud provider outage disrupts several brokers' trading systems",
+      "summary_line": "Late or corrected submissions pile up near settlement cut-off; a few bad inputs rolled NSCC's settlement to the next day in June.",
+      "what_happened": "Several brokers reported trading-system problems linked to a cloud provider outage (sample event).",
+      "transmission": {
+        "event": "A major cloud provider outage affects broker systems",
+        "mechanism": "Brokers submit trades and instructions late or with errors, so exceptions build near settlement cut-off",
+        "dtcc_process": "NSCC net settlement and DTC end-of-day settlement. On Jun 29, 2026, erroneous ETF redemption entries rolled NSCC final settlement into Jun 30"
+      },
+      "so_what": "The June rollover showed that a few bad inputs can delay settlement for the whole market.",
+      "so_now_what": "Confirm with operations that this week's late submissions cleared before cut-off. No GM decision unless settlement is delayed.",
+      "time_phased": {
+        "now": "Late and corrected submissions this week",
+        "next": "Watch for repeat outages and broker incident reports",
+        "later": "Shorter settlement cycles (T+1, possible 24x5) leave less time to fix errors"
+      },
+      "why_this_line": "Tagged ECS because broker trade submissions feed NSCC clearing and DTC settlement.",
+      "key_unknowns": [
+        "Not all affected brokers have disclosed",
+        "Whether any DTC settlement deadline was missed"
+      ],
+      "where_we_stand": "DTCC is the sole US provider of equity clearing and settlement, so reliability is the measure.",
+      "shareable_line": "NSCC's core systems ran at 99.77% availability over the past 12 months, against a 99.75% target.",
+      "sources": [
+        {
+          "name": "Broker status pages and news reports (sample event)",
+          "url": ""
+        },
+        {
+          "name": "DTCC PQD Q2 2026, 17.1, 17.2 and 17.3",
+          "url": "https://www.dtcc.com/legal/policy-and-compliance"
+        }
+      ],
+      "ai_generated_fields": [
+        "summary_line",
+        "so_what",
+        "so_now_what",
+        "shareable_line"
+      ],
+      "review_status": "AI-drafted, analyst-checked"
+    },
+    {
+      "id": "ecs-witching",
+      "snapshot": "2026-10-05",
+      "business_line": "ECS",
+      "sub_line": "NSCC",
+      "region": "US",
+      "risk_family": "Operational",
+      "confidence": "High",
+      "shock": 3,
+      "vulnerability": 3,
+      "shock_method": "Event rubric",
+      "shock_basis": "Scheduled and certain, large but routine volume spike, about 10 weeks away",
+      "vulnerability_basis": "Peak ÷ average daily variation margin (PQD 6.7.1 ÷ 6.6.1) at the 55th percentile of past PQDs",
+      "updated_at": "2026-10-05T07:30:00-04:00",
+      "title": "Triple witching and S&P quarterly rebalance on Dec 18, 2026",
+      "summary_line": "A scheduled volume peak. The risk is an operational error on a heavy day, like June's ETF redemption issue.",
+      "what_happened": "Quarterly options expiry and the S&P quarterly index rebalance fall on Friday, Dec 18, 2026.",
+      "transmission": {
+        "event": "Options expiry and an index rebalance fall on the same day",
+        "mechanism": "Trading volume and ETF creations and redemptions spike into the close",
+        "dtcc_process": "NSCC trade capture, netting and ETF processing; Q2 2026 average daily volume was 232.7M sides"
+      },
+      "so_what": "Volume is predictable. Errors on peak days are what turn it into a problem.",
+      "so_now_what": "No decision. Confirm that capacity tests are scheduled before Dec 18.",
+      "time_phased": {
+        "now": "Planning window",
+        "next": "Dec 18 peak day",
+        "later": "Dec 31 year-end peak"
+      },
+      "why_this_line": "Tagged ECS · NSCC because index rebalances and options expiry drive equity and ETF clearing volume.",
+      "key_unknowns": [
+        "Expected volume for this specific rebalance"
+      ],
+      "where_we_stand": "No confirmed competitor. Capacity on peak days is the measure.",
+      "shareable_line": "Dec 18 combines triple witching with the S&P quarterly rebalance, one of the heaviest days of the year for US equity clearing.",
+      "sources": [
+        {
+          "name": "S&P Dow Jones Indices rebalance calendar",
+          "url": "https://www.spglobal.com/spdji/"
+        },
+        {
+          "name": "DTCC PQD Q2 2026, 23.1.1",
+          "url": "https://www.dtcc.com/legal/policy-and-compliance"
+        }
+      ],
+      "ai_generated_fields": [
+        "summary_line",
+        "so_what",
+        "so_now_what",
+        "shareable_line"
+      ],
+      "review_status": "AI-drafted, analyst-checked"
+    },
+    {
+      "id": "wis-outflows",
+      "snapshot": "2026-10-05",
+      "business_line": "WIS",
+      "sub_line": "Fund/SERV",
+      "region": "US",
+      "risk_family": "Liquidity",
+      "confidence": "Low",
+      "shock": 3,
+      "vulnerability": null,
+      "shock_method": "Market indicator",
+      "shock_basis": "Weekly bond-fund net outflow at the 60th percentile of its own history",
+      "vulnerability_basis": "",
+      "updated_at": "2026-10-05T07:50:00-04:00",
+      "title": "Mutual fund redemptions pick up as bond funds see outflows",
+      "summary_line": "Heavier redemption days raise Fund/SERV order and payment volume; there is no public PQD buffer for WIS, so this shows Shock only.",
+      "what_happened": "Industry bond-fund outflows rose this week (sample reading).",
+      "transmission": {
+        "event": "Investors pull money from bond funds",
+        "mechanism": "More redemption orders and payments route through Fund/SERV",
+        "dtcc_process": "WIS Fund/SERV order processing and settlement payments"
+      },
+      "so_what": "Processing load rises, but WIS is not a CCP, so there is no margin or default exposure.",
+      "so_now_what": "No action. Watch whether outflows persist for a second week.",
+      "time_phased": {
+        "now": "Elevated redemptions this week",
+        "next": "Year-end tax-loss selling",
+        "later": "—"
+      },
+      "why_this_line": "Tagged WIS because Fund/SERV processes mutual fund orders and payments.",
+      "key_unknowns": [
+        "Net flows are not gross order volume",
+        "No public WIS internal data"
+      ],
+      "where_we_stand": "Fund/SERV is the industry standard for fund order processing.",
+      "shareable_line": "Bond-fund outflows picked up this week; Fund/SERV volumes are the place it would show.",
+      "sources": [
+        {
+          "name": "ICI weekly flows (sample)",
+          "url": ""
+        }
+      ],
+      "ai_generated_fields": [
+        "summary_line",
+        "so_what",
+        "so_now_what",
+        "shareable_line"
+      ],
+      "review_status": "AI-drafted, analyst-checked"
+    },
+    {
+      "id": "ficc-mandate",
+      "snapshot": "2026-09-28",
+      "business_line": "FICC",
+      "sub_line": "GSD",
+      "region": "US",
+      "risk_family": "Regulatory",
+      "confidence": "High",
+      "shock": 4,
+      "vulnerability": 4,
+      "shock_method": "Event rubric",
+      "shock_basis": "Scheduled and certain, covers all eligible cash Treasury trades, under 90 days away",
+      "vulnerability_basis": "Client-transaction concentration (PQD 19.1.3) at the 72nd percentile of past PQDs",
+      "updated_at": "2026-09-28T07:45:00-04:00",
+      "title": "Treasury cash-clearing deadline is under 90 days away (Dec 31, 2026)",
+      "summary_line": "Firms that do not clear today must onboard before year-end, and client activity is already concentrated in a few sponsoring members.",
+      "what_happened": "The SEC's Treasury clearing rule requires eligible cash Treasury trades to be centrally cleared from Dec 31, 2026, and repo from Jun 30, 2027.",
+      "transmission": {
+        "event": "SEC compliance date for cash Treasury clearing approaches",
+        "mechanism": "Firms that do not clear today onboard through sponsored or agent clearing before year-end",
+        "dtcc_process": "GSD onboarding and sponsored volume. The top 5 members already handle about 70–76% of client transactions"
+      },
+      "so_what": "A late onboarding rush lands on a small group of sponsoring members, while CME and ICE pitch the same clients.",
+      "so_now_what": "Review onboarding progress weekly against the deadline. Escalate if a large client publicly picks a competing clearinghouse.",
+      "time_phased": {
+        "now": "Onboarding wave across sponsoring members",
+        "next": "Dec 31, 2026: cash compliance date",
+        "later": "Jun 30, 2027: repo compliance date"
+      },
+      "why_this_line": "Tagged FICC · GSD because the rule covers US Treasury cash and repo, which GSD clears.",
+      "key_unknowns": [
+        "How many firms still need to onboard (not public)",
+        "Whether the SEC extends the dates again"
+      ],
+      "where_we_stand": "Competition is real here. CME Securities Clearing is an SEC-approved clearing agency and ICE has publicly signaled a Treasury clearing service, so the question is share of newly cleared activity.",
+      "shareable_line": "With the Dec 31 cash-clearing deadline under 90 days away, sponsored-clearing onboarding at FICC is the item to watch.",
+      "sources": [
+        {
+          "name": "SEC: Treasury clearing rule and compliance dates",
+          "url": "https://www.sec.gov"
+        },
+        {
+          "name": "DTCC PQD Q2 2026, 19.1.3",
+          "url": "https://www.dtcc.com/legal/policy-and-compliance"
+        },
+        {
+          "name": "CME Group and ICE public releases",
+          "url": ""
+        }
+      ],
+      "ai_generated_fields": [
+        "summary_line",
+        "so_what",
+        "so_now_what",
+        "shareable_line"
+      ],
+      "review_status": "AI-drafted, analyst-checked"
+    },
+    {
+      "id": "ficc-funding",
+      "snapshot": "2026-09-28",
+      "business_line": "FICC",
+      "sub_line": "GSD",
+      "region": "US",
+      "risk_family": "Liquidity",
+      "confidence": "Medium",
+      "shock": 3,
+      "vulnerability": 3,
+      "shock_method": "Market indicator",
+      "shock_basis": "This week's peak SOFR–EFFR spread, at the 85th percentile of its own history",
+      "vulnerability_basis": "GSD largest payment obligation ÷ qualifying liquidity resources (PQD 7.3.4 ÷ 7.1) at the 55th percentile of past PQDs",
+      "updated_at": "2026-09-28T07:30:00-04:00",
+      "title": "Repo funding pressure: SOFR–EFFR spread in its top 15% historically",
+      "summary_line": "Repo stress raises members' settlement payments; GSD covers its largest member obligation 1.3×, mostly with member-committed CCLF.",
+      "what_happened": "The SOFR–EFFR spread rose into the top 15% of its own history (sample reading).",
+      "transmission": {
+        "event": "Overnight repo rates move well above the fed funds rate",
+        "mechanism": "Members pay more to fund Treasury positions, so daily settlement payments at GSD get larger and harder to fund",
+        "dtcc_process": "GSD liquidity: largest single-member obligation $98B vs $127B in qualifying resources (1.3×)"
+      },
+      "so_what": "87% of GSD's liquidity cover is CCLF, which members themselves commit. In a funding squeeze, the firms providing that cover are the same firms under pressure.",
+      "so_now_what": "No decision needed this week. If the spread stays elevated for more than 3 business days, raise it with the liquidity-risk team before month-end.",
+      "time_phased": {
+        "now": "Spread elevated; watch whether it fades after the quarter turn",
+        "next": "Year-end funding squeeze lands with the Dec 31 cash-clearing deadline",
+        "later": "Repo clearing mandate (Jun 30, 2027) brings more repo into GSD"
+      },
+      "why_this_line": "Tagged FICC · GSD because repo funding drives GSD members' daily settlement payments.",
+      "key_unknowns": [
+        "The spike may be calendar-driven rather than real stress",
+        "Member-level funding exposures are not public",
+        "Vulnerability uses the Q2 2026 PQD; Q3 is not yet published"
+      ],
+      "where_we_stand": "Funding stress hits every Treasury clearinghouse. With CME and ICE entering, clients will compare how each one handles it.",
+      "shareable_line": "Repo funding costs rose this week. As of Q2 2026, FICC's liquidity resources covered its largest member obligation 1.3×.",
+      "sources": [
+        {
+          "name": "FRED: SOFR",
+          "url": "https://fred.stlouisfed.org/series/SOFR"
+        },
+        {
+          "name": "FRED: EFFR",
+          "url": "https://fred.stlouisfed.org/series/EFFR"
+        },
+        {
+          "name": "DTCC PQD Q2 2026, 7.1 and 7.3.4",
+          "url": "https://www.dtcc.com/legal/policy-and-compliance"
+        }
+      ],
+      "ai_generated_fields": [
+        "summary_line",
+        "so_what",
+        "so_now_what",
+        "shareable_line"
+      ],
+      "review_status": "AI-drafted, analyst-checked"
+    },
+    {
+      "id": "ecs-outage",
+      "snapshot": "2026-09-28",
+      "business_line": "ECS",
+      "sub_line": "NSCC · DTC",
+      "region": "US",
+      "risk_family": "Operational",
+      "confidence": "Medium",
+      "shock": 2,
+      "vulnerability": 4,
+      "shock_method": "Event rubric",
+      "shock_basis": "Several firms affected, resolved within hours, spillover to settlement unclear",
+      "vulnerability_basis": "Core-system availability 99.77% against a 99.75% target, with 2 reportable failures totaling 21h55m over 12 months (PQD 17.1–17.3)",
+      "updated_at": "2026-09-28T07:40:00-04:00",
+      "title": "Cloud provider outage disrupts several brokers' trading systems",
+      "summary_line": "Late or corrected submissions pile up near settlement cut-off; a few bad inputs rolled NSCC's settlement to the next day in June.",
+      "what_happened": "Several brokers reported trading-system problems linked to a cloud provider outage (sample event).",
+      "transmission": {
+        "event": "A major cloud provider outage affects broker systems",
+        "mechanism": "Brokers submit trades and instructions late or with errors, so exceptions build near settlement cut-off",
+        "dtcc_process": "NSCC net settlement and DTC end-of-day settlement. On Jun 29, 2026, erroneous ETF redemption entries rolled NSCC final settlement into Jun 30"
+      },
+      "so_what": "The June rollover showed that a few bad inputs can delay settlement for the whole market.",
+      "so_now_what": "Confirm with operations that this week's late submissions cleared before cut-off. No GM decision unless settlement is delayed.",
+      "time_phased": {
+        "now": "Late and corrected submissions this week",
+        "next": "Watch for repeat outages and broker incident reports",
+        "later": "Shorter settlement cycles (T+1, possible 24x5) leave less time to fix errors"
+      },
+      "why_this_line": "Tagged ECS because broker trade submissions feed NSCC clearing and DTC settlement.",
+      "key_unknowns": [
+        "Not all affected brokers have disclosed",
+        "Whether any DTC settlement deadline was missed"
+      ],
+      "where_we_stand": "DTCC is the sole US provider of equity clearing and settlement, so reliability is the measure.",
+      "shareable_line": "NSCC's core systems ran at 99.77% availability over the past 12 months, against a 99.75% target.",
+      "sources": [
+        {
+          "name": "Broker status pages and news reports (sample event)",
+          "url": ""
+        },
+        {
+          "name": "DTCC PQD Q2 2026, 17.1, 17.2 and 17.3",
+          "url": "https://www.dtcc.com/legal/policy-and-compliance"
+        }
+      ],
+      "ai_generated_fields": [
+        "summary_line",
+        "so_what",
+        "so_now_what",
+        "shareable_line"
+      ],
+      "review_status": "AI-drafted, analyst-checked"
+    },
+    {
+      "id": "ecs-witching",
+      "snapshot": "2026-09-28",
+      "business_line": "ECS",
+      "sub_line": "NSCC",
+      "region": "US",
+      "risk_family": "Operational",
+      "confidence": "High",
+      "shock": 3,
+      "vulnerability": 3,
+      "shock_method": "Event rubric",
+      "shock_basis": "Scheduled and certain, large but routine volume spike, about 10 weeks away",
+      "vulnerability_basis": "Peak ÷ average daily variation margin (PQD 6.7.1 ÷ 6.6.1) at the 55th percentile of past PQDs",
+      "updated_at": "2026-09-28T07:30:00-04:00",
+      "title": "Triple witching and S&P quarterly rebalance on Dec 18, 2026",
+      "summary_line": "A scheduled volume peak. The risk is an operational error on a heavy day, like June's ETF redemption issue.",
+      "what_happened": "Quarterly options expiry and the S&P quarterly index rebalance fall on Friday, Dec 18, 2026.",
+      "transmission": {
+        "event": "Options expiry and an index rebalance fall on the same day",
+        "mechanism": "Trading volume and ETF creations and redemptions spike into the close",
+        "dtcc_process": "NSCC trade capture, netting and ETF processing; Q2 2026 average daily volume was 232.7M sides"
+      },
+      "so_what": "Volume is predictable. Errors on peak days are what turn it into a problem.",
+      "so_now_what": "No decision. Confirm that capacity tests are scheduled before Dec 18.",
+      "time_phased": {
+        "now": "Planning window",
+        "next": "Dec 18 peak day",
+        "later": "Dec 31 year-end peak"
+      },
+      "why_this_line": "Tagged ECS · NSCC because index rebalances and options expiry drive equity and ETF clearing volume.",
+      "key_unknowns": [
+        "Expected volume for this specific rebalance"
+      ],
+      "where_we_stand": "No confirmed competitor. Capacity on peak days is the measure.",
+      "shareable_line": "Dec 18 combines triple witching with the S&P quarterly rebalance, one of the heaviest days of the year for US equity clearing.",
+      "sources": [
+        {
+          "name": "S&P Dow Jones Indices rebalance calendar",
+          "url": "https://www.spglobal.com/spdji/"
+        },
+        {
+          "name": "DTCC PQD Q2 2026, 23.1.1",
+          "url": "https://www.dtcc.com/legal/policy-and-compliance"
+        }
+      ],
+      "ai_generated_fields": [
+        "summary_line",
+        "so_what",
+        "so_now_what",
+        "shareable_line"
+      ],
+      "review_status": "AI-drafted, analyst-checked"
+    },
+    {
+      "id": "ecs-fomc",
+      "snapshot": "2026-09-28",
+      "business_line": "ECS",
+      "sub_line": "NSCC",
+      "region": "US",
+      "risk_family": "Market",
+      "confidence": "Medium",
+      "shock": 2,
+      "vulnerability": 3,
+      "shock_method": "Event rubric",
+      "shock_basis": "Scheduled, certain, market-wide, within 4 weeks; magnitude small",
+      "vulnerability_basis": "Peak ÷ average daily variation margin (PQD 6.7.1 ÷ 6.6.1) at the 55th percentile of past PQDs",
+      "updated_at": "2026-09-28T07:30:00-04:00",
+      "title": "FOMC week: rate decision lands mid-week (resolved)",
+      "summary_line": "A scheduled volatility event; markets took the decision calmly and the item dropped off the next week.",
+      "what_happened": "The VIX closed in the top 10% of the past 252 trading days (sample reading).",
+      "transmission": {
+        "event": "Equity prices swing sharply",
+        "mechanism": "Larger daily price moves raise members' mark-to-market payments and clearing fund requirements",
+        "dtcc_process": "NSCC margin calls: peak daily variation margin $9.1B against a $1.1B daily average"
+      },
+      "so_what": "Large calls hit members' liquidity at the same moment markets are stressed.",
+      "so_now_what": "If the VIX stays elevated through Friday, tell client teams to expect larger clearing fund calls.",
+      "time_phased": {
+        "now": "Elevated margin calls this week",
+        "next": "Dec 18 triple witching adds volume",
+        "later": "Year-end settlement peak"
+      },
+      "why_this_line": "Tagged ECS · NSCC because NSCC clears US equities and sets the related margin.",
+      "key_unknowns": [
+        "Which members carry the largest equity exposures (not public)",
+        "Whether the move lasts beyond this week"
+      ],
+      "where_we_stand": "No confirmed US competitor in equity clearing. The question is capacity and resilience under stress.",
+      "shareable_line": "NSCC's largest single-day margin call over the reporting period was $29.1B, according to its Q2 2026 public disclosure.",
+      "sources": [
+        {
+          "name": "FRED: VIXCLS",
+          "url": "https://fred.stlouisfed.org/series/VIXCLS"
+        },
+        {
+          "name": "DTCC PQD Q2 2026, 6.6.1, 6.7.1 and 6.8.1",
+          "url": "https://www.dtcc.com/legal/policy-and-compliance"
+        }
+      ],
+      "ai_generated_fields": [
+        "summary_line",
+        "so_what",
+        "so_now_what",
+        "shareable_line"
+      ],
+      "review_status": "AI-drafted, analyst-checked"
+    }
+  ]
+}

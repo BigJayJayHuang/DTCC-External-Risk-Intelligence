@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Risk Horizon</title>
+<meta name="description" content="External risk brief for DTCC business-line GMs (DTCC × Duke capstone prototype).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one-column GM brief (summary → filters → ranked risk cards), card opens to a full detail view */
+:root{
+  --bg:#FFFFFF; --surface:#F6F8F7; --line:#E1E6E3; --ink:#1B2621; --muted:#5D6A64;
+  --brand:#1F4E43; --brand-2:#2E6B5C; --on-brand:#FFFFFF; --brand-soft:#D3EAE1; --brand-soft-ink:#1C574A;
+  --note:#F4EADB; --note-line:#E6D5BB; --note-ink:#86601A;
+  --high:#D9673B; --high-soft:#FBE4D9; --high-ink:#9C4119; --on-high:#FFFFFF;
+  --med:#E2AC3D; --on-med:#2A2108;
+  --low:#BFD9CF; --on-low:#1B2621;
+  --pend:#E4E8E6; --on-pend:#3F4B46;
+  --focus:#2E6B5C;
+  --f-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --f-body:"Source Sans 3","Segoe UI",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#111916; --surface:#18221E; --line:#2A3631; --ink:#E4ECE8; --muted:#9AA9A2;
+  --brand:#7CC4AE; --brand-2:#8FD3BE; --on-brand:#0E1B16; --brand-soft:#21362F; --brand-soft-ink:#A9DCCB;
+  --note:#2A261E; --note-line:#3E372B; --note-ink:#E0BC77;
+  --high:#E07A50; --high-soft:#3A2419; --high-ink:#F2A988; --on-high:#1A0F09;
+  --med:#E2B04A; --on-med:#1F1806; --low:#3E5A50; --on-low:#E4ECE8;
+  --pend:#26312D; --on-pend:#B5C2BC; --focus:#8FD3BE; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111916; --surface:#18221E; --line:#2A3631; --ink:#E4ECE8; --muted:#9AA9A2;
+  --brand:#7CC4AE; --brand-2:#8FD3BE; --on-brand:#0E1B16; --brand-soft:#21362F; --brand-soft-ink:#A9DCCB;
+  --note:#2A261E; --note-line:#3E372B; --note-ink:#E0BC77;
+  --high:#E07A50; --high-soft:#3A2419; --high-ink:#F2A988; --on-high:#1A0F09;
+  --med:#E2B04A; --on-med:#1F1806; --low:#3E5A50; --on-low:#E4ECE8;
+  --pend:#26312D; --on-pend:#B5C2BC; --focus:#8FD3BE; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5;margin:0}
+[hidden]{display:none!important}
+.wrap{max-width:980px;margin:0 auto;padding-inline:20px;padding-block:20px 48px}
+button,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+a{color:var(--brand-2)}
+
+/* header */
+.top{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;margin-bottom:18px}
+.brand{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.brand h1{font-family:var(--f-display);font-weight:700;font-size:30px;letter-spacing:.02em;text-transform:uppercase;color:var(--brand);margin:0;line-height:1}
+.brand span{color:var(--muted);font-size:14.5px}
+.snap{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:14px;color:var(--muted);min-width:0;max-width:100%}
+.snap select{max-width:100%;min-width:0;border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:6px 10px;font-size:14px}
+.sample{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--note-ink);background:var(--note);border:1px solid var(--note-line);border-radius:999px;padding:3px 10px;white-space:nowrap}
+
+/* tabs */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:16px}
+.tab{border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:8px 16px;font-weight:700;font-size:15px;cursor:pointer;color:var(--muted);display:inline-flex;gap:7px;align-items:center}
+.tab .ct{font-size:12px;font-weight:700;border-radius:999px;padding:0 7px;background:var(--bg);color:var(--muted);border:1px solid var(--line);font-variant-numeric:tabular-nums}
+.tab[aria-selected="true"]{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+.tab[aria-selected="true"] .ct{background:transparent;color:var(--on-brand);border-color:currentColor}
+.tab:hover:not([aria-selected="true"]){border-color:var(--brand-2);color:var(--ink)}
+.saved{margin-left:auto;font-size:13.5px;color:var(--brand-2);font-weight:600}
+
+/* summary */
+.summary{background:var(--note);border-radius:12px;padding:18px 20px;margin-bottom:14px;display:grid;gap:12px}
+.sumhead{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+.sumhead h2{font-size:18px;margin:0;color:var(--brand);font-weight:700}
+.ai{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--note-ink);background:var(--bg);border:1px solid var(--note-line);border-radius:4px;padding:1px 6px;vertical-align:2px;white-space:nowrap}
+.summary p{margin:0;font-size:16px;max-width:68ch}
+.summary p.none{color:var(--muted)}
+.sumrow{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;font-size:14px}
+.cnt{display:inline-flex;align-items:center;gap:6px;font-weight:600}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+.coming{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px}
+.coming b{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--note-ink);margin-right:2px}
+.date{background:var(--bg);border:1px solid var(--note-line);border-radius:7px;padding:3px 9px;font-variant-numeric:tabular-nums}
+
+/* filters */
+.filters{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin:4px 0 8px;font-size:14px}
+.filters + .filters{margin-top:0;margin-bottom:14px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;max-width:100%;flex-wrap:wrap}
+.seg button{border:0;background:var(--bg);padding:6px 12px;cursor:pointer;font-weight:600;font-size:14px;color:var(--muted);border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--brand-soft);color:var(--brand-soft-ink)}
+.filters label{color:var(--muted);display:inline-flex;gap:6px;align-items:center}
+.filters select{border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:5px 8px;font-size:14px;max-width:100%}
+.showing{margin-left:auto;color:var(--muted)}
+.clear{border:0;background:none;color:var(--brand-2);font-weight:700;font-size:14px;cursor:pointer;padding:4px 2px}
+
+/* risk cards */
+.list{display:grid;gap:10px}
+.card{display:grid;grid-template-columns:76px minmax(0,1fr);gap:16px;text-align:left;width:100%;border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:16px;cursor:pointer}
+.card:hover{border-color:var(--brand-2)}
+.sev{border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;height:76px;font-variant-numeric:tabular-nums;text-align:center}
+.sev .n{font-size:30px;font-weight:700;line-height:1}
+.sev .l{font-size:11px;font-weight:700;letter-spacing:.08em;margin-top:3px}
+.sev.High{background:var(--high);color:var(--on-high)} .sev.Medium{background:var(--med);color:var(--on-med)} .sev.Low{background:var(--low);color:var(--on-low)}
+.sev.Pending{background:var(--pend);color:var(--on-pend)} .sev.Pending .n{font-size:22px}
+.ctitle{font-size:17.5px;font-weight:700;margin:0 0 7px;line-height:1.3;text-wrap:balance}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.chip{font-size:12.5px;font-weight:600;border-radius:999px;padding:2px 10px;background:var(--brand-soft);color:var(--brand-soft-ink);white-space:nowrap}
+.chip.o{background:var(--bg);border:1px solid var(--line);color:var(--ink)}
+.chip.chg{background:var(--high-soft);color:var(--high-ink)}
+.chip.new{background:var(--brand);color:var(--on-brand)}
+.chip.wk{background:var(--note);color:var(--note-ink)}
+.cline{margin:0 0 8px;font-size:15px;max-width:72ch}
+.cfoot{display:flex;justify-content:space-between;gap:12px;align-items:baseline;font-size:13px;color:var(--muted);flex-wrap:wrap}
+.more{font-weight:700;color:var(--brand-2);white-space:nowrap}
+.empty{border:1px dashed var(--line);border-radius:12px;padding:22px;text-align:center;color:var(--muted)}
+.empty b{color:var(--ink)}
+.empty button{margin-top:8px;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.empty code{font-family:var(--f-mono);font-size:13px;background:var(--surface);padding:1px 5px;border-radius:4px}
+.review{border:1px dashed var(--line);border-radius:12px;padding:14px 16px;margin-top:12px}
+.review h3{margin:0 0 6px;font-size:15px}
+.review ul{margin:0;padding-left:18px;font-size:14.5px;color:var(--muted)}
+.review li b{color:var(--ink);font-weight:600}
+.method{margin-top:22px;padding-top:14px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted);display:grid;gap:4px}
+.method b{color:var(--ink)}
+
+/* detail */
+.back{display:inline-flex;align-items:center;gap:6px;border:0;background:none;color:var(--brand-2);font-weight:700;font-size:15px;cursor:pointer;padding:4px 0;margin-bottom:12px}
+.dhead{display:grid;grid-template-columns:88px minmax(0,1fr);gap:18px;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:18px}
+.dhead .sev{height:88px}
+.dhead h2{font-size:22px;line-height:1.25;margin:0 0 9px;text-wrap:balance}
+.stamp{font-size:13.5px;color:var(--muted);margin-top:4px}
+.sec{margin-bottom:18px}
+.lab{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--note-ink);margin:0 0 8px}
+.sec p{margin:0;max-width:72ch}
+.chain{display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr) 28px minmax(0,1fr);align-items:stretch}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-width:0}
+.step.end{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+.step .k{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--brand-2);margin-bottom:4px}
+.step.end .k{color:var(--on-brand);opacity:.8}
+.arrow{display:flex;align-items:center;justify-content:center;color:var(--brand-2);font-weight:700;font-size:20px}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.box{border:1px solid var(--line);border-radius:10px;padding:14px 16px;min-width:0}
+.box.now{background:var(--note);border-color:var(--note-line)}
+.time{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.t{padding:12px 14px;border-right:1px solid var(--line);min-width:0}
+.t:last-child{border-right:0}
+.t .k{font-size:14px;font-weight:700;color:var(--brand);margin-bottom:3px}
+.t p{font-size:14.5px}
+.calc{display:grid;gap:6px;font-size:15px}
+.eq{justify-self:start;font-weight:700;background:var(--surface);border-radius:7px;padding:3px 10px;font-variant-numeric:tabular-nums;margin-top:2px}
+.box ul{margin:0;padding-left:18px;font-size:15px}
+.share{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;border:1.5px dashed var(--brand-soft);border-radius:10px;padding:14px 16px}
+.share q{font-style:italic;max-width:70ch}
+.copy{border:0;background:var(--brand);color:var(--on-brand);border-radius:8px;padding:8px 14px;font-weight:700;cursor:pointer;white-space:nowrap}
+.srcs{font-size:14px;border-top:1px solid var(--line);padding-top:12px;display:grid;gap:4px}
+.srcs ul{margin:0;padding-left:18px}
+.srcs .rv{color:var(--muted)}
+details.json{margin-top:14px;border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+details.json summary{cursor:pointer;font-weight:600;font-size:14px}
+details.json pre{overflow-x:auto;font-family:var(--f-mono);font-size:12.5px;line-height:1.5;margin:10px 0 0;background:var(--surface);padding:12px;border-radius:8px}
+
+@media (max-width:640px){
+  .wrap{padding-inline:16px}
+  .card{grid-template-columns:58px minmax(0,1fr);gap:12px;padding:14px}
+  .sev{height:58px}.sev .n{font-size:24px}.sev .l{font-size:10px}.sev.Pending .n{font-size:18px}
+  .dhead{grid-template-columns:64px minmax(0,1fr)}.dhead .sev{height:64px}
+  .dhead h2{font-size:19px}
+  .chain{grid-template-columns:minmax(0,1fr)}
+  .arrow{height:24px;transform:rotate(90deg)}
+  .two,.time{grid-template-columns:minmax(0,1fr)}
+  .t{border-right:0;border-bottom:1px solid var(--line)}.t:last-child{border-bottom:0}
+  .saved,.showing{margin-left:0}
+}
+@media (prefers-reduced-motion:no-preference){.card{transition:border-color .15s}}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"><p style="color:var(--muted)">Loading…</p></div>
+
+<script>
+/* =====================================================================
+   Risk Horizon — display layer only.
+   The risk model writes ONE file: docs/data/risk_output.json
+   (format: docs/data/README.md). This page just reads and shows it.
+   Open with ?sample=1 to load docs/data/sample_risk_output.json instead.
+   ===================================================================== */
+const PARAMS=new URLSearchParams(location.search);
+const DATA_URL=PARAMS.get("data")||(PARAMS.has("sample")?"data/sample_risk_output.json":"data/risk_output.json");
+
+/* All 10 DTCC business lines, always shown as tabs (order = tab order). */
+const LINE_META={
+  "FICC":{full:"Fixed Income Clearing Corporation (GSD and MBSD)"},
+  "ECS":{full:"Equity Clearing & Settlement (NSCC clearing, DTC settlement)"},
+  "RDS":{full:"Repository & Derivatives Services"},
+  "WIS":{full:"Wealth & Investment Solutions"},
+  "ITP":{full:"Institutional Trade Processing"},
+  "Asset Services":{full:"DTC Asset Services"},
+  "DAS":{full:"DTC Digital Asset Solutions"},
+  "DDA":{full:"DTCC Digital Assets"},
+  "Data Services":{full:"DTCC Data Services"},
+  "Consulting":{full:"DTCC Consulting Services"}
+};
+const LINE_KEYS=Object.keys(LINE_META);
+const FAMILIES=["Credit","Liquidity","Market","Operational","Cyber","Regulatory","Strategic"];
+const RANGES=[{k:"week",t:"Selected week"},{k:"30",t:"Last 30 days"},{k:"90",t:"Last 90 days"},{k:"all",t:"All time"}];
+const SORTS=[{k:"score",t:"Score: high → low"},{k:"score-asc",t:"Score: low → high"},{k:"newest",t:"Newest first"},{k:"oldest",t:"Oldest first"}];
+
+let DATA=null, SNAPS=[], LOAD_ERR=null;
+const state={line:"FICC",snap:null,range:"week",sort:"score",sev:"All",fam:"All",region:"All"};
+try{const s=localStorage.getItem("rh-line"); if(s&&LINE_META[s]) state.line=s;}catch(e){}
+try{const s=localStorage.getItem("rh-sort"); if(s&&SORTS.some(x=>x.k===s)) state.sort=s;}catch(e){}
+
+/* ---------- helpers ---------- */
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const level=n=>n==null?"Pending":n>=15?"High":n>=8?"Medium":"Low";
+const isNum=v=>typeof v==="number"&&isFinite(v);
+const dayMs=864e5;
+const toDate=s=>{if(!s) return null; const d=new Date(/^\d{4}-\d{2}-\d{2}$/.test(s)?s+"T12:00:00Z":s); return isNaN(d)?null:d;};
+const fmtDay=d=>d?d.toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric",timeZone:"UTC"}):"";
+const fmtStamp=d=>d?d.toLocaleString("en-US",{month:"short",day:"numeric",hour:"numeric",minute:"2-digit",timeZone:"America/New_York"})+" ET":"";
+const snapObj=id=>SNAPS.find(s=>s.id===id);
+const latestSnap=()=>SNAPS[0];
+const asArr=v=>Array.isArray(v)?v:(v==null||v===""?[]:[v]);
+
+/* Normalise one model record into what the page needs. Missing fields are tolerated. */
+function norm(raw){
+  const snap=snapObj(raw.snapshot);
+  const S=isNum(raw.shock)?raw.shock:null, V=isNum(raw.vulnerability)?raw.vulnerability:null;
+  const score=S!=null&&V!=null?S*V:null;
+  const upd=toDate(raw.updated_at)||(snap&&snap.date)||null;
+  return {raw,id:String(raw.id),snapshot:raw.snapshot,snapDate:snap?snap.date:upd,line:raw.business_line,sub:raw.sub_line||"",
+    region:raw.region||"US",family:raw.risk_family||"Unassigned",conf:raw.confidence||"Not rated",S,V,score,lvl:level(score),
+    upd,title:raw.title||"(untitled)",line1:raw.summary_line||"",what:raw.what_happened||"",
+    chain:asArr(raw.transmission&&[raw.transmission.event,raw.transmission.mechanism,raw.transmission.dtcc_process]),
+    sowhat:raw.so_what||"",nowwhat:raw.so_now_what||"",
+    time:raw.time_phased?[raw.time_phased.now,raw.time_phased.next,raw.time_phased.later]:[],
+    shockMethod:raw.shock_method||"",shockText:raw.shock_basis||"",vulnText:raw.vulnerability_basis||"",
+    whyLine:raw.why_this_line||"",unknowns:asArr(raw.key_unknowns),stand:raw.where_we_stand||"",share:raw.shareable_line||"",
+    sources:asArr(raw.sources).map(s=>typeof s==="string"?{name:s,url:""}:{name:s.name||s.url||"Source",url:s.url||""}),
+    review:raw.review_status||"",aiFields:asArr(raw.ai_generated_fields)};
+}
+const ALL=()=>(DATA&&Array.isArray(DATA.items)?DATA.items:[]).map(norm);
+
+/* change vs the snapshot just before the item's own snapshot */
+function change(it,all){
+  const idx=SNAPS.findIndex(s=>s.id===it.snapshot); const prevSnap=SNAPS[idx+1];
+  if(idx<0||!prevSnap) return null;
+  const prev=all.find(p=>p.id===it.id&&p.snapshot===prevSnap.id);
+  if(!prev) return {k:"new",t:"New this week"};
+  if(it.score!=null&&prev.score!=null&&it.score!==prev.score) return {k:"chg",t:(it.score>prev.score?"↑ from ":"↓ from ")+prev.score+" ("+prev.lvl+")"};
+  return null;
+}
+
+/* items for a line, honouring snapshot + time range (wider ranges keep the latest version of each item) */
+function itemsForLine(line){
+  const all=ALL();
+  const sel=snapObj(state.snap); if(!sel) return [];
+  let pool=all.filter(i=>i.line===line);
+  if(state.range==="week") pool=pool.filter(i=>i.snapshot===state.snap);
+  else{
+    const ref=sel.date.getTime(), from=state.range==="all"?-Infinity:ref-Number(state.range)*dayMs;
+    pool=pool.filter(i=>{const t=(i.snapDate||i.upd||sel.date).getTime(); return t<=ref+6*dayMs&&t>=from;});
+    const best={}; pool.forEach(i=>{const b=best[i.id]; if(!b||(i.snapDate||0)>(b.snapDate||0)) best[i.id]=i;});
+    pool=Object.values(best);
+  }
+  return pool.map(i=>({...i,chg:change(i,all)}));
+}
+function sortItems(a){
+  const t=i=>(i.upd||i.snapDate||new Date(0)).getTime();
+  const sc=(i,dir)=>i.score==null?(dir>0?-1:999):i.score;
+  const by={
+    "score":(x,y)=>sc(y,1)-sc(x,1)||t(y)-t(x),
+    "score-asc":(x,y)=>sc(x,-1)-sc(y,-1)||t(y)-t(x),
+    "newest":(x,y)=>t(y)-t(x)||sc(y,1)-sc(x,1),
+    "oldest":(x,y)=>t(x)-t(y)||sc(y,1)-sc(x,1)};
+  return a.sort(by[state.sort]||by.score);
+}
+function lineInfo(line){return (DATA&&DATA.lines&&DATA.lines[line])||{};}
+function lineSummary(line){const s=lineInfo(line).summary; if(!s) return ""; return typeof s==="string"?s:(s[state.snap]||"");}
+function lineList(line,key){return asArr(lineInfo(line)[key]).filter(x=>!x.snapshot||x.snapshot===state.snap);}
+function daysTo(d){const dd=toDate(d),s=snapObj(state.snap); return dd&&s?Math.round((dd-s.date)/dayMs):null;}
+
+/* ---------- list view ---------- */
+function renderList(){
+  const L=state.line, meta=LINE_META[L]||{full:L};
+  const all=sortItems(itemsForLine(L));
+  const shown=all.filter(i=>(state.sev==="All"||i.lvl===state.sev)&&(state.fam==="All"||i.family===state.fam)&&(state.region==="All"||i.region===state.region));
+  const c={High:0,Medium:0,Low:0,Pending:0}; all.forEach(i=>c[i.lvl]++);
+  const fams=[...new Set(all.map(i=>i.family))];
+  const famOpts=[...FAMILIES,...fams.filter(f=>!FAMILIES.includes(f))];
+  const regions=["All",...new Set(["US","Global",...ALL().map(i=>i.region)])];
+  const review=lineList(L,"review"), coming=lineList(L,"coming"), summary=lineSummary(L);
+  const filtered=state.sev!=="All"||state.fam!=="All"||state.region!=="All";
+  const counts=Object.fromEntries(LINE_KEYS.map(k=>[k,itemsForLine(k).length]));
+  const rangeT=RANGES.find(r=>r.k===state.range).t;
+  document.getElementById("app").innerHTML=`
+  ${header()}
+  <div class="tabs" role="tablist" aria-label="Business line">
+    ${LINE_KEYS.map(k=>`<button class="tab" role="tab" aria-selected="${k===L}" data-line="${esc(k)}">${esc(k)}<span class="ct" aria-label="${counts[k]} items">${counts[k]}</span></button>`).join("")}
+    <span class="saved">✓ Opens on ${esc(L)} next time</span>
+  </div>
+  <section class="summary" aria-label="Summary">
+    <div class="sumhead"><h2>${esc(L)} — the few things that matter ${state.range==="week"?"this week":"in this period"}</h2>${summary?`<span class="ai">AI-WRITTEN</span>`:""}</div>
+    ${summary?`<p>${esc(summary)}</p>`:`<p class="none">${esc(meta.full)}. ${all.length?"No written summary for this run.":"No scored items for this line in this run."}</p>`}
+    <div class="sumrow">
+      <span class="cnt"><span class="dot" style="background:var(--high)"></span>${c.High} High</span>
+      <span class="cnt"><span class="dot" style="background:var(--med)"></span>${c.Medium} Medium</span>
+      <span class="cnt"><span class="dot" style="background:var(--low)"></span>${c.Low} Low</span>
+      ${c.Pending?`<span class="cnt"><span class="dot" style="background:var(--pend);border:1px solid var(--line)"></span>${c.Pending} V pending</span>`:""}
+      <span class="cnt" style="color:var(--muted)">${review.length} awaiting review</span>
+    </div>
+    ${coming.length?`<div class="coming"><b>Coming up</b>${coming.map(x=>{const n=daysTo(x.date);return `<span class="date">${fmtDay(toDate(x.date))} · ${esc(x.title)}${n!=null&&n>=0?` · ${n} days`:""}</span>`}).join("")}</div>`:""}
+  </section>
+  <div class="filters" role="group" aria-label="Time and sort">
+    <label for="f-range">Time <select id="f-range">${RANGES.map(r=>`<option value="${r.k}" ${state.range===r.k?"selected":""}>${r.t}</option>`).join("")}</select></label>
+    <label for="f-sort">Sort <select id="f-sort">${SORTS.map(s=>`<option value="${s.k}" ${state.sort===s.k?"selected":""}>${s.t}</option>`).join("")}</select></label>
+  </div>
+  <div class="filters" role="group" aria-label="Filters">
+    <span class="seg" aria-label="Severity">${["All","High","Medium","Low",...(c.Pending?["Pending"]:[])].map(s=>`<button data-sev="${s}" aria-pressed="${state.sev===s}">${s==="Pending"?"V pending":s}</button>`).join("")}</span>
+    <label for="f-fam">Risk family <select id="f-fam"><option>All</option>${famOpts.map(f=>`<option ${state.fam===f?"selected":""} ${fams.includes(f)?"":"disabled"}>${esc(f)}</option>`).join("")}</select></label>
+    <label for="f-reg">Region <select id="f-reg">${regions.map(r=>`<option ${state.region===r?"selected":""}>${esc(r)}</option>`).join("")}</select></label>
+    ${filtered?`<button class="clear" id="clear">Clear filters</button>`:""}
+    <span class="showing">Showing ${shown.length} of ${all.length}${state.range==="week"?"":" · "+rangeT.toLowerCase()}</span>
+  </div>
+  <div class="list">
+  ${shown.length?shown.map(cardHtml).join(""):emptyHtml(all.length)}
+  </div>
+  ${review.length?`<section class="review" aria-label="Awaiting review">
+    <h3>${review.length} potential connection${review.length>1?"s":""} awaiting analyst review</h3>
+    <ul>${review.map(r=>`<li><b>${esc(r.title)}</b>${r.risk_family?` · ${esc(r.risk_family)}`:""} · not scored: ${esc(r.reason)}</li>`).join("")}</ul>
+  </section>`:""}
+  ${footer()}`;
+  bindCommon();
+  document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{state.line=b.dataset.line;state.sev="All";state.fam="All";state.region="All";try{localStorage.setItem("rh-line",state.line)}catch(e){};setHash(lineHash(state.line));});
+  document.querySelectorAll("[data-sev]").forEach(b=>b.onclick=()=>{state.sev=b.dataset.sev;renderList();});
+  document.getElementById("f-fam").onchange=e=>{state.fam=e.target.value;renderList();};
+  document.getElementById("f-reg").onchange=e=>{state.region=e.target.value;renderList();};
+  document.getElementById("f-range").onchange=e=>{state.range=e.target.value;renderList();};
+  document.getElementById("f-sort").onchange=e=>{state.sort=e.target.value;try{localStorage.setItem("rh-sort",state.sort)}catch(x){};renderList();};
+  const cl=document.getElementById("clear"); if(cl) cl.onclick=resetFilters;
+  const r=document.getElementById("reset"); if(r) r.onclick=resetFilters;
+  document.querySelectorAll("[data-open]").forEach(b=>b.onclick=()=>setHash("item/"+encodeURIComponent(b.dataset.open)+"/"+encodeURIComponent(b.dataset.snap)));
+}
+function resetFilters(){state.sev="All";state.fam="All";state.region="All";renderList();}
+function sevBox(i){return `<span class="sev ${i.lvl}">${i.score!=null?`<span class="n">${i.score}</span><span class="l">${i.lvl.toUpperCase()}</span>`:`<span class="n">S${i.S??"–"}</span><span class="l">V PENDING</span>`}</span>`;}
+function scoreChip(i){return `<span class="chip o">Shock ${i.S??"–"} × Vulnerability ${i.V??"pending"}</span>`;}
+function cardHtml(i){
+  const otherWeek=state.range!=="week"&&i.snapshot!==state.snap;
+  return `<button class="card" data-open="${esc(i.id)}" data-snap="${esc(i.snapshot)}" aria-label="Open details: ${esc(i.title)}">
+    ${sevBox(i)}
+    <span style="min-width:0;display:block">
+      <span class="ctitle" style="display:block">${esc(i.title)}</span>
+      <span class="chips">
+        ${i.chg&&!otherWeek?`<span class="chip ${i.chg.k}">${esc(i.chg.t)}</span>`:""}
+        ${otherWeek?`<span class="chip wk">Week of ${esc(fmtDay(i.snapDate))}</span>`:""}
+        <span class="chip">${esc(i.family)}</span><span class="chip">${esc(i.line)}${i.sub?" · "+esc(i.sub):""}</span>
+        ${scoreChip(i)}<span class="chip o">Confidence: ${esc(i.conf)}</span>
+      </span>
+      ${i.line1?`<span class="cline" style="display:block">${i.aiFields.includes("summary_line")?`<span class="ai">AI-WRITTEN</span> `:""}${esc(i.line1)}</span>`:""}
+      <span class="cfoot"><span>${i.sources.length} source${i.sources.length===1?"":"s"}${i.upd?" · updated "+esc(fmtStamp(i.upd)):""}</span><span class="more">Details ›</span></span>
+    </span>
+  </button>`;
+}
+function emptyHtml(total){
+  if(LOAD_ERR) return `<div class="empty"><b>Couldn't load model output.</b><br>${esc(LOAD_ERR)}<br><br>Opening the file directly from disk blocks data loading. Run <code>python3 -m http.server</code> inside <code>docs/</code>, or use the GitHub Pages link.</div>`;
+  if(!SNAPS.length) return `<div class="empty"><b>No model output yet.</b><br>The risk model hasn't written <code>docs/data/risk_output.json</code> yet.<br><a href="?sample=1">Preview with sample data ›</a></div>`;
+  if(total) return `<div class="empty">No items match these filters.<br><button id="reset">Clear filters</button></div>`;
+  return `<div class="empty">No items for ${esc(state.line)} ${state.range==="week"?"in this week's run":"in this time range"}.${state.range==="week"?`<br><span style="font-size:14px">Try Time → All time to see earlier weeks.</span>`:""}</div>`;
+}
+
+function header(){
+  const badge=LOAD_ERR?`<span class="sample">Load error</span>`:!SNAPS.length?`<span class="sample">No data yet</span>`:DATA.sample?`<span class="sample">Sample data</span>`:"";
+  return `<header class="top">
+  <div class="brand"><h1>Risk Horizon</h1><span>External risk brief for the business-line GM</span></div>
+  <div class="snap">${badge}${SNAPS.length?`<label for="snap">Snapshot</label>
+  <select id="snap">${SNAPS.map((s,n)=>`<option value="${esc(s.id)}" ${s.id===state.snap?"selected":""}>${esc(s.label)}${n===0?" (latest)":""}</option>`).join("")}</select>`:""}</div>
+</header>`}
+function footer(){
+  const gen=DATA&&toDate(DATA.generated_at);
+  return `<footer class="method">
+  <span><b>Severity (1–25) = External Shock (1–5) × Internal Vulnerability (1–5).</b> Shock comes from a market indicator's percentile against its own history, or an event rubric for events with no market indicator. Vulnerability comes from the line's latest published DTCC PQD; where none is available the card shows "V pending" instead of a score. High 15–25 · Medium 8–14 · Low 1–7. Each card compares with the previous weekly run. Confidence is shown beside the score, never multiplied in.</span>
+  <span>Prototype for the DTCC × Duke capstone. Public data only.${DATA&&DATA.sample?" Everything on this page is sample data for layout testing.":""}${gen?" Model output generated "+esc(fmtStamp(gen))+".":""}${DATA&&DATA.model_version?" Model "+esc(DATA.model_version)+".":""}</span>
+</footer>`}
+function bindCommon(){const s=document.getElementById("snap"); if(s) s.onchange=e=>{
+  state.snap=e.target.value;
+  const h=decodeURIComponent((location.hash||"").slice(1));
+  if(h.startsWith("item/")){ /* on a detail page: jump to the same item in the new week, or back to the list */
+    const id=h.split("/")[1];
+    return setHash(ALL().some(i=>i.id===id&&i.snapshot===state.snap)?"item/"+encodeURIComponent(id)+"/"+encodeURIComponent(state.snap):lineHash(state.line));
+  }
+  route();};}
+
+/* ---------- detail view ---------- */
+function renderDetail(id,snap){
+  const all=ALL();
+  let it=all.find(i=>i.id===id&&i.snapshot===snap)||all.filter(i=>i.id===id).sort((a,b)=>(b.snapDate||0)-(a.snapDate||0))[0];
+  if(!it){ setHash(lineHash(state.line)); return; }
+  it={...it,chg:change(it,all)};
+  state.line=LINE_META[it.line]?it.line:state.line;
+  const i=it, ai=f=>i.aiFields.includes(f)?` <span class="ai">AI-WRITTEN</span>`:"";
+  document.getElementById("app").innerHTML=`
+  ${header()}
+  <button class="back" id="back">‹ Back to ${esc(state.line)} brief</button>
+  <div class="dhead">
+    ${sevBox(i)}
+    <div style="min-width:0">
+      <h2>${esc(i.title)}</h2>
+      <div class="chips">${i.chg?`<span class="chip ${i.chg.k}">${esc(i.chg.t)}</span>`:""}<span class="chip">${esc(i.family)}</span><span class="chip">${esc(i.line)}${i.sub?" · "+esc(i.sub):""}</span><span class="chip o">Region: ${esc(i.region)}</span>${scoreChip(i)}<span class="chip o">Confidence: ${esc(i.conf)}</span></div>
+      ${i.what?`<div class="stamp">What happened: ${esc(i.what)}</div>`:""}
+    </div>
+  </div>
+  ${i.chain.some(Boolean)?`<section class="sec"><h3 class="lab">Transmission chain</h3>
+    <div class="chain">
+      <div class="step"><div class="k">1 · World event</div>${esc(i.chain[0])}</div><div class="arrow" aria-hidden="true">→</div>
+      <div class="step"><div class="k">2 · Mechanism</div>${esc(i.chain[1])}</div><div class="arrow" aria-hidden="true">→</div>
+      <div class="step end"><div class="k">3 · DTCC process touched</div>${esc(i.chain[2])}</div>
+    </div></section>`:""}
+  ${i.sowhat||i.nowwhat?`<section class="sec two">
+    <div class="box"><h3 class="lab">So what${ai("so_what")}</h3><p>${esc(i.sowhat)||"—"}</p></div>
+    <div class="box now"><h3 class="lab">So now what${ai("so_now_what")}</h3><p>${esc(i.nowwhat)||"—"}</p></div>
+  </section>`:""}
+  ${i.time.some(Boolean)?`<section class="sec"><h3 class="lab">Time-phased view</h3>
+    <div class="time">${["Now · this week","Next · 1–3 months","Later · 2027+"].map((k,n)=>`<div class="t"><div class="k">${k}</div><p>${esc(i.time[n])||"—"}</p></div>`).join("")}</div></section>`:""}
+  <section class="sec two">
+    <div class="box"><h3 class="lab">How the score was built</h3><div class="calc">
+      <span><b>Shock ${i.S??"–"}</b>${i.shockMethod?" · "+esc(i.shockMethod):""}${i.shockText?": "+esc(i.shockText):""}</span>
+      <span><b>Vulnerability ${i.V??"pending"}</b>${i.vulnText?" · "+esc(i.vulnText):i.V==null?" · no PQD buffer available for this line yet":""}</span>
+      <span class="eq">${i.score!=null?`${i.S} × ${i.V} = ${i.score} → ${i.lvl}`:`Shock ${i.S??"–"} only · score waits on V`}</span>
+      ${i.whyLine?`<span style="color:var(--muted);font-size:14px">${esc(i.whyLine)}</span>`:""}</div></div>
+    <div class="box"><h3 class="lab">Confidence and key unknowns</h3><ul><li><b>${esc(i.conf)}</b> confidence</li>${i.unknowns.map(u=>`<li>${esc(u)}</li>`).join("")}</ul></div>
+  </section>
+  ${i.stand?`<section class="sec"><h3 class="lab">Where we stand</h3><p>${esc(i.stand)}</p></section>`:""}
+  ${i.share?`<section class="sec share"><div style="min-width:0"><h3 class="lab" style="margin-bottom:4px">Shareable line${ai("shareable_line")}</h3><q id="shareText">${esc(i.share)}</q></div><button class="copy" id="copy">Copy line</button></section>`:""}
+  <section class="srcs"><h3 class="lab" style="margin:0">Sources</h3>
+    ${i.sources.length?`<ul>${i.sources.map(s=>`<li>${s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`:esc(s.name)}</li>`).join("")}</ul>`:`<span class="rv">No sources listed.</span>`}
+    <span class="rv">Week of ${esc(fmtDay(i.snapDate))}${i.upd?" · updated "+esc(fmtStamp(i.upd)):""}${i.review?" · Review: "+esc(i.review):""}</span></section>
+  <details class="json"><summary>Structured record behind this card</summary><pre>${esc(JSON.stringify(i.raw,null,2))}</pre></details>
+  ${footer()}`;
+  bindCommon();
+  document.getElementById("back").onclick=()=>setHash(lineHash(state.line));
+  const cp=document.getElementById("copy");
+  if(cp) cp.onclick=()=>{const t=i.share;
+    const ok=()=>{cp.textContent="Copied";setTimeout(()=>cp.textContent="Copy line",1600)};
+    const fallback=()=>{const r=document.createRange();r.selectNodeContents(document.getElementById("shareText"));const s=getSelection();s.removeAllRanges();s.addRange(r);cp.textContent="Selected, press Ctrl/⌘+C";};
+    try{navigator.clipboard.writeText(t).then(ok,fallback)}catch(e){fallback()}};
+  window.scrollTo(0,0);
+}
+
+/* ---------- routing: #ecs  |  #item/<id>/<snapshot> ---------- */
+const lineHash=l=>l.toLowerCase().replace(/\s+/g,"-");
+function setHash(h){ if(location.hash.slice(1)===h) route(); else location.hash=h; }
+function route(){
+  const h=decodeURIComponent((location.hash||"").slice(1));
+  if(h.startsWith("item/")){const [,id,snap]=h.split("/"); return renderDetail(id,snap);}
+  const L=LINE_KEYS.find(k=>lineHash(k)===h.toLowerCase());
+  if(L&&L!==state.line){state.line=L;try{localStorage.setItem("rh-line",L)}catch(e){}}
+  renderList();
+}
+
+/* ---------- load ---------- */
+async function load(){
+  try{
+    const r=await fetch(DATA_URL,{cache:"no-store"});
+    if(!r.ok) throw new Error("HTTP "+r.status+" for "+DATA_URL);
+    DATA=await r.json();
+  }catch(e){ DATA={items:[],snapshots:[]}; LOAD_ERR=e.message||String(e); }
+  SNAPS=asArr(DATA.snapshots).map(s=>({id:String(s.id),date:toDate(s.date||s.id),label:s.label||("Week of "+fmtDay(toDate(s.date||s.id)))}))
+    .filter(s=>s.date).sort((a,b)=>b.date-a.date);
+  /* snapshots referenced by items but not listed are added automatically */
+  asArr(DATA.items).forEach(i=>{if(i.snapshot&&!SNAPS.some(s=>s.id===i.snapshot)){const d=toDate(i.snapshot); if(d) SNAPS.push({id:i.snapshot,date:d,label:"Week of "+fmtDay(d)});}});
+  SNAPS.sort((a,b)=>b.date-a.date);
+  state.snap=SNAPS.length?SNAPS[0].id:null;
+  window.addEventListener("hashchange",route);
+  route();
+}
+load();
+</script>
+</body>
+</html>
