@@ -1,0 +1,7 @@
+catalog_version,chain_id,model_id,simulation_id,simulation_status,source_type,historical_validation_status,full_chain_validated,real_world_probability_calibrated
+expanded_v3,ECS-DTC-06,DTC_CONTROL,SIM_ec170e3eef71a590,scenario_explored,synthetic,unchanged; service-specific empirical data remain missing,False,False
+expanded_v3,FICC-MBSD-08,EPN_POOL,SIM_ec170e3eef71a590,scenario_explored,synthetic,unchanged; service-specific empirical data remain missing,False,False
+expanded_v3,FICC-MBSD-02,EPN_POOL,SIM_ec170e3eef71a590,scenario_explored,synthetic,unchanged; service-specific empirical data remain missing,False,False
+expanded_v3,FICC-MBSD-05,EPN_POOL,SIM_ec170e3eef71a590,generic_outage_scenario_only,synthetic,unchanged; service-specific empirical data remain missing,False,False
+expanded_v3,FICC-MBSD-09,EPN_POOL,SIM_ec170e3eef71a590,generic_outage_scenario_only,synthetic,unchanged; service-specific empirical data remain missing,False,False
+expanded_v3,FICC-MBSD-06,TBA_PIPELINE,SIM_ec170e3eef71a590,scenario_explored,synthetic,unchanged; service-specific empirical data remain missing,False,False

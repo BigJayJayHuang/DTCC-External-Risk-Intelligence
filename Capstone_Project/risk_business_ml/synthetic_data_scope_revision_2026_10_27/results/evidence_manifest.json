@@ -1,0 +1,230 @@
+[
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+    "sha256": "8efcf690bb68eb25a7031fbdf10a417fc6e40ccfe7a7828b038aab1c5189c307"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/FICC-GSD-01_primary_lag0_pairs.csv",
+    "sha256": "d6fb5fb5f6d8ec42c350546cfed2bee753fcdabe8ea827dc02e26bf8fca2c3bc"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/business_responses_used.csv",
+    "sha256": "1c5b7d7fb2e0328fae6e0a7c2e09e835388b3391b196b86327231e292effaa88"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/inputs/market_daily.csv",
+    "sha256": "715596cd33c3f711c3864138427faefab7e8437cebadcbea82a0f8b2a437fc47"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv",
+    "sha256": "aa6fd6b5a9f57086bba6a70ca66cae78d444e1f23e0419029edf6756002e25a9"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/results/quarterly_test_results.csv",
+    "sha256": "b45f33a31ec838ba29d219620e23bb741398bd498da011ec267203dfc9ba3a4d"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/funding_ofr_hac_pairs.csv",
+    "sha256": "fd6fef47b218dd32133f9eef398f5b9b5b685c9d57eadcb16f45fd0132899256"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/results/ofr_funding_hac.json",
+    "sha256": "bb00f93cf142db36f31846fd879aa231ed295844c759eb91183a6fe855dd6cb4"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/inputs/ficc_daily_operations_history.csv",
+    "sha256": "efe8d99be961f95b75696384071e03229183fea0b07b5977437a061605e4133d"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json",
+    "sha256": "eaa90415d98be859027787c9f381d1b81a416211185811f3e9a59a39c4889c40"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/results/sponsored_node_descriptives.csv",
+    "sha256": "47722799357793c0fc13d028c7e1b91b5acb3d1a19195e7b9f3a6437d688d6d6"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/FICC-MBSD-01_primary_lag0_pairs.csv",
+    "sha256": "a1fe864118cc43397eb22cc82cd27f37216aa82173141dd5b423c397478f3043"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/MORTGAGE30US.csv",
+    "sha256": "dce969988bf51aa44e0a89a060abf75afa04d732aad64f7e5c93040a83fba6dc"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/pqd_additional_fields_normalized.csv",
+    "sha256": "fe417a91affda3984f6fce3063ecd1cae12bcb849928244760e8a0d876780061"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/ECS-NSCC-01B_primary_lag0_pairs.csv",
+    "sha256": "55a6c7b0fbe6ef070860bb287df3718673b47658c3c81429851afef3f1bc0380"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/ECS-NSCC-03B_secondary_changed_definition_lag0_pairs.csv",
+    "sha256": "e04f8bb3e99955609a73b04d070d54188acab9598b1d81b969f272101032e17f"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/cboe_equity_daily.csv",
+    "sha256": "3c9dbebe1ec6d0616924dd7f3ca7cfd9112417cd3cd11cedfd38b6f850c98904"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/equity_volume_ftd_weekly_pairs.csv",
+    "sha256": "4ac73374ffa1620f1fe66392a70ca4ac33f52502160ee02ae6202a6f3416da3b"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/sec_ftd_daily.csv",
+    "sha256": "0a36adea8d44594011a7e4d1bde13346396b3f0d3f885cd732d1744be6881c3e"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/results/equity_volume_ftd_hac.json",
+    "sha256": "6e8a85c387f7697da2e584b17721883daf55f6c9acf8e705277b9cb367d2a51d"
+  },
+  {
+    "file": "capstone_database/data/capstone.sqlite3",
+    "sha256": "57de6bb0488cb14148c0025ce43c867edbeb7e7fa4208e35ce61b79efc70d862"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/DCPF3M.csv",
+    "sha256": "149e7ef7ad040fc489e26a7505f4fb9abd09e900d65f0fd0110da9e65cacb9c1"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/DTB3.csv",
+    "sha256": "90940ccda358112ad1f6f78a566035fcce02fe8e07251e1636a3611e94064886"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/ECS-NSCC-01A_primary_lag0_pairs.csv",
+    "sha256": "a08d06d6ba383b2ef8981c67ad783a4137af0856dc5113e071e138b95dce325c"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/ECS-NSCC-01C_primary_lag0_pairs.csv",
+    "sha256": "b463ea95fa7e5ca6ae0bce059c691beddeb798bd4db67500ade0d9a1078d5d82"
+  },
+  {
+    "file": "risk_business_ml/transmission_chain_tests_2026_10_16/results/chain_status_EN.csv",
+    "sha256": "eec9adce8099f121862ac5c4198770e1c4b4779cd90db1ccd305321196a1420a"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/analysis_plan.json",
+    "sha256": "cfdb0f352efcf355c00216cbe46f51a43169d784113c8cb5d16ad256eacc944e"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/results/new_chain_status_EN.csv",
+    "sha256": "42deeda60c0474ad1d69ee7a948fd1b329708c7f6e99020df36a7c5ddecc4a9b"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/CONCENTRATION_lag0_pairs.csv",
+    "sha256": "e0b2158b7b694fb16ea0941810b124da62f95c94c7e735940ab2b913ede45dd1"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/results/association_results.csv",
+    "sha256": "accd529e757e3da332a159b09deefdf02d981b46a1d6c00da0cef7c3772351ae"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/results/event_test_summary.csv",
+    "sha256": "de781b4bf29ed89594d22863cf8e59fd78e3325d3f90382d9b517a52ba24042b"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/funding_signal.csv",
+    "sha256": "cc90d32987da11f407499b7033a04885dd4cbbc7900c0f5c67d65b80bbda6c86"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/GCF_FUNDING_pairs.csv",
+    "sha256": "037059dc0d6d1705ac803a4e92ec35db51f98a9e2bc7526972612be756e84f5c"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/mmf_repo_flow_million_usd.csv",
+    "sha256": "cca37468f279c2fb3996359f1fcc83c3f801fbe5164c4e8eea8cf58a9548d209"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/gcf_volume.csv",
+    "sha256": "7b21623f462e9e0ecf999d28a3d27f68e9f52eb0de77361a2219994f968f76f8"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/triparty_volume.csv",
+    "sha256": "6210b9398b0a1ee88418ddc03467dc27a6be5b7cf57e769139ff527523778d73"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/MMF_GCF_lag0_pairs.csv",
+    "sha256": "b153f7033c6109e0cf8168b2500baa6e7478bbc7fd6247e99ce002c91d7f9ef1"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/TRIPARTY_GCF_lag0_pairs.csv",
+    "sha256": "d056cac1405977d1760b50305a77d8eae72935cfc1f5fba72e33e6ffd08ba56e"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/ust10_abs_change_signal.csv",
+    "sha256": "2bc85c52b40e7e8983018cd12b4f1c103d537f9d4f2894703812f31d58c7ac6c"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/CROSS_MARGIN_lag0_pairs.csv",
+    "sha256": "759d83e15f4e06330bb19dd900b3011be73a34c215a92b7fc72621dc689ce541"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/new_pqd_fields.csv",
+    "sha256": "348897ffef112c4cbdffe77ca0870fff04f63c40a256826a6ffa343e6fbae5c1"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/new_pqd_cell_evidence.csv",
+    "sha256": "f8b6d7f9ba1688af3ec778500a8ff22348740b0748567b1eb962a1a59ae9f242"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/treasury_auction_observations.csv",
+    "sha256": "aab71292edc815a9650c517e19d2093c1ca67203308ca9d975d8a3704067a3c4"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/auction_monthly.csv",
+    "sha256": "7851b945e86678045ef2d1d939a2f082ecee27097460c2454c7227f4d3b9659d"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/AUCTION_GSD_lag0_pairs.csv",
+    "sha256": "413f65b18d85d9ac3b20e2eddf0b5a4e9b59ce45ce6aabefc50b0f89b20c69bb"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/TBA_PIPELINE_lag0_pairs.csv",
+    "sha256": "12c7de0091d13f64730accc917ae4f95c04cf16a10d31e6cbc805a5640376cdd"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/financial_guarantee_reconciliation.csv",
+    "sha256": "aa1eb4c43451ed5a05b57800091cb70085f486803cbfd02e770a6d6b76cd0080"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/vix_signal.csv",
+    "sha256": "0f5753c14755f35ef1233be9b58cd109821f0003ef78e18e8040f81dfccc24e5"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/SLD_LIQUIDITY_lag0_pairs.csv",
+    "sha256": "d330eb33c1c789586b52c33eaa71f687570b49a591c5ede822516d80dae55e8c"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/ECS-NSCC-09_event_alerts.csv",
+    "sha256": "dba64038e5e12f4aea24f377fbd9294d36bbbe1225712b08ffc0ec1dc54320b1"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/cp_bill_spread_signal.csv",
+    "sha256": "81f49139dfe23c3ea2c2800feffaee0eae9afbb2bde8c1ade625551e8e0d215f"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/ECS-DTC-01_event_alerts.csv",
+    "sha256": "5a8cf12e67e1fbf9238a7e114e44cc2d3ee4421544ce6ce674b9f14d6bde49ee"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/raw/sec_dtc_chill_2014.pdf",
+    "sha256": "2168ab9b053c5af42125681e821c74b978b3ac7866b7e37b63e23cd715bb0050"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/raw/acs_launch_2025.html",
+    "sha256": "42764b4901eba85bc47e0c935e80f9cd5f7cc751037f10a083b0ef0e6db5c6d7"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/raw/cftc_mfglobal.html",
+    "sha256": "a58a0cc2dc4eb2fd0933d1b23fe1bb791fc0054c7fa4ce0be51935379bf14e05"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/mutual_fund_net_issuance_million_usd.csv",
+    "sha256": "3634e137ca5ea0a146473618e7c3c8de3edb77070f2b4825d43a25e3ad3e296d"
+  },
+  {
+    "file": "risk_business_ml/new_reference_chain_tests_2026_10_21/data/ECS-DTC-06_event_alerts.csv",
+    "sha256": "f28d9eda32500df6a8a4903448719aae3f59af32753a64794feae6d478e866aa"
+  }
+]

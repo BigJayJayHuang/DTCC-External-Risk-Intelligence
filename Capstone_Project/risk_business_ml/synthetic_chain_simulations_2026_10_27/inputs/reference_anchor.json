@@ -1,0 +1,14 @@
+{
+  "reference_id": "MBSD_2026Q2_broad_unsettled_notional",
+  "source_type": "public_reference",
+  "value": 562000000000.0,
+  "units": "USD",
+  "reporting_period": "2026Q2",
+  "source_file": "FICC_Q2_2026.pdf",
+  "source_page": 17,
+  "source_sha256": "db6ad9f8356dca918c1bc8b347bf7b82a1f40de7718644cb25ca6bca52645f49",
+  "reconciliation_sha256": "aa1eb4c43451ed5a05b57800091cb70085f486803cbfd02e770a6d6b76cd0080",
+  "source_url": "https://www.dtcc.com/legal/financial-statements",
+  "definition": "Broad MBSD unsettled guarantee notional; not a TBA-only portfolio or a cash payment obligation.",
+  "use": "Illustrative scale only; hypothetical TBA share is an assumption, not inferred from this aggregate."
+}

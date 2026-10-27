@@ -1,0 +1,37 @@
+[
+  {
+    "path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/capstone_database/data/capstone.sqlite3",
+    "sha256": "57de6bb0488cb14148c0025ce43c867edbeb7e7fa4208e35ce61b79efc70d862",
+    "bytes": 282775552
+  },
+  {
+    "path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/capstone_database/data/capstone.sqlite3.gz",
+    "sha256": "fb5735c86ebda4a3a098ad5c04597ab7882a48d11c7ad5230aa0785622f1d45e",
+    "bytes": 19006868
+  },
+  {
+    "path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/capstone_database/data/snapshot_manifest.json",
+    "sha256": "ecee30720eebc864595a773420b859d3cf3aae2aac27011bd64b21544d53fee3",
+    "bytes": 2909
+  },
+  {
+    "path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/risk_business_ml/new_reference_chain_tests_2026_10_21/results/new_chain_status_EN.csv",
+    "sha256": "42deeda60c0474ad1d69ee7a948fd1b329708c7f6e99020df36a7c5ddecc4a9b",
+    "bytes": 16822
+  },
+  {
+    "path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/risk_business_ml/new_reference_chain_tests_2026_10_21/results/new_chain_status_CN.csv",
+    "sha256": "764b59d277cdc90ffcc51b33475c6f39ede90f8556d8b4496888692aa2210cd6",
+    "bytes": 14999
+  },
+  {
+    "path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/risk_business_ml/new_reference_chain_tests_2026_10_21/results/association_results.csv",
+    "sha256": "accd529e757e3da332a159b09deefdf02d981b46a1d6c00da0cef7c3772351ae",
+    "bytes": 3885
+  },
+  {
+    "path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/results/scoring/weekly_scores.json",
+    "sha256": "10ac2954f22cd1dd493467f8a725b38c1894a49c49f67b41cefcd99e9c525682",
+    "bytes": 11311
+  }
+]

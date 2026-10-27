@@ -1,0 +1,1720 @@
+[
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "FICC-GSD-01",
+    "event_cn": "国债抛售或收益率剧烈波动。",
+    "event_en": "Treasury selloff or sharp yield swings.",
+    "mechanism_cn": "会员已清算头寸的价格变动加大，改变其所需保证金。",
+    "mechanism_en": "Larger price moves on members' cleared positions change required margin.",
+    "process_cn": "GSD 保证金要求。",
+    "process_en": "GSD margin requirements.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "FICC-GSD-01",
+        "revised_ids": [
+          "FICC-GSD-01"
+        ],
+        "action": {
+          "CN": "相似，按示例收敛到保证金；保留原检验。",
+          "EN": "Aligned to margin requirements; retain the original test."
+        },
+        "validation_transfer": "same_specification"
+      }
+    ],
+    "route": "REAL_ONLY",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "external_signal_and_business_outcome",
+        "field": "Absolute10-year yield move→GSD IM QoQ",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/FICC-GSD-01_primary_lag0_pairs.csv",
+        "coverage": {
+          "paired_n": 22,
+          "first": "2021Q1",
+          "last": "2026Q2"
+        },
+        "boundary": "Real observed input/outcome pair; an insignificant result is retained, not replaced with synthetic values."
+      },
+      {
+        "stage": "external_signal",
+        "field": "DGS10",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/inputs/market_daily.csv",
+        "coverage": "Frozen research snapshot; DGS10/BAA10Y through2026-10-09; SOFR/EFFR/VIX through2026-10-13",
+        "boundary": "Real series remain real; broad market data do not identify a member, service dependency or failure."
+      },
+      {
+        "stage": "internal_aggregate_business_measure",
+        "field": "initial_margin_required_usd; im_qoq",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/business_responses_used.csv",
+        "coverage": "69 entity-quarter records: GSD/MBSD/NSCC,2020Q4–2026Q2",
+        "boundary": "Aggregates are not member-level cash, resources or payment records."
+      }
+    ],
+    "real_steps_cn": "直接用真实国债收益率和GSD保证金环比；原n=22、ρ=0.408且区间跨零的结果保留。",
+    "real_steps_en": "Use actual Treasury yields and GSD margin QoQ; retain n=22,rho0.408 and the interval crossing zero.",
+    "missing_steps_cn": "会员级组合可解释性仍有限，但不是本规格数据缺失。",
+    "missing_steps_en": "Member-portfolio attribution remains limited but is not missing data in this specification.",
+    "do_not_simulate_cn": "不再生成国债收益率、GSD保证金、宽泛虚拟头寸来重做同一链。",
+    "do_not_simulate_en": "Do not generate yields, GSD margins or broad toy portfolios to rerun this same specification.",
+    "permissible_simulation_cn": "当前已有数据检验规格不使用模拟；不显著、未过门槛或样本短都不能作为改用生成数据的理由。",
+    "permissible_simulation_en": "No simulation for the existing-data specification; insignificance, threshold failure or a short sample does not justify replacing observations.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/quarterly_test_results.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv"
+    ],
+    "evidence_paths": [
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/FICC-GSD-01_primary_lag0_pairs.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/business_responses_used.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/inputs/market_daily.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/quarterly_test_results.csv"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "FICC-GSD-02",
+    "event_cn": "回购利率飙升或短期融资收紧。",
+    "event_en": "Repo rates spike or short-term funding tightens.",
+    "mechanism_cn": "会员融资成本上升，每日结算支付更难筹集资金。",
+    "mechanism_en": "Members' funding costs rise, making daily settlement payments harder to fund.",
+    "process_cn": "GSD 结算支付和流动性。",
+    "process_en": "GSD settlement payments and liquidity.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "FICC-GSD-02",
+        "revised_ids": [
+          "FICC-GSD-02"
+        ],
+        "action": {
+          "CN": "相似，按示例写结算流动性；利差结果仅为间接代理。",
+          "EN": "Aligned to settlement liquidity; the spread result remains an indirect proxy."
+        },
+        "validation_transfer": "proxy_only"
+      }
+    ],
+    "route": "REAL_PLUS_MISSING_LINK_SIMULATION",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "external_signal",
+        "field": "SOFR/EFFR",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/inputs/market_daily.csv",
+        "coverage": "Frozen research snapshot; DGS10/BAA10Y through2026-10-09; SOFR/EFFR/VIX through2026-10-13",
+        "boundary": "Real series remain real; broad market data do not identify a member, service dependency or failure."
+      },
+      {
+        "stage": "external_signal_and_business_outcome",
+        "field": "Adjusted funding stress→OFR overnight GCF−DVP spread",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/funding_ofr_hac_pairs.csv",
+        "coverage": {
+          "paired_n": 246,
+          "first": "2019-04-05",
+          "last": "2026-06-30"
+        },
+        "boundary": "Real market-price proxy; sparseGCF observations; not actual GSD funding failures."
+      },
+      {
+        "stage": "internal_aggregate_business_measure",
+        "field": "stress_payment_obligation_usd; qlr_quantified_sum_usd",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/business_responses_used.csv",
+        "coverage": "69 entity-quarter records: GSD/MBSD/NSCC,2020Q4–2026Q2",
+        "boundary": "Aggregates are not member-level cash, resources or payment records."
+      }
+    ],
+    "real_steps_cn": "真实融资利差、GCF−DVP利率及PQD总量继续用真实数据；保留原HAC不支持结果。",
+    "real_steps_en": "Keep observed funding spreads,GCF−DVP rates and aggregatePQD resources; retain the unsupported HAC result.",
+    "missing_steps_cn": "会员日内现金、付款到期与融资时间、实际未付金额。",
+    "missing_steps_en": "Member intraday cash, due/funding times and actual unpaid payments.",
+    "do_not_simulate_cn": "不生成已有SOFR/EFFR/OFR价格；不把GCF价格回归失败改成模拟通过。",
+    "do_not_simulate_en": "Do not generate existing rates or turn a failed GCF-price regression into a simulated pass.",
+    "permissible_simulation_cn": "只对缺失的会员现金缓冲和资金到达时间设区间，条件于实际融资压力日期检验付款约束；不是历史失败概率。",
+    "permissible_simulation_en": "Vary only unavailable member cash buffers/funding timing conditional on observed stress dates; test payment constraints, not historical failure probabilities.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/ofr_funding_hac.json"
+    ],
+    "evidence_paths": [
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/business_responses_used.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/funding_ofr_hac_pairs.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/inputs/market_daily.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/ofr_funding_hac.json"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "FICC-GSD-03",
+    "event_cn": "国债集中清算合规节点临近、延期或调整。",
+    "event_en": "Treasury central clearing deadlines approach, are extended, or change.",
+    "mechanism_cn": "机构为满足规则接入清算，包括通过 Sponsored 模式接入，改变接入工作量和业务量。",
+    "mechanism_en": "Firms onboard to meet the rule, including through Sponsored clearing, changing onboarding demand and volume.",
+    "process_cn": "GSD 客户接入和 Sponsored 业务量。",
+    "process_en": "GSD onboarding and Sponsored volume.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "FICC-GSD-03",
+        "revised_ids": [
+          "FICC-GSD-03"
+        ],
+        "action": {
+          "CN": "相似，保留接入和 Sponsored；移除必然集中于少数担保会员的结论。",
+          "EN": "Aligned to onboarding and Sponsored activity; remove inevitable sponsor-concentration claims."
+        },
+        "validation_transfer": "descriptive_only"
+      }
+    ],
+    "route": "REAL_ONLY",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "documented_event_or_case",
+        "field": "C01,C02",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json",
+        "coverage": "Frozen2026-10-16 case register; original source retrieval limitations retained",
+        "boundary": "Facts apply only to named event/process; index-only/adjacent cases are not full chain validation."
+      },
+      {
+        "stage": "observed_business_activity",
+        "field": "Sponsored TOTAL_AMOUNT",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/inputs/ficc_daily_operations_history.csv",
+        "coverage": {
+          "n": 1285,
+          "first": "2021-08-16",
+          "last": "2026-10-08"
+        },
+        "boundary": "Volume is observed; announcement timing does not prove causality."
+      }
+    ],
+    "real_steps_cn": "复用真实SEC节点和Sponsored业务量，已有前后各20观测的描述对比。",
+    "real_steps_en": "Reuse actualSEC milestones and Sponsored activity;20-observation before/after descriptions already exist.",
+    "missing_steps_cn": "实际接入会员数与未来合规节点结果；未来结果还没发生不能造历史数据。",
+    "missing_steps_en": "Real onboarding counts and future compliance outcomes; future outcomes cannot be manufactured as history.",
+    "do_not_simulate_cn": "不生成规则日期、Sponsored量或接入数量代替真实序列。",
+    "do_not_simulate_en": "Do not generate rule dates,Sponsored volumes or onboarding counts as replacements.",
+    "permissible_simulation_cn": "当前已有数据检验规格不使用模拟；不显著、未过门槛或样本短都不能作为改用生成数据的理由。",
+    "permissible_simulation_en": "No simulation for the existing-data specification; insignificance, threshold failure or a short sample does not justify replacing observations.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/sponsored_node_descriptives.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "evidence_paths": [
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/inputs/ficc_daily_operations_history.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/sponsored_node_descriptives.csv"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "FICC-GSD-04",
+    "event_cn": "银行或交易商会员被降级、出现亏损或信用恶化，尚未确认违约。",
+    "event_en": "A bank or dealer member is downgraded, reports losses, or deteriorates in credit without a confirmed default.",
+    "mechanism_cn": "会员违约风险上升，增加风险监测和违约管理准备需求；实际违约另归 GSD-06。",
+    "mechanism_en": "Higher member default risk increases surveillance and default-management preparedness; an actual default routes to GSD-06.",
+    "process_cn": "FICC 会员信用监测及违约管理准备。",
+    "process_en": "FICC member credit surveillance and default-management preparedness.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "FICC-GSD-04",
+        "revised_ids": [
+          "FICC-GSD-04",
+          "FICC-GSD-06"
+        ],
+        "action": {
+          "CN": "按示例拆分信用恶化与实际违约；不再把降级直接写成共同分摊损失。",
+          "EN": "Split credit deterioration from actual default; a downgrade does not directly imply mutualized losses."
+        },
+        "validation_transfer": "split_event_stages"
+      }
+    ],
+    "route": "NOT_READY",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "external_signal",
+        "field": "BAA10Y",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/inputs/market_daily.csv",
+        "coverage": "Frozen research snapshot; DGS10/BAA10Y through2026-10-09; SOFR/EFFR/VIX through2026-10-13",
+        "boundary": "Real series remain real; broad market data do not identify a member, service dependency or failure."
+      },
+      {
+        "stage": "documented_event_or_case",
+        "field": "C03 onlydefaultstage,notpredefaultdecision",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json",
+        "coverage": "Frozen2026-10-16 case register; original source retrieval limitations retained",
+        "boundary": "Facts apply only to named event/process; index-only/adjacent cases are not full chain validation."
+      }
+    ],
+    "real_steps_cn": "保留真实宏观信用利差和已核实事件；按具名实体区分信用恶化和实际违约。",
+    "real_steps_en": "Retain observed macro credit spreads and verified events; distinguish named-entity deterioration from actual default.",
+    "missing_steps_cn": "历史会员身份、具名降级/亏损、监测决定及追加措施；Baa并非某会员信用事件。",
+    "missing_steps_en": "Dated memberships,named downgrades/losses,surveillance decisions and risk actions; Baa is not a member event.",
+    "do_not_simulate_cn": "不能随机生成真实会员评级、Watch List或风控决定来声称验证信用传导。",
+    "do_not_simulate_en": "Do not fabricate member ratings,watch-list entries or risk decisions as validation.",
+    "permissible_simulation_cn": "先定义具名会员和可解释决策规格；之后只能模拟假设风控措施的下游资源影响，不能验证是否真实触发。",
+    "permissible_simulation_en": "First define named members and a defensible decision specification; then only conditional downstream resource effects could be simulated, not actual triggering.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "evidence_paths": [
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/inputs/market_daily.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "FICC-GSD-06",
+    "event_cn": "GSD 清算会员实际违约或 FICC 宣布停止为其提供服务。",
+    "event_en": "A GSD clearing member actually defaults or FICC ceases to act for it.",
+    "mechanism_cn": "FICC 按违约程序动用违约会员资源；剩余缺口才按损失分摊规则处理，可能涉及存续会员清算基金。",
+    "mechanism_en": "FICC applies the defaulting member's resources; any remaining shortfall is handled under loss-allocation rules and may involve surviving members' Clearing Fund deposits.",
+    "process_cn": "GSD 损失分摊与清算基金互助机制。",
+    "process_en": "GSD loss allocation and Clearing Fund mutualization.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "FICC-GSD-04",
+        "revised_ids": [
+          "FICC-GSD-04",
+          "FICC-GSD-06"
+        ],
+        "action": {
+          "CN": "按示例拆分信用恶化与实际违约；不再把降级直接写成共同分摊损失。",
+          "EN": "Split credit deterioration from actual default; a downgrade does not directly imply mutualized losses."
+        },
+        "validation_transfer": "split_event_stages"
+      }
+    ],
+    "route": "REAL_PLUS_MISSING_LINK_SIMULATION",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "documented_event_or_case",
+        "field": "C03 GSDdefaultpath only",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json",
+        "coverage": "Frozen2026-10-16 case register; original source retrieval limitations retained",
+        "boundary": "Facts apply only to named event/process; index-only/adjacent cases are not full chain validation."
+      },
+      {
+        "stage": "internal_aggregate_business_measure",
+        "field": "GSD initial margin/stress loss andQLR aggregates",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/business_responses_used.csv",
+        "coverage": "69 entity-quarter records: GSD/MBSD/NSCC,2020Q4–2026Q2",
+        "boundary": "Aggregates are not member-level cash, resources or payment records."
+      }
+    ],
+    "real_steps_cn": "实际违约事实及公开处置案例保留；PQD总资源只作真实总量背景。",
+    "real_steps_en": "Retain actual default facts/public close-out accounts; use aggregatePQD resources only as real scale context.",
+    "missing_steps_cn": "违约会员组合、专属资源使用、真实平仓损失、分摊次序和剩余缺口。",
+    "missing_steps_en": "Defaulter portfolio,own resources used,real close-out losses,allocation sequence and residual shortfall.",
+    "do_not_simulate_cn": "不重生成违约事件，不将总清算基金当成违约会员自有资源。",
+    "do_not_simulate_en": "Do not regenerate the default event or treat aggregate clearing-fund resources as the defaulter's own.",
+    "permissible_simulation_cn": "仅对不可得的专属资源和损失比例做敏感性/守恒实验；保留真实事件与可比公开总量。",
+    "permissible_simulation_en": "Run sensitivity/conservation experiments only for unavailable member resources/loss fractions while retaining actual events and compatible public aggregates.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "evidence_paths": [
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/business_responses_used.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "FICC-MBSD-01",
+    "event_cn": "房贷利率骤变或 MBS 利差扩大。",
+    "event_en": "Mortgage rates jump or MBS spreads widen.",
+    "mechanism_cn": "TBA 价格波动改变会员头寸的盯市价值，带动变动保证金和保证金要求变化。",
+    "mechanism_en": "TBA price swings change marked-to-market positions and affect variation margin and margin requirements.",
+    "process_cn": "MBSD 保证金及变动保证金。",
+    "process_en": "MBSD margin and variation margin.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "FICC-MBSD-01",
+        "revised_ids": [
+          "FICC-MBSD-01"
+        ],
+        "action": {
+          "CN": "相似，按示例保留 TBA 价格到保证金；保留代理及检验限制。",
+          "EN": "Aligned to TBA prices and margin; retain proxy and test limitations."
+        },
+        "validation_transfer": "same_specification"
+      }
+    ],
+    "route": "REAL_ONLY",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "external_signal_and_business_outcome",
+        "field": "PMMS−Treasury proxy change→MBSD VM peakQoQ",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/FICC-MBSD-01_primary_lag0_pairs.csv",
+        "coverage": {
+          "paired_n": 22,
+          "first": "2021Q1",
+          "last": "2026Q2"
+        },
+        "boundary": "Real observed input/outcome pair; an insignificant result is retained, not replaced with synthetic values."
+      },
+      {
+        "stage": "external_signal",
+        "field": "MORTGAGE30US",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/MORTGAGE30US.csv",
+        "coverage": {
+          "n": 459,
+          "first": "2018-01-04",
+          "last": "2026-10-15"
+        },
+        "boundary": "PMMS is a mortgage-rate proxy, not agencyMBS OAS; November2022method change."
+      },
+      {
+        "stage": "internal_aggregate_business_measure",
+        "field": "MBSD vm_peak_usd; vm_peak_qoq",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/business_responses_used.csv",
+        "coverage": "69 entity-quarter records: GSD/MBSD/NSCC,2020Q4–2026Q2",
+        "boundary": "Aggregates are not member-level cash, resources or payment records."
+      }
+    ],
+    "real_steps_cn": "直接使用真实房贷/国债利率代理和MBSD VM；保留n=22、ρ=0.150不显著的结果。",
+    "real_steps_en": "Use observed mortgage/Treasury proxy and MBSD VM; retain n=22,rho0.150 and inconclusive evidence.",
+    "missing_steps_cn": "真实TBA价格、MBS OAS及会员组合解释仍未齐；这不要求重生成现有代理及VM。",
+    "missing_steps_en": "TrueTBA prices,MBSOAS and member books remain incomplete; that doesnot call for replacing observed proxies/VM.",
+    "do_not_simulate_cn": "不生成MBS冲击和VM来替代已有真实序列，也不把代理称成真实OAS。",
+    "do_not_simulate_en": "Do not replace observed proxies/VM with synthetic MBS shocks/VM or relabel the proxy as actualOAS.",
+    "permissible_simulation_cn": "当前已有数据检验规格不使用模拟；不显著、未过门槛或样本短都不能作为改用生成数据的理由。",
+    "permissible_simulation_en": "No simulation for the existing-data specification; insignificance, threshold failure or a short sample does not justify replacing observations.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/quarterly_test_results.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv"
+    ],
+    "evidence_paths": [
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/FICC-MBSD-01_primary_lag0_pairs.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/MORTGAGE30US.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/business_responses_used.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/quarterly_test_results.csv"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "FICC-GSD-08",
+    "event_cn": "承担 GSD 结算职能的清算银行出现运营或信用问题。",
+    "event_en": "A clearing bank performing a GSD settlement role has an operational or credit problem.",
+    "mechanism_cn": "经该银行完成的证券交收与 Fedwire 付款无法按时衔接，使对应 GSD 结算受阻。",
+    "mechanism_en": "Securities delivery and Fedwire payment through that bank cannot complete on time, interrupting the affected GSD settlement.",
+    "process_cn": "GSD 经清算银行进行的证券结算。",
+    "process_en": "GSD securities settlement via clearing banks.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "FICC-GSD-06",
+        "revised_ids": [
+          "FICC-GSD-08",
+          "TEAM-FICC-02"
+        ],
+        "action": {
+          "CN": "清算银行分支按示例 GSD-08；会员或供应商分支另保留。旧编号让给实际违约。",
+          "EN": "Align the clearing-bank branch to GSD-08; retain member/vendor operations separately. Reference GSD-06 means actual default."
+        },
+        "validation_transfer": "split_actor_roles"
+      }
+    ],
+    "route": "REAL_PLUS_MISSING_LINK_SIMULATION",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "documented_event_or_case",
+        "field": "C05 Treasury/BNY facts only",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json",
+        "coverage": "Frozen2026-10-16 case register; original source retrieval limitations retained",
+        "boundary": "Facts apply only to named event/process; index-only/adjacent cases are not full chain validation."
+      },
+      {
+        "stage": "reported_system_measure",
+        "field": "PQD17.2.1/17.3.1; GSD19.1.3.1/19.1.3.2",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/pqd_additional_fields_normalized.csv",
+        "coverage": "352 extracted rows; shared-system/trailing12month definitions; GSD capacity numbers only2025Q2–2026Q2",
+        "boundary": "Do not convert combined systems or trailing12month counts into service-specific daily outages."
+      }
+    ],
+    "real_steps_cn": "保留ICBC事件、国债市场及BNY已证实事实，以及注明范围的PQD运营披露。",
+    "real_steps_en": "Keep verified ICBC/Treasury/BNY facts and correctly scoped operational disclosures.",
+    "missing_steps_cn": "该银行在特定GSD交收中的角色、实际受阻的证券/资金腿和时点。",
+    "missing_steps_en": "Verified bank role in specificGSD settlement,affected securities/cash legs and timing.",
+    "do_not_simulate_cn": "不把ICBC/BNY市场事件或共享系统指标改写成已观察到的GSD故障。",
+    "do_not_simulate_en": "Do not recast ICBC/BNY market facts or shared-system measures as observed GSD failure.",
+    "permissible_simulation_cn": "只在显式假设的清算银行依赖和双腿时序下检验阻断/恢复机制；事件事实不生成。",
+    "permissible_simulation_en": "Test blocking/recovery only under explicitly hypothetical bank dependencies and two-leg timing; actual event facts are not generated.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "evidence_paths": [
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/pqd_additional_fields_normalized.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "TEAM-FICC-01",
+    "event_cn": "CME、ICE 等竞争对手推出国债清算服务、功能或客户接入。",
+    "event_en": "A competitor such as CME or ICE launches Treasury clearing services, features, or onboarding.",
+    "mechanism_cn": "同一客户群可选择其他服务；只有客户迁移或可比业务量证据才能判断 FICC 份额变化。",
+    "mechanism_en": "Customers may choose competing services; migration or comparable volume evidence is needed to assess changes in FICC share.",
+    "process_cn": "GSD 新增业务获取与竞争地位。",
+    "process_en": "GSD new-business acquisition and competitive position.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "FICC-GSD-05",
+        "revised_ids": [
+          "TEAM-FICC-01"
+        ],
+        "action": {
+          "CN": "不同机制且不冲突，保留竞争链；新 GSD-05 专指 GCF 履约。",
+          "EN": "Retain competition as a separate extension; reference GSD-05 concerns GCF obligations."
+        },
+        "validation_transfer": "unrun_outcome"
+      }
+    ],
+    "route": "NOT_READY",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "documented_event_or_case",
+        "field": "C04 competitorentryconfirmed",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json",
+        "coverage": "Frozen2026-10-16 case register; original source retrieval limitations retained",
+        "boundary": "Facts apply only to named event/process; index-only/adjacent cases are not full chain validation."
+      }
+    ],
+    "real_steps_cn": "已有真实竞争者审批/服务公告；继续保留原始证据。",
+    "real_steps_en": "Actual competitor approval/service announcements already exist and remain evidence.",
+    "missing_steps_cn": "同口径竞争者实际业务量、客户迁移及市场份额。",
+    "missing_steps_en": "Comparable competitor activity,customer migration and market shares.",
+    "do_not_simulate_cn": "不能随机生成迁移客户和份额，再声称竞争导致真实业务流失。",
+    "do_not_simulate_en": "Do not fabricate migrating clients/shares and claim actual business loss.",
+    "permissible_simulation_cn": "先补可比服务与客户选择规格；如做假设份额情景，只能展示算术敏感性，不属于该链的实证检验。",
+    "permissible_simulation_en": "First specify comparable services/customer-choice model; assumed share scenarios could only illustrate arithmetic sensitivity,not empirically test the chain.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "evidence_paths": [
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "TEAM-FICC-02",
+    "event_cn": "GSD 会员或其供应商发生网络攻击或系统故障。",
+    "event_en": "A GSD member or its vendor suffers a cyberattack or system outage.",
+    "mechanism_cn": "若故障确实影响该会员的 GSD 连接、提交或履约能力，交易提交或结算可能延迟。",
+    "mechanism_en": "If the incident impairs that member's GSD connection, submissions, or obligations, trade submission or settlement may be delayed.",
+    "process_cn": "GSD 会员交易提交及结算；银行结算通道问题另归 GSD-08。",
+    "process_en": "GSD member submissions and settlement; clearing-bank disruptions route separately to GSD-08.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "FICC-GSD-06",
+        "revised_ids": [
+          "FICC-GSD-08",
+          "TEAM-FICC-02"
+        ],
+        "action": {
+          "CN": "清算银行分支按示例 GSD-08；会员或供应商分支另保留。旧编号让给实际违约。",
+          "EN": "Align the clearing-bank branch to GSD-08; retain member/vendor operations separately. Reference GSD-06 means actual default."
+        },
+        "validation_transfer": "split_actor_roles"
+      }
+    ],
+    "route": "REAL_PLUS_MISSING_LINK_SIMULATION",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "documented_event_or_case",
+        "field": "C05 namedincident; directGSDdependencyunverified",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json",
+        "coverage": "Frozen2026-10-16 case register; original source retrieval limitations retained",
+        "boundary": "Facts apply only to named event/process; index-only/adjacent cases are not full chain validation."
+      },
+      {
+        "stage": "reported_system_measure",
+        "field": "PQD17.2.1/17.3.1; GSD19.1.3.1/19.1.3.2",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/pqd_additional_fields_normalized.csv",
+        "coverage": "352 extracted rows; shared-system/trailing12month definitions; GSD capacity numbers only2025Q2–2026Q2",
+        "boundary": "Do not convert combined systems or trailing12month counts into service-specific daily outages."
+      }
+    ],
+    "real_steps_cn": "复用具名网络事件及原始时间，不重生成新闻和事故频次。",
+    "real_steps_en": "Reuse named incident facts/timing; do not generate replacement news or frequencies.",
+    "missing_steps_cn": "会员/供应商到GSD依赖、受损指令、业务队列和恢复。",
+    "missing_steps_en": "Member/vendor-to-GSDdependencies,impaired instructions,queues and recovery.",
+    "do_not_simulate_cn": "不以漏洞计数、行业事故或共享PQD字段证明GSD暴露。",
+    "do_not_simulate_en": "Do not use vulnerability counts,industry incidents or sharedPQDfields to proveGSDexposure.",
+    "permissible_simulation_cn": "只模拟显式假设暴露下的缺失提交/交收队列；保留现实事件与适用范围，并与GSD08根因去重。",
+    "permissible_simulation_en": "Simulate only missing submission/settlement queues conditional on explicit assumed exposure; retain actual facts and deduplicate linkedGSD08root causes.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "evidence_paths": [
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/pqd_additional_fields_normalized.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "TEAM-FICC-03",
+    "event_cn": "GSE 托管、私有化或机构 MBS 担保安排出现实质变化。",
+    "event_en": "A substantive change occurs in GSE conservatorship, privatization, or agency-MBS guarantees.",
+    "mechanism_cn": "担保预期或交易约定变化可能改变机构 MBS 定价和 TBA 活动，进而影响 MBSD 清算及风险参数。",
+    "mechanism_en": "Changes in guarantee expectations or trading conventions may alter agency-MBS pricing and TBA activity, affecting MBSD clearing and risk parameters.",
+    "process_cn": "MBSD TBA 清算活动及相关风险参数。",
+    "process_en": "MBSD TBA clearing activity and related risk parameters.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "FICC-MBSD-02",
+        "revised_ids": [
+          "TEAM-FICC-03"
+        ],
+        "action": {
+          "CN": "保留 GSE 改革；示例 MBSD-02 是池交付失败，不能按同号替换。",
+          "EN": "Retain GSE reform; reference MBSD-02 concerns pool-delivery fails, a different mechanism."
+        },
+        "validation_transfer": "unrun_outcome"
+      }
+    ],
+    "route": "NOT_READY",
+    "real_test_available": false,
+    "real_inputs": [
+      {
+        "stage": "documented_event_or_case",
+        "field": "C06 adjacentUMBSnodeonly",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json",
+        "coverage": "Frozen2026-10-16 case register; original source retrieval limitations retained",
+        "boundary": "Facts apply only to named event/process; index-only/adjacent cases are not full chain validation."
+      },
+      {
+        "stage": "observed_activity",
+        "field": "MBSD MBS Total PAR Value",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/inputs/ficc_daily_operations_history.csv",
+        "coverage": {
+          "n": 250,
+          "first": "2025-10-09",
+          "last": "2026-10-09"
+        },
+        "boundary": "Agency/TBA activity cannot substitute for an undefined conservatorship-exit/privatization event."
+      }
+    ],
+    "real_steps_cn": "真实UMBS及改革材料、已有MBSD活动量保留。",
+    "real_steps_en": "Retain actualUMBS/reform materials and observedMBSDactivity.",
+    "missing_steps_cn": "明确适用的改革节点、正式TRACE数据访问/导出与对应MBSD反应。",
+    "missing_steps_en": "A defined applicable reform node,authorizedTRACEdata/export and correspondingMBSDresponse.",
+    "do_not_simulate_cn": "不能生成未发生改革、担保变化或随机TRACE交易来填充真实事件史。",
+    "do_not_simulate_en": "Do not fabricate unrealized reforms,guarantee changes orTRACEtrades as history.",
+    "permissible_simulation_cn": "先固定结构假设和改革事件定义；没有规格前不以随机数据宣布检验。",
+    "permissible_simulation_en": "Fix the structural assumptions/event definition first; without a specification,no random-data test should be declared.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "evidence_paths": [
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/inputs/ficc_daily_operations_history.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "ECS-NSCC-01",
+    "event_cn": "股市急跌或价格剧烈波动。",
+    "event_en": "A sharp equity selloff or large price swings.",
+    "mechanism_cn": "每日盯市现金流大幅变化，会员需要当日调动更多现金。",
+    "mechanism_en": "Daily mark-to-market payments change sharply, requiring members to move more cash that day.",
+    "process_cn": "NSCC 变动保证金。",
+    "process_en": "NSCC variation margin.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "ECS-NSCC-01B",
+        "revised_ids": [
+          "ECS-NSCC-01"
+        ],
+        "action": {
+          "CN": "与示例股市波动到 VM 相同，采用其编号与流程。",
+          "EN": "Align equity volatility to VM using the reference ID and process."
+        },
+        "validation_transfer": "same_specification"
+      }
+    ],
+    "route": "REAL_ONLY",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "external_signal_and_business_outcome",
+        "field": "VIX→NSCC VM peak/average",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/ECS-NSCC-01B_primary_lag0_pairs.csv",
+        "coverage": {
+          "paired_n": 23,
+          "first": "2020Q4",
+          "last": "2026Q2"
+        },
+        "boundary": "Real observed input/outcome pair; an insignificant result is retained, not replaced with synthetic values."
+      },
+      {
+        "stage": "external_signal",
+        "field": "VIXCLS",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/inputs/market_daily.csv",
+        "coverage": "Frozen research snapshot; DGS10/BAA10Y through2026-10-09; SOFR/EFFR/VIX through2026-10-13",
+        "boundary": "Real series remain real; broad market data do not identify a member, service dependency or failure."
+      },
+      {
+        "stage": "internal_aggregate_business_measure",
+        "field": "NSCC vm_peak_usd;vm_avg_usd",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/business_responses_used.csv",
+        "coverage": "69 entity-quarter records: GSD/MBSD/NSCC,2020Q4–2026Q2",
+        "boundary": "Aggregates are not member-level cash, resources or payment records."
+      }
+    ],
+    "real_steps_cn": "直接使用真实VIX和NSCC VM，保留ρ=0.081及原统计限制。",
+    "real_steps_en": "Use actualVIX/NSCCVM and retain rho0.081 and original limitations.",
+    "missing_steps_cn": "会员日内资金网络不在当前季度规格内；无须为已有VM重新造数据。",
+    "missing_steps_en": "Intraday member funding networks are outside the current quarterlyspec; no replacementVMdata are needed.",
+    "do_not_simulate_cn": "撤下用于重复同一VM传导规格的全合成股价/头寸/VM例子。",
+    "do_not_simulate_en": "Retire all-synthetic price/position/VM examples as substitutes for this observedVMspec.",
+    "permissible_simulation_cn": "当前已有数据检验规格不使用模拟；不显著、未过门槛或样本短都不能作为改用生成数据的理由。",
+    "permissible_simulation_en": "No simulation for the existing-data specification; insignificance, threshold failure or a short sample does not justify replacing observations.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/quarterly_test_results.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv"
+    ],
+    "evidence_paths": [
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/ECS-NSCC-01B_primary_lag0_pairs.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/business_responses_used.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/inputs/market_daily.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/quarterly_test_results.csv"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "ECS-NSCC-02",
+    "event_cn": "短期融资紧张，券商筹资成本上升。",
+    "event_en": "Short-term funding tightens and brokers face higher funding costs.",
+    "mechanism_cn": "券商可用于每日付款的现金减少，变动保证金和结算付款更难筹集。",
+    "mechanism_en": "Brokers have less spare cash for daily payments, making variation margin and settlement payments harder to fund.",
+    "process_cn": "NSCC 变动保证金和流动性。",
+    "process_en": "NSCC variation margin and liquidity.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "ECS-NSCC-03B",
+        "revised_ids": [
+          "ECS-NSCC-02"
+        ],
+        "action": {
+          "CN": "按示例定位 VM 和流动性；旧 IM 比例通过不等于新目标已通过。",
+          "EN": "Align to VM and liquidity; a legacy IM-ratio pass does not validate the revised target."
+        },
+        "validation_transfer": "target_changed"
+      }
+    ],
+    "route": "REAL_ONLY",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "external_signal_and_business_outcome",
+        "field": "AdjustedSOFR−EFFR→NSCC VM peak/average,declaredsecondary",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/ECS-NSCC-03B_secondary_changed_definition_lag0_pairs.csv",
+        "coverage": {
+          "paired_n": 23,
+          "first": "2020Q4",
+          "last": "2026Q2"
+        },
+        "boundary": "RealVMtarget exists; oldIM-ratio result is not transferred to revisedVMtarget; retain secondary designation."
+      },
+      {
+        "stage": "external_signal",
+        "field": "SOFR/EFFR",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/inputs/market_daily.csv",
+        "coverage": "Frozen research snapshot; DGS10/BAA10Y through2026-10-09; SOFR/EFFR/VIX through2026-10-13",
+        "boundary": "Real series remain real; broad market data do not identify a member, service dependency or failure."
+      },
+      {
+        "stage": "internal_aggregate_business_measure",
+        "field": "NSCC vm_avg_usd;vm_peak_usd;QLR",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/business_responses_used.csv",
+        "coverage": "69 entity-quarter records: GSD/MBSD/NSCC,2020Q4–2026Q2",
+        "boundary": "Aggregates are not member-level cash, resources or payment records."
+      }
+    ],
+    "real_steps_cn": "新目录要求VM/流动性，真实融资信号和VM已有23季配对，可按明确新规格重跑/报告；不能继承旧IM通过。",
+    "real_steps_en": "For revisedVM/liquidity target,real funding/VMpairs already exist for23quarters; analyze under an explicit specification,without inheriting anIM-ratio pass.",
+    "missing_steps_cn": "真实会员未付款、可动用现金及日内资金时间仍缺；不影响现有VM代理分析使用真实数据。",
+    "missing_steps_en": "Member unpaid payments,availablecash and intraday timing remain absent; observedVMproxy analysis stays real.",
+    "do_not_simulate_cn": "不生成SOFR、VM或IM来取代现有数据；数据不显著时保留结论。",
+    "do_not_simulate_en": "Do not generateSOFR/VM/IMreplacement observations; retain inconclusive findings.",
+    "permissible_simulation_cn": "当前已有数据检验规格不使用模拟；不显著、未过门槛或样本短都不能作为改用生成数据的理由。",
+    "permissible_simulation_en": "No simulation for the existing-data specification; insignificance, threshold failure or a short sample does not justify replacing observations.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/quarterly_test_results.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv"
+    ],
+    "evidence_paths": [
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/ECS-NSCC-03B_secondary_changed_definition_lag0_pairs.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/business_responses_used.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/inputs/market_daily.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/quarterly_test_results.csv"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "ECS-NSCC-03",
+    "event_cn": "市场股票成交量异常激增。",
+    "event_en": "Equity-market trading volume surges.",
+    "mechanism_cn": "交付需求和证券可得性压力加大，可能留下更多尚未完成交收的头寸。",
+    "mechanism_en": "Higher delivery demand and securities-availability pressures may leave more positions undelivered.",
+    "process_cn": "NSCC CNS 证券交收及未交割余额。",
+    "process_en": "NSCC CNS settlement and outstanding fails.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "ECS-NSCC-02A",
+        "revised_ids": [
+          "ECS-NSCC-03"
+        ],
+        "action": {
+          "CN": "与示例成交量到 CNS 失败相似，改号；FTD 仍是未交割余额。",
+          "EN": "Align volume to CNS fails and renumber; FTD remains an outstanding balance."
+        },
+        "validation_transfer": "same_specification"
+      }
+    ],
+    "route": "REAL_ONLY",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "external_signal_and_business_outcome",
+        "field": "weekly_volume_max→outstanding_ftd_shares",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/equity_volume_ftd_weekly_pairs.csv",
+        "coverage": {
+          "paired_n": 413,
+          "first": "2018-06-30/2018-07-06",
+          "last": "2026-09-19/2026-09-25"
+        },
+        "boundary": "FTD is outstanding balance,not failrate,newfailsflow or systemoutage."
+      },
+      {
+        "stage": "external_signal",
+        "field": "equity_volume;trade_count",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/cboe_equity_daily.csv",
+        "coverage": {
+          "n": 2209,
+          "first": "2018-01-02",
+          "last": "2026-10-15"
+        },
+        "boundary": "Observedmarketshares/counts,notNSCCsystemmessages."
+      },
+      {
+        "stage": "business_outcome",
+        "field": "outstanding_ftd_shares",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/sec_ftd_daily.csv",
+        "coverage": {
+          "n": 2185,
+          "first": "2018-01-02",
+          "last": "2026-09-30"
+        },
+        "boundary": "Do notsumdailystockvalues as newlyfailedflow."
+      }
+    ],
+    "real_steps_cn": "真实Cboe成交量和SEC CNS未交割余额已匹配，已有413周HAC分析。",
+    "real_steps_en": "ActualCboevolume andSECCNSFTDbalances already aligned with413-weekHACanalysis.",
+    "missing_steps_cn": "证券可得性、容量和其他混杂是解释限制，不是生成FTD的理由。",
+    "missing_steps_en": "Securityavailability,capacity andconfounders are explanationlimits,not reasons to generateFTD.",
+    "do_not_simulate_cn": "不生成成交量或FTD替换现有实际记录。",
+    "do_not_simulate_en": "Do notgeneratevolume/FTDreplacements.",
+    "permissible_simulation_cn": "当前已有数据检验规格不使用模拟；不显著、未过门槛或样本短都不能作为改用生成数据的理由。",
+    "permissible_simulation_en": "No simulation for the existing-data specification; insignificance, threshold failure or a short sample does not justify replacing observations.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/equity_volume_ftd_hac.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv"
+    ],
+    "evidence_paths": [
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/cboe_equity_daily.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/equity_volume_ftd_weekly_pairs.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/sec_ftd_daily.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/equity_volume_ftd_hac.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "ECS-SET-01",
+    "event_cn": "结算周期缩短或交易时段延长，例如 T+1、T+0 或 24x5。",
+    "event_en": "A shorter settlement cycle or longer trading hours, such as T+1, T+0, or 24x5.",
+    "mechanism_cn": "处理、确认和筹资窗口变化，迟到或手工步骤可能成为瓶颈；是否增加失败须看实际结果。",
+    "mechanism_en": "Changed processing, affirmation, and funding windows may make late or manual steps bottlenecks; any increase in fails requires evidence.",
+    "process_cn": "NSCC 与 DTC 结算；分别记录 CNS 和非 CNS 结果。",
+    "process_en": "NSCC and DTC settlement; retain separate CNS and non-CNS outcomes.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "ECS-NSCC-04",
+        "revised_ids": [
+          "ECS-SET-01"
+        ],
+        "action": {
+          "CN": "与旧 DTC-01 合并事件链，NSCC 结果单独保留；不预设失败增加。",
+          "EN": "Merge the shared event with legacy DTC-01, retaining a separate NSCC outcome; do not presume rising fails."
+        },
+        "validation_transfer": "merged_separate_outcomes"
+      },
+      {
+        "legacy_id": "ECS-DTC-01",
+        "revised_ids": [
+          "ECS-SET-01"
+        ],
+        "action": {
+          "CN": "并入共同制度事件链，但 DTC 非 CNS 结果不与 NSCC 混合。",
+          "EN": "Merge the rule-change event while retaining the separate DTC non-CNS outcome."
+        },
+        "validation_transfer": "merged_separate_outcomes"
+      }
+    ],
+    "route": "REAL_PLUS_MISSING_LINK_SIMULATION",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "documented_event_or_case",
+        "field": "C07 actualT+1node/immediateresults",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json",
+        "coverage": "Frozen2026-10-16 case register; original source retrieval limitations retained",
+        "boundary": "Facts apply only to named event/process; index-only/adjacent cases are not full chain validation."
+      },
+      {
+        "stage": "observed_public_service_or_event",
+        "field": "NSCCfailrate;DTCfailrate;affirmationrate",
+        "file": "capstone_database/data/capstone.sqlite3",
+        "coverage": {
+          "dataset_id": "equity_operations",
+          "n": 32,
+          "periods": [
+            "2024-05",
+            "2026-08",
+            "2026-09"
+          ]
+        },
+        "boundary": "Isolatedsnapshots,notthecontinuous3-monthbefore/afterhistory; CNSandnon-CNSdistinct."
+      }
+    ],
+    "real_steps_cn": "实施日期和真实首日/已有月度快照继续直接使用；NSCC与DTC结果分开。",
+    "real_steps_en": "Useactualimplementationdate,firstdayresults andexistingmonthlysnapshots,separatingNSCC/DTC.",
+    "missing_steps_cn": "连续前后月度失败率须继续找真实资料；不可得的流程步骤时长和容量是可模拟部分。",
+    "missing_steps_en": "Continuouspre/postmonthlyfailrates requirefurtherrealcollection; unavailableprocessingstage durations/capacitycanbesimulated.",
+    "do_not_simulate_cn": "不造月度历史失败率、实施日期或首日观察；不能预设T+1必然增加失败。",
+    "do_not_simulate_en": "Donotfabricatemonthlyfailhistory,implementationdate orfirstdayobservations;donotassumeinevitableT+1failincrease.",
+    "permissible_simulation_cn": "仅改变缺失的内部确认/处理/筹资窗口与步骤耗时，检验给定窗口下队列；不将模拟当真实T+1事件研究。",
+    "permissible_simulation_en": "Varyonlymissinginternalconfirmation/processing/fundingwindows andlatencies;testconditionalqueues,notanactualT+1eventstudy.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "evidence_paths": [
+      "capstone_database/data/capstone.sqlite3",
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "ECS-NSCC-06",
+    "event_cn": "NSCC 清算会员实际违约或 NSCC 停止为其提供服务。",
+    "event_en": "An NSCC clearing member actually defaults or NSCC ceases to act for it.",
+    "mechanism_cn": "NSCC 处理该会员未平仓 CNS 多空头寸，面临买入及平仓期间的市场价格风险。",
+    "mechanism_en": "NSCC closes out the member's open CNS long and short positions, facing market-price risk during buy-ins and liquidation.",
+    "process_cn": "NSCC 停止服务后的 CNS 平仓。",
+    "process_en": "NSCC CNS close-out after ceasing to act.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "ECS-NSCC-03A",
+        "revised_ids": [
+          "TEAM-ECS-04",
+          "ECS-NSCC-06"
+        ],
+        "action": {
+          "CN": "保留违约前信用链；实际违约按示例 CNS 平仓链。",
+          "EN": "Retain pre-default credit risk; align actual default to the reference CNS close-out chain."
+        },
+        "validation_transfer": "split_event_stages"
+      }
+    ],
+    "route": "REAL_PLUS_MISSING_LINK_SIMULATION",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "documented_event_or_case",
+        "field": "C03NSCCdefaultcloseoutexistence",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json",
+        "coverage": "Frozen2026-10-16 case register; original source retrieval limitations retained",
+        "boundary": "Facts apply only to named event/process; index-only/adjacent cases are not full chain validation."
+      },
+      {
+        "stage": "internal_aggregate_business_measure",
+        "field": "NSCC initialmargin/stresslossaggregates",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/business_responses_used.csv",
+        "coverage": "69 entity-quarter records: GSD/MBSD/NSCC,2020Q4–2026Q2",
+        "boundary": "Aggregates are not member-level cash, resources or payment records."
+      }
+    ],
+    "real_steps_cn": "实际违约与公开CNS处置事实不重生成，PQD总量仍为真实背景。",
+    "real_steps_en": "Keepactualdefault/publicCNScloseoutfacts andrealaggregatePQDcontext.",
+    "missing_steps_cn": "违约会员的CNS多空、买入成交价格、逐笔平仓时点及成本。",
+    "missing_steps_en": "DefaultermemberCNSlong/shortpositions,buy-inprices,closeouttimestamps/costs.",
+    "do_not_simulate_cn": "不随机生成实际违约历史或把全市场头寸当成该会员的CNS簿。",
+    "do_not_simulate_en": "Donotgenerateactualdefaulthistory orassignamarketaggregateasthedefaulterCNSbook.",
+    "permissible_simulation_cn": "只模拟缺失头寸构成与平仓时延/滑点的条件影响；方向/守恒检查不等于真实损失验证。",
+    "permissible_simulation_en": "Simulateonlyunavailablebookcomposition andconditionaldelay/slippageeffects;direction/conservationchecksarenotreal-lossvalidation.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "evidence_paths": [
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/business_responses_used.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "ECS-DTC-02",
+    "event_cn": "DTC 结算银行出现融资、信用或运营问题。",
+    "event_en": "A DTC settling bank has a funding, credit, or operational problem.",
+    "mechanism_cn": "若该银行拒绝或无法通过 Fedwire 完成汇总净额支付，其所代表参与者的日终资金结算不能按时完成。",
+    "mechanism_en": "If the bank refuses or fails to settle its aggregate net-net balance over Fedwire, end-of-day money settlement cannot complete on time for the participants it represents.",
+    "process_cn": "DTC 结算银行日终资金结算。",
+    "process_en": "DTC settling-bank money settlement.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "ECS-DTC-04",
+        "revised_ids": [
+          "ECS-DTC-02"
+        ],
+        "action": {
+          "CN": "按结算银行付款链改写；删除 DTC 必须补缺口的断言，须先证实银行角色。",
+          "EN": "Align to settling-bank payments; remove automatic DTC gap-funding claims and verify the bank role first."
+        },
+        "validation_transfer": "scope_changed"
+      }
+    ],
+    "route": "REAL_PLUS_MISSING_LINK_SIMULATION",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "external_funding_background",
+        "field": "DCPF3M/DTB3",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/DCPF3M.csv",
+        "coverage": {
+          "n": 2293,
+          "first": "2018-01-01",
+          "last": "2026-10-14"
+        },
+        "boundary": "ObservedCPandTreasurybillrates;notnamedsettlingbankfailure."
+      },
+      {
+        "stage": "external_funding_background",
+        "field": "DTB3",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/DTB3.csv",
+        "coverage": {
+          "n": 2293,
+          "first": "2018-01-01",
+          "last": "2026-10-14"
+        },
+        "boundary": "OriginalFedXMLratesretained;DGS3MOisnotasubstitute."
+      },
+      {
+        "stage": "documented_event_or_case",
+        "field": "C09directDTCcashshortfallnotverified",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json",
+        "coverage": "Frozen2026-10-16 case register; original source retrieval limitations retained",
+        "boundary": "Facts apply only to named event/process; index-only/adjacent cases are not full chain validation."
+      }
+    ],
+    "real_steps_cn": "真实CP/国库券融资背景与已核对公告保留；旧ECS-DTC04事件筛查失败结果保留。",
+    "real_steps_en": "RetainactualCP/billfundingbackgroundandnotices;keepfailedlegacysignaltest.",
+    "missing_steps_cn": "真实结算银行/参与者映射、汇总净额、拒绝付款/确认时点及日终未付额。",
+    "missing_steps_en": "Actualbank/participantmapping,net-netbalances,refusal/acknowledgementtimesandunpaidsettlement.",
+    "do_not_simulate_cn": "不生成融资利率或声称宏观利差证明具体DTC银行拒付。",
+    "do_not_simulate_en": "DonotgenerateratesorclaimmacrospreadprovesanamedDTCbankrefusal.",
+    "permissible_simulation_cn": "只对未知银行依赖、净额和确认截止门槛做条件模拟，生成映射明确是假设；不得生成真实银行身份。",
+    "permissible_simulation_en": "Simulateonlyunknownbankdependency/balances/acknowledgementgates;generatedmapsareexplicitassumptions,notactualbankidentities.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "evidence_paths": [
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/DCPF3M.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/DTB3.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "ECS-DTC-05",
+    "event_cn": "大型 DTC 参与者遭遇网络攻击或重大系统故障。",
+    "event_en": "A large DTC participant suffers a cyber event or major system outage.",
+    "mechanism_cn": "参与者与 DTC 的连接或指令传输受损，使其账簿划转和结算受阻，可涉及参与者系统中断处理。",
+    "mechanism_en": "Impaired participant connectivity or instruction transmission disrupts book-entry transfers and settlement, potentially invoking participant-system-disruption handling.",
+    "process_cn": "DTC 参与者系统中断及相关指令处理。",
+    "process_en": "DTC participant system disruption and affected instructions.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "ECS-DTC-02A",
+        "revised_ids": [
+          "ECS-DTC-05",
+          "TEAM-ECS-08"
+        ],
+        "action": {
+          "CN": "参与者分支按示例 DTC-05；DTC 自身系统分支另保留。KEV 入库不证明暴露。",
+          "EN": "Align the participant branch to DTC-05 and retain DTC-owned system disruption separately. KEV additions do not establish exposure."
+        },
+        "validation_transfer": "split_actor_roles"
+      }
+    ],
+    "route": "REAL_PLUS_MISSING_LINK_SIMULATION",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "observed_public_service_or_event",
+        "field": "CISAKEVrecords",
+        "file": "capstone_database/data/capstone.sqlite3",
+        "coverage": {
+          "dataset_id": "external_events",
+          "n": 1815,
+          "cisa_kev": 1754,
+          "google_workspace": 39,
+          "google_cloud": 8,
+          "fema": 14
+        },
+        "boundary": "KEVdateAddedisnotattackonset;actual_dtcc_exposure_verified=false;providerincidentsarenotDTCdependencies."
+      },
+      {
+        "stage": "reported_system_measure",
+        "field": "PQD17.2.1/17.3.1; GSD19.1.3.1/19.1.3.2",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/pqd_additional_fields_normalized.csv",
+        "coverage": "352 extracted rows; shared-system/trailing12month definitions; GSD capacity numbers only2025Q2–2026Q2",
+        "boundary": "Do not convert combined systems or trailing12month counts into service-specific daily outages."
+      },
+      {
+        "stage": "documented_event_or_case",
+        "field": "C05notDTCparticipantproof",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json",
+        "coverage": "Frozen2026-10-16 case register; original source retrieval limitations retained",
+        "boundary": "Facts apply only to named event/process; index-only/adjacent cases are not full chain validation."
+      }
+    ],
+    "real_steps_cn": "已有真实漏洞/供应商事故资料保留作线索，不能升级为DTC参与者已受影响。",
+    "real_steps_en": "Keeprealvulnerability/providerrecordsasleadswithoutupgradingthemtoobservedDTCparticipantimpact.",
+    "missing_steps_cn": "具名参与者软件/连接依赖、真实攻击起止和受影响指令。",
+    "missing_steps_en": "Namedparticipantsoftware/connectivitydependencies,actualattacktimesandaffectedinstructions.",
+    "do_not_simulate_cn": "不随机生成真实攻击、会员名单、软件暴露或把KEV计数当发生率。",
+    "do_not_simulate_en": "Donotfabricateactualattacks,memberships,softwareexposureoruseKEVcountsasincidentfrequency.",
+    "permissible_simulation_cn": "仅在明确假设的参与者连接中断下模拟指令积压/恢复；保留所有现实线索及未核实标记。",
+    "permissible_simulation_en": "Simulateonlyinstructionqueues/recoveryunderexplicitassumedparticipantdisconnection;retainrealleadsandunverifiedflags.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "evidence_paths": [
+      "capstone_database/data/capstone.sqlite3",
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/pqd_additional_fields_normalized.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "TEAM-ECS-01",
+    "event_cn": "股市急跌或价格剧烈波动。",
+    "event_en": "A sharp equity selloff or large price swings.",
+    "mechanism_cn": "头寸风险重估可能改变 Clearing Fund 要求，引发追加保证金需求。",
+    "mechanism_en": "Reassessment of position risk may change Clearing Fund requirements and generate additional margin calls.",
+    "process_cn": "NSCC Clearing Fund 追缴；区别于每日 VM 付款。",
+    "process_en": "NSCC Clearing Fund calls, distinct from daily VM payments.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "ECS-NSCC-01A",
+        "revised_ids": [
+          "TEAM-ECS-01"
+        ],
+        "action": {
+          "CN": "IM 追缴与 VM 是不同流程，不冲突，单独保留。",
+          "EN": "Retain IM calls separately because they differ from VM payments."
+        },
+        "validation_transfer": "same_specification"
+      }
+    ],
+    "route": "REAL_ONLY",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "external_signal_and_business_outcome",
+        "field": "VIX→im_call_to_prior_im",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/ECS-NSCC-01A_primary_lag0_pairs.csv",
+        "coverage": {
+          "paired_n": 22,
+          "first": "2021Q1",
+          "last": "2026Q2"
+        },
+        "boundary": "Real observed input/outcome pair; an insignificant result is retained, not replaced with synthetic values."
+      },
+      {
+        "stage": "internal_aggregate_business_measure",
+        "field": "NSCC im_call_usd;prior_im",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/business_responses_used.csv",
+        "coverage": "69 entity-quarter records: GSD/MBSD/NSCC,2020Q4–2026Q2",
+        "boundary": "Aggregates are not member-level cash, resources or payment records."
+      },
+      {
+        "stage": "external_signal",
+        "field": "VIXCLS",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/inputs/market_daily.csv",
+        "coverage": "Frozen research snapshot; DGS10/BAA10Y through2026-10-09; SOFR/EFFR/VIX through2026-10-13",
+        "boundary": "Real series remain real; broad market data do not identify a member, service dependency or failure."
+      }
+    ],
+    "real_steps_cn": "真实VIX、PQD追缴额和上季IM已形成22季配对，保留原ρ=0.195不显著结果。",
+    "real_steps_en": "RealVIX,PQDcallsandprior-quarterIMform22pairs;retainrho0.195/inconclusiveevidence.",
+    "missing_steps_cn": "会员级保证金公式不是当前总量检验的必需生成输入。",
+    "missing_steps_en": "Membermarginformulaisnotarequiredsyntheticinputforthecurrentaggregateanalysis.",
+    "do_not_simulate_cn": "撤下用全合成波动率和保证金代替该已有数据检验的例子。",
+    "do_not_simulate_en": "Retireall-syntheticvolatility/marginexamplesassubstitutesfortheexisting-dataanalysis.",
+    "permissible_simulation_cn": "当前已有数据检验规格不使用模拟；不显著、未过门槛或样本短都不能作为改用生成数据的理由。",
+    "permissible_simulation_en": "No simulation for the existing-data specification; insignificance, threshold failure or a short sample does not justify replacing observations.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/quarterly_test_results.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv"
+    ],
+    "evidence_paths": [
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/ECS-NSCC-01A_primary_lag0_pairs.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/business_responses_used.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/inputs/market_daily.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/quarterly_test_results.csv"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "TEAM-ECS-02",
+    "event_cn": "股市波动超过保证金模型覆盖预期。",
+    "event_en": "Equity-market moves exceed the margin model's expected coverage.",
+    "mechanism_cn": "部分历史头寸损失超过模型所需保证金，产生回测突破并提示覆盖偏差。",
+    "mechanism_en": "Losses on some historical positions exceed model-required margin, producing backtesting breaches that indicate coverage gaps.",
+    "process_cn": "NSCC 保证金模型覆盖及回测。",
+    "process_en": "NSCC margin-model coverage and backtesting.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "ECS-NSCC-01C",
+        "revised_ids": [
+          "TEAM-ECS-02"
+        ],
+        "action": {
+          "CN": "回测覆盖是不同流程，保留；不把突破等同实际损失。",
+          "EN": "Retain backtesting coverage separately; breaches do not establish realized loss."
+        },
+        "validation_transfer": "same_specification"
+      }
+    ],
+    "route": "REAL_ONLY",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "external_signal_and_business_outcome",
+        "field": "VIX→backtest_breaches",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/ECS-NSCC-01C_primary_lag0_pairs.csv",
+        "coverage": {
+          "paired_n": 23,
+          "first": "2020Q4",
+          "last": "2026Q2"
+        },
+        "boundary": "Real observed input/outcome pair; an insignificant result is retained, not replaced with synthetic values."
+      },
+      {
+        "stage": "internal_aggregate_business_measure",
+        "field": "NSCCbacktest_breaches;backtest_observations",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/business_responses_used.csv",
+        "coverage": "69 entity-quarter records: GSD/MBSD/NSCC,2020Q4–2026Q2",
+        "boundary": "Aggregates are not member-level cash, resources or payment records."
+      }
+    ],
+    "real_steps_cn": "真实VIX及PQD回测突破23季已有，保留区间跨零与过去12个月重叠限制。",
+    "real_steps_en": "RealVIX/PQDbacktestbreachesexistfor23quarters;retaincross-zeroCIandtrailing12monthoverlap.",
+    "missing_steps_cn": "更细持仓/模型归因未齐，但不能改造原突破数。",
+    "missing_steps_en": "Detailedbook/modelattributionremainsabsentbutdoesnotjustifyreplacingbreachcounts.",
+    "do_not_simulate_cn": "不生成回测突破数来取得更好的相关性或更多季度。",
+    "do_not_simulate_en": "Donotgeneratebreachcountstoimprovecorrelationorexpandhistoricalquarters.",
+    "permissible_simulation_cn": "当前已有数据检验规格不使用模拟；不显著、未过门槛或样本短都不能作为改用生成数据的理由。",
+    "permissible_simulation_en": "No simulation for the existing-data specification; insignificance, threshold failure or a short sample does not justify replacing observations.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/quarterly_test_results.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv"
+    ],
+    "evidence_paths": [
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/ECS-NSCC-01C_primary_lag0_pairs.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/business_responses_used.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/quarterly_test_results.csv"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "TEAM-ECS-03",
+    "event_cn": "股票成交量异常激增。",
+    "event_en": "Equity trading volume surges.",
+    "mechanism_cn": "若交易捕获和净额处理负荷接近实际容量，可能出现延迟或故障；须有独立运营证据。",
+    "mechanism_en": "If trade-capture and netting loads approach actual capacity, delays or outages may occur; separate operational evidence is required.",
+    "process_cn": "NSCC 交易捕获及净额处理系统。",
+    "process_en": "NSCC trade-capture and netting systems.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "ECS-NSCC-02B",
+        "revised_ids": [
+          "TEAM-ECS-03"
+        ],
+        "action": {
+          "CN": "系统容量与交割失败不同，不冲突，保留容量链。",
+          "EN": "Retain capacity separately from settlement fails."
+        },
+        "validation_transfer": "unrun_outcome"
+      }
+    ],
+    "route": "REAL_PLUS_MISSING_LINK_SIMULATION",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "external_load_proxy",
+        "field": "Cboeequity_volume;trade_count",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/cboe_equity_daily.csv",
+        "coverage": {
+          "n": 2209,
+          "first": "2018-01-02",
+          "last": "2026-10-15"
+        },
+        "boundary": "Share/tradevolumeisnotNSCCmessagecount;capacitymappingmustbeassumed."
+      },
+      {
+        "stage": "reported_system_measure",
+        "field": "PQD17.2.1/17.3.1; GSD19.1.3.1/19.1.3.2",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/pqd_additional_fields_normalized.csv",
+        "coverage": "352 extracted rows; shared-system/trailing12month definitions; GSD capacity numbers only2025Q2–2026Q2",
+        "boundary": "Do not convert combined systems or trailing12month counts into service-specific daily outages."
+      }
+    ],
+    "real_steps_cn": "真实成交量与已做事件筛查保留；PQD共享口径不拆成独立NSCC事故。",
+    "real_steps_en": "Keeprealvolume/executedscreening;donotsplitsharedPQDmeasureintoNSCCincidents.",
+    "missing_steps_cn": "NSCC专属消息到达、吞吐上限、处理耗时、排队与可比中断历史。",
+    "missing_steps_en": "NSCC-specificmessagearrivals,capacity,latency,queuesandcomparableoutagehistory.",
+    "do_not_simulate_cn": "不生成已有Cboe成交量；不生成一段假NSCC故障历史进行相关性检验。",
+    "do_not_simulate_en": "DonotgeneratereplacementCboevolumeorafakeNSCCoutagehistoryforcorrelation.",
+    "permissible_simulation_cn": "保留真实日度负荷形状，只对未知消息转换比例、容量和处理时长做区间模拟；不把股数当消息数。",
+    "permissible_simulation_en": "Retainobserveddailyloadshape;varyonlyunknownmessageconversion/capacity/latency;sharesarenotmessages.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "evidence_paths": [
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/cboe_equity_daily.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/pqd_additional_fields_normalized.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "TEAM-ECS-04",
+    "event_cn": "具名券商或银行会员信用恶化，尚未确认违约。",
+    "event_en": "A named broker or bank member deteriorates in credit without a confirmed default.",
+    "mechanism_cn": "信用风险增加可能触发会员监测或风险措施；实际违约后的 CNS 平仓另归 NSCC-06。",
+    "mechanism_en": "Higher credit risk may prompt surveillance or risk measures; CNS close-out following actual default routes to NSCC-06.",
+    "process_cn": "NSCC 会员信用监测与风险措施。",
+    "process_en": "NSCC member credit surveillance and risk measures.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "ECS-NSCC-03A",
+        "revised_ids": [
+          "TEAM-ECS-04",
+          "ECS-NSCC-06"
+        ],
+        "action": {
+          "CN": "保留违约前信用链；实际违约按示例 CNS 平仓链。",
+          "EN": "Retain pre-default credit risk; align actual default to the reference CNS close-out chain."
+        },
+        "validation_transfer": "split_event_stages"
+      }
+    ],
+    "route": "NOT_READY",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "external_signal",
+        "field": "BAA10Y",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/inputs/market_daily.csv",
+        "coverage": "Frozen research snapshot; DGS10/BAA10Y through2026-10-09; SOFR/EFFR/VIX through2026-10-13",
+        "boundary": "Real series remain real; broad market data do not identify a member, service dependency or failure."
+      },
+      {
+        "stage": "documented_event_or_case",
+        "field": "C03actualdefaultstageonly",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json",
+        "coverage": "Frozen2026-10-16 case register; original source retrieval limitations retained",
+        "boundary": "Facts apply only to named event/process; index-only/adjacent cases are not full chain validation."
+      }
+    ],
+    "real_steps_cn": "真实信用背景和历史违约案例保留，违约前监测与实际平仓拆分。",
+    "real_steps_en": "Keeprealcreditbackground/historicaldefaultcase,separatingpre-defaultsurveillancefromcloseout.",
+    "missing_steps_cn": "具名NSCC会员信用恶化及其对应监测/风险措施。",
+    "missing_steps_en": "NamedNSCCmemberdeteriorationandcorrespondingsurveillance/riskactions.",
+    "do_not_simulate_cn": "不能随机生成会员被降级、监控或加收要求来验证触发关系。",
+    "do_not_simulate_en": "Donotfabricatememberdowngrades,surveillanceorcallsastriggerrelationshipvalidation.",
+    "permissible_simulation_cn": "先固定可解释政策/阈值；之后仅可检验假设措施对现金资源的后果，不能冒充真实决策。",
+    "permissible_simulation_en": "Defineadefensiblepolicy/thresholdfirst;onlyconditionalresourceeffectsofanactioncouldbethentested,notactualdecisions.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "evidence_paths": [
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/inputs/market_daily.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/event_test_summary.csv"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "TEAM-ECS-05",
+    "event_cn": "三巫日、Russell 调整或 S&P 指数再平衡等已知高峰日期。",
+    "event_en": "Known peaks such as triple witching, Russell reconstitution, or S&P index rebalances.",
+    "mechanism_cn": "活动集中到可预知日期，增加当日处理负荷；额外失败或故障需单独验证。",
+    "mechanism_en": "Activity bunches on predictable dates, raising processing load; additional fails or outages require separate validation.",
+    "process_cn": "NSCC 高峰日交易处理和后续交收。",
+    "process_en": "NSCC peak-date processing and subsequent settlement.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "ECS-NSCC-05",
+        "revised_ids": [
+          "TEAM-ECS-05"
+        ],
+        "action": {
+          "CN": "已知高峰日不等于示例的补充流动性存款，不冲突，保留并改号。",
+          "EN": "Retain known peak dates separately from the reference supplemental-liquidity-deposit mechanism."
+        },
+        "validation_transfer": "unrun_outcome"
+      }
+    ],
+    "route": "REAL_ONLY",
+    "real_test_available": false,
+    "real_inputs": [
+      {
+        "stage": "external_load",
+        "field": "Cboeequity_volume;trade_count",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/cboe_equity_daily.csv",
+        "coverage": {
+          "n": 2209,
+          "first": "2018-01-02",
+          "last": "2026-10-15"
+        },
+        "boundary": "Availableactualvolume."
+      },
+      {
+        "stage": "business_outcome",
+        "field": "SECCNSoutstandingFTD",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/sec_ftd_daily.csv",
+        "coverage": {
+          "n": 2185,
+          "first": "2018-01-02",
+          "last": "2026-09-30"
+        },
+        "boundary": "Actualoutstandingbalances,notfailrate."
+      }
+    ],
+    "real_steps_cn": "成交量和FTD实际数据已经具备；应冻结权威再平衡/到期日历后跑真实事件检验。",
+    "real_steps_en": "Actualvolume/FTDalreadyexist;freezeanauthoritativeexpiry/rebalancecalendarthenrunarealeventtest.",
+    "missing_steps_cn": "当前缺的是日历/窗口/通过规则设计，不是需要生成业务结果。",
+    "missing_steps_en": "Thegapiscalendar/windows/pass-ruledesign,notarequirementtogenerateoutcomes.",
+    "do_not_simulate_cn": "不随机生成三巫日或指数调整日，也不重生成现有成交量和FTD。",
+    "do_not_simulate_en": "Donotgenerateexpiry/rebalancedatesorreplaceobservedvolume/FTD.",
+    "permissible_simulation_cn": "当前已有数据检验规格不使用模拟；不显著、未过门槛或样本短都不能作为改用生成数据的理由。",
+    "permissible_simulation_en": "No simulation for the existing-data specification; insignificance, threshold failure or a short sample does not justify replacing observations.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/chain_status_EN.csv"
+    ],
+    "evidence_paths": [
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/cboe_equity_daily.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/sec_ftd_daily.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/chain_status_EN.csv"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "TEAM-ECS-06",
+    "event_cn": "云、网络或共享供应商发生广泛故障。",
+    "event_en": "A cloud, network, or shared vendor has a widespread outage.",
+    "mechanism_cn": "只有确认 DTC 或参与者依赖该服务、且相关连接或指令受阻，才能判断其向 DTC 传导。",
+    "mechanism_en": "Transmission requires a verified DTC or participant dependency and evidence that relevant connections or instructions were impaired.",
+    "process_cn": "DTC 依赖服务及指令处理；参与者中断与 DTC-05 关联去重。",
+    "process_en": "DTC service dependencies and instructions; link participant disruptions to DTC-05 without duplication.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "ECS-DTC-02B",
+        "revised_ids": [
+          "TEAM-ECS-06"
+        ],
+        "action": {
+          "CN": "供应商根因不冲突，保留；若归入同一参与者中断，仅链接一次事件。",
+          "EN": "Retain vendor causes; link once when they lead to the same participant disruption."
+        },
+        "validation_transfer": "unrun_outcome"
+      }
+    ],
+    "route": "REAL_PLUS_MISSING_LINK_SIMULATION",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "observed_public_service_or_event",
+        "field": "CISAKEVrecords",
+        "file": "capstone_database/data/capstone.sqlite3",
+        "coverage": {
+          "dataset_id": "external_events",
+          "n": 1815,
+          "cisa_kev": 1754,
+          "google_workspace": 39,
+          "google_cloud": 8,
+          "fema": 14
+        },
+        "boundary": "KEVdateAddedisnotattackonset;actual_dtcc_exposure_verified=false;providerincidentsarenotDTCdependencies."
+      }
+    ],
+    "real_steps_cn": "已有真实Google等事故记录及其中可用起止时间保留；来源缺失仍标缺失。",
+    "real_steps_en": "Retainactualproviderrecordsandavailablebegin/endtimes;keepsourcegapsmissing.",
+    "missing_steps_cn": "DTC/参与者对供应商的实际依赖及服务指令受损、恢复时序。",
+    "missing_steps_en": "ActualDTC/participant-vendordependencies,impairedinstructionsandrecoverytiming.",
+    "do_not_simulate_cn": "不生成已知供应商事故或真实DTCC依赖关系，不能把行业故障直接当DTC故障。",
+    "do_not_simulate_en": "DonotfabricateknownproviderincidentsoractualDTCCdependencies;provideroutageisnotDTCoutage.",
+    "permissible_simulation_cn": "仅对未披露依赖、冗余与恢复能力作假设情景；如果复用实际供应商事件时长，必须保留原值。",
+    "permissible_simulation_en": "Simulateonlyundiscloseddependency,redundancyandrecoveryassumptions;retainactualproviderdurationsifused.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "evidence_paths": [
+      "capstone_database/data/capstone.sqlite3",
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "TEAM-ECS-07",
+    "event_cn": "IPO 或债券发行量显著增加。",
+    "event_en": "IPO or bond issuance rises sharply.",
+    "mechanism_cn": "新券资格审查和首次交收需求增加；是否形成积压取决于容量与实际处理情况。",
+    "mechanism_en": "More issues increase eligibility-review and initial-settlement demand; backlogs depend on capacity and observed processing.",
+    "process_cn": "DTC 新券资格及初始交收；业务归属暂沿用 ECS。",
+    "process_en": "DTC new-issue eligibility and initial settlement; provisionally classified under ECS.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "ECS-DTC-03",
+        "revised_ids": [
+          "TEAM-ECS-07"
+        ],
+        "action": {
+          "CN": "新券处理与示例的市场中断不同，不冲突，保留并改号。",
+          "EN": "Retain new-issue processing separately from market disruption and renumber."
+        },
+        "validation_transfer": "unrun_outcome"
+      }
+    ],
+    "route": "REAL_PLUS_MISSING_LINK_SIMULATION",
+    "real_test_available": true,
+    "real_inputs": [
+      {
+        "stage": "observed_public_service_or_event",
+        "field": "new_issuance_count;new_issuance_amount_usd",
+        "file": "capstone_database/data/capstone.sqlite3",
+        "coverage": {
+          "dataset_id": "underwriting",
+          "n": 752,
+          "first": "2011-01",
+          "last": "2026-08",
+          "categories": [
+            "CD",
+            "Corporate",
+            "Equity",
+            "Municipal"
+          ]
+        },
+        "boundary": "ActualDTCeligibility/issuanceactivity,notmarket-wide424Bfilingsnorprocessinglatency."
+      }
+    ],
+    "real_steps_cn": "DTC真实月度发行数量和金额已存在，直接复用。",
+    "real_steps_en": "ReuseactualDTCmonthlyissuancecounts/amounts.",
+    "missing_steps_cn": "市场范围424B历史是尚待采集的公开输入；审核服务时长、排队/退回及容量未披露。",
+    "missing_steps_en": "Market-wide424Bhistoryisapubliccollectiongap;reviewlatencies,queues/rejectsandcapacityareunavailable.",
+    "do_not_simulate_cn": "不随机生成已有DTC发行量；424B尚未采集不等于不可得。",
+    "do_not_simulate_en": "DonotgenerateDTCissuancealreadyobserved;uncollected424Bdoesnotmeanunavailable.",
+    "permissible_simulation_cn": "只对未知审核时长、每日到达分布和容量模拟排队；真实月度业务总量保留，不能生成一套替代月度量。",
+    "permissible_simulation_en": "Simulateonlyunknownreviewlatency,intramontharrivalallocationandcapacity,retainingobservedmonthlytotals.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/chain_status_EN.csv"
+    ],
+    "evidence_paths": [
+      "capstone_database/data/capstone.sqlite3",
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/chain_status_EN.csv"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  },
+  {
+    "catalog_version": "expanded_v3",
+    "chain_id": "TEAM-ECS-08",
+    "event_cn": "网络攻击或重大故障直接影响 DTC 自身的相关系统。",
+    "event_en": "A cyberattack or major outage directly affects relevant DTC systems.",
+    "mechanism_cn": "若 DTC 的指令接收、处理或连接服务确实不可用，相关参与者的账簿划转与结算可能延迟。",
+    "mechanism_en": "If DTC instruction intake, processing, or connectivity is unavailable, affected participants may experience delayed book-entry transfers and settlement.",
+    "process_cn": "DTC 自身服务连续性；区别于 DTC-05 的参与者系统中断。",
+    "process_en": "DTC service continuity, distinct from participant system disruption under DTC-05.",
+    "empirical_mapping": [
+      {
+        "legacy_id": "ECS-DTC-02A",
+        "revised_ids": [
+          "ECS-DTC-05",
+          "TEAM-ECS-08"
+        ],
+        "action": {
+          "CN": "参与者分支按示例 DTC-05；DTC 自身系统分支另保留。KEV 入库不证明暴露。",
+          "EN": "Align the participant branch to DTC-05 and retain DTC-owned system disruption separately. KEV additions do not establish exposure."
+        },
+        "validation_transfer": "split_actor_roles"
+      }
+    ],
+    "route": "GAP_SIMULATION_CANDIDATE",
+    "real_test_available": false,
+    "real_inputs": [
+      {
+        "stage": "observed_public_service_or_event",
+        "field": "CISAKEVrecords",
+        "file": "capstone_database/data/capstone.sqlite3",
+        "coverage": {
+          "dataset_id": "external_events",
+          "n": 1815,
+          "cisa_kev": 1754,
+          "google_workspace": 39,
+          "google_cloud": 8,
+          "fema": 14
+        },
+        "boundary": "KEVdateAddedisnotattackonset;actual_dtcc_exposure_verified=false;providerincidentsarenotDTCdependencies."
+      },
+      {
+        "stage": "reported_system_measure",
+        "field": "PQD17.2.1/17.3.1; GSD19.1.3.1/19.1.3.2",
+        "file": "risk_business_ml/transmission_chain_tests_2026_10_16/data/pqd_additional_fields_normalized.csv",
+        "coverage": "352 extracted rows; shared-system/trailing12month definitions; GSD capacity numbers only2025Q2–2026Q2",
+        "boundary": "Do not convert combined systems or trailing12month counts into service-specific daily outages."
+      }
+    ],
+    "real_steps_cn": "漏洞及供应商资料只保留为现实背景，不冒充DTC自身事故。",
+    "real_steps_en": "Retainvulnerability/providerrecordsasbackground,notDTC-ownedincidents.",
+    "missing_steps_cn": "DTC自身实际停机起止、受影响服务、指令量及恢复；共享17.3不是该序列。",
+    "missing_steps_en": "ActualDTCown-systemoutageonset/end,services,instructionsandrecovery;shared17.3isnotthatseries.",
+    "do_not_simulate_cn": "不能生成带真实日期的DTC故障记录或以KEV日期替代攻击日期。",
+    "do_not_simulate_en": "DonotfabricatedatedDTCincidentrecordsorrelabelKEVdatesasattackdates.",
+    "permissible_simulation_cn": "可以单独设“若DTC指令接收中断X分钟”的故障注入测试，模拟未知队列/恢复，不推断真实发生率或归因。",
+    "permissible_simulation_en": "Useexplicitfaultinjection:ifDTCinstructionintakewereunavailableforXminutes,testhypotheticalqueues/recoverywithoutinferringactualfrequency/attribution.",
+    "real_result_reference": [
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "evidence_paths": [
+      "capstone_database/data/capstone.sqlite3",
+      "risk_business_ml/new_reference_chain_tests_2026_10_21/inputs/chain_registry_v3.json",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/data/pqd_additional_fields_normalized.csv",
+      "risk_business_ml/transmission_chain_tests_2026_10_16/results/case_evidence.json"
+    ],
+    "real_observations_must_be_preserved": true,
+    "failed_real_test_does_not_authorize_simulation_replacement": true,
+    "simulation_is_empirical_validation": false
+  }
+]

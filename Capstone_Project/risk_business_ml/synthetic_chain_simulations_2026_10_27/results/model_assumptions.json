@@ -1,0 +1,263 @@
+{
+  "dtc": {
+    "model_id": "DTC_CONTROL",
+    "chain_ids": [
+      "ECS-DTC-06"
+    ],
+    "config": {
+      "units": "USD million",
+      "time_units": "minutes after hypothetical opening",
+      "horizon_minutes": 480.0,
+      "transaction_count": 30,
+      "transaction_gamma_shape": 2.0,
+      "transaction_gamma_scale_usd_million": 1.7,
+      "last_transaction_minute": 425.0,
+      "opening_cash_usd_million": 5.0,
+      "opening_debit_usd_million": 0.0,
+      "net_debit_cap_usd_million": 35.0,
+      "collateral_market_value_usd_million": 40.0,
+      "baseline_haircut": 0.1,
+      "funding_times_minutes": [
+        60.0,
+        140.0,
+        220.0,
+        300.0,
+        390.0
+      ],
+      "funding_weight_dirichlet_alpha": 4.0,
+      "shock_funding_fraction": 0.5,
+      "shock_funding_delay_minutes": 180.0,
+      "shock_haircut": 0.35,
+      "shock_start_minute": 100.0,
+      "high_buffer_cap_multiple_of_total": 1.8,
+      "high_buffer_collateral_multiple_of_total": 1.8,
+      "rescue_minute": 320.0,
+      "cash_rescue_multiple_of_total": 1.0,
+      "cap_rescue_multiple_of_total": 1.8,
+      "sensitivity_low_haircut": 0.2,
+      "sensitivity_high_haircut": 0.55
+    },
+    "interpretation": "Synthetic conditional scenario exploration and implementation checks only; no empirical chain validation, calibrated default probability or reconstruction of DTC controls.",
+    "queue_policy": "One participant, positive indivisible outgoing obligations, strict FIFO; blocked head prevents bypass. Resource events at a timestamp precede transaction arrivals.",
+    "cash_accounting": "Cash first repays simulated outstanding debit; excess is prefunding. Outgoing payments spend prefunding before adding debit. Cash is never also credited to the eligible collateral portfolio.",
+    "cap_accounting": "An increased debit cap is capacity only, not money and not collateral. Actual funding requires a separate cash event.",
+    "collateral_accounting": "Separate exogenously valued eligible portfolio = market value*(1-haircut); incoming purchased securities are not automatically added. Revaluation can create an existing exposure breach without reversing completed settlements.",
+    "baseline_funding": "Total scheduled baseline cash funding equals gross generated payment amount; timing weights are arbitrary seeded Dirichlet draws, not inferred participant behavior.",
+    "pairing": "Each replicate uses the same transactions and base funding draws across all scenarios. Funding/haircut/resource changes are declared interventions, not estimated causal effects.",
+    "censoring": "EOD pending waits are right-censored; settled-wait statistics exclude pending obligations and are not overall completion-time estimates.",
+    "cash_rescue": "Default rescue deliberately supplies cash equal to gross payments as a sufficient-liquidity control, not an operational recommendation.",
+    "parameters": "All hypothetical constants and distributions are scenario assumptions, not DTCC limits or estimated risk parameters."
+  },
+  "epn": {
+    "model_id": "EPN_POOL",
+    "config": {
+      "orders_per_replication": 48,
+      "notice_cutoff_min": 240.0,
+      "delivery_deadline_min": 300.0,
+      "horizon_min": 480.0,
+      "arrival_start_min": 0.0,
+      "arrival_end_min": 180.0,
+      "pool_ready_start_min": 130.0,
+      "pool_ready_end_min": 220.0,
+      "baseline_error_fraction": 0.15,
+      "repair_error_fraction": 0.4,
+      "correction_latency_low_min": 10.0,
+      "correction_latency_high_min": 30.0,
+      "processing_capacity_orders_per_min": 0.5,
+      "rescue_capacity_orders_per_min": 2.0,
+      "delivery_lag_min": 20.0,
+      "outage_start_min": 90.0,
+      "short_outage_duration_min": 60.0,
+      "prolonged_outage_duration_min": 160.0,
+      "severe_outage_duration_min": 290.0,
+      "beyond_horizon_outage_duration_min": 420.0,
+      "order_notional_median_usd_million": 5.0,
+      "order_notional_log_sigma": 0.5
+    },
+    "mechanism": "Instant initial syntax precheck, FIFO valid-notice processor with pausing outage, pool availability gate, fixed delivery lag.",
+    "time_basis": "Hypothetical relative minutes; not official SIFMA/EPN operating cutoffs.",
+    "units": "Order notional in USD million; work/capacity are hypothetical orders per simulation minute.",
+    "coupling": "Common latent arrivals, pool-ready times, correction times, error draws and notionals across scenarios within a replicate.",
+    "late_notice_scope": "Late valid notification is reported separately; it is not automatically a failed delivery.",
+    "horizon_scope": "Delayed completed deliveries and not completed by horizon are separate; delay for unfinished orders is a lower bound.",
+    "capacity_scope": "Each scenario uses its specified fixed capacity for the entire simulated day, including before and after an outage. The higher-capacity case is not a capacity change activated only at recovery.",
+    "waiting_scope": "queue_start_min is the nominal eligible/service-start time before any outage suspension. processing_wait_min measures waiting before that nominal start and excludes pauses during processing. Delivery deadline and horizon delay metrics capture the end-to-end effect of outages.",
+    "identification_limit": "Assumed conditional queue mechanism only, not real EPN outage exposure, failure probabilities or empirical chain validation."
+  },
+  "tba": {
+    "model_id": "TBA_PIPELINE",
+    "units": "USD gross unsettled notional; USD-days for integrated stocks; simulated days, not calendar dates",
+    "interpretation": "Conditional stock-flow scenario only, not empirical DTCC transmission validation, loss, cash obligation, margin call or calibrated failure probability.",
+    "reference": {
+      "broad_mbsd_reference_usd": 562000000000.0,
+      "reference_quarter": "2026Q2",
+      "scope": "Broad MBSD unsettled-guarantee notional, NOT identified TBA positions",
+      "source_file": "FICC_Q2_2026.pdf",
+      "page": 17,
+      "sha256": "db6ad9f8356dca918c1bc8b347bf7b82a1f40de7718644cb25ca6bca52645f49"
+    },
+    "hypothetical_tba_share": "0.5 default, 0.25/0.75 sensitivities; never estimated from PQD",
+    "new_flow_and_maturities": "Entirely assumed; broad daily MBSD clearing notional is not used as TBA origination",
+    "cancellations": "Seeded requests proportional to initial stock, capped at available stock and allocated pro rata before settlement",
+    "deferrals": "Assumed completion fraction applies only to due/overdue buckets; deferred positions retain original maturity and remain outstanding",
+    "recovery": "Earlier recovery removes the assumed impairment sooner; no early settlement of future trades is used in experiment cases",
+    "capacity_limit": "There is no separate settlement-throughput cap. In an unimpaired day all due/overdue notionals settle, so recovery speed is a model assumption, not an observed MBSD capability.",
+    "randomness": "Same latent opening weights, AR(1) lognormal daily-flow multiplier, tenor choices and cancellation requests across paired cases; share cases scale the same draws",
+    "config": {
+      "horizon_days": 60,
+      "broad_mbsd_reference_usd": 562000000000.0,
+      "hypothetical_tba_share": 0.5,
+      "daily_new_fraction_of_initial": 0.025,
+      "daily_flow_log_sigma": 0.25,
+      "flow_ar1": 0.5,
+      "daily_cancellation_fraction_of_initial": 0.0005,
+      "initial_due_days": [
+        5,
+        10,
+        20,
+        30,
+        40,
+        50
+      ],
+      "initial_due_weights": [
+        0.1,
+        0.15,
+        0.2,
+        0.2,
+        0.2,
+        0.15
+      ],
+      "new_trade_tenors_days": [
+        10,
+        20,
+        30,
+        40
+      ],
+      "new_trade_tenor_probabilities": [
+        0.1,
+        0.2,
+        0.4,
+        0.3
+      ]
+    },
+    "scenario_definitions": [
+      {
+        "scenario_id": "tba_baseline",
+        "scenario_label_en": "Baseline, no deferral",
+        "scenario_label_cn": "基准：无延期",
+        "shock_level": 0.0,
+        "start": 20,
+        "end": 19,
+        "share": 0.5
+      },
+      {
+        "scenario_id": "tba_transient_delay",
+        "scenario_label_en": "Transient settlement deferral",
+        "scenario_label_cn": "短期交收延期",
+        "shock_level": 0.4,
+        "start": 20,
+        "end": 29,
+        "share": 0.5
+      },
+      {
+        "scenario_id": "tba_prolonged_delay",
+        "scenario_label_en": "Prolonged settlement deferral",
+        "scenario_label_cn": "持续交收延期",
+        "shock_level": 0.8,
+        "start": 15,
+        "end": 44,
+        "share": 0.5
+      },
+      {
+        "scenario_id": "tba_earlier_recovery",
+        "scenario_label_en": "Same initial shock, earlier recovery",
+        "scenario_label_cn": "相同初始冲击、提前恢复",
+        "shock_level": 0.8,
+        "start": 15,
+        "end": 29,
+        "share": 0.5
+      },
+      {
+        "scenario_id": "tba_unrelated_event",
+        "scenario_label_en": "Unrelated event, no exposure",
+        "scenario_label_cn": "无关事件、没有暴露",
+        "shock_level": 0.0,
+        "start": 20,
+        "end": 19,
+        "share": 0.5
+      },
+      {
+        "scenario_id": "tba_severity_20",
+        "scenario_label_en": "Assumed deferral fraction 20%",
+        "scenario_label_cn": "假设延期比例20%",
+        "shock_level": 0.2,
+        "start": 20,
+        "end": 34,
+        "share": 0.5
+      },
+      {
+        "scenario_id": "tba_severity_40",
+        "scenario_label_en": "Assumed deferral fraction 40%",
+        "scenario_label_cn": "假设延期比例40%",
+        "shock_level": 0.4,
+        "start": 20,
+        "end": 34,
+        "share": 0.5
+      },
+      {
+        "scenario_id": "tba_severity_60",
+        "scenario_label_en": "Assumed deferral fraction 60%",
+        "scenario_label_cn": "假设延期比例60%",
+        "shock_level": 0.6,
+        "start": 20,
+        "end": 34,
+        "share": 0.5
+      },
+      {
+        "scenario_id": "tba_severity_80",
+        "scenario_label_en": "Assumed deferral fraction 80%",
+        "scenario_label_cn": "假设延期比例80%",
+        "shock_level": 0.8,
+        "start": 20,
+        "end": 34,
+        "share": 0.5
+      },
+      {
+        "scenario_id": "tba_share_25_baseline",
+        "scenario_label_en": "Assumed TBA share 25%, baseline",
+        "scenario_label_cn": "假设TBA份额25%、基准",
+        "shock_level": 0.0,
+        "start": 20,
+        "end": 19,
+        "share": 0.25
+      },
+      {
+        "scenario_id": "tba_share_25_delay",
+        "scenario_label_en": "Assumed TBA share 25%, prolonged deferral",
+        "scenario_label_cn": "假设TBA份额25%、持续延期",
+        "shock_level": 0.8,
+        "start": 15,
+        "end": 44,
+        "share": 0.25
+      },
+      {
+        "scenario_id": "tba_share_75_baseline",
+        "scenario_label_en": "Assumed TBA share 75%, baseline",
+        "scenario_label_cn": "假设TBA份额75%、基准",
+        "shock_level": 0.0,
+        "start": 20,
+        "end": 19,
+        "share": 0.75
+      },
+      {
+        "scenario_id": "tba_share_75_delay",
+        "scenario_label_en": "Assumed TBA share 75%, prolonged deferral",
+        "scenario_label_cn": "假设TBA份额75%、持续延期",
+        "shock_level": 0.8,
+        "start": 15,
+        "end": 44,
+        "share": 0.75
+      }
+    ]
+  }
+}

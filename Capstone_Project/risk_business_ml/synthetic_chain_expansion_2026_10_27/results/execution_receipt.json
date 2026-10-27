@@ -1,0 +1,330 @@
+{
+  "simulation_id": "SIM2_a980a9e441f61837",
+  "executed_at_utc": "2026-10-27T16:17:48+00:00",
+  "seed": 20261027,
+  "replications_per_scenario": 100,
+  "scenario_count": 102,
+  "model_count": 19,
+  "new_chain_ids": [
+    "AssetSvc-DTC-01",
+    "AssetSvc-DTC-02",
+    "ECS-DTC-01",
+    "ECS-DTC-02",
+    "ECS-DTC-04",
+    "ECS-NSCC-01",
+    "ECS-NSCC-04",
+    "ECS-NSCC-05",
+    "ECS-NSCC-06",
+    "ECS-NSCC-07",
+    "ECS-NSCC-08",
+    "ECS-NSCC-12",
+    "FICC-GSD-01",
+    "FICC-GSD-05",
+    "FICC-GSD-06",
+    "FICC-GSD-09",
+    "FICC-GSD-10",
+    "FICC-MBSD-01",
+    "TEAM-ECS-01",
+    "WIS-NSCC-02"
+  ],
+  "tables": {
+    "ml_runs": 3100,
+    "ml_market_inputs": 18000,
+    "ml_market_members": 18000,
+    "ml_concentration_inputs": 6000,
+    "ml_concentration_positions": 6000,
+    "ml_liquidity_inputs": 6000,
+    "ml_liquidity_allocations": 6000,
+    "ml_cross_inputs": 7200,
+    "ml_cross_members": 7200,
+    "df_runs": 3600,
+    "df_inputs": 41400,
+    "df_traces": 25200,
+    "ops_runs": 3500,
+    "ops_inputs": 73500,
+    "ops_events": 73500
+  },
+  "csv_sha256": {
+    "ml_runs": "6af13f76637b764353d7f7034aafbcf8114ce0136fe8d83492731b3de812584e",
+    "ml_market_inputs": "afd0cd3ac8f95fb929e30f91dd1ad6d0f66a47cb2050915170c1a90bc1951900",
+    "ml_market_members": "25d5cf710f32d54c528ff4148939c346d2abbf30326296bd10426a00dd7d82b0",
+    "ml_concentration_inputs": "5655e44bd30ae0e698a8731c755282da521f5c09fa121aee82e7d9d777e1b292",
+    "ml_concentration_positions": "cacff82c4aee7240749636a753bbab70e1d1a4d10c78fc62e25338c8fc7850b9",
+    "ml_liquidity_inputs": "0d18f513094e0e90610464fff218ed4f1a7cd3f4a3eb910aaca06a5aadbe923c",
+    "ml_liquidity_allocations": "8271f04cb519741495e3bd0373a3c6473c610b5797e745aeb58f36bbd20481d1",
+    "ml_cross_inputs": "a3fc4f8c6b33fcba8c75290087cf5498c363a1ddb938df11d5a1b99cdbd300c9",
+    "ml_cross_members": "5d5378d14aac1e87d20badf33e720fe92509da052cb4be02de6c36bfec0d9279",
+    "df_runs": "565a137afda8559e55577d381d23fa921bc9822568cbb459103693ba27686e8a",
+    "df_inputs": "a5e22189486ff1cd9fd2bd85d76f610fea34f0642be24d5135fc2e06b901f052",
+    "df_traces": "a0af22ea5c6e0c1738c199b88bd44eff1b63cec7109c3754fee10b636d23167f",
+    "ops_runs": "3ede09a8c91e32d183d8c24027380a9a5b77205fd62eb37302bc4786f3dc44e7",
+    "ops_inputs": "5afa4426b49d637b42cf70235f3ce85bd3031a200ee7be24ed29d9188b9849fe",
+    "ops_events": "eacb642524aee63abd54b8fb96ea47210c733eaef34103a11b6be1ce9b6dbed9"
+  },
+  "database_store": {
+    "changes": {
+      "new": 298200,
+      "changed": 0,
+      "unchanged": 0
+    },
+    "records_in_batch": 298200,
+    "integrity": "ok"
+  },
+  "repeat_store": {
+    "changes": {
+      "new": 0,
+      "changed": 0,
+      "unchanged": 298200
+    },
+    "records_in_batch": 298200,
+    "integrity": "ok"
+  },
+  "all_checks_passed": true,
+  "checks": [
+    {
+      "name": "protected:capstone.sqlite3",
+      "passed": true,
+      "original_present": true,
+      "detail": "Unchanged original"
+    },
+    {
+      "name": "protected:capstone.sqlite3.gz",
+      "passed": true,
+      "original_present": true,
+      "detail": "Unchanged original"
+    },
+    {
+      "name": "protected:snapshot_manifest.json",
+      "passed": true,
+      "original_present": true,
+      "detail": "Unchanged original"
+    },
+    {
+      "name": "protected:new_chain_status_EN.csv",
+      "passed": true,
+      "original_present": true,
+      "detail": "Unchanged original"
+    },
+    {
+      "name": "protected:new_chain_status_CN.csv",
+      "passed": true,
+      "original_present": true,
+      "detail": "Unchanged original"
+    },
+    {
+      "name": "protected:association_results.csv",
+      "passed": true,
+      "original_present": true,
+      "detail": "Unchanged original"
+    },
+    {
+      "name": "protected:weekly_scores.json",
+      "passed": true,
+      "original_present": true,
+      "detail": "Unchanged original"
+    },
+    {
+      "name": "margin_liquidity:market_vm_cash_conserved",
+      "passed": true,
+      "detail": "Generated equal/opposite aggregate factor exposures; VM paid equals VM received."
+    },
+    {
+      "name": "margin_liquidity:market_required_stock_bookkeeping",
+      "passed": true,
+      "detail": "Required ending stock minus opening stock equals incremental call minus potential release; stock is not VM."
+    },
+    {
+      "name": "margin_liquidity:market_member_cash_conserved",
+      "passed": true,
+      "detail": "Starting cash + VM receipts + shortfall = VM outflow + margin cash requirement + residual cash."
+    },
+    {
+      "name": "margin_liquidity:concentration_gross_notional_conserved",
+      "passed": true,
+      "detail": "Changing security shares preserves the same member gross position."
+    },
+    {
+      "name": "margin_liquidity:sld_calls_allocated_and_resource_balance",
+      "passed": true,
+      "detail": "Illustrative called amount is allocated once; collected deposits enter resources once."
+    },
+    {
+      "name": "margin_liquidity:sld_collected_not_greater_than_call_or_cash",
+      "passed": true,
+      "detail": "An unfunded call does not become usable liquidity."
+    },
+    {
+      "name": "margin_liquidity:paired_unrelated_controls_identical",
+      "passed": true,
+      "detail": "An event that does not alter the modeled inputs leaves the primary metric unchanged."
+    },
+    {
+      "name": "margin_liquidity:all_scenario_values_finite",
+      "passed": true,
+      "detail": "All exported primary values are finite."
+    },
+    {
+      "name": "default_funding:scenario_run_count",
+      "passed": true,
+      "detail": "Six submodels, six paired scenarios per submodel"
+    },
+    {
+      "name": "default_funding:finite_primary_outputs",
+      "passed": true,
+      "detail": "Conditional amounts finite and nonnegative"
+    },
+    {
+      "name": "default_funding:gsd_default:unrelated_control",
+      "passed": true,
+      "detail": "Unrelated event changes no modeled dependency"
+    },
+    {
+      "name": "default_funding:cns_closeout:unrelated_control",
+      "passed": true,
+      "detail": "Unrelated event changes no modeled dependency"
+    },
+    {
+      "name": "default_funding:gcf_deadline:unrelated_control",
+      "passed": true,
+      "detail": "Unrelated event changes no modeled dependency"
+    },
+    {
+      "name": "default_funding:auction_funding:unrelated_control",
+      "passed": true,
+      "detail": "Unrelated event changes no modeled dependency"
+    },
+    {
+      "name": "default_funding:dtc_bank:unrelated_control",
+      "passed": true,
+      "detail": "Unrelated event changes no modeled dependency"
+    },
+    {
+      "name": "default_funding:nscc_bank:unrelated_control",
+      "passed": true,
+      "detail": "Unrelated event changes no modeled dependency"
+    },
+    {
+      "name": "default_funding:default_loss_conservation",
+      "passed": true,
+      "detail": "Loss = own resources used + hypothetical collective allocation + unallocated loss"
+    },
+    {
+      "name": "default_funding:auction_cash_conservation",
+      "passed": true,
+      "detail": "Opening cash + explicit funding = cash paid + closing cash"
+    },
+    {
+      "name": "default_funding:auction_obligation_conservation",
+      "passed": true,
+      "detail": "Cumulative obligations = paid + unpaid"
+    },
+    {
+      "name": "default_funding:bank_netting_identity",
+      "passed": true,
+      "detail": "Debit minus credit = aggregate net-net within each service only"
+    },
+    {
+      "name": "default_funding:service_isolation",
+      "passed": true,
+      "detail": "No balances netted across DTC and NSCC"
+    },
+    {
+      "name": "default_funding:gcf_censoring_partition",
+      "passed": true,
+      "detail": "Late completed and unfinished are distinct states"
+    },
+    {
+      "name": "default_funding:seed_text",
+      "passed": true,
+      "detail": "Unsigned seeds retain exact text"
+    },
+    {
+      "name": "service_operations:mmi_ack:instruction_conservation",
+      "passed": true,
+      "detail": "Completed plus unfinished counts/notionals equal generated instructions; no missing instructions."
+    },
+    {
+      "name": "service_operations:mmi_ack:unrelated_event_control",
+      "passed": true,
+      "detail": "No outcome change when explicit service dependency/restriction/transmission condition is absent."
+    },
+    {
+      "name": "service_operations:acats_wave:instruction_conservation",
+      "passed": true,
+      "detail": "Completed plus unfinished counts/notionals equal generated instructions; no missing instructions."
+    },
+    {
+      "name": "service_operations:acats_wave:unrelated_event_control",
+      "passed": true,
+      "detail": "No outcome change when explicit service dependency/restriction/transmission condition is absent."
+    },
+    {
+      "name": "service_operations:fundserv_gross:instruction_conservation",
+      "passed": true,
+      "detail": "Completed plus unfinished counts/notionals equal generated instructions; no missing instructions."
+    },
+    {
+      "name": "service_operations:fundserv_gross:unrelated_event_control",
+      "passed": true,
+      "detail": "No outcome change when explicit service dependency/restriction/transmission condition is absent."
+    },
+    {
+      "name": "service_operations:registration:instruction_conservation",
+      "passed": true,
+      "detail": "Completed plus unfinished counts/notionals equal generated instructions; no missing instructions."
+    },
+    {
+      "name": "service_operations:registration:unrelated_event_control",
+      "passed": true,
+      "detail": "No outcome change when explicit service dependency/restriction/transmission condition is absent."
+    },
+    {
+      "name": "service_operations:security_restriction:instruction_conservation",
+      "passed": true,
+      "detail": "Completed plus unfinished counts/notionals equal generated instructions; no missing instructions."
+    },
+    {
+      "name": "service_operations:security_restriction:unrelated_event_control",
+      "passed": true,
+      "detail": "No outcome change when explicit service dependency/restriction/transmission condition is absent."
+    },
+    {
+      "name": "service_operations:dtc_canadian_link:instruction_conservation",
+      "passed": true,
+      "detail": "Completed plus unfinished counts/notionals equal generated instructions; no missing instructions."
+    },
+    {
+      "name": "service_operations:dtc_canadian_link:unrelated_event_control",
+      "passed": true,
+      "detail": "No outcome change when explicit service dependency/restriction/transmission condition is absent."
+    },
+    {
+      "name": "service_operations:nscc_international_link:instruction_conservation",
+      "passed": true,
+      "detail": "Completed plus unfinished counts/notionals equal generated instructions; no missing instructions."
+    },
+    {
+      "name": "service_operations:nscc_international_link:unrelated_event_control",
+      "passed": true,
+      "detail": "No outcome change when explicit service dependency/restriction/transmission condition is absent."
+    },
+    {
+      "name": "service_operations:fundserv:cash_conservation",
+      "passed": true,
+      "detail": "Only completed redemptions consume independently prefunded cash; no reuse of purchase flows."
+    },
+    {
+      "name": "service_operations:fundserv:gross_vs_net",
+      "passed": true,
+      "detail": "Purchase plus redemption gross notionals determine workload; purchase minus redemption is reported separately."
+    }
+  ],
+  "empirical_database_modified": false,
+  "historical_chain_validation_changed": false,
+  "python": "3.13.10",
+  "libraries": {
+    "numpy": "2.3.3",
+    "pandas": "2.3.3",
+    "matplotlib": "3.10.6"
+  }
+}

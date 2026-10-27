@@ -1,0 +1,33 @@
+{
+  "simulation_id": "SIM_ec170e3eef71a590",
+  "source_and_engine_hashes": "passed",
+  "saved_csv_rows": 334757,
+  "all_rows_labelled_synthetic": true,
+  "dtc_independent_max_residuals": {
+    "cash_ledger_usd_million": 7.105427357601002e-14,
+    "debit_ledger_usd_million": 4.263256414560601e-14,
+    "queue_usd_million": 4.263256414560601e-14
+  },
+  "dtc_admissions_checked": 20198,
+  "dtc_queue_area_paths": 800,
+  "dtc_queue_area_max_difference": 3.637978807091713e-12,
+  "paired_transaction_workloads": "identical within each replicate",
+  "scenario_summary_rows": 29,
+  "read_only_query_results": [
+    8,
+    8,
+    13
+  ],
+  "sqlite_integrity": "ok",
+  "unsigned_seed_text_preserved": true,
+  "idempotent_repeat_records": {
+    "new": 0,
+    "changed": 0,
+    "unchanged": 334757
+  },
+  "protected_empirical_artifacts": 7,
+  "protected_empirical_artifacts_present": 7,
+  "original_empirical_status_changed": false,
+  "independent_replay_receipt_sha256": "0949b4992a0f00b96b18cee93f9941d04eaceeb38b71bcf637c991c3f96ddb44",
+  "claim_limit": "Implementation/conservation/scenario checks only; no empirical chain validation or calibrated real-world probabilities."
+}

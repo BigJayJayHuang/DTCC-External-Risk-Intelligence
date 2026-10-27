@@ -1,0 +1,107 @@
+[
+  {
+    "scenario_id": "gap_auction_missing_cash_baseline",
+    "model_id": "auction_missing_cash",
+    "role": "baseline",
+    "label_cn": "真实发行日供给→缺失现金约束：基准假设",
+    "label_en": "Observed issue-date supply → missing cash constraint: Baseline assumptions"
+  },
+  {
+    "scenario_id": "gap_auction_missing_cash_stress",
+    "model_id": "auction_missing_cash",
+    "role": "stress",
+    "label_cn": "真实发行日供给→缺失现金约束：缺失环节压力假设",
+    "label_en": "Observed issue-date supply → missing cash constraint: Missing-link stress assumptions"
+  },
+  {
+    "scenario_id": "gap_auction_missing_cash_mitigation",
+    "model_id": "auction_missing_cash",
+    "role": "mitigation",
+    "label_cn": "真实发行日供给→缺失现金约束：缺失环节缓解假设",
+    "label_en": "Observed issue-date supply → missing cash constraint: Missing-link mitigation assumptions"
+  },
+  {
+    "scenario_id": "gap_auction_missing_cash_unrelated",
+    "model_id": "auction_missing_cash",
+    "role": "unrelated",
+    "label_cn": "真实发行日供给→缺失现金约束：无关事件对照",
+    "label_en": "Observed issue-date supply → missing cash constraint: Unrelated-event control"
+  },
+  {
+    "scenario_id": "gap_auction_missing_cash_sensitivity",
+    "model_id": "auction_missing_cash",
+    "role": "sensitivity",
+    "label_cn": "真实发行日供给→缺失现金约束：缺失参数敏感性",
+    "label_en": "Observed issue-date supply → missing cash constraint: Missing-parameter sensitivity"
+  },
+  {
+    "scenario_id": "gap_tba_missing_ladder_baseline",
+    "model_id": "tba_missing_ladder",
+    "role": "baseline",
+    "label_cn": "真实MBSD总存量→缺失TBA期限分解：基准假设",
+    "label_en": "Observed broad MBSD stock → missing TBA maturity decomposition: Baseline assumptions"
+  },
+  {
+    "scenario_id": "gap_tba_missing_ladder_stress",
+    "model_id": "tba_missing_ladder",
+    "role": "stress",
+    "label_cn": "真实MBSD总存量→缺失TBA期限分解：缺失环节压力假设",
+    "label_en": "Observed broad MBSD stock → missing TBA maturity decomposition: Missing-link stress assumptions"
+  },
+  {
+    "scenario_id": "gap_tba_missing_ladder_mitigation",
+    "model_id": "tba_missing_ladder",
+    "role": "mitigation",
+    "label_cn": "真实MBSD总存量→缺失TBA期限分解：缺失环节缓解假设",
+    "label_en": "Observed broad MBSD stock → missing TBA maturity decomposition: Missing-link mitigation assumptions"
+  },
+  {
+    "scenario_id": "gap_tba_missing_ladder_unrelated",
+    "model_id": "tba_missing_ladder",
+    "role": "unrelated",
+    "label_cn": "真实MBSD总存量→缺失TBA期限分解：无关事件对照",
+    "label_en": "Observed broad MBSD stock → missing TBA maturity decomposition: Unrelated-event control"
+  },
+  {
+    "scenario_id": "gap_tba_missing_ladder_sensitivity",
+    "model_id": "tba_missing_ladder",
+    "role": "sensitivity",
+    "label_cn": "真实MBSD总存量→缺失TBA期限分解：缺失参数敏感性",
+    "label_en": "Observed broad MBSD stock → missing TBA maturity decomposition: Missing-parameter sensitivity"
+  },
+  {
+    "scenario_id": "gap_concentration_missing_members_baseline",
+    "model_id": "concentration_missing_members",
+    "role": "baseline",
+    "label_cn": "真实前五会员平均份额→缺失组内配置：基准假设",
+    "label_en": "Observed top-five average share → missing within-group composition: Baseline assumptions"
+  },
+  {
+    "scenario_id": "gap_concentration_missing_members_stress",
+    "model_id": "concentration_missing_members",
+    "role": "stress",
+    "label_cn": "真实前五会员平均份额→缺失组内配置：缺失环节压力假设",
+    "label_en": "Observed top-five average share → missing within-group composition: Missing-link stress assumptions"
+  },
+  {
+    "scenario_id": "gap_concentration_missing_members_mitigation",
+    "model_id": "concentration_missing_members",
+    "role": "mitigation",
+    "label_cn": "真实前五会员平均份额→缺失组内配置：缺失环节缓解假设",
+    "label_en": "Observed top-five average share → missing within-group composition: Missing-link mitigation assumptions"
+  },
+  {
+    "scenario_id": "gap_concentration_missing_members_unrelated",
+    "model_id": "concentration_missing_members",
+    "role": "unrelated",
+    "label_cn": "真实前五会员平均份额→缺失组内配置：无关事件对照",
+    "label_en": "Observed top-five average share → missing within-group composition: Unrelated-event control"
+  },
+  {
+    "scenario_id": "gap_concentration_missing_members_sensitivity",
+    "model_id": "concentration_missing_members",
+    "role": "sensitivity",
+    "label_cn": "真实前五会员平均份额→缺失组内配置：缺失参数敏感性",
+    "label_en": "Observed top-five average share → missing within-group composition: Missing-parameter sensitivity"
+  }
+]

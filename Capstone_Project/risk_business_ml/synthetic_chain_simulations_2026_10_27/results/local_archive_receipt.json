@@ -1,0 +1,20 @@
+{
+  "file": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/risk_business_ml/Synthetic_Chain_Prototypes_2026-10-27.zip",
+  "files": 56,
+  "bytes": 53143142,
+  "sha256": "2b95e6825bc24c4138ad4157f1eea874ef9eac33f6e59c561b92b11657c0b4c5",
+  "zip_integrity": "passed",
+  "all_file_checksums": "passed",
+  "synthetic_snapshot": {
+    "source_type": "synthetic",
+    "simulation_id": "SIM_ec170e3eef71a590",
+    "records": 334757,
+    "database_sha256": "fc2c61b502d7d0d30e21d633818b012ab2f2e174778c36f334337d271453a523",
+    "compressed_sha256": "ea572b5c3a2b53297e2f98a6962fd39dea2ced34c09b2e0687b2a580b792f03f",
+    "compressed_bytes": 43442725,
+    "note": "Separate synthetic store; does not update the empirical public-data database."
+  },
+  "delivery_scope": "historical local-only ZIP receipt; the referenced archive is not a separate GitHub asset",
+  "current_gap_only_results": false,
+  "current_scope_readme": "../../synthetic_data_scope_revision_2026_10_27/README.md"
+}

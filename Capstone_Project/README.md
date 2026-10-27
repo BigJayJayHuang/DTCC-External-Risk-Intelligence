@@ -8,6 +8,7 @@
 
 | 内容 | 入口 | 说明 |
 |---|---|---|
+| **10月27日当前成果：真实数据优先、仅模拟缺口** | [修正版入口](risk_business_ml/synthetic_data_scope_revision_2026_10_27/README.md) · [中文结果](risk_business_ml/synthetic_data_scope_revision_2026_10_27/RESULTS_CN.md) · [English results](risk_business_ml/synthetic_data_scope_revision_2026_10_27/RESULTS_EN.md) | 56条逐环节分流；9条沿用真实数据、22条只模拟缺失部分、18条为候选、7条先补事实与定义；3个固定真实输入的可运行缺口示范 |
 | **当前数据库与每日更新** | [capstone_database](capstone_database/README_CN.md) · [English](capstone_database/README.md) | 最新共享快照、CSV、查询程序、来源映射与更新日志 |
 | **10月21日新增传导链检验** | [中文汇总](risk_business_ml/new_reference_chain_tests_2026_10_21/Concise_Test_Summary_CN.md) · [English](risk_business_ml/new_reference_chain_tests_2026_10_21/Concise_Test_Summary_EN.md) | 31条证据核对、逐链状态、Notebook及新增12,714条研究数据的入库记录 |
 | **10 月 14 日的数据更新** | [data_refresh_2026_10_14](data_refresh_2026_10_14/README_CN_EN.md) | 十条业务线的公开数据、新闻、业务信息需求及覆盖缺口 |
@@ -21,6 +22,7 @@
 | **核心逻辑链检验（第一轮已签字）** | [results/chain_tests](results/chain_tests/REPORT.md) | FICC、ECS 共 10 条核心链的两项检验、最终可信度（`chain_confidence.json`）和图表；检验规则先定稿后计算（`TEST_SPEC.md`） |
 | **每周打分（当前 v1.2）** | [results/scoring](results/scoring/SCORING_SPEC.md) | 每周冲击分 S × 脆弱度 V 与卡片排名：`weekly_scores.json`（最新一周）、`weekly_scores_history.csv`（2021 年起）、v1.1 与 v1.2 对比；旧版本输出保留为 `*_v1.0.*`、`*_v1.1.*` |
 | **检验与打分程序** | [validation](validation/) | 数据下载（`fetch.py`）、逻辑链检验（`run.py`）、可信度导出（`export.py`）、每周打分（`scoring.py`）、事件评分规则 v1.2（`event_scoring.py`）与 LLM 事件分类提示词 |
+| **历史假设模拟，已被当前范围修正** | [早期DTC/EPN/TBA原型](risk_business_ml/synthetic_chain_simulations_2026_10_27/README.md) · [后续广泛扩展](risk_business_ml/synthetic_chain_expansion_2026_10_27/README.md) | 保留代码、带标签的模拟数据、独立核查与图表；不作为当前补缺进度或真实有效性证明 |
 
 ## 队友如何使用
 
@@ -51,6 +53,8 @@ python3 download_latest.py
 项目方提供的原始 kickoff、需求、taxonomy 文档及完整演示文稿保留在原工作区；本公开共享包包含我们整理的公开数据、分析报告、清单和演讲材料。
 
 ## English
+
+**Current work:** [Real-data-first, gap-only revision](risk_business_ml/synthetic_data_scope_revision_2026_10_27/README.md) preserves observed data and existing empirical tests. Its56-chain ledger separates9real-data specifications,22partial-data routes,18missing-service-data candidates and7facts/definition gaps. Three runnable examples generate only missing quantities while holding real source values fixed. Earlier broad simulations remain historical materials; they do not replace observed data or validate actual transmission.
 
 This folder is the single entry point for the team's previous collection work, historical public disclosures, exploratory models and validation, bilingual reports, speaking materials, and the current shared database. Download **one complete ZIP** from the release page. Unzip it and run `python3 query.py` from `Capstone_Project/capstone_database`; use `python3 download_latest.py` later to refresh only your local database copy.
 

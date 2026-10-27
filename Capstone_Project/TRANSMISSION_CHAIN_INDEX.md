@@ -6,6 +6,8 @@ Use this board to navigate **definitions → tests → data gaps → database �
 
 ## 先看什么 / Start here
 
+**当前补缺范围 / Current missing-data scope：** [真实数据优先修正版 / Real-data-first revision](risk_business_ml/synthetic_data_scope_revision_2026_10_27/README.md) · [56条逐环节清单 / 56-chain source priority](risk_business_ml/synthetic_data_scope_revision_2026_10_27/SOURCE_PRIORITY_CN.md) · [English](risk_business_ml/synthetic_data_scope_revision_2026_10_27/SOURCE_PRIORITY_EN.md)。9条沿用真实数据、22条仅允许模拟缺失环节、18条为缺专属数据的模拟候选、7条先补事实／定义。当前只重跑3个固定真实输入的缺口示范；此前131种广泛假设情景保留为历史程序实验，不再作为当前补缺覆盖口径。Observed data take priority; weak empirical results are not missing data. The real database, empirical statuses and weekly scores remain unchanged.
+
 | 目的 / Purpose | 入口 / Open | 阅读提示 / What it means |
 |---|---|---|
 | **31条新增链的结果 / New-chain findings** | [中文汇总](risk_business_ml/new_reference_chain_tests_2026_10_21/Concise_Test_Summary_CN.md) · [English summary](risk_business_ml/new_reference_chain_tests_2026_10_21/Concise_Test_Summary_EN.md) | 10条部分数值检验、4条案例/条件核对、17条缺专属数据；完整验证0条。10 partial numerical tests,4 case/condition reviews,17 missing-data cases;0 fully validated chains. |

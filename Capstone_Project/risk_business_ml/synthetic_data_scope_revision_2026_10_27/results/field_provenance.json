@@ -1,0 +1,26 @@
+{
+  "observed": {
+    "auction_observations.issue_date": "Exact source issue_date; not generated",
+    "auction_observations.offered_amount_usd": "Exact offered market supply in USD; not awards or actual GSD obligations",
+    "observed_broad_mbsd_stock_usd": "Latest reconciled MBSD chosen_usd; broad guarantee notional, not TBA-only or cash",
+    "observed_top5_average_share": "NSCC18.2.2 AverageInQuarter; stylized distribution compatibility only",
+    "observed_top5_peak_share": "Separate NSCC18.2.2 PeakInQuarter; not used as average or vice versa",
+    "observed_top5_im_average_share": "Separate margin aggregate; not same member group as top5positions"
+  },
+  "derived_from_observed": {
+    "observed_daily_offered_usd": "Sum actual offered amounts by unchanged issue_date",
+    "observed_month_offered_usd": "Sum actual selected source rows",
+    "date": "Fixed calendar days in selected observed month; not synthetic auction events"
+  },
+  "assumed_missing": {
+    "conditional_obligation_usd": "Offered supply times assumed participation/award-eligibility share and netting ratio; not observed GSD obligations",
+    "opening_cash_usd/funding_received_usd": "Unknown cash buffers, available funding amounts and funding delays",
+    "assumed_tba_share/maturity_fraction/assumed_deferral_fraction": "Unobserved TBA component and maturity/delivery decomposition",
+    "assumed_member_share/assumed_member_count": "Virtual average-compatible member distribution; not observed identities or daily/quarter-end weights",
+    "normalized_exposure_units/hypothetical_addon_units": "Normalized total100, arbitrary add-on threshold/rate; not dollars or official margin"
+  },
+  "derived_from_observed_and_assumed_missing": {
+    "primary_value": "Conditional cash/stock/allocation consequences, not actual outcomes",
+    "paid_usd/unpaid_usd/overdue_usd": "Model ledger consequences after only missing link assumptions are applied"
+  }
+}

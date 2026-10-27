@@ -1,0 +1,55 @@
+[
+  {
+    "name": "epn_rules.pdf",
+    "url": "https://www.dtcc.com/~/media/files/downloads/legal/rules/ficc_mbsd_epnrules.pdf",
+    "retrieved_at_utc": "2026-10-21T20:02:01.494424+00:00",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "final_url": "https://files.dtcc.com/download/assets/ficc_mbsd_epnrules.pdf/4c561ca4369211f09a845e09fb65ecc7",
+    "status": "downloaded",
+    "bytes": 297212,
+    "sha256": "99e4bb7f78d0ca6324fba08eefed5a958ab4f683aa6fe7723a51495f082a2a6f",
+    "role": "Mechanism context only; numerical simulation parameters are assumptions, not extracted operating parameters."
+  },
+  {
+    "name": "ficc_mbsd_rules.pdf",
+    "url": "https://www.dtcc.com/~/media/Files/Downloads/legal/rules/ficc_mbsd_rules.pdf",
+    "retrieved_at_utc": "2026-10-21T20:02:02.327102+00:00",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "final_url": "https://files.dtcc.com/download/assets/ficc_mbsd_rules.pdf/d410be52369111f0b606526112f6cc5f",
+    "status": "downloaded",
+    "bytes": 984463,
+    "sha256": "8f2f9dfed34bf60a312df2243b4d73841c99053fb417f04f441db9075cbcab16",
+    "role": "Mechanism context only; numerical simulation parameters are assumptions, not extracted operating parameters."
+  },
+  {
+    "name": "dtc_settlement_guide.pdf",
+    "url": "https://www.dtcc.com/~/media/Files/Downloads/legal/service-guides/Settlement.pdf",
+    "retrieved_at_utc": "2026-10-21T20:02:02.011356+00:00",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "final_url": "https://files.dtcc.com/download/assets/Settlement.pdf/c83a99be369a11f093d0c204a2f8334f",
+    "status": "downloaded",
+    "bytes": 590193,
+    "sha256": "61dadbf7370a4c6238c11d6fac29b79cbd6fbc68f445638100f08b7572ddd029",
+    "role": "Mechanism context only; numerical simulation parameters are assumptions, not extracted operating parameters."
+  },
+  {
+    "name": "DTCC Financial Risk Controls",
+    "url": "https://www.dtcc.com/about/protecting-the-markets/managing-risk/financial-risk-management",
+    "review_date": "2026-10-27",
+    "role": "General cap/collateral and stress-scenario context; not validation of this simplified engine."
+  },
+  {
+    "name": "ONS synthetic data policy",
+    "url": "https://www.ons.gov.uk/aboutus/transparencyandgovernance/datastrategy/datapolicies/syntheticdatapolicy",
+    "review_date": "2026-10-27",
+    "role": "Scope limits of synthetic data for testing and research."
+  },
+  {
+    "name": "Quant-tech Machine Learning3 course reference",
+    "local_reference": "/Users/shanpeiyuan/.codex/skills/quant-tech/references/text/machine-learning-3.txt",
+    "role": "Sensitivity and simple controls; no empirical out-of-sample claim."
+  }
+]

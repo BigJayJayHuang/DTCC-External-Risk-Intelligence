@@ -1,0 +1,12 @@
+{
+  "new_mechanism_models": 19,
+  "all_mechanism_models": 22,
+  "new_scenarios": 102,
+  "all_scenarios": 131,
+  "new_chain_ids": 20,
+  "all_partial_mechanism_chain_ids": 24,
+  "generic_context_only_chain_ids": 2,
+  "not_simulated_chain_ids": 30,
+  "catalog_chain_ids": 56,
+  "full_chain_validated_in_simulation_branch": 0
+}

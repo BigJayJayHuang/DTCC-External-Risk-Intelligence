@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "simulation_id": "GAP_734b036362dcdf90",
+  "source_route_counts": {
+    "REAL_ONLY": 9,
+    "REAL_PLUS_MISSING_LINK_SIMULATION": 22,
+    "NOT_READY": 7,
+    "GAP_SIMULATION_CANDIDATE": 18
+  },
+  "observed_fields_regenerated": false,
+  "original_empirical_artifacts_unchanged": 7,
+  "unit_tests": {
+    "tests_run": 17,
+    "failures": 0,
+    "errors": 0,
+    "passed": true
+  },
+  "independent_audit_sha256": "093ddbd3efd27d60d42a89c61b9f2dcf22c57fb1b296aabb1aec9fe47aa6058a",
+  "data_scope": "Real data first; generated values only for named missing steps, never to replace weak tests."
+}

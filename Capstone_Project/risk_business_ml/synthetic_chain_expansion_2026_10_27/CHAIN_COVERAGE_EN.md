@@ -1,0 +1,62 @@
+# Scenario coverage across56 catalog chains
+
+Scenario coverage is not empirical validation. Original empirical statuses remain unchanged; reused IDs in other catalogs do not inherit results.
+
+| Chain ID | Simulation status | Business process | Model | Not modeled |
+|---|---|---|---|---|
+| FICC-GSD-01 | New: conditional mechanism simulated | GSD margin requirements. | ml_market_gsd | No production VaR/netting, actual GSD portfolio or requirement notices. |
+| FICC-GSD-02 | No dedicated simulation yet | GSD settlement payments and liquidity. |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| FICC-GSD-03 | No dedicated simulation yet | GSD onboarding and Sponsored volume. |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| FICC-GSD-04 | No dedicated simulation yet | FICC member credit surveillance and default-management preparedness. |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| FICC-GSD-06 | New: conditional mechanism simulated | GSD loss allocation and Clearing Fund mutualization. | gsd_default | Does not reproduce official waterfall, assessment periods, legal caps or default incidence |
+| FICC-MBSD-01 | New: conditional mechanism simulated | MBSD margin and variation margin. | ml_market_mbsd | No separate rate/spread/convexity model or real TBA trades. |
+| FICC-GSD-08 | No dedicated simulation yet | GSD securities settlement via clearing banks. |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| TEAM-FICC-01 | No dedicated simulation yet | GSD new-business acquisition and competitive position. |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| TEAM-FICC-02 | No dedicated simulation yet | GSD member submissions and settlement; clearing-bank disruptions route separately to GSD-08. |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| TEAM-FICC-03 | No dedicated simulation yet | MBSD TBA clearing activity and related risk parameters. |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| ECS-NSCC-01 | New: conditional mechanism simulated | NSCC variation margin. | ml_market_nscc | No actual NSCC settlement timing or member funding network. |
+| ECS-NSCC-02 | No dedicated simulation yet | NSCC variation margin and liquidity. |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| ECS-NSCC-03 | No dedicated simulation yet | NSCC CNS settlement and outstanding fails. |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| ECS-SET-01 | No dedicated simulation yet | NSCC and DTC settlement; retain separate CNS and non-CNS outcomes. |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| ECS-NSCC-06 | New: conditional mechanism simulated | NSCC CNS close-out after ceasing to act. | cns_closeout | No actual CNS positions, buy-in depth, historical paths or default incidence |
+| ECS-DTC-02 | New: conditional mechanism simulated | DTC settling-bank money settlement. | dtc_bank | No actual Fedwire transfers, bank contingency arrangements or default probability |
+| ECS-DTC-05 | No dedicated simulation yet | DTC participant system disruption and affected instructions. |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| TEAM-ECS-01 | New: conditional mechanism simulated | NSCC Clearing Fund calls, distinct from daily VM payments. | ml_market_nscc | No production NSCC margin formula or evidence of actual calls. |
+| TEAM-ECS-02 | No dedicated simulation yet | NSCC margin-model coverage and backtesting. |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| TEAM-ECS-03 | No dedicated simulation yet | NSCC trade-capture and netting systems. |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| TEAM-ECS-04 | No dedicated simulation yet | NSCC member credit surveillance and risk measures. |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| TEAM-ECS-05 | No dedicated simulation yet | NSCC peak-date processing and subsequent settlement. |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| TEAM-ECS-06 | No dedicated simulation yet | DTC service dependencies and instructions; link participant disruptions to DTC-05 without duplication. |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| TEAM-ECS-07 | No dedicated simulation yet | DTC new-issue eligibility and initial settlement; provisionally classified under ECS. |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| TEAM-ECS-08 | No dedicated simulation yet | DTC service continuity, distinct from participant system disruption under DTC-05. |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| ECS-NSCC-04 | New: conditional mechanism simulated | NSCC raises that member's requirements | ml_concentration | No observed capital strain, official thresholds, real member or risk decision. |
+| FICC-MBSD-02 | Earlier: conditional mechanism simulated | MBSD pool settlement and fails charge | EPN_POOL | Actual members, incidents, timing and service outcomes remain missing; not a complete chain or identified cyberattack. |
+| FICC-MBSD-03 | No dedicated simulation yet | MBSD Watch List surveillance and Clearing Fund requirements |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| FICC-GSD-05 | New: conditional mechanism simulated | GSD GCF Repo collateral allocation and funds settlement | gcf_deadline | No official fees; no production GCF position-side netting or intraday optimization |
+| FICC-GSD-07 | No dedicated simulation yet | GSD CCIT tri-party service and GCF Repo |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| FICC-MBSD-04 | No dedicated simulation yet | MBSD settlement timeframes under market disruption |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| FICC-MBSD-05 | Earlier: generic outage context only | MBSD participant system disruption | EPN_POOL | Actual members, incidents, timing and service outcomes remain missing; not a complete chain or identified cyberattack. |
+| FICC-GSD-09 | New: conditional mechanism simulated | GSD cross-margining and Required Fund Deposit | ml_cross_margin | No actual program eligibility, inter-CCP allocation, liquidation or official GSD RFD. |
+| FICC-GSD-10 | New: conditional mechanism simulated | GSD netting and settlement of auction purchases | auction_funding | No auction-tail causal estimate, actual awards, security-delivery leg or netting ratio |
+| FICC-MBSD-06 | Earlier: conditional mechanism simulated | MBSD TBA netting and forward settlement positions | TBA_PIPELINE | Actual members, incidents, timing and service outcomes remain missing; not a complete chain or identified cyberattack. |
+| FICC-MBSD-07 | No dedicated simulation yet | MBSD options expiration and exercise |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| FICC-MBSD-08 | Earlier: conditional mechanism simulated | MBSD Electronic Pool Notification (EPN) messaging and good delivery | EPN_POOL | Actual members, incidents, timing and service outcomes remain missing; not a complete chain or identified cyberattack. |
+| FICC-MBSD-09 | Earlier: generic outage context only | MBSD EPN cybersecurity and message eligibility | EPN_POOL | Actual members, incidents, timing and service outcomes remain missing; not a complete chain or identified cyberattack. |
+| ECS-NSCC-05 | New: conditional mechanism simulated | NSCC supplemental liquidity deposits | ml_sld | No Rule 4(A) formula, dynamic needs, actual SLD calls or real resources. |
+| ECS-NSCC-07 | New: conditional mechanism simulated | NSCC settling-bank money settlement | nscc_bank | No actual Fedwire transfers; DTC outcomes are not transferred to NSCC |
+| ECS-NSCC-08 | New: conditional mechanism simulated | NSCC ACATS customer account transfers | acats_wave | No actual ACATS deadlines, full state machine, participant-default reversals, asset transferability or broker mapping. |
+| ECS-NSCC-09 | No dedicated simulation yet | NSCC Securities Financing Transaction clearing service |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| ECS-DTC-01 | New: conditional mechanism simulated | DTC MMI settlement (funding acknowledgment) | mmi_ack | No MMI optimization, PIF, real IPA acknowledgements or calibrated failure frequency; acknowledgement is not sufficient for actual settlement success. |
+| ECS-DTC-03 | No dedicated simulation yet | DTC settlement timeframes under market disruption |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| AssetSvc-DTC-01 | New: conditional mechanism simulated | DTC deposit chills and global locks | security_restriction | No automatic lock inference from a trading halt; no actual restriction decision or reason identified. |
+| AssetSvc-DTC-02 | New: conditional mechanism simulated | DTC custody / deposit and transfer services | registration | No real issuer, transfer agent or ownership determination. |
+| FICC-GSD-11 | No dedicated simulation yet | GSD Agent Clearing Service |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| ECS-NSCC-10 | No dedicated simulation yet | NSCC Envelope Settlement Service |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| WIS-NSCC-01 | No dedicated simulation yet | NSCC Insurance & Retirement Solutions settlement |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| ECS-DTC-04 | New: conditional mechanism simulated | DTC Canadian-Link cross-border settlement | dtc_canadian_link | No actual CDS interface, cash/FX legs or inherited NSCC outcomes. |
+| AssetSvc-DTC-03 | No dedicated simulation yet | DTC segregated accounts for swap margin |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| AssetSvc-DTC-04 | No dedicated simulation yet | DTC segregated accounts for customer property |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| WIS-NSCC-02 | New: conditional mechanism simulated | NSCC Fund/SERV mutual fund order and settlement | fundserv_gross | No actual NAVs, payment netting, order rules or fund/distributor mappings. |
+| WIS-NSCC-03 | No dedicated simulation yet | NSCC Alternative Investment Product (AIP) service |  | No chain-specific state/decision/outcome model in this batch; a generic queue or random labels are not a substitute. |
+| ECS-DTC-06 | Earlier: conditional mechanism simulated | DTC risk management controls (Net Debit Cap and Collateral Monitor) | DTC_CONTROL | Actual members, incidents, timing and service outcomes remain missing; not a complete chain or identified cyberattack. |
+| ECS-NSCC-12 | New: conditional mechanism simulated | NSCC International Links | nscc_international_link | No actual international-link agreement or substitution of DTC outcomes for NSCC outcomes. |

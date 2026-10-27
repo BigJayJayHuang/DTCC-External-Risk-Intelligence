@@ -1,0 +1,72 @@
+{
+  "audited_at_utc": "2026-10-27T15:59:16+00:00",
+  "simulation_id": "SIM_ec170e3eef71a590",
+  "passed": true,
+  "scope": "Independent saved-input/output replay for EPN and TBA only; DTC not audited by this script.",
+  "source_and_csv_sha256": {
+    "data/tba_inputs.csv": "3ad84e0800599d232cae229a502f1256d511e31b9d777037f75b4644aa7296ae",
+    "data/tba_daily.csv": "c50ad69d440d597af0a2565497c66cc8a7b02de7522f83581e45c715cbb4c94e",
+    "data/tba_runs.csv": "6041369f5073f1ee72e49ce2ac2f258e1373a78f4dd24be580d2e2dc9c536cde",
+    "data/epn_inputs.csv": "719d33cb87971e79df8260c1d2ac35a21ad3d8e97dada00cab999640f5939d15",
+    "data/epn_events.csv": "02dbf44941abb95233783bf044e7f9e66c3c29a31d3e2ac652fad2631dcf97ef",
+    "data/epn_runs.csv": "d20b18a045838f5516efbaed6b8b974cc8451803a21eabb9121888669c5dbc40",
+    "src/epn.py": "05156ad50d47f6042ee59bbd2748b69ac68cca76db5fab6311d77b6b85ccb4ae",
+    "src/tba.py": "3fa7a1a985c9b8761dd2f7989959c072ecebfcd4ac2f17c1fb898aef9968a1c6",
+    "config/resolved_plan.json": "fdfbbde148c469377fe46b73f6d7712d4ccdd47c5d6424e5160e236c52fc7af5",
+    "results/model_assumptions.json": "e7ecfda7236d6fd591fe958fb6d77a68ddc242467c4e020fd356cb500381a257",
+    "results/execution_receipt.json": "f0e02fdb74077720a3a170229e3008d92be178ffb696b5c11358492f17ff8988",
+    "src/audit_epn_tba.py": "384ed86d2d853248f787bbc6cc657d2908576dafec1166c9c00b2c7b12e9067e",
+    "inputs/financial_guarantee_reconciliation.csv": "aa1eb4c43451ed5a05b57800091cb70085f486803cbfd02e770a6d6b76cd0080",
+    "inputs/FICC_Q2_2026.pdf": "db6ad9f8356dca918c1bc8b347bf7b82a1f40de7718644cb25ca6bca52645f49"
+  },
+  "tolerances": {
+    "tba_usd": 0.5111360223963857,
+    "epn_minutes": 1e-09,
+    "epn_usd_million": 1e-09,
+    "basis": "Double-precision machine epsilon times monetary/time scale and a4096-operation rounding allowance; floors1e-8USD/1e-9minute. Not risk thresholds."
+  },
+  "tba": {
+    "paths_replayed": 1300,
+    "daily_rows_replayed": 78000,
+    "numeric_fields_replayed": [
+      "opening_unsettled_usd",
+      "new_trade_usd",
+      "cancelled_usd",
+      "due_before_settlement_usd",
+      "settled_usd",
+      "closing_unsettled_usd",
+      "overdue_unsettled_usd"
+    ],
+    "max_absolute_saved_value_difference_usd_or_usd_days": 0.0009765625,
+    "max_saved_amount_difference_usd": 0.00048828125,
+    "max_saved_integrated_difference_usd_days": 0.0009765625,
+    "max_terminal_arithmetic_residual_usd": 0.00054931640625,
+    "algorithm": "Separate original-maturity buckets, explicit pro-rata cancellation amounts, math.fsum; no generator or engine imports."
+  },
+  "epn": {
+    "paths_replayed": 800,
+    "orders_replayed": 38400,
+    "max_time_difference_minutes": 1.1368683772161603e-13,
+    "max_notional_difference_usd_million": 1.1368683772161603e-13,
+    "counts_censoring_and_backlog": "passed",
+    "observed_late_valid_notice_count": 0,
+    "nominal_queue_starts_within_outage": 271,
+    "algorithm": "Remove downtime from active-service clock, schedule FIFO work there, invert to physical time; independently classify deadlines, censoring and backlog."
+  },
+  "public_anchor": {
+    "source_file": "FICC_Q2_2026.pdf",
+    "page": 17,
+    "sha256": "db6ad9f8356dca918c1bc8b347bf7b82a1f40de7718644cb25ca6bca52645f49",
+    "broad_mbsd_notional_usd": 562000000000.0,
+    "scope": "Broad MBSD unsettled guarantee notional; hypothetical TBA shares are assumptions, not measured exposure."
+  },
+  "interpretation_limits": [
+    "Successful replay verifies arithmetic and the declared hypothetical mechanism; it is not evidence of real DTCC exposure, causal transmission, calibrated risk or actual production behavior.",
+    "EPN cutoffs/deadlines and queue capacity are hypothetical; late valid notices, late completed deliveries and unfinished deliveries are distinct.",
+    "For unfinished EPN deliveries, reported delay is only a horizon-censored lower bound; zero late-completed deliveries does not mean no disruption.",
+    "EPN queue_start is nominal service eligibility before outage suspension; processing_wait excludes the outage suspension inside service.",
+    "EPN capacity-rescue scenario assumes higher capacity all day, not an isolated post-outage recovery intervention.",
+    "TBA values are gross notional, not cash funding, margin calls or losses. Broad MBSD scale does not identify a TBA-only portfolio.",
+    "No additional settlement-throughput cap is present in the TBA ladder; full clearing on an unimpaired day is an assumption."
+  ]
+}

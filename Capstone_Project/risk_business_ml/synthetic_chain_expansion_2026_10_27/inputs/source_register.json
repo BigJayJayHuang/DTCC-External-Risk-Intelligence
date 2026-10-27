@@ -1,0 +1,81 @@
+[
+  {
+    "id": "NSCC_RULES",
+    "url": "https://files.dtcc.com/download/assets/nscc_rules.pdf/85bda02a369211f0a3ae820bd5ac0897",
+    "local": "inputs/nscc_rules_current.pdf",
+    "note": "Rule4A SLD, Rule9 ESS, ACATS, I&RS, AIP, SFT and international-link provisions; September21 2026 version.",
+    "sha256": "8db8b5201cc665e7b74054058e9fb20cc2a36f49b33ad84a936e33f0cd57da06",
+    "retrieved_for": "prior empirical study, reused unchanged",
+    "use": "Qualitative mechanism reference only; numeric parameters are hypothetical"
+  },
+  {
+    "id": "GSD_RULES",
+    "url": "https://files.dtcc.com/download/assets/FICC-GSD%2BRulebook%2B%E2%80%93%2B2026-0826%2BFinal.pdf/b6c07124ceb411f09c9062cd3fe05a01",
+    "local": "inputs/gsd_rules_current.pdf",
+    "note": "GCF, CCIT, auction purchases, cross-margining and ACS definitions.",
+    "sha256": "d710d584501f93934277c294c1c6b1350010839bdeb2edca4280c2b2c80968a6",
+    "retrieved_for": "prior empirical study, reused unchanged",
+    "use": "Qualitative mechanism reference only; numeric parameters are hypothetical"
+  },
+  {
+    "id": "DTC_RULES",
+    "url": "https://files.dtcc.com/download/assets/dtc_rules.pdf/6064c95e369511f09a845e09fb65ecc7",
+    "local": "inputs/dtc_rules_current.pdf",
+    "note": "MMI, settling banks, Canadian-Link, chills/locks, segregation and disruption provisions; April28 2026 version.",
+    "sha256": "129d15810713a064d4de9aaf0bdd60319ae9065260268caa4f66976f84a1bf6e",
+    "retrieved_for": "prior empirical study, reused unchanged",
+    "use": "Qualitative mechanism reference only; numeric parameters are hypothetical"
+  },
+  {
+    "id": "DTC_SETTLEMENT",
+    "url": "https://files.dtcc.com/download/assets/Settlement.pdf/c83a99be369a11f093d0c204a2f8334f",
+    "local": "inputs/dtc_settlement_guide.pdf",
+    "note": "Funding acknowledgments, NDC and Collateral Monitor controls. No participant exception logs collected.",
+    "sha256": "61dadbf7370a4c6238c11d6fac29b79cbd6fbc68f445638100f08b7572ddd029",
+    "retrieved_for": "prior empirical study, reused unchanged",
+    "use": "Qualitative mechanism reference only; numeric parameters are hypothetical"
+  },
+  {
+    "id": "SEC_CHILL",
+    "url": "https://public-inspection.federalregister.gov/2014-06459.pdf",
+    "local": "inputs/sec_dtc_chill_2014.pdf",
+    "note": "Historical SEC procedural discussion of DTC restrictions and International Power; does not establish a matched suspension-to-lock event series.",
+    "sha256": "2168ab9b053c5af42125681e821c74b978b3ac7866b7e37b63e23cd715bb0050",
+    "retrieved_for": "prior empirical study, reused unchanged",
+    "use": "Qualitative mechanism reference only; numeric parameters are hypothetical"
+  },
+  {
+    "id": "PROJECT_REGISTRY",
+    "local": "inputs/chain_registry_v3.json",
+    "sha256": "8efcf690bb68eb25a7031fbdf10a417fc6e40ccfe7a7828b038aab1c5189c307",
+    "use": "Exact chain IDs and supplied mechanism scope, expanded_v3; no empirical result inherited"
+  },
+  {
+    "id": "MMI_WEB",
+    "url": "https://dtcclearning.com/products-and-services/settlement/mmi.html",
+    "reviewed_on": "2026-10-27",
+    "use": "IPA funding acknowledgement precedes processing attempts; not sufficient alone for actual settlement"
+  },
+  {
+    "id": "ACATS_WEB",
+    "url": "https://dtcclearning.com/products-and-services/equities-clearing/acats.html",
+    "reviewed_on": "2026-10-27",
+    "use": "Qualitative service scope; no real transfer cutoffs or capacity calibrated"
+  },
+  {
+    "id": "FUNDS_WEB",
+    "url": "https://www.dtcc.com/products-and-services/wealth-investment-solutions/fund-solutions",
+    "reviewed_on": "2026-10-27",
+    "use": "Fund/SERV processes and settles transactions; net fund flow is not gross order volume"
+  },
+  {
+    "id": "XM_WEB",
+    "url": "https://dtcclearning.com/products-and-services/fixed-income-clearing/cross-margining.html",
+    "reviewed_on": "2026-10-27",
+    "use": "Combined-risk and offset concept; no official formula or savings rate replicated"
+  },
+  {
+    "id": "QUANT_TECH",
+    "use": "Bundled Machine Learning3 sensitivity/baseline/generalization guidance; not evidence of DTCC parameter values or causal relationships"
+  }
+]

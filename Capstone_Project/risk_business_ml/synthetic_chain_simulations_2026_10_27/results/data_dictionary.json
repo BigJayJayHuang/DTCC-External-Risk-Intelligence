@@ -1,0 +1,1149 @@
+{
+  "dtc_inputs": {
+    "rows": 29700,
+    "columns": [
+      {
+        "name": "scenario_id",
+        "dtype": "object"
+      },
+      {
+        "name": "replicate_id",
+        "dtype": "int64"
+      },
+      {
+        "name": "scenario_seed",
+        "dtype": "string"
+      },
+      {
+        "name": "input_type",
+        "dtype": "object"
+      },
+      {
+        "name": "event_type",
+        "dtype": "object"
+      },
+      {
+        "name": "time_minutes",
+        "dtype": "float64"
+      },
+      {
+        "name": "opening_cash_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "opening_debit_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "net_debit_cap_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "collateral_market_value_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "haircut",
+        "dtype": "float64"
+      },
+      {
+        "name": "horizon_minutes",
+        "dtype": "float64"
+      },
+      {
+        "name": "in_horizon",
+        "dtype": "bool"
+      },
+      {
+        "name": "amount_units",
+        "dtype": "object"
+      },
+      {
+        "name": "transaction_id",
+        "dtype": "object"
+      },
+      {
+        "name": "amount_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "resource_role",
+        "dtype": "object"
+      },
+      {
+        "name": "simulation_id",
+        "dtype": "object"
+      },
+      {
+        "name": "source_type",
+        "dtype": "object"
+      },
+      {
+        "name": "assumption_version",
+        "dtype": "object"
+      },
+      {
+        "name": "catalog_version",
+        "dtype": "object"
+      },
+      {
+        "name": "empirical_validation",
+        "dtype": "bool"
+      },
+      {
+        "name": "observation_time_basis",
+        "dtype": "object"
+      }
+    ],
+    "grain": "scenario/replication/initial resources or scheduled transaction/resource event",
+    "source_type": "synthetic"
+  },
+  "dtc_events": {
+    "rows": 61557,
+    "columns": [
+      {
+        "name": "scenario_id",
+        "dtype": "object"
+      },
+      {
+        "name": "replicate_id",
+        "dtype": "int64"
+      },
+      {
+        "name": "scenario_seed",
+        "dtype": "string"
+      },
+      {
+        "name": "event_index",
+        "dtype": "int64"
+      },
+      {
+        "name": "time_minutes",
+        "dtype": "float64"
+      },
+      {
+        "name": "event_type",
+        "dtype": "object"
+      },
+      {
+        "name": "transaction_id",
+        "dtype": "object"
+      },
+      {
+        "name": "event_amount_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "reason",
+        "dtype": "object"
+      },
+      {
+        "name": "cash_used_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "new_debit_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "cash_repaid_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "cash_balance_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "net_debit_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "net_debit_cap_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "collateral_market_value_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "haircut",
+        "dtype": "float64"
+      },
+      {
+        "name": "eligible_collateral_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "cumulative_cash_funding_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "cumulative_new_debit_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "cumulative_debit_repaid_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "arrived_amount_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "settled_amount_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "pending_amount_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "pending_count",
+        "dtype": "int64"
+      },
+      {
+        "name": "ledger_residual_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "queue_conservation_residual_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "resource_breach_after_revaluation",
+        "dtype": "bool"
+      },
+      {
+        "name": "initial_cash_usd_million",
+        "dtype": "int64"
+      },
+      {
+        "name": "initial_debit_usd_million",
+        "dtype": "int64"
+      },
+      {
+        "name": "initial_cap_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "initial_collateral_market_value_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "initial_haircut",
+        "dtype": "float64"
+      },
+      {
+        "name": "simulation_id",
+        "dtype": "object"
+      },
+      {
+        "name": "source_type",
+        "dtype": "object"
+      },
+      {
+        "name": "assumption_version",
+        "dtype": "object"
+      },
+      {
+        "name": "catalog_version",
+        "dtype": "object"
+      },
+      {
+        "name": "empirical_validation",
+        "dtype": "bool"
+      },
+      {
+        "name": "observation_time_basis",
+        "dtype": "object"
+      }
+    ],
+    "grain": "scenario/replication/ordered event state",
+    "source_type": "synthetic"
+  },
+  "dtc_runs": {
+    "rows": 800,
+    "columns": [
+      {
+        "name": "scenario_id",
+        "dtype": "object"
+      },
+      {
+        "name": "replicate_id",
+        "dtype": "int64"
+      },
+      {
+        "name": "scenario_seed",
+        "dtype": "string"
+      },
+      {
+        "name": "model_id",
+        "dtype": "object"
+      },
+      {
+        "name": "chain_ids",
+        "dtype": "object"
+      },
+      {
+        "name": "scenario_label_en",
+        "dtype": "object"
+      },
+      {
+        "name": "scenario_label_cn",
+        "dtype": "object"
+      },
+      {
+        "name": "shock_level",
+        "dtype": "float64"
+      },
+      {
+        "name": "shock_exposure",
+        "dtype": "object"
+      },
+      {
+        "name": "vulnerability_label",
+        "dtype": "object"
+      },
+      {
+        "name": "parameter_sensitivity",
+        "dtype": "object"
+      },
+      {
+        "name": "assumed_stress_haircut",
+        "dtype": "float64"
+      },
+      {
+        "name": "submitted_amount_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "submitted_count",
+        "dtype": "int64"
+      },
+      {
+        "name": "settled_amount_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "settled_count",
+        "dtype": "int64"
+      },
+      {
+        "name": "eod_pending_amount_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "eod_pending_count",
+        "dtype": "int64"
+      },
+      {
+        "name": "ever_head_blocked_count",
+        "dtype": "int64"
+      },
+      {
+        "name": "ever_queued_count",
+        "dtype": "int64"
+      },
+      {
+        "name": "peak_queued_amount_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "queue_area_usd_million_minutes",
+        "dtype": "float64"
+      },
+      {
+        "name": "mean_settled_wait_minutes",
+        "dtype": "float64"
+      },
+      {
+        "name": "max_settled_wait_minutes",
+        "dtype": "float64"
+      },
+      {
+        "name": "max_eod_pending_age_minutes",
+        "dtype": "float64"
+      },
+      {
+        "name": "cash_funding_received_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "eod_cash_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "eod_net_debit_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "eod_cap_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "eod_eligible_collateral_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "horizon_minutes",
+        "dtype": "int64"
+      },
+      {
+        "name": "amount_units",
+        "dtype": "object"
+      },
+      {
+        "name": "time_units",
+        "dtype": "object"
+      },
+      {
+        "name": "pending_waits_are_right_censored",
+        "dtype": "bool"
+      },
+      {
+        "name": "max_abs_ledger_residual_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "max_abs_queue_residual_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "all_settlements_within_resources",
+        "dtype": "bool"
+      },
+      {
+        "name": "simulation_id",
+        "dtype": "object"
+      },
+      {
+        "name": "source_type",
+        "dtype": "object"
+      },
+      {
+        "name": "assumption_version",
+        "dtype": "object"
+      },
+      {
+        "name": "catalog_version",
+        "dtype": "object"
+      },
+      {
+        "name": "empirical_validation",
+        "dtype": "bool"
+      },
+      {
+        "name": "observation_time_basis",
+        "dtype": "object"
+      }
+    ],
+    "grain": "scenario/replication summary",
+    "source_type": "synthetic"
+  },
+  "epn_inputs": {
+    "rows": 38400,
+    "columns": [
+      {
+        "name": "scenario_id",
+        "dtype": "object"
+      },
+      {
+        "name": "replicate_id",
+        "dtype": "int64"
+      },
+      {
+        "name": "scenario_seed",
+        "dtype": "string"
+      },
+      {
+        "name": "order_id",
+        "dtype": "object"
+      },
+      {
+        "name": "submission_min",
+        "dtype": "float64"
+      },
+      {
+        "name": "notional_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "initial_valid",
+        "dtype": "bool"
+      },
+      {
+        "name": "correction_latency_min",
+        "dtype": "float64"
+      },
+      {
+        "name": "pool_available_min",
+        "dtype": "float64"
+      },
+      {
+        "name": "processing_capacity_orders_per_min",
+        "dtype": "float64"
+      },
+      {
+        "name": "outage_start_min",
+        "dtype": "float64"
+      },
+      {
+        "name": "outage_end_min",
+        "dtype": "float64"
+      },
+      {
+        "name": "outage_applies",
+        "dtype": "bool"
+      },
+      {
+        "name": "notice_cutoff_min",
+        "dtype": "int64"
+      },
+      {
+        "name": "delivery_deadline_min",
+        "dtype": "int64"
+      },
+      {
+        "name": "horizon_min",
+        "dtype": "int64"
+      },
+      {
+        "name": "simulation_id",
+        "dtype": "object"
+      },
+      {
+        "name": "source_type",
+        "dtype": "object"
+      },
+      {
+        "name": "assumption_version",
+        "dtype": "object"
+      },
+      {
+        "name": "catalog_version",
+        "dtype": "object"
+      },
+      {
+        "name": "empirical_validation",
+        "dtype": "bool"
+      },
+      {
+        "name": "observation_time_basis",
+        "dtype": "object"
+      }
+    ],
+    "grain": "scenario/replication/order",
+    "source_type": "synthetic"
+  },
+  "epn_events": {
+    "rows": 38400,
+    "columns": [
+      {
+        "name": "order_id",
+        "dtype": "object"
+      },
+      {
+        "name": "submission_min",
+        "dtype": "float64"
+      },
+      {
+        "name": "notional_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "initial_valid",
+        "dtype": "bool"
+      },
+      {
+        "name": "correction_latency_min",
+        "dtype": "float64"
+      },
+      {
+        "name": "pool_available_min",
+        "dtype": "float64"
+      },
+      {
+        "name": "valid_notification_min",
+        "dtype": "float64"
+      },
+      {
+        "name": "queue_start_min",
+        "dtype": "float64"
+      },
+      {
+        "name": "processing_complete_min",
+        "dtype": "float64"
+      },
+      {
+        "name": "planned_processing_finish_min",
+        "dtype": "float64"
+      },
+      {
+        "name": "valid_notification_late",
+        "dtype": "bool"
+      },
+      {
+        "name": "processing_after_notice_cutoff",
+        "dtype": "bool"
+      },
+      {
+        "name": "initial_validation_rejected",
+        "dtype": "bool"
+      },
+      {
+        "name": "completed_within_horizon",
+        "dtype": "bool"
+      },
+      {
+        "name": "delivery_complete_min",
+        "dtype": "float64"
+      },
+      {
+        "name": "delivery_late",
+        "dtype": "bool"
+      },
+      {
+        "name": "unfinished_at_horizon",
+        "dtype": "bool"
+      },
+      {
+        "name": "overdue_at_deadline",
+        "dtype": "bool"
+      },
+      {
+        "name": "observed_delivery_delay_min",
+        "dtype": "float64"
+      },
+      {
+        "name": "delay_lower_bound_min",
+        "dtype": "float64"
+      },
+      {
+        "name": "processing_wait_min",
+        "dtype": "float64"
+      },
+      {
+        "name": "scenario_id",
+        "dtype": "object"
+      },
+      {
+        "name": "replicate_id",
+        "dtype": "int64"
+      },
+      {
+        "name": "scenario_seed",
+        "dtype": "string"
+      },
+      {
+        "name": "simulation_id",
+        "dtype": "object"
+      },
+      {
+        "name": "source_type",
+        "dtype": "object"
+      },
+      {
+        "name": "assumption_version",
+        "dtype": "object"
+      },
+      {
+        "name": "catalog_version",
+        "dtype": "object"
+      },
+      {
+        "name": "empirical_validation",
+        "dtype": "bool"
+      },
+      {
+        "name": "observation_time_basis",
+        "dtype": "object"
+      }
+    ],
+    "grain": "scenario/replication/order outcome",
+    "source_type": "synthetic"
+  },
+  "epn_runs": {
+    "rows": 800,
+    "columns": [
+      {
+        "name": "scenario_id",
+        "dtype": "object"
+      },
+      {
+        "name": "replicate_id",
+        "dtype": "int64"
+      },
+      {
+        "name": "scenario_seed",
+        "dtype": "string"
+      },
+      {
+        "name": "model_id",
+        "dtype": "object"
+      },
+      {
+        "name": "chain_ids",
+        "dtype": "object"
+      },
+      {
+        "name": "scenario_label_en",
+        "dtype": "object"
+      },
+      {
+        "name": "scenario_label_cn",
+        "dtype": "object"
+      },
+      {
+        "name": "shock_level",
+        "dtype": "int64"
+      },
+      {
+        "name": "shock_unit",
+        "dtype": "object"
+      },
+      {
+        "name": "processing_capacity_orders_per_min",
+        "dtype": "float64"
+      },
+      {
+        "name": "outage_applies",
+        "dtype": "bool"
+      },
+      {
+        "name": "order_count",
+        "dtype": "int64"
+      },
+      {
+        "name": "total_notional_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "late_message_count",
+        "dtype": "int64"
+      },
+      {
+        "name": "initial_rejection_count",
+        "dtype": "int64"
+      },
+      {
+        "name": "processing_after_cutoff_count",
+        "dtype": "int64"
+      },
+      {
+        "name": "completed_delivery_count",
+        "dtype": "int64"
+      },
+      {
+        "name": "completed_delivery_notional_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "delayed_completed_delivery_count",
+        "dtype": "int64"
+      },
+      {
+        "name": "delayed_completed_notional_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "unfinished_delivery_count",
+        "dtype": "int64"
+      },
+      {
+        "name": "unfinished_notional_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "overdue_delivery_count",
+        "dtype": "int64"
+      },
+      {
+        "name": "overdue_notional_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "overdue_order_fraction",
+        "dtype": "float64"
+      },
+      {
+        "name": "mean_delay_lower_bound_min",
+        "dtype": "float64"
+      },
+      {
+        "name": "max_delay_lower_bound_min",
+        "dtype": "float64"
+      },
+      {
+        "name": "mean_processing_wait_min",
+        "dtype": "float64"
+      },
+      {
+        "name": "peak_system_backlog_orders",
+        "dtype": "int64"
+      },
+      {
+        "name": "processing_backlog_at_horizon",
+        "dtype": "int64"
+      },
+      {
+        "name": "notional_conservation_error_usd_million",
+        "dtype": "float64"
+      },
+      {
+        "name": "horizon_min",
+        "dtype": "int64"
+      },
+      {
+        "name": "notice_cutoff_min",
+        "dtype": "int64"
+      },
+      {
+        "name": "delivery_deadline_min",
+        "dtype": "int64"
+      },
+      {
+        "name": "simulation_id",
+        "dtype": "object"
+      },
+      {
+        "name": "source_type",
+        "dtype": "object"
+      },
+      {
+        "name": "assumption_version",
+        "dtype": "object"
+      },
+      {
+        "name": "catalog_version",
+        "dtype": "object"
+      },
+      {
+        "name": "empirical_validation",
+        "dtype": "bool"
+      },
+      {
+        "name": "observation_time_basis",
+        "dtype": "object"
+      }
+    ],
+    "grain": "scenario/replication summary",
+    "source_type": "synthetic"
+  },
+  "tba_inputs": {
+    "rows": 85800,
+    "columns": [
+      {
+        "name": "scenario_id",
+        "dtype": "object"
+      },
+      {
+        "name": "replicate_id",
+        "dtype": "int64"
+      },
+      {
+        "name": "scenario_seed",
+        "dtype": "string"
+      },
+      {
+        "name": "input_type",
+        "dtype": "object"
+      },
+      {
+        "name": "sim_day",
+        "dtype": "int64"
+      },
+      {
+        "name": "scheduled_maturity_day",
+        "dtype": "int64"
+      },
+      {
+        "name": "notional_usd",
+        "dtype": "float64"
+      },
+      {
+        "name": "cancellation_request_usd",
+        "dtype": "float64"
+      },
+      {
+        "name": "completion_fraction_assumed",
+        "dtype": "float64"
+      },
+      {
+        "name": "hypothetical_tba_share",
+        "dtype": "float64"
+      },
+      {
+        "name": "simulation_id",
+        "dtype": "object"
+      },
+      {
+        "name": "source_type",
+        "dtype": "object"
+      },
+      {
+        "name": "assumption_version",
+        "dtype": "object"
+      },
+      {
+        "name": "catalog_version",
+        "dtype": "object"
+      },
+      {
+        "name": "empirical_validation",
+        "dtype": "bool"
+      },
+      {
+        "name": "observation_time_basis",
+        "dtype": "object"
+      }
+    ],
+    "grain": "scenario/replication/opening cohort or daily new/control row",
+    "source_type": "synthetic"
+  },
+  "tba_daily": {
+    "rows": 78000,
+    "columns": [
+      {
+        "name": "sim_day",
+        "dtype": "int64"
+      },
+      {
+        "name": "opening_unsettled_usd",
+        "dtype": "float64"
+      },
+      {
+        "name": "new_trade_usd",
+        "dtype": "float64"
+      },
+      {
+        "name": "new_trade_tenor_days",
+        "dtype": "int64"
+      },
+      {
+        "name": "new_trade_due_day",
+        "dtype": "int64"
+      },
+      {
+        "name": "cancellation_requested_usd",
+        "dtype": "float64"
+      },
+      {
+        "name": "cancelled_usd",
+        "dtype": "float64"
+      },
+      {
+        "name": "due_before_settlement_usd",
+        "dtype": "float64"
+      },
+      {
+        "name": "completion_fraction_assumed",
+        "dtype": "float64"
+      },
+      {
+        "name": "settled_due_usd",
+        "dtype": "float64"
+      },
+      {
+        "name": "settled_early_usd",
+        "dtype": "int64"
+      },
+      {
+        "name": "settled_usd",
+        "dtype": "float64"
+      },
+      {
+        "name": "closing_unsettled_usd",
+        "dtype": "float64"
+      },
+      {
+        "name": "overdue_unsettled_usd",
+        "dtype": "float64"
+      },
+      {
+        "name": "stock_flow_residual_usd",
+        "dtype": "float64"
+      },
+      {
+        "name": "scenario_id",
+        "dtype": "object"
+      },
+      {
+        "name": "replicate_id",
+        "dtype": "int64"
+      },
+      {
+        "name": "scenario_seed",
+        "dtype": "string"
+      },
+      {
+        "name": "hypothetical_tba_share",
+        "dtype": "float64"
+      },
+      {
+        "name": "simulation_id",
+        "dtype": "object"
+      },
+      {
+        "name": "source_type",
+        "dtype": "object"
+      },
+      {
+        "name": "assumption_version",
+        "dtype": "object"
+      },
+      {
+        "name": "catalog_version",
+        "dtype": "object"
+      },
+      {
+        "name": "empirical_validation",
+        "dtype": "bool"
+      },
+      {
+        "name": "observation_time_basis",
+        "dtype": "object"
+      }
+    ],
+    "grain": "scenario/replication/simulated day",
+    "source_type": "synthetic"
+  },
+  "tba_runs": {
+    "rows": 1300,
+    "columns": [
+      {
+        "name": "scenario_id",
+        "dtype": "object"
+      },
+      {
+        "name": "replicate_id",
+        "dtype": "int64"
+      },
+      {
+        "name": "scenario_seed",
+        "dtype": "string"
+      },
+      {
+        "name": "model_id",
+        "dtype": "object"
+      },
+      {
+        "name": "chain_ids",
+        "dtype": "object"
+      },
+      {
+        "name": "scenario_label_en",
+        "dtype": "object"
+      },
+      {
+        "name": "scenario_label_cn",
+        "dtype": "object"
+      },
+      {
+        "name": "shock_level",
+        "dtype": "float64"
+      },
+      {
+        "name": "hypothetical_tba_share",
+        "dtype": "float64"
+      },
+      {
+        "name": "broad_mbsd_reference_usd",
+        "dtype": "int64"
+      },
+      {
+        "name": "initial_unsettled_usd",
+        "dtype": "int64"
+      },
+      {
+        "name": "horizon_days",
+        "dtype": "int64"
+      },
+      {
+        "name": "deferral_start_day",
+        "dtype": "int64"
+      },
+      {
+        "name": "deferral_end_day",
+        "dtype": "int64"
+      },
+      {
+        "name": "new_notional_usd",
+        "dtype": "float64"
+      },
+      {
+        "name": "settled_notional_usd",
+        "dtype": "float64"
+      },
+      {
+        "name": "cancelled_notional_usd",
+        "dtype": "float64"
+      },
+      {
+        "name": "ending_unsettled_usd",
+        "dtype": "float64"
+      },
+      {
+        "name": "peak_unsettled_usd",
+        "dtype": "float64"
+      },
+      {
+        "name": "peak_overdue_usd",
+        "dtype": "float64"
+      },
+      {
+        "name": "overdue_notional_days_usd_days",
+        "dtype": "float64"
+      },
+      {
+        "name": "maximum_excess_unsettled_usd",
+        "dtype": "float64"
+      },
+      {
+        "name": "excess_unsettled_notional_days_usd_days",
+        "dtype": "float64"
+      },
+      {
+        "name": "peak_unsettled_to_initial",
+        "dtype": "float64"
+      },
+      {
+        "name": "peak_overdue_to_initial",
+        "dtype": "float64"
+      },
+      {
+        "name": "max_stock_flow_residual_usd",
+        "dtype": "float64"
+      },
+      {
+        "name": "terminal_conservation_residual_usd",
+        "dtype": "float64"
+      },
+      {
+        "name": "simulation_id",
+        "dtype": "object"
+      },
+      {
+        "name": "source_type",
+        "dtype": "object"
+      },
+      {
+        "name": "assumption_version",
+        "dtype": "object"
+      },
+      {
+        "name": "catalog_version",
+        "dtype": "object"
+      },
+      {
+        "name": "empirical_validation",
+        "dtype": "bool"
+      },
+      {
+        "name": "observation_time_basis",
+        "dtype": "object"
+      }
+    ],
+    "grain": "scenario/replication summary",
+    "source_type": "synthetic"
+  }
+}

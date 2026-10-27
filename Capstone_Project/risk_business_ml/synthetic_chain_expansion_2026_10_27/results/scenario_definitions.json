@@ -1,0 +1,818 @@
+[
+  {
+    "scenario_id": "ml_market_gsd_baseline",
+    "model_id": "ml_market_gsd",
+    "label_cn": "GSD国债：基准变动",
+    "label_en": "GSD: Baseline move",
+    "role": "baseline",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_market_gsd_stress",
+    "model_id": "ml_market_gsd",
+    "label_cn": "GSD国债：价格与波动率冲击",
+    "label_en": "GSD: Price and volatility shock",
+    "role": "stress",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_market_gsd_hedged",
+    "model_id": "ml_market_gsd",
+    "label_cn": "GSD国债：假设对冲降低净敞口",
+    "label_en": "GSD: Assumed hedge reduces net exposure",
+    "role": "mitigation",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_market_gsd_unrelated",
+    "model_id": "ml_market_gsd",
+    "label_cn": "GSD国债：无关事件对照",
+    "label_en": "GSD: Unrelated-event control",
+    "role": "unrelated",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_market_gsd_vol_sensitivity",
+    "model_id": "ml_market_gsd",
+    "label_cn": "GSD国债：更高波动率假设",
+    "label_en": "GSD: Higher assumed volatility",
+    "role": "sensitivity",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_market_mbsd_baseline",
+    "model_id": "ml_market_mbsd",
+    "label_cn": "MBSD房贷证券：基准变动",
+    "label_en": "MBSD: Baseline move",
+    "role": "baseline",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_market_mbsd_stress",
+    "model_id": "ml_market_mbsd",
+    "label_cn": "MBSD房贷证券：价格与波动率冲击",
+    "label_en": "MBSD: Price and volatility shock",
+    "role": "stress",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_market_mbsd_hedged",
+    "model_id": "ml_market_mbsd",
+    "label_cn": "MBSD房贷证券：假设对冲降低净敞口",
+    "label_en": "MBSD: Assumed hedge reduces net exposure",
+    "role": "mitigation",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_market_mbsd_unrelated",
+    "model_id": "ml_market_mbsd",
+    "label_cn": "MBSD房贷证券：无关事件对照",
+    "label_en": "MBSD: Unrelated-event control",
+    "role": "unrelated",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_market_mbsd_vol_sensitivity",
+    "model_id": "ml_market_mbsd",
+    "label_cn": "MBSD房贷证券：更高波动率假设",
+    "label_en": "MBSD: Higher assumed volatility",
+    "role": "sensitivity",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_market_nscc_baseline",
+    "model_id": "ml_market_nscc",
+    "label_cn": "NSCC股票：基准变动",
+    "label_en": "NSCC: Baseline move",
+    "role": "baseline",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_market_nscc_stress",
+    "model_id": "ml_market_nscc",
+    "label_cn": "NSCC股票：价格与波动率冲击",
+    "label_en": "NSCC: Price and volatility shock",
+    "role": "stress",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_market_nscc_hedged",
+    "model_id": "ml_market_nscc",
+    "label_cn": "NSCC股票：假设对冲降低净敞口",
+    "label_en": "NSCC: Assumed hedge reduces net exposure",
+    "role": "mitigation",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_market_nscc_unrelated",
+    "model_id": "ml_market_nscc",
+    "label_cn": "NSCC股票：无关事件对照",
+    "label_en": "NSCC: Unrelated-event control",
+    "role": "unrelated",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_market_nscc_vol_sensitivity",
+    "model_id": "ml_market_nscc",
+    "label_cn": "NSCC股票：更高波动率假设",
+    "label_en": "NSCC: Higher assumed volatility",
+    "role": "sensitivity",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_concentration_baseline",
+    "model_id": "ml_concentration",
+    "label_cn": "分散头寸",
+    "label_en": "Diversified positions",
+    "role": "baseline",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_concentration_stress",
+    "model_id": "ml_concentration",
+    "label_cn": "单一证券集中",
+    "label_en": "Single-security concentration",
+    "role": "stress",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_concentration_diversified",
+    "model_id": "ml_concentration",
+    "label_cn": "降低集中度",
+    "label_en": "Reduce concentration",
+    "role": "mitigation",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_concentration_unrelated",
+    "model_id": "ml_concentration",
+    "label_cn": "无关事件对照",
+    "label_en": "Unrelated-event control",
+    "role": "unrelated",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_concentration_threshold_sensitivity",
+    "model_id": "ml_concentration",
+    "label_cn": "更低加收门槛",
+    "label_en": "Lower assumed add-on threshold",
+    "role": "sensitivity",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_sld_baseline",
+    "model_id": "ml_sld",
+    "label_cn": "基准家族敞口",
+    "label_en": "Baseline family exposures",
+    "role": "baseline",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_sld_stress",
+    "model_id": "ml_sld",
+    "label_cn": "最大家族敞口放大",
+    "label_en": "Larger family liquidity exposures",
+    "role": "stress",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_sld_cash_rescue",
+    "model_id": "ml_sld",
+    "label_cn": "假设会员增加可用现金",
+    "label_en": "Assumed extra member cash",
+    "role": "mitigation",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_sld_unrelated",
+    "model_id": "ml_sld",
+    "label_cn": "无关事件对照",
+    "label_en": "Unrelated-event control",
+    "role": "unrelated",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_sld_resource_sensitivity",
+    "model_id": "ml_sld",
+    "label_cn": "更低基础流动性资源",
+    "label_en": "Lower assumed base resources",
+    "role": "sensitivity",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_cross_margin_baseline",
+    "model_id": "ml_cross_margin",
+    "label_cn": "对冲账簿基准",
+    "label_en": "Offsetting-book baseline",
+    "role": "baseline",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_cross_margin_stress",
+    "model_id": "ml_cross_margin",
+    "label_cn": "相关性破裂与波动放大",
+    "label_en": "Basis dislocation and volatility shock",
+    "role": "stress",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_cross_margin_correlation_rescue",
+    "model_id": "ml_cross_margin",
+    "label_cn": "恢复假设对冲相关性",
+    "label_en": "Restore assumed hedge correlation",
+    "role": "mitigation",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_cross_margin_unrelated",
+    "model_id": "ml_cross_margin",
+    "label_cn": "无关事件对照",
+    "label_en": "Unrelated-event control",
+    "role": "unrelated",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_cross_margin_wrong_way",
+    "model_id": "ml_cross_margin",
+    "label_cn": "同方向敞口敏感性",
+    "label_en": "Same-direction exposure sensitivity",
+    "role": "sensitivity",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "ml_cross_margin_no_offset",
+    "model_id": "ml_cross_margin",
+    "label_cn": "无相关性收益敏感性",
+    "label_en": "No-correlation-benefit sensitivity",
+    "role": "sensitivity",
+    "engine": "margin_liquidity"
+  },
+  {
+    "scenario_id": "df_gsd_default_baseline",
+    "model_id": "gsd_default",
+    "label_cn": "违约资源与假设剩余损失分配：基准",
+    "label_en": "Default resources and hypothetical residual allocation: Baseline",
+    "role": "baseline",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_gsd_default_shock",
+    "model_id": "gsd_default",
+    "label_cn": "违约资源与假设剩余损失分配：冲击",
+    "label_en": "Default resources and hypothetical residual allocation: Shock",
+    "role": "shock",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_gsd_default_mitigation",
+    "model_id": "gsd_default",
+    "label_cn": "违约资源与假设剩余损失分配：同一冲击与缓解",
+    "label_en": "Default resources and hypothetical residual allocation: Same shock with mitigation",
+    "role": "mitigation",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_gsd_default_unrelated",
+    "model_id": "gsd_default",
+    "label_cn": "违约资源与假设剩余损失分配：无关事件对照",
+    "label_en": "Default resources and hypothetical residual allocation: Unrelated-event control",
+    "role": "unrelated",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_gsd_default_sensitivity_low",
+    "model_id": "gsd_default",
+    "label_cn": "违约资源与假设剩余损失分配：较低冲击假设",
+    "label_en": "Default resources and hypothetical residual allocation: Lower stress assumption",
+    "role": "sensitivity_low",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_gsd_default_sensitivity_high",
+    "model_id": "gsd_default",
+    "label_cn": "违约资源与假设剩余损失分配：较高冲击假设",
+    "label_en": "Default resources and hypothetical residual allocation: Higher stress assumption",
+    "role": "sensitivity_high",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_cns_closeout_baseline",
+    "model_id": "cns_closeout",
+    "label_cn": "CNS多空头寸平仓：基准",
+    "label_en": "CNS long/short close-out: Baseline",
+    "role": "baseline",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_cns_closeout_shock",
+    "model_id": "cns_closeout",
+    "label_cn": "CNS多空头寸平仓：冲击",
+    "label_en": "CNS long/short close-out: Shock",
+    "role": "shock",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_cns_closeout_mitigation",
+    "model_id": "cns_closeout",
+    "label_cn": "CNS多空头寸平仓：同一冲击与缓解",
+    "label_en": "CNS long/short close-out: Same shock with mitigation",
+    "role": "mitigation",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_cns_closeout_unrelated",
+    "model_id": "cns_closeout",
+    "label_cn": "CNS多空头寸平仓：无关事件对照",
+    "label_en": "CNS long/short close-out: Unrelated-event control",
+    "role": "unrelated",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_cns_closeout_sensitivity_low",
+    "model_id": "cns_closeout",
+    "label_cn": "CNS多空头寸平仓：较低冲击假设",
+    "label_en": "CNS long/short close-out: Lower stress assumption",
+    "role": "sensitivity_low",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_cns_closeout_sensitivity_high",
+    "model_id": "cns_closeout",
+    "label_cn": "CNS多空头寸平仓：较高冲击假设",
+    "label_en": "CNS long/short close-out: Higher stress assumption",
+    "role": "sensitivity_high",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_gcf_deadline_baseline",
+    "model_id": "gcf_deadline",
+    "label_cn": "GCF抵押品及现金到期门槛：基准",
+    "label_en": "GCF collateral/cash deadline gates: Baseline",
+    "role": "baseline",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_gcf_deadline_shock",
+    "model_id": "gcf_deadline",
+    "label_cn": "GCF抵押品及现金到期门槛：冲击",
+    "label_en": "GCF collateral/cash deadline gates: Shock",
+    "role": "shock",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_gcf_deadline_mitigation",
+    "model_id": "gcf_deadline",
+    "label_cn": "GCF抵押品及现金到期门槛：同一冲击与缓解",
+    "label_en": "GCF collateral/cash deadline gates: Same shock with mitigation",
+    "role": "mitigation",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_gcf_deadline_unrelated",
+    "model_id": "gcf_deadline",
+    "label_cn": "GCF抵押品及现金到期门槛：无关事件对照",
+    "label_en": "GCF collateral/cash deadline gates: Unrelated-event control",
+    "role": "unrelated",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_gcf_deadline_sensitivity_low",
+    "model_id": "gcf_deadline",
+    "label_cn": "GCF抵押品及现金到期门槛：较低冲击假设",
+    "label_en": "GCF collateral/cash deadline gates: Lower stress assumption",
+    "role": "sensitivity_low",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_gcf_deadline_sensitivity_high",
+    "model_id": "gcf_deadline",
+    "label_cn": "GCF抵押品及现金到期门槛：较高冲击假设",
+    "label_en": "GCF collateral/cash deadline gates: Higher stress assumption",
+    "role": "sensitivity_high",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_auction_funding_baseline",
+    "model_id": "auction_funding",
+    "label_cn": "拍卖发行日资金集中：基准",
+    "label_en": "Auction issue-date funding concentration: Baseline",
+    "role": "baseline",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_auction_funding_shock",
+    "model_id": "auction_funding",
+    "label_cn": "拍卖发行日资金集中：冲击",
+    "label_en": "Auction issue-date funding concentration: Shock",
+    "role": "shock",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_auction_funding_mitigation",
+    "model_id": "auction_funding",
+    "label_cn": "拍卖发行日资金集中：同一冲击与缓解",
+    "label_en": "Auction issue-date funding concentration: Same shock with mitigation",
+    "role": "mitigation",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_auction_funding_unrelated",
+    "model_id": "auction_funding",
+    "label_cn": "拍卖发行日资金集中：无关事件对照",
+    "label_en": "Auction issue-date funding concentration: Unrelated-event control",
+    "role": "unrelated",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_auction_funding_sensitivity_low",
+    "model_id": "auction_funding",
+    "label_cn": "拍卖发行日资金集中：较低冲击假设",
+    "label_en": "Auction issue-date funding concentration: Lower stress assumption",
+    "role": "sensitivity_low",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_auction_funding_sensitivity_high",
+    "model_id": "auction_funding",
+    "label_cn": "拍卖发行日资金集中：较高冲击假设",
+    "label_en": "Auction issue-date funding concentration: Higher stress assumption",
+    "role": "sensitivity_high",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_dtc_bank_baseline",
+    "model_id": "dtc_bank",
+    "label_cn": "DTC结算银行汇总净额门槛：基准",
+    "label_en": "DTC settling-bank aggregate gate: Baseline",
+    "role": "baseline",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_dtc_bank_shock",
+    "model_id": "dtc_bank",
+    "label_cn": "DTC结算银行汇总净额门槛：冲击",
+    "label_en": "DTC settling-bank aggregate gate: Shock",
+    "role": "shock",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_dtc_bank_mitigation",
+    "model_id": "dtc_bank",
+    "label_cn": "DTC结算银行汇总净额门槛：同一冲击与缓解",
+    "label_en": "DTC settling-bank aggregate gate: Same shock with mitigation",
+    "role": "mitigation",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_dtc_bank_unrelated",
+    "model_id": "dtc_bank",
+    "label_cn": "DTC结算银行汇总净额门槛：无关事件对照",
+    "label_en": "DTC settling-bank aggregate gate: Unrelated-event control",
+    "role": "unrelated",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_dtc_bank_sensitivity_low",
+    "model_id": "dtc_bank",
+    "label_cn": "DTC结算银行汇总净额门槛：较低冲击假设",
+    "label_en": "DTC settling-bank aggregate gate: Lower stress assumption",
+    "role": "sensitivity_low",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_dtc_bank_sensitivity_high",
+    "model_id": "dtc_bank",
+    "label_cn": "DTC结算银行汇总净额门槛：较高冲击假设",
+    "label_en": "DTC settling-bank aggregate gate: Higher stress assumption",
+    "role": "sensitivity_high",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_nscc_bank_baseline",
+    "model_id": "nscc_bank",
+    "label_cn": "NSCC结算银行汇总净额门槛：基准",
+    "label_en": "NSCC settling-bank aggregate gate: Baseline",
+    "role": "baseline",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_nscc_bank_shock",
+    "model_id": "nscc_bank",
+    "label_cn": "NSCC结算银行汇总净额门槛：冲击",
+    "label_en": "NSCC settling-bank aggregate gate: Shock",
+    "role": "shock",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_nscc_bank_mitigation",
+    "model_id": "nscc_bank",
+    "label_cn": "NSCC结算银行汇总净额门槛：同一冲击与缓解",
+    "label_en": "NSCC settling-bank aggregate gate: Same shock with mitigation",
+    "role": "mitigation",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_nscc_bank_unrelated",
+    "model_id": "nscc_bank",
+    "label_cn": "NSCC结算银行汇总净额门槛：无关事件对照",
+    "label_en": "NSCC settling-bank aggregate gate: Unrelated-event control",
+    "role": "unrelated",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_nscc_bank_sensitivity_low",
+    "model_id": "nscc_bank",
+    "label_cn": "NSCC结算银行汇总净额门槛：较低冲击假设",
+    "label_en": "NSCC settling-bank aggregate gate: Lower stress assumption",
+    "role": "sensitivity_low",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "df_nscc_bank_sensitivity_high",
+    "model_id": "nscc_bank",
+    "label_cn": "NSCC结算银行汇总净额门槛：较高冲击假设",
+    "label_en": "NSCC settling-bank aggregate gate: Higher stress assumption",
+    "role": "sensitivity_high",
+    "engine": "default_funding"
+  },
+  {
+    "scenario_id": "ops_mmi_ack_baseline",
+    "model_id": "mmi_ack",
+    "label_cn": "MMI融资确认门控：基准",
+    "label_en": "MMI funding-acknowledgement gate: Baseline",
+    "role": "baseline",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_mmi_ack_stress",
+    "model_id": "mmi_ack",
+    "label_cn": "MMI融资确认门控：相关冲击",
+    "label_en": "MMI funding-acknowledgement gate: Relevant stress",
+    "role": "stress",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_mmi_ack_mitigation",
+    "model_id": "mmi_ack",
+    "label_cn": "MMI融资确认门控：修复或额外资源",
+    "label_en": "MMI funding-acknowledgement gate: Repair or additional resources",
+    "role": "mitigation",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_mmi_ack_unrelated",
+    "model_id": "mmi_ack",
+    "label_cn": "MMI融资确认门控：不满足传导条件的事件",
+    "label_en": "MMI funding-acknowledgement gate: Event without modeled transmission conditions",
+    "role": "unrelated",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_mmi_ack_sensitivity",
+    "model_id": "mmi_ack",
+    "label_cn": "MMI融资确认门控：更强冲击／更广限制",
+    "label_en": "MMI funding-acknowledgement gate: More severe shock / wider restriction",
+    "role": "sensitivity",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_acats_wave_baseline",
+    "model_id": "acats_wave",
+    "label_cn": "ACATS账户转移集中到达：基准",
+    "label_en": "ACATS transfer-arrival wave: Baseline",
+    "role": "baseline",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_acats_wave_stress",
+    "model_id": "acats_wave",
+    "label_cn": "ACATS账户转移集中到达：相关冲击",
+    "label_en": "ACATS transfer-arrival wave: Relevant stress",
+    "role": "stress",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_acats_wave_mitigation",
+    "model_id": "acats_wave",
+    "label_cn": "ACATS账户转移集中到达：修复或额外资源",
+    "label_en": "ACATS transfer-arrival wave: Repair or additional resources",
+    "role": "mitigation",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_acats_wave_unrelated",
+    "model_id": "acats_wave",
+    "label_cn": "ACATS账户转移集中到达：不满足传导条件的事件",
+    "label_en": "ACATS transfer-arrival wave: Event without modeled transmission conditions",
+    "role": "unrelated",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_acats_wave_sensitivity",
+    "model_id": "acats_wave",
+    "label_cn": "ACATS账户转移集中到达：更强冲击／更广限制",
+    "label_en": "ACATS transfer-arrival wave: More severe shock / wider restriction",
+    "role": "sensitivity",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_fundserv_gross_baseline",
+    "model_id": "fundserv_gross",
+    "label_cn": "Fund/SERV总订单与赎回资金：基准",
+    "label_en": "Fund/SERV gross orders and redemption funding: Baseline",
+    "role": "baseline",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_fundserv_gross_stress",
+    "model_id": "fundserv_gross",
+    "label_cn": "Fund/SERV总订单与赎回资金：相关冲击",
+    "label_en": "Fund/SERV gross orders and redemption funding: Relevant stress",
+    "role": "stress",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_fundserv_gross_mitigation",
+    "model_id": "fundserv_gross",
+    "label_cn": "Fund/SERV总订单与赎回资金：修复或额外资源",
+    "label_en": "Fund/SERV gross orders and redemption funding: Repair or additional resources",
+    "role": "mitigation",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_fundserv_gross_unrelated",
+    "model_id": "fundserv_gross",
+    "label_cn": "Fund/SERV总订单与赎回资金：不满足传导条件的事件",
+    "label_en": "Fund/SERV gross orders and redemption funding: Event without modeled transmission conditions",
+    "role": "unrelated",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_fundserv_gross_sensitivity",
+    "model_id": "fundserv_gross",
+    "label_cn": "Fund/SERV总订单与赎回资金：更强冲击／更广限制",
+    "label_en": "Fund/SERV gross orders and redemption funding: More severe shock / wider restriction",
+    "role": "sensitivity",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_registration_baseline",
+    "model_id": "registration",
+    "label_cn": "证券存入登记确认：基准",
+    "label_en": "Deposit registration-confirmation gate: Baseline",
+    "role": "baseline",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_registration_stress",
+    "model_id": "registration",
+    "label_cn": "证券存入登记确认：相关冲击",
+    "label_en": "Deposit registration-confirmation gate: Relevant stress",
+    "role": "stress",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_registration_mitigation",
+    "model_id": "registration",
+    "label_cn": "证券存入登记确认：修复或额外资源",
+    "label_en": "Deposit registration-confirmation gate: Repair or additional resources",
+    "role": "mitigation",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_registration_unrelated",
+    "model_id": "registration",
+    "label_cn": "证券存入登记确认：不满足传导条件的事件",
+    "label_en": "Deposit registration-confirmation gate: Event without modeled transmission conditions",
+    "role": "unrelated",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_registration_sensitivity",
+    "model_id": "registration",
+    "label_cn": "证券存入登记确认：更强冲击／更广限制",
+    "label_en": "Deposit registration-confirmation gate: More severe shock / wider restriction",
+    "role": "sensitivity",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_security_restriction_baseline",
+    "model_id": "security_restriction",
+    "label_cn": "证券级存入冻结与全面锁定：基准",
+    "label_en": "Security-specific deposit chill / global lock: Baseline",
+    "role": "baseline",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_security_restriction_stress",
+    "model_id": "security_restriction",
+    "label_cn": "证券级存入冻结与全面锁定：相关冲击",
+    "label_en": "Security-specific deposit chill / global lock: Relevant stress",
+    "role": "stress",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_security_restriction_mitigation",
+    "model_id": "security_restriction",
+    "label_cn": "证券级存入冻结与全面锁定：修复或额外资源",
+    "label_en": "Security-specific deposit chill / global lock: Repair or additional resources",
+    "role": "mitigation",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_security_restriction_unrelated",
+    "model_id": "security_restriction",
+    "label_cn": "证券级存入冻结与全面锁定：不满足传导条件的事件",
+    "label_en": "Security-specific deposit chill / global lock: Event without modeled transmission conditions",
+    "role": "unrelated",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_security_restriction_sensitivity",
+    "model_id": "security_restriction",
+    "label_cn": "证券级存入冻结与全面锁定：更强冲击／更广限制",
+    "label_en": "Security-specific deposit chill / global lock: More severe shock / wider restriction",
+    "role": "sensitivity",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_dtc_canadian_link_baseline",
+    "model_id": "dtc_canadian_link",
+    "label_cn": "DTC加拿大链接依赖：基准",
+    "label_en": "DTC Canadian-Link dependency: Baseline",
+    "role": "baseline",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_dtc_canadian_link_stress",
+    "model_id": "dtc_canadian_link",
+    "label_cn": "DTC加拿大链接依赖：相关冲击",
+    "label_en": "DTC Canadian-Link dependency: Relevant stress",
+    "role": "stress",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_dtc_canadian_link_mitigation",
+    "model_id": "dtc_canadian_link",
+    "label_cn": "DTC加拿大链接依赖：修复或额外资源",
+    "label_en": "DTC Canadian-Link dependency: Repair or additional resources",
+    "role": "mitigation",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_dtc_canadian_link_unrelated",
+    "model_id": "dtc_canadian_link",
+    "label_cn": "DTC加拿大链接依赖：不满足传导条件的事件",
+    "label_en": "DTC Canadian-Link dependency: Event without modeled transmission conditions",
+    "role": "unrelated",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_dtc_canadian_link_sensitivity",
+    "model_id": "dtc_canadian_link",
+    "label_cn": "DTC加拿大链接依赖：更强冲击／更广限制",
+    "label_en": "DTC Canadian-Link dependency: More severe shock / wider restriction",
+    "role": "sensitivity",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_nscc_international_link_baseline",
+    "model_id": "nscc_international_link",
+    "label_cn": "NSCC国际链接依赖：基准",
+    "label_en": "NSCC International-Link dependency: Baseline",
+    "role": "baseline",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_nscc_international_link_stress",
+    "model_id": "nscc_international_link",
+    "label_cn": "NSCC国际链接依赖：相关冲击",
+    "label_en": "NSCC International-Link dependency: Relevant stress",
+    "role": "stress",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_nscc_international_link_mitigation",
+    "model_id": "nscc_international_link",
+    "label_cn": "NSCC国际链接依赖：修复或额外资源",
+    "label_en": "NSCC International-Link dependency: Repair or additional resources",
+    "role": "mitigation",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_nscc_international_link_unrelated",
+    "model_id": "nscc_international_link",
+    "label_cn": "NSCC国际链接依赖：不满足传导条件的事件",
+    "label_en": "NSCC International-Link dependency: Event without modeled transmission conditions",
+    "role": "unrelated",
+    "engine": "service_operations"
+  },
+  {
+    "scenario_id": "ops_nscc_international_link_sensitivity",
+    "model_id": "nscc_international_link",
+    "label_cn": "NSCC国际链接依赖：更强冲击／更广限制",
+    "label_en": "NSCC International-Link dependency: More severe shock / wider restriction",
+    "role": "sensitivity",
+    "engine": "service_operations"
+  }
+]

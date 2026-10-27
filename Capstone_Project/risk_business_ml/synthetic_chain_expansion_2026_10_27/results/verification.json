@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "simulation_id": "SIM2_a980a9e441f61837",
+  "source_and_engine_hashes": "passed",
+  "synthetic_records": 298200,
+  "scenario_runs": 10200,
+  "scenarios": 102,
+  "model_count": 19,
+  "new_catalog_chain_ids": 20,
+  "catalog_coverage_rows": 56,
+  "max_summary_mean_difference": 5.684341886080802e-14,
+  "all_rows_labelled_synthetic": true,
+  "independent_replays": {
+    "margin": {
+      "sha256": "5ab4f3e9da449d00d473b132d15db80ac9aae42bc95ef49bf4dba4bf8ce8b321",
+      "receipt": "results/independent_margin_audit.json"
+    },
+    "default": {
+      "sha256": "16dd2ed3cf6e264521b17a614caf1e5e3cd31464ab074d9fa153bba6c5a40f98",
+      "receipt": "results/independent_default_audit.json"
+    },
+    "operations": {
+      "sha256": "73fcc3d9c683e6f940fe1f3bf61656ed04ae212eaa9c03150e6cedc62cbe51ff",
+      "receipt": "results/independent_operations_audit.json"
+    }
+  },
+  "unit_tests": {
+    "tests_run": 58,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": true,
+    "scope": "Hand-computed mechanisms, conservation, pairing, null, reproducibility, DB constraints, checksum restore and read-only queries; not empirical validation."
+  },
+  "sqlite_integrity": "ok",
+  "exact_seed_text": "passed",
+  "read_only_queries_row_counts": [
+    31,
+    5,
+    5,
+    35,
+    12
+  ],
+  "read_only_write_rejected": true,
+  "repeat_store": {
+    "new": 0,
+    "changed": 0,
+    "unchanged": 298200
+  },
+  "original_artifacts_checked": 7,
+  "original_artifacts_present": 7,
+  "original_empirical_status_changed": false,
+  "markdown_links_checked": 30,
+  "claim_limit": "Implementation and conditional scenario checks only; no empirical validation or calibrated probabilities."
+}

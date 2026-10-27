@@ -1,0 +1,182 @@
+[
+  {
+    "chain_id": "FICC-GSD-01",
+    "model_id": "ml_market_gsd",
+    "scope_cn": "国债价格变动及波动率假设改变所需保证金。",
+    "scope_en": "Assumed Treasury price moves/volatility alter required margin.",
+    "not_modeled_cn": "未复制VaR、组合净额、真实GSD头寸或保证金通知。",
+    "not_modeled_en": "No production VaR/netting, actual GSD portfolio or requirement notices.",
+    "engine": "margin_liquidity"
+  },
+  {
+    "chain_id": "FICC-MBSD-01",
+    "model_id": "ml_market_mbsd",
+    "scope_cn": "假设MBS因子变动改变VM现金及所需保证金。",
+    "scope_en": "An assumed MBS factor move changes VM cash and required margin.",
+    "not_modeled_cn": "未分离利率、利差、凸性及真实TBA交易。",
+    "not_modeled_en": "No separate rate/spread/convexity model or real TBA trades.",
+    "engine": "margin_liquidity"
+  },
+  {
+    "chain_id": "ECS-NSCC-01",
+    "model_id": "ml_market_nscc",
+    "scope_cn": "假设股价变动转为会员VM支付与收款。",
+    "scope_en": "Assumed equity moves become member VM payments and receipts.",
+    "not_modeled_cn": "未模拟实际NSCC结算时序或会员资金网络。",
+    "not_modeled_en": "No actual NSCC settlement timing or member funding network.",
+    "engine": "margin_liquidity"
+  },
+  {
+    "chain_id": "TEAM-ECS-01",
+    "model_id": "ml_market_nscc",
+    "scope_cn": "假设波动率改变Clearing Fund要求及增量现金需求；与VM分列。",
+    "scope_en": "Assumed volatility changes Clearing Fund requirements and incremental cash needs, separate from VM.",
+    "not_modeled_cn": "未复制NSCC保证金公式或证明真实追加通知。",
+    "not_modeled_en": "No production NSCC margin formula or evidence of actual calls.",
+    "engine": "margin_liquidity"
+  },
+  {
+    "chain_id": "ECS-NSCC-04",
+    "model_id": "ml_concentration",
+    "scope_cn": "同一会员证券集中度改变假设保证金加收。",
+    "scope_en": "Single-member security concentration alters a hypothetical margin add-on.",
+    "not_modeled_cn": "未验证资本承压、官方阈值、真实会员或实际风控决定。",
+    "not_modeled_en": "No observed capital strain, official thresholds, real member or risk decision.",
+    "engine": "margin_liquidity"
+  },
+  {
+    "chain_id": "ECS-NSCC-05",
+    "model_id": "ml_sld",
+    "scope_cn": "最大关联家族流动性敞口转为假设补充存款追缴及未覆盖缺口。",
+    "scope_en": "Largest affiliated-family liquidity exposure produces illustrative deposit calls and uncovered gaps.",
+    "not_modeled_cn": "未复制Rule 4(A)公式、动态需求、实际SLD通知及真实资源。",
+    "not_modeled_en": "No Rule 4(A) formula, dynamic needs, actual SLD calls or real resources.",
+    "engine": "margin_liquidity"
+  },
+  {
+    "chain_id": "FICC-GSD-09",
+    "model_id": "ml_cross_margin",
+    "scope_cn": "国债和期货带符号敞口在假设相关性下改变组合风险及所需金额。",
+    "scope_en": "Signed Treasury/futures exposures alter combined risk and requirement under assumed correlation.",
+    "not_modeled_cn": "未模拟真实项目资格、机构间分配、清盘或GSD官方RFD。",
+    "not_modeled_en": "No actual program eligibility, inter-CCP allocation, liquidation or official GSD RFD.",
+    "engine": "margin_liquidity"
+  },
+  {
+    "chain_id": "FICC-GSD-06",
+    "model_id": "gsd_default",
+    "scope_cn": "违约后自有资源与剩余损失的假设分配",
+    "scope_en": "Conditional own-resource use and toy residual allocation after activated default",
+    "not_modeled_cn": "未复制官方损失瀑布、评估周期、法定分摊上限或违约发生率",
+    "not_modeled_en": "Does not reproduce official waterfall, assessment periods, legal caps or default incidence",
+    "engine": "default_funding"
+  },
+  {
+    "chain_id": "ECS-NSCC-06",
+    "model_id": "cns_closeout",
+    "scope_cn": "假设多空头寸在延迟平仓中的不利价格变化",
+    "scope_en": "Adverse repricing of hypothetical long/short positions during delayed close-out",
+    "not_modeled_cn": "未建模实际CNS头寸、买入成交深度、真实市场路径或违约发生率",
+    "not_modeled_en": "No actual CNS positions, buy-in depth, historical paths or default incidence",
+    "engine": "default_funding"
+  },
+  {
+    "chain_id": "FICC-GSD-05",
+    "model_id": "gcf_deadline",
+    "scope_cn": "虚拟分配单位的现金与抵押品共同到期门槛",
+    "scope_en": "Joint cash/collateral deadlines on hypothetical allocation units",
+    "not_modeled_cn": "未计算官方费用；未复制GCF净头寸方向与实际日内优化",
+    "not_modeled_en": "No official fees; no production GCF position-side netting or intraday optimization",
+    "engine": "default_funding"
+  },
+  {
+    "chain_id": "FICC-GSD-10",
+    "model_id": "auction_funding",
+    "scope_cn": "已假设净额后的发行日现金义务集中",
+    "scope_en": "Concentration of assumed netted issue-date cash obligations",
+    "not_modeled_cn": "未估计拍卖尾差因果作用、实际获配、证券交付或净额率",
+    "not_modeled_en": "No auction-tail causal estimate, actual awards, security-delivery leg or netting ratio",
+    "engine": "default_funding"
+  },
+  {
+    "chain_id": "ECS-DTC-02",
+    "model_id": "dtc_bank",
+    "scope_cn": "DTC专属虚拟银行映射与日终确认门槛",
+    "scope_en": "DTC-only hypothetical bank mapping and end-day acknowledgement gate",
+    "not_modeled_cn": "未复制Fedwire交易、真实结算银行应急安排或银行违约概率",
+    "not_modeled_en": "No actual Fedwire transfers, bank contingency arrangements or default probability",
+    "engine": "default_funding"
+  },
+  {
+    "chain_id": "ECS-NSCC-07",
+    "model_id": "nscc_bank",
+    "scope_cn": "NSCC专属虚拟银行映射与日终确认门槛",
+    "scope_en": "NSCC-only hypothetical bank mapping and end-day acknowledgement gate",
+    "not_modeled_cn": "未复制Fedwire交易；未将DTC结果直接用于NSCC",
+    "not_modeled_en": "No actual Fedwire transfers; DTC outcomes are not transferred to NSCC",
+    "engine": "default_funding"
+  },
+  {
+    "chain_id": "ECS-DTC-01",
+    "model_id": "mmi_ack",
+    "scope_cn": "假设IPA对发行人简称的融资确认门控，区分到期与发行指令。",
+    "scope_en": "Hypothetical IPA funding acknowledgement by acronym, with separate maturity and issuance instructions.",
+    "not_modeled_cn": "未复制MMI优化、PIF、真实IPA融资确认或付款失败频率；融资确认不是实际结算成功的充分条件。",
+    "not_modeled_en": "No MMI optimization, PIF, real IPA acknowledgements or calibrated failure frequency; acknowledgement is not sufficient for actual settlement success.",
+    "engine": "service_operations"
+  },
+  {
+    "chain_id": "ECS-NSCC-08",
+    "model_id": "acats_wave",
+    "scope_cn": "券商退出引起的假设账户转移集中到达与处理队列。",
+    "scope_en": "Hypothetical broker-exit transfer arrivals and processing queue.",
+    "not_modeled_cn": "未复制ACATS真实时限、全部状态、参与者违约后的撤销、账户资产可转移性及券商映射。",
+    "not_modeled_en": "No actual ACATS deadlines, full state machine, participant-default reversals, asset transferability or broker mapping.",
+    "engine": "service_operations"
+  },
+  {
+    "chain_id": "WIS-NSCC-02",
+    "model_id": "fundserv_gross",
+    "scope_cn": "分别生成申购赎回总订单，模拟处理能力与独立赎回预付资金约束。",
+    "scope_en": "Separate purchase/redemption gross orders, processing capacity and independently prefunded redemption cash.",
+    "not_modeled_cn": "未复制真实基金净值、净额结算、订单规则及基金或分销商映射。",
+    "not_modeled_en": "No actual NAVs, payment netting, order rules or fund/distributor mappings.",
+    "engine": "service_operations"
+  },
+  {
+    "chain_id": "AssetSvc-DTC-02",
+    "model_id": "registration",
+    "scope_cn": "证券存入必须通过假设的登记确认门控。",
+    "scope_en": "Deposit instructions require an explicit hypothetical registration confirmation.",
+    "not_modeled_cn": "未建模真实发行人、过户代理及证券权属裁定。",
+    "not_modeled_en": "No real issuer, transfer agent or ownership determination.",
+    "engine": "service_operations"
+  },
+  {
+    "chain_id": "AssetSvc-DTC-01",
+    "model_id": "security_restriction",
+    "scope_cn": "显式证券级存入冻结仅阻止存入，全面锁定阻止所模拟的存入与划转。",
+    "scope_en": "Explicit security-level deposit chill gates deposits; global lock gates modeled deposits and transfers.",
+    "not_modeled_cn": "不从停牌自动推断DTC锁定，未识别真实锁定决定或原因。",
+    "not_modeled_en": "No automatic lock inference from a trading halt; no actual restriction decision or reason identified.",
+    "engine": "service_operations"
+  },
+  {
+    "chain_id": "ECS-DTC-04",
+    "model_id": "dtc_canadian_link",
+    "scope_cn": "单独生成DTC加拿大链接依赖及跨境指令中断。",
+    "scope_en": "Independently generated DTC Canadian-Link dependencies and interrupted cross-border instructions.",
+    "not_modeled_cn": "未建模真实CDS接口、资金外汇腿或NSCC结果；不会继承NSCC路径。",
+    "not_modeled_en": "No actual CDS interface, cash/FX legs or inherited NSCC outcomes.",
+    "engine": "service_operations"
+  },
+  {
+    "chain_id": "ECS-NSCC-12",
+    "model_id": "nscc_international_link",
+    "scope_cn": "另行生成境外机构链接依赖及NSCC跨境指令中断。",
+    "scope_en": "Separately generated foreign-institution link dependencies and interrupted NSCC cross-border instructions.",
+    "not_modeled_cn": "未复制真实国际链接协议或用DTC结果替代NSCC结果。",
+    "not_modeled_en": "No actual international-link agreement or substitution of DTC outcomes for NSCC outcomes.",
+    "engine": "service_operations"
+  }
+]

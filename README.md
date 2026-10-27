@@ -1,6 +1,8 @@
 # Capstone Project · 总入口
 
-**[传导链统一工作台 / Transmission Chain Board](Capstone_Project/TRANSMISSION_CHAIN_INDEX.md)** — 新增31条链的定义、检验、数据缺口、数据库与队友评分入口。
+**[传导链统一工作台 / Transmission Chain Board](Capstone_Project/TRANSMISSION_CHAIN_INDEX.md)** — 56条链的真实数据优先分流、缺口模拟、历史检验、数据库与队友评分入口。
+
+**当前成果 / Current work：** [真实数据优先修正版](Capstone_Project/risk_business_ml/synthetic_data_scope_revision_2026_10_27/README.md) · [中文结果](Capstone_Project/risk_business_ml/synthetic_data_scope_revision_2026_10_27/RESULTS_CN.md) · [English results](Capstone_Project/risk_business_ml/synthetic_data_scope_revision_2026_10_27/RESULTS_EN.md)。已有真实数据的环节保留原检验，只对缺失环节做条件模拟；此前广泛模拟保留为历史材料。
 
 所有内容已统一放进 **[Capstone_Project](Capstone_Project/README.md)**，包括之前的数据采集、机器学习与验证、中英文报告，以及当前共享数据库和每日更新程序。
 

@@ -1,0 +1,131 @@
+{
+  "question": "Mechanistic implementation and conditional scenario exploration, not historical event/PQD validation.",
+  "seed": 20261027,
+  "replications_per_scenario": 100,
+  "assumption_version": "synthetic-v1.0",
+  "catalog_version": "expanded_v3",
+  "models": {
+    "dtc": {
+      "units": "USD million",
+      "time_units": "minutes after hypothetical opening",
+      "horizon_minutes": 480.0,
+      "transaction_count": 30,
+      "transaction_gamma_shape": 2.0,
+      "transaction_gamma_scale_usd_million": 1.7,
+      "last_transaction_minute": 425.0,
+      "opening_cash_usd_million": 5.0,
+      "opening_debit_usd_million": 0.0,
+      "net_debit_cap_usd_million": 35.0,
+      "collateral_market_value_usd_million": 40.0,
+      "baseline_haircut": 0.1,
+      "funding_times_minutes": [
+        60.0,
+        140.0,
+        220.0,
+        300.0,
+        390.0
+      ],
+      "funding_weight_dirichlet_alpha": 4.0,
+      "shock_funding_fraction": 0.5,
+      "shock_funding_delay_minutes": 180.0,
+      "shock_haircut": 0.35,
+      "shock_start_minute": 100.0,
+      "high_buffer_cap_multiple_of_total": 1.8,
+      "high_buffer_collateral_multiple_of_total": 1.8,
+      "rescue_minute": 320.0,
+      "cash_rescue_multiple_of_total": 1.0,
+      "cap_rescue_multiple_of_total": 1.8,
+      "sensitivity_low_haircut": 0.2,
+      "sensitivity_high_haircut": 0.55
+    },
+    "epn": {
+      "orders_per_replication": 48,
+      "notice_cutoff_min": 240.0,
+      "delivery_deadline_min": 300.0,
+      "horizon_min": 480.0,
+      "arrival_start_min": 0.0,
+      "arrival_end_min": 180.0,
+      "pool_ready_start_min": 130.0,
+      "pool_ready_end_min": 220.0,
+      "baseline_error_fraction": 0.15,
+      "repair_error_fraction": 0.4,
+      "correction_latency_low_min": 10.0,
+      "correction_latency_high_min": 30.0,
+      "processing_capacity_orders_per_min": 0.5,
+      "rescue_capacity_orders_per_min": 2.0,
+      "delivery_lag_min": 20.0,
+      "outage_start_min": 90.0,
+      "short_outage_duration_min": 60.0,
+      "prolonged_outage_duration_min": 160.0,
+      "severe_outage_duration_min": 290.0,
+      "beyond_horizon_outage_duration_min": 420.0,
+      "order_notional_median_usd_million": 5.0,
+      "order_notional_log_sigma": 0.5
+    },
+    "tba": {
+      "horizon_days": 60,
+      "broad_mbsd_reference_usd": 562000000000.0,
+      "hypothetical_tba_share": 0.5,
+      "daily_new_fraction_of_initial": 0.025,
+      "daily_flow_log_sigma": 0.25,
+      "flow_ar1": 0.5,
+      "daily_cancellation_fraction_of_initial": 0.0005,
+      "initial_due_days": [
+        5,
+        10,
+        20,
+        30,
+        40,
+        50
+      ],
+      "initial_due_weights": [
+        0.1,
+        0.15,
+        0.2,
+        0.2,
+        0.2,
+        0.15
+      ],
+      "new_trade_tenors_days": [
+        10,
+        20,
+        30,
+        40
+      ],
+      "new_trade_tenor_probabilities": [
+        0.1,
+        0.2,
+        0.4,
+        0.3
+      ]
+    }
+  },
+  "engine_hashes": {
+    "dtc": "698ab7f6cad2d65d52d4b68e0fe0ad6d8e28f5ae5ec776447ac4b49f9bda420a",
+    "epn": "05156ad50d47f6042ee59bbd2748b69ac68cca76db5fab6311d77b6b85ccb4ae",
+    "tba": "3fa7a1a985c9b8761dd2f7989959c072ecebfcd4ac2f17c1fb898aef9968a1c6"
+  },
+  "runner_sha256": "02a4ef76e46fc91b79e472d7ced1a8e248dec9ab0d72b786d7440949ecf2d1b5",
+  "anchor": {
+    "reference_id": "MBSD_2026Q2_broad_unsettled_notional",
+    "source_type": "public_reference",
+    "value": 562000000000.0,
+    "units": "USD",
+    "reporting_period": "2026Q2",
+    "source_file": "FICC_Q2_2026.pdf",
+    "source_page": 17,
+    "source_sha256": "db6ad9f8356dca918c1bc8b347bf7b82a1f40de7718644cb25ca6bca52645f49",
+    "reconciliation_sha256": "aa1eb4c43451ed5a05b57800091cb70085f486803cbfd02e770a6d6b76cd0080",
+    "source_url": "https://www.dtcc.com/legal/financial-statements",
+    "definition": "Broad MBSD unsettled guarantee notional; not a TBA-only portfolio or a cash payment obligation.",
+    "use": "Illustrative scale only; hypothetical TBA share is an assumption, not inferred from this aggregate."
+  },
+  "scope": "DTC constraint queue, EPN notification-to-pool delivery, TBA stock-flow ladder.",
+  "inference_limits": [
+    "No real incident frequency, causal effect, empirical correlation or calibrated probability.",
+    "No synthetic sample is counted as a historical event or quarter.",
+    "Model differences reflect assumptions; they do not rank real DTCC business-line risk.",
+    "Real business database and historical missing-data statuses remain unchanged."
+  ],
+  "comparison_design": "Paired common random inputs within each model; unexposed/null, stress, mitigation and sensitivity scenarios; scenario spread is not a confidence interval."
+}

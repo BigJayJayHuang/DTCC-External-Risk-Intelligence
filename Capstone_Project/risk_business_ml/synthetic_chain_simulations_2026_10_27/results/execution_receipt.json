@@ -1,0 +1,191 @@
+{
+  "executed_at_utc": "2026-10-27T15:55:07+00:00",
+  "simulation_id": "SIM_ec170e3eef71a590",
+  "assumption_version": "synthetic-v1.0",
+  "seed": 20261027,
+  "replications_per_scenario": 100,
+  "database": "data/synthetic_scenarios.sqlite3",
+  "database_store": {
+    "changes": {
+      "new": 334757,
+      "changed": 0,
+      "unchanged": 0
+    },
+    "records_in_batch": 334757,
+    "integrity": "ok",
+    "foreign_keys": "ok"
+  },
+  "repeat_store": {
+    "changes": {
+      "new": 0,
+      "changed": 0,
+      "unchanged": 334757
+    },
+    "records_in_batch": 334757,
+    "integrity": "ok",
+    "foreign_keys": "ok"
+  },
+  "tables": {
+    "dtc_runs": 800,
+    "dtc_inputs": 29700,
+    "dtc_events": 61557,
+    "epn_inputs": 38400,
+    "epn_events": 38400,
+    "epn_runs": 800,
+    "tba_runs": 1300,
+    "tba_inputs": 85800,
+    "tba_daily": 78000
+  },
+  "csv_sha256": {
+    "dtc_runs": "b934512b7fddd5478900d616cb227e276360e98062388e2f4635f7c498603841",
+    "dtc_inputs": "5262320734b991a032f0af2bec00fce02cc37f6df3009df19d8c47c98f097547",
+    "dtc_events": "7d608dd1876cef3a3bbd92f5bf6b5322c774f2b55ffb3e15514a371d1802e57b",
+    "epn_inputs": "719d33cb87971e79df8260c1d2ac35a21ad3d8e97dada00cab999640f5939d15",
+    "epn_events": "02dbf44941abb95233783bf044e7f9e66c3c29a31d3e2ac652fad2631dcf97ef",
+    "epn_runs": "d20b18a045838f5516efbaed6b8b974cc8451803a21eabb9121888669c5dbc40",
+    "tba_runs": "6041369f5073f1ee72e49ce2ac2f258e1373a78f4dd24be580d2e2dc9c536cde",
+    "tba_inputs": "3ad84e0800599d232cae229a502f1256d511e31b9d777037f75b4644aa7296ae",
+    "tba_daily": "c50ad69d440d597af0a2565497c66cc8a7b02de7522f83581e45c715cbb4c94e"
+  },
+  "all_checks_passed": true,
+  "checks": [
+    {
+      "name": "empirical_unchanged:capstone.sqlite3",
+      "passed": true,
+      "detail": "Original artifact unchanged",
+      "original_present": true
+    },
+    {
+      "name": "empirical_unchanged:capstone.sqlite3.gz",
+      "passed": true,
+      "detail": "Original artifact unchanged",
+      "original_present": true
+    },
+    {
+      "name": "empirical_unchanged:snapshot_manifest.json",
+      "passed": true,
+      "detail": "Original artifact unchanged",
+      "original_present": true
+    },
+    {
+      "name": "empirical_unchanged:new_chain_status_EN.csv",
+      "passed": true,
+      "detail": "Original artifact unchanged",
+      "original_present": true
+    },
+    {
+      "name": "empirical_unchanged:new_chain_status_CN.csv",
+      "passed": true,
+      "detail": "Original artifact unchanged",
+      "original_present": true
+    },
+    {
+      "name": "empirical_unchanged:association_results.csv",
+      "passed": true,
+      "detail": "Original artifact unchanged",
+      "original_present": true
+    },
+    {
+      "name": "empirical_unchanged:weekly_scores.json",
+      "passed": true,
+      "detail": "Original artifact unchanged",
+      "original_present": true
+    },
+    {
+      "check_id": "dtc_cash_credit_ledger_conservation",
+      "passed": true,
+      "max_abs_residual_usd_million": 7.105427357601002e-14,
+      "name": "dtc:dtc_cash_credit_ledger_conservation"
+    },
+    {
+      "check_id": "dtc_transaction_queue_conservation",
+      "passed": true,
+      "max_abs_residual_usd_million": 4.263256414560601e-14,
+      "name": "dtc:dtc_transaction_queue_conservation"
+    },
+    {
+      "check_id": "dtc_admission_constraints",
+      "passed": true,
+      "name": "dtc:dtc_admission_constraints"
+    },
+    {
+      "check_id": "dtc_no_exposure_control",
+      "passed": true,
+      "name": "dtc:dtc_no_exposure_control"
+    },
+    {
+      "check_id": "dtc_haircut_sensitivity_direction",
+      "passed": true,
+      "name": "dtc:dtc_haircut_sensitivity_direction"
+    },
+    {
+      "check_id": "dtc_timestamps_within_horizon",
+      "passed": true,
+      "name": "dtc:dtc_timestamps_within_horizon"
+    },
+    {
+      "name": "epn:epn_notional_conservation",
+      "passed": true,
+      "detail": "Each synthetic notional is completed or unfinished once; no cash leg is inferred."
+    },
+    {
+      "name": "epn:epn_unrelated_outage_equals_baseline",
+      "passed": true,
+      "detail": "Same latent orders; an unlinked outage has no process effect."
+    },
+    {
+      "name": "epn:epn_delivery_after_processing",
+      "passed": true,
+      "detail": "Observed delivery cannot precede valid-message processing."
+    },
+    {
+      "name": "epn:epn_capacity_rescue_not_worse",
+      "passed": true,
+      "detail": "Higher all-day processing capacity does not increase overdue deliveries in paired paths."
+    },
+    {
+      "check_id": "tba_daily_stock_flow_conservation",
+      "passed": true,
+      "detail": "max absolute residual USD 0.000244140625; floating tolerance USD 56.2",
+      "name": "tba:tba_daily_stock_flow_conservation"
+    },
+    {
+      "check_id": "tba_nonnegative_stock",
+      "passed": true,
+      "detail": "min closing/overdue USD 0",
+      "name": "tba:tba_nonnegative_stock"
+    },
+    {
+      "check_id": "tba_cancellation_capped_at_available_stock",
+      "passed": true,
+      "detail": "max cancellation excess USD 0",
+      "name": "tba:tba_cancellation_capped_at_available_stock"
+    },
+    {
+      "check_id": "tba_terminal_conservation",
+      "passed": true,
+      "detail": "opening + cumulative new - settled - cancelled = terminal stock",
+      "name": "tba:tba_terminal_conservation"
+    },
+    {
+      "check_id": "tba_unrelated_event_equals_baseline",
+      "passed": true,
+      "detail": "Every replicate compared all daily input/output fields exactly",
+      "name": "tba:tba_unrelated_event_equals_baseline"
+    },
+    {
+      "check_id": "tba_baseline_has_no_overdue",
+      "passed": true,
+      "detail": "All due trades settle in no-deferral cases",
+      "name": "tba:tba_baseline_has_no_overdue"
+    }
+  ],
+  "python": "3.13.10",
+  "libraries": {
+    "numpy": "2.3.3",
+    "pandas": "2.3.3",
+    "matplotlib": "3.10.6"
+  },
+  "empirical_database_modified": false,
+  "historical_chain_validation_changed": false
+}

@@ -1,0 +1,8 @@
+{
+  "tests_run": 58,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": true,
+  "scope": "Hand-computed mechanisms, conservation, pairing, null, reproducibility, DB constraints, checksum restore and read-only queries; not empirical validation."
+}

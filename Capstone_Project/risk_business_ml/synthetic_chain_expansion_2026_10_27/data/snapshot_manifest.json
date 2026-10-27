@@ -1,0 +1,9 @@
+{
+  "source_type": "synthetic",
+  "simulation_id": "SIM2_a980a9e441f61837",
+  "records": 298200,
+  "database_sha256": "4af0f2bb978d744546731946e43e5323922eb2079da22be01100466541419d4e",
+  "compressed_sha256": "a9fbb4b03706ec98165f13311b9319e2895905681c45e8e4c16a024ea0eebe76",
+  "compressed_bytes": 23054193,
+  "note": "Synthetic store only; original empirical database is separate and unchanged."
+}

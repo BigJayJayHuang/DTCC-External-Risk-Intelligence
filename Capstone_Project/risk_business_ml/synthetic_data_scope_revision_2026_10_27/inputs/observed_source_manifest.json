@@ -1,0 +1,34 @@
+[
+  {
+    "file": "treasury_auction_observations.csv",
+    "source_path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/risk_business_ml/new_reference_chain_tests_2026_10_21/data/treasury_auction_observations.csv",
+    "frozen_path": "inputs/observed/treasury_auction_observations.csv",
+    "sha256": "aab71292edc815a9650c517e19d2093c1ca67203308ca9d975d8a3704067a3c4",
+    "status": "observed_or_verified_derived",
+    "generation_permitted": false
+  },
+  {
+    "file": "new_pqd_fields.csv",
+    "source_path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/risk_business_ml/new_reference_chain_tests_2026_10_21/data/new_pqd_fields.csv",
+    "frozen_path": "inputs/observed/new_pqd_fields.csv",
+    "sha256": "348897ffef112c4cbdffe77ca0870fff04f63c40a256826a6ffa343e6fbae5c1",
+    "status": "observed_or_verified_derived",
+    "generation_permitted": false
+  },
+  {
+    "file": "financial_guarantee_reconciliation.csv",
+    "source_path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/risk_business_ml/new_reference_chain_tests_2026_10_21/data/financial_guarantee_reconciliation.csv",
+    "frozen_path": "inputs/observed/financial_guarantee_reconciliation.csv",
+    "sha256": "aa1eb4c43451ed5a05b57800091cb70085f486803cbfd02e770a6d6b76cd0080",
+    "status": "observed_or_verified_derived",
+    "generation_permitted": false
+  },
+  {
+    "file": "new_pqd_cell_evidence.csv",
+    "source_path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/risk_business_ml/new_reference_chain_tests_2026_10_21/data/new_pqd_cell_evidence.csv",
+    "frozen_path": "inputs/observed/new_pqd_cell_evidence.csv",
+    "sha256": "f8b6d7f9ba1688af3ec778500a8ff22348740b0748567b1eb962a1a59ae9f242",
+    "status": "observed_or_verified_derived",
+    "generation_permitted": false
+  }
+]

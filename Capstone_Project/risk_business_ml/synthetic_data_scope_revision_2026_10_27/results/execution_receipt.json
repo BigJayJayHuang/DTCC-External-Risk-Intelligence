@@ -1,0 +1,161 @@
+{
+  "simulation_id": "GAP_734b036362dcdf90",
+  "executed_at_utc": "2026-10-27T19:00:54+00:00",
+  "scenarios": 15,
+  "scenario_runs": 1500,
+  "replications": 100,
+  "tables": {
+    "gap_runs": 1500,
+    "auction_lots": 18500,
+    "auction_trace": 15000,
+    "tba_trace": 15000,
+    "concentration_members": 12500
+  },
+  "csv_sha256": {
+    "gap_runs": "c6fa7b7a5f26b41d8cf339a23812e95b515eff0b719817dcbd0db0514ca12fe2",
+    "auction_lots": "61e5f1560f27f207bb9fe2fc6d95d461ba845c2327d44527cb7c3e19937acf8d",
+    "auction_trace": "0e59bb01c3abefa69dde61f89984d83a063cc39852ed418190cae03c6a61103e",
+    "tba_trace": "d8d07a9db1730f412d081f7a4f45539c004f249c58a25a4e44568486fe6a0785",
+    "concentration_members": "934a8243886fc29069b4cec0f4a478ef76bfc40b552bfd8771caa427a3a631db"
+  },
+  "source_files": [
+    {
+      "file": "treasury_auction_observations.csv",
+      "source_path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/risk_business_ml/new_reference_chain_tests_2026_10_21/data/treasury_auction_observations.csv",
+      "frozen_path": "inputs/observed/treasury_auction_observations.csv",
+      "sha256": "aab71292edc815a9650c517e19d2093c1ca67203308ca9d975d8a3704067a3c4",
+      "status": "observed_or_verified_derived",
+      "generation_permitted": false
+    },
+    {
+      "file": "new_pqd_fields.csv",
+      "source_path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/risk_business_ml/new_reference_chain_tests_2026_10_21/data/new_pqd_fields.csv",
+      "frozen_path": "inputs/observed/new_pqd_fields.csv",
+      "sha256": "348897ffef112c4cbdffe77ca0870fff04f63c40a256826a6ffa343e6fbae5c1",
+      "status": "observed_or_verified_derived",
+      "generation_permitted": false
+    },
+    {
+      "file": "financial_guarantee_reconciliation.csv",
+      "source_path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/risk_business_ml/new_reference_chain_tests_2026_10_21/data/financial_guarantee_reconciliation.csv",
+      "frozen_path": "inputs/observed/financial_guarantee_reconciliation.csv",
+      "sha256": "aa1eb4c43451ed5a05b57800091cb70085f486803cbfd02e770a6d6b76cd0080",
+      "status": "observed_or_verified_derived",
+      "generation_permitted": false
+    },
+    {
+      "file": "new_pqd_cell_evidence.csv",
+      "source_path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/risk_business_ml/new_reference_chain_tests_2026_10_21/data/new_pqd_cell_evidence.csv",
+      "frozen_path": "inputs/observed/new_pqd_cell_evidence.csv",
+      "sha256": "f8b6d7f9ba1688af3ec778500a8ff22348740b0748567b1eb962a1a59ae9f242",
+      "status": "observed_or_verified_derived",
+      "generation_permitted": false
+    }
+  ],
+  "source_generation_guard": "passed",
+  "original_evidence_checks": [
+    {
+      "path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/capstone_database/data/capstone.sqlite3",
+      "present": true,
+      "unchanged": true
+    },
+    {
+      "path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/capstone_database/data/capstone.sqlite3.gz",
+      "present": true,
+      "unchanged": true
+    },
+    {
+      "path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/capstone_database/data/snapshot_manifest.json",
+      "present": true,
+      "unchanged": true
+    },
+    {
+      "path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/risk_business_ml/new_reference_chain_tests_2026_10_21/results/new_chain_status_EN.csv",
+      "present": true,
+      "unchanged": true
+    },
+    {
+      "path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/risk_business_ml/new_reference_chain_tests_2026_10_21/results/new_chain_status_CN.csv",
+      "present": true,
+      "unchanged": true
+    },
+    {
+      "path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/risk_business_ml/new_reference_chain_tests_2026_10_21/results/association_results.csv",
+      "present": true,
+      "unchanged": true
+    },
+    {
+      "path": "/Users/shanpeiyuan/Capstone Project/capstone_database/Capstone_Project/results/scoring/weekly_scores.json",
+      "present": true,
+      "unchanged": true
+    }
+  ],
+  "observed_fields_regenerated": false,
+  "empirical_database_modified": false,
+  "checks": [
+    {
+      "name": "source_files_unchanged",
+      "passed": true,
+      "detail": "Source hashes unchanged after execution"
+    },
+    {
+      "name": "cash_conservation",
+      "passed": true,
+      "detail": "USD residual below one cent"
+    },
+    {
+      "name": "auction_obligation_conservation",
+      "passed": true,
+      "detail": "Unpaid obligations carry forward"
+    },
+    {
+      "name": "actual_offered_schedule_preserved",
+      "passed": true,
+      "detail": "Only observed issue-date offered supply; no invented auction dates or awards"
+    },
+    {
+      "name": "tba_stock_conservation",
+      "passed": true,
+      "detail": "Matured and unmatured partitions conserve assumed TBA stock"
+    },
+    {
+      "name": "actual_broad_stock_preserved",
+      "passed": true,
+      "detail": "Broad observed MBSD stock never replaced with synthetic observations"
+    },
+    {
+      "name": "actual_top5_average_preserved",
+      "passed": true,
+      "detail": "Only missing within-group allocation varies"
+    },
+    {
+      "name": "top5_rank_and_normalization",
+      "passed": true,
+      "detail": "Assumed25+member stylized average-compatible distributions; not observed daily books"
+    },
+    {
+      "name": "actual_peak_separate",
+      "passed": true,
+      "detail": "Actual average and peak remain separate fields"
+    },
+    {
+      "name": "unrelated_control_exact",
+      "passed": true,
+      "detail": "Unrelated events do not alter missing-link conditions"
+    }
+  ],
+  "store_first": {
+    "new": 62500,
+    "unchanged": 0
+  },
+  "store_repeat": {
+    "new": 0,
+    "unchanged": 62500
+  },
+  "unit_tests": {
+    "tests_run": 17,
+    "failures": 0,
+    "errors": 0,
+    "passed": true
+  }
+}
