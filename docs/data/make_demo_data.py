@@ -141,7 +141,7 @@ for li,(code,(full,evs)) in enumerate(L.items()):
           "title":title,"summary_line":sw,"what_happened":ev+" (sample event).",
           "transmission":{"event":ev,"mechanism":mech,"dtcc_process":proc},"so_what":sw,"so_now_what":nw,
           "time_phased":{"now":"Watch this week's readings","next":"Re-score as new data arrives","later":"Revisit at next PQD release"},
-          "why_this_line":f"Tagged {code} because it touches {proc[0].lower()+proc[1:]}.",
+          "why_this_line":f"Tagged {code} because it touches {proc}.",
           "key_unknowns":["All readings on this card are simulated for the demo","Internal DTCC data not public"],
           "where_we_stand":"Sample card for layout and demo purposes.","shareable_line":title+".",
           "sources":src,"ai_generated_fields":["summary_line","so_what","so_now_what","shareable_line"],"review_status":"Simulated demo data"}
