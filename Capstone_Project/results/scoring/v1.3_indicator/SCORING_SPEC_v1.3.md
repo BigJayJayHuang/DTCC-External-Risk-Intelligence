@@ -99,7 +99,7 @@ The other 10 cards have no market signal.
 
    The labels name the input that set the final S, as in v1.2 `combine_s`. When the market S is higher, the source is `market` even if an event is active. This was former open point 6; decided 2026-11-05 to keep it unchanged.
 
-5. **Human check.** `needs_human_signoff = true` whenever S ≥ 4, whatever its source. An event sign-off in `event_signoffs.csv` still clears only that event's own review flag, as in v1.2 §12.3.
+5. **Human check.** `needs_human_signoff = true` whenever S ≥ 4, whatever its source. An event sign-off in `event_signoffs.csv` still clears only that event's own review flag, as in v1.2 §12.3. **Superseded by Amendment A.**
 
 ## 7. Vulnerability V, severity, confidence (D5)
 
@@ -177,3 +177,27 @@ From `Capstone_Project/`:
 1. **`risk_family` and `sub_line` values** in `card_lines.csv`: proposed, to be confirmed by Jay. They are display fields only and do not change S, V or severity.
 
 Former points 1, 2, 3, 4 and 6 were decided on 2026-11-05 and are recorded in §4, §6 and §7.
+
+## Amendment A — sign-off scope, daily values, shared signals
+
+Approved: Wenqi Cai, 2026-11-05T04:55Z. Written before the re-run of the weeks of 2026-10-19 and 2026-10-26; the earlier outputs for those weeks are replaced by the re-run. Amendment A replaces §6.5 and adds fields to §9. Nothing else changes: S, V, severity, status and show_on_main are computed as before.
+
+**A1. Human sign-off (replaces §6.5).**
+- `needs_human_signoff = true` only when a register event sets S, S ≥ 4, and the driving event has no sign-off covering that S.
+- A register event sets S when `S_source` is `event_manual` or `market+event_manual`. A tie counts as event-set.
+- A sign-off covers S when the driving event row carries `signed_off_by`. That is v1.2 `apply_signoff`: a row in `data/events/event_signoffs.csv` with the same certainty and reach and `max_S ≥ S`, on an event whose only review reason is the S ≥ 4 check.
+- A sign-off clears the flag. A market-driven S (`S_source = market`) never needs a sign-off.
+
+**A2. Daily values behind a market S ≥ 4.**
+- Every record with `S_market ≥ 4` carries `signal.daily_values`: the observations of that week (Monday–Friday) of the transformed signal series whose weekly maximum is the weekly peak, as `[{date, value}]`. For MORTGAGE30US this is the single weekly survey value.
+- It also carries `signal.daily_inputs`: the raw series behind those values for the same days, `{series: [{date, value}]}`. For the Cboe ratio it carries `signal.ratio_denominator`, the median of the prior 52 weekly peaks.
+- `signal.peak_check` is true when the maximum of `daily_values` (divided by `ratio_denominator` for the ratio) reproduces `signal.value`. A false check stops the run.
+- Records with `S_market < 4` or no market S have no `daily_values`.
+
+**A3. Shared signals.**
+- A record "takes S from" the raw series of every chain whose chain S equals `S_market` (§4 data-guard table), when `S_source` is `market` or `market+event_manual`.
+- When two records of different cards in the same week take S from at least one common raw series, each lists the other's `card_id` in `shared_signal` (sorted). `shared_signal_series` gives the common series per card.
+- The two records of one cross-entity card do not list each other. Records that do not take S from a market series have `shared_signal = []`.
+- These fields are for display only. Severity is not adjusted.
+
+**A4. Event provenance.** Each entry in `event_manual.events` also carries `outlet`, `source_tier` and `source_urls` from the register. This is display only.
