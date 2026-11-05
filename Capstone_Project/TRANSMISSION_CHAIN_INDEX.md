@@ -6,7 +6,10 @@ Use this board to navigate **definitions → tests → data gaps → database �
 
 ## 先看什么 / Start here
 
-**当前补缺范围 / Current missing-data scope：** [真实数据优先修正版 / Real-data-first revision](risk_business_ml/synthetic_data_scope_revision_2026_10_27/README.md) · [56条逐环节清单 / 56-chain source priority](risk_business_ml/synthetic_data_scope_revision_2026_10_27/SOURCE_PRIORITY_CN.md) · [English](risk_business_ml/synthetic_data_scope_revision_2026_10_27/SOURCE_PRIORITY_EN.md)。9条沿用真实数据、22条仅允许模拟缺失环节、18条为缺专属数据的模拟候选、7条先补事实／定义。当前只重跑3个固定真实输入的缺口示范；此前131种广泛假设情景保留为历史程序实验，不再作为当前补缺覆盖口径。Observed data take priority; weak empirical results are not missing data. The real database, empirical statuses and weekly scores remain unchanged.
+**当前模型输入 / Current model inputs：** [16卡季度V总入口](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/README.md) · [中文说明](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/README_CN.md) · [English](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/README_EN.md) · [16卡统一V输入](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/data/risk_model_v_inputs.csv) · [驱动检查](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/results/v_driver_checks.csv) · [团队卡片ID对照](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/results/card_id_map.csv)。16张拟定（PROPOSED）卡片、31条组成链，2020Q4–2026Q2各23季度：6张为真实PQD V（含原有缺失值），10张为真实公开代理序列V（public_proxy），主排名不含模拟V。逐行标注V来源层（pqd / public_proxy / simulated / none）；提供按可用日期读取及S×V接口。历史发布时间及数据修订版本未核实。16 PROPOSED cards: 6 pqd V, 10 public_proxy V from real public series; no simulated V in the main ranking.
+
+
+**历史56条补缺范围 / Historical56-chain missing-data scope：** [真实数据优先修正版 / Real-data-first revision](risk_business_ml/synthetic_data_scope_revision_2026_10_27/README.md) · [56条逐环节清单 / 56-chain source priority](risk_business_ml/synthetic_data_scope_revision_2026_10_27/SOURCE_PRIORITY_CN.md) · [English](risk_business_ml/synthetic_data_scope_revision_2026_10_27/SOURCE_PRIORITY_EN.md)。9条沿用真实数据、22条仅允许模拟缺失环节、18条为缺专属数据的模拟候选、7条先补事实／定义。该历史批次重跑3个固定真实输入的缺口示范；此前131种广泛假设情景保留为历史程序实验，不再作为当前补缺覆盖口径。Observed data take priority; weak empirical results are not missing data. The real database, empirical statuses and weekly scores remain unchanged.
 
 | 目的 / Purpose | 入口 / Open | 阅读提示 / What it means |
 |---|---|---|
