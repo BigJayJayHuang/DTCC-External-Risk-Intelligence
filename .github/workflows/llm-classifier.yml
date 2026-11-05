@@ -5,10 +5,13 @@ on:
     paths:
       - 'Capstone_Project/validation/llm_classifier*'
       - 'Capstone_Project/validation/test_llm_classifier.py'
+      - 'Capstone_Project/validation/llm_daily*'
+      - 'Capstone_Project/validation/test_llm_daily.py'
       - 'Capstone_Project/validation/event_scoring.py'
       - 'Capstone_Project/validation/llm_event_classifier_prompt.md'
       - 'Capstone_Project/validation/requirements-llm.txt'
       - '.github/workflows/llm-classifier.yml'
+      - '.github/workflows/daily-data.yml'
 
 permissions:
   contents: read
@@ -29,6 +32,7 @@ jobs:
           python-version: '3.12'
       - run: python -m pip install -r validation/requirements-llm.txt
       - run: python -m unittest validation.test_llm_classifier -v
+      - run: python -m unittest validation.test_llm_daily -v
       - run: python -m validation.test_event_scoring
       - name: Confirm protected files remain unchanged
         env:

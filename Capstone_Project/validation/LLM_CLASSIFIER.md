@@ -2,6 +2,8 @@
 
 The classifier reads the daily pipeline's `news.csv`, calls Claude Sonnet 4.6, and writes **review candidates only**. Every candidate has `needs_review=Y`, including records whose automatic checks pass. It never writes `data/events/event_register.csv` and never signs off an event.
 
+The [daily-pipeline activation handoff](BEDROCK_DAILY_ROLLOUT.md) covers the prepared incremental job, DTCC's OIDC role, daily budget, durable state and recovery. Automated AWS execution remains disabled until that setup is complete.
+
 ## Run locally
 
 From `Capstone_Project/`:

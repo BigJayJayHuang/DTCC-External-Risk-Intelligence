@@ -314,6 +314,21 @@ def csv_row(article: dict, result: dict, checked: dict, reasons: list[str], conf
     return row
 
 
+def aws_session(config: dict):
+    """Interactive SSO locally; short-lived role credentials in a runner."""
+    import boto3
+    mode = os.environ.get("BEDROCK_AUTH_MODE", "profile")
+    if mode == "profile":
+        return boto3.Session(profile_name=os.environ.get("BEDROCK_PROFILE", "devx-bedrock"), region_name=config["region"])
+    if mode != "workload":
+        raise ValueError("BEDROCK_AUTH_MODE must be profile or workload")
+    session = boto3.Session(region_name=config["region"])
+    credentials = session.get_credentials()
+    if credentials is None or not credentials.token:
+        raise ValueError("Workload authentication requires temporary role credentials")
+    return session
+
+
 def run(args, session=None):
     config = json.loads(args.config.read_text(encoding="utf-8"))
     if config["temperature"] != 0 or config["max_tokens"] != 1200 or not 0 <= config["throttling_retries"] <= 2:
@@ -370,9 +385,8 @@ def run(args, session=None):
     if candidates_path.exists():
         raise FileExistsError("Candidate CSV already exists; refusing to overwrite review work")
     if session is None:
-        import boto3
         from botocore.config import Config
-        session = boto3.Session(profile_name=os.environ.get("BEDROCK_PROFILE", "devx-bedrock"), region_name=config["region"])
+        session = aws_session(config)
         # All SDK retries are disabled. Only invoke() retries explicit throttling.
         sdk_config = Config(retries={"total_max_attempts": 1}, connect_timeout=10, read_timeout=config["read_timeout_seconds"])
         sts = session.client("sts", config=sdk_config)
