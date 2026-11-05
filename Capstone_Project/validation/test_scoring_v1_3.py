@@ -23,9 +23,9 @@ def mkt(S, peak=1.0, pct=0.5):
     return {'S': S, 'method': 'percentile', 'weekly_peak': peak, 'percentile': pct, 'prior_weeks': 300}
 
 
-def event(S, eid='EV9001', needs_review=False):
+def event(S, eid='EV9001', needs_review=False, card_ids=('FICC-GSD-03',)):
     e = {'event_id': eid, 'title': 'fixture event', 'S': S, 'certainty': 2, 'reach': 2, 'timing': 1, 'effect_date': '2026-12-31',
-         'needs_review': needs_review, 'review_reasons': [], 'card_ids': ['FICC-GSD-03']}
+         'needs_review': needs_review, 'review_reasons': [], 'card_ids': list(card_ids)}
     return {'S': S, 'method': 'rubric v1.2', 'events': [e], 'driving_event_ids': [eid], 'needs_review': needs_review,
             'rubric_version': 'event-rubric-v1.2', 'active_events': 1}
 
@@ -35,9 +35,9 @@ def vrec(V, tier='pqd', quarter='2026Q2'):
             'vulnerability_metric': 'fixture_metric', 'history_quality': 'ok', 'caveats': []}
 
 
-def run(card_id, market=None, ev=NO_EVENT, V=3, last=FULL, check=None):
+def run(card_id, market=None, ev=NO_EVENT, V=3, last=FULL, check=None, releases=None):
     card = CARDS[card_id]
-    cov = S13.coverage([m['field'] for m in card['market_chains']], last, FRI)
+    cov = S13.coverage([m['field'] for m in card['market_chains']], last, FRI, releases)
     return S13.card_week(card, WEEK, market_recs=market or {}, cov=cov, ev=ev, v=vrec(V), check=check or {})
 
 
@@ -72,7 +72,7 @@ class Status(unittest.TestCase):
     def test_new_card_without_chain_test(self):
         r = run('XE-CYBER', V=5)
         self.assertEqual(r['status'], 'news_not_scanned')
-        self.assertEqual(r['chain_confidence']['level'], None)
+        self.assertEqual(r['chain_confidence'], {'level': 'Low', 'rule': 'untested', 'chain_id': None, 'chains': {}})
 
     def test_every_record_has_news_coverage(self):
         for cid in CARDS:
@@ -104,11 +104,32 @@ class MaxRule(unittest.TestCase):
 class DataGuard(unittest.TestCase):
     def test_daily_series_must_reach_friday(self):
         last = FULL | {'VIXCLS': THU}
-        r = run('ECS-NSCC-LIQ', market={'ECS-NSCC-01': mkt(5), 'ECS-NSCC-02': mkt(2)}, last=last, ev=event(4))
+        r = run('ECS-NSCC-LIQ', market={'ECS-NSCC-01': mkt(5), 'ECS-NSCC-02': mkt(2)}, last=last)
         self.assertEqual((r['status'], r['S'], r['S_market'], r['signal'], r['severity']), ('data_incomplete', None, None, None, None))
         self.assertIn('VIXCLS last 2026-10-29 < required 2026-10-30', r['status_reason'])
         self.assertTrue(all(c['S'] is None and c['weekly_peak'] is None for c in r['market_chains']))
         self.assertFalse(r['data_coverage']['VIXCLS']['ok'])
+        self.assertEqual(r['chain_confidence']['rule'], 'lowest_tested_chain (S null)')
+
+    def test_incomplete_market_data_with_active_event_scores_from_event(self):
+        last = FULL | {'VIXCLS': THU}
+        r = run('ECS-NSCC-LIQ', market={'ECS-NSCC-01': mkt(5), 'ECS-NSCC-02': mkt(2)}, last=last,
+                ev=event(4, card_ids=['ECS-NSCC-02']), V=3)
+        self.assertEqual((r['status'], r['status_reason'], r['S'], r['S_source'], r['S_market'], r['S_event'], r['signal']),
+                         ('scored', 'market_data_incomplete', 4, 'event_manual', None, 4, None))
+        self.assertEqual((r['severity'], r['show_on_main'], r['needs_human_signoff']), (12, True, True))
+        self.assertFalse(r['data_coverage']['VIXCLS']['ok'])
+        self.assertEqual((r['chain_confidence']['chain_id'], r['chain_confidence']['rule']), ('ECS-NSCC-02', 'driving_event_chain'))
+
+    def test_weekly_series_holiday_release_counts(self):
+        tg_fri = pd.Timestamp('2026-11-27')                       # Thanksgiving week: Thu 2026-11-26 holiday
+        daily = {s: tg_fri for s in ['DGS10']}
+        moved = S13.coverage(['mbs_spread_abs_wchg'], daily, tg_fri, {'MORTGAGE30US': ['2026-11-19', '2026-11-25']})
+        self.assertEqual(moved['MORTGAGE30US'], {'last_date': '2026-11-25', 'required_date': '2026-11-25', 'ok': True})
+        pending = S13.coverage(['mbs_spread_abs_wchg'], daily, tg_fri, {'MORTGAGE30US': ['2026-11-12', '2026-11-19']})
+        self.assertEqual(pending['MORTGAGE30US'], {'last_date': '2026-11-19', 'required_date': '2026-11-26', 'ok': False})
+        r = run('FICC-MBSD-01', market={'FICC-MBSD-01': mkt(3)}, releases={'MORTGAGE30US': ['2026-10-22', '2026-10-28']})
+        self.assertEqual((r['status'], r['data_coverage']['MORTGAGE30US']['required_date']), ('scored', '2026-10-28'))
 
     def test_mortgage_needs_its_thursday_survey(self):
         ok = S13.coverage(['mbs_spread_abs_wchg'], FULL, FRI)
@@ -177,10 +198,31 @@ class SeverityAndSignoff(unittest.TestCase):
         self.assertTrue(run('FICC-GSD-01', market={'FICC-GSD-01': mkt(4)}, V=1)['needs_human_signoff'])   # market S, severity 4
         self.assertFalse(run('FICC-GSD-01', market={'FICC-GSD-01': mkt(3)}, V=5)['needs_human_signoff'])  # severity 15, S 3
 
-    def test_chain_confidence_separate_and_lowest(self):
+    def test_chain_confidence_from_signal_chain(self):
         r = run('XE-MEMBER', market={'FICC-GSD-04': mkt(5)}, V=1)
-        self.assertEqual(r['chain_confidence']['chains'], {'FICC-GSD-04': 'Medium', 'ECS-NSCC-04': 'Low'})
-        self.assertEqual((r['chain_confidence']['level'], r['severity']), ('Low', 5))
+        cc = r['chain_confidence']
+        self.assertEqual(cc['chains'], {'FICC-GSD-04': 'Medium', 'ECS-NSCC-04': 'Low'})
+        self.assertEqual((cc['level'], cc['rule'], cc['chain_id'], r['severity']), ('Medium', 'signal_chain', 'FICC-GSD-04', 5))
+        tie = run('XE-MEMBER', market={'FICC-GSD-04': mkt(4)}, ev=event(4, card_ids=['ECS-NSCC-04']), V=1)
+        self.assertEqual((tie['S_source'], tie['chain_confidence']['chain_id']), ('market+event_manual', 'FICC-GSD-04'))
+
+    def test_chain_confidence_from_driving_event_chain(self):
+        r = run('XE-MEMBER', market={'FICC-GSD-04': mkt(2)}, ev=event(4, card_ids=['ECS-NSCC-04']), V=1)
+        cc = r['chain_confidence']
+        self.assertEqual((r['S_source'], cc['level'], cc['rule'], cc['chain_id']), ('event_manual', 'Low', 'driving_event_chain', 'ECS-NSCC-04'))
+        g3 = run('FICC-GSD-03', ev=event(4))['chain_confidence']
+        self.assertEqual((g3['level'], g3['chain_id']), ('Low', 'FICC-GSD-03'))
+        unmapped = run('XE-MEMBER', market={'FICC-GSD-04': mkt(2)}, ev=event(4, card_ids=['XE-MEMBER']), V=1)['chain_confidence']
+        self.assertEqual((unmapped['level'], unmapped['chain_id'], unmapped['rule']),
+                         ('Low', 'ECS-NSCC-04', 'lowest_tested_chain (driving event not on a tested chain)'))
+
+    def test_chain_confidence_when_S_is_null(self):
+        r = run('FICC-GSD-03', V=3)       # news_not_scanned, tested chain FICC-GSD-03 (Low)
+        self.assertEqual((r['chain_confidence']['level'], r['chain_confidence']['rule']), ('Low', 'lowest_tested_chain (S null)'))
+        x = run('XE-MEMBER', last=FULL | {'BAA10Y': THU}, V=1)
+        self.assertEqual((x['status'], x['chain_confidence']['level'], x['chain_confidence']['chain_id']), ('data_incomplete', 'Low', 'ECS-NSCC-04'))
+        m = run('FICC-MBSD-01', last=FULL | {'DGS10': THU})
+        self.assertEqual(m['chain_confidence']['level'], 'Medium')
 
     def test_v_fields(self):
         f = S13.v_fields({**vrec(5, 'public_proxy'), 'history_quality': 'low (<8 quarters)', 'V_override_reason': None},
@@ -210,10 +252,19 @@ class EventMapping(unittest.TestCase):
 
 class Gate(unittest.TestCase):
     def test_score_refused_while_spec_is_draft(self):
-        self.assertFalse(S13.spec_approved())
-        with self.assertRaises(SystemExit):
-            S13.main(['score', '--week', WEEK])
-        self.assertFalse(any(S13.OUT.glob('weekly_scores_v1.3_*.json')))
+        import tempfile
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp = Path(tmp)
+            draft, approved = tmp / 'draft.md', tmp / 'approved.md'
+            draft.write_text('# spec\n\nStatus: **DRAFT** — not approved. Change to `Status: **APPROVED** (...)`.\n')
+            approved.write_text('# spec\n\nStatus: **APPROVED** (Someone, 2026-11-05T00:00Z)\n')
+            self.assertFalse(S13.spec_approved(draft))
+            self.assertTrue(S13.spec_approved(approved))
+            with mock.patch.object(S13, 'SPEC', draft), mock.patch.object(S13, 'OUT', tmp / 'out'):
+                with self.assertRaises(SystemExit):
+                    S13.main(['score', '--week', WEEK])
+            self.assertFalse((tmp / 'out').exists())
 
 
 class ProtectedFiles(unittest.TestCase):

@@ -42,7 +42,7 @@ SIGNAL_SERIES = {
     'mbs_spread_abs_wchg': ['MORTGAGE30US', 'DGS10'],
     'consolidated_shares': ['CBOE_CONSOLIDATED'],
 }
-THURSDAY_SERIES = {'MORTGAGE30US'}
+WEEKLY_SERIES = {'MORTGAGE30US': 3}          # usual release weekday (Thursday); the actual release date counts
 ENTITY_PREFIX = {'FICC-GSD': ['GSD'], 'FICC-MBSD': ['MBSD'], 'ECS-NSCC': ['NSCC'], 'ECS-DTC': ['DTC'], 'ECS-SET': ['NSCC', 'DTC']}
 ENTITY_LINE = {'GSD': 'FICC', 'MBSD': 'FICC', 'NSCC': 'ECS', 'DTC': 'ECS'}
 SOURCE_LABEL = {'market': 'market', 'events': 'event_manual', 'events (market null)': 'event_manual',
@@ -124,26 +124,48 @@ def load_cards(conf, registry=None, table=None):
                               for c in comps if c in conf and conf[c]['signal']['field']],
             'entities': ents, 'cross_entity': len({ENTITY_LINE[e] for e in ents}) > 1,
             'legacy_v12_cards': [c for c in V12.CARD_ORDER if mapping.get(c) == r['card_id']],
-            'lines': table[r['card_id']], 'risk_family': table[r['card_id']][0]['risk_family'],
-            'chain_confidence': {'level': max(tested.values(), key=CONFIDENCE_ORDER.index) if tested else None,
-                                 'chains': tested,
-                                 'rule': 'lowest level among the card\'s tested chains' if tested else 'no chain test for this card'}})
+            'lines': table[r['card_id']], 'risk_family': table[r['card_id']][0]['risk_family'], 'tested_chains': tested})
     return cards
 
 
+def chain_confidence(tested, S, S_source, signal_chain, driving_event):
+    """Resolved §11.1: the level of the chain that set S; lowest tested chain if S is null; Low if untested."""
+    if not tested:
+        return {'level': 'Low', 'rule': 'untested', 'chain_id': None, 'chains': {}}
+    lowest = max(tested, key=lambda c: CONFIDENCE_ORDER.index(tested[c]))
+    if S is None:
+        chain, rule = lowest, 'lowest_tested_chain (S null)'
+    elif S_source in ('market', 'market+event_manual'):
+        chain, rule = signal_chain, 'signal_chain'
+    else:
+        chain = next((c for c in (driving_event or {}).get('card_ids', []) if c in tested), None)
+        chain, rule = (chain, 'driving_event_chain') if chain else (lowest, 'lowest_tested_chain (driving event not on a tested chain)')
+    return {'level': tested[chain], 'rule': rule, 'chain_id': chain, 'chains': tested}
+
+
 # ------------------------------------------------------------------ D1 data guard
-def required_date(series, week_end):
-    return week_end - pd.Timedelta(days=1) if series in THURSDAY_SERIES else week_end
+def coverage(fields, last_dates, week_end, release_dates=None):
+    """Per raw series: last observation, the date it must reach for this week, ok.
 
-
-def coverage(fields, last_dates, week_end):
-    """Per raw series: last observation, the date it must reach for this week, ok."""
-    out = {}
+    Daily series must reach the Friday. A weekly series must have its release inside the week (Mon-Fri); the required
+    date is that actual release date (resolved §11.4: e.g. Wed 2026-11-25 in Thanksgiving week), or the usual
+    weekday while no release for the week exists yet."""
+    out, release_dates = {}, release_dates or {}
+    monday = week_end - pd.Timedelta(days=4)
     for f in fields:
         for s in SIGNAL_SERIES[f]:
-            last, need = last_dates.get(s), required_date(s, week_end)
+            last = last_dates.get(s)
+            if s in WEEKLY_SERIES:
+                dates = [pd.Timestamp(d) for d in release_dates.get(s, [last] if last is not None else [])]
+                in_week = [d for d in dates if monday <= d <= week_end]
+                need = max(in_week) if in_week else monday + pd.Timedelta(days=WEEKLY_SERIES[s])
+                ok = bool(in_week)
+                last = max(dates) if dates else last
+            else:
+                need = week_end
+                ok = last is not None and pd.Timestamp(last) >= need
             out[s] = {'last_date': None if last is None else str(pd.Timestamp(last).date()),
-                      'required_date': str(need.date()), 'ok': last is not None and pd.Timestamp(last) >= need}
+                      'required_date': str(need.date()), 'ok': ok}
     return out
 
 
@@ -151,6 +173,10 @@ def series_last_dates():
     out = {s: D.fred(s).index.max() for s in ['SOFR', 'EFFR', 'DGS10', 'BAA10Y', 'VIXCLS', 'MORTGAGE30US']}
     out['CBOE_CONSOLIDATED'] = D.consolidated_volume().index.max()
     return out
+
+
+def series_release_dates():
+    return {s: list(D.fred(s).index) for s in WEEKLY_SERIES}
 
 
 # ------------------------------------------------------------------ D4 manual-register event S (v1.2 logic)
@@ -211,7 +237,10 @@ def card_week(card, week, *, market_recs, cov, ev, v, check):
     drv = next((c for c in valid if c['S'] == S_market), None)
     S_event = ev['S'] if ev['active_events'] else None
 
-    if card['market_chains'] and missing:
+    if card['market_chains'] and missing and ev['active_events']:
+        # resolved §11.2: incomplete market data but an active register event -> score from the event
+        status, S, src, reason = 'scored', ev['S'], 'event_manual', 'market_data_incomplete'
+    elif card['market_chains'] and missing:
         status, S, src, reason = 'data_incomplete', None, None, '; '.join(missing)
     elif card['market_chains'] and S_market is None and not ev['active_events']:
         status, S, src = 'data_incomplete', None, None
@@ -240,7 +269,8 @@ def card_week(card, week, *, market_recs, cov, ev, v, check):
         **vf,
         'severity': sev, 'show_on_main': sev is not None and sev >= SHOW_ON_MAIN_MIN,
         'needs_human_signoff': S is not None and S >= SIGNOFF_MIN_S,
-        'chain_confidence': card['chain_confidence']})
+        'chain_confidence': chain_confidence(card['tested_chains'], S, src, drv['chain_id'] if drv else None,
+                                             ev['events'][0] if ev['events'] else None)})
     return rec
 
 
@@ -260,12 +290,12 @@ def build_week(week, cards=None):
     cards = cards or load_cards(conf)
     registry = json.loads(REGISTRY.read_text())
     mapping, checks = old_to_new(registry), {c['card_id']: c for c in json.loads(V_CHECKS.read_text())['cards']}
-    last, ranked = series_last_dates(), ranked_events(reg, friday)
+    last, releases, ranked = series_last_dates(), series_release_dates(), ranked_events(reg, friday)
     pct = {mc['chain_id']: percentile_scores(scoring_signal(mc['chain_id'], mc['field'])) for c in cards for mc in c['market_chains']}
     out = []
     for card in cards:
         rec = card_week(card, week, market_recs={k: pct[k].get(friday) for k in (mc['chain_id'] for mc in card['market_chains'])},
-                        cov=coverage([mc['field'] for mc in card['market_chains']], last, friday),
+                        cov=coverage([mc['field'] for mc in card['market_chains']], last, friday, releases),
                         ev=card_events(ranked, card['card_id'], mapping),
                         v=get_v(card['card_id'], str(friday.date())), check=checks.get(card['card_id'], {}))
         out += split_lines(rec, card)
@@ -278,9 +308,9 @@ def spec_approved(path=SPEC):
 
 # ------------------------------------------------------------------ CLI
 def _coverage_report(weeks):
-    last = series_last_dates()
+    last, releases = series_last_dates(), series_release_dates()
     print(json.dumps({'last_dates': {s: str(d.date()) for s, d in last.items()},
-                      'weeks': {w: coverage(list(SIGNAL_SERIES), last, week_dates(w)[1]) for w in weeks}}, indent=2))
+                      'weeks': {w: coverage(list(SIGNAL_SERIES), last, week_dates(w)[1], releases) for w in weeks}}, indent=2))
 
 
 def _register_report(weeks, registry=None):
@@ -306,11 +336,18 @@ def main(argv=None):
         return _coverage_report(a.week)
     if a.command == 'register':
         return _register_report(a.week)
-    if not spec_approved():
-        raise SystemExit(f'{SPEC.relative_to(PROJECT)} is not APPROVED; v1.3 scores are not produced while the spec is DRAFT.')
+    if not spec_approved(SPEC):
+        raise SystemExit(f'{SPEC} is not APPROVED; v1.3 scores are not produced while the spec is DRAFT.')
+    status = re.search(r'^Status: (.*)$', SPEC.read_text(), re.M).group(1)
     OUT.mkdir(parents=True, exist_ok=True)
     for w in a.week:
-        (OUT / f'weekly_scores_v1.3_{w}.json').write_text(json.dumps(V12._clean(build_week(w)), indent=2, ensure_ascii=False) + '\n')
+        recs = [{**r, 'official': True} for r in build_week(w)]
+        doc = {'spec': 'results/scoring/v1.3_indicator/SCORING_SPEC_v1.3.md', 'spec_status': status, 'spec_version': SPEC_VERSION,
+               'rubric_version': E.RUBRIC_VERSION, 'week': w, 'week_end': str(week_dates(w)[1].date()),
+               'run_utc': pd.Timestamp.now(tz='UTC').strftime('%Y-%m-%dT%H:%MZ'), 'news_coverage': NEWS_COVERAGE, 'records': recs}
+        path = OUT / f'weekly_scores_v1.3_{w}.json'
+        path.write_text(json.dumps(V12._clean(doc), indent=2, ensure_ascii=False) + '\n')
+        print(path.relative_to(PROJECT), len(recs), 'records')
 
 
 if __name__ == '__main__':

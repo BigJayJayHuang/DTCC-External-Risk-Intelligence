@@ -17,7 +17,7 @@ v1.3 scores the 16 PROPOSED final cards (`risk_business_ml/final16_quarterly_vul
 | Event S | rubric v1.2 (§12.3), S = max(market, event) (§12.4) | **Unchanged** rule; register card ids mapped to final16 ids (D4) |
 | V | PQD only, from chain_confidence fields (§11.4, §12.1, §12.2) | final16 V via `final16_vulnerability.get_v`: PQD or public proxy, as-of (D5) |
 | Card with no market signal and no active event | S = 1 ("no active event") | **S = null, status `news_not_scanned`** (D1) |
-| Incomplete data week | not checked | **status `data_incomplete`, S = null** (D1) |
+| Incomplete data week | not checked | **status `data_incomplete`, S = null**, or scored from an active register event (D1, §4) |
 | Human check | S ≥ 4 on an event (rubric) | **any** card-week with S ≥ 4 (D4) |
 | Cross-entity cards | n/a | one record per business line (D2) |
 | Dashboard flag | n/a | `show_on_main = severity ≥ 6` (D5) |
@@ -34,8 +34,9 @@ Each card-week gets exactly one status:
 
 | Status | When | S | V |
 |---|---|---|---|
-| `data_incomplete` | The card has a market signal, and a series it needs does not reach the required date (below). | null; the partial-week peak is not reported | shown |
+| `data_incomplete` | The card has a market signal, a series it needs does not reach the required date (below), and no register event is active. | null; the partial-week peak is not reported | shown |
 | `data_incomplete` | The card has a market signal, every chain S is null (e.g. fewer than 104 prior weeks), and no register event is active. | null | shown |
+| `scored` with `status_reason = "market_data_incomplete"` | The card has a market signal, a series it needs does not reach the required date, and a register event is active. | `S_event`; `S_source = "event_manual"`; `S_market` and `signal` null | shown |
 | `news_not_scanned` | The card has no market signal and no active register event. | null | shown |
 | `scored` | Otherwise. | 1–5 | shown |
 
@@ -47,10 +48,16 @@ Each card-week gets exactly one status:
 | `sofr_effr_adjusted` | SOFR, EFFR | Friday |
 | `baa_widen20` | BAA10Y | Friday |
 | `vix_jump` | VIXCLS | Friday |
-| `mbs_spread_abs_wchg` | MORTGAGE30US; DGS10 | Thursday (survey date); Friday |
+| `mbs_spread_abs_wchg` | MORTGAGE30US (weekly); DGS10 | the actual release date in that week; Friday |
 | `consolidated_shares` | Cboe consolidated daily shares | Friday |
 
-If Friday is a holiday, the week passes once the next business day's observation exists. A market card whose data is incomplete stays `data_incomplete` even when a register event is active; the event S is still recorded in `S_event`.
+- **Daily series.** If Friday is a holiday, the week passes once the next business day's observation exists.
+- **Weekly series (MORTGAGE30US).** The week passes when the series has a release dated inside the week (Monday–Friday). The required date is that actual release date, normally Thursday. A holiday release counts: in Thanksgiving week, Wednesday 2026-11-25 is the required date. While no release for the week exists, the required date is the usual Thursday and the check fails.
+
+**Decisions on the open points (2026-11-05).**
+- Former open point 2: incomplete market data with an active register event is scored from the event, as in the table above.
+- Former open point 3: insufficient history (no chain S, no active event) stays under `data_incomplete`.
+- Former open point 4: the weekly-series holiday rule above.
 
 ## 5. Cards, lines and the legacy map (D2)
 
@@ -87,8 +94,10 @@ The other 10 cards have no market signal.
    | `S_source` | Meaning |
    |---|---|
    | `market` | No active event, or market S > event S |
-   | `event_manual` | Event S > market S, or the card has no market signal |
+   | `event_manual` | Event S > market S, the card has no market signal, or the market data is incomplete (§4) |
    | `market+event_manual` | Market S = event S |
+
+   The labels name the input that set the final S, as in v1.2 `combine_s`. When the market S is higher, the source is `market` even if an event is active. This was former open point 6; decided 2026-11-05 to keep it unchanged.
 
 5. **Human check.** `needs_human_signoff = true` whenever S ≥ 4, whatever its source. An event sign-off in `event_signoffs.csv` still clears only that event's own review flag, as in v1.2 §12.3.
 
@@ -102,7 +111,17 @@ The other 10 cards have no market signal.
   - `V_caveats`: from `get_v`.
 - **Severity.** severity = S × V, from 1 to 25. It is null when S or V is null.
 - **show_on_main.** `severity ≥ 6`; false when severity is null.
-- **chain_confidence.** Read-only from `results/chain_tests/chain_confidence.json`. It shows each tested component chain and a card `level` equal to the lowest level among them. It is null for the 8 cards with no chain test. It is shown separately and never multiplied into severity.
+- **chain_confidence.** Read-only from `results/chain_tests/chain_confidence.json`. Shown separately and never multiplied into severity. This was former open point 1, decided 2026-11-05. `level` is the level of the chain that set S:
+
+  | Case | Chain used | `rule` |
+  |---|---|---|
+  | `S_source` is `market` or `market+event_manual` | the signal chain (`signal.chain_id`) | `signal_chain` |
+  | `S_source` is `event_manual` | the first of the driving event's register `card_ids` that is a tested chain of this card (e.g. ECS-NSCC-04 for XE-MEMBER) | `driving_event_chain` |
+  | `event_manual`, but no such chain | the card's lowest tested chain | `lowest_tested_chain (driving event not on a tested chain)` |
+  | S is null | the card's lowest tested chain | `lowest_tested_chain (S null)` |
+  | The card has no chain test (8 cards) | none; `level = "Low"` | `untested` |
+
+  The record also lists every tested component chain and its level (`chains`).
 
 ## 8. Protected files and approval gate
 
@@ -129,7 +148,7 @@ v1.3 outputs go only under `results/scoring/v1.3_indicator/`.
 | `title`, `card_status` | string | registry `name_en`; `PROPOSED` |
 | `business_line`, `sub_line`, `region`, `risk_family` | string | from `card_lines.csv`; region `US` |
 | `cross_entity`, `entities` | bool, string[] | D2 |
-| `status`, `status_reason` | string | `scored` / `news_not_scanned` / `data_incomplete`; the reason when not scored |
+| `status`, `status_reason` | string | `scored` / `news_not_scanned` / `data_incomplete`; the reason when not scored, or `market_data_incomplete` for an event-scored market card (§4) |
 | `S`, `S_source` | int 1–5 or null; string or null | §6 |
 | `S_market`, `S_event` | int or null | the inputs to the max rule |
 | `signal` | object or null | `{name, description, chain_id, value, percentile, prior_weeks, method}`; `value` is the weekly peak (the ratio for NSCC-03) |
@@ -139,7 +158,7 @@ v1.3 outputs go only under `results/scoring/v1.3_indicator/`.
 | `V`, `V_base`, `V_tier`, `V_driver`, `V_metric`, `V_quarter`, `V_available_date`, `V_flags`, `V_override_reason`, `V_caveats`, `V_null_reason` | | §7 |
 | `severity`, `show_on_main` | int 1–25 or null; bool | §7 |
 | `needs_human_signoff` | bool | S ≥ 4 |
-| `chain_confidence` | object | `{level, chains{chain_id: level}, rule}` |
+| `chain_confidence` | object | `{level, rule, chain_id, chains{chain_id: level}}` (§7) |
 | `news_coverage` | string | always `manual_register_only` |
 
 Dashboard-only text (transmission steps, sources, display labels) belongs to the export step and is not part of the scoring record.
@@ -150,14 +169,11 @@ From `Capstone_Project/`:
 
 - `python -m validation.scoring_v1_3 coverage --week <Monday> [...]` — D1 guard per series; no scores.
 - `python -m validation.scoring_v1_3 register --week <Monday> [...]` — register rows with their final16 ids and active flags; no scores.
-- `python -m validation.scoring_v1_3 score --week <Monday> [...]` — refused while DRAFT. Once approved it writes `results/scoring/v1.3_indicator/weekly_scores_v1.3_<week>.json`.
+- `python -m validation.scoring_v1_3 score --week <Monday> [...]` — refused while DRAFT. Once approved it writes `results/scoring/v1.3_indicator/weekly_scores_v1.3_<week>.json`: header (spec status, versions, week, run time) plus `records`, with `official = true`.
 - `python -m pytest -v validation/test_scoring_v1_3.py` — fixture tests, no live data.
 
-## 11. Open points for the approver
+## 11. Open points
 
-1. **Chain confidence for multi-chain cards.** "Lowest tested chain" makes XE-MEMBER Low (FICC-GSD-04 Medium, ECS-NSCC-04 Low). The alternative is the confidence of the chain that set S.
-2. **Data incomplete with an active event.** §4 keeps such a card-week null. The alternative is to score it from the event alone.
-3. **Insufficient history.** This is filed under `data_incomplete`. A fourth status could be added instead.
-4. **Thanksgiving week.** If Freddie Mac publishes MORTGAGE30US on Wednesday 2026-11-25, the Thursday requirement fails. A holiday rule is needed before scoring that week.
-5. **`risk_family` and `sub_line` values** in `card_lines.csv` are proposals for Jay to confirm.
-6. **`S_source` labels** follow v1.2 `combine_s` (who set the final S). A tie is `market+event_manual`; when the market wins, the source is `market` even if an event is active.
+1. **`risk_family` and `sub_line` values** in `card_lines.csv`: proposed, to be confirmed by Jay. They are display fields only and do not change S, V or severity.
+
+Former points 1, 2, 3, 4 and 6 were decided on 2026-11-05 and are recorded in §4, §6 and §7.
