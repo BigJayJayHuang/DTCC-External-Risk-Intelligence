@@ -1,6 +1,6 @@
 # Weekly scoring spec v1.3-indicator (16 final cards)
 
-Status: **DRAFT** — not approved. No v1.3 scores are produced until the owner changes this line to `Status: **APPROVED** (<who>, <UTC time>)` and commits it. `python -m validation.scoring_v1_3 score` refuses to run while this line says DRAFT.
+Status: **APPROVED** (Wenqi Cai, 2026-11-05T04:45Z)
 
 Written 2026-11-05 on branch `feat/v1.3-indicator-dashboard`, before any v1.3 score was computed. Base: `main` at `b34bc3e`. v1.2 (`results/scoring/SCORING_SPEC.md` §1–§12) stays frozen; its code and outputs are not changed (§8).
 
