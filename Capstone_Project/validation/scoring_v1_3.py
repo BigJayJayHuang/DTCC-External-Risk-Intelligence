@@ -191,8 +191,65 @@ def card_events(ranked, card_id, mapping):
 
 
 def ranked_events(reg, week_end):
+    """v1.2 active_events() + apply_signoff(), plus register provenance (Amendment A4, display only)."""
     signoffs = {s.event_id: s for s in pd.read_csv(V12.SIGNOFFS, dtype=str).itertuples()} if V12.SIGNOFFS.exists() else {}
-    return [V12.apply_signoff(r, signoffs) for r in V12.active_events(reg, week_end)]
+    events = {e.event_id: e for e in V12.register_events(reg)}
+    out = []
+    for r in V12.active_events(reg, week_end):
+        e = events[r['event_id']]
+        out.append({**V12.apply_signoff(r, signoffs), 'outlet': e.sources[0].get('outlet') if e.sources else None,
+                    'source_tier': e.sources[0].get('tier') if e.sources else None, 'source_urls': [s['url'] for s in e.sources]})
+    return out
+
+
+# ------------------------------------------------------------------ Amendment A2: daily values behind a market S >= 4
+def _week_of(index, friday):
+    """Same week labelling as v1.2 weekly_peaks(): each observation belongs to the next Friday on or after it."""
+    return (index + pd.to_timedelta((4 - index.dayofweek) % 7, unit='D')) == friday
+
+
+def _obs(series, friday):
+    s = series.dropna()
+    return [{'date': str(d.date()), 'value': float(v)} for d, v in s[_week_of(s.index, friday)].items()]
+
+
+def daily_info(field, friday):
+    """Observations of the week behind the weekly peak, the raw inputs for those days, and the Cboe ratio denominator."""
+    s = V12.SIGNALS[field]()
+    info = {'daily_values': _obs(s, friday), 'daily_inputs': {}}
+    if field == 'consolidated_shares':      # the signal is the raw series; S uses peak / median of prior 52 weekly peaks
+        den = weekly_peaks(s).shift(1).rolling(52, min_periods=52).median().get(friday)
+        info['ratio_denominator'] = None if den is None or pd.isna(den) else float(den)
+    else:
+        info['daily_inputs'] = {r: _obs(D.fred(r), friday) for r in SIGNAL_SERIES[field]}
+    return info
+
+
+def peak_check(value, info):
+    vals = [d['value'] for d in info.get('daily_values', [])]
+    if not vals or value is None:
+        return False
+    top = max(vals) / info['ratio_denominator'] if info.get('ratio_denominator') else max(vals)
+    return abs(top - value) <= 1e-9 * max(1.0, abs(value))
+
+
+# ------------------------------------------------------------------ Amendment A3: shared signals
+def s_series(rec):
+    """Raw series a record takes S from: every chain whose S equals S_market, when the market sets S."""
+    if rec['S_source'] not in ('market', 'market+event_manual') or rec['S_market'] is None:
+        return set()
+    return {s for c in rec['market_chains'] if c['S'] == rec['S_market'] for s in SIGNAL_SERIES[c['field']]}
+
+
+def assign_shared(recs):
+    """recs: one base record per card for one week. Adds shared_signal / shared_signal_series in place."""
+    series = {r['card_id']: s_series(r) for r in recs}
+    for r in recs:
+        mine = series[r['card_id']]
+        common = {o: sorted(mine & s) for o, s in series.items() if o != r['card_id'] and mine & s}
+        r['shared_signal'] = sorted(common)
+        r['shared_signal_series'] = dict(sorted(common.items()))
+    return recs
 
 
 # ------------------------------------------------------------------ D5 V
@@ -218,7 +275,7 @@ def v_fields(v, check):
 
 
 # ------------------------------------------------------------------ one card-week
-def card_week(card, week, *, market_recs, cov, ev, v, check):
+def card_week(card, week, *, market_recs, cov, ev, v, check, daily=None):
     """Base record for one card-week (before the D2 line split). All inputs are plain data."""
     monday, friday = week_dates(week)
     rec = {'card_id': card['card_id'], 'week': str(monday.date()), 'week_end': str(friday.date()),
@@ -254,23 +311,32 @@ def card_week(card, week, *, market_recs, cov, ev, v, check):
         status, S, src = 'news_not_scanned', None, None
         reason = 'no market signal for this card and no active manual-register event; news classifier not yet running'
 
+    signal = None if drv is None else {'name': drv['field'], 'description': drv['description'], 'chain_id': drv['chain_id'],
+                                       'value': drv['weekly_peak'], 'percentile': drv['percentile'],
+                                       'prior_weeks': drv['prior_weeks'], 'method': drv['method']}
+    if signal and S_market >= SIGNOFF_MIN_S:           # Amendment A2
+        info = (daily or {}).get(drv['chain_id']) or {}
+        signal.update(info)
+        signal['peak_check'] = peak_check(drv['weekly_peak'], info)
+        if not signal['peak_check']:
+            raise ValueError(f"{card['card_id']} {week}: daily values do not reproduce the weekly peak of {drv['chain_id']}")
+    driving = ev['events'][0] if ev['events'] else None
+    event_set = src in ('event_manual', 'market+event_manual')     # Amendment A1
     vf = v_fields(v, check)
     sev = S * vf['V'] if (S is not None and vf['V'] is not None) else None
     rec.update({
         'status': status, 'status_reason': reason, 'S': S, 'S_source': src, 'S_market': S_market, 'S_event': S_event,
-        'signal': None if drv is None else {'name': drv['field'], 'description': drv['description'], 'chain_id': drv['chain_id'],
-                                             'value': drv['weekly_peak'], 'percentile': drv['percentile'],
-                                             'prior_weeks': drv['prior_weeks'], 'method': drv['method']},
-        'market_chains': chains, 'data_coverage': cov,
+        'signal': signal, 'market_chains': chains, 'data_coverage': cov,
         'event_manual': {'active_events': ev['active_events'], 'driving_event_ids': ev.get('driving_event_ids', []),
                          'needs_review': ev.get('needs_review', False),
                          'events': [{k: e.get(k) for k in ('event_id', 'title', 'S', 'certainty', 'reach', 'timing', 'effect_date',
-                                                           'needs_review', 'review_reasons', 'signed_off_by')} for e in ev['events']]},
+                                                           'needs_review', 'review_reasons', 'signed_off_by', 'outlet', 'source_tier',
+                                                           'source_urls')} for e in ev['events']]},
         **vf,
         'severity': sev, 'show_on_main': sev is not None and sev >= SHOW_ON_MAIN_MIN,
-        'needs_human_signoff': S is not None and S >= SIGNOFF_MIN_S,
-        'chain_confidence': chain_confidence(card['tested_chains'], S, src, drv['chain_id'] if drv else None,
-                                             ev['events'][0] if ev['events'] else None)})
+        'needs_human_signoff': bool(event_set and S is not None and S >= SIGNOFF_MIN_S and not (driving and driving.get('signed_off_by'))),
+        'chain_confidence': chain_confidence(card['tested_chains'], S, src, drv['chain_id'] if drv else None, driving),
+        'shared_signal': [], 'shared_signal_series': {}})
     return rec
 
 
@@ -292,14 +358,14 @@ def build_week(week, cards=None):
     mapping, checks = old_to_new(registry), {c['card_id']: c for c in json.loads(V_CHECKS.read_text())['cards']}
     last, releases, ranked = series_last_dates(), series_release_dates(), ranked_events(reg, friday)
     pct = {mc['chain_id']: percentile_scores(scoring_signal(mc['chain_id'], mc['field'])) for c in cards for mc in c['market_chains']}
-    out = []
-    for card in cards:
-        rec = card_week(card, week, market_recs={k: pct[k].get(friday) for k in (mc['chain_id'] for mc in card['market_chains'])},
-                        cov=coverage([mc['field'] for mc in card['market_chains']], last, friday, releases),
-                        ev=card_events(ranked, card['card_id'], mapping),
-                        v=get_v(card['card_id'], str(friday.date())), check=checks.get(card['card_id'], {}))
-        out += split_lines(rec, card)
-    return out
+    daily = {mc['chain_id']: daily_info(mc['field'], friday) for c in cards for mc in c['market_chains']}
+    base = [card_week(card, week, market_recs={k: pct[k].get(friday) for k in (mc['chain_id'] for mc in card['market_chains'])},
+                      cov=coverage([mc['field'] for mc in card['market_chains']], last, friday, releases),
+                      ev=card_events(ranked, card['card_id'], mapping),
+                      v=get_v(card['card_id'], str(friday.date())), check=checks.get(card['card_id'], {}), daily=daily)
+            for card in cards]
+    assign_shared(base)
+    return [r for rec, card in zip(base, cards) for r in split_lines(rec, card)]
 
 
 def spec_approved(path=SPEC):
@@ -338,11 +404,14 @@ def main(argv=None):
         return _register_report(a.week)
     if not spec_approved(SPEC):
         raise SystemExit(f'{SPEC} is not APPROVED; v1.3 scores are not produced while the spec is DRAFT.')
-    status = re.search(r'^Status: (.*)$', SPEC.read_text(), re.M).group(1)
+    text = SPEC.read_text()
+    status = re.search(r'^Status: (.*)$', text, re.M).group(1)
+    amendments = [{'amendment': a, 'approved': who} for a, who in re.findall(r'^## Amendment (\w+)[^\n]*\n\nApproved: ([^.\n]+)', text, re.M)]
     OUT.mkdir(parents=True, exist_ok=True)
     for w in a.week:
         recs = [{**r, 'official': True} for r in build_week(w)]
-        doc = {'spec': 'results/scoring/v1.3_indicator/SCORING_SPEC_v1.3.md', 'spec_status': status, 'spec_version': SPEC_VERSION,
+        doc = {'spec': 'results/scoring/v1.3_indicator/SCORING_SPEC_v1.3.md', 'spec_status': status, 'spec_amendments': amendments,
+               'spec_version': SPEC_VERSION,
                'rubric_version': E.RUBRIC_VERSION, 'week': w, 'week_end': str(week_dates(w)[1].date()),
                'run_utc': pd.Timestamp.now(tz='UTC').strftime('%Y-%m-%dT%H:%MZ'), 'news_coverage': NEWS_COVERAGE, 'records': recs}
         path = OUT / f'weekly_scores_v1.3_{w}.json'

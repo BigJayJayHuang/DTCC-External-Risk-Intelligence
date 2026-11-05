@@ -23,9 +23,12 @@ def mkt(S, peak=1.0, pct=0.5):
     return {'S': S, 'method': 'percentile', 'weekly_peak': peak, 'percentile': pct, 'prior_weeks': 300}
 
 
-def event(S, eid='EV9001', needs_review=False, card_ids=('FICC-GSD-03',)):
+def event(S, eid='EV9001', needs_review=False, card_ids=('FICC-GSD-03',), signed_off_by=None):
     e = {'event_id': eid, 'title': 'fixture event', 'S': S, 'certainty': 2, 'reach': 2, 'timing': 1, 'effect_date': '2026-12-31',
-         'needs_review': needs_review, 'review_reasons': [], 'card_ids': list(card_ids)}
+         'needs_review': needs_review, 'review_reasons': [], 'card_ids': list(card_ids), 'outlet': 'SEC', 'source_tier': 'regulator',
+         'source_urls': ['https://example.invalid/rule']}
+    if signed_off_by:
+        e['signed_off_by'] = signed_off_by
     return {'S': S, 'method': 'rubric v1.2', 'events': [e], 'driving_event_ids': [eid], 'needs_review': needs_review,
             'rubric_version': 'event-rubric-v1.2', 'active_events': 1}
 
@@ -35,10 +38,18 @@ def vrec(V, tier='pqd', quarter='2026Q2'):
             'vulnerability_metric': 'fixture_metric', 'history_quality': 'ok', 'caveats': []}
 
 
-def run(card_id, market=None, ev=NO_EVENT, V=3, last=FULL, check=None, releases=None):
+def days(peak, n=5):
+    """Fixture week of daily values whose maximum is the weekly peak."""
+    return {'daily_values': [{'date': str((pd.Timestamp(WEEK) + pd.Timedelta(days=i)).date()), 'value': peak * (0.5 + 0.1 * i)}
+                             for i in range(n - 1)] + [{'date': str(FRI.date()), 'value': peak}], 'daily_inputs': {}}
+
+
+def run(card_id, market=None, ev=NO_EVENT, V=3, last=FULL, check=None, releases=None, daily=None):
     card = CARDS[card_id]
     cov = S13.coverage([m['field'] for m in card['market_chains']], last, FRI, releases)
-    return S13.card_week(card, WEEK, market_recs=market or {}, cov=cov, ev=ev, v=vrec(V), check=check or {})
+    if daily is None:   # consistent fixture daily values for every market chain
+        daily = {c: days(r['weekly_peak']) for c, r in (market or {}).items() if r.get('weekly_peak') is not None}
+    return S13.card_week(card, WEEK, market_recs=market or {}, cov=cov, ev=ev, v=vrec(V), check=check or {}, daily=daily)
 
 
 class ReuseV12(unittest.TestCase):
@@ -194,9 +205,85 @@ class SeverityAndSignoff(unittest.TestCase):
         r = run('FICC-GSD-01', market={'FICC-GSD-01': mkt(4)}, V=None)
         self.assertEqual((r['status'], r['S'], r['severity'], r['show_on_main']), ('scored', 4, None, False))
 
-    def test_signoff_for_any_S_ge_4(self):
-        self.assertTrue(run('FICC-GSD-01', market={'FICC-GSD-01': mkt(4)}, V=1)['needs_human_signoff'])   # market S, severity 4
-        self.assertFalse(run('FICC-GSD-01', market={'FICC-GSD-01': mkt(3)}, V=5)['needs_human_signoff'])  # severity 15, S 3
+    def test_signoff_only_for_unsigned_event_S_ge_4(self):           # Amendment A1
+        self.assertFalse(run('FICC-GSD-01', market={'FICC-GSD-01': mkt(5)}, V=5)['needs_human_signoff'])     # market S 5
+        self.assertTrue(run('FICC-GSD-03', ev=event(4))['needs_human_signoff'])                                # event S 4, unsigned
+        self.assertFalse(run('FICC-GSD-03', ev=event(3))['needs_human_signoff'])                               # event S 3
+        signed = run('FICC-GSD-03', ev=event(4, signed_off_by='Wenqi Cai 2026-11-05T04:45Z'))
+        self.assertEqual((signed['S'], signed['needs_human_signoff']), (4, False))                              # sign-off clears it
+        self.assertEqual(signed['event_manual']['events'][0]['signed_off_by'], 'Wenqi Cai 2026-11-05T04:45Z')
+        self.assertFalse(run('FICC-GSD-02', market={'FICC-GSD-02': mkt(5)}, ev=event(4), V=4)['needs_human_signoff'])  # market wins
+        self.assertTrue(run('FICC-GSD-02', market={'FICC-GSD-02': mkt(4)}, ev=event(4), V=4)['needs_human_signoff'])   # tie
+        self.assertTrue(run('FICC-GSD-02', market={'FICC-GSD-02': mkt(2)}, ev=event(4), V=4)['needs_human_signoff'])   # event wins
+
+    def test_event_provenance_on_record(self):                        # Amendment A4
+        e = run('FICC-GSD-03', ev=event(4))['event_manual']['events'][0]
+        self.assertEqual((e['outlet'], e['source_tier'], e['source_urls']), ('SEC', 'regulator', ['https://example.invalid/rule']))
+
+
+class DailyValues(unittest.TestCase):                                   # Amendment A2
+    def test_market_S_ge_4_carries_daily_values(self):
+        info = days(9.0) | {'daily_inputs': {'SOFR': [{'date': '2026-10-30', 'value': 4.0}]}}
+        r = run('FICC-GSD-02', market={'FICC-GSD-02': mkt(4, peak=9.0)}, daily={'FICC-GSD-02': info})
+        self.assertEqual(r['signal']['daily_values'], info['daily_values'])
+        self.assertEqual(r['signal']['daily_inputs'], info['daily_inputs'])
+        self.assertTrue(r['signal']['peak_check'])
+
+    def test_market_S_below_4_has_no_daily_values(self):
+        r = run('FICC-GSD-02', market={'FICC-GSD-02': mkt(3, peak=9.0)})
+        self.assertNotIn('daily_values', r['signal'])
+
+    def test_market_S_ge_4_kept_when_event_wins(self):
+        r = run('FICC-GSD-02', market={'FICC-GSD-02': mkt(4, peak=9.0)}, ev=event(5), V=4)
+        self.assertEqual((r['S_source'], r['signal']['peak_check']), ('event_manual', True))
+
+    def test_inconsistent_daily_values_stop_the_run(self):
+        with self.assertRaises(ValueError):
+            run('FICC-GSD-02', market={'FICC-GSD-02': mkt(4, peak=9.0)}, daily={'FICC-GSD-02': days(8.0)})
+        with self.assertRaises(ValueError):
+            run('FICC-GSD-02', market={'FICC-GSD-02': mkt(4, peak=9.0)}, daily={})
+
+    def test_ratio_denominator(self):
+        info = days(2_000.0) | {'ratio_denominator': 1_000.0}
+        self.assertTrue(S13.peak_check(2.0, info))
+        self.assertFalse(S13.peak_check(2000.0, info))
+
+
+class SharedSignal(unittest.TestCase):                                  # Amendment A3
+    def week(self):
+        return [run('FICC-GSD-02', market={'FICC-GSD-02': mkt(5)}, V=4),
+                run('ECS-NSCC-LIQ', market={'ECS-NSCC-01': mkt(3), 'ECS-NSCC-02': mkt(5)}),
+                run('FICC-GSD-01', market={'FICC-GSD-01': mkt(3)}),
+                run('FICC-MBSD-01', market={'FICC-MBSD-01': mkt(4)}),
+                run('XE-MEMBER', market={'FICC-GSD-04': mkt(4)}),
+                run('FICC-GSD-03', ev=event(4)),
+                run('XE-CYBER')]
+
+    def test_shared_raw_series(self):
+        recs = {r['card_id']: r for r in S13.assign_shared(self.week())}
+        self.assertEqual(recs['FICC-GSD-02']['shared_signal'], ['ECS-NSCC-LIQ'])
+        self.assertEqual(recs['ECS-NSCC-LIQ']['shared_signal'], ['FICC-GSD-02'])
+        self.assertEqual(recs['ECS-NSCC-LIQ']['shared_signal_series'], {'FICC-GSD-02': ['EFFR', 'SOFR']})
+        self.assertEqual(recs['FICC-GSD-01']['shared_signal_series'], {'FICC-MBSD-01': ['DGS10']})   # MBSD spread uses DGS10
+        self.assertEqual(recs['FICC-MBSD-01']['shared_signal'], ['FICC-GSD-01'])
+        for cid in ['XE-MEMBER', 'FICC-GSD-03', 'XE-CYBER']:
+            self.assertEqual(recs[cid]['shared_signal'], [], cid)
+
+    def test_only_chains_that_set_S(self):
+        recs = {r['card_id']: r for r in S13.assign_shared(
+            [run('FICC-GSD-02', market={'FICC-GSD-02': mkt(4)}, V=4),
+             run('ECS-NSCC-LIQ', market={'ECS-NSCC-01': mkt(5), 'ECS-NSCC-02': mkt(4)})])}   # NSCC S from VIX, not SOFR
+        self.assertEqual((recs['FICC-GSD-02']['shared_signal'], recs['ECS-NSCC-LIQ']['shared_signal']), ([], []))
+
+    def test_event_set_S_does_not_share(self):
+        recs = S13.assign_shared([run('FICC-GSD-02', market={'FICC-GSD-02': mkt(2)}, ev=event(4), V=4),
+                                  run('ECS-NSCC-LIQ', market={'ECS-NSCC-01': mkt(2), 'ECS-NSCC-02': mkt(2)})])
+        self.assertEqual([r['shared_signal'] for r in recs], [[], []])   # GSD-02's S comes from the event, not SOFR/EFFR
+
+    def test_cross_entity_records_do_not_list_each_other(self):
+        base = S13.assign_shared([run('XE-MEMBER', market={'FICC-GSD-04': mkt(4)})])[0]
+        recs = S13.split_lines(base, CARDS['XE-MEMBER'])
+        self.assertEqual([r['shared_signal'] for r in recs], [[], []])
 
     def test_chain_confidence_from_signal_chain(self):
         r = run('XE-MEMBER', market={'FICC-GSD-04': mkt(5)}, V=1)
