@@ -32,7 +32,7 @@ To publish a new week:
     "ECS": {
       "summary": {"2026-10-26": "One-paragraph brief for the week"},  // or a plain string
       "summary_ai": false,                                             // true adds an AI-WRITTEN tag to the summary
-      "coming":  [{"date": "2026-12-18", "title": "Triple witching"}],
+      "coming":  [{"date": "2026-12-18", "title": "Triple witching"}],  // latest week: days from the viewer's today; older weeks: from that Friday ("as of"); past dates hidden
       "review":  [{"title": "...", "risk_family": "Strategic", "reason": "why not scored", "snapshot": "2026-10-26"}]
     }
   },
@@ -56,7 +56,8 @@ Each item belongs to one snapshot. To show week-over-week change, write the same
 | `status` | no | string | `scored` (default), `news_not_scanned` (grey "News not scanned" box, sorted last) or `data_incomplete` (grey "Data incomplete" box) |
 | `V_tier` | no | string | `pqd` or `public_proxy`, shown next to V |
 | `needs_human_signoff` | no | bool | `true` shows a "Pending review" badge |
-| `shared_signal` | no | string[] | card_ids of other cards whose S comes from the same raw series; shows "Signal shared with …" |
+| `analysis_status` | no | string | `pending_llm` while So what / So now what await the LLM step |
+| `shared_signal` | no | string[] | card_ids of other cards whose S comes from the same signal field (e.g. `sofr_effr_adjusted`); shows "Signal shared with …" |
 | `card_id` | no | string | final16 card id; the validator checks each card/business-line pair against `card_lines.csv` |
 | `risk_family` | yes | string | Credit, Liquidity, Market, Operational, Cyber, Regulatory, Strategic |
 | `sub_line` | no | string | e.g. `NSCC`, `GSD`, `NSCC · DTC` |
@@ -66,7 +67,7 @@ Each item belongs to one snapshot. To show week-over-week change, write the same
 | `summary_line` | no | string | One line under the card title |
 | `what_happened` | no | string | |
 | `transmission` | no | object | `{event, mechanism, dtcc_process}` |
-| `so_what`, `so_now_what` | no | string | |
+| `so_what`, `so_now_what` | no | string, or `null` only when `analysis_status` is `pending_llm` (the page then shows a grey dashed "AI analysis – available once the news classifier is connected." box under the heading) | |
 | `time_phased` | no | object | `{now, next, later}` |
 | `shock_method` | no | string | `Market indicator` or `Event rubric` |
 | `shock_basis`, `vulnerability_basis` | no | string | How each score was built |

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-05T04:57:00Z",
+  "generated_at": "2026-11-05T05:16:00Z",
   "model_version": "v1.3-indicator",
   "sample": false,
   "news_coverage": "manual_register_only",
@@ -10,16 +10,20 @@
     {
       "amendment": "A",
       "approved": "Wenqi Cai, 2026-11-05T04:55Z"
+    },
+    {
+      "amendment": "B",
+      "approved": "Wenqi Cai, 2026-11-05T05:15Z"
     }
   ],
   "source_files": [
     {
       "file": "Capstone_Project/results/scoring/v1.3_indicator/weekly_scores_v1.3_2026-10-19.json",
-      "sha256": "faf9958d465119015644ac7c3fc68f69f3370d8c2392d614c727ca87a94fe58a"
+      "sha256": "f92105cfd009913a521fb7e3ebf2f4326ab68cf62629090401e7907723fe35f9"
     },
     {
       "file": "Capstone_Project/results/scoring/v1.3_indicator/weekly_scores_v1.3_2026-10-26.json",
-      "sha256": "9ef3b9d3b6e1eadbc0d4777bb02d17012c624e55982ccb649619faad4fcb7389"
+      "sha256": "6e275c042f291115e8101d5dcf9f1ed0d2e51f0f87635fcb02cf10e209f9261a"
     }
   ],
   "snapshots": [
@@ -209,20 +213,14 @@
           "FICC-GSD-01": "Medium"
         }
       },
-      "shared_signal": [
-        "FICC-MBSD-01"
-      ],
-      "shared_signal_series": {
-        "FICC-MBSD-01": [
-          "DGS10"
-        ]
-      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
       "id": "ficc-gsd-01",
       "snapshot": "2026-10-19",
       "shock": 5,
       "vulnerability": 1,
       "confidence": "Medium",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Weekly peak absolute daily change in the 10-year Treasury yield 17 bp, 97th percentile of 459 prior weeks",
       "shock_basis": "Weekly peak absolute daily change in the 10-year Treasury yield 17 bp, 97th percentile of 459 prior weeks",
       "vulnerability_basis": "PQD stress_loss_to_im (GSD); 2026Q2; DTCC public quantitative disclosure (PQD)",
@@ -243,6 +241,9 @@
         }
       ],
       "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
       "shock_method": "Market indicator"
     },
     {
@@ -408,10 +409,9 @@
       "shared_signal": [
         "ECS-NSCC-LIQ"
       ],
-      "shared_signal_series": {
+      "shared_signal_fields": {
         "ECS-NSCC-LIQ": [
-          "EFFR",
-          "SOFR"
+          "sofr_effr_adjusted"
         ]
       },
       "id": "ficc-gsd-02",
@@ -419,7 +419,7 @@
       "shock": 4,
       "vulnerability": 4,
       "confidence": "Medium",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Weekly peak SOFR–EFFR spread (quarter-end adjusted) 3 bp, 74th percentile of 420 prior weeks",
       "shock_basis": "Weekly peak SOFR–EFFR spread (quarter-end adjusted) 3 bp, 74th percentile of 420 prior weeks",
       "vulnerability_basis": "PQD payment_to_qlr (GSD); 2026Q2; DTCC public quantitative disclosure (PQD)",
@@ -444,6 +444,9 @@
         }
       ],
       "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
       "shock_method": "Market indicator"
     },
     {
@@ -550,13 +553,13 @@
         }
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "ficc-gsd-03",
       "snapshot": "2026-10-19",
       "shock": 4,
       "vulnerability": 3,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Hand-entered event EV0006: Treasury clearing compliance date: eligible cash transactions, effective 2026-12-31, source Federal Register (SEC): https://www.govinfo.gov/content/pkg/FR-2025-03-04/html/2025-03351.htm",
       "shock_basis": "Event EV0006: certainty 2 + reach 2 + timing 1 = 5 → S 4 (rubric v1.2)",
       "vulnerability_basis": "PQD top5_client_share (GSD); 2026Q2; DTCC public quantitative disclosure (PQD)",
@@ -577,6 +580,9 @@
         }
       ],
       "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
       "shock_method": "Event rubric (hand-entered register)",
       "review_status": "Event EV0006 signed off by Wenqi Cai 2026-11-05T04:45Z"
     },
@@ -671,20 +677,14 @@
           "FICC-MBSD-01": "Medium"
         }
       },
-      "shared_signal": [
-        "FICC-GSD-01"
-      ],
-      "shared_signal_series": {
-        "FICC-GSD-01": [
-          "DGS10"
-        ]
-      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
       "id": "ficc-mbsd-01",
       "snapshot": "2026-10-19",
       "shock": 3,
       "vulnerability": 1,
       "confidence": "Medium",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Weekly change in the 30-year mortgage rate minus 10-year Treasury spread 6 bp, 43rd percentile of 458 prior weeks",
       "shock_basis": "Weekly change in the 30-year mortgage rate minus 10-year Treasury spread 6 bp, 43rd percentile of 458 prior weeks",
       "vulnerability_basis": "PQD stress_loss_to_im (MBSD); 2026Q2; DTCC public quantitative disclosure (PQD)",
@@ -709,6 +709,9 @@
         }
       ],
       "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
       "shock_method": "Market indicator"
     },
     {
@@ -869,10 +872,9 @@
       "shared_signal": [
         "FICC-GSD-02"
       ],
-      "shared_signal_series": {
+      "shared_signal_fields": {
         "FICC-GSD-02": [
-          "EFFR",
-          "SOFR"
+          "sofr_effr_adjusted"
         ]
       },
       "id": "ecs-nscc-liq",
@@ -880,7 +882,7 @@
       "shock": 4,
       "vulnerability": 3,
       "confidence": "Medium",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Weekly peak VIX relative to its 20-day average 1.18×, 77th percentile of 455 prior weeks",
       "shock_basis": "Weekly peak VIX relative to its 20-day average 1.18×, 77th percentile of 455 prior weeks",
       "vulnerability_basis": "PQD payment_to_qlr (NSCC); 2026Q2; DTCC public quantitative disclosure (PQD)",
@@ -909,6 +911,9 @@
         }
       ],
       "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
       "shock_method": "Market indicator"
     },
     {
@@ -1002,13 +1007,13 @@
         }
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "ecs-nscc-03",
       "snapshot": "2026-10-19",
       "shock": 1,
       "vulnerability": 1,
       "confidence": "Medium",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Weekly peak US consolidated equity volume relative to the median of the prior 52 weekly peaks 0.91×, 20th percentile of 407 prior weeks",
       "shock_basis": "Weekly peak US consolidated equity volume relative to the median of the prior 52 weekly peaks 0.91×, 20th percentile of 407 prior weeks",
       "vulnerability_basis": "Off-exchange (TRF) share of consolidated equity volume, quarterly mean of daily share; 2026Q2; public proxy series, not DTCC data",
@@ -1025,6 +1030,9 @@
         }
       ],
       "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
       "shock_method": "Market indicator"
     },
     {
@@ -1090,13 +1098,13 @@
         }
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "ecs-set-01",
       "snapshot": "2026-10-19",
       "shock": null,
       "vulnerability": 5,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "SEC CNS fails-to-deliver stock, quarterly mean of daily USD value; 2026Q2; public proxy series, not DTCC data",
@@ -1112,7 +1120,10 @@
           "url": "https://www.sec.gov/data-research/sec-markets-data/fails-deliver-data"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "xe-member-ficc",
@@ -1255,13 +1266,13 @@
         }
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "xe-member-ficc",
       "snapshot": "2026-10-19",
       "shock": 4,
       "vulnerability": 1,
       "confidence": "Medium",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Weekly peak 20-day widening of the Baa–10-year Treasury spread 8 bp, 70th percentile of 455 prior weeks",
       "shock_basis": "Weekly peak 20-day widening of the Baa–10-year Treasury spread 8 bp, 70th percentile of 455 prior weeks",
       "vulnerability_basis": "PQD 18.2.2 top-five open-position share: max(GSD, NSCC) percentile series, ranked on its own history; 2026Q2; DTCC public quantitative disclosure (PQD)",
@@ -1282,6 +1293,9 @@
         }
       ],
       "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
       "shock_method": "Market indicator"
     },
     {
@@ -1425,13 +1439,13 @@
         }
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "xe-member-ecs",
       "snapshot": "2026-10-19",
       "shock": 4,
       "vulnerability": 1,
       "confidence": "Medium",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Weekly peak 20-day widening of the Baa–10-year Treasury spread 8 bp, 70th percentile of 455 prior weeks",
       "shock_basis": "Weekly peak 20-day widening of the Baa–10-year Treasury spread 8 bp, 70th percentile of 455 prior weeks",
       "vulnerability_basis": "PQD 18.2.2 top-five open-position share: max(GSD, NSCC) percentile series, ranked on its own history; 2026Q2; DTCC public quantitative disclosure (PQD)",
@@ -1452,6 +1466,9 @@
         }
       ],
       "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
       "shock_method": "Market indicator"
     },
     {
@@ -1516,13 +1533,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "xe-disrupt-ficc",
       "snapshot": "2026-10-19",
       "shock": null,
       "vulnerability": 4,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "US trading halts incl. LULD pauses reported by Nasdaq Trader, quarterly count; 2026Q2; public proxy series, not DTCC data",
@@ -1538,7 +1555,10 @@
           "url": "https://www.nasdaqtrader.com/Trader.aspx?id=TradeHalts"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "xe-disrupt-ecs",
@@ -1602,13 +1622,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "xe-disrupt-ecs",
       "snapshot": "2026-10-19",
       "shock": null,
       "vulnerability": 4,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "US trading halts incl. LULD pauses reported by Nasdaq Trader, quarterly count; 2026Q2; public proxy series, not DTCC data",
@@ -1624,7 +1644,10 @@
           "url": "https://www.nasdaqtrader.com/Trader.aspx?id=TradeHalts"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "xe-settlebank-ficc",
@@ -1689,13 +1712,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "xe-settlebank-ficc",
       "snapshot": "2026-10-19",
       "shock": null,
       "vulnerability": 2,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "KBW Nasdaq Bank Index (BKX) drawdown from trailing 52-week high, quarterly max; 2026Q2; public proxy series, not DTCC data",
@@ -1711,7 +1734,10 @@
           "url": "https://www.nasdaq.com/market-activity/index/bkx/historical"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "xe-settlebank-ecs",
@@ -1776,13 +1802,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "xe-settlebank-ecs",
       "snapshot": "2026-10-19",
       "shock": null,
       "vulnerability": 2,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "KBW Nasdaq Bank Index (BKX) drawdown from trailing 52-week high, quarterly max; 2026Q2; public proxy series, not DTCC data",
@@ -1798,7 +1824,10 @@
           "url": "https://www.nasdaq.com/market-activity/index/bkx/historical"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "xe-cyber-ficc",
@@ -1866,13 +1895,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "xe-cyber-ficc",
       "snapshot": "2026-10-19",
       "shock": null,
       "vulnerability": 5,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "NVD published CVEs, quarterly count; 2026Q2; public proxy series, not DTCC data",
@@ -1888,7 +1917,10 @@
           "url": "https://nvd.nist.gov/developers/vulnerabilities"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "xe-cyber-ecs",
@@ -1956,13 +1988,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "xe-cyber-ecs",
       "snapshot": "2026-10-19",
       "shock": null,
       "vulnerability": 5,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "NVD published CVEs, quarterly count; 2026Q2; public proxy series, not DTCC data",
@@ -1978,7 +2010,10 @@
           "url": "https://nvd.nist.gov/developers/vulnerabilities"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "ficc-gsd-11",
@@ -2043,13 +2078,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "ficc-gsd-11",
       "snapshot": "2026-10-19",
       "shock": null,
       "vulnerability": 3,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "OFR qualifying hedge fund gross assets / net assets; 2026Q1; public proxy series, not DTCC data",
@@ -2065,7 +2100,10 @@
           "url": "https://www.financialresearch.gov/hedge-fund-monitor/api/"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "ficc-mbsd-02",
@@ -2125,13 +2163,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "ficc-mbsd-02",
       "snapshot": "2026-10-19",
       "shock": null,
       "vulnerability": 3,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "Mortgage origination volume, USD bn per quarter; 2026Q2; public proxy series, not DTCC data",
@@ -2147,7 +2185,10 @@
           "url": "https://www.newyorkfed.org/microeconomics/hhdc"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "ecs-nscc-08",
@@ -2210,13 +2251,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "ecs-nscc-08",
       "snapshot": "2026-10-19",
       "shock": null,
       "vulnerability": 3,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "NYSE Arca Securities Broker/Dealer Index (XBD) drawdown from trailing 52-week high, quarterly max; 2026Q2; public proxy series, not DTCC data",
@@ -2232,7 +2273,10 @@
           "url": "https://finance.yahoo.com/quote/%5EXBD/history/"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "ecs-nscc-09",
@@ -2297,13 +2341,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "ecs-nscc-09",
       "snapshot": "2026-10-19",
       "shock": null,
       "vulnerability": 3,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "SOFR underlying transaction volume, USD bn, quarterly mean; 2026Q2; public proxy series, not DTCC data",
@@ -2319,7 +2363,10 @@
           "url": "https://markets.newyorkfed.org/static/docs/markets-api.html"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "ecs-dtc-01",
@@ -2382,13 +2429,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "ecs-dtc-01",
       "snapshot": "2026-10-19",
       "shock": null,
       "vulnerability": 3,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "Commercial paper outstanding, seasonally adjusted, USD mn, quarterly mean of weekly values; 2026Q2; public proxy series, not DTCC data",
@@ -2404,7 +2451,10 @@
           "url": "https://www.federalreserve.gov/releases/cp/"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "ficc-gsd-01",
@@ -2492,20 +2542,14 @@
           "FICC-GSD-01": "Medium"
         }
       },
-      "shared_signal": [
-        "FICC-MBSD-01"
-      ],
-      "shared_signal_series": {
-        "FICC-MBSD-01": [
-          "DGS10"
-        ]
-      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
       "id": "ficc-gsd-01",
       "snapshot": "2026-10-26",
       "shock": 3,
       "vulnerability": 1,
       "confidence": "Medium",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Weekly peak absolute daily change in the 10-year Treasury yield 7 bp, 43rd percentile of 460 prior weeks",
       "shock_basis": "Weekly peak absolute daily change in the 10-year Treasury yield 7 bp, 43rd percentile of 460 prior weeks",
       "vulnerability_basis": "PQD stress_loss_to_im (GSD); 2026Q2; DTCC public quantitative disclosure (PQD)",
@@ -2526,6 +2570,9 @@
         }
       ],
       "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
       "shock_method": "Market indicator"
     },
     {
@@ -2691,10 +2738,9 @@
       "shared_signal": [
         "ECS-NSCC-LIQ"
       ],
-      "shared_signal_series": {
+      "shared_signal_fields": {
         "ECS-NSCC-LIQ": [
-          "EFFR",
-          "SOFR"
+          "sofr_effr_adjusted"
         ]
       },
       "id": "ficc-gsd-02",
@@ -2702,7 +2748,7 @@
       "shock": 5,
       "vulnerability": 4,
       "confidence": "Medium",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Weekly peak SOFR–EFFR spread (quarter-end adjusted) 6 bp, 86th percentile of 421 prior weeks",
       "shock_basis": "Weekly peak SOFR–EFFR spread (quarter-end adjusted) 6 bp, 86th percentile of 421 prior weeks",
       "vulnerability_basis": "PQD payment_to_qlr (GSD); 2026Q2; DTCC public quantitative disclosure (PQD)",
@@ -2727,6 +2773,9 @@
         }
       ],
       "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
       "shock_method": "Market indicator"
     },
     {
@@ -2833,13 +2882,13 @@
         }
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "ficc-gsd-03",
       "snapshot": "2026-10-26",
       "shock": 4,
       "vulnerability": 3,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Hand-entered event EV0006: Treasury clearing compliance date: eligible cash transactions, effective 2026-12-31, source Federal Register (SEC): https://www.govinfo.gov/content/pkg/FR-2025-03-04/html/2025-03351.htm",
       "shock_basis": "Event EV0006: certainty 2 + reach 2 + timing 1 = 5 → S 4 (rubric v1.2)",
       "vulnerability_basis": "PQD top5_client_share (GSD); 2026Q2; DTCC public quantitative disclosure (PQD)",
@@ -2860,6 +2909,9 @@
         }
       ],
       "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
       "shock_method": "Event rubric (hand-entered register)",
       "review_status": "Event EV0006 signed off by Wenqi Cai 2026-11-05T04:45Z"
     },
@@ -2991,20 +3043,14 @@
           "FICC-MBSD-01": "Medium"
         }
       },
-      "shared_signal": [
-        "FICC-GSD-01"
-      ],
-      "shared_signal_series": {
-        "FICC-GSD-01": [
-          "DGS10"
-        ]
-      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
       "id": "ficc-mbsd-01",
       "snapshot": "2026-10-26",
       "shock": 4,
       "vulnerability": 1,
       "confidence": "Medium",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Weekly change in the 30-year mortgage rate minus 10-year Treasury spread 10 bp, 63rd percentile of 459 prior weeks",
       "shock_basis": "Weekly change in the 30-year mortgage rate minus 10-year Treasury spread 10 bp, 63rd percentile of 459 prior weeks",
       "vulnerability_basis": "PQD stress_loss_to_im (MBSD); 2026Q2; DTCC public quantitative disclosure (PQD)",
@@ -3029,6 +3075,9 @@
         }
       ],
       "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
       "shock_method": "Market indicator"
     },
     {
@@ -3211,10 +3260,9 @@
       "shared_signal": [
         "FICC-GSD-02"
       ],
-      "shared_signal_series": {
+      "shared_signal_fields": {
         "FICC-GSD-02": [
-          "EFFR",
-          "SOFR"
+          "sofr_effr_adjusted"
         ]
       },
       "id": "ecs-nscc-liq",
@@ -3222,7 +3270,7 @@
       "shock": 5,
       "vulnerability": 3,
       "confidence": "Medium",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Weekly peak SOFR–EFFR spread (quarter-end adjusted) 6 bp, 86th percentile of 421 prior weeks",
       "shock_basis": "Weekly peak SOFR–EFFR spread (quarter-end adjusted) 6 bp, 86th percentile of 421 prior weeks",
       "vulnerability_basis": "PQD payment_to_qlr (NSCC); 2026Q2; DTCC public quantitative disclosure (PQD)",
@@ -3251,6 +3299,9 @@
         }
       ],
       "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
       "shock_method": "Market indicator"
     },
     {
@@ -3344,13 +3395,13 @@
         }
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "ecs-nscc-03",
       "snapshot": "2026-10-26",
       "shock": 2,
       "vulnerability": 1,
       "confidence": "Medium",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Weekly peak US consolidated equity volume relative to the median of the prior 52 weekly peaks 0.96×, 29th percentile of 408 prior weeks",
       "shock_basis": "Weekly peak US consolidated equity volume relative to the median of the prior 52 weekly peaks 0.96×, 29th percentile of 408 prior weeks",
       "vulnerability_basis": "Off-exchange (TRF) share of consolidated equity volume, quarterly mean of daily share; 2026Q2; public proxy series, not DTCC data",
@@ -3367,6 +3418,9 @@
         }
       ],
       "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
       "shock_method": "Market indicator"
     },
     {
@@ -3432,13 +3486,13 @@
         }
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "ecs-set-01",
       "snapshot": "2026-10-26",
       "shock": null,
       "vulnerability": 5,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "SEC CNS fails-to-deliver stock, quarterly mean of daily USD value; 2026Q2; public proxy series, not DTCC data",
@@ -3454,7 +3508,10 @@
           "url": "https://www.sec.gov/data-research/sec-markets-data/fails-deliver-data"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "xe-member-ficc",
@@ -3550,13 +3607,13 @@
         }
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "xe-member-ficc",
       "snapshot": "2026-10-26",
       "shock": 3,
       "vulnerability": 1,
       "confidence": "Medium",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Weekly peak 20-day widening of the Baa–10-year Treasury spread 4 bp, 58th percentile of 456 prior weeks",
       "shock_basis": "Weekly peak 20-day widening of the Baa–10-year Treasury spread 4 bp, 58th percentile of 456 prior weeks",
       "vulnerability_basis": "PQD 18.2.2 top-five open-position share: max(GSD, NSCC) percentile series, ranked on its own history; 2026Q2; DTCC public quantitative disclosure (PQD)",
@@ -3577,6 +3634,9 @@
         }
       ],
       "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
       "shock_method": "Market indicator"
     },
     {
@@ -3673,13 +3733,13 @@
         }
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "xe-member-ecs",
       "snapshot": "2026-10-26",
       "shock": 3,
       "vulnerability": 1,
       "confidence": "Medium",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Weekly peak 20-day widening of the Baa–10-year Treasury spread 4 bp, 58th percentile of 456 prior weeks",
       "shock_basis": "Weekly peak 20-day widening of the Baa–10-year Treasury spread 4 bp, 58th percentile of 456 prior weeks",
       "vulnerability_basis": "PQD 18.2.2 top-five open-position share: max(GSD, NSCC) percentile series, ranked on its own history; 2026Q2; DTCC public quantitative disclosure (PQD)",
@@ -3700,6 +3760,9 @@
         }
       ],
       "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
       "shock_method": "Market indicator"
     },
     {
@@ -3764,13 +3827,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "xe-disrupt-ficc",
       "snapshot": "2026-10-26",
       "shock": null,
       "vulnerability": 4,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "US trading halts incl. LULD pauses reported by Nasdaq Trader, quarterly count; 2026Q2; public proxy series, not DTCC data",
@@ -3786,7 +3849,10 @@
           "url": "https://www.nasdaqtrader.com/Trader.aspx?id=TradeHalts"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "xe-disrupt-ecs",
@@ -3850,13 +3916,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "xe-disrupt-ecs",
       "snapshot": "2026-10-26",
       "shock": null,
       "vulnerability": 4,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "US trading halts incl. LULD pauses reported by Nasdaq Trader, quarterly count; 2026Q2; public proxy series, not DTCC data",
@@ -3872,7 +3938,10 @@
           "url": "https://www.nasdaqtrader.com/Trader.aspx?id=TradeHalts"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "xe-settlebank-ficc",
@@ -3937,13 +4006,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "xe-settlebank-ficc",
       "snapshot": "2026-10-26",
       "shock": null,
       "vulnerability": 2,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "KBW Nasdaq Bank Index (BKX) drawdown from trailing 52-week high, quarterly max; 2026Q2; public proxy series, not DTCC data",
@@ -3959,7 +4028,10 @@
           "url": "https://www.nasdaq.com/market-activity/index/bkx/historical"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "xe-settlebank-ecs",
@@ -4024,13 +4096,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "xe-settlebank-ecs",
       "snapshot": "2026-10-26",
       "shock": null,
       "vulnerability": 2,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "KBW Nasdaq Bank Index (BKX) drawdown from trailing 52-week high, quarterly max; 2026Q2; public proxy series, not DTCC data",
@@ -4046,7 +4118,10 @@
           "url": "https://www.nasdaq.com/market-activity/index/bkx/historical"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "xe-cyber-ficc",
@@ -4114,13 +4189,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "xe-cyber-ficc",
       "snapshot": "2026-10-26",
       "shock": null,
       "vulnerability": 5,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "NVD published CVEs, quarterly count; 2026Q2; public proxy series, not DTCC data",
@@ -4136,7 +4211,10 @@
           "url": "https://nvd.nist.gov/developers/vulnerabilities"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "xe-cyber-ecs",
@@ -4204,13 +4282,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "xe-cyber-ecs",
       "snapshot": "2026-10-26",
       "shock": null,
       "vulnerability": 5,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "NVD published CVEs, quarterly count; 2026Q2; public proxy series, not DTCC data",
@@ -4226,7 +4304,10 @@
           "url": "https://nvd.nist.gov/developers/vulnerabilities"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "ficc-gsd-11",
@@ -4291,13 +4372,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "ficc-gsd-11",
       "snapshot": "2026-10-26",
       "shock": null,
       "vulnerability": 3,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "OFR qualifying hedge fund gross assets / net assets; 2026Q1; public proxy series, not DTCC data",
@@ -4313,7 +4394,10 @@
           "url": "https://www.financialresearch.gov/hedge-fund-monitor/api/"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "ficc-mbsd-02",
@@ -4373,13 +4457,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "ficc-mbsd-02",
       "snapshot": "2026-10-26",
       "shock": null,
       "vulnerability": 3,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "Mortgage origination volume, USD bn per quarter; 2026Q2; public proxy series, not DTCC data",
@@ -4395,7 +4479,10 @@
           "url": "https://www.newyorkfed.org/microeconomics/hhdc"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "ecs-nscc-08",
@@ -4458,13 +4545,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "ecs-nscc-08",
       "snapshot": "2026-10-26",
       "shock": null,
       "vulnerability": 3,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "NYSE Arca Securities Broker/Dealer Index (XBD) drawdown from trailing 52-week high, quarterly max; 2026Q2; public proxy series, not DTCC data",
@@ -4480,7 +4567,10 @@
           "url": "https://finance.yahoo.com/quote/%5EXBD/history/"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "ecs-nscc-09",
@@ -4545,13 +4635,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "ecs-nscc-09",
       "snapshot": "2026-10-26",
       "shock": null,
       "vulnerability": 3,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "SOFR underlying transaction volume, USD bn, quarterly mean; 2026Q2; public proxy series, not DTCC data",
@@ -4567,7 +4657,10 @@
           "url": "https://markets.newyorkfed.org/static/docs/markets-api.html"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     },
     {
       "record_id": "ecs-dtc-01",
@@ -4630,13 +4723,13 @@
         "chains": {}
       },
       "shared_signal": [],
-      "shared_signal_series": {},
+      "shared_signal_fields": {},
       "id": "ecs-dtc-01",
       "snapshot": "2026-10-26",
       "shock": null,
       "vulnerability": 3,
       "confidence": "Low",
-      "updated_at": "2026-11-05T04:57:00Z",
+      "updated_at": "2026-11-05T05:16:00Z",
       "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
       "vulnerability_basis": "Commercial paper outstanding, seasonally adjusted, USD mn, quarterly mean of weekly values; 2026Q2; public proxy series, not DTCC data",
@@ -4652,7 +4745,10 @@
           "url": "https://www.federalreserve.gov/releases/cp/"
         }
       ],
-      "ai_generated_fields": []
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
     }
   ]
 }

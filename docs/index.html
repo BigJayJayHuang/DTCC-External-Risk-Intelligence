@@ -92,6 +92,9 @@ a{color:var(--brand-2)}
 .banner{background:var(--note);border:1px solid var(--note-line);color:var(--note-ink);border-radius:10px;padding:9px 14px;margin-bottom:14px;font-size:14.5px;font-weight:600}
 .chip.rev{background:var(--high-soft);color:var(--high-ink);font-weight:700}
 .shared{display:block;font-size:13.5px;color:var(--muted);margin:0 0 4px}
+.ph{display:inline-block;border:1.5px dashed var(--line);background:var(--surface);color:var(--muted);border-radius:7px;padding:2px 9px;font-size:13.5px;font-weight:400}
+.box .ph{display:block;padding:10px 12px;font-size:14.5px}
+.asof{font-size:13px;color:var(--note-ink)}
 .ctitle{font-size:17.5px;font-weight:700;margin:0 0 7px;line-height:1.3;text-wrap:balance}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
 .chip{font-size:12.5px;font-weight:600;border-radius:999px;padding:2px 10px;background:var(--mint);color:var(--brand-soft-ink);white-space:nowrap}
@@ -180,6 +183,7 @@ const DATA_URL=PARAMS.get("data")||"data/risk_output.json";
 const UNSCORED={news_not_scanned:"Unscanned",data_incomplete:"Incomplete"};
 const LVL_TEXT={Pending:"V pending",Unscanned:"Not scanned",Incomplete:"Data incomplete"};
 const TIER_TEXT={pqd:"PQD",public_proxy:"public proxy"};
+const PH=`<span class="ph">AI analysis – available once the news classifier is connected.</span>`;
 
 /* All 10 DTCC business lines, always shown as tabs (order = tab order). */
 const LINE_META={
@@ -276,7 +280,12 @@ function sortItems(a){
 function lineInfo(line){return (DATA&&DATA.lines&&DATA.lines[line])||{};}
 function lineSummary(line){const s=lineInfo(line).summary; if(!s) return ""; return typeof s==="string"?s:(s[state.snap]||"");}
 function lineList(line,key){return asArr(lineInfo(line)[key]).filter(x=>!x.snapshot||x.snapshot===state.snap);}
-function daysTo(d){const dd=toDate(d),s=snapObj(state.snap); return dd&&s?Math.round((dd-s.date)/dayMs):null;}
+function countdownRef(){
+  const s=snapObj(state.snap); if(!s) return null;
+  if(SNAPS[0]&&s.id===SNAPS[0].id){const t=new Date(); return {ref:new Date(Date.UTC(t.getFullYear(),t.getMonth(),t.getDate(),12)),asOf:null};}
+  const fri=new Date(s.date.getTime()+4*dayMs); return {ref:fri,asOf:fri};
+}
+function daysFrom(d,ref){const dd=toDate(d); return dd&&ref?Math.round((dd-ref)/dayMs):null;}
 
 /* ---------- list view ---------- */
 function renderList(){
@@ -287,7 +296,8 @@ function renderList(){
   const fams=[...new Set(all.map(i=>i.family))];
   const famOpts=[...FAMILIES,...fams.filter(f=>!FAMILIES.includes(f))];
   const regions=["All",...new Set(["US","Global",...ALL().map(i=>i.region)])];
-  const review=lineList(L,"review"), coming=lineList(L,"coming"), summary=lineSummary(L);
+  const review=lineList(L,"review"), summary=lineSummary(L), cd=countdownRef();
+  const coming=lineList(L,"coming").map(x=>({...x,n:cd?daysFrom(x.date,cd.ref):null})).filter(x=>x.n!=null&&x.n>=0);
   const filtered=state.sev!=="All"||state.fam!=="All"||state.region!=="All";
   const counts=Object.fromEntries(LINE_KEYS.map(k=>[k,itemsForLine(k).length]));
   const rangeT=RANGES.find(r=>r.k===state.range).t;
@@ -307,7 +317,7 @@ function renderList(){
       ${["Pending","Unscanned","Incomplete"].filter(k=>c[k]).map(k=>`<span class="cnt"><span class="dot" style="background:var(--pend);border:1px solid var(--line)"></span>${c[k]} ${k==="Unscanned"?"not scanned for news":LVL_TEXT[k].toLowerCase()}</span>`).join("")}
       <span class="cnt" style="color:var(--muted)">${review.length} awaiting review</span>
     </div>
-    ${coming.length?`<div class="coming"><b>Coming up</b>${coming.map(x=>{const n=daysTo(x.date);return `<span class="date">${fmtDay(toDate(x.date))} · ${esc(x.title)}${n!=null&&n>=0?` · ${n} days`:""}</span>`}).join("")}</div>`:""}
+    ${coming.length?`<div class="coming"><b>Coming up</b>${cd.asOf?`<span class="asof">as of ${esc(fmtDay(cd.asOf))}</span>`:""}${coming.map(x=>`<span class="date">${fmtDay(toDate(x.date))} · ${esc(x.title)} · ${x.n===0?"today":x.n===1?"1 day":x.n+" days"}</span>`).join("")}</div>`:""}
   </section>
   <div class="filters" role="group" aria-label="Time and sort">
     <label for="f-range">Time <select id="f-range">${RANGES.map(r=>`<option value="${r.k}" ${state.range===r.k?"selected":""}>${r.t}</option>`).join("")}</select></label>
@@ -364,8 +374,8 @@ function cardHtml(i){
         ${scoreChip(i)}<span class="chip o">Confidence: ${esc(i.conf)}</span>${reviewChip(i)}
       </span>
       ${sharedNote(i)}
-      ${(i.sowhat||i.line1)?`<span class="cline" style="display:block"><b>So what —</b> ${esc(i.sowhat||i.line1)}</span>`:""}
-      ${i.nowwhat?`<span class="cline" style="display:block"><b>So now what —</b> ${esc(i.nowwhat)}</span>`:""}
+      <span class="cline" style="display:block"><b>So what —</b> ${(i.sowhat||i.line1)?esc(i.sowhat||i.line1):PH}</span>
+      <span class="cline" style="display:block"><b>So now what —</b> ${i.nowwhat?esc(i.nowwhat):PH}</span>
       <span class="cfoot"><span>${i.sources.length} source${i.sources.length===1?"":"s"}${i.upd?" · updated "+esc(fmtStamp(i.upd)):""}</span><span class="more">Details ›</span></span>
     </span>
   </button>`;
@@ -426,10 +436,10 @@ function renderDetail(id,snap){
       <div class="step"><div class="k">2 · Mechanism</div>${esc(i.chain[1])}</div><div class="arrow" aria-hidden="true">→</div>
       <div class="step end"><div class="k">3 · DTCC process touched</div>${esc(i.chain[2])}</div>
     </div></section>`:""}
-  ${i.sowhat||i.nowwhat?`<section class="sec two">
-    <div class="box"><h3 class="lab">So what${ai("so_what")}</h3><p>${esc(i.sowhat)||"—"}</p></div>
-    <div class="box now"><h3 class="lab">So now what${ai("so_now_what")}</h3><p>${esc(i.nowwhat)||"—"}</p></div>
-  </section>`:""}
+  <section class="sec two">
+    <div class="box"><h3 class="lab">So what${i.sowhat?ai("so_what"):""}</h3>${i.sowhat?`<p>${esc(i.sowhat)}</p>`:PH}</div>
+    <div class="box now"><h3 class="lab">So now what${i.nowwhat?ai("so_now_what"):""}</h3>${i.nowwhat?`<p>${esc(i.nowwhat)}</p>`:PH}</div>
+  </section>
   ${i.time.some(Boolean)?`<section class="sec"><h3 class="lab">Time-phased view</h3>
     <div class="time">${["Now · this week","Next · 1–3 months","Later · 2027+"].map((k,n)=>`<div class="t"><div class="k">${k}</div><p>${esc(i.time[n])||"—"}</p></div>`).join("")}</div></section>`:""}
   <section class="sec two">

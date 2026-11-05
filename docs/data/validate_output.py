@@ -14,6 +14,7 @@ LINES = {"FICC", "ECS", "RDS", "WIS", "ITP", "Asset Services", "DAS", "DDA", "Da
 FAMILIES = {"Credit", "Liquidity", "Market", "Operational", "Cyber", "Regulatory", "Strategic"}
 STATUSES = {"scored", "news_not_scanned", "data_incomplete"}
 UNSCORED = {"news_not_scanned", "data_incomplete"}          # shock may be null only for these
+ANALYSIS_FIELDS = ("so_what", "so_now_what")                 # null only while analysis_status = "pending_llm"
 # Business-line rows per card (scoring v1.3), including the FICC and ECS rows of cross-entity (XE-) cards
 CARD_LINES = Path(__file__).resolve().parents[2] / "Capstone_Project/results/scoring/v1.3_indicator/config/card_lines.csv"
 
@@ -80,6 +81,11 @@ def main(path):
                                                                      if it.get("shock") is None else ""))
         if status in UNSCORED and it.get("shock") is not None:
             errors.append(f"{tag}: status {status} must have shock null")
+        for k in ANALYSIS_FIELDS:
+            if k in it and it[k] is None and it.get("analysis_status") != "pending_llm":
+                errors.append(f"{tag}: {k} is null; allowed only when analysis_status is 'pending_llm'")
+            elif it.get(k) is not None and not isinstance(it[k], str):
+                errors.append(f"{tag}: {k} must be a string or null")
         if card_lines is not None and it.get("card_id"):
             want = card_lines.get((it["card_id"], it.get("business_line")))
             if want is None:

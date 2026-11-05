@@ -6,7 +6,8 @@ Then check it:               python3 docs/data/validate_output.py docs/data/risk
 
 Standard library only. Every text field is a fixed template filled with numbers, ids, dates and URLs from the
 scoring records, the chain registry and the source manifests; no prose is generated. All v1.3 record fields are
-kept on each item as extra fields. Output is deterministic for the same inputs.
+kept on each item as extra fields. so_what and so_now_what are reserved for future AI text: they are null, with
+analysis_status = "pending_llm"; no placeholder text is written into the data. Output is deterministic for the same inputs.
 """
 import argparse, csv, hashlib, json, runpy
 from datetime import date
@@ -148,7 +149,8 @@ def item(r, run_utc, cards, chains, proxy, pqd_urls):
         'vulnerability_basis': (f"{r['V_driver']}; {r['V_quarter']}; {TIER_TEXT.get(r['V_tier'], r['V_tier'])}"
                                 if r['V'] is not None else (r.get('V_null_reason') or '')),
         'transmission': tr, 'transmission_chain_id': tchain,
-        'sources': sources(r, proxy, pqd_urls), 'ai_generated_fields': []})
+        'sources': sources(r, proxy, pqd_urls), 'ai_generated_fields': [],
+        'so_what': None, 'so_now_what': None, 'analysis_status': 'pending_llm'})   # slots reserved for the LLM step
     if r['S_source']:
         it['shock_method'] = SHOCK_METHOD[r['S_source']]
     rs = review_status(r)
