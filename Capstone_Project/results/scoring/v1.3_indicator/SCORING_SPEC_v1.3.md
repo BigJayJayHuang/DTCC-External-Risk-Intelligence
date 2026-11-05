@@ -194,10 +194,19 @@ Approved: Wenqi Cai, 2026-11-05T04:55Z. Written before the re-run of the weeks o
 - `signal.peak_check` is true when the maximum of `daily_values` (divided by `ratio_denominator` for the ratio) reproduces `signal.value`. A false check stops the run.
 - Records with `S_market < 4` or no market S have no `daily_values`.
 
-**A3. Shared signals.**
+**A3. Shared signals** (matching rule superseded by Amendment B).
 - A record "takes S from" the raw series of every chain whose chain S equals `S_market` (§4 data-guard table), when `S_source` is `market` or `market+event_manual`.
 - When two records of different cards in the same week take S from at least one common raw series, each lists the other's `card_id` in `shared_signal` (sorted). `shared_signal_series` gives the common series per card.
 - The two records of one cross-entity card do not list each other. Records that do not take S from a market series have `shared_signal = []`.
 - These fields are for display only. Severity is not adjusted.
 
 **A4. Event provenance.** Each entry in `event_manual.events` also carries `outlet`, `source_tier` and `source_urls` from the register. This is display only.
+
+## Amendment B — shared signals by transformed signal field (display only)
+
+Approved: Wenqi Cai, 2026-11-05T05:15Z. Written before the re-run of the weeks of 2026-10-19 and 2026-10-26. It replaces the matching rule of A3 and changes no score: S, V, severity, status, show_on_main and needs_human_signoff are computed as before.
+
+- **B1.** A record takes S from the transformed signal field (e.g. `sofr_effr_adjusted`) of every chain whose chain S equals `S_market`, when `S_source` is `market` or `market+event_manual`.
+- **B2.** `shared_signal` lists the other cards in the same week that take S from at least one of the same signal fields. A shared raw input no longer counts. For example, DGS10 feeds both `ust10_abs_change` and `mbs_spread_abs_wchg`, so FICC-GSD-01 and FICC-MBSD-01 do not share a signal.
+- **B3.** `shared_signal_series` is replaced by `shared_signal_fields`: `{card_id: [signal field]}` for each card in `shared_signal`.
+- **B4.** The two records of one cross-entity card still do not list each other. Records that do not take S from a market signal have `shared_signal = []`.
