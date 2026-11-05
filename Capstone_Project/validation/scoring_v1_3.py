@@ -233,22 +233,22 @@ def peak_check(value, info):
     return abs(top - value) <= 1e-9 * max(1.0, abs(value))
 
 
-# ------------------------------------------------------------------ Amendment A3: shared signals
-def s_series(rec):
-    """Raw series a record takes S from: every chain whose S equals S_market, when the market sets S."""
+# ------------------------------------------------------------------ Amendment A3 / B: shared signals
+def s_fields(rec):
+    """Signal fields a record takes S from (Amendment B1): every chain whose S equals S_market, when the market sets S."""
     if rec['S_source'] not in ('market', 'market+event_manual') or rec['S_market'] is None:
         return set()
-    return {s for c in rec['market_chains'] if c['S'] == rec['S_market'] for s in SIGNAL_SERIES[c['field']]}
+    return {c['field'] for c in rec['market_chains'] if c['S'] == rec['S_market']}
 
 
 def assign_shared(recs):
-    """recs: one base record per card for one week. Adds shared_signal / shared_signal_series in place."""
-    series = {r['card_id']: s_series(r) for r in recs}
+    """recs: one base record per card for one week. Adds shared_signal / shared_signal_fields in place (Amendment B2-B4)."""
+    fields = {r['card_id']: s_fields(r) for r in recs}
     for r in recs:
-        mine = series[r['card_id']]
-        common = {o: sorted(mine & s) for o, s in series.items() if o != r['card_id'] and mine & s}
+        mine = fields[r['card_id']]
+        common = {o: sorted(mine & f) for o, f in fields.items() if o != r['card_id'] and mine & f}
         r['shared_signal'] = sorted(common)
-        r['shared_signal_series'] = dict(sorted(common.items()))
+        r['shared_signal_fields'] = dict(sorted(common.items()))
     return recs
 
 
@@ -336,7 +336,7 @@ def card_week(card, week, *, market_recs, cov, ev, v, check, daily=None):
         'severity': sev, 'show_on_main': sev is not None and sev >= SHOW_ON_MAIN_MIN,
         'needs_human_signoff': bool(event_set and S is not None and S >= SIGNOFF_MIN_S and not (driving and driving.get('signed_off_by'))),
         'chain_confidence': chain_confidence(card['tested_chains'], S, src, drv['chain_id'] if drv else None, driving),
-        'shared_signal': [], 'shared_signal_series': {}})
+        'shared_signal': [], 'shared_signal_fields': {}})
     return rec
 
 

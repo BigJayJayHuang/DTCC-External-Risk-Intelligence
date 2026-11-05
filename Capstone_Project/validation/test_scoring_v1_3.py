@@ -249,7 +249,7 @@ class DailyValues(unittest.TestCase):                                   # Amendm
         self.assertFalse(S13.peak_check(2000.0, info))
 
 
-class SharedSignal(unittest.TestCase):                                  # Amendment A3
+class SharedSignal(unittest.TestCase):                                  # Amendment A3 / B
     def week(self):
         return [run('FICC-GSD-02', market={'FICC-GSD-02': mkt(5)}, V=4),
                 run('ECS-NSCC-LIQ', market={'ECS-NSCC-01': mkt(3), 'ECS-NSCC-02': mkt(5)}),
@@ -259,15 +259,25 @@ class SharedSignal(unittest.TestCase):                                  # Amendm
                 run('FICC-GSD-03', ev=event(4)),
                 run('XE-CYBER')]
 
-    def test_shared_raw_series(self):
+    def test_shared_signal_field(self):
         recs = {r['card_id']: r for r in S13.assign_shared(self.week())}
         self.assertEqual(recs['FICC-GSD-02']['shared_signal'], ['ECS-NSCC-LIQ'])
         self.assertEqual(recs['ECS-NSCC-LIQ']['shared_signal'], ['FICC-GSD-02'])
-        self.assertEqual(recs['ECS-NSCC-LIQ']['shared_signal_series'], {'FICC-GSD-02': ['EFFR', 'SOFR']})
-        self.assertEqual(recs['FICC-GSD-01']['shared_signal_series'], {'FICC-MBSD-01': ['DGS10']})   # MBSD spread uses DGS10
-        self.assertEqual(recs['FICC-MBSD-01']['shared_signal'], ['FICC-GSD-01'])
+        self.assertEqual(recs['ECS-NSCC-LIQ']['shared_signal_fields'], {'FICC-GSD-02': ['sofr_effr_adjusted']})
+        self.assertNotIn('shared_signal_series', recs['ECS-NSCC-LIQ'])
         for cid in ['XE-MEMBER', 'FICC-GSD-03', 'XE-CYBER']:
             self.assertEqual(recs[cid]['shared_signal'], [], cid)
+
+    def test_shared_raw_input_does_not_count(self):                    # Amendment B2: DGS10 feeds two different fields
+        recs = {r['card_id']: r for r in S13.assign_shared(self.week())}
+        self.assertEqual((recs['FICC-GSD-01']['shared_signal'], recs['FICC-MBSD-01']['shared_signal']), ([], []))
+        self.assertEqual((recs['FICC-GSD-01']['shared_signal_fields'], recs['FICC-MBSD-01']['shared_signal_fields']), ({}, {}))
+
+    def test_tied_chains_both_count(self):                              # both NSCC chains at S_market
+        recs = {r['card_id']: r for r in S13.assign_shared(
+            [run('FICC-GSD-02', market={'FICC-GSD-02': mkt(4)}, V=4),
+             run('ECS-NSCC-LIQ', market={'ECS-NSCC-01': mkt(4), 'ECS-NSCC-02': mkt(4)})])}
+        self.assertEqual(recs['FICC-GSD-02']['shared_signal_fields'], {'ECS-NSCC-LIQ': ['sofr_effr_adjusted']})
 
     def test_only_chains_that_set_S(self):
         recs = {r['card_id']: r for r in S13.assign_shared(
