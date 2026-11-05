@@ -1,0 +1,19 @@
+{
+  "reference_commit": "b34bc3e",
+  "note": "sha256 of files scoring v1.3 must not change (protected v1.2 outputs, final16 adapter, event rubric). Checked by validation/test_scoring_v1_3.py.",
+  "files": {
+    "validation/scoring.py": "badd2c5a2487f297467904f0587d0b2158958c6ec2ee75c53353aeb9748a8e60",
+    "results/scoring/SCORING_SPEC.md": "eec27c3ab936ff1c3b578e855ec8f91876e8b8d08c45d27ce6b731ad071f69d0",
+    "results/chain_tests/chain_confidence.json": "3d7309504873b08fdfef41fe0e4b40da0819fcb9518b971c36554111032f0f91",
+    "validation/final16_vulnerability.py": "207749d9c9995560ba3b6bcaa9828864afbc37ff647138407b60daff2aa11278",
+    "validation/event_scoring.py": "5c652e79e382c125c55fdfb7e91bf75d13bf3befd0a3a6ee3f099a32a1d18614",
+    "results/scoring/v1.1_rerun/weekly_scores.json": "15d430a608b7f874ed88a7ee5b6d8f3f59e590a24acea66bab92f966af361032",
+    "results/scoring/v1.1_rerun/weekly_scores_history.csv": "58699d9f86015c8d989b59150969c9a15c7c900a9948e29ea16bad52abb45d8f",
+    "results/scoring/weekly_scores.json": "10ac2954f22cd1dd493467f8a725b38c1894a49c49f67b41cefcd99e9c525682",
+    "results/scoring/weekly_scores_history.csv": "458d6c0d09fe3ea0803584be202c430accb2f8a839723d8ccaf35ba91bd07d12",
+    "results/scoring/weekly_scores_history_v1.0.csv": "4823dc4aa9f1ad0be5e3f8411b23948ccec68fcab7bb18679baa827a082ccbf1",
+    "results/scoring/weekly_scores_history_v1.1.csv": "7878654c036ae719a615fd1c7adeda610e50414704fb6b8645f76bc6153990c1",
+    "results/scoring/weekly_scores_v1.0.json": "34abc26fe3f3cd34849f89ef86951f2d9f61a159c9bf772fda0d7d76eda753ed",
+    "results/scoring/weekly_scores_v1.1.json": "a5598507dddeec2cbc96e3d4707db2885c43b6af1df0b786dd14c4ce67f89b1a"
+  }
+}

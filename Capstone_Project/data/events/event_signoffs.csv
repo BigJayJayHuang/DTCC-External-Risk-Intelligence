@@ -1,2 +1,3 @@
 event_id,certainty,reach,max_S,reviewed_by,reviewed_utc,note
 EV0006,2,2,4,owner (wc232),2026-10-23T03:44Z,"S 4 for the 2026-12-31 cash Treasury clearing compliance date (final rule Rel. 34-102487; no further extension found) reviewed and accepted. Re-check required when S reaches 5 (effect within 4 weeks) or levels change."
+EV0006,2,2,4,Wenqi Cai,2026-11-05T04:45Z,"Treasury clearing compliance date for eligible cash transactions, effect 2026-12-31: reviewed and signed off; S 4 accepted (certainty 2, reach 2, timing 1). Source verified: SEC Release No. 34-102487, Federal Register 2025-03-04 (https://www.govinfo.gov/content/pkg/FR-2025-03-04/html/2025-03351.htm). Re-check required when S reaches 5 (effect within 4 weeks, from the week of 2026-11-30) or levels change."

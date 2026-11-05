@@ -4,7 +4,7 @@
 """
 from datetime import date
 
-from .event_scoring import Event, validate, event_score
+from .event_scoring import Event, validate, event_score, is_active, timing_level
 
 WEEK = date(2026, 10, 19)
 CATALOG = {'FICC-GSD-03', 'ECS-SET-01', 'XE-MEMBER'}
@@ -42,6 +42,29 @@ def test_examples():
     assert any('verbatim' in x for x in r['review_reasons'])
 
 
+def test_timing_level_boundaries():
+    # week 2026-10-19 (Mon) .. 2026-10-23 (Fri); weeks are counted from the Friday for future dates
+    assert timing_level(date(2026, 10, 21), WEEK) == 2       # inside the week
+    assert timing_level(date(2026, 12, 31), WEEK) == 1       # 69 days -> 10 weeks
+    assert timing_level(date(2027, 6, 30), WEEK) == 0        # far beyond 12 weeks
+    assert timing_level(date(2026, 11, 20), WEEK) == 2       # exactly 4 weeks after the Friday
+    assert timing_level(date(2026, 11, 21), WEEK) == 1       # 4 weeks + 1 day
+    assert timing_level(date(2027, 1, 15), WEEK) == 1        # exactly 12 weeks
+    assert timing_level(date(2027, 1, 16), WEEK) == 0        # 12 weeks + 1 day
+    assert timing_level(date(2026, 9, 21), WEEK) == 2        # 4 weeks before the Monday
+
+
+def test_event_inactive_after_84_days():
+    t1 = ev(event_id='EV0002', card_ids=['ECS-SET-01'], title='US T+1 go-live', announced_date=date(2023, 2, 15),
+            effect_date=date(2024, 5, 28))
+    assert not is_active(t1, WEEK)
+    assert event_score(t1, WEEK) == {'event_id': 'EV0002', 'active': False, 'S': None}
+    assert is_active(ev(effect_date=date(2026, 7, 27)), WEEK)        # Monday is exactly effect + 84 days
+    assert not is_active(ev(effect_date=date(2026, 7, 26)), WEEK)    # effect + 85 days
+
+
 if __name__ == '__main__':
     test_examples()
+    test_timing_level_boundaries()
+    test_event_inactive_after_84_days()
     print('event_scoring worked examples: OK')
