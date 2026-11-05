@@ -1,11 +1,17 @@
 {
   "spec": "results/scoring/v1.3_indicator/SCORING_SPEC_v1.3.md",
   "spec_status": "**APPROVED** (Wenqi Cai, 2026-11-05T04:45Z)",
+  "spec_amendments": [
+    {
+      "amendment": "A",
+      "approved": "Wenqi Cai, 2026-11-05T04:55Z"
+    }
+  ],
   "spec_version": "v1.3-indicator",
   "rubric_version": "event-rubric-v1.2",
   "week": "2026-10-26",
   "week_end": "2026-10-30",
-  "run_utc": "2026-11-05T04:45Z",
+  "run_utc": "2026-11-05T04:57Z",
   "news_coverage": "manual_register_only",
   "records": [
     {
@@ -93,6 +99,14 @@
         "chains": {
           "FICC-GSD-01": "Medium"
         }
+      },
+      "shared_signal": [
+        "FICC-MBSD-01"
+      ],
+      "shared_signal_series": {
+        "FICC-MBSD-01": [
+          "DGS10"
+        ]
       }
     },
     {
@@ -129,7 +143,76 @@
         "value": 6.00000000000005,
         "percentile": 0.8598574821852731,
         "prior_weeks": 421,
-        "method": "percentile"
+        "method": "percentile",
+        "daily_values": [
+          {
+            "date": "2026-10-26",
+            "value": 4.000000000000048
+          },
+          {
+            "date": "2026-10-27",
+            "value": 6.00000000000005
+          },
+          {
+            "date": "2026-10-28",
+            "value": 5.000000000000027
+          },
+          {
+            "date": "2026-10-29",
+            "value": 5.000000000000027
+          },
+          {
+            "date": "2026-10-30",
+            "value": 6.00000000000005
+          }
+        ],
+        "daily_inputs": {
+          "SOFR": [
+            {
+              "date": "2026-10-26",
+              "value": 3.93
+            },
+            {
+              "date": "2026-10-27",
+              "value": 3.95
+            },
+            {
+              "date": "2026-10-28",
+              "value": 3.94
+            },
+            {
+              "date": "2026-10-29",
+              "value": 3.94
+            },
+            {
+              "date": "2026-10-30",
+              "value": 3.95
+            }
+          ],
+          "EFFR": [
+            {
+              "date": "2026-10-26",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-27",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-28",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-29",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-30",
+              "value": 3.88
+            }
+          ]
+        },
+        "peak_check": true
       },
       "market_chains": [
         {
@@ -177,7 +260,7 @@
       "V_null_reason": null,
       "severity": 20,
       "show_on_main": true,
-      "needs_human_signoff": true,
+      "needs_human_signoff": false,
       "chain_confidence": {
         "level": "Medium",
         "rule": "signal_chain",
@@ -185,6 +268,15 @@
         "chains": {
           "FICC-GSD-02": "Medium"
         }
+      },
+      "shared_signal": [
+        "ECS-NSCC-LIQ"
+      ],
+      "shared_signal_series": {
+        "ECS-NSCC-LIQ": [
+          "EFFR",
+          "SOFR"
+        ]
       }
     },
     {
@@ -236,7 +328,12 @@
             "review_reasons": [
               "S >= 4: human check before publishing"
             ],
-            "signed_off_by": "Wenqi Cai 2026-11-05T04:45Z"
+            "signed_off_by": "Wenqi Cai 2026-11-05T04:45Z",
+            "outlet": "Federal Register (SEC)",
+            "source_tier": "regulator",
+            "source_urls": [
+              "https://www.govinfo.gov/content/pkg/FR-2025-03-04/html/2025-03351.htm"
+            ]
           },
           {
             "event_id": "EV0007",
@@ -248,7 +345,12 @@
             "effect_date": "2027-06-30",
             "needs_review": false,
             "review_reasons": [],
-            "signed_off_by": null
+            "signed_off_by": null,
+            "outlet": "Federal Register (SEC)",
+            "source_tier": "regulator",
+            "source_urls": [
+              "https://www.govinfo.gov/content/pkg/FR-2025-03-04/html/2025-03351.htm"
+            ]
           }
         ]
       },
@@ -271,7 +373,7 @@
       "V_null_reason": null,
       "severity": 12,
       "show_on_main": true,
-      "needs_human_signoff": true,
+      "needs_human_signoff": false,
       "chain_confidence": {
         "level": "Low",
         "rule": "driving_event_chain",
@@ -279,7 +381,9 @@
         "chains": {
           "FICC-GSD-03": "Low"
         }
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "ficc-mbsd-01",
@@ -315,7 +419,44 @@
         "value": 10.000000000000057,
         "percentile": 0.6318082788671024,
         "prior_weeks": 459,
-        "method": "percentile"
+        "method": "percentile",
+        "daily_values": [
+          {
+            "date": "2026-10-29",
+            "value": 10.000000000000057
+          }
+        ],
+        "daily_inputs": {
+          "MORTGAGE30US": [
+            {
+              "date": "2026-10-29",
+              "value": 7.24
+            }
+          ],
+          "DGS10": [
+            {
+              "date": "2026-10-26",
+              "value": 5.0
+            },
+            {
+              "date": "2026-10-27",
+              "value": 4.99
+            },
+            {
+              "date": "2026-10-28",
+              "value": 5.05
+            },
+            {
+              "date": "2026-10-29",
+              "value": 4.98
+            },
+            {
+              "date": "2026-10-30",
+              "value": 4.94
+            }
+          ]
+        },
+        "peak_check": true
       },
       "market_chains": [
         {
@@ -363,7 +504,7 @@
       "V_null_reason": null,
       "severity": 4,
       "show_on_main": false,
-      "needs_human_signoff": true,
+      "needs_human_signoff": false,
       "chain_confidence": {
         "level": "Medium",
         "rule": "signal_chain",
@@ -371,6 +512,14 @@
         "chains": {
           "FICC-MBSD-01": "Medium"
         }
+      },
+      "shared_signal": [
+        "FICC-GSD-01"
+      ],
+      "shared_signal_series": {
+        "FICC-GSD-01": [
+          "DGS10"
+        ]
       }
     },
     {
@@ -407,7 +556,76 @@
         "value": 6.00000000000005,
         "percentile": 0.8598574821852731,
         "prior_weeks": 421,
-        "method": "percentile"
+        "method": "percentile",
+        "daily_values": [
+          {
+            "date": "2026-10-26",
+            "value": 4.000000000000048
+          },
+          {
+            "date": "2026-10-27",
+            "value": 6.00000000000005
+          },
+          {
+            "date": "2026-10-28",
+            "value": 5.000000000000027
+          },
+          {
+            "date": "2026-10-29",
+            "value": 5.000000000000027
+          },
+          {
+            "date": "2026-10-30",
+            "value": 6.00000000000005
+          }
+        ],
+        "daily_inputs": {
+          "SOFR": [
+            {
+              "date": "2026-10-26",
+              "value": 3.93
+            },
+            {
+              "date": "2026-10-27",
+              "value": 3.95
+            },
+            {
+              "date": "2026-10-28",
+              "value": 3.94
+            },
+            {
+              "date": "2026-10-29",
+              "value": 3.94
+            },
+            {
+              "date": "2026-10-30",
+              "value": 3.95
+            }
+          ],
+          "EFFR": [
+            {
+              "date": "2026-10-26",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-27",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-28",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-29",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-30",
+              "value": 3.88
+            }
+          ]
+        },
+        "peak_check": true
       },
       "market_chains": [
         {
@@ -471,7 +689,7 @@
       "V_null_reason": null,
       "severity": 15,
       "show_on_main": true,
-      "needs_human_signoff": true,
+      "needs_human_signoff": false,
       "chain_confidence": {
         "level": "Medium",
         "rule": "signal_chain",
@@ -480,6 +698,15 @@
           "ECS-NSCC-01": "Medium",
           "ECS-NSCC-02": "Medium"
         }
+      },
+      "shared_signal": [
+        "FICC-GSD-02"
+      ],
+      "shared_signal_series": {
+        "FICC-GSD-02": [
+          "EFFR",
+          "SOFR"
+        ]
       }
     },
     {
@@ -571,7 +798,9 @@
         "chains": {
           "ECS-NSCC-03": "Medium"
         }
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "ecs-set-01",
@@ -634,7 +863,9 @@
         "chains": {
           "ECS-SET-01": "Low"
         }
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "xe-member-ficc",
@@ -728,7 +959,9 @@
           "FICC-GSD-04": "Medium",
           "ECS-NSCC-04": "Low"
         }
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "xe-member-ecs",
@@ -822,7 +1055,9 @@
           "FICC-GSD-04": "Medium",
           "ECS-NSCC-04": "Low"
         }
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "xe-disrupt-ficc",
@@ -884,7 +1119,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "xe-disrupt-ecs",
@@ -946,7 +1183,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "xe-settlebank-ficc",
@@ -1009,7 +1248,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "xe-settlebank-ecs",
@@ -1072,7 +1313,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "xe-cyber-ficc",
@@ -1138,7 +1381,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "xe-cyber-ecs",
@@ -1204,7 +1449,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "ficc-gsd-11",
@@ -1267,7 +1514,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "ficc-mbsd-02",
@@ -1325,7 +1574,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "ecs-nscc-08",
@@ -1386,7 +1637,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "ecs-nscc-09",
@@ -1449,7 +1702,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "ecs-dtc-01",
@@ -1510,7 +1765,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     }
   ]
 }

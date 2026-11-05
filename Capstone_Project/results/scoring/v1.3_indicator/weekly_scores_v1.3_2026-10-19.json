@@ -1,11 +1,17 @@
 {
   "spec": "results/scoring/v1.3_indicator/SCORING_SPEC_v1.3.md",
   "spec_status": "**APPROVED** (Wenqi Cai, 2026-11-05T04:45Z)",
+  "spec_amendments": [
+    {
+      "amendment": "A",
+      "approved": "Wenqi Cai, 2026-11-05T04:55Z"
+    }
+  ],
   "spec_version": "v1.3-indicator",
   "rubric_version": "event-rubric-v1.2",
   "week": "2026-10-19",
   "week_end": "2026-10-23",
-  "run_utc": "2026-11-05T04:45Z",
+  "run_utc": "2026-11-05T04:57Z",
   "news_coverage": "manual_register_only",
   "records": [
     {
@@ -42,7 +48,54 @@
         "value": 16.999999999999993,
         "percentile": 0.9705882352941176,
         "prior_weeks": 459,
-        "method": "percentile"
+        "method": "percentile",
+        "daily_values": [
+          {
+            "date": "2026-10-19",
+            "value": 6.00000000000005
+          },
+          {
+            "date": "2026-10-20",
+            "value": 3.000000000000025
+          },
+          {
+            "date": "2026-10-21",
+            "value": 0.9999999999999787
+          },
+          {
+            "date": "2026-10-22",
+            "value": 16.999999999999993
+          },
+          {
+            "date": "2026-10-23",
+            "value": 4.0000000000000036
+          }
+        ],
+        "daily_inputs": {
+          "DGS10": [
+            {
+              "date": "2026-10-19",
+              "value": 5.15
+            },
+            {
+              "date": "2026-10-20",
+              "value": 5.12
+            },
+            {
+              "date": "2026-10-21",
+              "value": 5.13
+            },
+            {
+              "date": "2026-10-22",
+              "value": 4.96
+            },
+            {
+              "date": "2026-10-23",
+              "value": 5.0
+            }
+          ]
+        },
+        "peak_check": true
       },
       "market_chains": [
         {
@@ -85,7 +138,7 @@
       "V_null_reason": null,
       "severity": 5,
       "show_on_main": false,
-      "needs_human_signoff": true,
+      "needs_human_signoff": false,
       "chain_confidence": {
         "level": "Medium",
         "rule": "signal_chain",
@@ -93,6 +146,14 @@
         "chains": {
           "FICC-GSD-01": "Medium"
         }
+      },
+      "shared_signal": [
+        "FICC-MBSD-01"
+      ],
+      "shared_signal_series": {
+        "FICC-MBSD-01": [
+          "DGS10"
+        ]
       }
     },
     {
@@ -129,7 +190,76 @@
         "value": 3.000000000000025,
         "percentile": 0.7416666666666667,
         "prior_weeks": 420,
-        "method": "percentile"
+        "method": "percentile",
+        "daily_values": [
+          {
+            "date": "2026-10-19",
+            "value": -2.0000000000000018
+          },
+          {
+            "date": "2026-10-20",
+            "value": -1.0000000000000009
+          },
+          {
+            "date": "2026-10-21",
+            "value": -0.9999999999999787
+          },
+          {
+            "date": "2026-10-22",
+            "value": 1.000000000000023
+          },
+          {
+            "date": "2026-10-23",
+            "value": 3.000000000000025
+          }
+        ],
+        "daily_inputs": {
+          "SOFR": [
+            {
+              "date": "2026-10-19",
+              "value": 3.87
+            },
+            {
+              "date": "2026-10-20",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-21",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-22",
+              "value": 3.9
+            },
+            {
+              "date": "2026-10-23",
+              "value": 3.92
+            }
+          ],
+          "EFFR": [
+            {
+              "date": "2026-10-19",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-20",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-21",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-22",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-23",
+              "value": 3.88
+            }
+          ]
+        },
+        "peak_check": true
       },
       "market_chains": [
         {
@@ -177,7 +307,7 @@
       "V_null_reason": null,
       "severity": 16,
       "show_on_main": true,
-      "needs_human_signoff": true,
+      "needs_human_signoff": false,
       "chain_confidence": {
         "level": "Medium",
         "rule": "signal_chain",
@@ -185,6 +315,15 @@
         "chains": {
           "FICC-GSD-02": "Medium"
         }
+      },
+      "shared_signal": [
+        "ECS-NSCC-LIQ"
+      ],
+      "shared_signal_series": {
+        "ECS-NSCC-LIQ": [
+          "EFFR",
+          "SOFR"
+        ]
       }
     },
     {
@@ -236,7 +375,12 @@
             "review_reasons": [
               "S >= 4: human check before publishing"
             ],
-            "signed_off_by": "Wenqi Cai 2026-11-05T04:45Z"
+            "signed_off_by": "Wenqi Cai 2026-11-05T04:45Z",
+            "outlet": "Federal Register (SEC)",
+            "source_tier": "regulator",
+            "source_urls": [
+              "https://www.govinfo.gov/content/pkg/FR-2025-03-04/html/2025-03351.htm"
+            ]
           },
           {
             "event_id": "EV0007",
@@ -248,7 +392,12 @@
             "effect_date": "2027-06-30",
             "needs_review": false,
             "review_reasons": [],
-            "signed_off_by": null
+            "signed_off_by": null,
+            "outlet": "Federal Register (SEC)",
+            "source_tier": "regulator",
+            "source_urls": [
+              "https://www.govinfo.gov/content/pkg/FR-2025-03-04/html/2025-03351.htm"
+            ]
           }
         ]
       },
@@ -271,7 +420,7 @@
       "V_null_reason": null,
       "severity": 12,
       "show_on_main": true,
-      "needs_human_signoff": true,
+      "needs_human_signoff": false,
       "chain_confidence": {
         "level": "Low",
         "rule": "driving_event_chain",
@@ -279,7 +428,9 @@
         "chains": {
           "FICC-GSD-03": "Low"
         }
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "ficc-mbsd-01",
@@ -371,6 +522,14 @@
         "chains": {
           "FICC-MBSD-01": "Medium"
         }
+      },
+      "shared_signal": [
+        "FICC-GSD-01"
+      ],
+      "shared_signal_series": {
+        "FICC-GSD-01": [
+          "DGS10"
+        ]
       }
     },
     {
@@ -407,7 +566,54 @@
         "value": 1.1762215771649736,
         "percentile": 0.7714285714285715,
         "prior_weeks": 455,
-        "method": "percentile"
+        "method": "percentile",
+        "daily_values": [
+          {
+            "date": "2026-10-19",
+            "value": 1.159092337670501
+          },
+          {
+            "date": "2026-10-20",
+            "value": 1.0775647410358564
+          },
+          {
+            "date": "2026-10-21",
+            "value": 1.0335212838465826
+          },
+          {
+            "date": "2026-10-22",
+            "value": 1.16698350401668
+          },
+          {
+            "date": "2026-10-23",
+            "value": 1.1762215771649736
+          }
+        ],
+        "daily_inputs": {
+          "VIXCLS": [
+            {
+              "date": "2026-10-19",
+              "value": 18.44
+            },
+            {
+              "date": "2026-10-20",
+              "value": 17.31
+            },
+            {
+              "date": "2026-10-21",
+              "value": 16.68
+            },
+            {
+              "date": "2026-10-22",
+              "value": 19.03
+            },
+            {
+              "date": "2026-10-23",
+              "value": 19.45
+            }
+          ]
+        },
+        "peak_check": true
       },
       "market_chains": [
         {
@@ -471,7 +677,7 @@
       "V_null_reason": null,
       "severity": 12,
       "show_on_main": true,
-      "needs_human_signoff": true,
+      "needs_human_signoff": false,
       "chain_confidence": {
         "level": "Medium",
         "rule": "signal_chain",
@@ -480,6 +686,15 @@
           "ECS-NSCC-01": "Medium",
           "ECS-NSCC-02": "Medium"
         }
+      },
+      "shared_signal": [
+        "FICC-GSD-02"
+      ],
+      "shared_signal_series": {
+        "FICC-GSD-02": [
+          "EFFR",
+          "SOFR"
+        ]
       }
     },
     {
@@ -571,7 +786,9 @@
         "chains": {
           "ECS-NSCC-03": "Medium"
         }
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "ecs-set-01",
@@ -634,7 +851,9 @@
         "chains": {
           "ECS-SET-01": "Low"
         }
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "xe-member-ficc",
@@ -673,7 +892,54 @@
         "value": 8.000000000000007,
         "percentile": 0.701098901098901,
         "prior_weeks": 455,
-        "method": "percentile"
+        "method": "percentile",
+        "daily_values": [
+          {
+            "date": "2026-10-19",
+            "value": 6.000000000000005
+          },
+          {
+            "date": "2026-10-20",
+            "value": 2.0000000000000018
+          },
+          {
+            "date": "2026-10-21",
+            "value": 2.0000000000000018
+          },
+          {
+            "date": "2026-10-22",
+            "value": 7.000000000000006
+          },
+          {
+            "date": "2026-10-23",
+            "value": 8.000000000000007
+          }
+        ],
+        "daily_inputs": {
+          "BAA10Y": [
+            {
+              "date": "2026-10-19",
+              "value": 1.46
+            },
+            {
+              "date": "2026-10-20",
+              "value": 1.44
+            },
+            {
+              "date": "2026-10-21",
+              "value": 1.44
+            },
+            {
+              "date": "2026-10-22",
+              "value": 1.46
+            },
+            {
+              "date": "2026-10-23",
+              "value": 1.47
+            }
+          ]
+        },
+        "peak_check": true
       },
       "market_chains": [
         {
@@ -719,7 +985,7 @@
       "V_null_reason": null,
       "severity": 4,
       "show_on_main": false,
-      "needs_human_signoff": true,
+      "needs_human_signoff": false,
       "chain_confidence": {
         "level": "Medium",
         "rule": "signal_chain",
@@ -728,7 +994,9 @@
           "FICC-GSD-04": "Medium",
           "ECS-NSCC-04": "Low"
         }
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "xe-member-ecs",
@@ -767,7 +1035,54 @@
         "value": 8.000000000000007,
         "percentile": 0.701098901098901,
         "prior_weeks": 455,
-        "method": "percentile"
+        "method": "percentile",
+        "daily_values": [
+          {
+            "date": "2026-10-19",
+            "value": 6.000000000000005
+          },
+          {
+            "date": "2026-10-20",
+            "value": 2.0000000000000018
+          },
+          {
+            "date": "2026-10-21",
+            "value": 2.0000000000000018
+          },
+          {
+            "date": "2026-10-22",
+            "value": 7.000000000000006
+          },
+          {
+            "date": "2026-10-23",
+            "value": 8.000000000000007
+          }
+        ],
+        "daily_inputs": {
+          "BAA10Y": [
+            {
+              "date": "2026-10-19",
+              "value": 1.46
+            },
+            {
+              "date": "2026-10-20",
+              "value": 1.44
+            },
+            {
+              "date": "2026-10-21",
+              "value": 1.44
+            },
+            {
+              "date": "2026-10-22",
+              "value": 1.46
+            },
+            {
+              "date": "2026-10-23",
+              "value": 1.47
+            }
+          ]
+        },
+        "peak_check": true
       },
       "market_chains": [
         {
@@ -813,7 +1128,7 @@
       "V_null_reason": null,
       "severity": 4,
       "show_on_main": false,
-      "needs_human_signoff": true,
+      "needs_human_signoff": false,
       "chain_confidence": {
         "level": "Medium",
         "rule": "signal_chain",
@@ -822,7 +1137,9 @@
           "FICC-GSD-04": "Medium",
           "ECS-NSCC-04": "Low"
         }
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "xe-disrupt-ficc",
@@ -884,7 +1201,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "xe-disrupt-ecs",
@@ -946,7 +1265,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "xe-settlebank-ficc",
@@ -1009,7 +1330,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "xe-settlebank-ecs",
@@ -1072,7 +1395,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "xe-cyber-ficc",
@@ -1138,7 +1463,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "xe-cyber-ecs",
@@ -1204,7 +1531,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "ficc-gsd-11",
@@ -1267,7 +1596,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "ficc-mbsd-02",
@@ -1325,7 +1656,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "ecs-nscc-08",
@@ -1386,7 +1719,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "ecs-nscc-09",
@@ -1449,7 +1784,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     },
     {
       "record_id": "ecs-dtc-01",
@@ -1510,7 +1847,9 @@
         "rule": "untested",
         "chain_id": null,
         "chains": {}
-      }
+      },
+      "shared_signal": [],
+      "shared_signal_series": {}
     }
   ]
 }
