@@ -1,0 +1,40 @@
+{
+  "document_id": "c2733d129e9daa988ff77ad0115388be785e0389a40310839607a73ea128df4e",
+  "url": "https://www.federalregister.gov/documents/2026/10/14/2026-20936/rtw-biotech-growth-fund-and-rtw-investments-lp",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "bd03481a73bebc07bca2eacc8ae5c361b55ebe184338eaa5b5aa09e11c319558",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_U7Ym2N2reRMlwQhtQ7Qu9T",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is headline-only and contains no substantive information beyond the names 'RTW Biotech Growth Fund and RTW Investments, LP'. There is no described event — market, regulatory, member stress, infrastructure, or cyber — that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4073,
+    "outputTokens": 102,
+    "totalTokens": 4175,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1334
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

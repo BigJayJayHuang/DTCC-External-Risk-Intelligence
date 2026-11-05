@@ -1,0 +1,40 @@
+{
+  "document_id": "a31fbf5105784d5aa402e3cd283ce8f4ddd608d6e98dedef7a28abc44b690658",
+  "url": "https://files.dtcc.com/download/assets/25024-26/76ebcf82cca911f1b0bfeea7eae1d37b",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "1c06bee7e9bb1061239c4eaf5f69e647992a9381b524a816a5e7aa404303c8c0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_OW9j5K14EVP7FXIYj5ScB4",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for a single security (Eco Wave Power Global AB, CUSIP 27900N103). It is an administrative/operational notice with no risk angle and does not describe any outside market, regulatory, member stress, or infrastructure event matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4158,
+    "outputTokens": 108,
+    "totalTokens": 4266,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1781
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

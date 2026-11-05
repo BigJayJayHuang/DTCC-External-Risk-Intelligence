@@ -1,0 +1,40 @@
+{
+  "document_id": "8cf547360a89c4869687d0e9a2473c1f4140924ed622e836eb8c52dc2ab1a945",
+  "url": "https://files.dtcc.com/download/assets/25221-26/0dda7e1ad30411f19acc86f716da0f4d",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "d096c1b5de51d9f3fc071a45e373da62d39096f1da8a42104f1359d3ad319756",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_CGUfSZWb0WZqx8YnV512X3",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This article announces a postponement of the AnnounceDirect external launch date to 2027. AnnounceDirect is a DTCC internal product/system launch notice with no risk angle — it does not describe an outside market, regulatory, member, or infrastructure event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4096,
+    "outputTokens": 109,
+    "totalTokens": 4205,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1569
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

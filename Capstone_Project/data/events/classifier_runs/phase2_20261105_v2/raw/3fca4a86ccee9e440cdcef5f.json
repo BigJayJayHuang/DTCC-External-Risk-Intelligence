@@ -1,0 +1,40 @@
+{
+  "document_id": "16420f279d36cd0c98f8c6b3bde8bb233304aa8f3ed2e43b64a82706cbbf6141",
+  "url": "https://www.federalregister.gov/documents/2026/10/09/2026-20710/self-regulatory-organizations-investors-exchange-llc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "063052987209de724a0fe17667cf18a149d15d3f68c38897cb33dd86c161895a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_GEhNmI19bD4eolr23FVx0C",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This article is about IEX (Investors Exchange LLC) modifying the criteria to qualify for a reduced incremental fee under IEX Rule 15.110(a) and (c). This is an internal exchange fee rule change with no risk angle touching any DTCC process described in the card catalog. It does not describe a market event, member stress, cyber incident, settlement cycle change, or any other Step 1 trigger from the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4179,
+    "outputTokens": 138,
+    "totalTokens": 4317,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2027
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

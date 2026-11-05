@@ -1,0 +1,40 @@
+{
+  "document_id": "2fdb08e43b341226f57ea5fe189575eebf49dc3c8c2a7760d202d3afac11fdf1",
+  "url": "https://www.federalregister.gov/documents/2026/10/09/2026-20712/self-regulatory-organizations-nyse-american-llc-notice-of-filing-and-immediate-effectiveness-of-a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ca886c1eaf29772605511e11cc6de45ca41cd54501830544e1d523cd05089087",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_vXSDyFTl5TeOwVoMUpqAnQ",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes NYSE American LLC amending its options proprietary market data fee schedule to adopt fees for one-minute intra-day volume reports. This is a minor exchange fee schedule change for market data products and does not correspond to any card's Step 1 trigger (no Treasury/repo stress, no equity selloff, no settlement cycle change, no member stress, no cyber event, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4173,
+    "outputTokens": 125,
+    "totalTokens": 4298,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2063
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

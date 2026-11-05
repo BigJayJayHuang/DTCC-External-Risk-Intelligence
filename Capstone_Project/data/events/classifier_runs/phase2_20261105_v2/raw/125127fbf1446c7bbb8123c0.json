@@ -1,0 +1,40 @@
+{
+  "document_id": "0acacddf6d6e6efa995187c4c2ec64fe1bb0e4a7e584159baf56c09e21a2013e",
+  "url": "https://files.dtcc.com/download/assets/a9842/0484118cc99011f199e19ebdd6a8b805",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "a8955e310d02f961870dc2b085d9a76fc7678760b8e7bbb61eee00f0c07ecf97",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_bkn19mPMPuXdhUt9IbLWAH",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal rule filing notice (SR-NSCC-2026-011) about a procedural update to the Automated Customer Account Transfer Service (ACATS) for insurance and retirement products. It is a DTCC product/process rule submission, not an outside market, regulatory, member, or infrastructure event that maps to any card's Step 1 trigger. No external risk event is described."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4132,
+    "outputTokens": 133,
+    "totalTokens": 4265,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2038
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

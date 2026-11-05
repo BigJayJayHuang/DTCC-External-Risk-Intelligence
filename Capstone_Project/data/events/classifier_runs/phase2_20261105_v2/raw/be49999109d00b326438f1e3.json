@@ -1,0 +1,40 @@
+{
+  "document_id": "bd9437e663fc497dd0ca1b0332366cb720a595ae1e6fd6038fb0c7fc8f8bd3ee",
+  "url": "https://files.dtcc.com/download/assets/24781-26/4b0eb3f4c80111f1bb5cb2d85be937e7",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "f242d1b6c7c98f67b45fa52bf2ff293e1e74dc9364645b87393c410bfa6c45d1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_KS7ZwpFJpWrv64TTlGTh1x",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a tax relief corporate action for Banco Santander S.A. (CUSIP 05964H105) in Spain. It is a routine DTC corporate action notice with no risk angle and does not describe any outside market, regulatory, member stress, or infrastructure event matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4182,
+    "outputTokens": 116,
+    "totalTokens": 4298,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1895
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

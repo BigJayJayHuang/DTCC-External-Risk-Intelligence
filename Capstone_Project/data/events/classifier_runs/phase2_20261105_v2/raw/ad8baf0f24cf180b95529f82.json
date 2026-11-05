@@ -1,0 +1,40 @@
+{
+  "document_id": "8b2caa9f79d8199993e00cc16afca40e2fefb12667cf037874bb0eac2663bcfc",
+  "url": "https://www.fca.org.uk/news/press-releases/fca-calls-private-market-firms-manage-conflicts-interest-line-rapid-growth",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "2ab98e638e89e0eccb545f83458ca0526cd2fb530c43e1073c36a2fa4c1d8383",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_cHjqNjn6WywOCp1McjriYB",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article covers an FCA review of conflicts-of-interest management at UK private market firms (private equity, private credit, real estate). This is a UK regulatory supervisory finding about fund governance and investor protection — it does not describe any of the Step 1 world events in the card catalog (no Treasury/repo stress, no equity selloff, no clearing mandate milestone, no member default, no cyber incident, no settlement disruption, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4567,
+    "outputTokens": 136,
+    "totalTokens": 4703,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2461
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

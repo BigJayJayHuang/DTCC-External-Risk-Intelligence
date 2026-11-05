@@ -1,0 +1,40 @@
+{
+  "document_id": "238af67758282105b0e327d7ee76db0cfe1e6f20c7dcd5169c490c961bd8da95",
+  "url": "https://files.dtcc.com/download/assets/GOV2263-26/d5e15cf2cd8811f1ac68a61d65ffdea5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "0fe7d28c7f902fdf38deb3ea086d27b2e615e0151133907c39e928b99b4af85f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_4V00OGbthmhUdq2sbpxcdR",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new Agent Clearing Member (Barclays Bank PLC/ACM Omnibus) joining FICC GSD. It is a routine membership/onboarding administrative notice with no risk event described — no stress, no default, no regulatory mandate milestone, no market disruption. While it touches FICC-GSD-11 (Agent Clearing Service), the notice itself is a product/membership announcement with no risk angle, not an outside event that a card's Step 1 describes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4144,
+    "outputTokens": 160,
+    "totalTokens": 4304,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2601
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

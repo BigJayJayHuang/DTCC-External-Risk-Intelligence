@@ -1,0 +1,40 @@
+{
+  "document_id": "84a52083806c30ad2a727aecc338b6715c8ad3a9a8419f640afbfd8e32f4f04f",
+  "url": "https://files.dtcc.com/download/assets/25032-26/4ff2559cd7ab11f1b67e0a6d464d813b",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "674eb000cbc7e489f3d6a7d6460045299639e81dea24c5ec1589c172142b819a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_UAj3MLz50qwThYFwxmeSCj",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for a specific security (HANNSTAR DISPLAY CORP - 144A, CUSIP 410698104). It is an administrative/operational notice with no risk angle and does not describe any outside market, regulatory, member stress, or infrastructure event that matches any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4159,
+    "outputTokens": 113,
+    "totalTokens": 4272,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1877
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

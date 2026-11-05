@@ -1,0 +1,40 @@
+{
+  "document_id": "8c24ba6208a3f214269649056b62984f1b54db64e64bd3986a48faaabe665fb7",
+  "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22263/self-regulatory-organizations-nyse-national-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "9b6448b5c1b233643098cafeedfa150db836b00f9a67ead95b3500af524a70b9",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_oViWCFEjGek6hu3tTiQZQW",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a notice of a proposed rule change to amend the bylaws of NYSE National, Inc. This is an internal exchange governance/administrative matter with no market event, member stress, cyber incident, or other Step 1 trigger described in any card. The article is headline-only and contains no substantive content that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4124,
+    "outputTokens": 117,
+    "totalTokens": 4241,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1950
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

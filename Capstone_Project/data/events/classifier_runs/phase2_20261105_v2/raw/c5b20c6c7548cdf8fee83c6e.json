@@ -1,0 +1,40 @@
+{
+  "document_id": "ba4425790ffc9c62cd4deb21337c61eea09b71de6dcbfcc5ada913975f3025f5",
+  "url": "https://www.fca.org.uk/news/statements/libor-euribor-related-bans",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "a0e6f39017d13289c9833658dd09c3390691fb9354d5dcb99c5af9333d06bc32",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_DNJKUzvuTN8SGrlVJkvcU8",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes the FCA revoking regulatory bans on individuals whose LIBOR/EURIBOR manipulation convictions were overturned by UK courts. This is a legal/enforcement housekeeping action with no connection to any card's Step 1 trigger — no market stress, no clearing mandate, no member default, no infrastructure event, no cyber incident."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4196,
+    "outputTokens": 119,
+    "totalTokens": 4315,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1980
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

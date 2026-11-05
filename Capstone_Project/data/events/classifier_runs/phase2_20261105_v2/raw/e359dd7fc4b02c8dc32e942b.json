@@ -1,0 +1,40 @@
+{
+  "document_id": "326b1a180b6c950df42d5a260b3cce8b7c9293b752e6bd89587d7058df44725b",
+  "url": "https://www.fca.org.uk/news/speeches/building-future-finance-age-ai",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "6628a5bb8aaee4840191a32af15c1c6ce81be832000aa6107517651348d1a1d3",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_AqsBDUUCcbrAEy8uhVU86q",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a speech by an FCA official about AI in financial services, the Mills Review, and consumer protection around AI-generated financial advice. It describes no outside market, regulatory, member, or infrastructure event that maps to any card in the catalog. No Treasury/repo stress, no clearing mandate milestone, no member stress, no cyber incident, no settlement disruption — only general FCA policy commentary on AI adoption."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4662,
+    "outputTokens": 128,
+    "totalTokens": 4790,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2489
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

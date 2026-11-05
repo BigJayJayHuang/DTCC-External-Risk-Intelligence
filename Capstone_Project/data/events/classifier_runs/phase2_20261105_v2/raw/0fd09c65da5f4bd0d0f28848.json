@@ -1,0 +1,40 @@
+{
+  "document_id": "0972817f21237dca7c9be84a62e6b002e3a0fc842e947d78223d4a5ca3c2c725",
+  "url": "https://files.dtcc.com/download/assets/25202-26/a2a98db0d86811f18aee7e06a7e389d7",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "d739c7e58569c8dd73a5d3d26dda3133fca681e908ddd5a4725f2f74ba57f93b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_08xWh6NGMMS5TvlRju4bj6",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about a tax relief corporate action for Hennes & Mauritz (H&M) stock, covering record date, payable date, and instruction deadlines. It describes an administrative corporate action notification, not an outside market, regulatory, member stress, or infrastructure event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4231,
+    "outputTokens": 114,
+    "totalTokens": 4345,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1997
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

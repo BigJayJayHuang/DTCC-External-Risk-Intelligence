@@ -1,0 +1,40 @@
+{
+  "document_id": "634edda6cfcbbcdf927f1ae30ba59dbd909548ac17bb56348bed2311c648012f",
+  "url": "https://files.dtcc.com/download/assets/24456-26/dab4bf20c3e811f18c6c2a109482d4f7",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "5376d9be7186d56e54b09dafe76a8a537d4a29f2ae610261e27b93ea4acdd52c",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_rq5tkPxlNfP6bl9fbTN9CD",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for a single security (AGILYX ASA, CUSIP 00853C101). It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that matches any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4148,
+    "outputTokens": 102,
+    "totalTokens": 4250,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1748
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

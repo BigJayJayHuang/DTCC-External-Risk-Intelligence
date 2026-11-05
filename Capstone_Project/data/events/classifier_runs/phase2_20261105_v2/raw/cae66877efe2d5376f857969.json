@@ -1,0 +1,40 @@
+{
+  "document_id": "e1883a1343d2a4d63813218378bcd9e162c8a9f1c5e0a76f1d47f0554e33ee4b",
+  "url": "https://www.federalregister.gov/documents/2026/11/03/2026-22377/self-regulatory-organizations-texas-stock-exchange-llc-notice-of-filing-and-order-granting",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "b3a7ca00018154946739421aa0e21f094da5ac82fa37e764a704605ab31efc7a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_j3IHaAolKzhT0b8RS0ZFpf",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only notice about Texas Stock Exchange amending its rule on Commodity-Based Trust Shares. This is a minor exchange rule change with no connection to any card's Step 1 trigger (no Treasury/repo stress, no equity selloff, no settlement cycle change, no member stress, no cyber event, etc.). No DTCC process is touched."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4169,
+    "outputTokens": 121,
+    "totalTokens": 4290,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1966
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

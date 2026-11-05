@@ -1,0 +1,40 @@
+{
+  "document_id": "31ff319bc7af4905cfc642aed2faca8d7c7485857cada54fe3a29137f8caba97",
+  "url": "https://files.dtcc.com/download/assets/25131-26/f3a8b66ac3e511f1b02c76c53cdc9348",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "e0b56993cd58852e57326a0dfdae94a4a1b1028b35e866dd35ec0c9607f4b8a8",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_C0eoqYswvwqcU8RXsNGZgl",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal operational/product notice about DRS (Direct Registration System) transaction processing changes — moving DRS Profile Deposits, Withdrawal-by-Transfer, and Centralized Billing to SPA. It describes a procedural/system migration for DTC participants, not an outside market, regulatory, member stress, or infrastructure event that maps to any card's Step 1 trigger in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4204,
+    "outputTokens": 132,
+    "totalTokens": 4336,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2294
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

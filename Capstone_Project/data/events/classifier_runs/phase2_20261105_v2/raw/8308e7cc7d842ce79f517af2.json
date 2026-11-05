@@ -1,0 +1,40 @@
+{
+  "document_id": "a35457801af56b79191b7c03b7276ac4fae16dd407c4958f8ca49d6285f097ef",
+  "url": "https://files.dtcc.com/download/assets/25197-26/24af2482d17511f1ad4e4a81cd029cdf",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "3be2b32fab216311f8b984c62c90f7c11a7b9f0655c4e9efe316bae213a0fcab",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Kfs6nWjKG4MOfv650Kl7Vv",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal participant notice announcing the primary account activation of Mesirow Financial, Inc. (#0727). It is an administrative/operational notice about a single participant onboarding action, not an outside market, regulatory, member stress, or infrastructure event described by any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4117,
+    "outputTokens": 107,
+    "totalTokens": 4224,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1827
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

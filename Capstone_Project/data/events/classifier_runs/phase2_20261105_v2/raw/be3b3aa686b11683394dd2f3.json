@@ -1,0 +1,40 @@
+{
+  "document_id": "f146c201c696abe568590f22a697d489af93b5df1845de42027444cce281d0c0",
+  "url": "https://www.federalregister.gov/documents/2026/10/16/2026-21135/self-regulatory-organizations-new-york-stock-exchange-llc-notice-of-filing-and-immediate",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "acbfd47d8c52a9a48b95c901bbcb6917f009074781e891a3c4b2385d12f8186b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_pTcTlY8LYYxGCNNMrhJ2vs",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a headline-only notice of a proposed NYSE rule change amending Rule 7.18 on trading halts. While trading halts could theoretically relate to XE-DISRUPT, this is a routine administrative/regulatory filing to amend the procedural rules governing how trading halts are conducted — not a report of an actual exchange halt, declared emergency, or unscheduled market closure. There is no outside event described that touches a DTCC process; it is a self-regulatory organization rule amendment with no risk event content."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4135,
+    "outputTokens": 159,
+    "totalTokens": 4294,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2575
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

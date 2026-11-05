@@ -1,0 +1,40 @@
+{
+  "document_id": "ebcedbc40897c53663d3dfee6353dd7c11449ced1729ea75431be7fc4c581757",
+  "url": "https://www.federalregister.gov/documents/2026/10/14/2026-20921/self-regulatory-organizations-texas-stock-exchange-llc-notice-of-filing-and-immediate-effectiveness",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "9ac73a6ff10e9b8bcf8bdfa7a5ea0eb903172c1ee5251ab9bfc9ce2cdb36befb",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_CUHuCOIun7d87rTwSKibbE",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a Texas Stock Exchange LLC rule change to implement a Restricted Stock Units Incentive Program — an internal compensation/incentive program at a new exchange. This does not match any card's Step 1 trigger (no market stress, no regulatory mandate affecting DTCC processes, no member default, no cyber event, no settlement cycle change, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4127,
+    "outputTokens": 118,
+    "totalTokens": 4245,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2095
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

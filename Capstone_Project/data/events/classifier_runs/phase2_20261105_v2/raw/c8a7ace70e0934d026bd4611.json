@@ -1,0 +1,40 @@
+{
+  "document_id": "bf1a5e29f00eb4f64a419bbece9c770e97fb8e065cd7b8300968c9b32228e11a",
+  "url": "https://www.federalregister.gov/documents/2026/10/16/2026-21180/agency-information-collection-activities-submission-for-omb-review-comment-request-extension-rule",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "dbfdbe9b2f1d1f7a5d9d58c880b4dcf0ad2b9c578324518cf0c4857d2bec348a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Ag4bxj77EarvMoItmcxW3U",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This article is an OMB paperwork review notice for Rule 30b1-7 and Form N-MFP (money market fund portfolio reporting). It is an administrative information collection extension with no new market event, regulatory action, or risk development that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4122,
+    "outputTokens": 105,
+    "totalTokens": 4227,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1858
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

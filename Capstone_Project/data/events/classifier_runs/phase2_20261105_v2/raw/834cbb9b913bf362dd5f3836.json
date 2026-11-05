@@ -1,0 +1,40 @@
+{
+  "document_id": "8a3d70dc8a5ca02b167c1d021e4837fc3153c4aa1d90afc252bce35f3d2a3f53",
+  "url": "https://files.dtcc.com/download/assets/a9841/2aa4398ed2ee11f1b8a1bead91ba6220",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ef7a2b7ffdf8c92fb5ed757f74a60701e4bec5e83053c9c488cd1ae6406e0599",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_QTBCO9H3VNRF3BBu8JAKPT",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new go-live date for CNS Modernization. It is a product/operational announcement from DTCC itself with no substantive detail provided beyond the title and summary. The article text contains no information about an outside market, regulatory, member, or infrastructure event that maps to any card's Step 1 trigger. It is not an outside risk event."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4097,
+    "outputTokens": 128,
+    "totalTokens": 4225,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2093
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

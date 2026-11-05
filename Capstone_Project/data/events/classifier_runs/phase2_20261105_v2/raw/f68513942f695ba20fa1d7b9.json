@@ -1,0 +1,40 @@
+{
+  "document_id": "9e2d88aed1742c4e45c9a3b41610e222c5ac504b09f240303f87b4d0d256ffc2",
+  "url": "https://files.dtcc.com/download/assets/A9846/62cbb7dccf2011f1871792c6fd34c242",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "95d1604d1d81459628533c6c2021f3ef5d6c5922e560a18571f0074c3cfd8865",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_SvxHbioOVGvfd5wKI747DK",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC/NSCC operational notice announcing a new bilateral affirmation requirement for ETF create/redeem instructions. It is an internal NSCC process/product rule change with no risk angle matching any card's Step 1 trigger (no market stress, no member failure, no cyber event, no settlement cycle change, no clearing mandate milestone, etc.). No card in the catalog covers ETF create/redeem affirmation workflow changes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4168,
+    "outputTokens": 141,
+    "totalTokens": 4309,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2296
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

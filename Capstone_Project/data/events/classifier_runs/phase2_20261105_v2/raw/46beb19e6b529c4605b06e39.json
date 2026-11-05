@@ -1,0 +1,40 @@
+{
+  "document_id": "06ac7810ce6909ef812dd13052f8fd4e2d9fba249cef0aad38f58f92e7a2cad8",
+  "url": "https://www.federalregister.gov/documents/2026/10/26/2026-21837/self-regulatory-organizations-miax-pearl-llc-notice-of-filing-and-immediate-effectiveness-of-a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "f89c47f1ff361e5c709c5120a076cbc5956630a695a268da7b38f3b42a4791ae",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_JjOBT2vGUq5ij4urGZfSPc",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a routine SEC notice about MIAX PEARL LLC amending its equities fee schedule. This is an exchange fee rule change with no risk angle touching any DTCC process described in the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4146,
+    "outputTokens": 87,
+    "totalTokens": 4233,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1501
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

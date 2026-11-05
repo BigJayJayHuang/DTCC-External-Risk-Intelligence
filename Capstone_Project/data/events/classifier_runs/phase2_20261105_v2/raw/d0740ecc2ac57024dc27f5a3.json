@@ -1,0 +1,40 @@
+{
+  "document_id": "c6c0f7cee4025fde98ed9e44ba0730332346b3aea5f4fdd1e791d843487cd0c1",
+  "url": "https://files.dtcc.com/download/assets/25021-26/07e045d0cca111f19ea6eea7eae1d37b",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "f261917a7308cd4b30ec33e72b135800f99177203adb1bf41cc344ae31620f9d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_nIFUh2EbFUCz4TAa3WxcpI",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for a single security (Top Glove, CUSIP 890534100). It is an administrative/operational notice with no risk angle and does not describe any outside market, regulatory, member stress, or infrastructure event matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4156,
+    "outputTokens": 105,
+    "totalTokens": 4261,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1915
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "8ef4e58a44729c36149e190f00ad7afd5c282010963fe59a0a4d9dcb8e56e00a",
+  "url": "https://files.dtcc.com/download/assets/GOV2254-26/30a0140ac73811f1beef4ee3aef81876",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "2bccdf7a62eee6fc5f43aaa6d85601e6e9b5fadcc6615ed19afd0c4efcbd1308",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_PYjVdly2Hr9RhVlwZi3jCN",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new participant (Sumitomo Mitsui Banking Corp/Manila Branch) joining the FICC GSD netting system. It is an administrative membership notice with no outside risk event — no market stress, regulatory mandate, member distress, or infrastructure disruption described. No card's Step 1 trigger is met."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4145,
+    "outputTokens": 122,
+    "totalTokens": 4267,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2022
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

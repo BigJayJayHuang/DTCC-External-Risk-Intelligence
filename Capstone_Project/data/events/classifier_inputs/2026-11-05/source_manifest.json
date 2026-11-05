@@ -1,0 +1,11 @@
+{
+  "release_url": "https://github.com/BigJayJayHuang/DTCC-External-Risk-Intelligence/releases/tag/data-latest",
+  "asset_url": "https://github.com/BigJayJayHuang/DTCC-External-Risk-Intelligence/releases/download/data-latest/Capstone_Project_Complete.zip",
+  "asset_updated_at": "2026-11-05T05:25:44Z",
+  "asset_sha256_advertised": "sha256:1f1a2d469a66c70298bee8761361f71df48cb01c938232394d6ee5c94ff26e42",
+  "entry": "Capstone_Project/capstone_database/exports/news.csv",
+  "entry_crc_verified": true,
+  "full_archive_digest_verified": false,
+  "news_csv_sha256": "0a9f6957ee1d4edc7afb0676f743a721a2716d50871467884e6354f9dce6a221",
+  "news_csv_bytes": 851080
+}

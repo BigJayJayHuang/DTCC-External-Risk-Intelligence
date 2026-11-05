@@ -1,0 +1,40 @@
+{
+  "document_id": "f9b9cf76d7a694d8d456e46aff261bb2a3ecff41fc6347a3717074ffcd720099",
+  "url": "https://www.bis.org/media-releases/20261029-cpmi-publishes-analysis-how-central-banks-support-payment-system-safety-and-efficiency-and",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "cdb77e52ebc8166b12dc19158c2c66bb3fc8713a45e7e4e694020b672f501edd",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_AFu5tItKtEG6emuDXRig3U",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a BIS/CPMI report on how central banks support payment system safety and efficiency amid technological innovation and new payment service providers. It does not describe any specific market event, regulatory action, member stress, or infrastructure disruption that maps to any card in the catalog. It is a general analytical/policy publication with no direct risk angle for DTCC processes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4153,
+    "outputTokens": 120,
+    "totalTokens": 4273,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1854
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

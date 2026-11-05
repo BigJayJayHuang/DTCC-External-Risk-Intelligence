@@ -1,0 +1,40 @@
+{
+  "document_id": "11c6c35fb88229e5436c04d5f2ad007882febbbfb25d0014b52bd4f493c0af0d",
+  "url": "https://www.sec.gov/newsroom/press-releases/2026-108-sec-amf-announce-supervisory-mou-enhance-cooperation-investment-advisers-investment-service",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "cd82fdfc3de5519c9bbfef117b3b5f2b5050c154208db197d1f8c241f77970d7",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_9SLGGE9pX1lXLy6tnP9V9o",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a bilateral supervisory MOU between the SEC and the French AMF for information-sharing on investment advisers and investment service providers. This is a cross-border regulatory cooperation agreement with no connection to any card's Step 1 trigger (no market stress, no clearing mandate, no member default, no cyber event, no settlement disruption, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4166,
+    "outputTokens": 118,
+    "totalTokens": 4284,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1954
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

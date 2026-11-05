@@ -1,0 +1,40 @@
+{
+  "document_id": "ca2c9432382d12a79d2867bbdddd34a8e343858381c5f6beedbdd7d48e32c176",
+  "url": "https://files.dtcc.com/download/assets/25165-26/542c9e98d79611f1aa7d22211f7bc0cd",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "3cee7ddc0e97c53018ed413922299ea6e7283c79a65408a4700d744d5ed7407a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_UO75ieuKZ3TnxF8tK0WMTP",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about a tax relief/dividend corporate action for Eaton Corporation PLC (CUSIP G29183103) with Irish tax relief at source. It is an operational/administrative notice about a specific corporate action event, not an outside market, regulatory, member stress, or infrastructure event described by any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4229,
+    "outputTokens": 117,
+    "totalTokens": 4346,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2256
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

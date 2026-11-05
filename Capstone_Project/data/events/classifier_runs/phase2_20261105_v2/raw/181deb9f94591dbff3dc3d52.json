@@ -1,0 +1,40 @@
+{
+  "document_id": "8d7396dfee0a48227c8a3ab4679587aabc51e0c1d5c33417a6aa36135d58ab86",
+  "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22260/self-regulatory-organizations-nyse-texas-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "0a3e8bd4e5cf47eb94230abe95fad6bb903c5a25128a869bb51e7f0423dd3192",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_P6ETIZJu9hNHs6pltyxbMb",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a notice of a proposed rule change to amend the bylaws of NYSE Texas, Inc. This is an internal exchange governance/administrative matter and does not describe any outside market, regulatory, member stress, infrastructure, or cyber event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4129,
+    "outputTokens": 100,
+    "totalTokens": 4229,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1696
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

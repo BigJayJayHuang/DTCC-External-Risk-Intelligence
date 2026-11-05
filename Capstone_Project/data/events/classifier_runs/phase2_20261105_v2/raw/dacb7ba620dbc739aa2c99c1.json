@@ -1,0 +1,40 @@
+{
+  "document_id": "0d84bbab316fddb29a8359e71c6716790cbc3267e1ab0a0a74ba0b55190e00b7",
+  "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261009a.htm",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "2d4cae8c06e2218b5759db090115627a545809355338d526bd9ebaeb20f496e0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_sbqfoJI7b9mmB8jAFvhUbV",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a Federal Reserve press release about the 2025 Survey of Consumer Finances, a household wealth/income survey. It describes no market event, regulatory action, member stress, infrastructure issue, or cyber incident that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4105,
+    "outputTokens": 97,
+    "totalTokens": 4202,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 6572
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "e9125648fbc842c6ef19eec4d000af56e45cbca17c9f3a0427f9fa123f4ac156",
+  "url": "https://www.sec.gov/newsroom/press-releases/2026-104-sec-proposes-expanding-securities-eligible-cross-trading-registered-funds",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "d5a4ce1f0a9d914f15046ef85babd893075a0a374a037119785d2387f2a7a90e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_NX2Ia1GSknkdPW2N5CltEw",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article describes an SEC proposal to expand securities eligible for cross trading between registered funds and their affiliates under the Investment Company Act. This is a fund-to-fund transaction rule change with no direct connection to any card's Step 1 trigger — it does not involve Treasury clearing, repo stress, equity selloffs, settlement cycles, member stress, cyber events, or any other catalogued risk event that touches a DTCC process."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4123,
+    "outputTokens": 132,
+    "totalTokens": 4255,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2152
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

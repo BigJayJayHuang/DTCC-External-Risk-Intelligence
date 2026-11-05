@@ -1,0 +1,40 @@
+{
+  "document_id": "890f086ced8c43dfc1c07305b6c3d4051d5eb5fcedfd19b989dbe09a61410011",
+  "url": "https://files.dtcc.com/download/assets/TIW864/96c7c582d6c611f1bc617269ad7e0bc8",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "a4a2b728df5fa7eaf344e89fe23fb9d60a1434c8e70f025a4cf0e604b72fba4b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_7ELgovHNZCBYw2gOMlHAyf",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Trade Information Warehouse (TIW) operational notice about successor event processing for PICARD BONDCO S.A. It is an internal/administrative DTCC notice with no risk angle matching any card's Step 1 trigger — it does not describe a market event, regulatory change, member stress, cyber incident, or infrastructure disruption."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4106,
+    "outputTokens": 121,
+    "totalTokens": 4227,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1727
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

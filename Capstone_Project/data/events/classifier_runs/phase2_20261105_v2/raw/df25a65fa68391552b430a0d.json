@@ -1,0 +1,40 @@
+{
+  "document_id": "ff5084ebbc0737c932b67ebf97f5e83159e6420c8d80d77138e493866a298270",
+  "url": "https://www.esma.europa.eu/press-news/esma-news/carlo-comporti-appointed-chair-european-securities-and-markets-authority",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "f2f00d12f6357cc8608faa9dbdd513a1ba959c34e1415d075ba8b48bf71c2e7e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_V86zjcH4BSHGCQeHE151K3",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article announces the appointment of Carlo Comporti as Chair of ESMA (EU regulator). This is a personnel/leadership change at a European regulatory body with no direct connection to any DTCC process described in the card catalog. No market event, regulatory mandate, member stress, or infrastructure disruption is described."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4092,
+    "outputTokens": 108,
+    "totalTokens": 4200,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1883
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

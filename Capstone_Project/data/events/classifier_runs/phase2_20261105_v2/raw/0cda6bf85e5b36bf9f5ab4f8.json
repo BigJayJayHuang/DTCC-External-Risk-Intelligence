@@ -1,0 +1,40 @@
+{
+  "document_id": "6c7a6eda4d8abd9493c8d34d76fadcffd3e14f7ee70adb991e9863e8054c0670",
+  "url": "https://files.dtcc.com/download/assets/25152-26/31231a62c81e11f197eb72a0c233d959",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "733163154f81f7b9b6573d52aa3314be776c75b13fd5c3838c85de745ecd5db3",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_HPE49V1RetqPqWakAOV0zj",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal holiday schedule notice for Veterans Day 2026. It is an operational/administrative notice with no risk angle — no outside market event, regulatory action, member stress, or infrastructure disruption described. No card in the catalog covers holiday schedule announcements."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4127,
+    "outputTokens": 100,
+    "totalTokens": 4227,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1731
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

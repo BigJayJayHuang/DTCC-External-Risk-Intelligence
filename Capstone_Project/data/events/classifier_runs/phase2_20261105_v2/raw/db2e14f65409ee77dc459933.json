@@ -1,0 +1,40 @@
+{
+  "document_id": "a6d0f7e7539384ab2dfae54edc527abe33f3bcac0f944cb4be21fd2c7f1d8296",
+  "url": "https://files.dtcc.com/download/assets/25136-26/adb51492ccae11f18c6adef68f5bd16c",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "e084637930b435a0a8d26d555f1b8b4f3b90029bc066ee903850baa9d0165ab0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_dINNIh6o2UCXpWpVjfyKZz",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about a tax relief / corporate action (dividend payment) for Intesa Sanpaolo S.p.A. securities. It describes a standard CA Web instruction deadline for a payable-date event and does not describe any outside market, regulatory, member-stress, infrastructure, or cyber event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4230,
+    "outputTokens": 121,
+    "totalTokens": 4351,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2183
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

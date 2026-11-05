@@ -1,0 +1,40 @@
+{
+  "document_id": "b945a18a65a7d0a3f51472207be7d0bb3bc014be51c2f57e30e7eda3f544e481",
+  "url": "https://www.fca.org.uk/news/news-stories/fca-encourages-former-verus-financial-services-limited-customers-check-if-they-can-claim-fscs",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "6b0d3617711d781fff9e7a1a1a21a607c8d638ec93a255ce832af85811dd35b9",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_cadggcLuN4fVq08uLW79YG",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about the FCA encouraging former customers of Verus Financial Services Limited (a UK independent financial adviser) to file compensation claims with the FSCS. This is a small UK retail advisory firm with no connection to DTCC clearing processes, Treasury markets, repo, equities settlement, or any other card in the catalog. No card's Step 1 trigger is matched."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4290,
+    "outputTokens": 122,
+    "totalTokens": 4412,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1929
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

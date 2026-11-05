@@ -1,0 +1,40 @@
+{
+  "document_id": "859c9afb0ad2971cd636ccfb4d4a177ffd9ddec634839144d4d45ce354bcd151",
+  "url": "https://www.federalregister.gov/documents/2026/10/16/2026-21137/self-regulatory-organizations-the-nasdaq-stock-market-llc-notice-of-filing-and-immediate",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "a343ad1e31d666adf69fb59dd03b8e47a07ed77e73952f291e6b291f1f1826bb",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_fAhIJC8EQRoF9HEmFDDADB",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a Nasdaq rule change for halting/opening trading in ETPs during 23/5 trading hours. This is an exchange operational/procedural rule filing, not an outside market, regulatory, member, or infrastructure event that maps to any card in the catalog. The closest card might be ECS-SET-01 (extended trading hours) or XE-DISRUPT (exchange halt), but the article is about Nasdaq setting internal halt/open procedures for 23/5 sessions — it is a procedural rule amendment, not a new event triggering settlement cycle changes or a market disruption. No risk-relevant outside event is described."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4189,
+    "outputTokens": 182,
+    "totalTokens": 4371,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3165
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

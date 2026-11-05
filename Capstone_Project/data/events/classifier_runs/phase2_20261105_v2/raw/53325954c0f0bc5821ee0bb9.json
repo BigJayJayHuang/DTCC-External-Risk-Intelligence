@@ -1,0 +1,40 @@
+{
+  "document_id": "96e8d61e8966e25f26052e2e605ef9f5efbb0b7e0f7ca8c78fc9ee4bb49a2ca7",
+  "url": "https://www.federalregister.gov/documents/2026/10/26/2026-21744/self-regulatory-organizations-cboe-edgx-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "cbee1c375ab53ec47c0ff1b41001c7d3c830a6f9d7d1b76ef2cd079ad03cd971",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_4z3c8Oz1a6HgYNx4VMsjjT",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This article is a routine SEC notice about Cboe EDGX Exchange amending its Rule 14.1 regarding information circular requirements for listed products. It does not describe any market event, member stress, cyber incident, settlement cycle change, or other outside event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4161,
+    "outputTokens": 107,
+    "totalTokens": 4268,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1698
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

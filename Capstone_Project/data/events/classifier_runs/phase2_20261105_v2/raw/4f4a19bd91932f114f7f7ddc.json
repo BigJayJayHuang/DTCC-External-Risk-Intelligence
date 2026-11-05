@@ -1,0 +1,40 @@
+{
+  "document_id": "a0e11d8a75d2a1ef47de0bcd9539e2b976b97a8357b4a71636c338538f08c41a",
+  "url": "https://www.federalregister.gov/documents/2026/10/19/2026-21376/further-definition-of-swap-to-exclude-casino-style-gambling-products",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "f46a0675a1fd31404f4167892c19819eb4bca5063574ac1221ae564e0532d05a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_cZzInxs9XZZ7bA4QeW9ldQ",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article describes a CFTC interim final rule excluding casino-style gambling products (sportsbook wagers, casino games) from the 'swap' definition. This does not match any card's Step 1 trigger — it has no bearing on Treasury markets, repo, MBS, equity settlement, member stress, cyber incidents, or any other DTCC process described in the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4161,
+    "outputTokens": 126,
+    "totalTokens": 4287,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1921
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

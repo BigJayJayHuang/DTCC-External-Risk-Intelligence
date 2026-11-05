@@ -1,0 +1,40 @@
+{
+  "document_id": "02e27d1f9f52ff01b8321a31ba7ca4b5c429dfda10e0b66284f6309bbffc402c",
+  "url": "https://files.dtcc.com/download/assets/25141-26/362d23fecef411f1a0b3269dbf3d41b0",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "1022fbe056e3bfa863c631ea93b33e65c33f6c480a7cafdd01344593cc67d701",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_MxvexJPuKixyEZCgmARedR",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about a corporate action (dividend/tax relief) for an unsponsored DR program (Kobe Bussan Co Ltd, CUSIP 499887107, depositary Citi, Tax Relief Country Japan). It is an operational/administrative notice with no market event, regulatory change, member stress, or infrastructure risk that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4210,
+    "outputTokens": 128,
+    "totalTokens": 4338,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2190
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

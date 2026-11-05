@@ -1,0 +1,40 @@
+{
+  "document_id": "64a6decfc3ee7cf7992bdff7c75987c7f6eb3be2219315500f27e0d522a44ce7",
+  "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22259/self-regulatory-organizations-national-securities-clearing-corporation-notice-of-filing-and",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "7404deb78661aeadd1c3f34c13314594591eed298a4f73b3bdde0d527eb11225",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_MQhdzYrobA7PFYYx6vzqJe",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is an NSCC internal rule change (proposed rule filing) concerning the ACATS account transfer process for insurance and retirement products. It is a DTCC/NSCC self-regulatory organization rule filing, not an outside market, regulatory, member, or infrastructure event that maps to any card's Step 1 trigger. No external stress event, market disruption, member failure, or clearing mandate milestone is described."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4140,
+    "outputTokens": 132,
+    "totalTokens": 4272,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2320
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

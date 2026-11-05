@@ -1,0 +1,40 @@
+{
+  "document_id": "9ee88db618d0d839f93fd86f474117f3f3ffbd80e9458d326cf0a0c105b365d9",
+  "url": "https://files.dtcc.com/download/assets/25185-26/a2493c66ccc511f1a554066af7203eca",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "edba9a5db655d760fd89aa96b9d696b9e9717046d5bc8aceac4f5935794d329f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_jXKDDRuMCmKY1z1pvXzKa6",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for ioneer Ltd (CUSIP 46211L101), issued by Bank of New York Mellon. It is an administrative/operational notice with no risk angle and does not describe any outside market, regulatory, member stress, or infrastructure event matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4150,
+    "outputTokens": 111,
+    "totalTokens": 4261,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2015
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

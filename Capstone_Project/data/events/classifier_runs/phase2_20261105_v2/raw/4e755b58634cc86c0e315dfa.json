@@ -1,0 +1,40 @@
+{
+  "document_id": "d6c4ac9ba4104c5a5373830f94a4755774512b8ac832a7cb254da999f0cfc7f6",
+  "url": "https://www.federalregister.gov/documents/2026/10/27/2026-21845/cboe-clear-us-llc-order-granting-an-application-as-amended-for-temporary-registration-as-a-clearing",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "7a4c453348cc1d7eab9b8e85f922688e06de181b43e0779f9684ee647f5916a5",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_hnZpjBBlZFAtBhVyIwdaej",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article reports the SEC granting temporary registration to Cboe Clear U.S., LLC as a clearing agency. This is a new entrant/competitor in the clearing space, not an outside market, regulatory mandate, member stress, or infrastructure event that maps to any card's Step 1 trigger. No DTCC process is directly touched by a competitor receiving registration."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4154,
+    "outputTokens": 120,
+    "totalTokens": 4274,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2178
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

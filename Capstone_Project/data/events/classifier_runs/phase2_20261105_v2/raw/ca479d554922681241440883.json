@@ -1,0 +1,40 @@
+{
+  "document_id": "6843e15ea2bca8fcc90ca5714fcd7852f01604a5b6e29cbc7173a64e1c3d85a6",
+  "url": "https://www.federalregister.gov/documents/2026/10/26/2026-21735/self-regulatory-organizations-the-options-clearing-corporation-order-approving-proposed-rule-change",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "c39a5c006df1178885b4950d1a52ea697e334ba496a69092a9fa0845707b9ea4",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_AwG68E1s00hfrB7Mx7yQvJ",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article concerns OCC (Options Clearing Corporation) amendments to clearing member standards. OCC is not DTCC, and options clearing member standards do not map to any of the 16 cards in the catalog, which cover FICC GSD/MBSD, NSCC, DTC, and cross-entity events. No card's Step 1 describes OCC rule changes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4129,
+    "outputTokens": 125,
+    "totalTokens": 4254,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1946
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

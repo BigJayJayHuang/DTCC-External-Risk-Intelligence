@@ -1,0 +1,40 @@
+{
+  "document_id": "580a7c13a3ef8e4f622d060343ec4d3c7b80fdd2d12c8f2982006caf62653d3b",
+  "url": "https://files.dtcc.com/download/assets/25149-26/4814ceacc7f911f1916dcec075c26091",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "336833c677c37443d9b364932d3e820a9eaa18f24e90c9c12c38a99ab81203b4",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_hFE1pVoOKsohJRmR3E76qF",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification (Important Notice) for Lotus Technology Inc (CUSIP 54572F101). It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4153,
+    "outputTokens": 104,
+    "totalTokens": 4257,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1899
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

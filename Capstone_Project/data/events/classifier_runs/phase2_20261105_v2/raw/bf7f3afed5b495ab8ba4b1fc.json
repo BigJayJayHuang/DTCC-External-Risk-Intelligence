@@ -1,0 +1,40 @@
+{
+  "document_id": "e68b407e57b5d54078981fcebc3ce1023f795bac0dda1052cc692a61468d5445",
+  "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261026~bde7b6d11a.en.html",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "8f6cdce828ca6989ff2c9b5b51e690f40c1e7f9550be1ae7b10f0e20dfba37fc",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_eWFhAo1oWFaWhpKVNPzwGv",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only ECB survey report on lending conditions for European enterprises. It does not describe any event matching the Step 1 triggers in the card catalog (no Treasury/repo stress, no equity selloff, no member default, no cyber incident, no settlement cycle change, etc.). It is a macroeconomic survey with no direct connection to any DTCC process."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4075,
+    "outputTokens": 123,
+    "totalTokens": 4198,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2106
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

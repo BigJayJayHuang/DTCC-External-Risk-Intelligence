@@ -1,0 +1,40 @@
+{
+  "document_id": "c9aac6a9a28ff26b592b021a9ab8a1c7290f22a01930b2423ed28d4f448fed0f",
+  "url": "https://www.esma.europa.eu/press-news/esma-news/esma-seeks-evidence-use-tokenised-collateral-central-clearing",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "1afc9aa795847cf3883e2d35a546da0ea0238dd30fc83fe9287ecfc1f021e605",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_0lN3YcTCv3WfKlFeaBjiDG",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about ESMA (EU regulator) seeking evidence on tokenised collateral in central clearing. This is an EU regulatory consultation with no direct connection to any DTCC process described in the card catalog. No card's Step 1 event (Treasury selloff, repo stress, equity selloff, member default, cyber incident, settlement cycle change, etc.) is triggered by an ESMA inquiry into tokenised collateral. The article text is also truncated and provides no further detail beyond the headline topic."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4104,
+    "outputTokens": 150,
+    "totalTokens": 4254,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2521
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "5129a133bf4bcb38f0650b5d4f97122c5c12f8d9dedfd3e1f020b27942ad16b1",
+  "url": "https://files.dtcc.com/download/assets/25195-26/929ac478d14411f194615e065d24f40e",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "63c0cb3d89545688db88563113499e5b4fbeaa2549866f956f49c2db59794d3e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_aFveQbaUE0C9J9BKmmdy2X",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about a Canadian tax relief distribution for Chemtrade Logistics Income Fund (CUSIP 16387P103). It is an administrative corporate action notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4231,
+    "outputTokens": 105,
+    "totalTokens": 4336,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1759
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "bd7c138aaac12873ed0da1a83345afba9d49f5bf126b35641d91c69ccdc3d450",
+  "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22262/self-regulatory-organizations-cboe-bzx-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "c0a0db535e38850fa50f9c06b22ab0727a9472397c927f027acf6b65681e7d3a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_bAiMp0KmfUMwwjw2sxUOx7",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a Cboe BZX Exchange rule change to adopt a 'Start Time Order Instruction' (amending Rule 11.1(a)). This is an exchange-internal order-handling rule change with no market stress, clearing mandate, member default, cyber, or settlement-cycle angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4161,
+    "outputTokens": 116,
+    "totalTokens": 4277,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1937
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "8fbf8f2c70f93e27338a8e79764473112094aa7549388096b8a656ceeb1eafaf",
+  "url": "https://files.dtcc.com/download/assets/25184-26/16423448ccc511f1bd32e694c785b3e1",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "034de6acac9fc9c353a78c2bf66e26e4c761077a54e118cfa9422c4c98f380d5",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_JbhCvNQ0U1tcpKAITu8IhN",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification (Important Notice) for a single security (Micware Co., Ltd., CUSIP 59490A100). It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4151,
+    "outputTokens": 110,
+    "totalTokens": 4261,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1858
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

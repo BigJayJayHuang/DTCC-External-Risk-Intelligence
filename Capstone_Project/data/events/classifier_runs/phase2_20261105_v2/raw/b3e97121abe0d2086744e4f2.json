@@ -1,0 +1,40 @@
+{
+  "document_id": "5aa71a92ad9db01ecc19d58bd500a12f758c59e6625a07d1414f2a5acb9dce9a",
+  "url": "https://files.dtcc.com/download/assets/25022-26/47a67b3acca111f1bd32e694c785b3e1",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "bcadba565c6bbeb7bf77ec73559fc5ba68e217694fa5fed4da265d9fe2a32628",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Ts0XNQkkHjPPQgwpt8Qp2w",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification (Important Notice) for a single security (ENGIE, CUSIP 29286D105). It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4152,
+    "outputTokens": 107,
+    "totalTokens": 4259,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1905
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

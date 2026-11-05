@@ -1,0 +1,40 @@
+{
+  "document_id": "c53ca988ac76be54d15c398bd863197829866342644fedd95d0b4245e5aec470",
+  "url": "https://www.esma.europa.eu/press-news/esma-news/esmas-third-sanctions-report-highlights-need-greater-convergence-enforcement",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "c18e8289b7768ad27fbd1ba1fffa13cac970cc08b44dec9f3ecb76a08a79c146",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_CpzwdhzeJsQDwqY40xqjwS",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about ESMA's third Sanctions Report on enforcement convergence in EU financial markets. This is an EU regulatory enforcement/convergence topic with no connection to any DTCC process described in the card catalog (no Treasury clearing, repo stress, equity selloff, member default, cyber event, settlement cycle change, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4098,
+    "outputTokens": 112,
+    "totalTokens": 4210,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2035
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

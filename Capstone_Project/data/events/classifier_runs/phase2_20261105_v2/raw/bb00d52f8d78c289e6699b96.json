@@ -1,0 +1,40 @@
+{
+  "document_id": "a80e7bd9867c1572c743c8d8f06e8e226e631a676d83a1c09bf03fad7f9dbbe6",
+  "url": "https://www.federalregister.gov/documents/2026/11/03/2026-22374/self-regulatory-organizations-nyse-arca-inc-notice-of-filing-and-immediate-effectiveness-of-proposed",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "81c56ef822f0d00312e7cc0e5ecfe15bba947ad67a292a68a434747e454a3d9b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Exmj72YmwDB74GJZf1WTFo",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes NYSE Arca filing to list shares of the Bitwise 10 Crypto Index ETF under a generic listing rule. This is a routine ETF listing notice with no risk angle matching any card's Step 1 trigger — no Treasury/repo stress, no settlement cycle change, no member stress, no cyber event, no market disruption, etc."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4179,
+    "outputTokens": 120,
+    "totalTokens": 4299,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1981
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

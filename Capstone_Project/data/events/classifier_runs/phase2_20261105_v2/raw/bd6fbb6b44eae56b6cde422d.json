@@ -1,0 +1,40 @@
+{
+  "document_id": "ebc5712a7fa0edbc5b78ff9781e6e377bb84378f2553a36c8a49163c3358038b",
+  "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22454/self-regulatory-organizations-nasdaq-phlx-llc-notice-of-filing-and-immediate-effectiveness-of-a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "442081d5a260d23570041f86a6df79d57e90b3943c6de3d5a94fe4f351f0aeb8",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_M1R5qHo5ReLamEZem0Lgg7",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This article describes a Nasdaq PHLX rule change to delete obsolete references to the CORE FIX Order Entry Protocol in its transaction fee schedule. It is a minor administrative/housekeeping rule filing by an exchange and does not describe any outside market, regulatory, member stress, infrastructure, or cyber event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4189,
+    "outputTokens": 117,
+    "totalTokens": 4306,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1999
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

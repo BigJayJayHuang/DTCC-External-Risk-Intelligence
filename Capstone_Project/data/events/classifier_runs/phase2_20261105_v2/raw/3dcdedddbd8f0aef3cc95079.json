@@ -1,0 +1,40 @@
+{
+  "document_id": "480dce6dac8b206767416f230bdc54e8d02d83916522367a063b36cba892b11e",
+  "url": "https://files.dtcc.com/download/assets/25181-26/489a33f2ccc311f1b8d2e694c785b3e1",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "17ba74b93e38c9eed4463c4b2244061d68812b8411dc9f370476332a247c72cc",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_MoOZp7PeubNb2Ufj5yHmGA",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for a single security (Nano Dimension, CUSIP 63008G203). It is an administrative/operational notice with no risk angle and does not describe any outside market, regulatory, member stress, or infrastructure event matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4152,
+    "outputTokens": 106,
+    "totalTokens": 4258,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1925
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

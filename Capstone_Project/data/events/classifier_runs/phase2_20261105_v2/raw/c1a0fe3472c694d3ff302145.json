@@ -1,0 +1,40 @@
+{
+  "document_id": "054df8328a9b1c921c14e3764bceba1a4e285e0cd4a4360057f1ac9aee934bb4",
+  "url": "https://www.federalregister.gov/documents/2026/10/16/2026-21216/agency-information-collection-activities-submission-for-omb-review-comment-request-extension-form",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "663335d8bdae98bac47692d4faa20b64722b749240af885fbe2dd4406e636998",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_sZmCv8447jzTSTL1LIECPQ",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Form N-17f-2 is an SEC information collection activity (OMB review extension for investment company custody verification). It does not describe any outside market, regulatory, member, or infrastructure event that matches any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4106,
+    "outputTokens": 92,
+    "totalTokens": 4198,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1447
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

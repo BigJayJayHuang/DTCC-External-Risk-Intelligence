@@ -1,0 +1,40 @@
+{
+  "document_id": "05bca8158007667061ef703da42fa5e76c345f42f05b5f8d12fb2c0efd28046b",
+  "url": "https://files.dtcc.com/download/assets/25156-26/794b8da0c8c411f197859ebdd6a8b805",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "7879a2bbba832fc2715fb896cfe7cf5dfbe6504dea80f053b6bd9ee4374164f7",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_PoF8aYnYyOfM2qDaXCM13p",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification (Important Notice) for BDO Unibank Inc (CUSIP 05537Y304), issued by Deutsche Bank. It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4153,
+    "outputTokens": 113,
+    "totalTokens": 4266,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1997
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

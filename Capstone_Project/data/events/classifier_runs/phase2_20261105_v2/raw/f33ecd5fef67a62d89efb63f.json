@@ -1,0 +1,40 @@
+{
+  "document_id": "256e6bd46e696dbbe70ff4f757f5ddc8caffef2054132c82a31c4f3fdf142ad7",
+  "url": "https://files.dtcc.com/download/assets/25222-26/62ca44e0d3aa11f183f602763fa05cf5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "0c8397252b62b9e766dac857b070e34e2b2249fae130a6fe49613b613fa99e31",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_0cHNKQUPz3gGN5D4VaUs0t",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTCC administrative notice about an account name change for a Bank of New York Mellon account (#4369). It is an internal participant record update with no risk angle and does not describe any outside market, regulatory, member stress, or infrastructure event matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4122,
+    "outputTokens": 105,
+    "totalTokens": 4227,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1890
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

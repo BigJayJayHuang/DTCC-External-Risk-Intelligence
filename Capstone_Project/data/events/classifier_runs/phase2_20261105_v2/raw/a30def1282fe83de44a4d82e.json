@@ -1,0 +1,40 @@
+{
+  "document_id": "f760a44c7d59c38976fb2bb755fe3cf010c1df8f8ad19bca4feffd1ce376d241",
+  "url": "https://www.federalregister.gov/documents/2026/10/13/2026-20804/self-regulatory-organizations-nasdaq-texas-llc-notice-of-filing-and-immediate-effectiveness-of-a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "96f93f2948995ccec776c4676dd0f4c1643cb6316784021b872fedd156bdddb1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ZSHn6M6ntiQ5J8k9LthveN",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article concerns Nasdaq Texas LLC amending Rule 5740 on information circular requirements for a self-regulatory organization. This is an internal exchange rule change with no market, funding, cyber, or member-stress angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4141,
+    "outputTokens": 96,
+    "totalTokens": 4237,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1647
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

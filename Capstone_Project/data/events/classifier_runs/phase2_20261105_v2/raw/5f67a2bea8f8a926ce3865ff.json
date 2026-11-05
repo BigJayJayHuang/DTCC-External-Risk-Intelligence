@@ -1,0 +1,40 @@
+{
+  "document_id": "4def50843c3c68b95ee317fefbbcd44db738d5596d0459be1da0423e0aea5727",
+  "url": "https://www.federalregister.gov/documents/2026/10/23/2026-21652/self-regulatory-organizations-new-york-stock-exchange-llc-notice-of-filing-and-immediate",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "b5357caa33980d87411c20f7fc125ff090f8e1fd9a389fc6d737710d43004a05",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_O5KVSvClxrScrQI8gFpylF",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "NYSE Rule 123D restoration is an exchange trading rule (likely related to trading halts/order handling) with no direct connection to any card's Step 1 trigger. The article is headline-only and describes an NYSE internal rule change with no market stress, clearing mandate, member default, cyber, or settlement cycle angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4121,
+    "outputTokens": 118,
+    "totalTokens": 4239,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2145
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "3bcaa2b611932da5d5ccc9d18907a78ba514689626193775fa8f5381a196dd72",
+  "url": "https://www.federalregister.gov/documents/2026/10/28/2026-22011/valued-advisers-trust-and-long-short-advisors-llc",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "9a8c22cc8c975abe4821e7cac6777ba6ef64f0c45e86194647984e74f5b6676e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_rDZKfYCNRIgbzqQJed1o5C",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is headline-only and contains no substantive information beyond the names 'Valued Advisers Trust and Long Short Advisors, LLC'. There is no described market event, regulatory action, member stress, infrastructure issue, or cyber incident that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4073,
+    "outputTokens": 103,
+    "totalTokens": 4176,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1498
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

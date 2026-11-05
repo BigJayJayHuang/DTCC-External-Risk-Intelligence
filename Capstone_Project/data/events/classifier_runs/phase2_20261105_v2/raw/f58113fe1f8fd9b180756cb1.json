@@ -1,0 +1,40 @@
+{
+  "document_id": "8afca640464bf84ff5f566a33d64f4e97b7368474b42544de0c79d62b6d8a309",
+  "url": "https://files.dtcc.com/download/assets/GOV2264-26/0dcec3f2cd8911f1b7ec1216fe668897",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ab055f49bc12f68a89dc2134b3956836bf2b3c97665a53ccbdaa85d2087b961e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_QErCmFvKkYFV1h9mpsPemV",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new Sponsoring Member (Barclays Capital Inc./Omnibus) joining FICC GSD. It is an administrative membership update, not an outside market, regulatory, member stress, or infrastructure event that maps to any card's Step 1 trigger."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4159,
+    "outputTokens": 110,
+    "totalTokens": 4269,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1937
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

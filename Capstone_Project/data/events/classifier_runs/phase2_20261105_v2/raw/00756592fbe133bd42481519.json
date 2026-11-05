@@ -1,0 +1,40 @@
+{
+  "document_id": "691ad8b901c7dfabf9fba9bfcdf4f62831990e6b0e52b7a77a96d39146e2b483",
+  "url": "https://files.dtcc.com/download/assets/GOV2261-26/85b14e76cd8911f1a0e4e694c785b3e1",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "224125ef31f871119c0f5b73c9a20bfa79396080dd3d6264b298bd5bb37e4907",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_TpONkVF8XU8vxEk55ysEfl",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new participant (Edward D. Jones & Co.) joining the GSD netting system. It is a routine membership/onboarding administrative notice with no outside risk event described. No market, regulatory, member stress, or infrastructure event is present that maps to any card's Step 1 trigger."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4147,
+    "outputTokens": 115,
+    "totalTokens": 4262,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1828
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

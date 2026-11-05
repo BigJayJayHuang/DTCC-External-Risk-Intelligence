@@ -1,0 +1,40 @@
+{
+  "document_id": "5f011b753eba8300567f90273339478fb7e54c32698be7f6d06c2f58667b7c33",
+  "url": "https://www.federalregister.gov/documents/2026/10/09/2026-20711/self-regulatory-organizations-the-nasdaq-stock-market-llc-notice-of-filing-and-immediate",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "b2bfe8b895ab10b8c145050307c9471578ca42f083c461101a91b69be07d5db7",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_DnWIutnn2sWWWJ8AqcJGMq",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This article describes a Nasdaq rule change to amend transaction fees and establish a credit tier for non-displayed orders that provide liquidity. This is an internal exchange fee/rebate structure change with no risk angle touching any DTCC process described in the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4210,
+    "outputTokens": 98,
+    "totalTokens": 4308,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1539
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

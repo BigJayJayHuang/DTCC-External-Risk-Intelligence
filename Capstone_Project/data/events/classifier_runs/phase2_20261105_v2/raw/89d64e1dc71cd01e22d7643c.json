@@ -1,0 +1,40 @@
+{
+  "document_id": "f5ec0917ffe46919b7196125edc6286005f2b1cf5e4030c19466be7cb82e3636",
+  "url": "https://www.federalregister.gov/documents/2026/10/30/2026-22131/self-regulatory-organizations-nyse-american-llc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "4bbd2a571fa5032a21bf9f8592fa6cbc57fc0cfbc83d30d90021f5b2b2a087f7",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_EAPNnBEH4ZZTXXttDPRiNy",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a NYSE American LLC operating agreement amendment (internal governance/administrative change). No card in the catalog covers exchange operating agreement amendments, and the article contains no information about a market event, regulatory mandate, member stress, infrastructure disruption, or cyber incident that would touch any DTCC process."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4149,
+    "outputTokens": 103,
+    "totalTokens": 4252,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2014
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

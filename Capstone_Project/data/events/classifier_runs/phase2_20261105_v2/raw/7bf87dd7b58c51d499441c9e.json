@@ -1,0 +1,40 @@
+{
+  "document_id": "7813c5abda71ef96ac4b712bb3160ca7a9f9ac6784f18d711a6eff039171785f",
+  "url": "https://www.fca.org.uk/news/blogs/defence-smes-need-banking-services-work",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "1946cdae9eeb6f6b8ae8ee9fcb1e354af475d708d85df4bcb02317ca6a47d1ff",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_3pnckJDtmLHl7OQWuBKCbf",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is an FCA blog about UK defence SMEs accessing banking services. It describes friction in bank onboarding processes for defence-sector small businesses, not any market, regulatory, member/counterparty, infrastructure, or cyber event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4899,
+    "outputTokens": 100,
+    "totalTokens": 4999,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1864
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

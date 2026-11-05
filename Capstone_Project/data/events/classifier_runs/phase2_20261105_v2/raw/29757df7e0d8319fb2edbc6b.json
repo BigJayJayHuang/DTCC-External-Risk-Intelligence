@@ -1,0 +1,40 @@
+{
+  "document_id": "2d832354bf369b57c5fa14382f3256b16e534b93af1d9b31e062cf508ad38145",
+  "url": "https://files.dtcc.com/download/assets/25226-26/c1fd83e0d3ce11f181e816b40839f6ca",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "1b0ff8cbd40ae5b49ae7be14c4e8355cd1e8f31fca89046502789e337876b624",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_CPrCqvfjRJaEHLq0C6SU4S",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal holiday schedule notice for Thanksgiving Day 2026. It is an operational/administrative notice about DTCC's own holiday observance and its impact on clearing and settlement services. It does not describe an outside event (market, regulatory, member/counterparty, infrastructure, or cyber) that matches any card's Step 1 trigger. No risk angle is present."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4123,
+    "outputTokens": 126,
+    "totalTokens": 4249,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1736
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

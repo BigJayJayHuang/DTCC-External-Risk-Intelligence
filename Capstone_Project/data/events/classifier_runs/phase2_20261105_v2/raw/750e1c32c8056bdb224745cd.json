@@ -1,0 +1,40 @@
+{
+  "document_id": "494fe901a105d188e1c9d69bb6df2b9a66560917d734b3bef9b430c32fc3ba5c",
+  "url": "https://files.dtcc.com/download/assets/25223-26/cfca92aad3b611f1aae476381129a88a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "77f29e4e4c1a5428cb9af0101dacf79166c053401f7b42f5b74fdf39809e738a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_kqRnPCFxI0YVvesUxixjLV",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC operational notice announcing the reinstatement of DTC services for a single issuer (TJGC Group Limited). It is an internal DTCC administrative action with no outside risk event described. No card in the catalog covers reinstatement of DTC services for a single issuer, and there is no market, regulatory, member stress, or infrastructure event present."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4145,
+    "outputTokens": 124,
+    "totalTokens": 4269,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1961
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

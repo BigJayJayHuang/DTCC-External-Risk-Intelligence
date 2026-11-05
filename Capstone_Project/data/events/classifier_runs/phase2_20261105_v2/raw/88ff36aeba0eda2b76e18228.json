@@ -1,0 +1,40 @@
+{
+  "document_id": "8537f50d01e04d576d576ee40074d2e18ef8d9e910c56a1ffe729c2da1e7675b",
+  "url": "https://www.federalregister.gov/documents/2026/10/16/2026-21132/self-regulatory-organizations-long-term-stock-exchange-inc-notice-of-filing-and-immediate",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "87ba1a722657b6a4bca6eeb4471c0307408f79e028fcf8e01f113f12f00f1fad",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_OJK1TalLYoy8SV708xQVQc",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes LTSE amending its fee schedule to add a market maker incentive program. This is an exchange fee/incentive rule change with no connection to any card's Step 1 trigger (no Treasury selloff, repo stress, clearing mandate, equity selloff, member stress, cyber event, etc.). Not relevant to any DTCC process in the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4154,
+    "outputTokens": 121,
+    "totalTokens": 4275,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2022
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

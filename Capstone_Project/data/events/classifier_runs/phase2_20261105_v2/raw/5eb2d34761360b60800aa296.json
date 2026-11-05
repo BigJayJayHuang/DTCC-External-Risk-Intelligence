@@ -1,0 +1,40 @@
+{
+  "document_id": "b25591325d07de7047181086956f82d15b71be815540be8f0a6d75f83735bf0b",
+  "url": "https://www.esma.europa.eu/press-news/esma-news/esma-sets-out-2026-european-common-enforcement-priorities",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "505cf15dd430e59130bb1cfcb476781de025f65174e4db31164f94a2a154f7da",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_KAoqxb6ZLmRmMcYnw7U2JG",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about ESMA's 2026 European Common Enforcement Priorities for European financial markets. This is a European regulatory enforcement priority announcement with no connection to any of the DTCC card Step 1 triggers (no Treasury/repo stress, no equity selloff, no member default, no cyber event, no settlement cycle change, etc.). The article text is also truncated and contains no substantive detail beyond the title and opening line, but even at face value it describes EU-focused enforcement priorities that do not map to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4093,
+    "outputTokens": 159,
+    "totalTokens": 4252,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2716
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

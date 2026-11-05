@@ -1,0 +1,40 @@
+{
+  "document_id": "7b4d414c6594d71e04a54855af6f88e67769d99175a95a9d82cfa494cf4f8a1c",
+  "url": "https://files.dtcc.com/download/assets/25166-26/67e5ba90d79711f19b8b36039ce0e230",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "7d6aecffad9e1f5634048d36e813dfb36f2278bea2b9526e35e73c79661c4cba",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_N33mloBvbJCT9FrVtBAGSj",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for a single ADR (Bora Pharmaceutical Sponsored ADR, CUSIP 09952D100). It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that matches any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4166,
+    "outputTokens": 106,
+    "totalTokens": 4272,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2019
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

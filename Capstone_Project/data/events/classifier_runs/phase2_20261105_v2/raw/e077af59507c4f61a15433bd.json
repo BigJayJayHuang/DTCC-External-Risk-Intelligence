@@ -1,0 +1,40 @@
+{
+  "document_id": "d95bf694201413c69ef6cc1309fdf12216d56692be677b24c6a4ddc9e9d5d6a3",
+  "url": "https://www.federalregister.gov/documents/2026/10/19/2026-21244/self-regulatory-organizations-24x-national-exchange-llc-notice-of-filing-and-immediate-effectiveness",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "1611eb1052292c47586ba831140f893f1b65bb3d99e32bfd9f239113c90aef3d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_4B67uzl5NSjhWfTy9lcoxw",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a proposed rule change by 24X National Exchange LLC to amend its Warrant Performance Incentive Program. This is an internal exchange rule change with no connection to any of the DTCC card Step 1 triggers (no market stress, no clearing mandate, no member default, no cyber event, no settlement cycle change, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4133,
+    "outputTokens": 116,
+    "totalTokens": 4249,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1923
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

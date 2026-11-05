@@ -1,0 +1,40 @@
+{
+  "document_id": "308685980a2be9031382539c10ad4c7e871f4229cbcb9199f2c4d09376737504",
+  "url": "https://www.federalregister.gov/documents/2026/10/23/2026-21637/agency-information-collection-activities-submission-for-omb-review-comment-request-extension-rule",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "26fcfad08603974e25c46a8ad0b809d1741b3f563ee60e98e83947d7ab097d90",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_7UYY0LAdzhcLogfzPQio0y",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a routine OMB information collection extension notice for SEC Rule 17g-1 (fidelity bond requirements for investment companies). It does not describe any market event, regulatory change, member stress, infrastructure disruption, or cyber incident that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4100,
+    "outputTokens": 103,
+    "totalTokens": 4203,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1895
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

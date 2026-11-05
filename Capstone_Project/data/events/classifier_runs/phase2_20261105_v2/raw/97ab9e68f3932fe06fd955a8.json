@@ -1,0 +1,40 @@
+{
+  "document_id": "5c530a3f841bc47535222435b8d1519b9679a3c38867363f6e0cfe1dd271c60a",
+  "url": "https://files.dtcc.com/download/assets/24779-26/37b88c92c41111f1b02c76c53cdc9348",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "a79e671bd714b172e9d73a5f2d63c49a6cf0999a773772df2a41cf48b3b7a90d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_UcevOtJSHvzUHXxbLsuwec",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about tax relief processing for a Banco Bilbao Vizcaya Argentaria dividend (CUSIP 05946k101, Spain). It describes an administrative corporate action/tax relief instruction deadline, not an outside market, regulatory, member stress, or infrastructure event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4231,
+    "outputTokens": 117,
+    "totalTokens": 4348,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2015
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

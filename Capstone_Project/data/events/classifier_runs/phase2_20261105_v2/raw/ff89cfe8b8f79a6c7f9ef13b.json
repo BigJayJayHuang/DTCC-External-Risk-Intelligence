@@ -1,0 +1,40 @@
+{
+  "document_id": "457fba0d39310b4a7fa6b120fa14b5489cd747f400fd1a41156ed13bdc974bac",
+  "url": "https://files.dtcc.com/download/assets/25139-26/bd375cecce3c11f19cd8061fd58cb342",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "162338137e8fbd8d304748a40f1e7e593a99cacd789ac262623dfbbab8696014",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_e7LdtZjVB1ZbiO1i4IBkZo",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about tax relief procedures for a corporate action (dividend) on Weatherford International PLC (CUSIP G48833118) in Ireland. It describes administrative cut-off deadlines for relief-at-source and quick refund instructions. No outside market, regulatory, member stress, or infrastructure event is described; no card's Step 1 trigger is present."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4221,
+    "outputTokens": 127,
+    "totalTokens": 4348,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2218
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

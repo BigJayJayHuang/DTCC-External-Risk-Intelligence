@@ -1,0 +1,40 @@
+{
+  "document_id": "c36881475d9a95698659156412d475a7b0603f4d15b507cb33efde47a7ed74c2",
+  "url": "https://files.dtcc.com/download/assets/25229-26/62297b22d6d511f1b509661b1cd0e824",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "3a2bfc7befcd63b9990c582a9eb26cd3590824a0678ce749209770d9881243a4",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_VhFHONTNdWeW3qmJ2nl06Z",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice about an additional account activation for Mizuho Securities USA LLC/Mizuho Americas Finance LLC. It is an administrative/operational update about a participant account change, not an outside market, regulatory, member stress, or infrastructure event described by any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4125,
+    "outputTokens": 108,
+    "totalTokens": 4233,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1815
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "817166b4f3ce654cf2b38d73e0426fe3c40826fd57359d5f09a4a5adc87c4e6e",
+  "url": "https://files.dtcc.com/download/assets/25023-26/cd9be756cca711f19bdd1eecc365c684",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "794f8972b42e2a3b5fe1b55205270d2a3d38e9ecab7e9c27d897eb6d092ed4d8",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_VohXa4ysnHwY17ziqM3STD",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for Eutelsat Communications (CUSIP 29888Q207), issued by Bank of New York Mellon. It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4155,
+    "outputTokens": 108,
+    "totalTokens": 4263,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2061
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

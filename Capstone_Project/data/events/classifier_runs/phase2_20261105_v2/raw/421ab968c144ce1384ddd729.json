@@ -1,0 +1,40 @@
+{
+  "document_id": "46b3f37637f1c3d398e21d43af62c7d447630ffcf8259eafa308cce369e18786",
+  "url": "https://files.dtcc.com/download/assets/25192-26/f1729392cf0311f192bf269dbf3d41b0",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "945ce2c5b51a4d65132ee9feae8a893d71b39744b7f1915ab794aaad86cf6678",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_mcSDrv48z4NV6vESoa3HYz",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for a single security (Perpetuals.com Ltd, CUSIP 27030F202). It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4152,
+    "outputTokens": 103,
+    "totalTokens": 4255,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1750
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

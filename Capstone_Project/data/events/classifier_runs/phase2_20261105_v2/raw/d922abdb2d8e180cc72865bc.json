@@ -1,0 +1,40 @@
+{
+  "document_id": "538eb0c978a3d2a6d159f0e33cca8ec96cfba356f09e797c01d223a033097e6f",
+  "url": "https://files.dtcc.com/download/assets/GOV2266-26/4f4e6d10cd6f11f194f02e7def2a5925",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "81a8d431bf4b1b33658fba6d293223d90bd9c5447bc9f2fa875ecc2a02ad938b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_swZ0hWZvr73ZGBE5fJVVDc",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new participant (J.P. Morgan Securities LLC/AWM) joining the GSD Netting System. It is a routine membership/onboarding administrative notice with no risk event angle — no market stress, no regulatory mandate milestone, no member distress, no cyber or operational incident. No card in the catalog covers routine new participant admissions."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4147,
+    "outputTokens": 126,
+    "totalTokens": 4273,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1978
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

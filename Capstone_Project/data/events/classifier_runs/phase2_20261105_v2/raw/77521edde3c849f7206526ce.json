@@ -1,0 +1,40 @@
+{
+  "document_id": "261713c1b99dc872f98753a14f1a36b0e925153121da8b1c821cd2f412608e1f",
+  "url": "https://files.dtcc.com/download/assets/GOV2252-26/6a74d644c74111f18faaae013f226a74",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "f5859615614d83974cdcdb4683dbf71ff4b798d2197ad1f9a93f2abdbd26ff5a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_6t5ovdqVtHSkiC82xdgU8k",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new participant (JP Morgan Chase Bank, NA/CIO_H) joining the GSD netting system. It is an administrative membership/onboarding notice with no outside risk event described — no market stress, regulatory milestone, cyber incident, or member distress. No card's Step 1 trigger is met."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4142,
+    "outputTokens": 120,
+    "totalTokens": 4262,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 4365
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

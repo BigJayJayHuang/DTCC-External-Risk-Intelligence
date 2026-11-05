@@ -1,0 +1,40 @@
+{
+  "document_id": "f0e6eea4c112f09163f98a4eb8ae50b9c600f872b7fdd804d690b6c99a5c3a38",
+  "url": "https://files.dtcc.com/download/assets/25142-26/30ffcdeacf2211f1a4d692c6fd34c242",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "e9d9aa6dc048b08fd0a70789acd8d2c550eed6b7e93d1cd66dd0db78a428dc34",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_SOXgz1xbqYJQDKl1FWE9tD",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a routine corporate action (dividend/tax relief) for TGS ASA (CUSIP 87243K208) in Norway. It describes no outside market, regulatory, member stress, or infrastructure event that matches any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4185,
+    "outputTokens": 103,
+    "totalTokens": 4288,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1630
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

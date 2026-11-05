@@ -1,0 +1,40 @@
+{
+  "document_id": "049d09047ffbf2d21369abf54b5336e60247ae9f47a330e69dc7b2b98f3cac9a",
+  "url": "https://files.dtcc.com/download/assets/24854-26/404f5a8acbfe11f194338e38b45d411f",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ea9ec34679ec0331da7be660cace346ae0168a05e0d192ad53f216319711e626",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_JGJeAQ7oIYQsxxsPvWjOZQ",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a tax relief corporate action for Metso Outotec Corporation (Finland), covering record date, payable date, and election deadline. It is a routine DTC corporate actions notice with no market, regulatory, member stress, or infrastructure risk angle that matches any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4212,
+    "outputTokens": 111,
+    "totalTokens": 4323,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1908
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

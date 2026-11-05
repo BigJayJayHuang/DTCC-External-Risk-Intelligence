@@ -1,0 +1,40 @@
+{
+  "document_id": "b78b5a2d6b739d54818144048552207946a111652ebd28ee7781a6a3a6fcadc2",
+  "url": "https://files.dtcc.com/download/assets/24594-26/4407efbcd6d911f1ac22661b1cd0e824",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "4db0c3a26ade173d6da67f0f6d331cc15d353f2de954e04bb4ea88aa075cdcdc",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Om3s6EbjyfjKIbOqWV4EIj",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about tax relief procedures for a dividend payment on Perrigo Company PLC (CUSIP G97822103) in Ireland. It describes a corporate action (CA) administrative notice with cut-off and instruction deadlines, not an outside market, regulatory, member stress, or infrastructure event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4226,
+    "outputTokens": 120,
+    "totalTokens": 4346,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2079
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

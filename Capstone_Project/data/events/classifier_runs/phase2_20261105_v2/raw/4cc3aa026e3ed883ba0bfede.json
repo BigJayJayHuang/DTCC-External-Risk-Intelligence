@@ -1,0 +1,40 @@
+{
+  "document_id": "13d4194839a5b3b1234e4161c5965443c1751cb8d1f4e5fbfb863bcf108c8703",
+  "url": "https://files.dtcc.com/download/assets/CMU227-26/3ea3c040d20711f1bd9c5661b99e1de4",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "4b50113c7cf98094fdfe0998c9f9cbe0d987d80c69b2829d4bed4b6f83c067ab",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_NOrWudX3ddP1Ck0artPiTk",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is an internal DTCC operational notice (CMU227-26) announcing the decommissioning of PDF print-image reports in favor of CSV-only reporting for RTTM. It is a product/format change announcement with no risk angle and does not correspond to any card's Step 1 world event (market, regulatory, member stress, infrastructure, or cyber event)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4135,
+    "outputTokens": 125,
+    "totalTokens": 4260,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1986
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

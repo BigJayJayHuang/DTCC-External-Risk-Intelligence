@@ -1,0 +1,40 @@
+{
+  "document_id": "189d1019c6b7b9719eb21b00eaee36908d4d2285d0a1f6da3f3fdc34a69e28b4",
+  "url": "https://files.dtcc.com/download/assets/24780-26/7c83013cc41011f1b02c76c53cdc9348",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "6d94ef6c8206bdd55f374dd4213277d696ae268b295fa55540a5c3b625e5c2fc",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_0JRyUGjLF95NTWuQ9UcZpZ",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a tax relief event for Belgian security COLRUYT (CUSIP 196850101). It is a routine corporate action/tax notification with no risk angle and does not match any card's Step 1 trigger (no market stress, regulatory change, member stress, cyber event, or infrastructure disruption)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4179,
+    "outputTokens": 117,
+    "totalTokens": 4296,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2088
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

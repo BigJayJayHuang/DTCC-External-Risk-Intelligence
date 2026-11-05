@@ -1,0 +1,40 @@
+{
+  "document_id": "da185b1a45185e2f7143632d789b3242b1be3ca5fb79a83c0d59d0e127de826d",
+  "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22453/self-regulatory-organizations-nasdaq-ise-llc-notice-of-filing-of-proposed-rule-change-to-amend-the",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "94c00c1ca95ee6f29e2c658649e2b0bc1ab9db6b35a6cea5f55753a057fd5377",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_yekY7QZepiD9pZ6h8uyd0k",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a Nasdaq ISE proposed rule change to amend strike price intervals for options on certain ETF shares. This is an options market microstructure rule change with no connection to any card's Step 1 trigger (Treasury stress, repo stress, clearing mandates, equity selloffs, member defaults, cyber incidents, settlement cycle changes, etc.). No DTCC process is touched."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4166,
+    "outputTokens": 124,
+    "totalTokens": 4290,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2273
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

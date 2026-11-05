@@ -1,0 +1,40 @@
+{
+  "document_id": "c67befbec2e4f8c2f590e513dbb080be0e46bee9751a050e3cd8a83b4599cec5",
+  "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261024~ee2ba73cf3.en.html",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ef7e800250bf7812962dce99884cab80dda4912a1d3dda23daa620744eee6ddf",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_taXLkzTp5cteTpMmObKXyl",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is headline-only with no substantive content. It is an interview title referencing an ECB executive board member speaking to an Italian financial newspaper. There is no described market event, regulatory action, member stress, or infrastructure issue that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4075,
+    "outputTokens": 99,
+    "totalTokens": 4174,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1860
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

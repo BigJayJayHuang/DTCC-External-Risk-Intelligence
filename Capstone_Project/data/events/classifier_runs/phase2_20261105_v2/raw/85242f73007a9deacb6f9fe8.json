@@ -1,0 +1,40 @@
+{
+  "document_id": "e55fad0bbdd9a56afafaff4cae3def951edd2cac65ef91db245f19646e5e0935",
+  "url": "https://files.dtcc.com/download/assets/25157-26/9a206706c98411f1ae331ae81efac69c",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "26fa839f8e6e9ae6243143366d747b82599fca23b611281726418d57a8b7da6f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_eGtGeed9jO5EktBQ6VVtxs",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification (Important Notice) for Roche Holding Ltd (CUSIP 771195104) issued by JPMorgan Chase Bank, N.A. It is an administrative/operational notice with no market event, regulatory action, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4155,
+    "outputTokens": 120,
+    "totalTokens": 4275,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1939
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

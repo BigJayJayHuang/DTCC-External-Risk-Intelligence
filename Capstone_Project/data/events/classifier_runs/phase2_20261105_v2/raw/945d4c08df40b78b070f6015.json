@@ -1,0 +1,40 @@
+{
+  "document_id": "e1e4179fc4eeb4f6310627065a08a8edd88eda4832d6ff07bbaa5e83ab3a070a",
+  "url": "https://files.dtcc.com/download/assets/GOV2274-26/f13d1762d24111f192ab723074e17ccf",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "a4ae41ec1d612273023b63f80eb1c80ecc05bdcb9bc35fd59184640b2185a52e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_WzV3mZb7V5s2CU0r8nH0Zu",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new Agent Clearing Member (Montec Securities LLC) joining FICC GSD. It is an administrative membership onboarding notice, not an outside market, regulatory, member stress, or infrastructure event described by any card's Step 1. No risk angle is present."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4140,
+    "outputTokens": 111,
+    "totalTokens": 4251,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1938
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

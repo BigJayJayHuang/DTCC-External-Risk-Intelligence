@@ -1,0 +1,40 @@
+{
+  "document_id": "818b3a081587b402b7baf9dd2c3db57abea39b8e70d28372f98fb72bc98c4a00",
+  "url": "https://www.bis.org/media-releases/20261014-global-standard-setting-bodies-publish-final-report-guidance-fmis-general-business-risks-and",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "9a799d907cca9f9e669e3f53ec27bf8dc6f13d5aa375c8aa67ccebd51ddb5b50",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_TXxwFBgxRHZsISze87Ghpv",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article describes a CPMI-IOSCO final report on guidance for FMIs regarding general business risks and losses. This is a regulatory/standard-setting publication about FMI governance and risk management frameworks, not an outside market, member, infrastructure, or cyber event that maps to any card's Step 1 trigger. No card in the catalog covers guidance on FMI general business risk management."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4161,
+    "outputTokens": 129,
+    "totalTokens": 4290,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2222
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

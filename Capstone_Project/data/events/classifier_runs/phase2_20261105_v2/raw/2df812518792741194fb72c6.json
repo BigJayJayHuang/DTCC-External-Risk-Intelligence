@@ -1,0 +1,40 @@
+{
+  "document_id": "9452bef5142f4608cd0c41d9b6324cef264a7ac673f2e8fdd4cdc456eb2c1871",
+  "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp.261102~70003226e9.en.html",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "c22b99a174df8b65a8157069e41fe99bca502e33d37cb8fc83794edaf599d9d7",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_F8ZE2BikNt2UZRcdQCtwbP",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only speech by an ECB official about European integration and geopolitical fragmentation. It contains no new market event, regulatory action, member stress, or infrastructure disruption that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4095,
+    "outputTokens": 91,
+    "totalTokens": 4186,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1683
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

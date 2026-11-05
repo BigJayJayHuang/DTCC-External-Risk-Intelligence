@@ -1,0 +1,40 @@
+{
+  "document_id": "e2834c74f4065e96c922c178a693a73131fab3f1a3291fc7994156b0f5d546e3",
+  "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261016a.htm",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "51a9af5aef8f3758ea7b833585b6553895fea2ab216d5af42d8cac6402f3f2b5",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_U56PUvAsyEpBUrj0Al5iig",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article reports the termination of enforcement actions against Gardner Bancshares, Inc. and Small Business Bank by the Federal Reserve. These are small, non-systemically important institutions, and the termination of an enforcement action (a positive resolution) does not describe any stress, default, funding squeeze, cyber event, or regulatory change that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4078,
+    "outputTokens": 119,
+    "totalTokens": 4197,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2068
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

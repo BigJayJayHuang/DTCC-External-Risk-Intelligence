@@ -1,0 +1,40 @@
+{
+  "document_id": "25e10b02a668a9dd81293d6e75efa12f7238275cd0ea7149f07856e05bbb9f8e",
+  "url": "https://files.dtcc.com/download/assets/25162-26/0159786acd8911f1b7ec1216fe668897",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "550ec055362159a2a637c783203fe213d74fd4a147b7a50c6e9016728b17b3c3",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_fPed8XqVhOzbr1GqoqBAXI",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTC Important Notice about a tax relief corporate action (dividend) for Shinhan Financial Group (CUSIP 824596100) in Korea. It is routine DTC operational/administrative notice with no market event, regulatory change, member stress, or infrastructure risk that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4191,
+    "outputTokens": 109,
+    "totalTokens": 4300,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2133
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

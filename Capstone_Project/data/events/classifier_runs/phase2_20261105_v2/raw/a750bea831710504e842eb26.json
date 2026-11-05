@@ -1,0 +1,40 @@
+{
+  "document_id": "4a9369f23e0c5f46acaf8f6a05f64d9a7a845b178932319367bc609595c0fab9",
+  "url": "https://files.dtcc.com/download/assets/DDRS31/aafb14bed3e711f1b3b63e570263de11",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ae8ce82fca2181fdd7d932dfae27237a79eabe6623a5a6e2c0d18bc8cc4af003",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_nAYvLxsEr2DLZdbIQ8Lh81",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes an internal DTCC administrative update to a Third Party Provider Agreement (notice DDRS31). This is a routine contractual/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4085,
+    "outputTokens": 96,
+    "totalTokens": 4181,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1779
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

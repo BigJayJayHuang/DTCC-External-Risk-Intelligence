@@ -1,0 +1,40 @@
+{
+  "document_id": "b6582caeec3f354098cb7bb1189a6cb725ab478573d2812a1880314c7d93d091",
+  "url": "https://files.dtcc.com/download/assets/25133-26/27ecd0b8c3ec11f18175aa4f52df656d",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "e72e68c72d44e5a47383aa47f80b770280359515f32c8b1fa57379f2f61ca196",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_5LhXDllVyQoMjQ9sVhnIvM",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC operational/product notice about DRS Withdrawal-by-Transfer processing and DRS Centralized Billing transitioning to SPA. It is an internal DTCC system migration announcement with no risk angle matching any card's Step 1 trigger (no market event, no member stress, no regulatory mandate affecting clearing volumes, no cyber/outage, no settlement cycle change). None of the 16 cards cover DTC transfer agent processing migrations of this type."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4207,
+    "outputTokens": 146,
+    "totalTokens": 4353,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2548
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

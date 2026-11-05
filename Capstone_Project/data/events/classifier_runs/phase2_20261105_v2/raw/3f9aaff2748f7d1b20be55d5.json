@@ -1,0 +1,40 @@
+{
+  "document_id": "ff791be8c8fcda71956a60e6aedfb51e21d2885e35655777dd0b6c931b210efc",
+  "url": "https://files.dtcc.com/download/assets/A9840/1fff4b3ccc9411f1bd32e694c785b3e1",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "b8bed7db6d0d92198c6230326ec884d96959a6528f33b275a0d8fde800165c07",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ANxsAiQAobEaW6jjUYf6dH",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC operational/technical notice about X9 Financial PKI certificate requirements for REST API and SOAP API connections for DTCC Insurance Products. It is an internal infrastructure/connectivity update with no risk angle matching any card's Step 1 trigger (no market event, no regulatory mandate, no member stress, no cyber attack, no settlement cycle change, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4160,
+    "outputTokens": 123,
+    "totalTokens": 4283,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2047
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

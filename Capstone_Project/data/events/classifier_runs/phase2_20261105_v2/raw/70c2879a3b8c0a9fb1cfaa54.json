@@ -1,0 +1,40 @@
+{
+  "document_id": "61868b2f2f3e73397b97b429dd982ef41c89f98e2086708ff8dca6ef76adbb6a",
+  "url": "https://files.dtcc.com/download/assets/24851-26+/3c2c7f92c7d911f1b753be7d02b058cf",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "66e5e98f7bf9252f27f389dcb93ad127aed939547aded5c12d9d670f510a869e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_7ftVQEGKgL8lufbMgRgMAg",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about a tax relief corporate action for Atlas Copco AB (Sweden). It describes a standard dividend/tax relief event with record and payable dates, not an outside market, regulatory, member stress, or infrastructure event matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4200,
+    "outputTokens": 102,
+    "totalTokens": 4302,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1949
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

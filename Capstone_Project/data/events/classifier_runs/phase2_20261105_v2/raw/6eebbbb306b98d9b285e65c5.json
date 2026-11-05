@@ -1,0 +1,40 @@
+{
+  "document_id": "ed36dca421887599d0c850e3eba13c26c65f80ba097174f9bc5e22a2b06bd82c",
+  "url": "https://files.dtcc.com/download/assets/GOV2265-26/301d2660cd8911f1abb2aadb5761d092",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "6890d1ee70b9ccdbde85abc1daf3a700998ae1d8e993723e9d4f7129b9c0318d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_N204YYlAwdHURaWrgkqe7k",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new Agent Clearing Member (Barclays Capital Inc.) joining FICC GSD. It is a routine membership/onboarding administrative notice, not an outside market, regulatory, member stress, or infrastructure event described by any card's Step 1. It does not describe stress, a mandate milestone, a market disruption, or any other risk-relevant trigger."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4141,
+    "outputTokens": 131,
+    "totalTokens": 4272,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2175
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "8cbcc27c32f6f5142025db45c5526487650430e6cd8846caffd3e94e6376ac63",
+  "url": "https://www.federalregister.gov/documents/2026/11/03/2026-22376/self-regulatory-organizations-nasdaq-texas-llc-notice-of-filing-and-immediate-effectiveness-of-a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "4646cf46662072044f57ab87d27a054d4a9dfa88018250ab2a35014ca76cd4b0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_hosJRIfUHtX6Tflrni6qbK",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes Nasdaq Texas LLC amending its trading halt rule (Equity 4, Rule 4120) to align with Nasdaq Stock Market LLC. This is a minor internal rule alignment at a single exchange with no market-wide risk angle and does not match any card's Step 1 trigger (no Treasury selloff, repo stress, clearing mandate, MBS event, equity selloff, member stress, cyber incident, or settlement disruption)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4158,
+    "outputTokens": 137,
+    "totalTokens": 4295,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2303
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

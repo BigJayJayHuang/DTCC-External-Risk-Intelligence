@@ -1,0 +1,40 @@
+{
+  "document_id": "38991650980f307448d5ea9a012974bbe10be29e4df980d5e3c3b61c4c8487da",
+  "url": "https://files.dtcc.com/download/assets/25155-26/4fad1d30c8c711f18db21ae81efac69c",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "76aa0928ec534934e83884a62854cc59434b163a577b6783885ffae95ed6e18d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_6dBQtiapOcNEirQwMlsXAE",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal service notice announcing the suspension of DTC services for a single small issuer (TJGC Group Limited). It is an operational/administrative action by DTC itself, not an outside event described by any card's Step 1. No card in the catalog covers DTC suspending services for a single small issuer."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4152,
+    "outputTokens": 117,
+    "totalTokens": 4269,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2058
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

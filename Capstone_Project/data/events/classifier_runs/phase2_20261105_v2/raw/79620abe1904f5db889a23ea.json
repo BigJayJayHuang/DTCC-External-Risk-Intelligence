@@ -1,0 +1,40 @@
+{
+  "document_id": "8049c1e2d225a87fceb4104a69196c93db939fc8d083125ba19c9af3eed6e3fc",
+  "url": "https://www.federalregister.gov/documents/2026/10/09/2026-20708/self-regulatory-organizations-investors-exchange-llc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ca572d7ce3969e0da6dd1edae2fc6186bd67aab4463c413b037b664cdde54355",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_QFEvmDPgIK2mcGOEasU938",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a routine fee schedule amendment by Investors Exchange LLC (IEX). This is an exchange fee change with no risk angle touching any DTCC process described in the card catalog. No market stress, clearing mandate, member default, cyber event, or settlement disruption is involved."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4167,
+    "outputTokens": 102,
+    "totalTokens": 4269,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1807
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

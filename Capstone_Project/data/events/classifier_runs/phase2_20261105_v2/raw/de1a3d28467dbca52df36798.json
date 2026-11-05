@@ -1,0 +1,40 @@
+{
+  "document_id": "325e9ac8fee4556dcbfd326c5571b3eb0a80879867b0f9634e37799ee4981359",
+  "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22267/self-regulatory-organizations-miax-sapphire-llc-notice-of-filing-and-immediate-effectiveness-of-a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "c500e44d6f22b0ffc276c5885c748ad1a9aa62757d3efcd29325b65ad74730b4",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_emD7ewyo0r3TLamrBmRiqO",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a MIAX Sapphire LLC rule change amending fees/rebates for professional customer orders (QCC, cQCC) and establishing a tiered fee structure for away market maker facilitation. This is an options exchange fee rule filing with no connection to any DTCC card's Step 1 trigger — it does not involve Treasury markets, repo, MBS, equity selloffs, settlement cycles, member stress, cyber incidents, or any other covered event."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4219,
+    "outputTokens": 143,
+    "totalTokens": 4362,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2024
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

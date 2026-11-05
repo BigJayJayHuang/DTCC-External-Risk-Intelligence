@@ -1,0 +1,40 @@
+{
+  "document_id": "21834bc7f6ea992c93429f753fdbfa6c47bf4b10796a35efea90828b4ad3d5ae",
+  "url": "https://www.fca.org.uk/news/press-releases/fca-sets-expectations-firms-making-car-finance-settlement-offers",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "969756bfab951ceb6674a7cd9fccefd80737545c7433269d6fcbf5ce3259b22f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_uBoxtwszRxMlCRhmUTCryj",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about the UK FCA's car finance compensation scheme and settlement offers by lenders (e.g., Barclays Partner Finance) to consumers. This is a UK retail consumer finance regulatory matter with no connection to any DTCC process described in the card catalog (no Treasury/repo/equity market stress, no clearing mandate, no member default, no cyber event, no settlement cycle change, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4829,
+    "outputTokens": 129,
+    "totalTokens": 4958,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2371
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

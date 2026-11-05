@@ -1,0 +1,40 @@
+{
+  "document_id": "e7288c0b4100f77a0b7190687c149ef87a907657e738593aa2baf31855598c5e",
+  "url": "https://files.dtcc.com/download/assets/MBS1612-26/ee94ad52d17111f1afc95e065d24f40e",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "0a40168001a2be6f87be5c21d61a8eb7b3145a107323da3c017535e79c4a249d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_kJbkx9ZfnxkEmNhySUrHI3",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice (MBS1612-26 Final Retire Notice) about a J.P. Morgan Securities LLC participant/member update. It contains no substantive information about an outside market, regulatory, member stress, or infrastructure event that maps to any card in the catalog. The article text is essentially a header and a generic placeholder summary with no risk-relevant content."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4121,
+    "outputTokens": 125,
+    "totalTokens": 4246,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1809
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

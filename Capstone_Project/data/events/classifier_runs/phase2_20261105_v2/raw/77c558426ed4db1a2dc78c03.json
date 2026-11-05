@@ -1,0 +1,40 @@
+{
+  "document_id": "1c3d2cde3b8fa7e773a74d12fa1f03e2d7f7bbde06b40bdbcee3c8c36c714097",
+  "url": "https://files.dtcc.com/download/assets/25186-26/5fa181e2ccc611f1bd8b066af7203eca",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "c8838d85973dc69204dd790762226a263c7e536dac77057a10eae9c7eff4927f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_rdp2FlG2P8nj5GGDqcIshX",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for a single security (Tokyo Lifestyle Co., Ltd., CUSIP 98741L200). It is an administrative/operational notice with no risk event described. No card in the catalog matches a depositary fee notification, and the article explicitly states the content is 'not sensitive, confidential, or non-public information.' It does not describe any outside market, regulatory, member stress, or infrastructure event."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4161,
+    "outputTokens": 138,
+    "totalTokens": 4299,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2142
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "b5d9a0231329509ce385dd9018e9efe3c8a13ab9d24bef1a115aec5454ca7288",
+  "url": "https://files.dtcc.com/download/assets/GOV2257-26/47991ebed20e11f18895ca1f05fcc176",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "858bfe0e2834012003feb18f1806a11abb2f17ca8b19fe0a9c3c95135dee5fd3",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_K9czrBPnDjxQ6hJSQBowPd",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is an internal DTCC notice (GOV2257-26) clarifying the GSD Schedule of Haircuts and Concentration Limits for Eligible Clearing Fund Securities. It is an administrative/operational clarification by DTCC itself, not an outside market, regulatory, member, or infrastructure event described by any card's Step 1 trigger. No external risk event is present."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4125,
+    "outputTokens": 127,
+    "totalTokens": 4252,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1793
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

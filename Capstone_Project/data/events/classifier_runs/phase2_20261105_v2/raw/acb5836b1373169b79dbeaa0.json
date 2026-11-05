@@ -1,0 +1,40 @@
+{
+  "document_id": "bad0b21a29e21205301f356d66b4d4d3bd0779878c3d1484b78ffe888e3668af",
+  "url": "https://files.dtcc.com/download/assets/25154-26/9201d816c8a811f1ac035a6d32479a89",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "4bac0639e7c4f910e738829b46376b85f8a0b28f61ca85203b004d42dcc0a7f1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_j4pIcYk3KoZ8DyUII4NLYz",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification (Important Notice) for Serco Group PLC, a corporate action/fee notice. It describes no outside market, regulatory, member stress, or infrastructure event that maps to any card in the catalog. It is an internal DTCC administrative notice with no risk angle."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4155,
+    "outputTokens": 112,
+    "totalTokens": 4267,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1847
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

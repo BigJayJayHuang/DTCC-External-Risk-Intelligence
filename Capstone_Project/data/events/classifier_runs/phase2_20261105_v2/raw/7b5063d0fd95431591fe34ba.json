@@ -1,0 +1,40 @@
+{
+  "document_id": "4d096047b293ccfa1ad6c62125c6797890417b65af2936177582b439903ae7cd",
+  "url": "https://www.federalregister.gov/documents/2026/10/13/2026-20808/self-regulatory-organizations-the-nasdaq-stock-market-llc-notice-of-filing-and-immediate",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "bd38c91d227127cc64228d36db94ab10deca798c131ec41ee27aaa993e4583e0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_W8McsfuSve78XPqF5xs83C",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only notice about Nasdaq amending its listing rule 5505. This is an exchange listing standards change with no connection to any card's Step 1 trigger (no market stress, no clearing mandate, no member default, no cyber event, no settlement cycle change, etc.). No card in the catalog fits."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4123,
+    "outputTokens": 112,
+    "totalTokens": 4235,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1977
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

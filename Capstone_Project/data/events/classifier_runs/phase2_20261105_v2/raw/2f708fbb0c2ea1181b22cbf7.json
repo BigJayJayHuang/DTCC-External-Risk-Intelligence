@@ -1,0 +1,40 @@
+{
+  "document_id": "ca6b5319e72e299320da95c9ec87501faed14580b79482bb69924930a6e32da0",
+  "url": "https://files.dtcc.com/download/assets/25198-26/36428010cf0711f1a0b3269dbf3d41b0",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "1c2d051bd2e30f95436f33ba75fd0bc19effc2a9b5fffbb7df2b8e80fe0028a6",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_8cWjdCLThFTWpDczEdUFiP",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for Chilwa Minerals Limited (CUSIP 16934F103), issued by Bank of New York Mellon. It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4151,
+    "outputTokens": 109,
+    "totalTokens": 4260,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1674
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

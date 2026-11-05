@@ -1,0 +1,40 @@
+{
+  "document_id": "1030af345c99de5d619c60d8adae498506d9ec32c0497501219179e646138dbe",
+  "url": "https://files.dtcc.com/download/assets/25200-26/59e884f6d21d11f1b7937262f917d8e5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ce9d0ea0ffb593a19e9233334303be490c3935ec67a69e1400d028350cc6465f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ElAhPsg1PR2QaOA32ubvGi",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification (Important Notice) for a single security (RUIHE DATA TECHNOLOGY HOLDINGS LIMITED, CUSIP 780935102). It is an administrative/operational notice with no market event, regulatory action, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4154,
+    "outputTokens": 115,
+    "totalTokens": 4269,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1893
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

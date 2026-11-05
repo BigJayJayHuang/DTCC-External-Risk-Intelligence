@@ -1,0 +1,40 @@
+{
+  "document_id": "0584f9c53b12338dacd9137c60fe73381ab63597d1b74d8d6514353ebb81c843",
+  "url": "https://files.dtcc.com/download/assets/25144-26/4c16eee6d3d811f1ae73a24f43a22b58",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "7a0335e0a7b174de85d92e797b26caf0889196ca17e7f6983a5306c932615e4a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_UWSJzx6UE2hjWbqOvrvaSM",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a corporate action (dividend/tax relief) for KBC Groep NV (CUSIP 48241F104) with a record date and payable date. It is routine DTC issuer/corporate action notification with no outside risk event described — no market stress, regulatory change, member stress, cyber incident, or infrastructure disruption that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4182,
+    "outputTokens": 132,
+    "totalTokens": 4314,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 6117
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

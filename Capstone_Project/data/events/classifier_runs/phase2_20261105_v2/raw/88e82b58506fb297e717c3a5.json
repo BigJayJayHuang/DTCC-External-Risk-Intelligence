@@ -1,0 +1,40 @@
+{
+  "document_id": "9abd06a2bbc397d5dd81f60050e36d716209242c605b5183cdaa09cd8c263e0a",
+  "url": "https://www.federalregister.gov/documents/2026/10/28/2026-21933/the-carlyle-group-inc-and-cp-viii-coinvestment-b-lp",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "51c9ae59d7c66c2066f9b754aed9be0b2abd54775c7578ab1d02e72a175b7520",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_6p3GdmzXxj6dABpJjmTx2N",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is headline-only and contains no substantive information beyond the names 'The Carlyle Group Inc. and CP VIII Coinvestment B, L.P.' — a Federal Register filing title. There is no described market event, regulatory action, member stress, cyber incident, or any other Step 1 trigger matching any card in the catalog. Insufficient content to establish relevance."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4091,
+    "outputTokens": 126,
+    "totalTokens": 4217,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1786
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

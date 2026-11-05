@@ -1,0 +1,40 @@
+{
+  "document_id": "6c32e5a2ee07fcc495166f5bb1d7c3a80c4c0020241961edad3b86d34fc1505c",
+  "url": "https://files.dtcc.com/download/assets/25159-26/c786d1e8cc8c11f1952c36c576494f3d",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "917355bc88610e13d006f6a4c57e2880b4d4f2f6acf51f812bed1b54348ee470",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_oLUmD5TVVQhaM1XRfYHGUM",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a tax relief / corporate action (dividend) for Aon PLC (CUSIP G0403H108) in Ireland. It is a routine DTC corporate action notification with no market event, regulatory change, member stress, or infrastructure risk described. No card in the catalog covers routine corporate action tax relief notices."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4223,
+    "outputTokens": 118,
+    "totalTokens": 4341,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2083
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

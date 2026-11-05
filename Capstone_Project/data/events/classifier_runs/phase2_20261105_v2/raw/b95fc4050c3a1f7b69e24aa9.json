@@ -1,0 +1,40 @@
+{
+  "document_id": "b580a4fae77696f92e6b57ce9003e8eb57b31d5e4c778fb55eb737fd7186b3aa",
+  "url": "https://files.dtcc.com/download/assets/25230-26/83a70c62d7b411f18afb6a2be9a8761b",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "44e78d112df8e90c692d2dd26c9b3319be9f58ebee35cc52f4ed3a872cd1de61",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_9kE57k2l80HXM51uV3KEAM",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC operational notice about removing chills on a specific security (Venator Materials PLC, CUSIP G9329Z118) and restoring settlement activity. It is an internal DTCC administrative/operational action on a single security, not an outside market, regulatory, member stress, or infrastructure event described by any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4292,
+    "outputTokens": 120,
+    "totalTokens": 4412,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1915
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

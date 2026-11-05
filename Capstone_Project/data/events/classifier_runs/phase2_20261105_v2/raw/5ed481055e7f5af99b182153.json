@@ -1,0 +1,40 @@
+{
+  "document_id": "c6d5f4b95d0819def3cf24668757763c6752d8665cce151170b2f3a47a70f83c",
+  "url": "https://www.sec.gov/newsroom/press-releases/2026-105-sec-small-business-advisory-committee-discuss-ipo-modernization-regulation-crowdfunding",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ac56b4ec4200e56f4ea37d14f203981db035dcca1b42aaf5a56775bbb159e6db",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_czZmfgzZbW2ver6Jbx9VL0",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes an SEC Small Business Capital Formation Advisory Committee meeting to discuss IPO modernization and Regulation Crowdfunding. This does not correspond to any card's Step 1 trigger — it is not a market event, member stress, infrastructure issue, cyber incident, or regulatory change touching DTCC processes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4145,
+    "outputTokens": 107,
+    "totalTokens": 4252,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1726
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

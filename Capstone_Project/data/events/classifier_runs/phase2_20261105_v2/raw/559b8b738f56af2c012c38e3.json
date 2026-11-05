@@ -1,0 +1,40 @@
+{
+  "document_id": "70f11380a0b18f48156055c7014087a73db51ac5fa02ef1e815045ec9e5a03ce",
+  "url": "https://www.fca.org.uk/news/news-stories/chandler-king-enters-creditors-voluntary-liquidation",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "bc593113d0537b5c41fa58e87b50ae3102c0212821734f7b530d94516b0c5097",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_gMR53HGZnN1EuRCsZagosm",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Chandler King (City) Limited is a small UK independent financial adviser that advised on investments and pensions. It is not a DTCC member, dealer, broker, clearing bank, or any participant type described in the card catalog. Its liquidation does not touch any of the 16 card Step 1 triggers (no Treasury/repo stress, no equity selloff, no clearing mandate, no cyber event, no major participant stress, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4206,
+    "outputTokens": 138,
+    "totalTokens": 4344,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2380
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

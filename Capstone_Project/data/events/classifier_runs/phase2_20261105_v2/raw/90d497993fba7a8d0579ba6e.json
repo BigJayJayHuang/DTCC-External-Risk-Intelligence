@@ -1,0 +1,40 @@
+{
+  "document_id": "870a679214a00bd4a8210249d1aa318d680e2f68e3efe29bfb14c41c5f37d195",
+  "url": "https://www.federalregister.gov/documents/2026/10/26/2026-21746/self-regulatory-organizations-cboe-edga-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "cdda8677663ffaf2395aa3166ed1a630230b3875ef645425f8c7b24325f8baaa",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_5qDLjmeRDmnRQOnlFYkTLT",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a Cboe EDGA Exchange fee schedule amendment to update the definition of 'Trading Platform' — a routine exchange rule filing with no market stress, clearing mandate, member default, cyber, or other event matching any card's Step 1 trigger."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4149,
+    "outputTokens": 98,
+    "totalTokens": 4247,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1686
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

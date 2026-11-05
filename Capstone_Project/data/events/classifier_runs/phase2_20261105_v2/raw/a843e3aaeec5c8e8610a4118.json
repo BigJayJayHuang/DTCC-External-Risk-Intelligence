@@ -1,0 +1,40 @@
+{
+  "document_id": "389d47a70a2c3d9ae3df34cddbc695d1708d1894a2e0594e83c8f555baa9bac3",
+  "url": "https://www.federalregister.gov/documents/2026/10/15/2026-21037/investment-company-cross-trading",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "f3f5c12ba1f3cc6615d5acb10d5f13923c84f14e996623d4377e8afbbc0e6bae",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ALizMPyXNdimpZVcZvz9x9",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes an SEC proposal to amend cross-trading rules for registered investment companies (Investment Company Act). This is a fund governance/compliance rulemaking with no direct connection to any card's Step 1 trigger — it does not involve Treasury clearing, repo stress, equity selloffs, settlement cycles, member stress, cyber incidents, or any other DTCC process touchpoint in the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4178,
+    "outputTokens": 125,
+    "totalTokens": 4303,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2171
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

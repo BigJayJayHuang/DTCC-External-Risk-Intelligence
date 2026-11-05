@@ -1,0 +1,40 @@
+{
+  "document_id": "3040bea27de9241630c5636798fe2fb06bd02a10ebecd0bb1c36328075b33e3b",
+  "url": "https://www.federalregister.gov/documents/2026/10/30/2026-22133/self-regulatory-organizations-cboe-byx-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "d12332fc205ad051122883718a75f635c16a78a2d19c6a9ed3e71dcea96ed570",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_3xvPCwpcpJFGZ8KNbnDhNX",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a Cboe BYX Exchange rule change to adopt a 'Start Time Order Instruction' — a minor exchange order-type rule amendment. This does not match any card's Step 1 trigger (no market stress, no clearing mandate, no member default, no cyber event, no settlement cycle change, no funding squeeze). Only a headline is available and it contains no risk-relevant event for any DTCC process."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4160,
+    "outputTokens": 134,
+    "totalTokens": 4294,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2356
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

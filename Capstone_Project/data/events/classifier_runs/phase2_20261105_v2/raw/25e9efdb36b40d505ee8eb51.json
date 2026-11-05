@@ -1,0 +1,40 @@
+{
+  "document_id": "ef2ef737ac76946ea10f85f193a73894c582c9d65fc3e1fea4783260af46cc1e",
+  "url": "https://files.dtcc.com/download/assets/25129-26/34cf6ad8c62211f18f21aeccf485c6a4",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "9a2852c10615ee0c1f3d715c628f0fa4bc238e8576f7865fd3415933ccb57d68",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_E0RXnHzVE3yLFnUxXK6kAf",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal compliance notice requiring DTC Participants to submit a valid LEI by December 12, 2026. It is an administrative/operational requirement directed at participants, not an outside market, regulatory, member stress, infrastructure, or cyber event described by any card's Step 1. No card in the catalog covers LEI submission deadlines or participant administrative compliance requirements."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4134,
+    "outputTokens": 125,
+    "totalTokens": 4259,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2169
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

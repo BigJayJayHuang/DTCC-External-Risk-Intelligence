@@ -1,0 +1,40 @@
+{
+  "document_id": "ec1f0a6631322e7f9480ef951bd68100f314b56c427d8ba59e498155e6db8976",
+  "url": "https://files.dtcc.com/download/assets/25194-26/9c83805ad23f11f1ae2492e8dca7836b",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "f6bd6c3e8184742337e9fde4c2c6598b2c6a8a31b400bb033dafcf7674e583a3",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_7PAY1yirnR23SeanQa6EZT",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about a rights offering for Powermax Minerals Inc. (CUSIP 73934M109). It describes a standard corporate action notification with record date, instruction deadline, and expiry date. It does not describe any outside market, regulatory, member stress, infrastructure, or cyber event that matches any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4230,
+    "outputTokens": 118,
+    "totalTokens": 4348,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1871
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

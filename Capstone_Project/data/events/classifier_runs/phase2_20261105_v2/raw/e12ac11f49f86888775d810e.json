@@ -1,0 +1,40 @@
+{
+  "document_id": "8ae1a863c66a78600f74f6d41cf1269b73f0bfd1ad3a4d1c4fd326c59a33e923",
+  "url": "https://files.dtcc.com/download/assets/GOV2244-26/703f5430c3ec11f1ba749a06627ff10a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "3804e109112b62296994217973e5cb37f7a00d6f6b4ac9d1943f0e752889a32e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_lOwtmo73eVijP8vOVRujkw",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new participant (Charles Schwab & Co., Inc.) joining the GSD netting system. It is a routine membership/onboarding administrative notice with no outside risk event described. No card in the catalog covers new participant admissions as a risk-triggering event."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4148,
+    "outputTokens": 110,
+    "totalTokens": 4258,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1999
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

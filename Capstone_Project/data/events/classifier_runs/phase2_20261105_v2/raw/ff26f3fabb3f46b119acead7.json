@@ -1,0 +1,40 @@
+{
+  "document_id": "b05d528d209008ba6401142f674d33d82e2e74d8a50b39fe7927e300f5d047f8",
+  "url": "https://files.dtcc.com/download/assets/CMU225-26/7727702ac8dd11f194999ebdd6a8b805",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "e010a4dcaafd5b2f0ac94fe0217a83bc04fc4f7aed867d3c0ac116d99d6b1725",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_5zIMhhKsknIezn6ljnH6AB",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC notice about the deletion of a municipal utility district contract revenue instrument (Kaufman County Texas Municipal Utility District No. 5). It is an internal/operational securities reference-data notice with no risk angle matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4098,
+    "outputTokens": 98,
+    "totalTokens": 4196,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1916
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

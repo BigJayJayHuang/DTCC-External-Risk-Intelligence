@@ -1,0 +1,40 @@
+{
+  "document_id": "d35ef6288fb90862adae0f8296f0e62ebe19c7a3ad4dbd88a4c555fb20f02418",
+  "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22455/self-regulatory-organizations-nasdaq-texas-llc-notice-of-filing-and-immediate-effectiveness-of-a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "af5b599e48a0a5cfff5102a77403f9818ac1610a9ebfa96f9891bbb05ec05bea",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_LOQP6BrbZdvxSUZxfktvYm",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a minor administrative rule change by Nasdaq Texas LLC to delete obsolete references to the CORE FIX Order Entry Protocol in its transaction fee schedule. This is an internal exchange housekeeping matter with no market event, member stress, infrastructure disruption, or regulatory mandate that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4194,
+    "outputTokens": 109,
+    "totalTokens": 4303,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1762
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

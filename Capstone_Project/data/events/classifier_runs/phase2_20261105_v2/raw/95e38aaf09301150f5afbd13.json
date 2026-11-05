@@ -1,0 +1,40 @@
+{
+  "document_id": "2d190585b0b30a3eadb0019570f68cfce60909bddbca6db5db7e98c8a798b30e",
+  "url": "https://www.federalregister.gov/documents/2026/10/13/2026-20803/self-regulatory-organizations-cboe-edgx-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "eeaa01b57b27723019e7d146b6df804d21d31c70df50a39ac6b575189504d347",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_3OhZyOZDwBSkaV6u9IenmX",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a routine fee schedule amendment by Cboe EDGX Exchange to add IEX to Fee Code RP. This is an internal exchange fee rule change with no market stress, regulatory mandate, member default, cyber, or infrastructure event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4178,
+    "outputTokens": 103,
+    "totalTokens": 4281,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3117
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "52703df8675f4ad84ec8dbf02a223d1bacff63e1f1bf08b38d88fc1822bad3a2",
+  "url": "https://www.federalregister.gov/documents/2026/10/14/2026-20923/self-regulatory-organizations-texas-stock-exchange-llc-notice-of-filing-and-immediate-effectiveness",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "66d01f533050a7d7477c629811febc931f5b344d672cc07cc01f1f355c9447fa",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_lHqcqvqotdGhSRxZwy6pHz",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a Texas Stock Exchange fee schedule amendment (transaction fee for securities priced at or above $1.00 that remove displayed liquidity). This is a routine exchange fee rule change with no market stress, clearing mandate, member default, cyber, or other event matching any card's Step 1 trigger."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4195,
+    "outputTokens": 107,
+    "totalTokens": 4302,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1898
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

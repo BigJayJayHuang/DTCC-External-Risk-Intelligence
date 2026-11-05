@@ -1,0 +1,40 @@
+{
+  "document_id": "130803055187661e382e864c6961f6b4169d840d2eec0c9709b17bba0bc3a974",
+  "url": "https://files.dtcc.com/download/assets/25130-26/a9d42d58c3e511f1b02c76c53cdc9348",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "08bb2e3f574ded9315ff8457110cf85b92e26b91cc6d0a703fb152649216df4f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_mzqij1w2e3g02g6szZuIuP",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is an internal DTCC operational/product notice about DRS Centralized Billing expansion (billing process changes for FAST transfer agents using SPA). It describes an administrative fee-billing infrastructure change with no risk angle matching any card's Step 1 trigger — no market event, regulatory mandate, member stress, cyber incident, or settlement cycle change."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4191,
+    "outputTokens": 118,
+    "totalTokens": 4309,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2208
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

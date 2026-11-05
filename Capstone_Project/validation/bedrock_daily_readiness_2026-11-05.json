@@ -1,0 +1,36 @@
+{
+  "status": "dry_run",
+  "run_date": "2026-11-05",
+  "start": "2026-10-09",
+  "end": "2026-11-05",
+  "coverage": {
+    "source_rows": 1604,
+    "eligible_articles": 481,
+    "selected_articles": 481,
+    "input_rejections": {},
+    "latest_publication_date": "2026-11-04"
+  },
+  "already_classified": 481,
+  "pending_articles": 0,
+  "selected_articles": 0,
+  "estimated_selected_cost_usd": "0",
+  "daily_budget_usd": "10",
+  "previous_daily_cost_usd": "7.5383616",
+  "remaining_daily_budget_usd": "2.4616384",
+  "source_news_sha256": "0a9f6957ee1d4edc7afb0676f743a721a2716d50871467884e6354f9dce6a221",
+  "paid_calls": 0,
+  "automation_enabled": false,
+  "role_configured": false,
+  "reason": "DTCC OIDC role and recurring-cost confirmation pending",
+  "tests": "26 offline classifier/daily tests passed",
+  "workflow_syntax": "actionlint 1.7.7 passed",
+  "historical_run_commit": "a697cd7db2127343ca386d5a4062158164d53cb2",
+  "code_and_input_guards": {
+    "config": "184ad0cc88c59b7f6983dddf509e59a0a16d756618ac0fad6006f83b19eb5a44",
+    "prompt": "5659cdf7160162cc23b2b67ca23ec984d37ae2e4d6b3c1312eb0500954c7d30f",
+    "register": "81bf5b154e5c79247d8695b99c41bffac430cd688d9026f773690f687e6659e2",
+    "major_participants": "4482d2d4b8892f202465f514522ea6892484ddd8a1dfcdef3247c53f23e88fa0",
+    "classifier_code": "29557a122d03152fa7f95a3c0d149951d31fbf8caf6116db4001d2330bee3111",
+    "daily_code": "425fc0720f65c81c44c014e9fb514048fe2330ad792a06ba5be56fe7c308b31e"
+  }
+}

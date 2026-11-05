@@ -1,0 +1,40 @@
+{
+  "document_id": "38e1a5c73c93bcf3d9be81105090088b9bede2dbf92e01898b06604209817797",
+  "url": "https://files.dtcc.com/download/assets/25158-26/b0596b3ac98411f1aeeb1ae81efac69c",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "d447d0d63615b4fc5dc56ef763305daf7132936fdb4fa7436d5d1d739ab3f4fd",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_nQ340V8oytil68NlKVzXYf",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification for MTN Group Ltd Sponsored ADR (CUSIP 62474M108), issued by JPMorgan Chase Bank, N.A. It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4163,
+    "outputTokens": 117,
+    "totalTokens": 4280,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1968
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

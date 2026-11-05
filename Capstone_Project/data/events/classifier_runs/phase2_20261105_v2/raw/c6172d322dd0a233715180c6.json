@@ -1,0 +1,40 @@
+{
+  "document_id": "b8cf476423a952a48abb96c2f41dc47a7ca6b1b502d94b2ea3cde004f33bc1be",
+  "url": "https://www.fca.org.uk/news/news-stories/bullseye-financial-ltd-enters-administration",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "75a0010db2c9ee89905a405c691c329ab9b11559e342220e6ed5727c994bfdfb",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_bnLAaIAosgWZAtZvS2Iubc",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Bullseye Financial Ltd is a small UK-based investment manager serving only professional investors; it entered administration after already ceasing regulated activity in March 2026. There is no indication it is a DTCC member, a major US dealer/broker, or a participant in any DTCC-cleared market. No card in the catalog maps to the failure of a small, non-US, non-member firm of this type."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4484,
+    "outputTokens": 134,
+    "totalTokens": 4618,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2251
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

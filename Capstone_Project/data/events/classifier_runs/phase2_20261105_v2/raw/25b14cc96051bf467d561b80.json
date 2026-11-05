@@ -1,0 +1,40 @@
+{
+  "document_id": "bac42b33b481c56987292620f24c5f74f68b784d4c94ad3b1061631615ca20ba",
+  "url": "https://www.federalregister.gov/documents/2026/10/22/2026-21573/self-regulatory-organizations-miami-international-securities-exchange-llc-notice-of-filing-and",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "b011ccbd0bb66c97e90be265cdda62aa92e6029e7c923f54d43e79f5b2ce0be8",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Hy7fi3EBeDBPuyKoCAmoSr",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes non-substantive edits to Miami International Securities Exchange's Consolidated Audit Trail compliance rule (Rule 1703) for industry member data reporting. This is a minor administrative/housekeeping rule change at a single exchange with no market, funding, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4167,
+    "outputTokens": 113,
+    "totalTokens": 4280,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1790
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}
