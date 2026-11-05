@@ -1,0 +1,40 @@
+{
+  "document_id": "e16e2e0c3ea06a99ffb524a0d3661f5523ce7cbe3a8ecc4a51d47ae96e20251d",
+  "url": "https://www.esma.europa.eu/press-news/esma-news/esma-appoints-carlos-san-basilio-new-member-its-management-board",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ad2e1b552f1d9e3805911e1e747ed5314b91c9a89835801622a1abbefe6e075f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Tfk26H5DGmvveLEEl5EUPP",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article reports on ESMA appointing Carlos San Basilio as a new member of its Management Board. This is a European regulatory staffing/governance announcement with no connection to any DTCC process or card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4113,
+    "outputTokens": 90,
+    "totalTokens": 4203,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1430
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

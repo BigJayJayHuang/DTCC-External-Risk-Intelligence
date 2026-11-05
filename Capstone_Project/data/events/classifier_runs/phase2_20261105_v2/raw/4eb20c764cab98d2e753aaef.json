@@ -1,0 +1,40 @@
+{
+  "document_id": "3655b6f2e677fd701e689d6991b107d9f7d23dc073e3abab99dc3e532a0c972d",
+  "url": "https://files.dtcc.com/download/assets/GOV2287-26/a91ca11ed88611f19c024aed85cffbfa",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "dcb55ecf70db01bd9fa1a26640d9d6b0562b61f519640dff4764aab3446d7e4a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_OqfQXbulytI6sskrjLueu5",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new Agent Clearing Member (Zions Bancorporation, NA) joining FICC GSD. It is a routine membership/onboarding administrative notice, not an outside market, regulatory, member stress, or infrastructure event that maps to any card's Step 1 trigger."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4145,
+    "outputTokens": 114,
+    "totalTokens": 4259,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1975
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

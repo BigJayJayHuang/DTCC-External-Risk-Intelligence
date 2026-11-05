@@ -1,0 +1,40 @@
+{
+  "document_id": "f9c4243248d227c9d6ee528fb01a8feae3beaa8facb48a3e33c0ffd597539121",
+  "url": "https://files.dtcc.com/download/assets/25228-26/8a14403ed49d11f1b4e77ee92a45f438",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "420433877c94aaab5a72838e6d72d993016bebcd20a1fb36dabf8239bebae944",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_JS1SE7I9gxwoVfMzKRGL1s",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC corporate action notice for an optional dividend on AI OKTO CORP. (CUSIP Y2258E107). It describes a standard DTC processing event with record, payable, and ex-dates, and a CAWEB election cut-off. No outside market, regulatory, member stress, or infrastructure event is described; no card's Step 1 trigger is met."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4218,
+    "outputTokens": 130,
+    "totalTokens": 4348,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2001
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

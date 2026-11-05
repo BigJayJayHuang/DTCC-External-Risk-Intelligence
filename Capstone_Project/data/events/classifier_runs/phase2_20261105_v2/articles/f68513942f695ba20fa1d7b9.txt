@@ -1,0 +1,3 @@
+A9846
+
+Bilateral Affirmation of Pended ETF Create/Redeem Instructions Notice: A9846 Summary: Effective November 23, 2026, subject to the completion of all necessary regulatory filings, NSCC will require both the submitting ETF Agent and the AP counterparty to affirm any ETF create/redeem instruction that pends for review. NSCC will not release a pended instruction for further processing until it receives sufficient written approval from both parties.

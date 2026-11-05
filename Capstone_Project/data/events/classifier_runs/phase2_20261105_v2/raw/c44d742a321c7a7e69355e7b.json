@@ -1,0 +1,40 @@
+{
+  "document_id": "88a0a69afb7b3e6c4d911e91f7ed10733643f9de49d49af551cfc0a88037690b",
+  "url": "https://www.federalregister.gov/documents/2026/10/22/2026-21571/self-regulatory-organizations-new-york-stock-exchange-llc-notice-of-filing-and-immediate",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "c0e4f043a4c705cfb717220c85201500401e14bed815c85aa1cadc613e3dceb0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_TZTlGWMYo01FE1JNlO8rce",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes NYSE harmonizing Rule 3220 with FINRA rule changes — a routine SRO rule filing about gratuities/gifts rules. This does not match any card's Step 1 trigger (no market stress, no clearing mandate, no member default, no cyber event, no settlement cycle change, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4145,
+    "outputTokens": 112,
+    "totalTokens": 4257,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2051
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

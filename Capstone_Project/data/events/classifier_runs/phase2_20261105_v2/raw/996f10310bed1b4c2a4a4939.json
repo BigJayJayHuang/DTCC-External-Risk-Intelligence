@@ -1,0 +1,40 @@
+{
+  "document_id": "3c75e59e7a7a84f27b43b1eaeca8d610b4f6ff90971c689a65a95ac8edfded1a",
+  "url": "https://www.federalregister.gov/documents/2026/10/21/2026-21479/self-regulatory-organizations-nyse-texas-inc-notice-of-designation-of-a-longer-period-for-commission",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "223b3a4f99bbbc9bfadc5109039ff41141e4c9fbbc09c30d1a642ecd8d6c3921",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_PPjr4FueI7EbbaWgKU9VPZ",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a procedural SEC notice extending the review period for a NYSE Texas proposed rule change about complimentary products and services. This does not describe any outside market, regulatory, member, infrastructure, or cyber event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4164,
+    "outputTokens": 95,
+    "totalTokens": 4259,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1656
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

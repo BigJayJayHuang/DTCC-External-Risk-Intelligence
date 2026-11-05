@@ -1,0 +1,40 @@
+{
+  "document_id": "7b197c97e9f7616d4bc4a935d14a62204d15ad7b15bbd7ce97c509dfa9bf9dea",
+  "url": "https://files.dtcc.com/download/assets/25182-26/f53f78a6ccc311f1bd8b066af7203eca",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "a30d9d1cd1a9c9e7a1a17c4a40b08e4c4dbf98a3c0821ab8bb23a3ea544a7c45",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_2KpR7JGAGUwX5zLgFY7yts",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for a single security (Inventiva S.A., CUSIP 46124U107). It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4158,
+    "outputTokens": 101,
+    "totalTokens": 4259,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1639
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

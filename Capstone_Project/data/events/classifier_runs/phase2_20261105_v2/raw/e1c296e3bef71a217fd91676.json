@@ -1,0 +1,40 @@
+{
+  "document_id": "9765da0a2ea5e396e5c1ea3af0ca5e1b28ac885137547c3398f8089bff78f26c",
+  "url": "https://www.fca.org.uk/news/speeches/beyond-borders-regulating-risks-we-share",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "fa1eeab7ef8f331c31d1490938b48581bfec5e13a82fc0fbbaa07d680bc9492d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_tUFmY80U4kvGyXbWt9rAtx",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a speech by the FCA Chair about international regulatory cooperation and relationships between regulators. It contains no new market event, regulatory action, member stress, or infrastructure incident that maps to any card in the catalog. It is a general opinion/philosophy piece with no actionable risk event."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4317,
+    "outputTokens": 102,
+    "totalTokens": 4419,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1638
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

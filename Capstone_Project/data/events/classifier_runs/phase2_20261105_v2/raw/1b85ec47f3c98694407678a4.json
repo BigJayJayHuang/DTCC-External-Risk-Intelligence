@@ -1,0 +1,40 @@
+{
+  "document_id": "a13336ed3116bc6329295009e545d36eaab427caf9f8b255ba2dff951b7098d4",
+  "url": "https://www.bis.org/media-releases/20261016-basel-committee-finalises-measures-address-window-dressing-g-sib-framework-and-consults-g-sib",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "af4bd3d6212acc97d92503b07044dafc60a5b17c8a7c4569edeee9892b07c508",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ZavNPdFCXAfSjRIDDFNkeE",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes Basel Committee finalising amendments to address window-dressing in the G-SIB framework and a consultation on G-SIB methodology review. This is a prudential capital/regulatory methodology matter for global systemically important banks and does not describe any of the Step 1 world events covered by the card catalog (no Treasury/repo stress, no equity selloff, no clearing mandate milestone, no member default, no cyber event, no settlement disruption, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4154,
+    "outputTokens": 143,
+    "totalTokens": 4297,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2339
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

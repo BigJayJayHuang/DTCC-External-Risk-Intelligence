@@ -1,0 +1,40 @@
+{
+  "document_id": "9ccea06133738f6d7d6b65a9b3628cee7981a6c2108b0e8e8ea295dda5156055",
+  "url": "https://www.federalregister.gov/documents/2026/10/28/2026-22000/agency-information-collection-activities-submission-for-omb-review-comment-request-extension-rule",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "fe4d538190f0a04b886bfcc3ad648d7eb626deba685faf4aad2b9200db3d4f47",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Ss6i2dpjTBmZgLrALtzCfJ",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is an SEC OMB information collection extension notice for Rule 433 (free writing prospectus rules). This is an administrative/paperwork burden extension with no market event, member stress, infrastructure disruption, or regulatory change that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4100,
+    "outputTokens": 100,
+    "totalTokens": 4200,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1906
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

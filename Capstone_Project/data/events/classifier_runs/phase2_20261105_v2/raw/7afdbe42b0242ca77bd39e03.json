@@ -1,0 +1,40 @@
+{
+  "document_id": "5fabd4b4af24beed30f55dedd50676b81ad5f8b9ddd74a3e732c97fdcf4e0185",
+  "url": "https://www.federalregister.gov/documents/2026/11/03/2026-22375/self-regulatory-organizations-new-york-stock-exchange-llc-notice-of-filing-and-immediate",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "4bd23e3fbffa059060e1750e44e7be6c9f1ccf1774a76747210d2ebd9b3967ce",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_O2ZVpLLp91pXUob6mqM4nu",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only notice about NYSE amending Exchange Rule 2(c), a routine SRO rule change. No card in the catalog covers NYSE internal rule amendments, and the article provides no substantive content linking to any DTCC process risk event."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4131,
+    "outputTokens": 98,
+    "totalTokens": 4229,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1774
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

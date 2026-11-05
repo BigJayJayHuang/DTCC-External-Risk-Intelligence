@@ -1,0 +1,40 @@
+{
+  "document_id": "2cdb5cb83e73e3fce8740ca0e7323a5327b3f0187abda6ed7b7806e35d64aeea",
+  "url": "https://files.dtcc.com/download/assets/GOV2247-26/0208052ac40f11f180d03a4020e4515d",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "19ef43a5b35807fd75abb69180d52184a71bb74453a7d3fdb14d699f0ce9f5c9",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_MNjKZw8el0CBPZVKy4VMHv",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new participant (National Bank Financial Inc.) joining the GSD netting system. It is a routine membership/onboarding administrative notice with no outside risk event described — no market stress, regulatory change, member distress, cyber incident, or other Step 1 trigger from the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4141,
+    "outputTokens": 114,
+    "totalTokens": 4255,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1948
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

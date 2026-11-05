@@ -1,0 +1,40 @@
+{
+  "document_id": "368cb665b91c52d1bde985290549f04b899fa32e4994d3d8d70a5b6702aedf74",
+  "url": "https://files.dtcc.com/download/assets/24592-26+/91754738d3a311f1807102763fa05cf5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "b318646c988ed967bc046e2c0b4fad4ed78dd5723a2dedf24f33e9b4a64f8a87",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_uI53UEpkdbgsdV9dIyBqAP",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about tax relief procedures for a dividend payment on Smurfit WestRock PLC (CUSIP G8267P108) in Ireland. It describes administrative deadlines for relief-at-source and quick refund instructions, not an outside market, regulatory, member stress, or infrastructure event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4230,
+    "outputTokens": 122,
+    "totalTokens": 4352,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2197
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

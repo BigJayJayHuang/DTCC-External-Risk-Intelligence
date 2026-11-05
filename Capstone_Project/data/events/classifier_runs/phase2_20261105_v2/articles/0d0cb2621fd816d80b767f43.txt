@@ -1,0 +1,3 @@
+25131-26
+
+DRS Withdrawal by Transfer Transaction Processing & DRS Centralized Billing and Legacy Withdrawal by Transfer Scope Notice: 25131-26 Summary: Effective November 13, 2026 (pending regulatory approval), DRS Profile Deposits, DRS Withdrawal-by-Transfer, and DRS Centralized Billing will move to SPA, with centralized billing becoming mandatory for applicable DRS transactions. Participants will need to route transactions based on the DRS Eligible Indicator, while certain legacy Withdrawal-by-Transfer activity, including certificated withdrawals and foreign ownership-restricted securities, will continue to be processed through PBS and existing CCF files.

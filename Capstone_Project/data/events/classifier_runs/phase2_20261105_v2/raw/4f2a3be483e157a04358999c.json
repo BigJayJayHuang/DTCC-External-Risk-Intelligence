@@ -1,0 +1,40 @@
+{
+  "document_id": "9fb42c3698544a0dabbd6f2519f997298d94e1b98949ff95a56d53a2aeaf499f",
+  "url": "https://www.federalregister.gov/documents/2026/10/20/C1-2026-20360/interval-fund-modernization-expansion-of-multiple-share-class-to-registered-closed-end-management",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "6582785d476d4f05979418820e6e3cff1bb091dbc1aeaf0179a135bea0a31f9c",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_LPXY0v9GxkWhSkTWaiRpOK",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about SEC rulemaking on interval fund modernization and multiple share classes for closed-end funds and BDCs. This is a fund structure/regulatory topic with no direct connection to any of the DTCC card Step 1 triggers (Treasury markets, repo, equity selloffs, settlement cycles, member stress, cyber, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4114,
+    "outputTokens": 115,
+    "totalTokens": 4229,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2108
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

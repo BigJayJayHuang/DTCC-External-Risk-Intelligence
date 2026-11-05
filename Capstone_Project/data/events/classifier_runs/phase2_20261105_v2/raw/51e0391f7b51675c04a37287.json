@@ -1,0 +1,40 @@
+{
+  "document_id": "a0c3e1be77e8b5a27f797ac2698e8181f11f02e52a904b55b7ef35c0555dc710",
+  "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "57e91b4d9d4e2402b3f753dac396ba494b6e55ba970b8e52a271199cb810317e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ZWOg0HOXXRTUR0XSMyRS2I",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a headline-only FOMC statement from the Federal Reserve with no substantive content. It contains no information about a market event, regulatory action, member stress, or infrastructure issue that maps to any card in the catalog. There is nothing to classify."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4051,
+    "outputTokens": 97,
+    "totalTokens": 4148,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1476
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

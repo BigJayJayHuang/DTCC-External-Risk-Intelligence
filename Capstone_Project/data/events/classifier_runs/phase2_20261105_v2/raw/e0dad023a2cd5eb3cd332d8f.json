@@ -1,0 +1,40 @@
+{
+  "document_id": "ea19800d0cf4d382daf7a40b362c5c230c02607b42ee17150297bb6f7124d3a6",
+  "url": "https://www.federalregister.gov/documents/2026/10/23/2026-21640/fis-trust-and-faith-investor-services-llc",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "8d9f844ef8479cf65cb1e149a377df2848169c0358c8b38b6e1139377ea279ca",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_h2egWcteQVOSeqxfHMbBRe",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article contains only a title — 'FIS Trust and Faith Investor Services, LLC' — with no substantive content. There is no described event, market development, regulatory action, or any other information that maps to a card in the catalog. Content scope is 'headline_only' and the text provides no risk-relevant facts."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4066,
+    "outputTokens": 114,
+    "totalTokens": 4180,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1695
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

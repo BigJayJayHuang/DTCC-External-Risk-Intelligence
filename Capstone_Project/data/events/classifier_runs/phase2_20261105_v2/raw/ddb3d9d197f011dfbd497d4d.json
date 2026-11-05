@@ -1,0 +1,40 @@
+{
+  "document_id": "b2f2a0fd6da984a09e9335c6832f0bffc6974859de5b75de52112b21ccfc18fa",
+  "url": "https://files.dtcc.com/download/assets/24590-26/3b9803a8cbfd11f1aeef728307e3d6b8",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "c5986eb1c57bb1da88f8c2e0beaa802d76dee2783b9585a7e6a62d4d8433f4bb",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_YuVIULxTXI1pc6mkxz2euW",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about a tax relief corporate action for KT Corporation (CUSIP 48268K101) in Korea. It describes a standard dividend/tax relief event with a record date and CA Web cut-off, not an outside market, regulatory, member stress, or infrastructure event matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4191,
+    "outputTokens": 114,
+    "totalTokens": 4305,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1960
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

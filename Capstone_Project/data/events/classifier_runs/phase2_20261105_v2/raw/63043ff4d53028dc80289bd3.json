@@ -1,0 +1,40 @@
+{
+  "document_id": "a1b9fa1fc47c932a8091fe29db8a47f8ae21be65bc87d1fedf68a321f767ab51",
+  "url": "https://www.federalregister.gov/documents/2026/10/27/2026-21833/nilsine-partners-np1x-fund-et-al",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "46221b7e484b6407de273ae389446719d126616232b29b4a865837a5d5687774",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_9ECFW73xldH7U85unCszCj",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is headline-only and contains no substantive information beyond a fund name ('Nilsine Partners NP1X Fund, et al.'). There is no described event, market development, regulatory action, or participant stress that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4073,
+    "outputTokens": 99,
+    "totalTokens": 4172,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1500
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -26,3 +26,4 @@ distribution/
 .env
 .env.*
 **/.venv-validation/
+Capstone_Project/data/events/classifier_runs/*_dry_run/prepared_requests.jsonl

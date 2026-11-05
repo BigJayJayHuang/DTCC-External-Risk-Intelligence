@@ -1,0 +1,40 @@
+{
+  "document_id": "36c27ae6689a6c40b4b46dd476440893d1b54bda7d54eb7ecaf4d74e1e7d458d",
+  "url": "https://files.dtcc.com/download/assets/25160-26/9df54ee6cd6711f1b0bae694c785b3e1",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "49a012ce4152722def4581846ab119f84350f7c4e8409aaf90eef89da3a9912d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_KHLw46Xo803MXKaYAVD45H",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for Tesco PLC (CUSIP 881575401), issued by JPMorgan Chase Bank, N.A. It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4162,
+    "outputTokens": 110,
+    "totalTokens": 4272,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1764
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "9df439b0fc8f687bebe61e064d6465421bbdf51ede129db791df6edef74098e9",
+  "url": "https://www.sec.gov/newsroom/press-releases/2026-106-sec-announces-roundtable-machine-understandable-data-age-super-intelligence",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "c49c78529a22416f5383ec65eb318d2e525bf0388b85cfc27d57e036dd0b1f62",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_GKyazkczfhTFwJziRMO3w5",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article announces an SEC roundtable on machine-understandable data and 'Super Intelligence' (AI). This is a discussion/informational event with no market, regulatory mandate, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4147,
+    "outputTokens": 98,
+    "totalTokens": 4245,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1751
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

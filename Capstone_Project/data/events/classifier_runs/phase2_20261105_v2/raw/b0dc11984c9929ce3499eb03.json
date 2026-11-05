@@ -1,0 +1,40 @@
+{
+  "document_id": "8c2b71ed18f227197a345db244b2444263c3ec25f4e22e265c3b36e0256da418",
+  "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22452/self-regulatory-organizations-long-term-stock-exchange-inc-notice-of-filing-and-immediate",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "e3438fb1e6add76141d8ca9eb20866c254f1da606a905e1b0c80eb2348000531",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_P34PNI2NZOvwXMX0DpFUw0",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only notice about LTSE (Long-Term Stock Exchange) amending its own Rule 3.291. No card in the catalog covers exchange rule amendments of this type, and the article contains no information about a market event, member stress, cyber incident, settlement cycle change, or any other Step 1 trigger described in the card catalog. Content scope is 'headline_only' with no substantive detail."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4133,
+    "outputTokens": 134,
+    "totalTokens": 4267,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2107
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

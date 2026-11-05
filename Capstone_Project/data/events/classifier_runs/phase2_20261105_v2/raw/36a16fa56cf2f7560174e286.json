@@ -1,0 +1,40 @@
+{
+  "document_id": "adbb5dff195762a3af8acd0ae95b102a9302de1458cdb280f44738af3369eb3b",
+  "url": "https://files.dtcc.com/download/assets/25138-26/2dccdecccd7611f1bd2842781a14e2c3",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "f4126115249bfc7fe0eefb79e243f29e41ef5ac4fa30c551588a94b3d995c036",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_lPlUq34JOMN77afhIQClPH",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a tax relief / corporate action (quick refund) for ArcelorMittal (CUSIP 03938L203) in Luxembourg. It is routine DTC corporate actions supplemental material with no market event, regulatory change, member stress, or infrastructure risk that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4195,
+    "outputTokens": 116,
+    "totalTokens": 4311,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1988
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

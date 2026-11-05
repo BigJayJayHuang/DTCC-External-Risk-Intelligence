@@ -1,0 +1,40 @@
+{
+  "document_id": "d3fc0b9bb0ce0e0a903d1049e365cce4dbd799ba04b1268d2559910cb8a45cc9",
+  "url": "https://www.federalregister.gov/documents/2026/10/23/2026-21650/self-regulatory-organizations-new-york-stock-exchange-llc-notice-of-filing-of-proposed-rule-change",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "66e19089f86e08de4d542d26028034226584eb17178b50280a775da737b64816",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_fMpusHYJRoRa4Kl052bWLL",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a notice of a proposed NYSE rule change regarding 'Clearly Erroneous Executions' (Rule 7.10). This is an internal exchange rule amendment about trade busts/adjustments and does not describe an outside market, regulatory, member, or infrastructure event that maps to any card in the catalog. No card covers exchange rule changes on erroneous execution policies."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4144,
+    "outputTokens": 124,
+    "totalTokens": 4268,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2058
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

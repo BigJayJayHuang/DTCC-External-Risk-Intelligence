@@ -1,0 +1,40 @@
+{
+  "document_id": "06cd321038a3e4aedea4dd88d48f164b540bf1979835ce77a3f590343fa3331b",
+  "url": "https://www.federalregister.gov/documents/2026/10/27/2026-21848/sunshine-act-meetings",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "676b0c448d9f21c722dea2503ef1940d4afef0fe8606d02ff0bfa2b10f8f29e1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_dCggPiPZ2o1lRKjnE5cmRh",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article contains only the title 'Sunshine Act Meetings' with no substantive content. It describes a routine government meeting notice with no market, regulatory, member, or infrastructure event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4043,
+    "outputTokens": 90,
+    "totalTokens": 4133,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1508
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

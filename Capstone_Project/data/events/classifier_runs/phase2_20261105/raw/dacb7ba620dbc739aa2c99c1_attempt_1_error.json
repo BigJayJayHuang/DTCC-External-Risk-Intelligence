@@ -1,0 +1,5 @@
+{
+  "code": "ValidationException",
+  "message": "The model returned the following errors: tools.0.custom: Invalid schema: Enum value None does not match declared type '['integer', 'null']'",
+  "http_status": 400
+}

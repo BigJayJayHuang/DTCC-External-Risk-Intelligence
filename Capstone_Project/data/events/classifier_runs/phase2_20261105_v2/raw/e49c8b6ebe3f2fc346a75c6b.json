@@ -1,0 +1,40 @@
+{
+  "document_id": "75f27ade41e05f5defb48c3e8f0189af6920b8a69a5c9b714a67c756e9cab93e",
+  "url": "https://www.federalregister.gov/documents/2026/10/13/2026-20805/self-regulatory-organizations-nasdaq-phlx-llc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "5ee1e09c66a85625103f600618dcbdc616723e472ea52fe9fc087fd0620f0ebc",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Kt7XGvtwbJHIYtxcctUEuY",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a Nasdaq PHLX rule change amending its 'Clearly Erroneous Transactions' rule (Equity 4, Rule 3312). This is an internal exchange rule housekeeping change with no market event, member stress, cyber incident, settlement cycle change, or other Step 1 trigger matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4164,
+    "outputTokens": 119,
+    "totalTokens": 4283,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1853
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

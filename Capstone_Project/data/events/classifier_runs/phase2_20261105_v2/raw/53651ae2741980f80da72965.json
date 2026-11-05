@@ -1,0 +1,40 @@
+{
+  "document_id": "2a564ddf0ecfc0832f96921dca9a23398d32d0cbf22dab6efaca8067432c6aea",
+  "url": "https://www.federalregister.gov/documents/2026/10/13/2026-20800/self-regulatory-organizations-the-nasdaq-stock-market-llc-notice-of-filing-and-immediate",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ed0fa1a047f53784d74694023ae17cc9daa0d1800677e13a1f3ecd160dab87e5",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_k2kGHbtnv6TQslrZBHqekJ",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article concerns a Nasdaq rule change amending information circular requirements (Rule 5740) — an internal exchange administrative/disclosure rule. This does not describe any outside market, regulatory, member stress, infrastructure, or cyber event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4141,
+    "outputTokens": 97,
+    "totalTokens": 4238,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1935
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

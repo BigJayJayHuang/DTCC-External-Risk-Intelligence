@@ -1,0 +1,40 @@
+{
+  "document_id": "5a464bba2fe8b5ad12b548dac4653e8c3e645b1ae70b5123c2e78e27ae414dc7",
+  "url": "https://files.dtcc.com/download/assets/25224-26/987ae5acd3ac11f1807102763fa05cf5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "5dc23763dd82d29828cb01361856c54e69141e11820c46d779791e7629c06653",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_PmjaDUA3GMjoQDEBcS0pGs",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTCC participant notice announcing an additional account activation for UMB Bank, National Association/ETF (#3393). It is an internal administrative/operational notice with no risk angle — no market event, regulatory change, member stress, or infrastructure disruption described. No card in the catalog covers routine participant account activations."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4123,
+    "outputTokens": 113,
+    "totalTokens": 4236,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1928
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

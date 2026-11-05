@@ -1,0 +1,40 @@
+{
+  "document_id": "aa9c35acec7a80965fecda999e88641ecf1116db875af3889c08992a609770c0",
+  "url": "https://files.dtcc.com/download/assets/25199-26/57c696fad21c11f1ad7d568be26243c6",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "4149365f2d572fe2276d4afe654bda362283150a94ac8a0bf1ea3de81a6f5ec5",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_TJOc6hpZyp7EvI4jB7dEV7",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification (Important Notice) for a single security (IQM Quantum Computers Oyj, CUSIP 462921107). It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4153,
+    "outputTokens": 113,
+    "totalTokens": 4266,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1746
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

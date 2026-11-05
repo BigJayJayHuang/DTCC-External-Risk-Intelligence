@@ -1,0 +1,40 @@
+{
+  "document_id": "a35220ff4454560b494ae517611325b6367c906dc9568e77265daa3baf75f1b1",
+  "url": "https://www.fca.org.uk/news/statements/motor-finance-legal-challenge-be-heard-february-2027",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "6b44a1c042e30bbdbff7781976cfcf447417f4751a87554e3e6d36215395cc99",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_bXoewRWbPJuukL340HigUa",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article concerns a UK FCA motor finance compensation scheme legal challenge involving Volkswagen Financial Services, Mercedes Benz Financial Services, and Crédit Agricole Auto Finance. This is a UK consumer finance regulatory/legal matter with no connection to any card's Step 1 trigger (Treasury markets, repo, equity clearing, settlement cycles, cyber, member stress, etc.). No DTCC process is touched."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4349,
+    "outputTokens": 128,
+    "totalTokens": 4477,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1983
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

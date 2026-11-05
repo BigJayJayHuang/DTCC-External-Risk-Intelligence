@@ -1,0 +1,40 @@
+{
+  "document_id": "97a1641f07cc6ca80f171f6b0c168a50aee557700e2c6dbe1e20239ad15d6c24",
+  "url": "https://files.dtcc.com/download/assets/GOV2256-26/b2c7c3dac80811f1a63202b4532791d0",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "efbdd2cb3ec4b6da1c9fc43470eab9a94bb8eb7d379b10687d9b1fa88b30c70f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Cy9Jtprs80pXFAVyzSUCYY",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new Agent Clearing Member (Commerz Markets LLC) joining FICC GSD. It is an administrative membership onboarding notice, not an outside market, regulatory, member stress, or infrastructure event described by any card's Step 1. No risk angle is present."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4146,
+    "outputTokens": 112,
+    "totalTokens": 4258,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1902
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

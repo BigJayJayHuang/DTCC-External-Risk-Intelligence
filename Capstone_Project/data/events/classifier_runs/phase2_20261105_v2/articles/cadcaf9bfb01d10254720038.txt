@@ -1,0 +1,3 @@
+DAS-001
+
+DTCC Tokenization Service is Now Live Notice: DAS-001 Summary: The DTCC Tokenization Service (DTS) is now live! DTS is a voluntary service operated by The Depository Trust Company (DTC) that enables eligible DTC Participants to tokenize eligible assets held at DTC.

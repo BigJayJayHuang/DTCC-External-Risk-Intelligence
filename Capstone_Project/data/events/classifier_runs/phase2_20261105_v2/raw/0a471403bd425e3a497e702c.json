@@ -1,0 +1,40 @@
+{
+  "document_id": "5dc6e88469181a981b65f8954f0e79f09994b72c7c3cd3cc9e4034ffcb447fee",
+  "url": "https://www.fca.org.uk/news/statements/fca-publishes-terms-reference-independent-review-concerning-mr-andriesz",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "3efc786081afcff2456adfbc033c805dd3bee83e6c85c3f7ff5c46d7d2e650af",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_PmrbSkvcT7gZ3NxjbVNKgo",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes the FCA publishing terms of reference for an internal review into its handling of a whistleblower (Mr Andriesz). This is an internal UK regulatory governance/process matter with no connection to any market event, member stress, settlement cycle, clearing mandate, cyber incident, or other Step 1 trigger described in the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4367,
+    "outputTokens": 115,
+    "totalTokens": 4482,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1855
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "d5891bf7a3bdb6f8f61225aa5323474faed00c84df9d979e213bbfd1eb105df0",
+  "url": "https://www.federalregister.gov/documents/2026/10/15/2026-21082/agency-information-collection-activities-submission-for-omb-review-comment-request-extension-form",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "41c59d000f62ee1a4559d642ccd180657c67152c4f0686ff3c0ece2c0a056266",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_58bKxKEvGGQ4jBVKc8mk7X",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about an SEC OMB information collection extension for Form N-8B-2 (a registration form for unit investment trusts). This is an administrative/paperwork notice with no market, regulatory, member, or infrastructure event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4104,
+    "outputTokens": 101,
+    "totalTokens": 4205,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1626
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

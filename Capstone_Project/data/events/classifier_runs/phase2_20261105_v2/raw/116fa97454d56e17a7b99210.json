@@ -1,0 +1,40 @@
+{
+  "document_id": "0384185b75b3c608ef2452925961cfa1f2408d5c675e44693763230f5b738298",
+  "url": "https://www.fca.org.uk/news/statements/demands-disguised-remuneration-scheme-loan-repayments",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "47020800f9efbc2ea346c9ff58bd32042230235de923860c06ab4d4b7d7d2c68",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_6vZLea63ruZbxXYEg2lx7f",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about FCA guidance on disguised remuneration scheme loan repayments (tax avoidance schemes involving contractors paid via loans). This is a UK consumer/tax enforcement matter with no connection to any DTCC process, market infrastructure, clearing, settlement, or any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4489,
+    "outputTokens": 105,
+    "totalTokens": 4594,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1762
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "bca2bf16715fa3153b774906bb8782817f0345451eecb6374fd930faaf483145",
+  "url": "https://www.fca.org.uk/news/blogs/fair-value-look-practice-three-years-consumer-duty",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "8efd58feb426ea1d9f92b0727f3c06c5c4e17146207cb678aba0afc803ec5607",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_KD4E8HARjO7669yuCVTXHq",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is an FCA blog post about Consumer Duty 'fair value' assessments for retail consumer finance products (credit cards, consumer hire, home energy agreements). It describes no market event, regulatory action, member stress, cyber incident, or infrastructure disruption that maps to any card in the catalog. It has no bearing on DTCC clearing or settlement processes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 5079,
+    "outputTokens": 118,
+    "totalTokens": 5197,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2020
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

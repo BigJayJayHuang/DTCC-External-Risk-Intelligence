@@ -1,0 +1,40 @@
+{
+  "document_id": "ccd6c99c9c0e79602bdd2594dfb59b078315414f009f8b81023ebe2edaf85f3c",
+  "url": "https://files.dtcc.com/download/assets/25188-26/8d9c8852ccc711f1b0bfeea7eae1d37b",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "7c6740efc4467c20445163b536ae979b977466e3b9ae27682ad5c121e0b973db",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_SgFsELXHphhdGmX1feRDzC",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for a single security (Controladora Vuela / Volaris, CUSIP 21240E105). It is an administrative/operational notice with no risk angle and does not describe any outside market, regulatory, member stress, or infrastructure event matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4181,
+    "outputTokens": 112,
+    "totalTokens": 4293,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1876
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

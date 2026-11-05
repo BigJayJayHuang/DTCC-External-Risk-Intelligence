@@ -1,0 +1,40 @@
+{
+  "document_id": "848664935c71dde1ee05e4a4742b2860d21c032d6b326cf1fc5a08f41a36e11c",
+  "url": "https://files.dtcc.com/download/assets/24786-26/4efca25ed87e11f1af509a76ac91497a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "03c05df48c73b0c3b096af84310cd2d87780c0994ac58aa94e2819f1596ea4c9",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ApGVhhKm74kU5czLLzZ8Pg",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for a single security (DSC Holdings Ltd., CUSIP 233369107). It is an administrative/operational notice with no risk angle and does not describe any outside market, regulatory, member stress, or infrastructure event matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4148,
+    "outputTokens": 105,
+    "totalTokens": 4253,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1750
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "96158020ee212055b97fb92c5a954f4198e6de5eb3b7b6b1fd589f66dde92b31",
+  "url": "https://files.dtcc.com/download/assets/25020-26/87abbba6cca011f1a92ee694c785b3e1",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "6bd6518eedcabd9ac06ea9203f06c7a114bdc4b58037aec68b01fb59d423a628",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_HwUKJQoLLYXoVKIt9EhuzT",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification (Important Notice) for a single security (Elevra Lithium Limited, CUSIP 805700101). It is an administrative/operational notice with no risk angle and does not describe any outside market, regulatory, member stress, or infrastructure event matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4154,
+    "outputTokens": 115,
+    "totalTokens": 4269,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1926
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

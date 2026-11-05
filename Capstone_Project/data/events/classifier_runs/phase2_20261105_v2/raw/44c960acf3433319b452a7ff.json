@@ -1,0 +1,40 @@
+{
+  "document_id": "a84cbd23afdd623c141822db1bc6b3dd1da3d0d0a1519fae3a43e8e3c83703d4",
+  "url": "https://www.federalregister.gov/documents/2026/10/13/2026-20798/self-regulatory-organizations-cboe-byx-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "5fd54e2d45b710dadbee7383e00e39614d99b459913baa4b3e58d2991e7e54ac",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_J4W4e2THCL1MrVzdVoGlxI",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a Cboe BYX Exchange rule change amending its Clearly Erroneous Executions rule (Rule 11.17). This is an exchange-internal SRO rule filing with no market stress, member default, cyber, settlement cycle, or clearing mandate angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4164,
+    "outputTokens": 112,
+    "totalTokens": 4276,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1872
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

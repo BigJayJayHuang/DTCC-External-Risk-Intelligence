@@ -1,0 +1,40 @@
+{
+  "document_id": "61cd3bb049189e3cdba64c36e6b23fc07257105dd91d69b1eee45246b82d03c0",
+  "url": "https://www.esma.europa.eu/press-news/esma-news/esma-finalises-review-guidelines-delay-disclosure-inside-information",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "b9c3aa60bc6db893a430424f1d062586b455486395a490e9c8ee0bf4c2b9864b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_z3DAy3bGByAGFsuHTvrpgK",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about ESMA (EU regulator) finalizing guidelines on delay in disclosure of inside information under EU market abuse rules. This is a European regulatory development with no connection to any DTCC process described in the card catalog. None of the Step 1 triggers (Treasury selloff, repo stress, clearing mandates, equity selloff, cyber, member stress, etc.) apply."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4102,
+    "outputTokens": 124,
+    "totalTokens": 4226,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2052
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

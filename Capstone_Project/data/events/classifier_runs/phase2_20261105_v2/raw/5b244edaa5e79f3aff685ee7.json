@@ -1,0 +1,40 @@
+{
+  "document_id": "d02b6011697f4c96fcf4460c8ba49b9ef817a13398753db675ab49356e7515f6",
+  "url": "https://files.dtcc.com/download/assets/25161-26/0fe986f4cd7a11f19c58da016f7bddbe",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "975283e6addc8e5f48da4acd9490575c69978ff8c4bebf074a274d4a3a5647d0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_rvzD1D8StcWBcvmgTMz38o",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a tax relief corporate action for Unicredit S.p.A. (CUSIP 904678AS8, Italy), covering record/payable dates and a CA Web instruction deadline. It is an operational/administrative notice with no risk angle matching any card's Step 1 trigger — no market stress, regulatory mandate, member distress, cyber event, or infrastructure disruption is described."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4207,
+    "outputTokens": 135,
+    "totalTokens": 4342,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2398
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

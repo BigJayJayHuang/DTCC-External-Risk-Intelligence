@@ -1,0 +1,40 @@
+{
+  "document_id": "712ff6272e888c88db3ad7eff63bef99ee5593bf96a5b46ed1275f2b21b8134a",
+  "url": "https://www.federalregister.gov/documents/2026/10/21/C1-2026-20311/potential-designation-of-chartered-financial-analyst-designation-as-qualifying-natural-persons-for",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "cc688eb01a6828847564a9d3d83ff85e19c8e13dde9b5c9fbbc99c4db9fc90bf",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_l0WjLmVtyebLnSG3OkJjsI",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article concerns a potential SEC rulemaking to designate CFA holders as qualifying natural persons for accredited investor status. This is a retail/private securities access rule with no connection to any card's Step 1 trigger — it does not touch Treasury clearing, repo markets, equity settlement, member stress, cyber, or any other DTCC process described in the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4107,
+    "outputTokens": 120,
+    "totalTokens": 4227,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2070
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

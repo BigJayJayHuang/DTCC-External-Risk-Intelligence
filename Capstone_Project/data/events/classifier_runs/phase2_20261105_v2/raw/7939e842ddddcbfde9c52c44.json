@@ -1,0 +1,40 @@
+{
+  "document_id": "d9fe89bcb7569363ae842588f6f95534f41d355bc1c10e6996ec77e399bc2f30",
+  "url": "https://files.dtcc.com/download/assets/GOV2272-26/f659401ad17711f188cfba6930e64258",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "a75e6569c6e6966dc768c2553e2c4ed0cf0320560b477de057666001f58338c2",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_dVFtH381XkLDcM1C5YyHAK",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new participant (J.P. Morgan Securities LLC/House Fund Reinvestment) joining the GSD netting system. It is a routine membership/onboarding administrative notice with no outside risk event described — no market stress, regulatory mandate milestone, member default, cyber incident, or other Step 1 trigger from the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4141,
+    "outputTokens": 124,
+    "totalTokens": 4265,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2114
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

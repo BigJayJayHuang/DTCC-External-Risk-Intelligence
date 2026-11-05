@@ -1,0 +1,40 @@
+{
+  "document_id": "4ab92b92be8ef8e90f9931dc3093a68f3da950c4db9a8c9f3f29599a97b5b60a",
+  "url": "https://www.federalregister.gov/documents/2026/10/14/2026-20924/self-regulatory-organizations-cboe-bzx-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "d8ed99759a2f182a1d9f4bbc288382111a5800e8665f10f7328b55664e1e0ec6",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_wPLsf27Fp8IW0gM2m9KjDe",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes Cboe BZX Exchange amending its fee schedule to introduce a Step-Up Tier 1 pricing tier. This is an internal exchange fee schedule change with no risk angle matching any card's Step 1 trigger — it does not involve a market stress event, regulatory mandate affecting DTCC processes, member distress, cyber incident, or any other catalogued risk event."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4159,
+    "outputTokens": 125,
+    "totalTokens": 4284,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1982
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "de9dff40524a1e97929cafebea31dadf578c90fb7306fe97b6cc9a9a8fa3de78",
+  "url": "https://www.federalregister.gov/documents/2026/10/28/2026-21931/order-under-section-36-of-the-securities-exchange-act-of-1934-granting-conditional-exemptive-relief",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "3f1b2012c3b28ee489d27e882bf304d12b45fde0893560adebe438ed2748f8bf",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_gg6hiBx3q0vh43JwbqST8e",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a headline-only SEC exemptive order regarding the treatment of customer margin under Rule 15c3-3 (the Customer Protection Rule). This is a broker-dealer net capital/customer protection regulation. It does not describe an outside market, member stress, infrastructure, or cyber event that maps to any card in the catalog. It is a regulatory action affecting broker-dealer margin accounting treatment, not a Treasury clearing mandate, repo stress, equity selloff, settlement cycle change, member default, or any other Step 1 event covered by the cards."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4171,
+    "outputTokens": 161,
+    "totalTokens": 4332,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2741
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

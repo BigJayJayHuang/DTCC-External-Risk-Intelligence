@@ -1,0 +1,40 @@
+{
+  "document_id": "c2ced04e04d08ddefa744a9040a01b8db062d7e0b8549406ce5679aff641dcc4",
+  "url": "https://files.dtcc.com/download/assets/GOV2277-26/b35c4c28d3aa11f1aa3476381129a88a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "0daebc263976a5dd453b7340b531c4731154fdbab78a8439f4de52d4a19cbf72",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_FyQCRqiFkkSvb6rPLnRDMz",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal rule filing notice (SR-FICC-2026-011) that removes an administrative reporting requirement for Sponsoring Members regarding certain events impacting their Sponsored Members. It is a procedural/housekeeping rule change with no market event, member stress, or risk angle that maps to any card's Step 1 trigger. It does not describe an outside event affecting a DTCC process."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4153,
+    "outputTokens": 135,
+    "totalTokens": 4288,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2404
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "85eb3d9c987b8af64c5870872060ee76e97385fe75c856d55b90da79d10cc390",
+  "url": "https://files.dtcc.com/download/assets/25173-26/af7e546ecc9f11f1985292247065a78f",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "0d39f703a6532cb119a31dfca6e1ed6c740abb8ee70b1ff8a88d634c19f658f1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_DJjmS48pGc0zRzUO12OX2z",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a tax relief corporate action for Nokia OYJ (CUSIP 654902204) in Finland. It is an operational/administrative notice about a dividend/tax election deadline, not an outside market, regulatory, member stress, or infrastructure event described by any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4203,
+    "outputTokens": 110,
+    "totalTokens": 4313,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1998
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

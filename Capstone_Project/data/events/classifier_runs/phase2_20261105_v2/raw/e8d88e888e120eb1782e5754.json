@@ -1,0 +1,40 @@
+{
+  "document_id": "9c6f73fc35367f4ef1ea8cd8976577986ea0832d82962129698ddf4e13def529",
+  "url": "https://files.dtcc.com/download/assets/25178-26/8a2d86ccccc111f1a242e694c785b3e1",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "d4cf7abbe2664daaf3b2b667ec80b48705ea997571c0727ebcce961361893dde",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_RFgZB2dsFIlMY8X3g6Pwxt",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for a single security (Resolution Minerals Ltd, CUSIP 76091K105). It is an administrative/operational notice with no risk angle and does not describe any outside market, regulatory, member stress, or infrastructure event matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4150,
+    "outputTokens": 106,
+    "totalTokens": 4256,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1841
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

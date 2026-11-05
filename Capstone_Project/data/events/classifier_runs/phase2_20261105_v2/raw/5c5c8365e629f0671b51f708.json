@@ -1,0 +1,40 @@
+{
+  "document_id": "5a1c93b30bcfb40c595041e4deec0bbfe296d2c3361987f1b01763df3f255d86",
+  "url": "https://files.dtcc.com/download/assets/GOV2249-26/ab124a72c71b11f1910bd6df78f9bef6",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "51a3e33fbc7db8abfc07f334c9c26b94662e4bf4a52a31880cfc343565f75e36",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_6f7iMDdvma7CGSw75moo2y",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new participant (U.S. Bank National Association/Macro) joining the GSD netting system. It is a routine membership/onboarding administrative notice with no outside risk event described. It does not describe a market event, regulatory action, member stress, or infrastructure disruption that maps to any card's Step 1 trigger."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4145,
+    "outputTokens": 124,
+    "totalTokens": 4269,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1981
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

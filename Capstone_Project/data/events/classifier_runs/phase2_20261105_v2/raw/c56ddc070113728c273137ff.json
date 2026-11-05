@@ -1,0 +1,40 @@
+{
+  "document_id": "ed0fd9cf74a6e019e2d1eb1619c347d48d24f6854ec545388132fa699bd47d78",
+  "url": "https://www.fca.org.uk/news/news-stories/leeds-office-move",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "213087f82e06a954f72cee36c550cb529f93c5163e524c6fc4afc0146fad4739",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_lNEigzG9pXYSiwGkQjFKJt",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes the UK FCA signing a lease for a new office in Leeds. This is an internal real-estate/administrative matter for the FCA with no connection to any market event, regulatory rule, member stress, or infrastructure issue covered by any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4182,
+    "outputTokens": 98,
+    "totalTokens": 4280,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1811
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

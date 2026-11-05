@@ -1,0 +1,40 @@
+{
+  "document_id": "31b39bacd703ef95e1e326eecf2aa6fd3fd34e2295a3f1f153e93cf7a4fb67e7",
+  "url": "https://files.dtcc.com/download/assets/25143-26/075b9fa0d3be11f1822e82e2ad497373",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "f9b45b46bb410eb86464a1924873fe503af13925129ce56037cac5a8c851daf1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_jY5vIulNky2I3nL2Dg03DK",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a routine corporate action (dividend/tax relief) for Melexis NV (CUSIP 585482102) in Belgium. It does not describe any outside market, regulatory, member stress, or infrastructure event matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4182,
+    "outputTokens": 104,
+    "totalTokens": 4286,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1723
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

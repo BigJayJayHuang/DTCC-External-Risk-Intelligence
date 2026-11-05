@@ -1,0 +1,40 @@
+{
+  "document_id": "397fa3de157c0707a565610b713fce5f273881ae561602d2875c3692221c1055",
+  "url": "https://www.esma.europa.eu/press-news/esma-news/esma-streamlines-several-qas-part-simplification-efforts",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "6d364dbfc7ba85fa65bd48b0f4a4de143f2808c4360ceef88f0ccd0070024b87",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_f6djhWvs35hLowggfBRFIt",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about ESMA (EU regulator) streamlining Q&As as part of simplification efforts. This is an EU regulatory housekeeping action with no connection to any DTCC process or card in the catalog. The article text is truncated but contains no market event, member stress, infrastructure issue, or regulatory change that touches DTCC operations."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4093,
+    "outputTokens": 119,
+    "totalTokens": 4212,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1925
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

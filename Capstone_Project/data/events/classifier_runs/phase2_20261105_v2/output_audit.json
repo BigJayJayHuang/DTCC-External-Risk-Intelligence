@@ -1,0 +1,23 @@
+{
+  "audit_passed": true,
+  "checked_raw_outputs": 481,
+  "reconstructed_request_hashes_matched": true,
+  "source_texts_matched": true,
+  "protected_files_unchanged": true,
+  "candidate_rows": 0,
+  "all_candidates_need_review": true,
+  "relevant": 0,
+  "irrelevant": 481,
+  "failed_checks": 0,
+  "candidates_per_card": {},
+  "fence_fallbacks": 0,
+  "tokens": {
+    "inputTokens": 2004897,
+    "outputTokens": 55891,
+    "totalTokens": 2060788,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "7.5383616",
+  "budget_usd": "10"
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "3a1063f9a022f994b4aa767fbd93076ad4225de073e11168ad7435ef4e2e68ee",
+  "url": "https://files.dtcc.com/download/assets/25231-26/c8f4dad0d7a811f1bf71ca3e85514d03",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "786d560e88196b2a74024a379413b3fe9f5909bc3faa4377037ebb88677d7eeb",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_6KHLsjqzCA9eNxzwWCBmIB",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal administrative notice about the retirement of a single participant account (State Street Bank & Trust Company/Lending Pass-Through, #7268). It is a routine account maintenance action with no outside market, regulatory, member stress, or infrastructure risk event described. No card in the catalog covers account retirement notices."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4130,
+    "outputTokens": 111,
+    "totalTokens": 4241,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1992
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

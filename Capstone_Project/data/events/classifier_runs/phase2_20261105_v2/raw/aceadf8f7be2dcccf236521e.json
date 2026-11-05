@@ -1,0 +1,40 @@
+{
+  "document_id": "d1cd7d3330ec503ae6fa3a7044e4e0096b851baaa66492f59b7a7075183fe768",
+  "url": "https://files.dtcc.com/download/assets/a9849/3e7aa6d8d49611f1aded8250b29f21ee",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "54dea11c98e448630cef4ce58d9611ef9c5cfb0cdccf57b07a86086ff287d7a6",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_rMwlXUdo4Ab00fQhPtXHEu",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTCC administrative notice (a9849) announcing changes to the list of DTCC participants/members. It contains no substantive information about an outside market, regulatory, member stress, or infrastructure event that maps to any card in the catalog. It is an internal DTCC housekeeping notice with no risk angle."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4108,
+    "outputTokens": 114,
+    "totalTokens": 4222,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1569
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

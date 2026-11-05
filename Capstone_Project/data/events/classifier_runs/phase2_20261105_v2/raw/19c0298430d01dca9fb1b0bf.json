@@ -1,0 +1,40 @@
+{
+  "document_id": "22d0d5d79060988c030b4808440185f9f25e83651ce1fd014be3804c30dab6d6",
+  "url": "https://www.federalregister.gov/documents/2026/10/16/2026-21129/self-regulatory-organizations-long-term-stock-exchange-inc-notice-of-filing-and-immediate",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "f3c42992837d02dbad1f49b2806f8c8c9dec11fdce4a70dab3e4b5af8e42ebe8",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_yiG8WN1HHAo03nyLRkqYDQ",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a Long-Term Stock Exchange rule change amending its Clearly Erroneous Executions rule (Rule 11.270) in light of overnight protected bands for 23/5 trading. This is an exchange-internal rule filing with no direct risk angle touching any DTCC process described in the card catalog. While 23/5 trading is tangentially related to extended-hours settlement (ECS-SET-01), this article is only about erroneous execution bands at LTSE — not a settlement cycle change, market disruption, or other Step 1 event covered by any card."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4193,
+    "outputTokens": 174,
+    "totalTokens": 4367,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2851
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

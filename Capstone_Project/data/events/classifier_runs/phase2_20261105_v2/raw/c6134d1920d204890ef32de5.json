@@ -1,0 +1,40 @@
+{
+  "document_id": "c5fc7abe10a11ea14c6f4212cc098a51097a9cfd79dc8f0ae889c780f74d4445",
+  "url": "https://www.federalregister.gov/documents/2026/10/13/2026-20793/self-regulatory-organizations-cboe-edga-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "23adabbb880cbbad7b4775a225ca9951fc129f2800b47e0ef85916b451bdab44",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_53CehYlEh8Wb10V9GUlLxm",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes Cboe EDGA Exchange proposing a Data Vendor Program rule change. This is an exchange data/market data administrative rule filing with no risk angle touching any DTCC process described in the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4137,
+    "outputTokens": 89,
+    "totalTokens": 4226,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1629
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

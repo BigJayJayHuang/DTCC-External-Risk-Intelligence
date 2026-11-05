@@ -1,0 +1,40 @@
+{
+  "document_id": "cbb4b1bf3c297315819cdafc8de357637bbb110e5ffa85a9ef0cb918dc33990a",
+  "url": "https://www.federalregister.gov/documents/2026/10/16/2026-21204/agency-information-collection-activities-proposed-collection-comment-request-extension-rule-17g-3",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "8ef6a7fa020ba58994cfa46c4c2d9dba7c82925c284f89a1c51f6277c1d57132",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_wrz5G99rF1ccxHLli04dwX",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Rule 17g-3 is an SEC rule requiring annual financial reports from Nationally Recognized Statistical Rating Organizations (NRSROs). This article is a routine administrative notice for an information collection extension (PRA comment request) with no market event, member stress, infrastructure disruption, or regulatory change that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4093,
+    "outputTokens": 115,
+    "totalTokens": 4208,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2165
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

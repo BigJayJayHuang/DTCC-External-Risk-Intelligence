@@ -1,0 +1,40 @@
+{
+  "document_id": "b3fa98b970f8c656b9e747555594897c761ff14bba7d4295a3acd0077ccf8b0a",
+  "url": "https://files.dtcc.com/download/assets/25193-26/5384ec7ad17411f1b7efeae83ccab4ef",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "c1c5409a7211cfdd8c34b330130f7a2c465a176dacfa5c530d887c5220280146",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_aCY4l95PDP6AX1OZbsqdc3",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal administrative notice about the retirement of a primary account for Comerica Bank (#2108). It is a routine participant account change with no market, regulatory, cyber, or member-stress risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4117,
+    "outputTokens": 98,
+    "totalTokens": 4215,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1618
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

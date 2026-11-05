@@ -1,0 +1,40 @@
+{
+  "document_id": "006a79b59b0cd67a5fded87a0164b894aa0d09de973ca6ccf2c4e824b6e1f473",
+  "url": "https://files.dtcc.com/download/assets/B25218-26/d6c653dcd15911f1baeda64857289c49",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "85b7f2fa19a8d1c9a5189a27a6c2d0d1dbe5699f91873a89b4199e05588d74f1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_lIqiG7hFV7zruyWbXuUaY3",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC operational notice about a DTC global lock (chill/freeze) on a single defunct issuer (RVL Pharmaceuticals PLC, CUSIP G6S41R101) following its legal dissolution and transfer agent resignation. It is an internal DTC administrative action on one small, already-delisted security with no remaining assets. No card in the catalog covers DTC chills/freezes on individual defunct issuers, and the event does not describe a market, regulatory, member stress, or infrastructure event that maps to any card's Step 1 trigger."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4379,
+    "outputTokens": 170,
+    "totalTokens": 4549,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2735
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

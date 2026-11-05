@@ -1,0 +1,3 @@
+25133-26
+
+DRS Withdrawal by Transfer Transaction Processing & DRS Centralized Billing and Legacy Withdrawal by Transfer Scope Notice: 25133-26 Summary: This notice advises FAST transfer agents that DRS Withdrawal-by-Transfer processing and DRS Centralized Billing will transition to SPA on November 13, 2026 (pending regulatory approval), with centralized billing becoming mandatory for DRS Profile Deposits and Withdrawal-by-Transfer transactions. While DRS-eligible transactions will move to SPA, legacy certificated withdrawals and certain foreign ownership-restricted securities will continue to flow through PBS and existing transfer agent files such as RSATFX and CF2DMX.

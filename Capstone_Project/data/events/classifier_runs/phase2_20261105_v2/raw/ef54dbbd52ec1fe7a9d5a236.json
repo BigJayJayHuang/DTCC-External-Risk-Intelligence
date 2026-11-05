@@ -1,0 +1,40 @@
+{
+  "document_id": "cbc5086320f83e3ead49f59b346729dd4f7b4c9486d63830307de5c8ff890895",
+  "url": "https://files.dtcc.com/download/assets/24850-26+/dd1895b2c7d911f198cdbeeb22ca2ea3",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "addf1a1f22333b244c8670c4c540a7d800625c1c18a3ea3cc68d45decce2a3bf",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Y0Zy8lvD4AfKpOvJzawBmj",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a tax relief corporate action for Husqvarna AB (Sweden), a routine DTC issuer/CA notification. It does not describe any outside market, regulatory, member stress, or infrastructure event that matches any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4192,
+    "outputTokens": 101,
+    "totalTokens": 4293,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1891
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

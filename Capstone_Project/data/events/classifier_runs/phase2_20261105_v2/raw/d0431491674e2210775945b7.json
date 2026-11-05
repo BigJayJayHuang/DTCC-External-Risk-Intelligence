@@ -1,0 +1,40 @@
+{
+  "document_id": "7b1d0095b4384857b14633ccbaa0fcc2932d91f29d7c4a8d68f65e5cae5aca6f",
+  "url": "https://files.dtcc.com/download/assets/GOV2268-26/4b2cc2e6d16011f1a9428ed39b037a9a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "bfa2eb87b6cb659c9d18a9b734acf2b46d3cf4f68cb46fdf7d45b8d5614e4a69",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Z4B8bfWveVeuIaqNDD9ZXm",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal administrative notice about a Sponsored Member name change. It contains no market event, regulatory action, member stress, or infrastructure/cyber incident that maps to any card in the catalog. It is a routine participant/member update with no risk angle."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4123,
+    "outputTokens": 99,
+    "totalTokens": 4222,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1659
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

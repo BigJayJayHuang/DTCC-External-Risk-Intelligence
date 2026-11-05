@@ -1,0 +1,40 @@
+{
+  "document_id": "200e1fc0a97671a708d881b0537d8a2d2c16994c41bc5eba2e5caf8d48f4c439",
+  "url": "https://files.dtcc.com/download/assets/25137-26/e0587c36ccae11f195dc6a933c971b09",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "1a97c16cb06a64c345e96d41f368ae9c2e97e6c2d7b6cc2b3c61474117e79726",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_PUGyMw2KjR0pPXmsL18LgS",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about a corporate action (tax relief / dividend payment) for Unicredit S.p.A. (CUSIP 904678AF6) with record and payable dates in December 2026. It describes a standard CA Web instruction deadline notification, not an outside market, regulatory, member stress, or infrastructure event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4216,
+    "outputTokens": 127,
+    "totalTokens": 4343,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2209
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

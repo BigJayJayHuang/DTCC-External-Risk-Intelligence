@@ -1,0 +1,40 @@
+{
+  "document_id": "988b61ab77ff19b03c934aac1079ba16391f2fe8a3b377492cb93313a3ddab1f",
+  "url": "https://files.dtcc.com/download/assets/GOV2259-26/0d812a8acbda11f195bf7ae625519eae",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "49add8cd7d73d5448f51bea998ec7d3031fde293b40e20b1b62ffb2ee2b5f964",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_HtVqhhofcCtMejOnPn9xzq",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a DTCC internal notice (GOV2259-26) about deleting a Sponsored Member record. The content is a generic administrative update placeholder ('Updates/changes impacting DTCC Participant(s)/Member(s) and/or Sponsored Member(s) noted here') with no substantive information about an outside market, regulatory, member stress, or infrastructure event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4110,
+    "outputTokens": 134,
+    "totalTokens": 4244,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 4471
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

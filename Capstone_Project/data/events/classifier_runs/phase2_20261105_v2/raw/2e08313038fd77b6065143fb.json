@@ -1,0 +1,40 @@
+{
+  "document_id": "92e282240e70cebe1cb336b561aad0e2f08a711d5ab096d8789ee03401ab0e92",
+  "url": "https://www.federalregister.gov/documents/2026/10/22/2026-21574/self-regulatory-organizations-miax-pearl-llc-notice-of-filing-and-immediate-effectiveness-of-a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "77c709a882d720bba83708850089afafb47a220d5d78a889ee1d4099cea1cbe6",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_GBLHiSsnzYlDiLgxssBmdC",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "MIAX PEARL non-substantive correction to its own minor rule violation fine schedule (Exchange Rule 1014). This is an internal exchange housekeeping rule change with no market event, no member stress, no clearing or settlement impact, and no match to any card's Step 1 trigger."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4172,
+    "outputTokens": 106,
+    "totalTokens": 4278,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1680
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

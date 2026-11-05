@@ -1,0 +1,40 @@
+{
+  "document_id": "7e607b7e74d3fd56fadaad22cd67f3b47e30fdd6634c660549950f42e4b2a309",
+  "url": "https://files.dtcc.com/download/assets/DDRIE11/7af1d4a4d47f11f1821ca62688da004b",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "7f7dcc9eb46378ac53cb86bfada9ec8c4769fa1014f5a33bd0a9e8ddf50d8df4",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_mAw9a6Yv82JUzQknhBECAd",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This article describes an update to DTCC Data Repository (Ireland) PLC's operating procedures and fee schedule for the EU MiFIR ARM (Approved Reporting Mechanism) service. This is an internal DTCC product/operational notice with no risk angle matching any card in the catalog. It does not describe an outside market, regulatory, member, infrastructure, or cyber event that touches any of the listed DTCC processes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4135,
+    "outputTokens": 133,
+    "totalTokens": 4268,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1997
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

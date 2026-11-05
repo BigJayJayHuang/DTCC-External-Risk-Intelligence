@@ -1,0 +1,40 @@
+{
+  "document_id": "510a008d9d8bc766dd08883ffd5f354054509cea1de01b98402befd3cd74909e",
+  "url": "https://www.federalregister.gov/documents/2026/10/16/2026-21136/self-regulatory-organizations-cme-securities-clearing-inc-order-approving-proposed-rule-change-to",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "12fd1aa2c4290d1b4f3e64cf2b1844a77aabab071d2e7c782a6f82b95313479a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_cdDFC0Oov56CQJDn7uEKP4",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article concerns CME Securities Clearing Inc. amending its own liquidity facility rules (Rule 410, Rule 101, Capped Liquidity Facility Procedure, Liquidity Risk Management Policy). This is an internal rule change at a non-DTCC CCP and does not describe an outside market, regulatory, member, or infrastructure event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4159,
+    "outputTokens": 126,
+    "totalTokens": 4285,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1877
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

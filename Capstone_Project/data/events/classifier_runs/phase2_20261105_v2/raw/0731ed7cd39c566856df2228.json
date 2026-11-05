@@ -1,0 +1,40 @@
+{
+  "document_id": "6dad08c6a40d3fdea5243f4787e8463b755a89bb656aae6b4656f5e77bd1bb95",
+  "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261019~f0a3e053de.en.html",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "0c2cde24d53c39bbb571a17f8acaf224f2bb0a4ae4e7e2a87a25068f7af4b415",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_3wuXXBr8muHPCGKOymxHxS",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only ECB speech by Frank Elderson on climate/nature risks and economic resilience. It does not describe any outside market, regulatory, member, infrastructure, or cyber event that matches any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4083,
+    "outputTokens": 92,
+    "totalTokens": 4175,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1533
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

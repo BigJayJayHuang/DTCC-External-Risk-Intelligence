@@ -1,0 +1,40 @@
+{
+  "document_id": "0dd554fda31ed63205711a0703d1cc811a78c6bf05c4c66046d6c94e3c26a148",
+  "url": "https://files.dtcc.com/download/assets/25201-26/68e38f54d21e11f18e8c72d3772e5967",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "1c6a90d7f01a6d2d77b02eed0bb01012320aba448e2925d7d76d505c0f20dc56",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Jirc4XySobsBVwmOflqAZG",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for MEDIROM Healthcare Technologies Inc. (CUSIP 58510H103), issued by Bank of New York Mellon. It is an administrative/operational notice with no risk angle and does not describe any outside market, regulatory, member stress, or infrastructure event matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4156,
+    "outputTokens": 115,
+    "totalTokens": 4271,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1838
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

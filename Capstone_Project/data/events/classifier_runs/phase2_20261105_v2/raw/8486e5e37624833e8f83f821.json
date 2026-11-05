@@ -1,0 +1,40 @@
+{
+  "document_id": "3a41f6ede4847da64ff9cd37f0cfba0cb56bfd996c90b740fcc2a80cba43c0ec",
+  "url": "https://files.dtcc.com/download/assets/GOV2282-26/4c5fc45ed7a711f1a32676277c76473d",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "29f7685ce90a75e27cbf63ada2a259c61df2f43306d3ac522ec859bd32eb7bc2",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_DEwy5GJoAr6W0MgU8BfsYD",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new participant (JP Morgan Chase Bank, NA/London Branch) joining the GSD netting system. It is a routine membership/onboarding administrative notice with no outside risk event described. No card in the catalog covers a new participant joining FICC GSD as a Step 1 world event."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4144,
+    "outputTokens": 117,
+    "totalTokens": 4261,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1985
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

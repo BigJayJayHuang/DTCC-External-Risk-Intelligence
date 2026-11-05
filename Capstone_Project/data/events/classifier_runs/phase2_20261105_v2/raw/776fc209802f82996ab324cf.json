@@ -1,0 +1,40 @@
+{
+  "document_id": "1be471e990fef5396e8faff2a6e9dac59ea30744c0f630dd9a1c3732cd48e106",
+  "url": "https://www.cftc.gov/PressRoom/PressReleases/9315-26",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "3115befd0baf511886b524c2103ed58c01ef48bc8609b0e7d8b5f339e3534fcf",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_arXSOlyfbKbMCqcZLlNfMu",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about the CFTC suing to block state enforcement in Utah over jurisdictional matters. This is a regulatory/legal dispute between the CFTC and a state authority and does not describe any outside event matching any card in the catalog (no Treasury/repo stress, no equity selloff, no member stress, no cyber incident, no settlement cycle change, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4085,
+    "outputTokens": 123,
+    "totalTokens": 4208,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1985
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "f3910ce23581df6027ee2113f99a0cc55242c5f8dc707752bbdb5092e93bd38b",
+  "url": "https://files.dtcc.com/download/assets/25035-26/4e150666d7b011f1bf550a6d464d813b",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "f819db479ea7f8ed9a60b62f6ce4e765acb49d63668770df2aa3954adca75845",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_9vbYihpOuwrwzIEXCSQDrB",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification (Important Notice) for Fortescue Metals Group Ltd (CUSIP 34959A206), issued by Citibank. It is an administrative/supplemental notice with no market event, regulatory action, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4152,
+    "outputTokens": 118,
+    "totalTokens": 4270,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1940
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

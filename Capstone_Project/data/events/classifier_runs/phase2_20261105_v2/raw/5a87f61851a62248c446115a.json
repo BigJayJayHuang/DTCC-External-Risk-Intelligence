@@ -1,0 +1,40 @@
+{
+  "document_id": "b1ba5567b011e1b8669be443bb0d197d538de78ea52b0720d75bb8fdb14a7835",
+  "url": "https://files.dtcc.com/download/assets/25219-26/1506a87ed3ab11f180e9d62da045af0c",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "84518dea7ac6df217ba11c2956352828be514848f031d73330420096383a95d2",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_IWLxNoWu1mzBPfid0cn76z",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about a tax relief/corporate action for AerCap (CUSIP N00985106) in the Netherlands. It describes a dividend withholding tax relief procedure with cut-off dates, not an outside market, regulatory, member stress, or infrastructure event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4216,
+    "outputTokens": 114,
+    "totalTokens": 4330,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1955
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

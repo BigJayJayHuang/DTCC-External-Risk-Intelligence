@@ -1,0 +1,40 @@
+{
+  "document_id": "5294043bf01f646c436ce78eedfe297a8af4f7ea6258a069d5dbe2a5dc552e10",
+  "url": "https://files.dtcc.com/download/assets/25135-26/764b4378ccae11f1bdb0da016f7bddbe",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "133f73bd543ef2eb4701ed00ee70aa178f9e78540175db7c7cf1256477e72fc4",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_yQ8s0HFYOSYysDzsFKGoph",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a tax relief / corporate action (quick refund) for Intesa Sanpaolo S.p.A. securities in Italy. It is routine DTC corporate-action administrative notice with no market event, regulatory change, member stress, or infrastructure risk that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4234,
+    "outputTokens": 114,
+    "totalTokens": 4348,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1892
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

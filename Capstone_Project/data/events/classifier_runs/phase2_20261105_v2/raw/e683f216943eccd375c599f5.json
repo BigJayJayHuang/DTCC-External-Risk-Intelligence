@@ -1,0 +1,40 @@
+{
+  "document_id": "e657e8c20bdb9f394c4a56d504be8ed91e068f2c44953850ecc97a9370c2d990",
+  "url": "https://www.federalregister.gov/documents/2026/10/26/2026-21748/self-regulatory-organizations-nyse-american-llc-notice-of-filing-and-immediate-effectiveness-of-a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "cf04b58cde8019eb916732995ad156964a42471f85c45e0165ca43e756644603",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_98wrk3ktkSxRxSNbLicKE5",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes NYSE American LLC modifying its options fee schedule for manual transactions. This is an exchange fee/rebate rule change with no connection to any card's Step 1 trigger — no Treasury selloff, repo stress, clearing mandate, equity selloff, member stress, cyber event, or settlement disruption. Not relevant to any DTCC process in the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4155,
+    "outputTokens": 120,
+    "totalTokens": 4275,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1877
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

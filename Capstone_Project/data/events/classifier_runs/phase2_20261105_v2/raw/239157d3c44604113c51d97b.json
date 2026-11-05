@@ -1,0 +1,40 @@
+{
+  "document_id": "8425ea368f93baa556712867d2fd04f2af2e48c6565d2ff7733594aec702e74e",
+  "url": "https://files.dtcc.com/download/assets/25031-26/3e21035ad7aa11f19b8b36039ce0e230",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "2ec7845c351ba36054c4544809ccfb9a4f5d141d8b1d140426a6cbff3f765e5b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_2ObZbierrdOTyJNuj0SEID",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for a single security (HANNSTAR DISPLAY CORPORATION REG S, CUSIP Y3062S134). It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4153,
+    "outputTokens": 107,
+    "totalTokens": 4260,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1719
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

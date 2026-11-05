@@ -1,0 +1,40 @@
+{
+  "document_id": "eaef353fd7113a4de822f4dfcee002576dcbb26939d06d6b2eea98c1be844158",
+  "url": "https://files.dtcc.com/download/assets/a9843/e07d8476ccaa11f1907b066af7203eca",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "18961300b61458b4b097bd6a778e3c08a91662f1fc9ab728a30196f914e849f2",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_PjUMJDo5SF07uAcmOjUizY",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal rule filing notice (SR-NSCC-2026-012) about enhancing automated reasonability checks for ETF creation and redemption transaction submissions. It is a procedural/operational rule filing with no risk angle matching any card's Step 1 trigger — it does not describe a market event, member stress, cyber incident, regulatory mandate, or infrastructure disruption."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4143,
+    "outputTokens": 127,
+    "totalTokens": 4270,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1792
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "c151854fa37dd204a4116e1d9c66f0e6498b57e1d9acb865b9ea1793bea0fd08",
+  "url": "https://files.dtcc.com/download/assets/25034-26/cc299140d7ae11f18a2ed6d26d5485bf",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "da71ace78362acac403fa72a27a7614e9fb94004e8113d4f85b2ec6289c8c15b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_cHk34ghtNYsSui82bBFqlL",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification (Important Notice) for a single security (Fubon Financial Holding Co. Ltd. 144A, CUSIP 359515301). It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4162,
+    "outputTokens": 116,
+    "totalTokens": 4278,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1813
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "19b375e1b09838b688b77ac88edc848a8b827ac6996da1002ecbc75deecb3a24",
+  "url": "https://www.federalregister.gov/documents/2026/10/09/2026-20713/self-regulatory-organizations-nyse-arca-inc-notice-of-filing-and-immediate-effectiveness-of-a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "c5965934d8e64e48c37e18be44cdf61f0dfbf8e67f3312d93835b1a61efa7951",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_lH7xI6GpoPgFYHhvboQPo2",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes NYSE Arca amending its options proprietary market data fee schedule to adopt fees for one-minute intra-day volume reports. This is a routine exchange fee schedule change with no connection to any card's Step 1 trigger (no market stress, no clearing mandate, no member default, no cyber event, no settlement cycle change, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4180,
+    "outputTokens": 118,
+    "totalTokens": 4298,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2051
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

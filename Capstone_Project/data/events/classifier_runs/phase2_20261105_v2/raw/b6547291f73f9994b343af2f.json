@@ -1,0 +1,40 @@
+{
+  "document_id": "485711608bf4b24b0c2b18d5a9404b8eadffbea4b8d0cbc6f53d176ba35756cf",
+  "url": "https://www.federalregister.gov/documents/2026/10/19/2026-21377/further-definition-of-swap-inclusions",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "7810969686543425e5778fafb417ff9b96c6b92d8b140c1a6dfb64fa180488b1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_0YOvFdfnsJJrsh6yAKypsB",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article describes a CFTC proposal to further define the term 'swap' to include event contracts (sports, politics, cultural, weather). This is a derivatives definition/regulatory rulemaking that does not touch any of the DTCC card Step 1 triggers — it is not a Treasury selloff, repo stress, equity selloff, settlement cycle change, member stress, cyber event, or any other scenario covered by the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4137,
+    "outputTokens": 136,
+    "totalTokens": 4273,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2323
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

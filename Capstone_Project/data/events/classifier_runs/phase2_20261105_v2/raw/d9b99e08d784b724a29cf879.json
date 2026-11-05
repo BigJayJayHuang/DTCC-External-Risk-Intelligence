@@ -1,0 +1,40 @@
+{
+  "document_id": "c0dc5e8175d3c8fcb1da367edc8c9e4bd14a77e8448643acd8ad060df96c1167",
+  "url": "https://files.dtcc.com/download/assets/GOV2283-26/1898c610d7b211f18bc2266dd58c2a6f",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "310a77da76e9ce5a041676ce4112a88136d5f8fc9eb91620392d33568e70ad34",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_DvBOfUmk7QmogITbBXxafY",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new participant (Vanguard Marketing Corporation) joining the GSD netting system. It is a routine membership/onboarding administrative notice with no outside risk event described — no market stress, regulatory action, member default, cyber incident, or other Step 1 trigger from the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4143,
+    "outputTokens": 115,
+    "totalTokens": 4258,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1833
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

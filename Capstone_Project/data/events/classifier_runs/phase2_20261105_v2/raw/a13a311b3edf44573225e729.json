@@ -1,0 +1,40 @@
+{
+  "document_id": "499c5bef5e11b075f5761c17c5b7f5a1ee5d7be15ab6ff1822a471591ab41044",
+  "url": "https://www.federalregister.gov/documents/2026/10/09/2026-20709/self-regulatory-organizations-cboe-edgx-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "1e40bf10f53245d1d8f6b37670089b221b9d84013713b57cc5b205ba9dd78569",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Al1gHwxgXaTE9PvLckjXFw",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article concerns Cboe EDGX Exchange amending its rule on clearly erroneous executions. This is an exchange-level rule change about trade busts/reviews and does not describe any of the Step 1 world events covered by the card catalog (no Treasury selloff, repo stress, clearing mandate, MBS stress, equity selloff, settlement cycle change, broker failure, cyber incident, member stress, exchange halt, or settling bank problem). No DTCC process is touched."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4166,
+    "outputTokens": 146,
+    "totalTokens": 4312,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2682
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

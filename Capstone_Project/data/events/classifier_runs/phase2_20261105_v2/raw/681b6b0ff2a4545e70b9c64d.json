@@ -1,0 +1,40 @@
+{
+  "document_id": "a64d7f3da6ca2f78c339ce7dc376356d422c48862e91f81775810b711cf8fda1",
+  "url": "https://www.fca.org.uk/news/news-stories/epayments-systems-limited-enters-special-administration",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "546ef57a74dd738419dfb1994d6cbd8159e8b09febf83c51aaddb7952eccdb69",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ct7QiMXyViEacAQWv8VsYf",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "ePayments Systems Limited is a UK e-money institution entering special administration under FCA oversight. It is not a DTCC member, clearing bank, broker-dealer, or participant in any DTCC process. None of the card Step 1 triggers (Treasury stress, repo stress, equity selloff, cyber, exchange halt, settling bank failure, retail broker exit, etc.) apply. The firm has no apparent connection to DTCC's settlement, clearing, or margining processes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4238,
+    "outputTokens": 146,
+    "totalTokens": 4384,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2370
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

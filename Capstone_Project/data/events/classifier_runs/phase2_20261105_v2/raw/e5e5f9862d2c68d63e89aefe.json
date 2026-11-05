@@ -1,0 +1,40 @@
+{
+  "document_id": "fa42660c7db1369bb02d95b877b58d9305a10b13c94c1158a54006002987ec0c",
+  "url": "https://www.federalregister.gov/documents/2026/10/13/2026-20806/self-regulatory-organizations-the-nasdaq-stock-market-llc-notice-of-filing-and-immediate",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ab596ef213f1c1201f41a378a5de929c498539c810929631968f2d4f005bb18d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_VIQteclVWnxDhNG1ERcRWP",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a Nasdaq SRO rule change notice amending its own 'Clearly Erroneous Transactions' rule (Equity 11, Rule 11890). This is an internal exchange rule-maintenance filing with no market stress, member default, cyber, settlement cycle, clearing mandate, or other Step 1 event described in any card. The article is also headline-only with no substantive content to map to a card."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4154,
+    "outputTokens": 136,
+    "totalTokens": 4290,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2136
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

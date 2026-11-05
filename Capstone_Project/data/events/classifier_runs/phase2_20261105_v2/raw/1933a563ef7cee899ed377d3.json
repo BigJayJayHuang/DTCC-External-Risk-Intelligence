@@ -1,0 +1,40 @@
+{
+  "document_id": "9751aba6b40749907bd9ccee6ac20ae4eddb380e58b851ea5207178cc20c8f03",
+  "url": "https://files.dtcc.com/download/assets/GOV2284-26/52aaa558d7b211f1a32676277c76473d",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "7c5c7d5688dfa5ad9f15b5ccebba46b42dde261dfec29cb4a9e9d92e28298013",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_bnZlgbNSUHs9aiCwNnaOMG",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new participant (The Bank of Nova Scotia, New York Agency / BNS Toronto) joining the FICC GSD netting system. It is a routine membership/onboarding administrative notice with no outside risk event described. No card's Step 1 trigger (market stress, regulatory mandate, member stress, cyber event, etc.) is present."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4142,
+    "outputTokens": 127,
+    "totalTokens": 4269,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2019
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "44cacfef30aa4ecb1a21b0d2434d4f9ff98659ee479d5d951b8c5e596db8aeb0",
+  "url": "https://www.federalregister.gov/documents/2026/10/13/2026-20811/self-regulatory-organizations-cboe-bzx-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "685e8d7eff9ebf8e26731bd67a53550c9d26f0a3b1f573b308cebfb9205e49ae",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_31A7zvjbXliTFmGeWiZDT3",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes Cboe BZX Exchange introducing a Data Vendor Program — a routine exchange rule change with no market stress, regulatory mandate, member default, cyber, or infrastructure angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4139,
+    "outputTokens": 89,
+    "totalTokens": 4228,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 4178
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

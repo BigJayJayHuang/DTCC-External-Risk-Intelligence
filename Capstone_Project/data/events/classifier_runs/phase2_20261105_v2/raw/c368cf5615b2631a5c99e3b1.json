@@ -1,0 +1,40 @@
+{
+  "document_id": "8bb5e2bcac4e145d3865c506bdef43d733896b039213b84e24e5dcc44d62807c",
+  "url": "https://files.dtcc.com/download/assets/25018-26/477b6046cc9f11f1b0bfeea7eae1d37b",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "7e31bac49aaf3deb2876dde3d7b2538bfcfad0d29f549cead5708d279ff03c1b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_L90KPuyhA733rVXsioKThw",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for a single security (Dotz Nano Limited, CUSIP 25857G105). It is an administrative/operational notice with no risk angle and does not describe any outside market, regulatory, member stress, or infrastructure event matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4156,
+    "outputTokens": 108,
+    "totalTokens": 4264,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1768
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

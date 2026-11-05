@@ -1,0 +1,40 @@
+{
+  "document_id": "e20840367f90db51a2e8e8e58cfdce737fbff636528b6baa5fc83c44fb2298ba",
+  "url": "https://files.dtcc.com/download/assets/25191-26/46d3683ccf0111f1966b82c68e1198d2",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "f03aa00fe6175ea4cb62c0d18294e0879451ac4fd993845d29ec0bf0455e3207",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_htlcHXX5Jl0QYBIKwpAshB",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for Novonix Limited (CUSIP 67010L209), issued by Bank of New York Mellon. It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4153,
+    "outputTokens": 108,
+    "totalTokens": 4261,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1868
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

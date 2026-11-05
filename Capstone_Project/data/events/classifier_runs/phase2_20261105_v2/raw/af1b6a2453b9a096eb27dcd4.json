@@ -1,0 +1,40 @@
+{
+  "document_id": "e7262b7d88eb107b1becef3b12f322c3d47ac8f4bd5f3ca7b932c973be3101c6",
+  "url": "https://files.dtcc.com/download/assets/25190-26+/d3a79bc2cd7911f1aa35da016f7bddbe",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "bde8829b10bf611d9a1d0012df9915d92254153793513e7bd17445d9a6388097",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_JR2L5tomSLvKK2P5Rg7tIN",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a tax relief / corporate action (ADR dividend) for Whitecap Resources (Canada). It describes a routine DTC corporate actions notification with a one-day election window for a Canadian ADR. No outside market, regulatory, member stress, or infrastructure event is described; none of the card Step 1 triggers apply."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4216,
+    "outputTokens": 120,
+    "totalTokens": 4336,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2025
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "40513fcfce421114293c7655c5f082c1a88b45bc68fb4df77a6721945a2b65ba",
+  "url": "https://files.dtcc.com/download/assets/25180-26/be2e0450ccc211f1b602b2cdd0355e03",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "08c140f353f27f6ccc37c1fa7582c0d70511150e5fb18e676d4f4331480491da",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_0WZxYXZqrm9B4it2cuPkyh",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for a single security (Starpharma, CUSIP 855563102). It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that matches any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4151,
+    "outputTokens": 100,
+    "totalTokens": 4251,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1625
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

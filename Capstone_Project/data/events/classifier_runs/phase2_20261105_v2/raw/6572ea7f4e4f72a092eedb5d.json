@@ -1,0 +1,40 @@
+{
+  "document_id": "8dac74e8074181af5b7342609dd1c04cc11e733bd6f9cf7e05e2db0934000427",
+  "url": "https://files.dtcc.com/download/assets/24457-26/5fff86e0c7d811f1af5fbe671ac24eff",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "86dfcd9b844c891069406b0c146d1c33821e0267d15253baec626124c1d32818",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_5xDJzVCJCCaaqik2cFmex7",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTCC Important Notice about tax relief (relief at source / quick refund) for a Swedish security (SKF AB). It describes a corporate action tax processing deadline, not an outside market, regulatory, member stress, or infrastructure event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4219,
+    "outputTokens": 104,
+    "totalTokens": 4323,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1744
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

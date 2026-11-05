@@ -1,0 +1,40 @@
+{
+  "document_id": "e5b19ada27a7e46c7751f4998abf30a1d95ec6ccb0cc2857d7feff94f7d48229",
+  "url": "https://files.dtcc.com/download/assets/MBS1609-26/3f7181d4cc9311f1bd32e694c785b3e1",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "21d5f09d05e2c39a4d875b46790626475f65948bb2e4299b3ec3e7d38f15a498",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_NpcB88ei5ZvVqhYBjFNpwh",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice (MBS1609-26) announcing J.P. Morgan Securities LLC's intent to retire as a participant/member. It is an administrative membership notice with no outside market, regulatory, or infrastructure risk event described. No card's Step 1 trigger is present."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4135,
+    "outputTokens": 107,
+    "totalTokens": 4242,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1627
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

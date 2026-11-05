@@ -1,0 +1,40 @@
+{
+  "document_id": "b821d0680224022d56d18b4dbd0390ebf7cf975200efdcff360c6a2ef76550e5",
+  "url": "https://files.dtcc.com/download/assets/MBS1610-26/1a66db76d16311f1ac7f8ed39b037a9a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "0583f5959e34bd77d59a202485466515ecbe13c3142d5332def505b14b3c7262",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_n8rdPvQO1TbhdbYcobGB8h",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC participant activation notice for BofA Securities Inc. (MLPA) referencing MBS1610-26. The article contains no substantive information about an outside market, regulatory, member stress, or infrastructure event. It is an internal DTCC administrative/operational notice with no risk-relevant content that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4122,
+    "outputTokens": 120,
+    "totalTokens": 4242,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2900
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

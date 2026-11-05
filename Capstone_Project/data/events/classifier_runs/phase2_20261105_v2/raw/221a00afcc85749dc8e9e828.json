@@ -1,0 +1,40 @@
+{
+  "document_id": "252d3127346b7e5a1c3efcda8c2314ddd9a918acf281aa6af8104718987bce01",
+  "url": "https://www.federalregister.gov/documents/2026/10/21/2026-21481/self-regulatory-organizations-cboe-edgx-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "db1c37cb0e35da8f6fc67c433df40901d125391d5718832a2e4606fe3f60e1d8",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_uMENkwyFXnNu7RpwqWreD8",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This article describes a Cboe EDGX Exchange rule change clarifying when unpriced orders are eligible for execution and how day orders expire during overnight trading sessions. It is a minor operational/procedural rule amendment at a single exchange with no connection to any DTCC process described in the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4267,
+    "outputTokens": 107,
+    "totalTokens": 4374,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1623
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

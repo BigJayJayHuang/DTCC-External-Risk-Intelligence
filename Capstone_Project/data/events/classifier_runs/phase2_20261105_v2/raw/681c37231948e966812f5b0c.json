@@ -1,0 +1,40 @@
+{
+  "document_id": "f892cc5b6372a2f4227526ae70c4f7e260902db821abbfac0324e9d35d900662",
+  "url": "https://files.dtcc.com/download/assets/GOV2275-26+/e443a058d22d11f18da31a1e2373e925",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "8870ea11ebbc79308074a09f3c1e2aae9f9386e1d98caebf31cd9078bcd94f01",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Ip2csqb36GpcUsjhs9NYaR",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal holiday schedule notice (Thanksgiving Day) informing clients of holiday observance and its impact on clearing and settlement services. It is an operational/administrative notice with no outside risk event described — no market stress, regulatory change, member stress, or infrastructure disruption. No card in the catalog covers routine holiday schedule announcements."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4126,
+    "outputTokens": 115,
+    "totalTokens": 4241,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2915
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "113da61d4542c7a48030da5de0118a301764ce83e9d9146ba1f56aaf399fa1d1",
+  "url": "https://www.federalregister.gov/documents/2026/10/29/2026-22027/self-regulatory-organizations-financial-industry-regulatory-authority-inc-notice-of-filing-and",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "eb317461f5908aa13b3c068e906104d53da510fcb65f48a3c341e482fee19bfa",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_IQMk2TYkld4hU40RmClmhn",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This FINRA rule change addresses binary options, metric-based options, and options cleared by clearing agencies other than OCC. It does not describe any of the Step 1 world events covered by the card catalog (e.g., Treasury selloff, repo stress, equity selloff, member default, cyber incident, settlement cycle change, etc.). No card fits."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4199,
+    "outputTokens": 119,
+    "totalTokens": 4318,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2677
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

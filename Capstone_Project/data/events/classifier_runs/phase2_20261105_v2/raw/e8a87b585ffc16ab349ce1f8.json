@@ -1,0 +1,40 @@
+{
+  "document_id": "a814f6720041aef3155ae0007bdf587b241e0ff0179798e0f1bc3b77cdfe1717",
+  "url": "https://files.dtcc.com/download/assets/GOV2285-26/782a9342d7b211f1904276277c76473d",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "0c5c739fc5ef8cc28a1ae23bd1bb2bcb891f5e5319de8b733ca8bdcf84ae0acd",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_0bUEa6cTp2ClF030G43EC8",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new Sponsoring Member (Natwest Markets Securities Inc.) joining FICC GSD. It is a routine membership/onboarding administrative notice with no risk event described — no market stress, no regulatory milestone, no member distress, no infrastructure issue. It does not match any card's Step 1 trigger."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4139,
+    "outputTokens": 121,
+    "totalTokens": 4260,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2032
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

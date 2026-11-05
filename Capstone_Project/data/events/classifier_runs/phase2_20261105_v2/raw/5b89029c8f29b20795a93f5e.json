@@ -1,0 +1,40 @@
+{
+  "document_id": "9d0c3f7fb6db288c84ffab33675fc669c86e74f08f52cd3a1ff76fee56c31865",
+  "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261021~401d6c4b70.en.html",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "52aa11363f60c75fea62f0ce62da4f6f8d390b181c85ae4bb14fbdb4d5309581",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_o0iLt4rIypdhkV7UtHQByd",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only speech by ECB Chief Economist Philip Lane about euro liquidity lines and the international monetary system. It does not describe any outside event matching any card's Step 1 trigger (no Treasury selloff, repo stress, clearing mandate, equity selloff, member stress, cyber incident, etc.). Content is an ECB policy speech with no direct relevance to DTCC processes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4074,
+    "outputTokens": 127,
+    "totalTokens": 4201,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2090
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

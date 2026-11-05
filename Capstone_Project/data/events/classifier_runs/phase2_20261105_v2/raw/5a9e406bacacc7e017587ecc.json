@@ -1,0 +1,40 @@
+{
+  "document_id": "c57c0b7f6a3350d0444ee1bc85ba994d2170d1ddd1f68101331537e5394285e4",
+  "url": "https://files.dtcc.com/download/assets/GOV2253-26/f493c646c73711f1ab2e4ee3aef81876",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "fab1da16e88bf6c08ee1fa3adbf61e11ae0cfb7a86eb5aa50f748f1d002d3545",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_6clbk4cbH9l1bLOwuYAJ9U",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new participant (Sumitomo Mitsui Banking Corp/Hong Kong Branch) joining the GSD netting system. It is a routine membership/onboarding notice with no risk event angle — no market stress, regulatory mandate milestone, member distress, or infrastructure disruption. No card in the catalog covers new participant admissions as a Step 1 world event."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4148,
+    "outputTokens": 132,
+    "totalTokens": 4280,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2308
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

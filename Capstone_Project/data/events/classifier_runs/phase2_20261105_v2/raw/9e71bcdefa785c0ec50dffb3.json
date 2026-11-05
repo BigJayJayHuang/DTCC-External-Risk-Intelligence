@@ -1,0 +1,40 @@
+{
+  "document_id": "3ae8efb6d0960741f649ce4ff0376da193449fe54add8348bee72fe515890568",
+  "url": "https://files.dtcc.com/download/assets/24824-26/fa4679e8c96d11f1a56fba6bd8a09548",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "38401706f7ed701870d7ace04070d375a1729cdcfe4890ee8f118bc49c8d1d44",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_hXmP2hBkFDooVELnNQ0ji3",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for a single security (Vallourec, CUSIP 92023R407). It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4152,
+    "outputTokens": 101,
+    "totalTokens": 4253,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1786
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

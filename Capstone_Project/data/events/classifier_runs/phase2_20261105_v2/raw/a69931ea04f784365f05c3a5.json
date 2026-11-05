@@ -1,0 +1,40 @@
+{
+  "document_id": "41690a4ebc45cddae668868f5f5c4c5f8af039780fbd35ca7cec5c8e61324529",
+  "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261029a.htm",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ba9795ca2e66b218629c727d901a3035fe16db8b6d574bddba419599b86b26fd",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_t7GxdjBwygQ0BdnQPVZFRF",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a headline-only Federal Reserve press release announcing approval of an application by The Bank of Nova Scotia. There is no detail about the nature of the application, no stress signal, no default, no regulatory mandate, and no market event described. None of the card Step 1 triggers are met by this bare announcement."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4061,
+    "outputTokens": 110,
+    "totalTokens": 4171,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1614
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

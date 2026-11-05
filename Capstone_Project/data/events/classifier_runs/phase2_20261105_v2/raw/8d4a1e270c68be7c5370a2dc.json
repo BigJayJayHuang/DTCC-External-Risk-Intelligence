@@ -1,0 +1,40 @@
+{
+  "document_id": "3c9f189a7718b5a7702c708a22c55d75fd5f9e07feb21f911ca7e564b7f09d7d",
+  "url": "https://www.federalregister.gov/documents/2026/10/20/2026-21393/self-regulatory-organizations-financial-industry-regulatory-authority-inc-order-approving-a-proposed",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "71ac31c056c2f3f916d5886493d4806cb33d97d14c6bad66d6ec0de3e7bb2b12",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_vJbXLlSUjFtrKVkPqBn12P",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article concerns an SEC order approving a FINRA rule change to FINRA Rule 2210 (Communications With the Public). This is a broker-dealer communications/marketing rule amendment with no connection to any card's Step 1 trigger — it does not involve clearing, settlement, margin, repo, Treasury markets, cyber, member stress, or any other DTCC process risk."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4164,
+    "outputTokens": 124,
+    "totalTokens": 4288,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1975
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

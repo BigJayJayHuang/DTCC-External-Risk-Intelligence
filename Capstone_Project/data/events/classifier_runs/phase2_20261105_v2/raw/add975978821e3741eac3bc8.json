@@ -1,0 +1,40 @@
+{
+  "document_id": "bc2d95f94674611d484c03bc008f96a30ff356115b3ecdfed3182db61de59368",
+  "url": "https://files.dtcc.com/download/assets/24852-26+/39037570c80e11f191c9b2d85be937e7",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "70b1407dcbff5a900e867e7b8b85885b3e4e53b0f96eb19845d83c83ede58b23",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_YumXXhM4LCTGV5xSWCKC2l",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about a tax relief corporate action (dividend) for Atlas Copco AB B Shares (Sweden). It is an operational/administrative notice with no risk angle matching any card's Step 1 trigger — no market stress, regulatory change, member stress, cyber event, or infrastructure disruption described."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4192,
+    "outputTokens": 112,
+    "totalTokens": 4304,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2227
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

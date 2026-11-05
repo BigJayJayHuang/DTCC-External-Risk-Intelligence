@@ -1,0 +1,40 @@
+{
+  "document_id": "fb4e0cc6adaca9dce11f926e6a2894aef8f17465eab9e24992d403f5a0f16e56",
+  "url": "https://files.dtcc.com/download/assets/24591-26/a1997e22cd5911f1aaeb124e41ac185b",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "6b131076630f43c76ef89057f171535bdca615a5bf6518299659e76383a6fd11",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_hCEeq5npFFpKDbmR4U7hgS",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTCC Important Notice about a Canadian ADR tax relief event for Peyto Exploration & Development Corp. It is an operational/corporate action notice with no risk angle matching any card's Step 1 trigger. No market stress, regulatory mandate, member distress, cyber event, or infrastructure disruption is described."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4203,
+    "outputTokens": 114,
+    "totalTokens": 4317,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1961
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

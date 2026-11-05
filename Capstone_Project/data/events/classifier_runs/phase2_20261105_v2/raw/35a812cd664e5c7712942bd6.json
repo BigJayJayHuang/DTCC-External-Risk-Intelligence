@@ -1,0 +1,40 @@
+{
+  "document_id": "7d38482c52bcb5a5edcff2cb3bed50b75c16a47441560991f11e45849196dee3",
+  "url": "https://files.dtcc.com/download/assets/GOV2273-26/80b4cf42d49611f1afd6a62688da004b",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "fda8fbe62e16b7dd8a28c69d84f5aa6ec06c72c133fcd3e8c2c91b450c715148",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ZdzIBzrc5D97XWdC9w14Yl",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new participant (American Enterprise Investment Services, Inc.) joining the GSD netting system. It is a routine membership/onboarding administrative notice with no outside risk event described — no market stress, regulatory change, member distress, cyber incident, or other Step 1 trigger from the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4138,
+    "outputTokens": 116,
+    "totalTokens": 4254,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 4464
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

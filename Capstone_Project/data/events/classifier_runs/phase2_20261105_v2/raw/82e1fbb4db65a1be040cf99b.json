@@ -1,0 +1,40 @@
+{
+  "document_id": "52e355737e3300e80bc3a963023ffce2d0f47c0ba3bb7a6094e8d6cde723cd21",
+  "url": "https://files.dtcc.com/download/assets/GOV2286-26/13cfa976d89011f18172eef7357c04d2",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ac573c501ec3cc788c68e5daeeef2120988ec2b19342a34da3dd9b485aa71f06",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_TerevvB14TquMnAbRgVWx2",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new Agent Clearing Member (Citigroup Global Markets Inc.) joining FICC GSD. It is a routine membership/onboarding administrative notice, not an outside market, regulatory, or risk event described by any card's Step 1. It does not describe stress, a mandate milestone, a market disruption, or any other triggering event in the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4142,
+    "outputTokens": 132,
+    "totalTokens": 4274,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2147
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

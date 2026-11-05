@@ -1,0 +1,40 @@
+{
+  "document_id": "6ff4caf3205b46856065401fba325a6cdf65888c7ec291f4e157de77dedd19c4",
+  "url": "https://files.dtcc.com/download/assets/25174-26+/e51212becc9f11f1916feea7eae1d37b",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "59dcf500b5be2c40b25bdabb977d3b3065946f5179928a30e261e2ad55dd5f20",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_iSft2S3d1loiF7nezieFJF",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a tax relief corporate action for UPM-Kymmene Corporation (Finland) with a record date and payable date. It is a routine DTC corporate action/tax relief notice, not an outside market, regulatory, member stress, or infrastructure event described by any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4211,
+    "outputTokens": 113,
+    "totalTokens": 4324,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1938
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

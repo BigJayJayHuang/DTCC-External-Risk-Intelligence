@@ -1,0 +1,40 @@
+{
+  "document_id": "18a5a94c3ca026fa8a61decfb335fbe2eebfb6ddeb3ab98e22acc72930312f8f",
+  "url": "https://www.fca.org.uk/news/speeches/market-integrity-digital-age",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "90808f745282cd315f8d90fdd880e3363df9f6dea5b76eefd133e89c4b396afc",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ftDdtPnKg4z0MzuIZ3hEKk",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a speech by the FCA chief executive about UK financial services, AI adoption, tokenisation, Open Banking/Finance, and London's role as a financial centre. It contains no outside event (market stress, regulatory action, member default, infrastructure disruption, or cyber incident) that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4401,
+    "outputTokens": 111,
+    "totalTokens": 4512,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1854
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

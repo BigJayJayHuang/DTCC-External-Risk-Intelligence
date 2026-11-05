@@ -1,0 +1,40 @@
+{
+  "document_id": "9292c3f6398d38396314e634f129a88d03922dd5da8ea98bffebbb5abd601e47",
+  "url": "https://www.federalregister.gov/documents/2026/10/14/2026-20922/self-regulatory-organizations-texas-stock-exchange-llc-notice-of-filing-and-immediate-effectiveness",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "d532805124c4dddd362bba3ea503180f44e7d1857af2dbaad68eb123b9e73012",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_c20Po8Wvh2JDqBZwzldOZM",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes Texas Stock Exchange adopting a Shared Listings Program — a routine exchange rule change with no market stress, clearing mandate, member default, cyber, or other Step 1 trigger matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4128,
+    "outputTokens": 89,
+    "totalTokens": 4217,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1592
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

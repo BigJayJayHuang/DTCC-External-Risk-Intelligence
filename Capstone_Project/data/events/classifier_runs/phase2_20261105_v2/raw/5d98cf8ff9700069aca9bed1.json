@@ -1,0 +1,40 @@
+{
+  "document_id": "4a35a406aad951b48eadfc456c673a4652214a08e2f2d7941789b9f2fb4343ba",
+  "url": "https://files.dtcc.com/download/assets/24849-26/cf6172cec67411f1b3b3166a7603e4ef",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "a9d8489b11a4ba806f8627089010666eab28702eb5e524bf186f591124713000",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_uO3UdFhO1UmOWcGPvPAug7",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification (Important Notice) for a single security (Adlai Nortye Group Ltd., CUSIP 00704R109). It contains no outside market, regulatory, member stress, or infrastructure event that matches any card in the catalog. The notice itself states the information is 'not sensitive, confidential, or non-public information' and is purely administrative/supplemental in nature."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4159,
+    "outputTokens": 138,
+    "totalTokens": 4297,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2180
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

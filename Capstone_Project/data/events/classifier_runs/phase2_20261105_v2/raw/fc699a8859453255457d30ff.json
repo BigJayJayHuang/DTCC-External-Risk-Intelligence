@@ -1,0 +1,40 @@
+{
+  "document_id": "708096d193aa3d8de62e0c4f629150ca70e443a4160a73e1d898eade4db25076",
+  "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22268/self-regulatory-organizations-long-term-stock-exchange-inc-notice-of-filing-and-immediate",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "8a8bf835d99d1610578adc897d8ca88c2fae5a667362bba3ee4fcc79e15d1058",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_INVRoPJu0Mlx1G6Y0w9i1L",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a rule change by Long-Term Stock Exchange (LTSE) amending its Rule 11.280 on resumption of trading after a Level 3 market-wide circuit breaker halt. This is an internal exchange rule filing about trading resumption procedures, not an outside event that triggers any card's Step 1 scenario. It does not describe an actual market disruption, exchange halt, or declared emergency — only a procedural rule amendment about what happens after such a halt. No card in the catalog covers exchange rule amendments of this nature."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4174,
+    "outputTokens": 160,
+    "totalTokens": 4334,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3446
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

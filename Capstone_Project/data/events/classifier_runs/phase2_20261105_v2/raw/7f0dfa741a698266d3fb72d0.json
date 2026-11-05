@@ -1,0 +1,40 @@
+{
+  "document_id": "dc945be4608f9cb13175bf24f221ce15458bbe0014ddb0825a52a62cf57099c0",
+  "url": "https://files.dtcc.com/download/assets/GOV2260-26/52c07c70cbe611f1ad828e92237d1b0f",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "34ace47c3e29a1b18e79b4b615565553a3bafdf052c4236d382b7d198b1261a0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_nI11YuBDfA2I7JXdehJNjv",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new Agent Clearing Member (Intesa Sanpaolo IMI Securities Corp) joining FICC GSD. It is a routine membership/onboarding administrative notice, not an outside market, regulatory, member stress, or infrastructure event that maps to any card's Step 1 trigger. No risk event is described."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4143,
+    "outputTokens": 122,
+    "totalTokens": 4265,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2526
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

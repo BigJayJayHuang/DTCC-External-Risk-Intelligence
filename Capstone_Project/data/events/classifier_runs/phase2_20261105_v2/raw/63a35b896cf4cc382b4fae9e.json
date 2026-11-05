@@ -1,0 +1,40 @@
+{
+  "document_id": "b459fdcb70dcc1b7cf71951db8a493582c6091bf76c55249f73c8f92856fd9ff",
+  "url": "https://files.dtcc.com/download/assets/24778-26/d52b86a2c68011f1ab6b7a5d1f723cab",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "4eea4f395520ac95f6bedcf4c223b53e3c3269a2481eaa5fa88f5eb3dc326f59",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_g9XwrFjFkqjypQUCC9YMaa",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC tax relief notice for a Belgian security (CMB. TECH, CUSIP B38564108) with a record date and payable date. It describes a standard corporate action/tax relief processing notice, not an outside market, regulatory, member stress, or infrastructure event that matches any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4198,
+    "outputTokens": 113,
+    "totalTokens": 4311,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1968
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

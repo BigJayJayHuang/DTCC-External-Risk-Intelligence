@@ -1,0 +1,40 @@
+{
+  "document_id": "5929bd6bf32845d720e4fb193f5aa2a2b0511d420310552fbf801494ca34797f",
+  "url": "https://www.federalregister.gov/documents/2026/10/09/2026-20772/dpp-investors-2025-lp-and-dla-piper-llp-us",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ada49648cbb3561657430e4f39f512687a677ee6a7094112d74be2795f88c8b9",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_F9tzGGCHghI6uxKweutWR6",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a Federal Register notice about 'DPP Investors 2025 LP and DLA Piper LLP (US)' — likely an antitrust or investment advisory filing. The headline-only content provides no information about any market, regulatory, member, or infrastructure event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4090,
+    "outputTokens": 113,
+    "totalTokens": 4203,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1697
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "06f5c3b3308e77d07f4ac4c5fa52836a0dd7d85800e9acbf80aff3d85d145fe4",
+  "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261017~7015ea3099.en.html",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "f6c079f3844f3944c2b6508af1ecd716af6308d622b5fddddf7be636584c43aa",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_0AH1trQk3Xy4K1QdHGSjad",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is headline-only ('Christine Lagarde: IMFC Statement') with no substantive content. There is no described market event, regulatory action, member stress, or infrastructure issue that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4067,
+    "outputTokens": 91,
+    "totalTokens": 4158,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1438
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

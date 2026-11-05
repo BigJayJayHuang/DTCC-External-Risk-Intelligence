@@ -1,0 +1,40 @@
+{
+  "document_id": "f545fd8e61ef54d58dd01f354fd7ac9e6b783a92583c99dc776c2d73c9d39fb7",
+  "url": "https://files.dtcc.com/download/assets/24596-26/cba3ed32d7d211f1bbf7b24885514406",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "70a1e7ccd9151a5d5ed4b989e2f014b6efbf4e948eef725610735e0b774c58b0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_jxJgf2x61gBOUNuwKXZMg3",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about a tax relief corporate action (dividend) for KB Financial Group (CUSIP 48241A105) in Korea. It describes an administrative corporate action notification, not an outside market, regulatory, member stress, or infrastructure event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4188,
+    "outputTokens": 107,
+    "totalTokens": 4295,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1958
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}
