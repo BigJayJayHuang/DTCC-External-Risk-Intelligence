@@ -1,0 +1,21 @@
+card_id,business_line,sub_line,id_suffix,risk_family
+FICC-GSD-01,FICC,GSD,,Market
+FICC-GSD-02,FICC,GSD,,Liquidity
+FICC-GSD-03,FICC,GSD,,Regulatory
+FICC-MBSD-01,FICC,MBSD,,Market
+FICC-GSD-11,FICC,GSD,,Credit
+FICC-MBSD-02,FICC,MBSD,,Operational
+ECS-NSCC-LIQ,ECS,NSCC,,Liquidity
+ECS-NSCC-03,ECS,NSCC,,Operational
+ECS-SET-01,ECS,NSCC · DTC,,Regulatory
+ECS-NSCC-08,ECS,NSCC,,Credit
+ECS-NSCC-09,ECS,NSCC,,Liquidity
+ECS-DTC-01,ECS,DTC,,Liquidity
+XE-MEMBER,FICC,GSD · MBSD,ficc,Credit
+XE-MEMBER,ECS,NSCC,ecs,Credit
+XE-DISRUPT,FICC,MBSD,ficc,Operational
+XE-DISRUPT,ECS,DTC,ecs,Operational
+XE-SETTLEBANK,FICC,GSD,ficc,Credit
+XE-SETTLEBANK,ECS,NSCC · DTC,ecs,Credit
+XE-CYBER,FICC,MBSD,ficc,Cyber
+XE-CYBER,ECS,DTC,ecs,Cyber

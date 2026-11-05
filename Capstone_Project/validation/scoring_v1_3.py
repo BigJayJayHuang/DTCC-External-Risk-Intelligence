@@ -1,0 +1,317 @@
+"""Scoring v1.3-indicator for the 16 final cards (results/scoring/v1.3_indicator/SCORING_SPEC_v1.3.md).
+
+    python -m validation.scoring_v1_3 coverage --week 2026-10-19 --week 2026-10-26   # D1 data guard, no scores
+    python -m validation.scoring_v1_3 register --week 2026-10-19 --week 2026-10-26   # manual register, active flags
+    python -m validation.scoring_v1_3 score --week 2026-10-26                        # refused while the spec is DRAFT
+
+The v1.2 rules are reused, not copied: market S comes from scoring.percentile_scores / scoring_signal /
+weekly_peaks, event S from scoring.active_events + apply_signoff + combine_s, and V from
+final16_vulnerability.get_v. None of those files is changed, and validation/export.py is never called.
+"""
+import argparse, csv, json, re, sys
+from datetime import date, timedelta
+from pathlib import Path
+
+import pandas as pd
+
+from . import data as D
+from . import event_scoring as E
+from . import scoring as V12
+from .final16_vulnerability import ROOT as FINAL16, get_v
+from .paths import PROJECT, RESULTS
+from .scoring import percentile_scores, scoring_signal, weekly_peaks  # noqa: F401  (weekly_peaks runs inside scoring_signal)
+
+SPEC_VERSION = 'v1.3-indicator'
+OUT = PROJECT / 'results' / 'scoring' / 'v1.3_indicator'
+SPEC = OUT / 'SCORING_SPEC_v1.3.md'
+LINES_CONFIG = OUT / 'config' / 'card_lines.csv'
+REGISTRY = FINAL16 / 'config' / 'card_registry.json'
+V_CHECKS = FINAL16 / 'results' / 'v_driver_checks.json'
+NEWS_COVERAGE = 'manual_register_only'
+SHOW_ON_MAIN_MIN = 6
+SIGNOFF_MIN_S = 4
+DASHBOARD_LINES = {'FICC', 'ECS', 'RDS', 'WIS', 'ITP', 'Asset Services', 'DAS', 'DDA', 'Data Services', 'Consulting'}
+CONFIDENCE_ORDER = ['High', 'Medium', 'Low']
+
+# D1: raw series behind each v1.2 signal field. MORTGAGE30US is weekly (Thursday survey); the rest are daily.
+SIGNAL_SERIES = {
+    'ust10_abs_change': ['DGS10'],
+    'sofr_effr_adjusted': ['SOFR', 'EFFR'],
+    'baa_widen20': ['BAA10Y'],
+    'vix_jump': ['VIXCLS'],
+    'mbs_spread_abs_wchg': ['MORTGAGE30US', 'DGS10'],
+    'consolidated_shares': ['CBOE_CONSOLIDATED'],
+}
+THURSDAY_SERIES = {'MORTGAGE30US'}
+ENTITY_PREFIX = {'FICC-GSD': ['GSD'], 'FICC-MBSD': ['MBSD'], 'ECS-NSCC': ['NSCC'], 'ECS-DTC': ['DTC'], 'ECS-SET': ['NSCC', 'DTC']}
+ENTITY_LINE = {'GSD': 'FICC', 'MBSD': 'FICC', 'NSCC': 'ECS', 'DTC': 'ECS'}
+SOURCE_LABEL = {'market': 'market', 'events': 'event_manual', 'events (market null)': 'event_manual',
+                'market=events': 'market+event_manual'}
+
+
+# ------------------------------------------------------------------ weeks
+def week_dates(week):
+    """Monday label -> (Monday, Friday) as Timestamps."""
+    monday = pd.Timestamp(week)
+    if monday.dayofweek != 0:
+        raise ValueError(f'week must be a Monday: {week}')
+    return monday, monday + pd.Timedelta(days=4)
+
+
+# ------------------------------------------------------------------ cards (registry + D2 line table)
+def entities(component_ids):
+    out = []
+    for c in component_ids:
+        prefix = '-'.join(c.split('-')[:2])
+        for e in ENTITY_PREFIX.get(prefix, []):
+            if e not in out:
+                out.append(e)
+    return out
+
+
+def load_line_table(path=LINES_CONFIG):
+    with Path(path).open(newline='', encoding='utf-8') as f:
+        rows = list(csv.DictReader(f))
+    table = {}
+    for r in rows:
+        table.setdefault(r['card_id'], []).append(r)
+    return table
+
+
+def check_line_table(table, card_ids):
+    """Errors in the D2 line table (empty list = OK)."""
+    errors = []
+    for cid in card_ids:
+        rows = table.get(cid, [])
+        if not rows:
+            errors.append(f'{cid}: no business-line row')
+        if len({r['risk_family'] for r in rows}) > 1:
+            errors.append(f'{cid}: risk_family differs between its rows')
+        if len(rows) > 1 and (any(not r['id_suffix'] for r in rows) or len({r['id_suffix'] for r in rows}) < len(rows)):
+            errors.append(f'{cid}: several rows need distinct non-empty id_suffix values')
+        for r in rows:
+            if r['business_line'] not in DASHBOARD_LINES:
+                errors.append(f"{cid}: business_line {r['business_line']!r} is not a dashboard line")
+    errors += [f'{cid}: row for a card not in the final16 registry' for cid in table if cid not in card_ids]
+    return errors
+
+
+def old_to_new(registry):
+    """v1.2 / component / catalog card id -> final16 card id."""
+    m = {'NSCC liquidity': 'ECS-NSCC-LIQ'}
+    for r in registry:
+        m[r['card_id']] = r['card_id']
+        for c in r['component_ids']:
+            m.setdefault(c, r['card_id'])
+    return m
+
+
+def load_cards(conf, registry=None, table=None):
+    registry = registry or json.loads(REGISTRY.read_text())
+    table = table or load_line_table()
+    errors = check_line_table(table, [r['card_id'] for r in registry])
+    if errors:
+        raise ValueError('card_lines.csv: ' + '; '.join(errors))
+    mapping = old_to_new(registry)
+    cards = []
+    for r in registry:
+        comps = r['component_ids']
+        tested = {c: conf[c]['confidence'] for c in comps if c in conf}
+        ents = entities(comps)
+        cards.append({
+            'card_id': r['card_id'], 'title': r['name_en'], 'status_registry': r['status'], 'components': comps,
+            'market_chains': [{'chain_id': c, 'field': conf[c]['signal']['field'], 'description': conf[c]['signal']['description']}
+                              for c in comps if c in conf and conf[c]['signal']['field']],
+            'entities': ents, 'cross_entity': len({ENTITY_LINE[e] for e in ents}) > 1,
+            'legacy_v12_cards': [c for c in V12.CARD_ORDER if mapping.get(c) == r['card_id']],
+            'lines': table[r['card_id']], 'risk_family': table[r['card_id']][0]['risk_family'],
+            'chain_confidence': {'level': max(tested.values(), key=CONFIDENCE_ORDER.index) if tested else None,
+                                 'chains': tested,
+                                 'rule': 'lowest level among the card\'s tested chains' if tested else 'no chain test for this card'}})
+    return cards
+
+
+# ------------------------------------------------------------------ D1 data guard
+def required_date(series, week_end):
+    return week_end - pd.Timedelta(days=1) if series in THURSDAY_SERIES else week_end
+
+
+def coverage(fields, last_dates, week_end):
+    """Per raw series: last observation, the date it must reach for this week, ok."""
+    out = {}
+    for f in fields:
+        for s in SIGNAL_SERIES[f]:
+            last, need = last_dates.get(s), required_date(s, week_end)
+            out[s] = {'last_date': None if last is None else str(pd.Timestamp(last).date()),
+                      'required_date': str(need.date()), 'ok': last is not None and pd.Timestamp(last) >= need}
+    return out
+
+
+def series_last_dates():
+    out = {s: D.fred(s).index.max() for s in ['SOFR', 'EFFR', 'DGS10', 'BAA10Y', 'VIXCLS', 'MORTGAGE30US']}
+    out['CBOE_CONSOLIDATED'] = D.consolidated_volume().index.max()
+    return out
+
+
+# ------------------------------------------------------------------ D4 manual-register event S (v1.2 logic)
+def card_events(ranked, card_id, mapping):
+    """v1.2 card_event_score() for a final16 card: ranked = active_events() rows after apply_signoff()."""
+    mine = [r for r in ranked if card_id in {mapping.get(c) for c in r['card_ids']}]
+    if not mine:
+        return {'S': 1, 'method': 'rubric v1.2', 'reason': 'no active event', 'events': [], 'active_events': 0}
+    d = mine[0]
+    return {'S': d['S'], 'method': 'rubric v1.2', 'events': mine, 'driving_event_ids': [d['event_id']],
+            'needs_review': d['needs_review'], 'rubric_version': E.RUBRIC_VERSION, 'active_events': len(mine)}
+
+
+def ranked_events(reg, week_end):
+    signoffs = {s.event_id: s for s in pd.read_csv(V12.SIGNOFFS, dtype=str).itertuples()} if V12.SIGNOFFS.exists() else {}
+    return [V12.apply_signoff(r, signoffs) for r in V12.active_events(reg, week_end)]
+
+
+# ------------------------------------------------------------------ D5 V
+def v_fields(v, check):
+    flags = []
+    if check.get('flag_corr_gt_0_7'):
+        flags.append('corr_gt_0.7_with_S')
+    if check.get('flag_v5_share_gt_0_5'):
+        flags.append('V5_share_gt_0.5')
+    if str(v.get('history_quality', '')).startswith('low'):
+        flags.append('history_lt_8_quarters')
+    if check.get('proxy_quality') == 'weak proxy':
+        flags.append('weak_proxy')
+    if check.get('detrended'):
+        flags.append('detrended')
+    if v.get('V_override_reason'):
+        flags.append('V_override')
+    return {'V': v.get('V'), 'V_base': v.get('V_base'), 'V_tier': v.get('v_source_tier'),
+            'V_driver': check.get('driver') or v.get('vulnerability_metric'), 'V_metric': v.get('vulnerability_metric'),
+            'V_quarter': v.get('quarter'), 'V_available_date': v.get('available_date'), 'V_flags': flags,
+            'V_override_reason': v.get('V_override_reason'), 'V_caveats': v.get('caveats', []),
+            'V_null_reason': v.get('reason') if v.get('V') is None else None}
+
+
+# ------------------------------------------------------------------ one card-week
+def card_week(card, week, *, market_recs, cov, ev, v, check):
+    """Base record for one card-week (before the D2 line split). All inputs are plain data."""
+    monday, friday = week_dates(week)
+    rec = {'card_id': card['card_id'], 'week': str(monday.date()), 'week_end': str(friday.date()),
+           'spec_version': SPEC_VERSION, 'official': False, 'title': card['title'], 'card_status': card['status_registry'],
+           'region': 'US', 'risk_family': card['risk_family'], 'cross_entity': card['cross_entity'],
+           'entities': card['entities'], 'legacy_v12_cards': card['legacy_v12_cards'], 'news_coverage': NEWS_COVERAGE}
+    missing = [f"{s} last {c['last_date']} < required {c['required_date']}" for s, c in cov.items() if not c['ok']]
+    chains = []
+    for mc in card['market_chains']:
+        # D1: a partial week is never scored, so its partial weekly peak is not reported either
+        r = {'S': None, 'reason': 'data_incomplete'} if missing else (market_recs.get(mc['chain_id']) or {'S': None, 'reason': 'no data this week'})
+        chains.append({**mc, 'S': r.get('S'), 'weekly_peak': r.get('weekly_peak'), 'percentile': r.get('percentile'),
+                       'prior_weeks': r.get('prior_weeks'), 'method': r.get('method'), 'reason': r.get('reason')})
+    valid = [c for c in chains if c['S'] is not None]
+    S_market = max(c['S'] for c in valid) if valid else None
+    drv = next((c for c in valid if c['S'] == S_market), None)
+    S_event = ev['S'] if ev['active_events'] else None
+
+    if card['market_chains'] and missing:
+        status, S, src, reason = 'data_incomplete', None, None, '; '.join(missing)
+    elif card['market_chains'] and S_market is None and not ev['active_events']:
+        status, S, src = 'data_incomplete', None, None
+        reason = '; '.join(f"{c['chain_id']}: {c['reason']}" for c in chains)
+    elif card['market_chains']:
+        S, label = V12.combine_s(S_market, ev)
+        status, src, reason = 'scored', SOURCE_LABEL[label], None
+    elif ev['active_events']:
+        status, S, src, reason = 'scored', ev['S'], 'event_manual', None
+    else:
+        status, S, src = 'news_not_scanned', None, None
+        reason = 'no market signal for this card and no active manual-register event; news classifier not yet running'
+
+    vf = v_fields(v, check)
+    sev = S * vf['V'] if (S is not None and vf['V'] is not None) else None
+    rec.update({
+        'status': status, 'status_reason': reason, 'S': S, 'S_source': src, 'S_market': S_market, 'S_event': S_event,
+        'signal': None if drv is None else {'name': drv['field'], 'description': drv['description'], 'chain_id': drv['chain_id'],
+                                             'value': drv['weekly_peak'], 'percentile': drv['percentile'],
+                                             'prior_weeks': drv['prior_weeks'], 'method': drv['method']},
+        'market_chains': chains, 'data_coverage': cov,
+        'event_manual': {'active_events': ev['active_events'], 'driving_event_ids': ev.get('driving_event_ids', []),
+                         'needs_review': ev.get('needs_review', False),
+                         'events': [{k: e.get(k) for k in ('event_id', 'title', 'S', 'certainty', 'reach', 'timing', 'effect_date',
+                                                           'needs_review', 'review_reasons', 'signed_off_by')} for e in ev['events']]},
+        **vf,
+        'severity': sev, 'show_on_main': sev is not None and sev >= SHOW_ON_MAIN_MIN,
+        'needs_human_signoff': S is not None and S >= SIGNOFF_MIN_S,
+        'chain_confidence': card['chain_confidence']})
+    return rec
+
+
+def split_lines(rec, card):
+    """D2: one record per business-line row; identical scores, id suffixed when the card has several rows."""
+    out = []
+    for row in card['lines']:
+        rid = card['card_id'].lower() + (f"-{row['id_suffix']}" if row['id_suffix'] else '')
+        out.append({'record_id': rid, 'business_line': row['business_line'], 'sub_line': row['sub_line'], **rec})
+    return out
+
+
+# ------------------------------------------------------------------ live assembly (used only by `score`)
+def build_week(week, cards=None):
+    monday, friday = week_dates(week)
+    conf, reg = V12.load_chain_conf(), V12.load_register()
+    cards = cards or load_cards(conf)
+    registry = json.loads(REGISTRY.read_text())
+    mapping, checks = old_to_new(registry), {c['card_id']: c for c in json.loads(V_CHECKS.read_text())['cards']}
+    last, ranked = series_last_dates(), ranked_events(reg, friday)
+    pct = {mc['chain_id']: percentile_scores(scoring_signal(mc['chain_id'], mc['field'])) for c in cards for mc in c['market_chains']}
+    out = []
+    for card in cards:
+        rec = card_week(card, week, market_recs={k: pct[k].get(friday) for k in (mc['chain_id'] for mc in card['market_chains'])},
+                        cov=coverage([mc['field'] for mc in card['market_chains']], last, friday),
+                        ev=card_events(ranked, card['card_id'], mapping),
+                        v=get_v(card['card_id'], str(friday.date())), check=checks.get(card['card_id'], {}))
+        out += split_lines(rec, card)
+    return out
+
+
+def spec_approved(path=SPEC):
+    return bool(re.search(r'^Status: \*\*APPROVED', Path(path).read_text(), re.M)) if Path(path).exists() else False
+
+
+# ------------------------------------------------------------------ CLI
+def _coverage_report(weeks):
+    last = series_last_dates()
+    print(json.dumps({'last_dates': {s: str(d.date()) for s, d in last.items()},
+                      'weeks': {w: coverage(list(SIGNAL_SERIES), last, week_dates(w)[1]) for w in weeks}}, indent=2))
+
+
+def _register_report(weeks, registry=None):
+    mapping = old_to_new(registry or json.loads(REGISTRY.read_text()))
+    rows = []
+    for ev in V12.load_events(V12.load_register()):
+        rows.append({'event_id': ev.event_id, 'title': ev.title, 'card_ids': ev.card_ids,
+                     'final16': sorted({mapping.get(c, '?') for c in ev.card_ids}),
+                     'announced': str(ev.announced_date), 'effect': str(ev.effect_date), 'certainty': ev.certainty,
+                     'reach': ev.reach, 'sources': ev.sources,
+                     'active': {w: E.is_active(ev, week_dates(w)[0].date()) for w in weeks}})
+    print(json.dumps(rows, indent=2, ensure_ascii=False))
+
+
+def main(argv=None):
+    p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    p.add_argument('command', choices=['coverage', 'register', 'score'])
+    p.add_argument('--week', action='append', required=True, help='Monday, YYYY-MM-DD (repeatable)')
+    a = p.parse_args(argv)
+    for w in a.week:
+        week_dates(w)
+    if a.command == 'coverage':
+        return _coverage_report(a.week)
+    if a.command == 'register':
+        return _register_report(a.week)
+    if not spec_approved():
+        raise SystemExit(f'{SPEC.relative_to(PROJECT)} is not APPROVED; v1.3 scores are not produced while the spec is DRAFT.')
+    OUT.mkdir(parents=True, exist_ok=True)
+    for w in a.week:
+        (OUT / f'weekly_scores_v1.3_{w}.json').write_text(json.dumps(V12._clean(build_week(w)), indent=2, ensure_ascii=False) + '\n')
+
+
+if __name__ == '__main__':
+    sys.exit(main())
