@@ -4,12 +4,29 @@
 Usage: python3 docs/data/validate_output.py docs/data/risk_output.json
 Exit code 0 = OK, 1 = errors found. Standard library only.
 """
+import csv
 import json
 import sys
 from datetime import datetime
+from pathlib import Path
 
 LINES = {"FICC", "ECS", "RDS", "WIS", "ITP", "Asset Services", "DAS", "DDA", "Data Services", "Consulting"}
 FAMILIES = {"Credit", "Liquidity", "Market", "Operational", "Cyber", "Regulatory", "Strategic"}
+STATUSES = {"scored", "news_not_scanned", "data_incomplete"}
+UNSCORED = {"news_not_scanned", "data_incomplete"}          # shock may be null only for these
+# Business-line rows per card (scoring v1.3), including the FICC and ECS rows of cross-entity (XE-) cards
+CARD_LINES = Path(__file__).resolve().parents[2] / "Capstone_Project/results/scoring/v1.3_indicator/config/card_lines.csv"
+
+
+def load_card_lines():
+    if not CARD_LINES.exists():
+        return None
+    rows = {}
+    with CARD_LINES.open(newline="", encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            rid = r["card_id"].lower() + (f"-{r['id_suffix']}" if r["id_suffix"] else "")
+            rows[(r["card_id"], r["business_line"])] = rid
+    return rows
 
 
 def is_date(s):
@@ -40,6 +57,9 @@ def main(path):
             errors.append(f"snapshots[{n}]: date is not ISO (YYYY-MM-DD)")
         snap_ids.add(s.get("id"))
 
+    card_lines = load_card_lines()
+    if card_lines is None:
+        warnings.append(f"{CARD_LINES} not found: card/business-line rows not checked")
     seen = set()
     for n, it in enumerate(data.get("items", [])):
         tag = f"items[{n}] ({it.get('id', '?')})"
@@ -52,8 +72,20 @@ def main(path):
             errors.append(f"{tag}: business_line '{it['business_line']}' is not one of the 10 lines")
         if it.get("risk_family") and it["risk_family"] not in FAMILIES:
             warnings.append(f"{tag}: risk_family '{it['risk_family']}' is not a standard family")
-        if not score_ok(it.get("shock")):
-            errors.append(f"{tag}: shock must be an integer 1-5")
+        status = it.get("status")
+        if status is not None and status not in STATUSES:
+            errors.append(f"{tag}: status '{status}' is not one of {sorted(STATUSES)}")
+        if not score_ok(it.get("shock"), allow_none=status in UNSCORED):
+            errors.append(f"{tag}: shock must be an integer 1-5" + (" (null only when status is news_not_scanned or data_incomplete)"
+                                                                     if it.get("shock") is None else ""))
+        if status in UNSCORED and it.get("shock") is not None:
+            errors.append(f"{tag}: status {status} must have shock null")
+        if card_lines is not None and it.get("card_id"):
+            want = card_lines.get((it["card_id"], it.get("business_line")))
+            if want is None:
+                errors.append(f"{tag}: card {it['card_id']} has no '{it.get('business_line')}' row in card_lines.csv")
+            elif it.get("id") != want:
+                errors.append(f"{tag}: id should be '{want}' for card {it['card_id']} on {it.get('business_line')}")
         if not score_ok(it.get("vulnerability"), allow_none=True):
             errors.append(f"{tag}: vulnerability must be an integer 1-5 or null (never 0)")
         if it.get("updated_at") and not is_date(it["updated_at"]):

@@ -1,7 +1,7 @@
-"""Generates simulated demo data (10 items per business line, 3 weekly snapshots) into docs/data/risk_output.json.
-Run: python3 docs/data/make_demo_data.py   ·   Replace risk_output.json with real model output when ready."""
+"""DEMO ONLY. Generates simulated demo data (10 invented items per business line, 3 weekly snapshots) for layout testing.
+Run: python3 frontend_demo/make_demo_data.py  ->  frontend_demo/demo_risk_output.json (never written under docs/, which is published)."""
 import json, copy
-import os; OUT=os.path.join(os.path.dirname(os.path.abspath(__file__)),'risk_output.json')
+import os; OUT=os.path.join(os.path.dirname(os.path.abspath(__file__)),'demo_risk_output.json')
 SN=[("2026-10-26","Week of Oct 26, 2026"),("2026-10-19","Week of Oct 19, 2026"),("2026-10-12","Week of Oct 12, 2026")]
 F=lambda s:{"name":"FRED: "+s,"url":"https://fred.stlouisfed.org/series/"+s}
 PQD=lambda r:{"name":"DTCC PQD (simulated reading), "+r,"url":"https://www.dtcc.com/legal/policy-and-compliance"}
