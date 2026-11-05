@@ -224,7 +224,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches gSD liquidity resources vs largest member payment obligation.",
+      "why_this_line": "Tagged FICC because it touches GSD liquidity resources vs largest member payment obligation.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -282,7 +282,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches gSD liquidity resources vs largest member payment obligation.",
+      "why_this_line": "Tagged FICC because it touches GSD liquidity resources vs largest member payment obligation.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -340,7 +340,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches gSD liquidity resources vs largest member payment obligation.",
+      "why_this_line": "Tagged FICC because it touches GSD liquidity resources vs largest member payment obligation.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -398,7 +398,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches gSD sponsored onboarding and client concentration.",
+      "why_this_line": "Tagged FICC because it touches GSD sponsored onboarding and client concentration.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -452,7 +452,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches gSD sponsored onboarding and client concentration.",
+      "why_this_line": "Tagged FICC because it touches GSD sponsored onboarding and client concentration.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -506,7 +506,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches gSD sponsored onboarding and client concentration.",
+      "why_this_line": "Tagged FICC because it touches GSD sponsored onboarding and client concentration.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -560,7 +560,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches gSD initial margin and Cover-2 stress losses.",
+      "why_this_line": "Tagged FICC because it touches GSD initial margin and Cover-2 stress losses.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -614,7 +614,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches gSD initial margin and Cover-2 stress losses.",
+      "why_this_line": "Tagged FICC because it touches GSD initial margin and Cover-2 stress losses.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -668,7 +668,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches gSD initial margin and Cover-2 stress losses.",
+      "why_this_line": "Tagged FICC because it touches GSD initial margin and Cover-2 stress losses.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -722,7 +722,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches mBSD margin and stress losses.",
+      "why_this_line": "Tagged FICC because it touches MBSD margin and stress losses.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -780,7 +780,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches mBSD margin and stress losses.",
+      "why_this_line": "Tagged FICC because it touches MBSD margin and stress losses.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -838,7 +838,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches mBSD margin and stress losses.",
+      "why_this_line": "Tagged FICC because it touches MBSD margin and stress losses.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -896,7 +896,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches gSD share of newly cleared Treasury activity.",
+      "why_this_line": "Tagged FICC because it touches GSD share of newly cleared Treasury activity.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -946,7 +946,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches gSD share of newly cleared Treasury activity.",
+      "why_this_line": "Tagged FICC because it touches GSD share of newly cleared Treasury activity.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -996,7 +996,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches gSD share of newly cleared Treasury activity.",
+      "why_this_line": "Tagged FICC because it touches GSD share of newly cleared Treasury activity.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -1046,7 +1046,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches gSD default management and member credit monitoring.",
+      "why_this_line": "Tagged FICC because it touches GSD default management and member credit monitoring.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -1100,7 +1100,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches gSD default management and member credit monitoring.",
+      "why_this_line": "Tagged FICC because it touches GSD default management and member credit monitoring.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -1154,7 +1154,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches gSD default management and member credit monitoring.",
+      "why_this_line": "Tagged FICC because it touches GSD default management and member credit monitoring.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -1208,7 +1208,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches mBSD pool settlement and EPN messaging.",
+      "why_this_line": "Tagged FICC because it touches MBSD pool settlement and EPN messaging.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -1258,7 +1258,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches mBSD pool settlement and EPN messaging.",
+      "why_this_line": "Tagged FICC because it touches MBSD pool settlement and EPN messaging.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -1308,7 +1308,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches mBSD pool settlement and EPN messaging.",
+      "why_this_line": "Tagged FICC because it touches MBSD pool settlement and EPN messaging.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -1358,7 +1358,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches gSD trade submission and settlement.",
+      "why_this_line": "Tagged FICC because it touches GSD trade submission and settlement.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -1412,7 +1412,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches gSD trade submission and settlement.",
+      "why_this_line": "Tagged FICC because it touches GSD trade submission and settlement.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -1466,7 +1466,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches gSD funding conditions.",
+      "why_this_line": "Tagged FICC because it touches GSD funding conditions.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -1516,7 +1516,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged FICC because it touches mBSD margin and product scope.",
+      "why_this_line": "Tagged FICC because it touches MBSD margin and product scope.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -1566,7 +1566,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches nSCC margin calls and VM payments.",
+      "why_this_line": "Tagged ECS because it touches NSCC margin calls and VM payments.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -1620,7 +1620,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches nSCC margin calls and VM payments.",
+      "why_this_line": "Tagged ECS because it touches NSCC margin calls and VM payments.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -1674,7 +1674,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches nSCC margin calls and VM payments.",
+      "why_this_line": "Tagged ECS because it touches NSCC margin calls and VM payments.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -1728,7 +1728,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches nSCC CNS settlement and fails.",
+      "why_this_line": "Tagged ECS because it touches NSCC CNS settlement and fails.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -1782,7 +1782,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches nSCC CNS settlement and fails.",
+      "why_this_line": "Tagged ECS because it touches NSCC CNS settlement and fails.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -1836,7 +1836,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches nSCC CNS settlement and fails.",
+      "why_this_line": "Tagged ECS because it touches NSCC CNS settlement and fails.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -1890,7 +1890,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches nSCC liquidity and VM payments.",
+      "why_this_line": "Tagged ECS because it touches NSCC liquidity and VM payments.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -1948,7 +1948,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches nSCC liquidity and VM payments.",
+      "why_this_line": "Tagged ECS because it touches NSCC liquidity and VM payments.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -2006,7 +2006,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches nSCC liquidity and VM payments.",
+      "why_this_line": "Tagged ECS because it touches NSCC liquidity and VM payments.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -2064,7 +2064,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches nSCC and DTC fail rates and processing windows.",
+      "why_this_line": "Tagged ECS because it touches NSCC and DTC fail rates and processing windows.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -2118,7 +2118,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches nSCC and DTC fail rates and processing windows.",
+      "why_this_line": "Tagged ECS because it touches NSCC and DTC fail rates and processing windows.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -2172,7 +2172,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches nSCC and DTC fail rates and processing windows.",
+      "why_this_line": "Tagged ECS because it touches NSCC and DTC fail rates and processing windows.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -2226,7 +2226,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches nSCC default management.",
+      "why_this_line": "Tagged ECS because it touches NSCC default management.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -2276,7 +2276,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches nSCC default management.",
+      "why_this_line": "Tagged ECS because it touches NSCC default management.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -2326,7 +2326,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches nSCC default management.",
+      "why_this_line": "Tagged ECS because it touches NSCC default management.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -2376,7 +2376,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches nSCC net settlement and DTC end-of-day settlement.",
+      "why_this_line": "Tagged ECS because it touches NSCC net settlement and DTC end-of-day settlement.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -2430,7 +2430,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches nSCC net settlement and DTC end-of-day settlement.",
+      "why_this_line": "Tagged ECS because it touches NSCC net settlement and DTC end-of-day settlement.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -2484,7 +2484,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches nSCC net settlement and DTC end-of-day settlement.",
+      "why_this_line": "Tagged ECS because it touches NSCC net settlement and DTC end-of-day settlement.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -2538,7 +2538,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches nSCC trade capture and ETF processing.",
+      "why_this_line": "Tagged ECS because it touches NSCC trade capture and ETF processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -2588,7 +2588,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches nSCC trade capture and ETF processing.",
+      "why_this_line": "Tagged ECS because it touches NSCC trade capture and ETF processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -2638,7 +2638,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches nSCC trade capture and ETF processing.",
+      "why_this_line": "Tagged ECS because it touches NSCC trade capture and ETF processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -2688,7 +2688,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches dTC new-issue eligibility and underwriting.",
+      "why_this_line": "Tagged ECS because it touches DTC new-issue eligibility and underwriting.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -2738,7 +2738,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches dTC new-issue eligibility and underwriting.",
+      "why_this_line": "Tagged ECS because it touches DTC new-issue eligibility and underwriting.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -2788,7 +2788,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches dTC end-of-day money settlement.",
+      "why_this_line": "Tagged ECS because it touches DTC end-of-day money settlement.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -2842,7 +2842,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ECS because it touches dTC participant connectivity.",
+      "why_this_line": "Tagged ECS because it touches DTC participant connectivity.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -2892,7 +2892,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches dTCC EU trade repository validation.",
+      "why_this_line": "Tagged RDS because it touches DTCC EU trade repository validation.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -2942,7 +2942,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches dTCC EU trade repository validation.",
+      "why_this_line": "Tagged RDS because it touches DTCC EU trade repository validation.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -2992,7 +2992,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches dTCC EU trade repository validation.",
+      "why_this_line": "Tagged RDS because it touches DTCC EU trade repository validation.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -3042,7 +3042,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches dTCC US swap data repository.",
+      "why_this_line": "Tagged RDS because it touches DTCC US swap data repository.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -3092,7 +3092,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches dTCC US swap data repository.",
+      "why_this_line": "Tagged RDS because it touches DTCC US swap data repository.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -3142,7 +3142,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches dTCC US swap data repository.",
+      "why_this_line": "Tagged RDS because it touches DTCC US swap data repository.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -3192,7 +3192,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches gTR processing and timeliness.",
+      "why_this_line": "Tagged RDS because it touches GTR processing and timeliness.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -3242,7 +3242,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches gTR processing and timeliness.",
+      "why_this_line": "Tagged RDS because it touches GTR processing and timeliness.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -3292,7 +3292,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches gTR processing and timeliness.",
+      "why_this_line": "Tagged RDS because it touches GTR processing and timeliness.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -3342,7 +3342,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches uK trade repository.",
+      "why_this_line": "Tagged RDS because it touches UK trade repository.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -3392,7 +3392,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches uK trade repository.",
+      "why_this_line": "Tagged RDS because it touches UK trade repository.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -3442,7 +3442,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches uK trade repository.",
+      "why_this_line": "Tagged RDS because it touches UK trade repository.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -3492,7 +3492,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches repository reconciliation and pairing rates.",
+      "why_this_line": "Tagged RDS because it touches Repository reconciliation and pairing rates.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -3542,7 +3542,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches repository reconciliation and pairing rates.",
+      "why_this_line": "Tagged RDS because it touches Repository reconciliation and pairing rates.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -3592,7 +3592,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches repository reconciliation and pairing rates.",
+      "why_this_line": "Tagged RDS because it touches Repository reconciliation and pairing rates.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -3642,7 +3642,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches gTR client base.",
+      "why_this_line": "Tagged RDS because it touches GTR client base.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -3692,7 +3692,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches gTR client base.",
+      "why_this_line": "Tagged RDS because it touches GTR client base.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -3742,7 +3742,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches gTR client base.",
+      "why_this_line": "Tagged RDS because it touches GTR client base.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -3792,7 +3792,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches repository user access.",
+      "why_this_line": "Tagged RDS because it touches Repository user access.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -3842,7 +3842,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches repository user access.",
+      "why_this_line": "Tagged RDS because it touches Repository user access.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -3892,7 +3892,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches repository user access.",
+      "why_this_line": "Tagged RDS because it touches Repository user access.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -3942,7 +3942,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches tIW event and payment processing.",
+      "why_this_line": "Tagged RDS because it touches TIW event and payment processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -3992,7 +3992,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches tIW event and payment processing.",
+      "why_this_line": "Tagged RDS because it touches TIW event and payment processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -4042,7 +4042,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches asia trade repository.",
+      "why_this_line": "Tagged RDS because it touches Asia trade repository.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -4092,7 +4092,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged RDS because it touches repository timeliness metrics.",
+      "why_this_line": "Tagged RDS because it touches Repository timeliness metrics.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -4142,7 +4142,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches fund/SERV order processing and payments.",
+      "why_this_line": "Tagged WIS because it touches Fund/SERV order processing and payments.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -4192,7 +4192,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches fund/SERV order processing and payments.",
+      "why_this_line": "Tagged WIS because it touches Fund/SERV order processing and payments.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -4242,7 +4242,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches fund/SERV order processing and payments.",
+      "why_this_line": "Tagged WIS because it touches Fund/SERV order processing and payments.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -4292,7 +4292,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches insurance & Retirement Services messaging.",
+      "why_this_line": "Tagged WIS because it touches Insurance & Retirement Services messaging.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -4342,7 +4342,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches insurance & Retirement Services messaging.",
+      "why_this_line": "Tagged WIS because it touches Insurance & Retirement Services messaging.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -4392,7 +4392,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches insurance & Retirement Services messaging.",
+      "why_this_line": "Tagged WIS because it touches Insurance & Retirement Services messaging.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -4442,7 +4442,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches i&RS payment processing.",
+      "why_this_line": "Tagged WIS because it touches I&RS payment processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -4492,7 +4492,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches i&RS payment processing.",
+      "why_this_line": "Tagged WIS because it touches I&RS payment processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -4542,7 +4542,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches i&RS payment processing.",
+      "why_this_line": "Tagged WIS because it touches I&RS payment processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -4592,7 +4592,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches alternative Investment Product processing.",
+      "why_this_line": "Tagged WIS because it touches Alternative Investment Product processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -4642,7 +4642,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches alternative Investment Product processing.",
+      "why_this_line": "Tagged WIS because it touches Alternative Investment Product processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -4692,7 +4692,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches alternative Investment Product processing.",
+      "why_this_line": "Tagged WIS because it touches Alternative Investment Product processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -4742,7 +4742,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches fund/SERV order volume.",
+      "why_this_line": "Tagged WIS because it touches Fund/SERV order volume.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -4792,7 +4792,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches fund/SERV order volume.",
+      "why_this_line": "Tagged WIS because it touches Fund/SERV order volume.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -4842,7 +4842,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches fund/SERV order volume.",
+      "why_this_line": "Tagged WIS because it touches Fund/SERV order volume.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -4892,7 +4892,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches fund/SERV distributions.",
+      "why_this_line": "Tagged WIS because it touches Fund/SERV distributions.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -4942,7 +4942,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches fund/SERV distributions.",
+      "why_this_line": "Tagged WIS because it touches Fund/SERV distributions.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -4992,7 +4992,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches fund/SERV distributions.",
+      "why_this_line": "Tagged WIS because it touches Fund/SERV distributions.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -5042,7 +5042,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches fund/SERV file exchange.",
+      "why_this_line": "Tagged WIS because it touches Fund/SERV file exchange.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -5092,7 +5092,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches fund/SERV file exchange.",
+      "why_this_line": "Tagged WIS because it touches Fund/SERV file exchange.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -5142,7 +5142,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches fund/SERV file exchange.",
+      "why_this_line": "Tagged WIS because it touches Fund/SERV file exchange.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -5192,7 +5192,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches fund/SERV volumes.",
+      "why_this_line": "Tagged WIS because it touches Fund/SERV volumes.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -5242,7 +5242,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches fund/SERV volumes.",
+      "why_this_line": "Tagged WIS because it touches Fund/SERV volumes.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -5292,7 +5292,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches i&RS product mix.",
+      "why_this_line": "Tagged WIS because it touches I&RS product mix.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -5342,7 +5342,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged WIS because it touches fund/SERV order cycle.",
+      "why_this_line": "Tagged WIS because it touches Fund/SERV order cycle.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -5392,7 +5392,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches cTM matching and affirmation.",
+      "why_this_line": "Tagged ITP because it touches CTM matching and affirmation.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -5442,7 +5442,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches cTM matching and affirmation.",
+      "why_this_line": "Tagged ITP because it touches CTM matching and affirmation.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -5492,7 +5492,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches cTM matching and affirmation.",
+      "why_this_line": "Tagged ITP because it touches CTM matching and affirmation.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -5542,7 +5542,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches cTM and TradeSuite ID.",
+      "why_this_line": "Tagged ITP because it touches CTM and TradeSuite ID.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -5592,7 +5592,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches cTM and TradeSuite ID.",
+      "why_this_line": "Tagged ITP because it touches CTM and TradeSuite ID.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -5642,7 +5642,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches cTM and TradeSuite ID.",
+      "why_this_line": "Tagged ITP because it touches CTM and TradeSuite ID.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -5692,7 +5692,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches cTM cross-border matching.",
+      "why_this_line": "Tagged ITP because it touches CTM cross-border matching.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -5742,7 +5742,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches cTM cross-border matching.",
+      "why_this_line": "Tagged ITP because it touches CTM cross-border matching.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -5792,7 +5792,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches cTM cross-border matching.",
+      "why_this_line": "Tagged ITP because it touches CTM cross-border matching.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -5842,7 +5842,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches cTM allocation timeliness.",
+      "why_this_line": "Tagged ITP because it touches CTM allocation timeliness.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -5892,7 +5892,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches cTM allocation timeliness.",
+      "why_this_line": "Tagged ITP because it touches CTM allocation timeliness.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -5942,7 +5942,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches cTM allocation timeliness.",
+      "why_this_line": "Tagged ITP because it touches CTM allocation timeliness.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -5992,7 +5992,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches aLERT SSI data.",
+      "why_this_line": "Tagged ITP because it touches ALERT SSI data.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -6042,7 +6042,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches aLERT SSI data.",
+      "why_this_line": "Tagged ITP because it touches ALERT SSI data.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -6092,7 +6092,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches aLERT SSI data.",
+      "why_this_line": "Tagged ITP because it touches ALERT SSI data.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -6142,7 +6142,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches cTM throughput.",
+      "why_this_line": "Tagged ITP because it touches CTM throughput.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -6192,7 +6192,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches cTM throughput.",
+      "why_this_line": "Tagged ITP because it touches CTM throughput.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -6242,7 +6242,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches cTM throughput.",
+      "why_this_line": "Tagged ITP because it touches CTM throughput.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -6292,7 +6292,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches cTM client base.",
+      "why_this_line": "Tagged ITP because it touches CTM client base.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -6342,7 +6342,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches cTM client base.",
+      "why_this_line": "Tagged ITP because it touches CTM client base.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -6392,7 +6392,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches cTM client base.",
+      "why_this_line": "Tagged ITP because it touches CTM client base.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -6442,7 +6442,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches cTM connectivity.",
+      "why_this_line": "Tagged ITP because it touches CTM connectivity.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -6492,7 +6492,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches cTM connectivity.",
+      "why_this_line": "Tagged ITP because it touches CTM connectivity.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -6542,7 +6542,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches cTM cross-border.",
+      "why_this_line": "Tagged ITP because it touches CTM cross-border.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -6592,7 +6592,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged ITP because it touches tradeSuite ID availability.",
+      "why_this_line": "Tagged ITP because it touches TradeSuite ID availability.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -6642,7 +6642,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC corporate action processing.",
+      "why_this_line": "Tagged Asset Services because it touches DTC corporate action processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -6692,7 +6692,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC corporate action processing.",
+      "why_this_line": "Tagged Asset Services because it touches DTC corporate action processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -6742,7 +6742,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC corporate action processing.",
+      "why_this_line": "Tagged Asset Services because it touches DTC corporate action processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -6792,7 +6792,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC deposit chills and locks.",
+      "why_this_line": "Tagged Asset Services because it touches DTC deposit chills and locks.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -6842,7 +6842,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC deposit chills and locks.",
+      "why_this_line": "Tagged Asset Services because it touches DTC deposit chills and locks.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -6892,7 +6892,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC deposit chills and locks.",
+      "why_this_line": "Tagged Asset Services because it touches DTC deposit chills and locks.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -6942,7 +6942,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC tax services.",
+      "why_this_line": "Tagged Asset Services because it touches DTC tax services.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -6992,7 +6992,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC tax services.",
+      "why_this_line": "Tagged Asset Services because it touches DTC tax services.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -7042,7 +7042,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC tax services.",
+      "why_this_line": "Tagged Asset Services because it touches DTC tax services.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -7092,7 +7092,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC deposit processing.",
+      "why_this_line": "Tagged Asset Services because it touches DTC deposit processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -7142,7 +7142,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC deposit processing.",
+      "why_this_line": "Tagged Asset Services because it touches DTC deposit processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -7192,7 +7192,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC deposit processing.",
+      "why_this_line": "Tagged Asset Services because it touches DTC deposit processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -7242,7 +7242,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC underwriting.",
+      "why_this_line": "Tagged Asset Services because it touches DTC underwriting.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -7292,7 +7292,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC underwriting.",
+      "why_this_line": "Tagged Asset Services because it touches DTC underwriting.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -7342,7 +7342,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC underwriting.",
+      "why_this_line": "Tagged Asset Services because it touches DTC underwriting.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -7392,7 +7392,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC income payment processing.",
+      "why_this_line": "Tagged Asset Services because it touches DTC income payment processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -7442,7 +7442,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC income payment processing.",
+      "why_this_line": "Tagged Asset Services because it touches DTC income payment processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -7492,7 +7492,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC income payment processing.",
+      "why_this_line": "Tagged Asset Services because it touches DTC income payment processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -7542,7 +7542,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC custody role.",
+      "why_this_line": "Tagged Asset Services because it touches DTC custody role.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -7592,7 +7592,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC custody role.",
+      "why_this_line": "Tagged Asset Services because it touches DTC custody role.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -7642,7 +7642,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC custody role.",
+      "why_this_line": "Tagged Asset Services because it touches DTC custody role.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -7692,7 +7692,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC announcement processing.",
+      "why_this_line": "Tagged Asset Services because it touches DTC announcement processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -7742,7 +7742,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC announcement processing.",
+      "why_this_line": "Tagged Asset Services because it touches DTC announcement processing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -7792,7 +7792,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC reorganization services.",
+      "why_this_line": "Tagged Asset Services because it touches DTC reorganization services.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -7842,7 +7842,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Asset Services because it touches dTC proxy services.",
+      "why_this_line": "Tagged Asset Services because it touches DTC proxy services.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -7892,7 +7892,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches dTC tokenized asset servicing.",
+      "why_this_line": "Tagged DAS because it touches DTC tokenized asset servicing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -7942,7 +7942,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches dTC tokenized asset servicing.",
+      "why_this_line": "Tagged DAS because it touches DTC tokenized asset servicing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -7992,7 +7992,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches dTC tokenized asset servicing.",
+      "why_this_line": "Tagged DAS because it touches DTC tokenized asset servicing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -8042,7 +8042,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches dTC tokenization scope.",
+      "why_this_line": "Tagged DAS because it touches DTC tokenization scope.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -8092,7 +8092,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches dTC tokenization scope.",
+      "why_this_line": "Tagged DAS because it touches DTC tokenization scope.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -8142,7 +8142,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches dTC tokenization scope.",
+      "why_this_line": "Tagged DAS because it touches DTC tokenization scope.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -8192,7 +8192,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches tokenized collateral movements.",
+      "why_this_line": "Tagged DAS because it touches Tokenized collateral movements.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -8242,7 +8242,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches tokenized collateral movements.",
+      "why_this_line": "Tagged DAS because it touches Tokenized collateral movements.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -8292,7 +8292,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches tokenized collateral movements.",
+      "why_this_line": "Tagged DAS because it touches Tokenized collateral movements.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -8342,7 +8342,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches tokenized settlement cash leg.",
+      "why_this_line": "Tagged DAS because it touches Tokenized settlement cash leg.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -8392,7 +8392,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches tokenized settlement cash leg.",
+      "why_this_line": "Tagged DAS because it touches Tokenized settlement cash leg.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -8442,7 +8442,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches tokenized settlement cash leg.",
+      "why_this_line": "Tagged DAS because it touches Tokenized settlement cash leg.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -8492,7 +8492,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches dAS adoption.",
+      "why_this_line": "Tagged DAS because it touches DAS adoption.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -8542,7 +8542,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches dAS adoption.",
+      "why_this_line": "Tagged DAS because it touches DAS adoption.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -8592,7 +8592,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches dAS adoption.",
+      "why_this_line": "Tagged DAS because it touches DAS adoption.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -8642,7 +8642,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches dAS smart-contract controls.",
+      "why_this_line": "Tagged DAS because it touches DAS smart-contract controls.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -8692,7 +8692,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches dAS smart-contract controls.",
+      "why_this_line": "Tagged DAS because it touches DAS smart-contract controls.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -8742,7 +8742,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches dAS smart-contract controls.",
+      "why_this_line": "Tagged DAS because it touches DAS smart-contract controls.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -8792,7 +8792,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches dAS custody partners.",
+      "why_this_line": "Tagged DAS because it touches DAS custody partners.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -8842,7 +8842,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches dAS custody partners.",
+      "why_this_line": "Tagged DAS because it touches DAS custody partners.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -8892,7 +8892,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches dAS custody partners.",
+      "why_this_line": "Tagged DAS because it touches DAS custody partners.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -8942,7 +8942,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches tokenized collateral haircuts.",
+      "why_this_line": "Tagged DAS because it touches Tokenized collateral haircuts.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -8992,7 +8992,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches tokenized collateral haircuts.",
+      "why_this_line": "Tagged DAS because it touches Tokenized collateral haircuts.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -9042,7 +9042,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches dAS key management.",
+      "why_this_line": "Tagged DAS because it touches DAS key management.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -9092,7 +9092,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DAS because it touches dAS pipeline.",
+      "why_this_line": "Tagged DAS because it touches DAS pipeline.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -9142,7 +9142,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA platform releases.",
+      "why_this_line": "Tagged DDA because it touches DDA platform releases.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -9192,7 +9192,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA platform releases.",
+      "why_this_line": "Tagged DDA because it touches DDA platform releases.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -9242,7 +9242,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA platform releases.",
+      "why_this_line": "Tagged DDA because it touches DDA platform releases.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -9292,7 +9292,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA EU client base.",
+      "why_this_line": "Tagged DDA because it touches DDA EU client base.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -9342,7 +9342,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA EU client base.",
+      "why_this_line": "Tagged DDA because it touches DDA EU client base.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -9392,7 +9392,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA EU client base.",
+      "why_this_line": "Tagged DDA because it touches DDA EU client base.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -9442,7 +9442,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA sales pipeline.",
+      "why_this_line": "Tagged DDA because it touches DDA sales pipeline.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -9492,7 +9492,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA sales pipeline.",
+      "why_this_line": "Tagged DDA because it touches DDA sales pipeline.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -9542,7 +9542,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA sales pipeline.",
+      "why_this_line": "Tagged DDA because it touches DDA sales pipeline.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -9592,7 +9592,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA software supply chain.",
+      "why_this_line": "Tagged DDA because it touches DDA software supply chain.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -9642,7 +9642,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA software supply chain.",
+      "why_this_line": "Tagged DDA because it touches DDA software supply chain.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -9692,7 +9692,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA software supply chain.",
+      "why_this_line": "Tagged DDA because it touches DDA software supply chain.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -9742,7 +9742,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA revenue.",
+      "why_this_line": "Tagged DDA because it touches DDA revenue.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -9792,7 +9792,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA revenue.",
+      "why_this_line": "Tagged DDA because it touches DDA revenue.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -9842,7 +9842,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA revenue.",
+      "why_this_line": "Tagged DDA because it touches DDA revenue.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -9892,7 +9892,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA hosting.",
+      "why_this_line": "Tagged DDA because it touches DDA hosting.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -9942,7 +9942,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA hosting.",
+      "why_this_line": "Tagged DDA because it touches DDA hosting.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -9992,7 +9992,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA hosting.",
+      "why_this_line": "Tagged DDA because it touches DDA hosting.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -10042,7 +10042,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA demand.",
+      "why_this_line": "Tagged DDA because it touches DDA demand.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -10092,7 +10092,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA demand.",
+      "why_this_line": "Tagged DDA because it touches DDA demand.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -10142,7 +10142,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA demand.",
+      "why_this_line": "Tagged DDA because it touches DDA demand.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -10192,7 +10192,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA roadmap.",
+      "why_this_line": "Tagged DDA because it touches DDA roadmap.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -10242,7 +10242,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA roadmap.",
+      "why_this_line": "Tagged DDA because it touches DDA roadmap.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -10292,7 +10292,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA product roadmap.",
+      "why_this_line": "Tagged DDA because it touches DDA product roadmap.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -10342,7 +10342,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged DDA because it touches dDA controls.",
+      "why_this_line": "Tagged DDA because it touches DDA controls.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -10392,7 +10392,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data Services delivery SLAs.",
+      "why_this_line": "Tagged Data Services because it touches Data Services delivery SLAs.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -10442,7 +10442,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data Services delivery SLAs.",
+      "why_this_line": "Tagged Data Services because it touches Data Services delivery SLAs.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -10492,7 +10492,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data Services delivery SLAs.",
+      "why_this_line": "Tagged Data Services because it touches Data Services delivery SLAs.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -10542,7 +10542,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data product licensing.",
+      "why_this_line": "Tagged Data Services because it touches Data product licensing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -10592,7 +10592,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data product licensing.",
+      "why_this_line": "Tagged Data Services because it touches Data product licensing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -10642,7 +10642,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data product licensing.",
+      "why_this_line": "Tagged Data Services because it touches Data product licensing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -10692,7 +10692,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data Services pricing.",
+      "why_this_line": "Tagged Data Services because it touches Data Services pricing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -10742,7 +10742,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data Services pricing.",
+      "why_this_line": "Tagged Data Services because it touches Data Services pricing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -10792,7 +10792,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data Services pricing.",
+      "why_this_line": "Tagged Data Services because it touches Data Services pricing.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -10842,7 +10842,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data Services client portals.",
+      "why_this_line": "Tagged Data Services because it touches Data Services client portals.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -10892,7 +10892,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data Services client portals.",
+      "why_this_line": "Tagged Data Services because it touches Data Services client portals.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -10942,7 +10942,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data Services client portals.",
+      "why_this_line": "Tagged Data Services because it touches Data Services client portals.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -10992,7 +10992,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data Services platform.",
+      "why_this_line": "Tagged Data Services because it touches Data Services platform.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -11042,7 +11042,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data Services platform.",
+      "why_this_line": "Tagged Data Services because it touches Data Services platform.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -11092,7 +11092,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data Services platform.",
+      "why_this_line": "Tagged Data Services because it touches Data Services platform.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -11142,7 +11142,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data licensing terms.",
+      "why_this_line": "Tagged Data Services because it touches Data licensing terms.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -11192,7 +11192,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data licensing terms.",
+      "why_this_line": "Tagged Data Services because it touches Data licensing terms.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -11242,7 +11242,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data licensing terms.",
+      "why_this_line": "Tagged Data Services because it touches Data licensing terms.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -11292,7 +11292,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data product quality.",
+      "why_this_line": "Tagged Data Services because it touches Data product quality.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -11342,7 +11342,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data product quality.",
+      "why_this_line": "Tagged Data Services because it touches Data product quality.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -11392,7 +11392,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data product quality.",
+      "why_this_line": "Tagged Data Services because it touches Data product quality.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -11442,7 +11442,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data platform costs.",
+      "why_this_line": "Tagged Data Services because it touches Data platform costs.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -11492,7 +11492,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data platform costs.",
+      "why_this_line": "Tagged Data Services because it touches Data platform costs.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -11542,7 +11542,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches eU data products.",
+      "why_this_line": "Tagged Data Services because it touches EU data products.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -11592,7 +11592,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Data Services because it touches data API platform.",
+      "why_this_line": "Tagged Data Services because it touches Data API platform.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -11642,7 +11642,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches consulting engagement pipeline.",
+      "why_this_line": "Tagged Consulting because it touches Consulting engagement pipeline.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -11692,7 +11692,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches consulting engagement pipeline.",
+      "why_this_line": "Tagged Consulting because it touches Consulting engagement pipeline.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -11742,7 +11742,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches consulting engagement pipeline.",
+      "why_this_line": "Tagged Consulting because it touches Consulting engagement pipeline.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -11792,7 +11792,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches active engagements.",
+      "why_this_line": "Tagged Consulting because it touches Active engagements.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -11842,7 +11842,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches active engagements.",
+      "why_this_line": "Tagged Consulting because it touches Active engagements.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -11892,7 +11892,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches active engagements.",
+      "why_this_line": "Tagged Consulting because it touches Active engagements.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -11942,7 +11942,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches consulting governance.",
+      "why_this_line": "Tagged Consulting because it touches Consulting governance.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -11992,7 +11992,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches consulting governance.",
+      "why_this_line": "Tagged Consulting because it touches Consulting governance.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -12042,7 +12042,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches consulting governance.",
+      "why_this_line": "Tagged Consulting because it touches Consulting governance.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -12092,7 +12092,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches consulting revenue.",
+      "why_this_line": "Tagged Consulting because it touches Consulting revenue.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -12142,7 +12142,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches consulting revenue.",
+      "why_this_line": "Tagged Consulting because it touches Consulting revenue.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -12192,7 +12192,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches consulting revenue.",
+      "why_this_line": "Tagged Consulting because it touches Consulting revenue.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -12242,7 +12242,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches consulting pipeline.",
+      "why_this_line": "Tagged Consulting because it touches Consulting pipeline.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -12292,7 +12292,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches consulting pipeline.",
+      "why_this_line": "Tagged Consulting because it touches Consulting pipeline.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -12342,7 +12342,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches consulting pipeline.",
+      "why_this_line": "Tagged Consulting because it touches Consulting pipeline.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -12392,7 +12392,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches consulting data handling.",
+      "why_this_line": "Tagged Consulting because it touches Consulting data handling.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -12442,7 +12442,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches consulting data handling.",
+      "why_this_line": "Tagged Consulting because it touches Consulting data handling.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -12492,7 +12492,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches consulting data handling.",
+      "why_this_line": "Tagged Consulting because it touches Consulting data handling.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -12542,7 +12542,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches dTCC Solutions (UK).",
+      "why_this_line": "Tagged Consulting because it touches DTCC Solutions (UK).",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -12592,7 +12592,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches dTCC Solutions (UK).",
+      "why_this_line": "Tagged Consulting because it touches DTCC Solutions (UK).",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -12642,7 +12642,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches dTCC Solutions (UK).",
+      "why_this_line": "Tagged Consulting because it touches DTCC Solutions (UK).",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -12692,7 +12692,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches consulting service mix.",
+      "why_this_line": "Tagged Consulting because it touches Consulting service mix.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -12742,7 +12742,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches consulting service mix.",
+      "why_this_line": "Tagged Consulting because it touches Consulting service mix.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -12792,7 +12792,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches consulting delivery.",
+      "why_this_line": "Tagged Consulting because it touches Consulting delivery.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
@@ -12842,7 +12842,7 @@
         "next": "Re-score as new data arrives",
         "later": "Revisit at next PQD release"
       },
-      "why_this_line": "Tagged Consulting because it touches consulting receivables.",
+      "why_this_line": "Tagged Consulting because it touches Consulting receivables.",
       "key_unknowns": [
         "All readings on this card are simulated for the demo",
         "Internal DTCC data not public"
