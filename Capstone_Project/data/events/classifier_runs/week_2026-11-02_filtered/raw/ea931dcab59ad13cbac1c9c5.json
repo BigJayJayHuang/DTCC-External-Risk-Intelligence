@@ -1,0 +1,40 @@
+{
+  "document_id": "91f85c46d6929ffc4846753190644643636a999139bcb179b9f3a9d3054f1c18",
+  "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPNURNYWVac0FDTkNVNnEzUDJKaDJmOEZDckp3aVlDNk1KbDZ1cXVQcGZRZlA3VEFzbVNIeDdYTFY4bEVfTTJCTEdSR2JXN2Q2NTFBVGRJcy1oNlI4XzNObmlyZlJUaWQ3c2tHRlRHT2dPU19CN3hrbXFkMFh4Skg5cDJpdVZLRzV6T05TdFJvd2hldFdFalE2YXctNnU0VUhqUjVveXpiTHlVeFVzZGN4c0hsal9DZw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "2af816ce4b2d9f1278f3a966c17cc074aeb25b9f59ae8a77f427c08dac8e5af1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_AJ90R7l6ZO9kCu4qe4NTE0",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only snippet about a small ETF (MEMY) delisting and liquidating. This is a routine fund closure of a single minor product, not a market-wide event, member stress, or any other outside event described by the card catalog. No card's Step 1 trigger is met."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4359,
+    "outputTokens": 110,
+    "totalTokens": 4469,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1980
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

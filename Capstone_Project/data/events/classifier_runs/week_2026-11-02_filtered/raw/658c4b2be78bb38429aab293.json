@@ -1,0 +1,40 @@
+{
+  "document_id": "bcabaea690df8b7734e895eaa9e72f6354af94a400a135653371d131dd5012a7",
+  "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQUUxNX09HeGJMOFFkSGhaSWhCNWtuZk5oeGY3ZllSTld6SEdaM2NmbE5CVnZDNHJxY045dGFzZ2tWWUFtR0F5eTM4ZTJneDA0UWY3UkRYWGFLTXRxZ0Nod21ONkUxSEF0ci1hSFJvVkhUWWNEbERjOFNrY0V5VFlJQlVJMmhhWHVvODllTUV6ZG5ZZw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "299fcbaa931d63685ca32a383ba2d43826f4ec1186fef452d4fe31581e7d1b0a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ONXCz7cFTgN2dfjQhBM2FU",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only snippet about the Bank of France flagging a 2026 growth downgrade for France. This is a macroeconomic forecast update from a foreign central bank with no specific event matching any card's Step 1 trigger (no Treasury selloff, repo stress, member default, cyber incident, settlement cycle change, etc.). The content is too vague and geographically remote to map to any DTCC process card."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4278,
+    "outputTokens": 137,
+    "totalTokens": 4415,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2468
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "f9d3c6656f39a5f54f22eca61a00709716fa0e42d2b44c1839863a67f076da76",
+  "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQY3VrV1NzU3ZCQ2NvS29XT21laEp2ZWhzNWdiTUhsQlB4MXZadUtucUNjb2hhLUx5amU4VmxzLWpobkhIMWh1d1JVT3dkVi1VTmlpVnFaaTJYUjZYdFhMb1FySmtIX2cwcmxtQkQwRTNJb0ppQ21naEpaWUtMTl85NzdZRFl6dXpmNHVsV2NKWGhFTGJoU3R1TnJUbFdYVzYyRXg5WnJYYnIwdEVYOFVGX1ZpRHh1dW9qYW81MQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "07b4a67c4e58182f8fd84de20e17a13cfe1e33b3a8b364047223db9e4b6fb8cd",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_V0346ASFQKroQHq9J8I8Ja",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a headline-only snippet about the VIX spiking nearly 70% and historical S&P 500 patterns. It contains no factual reporting of a new market event, regulatory action, member stress, or infrastructure issue — only a historical/analytical teaser with no substantive content to support a card assignment."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4406,
+    "outputTokens": 113,
+    "totalTokens": 4519,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1858
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

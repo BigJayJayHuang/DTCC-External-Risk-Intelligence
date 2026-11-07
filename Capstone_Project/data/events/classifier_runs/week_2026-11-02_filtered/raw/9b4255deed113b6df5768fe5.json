@@ -1,0 +1,40 @@
+{
+  "document_id": "e4b8525830b2515cf537b9fb7ec3c36e010bc92519ac7946a13869fe97f7d708",
+  "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQMk5BV29EUE1vdWFvclB3aC1UOUZlVUwwQm1WZk5HTk5oVlA5c1l0Y09adGZ6dVJ0N25yWVJ1ajVucWdoUTJua2U1OWdZcVpXb2J0SW9DU3FLejlnZmZzUWdSeE41SmxKRjJ0Q2ZGMVJWR09lLWhsNFBWeC1Yb21fVlFMSjdraGxsdnUwaElwbm1YcHhPTHI0aGZhVFFMV1JpbXJBME1qa2JBZ9IBrwFBVV95cUxQOVNHTWxwVnZSSHQ1enlWczExbWsxZUpMdlprc3NPQmtGeTFHS3liQjNueFJpd0tYMWdYX1ZNaTJEbFFMeEtSZTFWSE1POXRjT2hFT1BCcWlZZTBNUHhac0RXam5CNjBBZzJ2MDJ3NkpyNXBrNm1CWFpZTVB4VTZIQmk3TGM2WmhHZmY3QjhNT21JbFljWVp1c19YRWlVeF9GVzZfZzdUWUh3c3Q5RVlZ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "9692074c30d7454008189a89fe9cf89224c8ffdb7bee5a7e2614a31c5723d65b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_xrUK7eMn0dEcudU16Lsjuv",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a generic consumer cybersecurity advice piece ('protect yourself against cyberattacks') with no specific cyber incident, named participant, or infrastructure event described. It does not report an outside event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4535,
+    "outputTokens": 92,
+    "totalTokens": 4627,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1694
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,9 @@
+{
+  "modelId": "anthropic.claude-sonnet-4-6",
+  "agreementAvailability": {
+    "status": "AVAILABLE"
+  },
+  "authorizationStatus": "AUTHORIZED",
+  "entitlementAvailability": "AVAILABLE",
+  "regionAvailability": "AVAILABLE"
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "417f7824c6f9deebc7dafdc35cf2c93f3babed52a920725648297804a1620c69",
+  "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRG02RXdnOUdVdG5heW1rdll4NGtPY2gzam5SbFNoY1RZZ0pQclREUjYtNFBPX3BnQlVsRU5leHVPcjJpN0JBcWFJck8wREhyczE1NGRIa1V3ei0tQVJjcVYtN0d3SHdwSVVMMS1jMVF0Vl91eXBSeXRCTHNXWFZOTmZkaEh2eGFNRjlnbl9UWUZBazlSeHNZb1RwTnppdGZRUTZNN1huYUNtSDUxSWY4LUxjaw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "c3cf14f03dc53832bf54473b8b0cc5356d4e27d6c8253e871ce51fa9ed53a671",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_7f0OHMU3LizMzfa6VEeRfH",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a headline snippet only — 'Anatomy of a Selloff: Sudden Chain Reaction Rattles Wall Street' — with no substantive content beyond the title. There are no facts, figures, named participants, dates, or event details to support any card assignment or field population. Insufficient information to classify as relevant."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4335,
+    "outputTokens": 114,
+    "totalTokens": 4449,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1826
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

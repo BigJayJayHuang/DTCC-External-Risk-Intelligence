@@ -1,0 +1,40 @@
+{
+  "document_id": "a4e7a03e421275f557017e04c3bec665afaf29abcc74fe7316ffb960a0f04ff7",
+  "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxONmdzeFVRS2wwSlFnTzlnMEd6dEhUd2hzSlh6NkphMUFIdFlMSmZpMG4tRFdUZk9DX25nUVQ4MnNqLWpMM3Njb2lVX1FYbTdfUGt5TjVOSkI4M3BmRG1MbjZGQXdvaUlvcGl0aFZPeXA3cUNveGdERHNJc1Q1WThLbVdBLThvN20tTFBGLW5aTXpqR1RabDZFRGQ0bmlxQ2gzQnpwOVc0TUdpUnB2WEVqdUlXWVp3V0NEc0J1YVJramhVNW5w?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "29b666f058011744c55be0fb2944a5c9ab3721a1f7b1cb97c969dcc704bbbf86",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_OeTQRwYFTLwhgxa3726xRG",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article reports that a Polymarket unit received approval from a US industry organization to operate as a futures broker. This is a business/regulatory milestone for a prediction-market firm entering futures brokerage; it does not describe any of the Step 1 world events covered by the card catalog (no Treasury stress, repo stress, equity selloff, settlement cycle change, member default, cyber incident, etc.). No DTCC process is touched."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4347,
+    "outputTokens": 134,
+    "totalTokens": 4481,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2399
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

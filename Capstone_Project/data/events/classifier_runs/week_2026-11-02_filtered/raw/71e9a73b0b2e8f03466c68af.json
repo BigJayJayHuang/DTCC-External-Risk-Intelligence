@@ -1,0 +1,40 @@
+{
+  "document_id": "764bca01db940e44cef32424d59a3fd6fbc4f92e0e87811ddb008af2c4c3b036",
+  "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOa2swWWdnalhUelF5Yl95R1AzMTF4eU5STTJFcEZRVmNmbnIxZFZmSl9XZWkxTXNhdlFERDU5bnVIUW1DVmVzdkQtOEQ5V084UG1XdWR0WTdjSzl5TXVvNXFtLWF2cEZ0ZVRJZkVQd3RxcU1BYVYxdFRVOVppQ19oLXpGZ2R6M1h3SDJrcmNHcGdyc3dxajVscDRaSUVLdXA2WnZ2R19ndGs?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "229c6f901345045ccfea801ecf031a47fcec22c4cb9e8dcebdf552f2f4548a9c",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_8igPWlotVaHBg72IE6buXX",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a headline-only snippet with no substantive content beyond the title. While it mentions a stock market selloff and liquidity pressure (which could map to ECS-NSCC-LIQ), the text is entirely a headline restatement with no factual detail about the event, participants, magnitude, or market impact. Insufficient content to support a meaningful classification."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4328,
+    "outputTokens": 124,
+    "totalTokens": 4452,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1889
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

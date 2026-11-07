@@ -1,0 +1,40 @@
+{
+  "document_id": "bd26c539afb5ad26af7ff193bf6da45150d0ad8702bc3245b397a2a367176d87",
+  "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPdkhSbENSNFdiaWIwZXh1ZjEzTEZCaXZJM3ctLWtFWjRSdlNsUDNJamtGVHBMcmwxM1d6bjBvbnFHSTRqQkgtMUxSaVRXMXZDRzh4aTFCMVlqR3Z2NWtBWGszM0VFRmxtcm1aaHM4Z0Q5LTE4TUxNeEhqTFh6M0NNSGhIX1hBd2lGX1hUY25mWWNxMllQUUJvN0lBYWd0dk51MkF1aXB1dUNINUhuRU5ZZlREV3k0WTc1dWJOLWZfc2x2YzlMaE9CQzRnLVgyWk5pM2RDMzdXcTBtYlVrUllLazJDMWRNdnc?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "2bd7cb65b30b0dd117a99c7d0b7fada6fb27eb2f39cd1e514dbd5ef2b90b73d0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_T9GYG33JJCgcDwAgzWe729",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about Axis Bank (an Indian bank) being downgraded to 'Sell' by MarketsMOJO due to bearish technicals and valuation concerns. Axis Bank is not a DTCC member or major US market participant, and the downgrade is an analyst/research rating (not a credit rating agency action). The article contains only a headline snippet with no evidence of stress, default, or DTCC-relevant impact. No card in the catalog is triggered."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4428,
+    "outputTokens": 147,
+    "totalTokens": 4575,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2457
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

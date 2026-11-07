@@ -1,0 +1,40 @@
+{
+  "document_id": "07a14f61a0339f590a48ef3872d50371867aa9677b2d0bd93a57249c617e2081",
+  "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOcXBsTmRaUUo4VW1NRTZfdUh3OVJ2aEI1Ql9zeTJIaXFlTV9YcDVkb0F4UkpxQ0lfeEVGcVdEU2liXzd2dW5mbTY2d3hVZFAyR1QwbC1RWGJiY3R1bmwwNFJHaWFTRXRvX0lJZUFkVmFqLW1sdzA4R2I3MWlULW0zdklkd3FhVWhMNEJUdllMMEtNOEZPNkE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "4d7a70c88ea47dd2d25305d43a73bfe9915fc13ca56e3cb7948456a6b30f0d64",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_E5k9oyB0gs8AZ85sCQBpNj",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only snippet about a trading halt on Gopax, a Korean cryptocurrency exchange. This is not a US equity, Treasury, or MBS market event and does not touch any DTCC process described in the card catalog. The content is too thin (headline only) to establish any link to DTCC operations, and a Korean crypto exchange halt does not map to XE-DISRUPT or any other card."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4305,
+    "outputTokens": 133,
+    "totalTokens": 4438,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2264
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

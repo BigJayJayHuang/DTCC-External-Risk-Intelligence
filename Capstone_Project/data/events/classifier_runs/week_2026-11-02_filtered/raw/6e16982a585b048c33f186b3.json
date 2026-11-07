@@ -1,0 +1,40 @@
+{
+  "document_id": "b2e11372d63e77c8ae05cee711f5d2816c1664dc581e7fd2c8858eb961ebd9ca",
+  "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQbDA4cHA0VW1QeXpLdHhZRTQ3UENaTmpvbmFET1dZTTNmX1RHSTR1X0VJZFVkRVlKV3dNeWRzZHZaN2VDSjVuaDlCV0JDQ0VKb3RVMjFOd1d6OW5LRGx2WTN3UGNBTGJ6WDBkX0dOU2d1XzZBMHU5Q3JORFZDb0gxWnhpZ0hMdnNWMmZjWmg0a1VvZlZaUTRIenVQUlh5ZE9vNG1kMnl5dkROUzRWMVBXcE1R?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ab71dd440495c1ce21dacb23075d7b083aff4bb10edb51da38d282e0ec2ec4e9",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_VoCPLXB0iT9IWRaCQrUuh8",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a headline snippet only — 'Tech stocks log worst day since 2020 as carnage comes to the AI trade' — with no substantive content beyond the title. While a major tech selloff could in principle touch ECS-NSCC-LIQ, the article provides no facts, figures, or details about the event (no volume data, no margin calls, no liquidity stress, no named participants). There is insufficient evidence to support any card assignment or field population under the rules."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4345,
+    "outputTokens": 151,
+    "totalTokens": 4496,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2327
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

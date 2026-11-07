@@ -1,0 +1,40 @@
+{
+  "document_id": "d46fc77bef7dc4108a9fd01e3d61b37378040616379d5120043e39365a0c4b88",
+  "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPcTZ6MUpQeFp6UnZDMmFSUjZVajRiaDhETU9zbkM0bGZoVUd5YThfcDR5RU9FbFdtcjRCbkllaWVuZTRjaWZtb1dId2gyUlA0Z2c3V1JmTWJEdU4wVF95eWl1c3hHTm9oVld2M1hTSzVZY2JJYnMyZi1RenI4NWdtT0s4cnliR1M3NU5sa3p4dmo3RlY2dFlSV0hJcnRYUU5KMU8xRkRxM1hVZ3RnRzRnS0hRMHExM25GUFVrVjRPdERWYnIx?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "dc8bd58a314f562ef1c0bcad389ff82e707595fae615a6419c504122569df333",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ZDqKCNf8PwVL8sUbmVM4UN",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline snippet about a stock analyst downgrade of LegalZoom.com (LZ) by Bank of America. LegalZoom is not a major DTCC member, dealer, or broker, and the article contains no information about stress, default, or systemic risk. No card in the catalog applies to a routine equity analyst downgrade of a small-cap legal services company."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4362,
+    "outputTokens": 126,
+    "totalTokens": 4488,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2027
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

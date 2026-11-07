@@ -1,0 +1,40 @@
+{
+  "document_id": "42ce5212d397bef38291b9bf1dcfbf48b23c07db84175274df9f1561c6a943ed",
+  "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPN3d3MkxQdFpnYTZPQnh0c2xRemg0R0FRTHM0MmgtYWxWN0RiQ0NwLWNWemZISlZ3Z1dMbkVyM1NfSXhtcW83eXAzbzBoNmkxa21sN050TkdGVHp1bklKVTRyR0ZjS19YdHRBVm53WVdaNVRRbUk0X21qeEVuU3cyQWdrblQ2VFFFR09ma0p6S0ltSjZ1eHk0NUpQQm4tNmNHdjNzZEZPMFNwNWx3ajN2N3pSQ1lrZEMwVnozSk5GYkNSQW1yb3g4MjZRTGtHYlMtclVSdm5Wb1IxWjRVdUlv?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "c601819b1a47522d49420e9ec8f353cef0fa5a05cb172694bfe2f324fc0573aa",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_4R7MfRbRuwbMfQD8lDxnF7",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline snippet about Jana Small Finance Bank Ltd being downgraded to a 'Hold' rating by an analyst. Jana Small Finance Bank is a small Indian bank with no apparent connection to DTCC membership or US clearing/settlement processes. The downgrade is an analyst rating change (not a credit rating agency downgrade of a DTCC member), and the entity is not a DTCC member or major US market participant. No card in the catalog applies."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4389,
+    "outputTokens": 140,
+    "totalTokens": 4529,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2316
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "ec6a1aeaca9d783e675fb7545bfad0ef1c176918e32107b0db209e92f598b945",
+  "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPQk9sdTFtR1poMDJELXc3ZTNRS3czSHZ4NUNweVdYY1BHUWRweHFSbWQ0dEpNdE5fdXNTM2hqalRfOHRuczVyXzlrTjNWQWhOYXJnVkFfZ0R3eTd1V0oxMVNwT1kySkZweTJHRGkwQnN1cDJTUkdpbWZ4QXB4NG5RT1VDNmFYWXV4TDhQSUVkTlJXSkZSeVVkTXFtTDNPbS1DUVVpUnNwMDM2Nk5ueW1GbVRmeWRvMlRUTXpPRDJMSmhLbEU2TFpWdzk0bnFLMTRW?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "69cd023fc4d9901ae9d13e5948d21106fe8388ea612ef7e0e74042b5e4e964ab",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_xbMr3Y7n01Np58GEFkFXNb",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a headline-only snippet about the VIX spiking 70% and what history suggests comes next. It contains no new factual event — no specific market action, participant stress, regulatory change, or infrastructure disruption is described. It is a speculative/historical commentary piece with no actionable event content that maps to any card's Step 1 trigger."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4387,
+    "outputTokens": 123,
+    "totalTokens": 4510,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2175
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

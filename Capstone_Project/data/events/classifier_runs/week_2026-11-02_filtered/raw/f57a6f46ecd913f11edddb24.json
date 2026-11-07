@@ -1,0 +1,40 @@
+{
+  "document_id": "f290926ca5974baa5e9cf1b100f2b4c80fa3cf14326992f443dfd6346b285c05",
+  "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPV0VpLXotVnNwVDBRRngtVXNuRGw0TUU5d1VCYXNTRm9tMVZwd0pZb01Vd0VtRXMtWVVaMjRNOGwtVmQ1VkpycjVYQUZNRDVsN1hLRmRPaVlUcmMyLW0wUVZwenlsR21VNFNzeUUtZ2FxQ1FsWWZlV0lsVHNXQ0NsVjhpWDRfVmhxZUcxdXNrQTN0SGhZVGoza2x4R2FIVWdTci1FRUNZZ2Q2ZHMyR0E?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "3b628a60b851736d307946862e96fdb3391e10d4599dfa15ed7a6e764c330343",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_5CVf5JV93YHjDMlGIVvN7z",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a headline snippet only ('Sterling dips as stock rout boosts dollar, outweighs rate rise boost') with no substantive content describing a specific market event, participant stress, or regulatory action that maps to any card's Step 1 trigger. The snippet mentions a stock rout and dollar strength, but provides no facts about magnitude, named participants, or DTCC-relevant processes beyond a vague market move. Insufficient evidence to support a card assignment."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4337,
+    "outputTokens": 143,
+    "totalTokens": 4480,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2302
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

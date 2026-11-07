@@ -1,0 +1,40 @@
+{
+  "document_id": "a1f0774de14421e4eb0b16a5626925ba71527429ebd2e0ff8ac687d0e348d445",
+  "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNVC1FdzU0cDRIWEl3TXpfZ0wwdGNSVmhfekpJdGotTEIwQWxVVHBmc3BpR2l2OHpJdExYMy1GdlBsWFJQOHkzUEMzQ0xDb0pGX2kxNGJLZGFlNE42U2tjVEk3Tnl3X3JCZ3g3UWRoS2FrVVVsYjctdk81ZVdWdGFjT3JLRFdLZVVlNkhZa2h4NDc1Ml83di1KQ1BLSklHWE95bU5nRHhoTHQyNzQ0VjQ5c0lKRQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "4b9e847fb80463fd85d697af5677f2e2fbcf41e08179e15bd9607782804e4173",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Djcwohax2DeMQadWD21oQf",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline snippet about Argentine bonds and peso debt intervention. This is a foreign sovereign debt market event with no connection to any DTCC process described in the card catalog. No US Treasury, repo, equity, MBS, member stress, or infrastructure angle is present."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4336,
+    "outputTokens": 99,
+    "totalTokens": 4435,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1695
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

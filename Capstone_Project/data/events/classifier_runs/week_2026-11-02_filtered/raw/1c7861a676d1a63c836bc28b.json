@@ -1,0 +1,40 @@
+{
+  "document_id": "768418a04182717e2703ab042c4d7be8740bcf8dc2e3628a6ca330b41fabbd05",
+  "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBEaGVvSHRZc1hOR25USlVjSXlrYVRSb3k2by1VZHMwRTFpREVOVEVjX0FwN0Z5azFwVHk5T0RoT1BuNHZGQ3ROMXFDbDFQN3g1TVFQWXpNUWd4UUR6LW80Sk8zNXQ5YndDMVV2Znl0UjlxZ0xmcEE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "25ea47db1008015fac70e03dd7a38301b800efffaac775d4c40ea44cc218aac1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_v1UV8FaqeRssiIOJJm2CJ6",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a retail investor in Taiwan making an impulsive purchase of a leveraged ETF (00631L) during a Taiwan stock market selloff. This is a human-interest/personal finance story about a Taiwanese market event with no connection to DTCC processes, US markets, or any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4324,
+    "outputTokens": 110,
+    "totalTokens": 4434,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1901
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

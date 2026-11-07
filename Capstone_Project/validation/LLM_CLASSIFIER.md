@@ -96,6 +96,11 @@ For a repeat run on the same run date, select a fresh `--output-dir` so existing
 - **Queries.** `validation/news_queries.csv` has `card_id,query` rows: 47 queries for the 16 cards. `validation/google_news_config.json` holds the User-Agent, rate limit, per-card cap, title-similarity threshold and source-tier lists.
 - **Fetching.** One Google News RSS search per query, `q=<query> after:<Sunday before> before:<Monday after>`. Plain `urllib` with an honest User-Agent (project URL, no email, no browser string), at most one request every 2 seconds. Collection stops on HTTP 429. Raw RSS is saved in `google_news_raw/` and listed in `fetch_manifest.json`.
 - **Item fields.** Title, snippet, outlet, outlet homepage, published time (UTC) and Google link. The publisher URL is resolved only when the Google article ID can be decoded offline. Current IDs cannot be decoded, and the link redirects only through a JavaScript page (checked 2026-11-07). Such items keep the Google link as `url` and are marked `url_resolution = not_resolvable_without_browser`. Google's RSS description repeats the headline and outlet, so the snippet is usually empty. `content_scope = headline_snippet`.
+- **Headline filter** (`headline_filter: true`, added 2026-11-07). Google matches loosely, often on article text not in the feed. After dedup, an item is kept only if:
+  - its headline contains all terms of a query that returned it (`keep_rule = all_terms_headline_match`), or
+  - its outlet is on the major-media list, whatever the headline overlap (`keep_rule = major_media_outlet`).
+  
+  `headline_term_match` records `full` / `partial` / `none`. Dropped items are listed in `google_news_filtered_out.csv`. The per-card cap is applied after this filter.
 - **Dedup and cap.** Items are deduplicated by URL and by near-identical normalized title (similarity ≥ 0.9). Each item records every card query that matched it (`matched_card_ids`, `matched_queries`). At most 25 items are kept per card: most matched queries first, then newest.
 - **Source tier.** From the config: listed major outlets are `major_media`, regulator and DTCC hosts get their tier, and everything else is `other`. The classifier compares the model's tier with this input tier.
 - **Official-feed pre-filter.** The official feeds (Federal Register, DTCC notices, SEC/CFTC/Fed, FCA/ECB/ESMA/BIS) are kept only when a card query matches title + summary. All terms must appear, case-insensitive, outside longer words, with a plural or inflection suffix allowed. Filtered items are listed in `official_prefilter_filtered_out.csv`.
@@ -117,3 +122,7 @@ The week was incomplete when collected (Saturday 11-07); official rows reach 11-
 The run stopped at the dry run: the estimate exceeds the USD 3 cap set for this week. No AWS call was made.
 
 Google's matching is loose. Only 37 of the 308 headlines contain all terms of a query that returned them, at an estimated USD 0.58 calibrated.
+
+### Week of 2026-11-02: filtered run (2026-11-07)
+
+With the headline filter, 81 Google items and 0 official items went to the model (dry run USD 1.90). The real run, capped at USD 3, completed all 81: 0 relevant, 81 irrelevant, 0 failures. It used 353,055 input and 10,380 output tokens, about USD 1.34. See [the run report](../data/events/CLASSIFIER_RUN_2026-11-07.md), which includes ten random irrelevant items and a list of likely misses caused by headline-only input.

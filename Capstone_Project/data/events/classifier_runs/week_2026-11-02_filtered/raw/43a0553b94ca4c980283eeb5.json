@@ -1,0 +1,40 @@
+{
+  "document_id": "286bd0293f54a075865656fface5da12f2173b8a53f8d52f7baa6da1861aa8b4",
+  "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPMnpZaHI1UDRMa3VBSkJ3OTZqdW1OSm9JajR3REN4WVpaUDZtd2c5RTRUMjE5MXFOd2NGOGl4dDFjUWdGSFVCeGVmcUxoTzlLRXoxcmQ5bzIwR1JPY05xVWFIVWs3ajVlSGF3NXRCSnhPVzFBWG0td25Pcm9IMnk4eXFkMU5jX2wtOUlSN1NkT3IzWEdMOHpwS3VmWmN2M1BTOTJ3V1hoV0dWVEM1dHR1NEFqbFA?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "b2f8e2c9ca8e244cec19e6eb1ef33c6725650f868222d7037bcdcc274c287be5",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_LINEN1kYAu9GvTUr8ZtW2W",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a headline snippet only — 'Asia Hedge Funds, Rich Investors Face Steep Losses in AI Selloff' — with no substantive content beyond the title. It describes losses by Asia-based hedge funds and wealthy investors in an AI-related market selloff, but provides no evidence of market-wide equity stress, NSCC liquidity pressure, member stress, or any other specific DTCC-process-touching event. The snippet is too thin to support any card assignment under the evidence-quotes requirement."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4345,
+    "outputTokens": 155,
+    "totalTokens": 4500,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2491
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

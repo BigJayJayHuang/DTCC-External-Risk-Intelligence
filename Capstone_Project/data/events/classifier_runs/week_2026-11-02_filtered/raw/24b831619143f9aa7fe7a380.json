@@ -1,0 +1,40 @@
+{
+  "document_id": "917ff7d9d1360019ead7222cef38131b4a7f53042379601bee691ed96b0c40fe",
+  "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPS0NJNjQxWXkyQlUtTlFYaEJnbExveEEzRnpkUXpQbXFsbkZEcEhweFh0WkdxZFhicl90WkdZUGltSks1SnNIOFdiamRxdWVOODVZMHo0Ukk1ZGd4T3hNZG9heUd1cUZkSXZSVzg2QU5waVg3UjVCTUtySlNEbnhNeXdVTXYyVlUxRUZvWlVIN2xnOE9pMWtWbTNLNzVXeDQxanpuZDM4Ry1JanRvTGtDUFVUUzhYaUZkanNsclhZSDVFekhUY0EwU2ZwR0EtN1AyQWZZTmdncWNPQ2h3RDFjWXdoUHJTMFp0c1l1Yk50QWNVYWNwdzg00gH8AUFVX3lxTE1iSVNWN2JFRWhyNW9hODI0WlhzVDdZVFRQeU5LVThBSm1uYmlqQUNwWFpDZnNYaC1SNWlfUkhGZUpaM0Q1dFA1TmZPR1BUeW05RWthQWIyVHJpbkNrTDRWNHNwbDZxeXJtZm9ISVhBUzBSYzd2aTU2bkR2d09Vdnh0b3o5c25ZWEtPdERtV01zcUktYmxKWS1pejhBV0g5blJQN3o4SVI3V2tJRTBoSWVSR1JnM1JIc09SYmMyQ2pmTVVWcWlTaUxDajctOFp5WnJyeWR3VkNCR1p1c0dBY3BVN3htaXBjR3R2YUdBMmhZRnV4dlVrdl9KZmNmMA?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "9bf0ba97d9a82cc8c3f9e114afc1c19c78e1a4d2f6b275ea4e339db1940c2676",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_HSfy5ayaQWbazzKbhauSC1",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article reports record trading volume of NSE (National Stock Exchange of India) gold receipts on Dhanteras 2026 — an Indian commodity market event with no connection to DTCC processes. The 'record trading volume' card (ECS-NSCC-03) applies to NSCC equity settlement volumes, not Indian exchange gold products. No DTCC-relevant event is described."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4749,
+    "outputTokens": 128,
+    "totalTokens": 4877,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2081
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}
