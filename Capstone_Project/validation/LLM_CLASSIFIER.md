@@ -82,3 +82,38 @@ AWS references: [toolChoice](https://docs.aws.amazon.com/bedrock/latest/APIRefer
 The November 5 run completed all 481 articles for USD 7.5383616 estimated cost. It marked all 481 irrelevant and produced no candidate rows; all 16 per-card counts are zero. No text/fence fallback, check failure, or throttling retry occurred in the completed batch. See the [execution report](../data/events/CLASSIFIER_RUN_2026-11-05.md) for input limitations, raw outputs, the initial rejected-schema attempt and reconciliation evidence. The prompt and event register are unchanged.
 
 For a repeat run on the same run date, select a fresh `--output-dir` so existing review CSVs cannot be overwritten. A new run creates new model charges under its own budget.
+
+## Weekly Google News source and official-feed pre-filter
+
+`validation/google_news.py` builds one classifier input per Monday–Sunday week (default: the last full week):
+
+```bash
+.venv-llm/bin/python -m validation.google_news --week-start 2026-11-02 --official <daily news.csv>
+.venv-llm/bin/python -m validation.llm_classifier --start 2026-11-02 --end 2026-11-08 \
+  --news data/events/classifier_inputs/week_2026-11-02/classifier_input.csv --dry-run --run-id week_2026-11-02
+```
+
+- **Queries.** `validation/news_queries.csv` has `card_id,query` rows: 47 queries for the 16 cards. `validation/google_news_config.json` holds the User-Agent, rate limit, per-card cap, title-similarity threshold and source-tier lists.
+- **Fetching.** One Google News RSS search per query, `q=<query> after:<Sunday before> before:<Monday after>`. Plain `urllib` with an honest User-Agent (project URL, no email, no browser string), at most one request every 2 seconds. Collection stops on HTTP 429. Raw RSS is saved in `google_news_raw/` and listed in `fetch_manifest.json`.
+- **Item fields.** Title, snippet, outlet, outlet homepage, published time (UTC) and Google link. The publisher URL is resolved only when the Google article ID can be decoded offline. Current IDs cannot be decoded, and the link redirects only through a JavaScript page (checked 2026-11-07). Such items keep the Google link as `url` and are marked `url_resolution = not_resolvable_without_browser`. Google's RSS description repeats the headline and outlet, so the snippet is usually empty. `content_scope = headline_snippet`.
+- **Dedup and cap.** Items are deduplicated by URL and by near-identical normalized title (similarity ≥ 0.9). Each item records every card query that matched it (`matched_card_ids`, `matched_queries`). At most 25 items are kept per card: most matched queries first, then newest.
+- **Source tier.** From the config: listed major outlets are `major_media`, regulator and DTCC hosts get their tier, and everything else is `other`. The classifier compares the model's tier with this input tier.
+- **Official-feed pre-filter.** The official feeds (Federal Register, DTCC notices, SEC/CFTC/Fed, FCA/ECB/ESMA/BIS) are kept only when a card query matches title + summary. All terms must appear, case-insensitive, outside longer words, with a plural or inflection suffix allowed. Filtered items are listed in `official_prefilter_filtered_out.csv`.
+- **Hints.** The classifier receives `query_hint_card_ids` and a one-line note inside the article JSON. They are hints only; the prompt and rubric are unchanged and the model still decides relevance and cards.
+
+### Week of 2026-11-02: collection and dry run (2026-11-07)
+
+The week was incomplete when collected (Saturday 11-07); official rows reach 11-06.
+
+| Step | Count |
+|---|---|
+| Google News requests | 47, all HTTP 200 |
+| Hits dated in the week | 569 |
+| After dedup | 534 |
+| After the 25-per-card cap | 308 (11 `major_media`, 297 `other`; 0 publisher URLs resolvable; 0 non-empty snippets) |
+| Official items | 107; kept 0, filtered 107 (no query matched) |
+| Classifier dry run | 308 requests; estimate USD 7.21 by the classifier's method, about USD 4.84 calibrated with the Nov-5 actual/estimate ratio (0.672) |
+
+The run stopped at the dry run: the estimate exceeds the USD 3 cap set for this week. No AWS call was made.
+
+Google's matching is loose. Only 37 of the 308 headlines contain all terms of a query that returned them, at an estimated USD 0.58 calibrated.
