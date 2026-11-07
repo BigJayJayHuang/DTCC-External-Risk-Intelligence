@@ -44,6 +44,9 @@ CSV_FIELDS = [
     "cache_write_input_tokens", "estimated_cost_usd", "response_mode", "fence_fallback",
     "attempts", "content_scope", "article_file", "raw_output_file",
 ]
+GOOGLE_NEWS_SOURCE = "google_news_rss"
+HINT_NOTE = ("Card ids whose keyword search query matched this item. Retrieval hint only; "
+             "it is not a relevance decision or a card assignment.")
 SOURCE_NAMES = {
     "sec_press": ("SEC", "regulator"), "cftc_press": ("CFTC", "regulator"),
     "fed_press": ("Federal Reserve", "regulator"), "esma_news": ("ESMA", "regulator"),
@@ -99,12 +102,21 @@ def load_news(path: Path, start: date, end: date, limit: int | None):
         seen.update([identity, row["url"]])
         title = html.unescape(row["title"]).strip()
         summary = html.unescape(row.get("summary", "")).strip()
-        scope = "publisher_feed_summary" if summary and summary != title else "headline_only"
-        text = title + ("\n\n" + summary if scope != "headline_only" else "")
+        has_summary = bool(summary and summary != title)
+        scope = "publisher_feed_summary" if has_summary else "headline_only"
+        text = title + ("\n\n" + summary if has_summary else "")
         outlet, tier = SOURCE_NAMES.get(row.get("source_id"), (urlparse(row["url"]).hostname or "unknown", "other"))
-        chosen.append({"document_id": identity, "title": title, "url": row["url"],
-                       "published_date": published, "source_id": row.get("source_id", ""),
-                       "outlet": outlet, "source_tier": tier, "content_scope": scope, "text": text})
+        if row.get("source_id") == GOOGLE_NEWS_SOURCE:
+            # Outlet and tier come from the collector (google_news.py), never from the model.
+            outlet, tier, scope = row.get("outlet") or outlet, row.get("source_tier") or "other", "headline_snippet"
+        article = {"document_id": identity, "title": title, "url": row["url"],
+                   "published_date": published, "source_id": row.get("source_id", ""),
+                   "outlet": outlet, "source_tier": tier, "content_scope": scope, "text": text}
+        hints = [c for c in (row.get("matched_card_ids") or "").split("|") if c]
+        if hints:   # keyword-search hints only; the model still decides relevance and cards
+            article["query_hint_card_ids"] = hints
+            article["query_hint_note"] = HINT_NOTE
+        chosen.append(article)
     chosen.sort(key=lambda r: (r["published_date"], r["document_id"]))
     available = len(chosen)
     if limit is not None:
