@@ -39,7 +39,9 @@ PROJECT = Path(__file__).resolve().parents[1]
 QUERIES = Path(__file__).with_name("news_queries.csv")
 CONFIG = Path(__file__).with_name("google_news_config.json")
 EXTRA_FIELDS = ["outlet", "outlet_url", "source_tier", "google_link", "publisher_url", "url_resolution",
-                "matched_card_ids", "matched_queries", "selected_for_card_ids", "content_scope"]
+                "matched_card_ids", "matched_queries", "selected_for_card_ids", "keep_rule", "headline_term_match",
+                "content_scope"]
+KEEP_ALL_TERMS, KEEP_MAJOR = "all_terms_headline_match", "major_media_outlet"
 BASE_FIELDS = ["document_id", "title", "url", "publication_date", "published_at_utc", "summary", "source_id", "last_seen"]
 
 
@@ -175,6 +177,31 @@ def source_tier(item: dict, config: dict) -> str:
     return "major_media" if item["outlet"] in set(config["major_media_outlets"]) else "other"
 
 
+# ------------------------------------------------------------------ headline filter (Google matches loosely)
+def headline_term_match(item: dict) -> str:
+    """full: all terms of a query that returned the item appear in the headline; partial: some term does; none."""
+    qs = [q for qlist in item["matches"].values() for q in qlist]
+    if any(query_matches(q, item["title"]) for q in qs):
+        return "full"
+    return "partial" if any(_term_regex(t).search(item["title"]) for q in qs for t in query_terms(q)) else "none"
+
+
+def headline_filter(items: list[dict], config: dict):
+    """Keep items whose headline contains all terms of a query that returned them, plus every item from a
+    major-media outlet whatever its headline overlap. Each kept item records the rule that kept it."""
+    kept, dropped = [], []
+    for i in items:
+        i["headline_term_match"] = headline_term_match(i)
+        if i["headline_term_match"] == "full":
+            i["keep_rule"] = KEEP_ALL_TERMS
+        elif source_tier(i, config) == "major_media":
+            i["keep_rule"] = KEEP_MAJOR
+        else:
+            i["keep_rule"] = None
+        (kept if i["keep_rule"] else dropped).append(i)
+    return kept, dropped
+
+
 # ------------------------------------------------------------------ dedup and per-card cap
 def dedupe(hits: list[dict], threshold: float) -> list[dict]:
     """hits: one dict per (query, item). Merge by resolved URL, then by near-identical normalized title."""
@@ -258,7 +285,8 @@ def collect(config, queries, monday, out_dir: Path, fetch=None, offline_dir: Pat
         hits += [{**i, "card_id": card, "query": q} for i in in_week]
     merged = dedupe(hits, config["title_similarity_threshold"])
     cards = list(dict.fromkeys(c for c, _ in queries))
-    kept = cap_per_card(merged, cards, config["max_items_per_card"])
+    passed, filtered = headline_filter(merged, config) if config.get("headline_filter", True) else (merged, [])
+    kept = cap_per_card(passed, cards, config["max_items_per_card"])
     rows = []
     for i in kept:
         url = i["publisher_url"] or i["google_link"]
@@ -268,12 +296,22 @@ def collect(config, queries, monday, out_dir: Path, fetch=None, offline_dir: Pat
                      "outlet": i["outlet"], "outlet_url": i["outlet_url"], "source_tier": source_tier(i, config),
                      "google_link": i["google_link"], "publisher_url": i["publisher_url"], "url_resolution": i["url_resolution"],
                      "matched_card_ids": "|".join(sorted(i["matches"])), "matched_queries": json.dumps(dict(i["matches"]), ensure_ascii=False),
-                     "selected_for_card_ids": "|".join(i["selected_for"]), "content_scope": config["content_scope"]})
+                     "selected_for_card_ids": "|".join(i["selected_for"]), "keep_rule": i.get("keep_rule") or "",
+                     "headline_term_match": i.get("headline_term_match", ""), "content_scope": config["content_scope"]})
     stats = {"queries": len(queries), "requests": len(manifest), "http_errors": sum(e["http_status"] != 200 for e in manifest),
              "raw_hits_in_week": len(hits), "after_dedup": len(merged), "kept_after_cap": len(rows),
              "duplicates_merged": len(hits) - len(merged),
-             "dropped_by_card_cap": len(merged) - len(rows)}
-    return rows, manifest, stats, merged
+             "headline_filter": {"passed": len(passed), "dropped": len(filtered),
+                                 "passed_by_rule": dict(Counter(i["keep_rule"] for i in passed)),
+                                 "passed_by_headline_term_match": dict(Counter(i.get("headline_term_match") for i in passed))},
+             "dropped_by_card_cap": len(passed) - len(rows),
+             "kept_by_rule": dict(Counter(r["keep_rule"] for r in rows))}
+    filtered_rows = [{"title": i["title"], "outlet": i["outlet"], "published_at_utc": i["published_at_utc"], "google_link": i["google_link"],
+                      "matched_card_ids": "|".join(sorted(i["matches"])), "matched_queries": json.dumps(dict(i["matches"]), ensure_ascii=False),
+                      "headline_term_match": i.get("headline_term_match", ""),
+                      "reason": "headline lacks all terms of every query that returned it, and the outlet is not on the major-media list"}
+                     for i in filtered]
+    return rows, manifest, stats, filtered_rows
 
 
 def write_csv(path: Path, rows: list[dict], fields: list[str]):
@@ -295,7 +333,10 @@ def main(argv=None):
     start, end = week_window(a.week_start)
     out = a.out_dir or PROJECT / "data/events/classifier_inputs" / f"week_{start.isoformat()}"
     out.mkdir(parents=True, exist_ok=True)
-    rows, manifest, stats, _ = collect(config, queries, start, out, offline_dir=a.offline_from)
+    prior = json.loads((out / "summary.json").read_text()) if a.offline_from and (out / "summary.json").exists() else {}
+    collected = prior.get("collected_utc")
+    now = datetime.fromisoformat(collected) if collected else None
+    rows, manifest, stats, google_dropped = collect(config, queries, start, out, offline_dir=a.offline_from, now=now)
     with a.official.open(encoding="utf-8-sig", newline="") as f:
         official = list(csv.DictReader(f))
     kept, dropped = prefilter_official(official, queries, set(config["official_source_ids"]), start, end)
@@ -304,13 +345,17 @@ def main(argv=None):
     write_csv(out / "official_prefilter_kept.csv", kept, fields)
     write_csv(out / "official_prefilter_filtered_out.csv", dropped, ["document_id", "source_id", "publication_date", "title", "url", "reason"])
     write_csv(out / "classifier_input.csv", rows + kept, fields)
+    write_csv(out / "google_news_filtered_out.csv", google_dropped,
+              ["title", "outlet", "published_at_utc", "google_link", "matched_card_ids", "matched_queries", "headline_term_match", "reason"])
     per_card = {c: {"google_news": sum(c in r["matched_card_ids"].split("|") for r in rows),
                     "google_news_selected_for": sum(c in r["selected_for_card_ids"].split("|") for r in rows),
                     "official_kept": sum(c in r["matched_card_ids"].split("|") for r in kept)}
                 for c in dict.fromkeys(c for c, _ in queries)}
     official_window = [r for r in official if r.get("source_id") in set(config["official_source_ids"])
                        and start.isoformat() <= (r.get("publication_date") or r.get("published_at_utc") or "")[:10] <= end.isoformat()]
-    summary = {"week_start": start.isoformat(), "week_end": end.isoformat(), "collected_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    summary = {"week_start": start.isoformat(), "week_end": end.isoformat(),
+               "collected_utc": collected or datetime.now(timezone.utc).isoformat(timespec="seconds"),
+               "reparsed_from_saved_raw_utc": datetime.now(timezone.utc).isoformat(timespec="seconds") if a.offline_from else None,
                "google_news": stats, "google_news_per_outlet_tier": dict(Counter(r["source_tier"] for r in rows)),
                "google_news_url_resolution": dict(Counter(r["url_resolution"] for r in rows)),
                "official": {"rows_in_week": len(official_window), "by_source": dict(Counter(r["source_id"] for r in official_window)),
@@ -318,7 +363,8 @@ def main(argv=None):
                "classifier_input_rows": len(rows) + len(kept), "per_card": per_card,
                "official_input_sha256": sha(a.official.read_bytes()), "queries_sha256": sha(QUERIES.read_bytes()),
                "config_sha256": sha(CONFIG.read_bytes()), "content_scope": config["content_scope"]}
-    (out / "fetch_manifest.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n")
+    if not a.offline_from:   # a re-parse keeps the original fetch record
+        (out / "fetch_manifest.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n")
     (out / "summary.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False) + "\n")
     print(json.dumps(summary, indent=2, ensure_ascii=False))
     return summary

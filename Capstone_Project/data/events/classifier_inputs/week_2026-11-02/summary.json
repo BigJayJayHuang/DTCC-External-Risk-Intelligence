@@ -2,22 +2,40 @@
   "week_start": "2026-11-02",
   "week_end": "2026-11-08",
   "collected_utc": "2026-11-07T23:47:37+00:00",
+  "reparsed_from_saved_raw_utc": "2026-11-07T23:54:06+00:00",
   "google_news": {
     "queries": 47,
     "requests": 47,
     "http_errors": 0,
     "raw_hits_in_week": 569,
     "after_dedup": 534,
-    "kept_after_cap": 308,
+    "kept_after_cap": 81,
     "duplicates_merged": 35,
-    "dropped_by_card_cap": 226
+    "headline_filter": {
+      "passed": 115,
+      "dropped": 419,
+      "passed_by_rule": {
+        "all_terms_headline_match": 99,
+        "major_media_outlet": 16
+      },
+      "passed_by_headline_term_match": {
+        "full": 99,
+        "partial": 2,
+        "none": 14
+      }
+    },
+    "dropped_by_card_cap": 34,
+    "kept_by_rule": {
+      "all_terms_headline_match": 65,
+      "major_media_outlet": 16
+    }
   },
   "google_news_per_outlet_tier": {
-    "other": 297,
-    "major_media": 11
+    "other": 64,
+    "major_media": 17
   },
   "google_news_url_resolution": {
-    "not_resolvable_without_browser": 308
+    "not_resolvable_without_browser": 81
   },
   "official": {
     "rows_in_week": 107,
@@ -33,31 +51,31 @@
     "kept_by_source": {},
     "filtered_out": 107
   },
-  "classifier_input_rows": 308,
+  "classifier_input_rows": 81,
   "per_card": {
     "FICC-GSD-01": {
-      "google_news": 25,
-      "google_news_selected_for": 25,
+      "google_news": 4,
+      "google_news_selected_for": 4,
       "official_kept": 0
     },
     "FICC-GSD-02": {
-      "google_news": 24,
-      "google_news_selected_for": 24,
+      "google_news": 2,
+      "google_news_selected_for": 2,
       "official_kept": 0
     },
     "FICC-GSD-03": {
-      "google_news": 10,
-      "google_news_selected_for": 10,
+      "google_news": 1,
+      "google_news_selected_for": 1,
       "official_kept": 0
     },
     "FICC-MBSD-01": {
-      "google_news": 25,
-      "google_news_selected_for": 25,
+      "google_news": 2,
+      "google_news_selected_for": 2,
       "official_kept": 0
     },
     "FICC-GSD-11": {
-      "google_news": 19,
-      "google_news_selected_for": 19,
+      "google_news": 3,
+      "google_news_selected_for": 3,
       "official_kept": 0
     },
     "FICC-MBSD-02": {
@@ -66,48 +84,48 @@
       "official_kept": 0
     },
     "ECS-NSCC-LIQ": {
-      "google_news": 27,
-      "google_news_selected_for": 25,
+      "google_news": 20,
+      "google_news_selected_for": 20,
       "official_kept": 0
     },
     "ECS-NSCC-03": {
-      "google_news": 22,
-      "google_news_selected_for": 22,
-      "official_kept": 0
-    },
-    "ECS-SET-01": {
-      "google_news": 25,
-      "google_news_selected_for": 25,
-      "official_kept": 0
-    },
-    "ECS-NSCC-08": {
-      "google_news": 25,
-      "google_news_selected_for": 25,
-      "official_kept": 0
-    },
-    "ECS-NSCC-09": {
-      "google_news": 7,
-      "google_news_selected_for": 7,
-      "official_kept": 0
-    },
-    "ECS-DTC-01": {
       "google_news": 6,
       "google_news_selected_for": 6,
       "official_kept": 0
     },
+    "ECS-SET-01": {
+      "google_news": 7,
+      "google_news_selected_for": 7,
+      "official_kept": 0
+    },
+    "ECS-NSCC-08": {
+      "google_news": 1,
+      "google_news_selected_for": 1,
+      "official_kept": 0
+    },
+    "ECS-NSCC-09": {
+      "google_news": 0,
+      "google_news_selected_for": 0,
+      "official_kept": 0
+    },
+    "ECS-DTC-01": {
+      "google_news": 0,
+      "google_news_selected_for": 0,
+      "official_kept": 0
+    },
     "XE-MEMBER": {
-      "google_news": 25,
-      "google_news_selected_for": 25,
+      "google_news": 10,
+      "google_news_selected_for": 10,
       "official_kept": 0
     },
     "XE-DISRUPT": {
-      "google_news": 26,
-      "google_news_selected_for": 25,
+      "google_news": 2,
+      "google_news_selected_for": 2,
       "official_kept": 0
     },
     "XE-SETTLEBANK": {
-      "google_news": 25,
-      "google_news_selected_for": 25,
+      "google_news": 0,
+      "google_news_selected_for": 0,
       "official_kept": 0
     },
     "XE-CYBER": {
@@ -118,6 +136,6 @@
   },
   "official_input_sha256": "b4b87e392c1905f469f72a2332863d443e385a86f9b5d09ed916ecebb00ebc07",
   "queries_sha256": "ec2598cf556c95cb9206be2a515168f4a83d5b27a3e4a3dc1e038dab94843bad",
-  "config_sha256": "90f7034b2da8722358766d52ef6bad7ab048816d0ffdc632512b74c693f0da8b",
+  "config_sha256": "f921476edb8e7696c7712842ce376d3835160c6d07479686b2dc99d46f3091b2",
   "content_scope": "headline_snippet"
 }

@@ -130,6 +130,27 @@ class Collect(unittest.TestCase):
         rows, *_ = self.run_collect([rss(*many)], [("FICC-GSD-02", '"repo rates" spike')])
         self.assertEqual(len(rows), 25)
 
+    def test_headline_filter_rules(self):
+        loose = ("Argentina bonds drop as market flags intervention", "Some Blog", "https://blog.example", "CBMiL001", "Thu, 05 Nov 2026 22:00:00 GMT")
+        part = ("Repo desks brace for quarter-end", "Some Blog", "https://blog.example", "CBMiL002", "Thu, 05 Nov 2026 22:00:00 GMT")
+        major = ("Sterling dips as stock rout boosts dollar", "Reuters", "https://www.reuters.com", "CBMiL003", "Thu, 05 Nov 2026 22:00:00 GMT")
+        rows, manifest, stats, calls, raw = self.run_collect([rss(A, loose, part, major)], [("FICC-GSD-02", '"repo rates" spike')])
+        by = {r["title"]: r for r in rows}
+        self.assertEqual(set(by), {A[0], major[0]})
+        self.assertEqual((by[A[0]]["keep_rule"], by[A[0]]["headline_term_match"]), ("all_terms_headline_match", "full"))
+        self.assertEqual((by[major[0]]["keep_rule"], by[major[0]]["headline_term_match"]), ("major_media_outlet", "none"))
+        self.assertEqual(stats["headline_filter"], {"passed": 2, "dropped": 2,
+                                                    "passed_by_rule": {"all_terms_headline_match": 1, "major_media_outlet": 1},
+                                                    "passed_by_headline_term_match": {"full": 1, "none": 1}})
+
+    def test_filtered_items_are_listed(self):
+        loose = ("Argentina bonds drop", "Some Blog", "https://blog.example", "CBMiL001", "Thu, 05 Nov 2026 22:00:00 GMT")
+        with tempfile.TemporaryDirectory() as tmp:
+            _, _, _, dropped = G.collect(CONFIG, [("FICC-GSD-02", '"repo rates" spike')], MONDAY, Path(tmp),
+                                         fetch=lambda url: (200, rss(loose)))
+        self.assertEqual([(d["title"], d["headline_term_match"]) for d in dropped], [("Argentina bonds drop", "none")])
+        self.assertIn("major-media", dropped[0]["reason"])
+
     def test_rate_limited_response_stops(self):
         with tempfile.TemporaryDirectory() as tmp:
             out = iter([(429, b""), (200, rss(A))])
