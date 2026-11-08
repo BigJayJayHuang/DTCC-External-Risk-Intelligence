@@ -1,7 +1,10 @@
 """Review-only Bedrock news classification; never modifies the event register.
 
-python -m validation.llm_classifier --start YYYY-MM-DD --end YYYY-MM-DD --dry-run
+python -m validation.llm_classifier --start YYYY-MM-DD --end YYYY-MM-DD --dry-run [--prompt-version v1.3 --prompt-cache on]
 Authentication: BEDROCK_PROFILE (default devx-bedrock), using AWS SSO.
+Prompt v1.2 (default, unchanged) puts everything in the system prompt. Prompt v1.3 puts the static rules and card
+catalog in the system prompt followed by a Converse cachePoint, and the per-item recent events and article in the
+user message.
 """
 from __future__ import annotations
 
@@ -27,6 +30,9 @@ from . import event_scoring as E
 
 PROJECT = Path(__file__).resolve().parents[1]
 PROMPT = Path(__file__).with_name("llm_event_classifier_prompt.md")
+PROMPT_V13 = Path(__file__).with_name("llm_event_classifier_prompt_v1.3.md")
+PROMPT_FILES = {"v1.2": PROMPT, "v1.3": PROMPT_V13}
+HEADLINE_SCOPES = {"headline_only", "headline_snippet"}
 CONFIG = Path(__file__).with_name("llm_classifier_config.json")
 REGISTER = PROJECT / "data/events/event_register.csv"
 MAJOR = PROJECT / "data/events/major_participants.csv"
@@ -42,7 +48,7 @@ CSV_FIELDS = [
     "original_certainty", "original_reach", "model_id", "base_model_id", "region",
     "prompt_version", "input_tokens", "output_tokens", "cache_read_input_tokens",
     "cache_write_input_tokens", "estimated_cost_usd", "response_mode", "fence_fallback",
-    "attempts", "content_scope", "article_file", "raw_output_file",
+    "attempts", "content_scope", "review_basis", "article_file", "raw_output_file",
 ]
 GOOGLE_NEWS_SOURCE = "google_news_rss"
 HINT_NOTE = ("Card ids whose keyword search query matched this item. Retrieval hint only; "
@@ -139,6 +145,29 @@ def prompt_parts(path: Path):
     return body, catalog, set(cards), "event-rubric-v1.2:" + sha(path.read_bytes())[:12]
 
 
+def prompt_parts_v13(path: Path = PROMPT_V13):
+    """v1.3: header / static system text / per-item user template / card catalog. Returns the system text with the
+    catalog filled in (identical for every item, so it can be cached), the user template, cards and version."""
+    parts = path.read_text(encoding="utf-8").split("\n---\n")
+    if len(parts) != 4:
+        raise ValueError("Prompt v1.3 must have header, system, user and catalog sections")
+    system_body, user_template = parts[1].strip(), parts[2].strip()
+    catalog = parts[3][parts[3].index("| card_id"):].strip()
+    cards = re.findall(r"^\| ((?:FICC|ECS|XE)-[A-Z0-9-]+) \|", catalog, re.M)
+    if len(set(cards)) != 16:
+        raise ValueError("Expected the original 16-card catalog")
+    if any(k in system_body for k in ("{RECENT_EVENTS}", "{ARTICLE}")) or "{CARD_CATALOG}" in user_template \
+            or system_body.count("{CARD_CATALOG}") != 1 or not all(k in user_template for k in ("{RECENT_EVENTS}", "{ARTICLE}")):
+        raise ValueError("Static system text and per-item user template are not separated as required")
+    return system_body.replace("{CARD_CATALOG}", catalog), user_template, set(cards), "classifier-prompt-v1.3:" + sha(path.read_bytes())[:12]
+
+
+def render_user_v13(template: str, register: list[dict], article: dict):
+    recent = [r for r in register if r["announced_date"] and r["announced_date"] <= article["published_date"]]
+    values = {"RECENT_EVENTS": json.dumps(recent, ensure_ascii=False), "ARTICLE": json.dumps(article, ensure_ascii=False)}
+    return re.sub(r"\{(RECENT_EVENTS|ARTICLE)\}", lambda m: values[m[1]], template), {r["event_id"] for r in recent}
+
+
 def load_register(path: Path) -> list[dict]:
     events = []
     with path.open(encoding="utf-8-sig", newline="") as handle:
@@ -193,6 +222,25 @@ def build_request(prompt: str, schema: dict, config: dict) -> dict:
                            "toolChoice": {"tool": {"name": TOOL}}}}
 
 
+def build_request_v13(system: str, user: str, schema: dict, config: dict, cache: bool) -> dict:
+    """Static prefix (tool + system text) first, then a cachePoint; per-item text only in the user message."""
+    request = build_request(system, schema, config)
+    if cache:
+        request["system"].append({"cachePoint": {"type": "default"}})
+    request["messages"] = [{"role": "user", "content": [{"text": user}]}]
+    return request
+
+
+def review_basis(article: dict, reasons: list[str]) -> list[str]:
+    """Every LLM candidate needs human review; headline-only input is named explicitly."""
+    basis = ["all LLM candidates require human review"]
+    if article.get("content_scope") in HEADLINE_SCOPES:
+        basis.append("headline-only input (" + article["content_scope"] + ")")
+    if reasons:
+        basis.append("validation flags present")
+    return basis
+
+
 class ResponseParseError(ValueError):
     def __init__(self, message, fence_fallback=False):
         super().__init__(message)
@@ -221,7 +269,8 @@ def parse_response(response: dict):
         raise ResponseParseError(str(exc), fence_fallback=fence is not None) from None
 
 
-def check_classification(result: dict, article: dict, schema: dict, cards: set[str], recent: set[str], major: set[str]):
+def check_classification(result: dict, article: dict, schema: dict, cards: set[str], recent: set[str], major: set[str],
+                         headline_rules: bool = False):
     Draft202012Validator(schema, format_checker=FormatChecker()).validate({"classification": result})
     if not result["is_relevant"]:
         return result, []
@@ -246,6 +295,11 @@ def check_classification(result: dict, article: dict, schema: dict, cards: set[s
     # Source authority comes from the supplied feed, never the model's assertion.
     if result["source_tier"] != article["source_tier"]:
         reasons.append("source_tier differs from input source classification")
+    if headline_rules and article.get("content_scope") in HEADLINE_SCOPES:   # prompt v1.3 headline-only rules
+        if result["confidence"] > 0.6:
+            reasons.append("headline-only item with confidence above 0.6")
+        if "headline_only" not in result["notes"]:
+            reasons.append("headline-only item without 'headline_only' in notes")
     if result["announced_date"] is None or result["effect_date"] is None:
         reasons.append("missing announced_date or effect_date; existing Event checks require both")
         return checked, list(dict.fromkeys(reasons))
@@ -258,6 +312,12 @@ def check_classification(result: dict, article: dict, schema: dict, cards: set[s
     event = E.validate(event, [article["text"]], cards, major)
     checked.update(card_ids=event.card_ids, certainty=event.certainty, reach=event.reach, stage=event.stage)
     return checked, list(dict.fromkeys(reasons + event.review_reasons))
+
+
+def cost_without_cache(usage: dict, prices: dict) -> Decimal:
+    """The same request priced as if nothing were cached: cache reads and writes count as ordinary input."""
+    total_input = usage.get("inputTokens", 0) + usage.get("cacheReadInputTokens", 0) + usage.get("cacheWriteInputTokens", 0)
+    return token_cost({"inputTokens": total_input, "outputTokens": usage.get("outputTokens", 0)}, prices)
 
 
 def token_cost(usage: dict, prices: dict) -> Decimal:
@@ -322,7 +382,8 @@ def csv_row(article: dict, result: dict, checked: dict, reasons: list[str], conf
                input_tokens=usage.get("inputTokens", 0), output_tokens=usage.get("outputTokens", 0),
                cache_read_input_tokens=usage.get("cacheReadInputTokens", 0), cache_write_input_tokens=usage.get("cacheWriteInputTokens", 0),
                estimated_cost_usd=str(cost), response_mode=mode, fence_fallback="Y" if fallback else "N", attempts=attempts,
-               content_scope=article["content_scope"], article_file=public_path(article_path), raw_output_file=public_path(raw_path))
+               content_scope=article["content_scope"], review_basis=json.dumps(review_basis(article, reasons)),
+               article_file=public_path(article_path), raw_output_file=public_path(raw_path))
     return row
 
 
@@ -350,9 +411,15 @@ def run(args, session=None):
         raise ValueError("Budget must be finite and positive")
     if args.start > args.end or args.max_articles is not None and args.max_articles < 1:
         raise ValueError("Invalid date window or --max-articles")
-    originals = {p: sha(p.read_bytes()) for p in (args.register, PROMPT)}
+    prompt_version = getattr(args, "prompt_version", "v1.2")
+    cache = prompt_version == "v1.3" and getattr(args, "prompt_cache", "on") == "on"
+    prompt_path = PROMPT_FILES[prompt_version]
+    originals = {p: sha(p.read_bytes()) for p in (args.register, PROMPT, PROMPT_V13)}
     articles, coverage = load_news(args.news, args.start, args.end, args.max_articles)
-    body, catalog, cards, version = prompt_parts(PROMPT)
+    if prompt_version == "v1.2":
+        body, catalog, cards, version = prompt_parts(PROMPT)
+    else:
+        system_text, user_template, cards, version = prompt_parts_v13(PROMPT_V13)
     register = load_register(args.register)
     with args.major.open(encoding="utf-8-sig", newline="") as handle:
         major = {r["name"] for r in csv.DictReader(handle) if r.get("name")}
@@ -366,14 +433,19 @@ def run(args, session=None):
     run_dir.mkdir(parents=True, exist_ok=False)
     requests = []
     for article in articles:
-        prompt, recent_ids = render_prompt(body, catalog, register, article)
-        request = build_request(prompt, schema, config)
+        if prompt_version == "v1.2":
+            prompt, recent_ids = render_prompt(body, catalog, register, article)
+            request = build_request(prompt, schema, config)
+        else:
+            user, recent_ids = render_user_v13(user_template, register, article)
+            request = build_request_v13(system_text, user, schema, config, cache)
         estimate, reserve = estimate_request(request, config["pricing"])
         requests.append((article, request, recent_ids, estimate, reserve))
     summary = {"run_id": run_id, "run_date": args.run_date.isoformat(), "dry_run": args.dry_run,
                "start": args.start.isoformat(), "end": args.end.isoformat(), "coverage": coverage,
                "input_sha256": sha(args.news.read_bytes()), "register_sha256": originals[args.register],
-               "prompt_sha256": originals[PROMPT], "prompt_version": version, "config": config,
+               "prompt_sha256": originals[prompt_path], "prompt_version": version, "prompt_file": public_path(prompt_path),
+               "prompt_cache": cache, "config": config,
                "classifier_sha256": sha(Path(__file__).read_bytes()), "schema_sha256": sha(json.dumps(schema, sort_keys=True).encode()),
                "model_id": config["model_id"], "region": config["region"], "budget_usd": str(budget),
                "estimated_full_run_cost_usd": str(sum((r[3] for r in requests), Decimal(0))),
@@ -384,7 +456,8 @@ def run(args, session=None):
                "failed_check_reasons": {}, "invocation_failures": 0, "candidates_per_card": {},
                "fence_fallbacks": 0, "tool_responses": 0, "text_responses": 0, "throttling_retries": 0,
                "input_tokens": 0, "output_tokens": 0, "cache_read_input_tokens": 0, "cache_write_input_tokens": 0,
-               "estimated_cost_usd": "0", "unreported_cost_reserve_usd": "0", "status": "dry_run" if args.dry_run else "running"}
+               "estimated_cost_usd": "0", "estimated_cost_without_cache_usd": "0", "unreported_cost_reserve_usd": "0",
+               "status": "dry_run" if args.dry_run else "running"}
     dump(run_dir / "summary.json", summary)
     if args.dry_run:
         with (run_dir / "prepared_requests.jsonl").open("x", encoding="utf-8") as handle:
@@ -416,7 +489,7 @@ def run(args, session=None):
         availability = {"check_error": safe_error(exc)}
     dump(run_dir / "availability_before.json", availability)
     summary["availability_before"] = availability
-    spent, unknown_reserve = Decimal(0), Decimal(0)
+    spent, unknown_reserve, uncached = Decimal(0), Decimal(0), Decimal(0)
     failures, counts = Counter(), Counter()
     candidate_handle, candidate_writer = csv_writer(candidates_path)
     irrelevant_handle = (run_dir / "irrelevant.jsonl").open("x", encoding="utf-8")
@@ -441,7 +514,7 @@ def run(args, session=None):
                 error = safe_error(exc)
                 summary["invocation_failures"] += 1
                 summary["throttling_retries"] += max(0, len(attempts) - 1)
-                failure_handle.write(json.dumps({"document_id": article["document_id"], "url": article["url"], "invocation_error": error}, ensure_ascii=False) + "\n")
+                failure_handle.write(json.dumps({"document_id": article["document_id"], "url": article["url"], "prompt_version": version, "invocation_error": error}, ensure_ascii=False) + "\n")
                 failure_handle.flush()
                 access = error["code"] in {"AccessDeniedException", "UnrecognizedClientException", "ExpiredTokenException"} or any(t in error["message"].lower() for t in ("subscription", "marketplace", "use case", "not authorized"))
                 if error["http_status"] is None:  # A network failure might follow a billed request.
@@ -467,6 +540,7 @@ def run(args, session=None):
                 break
             cost = token_cost(usage, config["pricing"])
             spent += cost
+            uncached += cost_without_cache(usage, config["pricing"])
             summary["articles_processed"] += 1
             summary["throttling_retries"] += attempt_count - 1
             for source, target in [("inputTokens", "input_tokens"), ("outputTokens", "output_tokens"),
@@ -479,7 +553,8 @@ def run(args, session=None):
                 summary[mode + "_responses"] += 1
                 if isinstance(result, dict) and result.get("is_relevant") is True:
                     summary["relevant"] += 1
-                checked, reasons = check_classification(result, article, schema, cards, recent_ids, major)
+                checked, reasons = check_classification(result, article, schema, cards, recent_ids, major,
+                                                        headline_rules=prompt_version == "v1.3")
                 if result["is_relevant"]:
                     counts.update(checked["card_ids"])
                     row = csv_row(article, result, checked, reasons, config, version, usage, cost, mode, fallback, attempt_count,
@@ -488,7 +563,7 @@ def run(args, session=None):
                     candidate_handle.flush()
                 else:
                     summary["irrelevant"] += 1
-                    irrelevant_handle.write(json.dumps({"document_id": article["document_id"], "url": article["url"], "classification": result,
+                    irrelevant_handle.write(json.dumps({"document_id": article["document_id"], "url": article["url"], "prompt_version": version, "classification": result,
                                                         "raw_output_file": public_path(raw_path), "usage": usage, "estimated_cost_usd": str(cost)}, ensure_ascii=False) + "\n")
                     irrelevant_handle.flush()
             except Exception as exc:
@@ -501,10 +576,11 @@ def run(args, session=None):
             if reasons:
                 summary["failed_checks"] += 1
                 failures.update(reasons)
-                failure_handle.write(json.dumps({"document_id": article["document_id"], "url": article["url"],
+                failure_handle.write(json.dumps({"document_id": article["document_id"], "url": article["url"], "prompt_version": version,
                                                  "reasons": reasons, "raw_output_file": public_path(raw_path)}, ensure_ascii=False) + "\n")
                 failure_handle.flush()
-            summary.update(estimated_cost_usd=str(spent), candidates_per_card=dict(counts), failed_check_reasons=dict(failures))
+            summary.update(estimated_cost_usd=str(spent), estimated_cost_without_cache_usd=str(uncached),
+                           candidates_per_card=dict(counts), failed_check_reasons=dict(failures))
             dump(run_dir / "summary.json", summary)
             if (index + 1) % 10 == 0 or index + 1 == len(requests):
                 print(json.dumps({"processed": summary["articles_processed"], "selected": len(requests), "relevant": summary["relevant"],
@@ -516,11 +592,12 @@ def run(args, session=None):
             summary["status"] = "complete"
     finally:
         candidate_handle.close(); irrelevant_handle.close(); failure_handle.close()
-        summary.update(estimated_cost_usd=str(spent), unreported_cost_reserve_usd=str(unknown_reserve),
+        summary.update(estimated_cost_usd=str(spent), estimated_cost_without_cache_usd=str(uncached),
+                       unreported_cost_reserve_usd=str(unknown_reserve),
                        candidates_per_card=dict(counts), failed_check_reasons=dict(failures),
                        articles_unprocessed=len(articles) - summary["articles_processed"],
                        event_register_unchanged=sha(args.register.read_bytes()) == originals[args.register],
-                       prompt_unchanged=sha(PROMPT.read_bytes()) == originals[PROMPT])
+                       prompt_unchanged=all(sha(f.read_bytes()) == originals[f] for f in (PROMPT, PROMPT_V13)))
         dump(run_dir / "summary.json", summary)
     print(json.dumps(summary, indent=2), flush=True)
     if not summary["event_register_unchanged"] or not summary["prompt_unchanged"]:
@@ -541,6 +618,8 @@ def parser():
     p.add_argument("--budget", type=Decimal)
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--run-id")
+    p.add_argument("--prompt-version", choices=sorted(PROMPT_FILES), default="v1.2")
+    p.add_argument("--prompt-cache", choices=["on", "off"], default="on", help="v1.3 only: Converse cachePoint after the static system text")
     p.add_argument("--run-date", type=date.fromisoformat, default=datetime.now(ZoneInfo("America/New_York")).date())
     return p
 

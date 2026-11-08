@@ -15,6 +15,7 @@
     "output_per_million": "16.50",
     "cache_read_per_million": "0.33",
     "cache_write_per_million": "4.125",
+    "cache_price_note": "Cache read/write rates: verify on the AWS Bedrock pricing page (https://aws.amazon.com/bedrock/pricing/) before relying on cost figures; values follow Anthropic's 0.1x read / 1.25x write ratios to the input rate.",
     "expected_output_tokens": 528,
     "tier": "Standard US geographic cross-region",
     "verified_date": "2026-11-05",
