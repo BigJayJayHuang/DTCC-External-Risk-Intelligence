@@ -1,0 +1,172 @@
+"""Offline tests for review_sheet.py, promote_reviewed.py and the unreviewed-AI flags in scoring_v1_3 (temp files only)."""
+import csv, json, tempfile, unittest
+from datetime import date
+from pathlib import Path
+
+from . import promote_reviewed as PR
+from . import review_sheet as RS
+from . import scoring_v1_3 as S13
+from .llm_classifier import PROJECT
+from .test_scoring_v1_3 import CARDS, NO_EVENT, event, mkt, run
+
+WEEK = date(2026, 11, 2)
+CAND_FIELDS = ["event_id", "title", "summary", "card_ids", "certainty", "original_certainty", "reach", "original_reach", "reach_basis",
+               "named_participants", "announced_date", "effect_date", "stage", "source_tier", "outlet", "url", "content_scope",
+               "same_as_event_id", "evidence_quotes", "llm_confidence", "validation_reasons", "prompt_version", "model_id", "article_file"]
+
+
+def cand(cid, title, cards, outlet, day="2026-11-05", conf=0.55, cert=2, reach=2, quote=None, same_as="", tier="other", summary=None):
+    return {"event_id": cid, "title": title, "summary": summary or title, "card_ids": cards, "certainty": 1, "original_certainty": cert,
+            "reach": reach, "original_reach": reach, "reach_basis": "market_wide", "named_participants": "", "announced_date": day,
+            "effect_date": day, "stage": "", "source_tier": tier, "outlet": outlet, "url": f"https://{outlet.lower().replace(' ', '')}.example/{cid}",
+            "content_scope": "headline_only", "same_as_event_id": same_as, "evidence_quotes": json.dumps([quote or title]),
+            "llm_confidence": conf, "validation_reasons": json.dumps(["certainty capped at 1: no primary source and fewer than 2 independent outlets"]),
+            "prompt_version": "classifier-prompt-v1.4:test", "model_id": "test-model"}
+
+
+class Grouping(unittest.TestCase):
+    def sheet(self, cands):
+        with tempfile.TemporaryDirectory(dir=PROJECT / "data") as tmp:
+            root = Path(tmp)
+            for c in cands:
+                (root / f"{c['event_id']}.txt").write_text(c["title"])
+                c["article_file"] = str((root / f"{c['event_id']}.txt").relative_to(PROJECT))
+            path = root / "c.csv"
+            with path.open("w", newline="") as f:
+                w = csv.DictWriter(f, fieldnames=CAND_FIELDS); w.writeheader(); w.writerows(cands)
+            return RS.build(path, WEEK)
+
+    def test_same_occurrence_merged_and_certainty_lifted(self):
+        rows = self.sheet([cand("A", "Tech stocks log worst day since 2020 in AI selloff", "ECS-NSCC-LIQ", "MarketWatch", conf=0.55),
+                           cand("B", "Tech stocks suffer worst day since 2020 as AI selloff deepens", "ECS-NSCC-LIQ", "CNBC", day="2026-11-06", conf=0.5),
+                           cand("C", "Hedge funds cut staff", "FICC-GSD-11", "WSJ")])
+        self.assertEqual(len(rows), 2)
+        merged = next(r for r in rows if "|" in r["candidate_ids"])
+        self.assertEqual((merged["candidate_ids"], merged["independent_outlets"]), ("A|B", 2))
+        self.assertEqual((merged["certainty_before_grouping"], merged["certainty"]), (1, 2))   # two independent outlets lift the cap
+        self.assertEqual(rows[0]["confidence"], 0.55)                                         # sorted by confidence, high to low
+
+    def test_not_merged_when_cards_or_dates_differ(self):
+        title = "Tech stocks log worst day since 2020 in AI selloff"
+        rows = self.sheet([cand("A", title, "ECS-NSCC-LIQ", "MarketWatch"), cand("B", title, "XE-CYBER", "CNBC"),
+                           cand("C", title, "ECS-NSCC-LIQ", "Reuters", day="2026-11-01")])
+        self.assertEqual(len(rows), 3)
+
+    def test_review_tier_and_would_be_scores(self):
+        rows = self.sheet([cand("A", "Tech stocks log worst day since 2020", "ECS-NSCC-LIQ", "MarketWatch", reach=2),
+                           cand("B", "Explainer on SOFR", "FICC-GSD-02", "Blog", cert=0, reach=0, day="2026-11-03")])
+        hi = next(r for r in rows if r["candidate_ids"] == "A")
+        lo = next(r for r in rows if r["candidate_ids"] == "B")
+        sev = json.loads(hi["would_be_severity"])["ECS-NSCC-LIQ"]
+        self.assertEqual(sev["severity"], hi["would_be_S"] * sev["V"])
+        self.assertEqual(hi["review_tier"], "required" if hi["would_be_S"] >= 4 or sev["severity"] >= 6 else "auto")
+        self.assertEqual((lo["would_be_S"], lo["review_tier"]), (1, "auto"))                   # 0 + 0 + timing 2 = 2 -> S 1, x V 4 < 6
+
+
+class Promote(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory(); self.root = Path(self.tmp.name)
+        self.register = self.root / "register.csv"
+        src = PROJECT / "data/events/event_register.csv"
+        self.register.write_text(src.read_text())                      # a copy; the real register is never written
+        self.spec_ok = self.root / "spec_ok.md"
+        self.spec_ok.write_text("# s\n\n## Amendment C — x\n\nApproved: Test Reviewer, 2026-11-08T00:00Z\n")
+        self.spec_no = self.root / "spec_no.md"
+        self.spec_no.write_text("# s\n\n## Amendment C — x\n\nStatus: PROPOSED\n")
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def row(self, pid, tier, decision="", reviewer="", same_as="", **kw):
+        base = {"proposed_event_id": pid, "title": "Tech stocks log worst day since 2020", "card_ids": "ECS-NSCC-LIQ", "certainty": "1",
+                "certainty_before_grouping": "1", "reach": "2", "reach_basis": "market_wide", "announced_date": "2026-11-05",
+                "effect_date": "2026-11-05", "would_be_S": "4" if tier == "required" else "2", "would_be_severity": "{}", "review_tier": tier,
+                "same_as_event_id": same_as, "stage": "", "named_participants": "", "independent_outlets": "1",
+                "sources": json.dumps([{"outlet": "MarketWatch", "url": "https://mw.example/a", "content_scope": "headline_only", "source_tier": "major_media"}]),
+                "evidence_quotes": json.dumps(["Tech stocks log worst day since 2020"]), "confidence": "0.55", "validate_flags": "[]",
+                "candidate_ids": "CAND-x", "prompt_version": "p", "model": "m", "decision": decision, "reviewer": reviewer,
+                "corrected_card_ids": "", "corrected_certainty": "", "corrected_reach": "", "reviewer_notes": ""}
+        return {**base, **kw}
+
+    def write_sheet(self, rows):
+        path = self.root / "sheet.csv"
+        with path.open("w", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=RS.FIELDS); w.writeheader(); w.writerows(rows)
+        return path
+
+    def reg_rows(self):
+        with self.register.open() as f:
+            return list(csv.DictReader(f))
+
+    def test_required_without_decision_refused_and_nothing_written(self):
+        before = self.register.read_text()
+        with self.assertRaises(PR.PromotionError):
+            PR.promote(self.write_sheet([self.row("P1", "required"), self.row("P2", "auto")]), self.register, spec=self.spec_ok)
+        self.assertEqual(self.register.read_text(), before)
+
+    def test_approve_auto_reject_merge_and_idempotent(self):
+        sheet = self.write_sheet([self.row("P1", "required", "approve", "Wenqi Cai"), self.row("P2", "auto"),
+                                  self.row("P3", "auto", "reject"), self.row("P4", "required", "approve", "Wenqi Cai", same_as="EV0006"),
+                                  self.row("P5", "required", "edit", "Wenqi Cai", corrected_certainty="2", corrected_card_ids="ECS-NSCC-LIQ|FICC-GSD-11")])
+        n0 = len(self.reg_rows())
+        res = PR.promote(sheet, self.register, today="2026-11-08", spec=self.spec_ok)
+        rows = {r["proposal_id"]: r for r in self.reg_rows() if r.get("proposal_id")}
+        self.assertEqual(len(self.reg_rows()), n0 + 3)
+        self.assertEqual((rows["P1"]["entered_by"], rows["P1"]["review_status"], rows["P1"]["needs_review"]), ("Wenqi Cai", "reviewed", "N"))
+        self.assertEqual((rows["P2"]["entered_by"], rows["P2"]["review_status"], rows["P2"]["needs_review"]), ("llm-auto", "unreviewed", "Y"))
+        self.assertEqual((rows["P5"]["certainty"], rows["P5"]["card_ids"], rows["P5"]["chain_id"]), ("2", "ECS-NSCC-LIQ|FICC-GSD-11", "ECS-NSCC-LIQ"))
+        self.assertEqual(res["rejected"], ["P3"]); self.assertEqual(res["manual_merge"], [{"proposal": "P4", "existing_event": "EV0006"}])
+        self.assertEqual(sorted(res["needs_signoff_for_S_ge_4"]), sorted([rows["P1"]["event_id"], rows["P5"]["event_id"]]))
+        self.assertEqual([r["event_id"] for r in self.reg_rows()][-3:], ["EV0010", "EV0011", "EV0012"])
+        again = PR.promote(sheet, self.register, today="2026-11-08", spec=self.spec_ok)                # idempotent
+        self.assertEqual((len(self.reg_rows()), again["inserted"]), (n0 + 3, []))
+        self.assertEqual(sorted(again["skipped_already_promoted"]), ["P1", "P2", "P5"])
+
+    def test_auto_rows_need_approved_amendment_c(self):
+        with self.assertRaises(PR.PromotionError):
+            PR.promote(self.write_sheet([self.row("P2", "auto")]), self.register, spec=self.spec_no)
+        self.assertFalse(PR.amendment_c_approved(PR.SPEC))          # the real spec: Amendment C is only proposed
+
+    def test_bad_rows_rejected(self):
+        for bad in (self.row("P1", "required", "approve"), self.row("P1", "required", "maybe", "R"),
+                    self.row("P1", "required", "edit", "R", corrected_card_ids="NOT-A-CARD"), self.row("P1", "required", "edit", "R", corrected_reach="5")):
+            with self.assertRaises(PR.PromotionError):
+                PR.promote(self.write_sheet([bad]), self.register, spec=self.spec_ok)
+
+    def test_promoted_rows_load_in_scoring(self):
+        from unittest import mock
+        from . import scoring as V12
+        PR.promote(self.write_sheet([self.row("P2", "auto")]), self.register, spec=self.spec_ok)
+        with mock.patch.object(V12, "REGISTER", self.register):
+            reg = V12.load_register()
+            events = V12.load_events(reg)
+        row = reg.iloc[-1]
+        self.assertEqual((row["entered_by"], row["review_status"]), ("llm-auto", "unreviewed"))
+        promoted = next(e for e in events if e.event_id == row["event_id"])
+        self.assertEqual((promoted.certainty, promoted.reach, promoted.card_ids), (1, 2, ["ECS-NSCC-LIQ"]))
+        self.assertIn("register needs_review = Y", promoted.review_reasons)
+
+
+class ScoringFlags(unittest.TestCase):
+    def unreviewed(self, S, **kw):
+        ev = event(S, card_ids=["FICC-GSD-03"])
+        ev["events"][0].update(entered_by="llm-auto", review_status="unreviewed", **kw)
+        return ev
+
+    def test_unreviewed_event_kept_off_main_and_labelled(self):
+        r = run("FICC-GSD-03", ev=self.unreviewed(4), V=3)               # S 4 x V 3 = 12
+        self.assertEqual((r["severity"], r["show_on_main"], r["event_review_label"]), (12, False, "AI-classified, not reviewed"))
+        self.assertEqual(r["event_manual"]["events"][0]["entered_by"], "llm-auto")
+
+    def test_market_tie_keeps_main_but_labels(self):
+        r = run("FICC-GSD-02", market={"FICC-GSD-02": mkt(4)}, ev=self.unreviewed(4, card_ids=["FICC-GSD-02"]), V=4)
+        self.assertEqual((r["S_source"], r["show_on_main"], r["event_review_label"]), ("market+event_manual", True, "AI-classified, not reviewed"))
+
+    def test_reviewed_event_unchanged(self):
+        r = run("FICC-GSD-03", ev=event(4), V=3)
+        self.assertEqual((r["show_on_main"], r["event_review_label"]), (True, None))
+        self.assertEqual(run("FICC-GSD-01", market={"FICC-GSD-01": mkt(3)}, V=3)["event_review_label"], None)
+
+
+if __name__ == "__main__":
+    unittest.main()

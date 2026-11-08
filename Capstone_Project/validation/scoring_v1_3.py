@@ -194,12 +194,23 @@ def ranked_events(reg, week_end):
     """v1.2 active_events() + apply_signoff(), plus register provenance (Amendment A4, display only)."""
     signoffs = {s.event_id: s for s in pd.read_csv(V12.SIGNOFFS, dtype=str).itertuples()} if V12.SIGNOFFS.exists() else {}
     events = {e.event_id: e for e in V12.register_events(reg)}
+    entry = {r['event_id']: (r.get('entered_by', ''), r.get('review_status', '')) for r in reg.to_dict('records')}
     out = []
     for r in V12.active_events(reg, week_end):
         e = events[r['event_id']]
+        entered_by, review_status = entry.get(r['event_id'], ('', ''))
         out.append({**V12.apply_signoff(r, signoffs), 'outlet': e.sources[0].get('outlet') if e.sources else None,
-                    'source_tier': e.sources[0].get('tier') if e.sources else None, 'source_urls': [s['url'] for s in e.sources]})
+                    'source_tier': e.sources[0].get('tier') if e.sources else None, 'source_urls': [s['url'] for s in e.sources],
+                    'entered_by': entered_by, 'review_status': review_status})
     return out
+
+
+AI_UNREVIEWED_LABEL = 'AI-classified, not reviewed'
+
+
+def ai_unreviewed(event: dict | None) -> bool:
+    """Register rows promoted by promote_reviewed.py without a human decision (Amendment C, proposed)."""
+    return bool(event) and (event.get('entered_by') == 'llm-auto' or event.get('review_status') == 'unreviewed')
 
 
 # ------------------------------------------------------------------ Amendment A2: daily values behind a market S >= 4
@@ -331,9 +342,12 @@ def card_week(card, week, *, market_recs, cov, ev, v, check, daily=None):
                          'needs_review': ev.get('needs_review', False),
                          'events': [{k: e.get(k) for k in ('event_id', 'title', 'S', 'certainty', 'reach', 'timing', 'effect_date',
                                                            'needs_review', 'review_reasons', 'signed_off_by', 'outlet', 'source_tier',
-                                                           'source_urls')} for e in ev['events']]},
+                                                           'source_urls', 'entered_by', 'review_status')} for e in ev['events']]},
         **vf,
-        'severity': sev, 'show_on_main': sev is not None and sev >= SHOW_ON_MAIN_MIN,
+        'severity': sev,
+        # Amendment C (proposed): an unreviewed AI-classified event that alone sets S keeps the card off the main page
+        'show_on_main': sev is not None and sev >= SHOW_ON_MAIN_MIN and not (src == 'event_manual' and ai_unreviewed(driving)),
+        'event_review_label': AI_UNREVIEWED_LABEL if src in ('event_manual', 'market+event_manual') and ai_unreviewed(driving) else None,
         'needs_human_signoff': bool(event_set and S is not None and S >= SIGNOFF_MIN_S and not (driving and driving.get('signed_off_by'))),
         'chain_confidence': chain_confidence(card['tested_chains'], S, src, drv['chain_id'] if drv else None, driving),
         'shared_signal': [], 'shared_signal_fields': {}})

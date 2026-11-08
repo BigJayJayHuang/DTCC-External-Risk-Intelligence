@@ -210,3 +210,13 @@ Approved: Wenqi Cai, 2026-11-05T05:15Z. Written before the re-run of the weeks o
 - **B2.** `shared_signal` lists the other cards in the same week that take S from at least one of the same signal fields. A shared raw input no longer counts. For example, DGS10 feeds both `ust10_abs_change` and `mbs_spread_abs_wchg`, so FICC-GSD-01 and FICC-MBSD-01 do not share a signal.
 - **B3.** `shared_signal_series` is replaced by `shared_signal_fields`: `{card_id: [signal field]}` for each card in `shared_signal`.
 - **B4.** The two records of one cross-entity card still do not list each other. Records that do not take S from a market signal have `shared_signal = []`.
+
+## Amendment C — unreviewed AI-classified events (PROPOSED, not approved)
+
+Status: PROPOSED 2026-11-08; awaiting approval. It changes no existing output: no register row has `entered_by = llm-auto` yet, and `validation/promote_reviewed.py` refuses to insert such rows until an `Approved:` line follows this heading.
+
+- **C1.** A register event with `entered_by = "llm-auto"` or `review_status = "unreviewed"` (inserted by `promote_reviewed.py` without a human decision) is an *unreviewed AI event*. Each entry in `event_manual.events` carries `entered_by` and `review_status`.
+- **C2.** When an unreviewed AI event alone sets S (`S_source = event_manual`), the record has `show_on_main = false`, whatever its severity. If the market S is equal or higher, the market alone justifies S, and `show_on_main` follows §7.
+- **C3.** Records whose S comes wholly or partly from an unreviewed AI event carry `event_review_label = "AI-classified, not reviewed"`.
+- **C4.** S, V, severity and `needs_human_signoff` are unchanged. S ≥ 4 from any event still needs the matching sign-off, as in A1.
+- **C5.** The dashboard must honour `show_on_main` and show `event_review_label`. This needs a `docs/` change that is not part of this amendment.

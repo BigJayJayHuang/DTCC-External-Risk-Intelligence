@@ -201,3 +201,22 @@ In one strict call the model's notes said "Setting is_relevant true" while the r
 | Cost | USD 0.270 |
 
 The bar for re-running the 83-item window (≥ 5/6 and ≤ 1 false positive) was not met.
+
+## Weekly run with the flat schema, review sheet and promotion (2026-11-08)
+
+**Run** `data/events/weekly/2026-11-02/` (`v14_flat`, 83 items, 2026-11-01 to 2026-11-08, cache on): 26 relevant, 54 irrelevant, 3 hard failures sent to `failed.jsonl`. Cost USD 1.243 (USD 2.138 without caching). See `RUN_REPORT.md` there.
+
+**Review sheet** (`python -m validation.review_sheet`) groups relevant candidates into proposed events:
+- **Grouping:** candidates join one event when their card_ids overlap, their announced dates are at most 2 days apart, and their title+summary word Jaccard is ≥ 0.25 (connected components).
+- **Certainty:** `event_scoring.validate()` runs on the combined sources, so independent outlets can lift the single-source certainty cap.
+- **Scores and tier:** would-be S (rubric v1.2) and severity (S × final16 V for the week) set `review_tier` (`required` if S ≥ 4 or severity ≥ 6).
+- **Output:** `data/events/review/review_2026-11-02.csv` with 17 proposed events (13 required, 4 auto).
+
+**Promotion** (`python -m validation.promote_reviewed --sheet …`; written and tested, not run on real data):
+- **Required rows:** enter only with approve/edit and a named reviewer.
+- **Auto rows:** enter as `llm-auto` / `unreviewed` unless rejected, and only after Amendment C of the v1.3 spec is approved.
+- **Updates to existing events:** rows with `same_as_event_id` are listed for manual merge.
+- **Reruns:** the script is idempotent via `proposal_id`.
+- **Sign-off:** S ≥ 4 still needs a matching sign-off, as today.
+
+**Scoring and dashboard:** `scoring_v1_3` keeps an S set only by an unreviewed AI event off the main page and labels it "AI-classified, not reviewed" (Amendment C, proposed). The dashboard (`docs/`) does not yet read these fields.
