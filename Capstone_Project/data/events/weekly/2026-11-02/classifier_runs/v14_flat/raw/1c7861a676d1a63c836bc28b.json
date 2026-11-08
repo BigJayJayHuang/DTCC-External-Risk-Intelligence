@@ -1,0 +1,54 @@
+{
+  "document_id": "768418a04182717e2703ab042c4d7be8740bcf8dc2e3628a6ca330b41fabbd05",
+  "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBEaGVvSHRZc1hOR25USlVjSXlrYVRSb3k2by1VZHMwRTFpREVOVEVjX0FwN0Z5azFwVHk5T0RoT1BuNHZGQ3ROMXFDbDFQN3g1TVFQWXpNUWd4UUR6LW80Sk8zNXQ5YndDMVV2Znl0UjlxZ0xmcEE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "8c3c4f8fa6b740e88890e78e89ef1a34a56ab147062c9a6da5b4f64b4dc84899",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_T0ImQhAOw2JRxeUSQLrKrJ",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Non-US market (Taiwan Stock Exchange); the event involves a retail investor's personal trading decision in a Taiwanese ETF with no stated link to US markets or DTCC participants. No catalog card applies."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1492,
+    "outputTokens": 386,
+    "totalTokens": 5563,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2823
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

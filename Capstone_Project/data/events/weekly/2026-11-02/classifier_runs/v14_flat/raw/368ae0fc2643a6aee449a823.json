@@ -1,0 +1,54 @@
+{
+  "document_id": "45d8cdbda90d39cd6e6cf1dcaf2f31cc19f75c5bb9e64ab4c7ba6acb85d2b5e7",
+  "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNSGc3NElKaEc5R2NRSXpENHZXb0RsWlExalRISzNHOUxTM2kxSGlpNlU4VTZ6d1VBSkMzaGpweWRranRZWlJjZnFNWXRCbnpZdXlUYjQ0R1huc1pQSTFNVGlMQ3dUSEV0MlJSVWtaS0JBOGt1VFVETXdZUHVqNk9JRkNBMXdJczZ0LUNSNEZR?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "091dac644c9ccc86f454db8bc7eaa566c9f789d597cd8a897d4d9af3999ac681",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ehbelS8QdnU4NBQ5k67Ei2",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline describes a settlement cycle change at Korea Exchange (a non-US market). No stated link to US markets or DTCC participants. ECS-SET-01 covers US settlement cycle changes only.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1455,
+    "outputTokens": 386,
+    "totalTokens": 5526,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2803
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,54 @@
+{
+  "document_id": "cc0128c1d5beaa55aa6019f1721d052bc90ad7bf31f6a4b39cf22fdb644b5135",
+  "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPc0F5ZnN2MWVVaFdxelhqWU5rRkprc21QQ0w5SWNJWm5OZEt5VmlvR2NOcDdjdHpRNEhObHFPMzkxdzUyMGtZNEJyMTF6UWxyTzJibFVfLXhIS09MZC1Ca0JNWnc4TDMzVlN3LWhJdnBMczRYLVBOYVZpTDFkUzdpYk03QWFYYnhJSElSeHhzbnkyRy10NDczSjIwdXNCOTVmRlkxX2I5VF9sZ0w2VHlsajFB?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "b979135f11ca0b3da711dcbe33e4b876f194e7e7dd4d89db022a86782ea6128f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_qWQCNclNSE1oEIRmk4wV2d",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Headline-only article about a political/electoral event (\"Blue Wave in Texas\") affecting SpaceX, a non-financial aerospace firm. No connection to financial markets, DTCC participants, or any catalog card type."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1490,
+    "outputTokens": 389,
+    "totalTokens": 5564,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2777
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

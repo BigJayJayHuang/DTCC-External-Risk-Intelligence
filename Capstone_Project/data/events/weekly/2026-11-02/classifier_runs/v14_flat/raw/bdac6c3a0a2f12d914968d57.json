@@ -1,0 +1,54 @@
+{
+  "document_id": "77d70663bf2e3300ec52e2dbf81bbc31703781604985f886295361ee01deab38",
+  "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPZWlrbjZla096X1dkaE5ZY1QyTVRTTkF6WDF4cFRkN3I2MndfZGxXU1llRVcwWWkwaUJWaWRUR0VFZTJiM18zNlhKaGdQei1nT3RpekFlWTVBSWo1el9ZTDVfUXhsSlM4LUM3aUx4dTlESGZaUFpabDJuT1VNeUpqQkVzSEN4cGtXWjYxVFRuZFhmS1hNSUZtQ0hoVGFVeEpLMkhvb3ZXcXFiMUpJeGtYTmhrak8yaXdKWkNJ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "6e98098c7993b9cafbf6b876573b61eba596fe3ff62d94cd8f456691ce4e6ff8",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Trde6jMz12TQZGVpNxZSbR",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline describes a cyberattack on a French bank with no stated link to US markets, DTCC participants, or DTCC-connected infrastructure. Non-US financial firm with no connection to DTCC processes mentioned.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1506,
+    "outputTokens": 391,
+    "totalTokens": 5582,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2778
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

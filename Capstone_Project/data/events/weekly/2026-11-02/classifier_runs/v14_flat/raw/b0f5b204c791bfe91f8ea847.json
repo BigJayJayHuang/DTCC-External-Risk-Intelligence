@@ -1,0 +1,54 @@
+{
+  "document_id": "58ceedc8ff696303d190ca33bba414a812cf40ff47de97fd817a6ffb8c1d6324",
+  "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNbF8xNWdfVEt6clgxbXZWMDN0WWtiZnpPckNpalZ5UTFoWGpBZVh1dUNILUg0Sk01MUtSY1RkV3cyeHZjVUY1bmZxSW5GbFhzazliSl9adkd6NU5HbEpkckN6SFBvNnlpNldWNDhXSHNzN2ZaVWxDbFB0SnJ6bGZvVEFLSVdJbUNEbnBGQUYxNEo0Wk50QkR6WXB5WUhfTUdtbkRHSUFRa21XZ1VrNjl0dw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "e61e2bd5282d7150813417e3345cac6dbec690ed81a5be67781960bfdb76d5ad",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_8yuJwzWPbjdqSMDP7slyEX",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline describes a cyberattack on French banking with no stated link to US markets, DTCC participants, or US financial infrastructure. Non-US market event with no connection to DTCC processes.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1504,
+    "outputTokens": 386,
+    "totalTokens": 5575,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2726
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,54 @@
+{
+  "document_id": "43a8304764e5c7bbca35f203fba2794c109bfae17a8a585e4cce0407f742b2f2",
+  "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQVjZDQ3RrZ1poX1dwR2FKUE5SOUk1S0VXblJ1eHplTUNQR3VpSFRBMHBXTUZUa0stTlowT2dPTGl3bVIzclpUYVVxQ1d0UlVvTFk5RUVVUWJVdTU4OC13Z3lGcWdLaWdlMHhSN2ZDM3RmVjhINXotZmlWZ3NhdFJVSUJhazZLeUVyU3lWTTkzck9ObW5aUTJSZGMyVEk1V2UzQXRrU2M4SlBVTXNESTFxLWMzc1l4a3hWWExjTUZoSDk0eE1tWkRzLU5YN1FNazREWW9Cd1Bvc3Nyck5BQ0pJeUhQVWZmMXl0ZzNv?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "87a6433eb9f859ff51ad418bc0685f099524c516457d940fb2fb7316a3990c0d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_CHDJVClDfLMG1Q6miyyzYY",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Federal Bank Ltd is an Indian commercial bank, not a US DTCC member or major participant. A downgrade by a domestic Indian analytics firm (MarketsMOJO) based on technical/valuation signals has no stated link to US markets or DTCC processes. Does not match any catalog card."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1596,
+    "outputTokens": 407,
+    "totalTokens": 5688,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2913
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

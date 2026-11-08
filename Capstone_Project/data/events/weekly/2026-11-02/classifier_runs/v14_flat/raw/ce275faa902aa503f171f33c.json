@@ -1,0 +1,54 @@
+{
+  "document_id": "b3841bd259fa77424464ae34f98361a482226121d6ec93d7863a0c237c98bc94",
+  "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQRUp5d04yTHlmVVZvTVVsZ25odHlKV1ROTTRqWERhMkdra253ZmlBQXF0dVRTeEJFdDJJclRoblRiQVVUNWlIVXNieVVESVlZLUZsQy1rdVNxV3ZUSjRRT0FTWWxoY0lVYlhOYXVYaFFjUy1yUVlmYWFVc09WS0FJS28zZ0JoeWRLbkk4UFAxd1hpVjRYOEE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "63b6368ac71e5e450c9e8eb23146d209666e326b82b6b02fa3fac2cea5ceb9e0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_gTIgQ3jARzP4dtp1nCitOC",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Non-US bank (French) with no stated link to US markets or DTCC participants; XE-CYBER requires a large participant or vendor connected to DTCC processes, which is not established by this headline alone."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1455,
+    "outputTokens": 390,
+    "totalTokens": 5530,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2893
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

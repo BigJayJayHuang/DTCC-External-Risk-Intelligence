@@ -1,0 +1,58 @@
+{
+  "document_id": "675e0e8de4aaf20e754c7e3e8008f390c8e133ea83cd6cbc509033c30e690327",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1fVzhWaTBRTTZaa3liaU9QSGsyV1RhWGZLOFhRamh0am9kaFc0aEI5RWREUGkyWHhsdkg1NEMzQkV1cnhnb0NEVEhXamZ3NzVXRjBSS28tbzhWV2NaVk1QYzBJUXFkQ2V1aWozVg?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "a3e0458fa55ab508bafaa82d6de9900908a7b309921cdd35b4dbdf6118c3fa86",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_InlQEDO6cnPRAJmTB4zDiT",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "same_as_event_id": null,
+              "title": "Non-US market pursues T+1 settlement transition in 2028",
+              "summary": "A non-US market (outlet is Korean-language news source 뉴스웍스) is reportedly pursuing a T+1 settlement cycle transition in 2028, described as the first change to the stock settlement cycle in 50 years. No link to US markets or DTCC participants is stated in the article.",
+              "card_ids": [
+                "ECS-SET-01"
+              ],
+              "certainty": 0,
+              "reach": 0,
+              "reach_basis": "single",
+              "named_participants": [],
+              "announced_date": "2026-11-02",
+              "effect_date": "2028-01-01",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "뉴스웍스",
+              "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1fVzhWaTBRTTZaa3liaU9QSGsyV1RhWGZLOFhRamh0am9kaFc0aEI5RWREUGkyWHhsdkg1NEMzQkV1cnhnb0NEVEhXamZ3NzVXRjBSS28tbzhWV2NaVk1QYzBJUXFkQ2V1aWozVg?oc=5",
+              "evidence_quotes": [
+                "Stock settlement cycle changes for the first time in 50 years...Pursuing a 'T +1' transition in 2028"
+              ],
+              "confidence": 0.3,
+              "notes": "headline_only. Outlet is a Korean-language news source (뉴스웍스), strongly suggesting this refers to the South Korean market, not US markets. No explicit link to US markets or DTCC participants is stated. Per rules, non-US market events with no stated link to US markets are not relevant; however, the headline does describe a concrete settlement-cycle change event matching ECS-SET-01's Step 1. Classified as relevant but with very low reach (0, single market) and certainty 0 (pursuing/planning stage). effect_date is estimated as 2028-01-01 since no specific date is given; noted in notes."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1435,
+    "outputTokens": 769,
+    "totalTokens": 5889,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5788
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

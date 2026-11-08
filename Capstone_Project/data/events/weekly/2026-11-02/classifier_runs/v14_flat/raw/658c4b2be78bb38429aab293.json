@@ -1,0 +1,54 @@
+{
+  "document_id": "bcabaea690df8b7734e895eaa9e72f6354af94a400a135653371d131dd5012a7",
+  "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQUUxNX09HeGJMOFFkSGhaSWhCNWtuZk5oeGY3ZllSTld6SEdaM2NmbE5CVnZDNHJxY045dGFzZ2tWWUFtR0F5eTM4ZTJneDA0UWY3UkRYWGFLTXRxZ0Nod21ONkUxSEF0ci1hSFJvVkhUWWNEbERjOFNrY0V5VFlJQlVJMmhhWHVvODllTUV6ZG5ZZw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "d3544aa8b9b9d07f359d2a40e39d929ac62e709c2107f1ece78743a1f11b6208",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_iaRifK6J4N9eBocT6JiyH7",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline describes a French central bank macroeconomic growth forecast downgrade for France/Europe. No US market event, no DTCC participant stress, no link to US clearing or settlement processes. Does not match any catalog card's Step 1.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1446,
+    "outputTokens": 395,
+    "totalTokens": 5526,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2834
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

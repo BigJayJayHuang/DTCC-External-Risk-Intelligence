@@ -1,0 +1,54 @@
+{
+  "document_id": "5bcd9d86566f3783b24d28ef422ec8999d52fc7ef81e1738079f1cc7572431f9",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBqVXNRZUlkcUNvcWpSYVdCMU1sQ3NWRXpKLWwwTWpIYmpkZXhqN0cxUHp6aFEzNHdZVWlSRmlYUVJRclEtZzBJSl8ybWphY25IZGtpZ2lsNEZlWXNKbmEzNVQ0Sk1yNDA4b3padA?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "c9466c6b614ee0033cefb06f6bb702897aeb1bb818daa28a609851534ef04ec1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_GhaiQ4JoRgUmo7wrCBetEj",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Headline-only item from a Korean outlet (머니투데이). The text references Europe and Hong Kong's preparation time for shorter settlement cycles as a caution — this is commentary/opinion framing with no concrete new event (no rule adoption, no deadline, no named US participant or regulator action). No event of a catalog type is described; it is a generic cautionary observation about non-US markets with no stated link to US markets or DTCC processes."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1432,
+    "outputTokens": 441,
+    "totalTokens": 5558,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3638
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

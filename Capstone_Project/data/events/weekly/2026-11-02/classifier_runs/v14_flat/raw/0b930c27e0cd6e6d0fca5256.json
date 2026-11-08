@@ -1,0 +1,54 @@
+{
+  "document_id": "60532a7de3d06f44bf56cf99aa4f8f3cb769de15903bc3832168023576e67383",
+  "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQNkRFTmtaMG1UMjlmREhiQWwxZHhZeWd0RzRmN00zd1NtUnUzb2RCbzlwR09ibXBsWVgtWjJ4Szcycl94cjkxdzlVRE9kYTFIM0tOWVE0MGJWLTByeXpabWVhRy12UUlLdXVINVo1NXQ5akw4ajlvOWxLWG52T3BWdnk4QkY5X09DcHV0WmJFMFdzYjNhWGNPZF9qdjdmbERFb09YNzZB?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "809a1f69b35b57b3dc1facfdf51d56a0e5a96165a0efc84855eadbc42b6dfa4f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_dPS0JFvQBoxnEybUy5gvSm",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Clariant is a Swiss specialty chemicals company, not a financial institution or DTCC member. A Deutsche Bank analyst downgrade of a non-financial firm's stock does not match any card's Step 1 event type.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1479,
+    "outputTokens": 390,
+    "totalTokens": 5554,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2866
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

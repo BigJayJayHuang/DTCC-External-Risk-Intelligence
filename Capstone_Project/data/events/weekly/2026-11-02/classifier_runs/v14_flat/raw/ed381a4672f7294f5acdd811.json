@@ -1,0 +1,54 @@
+{
+  "document_id": "657cb0906d19e88eae934cb5a18555dc4b05f2deb44c831f95106df741c01c02",
+  "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBkRkZwaFV3d0JFQm1GUlY5c0VLYVJBMjZqOTQxTC1aLTAyc29OSGsyQ0ZtSGJqQm9hbGZKYWNhMm40OEQ1NF82b3M2NmlTNE51UVNhTXk0VjIzcmh4WFJ5ckI2SGx0S0s0dzhlZjZBUTZMaER1MGc?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "a449deee2232a02436159869d62ea8b8884362dd6112aea4f692e577f70e04b5",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_4zcw0ftFJ9yEZ1W8mjy2kd",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Event is in the Taiwan stock market involving a Taiwanese bank (Bank SinoPac); no stated link to US markets or DTCC participants. Non-US market event with no US nexus."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1467,
+    "outputTokens": 385,
+    "totalTokens": 5537,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2731
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

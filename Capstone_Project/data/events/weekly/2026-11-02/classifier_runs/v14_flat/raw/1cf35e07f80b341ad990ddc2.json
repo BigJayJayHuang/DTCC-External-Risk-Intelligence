@@ -1,0 +1,54 @@
+{
+  "document_id": "8f8f3c3ca63ab3849404c2f65f65c83d2bf32997d14c0bd0c13eebba0ed3ab30",
+  "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNNFBlcTAtVnJZaXpEbTlZTkFwb09WWHktX0EzSDF1Q09KVDdSVTVOeUs5QTZEWlpTM2V3NzFRb2lQUjQ0OXh2Xzd2ckhJc3pCWHQxeTZZU004RTg0MUNvWkE4aW1HQ194bTJWeHNPeDI2UlVpS0NMRHV5M0xpZkh2ak5STk4?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "b68ea11d39d0398faf0fc01b9426d8659e09d14b048852904e2b42190a799b52",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_i2mZN5884npcII27QFDFYD",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline-only article about UK bank rate rise and tracker mortgages. This refers to a UK (non-US) market event with no stated link to US markets, DTCC participants, or MBS/TBA activity. No card match.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1442,
+    "outputTokens": 396,
+    "totalTokens": 5523,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2884
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

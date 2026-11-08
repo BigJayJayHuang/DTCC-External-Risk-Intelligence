@@ -1,0 +1,58 @@
+{
+  "document_id": "0785a1cc1498f5870ec611364f57584663fa6ad76d5ffa736209b620865b125b",
+  "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQNXpudWpkMlNJdlR6YlAxclhuWHl0UVhjby1JXzNlZFFMSVo1WnotWnhrTzNOenJlcEt5TWE0LUVRU1NjM0VPOGVvN181TUZEeWp0RWJ6RWlyMjFjV1FjNXBvQjlPSnJDN3QxdHkyVEJ2eU1ndzNSNTdQeld5TDctNWU5MGs2UE5aVGNnWDFCU0dHaHJUcEx6TzhBTlZsVmQ1NnUyQy03SWQ2WWNheHJlaVdrLWNDZw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "9c91a428837b225e835635d2357782bfac10d0ec29e236089a8a7270538596bd",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_1B95U1B4XxlHhV8O6meZMo",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "same_as_event_id": "EV0003",
+              "title": "US regulator advances route to 24-hour stock trading",
+              "summary": "A US regulator is advancing a pathway toward 24-hour stock trading, consistent with the previously recorded NSCC 24x5 clearing go-live event. No new details are provided beyond the headline.",
+              "card_ids": [
+                "ECS-SET-01"
+              ],
+              "certainty": 1,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-04",
+              "effect_date": "2026-11-04",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "Free Malaysia Today",
+              "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQNXpudWpkMlNJdlR6YlAxclhuWHl0UVhjby1JXzNlZFFMSVo1WnotWnhrTzNOenJlcEt5TWE0LUVRU1NjM0VPOGVvN181TUZEeWp0RWJ6RWlyMjFjV1FjNXBvQjlPSnJDN3QxdHkyVEJ2eU1ndzNSNTdQeld5TDctNWU5MGs2UE5aVGNnWDFCU0dHaHJUcEx6TzhBTlZsVmQ1NnUyQy03SWQ2WWNheHJlaVdrLWNDZw?oc=5",
+              "evidence_quotes": [
+                "US regulator advances route to 24-hour stock trading"
+              ],
+              "confidence": 0.5,
+              "notes": "headline_only; likely related to EV0003 (NSCC 24x5 clearing go-live). No new details on dates or specifics. Certainty set to 1 (advancing/proposed, not yet final) as the headline says \"advances route\" rather than confirming adoption. Effect date set to announced_date as no other date is available."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1485,
+    "outputTokens": 749,
+    "totalTokens": 5919,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 4579
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

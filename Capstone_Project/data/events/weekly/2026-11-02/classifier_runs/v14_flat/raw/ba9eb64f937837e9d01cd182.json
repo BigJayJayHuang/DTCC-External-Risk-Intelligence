@@ -1,0 +1,54 @@
+{
+  "document_id": "4b83060619630b82c06489f4e464095c99a12653dd93fb8e41df303ff4eb55e8",
+  "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB4emhjNmMyV25zY2RsQ01tajRMcmVhRDFzM0JwVmVTRFplbHJtT3ZuN21TYnVqSkxmcGlCTFB1ODExVmZ1WF9vb2wzR3RyUUxSSW03NjhzSkJTR0Ztb1Q0?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "95551dac885d7b35d59c17afdca1eeafc2f6e24ffb880b6327597636c87d0c71",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_nePi3iMDP1lh40tpuurTmk",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Cyberattack is at a French regional bank (Crédit Mutuel Arkéa) with no stated link to US markets, DTCC, or any DTCC participant. XE-CYBER requires a large participant or vendor connected to DTCC processes; a French retail/regional bank does not qualify.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1404,
+    "outputTokens": 413,
+    "totalTokens": 5502,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3172
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

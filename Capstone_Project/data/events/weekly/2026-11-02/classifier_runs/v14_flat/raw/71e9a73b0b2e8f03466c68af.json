@@ -1,0 +1,58 @@
+{
+  "document_id": "764bca01db940e44cef32424d59a3fd6fbc4f92e0e87811ddb008af2c4c3b036",
+  "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOa2swWWdnalhUelF5Yl95R1AzMTF4eU5STTJFcEZRVmNmbnIxZFZmSl9XZWkxTXNhdlFERDU5bnVIUW1DVmVzdkQtOEQ5V084UG1XdWR0WTdjSzl5TXVvNXFtLWF2cEZ0ZVRJZkVQd3RxcU1BYVYxdFRVOVppQ19oLXpGZ2R6M1h3SDJrcmNHcGdyc3dxajVscDRaSUVLdXA2WnZ2R19ndGs?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "fbb6d12dff8750edadb87efa6db93a4448e9e74ea9605ff66527cdaa603ae5e6",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_gRApUf69zwS2iKHxfzKyyA",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "same_as_event_id": null,
+              "title": "Stock market selloff triggers liquidity pressure",
+              "summary": "A stock market selloff is reported to be triggering liquidity pressure, consistent with a sharp equity selloff scenario that could affect NSCC variation margin and liquidity requirements.",
+              "card_ids": [
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-05",
+              "effect_date": "2026-11-05",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "Equiti Global",
+              "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOa2swWWdnalhUelF5Yl95R1AzMTF4eU5STTJFcEZRVmNmbnIxZFZmSl9XZWkxTXNhdlFERDU5bnVIUW1DVmVzdkQtOEQ5V084UG1XdWR0WTdjSzl5TXVvNXFtLWF2cEZ0ZVRJZkVQd3RxcU1BYVYxdFRVOVppQ19oLXpGZ2R6M1h3SDJrcmNHcGdyc3dxajVscDRaSUVLdXA2WnZ2R19ndGs?oc=5",
+              "evidence_quotes": [
+                "stock market selloff triggers liquidity pressure"
+              ],
+              "confidence": 0.5,
+              "notes": "headline_only; gold price detail is incidental — the operative event is the stock market selloff and associated liquidity pressure. No magnitude, named participants, or further detail available."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1496,
+    "outputTokens": 680,
+    "totalTokens": 5861,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 4130
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

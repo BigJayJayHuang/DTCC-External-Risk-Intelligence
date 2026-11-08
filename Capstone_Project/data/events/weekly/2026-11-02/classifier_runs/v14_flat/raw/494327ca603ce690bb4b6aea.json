@@ -1,0 +1,54 @@
+{
+  "document_id": "af5ad598cedf6ad7e97c4006911e23c0aace314aa8595ca4aa750bc485d1321a",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBGZ2p1QjJQYmhnVUhxbWRJVVoweFdJem9CUXpDeGViaWlOOWhsbzJkeEMwckctUzZNTXNDSTlFZ1A3T1NwcnZjUk5RN0c2MmpYbG9fWUZKcmliQ081ZVlSdUhPX3hLVkE0TW12UQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "0cc66c0ba91b1cb489685cc4f106a54fd8676e57dfc0aba52c4b7870d007712d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_RCoHhdgRhC5WtD7HMb3WZV",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Cyberattacks targeted refrigeration systems at blood banks and food supplies in France and Israel — non-financial firms in non-US markets with no stated link to US markets or DTCC participants. Does not match any card's Step 1.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1418,
+    "outputTokens": 395,
+    "totalTokens": 5498,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2599
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

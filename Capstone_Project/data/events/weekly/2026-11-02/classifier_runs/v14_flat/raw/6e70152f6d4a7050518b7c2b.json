@@ -1,0 +1,38 @@
+{
+  "document_id": "6a88039a848cfcb166f5e6b4d1b130485867e0d792cc11d21f8e25c3a0742422",
+  "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1ZQzdxZVR2cF81RkZaZXBDTGNXZmxyS18tMWZVR1BtVnRLZk9UOXJGM0pvMFVUSXNZcnNVYWs5SG9jNzlNWS1DYmJpWFQzZXZOcXB1aldOOGtQNGVRc3VtTzhYUW00UkNHbENaUm4wM1Voa1prT2VV?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "1014742b07f6a17a386bac948b9c4e8e1104d9a95171c6b610f546dabe92c7e4",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_otaOFvjhfHxFKA3n6yoDet",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Cyberattack targets French blood banks — a non-financial institution in a non-US market with no stated link to US markets or DTCC participants. Does not match any card's Step 1."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1417,
+    "outputTokens": 94,
+    "totalTokens": 5196,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1556
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

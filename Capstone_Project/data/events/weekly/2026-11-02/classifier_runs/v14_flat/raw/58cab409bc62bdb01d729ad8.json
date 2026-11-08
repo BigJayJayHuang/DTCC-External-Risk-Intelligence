@@ -1,0 +1,54 @@
+{
+  "document_id": "d46fc77bef7dc4108a9fd01e3d61b37378040616379d5120043e39365a0c4b88",
+  "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPcTZ6MUpQeFp6UnZDMmFSUjZVajRiaDhETU9zbkM0bGZoVUd5YThfcDR5RU9FbFdtcjRCbkllaWVuZTRjaWZtb1dId2gyUlA0Z2c3V1JmTWJEdU4wVF95eWl1c3hHTm9oVld2M1hTSzVZY2JJYnMyZi1RenI4NWdtT0s4cnliR1M3NU5sa3p4dmo3RlY2dFlSV0hJcnRYUU5KMU8xRkRxM1hVZ3RnRzRnS0hRMHExM25GUFVrVjRPdERWYnIx?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "8af6962e51c42181d3da0c8d93043d58728c83add3d8cb930899be83c156041e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_1QVCmEJhXjkTCqDMMsbmOq",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "LegalZoom.com (LZ) is a non-financial/legal services firm; a stock downgrade on a non-financial issuer does not match any catalog card. XE-MEMBER requires stress at a member bank, dealer, or broker — LegalZoom is none of these."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1530,
+    "outputTokens": 407,
+    "totalTokens": 5622,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2943
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

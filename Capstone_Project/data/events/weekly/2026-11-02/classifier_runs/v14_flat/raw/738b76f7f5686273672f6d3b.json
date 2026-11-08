@@ -1,0 +1,59 @@
+{
+  "document_id": "80c1dce5f731e4abb4123dd1c259dcaf86ff76fee3903169c45b474f8e5d4cd3",
+  "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPOFBSNTF3bXFWS1hzT2hRbDZZZFlJTUJlZ2U0OHdTdTBfcEEwdlRUSkk3bFlDM3Ixa1JaR3BUM1dyUFNRU0dWZG5FWE9pZHZwYjBRbGJtZGMzRk9ZZTdaNTAtbUJEWldKT1E0VTI1Q1hfcFEyNmg0WkVwaUdLcGIxZkJCRVZCcWxmX24wRGFEbnhqaFR0ZXNwSW8tNVlTVU5wNk92dVZyLWdiUQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "2db6b32b8acf0f00484f46a2ad931087dadadf6971ca0faef86c30becc739bec",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_6Wkvs2LGVdmamWaZPfM9AD",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "same_as_event_id": null,
+              "title": "Hedge Funds Dump Positions and Cut Staff as Selloff Deepens",
+              "summary": "Hedge funds are reportedly liquidating positions and reducing headcount amid a deepening market selloff, suggesting broad deleveraging pressure that could affect NSCC liquidity and GSD agent-cleared customer activity.",
+              "card_ids": [
+                "ECS-NSCC-LIQ",
+                "FICC-GSD-11"
+              ],
+              "certainty": 2,
+              "reach": 1,
+              "reach_basis": "group",
+              "named_participants": [],
+              "announced_date": "2026-11-06",
+              "effect_date": "2026-11-06",
+              "stage": null,
+              "source_tier": "major_media",
+              "outlet": "WSJ",
+              "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPOFBSNTF3bXFWS1hzT2hRbDZZZFlJTUJlZ2U0OHdTdTBfcEEwdlRUSkk3bFlDM3Ixa1JaR3BUM1dyUFNRU0dWZG5FWE9pZHZwYjBRbGJtZGMzRk9ZZTdaNTAtbUJEWldKT1E0VTI1Q1hfcFEyNmg0WkVwaUdLcGIxZkJCRVZCcWxmX24wRGFEbnhqaFR0ZXNwSW8tNVlTVU5wNk92dVZyLWdiUQ?oc=5",
+              "evidence_quotes": [
+                "Hedge Funds Dump Positions and Cut Staff as Selloff Deepens"
+              ],
+              "confidence": 0.5,
+              "notes": "headline_only. Headline states hedge funds are dumping positions during a deepening selloff, consistent with ECS-NSCC-LIQ (sharp equity selloff/liquidity squeeze) and FICC-GSD-11 (hedge fund/agent-cleared customer stress). No named firms, no magnitude, no specific market details provided. Certainty set to 2 as the headline describes an ongoing/confirmed event (\"deepens\"), not speculation. Reach set to 1 (group of hedge funds) rather than 2 as no major named participant identified."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1525,
+    "outputTokens": 815,
+    "totalTokens": 6025,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5714
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

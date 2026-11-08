@@ -1,0 +1,54 @@
+{
+  "document_id": "98504d48ed1dccb338e11b78761ca2a30b9f6cff8066d93fd72831b999777b8f",
+  "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBvcTV6TVpka1N1Y2tteHVVRmxZZFhjSTFmLU00RmVwN29iS1g2V1pHVzRqdWtNQkFHWmFOMFc2OThvYnNiM0JhU3JycmctWlkteUlSTTFWUkV5aExzNzg4TU4tRzRMdnhwN1AzMDVsOVFqZw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "ce6a329018bde373128fdc491d5ab5aa56fa99ab400e5ab642beedd4cbebbc64",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_QggcI3OYxoF508DqEEEbJk",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Cyberattack targets French blood banks — a non-financial institution in a non-US industry. No link to US financial markets, DTCC participants, or any catalog card type."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1408,
+    "outputTokens": 383,
+    "totalTokens": 5476,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2741
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,54 @@
+{
+  "document_id": "b5f8b5c8fbb611a92859e4cae9c88be6cf87fdc9f59ed8e85ae0854a1dd506c8",
+  "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOQTBOZlJERHFqRWdWbzRndXpCLUhxdWlkaWNQMWFZdkptbC14Vjk3b1VqXzdHcDZBZzBwcy1LaGNaUHJyaDFtRnJUV1NnSmlOUWJEWGJhNEtjMkdKV240QWZrZkdfeG1JSUF6QVRpOXc5MVQ3OURlQ2NaR1J1Qi1HRW9rWm50WnRIQzdHZHJQeEpXSW45dlRHanRMZXQ3NmZZN2xRaTd6RHNZaXZNS2htTnZhb3U0RUx3VWtBdDNFS2w2aDl4QUx4TGRmU3ZIYThyR1pKemJpYXhWTVk0VjZiU05HN2U?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "be8ca53150c08b286db78429f6262e85b351674b3fabdbcaedc551fa953f0869",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_GJaiWL3avNbWYDH4LWnkLw",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Sun Life Financial is a Canadian insurer listed on the TSX. The article describes a stock downgrade by a Canadian bank analyst. There is no stated link to US markets, DTCC membership, or any catalog card event type. Non-US firm with no connection to DTCC processes.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1576,
+    "outputTokens": 404,
+    "totalTokens": 5665,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3031
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

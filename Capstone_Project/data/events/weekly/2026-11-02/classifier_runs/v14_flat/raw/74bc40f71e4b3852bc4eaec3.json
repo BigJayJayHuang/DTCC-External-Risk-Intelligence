@@ -1,0 +1,54 @@
+{
+  "document_id": "a4e7a03e421275f557017e04c3bec665afaf29abcc74fe7316ffb960a0f04ff7",
+  "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxONmdzeFVRS2wwSlFnTzlnMEd6dEhUd2hzSlh6NkphMUFIdFlMSmZpMG4tRFdUZk9DX25nUVQ4MnNqLWpMM3Njb2lVX1FYbTdfUGt5TjVOSkI4M3BmRG1MbjZGQXdvaUlvcGl0aFZPeXA3cUNveGdERHNJc1Q1WThLbVdBLThvN20tTFBGLW5aTXpqR1RabDZFRGQ0bmlxQ2gzQnpwOVc0TUdpUnB2WEVqdUlXWVp3V0NEc0J1YVJramhVNW5w?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "7667c4d899e75716a9069054701f46e5d897b6cad0afcb7b3d6c905b798a7804",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_249df6kL50AShT2vpeWI6x",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Polymarket obtaining NFA approval to operate as a futures broker is a regulatory/business milestone for a prediction-market firm; it does not describe a broker failure, abrupt exit, member stress, or any other Step 1 event matching a catalog card. ECS-NSCC-08 requires a retail broker failing or exiting abruptly, which is not the case here."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1515,
+    "outputTokens": 425,
+    "totalTokens": 5625,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3006
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

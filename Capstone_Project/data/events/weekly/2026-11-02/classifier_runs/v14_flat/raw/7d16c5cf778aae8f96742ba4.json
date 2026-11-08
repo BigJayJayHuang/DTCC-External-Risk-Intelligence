@@ -1,0 +1,54 @@
+{
+  "document_id": "fd0953f14df192d165729a659fe8d7d272f57ab996d7eb4fd6e540d80fe2600b",
+  "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQcm03d1BFb2ZJLU5WemE5SHREYldoajRhNkJibTJEV3VaU1FsZV80QmNpbWZQWUZPQXg4N3dLaDZ2SzllNTdVUWswQnVQWURRaFhmRWpqTzE2MWtSRXg0UzhYQlBDaXdPSzhHc1A2WUNoRVAwbWc3WVlJckk2MG50V251NDZDcFVTamlxTFVyQmVTSmJUeE12R2tOYm9kcTBteWpzV1F6X1lFNElKdkJGSHl2ZjVPWWlfV2Q1UkZMSEF5RFZIbWt4U1lZV3BPZ3lxLXVlSUJaTnp0QQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "4cfcd00a64ca789cc353fe68bb066926f1fe146cf0ca35ccbf3adde8ce08115e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_oc6Km3EDqQUckssAHKIFBJ",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Cyberattack is on an unnamed French bank with no stated link to US markets, DTCC participants, or DTCC infrastructure. The amounts are denominated in Indian rupees (₹12,000 crore), further indicating no US market nexus. XE-CYBER requires a large participant or vendor with a connection to DTCC processes; this article provides no such link."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1577,
+    "outputTokens": 427,
+    "totalTokens": 5689,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3346
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

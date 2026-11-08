@@ -1,0 +1,54 @@
+{
+  "document_id": "7d9307606b84fc5ef71d952cde56fa950d5ee629672684b31fff6d878a8d872f",
+  "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNYXljd1hIVjRJRDlnaXRUWFpoblpDM2tnTHVlMDYyZms3UzViclZxVGMyWXVwclFIdi1yMUxveVZrZGw2ZUowY0YxbEZULXpjQUFON2t1bUE5dVdNcGk0NUVQNWlncHhoTGJ3M0xWalhoTzBIaGg2aVM3eUV1dDJpRFMyNEVVSWxDa1A5cF9pZ0VxWEZTUjJoOFRQS1NjRFBNTGFFdGY1NXNxQ2NyU0VqTmpWYzU4c3AwMGgwMHdR?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "d98512e045f3af716fc06133ce7035fb3f60d6b765c1e1bb8beac2147dc6e911",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_8XiGYHaKUPifGldCQ89tys",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Cyberattack involves Bank Rakyat, a Malaysian bank with no stated link to US markets or DTCC participants. Event is in a non-US market with no connection to DTCC processes described in the catalog."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1529,
+    "outputTokens": 392,
+    "totalTokens": 5606,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2543
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

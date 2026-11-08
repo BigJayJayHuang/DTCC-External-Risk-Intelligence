@@ -1,0 +1,54 @@
+{
+  "document_id": "7e875649b61f0e0f5b50137e6e36940d75d5d8757ade150ab055f1ed86220eac",
+  "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPc0pUWHNEUEFibWxmVDlGc2x5QlNMdFl1LXZNTElRbGMtYzFvOEh3Q0c4aHpFRGJBSXQ4RXZCRzZRbGpuSTI3MkV6MWNlQXpseDNhOGpVcUFzeE45al9kbGtuSC11LWZIUkE4d0VRYlk4eGhxSmFtdG9hUGZMczlZTlFaeWNCVldFNmJOUjA0SlNrdnd2UWhreGcyejgtRk4zekFPbjR1SWU0Mll4Rzc2U0lvbnhlTmItRndhUjU3ZTBMNEM0?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "e947ccc49b7066d62aee23ed1d8500c2d5ef710982daf36af08a393fca811d97",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_EAmonBO38l7RiEhqREq9aZ",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Opinion/warning piece about a non-US market (Korean stock market) and a cryptocurrency (ETH); no concrete event in a US market or DTCC-relevant process described. No card fits."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1526,
+    "outputTokens": 385,
+    "totalTokens": 5596,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2646
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

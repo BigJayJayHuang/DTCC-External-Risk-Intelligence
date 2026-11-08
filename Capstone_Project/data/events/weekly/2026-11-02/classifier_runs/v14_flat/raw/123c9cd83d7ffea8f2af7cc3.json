@@ -1,0 +1,60 @@
+{
+  "document_id": "1d2ccb7a4e0491eadacef635408de6164849cbb9d73524dbf45180eea18e628f",
+  "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBmODNtWWZVYXVoSksyVDJsSzc3VUxSREliUklaLXF2am05OU9LbWw5QkxkRmtuaUhFU0Vfdld4Rko5WllWMXNEZkNSUnBKUVR0cElPVw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "0d8e269da1cb30db24f30eece7eec886c0fe8ca9729f6b434c1556ae695e396b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_uTxHUZw1dAjuQ7yi6dUDqc",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Non-US market event (South Korea) with no stated link to US markets or DTCC participants; ECS-SET-01 covers US settlement cycle changes only."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1395,
+    "outputTokens": 379,
+    "totalTokens": 5459,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 3685,
+    "cacheDetails": [
+      {
+        "ttl": "5m",
+        "inputTokens": 3685
+      }
+    ]
+  },
+  "metrics": {
+    "latencyMs": 2521
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}
