@@ -9,7 +9,24 @@ on:
       - 'Capstone_Project/validation/test_llm_daily.py'
       - 'Capstone_Project/validation/event_scoring.py'
       - 'Capstone_Project/validation/llm_event_classifier_prompt.md'
+      - 'Capstone_Project/validation/llm_event_classifier_prompt_v*.md'
       - 'Capstone_Project/validation/requirements-llm.txt'
+      - 'Capstone_Project/validation/requirements-review.txt'
+      - 'Capstone_Project/validation/test_llm_*.py'
+      - 'Capstone_Project/validation/google_news*'
+      - 'Capstone_Project/validation/news_queries.csv'
+      - 'Capstone_Project/validation/test_google_news.py'
+      - 'Capstone_Project/validation/publisher_feeds*'
+      - 'Capstone_Project/validation/test_publisher_feeds.py'
+      - 'Capstone_Project/validation/review_sheet.py'
+      - 'Capstone_Project/validation/promote_reviewed.py'
+      - 'Capstone_Project/validation/test_review_promote.py'
+      - 'Capstone_Project/validation/weekly_news_run.py'
+      - 'Capstone_Project/validation/test_weekly_news_run.py'
+      - 'Capstone_Project/validation/golden_eval.py'
+      - 'Capstone_Project/validation/llm_strict_diagnostic.py'
+      - 'Capstone_Project/validation/scoring_v1_3.py'
+      - 'Capstone_Project/validation/fixtures/**'
       - '.github/workflows/llm-classifier.yml'
       - '.github/workflows/daily-data.yml'
 
@@ -19,7 +36,7 @@ permissions:
 jobs:
   offline-tests:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     defaults:
       run:
         working-directory: Capstone_Project
@@ -30,10 +47,15 @@ jobs:
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.12'
-      - run: python -m pip install -r validation/requirements-llm.txt
+      - run: python -m pip install -r validation/requirements-llm.txt -r validation/requirements-review.txt
       - run: python -m unittest validation.test_llm_classifier -v
       - run: python -m unittest validation.test_llm_daily -v
       - run: python -m validation.test_event_scoring
+      - name: Prompt versions, flat schema, Google News, publisher feeds, review, promotion, weekly run
+        run: >-
+          python -m unittest -v validation.test_llm_prompt_v13 validation.test_llm_flat_schema
+          validation.test_google_news validation.test_publisher_feeds validation.test_review_promote
+          validation.test_weekly_news_run
       - name: Confirm protected files remain unchanged
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
