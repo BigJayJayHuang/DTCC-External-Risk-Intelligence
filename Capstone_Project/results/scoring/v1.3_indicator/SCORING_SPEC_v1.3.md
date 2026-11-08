@@ -220,3 +220,22 @@ Approved: Wenqi Cai, 2026-11-08T01:10Z. Proposed 2026-11-08. When approved it ch
 - **C3.** Records whose S comes wholly or partly from an unreviewed AI event carry `event_review_label = "AI-classified, not reviewed"`.
 - **C4.** S, V, severity and `needs_human_signoff` are unchanged. S ≥ 4 from any event still needs the matching sign-off, as in A1.
 - **C5.** The dashboard must honour `show_on_main` and show `event_review_label`. This needs a `docs/` change that is not part of this amendment.
+
+## Amendment D — market-move news is context on indicator cards
+
+Approved: Wenqi Cai, 2026-11-08T01:10Z. Written before any code change for it. It changes no existing v1.3 score: S, V, severity, status, show_on_main and needs_human_signoff are computed as before, and no register row exists yet that it would reclassify.
+
+- **D1. Event type.** The classifier records `event_type` for every relevant item. Values:
+  - `market_move`: price, yield, spread, volatility or volume moves of a market or asset class;
+  - `regulatory`: rules, deadlines, regulator or DTCC actions;
+  - `firm_specific`: something happening to one or more identified firms (losses, margin calls, downgrades, deleveraging, default);
+  - `operational`: outages and system or settlement problems that are not cyber;
+  - `cyber`;
+  - `other`.
+- **D2. Indicator cards.** FICC-GSD-01, FICC-GSD-02, FICC-MBSD-01, ECS-NSCC-LIQ, ECS-NSCC-03 and XE-MEMBER. For each card of an event: if the card is an indicator card and `event_type = market_move`, the event is *context* for that card. It does not set `S_event`, does not count toward `review_tier`, and appears only as related news. On every other card, the event is scored as before.
+- **D3. Context file.** Context items go to `data/events/context_news.csv` (week, card_id, title, outlet, url, event_type, proposed_event_id). They never go to `event_register.csv`. `promote_reviewed.py` never inserts a context-tier row, and for an event that is context on some cards it inserts only the scored cards.
+- **D4. Related news.** `scoring_v1_3` adds a `related_news` list to each record from that file, matching card_id and week. It is display only.
+- **D5. Review tier**, computed after the context rule:
+  - `required` if any scored (non-context) card has a would-be S ≥ 4 or severity ≥ 6;
+  - `context` if every card of the event is context;
+  - otherwise `auto`.
