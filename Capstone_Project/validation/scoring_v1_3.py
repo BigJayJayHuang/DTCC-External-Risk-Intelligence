@@ -28,6 +28,7 @@ LINES_CONFIG = OUT / 'config' / 'card_lines.csv'
 REGISTRY = FINAL16 / 'config' / 'card_registry.json'
 V_CHECKS = FINAL16 / 'results' / 'v_driver_checks.json'
 NEWS_COVERAGE = 'manual_register_only'
+CONTEXT_NEWS = PROJECT / 'data' / 'events' / 'context_news.csv'   # Amendment D: market-move news on indicator cards
 SHOW_ON_MAIN_MIN = 6
 SIGNOFF_MIN_S = 4
 DASHBOARD_LINES = {'FICC', 'ECS', 'RDS', 'WIS', 'ITP', 'Asset Services', 'DAS', 'DDA', 'Data Services', 'Consulting'}
@@ -286,7 +287,18 @@ def v_fields(v, check):
 
 
 # ------------------------------------------------------------------ one card-week
-def card_week(card, week, *, market_recs, cov, ev, v, check, daily=None):
+def load_context_news(path=CONTEXT_NEWS):
+    """(week, card_id) -> related news rows (display only, Amendment D4)."""
+    out = {}
+    if Path(path).exists():
+        with Path(path).open(encoding='utf-8', newline='') as f:
+            for r in csv.DictReader(f):
+                out.setdefault((r['week'], r['card_id']), []).append(
+                    {k: r[k] for k in ('title', 'outlet', 'url', 'event_type', 'proposed_event_id')})
+    return out
+
+
+def card_week(card, week, *, market_recs, cov, ev, v, check, daily=None, related=None):
     """Base record for one card-week (before the D2 line split). All inputs are plain data."""
     monday, friday = week_dates(week)
     rec = {'card_id': card['card_id'], 'week': str(monday.date()), 'week_end': str(friday.date()),
@@ -350,7 +362,8 @@ def card_week(card, week, *, market_recs, cov, ev, v, check, daily=None):
         'event_review_label': AI_UNREVIEWED_LABEL if src in ('event_manual', 'market+event_manual') and ai_unreviewed(driving) else None,
         'needs_human_signoff': bool(event_set and S is not None and S >= SIGNOFF_MIN_S and not (driving and driving.get('signed_off_by'))),
         'chain_confidence': chain_confidence(card['tested_chains'], S, src, drv['chain_id'] if drv else None, driving),
-        'shared_signal': [], 'shared_signal_fields': {}})
+        'shared_signal': [], 'shared_signal_fields': {},
+        'related_news': list(related or [])})
     return rec
 
 
@@ -373,10 +386,12 @@ def build_week(week, cards=None):
     last, releases, ranked = series_last_dates(), series_release_dates(), ranked_events(reg, friday)
     pct = {mc['chain_id']: percentile_scores(scoring_signal(mc['chain_id'], mc['field'])) for c in cards for mc in c['market_chains']}
     daily = {mc['chain_id']: daily_info(mc['field'], friday) for c in cards for mc in c['market_chains']}
+    related = load_context_news()
     base = [card_week(card, week, market_recs={k: pct[k].get(friday) for k in (mc['chain_id'] for mc in card['market_chains'])},
                       cov=coverage([mc['field'] for mc in card['market_chains']], last, friday, releases),
                       ev=card_events(ranked, card['card_id'], mapping),
-                      v=get_v(card['card_id'], str(friday.date())), check=checks.get(card['card_id'], {}), daily=daily)
+                      v=get_v(card['card_id'], str(friday.date())), check=checks.get(card['card_id'], {}), daily=daily,
+                      related=related.get((str(monday.date()), card['card_id']), []))
             for card in cards]
     assign_shared(base)
     return [r for rec, card in zip(base, cards) for r in split_lines(rec, card)]

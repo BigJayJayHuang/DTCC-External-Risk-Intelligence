@@ -4,8 +4,13 @@
 
 Grouping (simple, explainable): two candidates describe the same occurrence when
   (1) their card_ids overlap, (2) their announced_dates are at most 2 days apart, and
-  (3) the word overlap of title + summary (lower-case words of 3+ letters, minus stop words) has Jaccard >= 0.25.
+  (3a) both have event_type market_move (Amendment D: one market move per card and 2-day window), or
+  (3b) the word overlap of title + summary (lower-case words of 3+ letters, minus stop words) has Jaccard >= 0.25.
 Groups are the connected components of that pairwise relation.
+Syndication: sources from different outlets whose headlines have word Jaccard >= 0.8 count as one source when
+validate() counts independent outlets; the number collapsed is reported per event.
+Context rule (Amendment D): on an indicator card, an event of type market_move is context; it gets no would-be
+severity, does not count toward review_tier, and is written to the context-news file instead.
 
 Per proposed event: union of card_ids; the highest model certainty and reach among members; earliest announced_date;
 the effect_date of the most confident member; all sources and evidence quotes. The existing event_scoring.validate()
@@ -16,6 +21,7 @@ final16 V as of that week's Friday. review_tier = "required" if S >= 4 or any se
 Reads only; never writes the event register.
 """
 import argparse, csv, hashlib, json, re
+from collections import Counter
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -26,11 +32,15 @@ from .llm_classifier import MAJOR, PROJECT, prompt_parts_v13, PROMPT_V14
 STOP = set("the and for with from after amid are its this that new says said into over amid than more has have was were will its "
            "his her their they them out about what when where which who why how but not all any can may could".split())
 JACCARD = 0.25
+SYNDICATION_JACCARD = 0.8
 MAX_DAYS = 2
+INDICATOR_CARDS = {"FICC-GSD-01", "FICC-GSD-02", "FICC-MBSD-01", "ECS-NSCC-LIQ", "ECS-NSCC-03", "XE-MEMBER"}   # Amendment D
+CONTEXT_NEWS = PROJECT / "data/events/context_news.csv"
+CONTEXT_FIELDS = ["week", "card_id", "title", "outlet", "url", "event_type", "proposed_event_id"]
 TIER_ORDER = ["regulator", "dtcc", "official", "issuer_filing", "major_media", "other"]
-FIELDS = ["proposed_event_id", "title", "card_ids", "certainty", "certainty_before_grouping", "reach", "reach_basis", "announced_date",
-          "effect_date", "would_be_S", "would_be_severity", "review_tier", "same_as_event_id", "stage", "named_participants",
-          "independent_outlets", "sources", "evidence_quotes", "confidence", "validate_flags", "candidate_ids", "prompt_version", "model",
+FIELDS = ["proposed_event_id", "title", "event_type", "card_ids", "scored_card_ids", "context_card_ids", "certainty", "certainty_before_grouping",
+          "reach", "reach_basis", "announced_date", "effect_date", "would_be_S", "would_be_severity", "review_tier", "same_as_event_id", "stage",
+          "named_participants", "independent_outlets", "syndication_collapsed", "member_event_types", "sources", "evidence_quotes", "confidence", "validate_flags", "candidate_ids", "prompt_version", "model",
           "decision", "reviewer", "corrected_card_ids", "corrected_certainty", "corrected_reach", "reviewer_notes"]
 
 
@@ -38,11 +48,17 @@ def words(text: str) -> set[str]:
     return {w for w in re.findall(r"[a-z0-9]+", text.lower()) if len(w) >= 3 and w not in STOP}
 
 
+def jaccard(a: set, b: set) -> float:
+    return len(a & b) / len(a | b) if a and b else 0.0
+
+
 def same_occurrence(a: dict, b: dict) -> bool:
     if not set(a["card_ids"]) & set(b["card_ids"]):
         return False
     if abs(date.fromisoformat(a["announced_date"]) - date.fromisoformat(b["announced_date"])) > timedelta(days=MAX_DAYS):
         return False
+    if a.get("event_type") == "market_move" and b.get("event_type") == "market_move":
+        return True
     wa, wb = words(a["title"] + " " + a["summary"]), words(b["title"] + " " + b["summary"])
     return bool(wa and wb) and len(wa & wb) / len(wa | wb) >= JACCARD
 
@@ -76,15 +92,30 @@ def load_candidates(path: Path) -> list[dict]:
                         "source_tier": r["source_tier"], "outlet": r["outlet"], "url": r["url"], "content_scope": r["content_scope"],
                         "headline": text.split("\n", 1)[0] if text else "", "text": text, "same_as_event_id": r["same_as_event_id"],
                         "evidence_quotes": json.loads(r["evidence_quotes"]), "confidence": float(r["llm_confidence"]),
-                        "flags": json.loads(r["validation_reasons"]), "prompt_version": r["prompt_version"], "model": r["model_id"]})
+                        "flags": json.loads(r["validation_reasons"]), "prompt_version": r["prompt_version"], "model": r["model_id"],
+                        "event_type": r.get("event_type") or ""})
     return out
 
 
-def proposed_event(members: list[dict], week: date, catalog: set[str], major: set[str]) -> dict:
-    rep = members[0]
-    cards = sorted({c for m in members for c in m["card_ids"]}, key=lambda c: (-sum(c in m["card_ids"] for m in members), c))
-    outlets = {}
+def syndication_sources(members: list[dict]) -> tuple[list[dict], int]:
+    """One source per cluster of near-identical headlines from different outlets; returns (kept members, collapsed)."""
+    kept = []
     for m in members:
+        hw = words(m["headline"] or m["title"])
+        if not any(k["outlet"] != m["outlet"] and jaccard(hw, words(k["headline"] or k["title"])) >= SYNDICATION_JACCARD for k in kept):
+            kept.append(m)
+    return kept, len(members) - len(kept)
+
+
+def proposed_event(members: list[dict], week: date, catalog: set[str], major: set[str]) -> tuple[dict, list[dict]]:
+    rep = members[0]
+    types = Counter(m["event_type"] for m in members if m["event_type"])
+    top = types.most_common()
+    event_type = rep["event_type"] if not top or (len(top) > 1 and top[0][1] == top[1][1]) else top[0][0]
+    cards = sorted({c for m in members for c in m["card_ids"]}, key=lambda c: (-sum(c in m["card_ids"] for m in members), c))
+    independent, collapsed = syndication_sources(members)
+    outlets = {}
+    for m in independent:
         outlets.setdefault(m["outlet"], m["source_tier"])
     quotes = list(dict.fromkeys(q for m in members for q in m["evidence_quotes"]))
     stage = max((m["stage"] for m in members if m["stage"] is not None), default=None) if "XE-MEMBER" in cards else None
@@ -92,27 +123,36 @@ def proposed_event(members: list[dict], week: date, catalog: set[str], major: se
     event = E.Event(event_id="proposed", card_ids=cards, title=rep["title"], announced_date=date.fromisoformat(min(m["announced_date"] for m in members)),
                     effect_date=date.fromisoformat(rep["effect_date"]), certainty=max(m["original_certainty"] for m in members),
                     reach=best_reach["original_reach"], evidence_quotes=quotes,
-                    sources=[{"url": m["url"], "outlet": m["outlet"], "tier": m["source_tier"]} for m in members],
+                    sources=[{"url": m["url"], "outlet": m["outlet"], "tier": m["source_tier"]} for m in independent],
                     llm_confidence=rep["confidence"], stage=stage, named_participants=sorted({p for m in members for p in m["named_participants"]}),
                     reach_basis=best_reach["reach_basis"])
     E.validate(event, [m["text"] for m in members], catalog, major)          # unchanged rubric checks on the combined sources
     scored = E.event_score(event, week)
     S = scored["S"]
     friday = (week + timedelta(days=4)).isoformat()
+    context = [c for c in event.card_ids if c in INDICATOR_CARDS and event_type == "market_move"]
+    scored = [c for c in event.card_ids if c not in context]
     severity = {}
-    for c in event.card_ids:
+    for c in scored:
         V = get_v(c, friday).get("V")
         severity[c] = {"V": V, "severity": S * V if S is not None and V is not None else None}
-    required = (S is not None and S >= 4) or any((v["severity"] or 0) >= 6 for v in severity.values())
+    if not scored:
+        tier = "context"
+    else:
+        tier = "required" if (S is not None and S >= 4) or any((v["severity"] or 0) >= 6 for v in severity.values()) else "auto"
     ids = sorted(m["candidate_id"] for m in members)
-    return {"proposed_event_id": "PE-" + week.isoformat() + "-" + hashlib.sha256("|".join(ids).encode()).hexdigest()[:8],
-            "title": rep["title"], "card_ids": "|".join(event.card_ids), "certainty": event.certainty,
+    pid = "PE-" + week.isoformat() + "-" + hashlib.sha256("|".join(ids).encode()).hexdigest()[:8]
+    ctx_rows = [{"week": week.isoformat(), "card_id": c, "title": m["headline"] or m["title"], "outlet": m["outlet"], "url": m["url"],
+                 "event_type": event_type, "proposed_event_id": pid} for c in context for m in members]
+    return {"proposed_event_id": pid, "title": rep["title"], "event_type": event_type, "card_ids": "|".join(event.card_ids),
+            "scored_card_ids": "|".join(scored), "context_card_ids": "|".join(context), "certainty": event.certainty,
             "certainty_before_grouping": max(m["certainty"] for m in members), "reach": event.reach, "reach_basis": event.reach_basis,
             "announced_date": event.announced_date.isoformat(), "effect_date": event.effect_date.isoformat(),
-            "would_be_S": "" if S is None else S, "would_be_severity": json.dumps(severity), "review_tier": "required" if required else "auto",
+            "would_be_S": "" if S is None else S, "would_be_severity": json.dumps(severity), "review_tier": tier,
             "same_as_event_id": "|".join(sorted({m["same_as_event_id"] for m in members if m["same_as_event_id"]})),
             "stage": "" if event.stage is None else event.stage, "named_participants": "|".join(event.named_participants),
-            "independent_outlets": len(outlets),
+            "independent_outlets": len(outlets), "syndication_collapsed": collapsed,
+            "member_event_types": json.dumps(dict(types)),
             "sources": json.dumps([{"outlet": m["outlet"], "url": m["url"], "content_scope": m["content_scope"], "source_tier": m["source_tier"],
                                     "headline": m["headline"], "evidence_quotes": m["evidence_quotes"], "item_flags": m["flags"]} for m in members],
                                   ensure_ascii=False),
@@ -120,15 +160,34 @@ def proposed_event(members: list[dict], week: date, catalog: set[str], major: se
             "validate_flags": json.dumps(event.review_reasons + (["S >= 4: human check before publishing"] if S is not None and S >= 4 else []),
                                          ensure_ascii=False),
             "candidate_ids": "|".join(ids), "prompt_version": rep["prompt_version"], "model": rep["model"],
-            "decision": "", "reviewer": "", "corrected_card_ids": "", "corrected_certainty": "", "corrected_reach": "", "reviewer_notes": ""}
+            "decision": "", "reviewer": "", "corrected_card_ids": "", "corrected_certainty": "", "corrected_reach": "", "reviewer_notes": ""}, ctx_rows
 
 
-def build(candidates: Path, week: date) -> list[dict]:
+def build(candidates: Path, week: date) -> tuple[list[dict], list[dict]]:
+    """Returns (review-sheet rows sorted by confidence, context-news rows)."""
     _, _, catalog, _ = prompt_parts_v13(PROMPT_V14, "v1.4")
     with MAJOR.open(encoding="utf-8-sig", newline="") as f:
         major = {r["name"] for r in csv.DictReader(f) if r.get("name")}
-    rows = [proposed_event(g, week, catalog, major) for g in group(load_candidates(candidates))]
-    return sorted(rows, key=lambda r: (-r["confidence"], r["proposed_event_id"]))
+    built = [proposed_event(g, week, catalog, major) for g in group(load_candidates(candidates))]
+    rows = sorted((r for r, _ in built), key=lambda r: (-r["confidence"], r["proposed_event_id"]))
+    return rows, [c for _, ctx in built for c in ctx]
+
+
+def append_context(path: Path, rows: list[dict]) -> int:
+    """Append context-news rows, skipping (week, card_id, url) already present. Never touches the event register."""
+    existing = []
+    if path.exists():
+        with path.open(encoding="utf-8", newline="") as f:
+            existing = list(csv.DictReader(f))
+    seen = {(r["week"], r["card_id"], r["url"]) for r in existing}
+    new = [r for r in rows if (r["week"], r["card_id"], r["url"]) not in seen and not seen.add((r["week"], r["card_id"], r["url"]))]
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a" if existing else "w", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=CONTEXT_FIELDS, lineterminator="\n")
+        if not existing:
+            w.writeheader()
+        w.writerows(new)
+    return len(new)
 
 
 def main(argv=None):
@@ -136,14 +195,17 @@ def main(argv=None):
     p.add_argument("--candidates", type=Path, required=True)
     p.add_argument("--week", type=date.fromisoformat, required=True, help="Monday of the scoring week")
     p.add_argument("--out", type=Path, required=True)
+    p.add_argument("--context-out", type=Path, default=CONTEXT_NEWS)
     a = p.parse_args(argv)
     if a.week.weekday() != 0:
         raise SystemExit("--week must be a Monday")
-    rows = build(a.candidates, a.week)
+    rows, ctx = build(a.candidates, a.week)
     a.out.parent.mkdir(parents=True, exist_ok=True)
     with a.out.open("x", encoding="utf-8", newline="") as f:          # never overwrite a sheet that may hold decisions
         w = csv.DictWriter(f, fieldnames=FIELDS, lineterminator="\n"); w.writeheader(); w.writerows(rows)
-    print(json.dumps({"proposed_events": len(rows), "required": sum(r["review_tier"] == "required" for r in rows), "out": str(a.out)}))
+    added = append_context(a.context_out, ctx)
+    print(json.dumps({"proposed_events": len(rows), "tiers": dict(Counter(r["review_tier"] for r in rows)), "out": str(a.out),
+                      "context_rows_added": added, "context_out": str(a.context_out)}))
 
 
 if __name__ == "__main__":

@@ -10,13 +10,13 @@ from .llm_classifier import PROJECT
 from .test_scoring_v1_3 import CARDS, NO_EVENT, event, mkt, run
 
 WEEK = date(2026, 11, 2)
-CAND_FIELDS = ["event_id", "title", "summary", "card_ids", "certainty", "original_certainty", "reach", "original_reach", "reach_basis",
+CAND_FIELDS = ["event_type", "event_id", "title", "summary", "card_ids", "certainty", "original_certainty", "reach", "original_reach", "reach_basis",
                "named_participants", "announced_date", "effect_date", "stage", "source_tier", "outlet", "url", "content_scope",
                "same_as_event_id", "evidence_quotes", "llm_confidence", "validation_reasons", "prompt_version", "model_id", "article_file"]
 
 
-def cand(cid, title, cards, outlet, day="2026-11-05", conf=0.55, cert=2, reach=2, quote=None, same_as="", tier="other", summary=None):
-    return {"event_id": cid, "title": title, "summary": summary or title, "card_ids": cards, "certainty": 1, "original_certainty": cert,
+def cand(cid, title, cards, outlet, day="2026-11-05", conf=0.55, cert=2, reach=2, quote=None, same_as="", tier="other", summary=None, etype=""):
+    return {"event_type": etype, "event_id": cid, "title": title, "summary": summary or title, "card_ids": cards, "certainty": 1, "original_certainty": cert,
             "reach": reach, "original_reach": reach, "reach_basis": "market_wide", "named_participants": "", "announced_date": day,
             "effect_date": day, "stage": "", "source_tier": tier, "outlet": outlet, "url": f"https://{outlet.lower().replace(' ', '')}.example/{cid}",
             "content_scope": "headline_only", "same_as_event_id": same_as, "evidence_quotes": json.dumps([quote or title]),
@@ -26,6 +26,9 @@ def cand(cid, title, cards, outlet, day="2026-11-05", conf=0.55, cert=2, reach=2
 
 class Grouping(unittest.TestCase):
     def sheet(self, cands):
+        return self.sheet_ctx(cands)[0]
+
+    def sheet_ctx(self, cands):
         with tempfile.TemporaryDirectory(dir=PROJECT / "data") as tmp:
             root = Path(tmp)
             for c in cands:
@@ -61,6 +64,44 @@ class Grouping(unittest.TestCase):
         self.assertEqual(sev["severity"], hi["would_be_S"] * sev["V"])
         self.assertEqual(hi["review_tier"], "required" if hi["would_be_S"] >= 4 or sev["severity"] >= 6 else "auto")
         self.assertEqual((lo["would_be_S"], lo["review_tier"]), (1, "auto"))                   # 0 + 0 + timing 2 = 2 -> S 1, x V 4 < 6
+
+
+class AmendmentD(Grouping):
+    def test_market_moves_on_same_card_group_whatever_the_wording(self):
+        rows = self.sheet([cand("A", "Tech stocks log worst day since 2020", "ECS-NSCC-LIQ", "MarketWatch", etype="market_move"),
+                           cand("B", "VIX volatility index spikes 70 percent", "ECS-NSCC-LIQ", "Yahoo", day="2026-11-06", etype="market_move"),
+                           cand("C", "Gold falls below $4,000", "FICC-GSD-01", "Equiti", etype="market_move")])
+        self.assertEqual(sorted(r["candidate_ids"] for r in rows), ["A|B", "C"])
+
+    def test_syndicated_copies_count_as_one_source(self):
+        rows = self.sheet([cand("A", "French bank loses 100 million euros in cyberattack", "XE-CYBER", "BankInfoSecurity", etype="cyber"),
+                           cand("B", "French Bank Loses 100 Million Euros in Cyberattack", "XE-CYBER", "Inshorts", conf=0.5, etype="cyber")])
+        r = rows[0]
+        self.assertEqual((r["candidate_ids"], r["independent_outlets"], r["syndication_collapsed"]), ("A|B", 1, 1))
+        self.assertEqual(r["certainty"], 1)                                                      # no lift from a copy
+
+    def test_context_rule_and_tiers(self):
+        rows, ctx = self.sheet_ctx([
+            cand("A", "Tech stocks log worst day since 2020", "ECS-NSCC-LIQ", "MarketWatch", etype="market_move"),
+            cand("B", "Hedge funds dump positions as selloff deepens", "ECS-NSCC-LIQ|FICC-GSD-11", "WSJ", day="2026-11-02", etype="market_move"),  # 3 days from A
+            cand("C", "Arini offloads debt amid margin calls", "ECS-NSCC-LIQ|XE-MEMBER", "WSJ", day="2026-11-03", etype="firm_specific")])
+        by = {r["candidate_ids"]: r for r in rows}
+        self.assertEqual((by["A"]["review_tier"], by["A"]["scored_card_ids"], by["A"]["context_card_ids"], by["A"]["would_be_severity"]),
+                         ("context", "", "ECS-NSCC-LIQ", "{}"))
+        self.assertEqual((by["B"]["scored_card_ids"], by["B"]["context_card_ids"]), ("FICC-GSD-11", "ECS-NSCC-LIQ"))
+        self.assertEqual(list(json.loads(by["B"]["would_be_severity"])), ["FICC-GSD-11"])
+        self.assertIn(by["B"]["review_tier"], ("required", "auto"))
+        self.assertEqual((by["C"]["scored_card_ids"], by["C"]["context_card_ids"]), ("ECS-NSCC-LIQ|XE-MEMBER", ""))   # firm_specific is scored
+        self.assertEqual(sorted((c["card_id"], c["url"].split("/")[-1]) for c in ctx), [("ECS-NSCC-LIQ", "A"), ("ECS-NSCC-LIQ", "B")])
+        self.assertTrue(all(c["event_type"] == "market_move" and c["week"] == "2026-11-02" for c in ctx))
+
+    def test_append_context_dedupes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "context_news.csv"
+            row = {"week": "2026-11-02", "card_id": "ECS-NSCC-LIQ", "title": "t", "outlet": "o", "url": "u", "event_type": "market_move", "proposed_event_id": "PE"}
+            self.assertEqual((RS.append_context(path, [row, row]), RS.append_context(path, [row])), (1, 0))
+            with path.open() as f:
+                self.assertEqual(len(list(csv.DictReader(f))), 1)
 
 
 class Promote(unittest.TestCase):
@@ -125,7 +166,16 @@ class Promote(unittest.TestCase):
     def test_auto_rows_need_approved_amendment_c(self):
         with self.assertRaises(PR.PromotionError):
             PR.promote(self.write_sheet([self.row("P2", "auto")]), self.register, spec=self.spec_no)
-        self.assertFalse(PR.amendment_c_approved(PR.SPEC))          # the real spec: Amendment C is only proposed
+        self.assertTrue(PR.amendment_c_approved(PR.SPEC))           # the real spec: Amendment C approved 2026-11-08
+
+    def test_context_rows_skipped_and_only_scored_cards_inserted(self):
+        res = PR.promote(self.write_sheet([self.row("P6", "context"), self.row("P7", "auto", card_ids="ECS-NSCC-LIQ|FICC-GSD-11",
+                                                                                    scored_card_ids="FICC-GSD-11", context_card_ids="ECS-NSCC-LIQ")]),
+                         self.register, spec=self.spec_ok)
+        self.assertEqual(res["context_not_promoted"], ["P6"])
+        rows = {r["proposal_id"]: r for r in self.reg_rows() if r.get("proposal_id")}
+        self.assertNotIn("P6", rows)
+        self.assertEqual((rows["P7"]["card_ids"], rows["P7"]["chain_id"]), ("FICC-GSD-11", "FICC-GSD-11"))
 
     def test_bad_rows_rejected(self):
         for bad in (self.row("P1", "required", "approve"), self.row("P1", "required", "maybe", "R"),
@@ -161,6 +211,22 @@ class ScoringFlags(unittest.TestCase):
     def test_market_tie_keeps_main_but_labels(self):
         r = run("FICC-GSD-02", market={"FICC-GSD-02": mkt(4)}, ev=self.unreviewed(4, card_ids=["FICC-GSD-02"]), V=4)
         self.assertEqual((r["S_source"], r["show_on_main"], r["event_review_label"]), ("market+event_manual", True, "AI-classified, not reviewed"))
+
+    def test_related_news_display_only(self):
+        news = [{"title": "Tech stocks log worst day since 2020", "outlet": "MarketWatch", "url": "u", "event_type": "market_move", "proposed_event_id": "PE"}]
+        card = CARDS["ECS-NSCC-LIQ"]
+        from .test_scoring_v1_3 import FULL, FRI, WEEK as W, vrec, days
+        cov = S13.coverage([m["field"] for m in card["market_chains"]], FULL, FRI)
+        market = {"ECS-NSCC-01": mkt(3), "ECS-NSCC-02": mkt(2)}
+        daily = {c: days(r["weekly_peak"]) for c, r in market.items()}
+        a = S13.card_week(card, W, market_recs=market, cov=cov, ev=NO_EVENT, v=vrec(3), check={}, daily=daily, related=news)
+        b = S13.card_week(card, W, market_recs=market, cov=cov, ev=NO_EVENT, v=vrec(3), check={}, daily=daily)
+        self.assertEqual((a["related_news"], b["related_news"]), (news, []))
+        self.assertEqual({k: v for k, v in a.items() if k != "related_news"}, {k: v for k, v in b.items() if k != "related_news"})
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "c.csv"
+            RS.append_context(path, [{"week": "2026-11-02", "card_id": "ECS-NSCC-LIQ", **news[0]}])
+            self.assertEqual(S13.load_context_news(path)[("2026-11-02", "ECS-NSCC-LIQ")], news)
 
     def test_reviewed_event_unchanged(self):
         r = run("FICC-GSD-03", ev=event(4), V=3)
