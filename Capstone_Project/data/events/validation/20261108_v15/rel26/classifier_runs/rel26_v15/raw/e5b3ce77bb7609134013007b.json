@@ -1,0 +1,59 @@
+{
+  "document_id": "22bfb250f155552d3bd6ce80c6ed5ea6cfde5eff885b37da1f2fc9194665ddfd",
+  "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNczVCVUNjOHE4dGNUYW0xcjRkZGJ6X1dwQV9TLUF3SVFycTFxRThNRFByclh3Q0FicW5KT2NWOU9Fcnl0WUpjOVRXYWFqT2RwdUpKOHlhWlN5QUhSSmRFY3diY0Y5WWd6MW5YV29GLWFqV0FUdzV3UkNFS282YU9ISUdhT3dodlBfbG9iLXphYmtBX1RHNWRDOUlXaWtFQzdaTGhZRm8xbUd2Y21LTEotT3U0WlE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:163854b82bd7",
+  "request_sha256": "08cb68c49dfd66ade3964a3c5ae01f04768cb16b82cf1bb8854c0ce2a9fca79b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_BvbdOy5sbjFCqhun4zTqxk",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "same_as_event_id": null,
+              "title": "National CERT warns of AI-powered cyberattacks on banks",
+              "summary": "A national CERT has issued a warning about AI-powered cyberattacks targeting banks and critical infrastructure, signaling a potential cyber threat to large financial participants.",
+              "card_ids": [
+                "XE-CYBER"
+              ],
+              "certainty": 1,
+              "reach": 1,
+              "reach_basis": "group",
+              "named_participants": [],
+              "announced_date": "2026-11-07",
+              "effect_date": "2026-11-07",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "PhoneWorld",
+              "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNczVCVUNjOHE4dGNUYW0xcjRkZGJ6X1dwQV9TLUF3SVFycTFxRThNRFByclh3Q0FicW5KT2NWOU9Fcnl0WUpjOVRXYWFqT2RwdUpKOHlhWlN5QUhSSmRFY3diY0Y5WWd6MW5YV29GLWFqV0FUdzV3UkNFS282YU9ISUdhT3dodlBfbG9iLXphYmtBX1RHNWRDOUlXaWtFQzdaTGhZRm8xbUd2Y21LTEotT3U0WlE?oc=5",
+              "evidence_quotes": [
+                "National CERT Warns of AI-Powered Cyberattacks on Banks and Critical Infrastructure"
+              ],
+              "confidence": 0.45,
+              "event_type": "cyber",
+              "notes": "headline_only. Warning issued by a national CERT about AI-powered cyberattacks targeting banks and critical infrastructure broadly — matches XE-CYBER Step 1 (cyberattack at a large participant). No specific bank, attack, or outage confirmed; certainty set to 1 (official warning/announcement, not a confirmed incident). Reach set to 1 (group — banks broadly) rather than 2 as no major named participant is identified. Source is a secondary outlet (PhoneWorld), not the CERT itself. Confidence lowered due to headline-only content and lack of detail."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1501,
+    "outputTokens": 809,
+    "totalTokens": 6215,
+    "cacheReadInputTokens": 3905,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5372
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

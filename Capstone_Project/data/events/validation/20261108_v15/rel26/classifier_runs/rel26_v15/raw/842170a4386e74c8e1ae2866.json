@@ -1,0 +1,60 @@
+{
+  "document_id": "f20e6e41404eb18589af99800548d61f796192b8d56c4d190bf3465bc15382c6",
+  "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE0tbzg5UDN1Tjd0M3JwX1VmUWg5Q3NkNVVtWFFMVjNSa3FheDl6cjIxTmhxdXFrVEN4b3lwckNzS3B2Z3ZGdlV4RURsZTY1M0l2NW9UenUzSVR3Z29XMk9qajFpZm8wTVBaenNIM1BQbXFHdk5BT0dCdw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:163854b82bd7",
+  "request_sha256": "a14fffbdf029f2480dbb93fa8576222406508a08edceda2234d27eacfbb6e8ba",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_T3lhRAmaitmO28UV7Lo78y",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "same_as_event_id": null,
+              "title": "Invesco QQQ Trust records ~$80B volume amid tech selloff",
+              "summary": "The Invesco QQQ Trust saw record trading volume of approximately $80 billion during a tech selloff, indicating an extreme single-ETF volume event that could stress NSCC CNS settlement and NSCC liquidity/variation margin processes.",
+              "card_ids": [
+                "ECS-NSCC-03",
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 1,
+              "reach_basis": "group",
+              "named_participants": [],
+              "announced_date": "2026-11-05",
+              "effect_date": "2026-11-05",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "Crypto Briefing",
+              "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE0tbzg5UDN1Tjd0M3JwX1VmUWg5Q3NkNVVtWFFMVjNSa3FheDl6cjIxTmhxdXFrVEN4b3lwckNzS3B2Z3ZGdlV4RURsZTY1M0l2NW9UenUzSVR3Z29XMk9qajFpZm8wTVBaenNIM1BQbXFHdk5BT0dCdw?oc=5",
+              "evidence_quotes": [
+                "Invesco QQQ Trust sees record trading volume of approximately $80 billion amid tech selloff"
+              ],
+              "confidence": 0.55,
+              "notes": "headline_only. Record volume on a single large ETF during a tech selloff is consistent with ECS-NSCC-03 (record trading volume → CNS settlement fails) and ECS-NSCC-LIQ (equity selloff → NSCC variation margin/liquidity). Reach set to 1 (group/business_line) rather than 2 because the headline names only one ETF, not a market-wide event, though the tech selloff context suggests broader pressure. Confidence lowered due to headline-only content.",
+              "event_type": "market_move"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1442,
+    "outputTokens": 777,
+    "totalTokens": 6124,
+    "cacheReadInputTokens": 3905,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5615
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -220,3 +220,16 @@ The bar for re-running the 83-item window (≥ 5/6 and ≤ 1 false positive) was
 - **Sign-off:** S ≥ 4 still needs a matching sign-off, as today.
 
 **Scoring and dashboard:** `scoring_v1_3` keeps an S set only by an unreviewed AI event off the main page and labels it "AI-classified, not reviewed" (Amendment C, proposed). The dashboard (`docs/`) does not yet read these fields.
+
+## Prompt v1.5 and Amendment D (2026-11-08)
+
+- **Prompt v1.5** (`--prompt-version v1.5`; v1.2 is still the default) adds `event_type`.
+- **Flat schema for v1.5:** carries `event_type` and requires it on relevant answers. Missing optional fields are filled with null before validation; missing core fields are rejected.
+- **Output limit:** `max_tokens` is 2000, and the per-call reserve follows it.
+- **`review_sheet.py`:**
+  - market moves are grouped per card;
+  - syndicated copies (headline Jaccard ≥ 0.8) count as one outlet;
+  - market-move news on the six indicator cards is context: `review_tier = context`, rows go to `data/events/context_news.csv`.
+- **Elsewhere:** `promote_reviewed.py` never inserts context rows, and `scoring_v1_3` shows `related_news`.
+- **Weekly use:** `python -m validation.weekly_news_run` runs a whole week; see `data/events/WEEKLY_RUNBOOK.md`.
+- **Validation:** `data/events/validation/20261108_v15/VALIDATION_REPORT.md`.

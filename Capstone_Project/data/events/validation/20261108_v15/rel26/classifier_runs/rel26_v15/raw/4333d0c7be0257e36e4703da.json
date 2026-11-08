@@ -1,0 +1,59 @@
+{
+  "document_id": "1cd956d878698e3cb6f7b896054c9de447cb6a496bd313bb73678374d0fe95bf",
+  "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxObUVoajhGN1Jjc2tzR2dTMHl6VHU4Z05kVHRWeUhEWnFJTnd5NFFmY3J5NUpRWVlzelNYNmdyZ0k2NXFzSXBXMGczd1dQUTRjRHY2ZXRlZjRSX0lNX09kQkQxN0V6NkxLNkFVQnJRX0poaG5lX01QVzJneC1MUWJRZjBGMjFfOG9LSHlpMHVSbS1GT3l1NHFhN3d6T2o0eGRaX2Z5YnRDdXJYOHVYVkltNFNUWXRSWV80TVpjLWxudmlON1lW0gHLAUFVX3lxTE9fdWY2WVlSdm5tLTgxbGRvWHNNMXprV3VtalVFc3oybFJaaTBuTWNfMTBHQlB4RlVxMURoLVRUTS1oaThsazJmYWcyOEUzOTdyM0ctUHNrOVUzckhiNHJBdE5RWkVfMGw5bHo5NWE5ZlV0enhhTHJTR1hwYzFacWpPNXd4d2Z5SlU4SnFvRURrbnpzN1dPbW41SHRzcDlfT1pYUzJqMVB5QmZqYWkwRjNROEpMTllxMUljOVRiMm5vdVV6Q00zQXhlVUpV?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:163854b82bd7",
+  "request_sha256": "81359e34b93de4e5d46ff1e7677dea6d7fbdb583248da4518677ecd4c0cfd67a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_y9G0FbyNDUk5RzkwxMWeYs",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "same_as_event_id": null,
+              "title": "U.S. stock market selloff following Democrats' midterm win",
+              "summary": "A U.S. stock market selloff is reported following the Democrats' midterm election win, with President Trump attributing the decline to the election result. The selloff could affect NSCC variation margin and liquidity.",
+              "card_ids": [
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-06",
+              "effect_date": "2026-11-06",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "The Hindu",
+              "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxObUVoajhGN1Jjc2tzR2dTMHl6VHU4Z05kVHRWeUhEWnFJTnd5NFFmY3J5NUpRWVlzelNYNmdyZ0k2NXFzSXBXMGczd1dQUTRjRHY2ZXRlZjRSX0lNX09kQkQxN0V6NkxLNkFVQnJRX0poaG5lX01QVzJneC1MUWJRZjBGMjFfOG9LSHlpMHVSbS1GT3l1NHFhN3d6T2o0eGRaX2Z5YnRDdXJYOHVYVkltNFNUWXRSWV80TVpjLWxudmlON1lW0gHLAUFVX3lxTE9fdWY2WVlSdm5tLTgxbGRvWHNNMXprV3VtalVFc3oybFJaaTBuTWNfMTBHQlB4RlVxMURoLVRUTS1oaThsazJmYWcyOEUzOTdyM0ctUHNrOVUzckhiNHJBdE5RWkVfMGw5bHo5NWE5ZlV0enhhTHJTR1hwYzFacWpPNXd4d2Z5SlU4SnFvRURrbnpzN1dPbW41SHRzcDlfT1pYUzJqMVB5QmZqYWkwRjNROEpMTllxMUljOVRiMm5vdVV6Q00zQXhlVUpV",
+              "evidence_quotes": [
+                "Trump blames Democrats' midterm win for U.S. stock market selloff"
+              ],
+              "confidence": 0.5,
+              "notes": "headline_only; no magnitude or specific index data provided; selloff is confirmed as having occurred but scope and severity are unknown. Effect date set to announced date as no separate date given.",
+              "event_type": "market_move"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1771,
+    "outputTokens": 1004,
+    "totalTokens": 6680,
+    "cacheReadInputTokens": 3905,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5741
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

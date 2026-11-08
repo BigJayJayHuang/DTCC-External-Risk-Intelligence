@@ -1,0 +1,59 @@
+{
+  "document_id": "f9d3c6656f39a5f54f22eca61a00709716fa0e42d2b44c1839863a67f076da76",
+  "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQY3VrV1NzU3ZCQ2NvS29XT21laEp2ZWhzNWdiTUhsQlB4MXZadUtucUNjb2hhLUx5amU4VmxzLWpobkhIMWh1d1JVT3dkVi1VTmlpVnFaaTJYUjZYdFhMb1FySmtIX2cwcmxtQkQwRTNJb0ppQ21naEpaWUtMTl85NzdZRFl6dXpmNHVsV2NKWGhFTGJoU3R1TnJUbFdYVzYyRXg5WnJYYnIwdEVYOFVGX1ZpRHh1dW9qYW81MQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:163854b82bd7",
+  "request_sha256": "f3869127c309d6174d01fdf7576aa250b818e17d16cddbff42c7bba22349dfd6",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_aBCVIy5L6bEGNmhUFv67DZ",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "same_as_event_id": null,
+              "title": "VIX spikes nearly 70% amid S&P 500 volatility",
+              "summary": "The VIX volatility index spiked nearly 70%, signaling a sharp equity market stress event that could affect NSCC variation margin and liquidity requirements.",
+              "card_ids": [
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-06",
+              "effect_date": "2026-11-06",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "Benzinga",
+              "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQY3VrV1NzU3ZCQ2NvS29XT21laEp2ZWhzNWdiTUhsQlB4MXZadUtucUNjb2hhLUx5amU4VmxzLWpobkhIMWh1d1JVT3dkVi1VTmlpVnFaaTJYUjZYdFhMb1FySmtIX2cwcmxtQkQwRTNJb0ppQ21naEpaWUtMTl85NzdZRFl6dXpmNHVsV2NKWGhFTGJoU3R1TnJUbFdYVzYyRXg5WnJYYnIwdEVYOFVGX1ZpRHh1dW9qYW81MQ?oc=5",
+              "evidence_quotes": [
+                "VIX Spiked Nearly 70%: What History Says for the S&P 500"
+              ],
+              "confidence": 0.5,
+              "event_type": "market_move",
+              "notes": "headline_only. VIX spike of ~70% is a concrete market event consistent with ECS-NSCC-LIQ (sharp equity selloff/volatility). No magnitude of S&P 500 decline stated; article is analytical/historical in framing but the headline confirms the VIX spike as a real event. Certainty set to 2 as the spike is reported as having occurred. Confidence lowered to 0.5 due to headline-only content and analytical framing."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1574,
+    "outputTokens": 820,
+    "totalTokens": 6299,
+    "cacheReadInputTokens": 3905,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5492
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

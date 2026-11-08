@@ -1,0 +1,59 @@
+{
+  "document_id": "764bca01db940e44cef32424d59a3fd6fbc4f92e0e87811ddb008af2c4c3b036",
+  "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOa2swWWdnalhUelF5Yl95R1AzMTF4eU5STTJFcEZRVmNmbnIxZFZmSl9XZWkxTXNhdlFERDU5bnVIUW1DVmVzdkQtOEQ5V084UG1XdWR0WTdjSzl5TXVvNXFtLWF2cEZ0ZVRJZkVQd3RxcU1BYVYxdFRVOVppQ19oLXpGZ2R6M1h3SDJrcmNHcGdyc3dxajVscDRaSUVLdXA2WnZ2R19ndGs?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:163854b82bd7",
+  "request_sha256": "a1442876ab495ecaae4340243f09ebcc7ed588b46fa5c69e0645d3a94b009acd",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_rVzn7XXUWOONfm7TxHJz9K",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "same_as_event_id": null,
+              "title": "Stock market selloff triggers liquidity pressure, gold falls",
+              "summary": "A stock market selloff has triggered liquidity pressure, with gold falling below $4,000. The headline suggests broad market stress that could affect NSCC variation margin and liquidity requirements.",
+              "card_ids": [
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-05",
+              "effect_date": "2026-11-05",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "Equiti Global",
+              "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOa2swWWdnalhUelF5Yl95R1AzMTF4eU5STTJFcEZRVmNmbnIxZFZmSl9XZWkxTXNhdlFERDU5bnVIUW1DVmVzdkQtOEQ5V084UG1XdWR0WTdjSzl5TXVvNXFtLWF2cEZ0ZVRJZkVQd3RxcU1BYVYxdFRVOVppQ19oLXpGZ2R6M1h3SDJrcmNHcGdyc3dxajVscDRaSUVLdXA2WnZ2R19ndGs?oc=5",
+              "evidence_quotes": [
+                "stock market selloff triggers liquidity pressure"
+              ],
+              "confidence": 0.5,
+              "event_type": "market_move",
+              "notes": "headline_only; no magnitude or specific index given for the equity selloff; gold price drop below $4,000 is mentioned as context for liquidity pressure. Confidence capped at 0.5 due to headline-only content."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1496,
+    "outputTokens": 721,
+    "totalTokens": 6122,
+    "cacheReadInputTokens": 3905,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 4304
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

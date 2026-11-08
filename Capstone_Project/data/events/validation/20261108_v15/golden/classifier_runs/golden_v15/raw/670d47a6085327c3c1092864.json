@@ -1,0 +1,65 @@
+{
+  "document_id": "675e0e8de4aaf20e754c7e3e8008f390c8e133ea83cd6cbc509033c30e690327",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1fVzhWaTBRTTZaa3liaU9QSGsyV1RhWGZLOFhRamh0am9kaFc0aEI5RWREUGkyWHhsdkg1NEMzQkV1cnhnb0NEVEhXamZ3NzVXRjBSS28tbzhWV2NaVk1QYzBJUXFkQ2V1aWozVg?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:163854b82bd7",
+  "request_sha256": "b0ca2f2ef32ec1fcad2e782c69f0cc799759a2be215ca8f7ad78d46e62c71504",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_rygucvGqTHXVq4hRWhS5j3",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "same_as_event_id": null,
+              "title": "Country pursuing T+1 settlement cycle transition in 2028",
+              "summary": "A stock settlement cycle change is being pursued for the first time in 50 years, targeting a T+1 transition in 2028. The article appears to cover a non-US market's planned move to T+1 settlement.",
+              "card_ids": [
+                "ECS-SET-01"
+              ],
+              "certainty": 0,
+              "reach": 1,
+              "reach_basis": "group",
+              "named_participants": [],
+              "announced_date": "2026-11-02",
+              "effect_date": "2028-01-01",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "뉴스웍스",
+              "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1fVzhWaTBRTTZaa3liaU9QSGsyV1RhWGZLOFhRamh0am9kaFc0aEI5RWREUGkyWHhsdkg1NEMzQkV1cnhnb0NEVEhXamZ3NzVXRjBSS28tbzhWV2NaVk1QYzBJUXFkQ2V1aWozVg?oc=5",
+              "evidence_quotes": [
+                "Stock settlement cycle changes for the first time in 50 years...Pursuing a 'T +1' transition in 2028"
+              ],
+              "confidence": 0.35,
+              "notes": "headline_only. Outlet is Korean (뉴스웍스), suggesting this covers a non-US market (likely South Korea) pursuing T+1 settlement. No explicit link to US markets or DTCC participants stated. Relevance is marginal; kept as relevant because a foreign T+1 transition could affect cross-border participants that are DTCC members, but confidence is low. Effect date is approximate (2028 year-start) as no specific date is given. Certainty set to 0 (speculative/pursuing stage).",
+              "event_type": "regulatory"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1435,
+    "outputTokens": 740,
+    "totalTokens": 6080,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 3905,
+    "cacheDetails": [
+      {
+        "ttl": "5m",
+        "inputTokens": 3905
+      }
+    ]
+  },
+  "metrics": {
+    "latencyMs": 5388
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

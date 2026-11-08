@@ -1,0 +1,59 @@
+{
+  "document_id": "336a2fabecaa8b4a084b1d6537cf7f10bd439f460ae91267cc7dd78e3a09a70b",
+  "url": "https://news.google.com/rss/articles/CBMixAJBVV95cUxOZDNyaXZPbmJSS3dGN1JOUnRXTWJ1dXpjNWk2YnNtaXVIR0tvTTVYQUZQT1FIaHNLR01sdWxKU29YZHVBd1FfOVBiM0c5am1WZWxxeWhYcTdtLVQ1QVFWZmtFa0NDM2JVWXpFMU95S2hhdnNZVVBiaGdjS0JYcmxzeWNwRjFyWXJYLVFnV2xCVkdpU2RFWWdEdzZFQkhYaUlaVmFTdW9paEdEREcyLTVHZzFuZmhycjlLd0t6b25JYWtGeVlZQlZraW9WUHQzaVZheTJ4V0xaeFBCTTBxZmNEakpBSkdEV0xKVGE3Z0VzRW5Na2FoaFFxWWxtZWk0WkVRZ05VTXVlZ0J1OEo1dlVmTlI3YUt2eUNHa2h0V2s2M1pyUUFLem13c05qdnk2TjA3SUVCTGZ1QUJYZ3BaVlZWdFJ2TU8?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:163854b82bd7",
+  "request_sha256": "af38f40e496f6ef25eb00857644fda9658f93d9312e77bb80b93d6a79b24b460",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_BbsYF5ykTBQ6U542G9ZOoT",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "same_as_event_id": null,
+              "title": "US Employment Surge Drives Rate Hike Bets, Treasury Yields Rise",
+              "summary": "A strong US employment report has fueled expectations of further rate hikes, pushing Treasury yields higher. Rising yields signal potential sharp yield swings that could affect GSD margin requirements.",
+              "card_ids": [
+                "FICC-GSD-01"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-06",
+              "effect_date": "2026-11-06",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "GuruFocus",
+              "url": "https://news.google.com/rss/articles/CBMixAJBVV95cUxOZDNyaXZPbmJSS3dGN1JOUnRXTWJ1dXpjNWk2YnNtaXVIR0tvTTVYQUZQT1FIaHNLR01sdWxKU29YZHVBd1FfOVBiM0c5am1WZWxxeWhYcTdtLVQ1QVFWZmtFa0NDM2JVWXpFMU95S2hhdnNZVVBiaGdjS0JYcmxzeWNwRjFyWXJYLVFnV2xCVkdpU2RFWWdEdzZFQkhYaUlaVmFTdW9paEdEREcyLTVHZzFuZmhycjlLd0t6b25JYWtGeVlZQlZraW9WUHQzaVZheTJ4V0xaeFBCTTBxZmNEakpBSkdEV0xKVGE3Z0VzRW5Na2FoaFFxWWxtZWk0WkVRZ05VTXVlZ0J1OEo1dlVmTlI3YUt2eUNHa2h0V2s2M1pyUUFLem13c05qdnk2TjA3SUVCTGZ1QUJYZ3BaVlZWdFJ2TU8?oc=5",
+              "evidence_quotes": [
+                "US Employment Surge Fuels Rate Hike Bets, Treasury Yields Rise"
+              ],
+              "confidence": 0.5,
+              "notes": "headline_only; Treasury yields rising on rate hike expectations matches FICC-GSD-01 (sharp yield swings). No magnitude or specific yield level given; effect_date set to announced_date as no separate date provided.",
+              "event_type": "market_move"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1687,
+    "outputTokens": 925,
+    "totalTokens": 6517,
+    "cacheReadInputTokens": 3905,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5271
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}
