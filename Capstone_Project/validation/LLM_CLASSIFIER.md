@@ -126,3 +126,20 @@ Google's matching is loose. Only 37 of the 308 headlines contain all terms of a 
 ### Week of 2026-11-02: filtered run (2026-11-07)
 
 With the headline filter, 81 Google items and 0 official items went to the model (dry run USD 1.90). The real run, capped at USD 3, completed all 81: 0 relevant, 81 irrelevant, 0 failures. It used 353,055 input and 10,380 output tokens, about USD 1.34. See [the run report](../data/events/CLASSIFIER_RUN_2026-11-07.md), which includes ten random irrelevant items and a list of likely misses caused by headline-only input.
+
+## Prompt v1.3 and prompt caching (2026-11-07)
+
+`llm_event_classifier_prompt_v1.3.md` adds a clarified rule 1 and a section on headline-only and summary-only items. The v1.2 file is unchanged, and v1.2 remains the default, so earlier runs reproduce.
+
+- **Selecting it:** `--prompt-version v1.3`. Every summary, raw output, irrelevant/failed line and candidate row records `prompt_version` (v1.3: `classifier-prompt-v1.3:<sha12>`).
+- **Request layout:** the static rules and card catalog form the system text, followed by a Converse `cachePoint` (`--prompt-cache on`, the default for v1.3). The per-item `recent_events` and article go in the user message.
+- **Cost figures:** cache read and write tokens are recorded. `estimated_cost_without_cache_usd` prices the same tokens as ordinary input. Cache rates are in `llm_classifier_config.json`; verify them on the AWS Bedrock pricing page.
+- **Code checks (v1.3 only, headline-only scopes):** a relevant record with confidence > 0.6, or without "headline_only" in its notes, is flagged. Every candidate keeps `needs_review = Y`, and `review_basis` names headline-only input. `event_scoring.validate` is unchanged.
+
+**Golden set** (`validation/fixtures/golden_set_20261107.csv`): 6 expected-relevant headlines, 9 expected-irrelevant and 1 borderline, from the week of 2026-11-02. Scored by `python -m validation.golden_eval`; see `data/events/golden_runs/20261107/classifier_runs/golden_v13/GOLDEN_REPORT.md`.
+
+| Run | Prompt | Expected relevant found | False positives | Cache write / read tokens | Cost |
+|---|---|---|---|---|---|
+| `golden_v13` | v1.3, cache on | 0 of 6 | 0 of 9 | 3,080 / 46,200 | USD 0.138 (USD 0.273 without caching) |
+
+The model applied the headline-only section but still judged each expected-relevant headline too vague.

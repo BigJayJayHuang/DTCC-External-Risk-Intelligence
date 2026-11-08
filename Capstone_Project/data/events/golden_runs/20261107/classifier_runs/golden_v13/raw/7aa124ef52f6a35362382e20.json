@@ -1,0 +1,40 @@
+{
+  "document_id": "9e761489f66b69c72da768dc03bb35762ddf18bde4adcc35a233f7a6e8068cb9",
+  "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5aaGJjZjh4ak5fMmZQeU9nTW93aHhlc3VqMGZ6MmxpLWN0MlFNWFBjaHlsc0kyUVRnczgxYkNVSDB5VDNkVWgtVl9PRGpiOWVVNWhWNE4wRGViUFhCN1VfcFpFbzFjR0xvSFBob2xRMHVyLWpj?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.3:aab5ad825775",
+  "request_sha256": "27ed46c54070f4e274a95aa04dad202c2b2f3233d9346d24f0dcb1596c1451fb",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_xqod44A1Nz0meb16BLgmuX",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline-only item. While it references a large tech stock plunge (~$1 trillion loss in Magnificent 7), it states no concrete event details (no market-wide selloff magnitude, no margin call, no liquidity stress, no named participant stress) beyond a generic headline. Insufficient text to support a card assignment under the headline-only rules."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1447,
+    "outputTokens": 119,
+    "totalTokens": 4646,
+    "cacheReadInputTokens": 3080,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2246
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

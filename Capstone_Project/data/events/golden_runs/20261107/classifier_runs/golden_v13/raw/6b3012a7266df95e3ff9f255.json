@@ -1,0 +1,40 @@
+{
+  "document_id": "45133d89231e58dc257ffcd6e4dda1d4ca3b19cce167cb50097d042824c0d72c",
+  "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVTZ1WTcyN01zdVpzb0xjTGc3SXk1RldJMDgtQ3IwOHNEeUZHel95TzB0T2o5V3VxdmcxNHpTc3RRQUlEX21QNkVsbzVzLXBReFhaTlBYRkpFaWxQcTNtajYtcU9xOXJvLWg1WkRiOWpWdmpqdUo0Q3RrRXM5blhoNWw4cDFNZ01neDVMWjNkUzNrWEdSb3ZHYklnYWV4UWJPYU9mTUdGSQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.3:aab5ad825775",
+  "request_sha256": "b4426859b4d0088bcd949f5b62f531a5cd2d9373798535545603b0cec9eb61ca",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_hDBINup8z6xRjHY6txPUcj",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline-only item is an explainer/opinion piece asking whether VIX can predict a crash. It describes no concrete market event — no actual selloff, no VIX spike that occurred, no named participant stress. No card Step 1 is triggered."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1532,
+    "outputTokens": 99,
+    "totalTokens": 4711,
+    "cacheReadInputTokens": 3080,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1960
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}
