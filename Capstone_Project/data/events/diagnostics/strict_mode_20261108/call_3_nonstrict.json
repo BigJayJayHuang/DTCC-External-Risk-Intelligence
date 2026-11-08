@@ -1,0 +1,68 @@
+{
+  "call": 3,
+  "strict": false,
+  "input": "v1.4 worked example 1",
+  "document_id": "diagnostic-example-1",
+  "content_scope": "headline_only",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1185,
+    "outputTokens": 357,
+    "totalTokens": 5250,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.01102464",
+  "raw_output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_p4DZQHAF3tmzfeGcX6yyEO",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": true,
+                "same_as_event_id": null,
+                "title": "Dow plunges 1,100 points in broad bank-led selloff",
+                "summary": "The Dow Jones Industrial Average fell 1,100 points in a broad market selloff led by bank stocks, signaling potential equity market stress.",
+                "card_ids": [
+                  "ECS-NSCC-LIQ",
+                  "XE-MEMBER"
+                ],
+                "certainty": 2,
+                "reach": 2,
+                "reach_basis": "market_wide",
+                "named_participants": [],
+                "announced_date": "2026-11-05",
+                "effect_date": "2026-11-05",
+                "stage": 1,
+                "source_tier": "other",
+                "outlet": "diagnostic input",
+                "url": "https://example.invalid/diagnostic-example-1",
+                "evidence_quotes": [
+                  "Dow plunges 1,100 points as bank stocks lead broad selloff"
+                ],
+                "confidence": 0.5,
+                "notes": "headline_only. XE-MEMBER stage 1 assigned due to bank stocks leading the selloff, suggesting stress at financial institutions, but no specific firm named so reach_basis remains market_wide. Certainty 2 as the event is reported as having occurred."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "attempts": 1,
+  "response_mode": "tool",
+  "fence_fallback": false,
+  "is_relevant": true,
+  "card_ids": [
+    "ECS-NSCC-LIQ",
+    "XE-MEMBER"
+  ],
+  "schema_valid_in_code": true,
+  "schema_errors": []
+}
