@@ -20,7 +20,7 @@ def outcomes(run_dir: Path, candidates: Path):
                 raw = json.loads((PROJECT / r["raw_output_file"]).read_text())
                 tool_input = next(p["toolUse"]["input"] for p in raw["output"]["message"]["content"] if "toolUse" in p)
                 original = tool_input.get("classification", tool_input)   # strict-anyof envelope or flat object
-                out[r["document_id"]] = {"is_relevant": True, "card_ids": r["card_ids"].split("|"), "certainty": int(r["certainty"]),
+                out[r["document_id"]] = {"is_relevant": True, "event_type": r.get("event_type") or "", "card_ids": r["card_ids"].split("|"), "certainty": int(r["certainty"]),
                                          "reach": int(r["reach"]), "original_certainty": original["certainty"], "original_reach": original["reach"],
                                          "confidence": float(r["llm_confidence"]), "notes": r["notes"], "effect_date": r["effect_date"],
                                          "flags": json.loads(r["validation_reasons"]), "evidence_quotes": json.loads(r["evidence_quotes"]),
@@ -80,12 +80,12 @@ def markdown(rows, m, summary):
     lines = ["# Golden-set result: " + summary["run_id"], "",
              f"Prompt `{summary['prompt_version']}` (cache {'on' if summary.get('prompt_cache') else 'off'}), model `{summary['model_id']}`. "
              f"Items processed: {summary['articles_processed']}; status `{summary['status']}`.", "",
-             "| # | Headline (outlet) | Expected | Result | is_relevant | card_ids | certainty (model→checked) | reach (model→checked) | confidence | notes | validate() / check flags | quote matched |",
-             "|---|---|---|---|---|---|---|---|---|---|---|---|"]
+             "| # | Headline (outlet) | Expected | Result | is_relevant | event_type | card_ids | certainty (model→checked) | reach (model→checked) | confidence | notes | validate() / check flags | quote matched |",
+             "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
     for n, r in enumerate(rows, 1):
         cert = f"{r['original_certainty']}→{r['certainty']}" if r.get("is_relevant") else ""
         reach = f"{r['original_reach']}→{r['reach']}" if r.get("is_relevant") else ""
-        lines.append(f"| {n} | {esc(r['title'])} ({esc(r['outlet'])}) | {esc(r['expected'])} | {esc(r['verdict'])} | {r.get('is_relevant')} | "
+        lines.append(f"| {n} | {esc(r['title'])} ({esc(r['outlet'])}) | {esc(r['expected'])} | {esc(r['verdict'])} | {r.get('is_relevant')} | {r.get('event_type', '') or ''} | "
                      f"{', '.join(r.get('card_ids') or [])} | {cert} | {reach} | {r.get('confidence', '')} | {esc(r.get('notes', ''))} | "
                      f"{esc('; '.join(r.get('flags') or [])) or '—'} | {'' if r['quote_matched'] is None else ('yes' if r['quote_matched'] else 'no')} |")
     lines += ["", f"- Expected relevant found with an acceptable card: **{m['found_with_acceptable_card']} of {m['expected_relevant']}** "

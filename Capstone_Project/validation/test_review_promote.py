@@ -85,15 +85,27 @@ class AmendmentD(Grouping):
             cand("A", "Tech stocks log worst day since 2020", "ECS-NSCC-LIQ", "MarketWatch", etype="market_move"),
             cand("B", "Hedge funds dump positions as selloff deepens", "ECS-NSCC-LIQ|FICC-GSD-11", "WSJ", day="2026-11-02", etype="market_move"),  # 3 days from A
             cand("C", "Arini offloads debt amid margin calls", "ECS-NSCC-LIQ|XE-MEMBER", "WSJ", day="2026-11-03", etype="firm_specific")])
-        by = {r["candidate_ids"]: r for r in rows}
-        self.assertEqual((by["A"]["review_tier"], by["A"]["scored_card_ids"], by["A"]["context_card_ids"], by["A"]["would_be_severity"]),
-                         ("context", "", "ECS-NSCC-LIQ", "{}"))
-        self.assertEqual((by["B"]["scored_card_ids"], by["B"]["context_card_ids"]), ("FICC-GSD-11", "ECS-NSCC-LIQ"))
-        self.assertEqual(list(json.loads(by["B"]["would_be_severity"])), ["FICC-GSD-11"])
-        self.assertIn(by["B"]["review_tier"], ("required", "auto"))
-        self.assertEqual((by["C"]["scored_card_ids"], by["C"]["context_card_ids"]), ("ECS-NSCC-LIQ|XE-MEMBER", ""))   # firm_specific is scored
-        self.assertEqual(sorted((c["card_id"], c["url"].split("/")[-1]) for c in ctx), [("ECS-NSCC-LIQ", "A"), ("ECS-NSCC-LIQ", "B")])
-        self.assertTrue(all(c["event_type"] == "market_move" and c["week"] == "2026-11-02" for c in ctx))
+        by = {(r["candidate_ids"], r["card_ids"]): r for r in rows}
+        self.assertEqual(sorted(by), [("A", "ECS-NSCC-LIQ"), ("B", "ECS-NSCC-LIQ"), ("B", "FICC-GSD-11"), ("C", "ECS-NSCC-LIQ|XE-MEMBER")])
+        a = by[("A", "ECS-NSCC-LIQ")]
+        self.assertEqual((a["review_tier"], a["scored_card_ids"], a["context_card_ids"], a["would_be_severity"]), ("context", "", "ECS-NSCC-LIQ", "{}"))
+        self.assertEqual(by[("B", "ECS-NSCC-LIQ")]["review_tier"], "context")
+        b11 = by[("B", "FICC-GSD-11")]
+        self.assertEqual((b11["scored_card_ids"], b11["context_card_ids"]), ("FICC-GSD-11", ""))       # market move on a non-indicator card is scored
+        self.assertIn(b11["review_tier"], ("required", "auto"))
+        c = by[("C", "ECS-NSCC-LIQ|XE-MEMBER")]
+        self.assertEqual((c["scored_card_ids"], c["context_card_ids"]), ("ECS-NSCC-LIQ|XE-MEMBER", ""))   # firm_specific is scored
+        self.assertEqual(sorted((x["card_id"], x["url"].split("/")[-1]) for x in ctx), [("ECS-NSCC-LIQ", "A"), ("ECS-NSCC-LIQ", "B")])
+        self.assertTrue(all(x["event_type"] == "market_move" and x["week"] == "2026-11-02" for x in ctx))
+
+    def test_multi_card_market_move_does_not_merge_cards(self):
+        rows, ctx = self.sheet_ctx([
+            cand("A", "Tech stocks log worst day since 2020", "ECS-NSCC-LIQ", "MarketWatch", etype="market_move"),
+            cand("B", "Selloff deepens, traders flee to Treasuries", "ECS-NSCC-LIQ|FICC-GSD-01", "MarketWatch2", etype="market_move"),
+            cand("C", "Treasury yields rise on jobs data", "FICC-GSD-01", "GuruFocus", day="2026-11-06", etype="market_move")])
+        self.assertEqual(sorted((r["card_ids"], r["candidate_ids"]) for r in rows), [("ECS-NSCC-LIQ", "A|B"), ("FICC-GSD-01", "B|C")])
+        self.assertEqual(sorted((x["card_id"], x["url"].split("/")[-1]) for x in ctx),
+                         [("ECS-NSCC-LIQ", "A"), ("ECS-NSCC-LIQ", "B"), ("FICC-GSD-01", "B"), ("FICC-GSD-01", "C")])
 
     def test_append_context_dedupes(self):
         with tempfile.TemporaryDirectory() as tmp:

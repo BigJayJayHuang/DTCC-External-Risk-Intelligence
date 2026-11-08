@@ -4,9 +4,11 @@
 
 Grouping (simple, explainable): two candidates describe the same occurrence when
   (1) their card_ids overlap, (2) their announced_dates are at most 2 days apart, and
-  (3a) both have event_type market_move (Amendment D: one market move per card and 2-day window), or
-  (3b) the word overlap of title + summary (lower-case words of 3+ letters, minus stop words) has Jaccard >= 0.25.
+  (3) the word overlap of title + summary (lower-case words of 3+ letters, minus stop words) has Jaccard >= 0.25.
 Groups are the connected components of that pairwise relation.
+market_move items are grouped per card instead (Amendment D): for each card, its market_move items whose
+announced_dates chain within 2 days form one proposed event for that card alone, whatever the wording. An item
+naming several cards joins one such event per card, so a multi-card item never merges different cards' groups.
 Syndication: sources from different outlets whose headlines have word Jaccard >= 0.8 count as one source when
 validate() counts independent outlets; the number collapsed is reported per event.
 Context rule (Amendment D): on an indicator card, an event of type market_move is context; it gets no would-be
@@ -57,8 +59,6 @@ def same_occurrence(a: dict, b: dict) -> bool:
         return False
     if abs(date.fromisoformat(a["announced_date"]) - date.fromisoformat(b["announced_date"])) > timedelta(days=MAX_DAYS):
         return False
-    if a.get("event_type") == "market_move" and b.get("event_type") == "market_move":
-        return True
     wa, wb = words(a["title"] + " " + a["summary"]), words(b["title"] + " " + b["summary"])
     return bool(wa and wb) and len(wa & wb) / len(wa | wb) >= JACCARD
 
@@ -77,6 +77,21 @@ def group(cands: list[dict]) -> list[list[dict]]:
     for i, c in enumerate(cands):
         groups.setdefault(find(i), []).append(c)
     return [sorted(g, key=lambda c: -c["confidence"]) for g in groups.values()]
+
+
+def market_move_groups(cands: list[dict]) -> list[list[dict]]:
+    """Per card: market_move items whose announced_dates chain within MAX_DAYS; each member restricted to that card."""
+    out = []
+    for card in sorted({c for m in cands for c in m["card_ids"]}):
+        items = sorted((m for m in cands if card in m["card_ids"]), key=lambda m: (m["announced_date"], m["candidate_id"]))
+        current = []
+        for m in items:
+            if current and date.fromisoformat(m["announced_date"]) - date.fromisoformat(current[-1]["announced_date"]) > timedelta(days=MAX_DAYS):
+                out.append(current); current = []
+            current.append({**m, "card_ids": [card]})
+        if current:
+            out.append(current)
+    return [sorted(g, key=lambda c: -c["confidence"]) for g in out]
 
 
 def load_candidates(path: Path) -> list[dict]:
@@ -141,7 +156,8 @@ def proposed_event(members: list[dict], week: date, catalog: set[str], major: se
     else:
         tier = "required" if (S is not None and S >= 4) or any((v["severity"] or 0) >= 6 for v in severity.values()) else "auto"
     ids = sorted(m["candidate_id"] for m in members)
-    pid = "PE-" + week.isoformat() + "-" + hashlib.sha256("|".join(ids).encode()).hexdigest()[:8]
+    key = "|".join(ids) + ("#" + "|".join(event.card_ids) if event_type == "market_move" else "")   # per-card market-move events
+    pid = "PE-" + week.isoformat() + "-" + hashlib.sha256(key.encode()).hexdigest()[:8]
     ctx_rows = [{"week": week.isoformat(), "card_id": c, "title": m["headline"] or m["title"], "outlet": m["outlet"], "url": m["url"],
                  "event_type": event_type, "proposed_event_id": pid} for c in context for m in members]
     return {"proposed_event_id": pid, "title": rep["title"], "event_type": event_type, "card_ids": "|".join(event.card_ids),
@@ -168,7 +184,10 @@ def build(candidates: Path, week: date) -> tuple[list[dict], list[dict]]:
     _, _, catalog, _ = prompt_parts_v13(PROMPT_V14, "v1.4")
     with MAJOR.open(encoding="utf-8-sig", newline="") as f:
         major = {r["name"] for r in csv.DictReader(f) if r.get("name")}
-    built = [proposed_event(g, week, catalog, major) for g in group(load_candidates(candidates))]
+    cands = load_candidates(candidates)
+    moves = [c for c in cands if c["event_type"] == "market_move"]
+    others = [c for c in cands if c["event_type"] != "market_move"]
+    built = [proposed_event(g, week, catalog, major) for g in market_move_groups(moves) + group(others)]
     rows = sorted((r for r, _ in built), key=lambda r: (-r["confidence"], r["proposed_event_id"]))
     return rows, [c for _, ctx in built for c in ctx]
 
