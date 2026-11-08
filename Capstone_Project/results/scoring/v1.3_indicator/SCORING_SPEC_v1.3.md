@@ -211,9 +211,9 @@ Approved: Wenqi Cai, 2026-11-05T05:15Z. Written before the re-run of the weeks o
 - **B3.** `shared_signal_series` is replaced by `shared_signal_fields`: `{card_id: [signal field]}` for each card in `shared_signal`.
 - **B4.** The two records of one cross-entity card still do not list each other. Records that do not take S from a market signal have `shared_signal = []`.
 
-## Amendment C — unreviewed AI-classified events (PROPOSED, not approved)
+## Amendment C — unreviewed AI-classified events
 
-Status: PROPOSED 2026-11-08; awaiting approval. It changes no existing output: no register row has `entered_by = llm-auto` yet, and `validation/promote_reviewed.py` refuses to insert such rows until an `Approved:` line follows this heading.
+Approved: Wenqi Cai, 2026-11-08T01:10Z. Proposed 2026-11-08. When approved it changed no existing output: no register row had `entered_by = llm-auto`. `validation/promote_reviewed.py` inserts such rows only while this `Approved:` line is present.
 
 - **C1.** A register event with `entered_by = "llm-auto"` or `review_status = "unreviewed"` (inserted by `promote_reviewed.py` without a human decision) is an *unreviewed AI event*. Each entry in `event_manual.events` carries `entered_by` and `review_status`.
 - **C2.** When an unreviewed AI event alone sets S (`S_source = event_manual`), the record has `show_on_main = false`, whatever its severity. If the market S is equal or higher, the market alone justifies S, and `show_on_main` follows §7.
