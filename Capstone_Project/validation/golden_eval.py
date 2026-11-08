@@ -6,6 +6,7 @@
 Writes GOLDEN_REPORT.md next to the run and prints the metrics as JSON. Reads only; calls no model.
 """
 import argparse, csv, json
+from decimal import Decimal
 from pathlib import Path
 
 from .llm_classifier import PROJECT
@@ -17,7 +18,8 @@ def outcomes(run_dir: Path, candidates: Path):
         with candidates.open(encoding="utf-8", newline="") as f:
             for r in csv.DictReader(f):
                 raw = json.loads((PROJECT / r["raw_output_file"]).read_text())
-                original = next(p["toolUse"]["input"]["classification"] for p in raw["output"]["message"]["content"] if "toolUse" in p)
+                tool_input = next(p["toolUse"]["input"] for p in raw["output"]["message"]["content"] if "toolUse" in p)
+                original = tool_input.get("classification", tool_input)   # strict-anyof envelope or flat object
                 out[r["document_id"]] = {"is_relevant": True, "card_ids": r["card_ids"].split("|"), "certainty": int(r["certainty"]),
                                          "reach": int(r["reach"]), "original_certainty": original["certainty"], "original_reach": original["reach"],
                                          "confidence": float(r["llm_confidence"]), "notes": r["notes"], "effect_date": r["effect_date"],
@@ -34,10 +36,14 @@ def outcomes(run_dir: Path, candidates: Path):
     return out
 
 
-def evaluate(fixture: Path, run_dir: Path, candidates: Path):
+def evaluate(fixture: Path, run_dirs, candidates):
     with fixture.open(encoding="utf-8", newline="") as f:
         gold = list(csv.DictReader(f))
-    res = outcomes(run_dir, candidates)
+    run_dirs = [run_dirs] if isinstance(run_dirs, Path) else run_dirs
+    candidates = [candidates] if isinstance(candidates, Path) else candidates
+    res = {}
+    for rd, cand in zip(run_dirs, candidates):     # several partial runs of one golden set
+        res.update(outcomes(rd, cand))
     rows, m = [], {"expected_relevant": 0, "found_with_acceptable_card": 0, "found_other_card": 0,
                    "negatives": 0, "false_positives": 0, "borderline": []}
     for g in gold:
@@ -96,12 +102,19 @@ def markdown(rows, m, summary):
 def main():
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     p.add_argument("--fixture", type=Path, required=True)
-    p.add_argument("--run-dir", type=Path, required=True)
-    p.add_argument("--candidates", type=Path, required=True)
+    p.add_argument("--run-dir", type=Path, action="append", required=True, help="repeatable; later runs fill items earlier runs did not process")
+    p.add_argument("--candidates", type=Path, action="append", required=True, help="one per --run-dir, same order")
+    p.add_argument("--report", type=Path, help="default: GOLDEN_REPORT.md in the first run dir")
     a = p.parse_args()
     rows, m = evaluate(a.fixture, a.run_dir, a.candidates)
-    summary = json.loads((a.run_dir / "summary.json").read_text())
-    (a.run_dir / "GOLDEN_REPORT.md").write_text(markdown(rows, m, summary), encoding="utf-8")
+    runs = [json.loads((d / "summary.json").read_text()) for d in a.run_dir]
+    summary = dict(runs[0], run_id=" + ".join(r["run_id"] for r in runs), status=" + ".join(r["status"] for r in runs),
+                   articles_processed=sum(r["articles_processed"] for r in runs))
+    for k in ("input_tokens", "output_tokens", "cache_write_input_tokens", "cache_read_input_tokens"):
+        summary[k] = sum(r[k] for r in runs)
+    for k in ("estimated_cost_usd", "estimated_cost_without_cache_usd"):
+        summary[k] = str(sum(Decimal(r.get(k) or "0") for r in runs))
+    (a.report or a.run_dir[0] / "GOLDEN_REPORT.md").write_text(markdown(rows, m, summary), encoding="utf-8")
     print(json.dumps(m, indent=2, ensure_ascii=False))
 
 

@@ -1,0 +1,58 @@
+{
+  "document_id": "b2e11372d63e77c8ae05cee711f5d2816c1664dc581e7fd2c8858eb961ebd9ca",
+  "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQbDA4cHA0VW1QeXpLdHhZRTQ3UENaTmpvbmFET1dZTTNmX1RHSTR1X0VJZFVkRVlKV3dNeWRzZHZaN2VDSjVuaDlCV0JDQ0VKb3RVMjFOd1d6OW5LRGx2WTN3UGNBTGJ6WDBkX0dOU2d1XzZBMHU5Q3JORFZDb0gxWnhpZ0hMdnNWMmZjWmg0a1VvZlZaUTRIenVQUlh5ZE9vNG1kMnl5dkROUzRWMVBXcE1R?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "9ba408d7fb7adad3dce70c17eeae34b7380771e314ca1d468d74757d11e91604",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_fOTsYQPv5tIrxu0NsLFY6i",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "same_as_event_id": null,
+              "title": "Tech stocks suffer worst day since 2020 in AI selloff",
+              "summary": "Tech stocks experienced their worst single-day decline since 2020, with the selloff described as \"carnage\" in the AI trade, indicating a sharp broad equity market downturn.",
+              "card_ids": [
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-05",
+              "effect_date": "2026-11-05",
+              "stage": null,
+              "source_tier": "major_media",
+              "outlet": "MarketWatch",
+              "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQbDA4cHA0VW1QeXpLdHhZRTQ3UENaTmpvbmFET1dZTTNmX1RHSTR1X0VJZFVkRVlKV3dNeWRzZHZaN2VDSjVuaDlCV0JDQ0VKb3RVMjFOd1d6OW5LRGx2WTN3UGNBTGJ6WDBkX0dOU2d1XzZBMHU5Q3JORFZDb0gxWnhpZ0hMdnNWMmZjWmg0a1VvZlZaUTRIenVQUlh5ZE9vNG1kMnl5dkROUzRWMVBXcE1R?oc=5",
+              "evidence_quotes": [
+                "Tech stocks log worst day since 2020 as carnage comes to the AI trade"
+              ],
+              "confidence": 0.55,
+              "notes": "headline_only; sharp equity selloff in tech/AI sector described as worst day since 2020, consistent with ECS-NSCC-LIQ Step 1 (sharp equity selloff). No magnitude, volume, or margin call details provided. Confidence capped due to headline-only content."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1513,
+    "outputTokens": 745,
+    "totalTokens": 5943,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 4543
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

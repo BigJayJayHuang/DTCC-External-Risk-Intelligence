@@ -173,3 +173,31 @@ With the 81 Google items, 122 items were prepared (7 full text, 26 summary, 89 h
 `load_news` now reports items outside `--start`/`--end` per source (`coverage.outside_date_window_by_source`).
 
 **Run of 2026-11-08** (window 2026-11-01 to 2026-11-08, 83 items, cache on): 0 relevant, USD 0.68 (USD 1.58 without caching). See the [run report](../data/events/CLASSIFIER_RUN_2026-11-08.md). It also explains why every strict-schema run so far returned 0 relevant, and suggests a two-call check.
+
+## Strict mode forced "irrelevant"; flat response schema (2026-11-08)
+
+**Diagnostic** (`validation/llm_strict_diagnostic.py`, outputs in `data/events/diagnostics/strict_mode_20261108/`): the same v1.4 request was sent with the strict `anyOf` tool schema and with strict off.
+
+| Input | Strict on | Strict off |
+|---|---|---|
+| v1.4 worked example 1 | irrelevant | relevant (ECS-NSCC-LIQ) |
+| Golden "Tech stocks log worst day since 2020" | irrelevant | relevant (ECS-NSCC-LIQ) |
+
+In one strict call the model's notes said "Setting is_relevant true" while the returned field was false. Constrained decoding never let the relevant branch through, which explains 0 relevant in every earlier strict run.
+
+**Flat schema** (`--response-schema flat`, the CLI default):
+- One object; every field is always present and null where it does not apply. No `anyOf`, `oneOf`, `if`/`then` or `const`.
+- The tool is still forced, but strict mode is off.
+- `validate_flat()` checks types, enums, catalog card_ids, ISO dates, confidence 0–1, and that relevant records fill every relevant field. Failures go to `failed.jsonl` and are never retried.
+- `response_mode` is recorded.
+- `--response-schema strict-anyof` reproduces earlier runs. `llm_daily.py` still calls the strict builders and should be switched before activation.
+
+**Golden set with v1.4 + flat schema** (`data/events/golden_runs/20261108/GOLDEN_REPORT.md`; the first run hit its USD 0.30 sub-cap after 14 items, so the last 2 were run separately):
+
+| Measure | Result |
+|---|---|
+| Expected relevant found with an acceptable card | 5 of 6 |
+| Non-borderline negatives wrongly marked relevant | 3 of 9 |
+| Cost | USD 0.270 |
+
+The bar for re-running the 83-item window (≥ 5/6 and ≤ 1 false positive) was not met.

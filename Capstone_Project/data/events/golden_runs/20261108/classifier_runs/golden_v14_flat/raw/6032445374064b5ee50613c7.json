@@ -1,0 +1,54 @@
+{
+  "document_id": "af813be59c6e25c3f30db7f7b7e9789641e122953c6379edec26b9a3dd958479",
+  "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOQkc0MGJkMWs5REZEYXFVRnRKaU5WSVBMMk0wRmh1Q0QxRHBxeFJhUGZTLTBMTjMyMzF1WGxfb05PR1EtTGtrajc0bDlNUFNEWlJSUU94ZkNJQUJpVTF2Y1RDYnh0eks2T0ZMeVMyZXdBYXpyR1hVVFhIQ2lIT3UxcXJkM3J1TFY1ZnVhWFVIc0htM2xKQ0w3UXluMDFsTzlqNUd3cDRJeG9tNUE1d1ZESk1TZzRNeFY4VVYyb01hRW04T1RoQjh5LUZwUXNycTB0VEE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "27d470d614a865ccc49a571d77ca52575f46045374d077eec6922d7d919fb20e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_6vKCqlclVZ184PPsSbCcEB",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Amcor (AMCR) is a packaging company, not a financial firm or DTCC participant. A stock downgrade on a non-financial issuer does not match any card's Step 1 event.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1562,
+    "outputTokens": 391,
+    "totalTokens": 5638,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2634
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}
