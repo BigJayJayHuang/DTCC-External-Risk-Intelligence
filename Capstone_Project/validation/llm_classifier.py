@@ -31,7 +31,9 @@ from . import event_scoring as E
 PROJECT = Path(__file__).resolve().parents[1]
 PROMPT = Path(__file__).with_name("llm_event_classifier_prompt.md")
 PROMPT_V13 = Path(__file__).with_name("llm_event_classifier_prompt_v1.3.md")
-PROMPT_FILES = {"v1.2": PROMPT, "v1.3": PROMPT_V13}
+PROMPT_V14 = Path(__file__).with_name("llm_event_classifier_prompt_v1.4.md")
+PROMPT_FILES = {"v1.2": PROMPT, "v1.3": PROMPT_V13, "v1.4": PROMPT_V14}
+SPLIT_PROMPTS = {"v1.3", "v1.4"}   # static system text + cachePoint, per-item user message
 HEADLINE_SCOPES = {"headline_only", "headline_snippet"}
 CONFIG = Path(__file__).with_name("llm_classifier_config.json")
 REGISTER = PROJECT / "data/events/event_register.csv"
@@ -90,7 +92,7 @@ def publication_date(row: dict) -> str:
 def load_news(path: Path, start: date, end: date, limit: int | None):
     with path.open(encoding="utf-8-sig", newline="") as handle:
         rows = list(csv.DictReader(handle))
-    chosen, rejected, seen, latest = [], Counter(), set(), None
+    chosen, rejected, seen, latest, outside = [], Counter(), set(), None, Counter()
     for row in rows:
         try:
             published = publication_date(row)
@@ -99,6 +101,7 @@ def load_news(path: Path, start: date, end: date, limit: int | None):
             continue
         latest = max(latest or published, published)
         if not start.isoformat() <= published <= end.isoformat():
+            outside[row.get("feed_id") or row.get("source_id") or "unknown"] += 1
             continue
         if not row.get("url") or not row.get("title"):
             rejected["missing_title_or_url"] += 1
@@ -146,6 +149,7 @@ def load_news(path: Path, start: date, end: date, limit: int | None):
         chosen = chosen[:limit]
     return chosen, {"source_rows": len(rows), "eligible_articles": available,
                     "selected_articles": len(chosen), "input_rejections": dict(rejected),
+                    "outside_date_window_by_source": dict(outside),
                     "latest_publication_date": latest}
 
 
@@ -162,7 +166,7 @@ def prompt_parts(path: Path):
     return body, catalog, set(cards), "event-rubric-v1.2:" + sha(path.read_bytes())[:12]
 
 
-def prompt_parts_v13(path: Path = PROMPT_V13):
+def prompt_parts_v13(path: Path = PROMPT_V13, label: str = "v1.3"):
     """v1.3: header / static system text / per-item user template / card catalog. Returns the system text with the
     catalog filled in (identical for every item, so it can be cached), the user template, cards and version."""
     parts = path.read_text(encoding="utf-8").split("\n---\n")
@@ -176,7 +180,7 @@ def prompt_parts_v13(path: Path = PROMPT_V13):
     if any(k in system_body for k in ("{RECENT_EVENTS}", "{ARTICLE}")) or "{CARD_CATALOG}" in user_template \
             or system_body.count("{CARD_CATALOG}") != 1 or not all(k in user_template for k in ("{RECENT_EVENTS}", "{ARTICLE}")):
         raise ValueError("Static system text and per-item user template are not separated as required")
-    return system_body.replace("{CARD_CATALOG}", catalog), user_template, set(cards), "classifier-prompt-v1.3:" + sha(path.read_bytes())[:12]
+    return system_body.replace("{CARD_CATALOG}", catalog), user_template, set(cards), f"classifier-prompt-{label}:" + sha(path.read_bytes())[:12]
 
 
 def render_user_v13(template: str, register: list[dict], article: dict):
@@ -441,14 +445,14 @@ def run(args, session=None):
     if args.start > args.end or args.max_articles is not None and args.max_articles < 1:
         raise ValueError("Invalid date window or --max-articles")
     prompt_version = getattr(args, "prompt_version", "v1.2")
-    cache = prompt_version == "v1.3" and getattr(args, "prompt_cache", "on") == "on"
+    cache = prompt_version in SPLIT_PROMPTS and getattr(args, "prompt_cache", "on") == "on"
     prompt_path = PROMPT_FILES[prompt_version]
-    originals = {p: sha(p.read_bytes()) for p in (args.register, PROMPT, PROMPT_V13)}
+    originals = {p: sha(p.read_bytes()) for p in (args.register, *PROMPT_FILES.values())}
     articles, coverage = load_news(args.news, args.start, args.end, args.max_articles)
     if prompt_version == "v1.2":
         body, catalog, cards, version = prompt_parts(PROMPT)
     else:
-        system_text, user_template, cards, version = prompt_parts_v13(PROMPT_V13)
+        system_text, user_template, cards, version = prompt_parts_v13(prompt_path, prompt_version)
     register = load_register(args.register)
     with args.major.open(encoding="utf-8-sig", newline="") as handle:
         major = {r["name"] for r in csv.DictReader(handle) if r.get("name")}
@@ -585,7 +589,7 @@ def run(args, session=None):
                 if isinstance(result, dict) and result.get("is_relevant") is True:
                     summary["relevant"] += 1
                 checked, reasons = check_classification(result, article, schema, cards, recent_ids, major,
-                                                        headline_rules=prompt_version == "v1.3")
+                                                        headline_rules=prompt_version in SPLIT_PROMPTS)
                 if result["is_relevant"]:
                     counts.update(checked["card_ids"])
                     row = csv_row(article, result, checked, reasons, config, version, usage, cost, mode, fallback, attempt_count,
@@ -628,7 +632,7 @@ def run(args, session=None):
                        candidates_per_card=dict(counts), failed_check_reasons=dict(failures),
                        articles_unprocessed=len(articles) - summary["articles_processed"],
                        event_register_unchanged=sha(args.register.read_bytes()) == originals[args.register],
-                       prompt_unchanged=all(sha(f.read_bytes()) == originals[f] for f in (PROMPT, PROMPT_V13)))
+                       prompt_unchanged=all(sha(f.read_bytes()) == originals[f] for f in PROMPT_FILES.values()))
         dump(run_dir / "summary.json", summary)
     print(json.dumps(summary, indent=2), flush=True)
     if not summary["event_register_unchanged"] or not summary["prompt_unchanged"]:
@@ -650,7 +654,7 @@ def parser():
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--run-id")
     p.add_argument("--prompt-version", choices=sorted(PROMPT_FILES), default="v1.2")
-    p.add_argument("--prompt-cache", choices=["on", "off"], default="on", help="v1.3 only: Converse cachePoint after the static system text")
+    p.add_argument("--prompt-cache", choices=["on", "off"], default="on", help="v1.3/v1.4: Converse cachePoint after the static system text")
     p.add_argument("--run-date", type=date.fromisoformat, default=datetime.now(ZoneInfo("America/New_York")).date())
     return p
 

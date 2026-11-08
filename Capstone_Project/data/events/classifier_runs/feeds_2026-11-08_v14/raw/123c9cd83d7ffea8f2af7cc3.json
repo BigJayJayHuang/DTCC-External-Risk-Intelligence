@@ -1,0 +1,46 @@
+{
+  "document_id": "1d2ccb7a4e0491eadacef635408de6164849cbb9d73524dbf45180eea18e628f",
+  "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBmODNtWWZVYXVoSksyVDJsSzc3VUxSREliUklaLXF2am05OU9LbWw5QkxkRmtuaUhFU0Vfdld4Rko5WllWMXNEZkNSUnBKUVR0cElPVw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "7fbaed3677a8c8153e3d403c5123b3c785292b10901c0ddd57a00ca8ab9f67a5",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_U3JKU7CRtqTo3A0SrycCfr",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "South Korea's planned T+1 settlement cycle is a non-US market development with no stated link to US markets or DTCC participants. The article is headline-only and describes a foreign regulatory initiative with no connection to DTCC processes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1395,
+    "outputTokens": 95,
+    "totalTokens": 5198,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 3708,
+    "cacheDetails": [
+      {
+        "ttl": "5m",
+        "inputTokens": 3708
+      }
+    ]
+  },
+  "metrics": {
+    "latencyMs": 1973
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

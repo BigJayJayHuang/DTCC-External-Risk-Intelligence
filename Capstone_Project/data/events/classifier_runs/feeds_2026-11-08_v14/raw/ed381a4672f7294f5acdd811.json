@@ -1,0 +1,40 @@
+{
+  "document_id": "657cb0906d19e88eae934cb5a18555dc4b05f2deb44c831f95106df741c01c02",
+  "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBkRkZwaFV3d0JFQm1GUlY5c0VLYVJBMjZqOTQxTC1aLTAyc29OSGsyQ0ZtSGJqQm9hbGZKYWNhMm40OEQ1NF82b3M2NmlTNE51UVNhTXk0VjIzcmh4WFJ5ckI2SGx0S0s0dzhlZjZBUTZMaER1MGc?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "93ffebd83225624662d431416ddee049018be2642ad8231399f21dae87924b51",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ZftCTKMw5rn7ASt8QFaBfR",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Event is in the Taiwan stock market involving a local bank (Bank SinoPac) interbank transfer disruption. No stated link to US markets or DTCC participants. Non-US market event with no connection to any catalog card."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1467,
+    "outputTokens": 92,
+    "totalTokens": 5267,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1775
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

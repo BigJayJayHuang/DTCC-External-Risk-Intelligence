@@ -165,3 +165,11 @@ The model applied the headline-only section but still judged each expected-relev
 | SEC | 25 items, 25 kept; article pages HTTP 403, so RSS summaries |
 
 With the 81 Google items, 122 items were prepared (7 full text, 26 summary, 89 headline-only), published 2024-07-29 to 2026-11-07. None of the six golden positives appear in the publisher feeds. The dry-run estimate, with v1.3 as a stand-in, is USD 1.82 with caching (USD 3.00 at the full input rate). The v1.4 run awaits the v1.4 prompt text.
+
+## Prompt v1.4 (2026-11-08)
+
+`llm_event_classifier_prompt_v1.4.md` is v1.3 with two sections inserted after the Rules list, inside the cached system text: "Relevance vs. evidence strength" and "Worked examples (headline-only input)". Nothing else changed; its file header still says v1.3, and the code labels it `classifier-prompt-v1.4:<sha12>`. Select it with `--prompt-version v1.4`; v1.2 stays the default.
+
+`load_news` now reports items outside `--start`/`--end` per source (`coverage.outside_date_window_by_source`).
+
+**Run of 2026-11-08** (window 2026-11-01 to 2026-11-08, 83 items, cache on): 0 relevant, USD 0.68 (USD 1.58 without caching). See the [run report](../data/events/CLASSIFIER_RUN_2026-11-08.md). It also explains why every strict-schema run so far returned 0 relevant, and suggests a two-call check.

@@ -1,0 +1,40 @@
+{
+  "document_id": "cc0128c1d5beaa55aa6019f1721d052bc90ad7bf31f6a4b39cf22fdb644b5135",
+  "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPc0F5ZnN2MWVVaFdxelhqWU5rRkprc21QQ0w5SWNJWm5OZEt5VmlvR2NOcDdjdHpRNEhObHFPMzkxdzUyMGtZNEJyMTF6UWxyTzJibFVfLXhIS09MZC1Ca0JNWnc4TDMzVlN3LWhJdnBMczRYLVBOYVZpTDFkUzdpYk03QWFYYnhJSElSeHhzbnkyRy10NDczSjIwdXNCOTVmRlkxX2I5VF9sZ0w2VHlsajFB?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "3791e5ec63611976417a7c1db620dfecd7d48abef14508346d09b831909421be",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_cNHXhopCeRvwVDYSG1A6xh",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about political/electoral developments in Texas and their implications for SpaceX, a non-financial aerospace company. No event matching any card's Step 1 (market stress, clearing mandates, member default, cyber, settlement disruption, etc.) is described."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1490,
+    "outputTokens": 99,
+    "totalTokens": 5297,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1873
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

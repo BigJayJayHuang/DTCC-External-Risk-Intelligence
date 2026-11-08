@@ -1,0 +1,40 @@
+{
+  "document_id": "f290926ca5974baa5e9cf1b100f2b4c80fa3cf14326992f443dfd6346b285c05",
+  "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPV0VpLXotVnNwVDBRRngtVXNuRGw0TUU5d1VCYXNTRm9tMVZwd0pZb01Vd0VtRXMtWVVaMjRNOGwtVmQ1VkpycjVYQUZNRDVsN1hLRmRPaVlUcmMyLW0wUVZwenlsR21VNFNzeUUtZ2FxQ1FsWWZlV0lsVHNXQ0NsVjhpWDRfVmhxZUcxdXNrQTN0SGhZVGoza2x4R2FIVWdTci1FRUNZZ2Q2ZHMyR0E?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "806a70e97b3ab77a8dd32e24842b0ae46a97f09560873700905f7a5c28929829",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_6P7x20MP4p0jU6wWXNofFV",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline describes sterling/dollar FX movement and a stock rout in a non-US context (UK rate rise). No concrete event tied to a US market-wide equity selloff magnitude, no named DTCC participant under stress, and no detail sufficient to confirm a US equity selloff affecting NSCC liquidity. Headline-only with no US market specifics; does not meet the threshold for any catalog card."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1505,
+    "outputTokens": 132,
+    "totalTokens": 5345,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2606
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

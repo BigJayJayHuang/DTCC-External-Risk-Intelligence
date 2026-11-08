@@ -1,0 +1,40 @@
+{
+  "document_id": "2d4cce0bb25cf78f7f8118786d7229755c2c4aa20e7743e2ab64e7763fd8a701",
+  "url": "https://www.sec.gov/newsroom/press-releases/2026-112-sec-adopts-amendments-update-definitions-small-entity-investment-companies-investment-advisers",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "fea287fcdbd72299a9dbc0599fe259965ee5a9cbf1cace7bdce75478c1376401",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_vFuwkJpGNYRj1YBGs9O5sV",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes SEC amendments updating definitions of 'small entity' for investment companies and investment advisers under the Regulatory Flexibility Act. This is an administrative/definitional rulemaking with no connection to any card's Step 1 event (no market stress, no clearing mandate milestone, no member default, no cyber event, no settlement disruption, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1366,
+    "outputTokens": 118,
+    "totalTokens": 5192,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2065
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "60532a7de3d06f44bf56cf99aa4f8f3cb769de15903bc3832168023576e67383",
+  "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQNkRFTmtaMG1UMjlmREhiQWwxZHhZeWd0RzRmN00zd1NtUnUzb2RCbzlwR09ibXBsWVgtWjJ4Szcycl94cjkxdzlVRE9kYTFIM0tOWVE0MGJWLTByeXpabWVhRy12UUlLdXVINVo1NXQ5akw4ajlvOWxLWG52T3BWdnk4QkY5X09DcHV0WmJFMFdzYjNhWGNPZF9qdjdmbERFb09YNzZB?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "18309f2f92135832812ab61f2e5897db4d7d206ac0a613434c8a1c9ccb1adda1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_SwpkGaQ4HKjgNvKPGas9UQ",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about Deutsche Bank downgrading Clariant (a Swiss specialty chemicals company) stock — a non-financial issuer in another industry. No event matching any card's Step 1 is described."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1479,
+    "outputTokens": 86,
+    "totalTokens": 5273,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1554
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

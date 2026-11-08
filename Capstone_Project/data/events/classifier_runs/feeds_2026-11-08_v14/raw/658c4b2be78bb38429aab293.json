@@ -1,0 +1,40 @@
+{
+  "document_id": "bcabaea690df8b7734e895eaa9e72f6354af94a400a135653371d131dd5012a7",
+  "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQUUxNX09HeGJMOFFkSGhaSWhCNWtuZk5oeGY3ZllSTld6SEdaM2NmbE5CVnZDNHJxY045dGFzZ2tWWUFtR0F5eTM4ZTJneDA0UWY3UkRYWGFLTXRxZ0Nod21ONkUxSEF0ci1hSFJvVkhUWWNEbERjOFNrY0V5VFlJQlVJMmhhWHVvODllTUV6ZG5ZZw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "794fd3b02c666c2ff6c76f1032bd33d30dbd4418633f1e24f11bafae79fea0c7",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ENWjVZu4ABBebycqmIRDyF",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline describes a macroeconomic growth forecast downgrade by the Bank of France. This is a non-US central bank issuing a GDP outlook revision — no market event, member stress, cyber incident, or other catalog-type event affecting DTCC processes is described."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1446,
+    "outputTokens": 100,
+    "totalTokens": 5254,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2022
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

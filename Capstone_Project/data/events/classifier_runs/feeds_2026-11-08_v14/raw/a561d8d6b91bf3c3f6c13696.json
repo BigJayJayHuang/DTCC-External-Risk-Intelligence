@@ -1,0 +1,40 @@
+{
+  "document_id": "f8414fe098efbf6850548570c21b4a20deaade1af50ec18e5728f5ac3b9a1843",
+  "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNdHJEdXJ6QTBBMDdBa2xGcmF2VXhTMVR2Z3NUa0M5Tmk2WlFtRTdfUjBmTFVWRWcybjBrLU53RVBxMHdHSmMzVjVHaHZUOC0wZlFGZnJ0aS1UeW5JQ3R2TjlQTF9YWWk1MVlQZlVwekEyb1R5NEtmLTdkM2Z4WHFYMG81ZjRMMnNzanRTbFVNbVRtVnNfRVU4aUdCTEdQQQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "0929d0b608a488ea422c2087d45b1f44f1282fabb3962548667c8fc8641181bf",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_pdA52qa3gmY9q2PPXy5yzR",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline describes stock price moves at real-estate/mortgage companies (Rocket Companies, Compass, Zillow) reacting to a Treasury yield retreat. No concrete market-wide selloff, yield spike, or other Step-1 event described — the yield move is only implied as background context for equity gains. The article is about non-DTCC-member issuer stock performance, not a Treasury market stress event. No card Step-1 is triggered."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1503,
+    "outputTokens": 141,
+    "totalTokens": 5352,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2634
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

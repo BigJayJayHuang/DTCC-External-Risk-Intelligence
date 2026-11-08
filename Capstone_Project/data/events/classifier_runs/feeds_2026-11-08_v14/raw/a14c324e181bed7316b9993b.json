@@ -1,0 +1,40 @@
+{
+  "document_id": "2047d56e6e234493381abb7d8e9cac6f64b32dee3ccfd2d641bca6e91857754e",
+  "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPQTREcm13Mlg0LTBDQ0c5bEVjYXctTFJEcVZYcF8xMDlBS3NreExrXzlvd0NQejZaekxES3dvSHB5MVppem51LXhJUHk5Y3FqN013Rm1hNnRpald1T255WFRaZ2xOV1cyVUNxTF9lVWFFQnlSa3V5SlFFNjhpRlBlR0F1d1JnVzBpTVVnbTNTczhaTUFYU2l1aXEtSVhCay1wYzVNdXBRcE5BOEp6VkNKQmExREk4NWR0bDZDa0xmWU8ybU04QWc?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "2979fa78f4ae01a5d0e44a9df9069bf6888e9cb8c0b9caedaf9989a5a7e0381a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_acvhBEbZnL32Mf6AJp9pLB",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline reports a 1.1% share price decline following an analyst downgrade of Bank of America. A minor share price move driven by an analyst opinion is not a stress signal (no large loss, liquidity trouble, margin call, or regulatory action reported). Does not meet the threshold for XE-MEMBER or any other card."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1532,
+    "outputTokens": 114,
+    "totalTokens": 5354,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1894
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

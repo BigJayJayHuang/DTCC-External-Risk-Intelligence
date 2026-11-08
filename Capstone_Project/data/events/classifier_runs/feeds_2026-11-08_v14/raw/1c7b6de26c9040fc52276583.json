@@ -1,0 +1,40 @@
+{
+  "document_id": "ca46fa9c8a6701422e587e749b2cfc8e2df0734d579eb7888048445822abd60d",
+  "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNanNKY19wVi1keHpMejFwcURKY0kyNFJrOTNwakVOTEhvZU5HLWNHcllQa0ppWU9XQlV4ZU5QSUlXTmQ3RVpmTEdtMTZYa2V1LWM4VlVvMktLRUVWNmhSR1pqNy1zdXV5RjZvLVJUeml3U2JMQVlRc2cyc2JDbmc4RTBvMXY?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "3ea9dbc9bf0eeaf721f7f56da00e3217fb6fd68daee32eaff28d073c18254d44",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_0XEJozk7B2QN53HnhRGbrH",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Cyberattack is on a French blood bank (healthcare/non-financial sector), with no stated link to US financial markets, DTCC participants, or any entity in the card catalog. Not relevant to any card."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1442,
+    "outputTokens": 90,
+    "totalTokens": 5240,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1781
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

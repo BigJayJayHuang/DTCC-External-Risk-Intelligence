@@ -1,0 +1,40 @@
+{
+  "document_id": "e4cc257ee7ac4c90b08ecb5dc0a53b713447e374bb8e72fe12ee78ebb41a96c1",
+  "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOZ29VMXRlekhORHlZRHZ1dk91d2V5eVpSeXp2eFBuTlB0a0NHelpFbjhZT3Vnd3pJRXZkd09PRnVwamFKeU9FeTN4WWdvOW4zTUE3WTZMVGU4dHZBb3Rsa24wT09TOWRmRWZTYlVXcGlGZ09FZ1A0cTJlTTh1YzlqdTZ2Qm90cDlPcTZ4YjlRcTRTenQ2Mm1J?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "9798673ff79dac77b52bca855e36a843ff2bb36f398ca88fd790a7e4338787ac",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_i3U18zTu3HWSFgjDKZwatH",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline only with no concrete market data (no magnitude, no index level, no named participant stress). A generic political blame headline does not describe a specific market event of the kind card ECS-NSCC-LIQ requires (sharp equity selloff with measurable impact). Insufficient evidence to classify as relevant."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1464,
+    "outputTokens": 110,
+    "totalTokens": 5282,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2134
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

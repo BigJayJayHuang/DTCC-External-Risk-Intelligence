@@ -1,0 +1,40 @@
+{
+  "document_id": "d11ce2588d9d565cb0d8d942998a2d0ad4b58917ff129641cc8b68e170b2bdda",
+  "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBZYnJiS1Z4RXNmX3lMdU1nQm1sa0ctYVBDOVRYQnl2STdVbThZZXpINGRucUN1NF9RS21uSXkwalZxQXUxNU1iWXBYZ3FBbTl6b0M5VTZmQ2pFWU5QNDZYeW5fQjRCd9IBXEFVX3lxTE9tRDRBVkpEcXVkdnZ5ekRYS0F2cThTWHVTTi13bi1YZnNZdjdVaFNseWlTMlp3SWthSUYxOE9DcmtMZ2QySjVCd0prVUpZeTV0WUxseWlGRElXTTRI?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "27f93a01473f158a1fe2629b86ef4de862e55ac312d306126cb51ed9870a296c",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_SVp1PODynr79TgjqyiS1Yl",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article describes a cyberattack on a French bank with no stated link to US markets, DTCC participants, or DTCC-connected infrastructure. A non-US bank with no named connection to DTCC processes does not match any card's Step 1."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1524,
+    "outputTokens": 101,
+    "totalTokens": 5333,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1878
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

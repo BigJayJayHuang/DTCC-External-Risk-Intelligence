@@ -1,0 +1,40 @@
+{
+  "document_id": "9dcd6322bb6d357cb8ea2b8e6bdf304b78c75ec0695ad785ca7a27108d8181d2",
+  "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNVVZqSHpsUzlYV091eXR4akNEZmNRNTNXcGRJWXJwNXpBd2Y3eXNRWVB5eF9FTHZoS1RFaENGajUzaXJuS3NmWkNYa2xJaVpoUGlMeEh0S0ZMdmZLcHJmb0EwZWxvWmNvZThOSE50MGZ3QWQxT0dkelBUVTQwRWtGYm5UcXMtc3FSN2FNQ1FsNEhGT1hpd0QxXzE1ellRRFRfM3A1b2dlMTl6UzktRUFJTXM4TGxsNGfSAcQBQVVfeXFMTTFzaTBhYW1JU1NFdGtMZS1VN240Q3ZJMC0zQm02X2ZpVUl2cEhNSmxkNlV3WEdiT1J1bDIyMzlWalg5a1NHRmdfRUpjdi1LNjNkbzV6eVJSOGNLaHRiazhSX192UDFVRWptRWZsRHIwazNnVVpIR0RtRHhkVG9Bckpnb0xFUVB1T2lRVkhkT0VPQy1DdEh1ZWV6ZDF0bVo5RjhiazRjTEdfV2dlUjJYek85V2U1S3Q5N0F2ck9sTDZVSWk5Yw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "8199fefea875f06b740aab4b7c8dabe7912c62a67e641674e97e885a834171f9",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ACWDv0ESA4PHtX2vUm6ykW",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Cyberattack is at a French bank (Credit Mutuel Arkea) with no stated link to US markets, DTCC participants, or DTCC-connected infrastructure. XE-CYBER requires a large participant or vendor connected to DTCC processes; a French retail/regional bank with no mentioned US market presence does not qualify."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1765,
+    "outputTokens": 118,
+    "totalTokens": 5591,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2312
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "872357177a1d94dbd6c227ef19d6e47bbff27dea43ef99224508c4dbb6ebd3f8",
+  "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPMElhUGVBRThETlplSjM2LTdKWFdqWlRwUDEtTmQxLTFldTU3QW5CeEV4QzJQUHZsbmU2SEVpVm1YV1ZGNGM3MlNGc0wzMGQ0S3FyX3hrSTlfRmJEZHpsVXhTUWNwZXZ4N0djR0kyU3BKM1NiYlNnMnRCWVlyZkJ3dnN0YTd5M1RYb2huZGtfOVpHbkFHandrbnljVnE2WlZwcUM2WlNsVF9vMmRNa3lSNWoxWGs1VXFZWFRJcQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "fe9814eeae2372f4fd7cc82f63ba99b09e1d18a88563980704d2264b3b6e5ea1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_QErn8K4GSpHKxy00zSgXty",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline describes a flight-to-safety rotation into Treasuries during a tech-led selloff, but provides no concrete magnitude, no named participant stress, no margin call, no liquidity squeeze, and no other specific event detail that maps to a card's Step 1. Headline-only with no actionable event signal; functions as a generic market-sentiment observation."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1520,
+    "outputTokens": 122,
+    "totalTokens": 5350,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2447
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

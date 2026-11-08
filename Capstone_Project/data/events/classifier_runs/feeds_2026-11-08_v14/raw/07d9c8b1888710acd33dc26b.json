@@ -1,0 +1,40 @@
+{
+  "document_id": "4e91d8a46c48ad5ec34c51cc8c257b937e108012c4def794d85bad38bcddfd22",
+  "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPZElOeXZTazI3SDF4bFpjbUJWZkl1LWI2NW1DN096SWphOW51VVEycUhlZm41NmRJZktNalhCeUhtN3pJcXhycXhSRnltZEowTWNyazg1T3l6cnVmYlBzb21iaXpTNWsxc1VLa3NSVnB1YWFFTUQxTTdNWU9naUZBTlJ2MktPUjVyTFBZV1oyUzBtLTZGWUM1YmdlMjROY1VTcGx2VlRUNThBTjRFQk1z?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "55546683bee4b4f9be51623a9582daa6da8d64d747e9ce0c7456a78305128c73",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ZUYDmtSf2w2jBon2x1k1dW",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline describes a selloff in AI/chip stocks spreading to Asia, but it is a single-sector equity move with no stated link to US market-wide stress, DTCC participants, or clearing processes. The $18B loss is concentrated among a narrow group of tech/AI investors, not a broad market event. Insufficient basis to map to ECS-NSCC-LIQ or any other card."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1501,
+    "outputTokens": 132,
+    "totalTokens": 5341,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2409
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

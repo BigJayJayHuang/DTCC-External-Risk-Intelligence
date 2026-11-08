@@ -1,0 +1,40 @@
+{
+  "document_id": "417f7824c6f9deebc7dafdc35cf2c93f3babed52a920725648297804a1620c69",
+  "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRG02RXdnOUdVdG5heW1rdll4NGtPY2gzam5SbFNoY1RZZ0pQclREUjYtNFBPX3BnQlVsRU5leHVPcjJpN0JBcWFJck8wREhyczE1NGRIa1V3ei0tQVJjcVYtN0d3SHdwSVVMMS1jMVF0Vl91eXBSeXRCTHNXWFZOTmZkaEh2eGFNRjlnbl9UWUZBazlSeHNZb1RwTnppdGZRUTZNN1huYUNtSDUxSWY4LUxjaw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "07d48c5672df5e6e1b059462b157e954c3740db78288ce17faa6627e3e8e2232",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_LUEbgvr1ov3FFKdSk8rnjH",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline only with no concrete event details — no mention of magnitude, named participants, specific market moves, or any event matching a card's Step 1. 'Sudden chain reaction rattles Wall Street' is too vague to confirm a market-wide selloff or any other catalog event without additional facts."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1503,
+    "outputTokens": 107,
+    "totalTokens": 5318,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1927
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

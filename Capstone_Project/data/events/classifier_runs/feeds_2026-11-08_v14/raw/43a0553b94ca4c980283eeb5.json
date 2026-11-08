@@ -1,0 +1,40 @@
+{
+  "document_id": "286bd0293f54a075865656fface5da12f2173b8a53f8d52f7baa6da1861aa8b4",
+  "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPMnpZaHI1UDRMa3VBSkJ3OTZqdW1OSm9JajR3REN4WVpaUDZtd2c5RTRUMjE5MXFOd2NGOGl4dDFjUWdGSFVCeGVmcUxoTzlLRXoxcmQ5bzIwR1JPY05xVWFIVWs3ajVlSGF3NXRCSnhPVzFBWG0td25Pcm9IMnk4eXFkMU5jX2wtOUlSN1NkT3IzWEdMOHpwS3VmWmN2M1BTOTJ3V1hoV0dWVEM1dHR1NEFqbFA?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "95a2b4426dda51659291037e8ef75b6ff844820d2f59762d94b523816c116c13",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_8gC8kAF58qxloxANFCrRbx",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline-only item about losses at Asia-based hedge funds and wealthy investors in an AI selloff. No concrete event linking to US markets, DTCC participants, or any catalog card's Step 1 trigger. The selloff appears confined to Asia-based investors with no stated connection to US clearing or settlement processes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1513,
+    "outputTokens": 111,
+    "totalTokens": 5332,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2180
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "675e0e8de4aaf20e754c7e3e8008f390c8e133ea83cd6cbc509033c30e690327",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1fVzhWaTBRTTZaa3liaU9QSGsyV1RhWGZLOFhRamh0am9kaFc0aEI5RWREUGkyWHhsdkg1NEMzQkV1cnhnb0NEVEhXamZ3NzVXRjBSS28tbzhWV2NaVk1QYzBJUXFkQ2V1aWozVg?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "24dca7d934a30162962a1455b06768b74dd7cd56e7372159cd7406d1f764233a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ddr8QesdiIsnU9eaH5ppue",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline refers to a T+1 transition in 2028, but the outlet is a Korean news source ('뉴스웍스') and the article appears to describe a non-US market (likely South Korea) pursuing its own T+1 settlement cycle change. There is no stated link to US markets or DTCC participants. The US T+1 transition is already recorded in EV0001/EV0002. This is a separate, non-US market event with no stated connection to DTCC processes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1435,
+    "outputTokens": 158,
+    "totalTokens": 5301,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2440
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

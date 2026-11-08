@@ -1,0 +1,40 @@
+{
+  "document_id": "5d7502f4c3e74774c6e063661e848bc4e577d632851c588450e38846bf91e348",
+  "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWUkxWGlYbVdselJXOVB0QVNtWEhQNTd6Q3lRcmU2eElhVHdWdDhaWWhDdjN3UjNXWVVuOURRNGtwTEFiUlNOU2NlbnRXREg5cnR6amVfaGVWbG9uYjZsRkFoQzZtMkhUMkdWZlptWnNaWUFTa0poRmt4TE0xSHFGbm80dUFDeVIzeW80S3FyWXpUcmtZckpDNFNhdWIxUDZk?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "0864148936b58ec84a8eb44dec42e65b1e6594e628580e434b32086d936196ae",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ETVhQD79h3eUnNGcsUGbrv",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article describes a cyberattack on a French banking group. XE-CYBER requires a large participant or vendor with a link to US markets or DTCC participants. The headline-only text names no US participant, no DTCC member, and states no connection to US markets or DTCC processes. A non-US bank with no stated US/DTCC nexus does not meet the card's Step 1 threshold."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1461,
+    "outputTokens": 137,
+    "totalTokens": 5306,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2434
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

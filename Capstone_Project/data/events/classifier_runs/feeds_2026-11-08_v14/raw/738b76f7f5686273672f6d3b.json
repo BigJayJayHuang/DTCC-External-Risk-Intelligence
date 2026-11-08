@@ -1,0 +1,40 @@
+{
+  "document_id": "80c1dce5f731e4abb4123dd1c259dcaf86ff76fee3903169c45b474f8e5d4cd3",
+  "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPOFBSNTF3bXFWS1hzT2hRbDZZZFlJTUJlZ2U0OHdTdTBfcEEwdlRUSkk3bFlDM3Ixa1JaR3BUM1dyUFNRU0dWZG5FWE9pZHZwYjBRbGJtZGMzRk9ZZTdaNTAtbUJEWldKT1E0VTI1Q1hfcFEyNmg0WkVwaUdLcGIxZkJCRVZCcWxmX24wRGFEbnhqaFR0ZXNwSW8tNVlTVU5wNk92dVZyLWdiUQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "a5370816dbe7c8f22bab328ea1e8e4ccca1c19f1c5d559af04038fd17c986cef",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_5ufbKj6TyEhpxVpuQriyvH",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline only with no concrete event details sufficient to classify. While hedge fund deleveraging could touch ECS-NSCC-LIQ or FICC-GSD-11, the headline alone ('Dump Positions and Cut Staff as Selloff Deepens') does not specify magnitude, named participants, market segment, or any link to DTCC processes. Insufficient evidence to classify as relevant under the rules."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1525,
+    "outputTokens": 134,
+    "totalTokens": 5367,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2151
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

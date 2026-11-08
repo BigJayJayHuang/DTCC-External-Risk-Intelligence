@@ -1,0 +1,40 @@
+{
+  "document_id": "fd0953f14df192d165729a659fe8d7d272f57ab996d7eb4fd6e540d80fe2600b",
+  "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQcm03d1BFb2ZJLU5WemE5SHREYldoajRhNkJibTJEV3VaU1FsZV80QmNpbWZQWUZPQXg4N3dLaDZ2SzllNTdVUWswQnVQWURRaFhmRWpqTzE2MWtSRXg0UzhYQlBDaXdPSzhHc1A2WUNoRVAwbWc3WVlJckk2MG50V251NDZDcFVTamlxTFVyQmVTSmJUeE12R2tOYm9kcTBteWpzV1F6X1lFNElKdkJGSHl2ZjVPWWlfV2Q1UkZMSEF5RFZIbWt4U1lZV3BPZ3lxLXVlSUJaTnp0QQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "078539ca49d8ee27b8e4e90bfe92dfcc1d0c0607cf4ca8a1fd99f44c75cd6d8f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ohNAC31VyTj82mznkFDva2",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Cyberattack on a French bank with funds transferred to cryptocurrency. No stated link to US markets, DTCC participants, or any DTCC-connected process. Non-US institution, no indication the affected bank is a DTCC member or that the event touches US clearing/settlement infrastructure."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1577,
+    "outputTokens": 107,
+    "totalTokens": 5392,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1952
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

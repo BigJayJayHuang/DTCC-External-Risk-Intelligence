@@ -1,0 +1,40 @@
+{
+  "document_id": "a4e7a03e421275f557017e04c3bec665afaf29abcc74fe7316ffb960a0f04ff7",
+  "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxONmdzeFVRS2wwSlFnTzlnMEd6dEhUd2hzSlh6NkphMUFIdFlMSmZpMG4tRFdUZk9DX25nUVQ4MnNqLWpMM3Njb2lVX1FYbTdfUGt5TjVOSkI4M3BmRG1MbjZGQXdvaUlvcGl0aFZPeXA3cUNveGdERHNJc1Q1WThLbVdBLThvN20tTFBGLW5aTXpqR1RabDZFRGQ0bmlxQ2gzQnpwOVc0TUdpUnB2WEVqdUlXWVp3V0NEc0J1YVJramhVNW5w?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "af24f2f9cd1b929bf4a12aa3bf878ccaaf4443280737044e73c96e49794d8cae",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_3U6ZKn71zCuwCyChQftrsX",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about Polymarket's prediction market unit receiving NFA approval to operate as a futures broker. This is a new entrant/regulatory approval story for a non-traditional participant with no stated link to DTCC processes, equity settlement, NSCC ACATS, or any other catalog card. No member stress, no market disruption, no settlement cycle change."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1515,
+    "outputTokens": 120,
+    "totalTokens": 5343,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2236
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

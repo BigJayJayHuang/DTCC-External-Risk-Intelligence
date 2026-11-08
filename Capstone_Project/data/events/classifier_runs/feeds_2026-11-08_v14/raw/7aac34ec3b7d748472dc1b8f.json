@@ -1,0 +1,40 @@
+{
+  "document_id": "2ffb9b29fa5ce0778284d789eb21315c408b4404ae3a8870c87c8c8f241de60d",
+  "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFAyOEh4VnFmV2x6OGhWcC1NbFdubU1mcnNFYTI1ZW5LZWVqU000dzRZYU1oT2FOVVBpdFh5UGY1aEg4MWZmaEEycW56c1hvakthbzlueGNmaVVaSU9tM1J2UmExQU1nSjI1TEE2UGw5NXBUN1RZeXc?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "66bd9fc4e9c3a11ce88a18057e086e27d9da644c6377ee99be465b44792b036a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_m8llq5viQbCrg4yVRCY8WA",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a China bond market selloff affecting Chinese wealth management products. There is no stated link to US markets, US Treasury markets, or DTCC participants. Non-US market event with no connection to any catalog card's Step 1."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1465,
+    "outputTokens": 93,
+    "totalTokens": 5266,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1765
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

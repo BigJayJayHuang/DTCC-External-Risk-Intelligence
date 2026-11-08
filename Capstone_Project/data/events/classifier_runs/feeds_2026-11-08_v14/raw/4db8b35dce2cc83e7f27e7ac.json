@@ -1,0 +1,40 @@
+{
+  "document_id": "bd26c539afb5ad26af7ff193bf6da45150d0ad8702bc3245b397a2a367176d87",
+  "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPdkhSbENSNFdiaWIwZXh1ZjEzTEZCaXZJM3ctLWtFWjRSdlNsUDNJamtGVHBMcmwxM1d6bjBvbnFHSTRqQkgtMUxSaVRXMXZDRzh4aTFCMVlqR3Z2NWtBWGszM0VFRmxtcm1aaHM4Z0Q5LTE4TUxNeEhqTFh6M0NNSGhIX1hBd2lGX1hUY25mWWNxMllQUUJvN0lBYWd0dk51MkF1aXB1dUNINUhuRU5ZZlREV3k0WTc1dWJOLWZfc2x2YzlMaE9CQzRnLVgyWk5pM2RDMzdXcTBtYlVrUllLazJDMWRNdnc?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "d90e09e1089635b8694642a0fd66a9fd028487fe7dea42dffbaeaf99b4eb6af1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Wx73rCxApF0kvOFTjlueGZ",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Axis Bank is an Indian bank, not a US DTCC member or major participant. The downgrade is by a non-authoritative technical analysis service (MarketsMOJO) and concerns a non-US market with no stated link to US markets or DTCC participants. Does not match any card's Step 1."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1596,
+    "outputTokens": 113,
+    "totalTokens": 5417,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2003
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

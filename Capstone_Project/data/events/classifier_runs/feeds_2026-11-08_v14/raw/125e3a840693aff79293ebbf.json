@@ -1,0 +1,40 @@
+{
+  "document_id": "a1f0774de14421e4eb0b16a5626925ba71527429ebd2e0ff8ac687d0e348d445",
+  "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNVC1FdzU0cDRIWEl3TXpfZ0wwdGNSVmhfekpJdGotTEIwQWxVVHBmc3BpR2l2OHpJdExYMy1GdlBsWFJQOHkzUEMzQ0xDb0pGX2kxNGJLZGFlNE42U2tjVEk3Tnl3X3JCZ3g3UWRoS2FrVVVsYjctdk81ZVdWdGFjT3JLRFdLZVVlNkhZa2h4NDc1Ml83di1KQ1BLSklHWE95bU5nRHhoTHQyNzQ0VjQ5c0lKRQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "fa888288b96ba09fc6bfd9b1d6e8fed90f478724ed1ecea67ae3907f60b694c3",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ZcXxeIWzW5aT34xXZf7BJX",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article concerns Argentine sovereign bonds and peso debt intervention — a non-US market event with no stated link to US markets or DTCC participants. No card in the catalog covers emerging-market sovereign debt stress in isolation."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1504,
+    "outputTokens": 87,
+    "totalTokens": 5299,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1731
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

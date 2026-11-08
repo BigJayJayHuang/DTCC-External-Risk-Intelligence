@@ -1,0 +1,40 @@
+{
+  "document_id": "b5f8b5c8fbb611a92859e4cae9c88be6cf87fdc9f59ed8e85ae0854a1dd506c8",
+  "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOQTBOZlJERHFqRWdWbzRndXpCLUhxdWlkaWNQMWFZdkptbC14Vjk3b1VqXzdHcDZBZzBwcy1LaGNaUHJyaDFtRnJUV1NnSmlOUWJEWGJhNEtjMkdKV240QWZrZkdfeG1JSUF6QVRpOXc5MVQ3OURlQ2NaR1J1Qi1HRW9rWm50WnRIQzdHZHJQeEpXSW45dlRHanRMZXQ3NmZZN2xRaTd6RHNZaXZNS2htTnZhb3U0RUx3VWtBdDNFS2w2aDl4QUx4TGRmU3ZIYThyR1pKemJpYXhWTVk0VjZiU05HN2U?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "b78a7008c4ad67ecb2ce199ff31bf4cf1e1a402691681329e6ffddb357f1f4ad",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_6lCaPxK0CYFAp40zfFWabG",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Sun Life Financial is a Canadian insurer (TSX-listed), not a US broker-dealer, bank, or DTCC member. A stock downgrade by a Canadian bank analyst on a Canadian firm has no stated link to US markets or DTCC processes. Not a catalog event type."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1576,
+    "outputTokens": 104,
+    "totalTokens": 5388,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2017
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

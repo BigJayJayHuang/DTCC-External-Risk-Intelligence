@@ -1,0 +1,40 @@
+{
+  "document_id": "4004987982646c0330fafff4e987511b4c8277bad3dc84c4a4a4b0b6c0de21d2",
+  "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQmowNkVTVUhwTW9qR1k0bUdrcWtGYjN2dUVQVE9vSDk4WlN1SjJvdzZmbjY0NUZ5anRXRWQzZENmbldqNUhqSHJtdXVHQVBrOVV0aVowZThtYlAzdm1rZzFYdHRpX0I0V2xtLXE0clVPUkRzTnhzTVl5d3lpSDZ3NU55WWxCWGxBYjlZeFVuZ09Qb2ZWV0hWOXpfaFU?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "d090b56770550b243bf2c3ab8dffa9a3ad7f13e1cb8b28d9dc919c16e8eb0602",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_wpUwnX66pzLMWNyvUJs1sW",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Cyberattack on a French bank with no stated link to US markets, DTCC participants, or DTCC-connected infrastructure. XE-CYBER requires a large participant or vendor connected to DTCC processes; a French bank with no US/DTCC nexus mentioned does not qualify."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1487,
+    "outputTokens": 109,
+    "totalTokens": 5304,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2066
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

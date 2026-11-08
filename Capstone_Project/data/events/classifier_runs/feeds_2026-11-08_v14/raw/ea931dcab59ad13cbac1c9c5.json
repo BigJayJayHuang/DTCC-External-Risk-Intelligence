@@ -1,0 +1,40 @@
+{
+  "document_id": "91f85c46d6929ffc4846753190644643636a999139bcb179b9f3a9d3054f1c18",
+  "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPNURNYWVac0FDTkNVNnEzUDJKaDJmOEZDckp3aVlDNk1KbDZ1cXVQcGZRZlA3VEFzbVNIeDdYTFY4bEVfTTJCTEdSR2JXN2Q2NTFBVGRJcy1oNlI4XzNObmlyZlJUaWQ3c2tHRlRHT2dPU19CN3hrbXFkMFh4Skg5cDJpdVZLRzV6T05TdFJvd2hldFdFalE2YXctNnU0VUhqUjVveXpiTHlVeFVzZGN4c0hsal9DZw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "f3885c4b0a0ac0b6367bd86532b4851a21745455a9ed2c23120422113f46b46c",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_pboVTvQ7gtscvIV6VQBus5",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Single small ETF delisting/liquidation announcement. No market-wide event, no stress at a major participant, no DTCC process impact described. Does not match any card's Step 1 trigger."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1527,
+    "outputTokens": 87,
+    "totalTokens": 5322,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1630
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "b2e11372d63e77c8ae05cee711f5d2816c1664dc581e7fd2c8858eb961ebd9ca",
+  "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQbDA4cHA0VW1QeXpLdHhZRTQ3UENaTmpvbmFET1dZTTNmX1RHSTR1X0VJZFVkRVlKV3dNeWRzZHZaN2VDSjVuaDlCV0JDQ0VKb3RVMjFOd1d6OW5LRGx2WTN3UGNBTGJ6WDBkX0dOU2d1XzZBMHU5Q3JORFZDb0gxWnhpZ0hMdnNWMmZjWmg0a1VvZlZaUTRIenVQUlh5ZE9vNG1kMnl5dkROUzRWMVBXcE1R?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "8f967520976fde278cb228bf21347f6c753d7d5bf7e8946fd982b64fd40d10d2",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Pzfnsm2J5ssP5OOOI1C988",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "headline_only with no concrete event details beyond a single-sector (tech/AI) selloff; does not describe a market-wide equity selloff or funding squeeze sufficient to map to ECS-NSCC-LIQ or any other card with confidence. A sector-specific down day for tech stocks does not clearly match any card's Step 1 trigger."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1513,
+    "outputTokens": 121,
+    "totalTokens": 5342,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2298
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

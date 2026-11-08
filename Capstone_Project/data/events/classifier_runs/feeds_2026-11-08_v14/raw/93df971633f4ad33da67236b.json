@@ -1,0 +1,40 @@
+{
+  "document_id": "5bcd9d86566f3783b24d28ef422ec8999d52fc7ef81e1738079f1cc7572431f9",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBqVXNRZUlkcUNvcWpSYVdCMU1sQ3NWRXpKLWwwTWpIYmpkZXhqN0cxUHp6aFEzNHdZVWlSRmlYUVJRclEtZzBJSl8ybWphY25IZGtpZ2lsNEZlWXNKbmEzNVQ0Sk1yNDA4b3padA?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "12fbec0f4614a53bd3523688c35a26a770b3fe4aca3b0ea70a6adb719da0f899",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_JY4JGHqbhGtIjUmgaeubsS",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline-only item from a Korean outlet. The text states no concrete new event — it is a cautionary/opinion framing about settlement cycle preparation timelines in Europe and Hong Kong, with no specific regulatory action, deadline, or market disruption described. No concrete Step 1 event is present."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1432,
+    "outputTokens": 106,
+    "totalTokens": 5246,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2080
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

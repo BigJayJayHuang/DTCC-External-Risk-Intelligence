@@ -1,0 +1,40 @@
+{
+  "document_id": "47278d30447049a77956d2b6bca160638f301c673f000cab581357b1706ac05e",
+  "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSXcxeU5qckhPME1ra0JNMTNVUVFnZjlmNmFRRGgxa09ZMVpxY2J4eGN6SE1JRUphZkFxSHRYVkJrUDRCaWF1Mjh1QVZNQ2hNOTJNSzU1NkVUVEthTXdaOHdPM1pybWx0Skx2cWFCZmxjNlZRdE14cmxTSHNXRTl5OG1OeUxDRF94bkNkb0NwMHlNN01mTEd4QUZ1MXJhOVpVZkVz0gGoAUFVX3lxTE9uSGJmbkhEdjUxcThKQjZmMjYtZUFRcm41b0ZKXzZFTGZ4YUlHZG9LOW1WSDBDSkNsOWFYN3RobWF3RG1RSF9CZXVNV3pQTWRQSjNyZHh2Q29rblRwaExCZzZaVy1zS1FzeDU5ZUhqb2c5VFNOMTlTQi13bmg2NThkSm1lUENtV3RRYTdLQUk1UVhKMHpwUWR4T3QzMjgwTUUweV9LX3NPMg?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "e4b37177e68ae818bdccef152445a6f65cdea7ff75bae2c65d88f5710f593e6a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_4coDJOZ98zyNj68ZM99PVw",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article describes a cyberattack on a French bank with no stated link to US markets, DTCC participants, or DTCC-connected infrastructure. A non-US bank with no named connection to DTCC membership does not meet the threshold for XE-CYBER or any other card. Headline-only with no detail on the institution or its US operations."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1705,
+    "outputTokens": 122,
+    "totalTokens": 5535,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2188
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "7d9307606b84fc5ef71d952cde56fa950d5ee629672684b31fff6d878a8d872f",
+  "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNYXljd1hIVjRJRDlnaXRUWFpoblpDM2tnTHVlMDYyZms3UzViclZxVGMyWXVwclFIdi1yMUxveVZrZGw2ZUowY0YxbEZULXpjQUFON2t1bUE5dVdNcGk0NUVQNWlncHhoTGJ3M0xWalhoTzBIaGg2aVM3eUV1dDJpRFMyNEVVSWxDa1A5cF9pZ0VxWEZTUjJoOFRQS1NjRFBNTGFFdGY1NXNxQ2NyU0VqTmpWYzU4c3AwMGgwMHdR?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "8e0c93e2e673864df761bea5bd92a610900568a6570f802f02eb436fc51f7fc2",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_tym6EcuJDyeVnZpb0zpUGh",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Cyberattack is at Bank Rakyat, a Malaysian bank with no stated link to US markets or DTCC participants. Article is headline-only and describes a non-US financial institution with no connection to DTCC processes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1529,
+    "outputTokens": 94,
+    "totalTokens": 5331,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1664
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}
