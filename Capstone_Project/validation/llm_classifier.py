@@ -32,8 +32,11 @@ PROJECT = Path(__file__).resolve().parents[1]
 PROMPT = Path(__file__).with_name("llm_event_classifier_prompt.md")
 PROMPT_V13 = Path(__file__).with_name("llm_event_classifier_prompt_v1.3.md")
 PROMPT_V14 = Path(__file__).with_name("llm_event_classifier_prompt_v1.4.md")
-PROMPT_FILES = {"v1.2": PROMPT, "v1.3": PROMPT_V13, "v1.4": PROMPT_V14}
-SPLIT_PROMPTS = {"v1.3", "v1.4"}   # static system text + cachePoint, per-item user message
+PROMPT_V15 = Path(__file__).with_name("llm_event_classifier_prompt_v1.5.md")
+PROMPT_FILES = {"v1.2": PROMPT, "v1.3": PROMPT_V13, "v1.4": PROMPT_V14, "v1.5": PROMPT_V15}
+SPLIT_PROMPTS = {"v1.3", "v1.4", "v1.5"}   # static system text + cachePoint, per-item user message
+EVENT_TYPE_PROMPTS = {"v1.5"}               # prompts that define event_type (Amendment D)
+EVENT_TYPES = ["market_move", "regulatory", "firm_specific", "operational", "cyber", "other"]
 HEADLINE_SCOPES = {"headline_only", "headline_snippet"}
 CONFIG = Path(__file__).with_name("llm_classifier_config.json")
 REGISTER = PROJECT / "data/events/event_register.csv"
@@ -45,7 +48,7 @@ CSV_FIELDS = [
     "event_id", "document_id", "is_relevant", "same_as_event_id", "title", "summary",
     "card_ids", "certainty", "reach", "reach_basis", "named_participants",
     "announced_date", "effect_date", "stage", "source_tier", "outlet", "source_url",
-    "url", "evidence_quote", "evidence_quotes", "llm_confidence", "notes",
+    "url", "evidence_quote", "evidence_quotes", "llm_confidence", "notes", "event_type",
     "entered_by", "needs_review", "validation_passed", "validation_reasons",
     "original_certainty", "original_reach", "model_id", "base_model_id", "region",
     "prompt_version", "input_tokens", "output_tokens", "cache_read_input_tokens",
@@ -209,7 +212,7 @@ def render_prompt(body: str, catalog: str, register: list[dict], article: dict):
     return prompt, {r["event_id"] for r in recent}
 
 
-def output_schema(cards: set[str]) -> dict:
+def output_schema(cards: set[str], event_type: bool = False) -> dict:
     properties = {
         "is_relevant": {"const": True}, "same_as_event_id": {"type": ["string", "null"]},
         "title": {"type": "string"}, "summary": {"type": "string"},
@@ -225,6 +228,8 @@ def output_schema(cards: set[str]) -> dict:
         "evidence_quotes": {"type": "array", "items": {"type": "string"}, "minItems": 1},
         "confidence": {"type": "number"}, "notes": {"type": "string"},
     }
+    if event_type:
+        properties["event_type"] = {"type": "string", "enum": EVENT_TYPES}
     relevant = {"type": "object", "properties": properties, "required": list(properties), "additionalProperties": False}
     irrelevant = {"type": "object", "properties": {"is_relevant": {"const": False}, "notes": {"type": "string"}},
                   "required": ["is_relevant", "notes"], "additionalProperties": False}
@@ -238,7 +243,7 @@ FLAT_TOOL_DESCRIPTION = ("Submit the classification record specified by the syst
                          "when is_relevant is false, set every field except notes to null.")
 
 
-def output_schema_flat(cards: set[str]) -> dict:
+def output_schema_flat(cards: set[str], event_type: bool = False) -> dict:
     """One flat object: every field always present, null where it does not apply. No anyOf/oneOf/if-then/const."""
     enum_or_null = lambda kind, values: {"type": [kind, "null"], "enum": [*values, None]}
     properties = {
@@ -258,35 +263,54 @@ def output_schema_flat(cards: set[str]) -> dict:
         "confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
         "notes": {"type": "string"},
     }
+    if event_type:
+        properties["event_type"] = enum_or_null("string", EVENT_TYPES)
     return {"type": "object", "properties": properties, "required": list(properties), "additionalProperties": False}
 
 
-RELEVANT_REQUIRED = ["title", "summary", "card_ids", "certainty", "reach", "reach_basis", "named_participants", "announced_date",
+RELEVANT_REQUIRED = ["title", "summary", "card_ids", "certainty", "reach", "reach_basis", "announced_date",
                      "effect_date", "source_tier", "outlet", "url", "evidence_quotes", "confidence"]
+OPTIONAL_LIST_FIELDS = ["named_participants"]    # optional: null means none named
 
 
-def validate_flat(record, cards: set[str]) -> dict:
-    """Code-side validation of a flat answer (strict mode off). Returns the record in the internal shape
-    (relevant: all fields; irrelevant: is_relevant + notes). Raises on any violation; the caller sends it to failed.jsonl."""
+CORE_FIELDS = ["is_relevant", "card_ids", "certainty", "reach", "evidence_quotes"]   # must be present (value may be null)
+
+
+def prepare_flat(record, cards: set[str], event_type: bool = False):
+    """Fill missing optional fields with null, then validate (strict mode off). Returns (internal-shape record,
+    filled field names). Core fields (plus event_type when the prompt defines it) must be present. Raises on any
+    violation; the caller sends the answer to failed.jsonl, without retry."""
     if not isinstance(record, dict):
         raise ValueError("flat record is not a JSON object")
-    Draft202012Validator(output_schema_flat(cards), format_checker=FormatChecker()).validate(record)
+    schema = output_schema_flat(cards, event_type)
+    core = CORE_FIELDS + (["event_type"] if event_type else [])
+    absent = [k for k in core if k not in record]
+    if absent:
+        raise ValueError("missing core field(s): " + ", ".join(absent))
+    filled = [k for k in schema["properties"] if k not in record]
+    record = {**record, **{k: ("" if k == "notes" else None) for k in filled}}
+    Draft202012Validator(schema, format_checker=FormatChecker()).validate(record)
     if not record["is_relevant"]:
         if not record["notes"].strip():
             raise ValueError("irrelevant record without a reason in notes")
-        return {"is_relevant": False, "notes": record["notes"]}
-    missing = [k for k in RELEVANT_REQUIRED if record[k] is None]
+        return {"is_relevant": False, "notes": record["notes"]}, filled
+    record = {**record, **{k: [] for k in OPTIONAL_LIST_FIELDS if record[k] is None}}
+    missing = [k for k in RELEVANT_REQUIRED + (["event_type"] if event_type else []) if record[k] is None]
     if missing:
         raise ValueError("relevant record with null fields: " + ", ".join(missing))
     if not record["card_ids"] or not record["evidence_quotes"]:
         raise ValueError("relevant record needs at least one card_id and one evidence quote")
-    return dict(record)
+    return dict(record), filled
+
+
+def validate_flat(record, cards: set[str], event_type: bool = False) -> dict:
+    return prepare_flat(record, cards, event_type)[0]
 
 
 def build_request(prompt: str, schema: dict, config: dict, strict: bool = True) -> dict:
     return {"modelId": config["model_id"], "system": [{"text": prompt}],
             "messages": [{"role": "user", "content": [{"text": "Classify the supplied article."}]}],
-            "inferenceConfig": {"temperature": 0, "maxTokens": 1200},
+            "inferenceConfig": {"temperature": 0, "maxTokens": config["max_tokens"]},
             "toolConfig": {"tools": [{"toolSpec": {"name": TOOL, "description": "Submit the classification record specified by the system prompt."
                                                     if strict else FLAT_TOOL_DESCRIPTION,
                                                     "strict": strict, "inputSchema": {"json": schema}}}],
@@ -407,7 +431,7 @@ def estimate_request(request: dict, prices: dict):
     # conservative byte-based input allowance plus chat/tool framing before calls.
     estimate = token_cost({"inputTokens": (byte_count + 2) // 3 + 512,
                            "outputTokens": prices["expected_output_tokens"]}, prices)
-    reserve = token_cost({"inputTokens": byte_count + 2048, "outputTokens": 1200}, prices)
+    reserve = token_cost({"inputTokens": byte_count + 2048, "outputTokens": request["inferenceConfig"]["maxTokens"]}, prices)
     return estimate, reserve
 
 
@@ -491,8 +515,8 @@ def aws_session(config: dict):
 
 def run(args, session=None):
     config = json.loads(args.config.read_text(encoding="utf-8"))
-    if config["temperature"] != 0 or config["max_tokens"] != 1200 or not 0 <= config["throttling_retries"] <= 2:
-        raise ValueError("Required: temperature 0, max_tokens 1200, at most two throttling retries")
+    if config["temperature"] != 0 or config["max_tokens"] != 2000 or not 0 <= config["throttling_retries"] <= 2:
+        raise ValueError("Required: temperature 0, max_tokens 2000, at most two throttling retries")
     budget = args.budget if args.budget is not None else Decimal(str(config["default_budget_usd"]))
     if budget <= 0 or not budget.is_finite():
         raise ValueError("Budget must be finite and positive")
@@ -512,8 +536,9 @@ def run(args, session=None):
         major = {r["name"] for r in csv.DictReader(handle) if r.get("name")}
     response_schema = getattr(args, "response_schema", "strict-anyof")   # CLI default: flat
     flat = response_schema == "flat"
-    schema = output_schema(cards)                     # internal shape used by check_classification
-    tool_schema = output_schema_flat(cards) if flat else schema
+    with_type = prompt_version in EVENT_TYPE_PROMPTS
+    schema = output_schema(cards, with_type)          # internal shape used by check_classification
+    tool_schema = output_schema_flat(cards, with_type) if flat else schema
     Draft202012Validator.check_schema(tool_schema)
     run_id = args.run_id or datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
     if not re.fullmatch(r"[A-Za-z0-9_-]+", run_id):
@@ -543,7 +568,7 @@ def run(args, session=None):
                "conservative_full_run_reservation_usd": str(sum((r[4] for r in requests), Decimal(0))),
                "estimated_full_run_cost_with_cache_usd": str(estimate_cached_run([r[1] for r in requests], config["pricing"])) if cache else None,
                "estimate_method": "UTF-8 request bytes/3 + 512 input tokens; expected output tokens from config; not observed tokenization",
-               "reservation_method": "UTF-8 request bytes + 2048 input tokens and 1200 output tokens, before each paid request",
+               "reservation_method": "UTF-8 request bytes + 2048 input tokens and the maxTokens output limit, before each paid request",
                "articles_processed": 0, "relevant": 0, "irrelevant": 0, "failed_checks": 0,
                "failed_check_reasons": {}, "invocation_failures": 0, "candidates_per_card": {},
                "fence_fallbacks": 0, "tool_responses": 0, "text_responses": 0, "throttling_retries": 0,
@@ -582,6 +607,7 @@ def run(args, session=None):
     dump(run_dir / "availability_before.json", availability)
     summary["availability_before"] = availability
     spent, unknown_reserve, uncached = Decimal(0), Decimal(0), Decimal(0)
+    filled_counts = Counter()
     failures, counts = Counter(), Counter()
     candidate_handle, candidate_writer = csv_writer(candidates_path)
     irrelevant_handle = (run_dir / "irrelevant.jsonl").open("x", encoding="utf-8")
@@ -642,8 +668,9 @@ def run(args, session=None):
             reasons = []
             try:
                 result, mode, fallback = parse_response(response, flat=flat)
-                if flat:
-                    result = validate_flat(result, cards)   # failure -> failed.jsonl below; never retried
+                if flat:   # failure -> failed.jsonl below; never retried
+                    result, filled = prepare_flat(result, cards, with_type)
+                    filled_counts.update(filled)
                 summary["fence_fallbacks"] += int(fallback)
                 summary[mode + "_responses"] += 1
                 if isinstance(result, dict) and result.get("is_relevant") is True:
@@ -690,7 +717,7 @@ def run(args, session=None):
     finally:
         candidate_handle.close(); irrelevant_handle.close(); failure_handle.close()
         summary.update(estimated_cost_usd=str(spent), estimated_cost_without_cache_usd=str(uncached),
-                       unreported_cost_reserve_usd=str(unknown_reserve),
+                       unreported_cost_reserve_usd=str(unknown_reserve), filled_missing_fields=dict(filled_counts),
                        candidates_per_card=dict(counts), failed_check_reasons=dict(failures),
                        articles_unprocessed=len(articles) - summary["articles_processed"],
                        event_register_unchanged=sha(args.register.read_bytes()) == originals[args.register],

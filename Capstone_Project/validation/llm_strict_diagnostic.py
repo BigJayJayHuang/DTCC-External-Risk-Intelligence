@@ -35,7 +35,7 @@ def reservation(request: dict, prices: dict, observed: dict | None) -> Decimal:
     else:          # byte-based, padded 20%
         static = len(json.dumps([request["system"][0], request["toolConfig"]], ensure_ascii=False).encode()) // 3 * 6 // 5
         dynamic = len(json.dumps(request["messages"], ensure_ascii=False).encode()) // 3 * 6 // 5 + 200
-    return C.token_cost({"cacheWriteInputTokens": static, "inputTokens": dynamic, "outputTokens": 1200}, prices)
+    return C.token_cost({"cacheWriteInputTokens": static, "inputTokens": dynamic, "outputTokens": request["inferenceConfig"]["maxTokens"]}, prices)
 
 
 def main(argv=None):

@@ -131,3 +131,85 @@ class FlatRun(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PromptV15(unittest.TestCase):
+    def test_v15_is_v14_plus_event_type_only(self):
+        v14, v15 = C.PROMPT_V14.read_text(), C.PROMPT_V15.read_text()
+        start, end = v15.index("## Event type"), v15.index("## Worked examples (headline-only input)")
+        rest = v15[:start] + v15[end:]
+        for t in ("market_move", "firm_specific", "regulatory"):
+            rest = rest.replace(f'is_relevant true; event_type "{t}"; card_ids', "is_relevant true; card_ids", 1)
+        self.assertEqual(rest, v14)
+        system, user, cards, version = C.prompt_parts_v13(C.PROMPT_V15, "v1.5")
+        self.assertIn("`market_move`: price, yield, spread, volatility or volume moves", system)
+        self.assertTrue(version.startswith("classifier-prompt-v1.5:"))
+        self.assertEqual(C.parser().parse_args(["--start", "2026-11-01", "--end", "2026-11-08"]).prompt_version, "v1.2")
+
+
+class EventTypeAndFill(unittest.TestCase):
+    def test_event_type_in_schema_and_required_when_relevant(self):
+        schema = C.output_schema_flat(CARDS, event_type=True)
+        self.assertEqual(schema["properties"]["event_type"]["enum"], C.EVENT_TYPES + [None])
+        rel = {**flat_relevant(), "event_type": "market_move"}
+        self.assertEqual(C.validate_flat(rel, CARDS, event_type=True)["event_type"], "market_move")
+        with self.assertRaises(ValueError):
+            C.validate_flat({**rel, "event_type": None}, CARDS, event_type=True)            # relevant needs a type
+        with self.assertRaises(ValidationError):
+            C.validate_flat({**rel, "event_type": "weather"}, CARDS, event_type=True)
+        self.assertEqual(C.validate_flat({**flat_irrelevant(), "event_type": None}, CARDS, event_type=True),
+                         {"is_relevant": False, "notes": "explainer"})
+        self.assertNotIn("event_type", C.output_schema_flat(CARDS)["properties"])            # earlier prompts unchanged
+
+    def test_missing_optional_fields_filled_core_required(self):
+        rel = {**flat_relevant(), "event_type": "firm_specific"}
+        for k in ("same_as_event_id", "stage", "named_participants"):
+            rel.pop(k)
+        record, filled = C.prepare_flat(rel, CARDS, event_type=True)
+        self.assertEqual(sorted(filled), ["named_participants", "same_as_event_id", "stage"])
+        self.assertIsNone(record["same_as_event_id"])
+        self.assertEqual(C.prepare_flat({"is_relevant": False, "notes": "explainer", "card_ids": None, "certainty": None, "reach": None,
+                                         "evidence_quotes": None, "event_type": None}, CARDS, event_type=True)[0]["is_relevant"], False)
+        for core in ("card_ids", "certainty", "reach", "event_type", "evidence_quotes", "is_relevant"):
+            bad = {**flat_relevant(), "event_type": "market_move"}; bad.pop(core)
+            with self.assertRaises(ValueError, msg=core):
+                C.prepare_flat(bad, CARDS, event_type=True)
+        record, _ = C.prepare_flat({**flat_relevant(), "event_type": "market_move", "named_participants": None}, CARDS, event_type=True)
+        self.assertEqual(record["named_participants"], [])                                    # optional: null means none named
+        with self.assertRaises(ValueError):
+            C.prepare_flat({**flat_relevant(), "event_type": "market_move", "reach_basis": None}, CARDS, event_type=True)  # still required
+
+    def test_max_tokens_2000_request_and_reserve(self):
+        config = json.loads(C.CONFIG.read_text())
+        self.assertEqual(config["max_tokens"], 2000)
+        system, user_t, cards, _ = C.prompt_parts_v13(C.PROMPT_V15, "v1.5")
+        req = C.build_request_v13(system, C.render_user_v13(user_t, [], headline_article())[0], C.output_schema_flat(cards, True), config, True, False)
+        self.assertEqual(req["inferenceConfig"]["maxTokens"], 2000)
+        _, reserve = C.estimate_request(req, config["pricing"])
+        bytes_ = len(json.dumps(req, ensure_ascii=False).encode())
+        self.assertEqual(reserve, C.token_cost({"inputTokens": bytes_ + 2048, "outputTokens": 2000}, config["pricing"]))
+
+    def test_v15_run_records_event_type_and_filled(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            news = root / "news.csv"
+            with news.open("w", newline="") as h:
+                w = csv.DictWriter(h, fieldnames=["document_id", "title", "url", "publication_date", "published_at_utc", "summary", "source_id", "outlet", "source_tier"])
+                w.writeheader()
+                w.writerow({"document_id": "g0", "title": "Tech stocks log worst day since 2020", "url": "https://news.google.com/rss/articles/X",
+                            "published_at_utc": "2026-11-05T20:00:00+00:00", "source_id": "google_news_rss", "outlet": "MarketWatch", "source_tier": "major_media"})
+            register = root / "register.csv"
+            register.write_text("event_id,title,card_ids,announced_date,effect_date\nEV1,old,FICC-GSD-03,2025-01-01,2026-12-31\n")
+            major = root / "major.csv"; major.write_text("name\n")
+            answer = {**flat_relevant(), "event_type": "market_move"}
+            answer.pop("same_as_event_id")
+            session = FakeSession([tool_response(answer, 400)])
+            args = argparse.Namespace(config=C.CONFIG, register=register, news=news, major=major, start=date(2026, 11, 2), end=date(2026, 11, 8),
+                                      max_articles=None, budget=Decimal("0.5"), dry_run=False, run_date=date(2026, 11, 8), run_id="v15",
+                                      output_dir=root, prompt_version="v1.5", prompt_cache="on", response_schema="flat")
+            s = C.run(args, session=session)
+            self.assertEqual((s["relevant"], s["filled_missing_fields"]), (1, {"same_as_event_id": 1}))
+            with (root / "candidates_2026-11-08.csv").open() as h:
+                row = next(csv.DictReader(h))
+            self.assertEqual((row["event_type"], row["prompt_version"][:23]), ("market_move", "classifier-prompt-v1.5:"))
+            self.assertEqual(session.runtime.calls[0]["inferenceConfig"]["maxTokens"], 2000)

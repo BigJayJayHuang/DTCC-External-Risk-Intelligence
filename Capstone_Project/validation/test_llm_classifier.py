@@ -89,7 +89,7 @@ class ClassifierTests(unittest.TestCase):
         request = C.build_request("original prompt", self.schema, self.config)
         self.assertEqual(request["toolConfig"]["toolChoice"], {"tool": {"name": C.TOOL}})
         self.assertTrue(request["toolConfig"]["tools"][0]["toolSpec"]["strict"])
-        self.assertEqual(request["inferenceConfig"], {"temperature": 0, "maxTokens": 1200})
+        self.assertEqual(request["inferenceConfig"], {"temperature": 0, "maxTokens": self.config["max_tokens"]})   # 2000 since 2026-11-08
 
     def test_prompt_wording_and_literal_article_placeholders(self):
         a = article(); a["text"] += " {ARTICLE}"
