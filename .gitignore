@@ -28,3 +28,7 @@ distribution/
 **/.venv-validation/
 Capstone_Project/data/events/classifier_runs/*_dry_run/prepared_requests.jsonl
 Capstone_Project/data/events/daily_runtime/
+
+# Full article texts stay local only (never committed)
+Capstone_Project/data/events/fulltext_cache/
+**/*.fulltext.txt

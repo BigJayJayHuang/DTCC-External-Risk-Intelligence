@@ -51,6 +51,8 @@ CSV_FIELDS = [
     "attempts", "content_scope", "review_basis", "article_file", "raw_output_file",
 ]
 GOOGLE_NEWS_SOURCE = "google_news_rss"
+PUBLISHER_SOURCE = "publisher_rss"
+COLLECTOR_SCOPES = {"full_text", "summary", "headline_only"}
 HINT_NOTE = ("Card ids whose keyword search query matched this item. Retrieval hint only; "
              "it is not a relevance decision or a card assignment.")
 SOURCE_NAMES = {
@@ -115,6 +117,21 @@ def load_news(path: Path, start: date, end: date, limit: int | None):
         if row.get("source_id") == GOOGLE_NEWS_SOURCE:
             # Outlet and tier come from the collector (google_news.py), never from the model.
             outlet, tier, scope = row.get("outlet") or outlet, row.get("source_tier") or "other", "headline_snippet"
+        if row.get("source_id") == PUBLISHER_SOURCE:
+            outlet, tier = row.get("outlet") or outlet, row.get("source_tier") or "other"
+        row_scope = (row.get("content_scope") or "").strip()
+        if row_scope in COLLECTOR_SCOPES:   # set by publisher_feeds.py
+            scope = row_scope
+            if scope == "full_text":
+                # Full text lives only in the git-ignored cache; the CSV holds its hash.
+                body = (PROJECT / row["text_file"]).read_text(encoding="utf-8")
+                if sha(body.encode("utf-8")) != row.get("text_sha256"):
+                    raise ValueError("full-text cache does not match text_sha256 for " + row["url"])
+                text = title + "\n\n" + body
+            elif scope == "summary" and has_summary:
+                text = title + "\n\n" + summary
+            else:
+                scope, text = "headline_only", title
         article = {"document_id": identity, "title": title, "url": row["url"],
                    "published_date": published, "source_id": row.get("source_id", ""),
                    "outlet": outlet, "source_tier": tier, "content_scope": scope, "text": text}
@@ -336,6 +353,18 @@ def estimate_request(request: dict, prices: dict):
     return estimate, reserve
 
 
+def estimate_cached_run(requests: list[dict], prices: dict) -> Decimal:
+    """Offline estimate when the system text is cached: the static prefix is written once, then read; the rest of each
+    request is ordinary input. Same byte-based token approximation as estimate_request; not observed tokenization."""
+    total = Decimal(0)
+    for n, request in enumerate(requests):
+        static = len(json.dumps([request["system"][0], request["toolConfig"]], ensure_ascii=False).encode("utf-8")) // 3
+        whole = (len(json.dumps(request, ensure_ascii=False).encode("utf-8")) + 2) // 3 + 512
+        cache = {"cacheWriteInputTokens": static} if n == 0 else {"cacheReadInputTokens": static}
+        total += token_cost({"inputTokens": whole - static, "outputTokens": prices["expected_output_tokens"], **cache}, prices)
+    return total
+
+
 def safe_error(exc) -> dict:
     response = getattr(exc, "response", {})
     error = response.get("Error", {})
@@ -450,6 +479,7 @@ def run(args, session=None):
                "model_id": config["model_id"], "region": config["region"], "budget_usd": str(budget),
                "estimated_full_run_cost_usd": str(sum((r[3] for r in requests), Decimal(0))),
                "conservative_full_run_reservation_usd": str(sum((r[4] for r in requests), Decimal(0))),
+               "estimated_full_run_cost_with_cache_usd": str(estimate_cached_run([r[1] for r in requests], config["pricing"])) if cache else None,
                "estimate_method": "UTF-8 request bytes/3 + 512 input tokens; expected output tokens from config; not observed tokenization",
                "reservation_method": "UTF-8 request bytes + 2048 input tokens and 1200 output tokens, before each paid request",
                "articles_processed": 0, "relevant": 0, "irrelevant": 0, "failed_checks": 0,
@@ -501,7 +531,8 @@ def run(args, session=None):
                 break
             key = sha((article["document_id"] + "|" + article["url"]).encode())[:24]
             raw_path = run_dir / "raw" / (key + ".json")
-            article_path = run_dir / "articles" / (key + ".txt")
+            # Full texts are never committed: the .fulltext.txt suffix is git-ignored.
+            article_path = run_dir / "articles" / (key + (".fulltext.txt" if article["content_scope"] == "full_text" else ".txt"))
             article_path.parent.mkdir(parents=True, exist_ok=True)
             article_path.write_text(article["text"], encoding="utf-8")
             attempts = []

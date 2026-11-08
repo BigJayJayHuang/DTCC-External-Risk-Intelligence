@@ -1,0 +1,26 @@
+{
+  "user_agent": "DTCC-External-Risk-Intelligence-capstone/0.1 (research prototype; +https://github.com/BigJayJayHuang/DTCC-External-Risk-Intelligence)",
+  "sec_user_agent_env": "SEC_USER_AGENT",
+  "sec_user_agent_note": "sec.gov asks automated clients to declare a company name and contact email. The project UA has no email, so SEC requests may be refused; a team member may set SEC_USER_AGENT locally (never committed).",
+  "min_request_interval_seconds": 2.0,
+  "timeout_seconds": 30,
+  "max_article_bytes": 3000000,
+  "fulltext_max_words": 1000,
+  "fulltext_cache_dir": "data/events/fulltext_cache",
+  "title_similarity_threshold": 0.9,
+  "feeds": [
+    {"id": "cnbc_top_news", "outlet": "CNBC", "source_tier": "major_media", "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114"},
+    {"id": "cnbc_finance", "outlet": "CNBC", "source_tier": "major_media", "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664"},
+    {"id": "cnbc_economy", "outlet": "CNBC", "source_tier": "major_media", "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=20910258"},
+    {"id": "cnbc_investing", "outlet": "CNBC", "source_tier": "major_media", "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=15839069"},
+    {"id": "marketwatch_top_stories", "outlet": "MarketWatch", "source_tier": "major_media", "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories"},
+    {"id": "marketwatch_market_pulse", "outlet": "MarketWatch", "source_tier": "major_media", "url": "https://feeds.content.dowjones.io/public/rss/mw_marketpulse"},
+    {"id": "marketwatch_realtime", "outlet": "MarketWatch", "source_tier": "major_media", "url": "https://feeds.content.dowjones.io/public/rss/mw_realtimeheadlines"},
+    {"id": "yahoo_finance_news", "outlet": "Yahoo Finance", "source_tier": "other", "url": "https://finance.yahoo.com/news/rssindex"},
+    {"id": "nasdaq_markets", "outlet": "Nasdaq", "source_tier": "other", "url": "https://www.nasdaq.com/feed/rssoutbound?category=Markets"},
+    {"id": "nasdaq_stocks", "outlet": "Nasdaq", "source_tier": "other", "url": "https://www.nasdaq.com/feed/rssoutbound?category=Stocks"},
+    {"id": "fed_press_all", "outlet": "Federal Reserve", "source_tier": "regulator", "url": "https://www.federalreserve.gov/feeds/press_all.xml"},
+    {"id": "sec_press_releases", "outlet": "SEC", "source_tier": "regulator", "url": "https://www.sec.gov/news/pressreleases.rss"}
+  ],
+  "notes": "Feed URLs are public RSS endpoints. robots.txt of each host is fetched with the same client and checked before any feed or article request. Full texts are stored only in fulltext_cache_dir (git-ignored)."
+}

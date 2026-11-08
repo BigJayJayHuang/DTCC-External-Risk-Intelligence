@@ -143,3 +143,25 @@ With the headline filter, 81 Google items and 0 official items went to the model
 | `golden_v13` | v1.3, cache on | 0 of 6 | 0 of 9 | 3,080 / 46,200 | USD 0.138 (USD 0.273 without caching) |
 
 The model applied the headline-only section but still judged each expected-relevant headline too vague.
+
+## Publisher feeds, broad pre-filter and full text (2026-11-08)
+
+`python -m validation.publisher_feeds` reads the feeds in `validation/publisher_feeds_config.json` (CNBC, MarketWatch, Yahoo Finance, Nasdaq, Federal Reserve, SEC).
+
+- **Client:** the project's honest User-Agent, at most one request every 2 seconds. Each host's robots.txt is fetched with the same client and checked before any feed or article request. Per RFC 9309, a 4xx robots.txt means no restrictions, and a 5xx or no answer means do not crawl.
+- **Pre-filter (no AI):** an item is kept when its headline or summary contains any single keyword from any card's query list (case-insensitive, word boundary). Matched keywords and card hints are recorded. Existing Google News items are added and stay headline-only.
+- **Full text:** fetched only when robots.txt allows it, and never past a paywall. A page marked `isAccessibleForFree: false`, or HTTP 401/402/403, falls back to the RSS summary. Text is truncated to about 1,000 words, and `content_scope` is `full_text`, `summary` or `headline_only`.
+- **What stays local:** full texts are written only to `data/events/fulltext_cache/`, and classifier article copies use a `.fulltext.txt` suffix; both are git-ignored. The repo keeps headline, URL, RSS summary, scope and `text_sha256`. The classifier verifies the hash before use.
+
+**First collection (2026-11-08 00:26 UTC):**
+
+| Source | Result |
+|---|---|
+| CNBC (4 feeds) | disallowed by `search.cnbc.com` robots.txt |
+| Nasdaq | robots.txt unanswered, so not crawled |
+| Yahoo Finance | configured feed 404; per-ticker feed host disallowed by robots.txt |
+| MarketWatch | 50 items, 9 kept; article pages disallowed by robots.txt |
+| Federal Reserve | 20 items, 7 kept, 7 full text |
+| SEC | 25 items, 25 kept; article pages HTTP 403, so RSS summaries |
+
+With the 81 Google items, 122 items were prepared (7 full text, 26 summary, 89 headline-only), published 2024-07-29 to 2026-11-07. None of the six golden positives appear in the publisher feeds. The dry-run estimate, with v1.3 as a stand-in, is USD 1.82 with caching (USD 3.00 at the full input rate). The v1.4 run awaits the v1.4 prompt text.

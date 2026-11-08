@@ -158,3 +158,15 @@ class RunV13(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CachedEstimate(unittest.TestCase):
+    def test_cached_estimate_below_uncached(self):
+        system, user_t, cards, _ = C.prompt_parts_v13()
+        schema, config = C.output_schema(cards), json.loads(C.CONFIG.read_text())
+        reqs = [C.build_request_v13(system, C.render_user_v13(user_t, [], {**headline_article(), "document_id": str(n)})[0], schema, config, True)
+                for n in range(5)]
+        uncached = sum((C.estimate_request(r, config["pricing"])[0] for r in reqs), Decimal(0))
+        cached = C.estimate_cached_run(reqs, config["pricing"])
+        self.assertLess(cached, uncached)
+        self.assertGreater(cached, Decimal(0))
