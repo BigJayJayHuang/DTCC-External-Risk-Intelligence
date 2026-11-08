@@ -234,18 +234,68 @@ def output_schema(cards: set[str]) -> dict:
             "required": ["classification"], "additionalProperties": False}
 
 
-def build_request(prompt: str, schema: dict, config: dict) -> dict:
+FLAT_TOOL_DESCRIPTION = ("Submit the classification record specified by the system prompt. Every field is required: "
+                         "when is_relevant is false, set every field except notes to null.")
+
+
+def output_schema_flat(cards: set[str]) -> dict:
+    """One flat object: every field always present, null where it does not apply. No anyOf/oneOf/if-then/const."""
+    enum_or_null = lambda kind, values: {"type": [kind, "null"], "enum": [*values, None]}
+    properties = {
+        "is_relevant": {"type": "boolean"},
+        "same_as_event_id": {"type": ["string", "null"]},
+        "title": {"type": ["string", "null"]}, "summary": {"type": ["string", "null"]},
+        "card_ids": {"type": ["array", "null"], "items": {"type": "string", "enum": sorted(cards)}},
+        "certainty": enum_or_null("integer", [0, 1, 2]), "reach": enum_or_null("integer", [0, 1, 2]),
+        "reach_basis": enum_or_null("string", ["market_wide", "business_line", "major_participant", "group", "single"]),
+        "named_participants": {"type": ["array", "null"], "items": {"type": "string"}},
+        "announced_date": {"type": ["string", "null"], "format": "date"},
+        "effect_date": {"type": ["string", "null"], "format": "date"},
+        "stage": enum_or_null("integer", [1, 2, 3, 4]),
+        "source_tier": enum_or_null("string", ["regulator", "dtcc", "issuer_filing", "official", "major_media", "other"]),
+        "outlet": {"type": ["string", "null"]}, "url": {"type": ["string", "null"]},
+        "evidence_quotes": {"type": ["array", "null"], "items": {"type": "string"}},
+        "confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "notes": {"type": "string"},
+    }
+    return {"type": "object", "properties": properties, "required": list(properties), "additionalProperties": False}
+
+
+RELEVANT_REQUIRED = ["title", "summary", "card_ids", "certainty", "reach", "reach_basis", "named_participants", "announced_date",
+                     "effect_date", "source_tier", "outlet", "url", "evidence_quotes", "confidence"]
+
+
+def validate_flat(record, cards: set[str]) -> dict:
+    """Code-side validation of a flat answer (strict mode off). Returns the record in the internal shape
+    (relevant: all fields; irrelevant: is_relevant + notes). Raises on any violation; the caller sends it to failed.jsonl."""
+    if not isinstance(record, dict):
+        raise ValueError("flat record is not a JSON object")
+    Draft202012Validator(output_schema_flat(cards), format_checker=FormatChecker()).validate(record)
+    if not record["is_relevant"]:
+        if not record["notes"].strip():
+            raise ValueError("irrelevant record without a reason in notes")
+        return {"is_relevant": False, "notes": record["notes"]}
+    missing = [k for k in RELEVANT_REQUIRED if record[k] is None]
+    if missing:
+        raise ValueError("relevant record with null fields: " + ", ".join(missing))
+    if not record["card_ids"] or not record["evidence_quotes"]:
+        raise ValueError("relevant record needs at least one card_id and one evidence quote")
+    return dict(record)
+
+
+def build_request(prompt: str, schema: dict, config: dict, strict: bool = True) -> dict:
     return {"modelId": config["model_id"], "system": [{"text": prompt}],
             "messages": [{"role": "user", "content": [{"text": "Classify the supplied article."}]}],
             "inferenceConfig": {"temperature": 0, "maxTokens": 1200},
-            "toolConfig": {"tools": [{"toolSpec": {"name": TOOL, "description": "Submit the classification record specified by the system prompt.",
-                                                    "strict": True, "inputSchema": {"json": schema}}}],
+            "toolConfig": {"tools": [{"toolSpec": {"name": TOOL, "description": "Submit the classification record specified by the system prompt."
+                                                    if strict else FLAT_TOOL_DESCRIPTION,
+                                                    "strict": strict, "inputSchema": {"json": schema}}}],
                            "toolChoice": {"tool": {"name": TOOL}}}}
 
 
-def build_request_v13(system: str, user: str, schema: dict, config: dict, cache: bool) -> dict:
+def build_request_v13(system: str, user: str, schema: dict, config: dict, cache: bool, strict: bool = True) -> dict:
     """Static prefix (tool + system text) first, then a cachePoint; per-item text only in the user message."""
-    request = build_request(system, schema, config)
+    request = build_request(system, schema, config, strict)
     if cache:
         request["system"].append({"cachePoint": {"type": "default"}})
     request["messages"] = [{"role": "user", "content": [{"text": user}]}]
@@ -268,7 +318,7 @@ class ResponseParseError(ValueError):
         self.fence_fallback = fence_fallback
 
 
-def parse_response(response: dict):
+def parse_response(response: dict, flat: bool = False):
     if response.get("stopReason") not in {"tool_use", "end_turn"}:
         raise ValueError("incomplete_response:" + str(response.get("stopReason")))
     content = response.get("output", {}).get("message", {}).get("content", [])
@@ -277,6 +327,10 @@ def parse_response(response: dict):
         if len(tools) != 1 or tools[0].get("name") != TOOL:
             raise ValueError("unexpected_or_multiple_tools")
         value = tools[0].get("input")
+        if flat:
+            if not isinstance(value, dict):
+                raise ValueError("invalid_tool_input")
+            return value, "tool", False
         if not isinstance(value, dict) or set(value) != {"classification"}:
             raise ValueError("invalid_tool_envelope")
         return value["classification"], "tool", False
@@ -456,8 +510,11 @@ def run(args, session=None):
     register = load_register(args.register)
     with args.major.open(encoding="utf-8-sig", newline="") as handle:
         major = {r["name"] for r in csv.DictReader(handle) if r.get("name")}
-    schema = output_schema(cards)
-    Draft202012Validator.check_schema(schema)
+    response_schema = getattr(args, "response_schema", "strict-anyof")   # CLI default: flat
+    flat = response_schema == "flat"
+    schema = output_schema(cards)                     # internal shape used by check_classification
+    tool_schema = output_schema_flat(cards) if flat else schema
+    Draft202012Validator.check_schema(tool_schema)
     run_id = args.run_id or datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
     if not re.fullmatch(r"[A-Za-z0-9_-]+", run_id):
         raise ValueError("Invalid run ID")
@@ -468,10 +525,10 @@ def run(args, session=None):
     for article in articles:
         if prompt_version == "v1.2":
             prompt, recent_ids = render_prompt(body, catalog, register, article)
-            request = build_request(prompt, schema, config)
+            request = build_request(prompt, tool_schema, config, strict=not flat)
         else:
             user, recent_ids = render_user_v13(user_template, register, article)
-            request = build_request_v13(system_text, user, schema, config, cache)
+            request = build_request_v13(system_text, user, tool_schema, config, cache, strict=not flat)
         estimate, reserve = estimate_request(request, config["pricing"])
         requests.append((article, request, recent_ids, estimate, reserve))
     summary = {"run_id": run_id, "run_date": args.run_date.isoformat(), "dry_run": args.dry_run,
@@ -479,7 +536,8 @@ def run(args, session=None):
                "input_sha256": sha(args.news.read_bytes()), "register_sha256": originals[args.register],
                "prompt_sha256": originals[prompt_path], "prompt_version": version, "prompt_file": public_path(prompt_path),
                "prompt_cache": cache, "config": config,
-               "classifier_sha256": sha(Path(__file__).read_bytes()), "schema_sha256": sha(json.dumps(schema, sort_keys=True).encode()),
+               "classifier_sha256": sha(Path(__file__).read_bytes()), "schema_sha256": sha(json.dumps(tool_schema, sort_keys=True).encode()),
+               "response_schema": response_schema, "tool_strict": not flat,
                "model_id": config["model_id"], "region": config["region"], "budget_usd": str(budget),
                "estimated_full_run_cost_usd": str(sum((r[3] for r in requests), Decimal(0))),
                "conservative_full_run_reservation_usd": str(sum((r[4] for r in requests), Decimal(0))),
@@ -583,7 +641,9 @@ def run(args, session=None):
                 summary[target] += usage.get(source, 0)
             reasons = []
             try:
-                result, mode, fallback = parse_response(response)
+                result, mode, fallback = parse_response(response, flat=flat)
+                if flat:
+                    result = validate_flat(result, cards)   # failure -> failed.jsonl below; never retried
                 summary["fence_fallbacks"] += int(fallback)
                 summary[mode + "_responses"] += 1
                 if isinstance(result, dict) and result.get("is_relevant") is True:
@@ -598,7 +658,8 @@ def run(args, session=None):
                     candidate_handle.flush()
                 else:
                     summary["irrelevant"] += 1
-                    irrelevant_handle.write(json.dumps({"document_id": article["document_id"], "url": article["url"], "prompt_version": version, "classification": result,
+                    irrelevant_handle.write(json.dumps({"document_id": article["document_id"], "url": article["url"], "prompt_version": version,
+                                                        "response_mode": mode, "classification": result,
                                                         "raw_output_file": public_path(raw_path), "usage": usage, "estimated_cost_usd": str(cost)}, ensure_ascii=False) + "\n")
                     irrelevant_handle.flush()
             except Exception as exc:
@@ -612,7 +673,8 @@ def run(args, session=None):
                 summary["failed_checks"] += 1
                 failures.update(reasons)
                 failure_handle.write(json.dumps({"document_id": article["document_id"], "url": article["url"], "prompt_version": version,
-                                                 "reasons": reasons, "raw_output_file": public_path(raw_path)}, ensure_ascii=False) + "\n")
+                                                 "response_schema": response_schema, "reasons": reasons,
+                                                 "raw_output_file": public_path(raw_path)}, ensure_ascii=False) + "\n")
                 failure_handle.flush()
             summary.update(estimated_cost_usd=str(spent), estimated_cost_without_cache_usd=str(uncached),
                            candidates_per_card=dict(counts), failed_check_reasons=dict(failures))
@@ -654,6 +716,9 @@ def parser():
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--run-id")
     p.add_argument("--prompt-version", choices=sorted(PROMPT_FILES), default="v1.2")
+    p.add_argument("--response-schema", choices=["flat", "strict-anyof"], default="flat",
+                   help="flat: one object, all fields present (null if n/a), strict off, validated in code. "
+                        "strict-anyof: the earlier strict schema (forced is_relevant=false in practice; kept to reproduce old runs)")
     p.add_argument("--prompt-cache", choices=["on", "off"], default="on", help="v1.3/v1.4: Converse cachePoint after the static system text")
     p.add_argument("--run-date", type=date.fromisoformat, default=datetime.now(ZoneInfo("America/New_York")).date())
     return p
