@@ -448,9 +448,11 @@ def estimate_cached_run(requests: list[dict], prices: dict) -> Decimal:
 
 
 def safe_error(exc) -> dict:
-    response = getattr(exc, "response", {})
-    error = response.get("Error", {})
-    message = error.get("Message", type(exc).__name__)
+    # Some botocore/urllib3 exceptions carry response=None; never let error reporting itself raise.
+    response = getattr(exc, "response", None)
+    response = response if isinstance(response, dict) else {}
+    error = response.get("Error") if isinstance(response.get("Error"), dict) else {}
+    message = error.get("Message") or (type(exc).__name__ + (": " + str(exc)[:300] if str(exc) else ""))
     # Exception repr/tracebacks may disclose machine paths or credential providers.
     message = re.sub(r"(?:/Users/|/home/|/private/)[^\s\"']+", "[local-path]", message)
     message = re.sub(r"(?:AKIA|ASIA)[A-Z0-9]{16}", "[redacted-access-key]", message)

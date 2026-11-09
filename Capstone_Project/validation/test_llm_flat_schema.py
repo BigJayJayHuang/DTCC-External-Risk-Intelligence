@@ -214,3 +214,14 @@ class EventTypeAndFill(unittest.TestCase):
                 row = next(csv.DictReader(h))
             self.assertEqual((row["event_type"], row["prompt_version"][:23]), ("market_move", "classifier-prompt-v1.5:"))
             self.assertEqual(session.runtime.calls[0]["inferenceConfig"]["maxTokens"], 2000)
+
+
+class SafeError(unittest.TestCase):
+    def test_response_none_does_not_mask_the_error(self):
+        class ReadTimeout(Exception):
+            response = None
+        e = C.safe_error(ReadTimeout("Read timeout on endpoint URL: /Users/someone/x"))
+        self.assertEqual((e["code"], e["http_status"]), ("ReadTimeout", None))
+        self.assertIn("Read timeout on endpoint URL", e["message"])
+        self.assertIn("[local-path]", e["message"])
+        self.assertEqual(C.safe_error(ValueError())["message"], "ValueError")
