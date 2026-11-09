@@ -27,7 +27,9 @@ SPEC = OUT / 'SCORING_SPEC_v1.3.md'
 LINES_CONFIG = OUT / 'config' / 'card_lines.csv'
 REGISTRY = FINAL16 / 'config' / 'card_registry.json'
 V_CHECKS = FINAL16 / 'results' / 'v_driver_checks.json'
-NEWS_COVERAGE = 'manual_register_only'
+NEWS_COVERAGE = 'manual_register_only'                 # default for a week not listed in NEWS_COVERAGE_FILE (Amendment F1)
+NEWS_SCREENED = 'headline_level_ai_screen'
+NEWS_COVERAGE_FILE = OUT / 'config' / 'news_coverage.csv'
 CONTEXT_NEWS = PROJECT / 'data' / 'events' / 'context_news.csv'   # Amendment D: market-move news on indicator cards
 SHOW_ON_MAIN_MIN = 6
 SIGNOFF_MIN_S = 4
@@ -298,13 +300,25 @@ def load_context_news(path=CONTEXT_NEWS):
     return out
 
 
-def card_week(card, week, *, market_recs, cov, ev, v, check, daily=None, related=None):
+def load_news_coverage(path=NEWS_COVERAGE_FILE):
+    """Amendment F1: week (Monday) -> news_coverage. Weeks not listed are manual_register_only."""
+    out = {}
+    if Path(path).exists():
+        with Path(path).open(encoding='utf-8', newline='') as f:
+            for r in csv.DictReader(f):
+                if r['news_coverage'] not in (NEWS_COVERAGE, NEWS_SCREENED):
+                    raise ValueError(f"{path}: unknown news_coverage {r['news_coverage']!r} for {r['week']}")
+                out[r['week']] = r['news_coverage']
+    return out
+
+
+def card_week(card, week, *, market_recs, cov, ev, v, check, daily=None, related=None, news_coverage=NEWS_COVERAGE):
     """Base record for one card-week (before the D2 line split). All inputs are plain data."""
     monday, friday = week_dates(week)
     rec = {'card_id': card['card_id'], 'week': str(monday.date()), 'week_end': str(friday.date()),
            'spec_version': SPEC_VERSION, 'official': False, 'title': card['title'], 'card_status': card['status_registry'],
            'region': 'US', 'risk_family': card['risk_family'], 'cross_entity': card['cross_entity'],
-           'entities': card['entities'], 'legacy_v12_cards': card['legacy_v12_cards'], 'news_coverage': NEWS_COVERAGE}
+           'entities': card['entities'], 'legacy_v12_cards': card['legacy_v12_cards'], 'news_coverage': news_coverage}
     missing = [f"{s} last {c['last_date']} < required {c['required_date']}" for s, c in cov.items() if not c['ok']]
     chains = []
     for mc in card['market_chains']:
@@ -330,6 +344,9 @@ def card_week(card, week, *, market_recs, cov, ev, v, check, daily=None, related
         status, src, reason = 'scored', SOURCE_LABEL[label], None
     elif ev['active_events']:
         status, S, src, reason = 'scored', ev['S'], 'event_manual', None
+    elif news_coverage == NEWS_SCREENED:                # Amendment F2
+        status, S, src = 'no_relevant_news', None, None
+        reason = 'no market signal for this card and no active register event; the weekly headline-level news screen found no relevant news'
     else:
         status, S, src = 'news_not_scanned', None, None
         reason = 'no market signal for this card and no active manual-register event; news classifier not yet running'
@@ -387,11 +404,12 @@ def build_week(week, cards=None):
     pct = {mc['chain_id']: percentile_scores(scoring_signal(mc['chain_id'], mc['field'])) for c in cards for mc in c['market_chains']}
     daily = {mc['chain_id']: daily_info(mc['field'], friday) for c in cards for mc in c['market_chains']}
     related = load_context_news()
+    news_coverage = load_news_coverage().get(str(monday.date()), NEWS_COVERAGE)
     base = [card_week(card, week, market_recs={k: pct[k].get(friday) for k in (mc['chain_id'] for mc in card['market_chains'])},
                       cov=coverage([mc['field'] for mc in card['market_chains']], last, friday, releases),
                       ev=card_events(ranked, card['card_id'], mapping),
                       v=get_v(card['card_id'], str(friday.date())), check=checks.get(card['card_id'], {}), daily=daily,
-                      related=related.get((str(monday.date()), card['card_id']), []))
+                      related=related.get((str(monday.date()), card['card_id']), []), news_coverage=news_coverage)
             for card in cards]
     assign_shared(base)
     return [r for rec, card in zip(base, cards) for r in split_lines(rec, card)]
@@ -442,7 +460,8 @@ def main(argv=None):
         doc = {'spec': 'results/scoring/v1.3_indicator/SCORING_SPEC_v1.3.md', 'spec_status': status, 'spec_amendments': amendments,
                'spec_version': SPEC_VERSION,
                'rubric_version': E.RUBRIC_VERSION, 'week': w, 'week_end': str(week_dates(w)[1].date()),
-               'run_utc': pd.Timestamp.now(tz='UTC').strftime('%Y-%m-%dT%H:%MZ'), 'news_coverage': NEWS_COVERAGE, 'records': recs}
+               'run_utc': pd.Timestamp.now(tz='UTC').strftime('%Y-%m-%dT%H:%MZ'),
+               'news_coverage': load_news_coverage().get(w, NEWS_COVERAGE), 'records': recs}
         path = OUT / f'weekly_scores_v1.3_{w}.json'
         path.write_text(json.dumps(V12._clean(doc), indent=2, ensure_ascii=False) + '\n')
         print(path.relative_to(PROJECT), len(recs), 'records')
