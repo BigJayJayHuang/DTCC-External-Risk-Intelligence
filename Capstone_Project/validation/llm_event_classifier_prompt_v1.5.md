@@ -116,6 +116,7 @@ Return only this JSON object:
 ```json
 {
   "is_relevant": true,
+  "event_type": "regulatory",
   "same_as_event_id": null,
   "title": "short neutral title, max 12 words",
   "summary": "one or two sentences, facts only",
