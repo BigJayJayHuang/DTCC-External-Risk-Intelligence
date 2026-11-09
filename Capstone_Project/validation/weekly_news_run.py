@@ -6,9 +6,10 @@ Steps for one Monday-Sunday week (the week must be over unless --allow-partial-w
   1. Google News RSS (news_queries.csv; headline filter; 25 per card) -> inputs/google/
   2. Publisher feeds (publisher_feeds_config.json; keyword pre-filter; full text where allowed) + the Google items
      -> inputs/feeds/classifier_input.csv
-  3. Dry run with prompt v1.5, flat schema, caching. Stops if the cache-aware estimate is above --cap.
+  3. Dry run with prompt v1.6, flat schema, caching. Stops if the cache-aware estimate is above --cap.
   4. Classify with the same settings, hard budget --cap.
-  5. Group candidates into proposed events, apply Amendment D (market-move news on indicator cards = context).
+  5. Drop non-US items, apply the FICC-GSD-11 gate (Amendment E), group candidates into proposed events, apply
+     Amendment D (market-move news on indicator cards = context).
   6. Write data/events/review/review_<Monday>.csv (never overwritten) and append context rows to
      data/events/context_news.csv.
 Never writes the event register or sign-offs. See data/events/WEEKLY_RUNBOOK.md.
@@ -87,7 +88,8 @@ def run_week(week_start: date, cap: Decimal, *, today: date | None = None, allow
     # 5-6. group, context rule, review sheet, context news
     candidates = out / f"candidates_{run_date.isoformat()}.csv"
     filtered = out / "filtered_non_us.csv"
-    rows, ctx = RS.build(candidates, monday, filtered) if candidates.exists() else ([], [])
+    gate = out / "card_gate.csv"
+    rows, ctx = RS.build(candidates, monday, filtered, gate) if candidates.exists() else ([], [])
     review_dir.mkdir(parents=True, exist_ok=True)
     sheet = review_dir / f"review_{monday.isoformat()}.csv"
     if sheet.exists():   # never overwrite a sheet that may already hold decisions
@@ -97,8 +99,9 @@ def run_week(week_start: date, cap: Decimal, *, today: date | None = None, allow
     added = RS.append_context(context_path, ctx)
     tiers = {t: sum(r["review_tier"] == t for r in rows) for t in TIERS}
     with_non_us = sum(1 for _ in csv.DictReader(filtered.open(encoding="utf-8"))) if filtered.exists() else 0
+    gated = sum(1 for _ in csv.DictReader(gate.open(encoding="utf-8"))) if gate.exists() else 0
     return finish("complete" if real.get("status") == "complete" else "partial_budget_limit", review_sheet=str(sheet),
-                  proposed_events=len(rows), tiers=tiers, filtered_non_us=with_non_us, context_rows_added=added,
+                  proposed_events=len(rows), tiers=tiers, filtered_non_us=with_non_us, card_gate_removals=gated, context_rows_added=added,
                   next_step="Review the 'required' rows, then run: python -m validation.promote_reviewed --sheet " + str(sheet))
 
 

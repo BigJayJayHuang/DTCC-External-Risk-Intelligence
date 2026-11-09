@@ -129,6 +129,30 @@ class FlatRun(unittest.TestCase):
         self.assertEqual((a.response_schema, a.prompt_version), ("flat", "v1.2"))
 
 
+
+class RecentEventDescriptions(unittest.TestCase):
+    REG = [{"event_id": "EV0005", "title": "SEC extends Treasury clearing compliance dates by one year", "card_ids": ["FICC-GSD-03"],
+            "announced_date": "2025-02-25", "effect_date": "2025-02-25", "description": ""},
+           {"event_id": "EV0006", "title": "Treasury clearing compliance date: eligible cash transactions", "card_ids": ["FICC-GSD-03"],
+            "announced_date": "2025-02-25", "effect_date": "2026-12-31", "description": ""},
+           {"event_id": "EV0099", "title": "Later event", "card_ids": ["XE-MEMBER"], "announced_date": "2026-12-01", "effect_date": "2026-12-01",
+            "description": "Hand-written line"}]
+
+    def test_effect_date_and_description(self):
+        recent = {r["event_id"]: r for r in C.recent_events(self.REG, "2026-11-06")}
+        self.assertEqual(sorted(recent), ["EV0005", "EV0006"])                # announced after the article: not listed
+        self.assertEqual(recent["EV0006"]["effect_date"], "2026-12-31")
+        self.assertIn("upcoming, takes effect 2026-12-31", recent["EV0006"]["description"])
+        self.assertIn("past, took effect 2025-02-25", recent["EV0005"]["description"])
+        self.assertEqual(C.recent_events(self.REG, "2026-12-02")[-1]["description"], "Hand-written line")
+
+    def test_rendered_user_message_carries_descriptions(self):
+        user, ids = C.render_user_v13("{RECENT_EVENTS}\n{ARTICLE}", self.REG, {"published_date": "2026-11-06", "title": "t"})
+        self.assertEqual(ids, {"EV0005", "EV0006"})
+        listed = json.loads(user.split("\n", 1)[0])
+        self.assertTrue(all(r["description"] and r["effect_date"] for r in listed))
+
+
 if __name__ == "__main__":
     unittest.main()
 

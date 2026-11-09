@@ -190,8 +190,28 @@ def prompt_parts_v13(path: Path = PROMPT_V13, label: str = "v1.3"):
     return system_body.replace("{CARD_CATALOG}", catalog), user_template, set(cards), f"classifier-prompt-{label}:" + sha(path.read_bytes())[:12]
 
 
+def describe_event(r: dict, as_of: str) -> str:
+    """One line per recent event, so an update links to the right one (e.g. the 2026-12-31 compliance date, not the
+    2025 rule that set it). A register column `description`, when filled, is used as is."""
+    if (r.get("description") or "").strip():
+        return r["description"].strip()
+    eff = r.get("effect_date") or ""
+    when = f"upcoming, takes effect {eff}" if eff and eff > as_of else (f"past, took effect {eff}" if eff else "effect date not recorded")
+    return f"{r['title']} ({'|'.join(r['card_ids'])}); announced {r['announced_date']}; {when}."
+
+
+def recent_events(register: list[dict], published_date: str) -> list[dict]:
+    """Register events announced on or before the article date, each with effect_date and a one-line description."""
+    out = []
+    for r in register:
+        if r["announced_date"] and r["announced_date"] <= published_date:
+            out.append({"event_id": r["event_id"], "title": r["title"], "description": describe_event(r, published_date),
+                        "card_ids": r["card_ids"], "announced_date": r["announced_date"], "effect_date": r["effect_date"]})
+    return out
+
+
 def render_user_v13(template: str, register: list[dict], article: dict):
-    recent = [r for r in register if r["announced_date"] and r["announced_date"] <= article["published_date"]]
+    recent = recent_events(register, article["published_date"])
     values = {"RECENT_EVENTS": json.dumps(recent, ensure_ascii=False), "ARTICLE": json.dumps(article, ensure_ascii=False)}
     return re.sub(r"\{(RECENT_EVENTS|ARTICLE)\}", lambda m: values[m[1]], template), {r["event_id"] for r in recent}
 
@@ -203,12 +223,13 @@ def load_register(path: Path) -> list[dict]:
     for row in rows:
         events.append({"event_id": row["event_id"], "title": row["title"],
                        "card_ids": (row.get("card_ids") or row.get("chain_id", "")).split("|"),
-                       "announced_date": row.get("announced_date", ""), "effect_date": row.get("effect_date", "")})
+                       "announced_date": row.get("announced_date", ""), "effect_date": row.get("effect_date", ""),
+                       "description": row.get("description", "")})
     return events
 
 
 def render_prompt(body: str, catalog: str, register: list[dict], article: dict):
-    recent = [r for r in register if r["announced_date"] and r["announced_date"] <= article["published_date"]]
+    recent = recent_events(register, article["published_date"])
     values = {"CARD_CATALOG": catalog, "RECENT_EVENTS": json.dumps(recent, ensure_ascii=False),
               "ARTICLE": json.dumps(article, ensure_ascii=False)}
     # One pass: literal placeholder-looking text in an article is never interpolated.

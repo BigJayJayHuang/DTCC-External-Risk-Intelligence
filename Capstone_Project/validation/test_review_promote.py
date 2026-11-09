@@ -43,7 +43,7 @@ class Grouping(unittest.TestCase):
     def test_same_occurrence_merged_and_certainty_lifted(self):
         rows = self.sheet([cand("A", "Tech stocks log worst day since 2020 in AI selloff", "ECS-NSCC-LIQ", "MarketWatch", conf=0.55),
                            cand("B", "Tech stocks suffer worst day since 2020 as AI selloff deepens", "ECS-NSCC-LIQ", "CNBC", day="2026-11-06", conf=0.5),
-                           cand("C", "Hedge funds cut staff", "FICC-GSD-11", "WSJ")])
+                           cand("C", "Hedge funds cut staff after repo losses", "FICC-GSD-11", "WSJ")])
         self.assertEqual(len(rows), 2)
         merged = next(r for r in rows if "|" in r["candidate_ids"])
         self.assertEqual((merged["candidate_ids"], merged["independent_outlets"]), ("A|B", 2))
@@ -84,7 +84,7 @@ class AmendmentD(Grouping):
     def test_context_rule_and_tiers(self):
         rows, ctx = self.sheet_ctx([
             cand("A", "Tech stocks log worst day since 2020", "ECS-NSCC-LIQ", "MarketWatch", etype="market_move"),
-            cand("B", "Hedge funds dump positions as selloff deepens", "ECS-NSCC-LIQ|FICC-GSD-11", "WSJ", day="2026-11-02", etype="market_move"),  # 3 days from A
+            cand("B", "Hedge funds dump Treasury positions as selloff deepens", "ECS-NSCC-LIQ|FICC-GSD-11", "WSJ", day="2026-11-02", etype="market_move"),  # 3 days from A
             cand("C", "Arini offloads debt amid margin calls", "ECS-NSCC-LIQ|XE-MEMBER", "WSJ", day="2026-11-03", etype="firm_specific")])
         by = {(r["candidate_ids"], r["card_ids"]): r for r in rows}
         self.assertEqual(sorted(by), [("A", "ECS-NSCC-LIQ"), ("B", "ECS-NSCC-LIQ"), ("B", "FICC-GSD-11"), ("C", "ECS-NSCC-LIQ|XE-MEMBER")])
@@ -156,6 +156,44 @@ class CodeChecks(Grouping):
         self.assertEqual((by["A"]["date_flags"], by["A"]["review_tier"] in ("required", "auto")), ("date_unverified", True))
         self.assertEqual((by["B"]["date_flags"], by["B"]["review_tier"]), ("date_unverified|date_mismatch", "date_review"))
         self.assertEqual(by["A"]["geography"], "us")
+
+
+class CardGate(Grouping):                                                # Amendment E5
+    def test_gate_terms(self):
+        hit = ["Basis trade unwinds hit Treasuries", "Repo rates jump", "SOFR spikes", "sponsored repo volumes", "Agent-clearing growth",
+               "hedge funds unwind basis-trades", "TREASURY market selloff"]
+        miss = ["Hedge Funds Dump Positions and Cut Staff as Selloff Deepens", "Quarterly report shows losses", "Repository outage",
+                "Sponsorship deal for fund"]
+        self.assertTrue(all(RS.GATE_TERMS.search(t) for t in hit))
+        self.assertFalse(any(RS.GATE_TERMS.search(t) for t in miss))
+
+    def test_card_removed_and_tier_recomputed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            gate_log = Path(tmp) / "card_gate.csv"
+            cands = [cand("A", "Hedge Funds Dump Positions and Cut Staff as Selloff Deepens", "ECS-NSCC-LIQ|FICC-GSD-11", "WSJ",
+                          etype="market_move", geo="us", tier="major_media"),
+                     cand("B", "Hedge fund basis trade unwind hits Treasury repo", "FICC-GSD-11", "Reuters", day="2026-11-03",
+                          etype="firm_specific", geo="us", tier="major_media"),
+                     cand("C", "Hedge fund closes after equity losses", "FICC-GSD-11", "Bloomberg", day="2026-11-03",
+                          etype="firm_specific", geo="us", tier="major_media")]
+            with tempfile.TemporaryDirectory(dir=PROJECT / "data") as d:
+                root = Path(d)
+                for c in cands:
+                    (root / f"{c['event_id']}.txt").write_text(c["title"]); c["article_file"] = str((root / f"{c['event_id']}.txt").relative_to(PROJECT))
+                path = root / "c.csv"
+                with path.open("w", newline="") as f:
+                    w = csv.DictWriter(f, fieldnames=CAND_FIELDS); w.writeheader(); w.writerows(cands)
+                rows, ctx = RS.build(path, WEEK, None, gate_log)
+            by = {r["candidate_ids"]: r for r in rows}
+            self.assertEqual(sorted(by), ["A", "B"])                         # C had only FICC-GSD-11: dropped
+            self.assertEqual((by["A"]["card_ids"], by["A"]["review_tier"]), ("ECS-NSCC-LIQ", "context"))   # now context under D
+            self.assertIn(RS.GATE_FLAG, json.loads(by["A"]["validate_flags"]))
+            self.assertEqual(by["B"]["card_ids"], "FICC-GSD-11")             # term present: kept
+            self.assertNotIn(RS.GATE_FLAG, json.loads(by["B"]["validate_flags"]))
+            self.assertEqual({c["card_id"] for c in ctx}, {"ECS-NSCC-LIQ"})
+            with gate_log.open() as f:
+                logged = {r["candidate_id"]: (r["card_ids_after"], r["action"]) for r in csv.DictReader(f)}
+            self.assertEqual(logged, {"A": ("ECS-NSCC-LIQ", "card_removed"), "C": ("", "item_dropped")})
 
 
 class Promote(unittest.TestCase):

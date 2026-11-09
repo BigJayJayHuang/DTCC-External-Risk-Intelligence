@@ -20,6 +20,9 @@ Checks after validate() (prompt v1.6 fields; older candidate files simply skip t
   - one independent source, headline-only, event_type operational or cyber: date flag "date_unverified";
   - an item's announced_date more than 14 days from its feed published date: date flag "date_mismatch", and
     review_tier "date_review" (kept out of the week's tiering until reviewed).
+FICC-GSD-11 gate (Amendment E5), after the non-US filter and before grouping: the card stays on an item only if the
+source text the model saw (headline, summary or text) names Treasury/Treasuries, repo, basis trade, SOFR, sponsored or
+agent clearing. Otherwise the card is removed (an item left with no card is dropped) and the removal is logged.
 
 Per proposed event: union of card_ids; the highest model certainty and reach among members; earliest announced_date;
 the effect_date of the most confident member; all sources and evidence quotes. The existing event_scoring.validate()
@@ -49,6 +52,10 @@ CONTEXT_FIELDS = ["week", "card_id", "title", "outlet", "url", "event_type", "pr
 TIER_ORDER = ["regulator", "dtcc", "official", "issuer_filing", "major_media", "other"]
 DATE_MISMATCH_DAYS = 14
 HEADLINE_SCOPES = {"headline_only", "headline_snippet"}
+GATED_CARD = "FICC-GSD-11"   # Amendment E5
+GATE_TERMS = re.compile(r"\b(treasury|treasuries|repos?|basis[- ]trades?|sofr|sponsored|agent[- ]clearing)\b", re.I)
+GATE_FLAG = "FICC-GSD-11 removed: no Treasury, repo, basis trade, SOFR, sponsored or agent clearing term in the source text"
+GATE_FIELDS = ["candidate_id", "title", "card_ids_before", "card_ids_after", "action", "outlet", "url"]
 FILTERED_FIELDS = ["candidate_id", "title", "card_ids", "event_type", "geography", "outlet", "url", "announced_date", "published_date"]
 FIELDS = ["proposed_event_id", "title", "event_type", "card_ids", "scored_card_ids", "context_card_ids", "certainty", "certainty_before_grouping",
           "reach", "reach_basis", "announced_date", "effect_date", "would_be_S", "would_be_severity", "review_tier", "geography", "new_information", "date_flags",
@@ -123,6 +130,26 @@ def load_candidates(path: Path) -> list[dict]:
                         "new_information": {"True": True, "False": False}.get(r.get("new_information") or ""),
                         "published_date": r.get("published_date") or ""})
     return out
+
+
+def gate_text(c: dict) -> str:
+    """The source text the model saw (the saved article file: headline, then summary or text); the model's own title and
+    summary only when no article file was saved."""
+    return c["text"] if c["text"] else c["title"] + "\n" + c["summary"]
+
+
+def card_gate(cands: list[dict]) -> tuple[list[dict], list[dict]]:
+    """Amendment E5. Returns (kept candidates, log rows)."""
+    kept, log = [], []
+    for c in cands:
+        if GATED_CARD not in c["card_ids"] or GATE_TERMS.search(gate_text(c)):
+            kept.append(c); continue
+        after = [x for x in c["card_ids"] if x != GATED_CARD]
+        log.append({"candidate_id": c["candidate_id"], "title": c["headline"] or c["title"], "card_ids_before": "|".join(c["card_ids"]),
+                    "card_ids_after": "|".join(after), "action": "card_removed" if after else "item_dropped", "outlet": c["outlet"], "url": c["url"]})
+        if after:
+            kept.append({**c, "card_ids": after, "flags": c["flags"] + [GATE_FLAG]})
+    return kept, log
 
 
 def syndication_sources(members: list[dict]) -> tuple[list[dict], int]:
@@ -202,15 +229,15 @@ def proposed_event(members: list[dict], week: date, catalog: set[str], major: se
                                     "headline": m["headline"], "evidence_quotes": m["evidence_quotes"], "item_flags": m["flags"]} for m in members],
                                   ensure_ascii=False),
             "evidence_quotes": json.dumps(quotes, ensure_ascii=False), "confidence": rep["confidence"],
-            "validate_flags": json.dumps(event.review_reasons + (["S >= 4: human check before publishing"] if S is not None and S >= 4 else []),
-                                         ensure_ascii=False),
+            "validate_flags": json.dumps(event.review_reasons + (["S >= 4: human check before publishing"] if S is not None and S >= 4 else [])
+                                         + ([GATE_FLAG] if any(GATE_FLAG in m["flags"] for m in members) else []), ensure_ascii=False),
             "candidate_ids": "|".join(ids), "prompt_version": rep["prompt_version"], "model": rep["model"],
             "decision": "", "reviewer": "", "corrected_card_ids": "", "corrected_certainty": "", "corrected_reach": "", "reviewer_notes": ""}, ctx_rows
 
 
-def build(candidates: Path, week: date, filtered_out: Path | None = None) -> tuple[list[dict], list[dict]]:
+def build(candidates: Path, week: date, filtered_out: Path | None = None, gate_out: Path | None = None) -> tuple[list[dict], list[dict]]:
     """Returns (review-sheet rows sorted by confidence, context-news rows). Non-US candidates are dropped first and,
-    when filtered_out is given, logged there."""
+    when filtered_out is given, logged there; then the FICC-GSD-11 gate runs, logged to gate_out when given."""
     _, _, catalog, _ = prompt_parts_v13(PROMPT_V14, "v1.4")
     with MAJOR.open(encoding="utf-8-sig", newline="") as f:
         major = {r["name"] for r in csv.DictReader(f) if r.get("name")}
@@ -222,6 +249,11 @@ def build(candidates: Path, week: date, filtered_out: Path | None = None) -> tup
         with filtered_out.open("w", encoding="utf-8", newline="") as f:
             w = csv.DictWriter(f, fieldnames=FILTERED_FIELDS, extrasaction="ignore", lineterminator="\n"); w.writeheader()
             w.writerows({**c, "card_ids": "|".join(c["card_ids"])} for c in non_us)
+    cands, gate_log = card_gate(cands)
+    if gate_out is not None:
+        gate_out.parent.mkdir(parents=True, exist_ok=True)
+        with gate_out.open("w", encoding="utf-8", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=GATE_FIELDS, lineterminator="\n"); w.writeheader(); w.writerows(gate_log)
     moves = [c for c in cands if c["event_type"] == "market_move"]
     others = [c for c in cands if c["event_type"] != "market_move"]
     built = [proposed_event(g, week, catalog, major) for g in market_move_groups(moves) + group(others)]
@@ -256,7 +288,8 @@ def main(argv=None):
     a = p.parse_args(argv)
     if a.week.weekday() != 0:
         raise SystemExit("--week must be a Monday")
-    rows, ctx = build(a.candidates, a.week, a.filtered_out or a.out.parent / f"filtered_non_us_{a.week.isoformat()}.csv")
+    rows, ctx = build(a.candidates, a.week, a.filtered_out or a.out.parent / f"filtered_non_us_{a.week.isoformat()}.csv",
+                      a.out.parent / f"card_gate_{a.week.isoformat()}.csv")
     a.out.parent.mkdir(parents=True, exist_ok=True)
     with a.out.open("x", encoding="utf-8", newline="") as f:          # never overwrite a sheet that may hold decisions
         w = csv.DictWriter(f, fieldnames=FIELDS, lineterminator="\n"); w.writeheader(); w.writerows(rows)
