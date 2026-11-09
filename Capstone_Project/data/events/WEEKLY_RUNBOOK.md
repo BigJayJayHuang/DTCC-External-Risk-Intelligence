@@ -20,8 +20,10 @@ aws sso login --profile devx-bedrock
    - Google items are kept only when the headline contains all the words of a search, or when they come from a major outlet.
    - Feed items are kept when they contain any search keyword.
 3. **Estimates the cost (dry run).** If the estimate with caching is above `--cap`, it stops here and has spent nothing.
-4. **Classifies each item** with prompt v1.5, the flat answer format and caching. It never spends more than `--cap`.
-5. **Groups items about the same occurrence into proposed events.**
+4. **Classifies each item** with prompt v1.6, the flat answer format and caching. It never spends more than `--cap`.
+5. **Applies the Amendment E checks, then groups items about the same occurrence into proposed events.**
+   - Items with geography `non_us` are dropped and logged to `filtered_non_us.csv`.
+   - FICC-GSD-11 stays on an item only when its source text names Treasury, repo, basis trade, SOFR, sponsored or agent clearing. Removals are logged to `card_gate.csv`.
    - The groups follow Amendment D of the scoring spec.
    - Price, yield, spread, volatility or volume moves on cards that already have a market indicator become *context*: they are shown as related news and never scored.
 6. **Writes two files:**
@@ -39,10 +41,14 @@ Open the review sheet. Each row is one proposed event, sorted by the model's con
 | `required` | Would score S ≥ 4 or severity ≥ 6 on a card | Fill `decision` (`approve`, `edit` or `reject`) and `reviewer`. For `edit`, also fill `corrected_card_ids`, `corrected_certainty` or `corrected_reach`. |
 | `auto` | Lower scores | Nothing needed. It enters as "AI-classified, not reviewed" and stays off the main page. Write `reject` to keep it out. |
 | `context` | Market move on an indicator card | Nothing. It is related news only and never enters the event register. |
+| `duplicate` | Same as a recorded event, with no new information | Nothing. Its items become related news on its cards; it never enters the register. |
+| `date_review` | The announced date is more than 14 days from the feed date | Same as `required`: check the date, then decide. |
 
 Read each row's `sources` and `evidence_quotes` before you decide. Every quote is copied word for word from the source text. `validate_flags` lists the automatic checks that fired, for example a certainty cap when only one outlet reported it.
 
 A row with `same_as_event_id` updates an event that is already in the register. Merge it by hand.
+
+`date_flags` = `date_unverified` means a single headline-only source on an outage or cyber item: check the article's real date before approving.
 
 ## 3. Promote
 

@@ -197,16 +197,16 @@ def describe_event(r: dict, as_of: str) -> str:
         return r["description"].strip()
     eff = r.get("effect_date") or ""
     when = f"upcoming, takes effect {eff}" if eff and eff > as_of else (f"past, took effect {eff}" if eff else "effect date not recorded")
-    return f"{r['title']} ({'|'.join(r['card_ids'])}); announced {r['announced_date']}; {when}."
+    return f"{r.get('title', '')} ({'|'.join(r.get('card_ids') or [])}); announced {r.get('announced_date', '')}; {when}."
 
 
 def recent_events(register: list[dict], published_date: str) -> list[dict]:
-    """Register events announced on or before the article date, each with effect_date and a one-line description."""
+    """Register events announced on or before the article date, each with effect_date and a one-line description
+    (prompts v1.3+, i.e. the weekly runs; render_prompt for v1.2 is unchanged)."""
     out = []
     for r in register:
         if r["announced_date"] and r["announced_date"] <= published_date:
-            out.append({"event_id": r["event_id"], "title": r["title"], "description": describe_event(r, published_date),
-                        "card_ids": r["card_ids"], "announced_date": r["announced_date"], "effect_date": r["effect_date"]})
+            out.append({**r, "description": describe_event(r, published_date)})     # every register field kept, plus the line
     return out
 
 
@@ -224,12 +224,13 @@ def load_register(path: Path) -> list[dict]:
         events.append({"event_id": row["event_id"], "title": row["title"],
                        "card_ids": (row.get("card_ids") or row.get("chain_id", "")).split("|"),
                        "announced_date": row.get("announced_date", ""), "effect_date": row.get("effect_date", ""),
-                       "description": row.get("description", "")})
+                       **({"description": row["description"].strip()} if (row.get("description") or "").strip() else {})})
     return events
 
 
 def render_prompt(body: str, catalog: str, register: list[dict], article: dict):
-    recent = recent_events(register, article["published_date"])
+    # v1.2 (the default prompt) keeps its original recent-events input for reproducibility; descriptions are v1.3+ only
+    recent = [r for r in register if r["announced_date"] and r["announced_date"] <= article["published_date"]]
     values = {"CARD_CATALOG": catalog, "RECENT_EVENTS": json.dumps(recent, ensure_ascii=False),
               "ARTICLE": json.dumps(article, ensure_ascii=False)}
     # One pass: literal placeholder-looking text in an article is never interpolated.

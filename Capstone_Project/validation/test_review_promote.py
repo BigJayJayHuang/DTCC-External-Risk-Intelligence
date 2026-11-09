@@ -1,5 +1,5 @@
 """Offline tests for review_sheet.py, promote_reviewed.py and the unreviewed-AI flags in scoring_v1_3 (temp files only)."""
-import csv, json, tempfile, unittest
+import csv, io, json, tempfile, unittest
 from datetime import date
 from pathlib import Path
 
@@ -250,7 +250,8 @@ class Promote(unittest.TestCase):
         self.assertEqual((rows["P5"]["certainty"], rows["P5"]["card_ids"], rows["P5"]["chain_id"]), ("2", "ECS-NSCC-LIQ|FICC-GSD-11", "ECS-NSCC-LIQ"))
         self.assertEqual(res["rejected"], ["P3"]); self.assertEqual(res["manual_merge"], [{"proposal": "P4", "existing_event": "EV0006"}])
         self.assertEqual(sorted(res["needs_signoff_for_S_ge_4"]), sorted([rows["P1"]["event_id"], rows["P5"]["event_id"]]))
-        self.assertEqual([r["event_id"] for r in self.reg_rows()][-3:], ["EV0010", "EV0011", "EV0012"])
+        nxt = max(int(r["event_id"][2:]) for r in csv.DictReader(io.StringIO((PROJECT / "data/events/event_register.csv").read_text()))) + 1
+        self.assertEqual([r["event_id"] for r in self.reg_rows()][-3:], [f"EV{n:04d}" for n in range(nxt, nxt + 3)])   # numbering continues
         again = PR.promote(sheet, self.register, today="2026-11-08", spec=self.spec_ok)                # idempotent
         self.assertEqual((len(self.reg_rows()), again["inserted"]), (n0 + 3, []))
         self.assertEqual(sorted(again["skipped_already_promoted"]), ["P1", "P2", "P5"])
