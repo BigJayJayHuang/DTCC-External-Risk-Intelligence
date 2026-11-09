@@ -14,12 +14,14 @@ MONDAY = date(2026, 11, 2)
 class Fakes:
     def __init__(self, estimate="0.50", cands=None):
         self.estimate, self.cands, self.calls = Decimal(estimate), cands or [], []
+        self.feed_args=[]
 
     def google(self, config, queries, monday, out):
         out.mkdir(parents=True, exist_ok=True)
         return [], [], {"kept_after_cap": 0}, []
 
     def feeds(self, argv):
+        self.feed_args=argv
         out = Path(argv[argv.index("--out-dir") + 1]); out.mkdir(parents=True, exist_ok=True)
         (out / "classifier_input.csv").write_text("document_id,title,url,publication_date,published_at_utc,summary,source_id\n")
         return {"items_to_classifier": 3, "scope_totals": {"headline_only": 3}, "published_range": ["2026-11-02", "2026-11-06"]}
@@ -37,6 +39,7 @@ class Fakes:
 class WeeklyRun(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory(); self.root = Path(self.tmp.name)
+        self.official=self.root/'official.csv';self.official.write_text('document_id,title,url,publication_date,published_at_utc,summary,source_id\n')
 
     def tearDown(self):
         self.tmp.cleanup()
@@ -44,7 +47,61 @@ class WeeklyRun(unittest.TestCase):
     def run_week(self, fakes, **kw):
         return W.run_week(MONDAY, Decimal("1.00"), today=date(2026, 11, 9), run_id="t", weekly_dir=self.root / "weekly",
                           review_dir=self.root / "review", context_path=self.root / "context_news.csv",
-                          collect_google=fakes.google, collect_feeds=fakes.feeds, classify=fakes.classify, **kw)
+                          collect_google=fakes.google, collect_feeds=fakes.feeds, classify=fakes.classify,
+                          official_news=kw.pop('official_news',self.official), **kw)
+
+    def test_original_official_export_and_window_are_passed_to_collector(self):
+        f=Fakes();self.run_week(f,collect_only=True)
+        self.assertEqual(f.feed_args[f.feed_args.index('--official')+1],str(self.official))
+        self.assertEqual(f.feed_args[f.feed_args.index('--week-start')+1],'2026-11-02')
+        self.assertEqual(f.feed_args[f.feed_args.index('--week-end')+1],'2026-11-08')
+
+    def test_collect_only_never_calls_classifier(self):
+        f=Fakes();res=self.run_week(f,collect_only=True)
+        self.assertEqual(f.calls,[])
+        self.assertEqual(res['status'],'collected_for_review_no_model_calls')
+        self.assertFalse((self.root/'review').exists())
+
+    def test_dry_run_never_pays_even_when_estimate_exceeds_cap(self):
+        f=Fakes(estimate='9');res=self.run_week(f,dry_run=True)
+        self.assertEqual([a.dry_run for a in f.calls],[True])
+        self.assertEqual(res['status'],'dry_run_no_model_calls')
+        self.assertTrue(res['estimate_above_cap'])
+
+    def test_missing_official_export_does_not_silently_drop_it(self):
+        f=Fakes();res=self.run_week(f,official_news=self.root/'missing.csv')
+        self.assertEqual(res['status'],'stopped_official_export_unavailable')
+        self.assertEqual(f.calls,[])
+
+    def test_uncertain_prior_call_is_not_reported_as_complete(self):
+        f=Fakes();normal=f.classify
+        def classify(args):
+            value=normal(args)
+            if not args.dry_run:value['unreported_cost_reserve_usd']='0.09'
+            return value
+        f.classify=classify
+        res=self.run_week(f)
+        self.assertEqual(res['status'],'stopped_unresolved_cost_reserve')
+        self.assertFalse((self.root/'review').exists())
+
+    def test_unresolved_earlier_run_blocks_new_paid_batch(self):
+        old=self.root/'weekly/2026-11-02/old/classifier_runs/v15/summary.json'
+        old.parent.mkdir(parents=True);old.write_text(json.dumps({'unreported_cost_reserve_usd':'0.092103','status':'invocation_error'}))
+        f=Fakes();res=self.run_week(f)
+        self.assertEqual(res['status'],'stopped_unresolved_prior_cost_reserve')
+        self.assertEqual([a.dry_run for a in f.calls],[True])
+        self.assertEqual(res['pending_reservations'][0]['unreported_cost_reserve_usd'],'0.092103')
+
+    def test_bad_run_id_is_rejected_before_collection(self):
+        with self.assertRaises(ValueError):
+            W.run_week(MONDAY,Decimal('1'),today=date(2026,11,9),run_id='../escape',weekly_dir=self.root/'weekly')
+
+    def test_interrupted_running_receipt_blocks_paid_batch(self):
+        old=self.root/'weekly/2026-11-02/old/classifier_runs/v15/summary.json'
+        old.parent.mkdir(parents=True);old.write_text(json.dumps({'unreported_cost_reserve_usd':'0','status':'running'}))
+        f=Fakes();res=self.run_week(f)
+        self.assertEqual(res['status'],'stopped_unresolved_prior_cost_reserve')
+        self.assertEqual([a.dry_run for a in f.calls],[True])
 
     def test_stops_when_estimate_above_cap(self):
         f = Fakes(estimate="1.01")

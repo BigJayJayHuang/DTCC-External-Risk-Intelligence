@@ -17,8 +17,14 @@ def build(output=None):
     # earlier checkout. Include them explicitly, with paths confined to the bundle.
     for folder in [PROJECT/'capstone_database/data',PROJECT/'capstone_database/exports',PROJECT/'capstone_database/logs']:
         for p in folder.iterdir():
-            if p.name in ['capstone.sqlite3.gz','snapshot_manifest.json','latest_update.json','validation.json','dataset_inventory.json','latest_reviewed_batch_sync.json','latest_github_sync.json','latest_research_import.json','research_repeat_import_check.json'] or (folder.name=='exports' and p.suffix=='.csv'):
+            if p.name in ['capstone.sqlite3.gz','snapshot_manifest.json','latest_update.json','validation.json','dataset_inventory.json','latest_reviewed_batch_sync.json','latest_github_sync.json','latest_research_import.json','research_repeat_import_check.json','scoring_input_refresh.json','source_health_summary.json','source_health_summary.md'] or (folder.name=='exports' and p.suffix=='.csv'):
                 names.append(str(p.relative_to(REPO)))
+    names=sorted(set(names))
+    # The current year can be new (e.g. January) and not yet tracked in Git.
+    # Include only official annual Cboe cache names, never arbitrary cache files.
+    import re
+    for p in (PROJECT/'data/raw/cboe').glob('market_history_*.csv'):
+        if re.fullmatch(r'market_history_\d{4}\.csv',p.name):names.append(str(p.relative_to(REPO)))
     names=sorted(set(names))
     if not names:raise ValueError('No tracked project files to package')
     inventory=[]

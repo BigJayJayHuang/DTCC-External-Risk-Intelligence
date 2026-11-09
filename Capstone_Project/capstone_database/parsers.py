@@ -87,6 +87,25 @@ def parse(s,data,as_of,requested_url):
             if not title or not url:raise ValueError('Feed entry missing title or URL')
             rows.append(news_record(s,title,url,field(n,'description','summary'),field(n,'pubDate','published','date')))
         dataset='news'
+    elif kind=='official_press_index':
+        # CFTC temporarily retired its RSS feeds in October2026. The official
+        # dated press-release index is a replacement discovery source, not body text.
+        soup=BeautifulSoup(data,'html.parser')
+        for tr in soup.select('table tbody tr'):
+            link=next((a for a in tr.select('a[href]') if re.fullmatch(r'/PressRoom/PressReleases/\d+-\d{2}',urlsplit(a['href']).path)),None)
+            if link is None:continue
+            if urlsplit(canonical(link['href'],s['url'])).hostname!='www.cftc.gov':
+                raise ValueError('Unexpected CFTC press-release host')
+            timestamp=tr.find('time')
+            if timestamp is None:raise ValueError('CFTC press index entry lacks publisher date')
+            raw_date=timestamp.get('datetime') or timestamp.get_text(' ',strip=True)
+            record=news_record(s,link.get_text(' ',strip=True),link['href'],'',raw_date,
+                               {'content_scope':'headline_only','text_scope':'publisher press index metadata; full article text not fetched',
+                                'publication_type':'official_press_release','replaced_transport':'retired_CFTC_RSS'})
+            if record['publication_date'] is None:raise ValueError('CFTC publisher date is invalid')
+            if record['publication_date']<=as_of.isoformat():rows.append(record)
+        if not rows:raise ValueError('CFTC dated press-index layout changed or no eligible entries found')
+        dataset='news'
     elif kind=='esma_news':
         soup=BeautifulSoup(data,'html.parser')
         for a in soup.select('a[href]'):
@@ -160,8 +179,10 @@ def parse(s,data,as_of,requested_url):
         m=re.search(r'(20\d{6})',requested_url)
         if not m:raise ValueError('RDS report date missing')
         day=datetime.strptime(m[1],'%Y%m%d').date().isoformat()
-        table=list(csv.reader(io.StringIO(data.decode('utf-8-sig'))))
-        if not table or data.lstrip().startswith(b'<'):raise ValueError('Not a repository CSV')
+        decoded=data.decode('utf-8-sig')
+        table=list(csv.reader(io.StringIO(decoded)))
+        if not table or decoded.lstrip().startswith('<') or not any(len(row)>1 for row in table):
+            raise ValueError('Not a repository CSV')
         for i,row in enumerate(table,1):
             rows.append({'source_id':sid,'report_date':day,'jurisdiction':'EU EMIR' if 'esma' in sid else ('UK SFTR' if 'sftr' in sid else 'UK EMIR'),'source_row':i,'row_values':row,'scope':'Preserve table/jurisdiction/units; EU and UK cannot simply be summed; not RDS revenue'})
         dataset='rds_reports'

@@ -22,5 +22,5 @@
     {"id": "fed_press_all", "outlet": "Federal Reserve", "source_tier": "regulator", "url": "https://www.federalreserve.gov/feeds/press_all.xml"},
     {"id": "sec_press_releases", "outlet": "SEC", "source_tier": "regulator", "url": "https://www.sec.gov/news/pressreleases.rss"}
   ],
-  "notes": "Feed URLs are public RSS endpoints. robots.txt of each host is fetched with the same client and checked before any feed or article request. Full texts are stored only in fulltext_cache_dir (git-ignored)."
+  "notes": "Feed URLs are public RSS endpoints, not a guarantee of availability. robots.txt is checked before feed/article requests; explicit access denial and server failures are fail-closed. No alternate route bypasses robots/paywalls or publisher HTTP401/402/403. Weekly intake includes pre-filtered daily official-source CSV rows; Google links remain unresolved unless a supported publisher URL is already known. Allowed HTML/PDF article evidence and raw hashes are cached only in fulltext_cache_dir (git-ignored); word-limited bodies are labeled article_excerpt."
 }

@@ -1,0 +1,22 @@
+{
+  "status": "dry_run",
+  "dry_run": true,
+  "coverage": {
+    "source_rows": 176,
+    "eligible_articles": 176,
+    "selected_articles": 176,
+    "input_rejections": {},
+    "outside_date_window_by_source": {},
+    "latest_publication_date": "2026-11-08"
+  },
+  "input_sha256": "e12bc9babca5544f9238096686b30c696dad75b93db5e23a4275e815cd5ec6ef",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "classifier_sha256": "ed5aec3c0290fb0113af762110f948212c192717ec50904068ad2a9a9282da84",
+  "budget_usd": "3",
+  "estimated_full_run_cost_usd": "4.9422120",
+  "conservative_full_run_reservation_usd": "16.3314591",
+  "estimated_full_run_cost_with_cache_usd": "2.707202025",
+  "articles_processed": 0,
+  "estimated_cost_usd": "0",
+  "unreported_cost_reserve_usd": "0"
+}

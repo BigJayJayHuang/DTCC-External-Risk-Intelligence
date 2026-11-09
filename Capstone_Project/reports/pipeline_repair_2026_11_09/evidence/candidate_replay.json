@@ -1,0 +1,54 @@
+{
+  "mode": "offline_replay_of_real_collected_metadata",
+  "window": [
+    "2026-11-02",
+    "2026-11-08"
+  ],
+  "new_network_requests": 0,
+  "aws_calls": 0,
+  "accepted_events": 0,
+  "scores_recomputed": false,
+  "official": {
+    "input_rows": 113,
+    "kept": 91,
+    "filtered_out": 22,
+    "kept_strict_all_terms": 0,
+    "kept_broad_keyword_fallback": 91,
+    "input_sha256": "3fdb366dcc69a0843c427b03a53f9731cf2baeb045f03d5f9c5b03e05c36f3a2",
+    "window": [
+      "2026-11-02",
+      "2026-11-08"
+    ],
+    "unsupported_source_rows": 0
+  },
+  "google_candidates": 85,
+  "duplicates_merged": 0,
+  "review_candidates": 176,
+  "scopes": {
+    "headline_only": 130,
+    "summary": 46
+  },
+  "source_counts": {
+    "cftc_press": 2,
+    "dtcc_notice_feed": 34,
+    "ecb_press": 1,
+    "fca_rss": 8,
+    "fed_press": 1,
+    "federal_register": 44,
+    "google_news_rss": 85,
+    "sec_press": 1
+  },
+  "publication_range": [
+    "2026-11-02",
+    "2026-11-08"
+  ],
+  "interpretation": "Broad keyword hits are review candidates, not confirmed relevance, risk events or final card assignments.",
+  "hashes": {
+    "data/official_news_in_window.csv": "3fdb366dcc69a0843c427b03a53f9731cf2baeb045f03d5f9c5b03e05c36f3a2",
+    "data/google_candidates.csv": "10779b309cdad3f6dc50f5300ef1aa00a0e15b22ae709941d0d281f20f21448c",
+    "data/candidate_review_queue.csv": "e12bc9babca5544f9238096686b30c696dad75b93db5e23a4275e815cd5ec6ef",
+    "data/official_keyword_exclusions.csv": "83e697ed46d0958fce80a4060aef8e1569e5c48719aa7b67995ae283d8784f6f"
+  },
+  "queries_sha256": "ec2598cf556c95cb9206be2a515168f4a83d5b27a3e4a3dc1e038dab94843bad",
+  "publisher_config_sha256": "3936b51225a3f1f3a7122ce0b498579ab0f8252a1727c3f689649cfbe336c362"
+}

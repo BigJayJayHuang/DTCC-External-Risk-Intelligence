@@ -1,0 +1,70 @@
+{
+  "generated_at_utc": "2026-11-09T21:23:02.934258+00:00",
+  "snapshot_publication": "not_confirmed",
+  "collection_status": "partial_failure",
+  "successful_sources": [
+    "fed_press",
+    "cftc_press",
+    "sec_press",
+    "fred_EFFR",
+    "ecb_press",
+    "fred_SOFR",
+    "bis_press",
+    "fred_DGS10",
+    "fred_VIXCLS",
+    "fred_BAA10Y",
+    "federal_register",
+    "fca_rss",
+    "esma_news",
+    "dtcc_notice_feed",
+    "rds_uk_sftr_table1",
+    "fred_MORTGAGE30US",
+    "rds_uk_sftr_table2"
+  ],
+  "partially_successful_sources": [
+    "rds_esma_table3",
+    "rds_esma_table1",
+    "rds_esma_table2",
+    "rds_fca_table1",
+    "rds_fca_table2",
+    "rds_fca_table3"
+  ],
+  "failed_sources": [
+    {
+      "source_id": "rds_esma_table3",
+      "error": "curl: (22) The requested URL returned error: 404",
+      "http_status": 404
+    },
+    {
+      "source_id": "rds_esma_table1",
+      "error": "curl: (22) The requested URL returned error: 404",
+      "http_status": 404
+    },
+    {
+      "source_id": "rds_esma_table2",
+      "error": "curl: (22) The requested URL returned error: 404",
+      "http_status": 404
+    },
+    {
+      "source_id": "rds_fca_table1",
+      "error": "curl: (22) The requested URL returned error: 404",
+      "http_status": 404
+    },
+    {
+      "source_id": "rds_fca_table2",
+      "error": "curl: (22) The requested URL returned error: 404",
+      "http_status": 404
+    },
+    {
+      "source_id": "rds_fca_table3",
+      "error": "curl: (22) The requested URL returned error: 404",
+      "http_status": 404
+    }
+  ],
+  "scoring_input_failures": [],
+  "scoring_input_refresh": "ok",
+  "previous_valid_values_retained": true,
+  "historical_scores_recomputed": false,
+  "event_register_modified": false,
+  "interpretation": "A snapshot can publish while some sources remain unavailable. Inspect source failures and data coverage before using a card score."
+}

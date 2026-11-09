@@ -1,0 +1,252 @@
+{
+  "checked_at_utc": "2026-11-09T21:02:20.267565+00:00",
+  "transport": "existing curl --http1.1 without special headers",
+  "CFTC": {
+    "rss_disabled_notice_url": "https://www.cftc.gov/RSS/index.htm",
+    "replacement_url": "https://www.cftc.gov/PressRoom/PressReleases",
+    "http_status": 200,
+    "body_sha256": "c25e63126fd5aaa5d78eb7df561a8942f3aeeeced5aece5f6a6d03201f52d0a8",
+    "records": 37,
+    "latest_publication_date": "2026-11-09",
+    "scope": "official dated index; headline_only, not full articles"
+  },
+  "RDS": {
+    "checked_report_dates": [
+      "2026-10-16",
+      "2026-10-23",
+      "2026-10-30",
+      "2026-11-06"
+    ],
+    "checks": [
+      {
+        "source_id": "rds_esma_table1",
+        "date": "20261016",
+        "status": "200",
+        "size": 1111,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_1_OTC_Agg_20261016.csv"
+      },
+      {
+        "source_id": "rds_esma_table1",
+        "date": "20261023",
+        "status": "200",
+        "size": 1112,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_1_OTC_Agg_20261023.csv"
+      },
+      {
+        "source_id": "rds_esma_table1",
+        "date": "20261030",
+        "status": "200",
+        "size": 1112,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_1_OTC_Agg_20261030.csv"
+      },
+      {
+        "source_id": "rds_esma_table1",
+        "date": "20261106",
+        "status": "404",
+        "size": null,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_1_OTC_Agg_20261106.csv"
+      },
+      {
+        "source_id": "rds_esma_table2",
+        "date": "20261016",
+        "status": "200",
+        "size": 1602,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_2_OTC_Agg_20261016.csv"
+      },
+      {
+        "source_id": "rds_esma_table2",
+        "date": "20261023",
+        "status": "200",
+        "size": 1528,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_2_OTC_Agg_20261023.csv"
+      },
+      {
+        "source_id": "rds_esma_table2",
+        "date": "20261030",
+        "status": "200",
+        "size": 1526,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_2_OTC_Agg_20261030.csv"
+      },
+      {
+        "source_id": "rds_esma_table2",
+        "date": "20261106",
+        "status": "404",
+        "size": null,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_2_OTC_Agg_20261106.csv"
+      },
+      {
+        "source_id": "rds_esma_table3",
+        "date": "20261016",
+        "status": "200",
+        "size": 692,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_3_OTC_Agg_20261016.csv"
+      },
+      {
+        "source_id": "rds_esma_table3",
+        "date": "20261023",
+        "status": "200",
+        "size": 693,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_3_OTC_Agg_20261023.csv"
+      },
+      {
+        "source_id": "rds_esma_table3",
+        "date": "20261030",
+        "status": "200",
+        "size": 695,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_3_OTC_Agg_20261030.csv"
+      },
+      {
+        "source_id": "rds_esma_table3",
+        "date": "20261106",
+        "status": "404",
+        "size": null,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_3_OTC_Agg_20261106.csv"
+      },
+      {
+        "source_id": "rds_fca_table1",
+        "date": "20261016",
+        "status": "200",
+        "size": 1024,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_1_OTC_Agg_20261016.csv"
+      },
+      {
+        "source_id": "rds_fca_table1",
+        "date": "20261023",
+        "status": "200",
+        "size": 1024,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_1_OTC_Agg_20261023.csv"
+      },
+      {
+        "source_id": "rds_fca_table1",
+        "date": "20261030",
+        "status": "200",
+        "size": 1024,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_1_OTC_Agg_20261030.csv"
+      },
+      {
+        "source_id": "rds_fca_table1",
+        "date": "20261106",
+        "status": "404",
+        "size": null,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_1_OTC_Agg_20261106.csv"
+      },
+      {
+        "source_id": "rds_fca_table2",
+        "date": "20261016",
+        "status": "200",
+        "size": 1377,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_2_OTC_Agg_20261016.csv"
+      },
+      {
+        "source_id": "rds_fca_table2",
+        "date": "20261023",
+        "status": "200",
+        "size": 1367,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_2_OTC_Agg_20261023.csv"
+      },
+      {
+        "source_id": "rds_fca_table2",
+        "date": "20261030",
+        "status": "200",
+        "size": 1360,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_2_OTC_Agg_20261030.csv"
+      },
+      {
+        "source_id": "rds_fca_table2",
+        "date": "20261106",
+        "status": "404",
+        "size": null,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_2_OTC_Agg_20261106.csv"
+      },
+      {
+        "source_id": "rds_fca_table3",
+        "date": "20261016",
+        "status": "200",
+        "size": 688,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_3_OTC_Agg_20261016.csv"
+      },
+      {
+        "source_id": "rds_fca_table3",
+        "date": "20261023",
+        "status": "200",
+        "size": 690,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_3_OTC_Agg_20261023.csv"
+      },
+      {
+        "source_id": "rds_fca_table3",
+        "date": "20261030",
+        "status": "200",
+        "size": 690,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_3_OTC_Agg_20261030.csv"
+      },
+      {
+        "source_id": "rds_fca_table3",
+        "date": "20261106",
+        "status": "404",
+        "size": null,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_3_OTC_Agg_20261106.csv"
+      },
+      {
+        "source_id": "rds_uk_sftr_table1",
+        "date": "20261016",
+        "status": "200",
+        "size": 40608,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_1_SFT_C_RP_ORG_20261016.CSV"
+      },
+      {
+        "source_id": "rds_uk_sftr_table1",
+        "date": "20261023",
+        "status": "200",
+        "size": 43808,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_1_SFT_C_RP_ORG_20261023.CSV"
+      },
+      {
+        "source_id": "rds_uk_sftr_table1",
+        "date": "20261030",
+        "status": "200",
+        "size": 38560,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_1_SFT_C_RP_ORG_20261030.CSV"
+      },
+      {
+        "source_id": "rds_uk_sftr_table1",
+        "date": "20261106",
+        "status": "200",
+        "size": 46368,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_1_SFT_C_RP_ORG_20261106.CSV"
+      },
+      {
+        "source_id": "rds_uk_sftr_table2",
+        "date": "20261016",
+        "status": "200",
+        "size": 211563,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_2_SFT_C_OUT_ORG_20261016.CSV"
+      },
+      {
+        "source_id": "rds_uk_sftr_table2",
+        "date": "20261023",
+        "status": "200",
+        "size": 210680,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_2_SFT_C_OUT_ORG_20261023.CSV"
+      },
+      {
+        "source_id": "rds_uk_sftr_table2",
+        "date": "20261030",
+        "status": "200",
+        "size": 210287,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_2_SFT_C_OUT_ORG_20261030.CSV"
+      },
+      {
+        "source_id": "rds_uk_sftr_table2",
+        "date": "20261106",
+        "status": "200",
+        "size": 210413,
+        "url": "https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_2_SFT_C_OUT_ORG_20261106.CSV"
+      }
+    ],
+    "interpretation": "Oldest three dates available for all eight sources. Latest EU/UK EMIR six reports unavailable404. Latest UK SFTR two reports available200. Individual report transactions preserve successful periods and retain failures."
+  },
+  "offline_tests": {
+    "capstone_database_tests_passed": 32,
+    "new_recovery_tests": 9
+  }
+}
