@@ -88,7 +88,8 @@ a{color:var(--brand-2)}
 .sev .l{font-size:11px;font-weight:700;letter-spacing:.08em;margin-top:3px}
 .sev.High{background:var(--high);color:var(--on-high)} .sev.Medium{background:var(--med);color:var(--on-med)} .sev.Low{background:var(--low);color:var(--on-low)}
 .sev.Pending{background:var(--pend);color:var(--on-pend)} .sev.Pending .n{font-size:22px}
-.sev.Unscanned,.sev.Incomplete{background:var(--pend);color:var(--on-pend)} .sev.Unscanned .n,.sev.Incomplete .n{font-size:15px;line-height:1.1}
+.sev.Unscanned,.sev.Incomplete,.sev.NoNews{background:var(--pend);color:var(--on-pend)} .sev.Unscanned .n,.sev.Incomplete .n{font-size:15px;line-height:1.1}
+.sev.NoNews{height:auto;min-height:76px;padding:6px 4px;align-self:start} .sev.NoNews .n{font-size:12.5px;line-height:1.15} .sev.NoNews .q{font-size:10.5px;line-height:1.15;margin-top:3px}
 .banner{background:var(--note);border:1px solid var(--note-line);color:var(--note-ink);border-radius:10px;padding:9px 14px;margin-bottom:14px;font-size:14.5px;font-weight:600}
 .chip.rev{background:var(--high-soft);color:var(--high-ink);font-weight:700}
 .chip.aiev{background:var(--note);color:var(--note-ink);border:1px solid var(--note-line);font-weight:700}
@@ -165,6 +166,7 @@ details.json pre{overflow-x:auto;font-family:var(--f-mono);font-size:12.5px;line
   .wrap{padding-inline:16px}
   .card{grid-template-columns:58px minmax(0,1fr);gap:12px;padding:14px}
   .sev{height:58px}.sev .n{font-size:24px}.sev .l{font-size:10px}.sev.Pending .n{font-size:18px}.sev.Unscanned .n,.sev.Incomplete .n{font-size:12px}
+  .sev.NoNews{height:auto;min-height:58px;padding:5px 3px}.sev.NoNews .n{font-size:10.5px}.sev.NoNews .q{font-size:9px}
   .dhead{grid-template-columns:64px minmax(0,1fr)}.dhead .sev{height:64px}
   .dhead h2{font-size:19px}
   .chain{grid-template-columns:minmax(0,1fr)}
@@ -187,8 +189,9 @@ details.json pre{overflow-x:auto;font-family:var(--f-mono);font-size:12.5px;line
    ===================================================================== */
 const PARAMS=new URLSearchParams(location.search);
 const DATA_URL=PARAMS.get("data")||"data/risk_output.json";
-const UNSCORED={news_not_scanned:"Unscanned",data_incomplete:"Incomplete"};
-const LVL_TEXT={Pending:"V pending",Unscanned:"Not scanned",Incomplete:"Data incomplete"};
+const UNSCORED={news_not_scanned:"Unscanned",data_incomplete:"Incomplete",no_relevant_news:"NoNews"};
+const LVL_TEXT={Pending:"V pending",Unscanned:"Not scanned",Incomplete:"Data incomplete",NoNews:"No relevant news"};
+const UNSCORED_LVLS=["Pending","Unscanned","Incomplete","NoNews"];
 const TIER_TEXT={pqd:"PQD",public_proxy:"public proxy"};
 const PH=`<span class="ph">AI analysis – available once the news classifier is connected.</span>`;
 const AI_LABEL="AI-classified, not reviewed";
@@ -282,7 +285,7 @@ function itemsForLine(line){
 function sortItems(a){
   const t=i=>(i.upd||i.snapDate||new Date(0)).getTime();
   const sc=(i,dir)=>i.score==null?(dir>0?-1:999):i.score;
-  const g=i=>i.lvl==="Unscanned"?2:i.lvl==="Incomplete"?1:0;   /* unscored cards always last */
+  const g=i=>i.lvl==="Unscanned"||i.lvl==="NoNews"?2:i.lvl==="Incomplete"?1:0;   /* unscored cards always last */
   const by={
     "score":(x,y)=>g(x)-g(y)||sc(y,1)-sc(x,1)||t(y)-t(x),
     "score-asc":(x,y)=>g(x)-g(y)||sc(x,-1)-sc(y,-1)||t(y)-t(x),
@@ -305,7 +308,7 @@ function renderList(){
   const L=state.line, meta=LINE_META[L]||{full:L};
   const all=sortItems(itemsForLine(L));
   const shown=all.filter(i=>(state.sev==="All"||i.lvl===state.sev)&&(state.fam==="All"||i.family===state.fam)&&(state.region==="All"||i.region===state.region));
-  const c={High:0,Medium:0,Low:0,Pending:0,Unscanned:0,Incomplete:0}; all.forEach(i=>c[i.lvl]++);
+  const c={High:0,Medium:0,Low:0,Pending:0,Unscanned:0,Incomplete:0,NoNews:0}; all.forEach(i=>c[i.lvl]++);
   const fams=[...new Set(all.map(i=>i.family))];
   const famOpts=[...FAMILIES,...fams.filter(f=>!FAMILIES.includes(f))];
   const regions=["All",...new Set(["US","Global",...ALL().map(i=>i.region)])];
@@ -327,7 +330,7 @@ function renderList(){
       <span class="cnt"><span class="dot" style="background:var(--high)"></span>${c.High} High</span>
       <span class="cnt"><span class="dot" style="background:var(--med)"></span>${c.Medium} Medium</span>
       <span class="cnt"><span class="dot" style="background:var(--low)"></span>${c.Low} Low</span>
-      ${["Pending","Unscanned","Incomplete"].filter(k=>c[k]).map(k=>`<span class="cnt"><span class="dot" style="background:var(--pend);border:1px solid var(--line)"></span>${c[k]} ${k==="Unscanned"?"not scanned for news":LVL_TEXT[k].toLowerCase()}</span>`).join("")}
+      ${UNSCORED_LVLS.filter(k=>c[k]).map(k=>`<span class="cnt"><span class="dot" style="background:var(--pend);border:1px solid var(--line)"></span>${c[k]} ${k==="Unscanned"?"not scanned for news":k==="NoNews"?"no relevant news found":LVL_TEXT[k].toLowerCase()}</span>`).join("")}
       <span class="cnt" style="color:var(--muted)">${review.length} awaiting review</span>
     </div>
     ${coming.length?`<div class="coming"><b>Coming up</b>${cd.asOf?`<span class="asof">as of ${esc(fmtDay(cd.asOf))}</span>`:""}${coming.map(x=>`<span class="date">${fmtDay(toDate(x.date))} · ${esc(x.title)} · ${x.n===0?"today":x.n===1?"1 day":x.n+" days"}</span>`).join("")}</div>`:""}
@@ -337,7 +340,7 @@ function renderList(){
     <label for="f-sort">Sort <select id="f-sort">${SORTS.map(s=>`<option value="${s.k}" ${state.sort===s.k?"selected":""}>${s.t}</option>`).join("")}</select></label>
   </div>
   <div class="filters" role="group" aria-label="Filters">
-    <span class="seg" aria-label="Severity">${["All","High","Medium","Low",...["Pending","Unscanned","Incomplete"].filter(k=>c[k])].map(s=>`<button data-sev="${s}" aria-pressed="${state.sev===s}">${LVL_TEXT[s]||s}</button>`).join("")}</span>
+    <span class="seg" aria-label="Severity">${["All","High","Medium","Low",...UNSCORED_LVLS.filter(k=>c[k])].map(s=>`<button data-sev="${s}" aria-pressed="${state.sev===s}">${LVL_TEXT[s]||s}</button>`).join("")}</span>
     <label for="f-fam">Risk family <select id="f-fam"><option>All</option>${famOpts.map(f=>`<option ${state.fam===f?"selected":""} ${fams.includes(f)?"":"disabled"}>${esc(f)}</option>`).join("")}</select></label>
     <label for="f-reg">Region <select id="f-reg">${regions.map(r=>`<option ${state.region===r?"selected":""}>${esc(r)}</option>`).join("")}</select></label>
     ${filtered?`<button class="clear" id="clear">Clear filters</button>`:""}
@@ -366,6 +369,7 @@ function resetFilters(){state.sev="All";state.fam="All";state.region="All";rende
 function sevBox(i){
   if(i.lvl==="Unscanned") return `<span class="sev Unscanned"><span class="n">News not scanned</span></span>`;
   if(i.lvl==="Incomplete") return `<span class="sev Incomplete"><span class="n">Data incomplete</span></span>`;
+  if(i.lvl==="NoNews") return `<span class="sev NoNews" aria-label="No relevant news found (headline-level scan)"><span class="n">No relevant news found</span><span class="q">(headline-level scan)</span></span>`;
   return `<span class="sev ${i.lvl}">${i.score!=null?`<span class="n">${i.score}</span><span class="l">${i.lvl.toUpperCase()}</span>`:`<span class="n">S${i.S??"–"}</span><span class="l">V PENDING</span>`}</span>`;}
 function vText(i){return `Vulnerability ${i.V??"pending"}${i.vTier?` (${esc(TIER_TEXT[i.vTier]||i.vTier)})`:""}`;}
 function scoreChip(i){return `<span class="chip o">${i.S!=null?`Shock ${i.S} × `:"Shock not scored · "}${vText(i)}</span>`;}
@@ -413,7 +417,7 @@ function emptyHtml(total){
 
 function header(){
   const badge=LOAD_ERR?`<span class="sample">Load error</span>`:!SNAPS.length?`<span class="sample">No data yet</span>`:DATA.sample?`<span class="sample">Sample data</span>`:"";
-  return `<div class="banner" role="note">Prototype – indicator-based scores and hand-entered events only; news is not yet scanned.</div>
+  return `<div class="banner" role="note">Prototype – scores from market indicators and reviewed events; news is screened weekly at headline level by AI, with high-impact items reviewed by an analyst.</div>
 <header class="top">
   <div class="brand"><h1>Risk Horizon</h1><span>External risk brief for the business-line GM</span></div>
   <div class="snap">${badge}${SNAPS.length?`<label for="snap">Snapshot</label>
@@ -422,7 +426,7 @@ function header(){
 function footer(){
   const gen=DATA&&toDate(DATA.generated_at);
   return `<footer class="method">
-  <span><b>Severity (1–25) = External Shock (1–5) × Internal Vulnerability (1–5).</b> Shock comes from a market indicator's percentile against its own history, or the event rubric for hand-entered events. Vulnerability comes from the card's latest published DTCC PQD or, where no PQD field fits the card, a public proxy series; each card shows its V tier (PQD or public proxy). Cards with no market indicator and no active hand-entered event show "News not scanned" instead of a score; where V is missing the card shows "V pending". High 15–25 · Medium 8–14 · Low 1–7. Each card compares with the previous weekly run. Confidence is shown beside the score, never multiplied in.</span>
+  <span><b>Severity (1–25) = External Shock (1–5) × Internal Vulnerability (1–5).</b> Shock comes from a market indicator's percentile against its own history, or the event rubric for reviewed register events. Vulnerability comes from the card's latest published DTCC PQD or, where no PQD field fits the card, a public proxy series; each card shows its V tier (PQD or public proxy). Cards with no market indicator and no active register event show "No relevant news found (headline-level scan)" in weeks covered by the weekly news screen, and "News not scanned" in earlier weeks, instead of a score; where V is missing the card shows "V pending". Related news is headline-level and never scored. High 15–25 · Medium 8–14 · Low 1–7. Each card compares with the previous weekly run. Confidence is shown beside the score, never multiplied in.</span>
   <span>Prototype for the DTCC × Duke capstone. Public data only.${DATA&&DATA.sample?" Everything on this page is sample data for layout testing.":""}${gen?" Model output generated "+esc(fmtStamp(gen))+".":""}${DATA&&DATA.model_version?" Model "+esc(DATA.model_version)+".":""}</span>
 </footer>`}
 function bindCommon(){const s=document.getElementById("snap"); if(s) s.onchange=e=>{
@@ -471,7 +475,7 @@ function renderDetail(id,snap){
     <div class="box"><h3 class="lab">How the score was built</h3><div class="calc">
       <span><b>${i.S!=null?`Shock ${i.S}`:"Shock not scored"}</b>${i.shockMethod?" · "+esc(i.shockMethod):""}${i.shockText?(i.S!=null?": ":" · ")+esc(i.shockText):""}</span>
       <span><b>${vText(i)}</b>${i.vulnText?" · "+esc(i.vulnText):i.V==null?" · no vulnerability reading for this card yet":""}</span>
-      <span class="eq">${i.score!=null?`${i.S} × ${i.V} = ${i.score} → ${i.lvl}`:i.lvl==="Unscanned"?"Not scored · news not yet scanned":i.lvl==="Incomplete"?"Not scored · market data incomplete":`Shock ${i.S??"–"} only · score waits on V`}</span>
+      <span class="eq">${i.score!=null?`${i.S} × ${i.V} = ${i.score} → ${i.lvl}`:i.lvl==="Unscanned"?"Not scored · news not yet scanned":i.lvl==="NoNews"?"Not scored · no relevant news found (headline-level scan)":i.lvl==="Incomplete"?"Not scored · market data incomplete":`Shock ${i.S??"–"} only · score waits on V`}</span>
       ${i.whyLine?`<span style="color:var(--muted);font-size:14px">${esc(i.whyLine)}</span>`:""}</div></div>
     <div class="box"><h3 class="lab">${i.unknowns.length?"Confidence and key unknowns":"Confidence"}</h3><ul><li><b>${esc(i.conf)}</b> confidence</li>${i.unknowns.map(u=>`<li>${esc(u)}</li>`).join("")}</ul></div>
   </section>

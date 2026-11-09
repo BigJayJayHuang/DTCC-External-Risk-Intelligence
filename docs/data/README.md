@@ -25,7 +25,8 @@ To publish a new week:
   "sample": false,                                // true shows a "Sample data" badge
 
   "snapshots": [                                  // one per weekly run; any order
-    {"id": "2026-10-26", "date": "2026-10-26", "label": "Week of Oct 26, 2026"}
+    {"id": "2026-10-26", "date": "2026-10-26", "label": "Week of Oct 26, 2026",
+     "news_coverage": "manual_register_only"}     // or "headline_level_ai_screen" once the weekly news run covered the week
   ],
 
   "lines": {                                      // optional, per business line
@@ -51,9 +52,9 @@ Each item belongs to one snapshot. To show week-over-week change, write the same
 | `snapshot` | yes | string | Must match a `snapshots[].id` |
 | `business_line` | yes | string | One of: `FICC`, `ECS`, `RDS`, `WIS`, `ITP`, `Asset Services`, `DAS`, `DDA`, `Data Services`, `Consulting` |
 | `title` | yes | string | Card headline |
-| `shock` | yes | int 1–5, or `null` when `status` is `news_not_scanned` or `data_incomplete` | External score S |
+| `shock` | yes | int 1–5, or `null` when `status` is `news_not_scanned`, `no_relevant_news` or `data_incomplete` | External score S |
 | `vulnerability` | no | int 1–5 or `null` | Internal score V from PQD or a public proxy (`V_tier`). `null` shows "V pending" with no score. Never use 0. |
-| `status` | no | string | `scored` (default), `news_not_scanned` (grey "News not scanned" box, sorted last) or `data_incomplete` (grey "Data incomplete" box) |
+| `status` | no | string | `scored` (default); `no_relevant_news` (grey "No relevant news found (headline-level scan)" box, sorted last; only in weeks whose snapshot has `news_coverage` `headline_level_ai_screen`); `news_not_scanned` (grey "News not scanned" box, sorted last; only in weeks before the weekly news screen); or `data_incomplete` (grey "Data incomplete" box) |
 | `V_tier` | no | string | `pqd` or `public_proxy`, shown next to V |
 | `needs_human_signoff` | no | bool | `true` shows a "Pending review" badge |
 | `analysis_status` | no | string | `pending_llm` while So what / So now what await the LLM step |

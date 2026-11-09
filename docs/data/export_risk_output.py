@@ -54,6 +54,8 @@ TIER_TEXT = {'pqd': 'DTCC public quantitative disclosure (PQD)', 'public_proxy':
 NOT_SCORED = {
     'news_not_scanned': 'Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.',
     'data_incomplete': 'Not scored: market data for this week is incomplete ({reason}).',
+    'no_relevant_news': ('Not scored: no market indicator for this card and no active register event; '
+                         'the weekly headline-level news screen found no relevant news.'),        # Amendment F
 }
 
 
@@ -175,9 +177,14 @@ def summary(items):
     scored = [i for i in items if i['status'] == 'scored']
     main = sum(1 for i in scored if i['show_on_main'])
     ns = sum(1 for i in items if i['status'] == 'news_not_scanned')
+    nr = sum(1 for i in items if i['status'] == 'no_relevant_news')
     di = sum(1 for i in items if i['status'] == 'data_incomplete')
     s = lambda n, w: f"{n} {w}{'' if n == 1 else 's'}"
-    text = f"{main} of {s(len(scored), 'scored card')} at severity ≥ 6; {s(ns, 'card')} not yet scanned for news"
+    text = f"{main} of {s(len(scored), 'scored card')} at severity ≥ 6"
+    if ns or not nr:                               # weeks before the news run keep their original wording
+        text += f"; {s(ns, 'card')} not yet scanned for news"
+    if nr:
+        text += f"; {s(nr, 'card')} with no relevant news found (headline-level scan)"
     return text + (f"; {s(di, 'card')} with incomplete market data." if di else '.')
 
 
@@ -204,13 +211,15 @@ def build(weeks):
         lines[line] = entry
     label = lambda w: 'Week of ' + date.fromisoformat(w).strftime('%b %-d, %Y')
     latest = max(docs, key=lambda d: d['week'])                       # spec metadata of the latest scored week
+    by_week = {d['week']: d for d in docs}
     return {
         'schema_version': '1.0', 'generated_at': max(iso(d['run_utc']) for d in docs), 'model_version': 'v1.3-indicator',
-        'sample': False, 'news_coverage': 'manual_register_only',
+        'sample': False, 'news_coverage': latest.get('news_coverage', 'manual_register_only'),   # latest week (Amendment F1)
         'spec': latest['spec'], 'spec_status': latest['spec_status'].replace('**', ''), 'spec_amendments': latest.get('spec_amendments', []),
         'source_files': [{'file': str((V13 / f'weekly_scores_v1.3_{w}.json').relative_to(REPO)),
                           'sha256': hashlib.sha256((V13 / f'weekly_scores_v1.3_{w}.json').read_bytes()).hexdigest()} for w in weeks],
-        'snapshots': [{'id': w, 'date': w, 'label': label(w)} for w in sorted(weeks, reverse=True)],
+        'snapshots': [{'id': w, 'date': w, 'label': label(w), 'news_coverage': by_week[w].get('news_coverage', 'manual_register_only')}
+                      for w in sorted(weeks, reverse=True)],
         'lines': lines, 'items': items}
 
 

@@ -12,8 +12,9 @@ from pathlib import Path
 
 LINES = {"FICC", "ECS", "RDS", "WIS", "ITP", "Asset Services", "DAS", "DDA", "Data Services", "Consulting"}
 FAMILIES = {"Credit", "Liquidity", "Market", "Operational", "Cyber", "Regulatory", "Strategic"}
-STATUSES = {"scored", "news_not_scanned", "data_incomplete"}
-UNSCORED = {"news_not_scanned", "data_incomplete"}          # shock may be null only for these
+STATUSES = {"scored", "news_not_scanned", "data_incomplete", "no_relevant_news"}
+UNSCORED = {"news_not_scanned", "data_incomplete", "no_relevant_news"}   # shock may be null only for these
+COVERAGE = {"manual_register_only", "headline_level_ai_screen"}           # snapshots[].news_coverage (Amendment F1)
 ANALYSIS_FIELDS = ("so_what", "so_now_what")                 # null only while analysis_status = "pending_llm"
 # Business-line rows per card (scoring v1.3), including the FICC and ECS rows of cross-entity (XE-) cards
 CARD_LINES = Path(__file__).resolve().parents[2] / "Capstone_Project/results/scoring/v1.3_indicator/config/card_lines.csv"
@@ -57,6 +58,9 @@ def main(path):
         elif not is_date(s.get("date", s["id"])):
             errors.append(f"snapshots[{n}]: date is not ISO (YYYY-MM-DD)")
         snap_ids.add(s.get("id"))
+        if "news_coverage" in s and s["news_coverage"] not in COVERAGE:
+            errors.append(f"snapshots[{n}]: news_coverage '{s['news_coverage']}' is not one of {sorted(COVERAGE)}")
+    coverage = {s.get("id"): s.get("news_coverage", "manual_register_only") for s in snaps}
 
     card_lines = load_card_lines()
     if card_lines is None:
@@ -81,6 +85,13 @@ def main(path):
                                                                      if it.get("shock") is None else ""))
         if status in UNSCORED and it.get("shock") is not None:
             errors.append(f"{tag}: status {status} must have shock null")
+        cov = coverage.get(it.get("snapshot"), "manual_register_only")
+        if status == "no_relevant_news" and cov != "headline_level_ai_screen":       # Amendment F2/F3
+            errors.append(f"{tag}: no_relevant_news only in a week with news_coverage headline_level_ai_screen (this week: {cov})")
+        if status == "news_not_scanned" and cov == "headline_level_ai_screen":
+            errors.append(f"{tag}: news_not_scanned in a week the news screen covered; expected no_relevant_news")
+        if status == "no_relevant_news" and it.get("show_on_main"):
+            errors.append(f"{tag}: no_relevant_news must have show_on_main false")
         for k in ANALYSIS_FIELDS:
             if k in it and it[k] is None and it.get("analysis_status") != "pending_llm":
                 errors.append(f"{tag}: {k} is null; allowed only when analysis_status is 'pending_llm'")
