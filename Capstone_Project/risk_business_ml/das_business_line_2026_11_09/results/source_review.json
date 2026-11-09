@@ -1,0 +1,180 @@
+{
+  "reviewed_at_utc": "2026-11-09T20:49:31.627535+00:00",
+  "input_sha256": "8a363aac7367978bb357b577f9c864d95ce8485ea83f22151441e47cee6d1f7c",
+  "source": "AWS_BEDROCK_DOCUMENT_UNDERSTANDING",
+  "review_method": "Exact source excerpt checks and conditional-claim corrections; original API output preserved",
+  "changes": [
+    {
+      "field": "F03.evidence_quote",
+      "before": "the Staff would not recommend enforcement action to the Commission against DTC",
+      "after": "the Staff would not recommend enforcement"
+    },
+    {
+      "field": "F05.evidence_quote",
+      "before": "DTC would not ascribe to any Tokenized Entitlements any collateral value or settlement value",
+      "after": "No Collateral or Settlement Value"
+    },
+    {
+      "field": "F06.evidence_quote",
+      "before": "a maximum of a four-hour recovery time objective, no more than two minutes of data loss",
+      "after": "a maximum of a four-hour recovery time objective"
+    },
+    {
+      "field": "F07.evidence_quote",
+      "before": "The tokens would only be transferable to Registered Wallets.",
+      "after": "Tokens are only transferrable to Registered Wallets"
+    },
+    {
+      "field": "F08.evidence_quote",
+      "before": "conversion orders) may be submitted to DTC Monday through Friday between 2:00 a.m. and 6:00 p.m. ET",
+      "after": "orders) may be submitted to DTC Monday through Friday between 2:00 a.m. and 6:00 p.m."
+    },
+    {
+      "field": "DAS-01.mechanism_evidence_quote",
+      "before": "a maximum of a four-hour recovery time objective, no more than two minutes of data loss",
+      "after": "a maximum of a four-hour recovery time objective"
+    },
+    {
+      "field": "DAS-02.mechanism_evidence_quote",
+      "before": "LedgerScan's record would constitute DTC's official books and records.",
+      "after": "would constitute DTC’s official books and records."
+    },
+    {
+      "field": "DAS-03.mechanism_evidence_quote",
+      "before": "DTC has performed its own screenings of the wallet and confirmed that it complies with the OFAC requirements.",
+      "after": "Tokens are only transferrable to Registered Wallets"
+    },
+    {
+      "field": "DAS-04.mechanism_evidence_quote",
+      "before": "This letter is withdrawn without further action three years from the date DTC launches",
+      "after": "without further action three years from the date DTC launches operation of the Preliminary Base"
+    },
+    {
+      "field": "DAS-05.mechanism_evidence_quote",
+      "before": "make a cash payment from a corporate action event (e.g., a dividend payment)",
+      "after": "make a cash payment from a corporate action event"
+    },
+    {
+      "field": "F04.statement_en",
+      "before": "Eligible securities are limited to Russell 1000 constituents, U.S. Treasury securities (bills, bonds, notes), and ETFs tracking major indices such as S&P 500 and Nasdaq-100.",
+      "after": "Eligible securities include Russell1000 constituents at pilot launch and later additions (including subsequent index removals), U.S. Treasury bills/bonds/notes, and ETFs tracking major indices."
+    },
+    {
+      "field": "F04.statement_zh",
+      "before": "合格证券仅限于罗素1000成分股、美国国债（短期、中期、长期）以及追踪标普500和纳斯达克100等主要指数的ETF。",
+      "after": "合格证券包括试点上线时的罗素1000成分股及其后新增证券（即使其后被移出指数）、美国国债及追踪主要指数的ETF。"
+    },
+    {
+      "field": "F04.limitation",
+      "before": "Eligibility list defined at Preliminary Base Version launch; additions/removals subject to index changes and DTC discretion.",
+      "after": "The letter expressly preserves eligibility despite subsequent Russell1000 index removal; index removal alone must not be coded as loss of eligibility."
+    },
+    {
+      "field": "DAS-01.transmission_pathway_en",
+      "before": "Network or system unavailability prevents acceptance of conversion orders within the 2 a.m.–6 p.m. ET window → participants cannot tokenize or de-tokenize positions → liquidity strategies dependent on tokenized collateral mobility are delayed → participant operational losses and reputational harm to DTS; DTS systems are Tier 2 isolated so core DTC clearing is not directly interrupted, but participant workflows are disrupted.",
+      "after": "Network or DTS system unavailability may delay conversion orders or token transfers; participants relying on timely conversion or collateral movement could experience operational delays. System separation is a control intended to limit propagation; core-DTC disruption or participant losses are not automatic and have not been observed here."
+    },
+    {
+      "field": "DAS-01.transmission_pathway_zh",
+      "before": "网络或系统不可用导致转换指令无法在规定窗口内受理→参与者无法完成代币化或去代币化→依赖代币化抵押品流动性的策略被延迟→参与者运营损失及DTS声誉受损；DTS系统为二级隔离，核心DTC清算不直接中断，但参与者工作流受影响。",
+      "after": "网络或DTS系统不可用可能延迟转换指令或代币转移，使依赖及时转换或抵押品移动的参与者出现运营延误。系统隔离旨在限制影响扩散；不能直接推定核心DTC系统中断或参与者发生损失。"
+    },
+    {
+      "field": "DAS-02.transmission_pathway_en",
+      "before": "LedgerScan constitutes DTC's official record of Tokenized Entitlements → divergence between LedgerScan records and on-chain state creates disputed ownership → DTC must invoke root-wallet reversal or manual reconciliation → resolution backlog grows → participant reporting obligations to SEC (quarterly) may reflect inaccurate data → regulatory and legal exposure; Conditions Requiring Reversal controls exist but resolution capacity is finite.",
+      "after": "A mismatch between LedgerScan records and on-chain state could require reconciliation or controlled correction; unresolved backlog could delay entitlement processing and affect DTC quarterly reporting to SEC staff. This is a conditional hypothesis; DTC bears the reporting commitment and published outcomes were not obtained."
+    },
+    {
+      "field": "DAS-02.transmission_pathway_zh",
+      "before": "LedgerScan构成DTC代币化权益的官方记录→LedgerScan记录与链上状态出现偏差导致所有权争议→DTC须启动根钱包撤销或人工对账→待解决积压增加→向SEC的季度报告可能反映不准确数据→监管和法律风险；撤销条件控制机制存在，但解决能力有限。",
+      "after": "LedgerScan记录与链上状态不一致可能需要对账或受控更正；积压可能延迟权益处理，并影响DTC向SEC工作人员提交的季度报告。这是条件性假设；报告承诺由DTC承担，尚未取得公开实测结果。"
+    },
+    {
+      "field": "DAS-04.external_shock",
+      "before": "SEC staff modifies or revokes the no-action position, or DTC inadvertently tokenizes securities outside the eligible universe (e.g., post-index-removal securities or securities with U.S. tax withholding obligations)",
+      "after": "SEC staff changes its no-action position or the service authorization approaches expiry; actual violations of permitted asset/participant conditions could also trigger review. Subsequent Russell1000 index removal alone is not a disqualifying event."
+    },
+    {
+      "field": "DAS-04.transmission_pathway_en",
+      "before": "Revocation or modification of no-action position triggers compliance review under Reg SCI, Section 19(b), and CCA Standards → DTC may need to suspend DTS operations or file rule changes → participants holding tokenized positions face forced de-tokenization → liquidity disruption; eligibility boundary breach creates regulatory reporting obligation and potential enforcement risk; three-year authorization window creates a known sunset date.",
+      "after": "A change in applicable regulatory conditions could require service restrictions, rule filings or contingency conversion, depending on official instructions. Capacity relative to affected positions determines the hypothetical adjustment burden. Neither forced conversion nor an enforcement action is assumed to occur automatically."
+    },
+    {
+      "field": "DAS-04.transmission_pathway_zh",
+      "before": "不采取行动立场被撤销或修改，触发Reg SCI、第19(b)条及CCA标准合规审查→DTC可能需暂停DTS运营或提交规则变更→持有代币化头寸的参与者面临强制去代币化→流动性中断；资格边界违反产生监管报告义务及潜在执法风险；三年授权窗口形成已知到期日。",
+      "after": "适用监管条件改变，可能按官方要求触发服务限制、规则备案或应急转换；转换能力相对于受影响头寸的规模决定假设中的调整负担。不能直接认定会强制转换或发生执法行动。"
+    },
+    {
+      "field": "DAS-05.transmission_pathway_en",
+      "before": "Peak conversion demand exceeds Factory system throughput within the 2 a.m.–6 p.m. ET window → orders queue or are rejected → participants cannot rebalance tokenized/traditional positions in time → settlement fails or collateral shortfalls emerge in downstream workflows; corporate action cash payments are the only permitted instruction from DTS to DTC's centralized systems, so errors in corporate action processing could cause incorrect cash credits; LedgerScan and Factory are Tier 2 isolated, limiting blast radius but not eliminating capacity risk.",
+      "after": "Peak conversion demand above processing capacity could produce queues and delay participant workflows. Corporate-action payment errors could require correction. The letter permits two limited interfaces to core DTC: securities movements to/from the Digital Omnibus Account and corporate-action cash payments; cash payment is not the sole permitted interface. No processing failure has been established by this research."
+    },
+    {
+      "field": "DAS-05.transmission_pathway_zh",
+      "before": "峰值转换需求超过Factory系统在规定窗口内的处理能力→指令排队或被拒绝→参与者无法及时调整代币化/传统头寸→下游工作流出现结算失败或抵押品缺口；公司行动现金支付是DTS向DTC集中系统发出的唯一允许指令，处理错误可能导致错误现金记账；Tier 2隔离限制影响范围但不消除容量风险。",
+      "after": "峰值转换需求超过处理能力可能形成队列并延迟参与者工作流；公司行动支付错误可能需要更正。函件允许两类与DTC核心系统的有限接口：数字总括账户证券转入转出，以及公司行动现金支付，后者并非唯一接口。本次研究未证实已经发生处理失败。"
+    },
+    {
+      "field": "scope.date_limitations",
+      "before": [
+        "SEC No-Action Letter dated December 11, 2025; three-year authorization period from DTS launch date",
+        "Limited-production trades occurred July 15, 2026 only; not a continuous operating history",
+        "Full service launch October 28, 2026; no post-launch operating metrics available in supplied documents",
+        "Network framework last updated August 12, 2026; additional networks planned for 2027 but not yet approved",
+        "No quarterly DTS operating data (volumes, wallet counts, outage records) found in supplied documents",
+        "All pre-launch periods (before October 28, 2026) represent pre-production; any synthetic vulnerability series would be counterfactual"
+      ],
+      "after": [
+        "SEC staff letter dated December11,2025; stated relief expires three years from launch of the Preliminary Base Version, subject to the letter conditions.",
+        "Public limited-production milestone: July15,2026; broader DTS launch announcement: October28,2026. These are distinct milestones.",
+        "No continuous DAS internal vulnerability/outcome series was obtained from the supplied documents; prelaunch simulation is counterfactual.",
+        "Original SEC PDF download returned403. A partial web-reader representation through approximately page10 was used, not the full39-page document."
+      ]
+    },
+    {
+      "field": "recommendations.recommended_next_steps_en",
+      "before": [
+        "1. Request DTC internal data: Factory and LedgerScan throughput benchmarks, DR test results, and conversion-order volume records to populate buffer ratios for DAS-01 and DAS-05.",
+        "2. Obtain root-wallet invocation logs and reconciliation turnaround records to calibrate DAS-02 buffer.",
+        "3. Confirm the approved Registered Wallet custodian list and key-management attestations for DAS-03; do not assume named collaborators are approved custodians.",
+        "4. Document DTC's contingency de-tokenization runbook and eligibility monitoring controls for DAS-04.",
+        "5. Monitor SEC rulemaking and no-action letter modification activity; track the three-year authorization sunset (expires approximately October 2029).",
+        "6. Conduct assumption-based sensitivity simulations for all five chains using publicly available index rebalancing calendars and Treasury auction schedules as demand-shock proxies, clearly labeling all outputs as counterfactual/pre-empirical.",
+        "7. Establish a data-collection agreement with DTC to receive quarterly SEC report packages once available, enabling future empirical calibration.",
+        "8. Do not assign DAS IDs to existing final16 risk cards; create new DAS-series cards as proposed."
+      ],
+      "after": [
+        "Request actual Factory/LedgerScan capacity, DR-test results, conversion demand and reconciliation records; these populate the five protective-buffer ratios.",
+        "Confirm Registered Wallet control attestations and approved infrastructure directly with DTC; named collaborators do not establish deployment or approval.",
+        "Confirm the formal Preliminary Base Version commencement date and relief expiry with DTC rather than deriving expiry from a production milestone.",
+        "Assess actual public-proxy series separately from internal measurements. Do not substitute market stress or generic crypto prices automatically for DAS V.",
+        "Use assumption-based functional/sensitivity tests only with explicit labels; these do not calibrate or empirically validate real DAS risk.",
+        "Extend a dedicated reviewed DAS news/card schema before any production classification; preserve the original final16 catalog."
+      ]
+    },
+    {
+      "field": "recommendations.recommended_next_steps_zh",
+      "before": [
+        "1. 向DTC申请内部数据：Factory和LedgerScan吞吐量基准、灾难恢复测试结果及转换指令量记录，以填充DAS-01和DAS-05的缓冲比率。",
+        "2. 获取根钱包调用日志和对账周转记录，用于校准DAS-02缓冲指标。",
+        "3. 确认已批准的已注册钱包托管方名单及密钥管理证明（DAS-03），不得假设命名合作方均为已批准托管方。",
+        "4. 记录DTC的应急去代币化操作手册及资格监控控制措施（DAS-04）。",
+        "5. 持续监测SEC规则制定及不采取行动立场修改动态；追踪三年授权窗口到期日（约2029年10月）。",
+        "6. 利用公开的指数再平衡日历和国债拍卖时间表作为需求冲击代理，对五条风险链进行基于假设的敏感性模拟，并明确标注所有输出为反事实/预实证结果。",
+        "7. 与DTC建立数据共享协议，待季度SEC报告包可用后实现未来实证校准。",
+        "8. 不得将DAS编号分配给现有final16风险卡；按建议新建DAS系列卡片。"
+      ],
+      "after": [
+        "索取Factory/LedgerScan处理能力、灾难恢复测试、转换需求和对账记录，用来填写五条链的保护性缓冲比率。",
+        "向DTC确认已注册钱包控制证明与实际部署的基础设施；合作机构名单不代表部署或批准清单。",
+        "向DTC确认初步基础版本的正式启动日及不采取行动立场的到期日，不从单次生产演示直接推定。",
+        "把真实公开代理序列与内部实测数据分开评估；不能直接把市场冲击或泛化币价用作DAS的V。",
+        "假设模拟仅用于流程和敏感性测试，须明确标注，不能据此声称已校准或实证验证DAS风险。",
+        "先建立可审核的DAS新闻与卡片schema，再接入生产分类；保留原有final16目录。"
+      ]
+    }
+  ],
+  "quote_errors": [],
+  "validation_scope": "Provenance and source consistency only; mechanisms remain hypotheses, not empirically validated",
+  "api_paid_calls_in_this_step": 0
+}

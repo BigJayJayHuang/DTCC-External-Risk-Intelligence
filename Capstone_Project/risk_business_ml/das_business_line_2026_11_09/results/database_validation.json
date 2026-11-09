@@ -1,0 +1,24 @@
+{
+  "project": {
+    "counts": {
+      "das_api_reading_runs": 3,
+      "das_chain_candidates": 5,
+      "das_public_facts": 8,
+      "das_source_documents": 7,
+      "das_v_availability": 115
+    },
+    "integrity": "ok",
+    "foreign_key_errors": 0
+  },
+  "portable": {
+    "counts": {
+      "das_api_reading_runs": 3,
+      "das_chain_candidates": 5,
+      "das_public_facts": 8,
+      "das_source_documents": 7,
+      "das_v_availability": 115
+    },
+    "integrity": "ok",
+    "foreign_key_errors": 0
+  }
+}

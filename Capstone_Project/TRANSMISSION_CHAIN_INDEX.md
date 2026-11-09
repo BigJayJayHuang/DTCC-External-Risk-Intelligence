@@ -6,6 +6,8 @@ Use this board to navigate **definitions → tests → data gaps → database �
 
 ## 先看什么 / Start here
 
+**DAS 新业务研究 / DAS business research（2026-11-09）：** [中文汇总](risk_business_ml/das_business_line_2026_11_09/README_CN.md) · [English](risk_business_ml/das_business_line_2026_11_09/README_EN.md) · [5条候选链 / Five candidate chains](risk_business_ml/das_business_line_2026_11_09/data/chain_candidates.csv) · [数据索要清单 / Required data](risk_business_ml/das_business_line_2026_11_09/data/data_request_list.csv) · [独立数据库快照 / Dedicated snapshot](risk_business_ml/das_business_line_2026_11_09/data/das_research.sqlite3.gz)。现有 AWS Bedrock API 阅读5份 DTCC 官方材料及 SEC 官方节选；8项公开事实、5条候选链。真实内部V缺失，115个历史季度位置保留空值；未生成模拟V，未做实证关联检验，未接入生产评分。Five DTCC documents plus an SEC excerpt read through AWS;8 public facts and5 candidate chains. Internal V remains unavailable; no empirical scores or synthetic replacements.
+
 **当前模型输入 / Current model inputs：** [16卡季度V总入口](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/README.md) · [中文说明](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/README_CN.md) · [English](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/README_EN.md) · [16卡统一V输入](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/data/risk_model_v_inputs.csv) · [驱动检查](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/results/v_driver_checks.csv) · [团队卡片ID对照](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/results/card_id_map.csv)。16张拟定（PROPOSED）卡片、31条组成链，2020Q4–2026Q2各23季度：6张为真实PQD V（含原有缺失值），10张为真实公开代理序列V（public_proxy），主排名不含模拟V。逐行标注V来源层（pqd / public_proxy / simulated / none）；提供按可用日期读取及S×V接口。历史发布时间及数据修订版本未核实。16 PROPOSED cards: 6 pqd V, 10 public_proxy V from real public series; no simulated V in the main ranking.
 
 

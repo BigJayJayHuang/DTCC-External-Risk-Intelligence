@@ -1,0 +1,30 @@
+{
+  "checked_date": "2026-11-09",
+  "screenshots_handling": "LOCAL_REFERENCE_ONLY_USER_DECLINED_AWS_UPLOAD",
+  "screenshot_aws_calls": 0,
+  "daily_collector": {
+    "run_id": 42547021653,
+    "url": "https://github.com/BigJayJayHuang/DTCC-External-Risk-Intelligence/actions/runs/42547021653",
+    "latest_five_scheduled_runs": "2026-11-05 through2026-11-09: failure status",
+    "latest_run_collection_validation_and_snapshot_publication": "succeeded",
+    "failing_final_step": "Report partial collection failures",
+    "source_failures": ["CFTC RSS HTTP403", "Eight RDS endpoints HTTP404"],
+    "interpretation": "Partial source failures; latest shared snapshot publication was not stopped. This bounded check does not establish all run statuses since2026-10-28."
+  },
+  "google_news_branch": {
+    "branch": "feat/google-news-prefilter-20261107",
+    "head": "0579f0ab64ee7117e3710c40882c4ee531bd5dcf",
+    "queries": 47,
+    "existing_cards": 16,
+    "DAS_query_rows": 0,
+    "measured_week": "2026-11-02 through2026-11-08",
+    "raw_items": 558,
+    "retained_items": 92,
+    "interpretation": "Observed one-week count, not a guaranteed weekly delivery rate."
+  },
+  "production_classifier": {
+    "DAS_supported": false,
+    "reason": "Existing schema restricts output to original16 FICC/ECS/XE cards.",
+    "changes_made": false
+  }
+}

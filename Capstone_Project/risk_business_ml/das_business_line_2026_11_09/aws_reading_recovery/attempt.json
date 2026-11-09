@@ -1,0 +1,28 @@
+{
+  "status": "failed_or_incomplete",
+  "started_at_utc": "2026-11-09T20:31:43.783746+00:00",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "region": "us-east-2",
+  "request_sha256": "069a93af2fc64020751e6137d9d9b12c53602730cedc3f839c5b343c9e5b8771",
+  "documents": 5,
+  "manual_run": true,
+  "automation_enabled": false,
+  "max_tokens": 9000,
+  "budget_usd": "2",
+  "conservative_reserve_usd": "0.2925879",
+  "pricing_verified_date": "2026-11-05",
+  "previous_cost_usd": "0.1396725",
+  "recovery": true,
+  "pricing_note": "Estimate from existing approved configuration; not an AWS billing statement",
+  "automatic_retries": 0,
+  "usage": {
+    "inputTokens": 9894,
+    "outputTokens": 5059,
+    "totalTokens": 14953,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.1161237",
+  "stop_reason": "end_turn",
+  "error_type": "JSONDecodeError"
+}

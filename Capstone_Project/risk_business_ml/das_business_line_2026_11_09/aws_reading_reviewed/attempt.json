@@ -1,0 +1,57 @@
+{
+  "status": "needs_revision",
+  "started_at_utc": "2026-11-09T20:36:31.750515+00:00",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "region": "us-east-2",
+  "request_sha256": "5f55444f7f42543ed1bce6dbcbd408d628024c67959f432a441080fdaa65a459",
+  "documents": 6,
+  "manual_run": true,
+  "automation_enabled": false,
+  "max_tokens": 9000,
+  "budget_usd": "2",
+  "conservative_reserve_usd": "0.4109424",
+  "pricing_verified_date": "2026-11-05",
+  "previous_cost_usd": "0.2557962",
+  "recovery": false,
+  "evidence_review_revision": true,
+  "source_hashes": [
+    {
+      "source_id": "launch",
+      "text_sha256": "a3f551bf4d50c43b0f36037333fedd16fe17990ca703d0bb6d79d3cbf874c431"
+    },
+    {
+      "source_id": "hub",
+      "text_sha256": "4c0d4e8c426f656550f9e0225a47072f7c69570d5cbe1362763f1b3668cae4f1"
+    },
+    {
+      "source_id": "network_framework",
+      "text_sha256": "542fece015fedd6a8be282b407e6eb486a201fc97e9a2ddafa61d8b61fe160ba"
+    },
+    {
+      "source_id": "notice_das001",
+      "text_sha256": "6d31a41d31ed25ee402a0ce8e60599e44ff953e95dcfb617650039676f1a44f8"
+    },
+    {
+      "source_id": "limited_production",
+      "text_sha256": "3ff767c58872b373063b6bdacb1262b8f1f495cb46daeb1024d6a9b9266347b3"
+    },
+    {
+      "source_id": "sec_staff_web_excerpt",
+      "text_sha256": "9da8a5fa98a5071eed3275feed009559890fdb9e8d4d915e2d9affcac98e52ff"
+    }
+  ],
+  "pricing_note": "Estimate from existing approved configuration; not an AWS billing statement",
+  "automatic_retries": 0,
+  "usage": {
+    "inputTokens": 20628,
+    "outputTokens": 7395,
+    "totalTokens": 28023,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.1900899",
+  "stop_reason": "end_turn",
+  "error_type": "JSONDecodeError",
+  "offline_parse_recovery": true,
+  "parse_error_resolved": true
+}

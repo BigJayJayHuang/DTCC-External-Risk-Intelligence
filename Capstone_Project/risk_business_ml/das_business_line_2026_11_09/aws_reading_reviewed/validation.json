@@ -1,0 +1,18 @@
+{
+  "status": "NEEDS_REVISION",
+  "errors": [
+    "facts[2]: quote does not occur verbatim in its bound source",
+    "facts[4]: quote does not occur verbatim in its bound source",
+    "facts[5]: quote does not occur verbatim in its bound source",
+    "facts[6]: quote does not occur verbatim in its bound source",
+    "facts[7]: quote does not occur verbatim in its bound source",
+    "chains[0]: quote does not occur verbatim in its bound source",
+    "chains[1]: quote does not occur verbatim in its bound source",
+    "chains[2]: quote does not occur verbatim in its bound source",
+    "chains[3]: quote does not occur verbatim in its bound source",
+    "chains[4]: quote does not occur verbatim in its bound source"
+  ],
+  "facts": 8,
+  "chains": 5,
+  "human_review_required": true
+}

@@ -1,0 +1,37 @@
+{
+  "status": "SOURCE_AND_STRUCTURE_CHECKS_PASSED_MECHANISMS_REQUIRE_REVIEW",
+  "quote_errors": [],
+  "available_evidence_sources": 6,
+  "complete_dtcc_documents_retrieved": 5,
+  "partial_sec_web_reader_excerpts": 1,
+  "unavailable_original_documents": 1,
+  "public_facts": 8,
+  "candidate_cards": 5,
+  "quarterly_positions": 115,
+  "observed_internal_v_values": 0,
+  "simulated_v_values": 0,
+  "empirical_tests_run": 0,
+  "aws": {
+    "total_estimated_cost_usd": "0.4458861",
+    "calls": 3,
+    "automation_enabled": false,
+    "credential_type": "existing_temporary_sso",
+    "pricing_note": "Configured-rate estimate, not an AWS bill."
+  },
+  "portable_database": {
+    "rows_imported": {
+      "das_source_documents": 7,
+      "das_public_facts": 8,
+      "das_chain_candidates": 5,
+      "das_v_availability": 115,
+      "das_api_reading_runs": 3
+    },
+    "integrity_check": "ok",
+    "foreign_key_errors": 0,
+    "snapshot": {
+      "file": "das_research.sqlite3.gz",
+      "sha256": "a1005f5fdc453ebd88dc2ba75e2d7c1069a8dfe5c1d1176767bfc7c0fa3afc6c",
+      "bytes": 50602
+    }
+  }
+}
