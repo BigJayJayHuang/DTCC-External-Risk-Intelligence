@@ -239,3 +239,27 @@ Approved: Wenqi Cai, 2026-11-08T01:10Z. Written before any code change for it. I
   - `required` if any scored (non-context) card has a would-be S ≥ 4 or severity ≥ 6;
   - `context` if every card of the event is context;
   - otherwise `auto`.
+
+## Amendment E — review-sheet checks after validate()
+
+Approved: Wenqi Cai, 2026-11-09T21:12Z. E1–E4 describe checks already in `validation/review_sheet.py` (prompt v1.6, commit 7ed9f5d); this amendment is written before the code for E5. It changes no existing v1.3 score: S, V, severity, status, show_on_main and needs_human_signoff are computed as before. It decides only which proposed events can reach the register and which items appear as related news.
+
+- **E1. Fields (prompt v1.6).** For every relevant item the classifier records:
+  - `geography`: `us`; `non_us_with_us_link` (only when the text itself states a link to US markets, US firms or DTCC participants); or `non_us`.
+  - `new_information`: set only when `same_as_event_id` is set. It is `true` if the text adds a new date, action, figure or stage compared with the recorded event, otherwise `false`. It is null when `same_as_event_id` is null.
+
+  Both are null for irrelevant items. Candidate files from older prompts lack these fields; E2 and E3 then do not apply.
+- **E2. Non-US filter.** An item with `geography = non_us` is dropped before grouping and logged to `filtered_non_us.csv` in the run folder. It never reaches the review sheet, the register or the related news.
+- **E3. Duplicate tier.** A proposed event whose items all have `same_as_event_id` set and `new_information = false` gets `review_tier = duplicate`.
+  - `promote_reviewed.py` never inserts it.
+  - Its items go to `context_news.csv` as related news on each of its cards (D3, D4).
+  - An event with new information keeps its tier and, as before, is listed for a manual merge.
+- **E4. Date flags (`date_flags` column).**
+  - `date_unverified`: one independent source, every item headline-only, and `event_type` operational or cyber. It is a flag for the reviewer only; the tier is unchanged.
+  - `date_mismatch`: an item's `announced_date` is more than 14 days from its feed published date. The event gets `review_tier = date_review` and is kept out of the week's tiering. Like `required`, it needs a decision before `promote_reviewed.py` runs.
+- **E5. FICC-GSD-11 gate.** After the non-US filter and before grouping, FICC-GSD-11 stays on an item only if its headline, summary or text contains one of these terms: Treasury, Treasuries, repo, basis trade, SOFR, sponsored, agent clearing.
+  - Matching ignores case and uses whole words. The plurals "repos" and "basis trades" and the hyphenated "basis-trade" and "agent-clearing" also count.
+  - Otherwise the card is removed from that item, and an item left with no card is dropped.
+  - Each removal is logged to `card_gate.csv` in the run folder and added to the item's flags.
+  - Grouping, the D2 context rule and the D5 tier are computed after the gate.
+- **E6. Order and precedence.** validate() per item → E2 → E5 → grouping → validate() on the combined sources → D2 context rule → D5 tier. Then `duplicate` (E3) replaces any tier, and otherwise `date_review` (E4) replaces any tier.
