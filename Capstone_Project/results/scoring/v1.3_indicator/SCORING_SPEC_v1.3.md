@@ -263,3 +263,23 @@ Approved: Wenqi Cai, 2026-11-09T21:12Z. E1–E4 describe checks already in `vali
   - Each removal is logged to `card_gate.csv` in the run folder and added to the item's flags.
   - Grouping, the D2 context rule and the D5 tier are computed after the gate.
 - **E6. Order and precedence.** validate() per item → E2 → E5 → grouping → validate() on the combined sources → D2 context rule → D5 tier. Then `duplicate` (E3) replaces any tier, and otherwise `date_review` (E4) replaces any tier.
+
+## Amendment F — weeks covered by the weekly news run
+
+Approved: Wenqi Cai, 2026-11-09T21:30Z. Written before any code change for it. It changes no S, V or severity. It changes only the status (and its reason) of cards with no market signal and no active register event, and adds `news_coverage` per week.
+
+- **F1. News coverage per week.** Every scored week records `news_coverage`:
+  - `headline_level_ai_screen`: the weekly news run (`validation/weekly_news_run.py`) completed for that Monday–Sunday week, and every `required` and `date_review` row of its review sheet has a decision. This applies to the week of 2026-11-02 (run `run_20261109T203937Z`, sheet `review_2026-11-02_run_20261109T203937Z.csv`).
+  - `manual_register_only`: any other week. The weeks of 2026-10-19 and 2026-10-26 keep this value.
+
+  The list is kept in `results/scoring/v1.3_indicator/config/news_coverage.csv`. A week that is not listed is `manual_register_only`.
+- **F2. New status `no_relevant_news`.** In a week with `news_coverage = headline_level_ai_screen`, a card with no market signal and no active register event gets `status = no_relevant_news`:
+  - S and `S_source` are null, and severity is null;
+  - V and its fields are shown as usual;
+  - `show_on_main = false` and `needs_human_signoff = false`.
+- **F3.** `news_not_scanned` remains only for weeks with `news_coverage = manual_register_only`.
+- **F4. Unchanged.**
+  - Cards with a market signal follow D1 (`data_incomplete`) and resolved §11.2 as before.
+  - Context and duplicate news (Amendments D and E) still appear only in `related_news` and never set S.
+  - Items rejected in review are neither scored nor shown.
+- **F5. Display.** The dashboard shows `no_relevant_news` as "No relevant news found (headline-level scan)". Like the other unscored statuses, it sorts after the scored cards.
