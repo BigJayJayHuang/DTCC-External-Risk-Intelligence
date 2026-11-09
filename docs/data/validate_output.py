@@ -100,6 +100,19 @@ def main(path):
         if key in seen:
             errors.append(f"{tag}: duplicate id within snapshot {it.get('snapshot')}")
         seen.add(key)
+        rel = it.get("related_news")
+        if rel is not None:
+            if not isinstance(rel, list):
+                errors.append(f"{tag}: related_news must be a list")
+            else:
+                for k, n in enumerate(rel):
+                    if not isinstance(n, dict) or not n.get("title") or not str(n.get("url", "")).startswith(("https://", "http://")):
+                        errors.append(f"{tag}: related_news[{k}] needs a title and an http(s) url")
+        ai_ev = it.get("ai_unreviewed_events")
+        if ai_ev is not None and not (isinstance(ai_ev, list) and all(isinstance(x, str) for x in ai_ev)):
+            errors.append(f"{tag}: ai_unreviewed_events must be a list of event ids")
+        if ai_ev and it.get("ai_review_label") != "AI-classified, not reviewed":
+            errors.append(f"{tag}: unreviewed AI events {ai_ev} but no 'AI-classified, not reviewed' label")
         tr = it.get("transmission")
         if tr is not None and not all(k in tr for k in ("event", "mechanism", "dtcc_process")):
             warnings.append(f"{tag}: transmission should have event, mechanism, dtcc_process")

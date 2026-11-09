@@ -91,6 +91,12 @@ a{color:var(--brand-2)}
 .sev.Unscanned,.sev.Incomplete{background:var(--pend);color:var(--on-pend)} .sev.Unscanned .n,.sev.Incomplete .n{font-size:15px;line-height:1.1}
 .banner{background:var(--note);border:1px solid var(--note-line);color:var(--note-ink);border-radius:10px;padding:9px 14px;margin-bottom:14px;font-size:14.5px;font-weight:600}
 .chip.rev{background:var(--high-soft);color:var(--high-ink);font-weight:700}
+.chip.aiev{background:var(--note);color:var(--note-ink);border:1px solid var(--note-line);font-weight:700}
+.cnews{display:block;font-size:13.5px;color:var(--muted);margin:0 0 4px;max-width:76ch}
+.cnews b{color:var(--ink);font-weight:600}
+.rnote{font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted);font-size:13px;margin-left:8px}
+.related ul{margin:0;padding-left:18px;font-size:14.5px;display:grid;gap:3px}
+.related .o{color:var(--muted)}
 .shared{display:block;font-size:13.5px;color:var(--muted);margin:0 0 4px}
 .ph{display:inline-block;border:1.5px dashed var(--line);background:var(--surface);color:var(--muted);border-radius:7px;padding:2px 9px;font-size:13.5px;font-weight:400}
 .box .ph{display:block;padding:10px 12px;font-size:14.5px}
@@ -123,7 +129,8 @@ a{color:var(--brand-2)}
 .dhead{display:grid;grid-template-columns:88px minmax(0,1fr);gap:18px;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:18px}
 .dhead .sev{height:88px}
 .dhead h2{font-size:22px;line-height:1.25;margin:0 0 9px;text-wrap:balance}
-.stamp{font-size:13.5px;color:var(--muted);margin-top:4px}
+.stamp{font-size:13.5px;color:var(--muted);margin-top:4px;overflow-wrap:anywhere}
+.calc span,.srcs li,.related li,.cnews{overflow-wrap:anywhere}   /* long source URLs (e.g. Google News links) must not widen the page */
 .sec{margin-bottom:18px}
 .lab{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--note-ink);margin:0 0 8px}
 .sec p{margin:0;max-width:72ch}
@@ -184,6 +191,8 @@ const UNSCORED={news_not_scanned:"Unscanned",data_incomplete:"Incomplete"};
 const LVL_TEXT={Pending:"V pending",Unscanned:"Not scanned",Incomplete:"Data incomplete"};
 const TIER_TEXT={pqd:"PQD",public_proxy:"public proxy"};
 const PH=`<span class="ph">AI analysis – available once the news classifier is connected.</span>`;
+const AI_LABEL="AI-classified, not reviewed";
+const NEWS_NOTE="headline-level news, not scored";
 
 /* All 10 DTCC business lines, always shown as tabs (order = tab order). */
 const LINE_META={
@@ -219,6 +228,9 @@ const fmtStamp=d=>d?d.toLocaleString("en-US",{month:"short",day:"numeric",hour:"
 const snapObj=id=>SNAPS.find(s=>s.id===id);
 const latestSnap=()=>SNAPS[0];
 const asArr=v=>Array.isArray(v)?v:(v==null||v===""?[]:[v]);
+const httpUrl=u=>/^https?:\/\//i.test(String(u||""));
+function relatedNews(v){const seen=new Set(); return asArr(v).filter(n=>n&&n.title&&!seen.has(n.url||n.title)&&seen.add(n.url||n.title))
+  .map(n=>({title:String(n.title),outlet:n.outlet?String(n.outlet):"",url:httpUrl(n.url)?String(n.url):""}));}
 
 /* Normalise one model record into what the page needs. Missing fields are tolerated. */
 function norm(raw){
@@ -238,7 +250,8 @@ function norm(raw){
     shockMethod:raw.shock_method||"",shockText:raw.shock_basis||"",vulnText:raw.vulnerability_basis||"",
     whyLine:raw.why_this_line||"",unknowns:asArr(raw.key_unknowns),stand:raw.where_we_stand||"",share:raw.shareable_line||"",
     sources:asArr(raw.sources).map(s=>typeof s==="string"?{name:s,url:""}:{name:s.name||s.url||"Source",url:s.url||""}),
-    aiFields:asArr(raw.ai_generated_fields)};
+    aiFields:asArr(raw.ai_generated_fields),related:relatedNews(raw.related_news),aiEvents:asArr(raw.ai_unreviewed_events).map(String),
+    aiLabel:raw.ai_review_label||raw.event_review_label||(asArr(raw.ai_unreviewed_events).length?AI_LABEL:"")};
 }
 const ALL=()=>(DATA&&Array.isArray(DATA.items)?DATA.items:[]).map(norm);
 
@@ -357,6 +370,16 @@ function sevBox(i){
 function vText(i){return `Vulnerability ${i.V??"pending"}${i.vTier?` (${esc(TIER_TEXT[i.vTier]||i.vTier)})`:""}`;}
 function scoreChip(i){return `<span class="chip o">${i.S!=null?`Shock ${i.S} × `:"Shock not scored · "}${vText(i)}</span>`;}
 function reviewChip(i){return i.needsReview?`<span class="chip rev">Pending review</span>`:"";}
+function aiChip(i){return i.aiLabel?`<span class="chip aiev">${esc(i.aiLabel)}</span>`:"";}
+function aiNote(i){return i.aiLabel&&i.aiEvents.length?`<span class="shared">${esc(i.aiLabel)}: event${i.aiEvents.length>1?"s":""} ${esc(i.aiEvents.join(", "))} entered by the news classifier without a human decision.</span>`:"";}
+function relatedLine(i){
+  if(!i.related.length) return "";
+  const top=i.related.slice(0,3).map(n=>esc(n.title)+(n.outlet?` (${esc(n.outlet)})`:"")).join("; ");
+  return `<span class="cnews"><b>Related news</b> · ${NEWS_NOTE}: ${top}${i.related.length>3?`; and ${i.related.length-3} more`:""}</span>`;}
+function relatedSection(i){
+  if(!i.related.length) return "";
+  return `<section class="sec related"><h3 class="lab">Related news<span class="rnote">${NEWS_NOTE}</span></h3>
+    <ul>${i.related.map(n=>`<li>${n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.title)}</a>`:esc(n.title)}${n.outlet?` <span class="o">· ${esc(n.outlet)}</span>`:""}</li>`).join("")}</ul></section>`;}
 function sharedNote(i){
   if(!i.shared.length) return "";
   const names=i.shared.map(cid=>{const o=ALL().find(x=>x.cardId===cid&&x.snapshot===i.snapshot); return o?`${o.title} (${cid})`:cid;});
@@ -371,9 +394,10 @@ function cardHtml(i){
         ${i.chg&&!otherWeek?`<span class="chip ${i.chg.k}">${esc(i.chg.t)}</span>`:""}
         ${otherWeek?`<span class="chip wk">Week of ${esc(fmtDay(i.snapDate))}</span>`:""}
         <span class="chip">${esc(i.family)}</span><span class="chip">${esc(i.line)}${i.sub?" · "+esc(i.sub):""}</span>
-        ${scoreChip(i)}<span class="chip o">Confidence: ${esc(i.conf)}</span>${reviewChip(i)}
+        ${scoreChip(i)}<span class="chip o">Confidence: ${esc(i.conf)}</span>${reviewChip(i)}${aiChip(i)}
       </span>
       ${sharedNote(i)}
+      ${relatedLine(i)}
       <span class="cline" style="display:block"><b>So what —</b> ${(i.sowhat||i.line1)?esc(i.sowhat||i.line1):PH}</span>
       <span class="cline" style="display:block"><b>So now what —</b> ${i.nowwhat?esc(i.nowwhat):PH}</span>
       <span class="cfoot"><span>${i.sources.length} source${i.sources.length===1?"":"s"}${i.upd?" · updated "+esc(fmtStamp(i.upd)):""}</span><span class="more">Details ›</span></span>
@@ -425,8 +449,9 @@ function renderDetail(id,snap){
     ${sevBox(i)}
     <div style="min-width:0">
       <h2>${esc(i.title)}</h2>
-      <div class="chips">${i.chg?`<span class="chip ${i.chg.k}">${esc(i.chg.t)}</span>`:""}<span class="chip">${esc(i.family)}</span><span class="chip">${esc(i.line)}${i.sub?" · "+esc(i.sub):""}</span><span class="chip o">Region: ${esc(i.region)}</span>${scoreChip(i)}<span class="chip o">Confidence: ${esc(i.conf)}</span>${reviewChip(i)}</div>
+      <div class="chips">${i.chg?`<span class="chip ${i.chg.k}">${esc(i.chg.t)}</span>`:""}<span class="chip">${esc(i.family)}</span><span class="chip">${esc(i.line)}${i.sub?" · "+esc(i.sub):""}</span><span class="chip o">Region: ${esc(i.region)}</span>${scoreChip(i)}<span class="chip o">Confidence: ${esc(i.conf)}</span>${reviewChip(i)}${aiChip(i)}</div>
       ${sharedNote(i)}
+      ${aiNote(i)}
       ${i.what?`<div class="stamp">What happened: ${esc(i.what)}</div>`:""}
     </div>
   </div>
@@ -452,6 +477,7 @@ function renderDetail(id,snap){
   </section>
   ${i.stand?`<section class="sec"><h3 class="lab">Where we stand</h3><p>${esc(i.stand)}</p></section>`:""}
   ${i.share?`<section class="sec share"><div style="min-width:0"><h3 class="lab" style="margin-bottom:4px">Shareable line${ai("shareable_line")}</h3><q id="shareText">${esc(i.share)}</q></div><button class="copy" id="copy">Copy line</button></section>`:""}
+  ${relatedSection(i)}
   <section class="srcs"><h3 class="lab" style="margin:0">Sources</h3>
     ${i.sources.length?`<ul>${i.sources.map(s=>`<li>${s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>`:esc(s.name)}</li>`).join("")}</ul>`:`<span class="rv">No sources listed.</span>`}
     <span class="rv">Week of ${esc(fmtDay(i.snapDate))}${i.upd?" · updated "+esc(fmtStamp(i.upd)):""}${i.review?" · Review: "+esc(i.review):""}</span></section>

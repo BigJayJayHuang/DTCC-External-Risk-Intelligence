@@ -78,6 +78,9 @@ Each item belongs to one snapshot. To show week-over-week change, write the same
 | `sources` | no | `[{name, url}]` | A `url` of `""` shows plain text |
 | `ai_generated_fields` | no | string[] | Field names that get an "AI-WRITTEN" tag, e.g. `summary_line`, `so_what`, `so_now_what`, `shareable_line` |
 | `review_status` | no | string | e.g. `AI-drafted, analyst-checked` |
+| `related_news` | no | `[{title, outlet, url, event_type, proposed_event_id}]` | Headline-level news for this card and week (Amendments D and E: market moves on indicator cards and duplicates of recorded events). Shown as "Related news · headline-level news, not scored"; never part of the score |
+| `ai_unreviewed_events` | no | string[] | Active register events on this card entered by the news classifier without a human decision (`llm-auto`/`unreviewed`) |
+| `ai_review_label` | no | string or `null` | `AI-classified, not reviewed` when such an event affects the card, or when S comes from one (`event_review_label`); shown as a chip on the card and in the detail view |
 
 The page calculates these itself, so the model should not send them:
 
