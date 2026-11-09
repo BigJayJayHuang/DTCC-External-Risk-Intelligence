@@ -140,6 +140,7 @@ class PromptV15(unittest.TestCase):
         rest = v15[:start] + v15[end:]
         for t in ("market_move", "firm_specific", "regulatory"):
             rest = rest.replace(f'is_relevant true; event_type "{t}"; card_ids', "is_relevant true; card_ids", 1)
+        rest = rest.replace('  "is_relevant": true,\n  "event_type": "regulatory",\n', '  "is_relevant": true,\n', 1)   # Output example (43512e2)
         self.assertEqual(rest, v14)
         system, user, cards, version = C.prompt_parts_v13(C.PROMPT_V15, "v1.5")
         self.assertIn("`market_move`: price, yield, spread, volatility or volume moves", system)
