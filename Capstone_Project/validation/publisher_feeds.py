@@ -6,21 +6,22 @@
    an honest User-Agent, at most one request every 2 seconds, after checking the host's robots.txt.
 2. Keep an item when its headline or summary contains any single keyword from any card's query list
    (news_queries.csv; case-insensitive, word-boundary match). Matched keywords and card hints are recorded.
-   Existing Google News items are added too; they stay headline-only.
+   Existing Google News and pre-filtered official-feed items are added too.
 3. For kept items with a publisher URL, fetch the page (robots.txt permitting) and extract the main article text.
    Paywalled pages (schema.org isAccessibleForFree = false, or HTTP 401/402/403) and failed extractions fall back
-   to the RSS summary. Text is truncated to about 1,000 words. content_scope is full_text, summary or headline_only.
+   to the RSS summary. Truncated text is explicitly article_excerpt, not full_text.
    Full texts are written only to the git-ignored fulltext cache; the CSVs hold headline, URL, summary, scope and
    the text's sha256.
 """
 from __future__ import annotations
 
-import argparse, csv, difflib, email.utils, hashlib, html, json, os, re, urllib.error, urllib.parse, urllib.request, urllib.robotparser
+import argparse, csv, difflib, email.utils, hashlib, html, ipaddress, json, os, re, shutil, subprocess, tempfile, urllib.error, urllib.parse, urllib.request, urllib.robotparser
 import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from html.parser import HTMLParser
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from . import google_news as G
 
@@ -29,7 +30,17 @@ CONFIG = Path(__file__).with_name("publisher_feeds_config.json")
 SOURCE_ID = "publisher_rss"
 FIELDS = ["document_id", "title", "url", "publication_date", "published_at_utc", "summary", "source_id", "feed_id", "outlet",
           "source_tier", "matched_keywords", "matched_card_ids", "content_scope", "fulltext_status", "text_words", "text_sha256",
-          "text_file", "google_link", "last_seen"]
+          "text_file", "google_link", "last_seen", "publisher_url", "outlet_url", "url_resolution", "matched_queries",
+          "selected_for_card_ids", "keep_rule", "headline_term_match", "duplicate_evidence", "text_truncated", "original_text_words",
+          "content_source_url", "raw_sha256", "raw_file"]
+
+OFFICIAL_META = {
+    "federal_register": ("Federal Register", "official"), "dtcc_notice_feed": ("DTCC", "dtcc"),
+    "dtcc_insight_20261014": ("DTCC", "dtcc"), "sec_press": ("SEC", "regulator"),
+    "cftc_press": ("CFTC", "regulator"), "fed_press": ("Federal Reserve", "regulator"),
+    "fca_rss": ("FCA", "regulator"), "ecb_press": ("ECB", "official"),
+    "esma_news": ("ESMA", "regulator"), "bis_press": ("BIS", "official"),
+}
 
 
 def sha(b: bytes) -> str:
@@ -37,11 +48,62 @@ def sha(b: bytes) -> str:
 
 
 # ------------------------------------------------------------------ HTTP client: honest UA, rate limit, robots.txt
+def public_https_url(url: str) -> bool:
+    """Reject local/private URL forms without DNS queries or network side effects.
+
+    This lexical guard does not claim to validate DNS resolution or prevent DNS
+    rebinding; the configured public-source inventory remains the source boundary.
+    """
+    if not isinstance(url, str) or re.search(r'[\x00-\x20\x7f]', url):
+        return False
+    try:
+        parsed = urllib.parse.urlsplit(url)
+        host = (parsed.hostname or '').rstrip('.').lower()
+        if parsed.scheme != 'https' or not host or parsed.username is not None or parsed.password is not None or parsed.port not in (None, 443):
+            return False
+    except ValueError:
+        return False
+    if '%' in host or '\\' in host:
+        return False
+    try:
+        address = ipaddress.ip_address(host)
+        return address.is_global and not address.is_multicast and not address.is_unspecified
+    except ValueError:
+        pass
+    labels = host.split('.')
+    if len(labels) < 2 or any(label in {'localhost', 'local', 'internal', 'localdomain', 'lan', 'home', 'metadata'} for label in labels):
+        return False
+    if any(host == suffix or host.endswith('.' + suffix) for suffix in ('nip.io', 'sslip.io', 'localtest.me', 'lvh.me')):
+        return False
+    # inet_aton-compatible shortened/octal/hex forms must not be interpreted as
+    # ordinary hostnames (e.g.127.1 or0x7f.0.0.1).
+    if all(re.fullmatch(r'(?:0x[0-9a-f]+|[0-9]+)', label) for label in labels):
+        return False
+    return all(re.fullmatch(r'[a-z0-9](?:[a-z0-9-]*[a-z0-9])?', label) for label in labels)
+
+
+class _SafeRedirect(urllib.request.HTTPRedirectHandler):
+    def __init__(self, allowed):
+        super().__init__(); self.allowed = allowed
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        target = urllib.parse.urljoin(req.full_url, newurl)
+        if not public_https_url(target):
+            raise urllib.error.HTTPError(req.full_url, 403, 'Unsafe redirect destination rejected', headers, fp)
+        kind = getattr(req, '_capstone_kind', 'page')
+        if kind != 'robots' and not self.allowed(target):
+            raise urllib.error.HTTPError(req.full_url, 403, 'Redirect destination disallowed by robots policy', headers, fp)
+        redirected = super().redirect_request(req, fp, code, msg, headers, target)
+        if redirected is not None:
+            redirected._capstone_kind = kind
+        return redirected
+
+
 class Client:
     def __init__(self, config, limiter=None, opener=None):
         self.config = config
         self.limiter = limiter or G.RateLimiter(config["min_request_interval_seconds"])
-        self.opener = opener or urllib.request.build_opener()
+        self.opener = opener or urllib.request.build_opener(_SafeRedirect(self.allowed))
         self.robots: dict[str, urllib.robotparser.RobotFileParser | bool] = {}
         self.log: list[dict] = []
 
@@ -52,8 +114,12 @@ class Client:
         return self.config["user_agent"]
 
     def get(self, url: str, max_bytes: int | None = None, kind: str = "page"):
+        if not public_https_url(url):
+            self.log.append({'kind': kind, 'url': '[rejected unsafe URL]', 'status': None, 'error': 'UnsafeURL'})
+            return None, b'', '', ''
         self.limiter.wait()
         req = urllib.request.Request(url, headers={"User-Agent": self.user_agent(url), "Accept-Language": "en-US,en;q=0.8"})
+        req._capstone_kind = kind
         entry = {"kind": kind, "url": url, "fetched_utc": datetime.now(timezone.utc).isoformat(timespec="seconds")}
         try:
             with self.opener.open(req, timeout=self.config["timeout_seconds"]) as r:
@@ -69,6 +135,8 @@ class Client:
         return entry["status"], b"", url, ""
 
     def allowed(self, url: str) -> bool:
+        if not public_https_url(url):
+            return False
         p = urllib.parse.urlparse(url)
         key = f"{p.scheme}://{p.netloc}"
         if key not in self.robots:
@@ -77,8 +145,10 @@ class Client:
                 rp = urllib.robotparser.RobotFileParser()
                 rp.parse(body.decode("utf-8", "replace").splitlines())
                 self.robots[key] = rp
-            else:   # RFC 9309: 4xx means no restrictions; 5xx or no answer means do not crawl
-                self.robots[key] = status is not None and 400 <= status < 500
+            else:
+                # Missing robots may be crawled under RFC9309. Explicit access
+                # denial, server failure or no response stays fail-closed.
+                self.robots[key] = status is not None and 400 <= status < 500 and status not in (401, 403, 429)
         rp = self.robots[key]
         return rp.can_fetch(self.user_agent(url), url) if isinstance(rp, urllib.robotparser.RobotFileParser) else bool(rp)
 
@@ -95,7 +165,8 @@ def _date(s: str):
         return email.utils.parsedate_to_datetime(s).astimezone(timezone.utc)
     except (TypeError, ValueError):
         try:
-            return datetime.fromisoformat(s.replace("Z", "+00:00")).astimezone(timezone.utc)
+            parsed = datetime.fromisoformat(s.replace("Z", "+00:00"))
+            return (parsed if parsed.tzinfo else parsed.replace(tzinfo=timezone.utc)).astimezone(timezone.utc)
         except ValueError:
             return None
 
@@ -125,17 +196,29 @@ def parse_feed(body: bytes) -> list[dict]:
 
 # ------------------------------------------------------------------ broad keyword pre-filter (no AI)
 def keyword_index(queries) -> dict[str, set[str]]:
+    """Broad retrieval hints: retain phrases and their constituent words.
+
+    This intentionally has higher recall than Google's all-terms query rule.
+    A match only sends an item for review; it does not establish relevance,
+    event validity or a risk score.
+    """
     index = defaultdict(set)
     for card, q in queries:
         for term in G.query_terms(q):
-            index[term.lower()].add(card)
+            terms = {term.lower()}
+            if re.search(r"\s", term):
+                terms.update(word.lower() for word in term.split())
+            for keyword in sorted(terms):
+                index[keyword].add(card)
     return dict(index)
 
 
 def keyword_hits(text: str, index: dict[str, set[str]]) -> dict[str, list[str]]:
     hits = {}
     for kw, cards in index.items():
-        if re.search(r"(?<![A-Za-z0-9])" + re.escape(kw) + r"(?![A-Za-z0-9])", text, re.I):
+        # Plurals retain ordinary settlement/settlements notices without the
+        # broader verb/inflection matches that would turn bank into banking.
+        if re.search(r"(?<![A-Za-z0-9])" + re.escape(kw) + r"(?:s|es)?(?![A-Za-z0-9])", text, re.I):
             hits[kw] = sorted(cards)
     return hits
 
@@ -168,7 +251,7 @@ class _Paragraphs(HTMLParser):
             self.buf = None
 
     def handle_data(self, data):
-        if self.buf is not None:
+        if self.buf is not None and not sum(self.depth.values()):
             self.buf.append(data)
 
 
@@ -212,7 +295,9 @@ def truncate(text: str, words: int) -> str:
 
 
 def fetch_fulltext(item: dict, client: Client, config: dict, cache_dir: Path) -> dict:
-    url = item["url"]
+    url = item.get("publisher_url") or item["url"]
+    if not public_https_url(url):
+        return {"fulltext_status": "unsafe_publisher_url"}
     if urllib.parse.urlparse(url).hostname in ("news.google.com",) or not url.startswith("http"):
         return {"fulltext_status": "no_publisher_url"}
     if not client.allowed(url):
@@ -222,51 +307,203 @@ def fetch_fulltext(item: dict, client: Client, config: dict, cache_dir: Path) ->
         return {"fulltext_status": "paywalled_or_forbidden_http_%s" % status}
     if status != 200 or not body:
         return {"fulltext_status": f"http_{status}"}
-    if "html" not in ctype.lower():
+    if len(body) > config["max_article_bytes"]:
+        return {"fulltext_status": "article_byte_limit_exceeded"}
+    if body.startswith(b"%PDF"):
+        if not shutil.which("pdftotext"):
+            return {"fulltext_status": "pdf_extractor_unavailable"}
+        with tempfile.TemporaryDirectory() as tmp:
+            source = Path(tmp) / "article.pdf"
+            source.write_bytes(body)
+            try:
+                text = subprocess.check_output(["pdftotext", "-layout", str(source), "-"], timeout=30, stderr=subprocess.DEVNULL).decode("utf-8", "replace")
+            except (subprocess.SubprocessError, OSError):
+                return {"fulltext_status": "pdf_extract_failed"}
+        text, how = re.sub(r"\s+", " ", text).strip(), "ok_pdf"
+        if len(text.split()) < 30:
+            return {"fulltext_status": "pdf_extract_failed"}
+    elif "html" in ctype.lower():
+        text, how = extract(body.decode("utf-8", "replace"))
+    else:
         return {"fulltext_status": "not_html"}
-    text, how = extract(body.decode("utf-8", "replace"))
     if not text:
         return {"fulltext_status": how}
+    original_words = len(text.split())
     text = truncate(text, config["fulltext_max_words"])
     name = sha(url.encode())[:24] + ".txt"
     cache_dir.mkdir(parents=True, exist_ok=True)
     (cache_dir / name).write_text(text, encoding="utf-8")
+    raw_path = cache_dir / "raw" / (sha(body) + (".pdf" if body.startswith(b"%PDF") else ".html"))
+    raw_path.parent.mkdir(parents=True, exist_ok=True)
+    raw_path.write_bytes(body)
     return {"fulltext_status": how, "text_sha256": sha(text.encode("utf-8")), "text_words": len(text.split()),
-            "text_file": str((cache_dir / name).relative_to(PROJECT))}
+            "text_file": str((cache_dir / name).relative_to(PROJECT)), "text_truncated": original_words > config["fulltext_max_words"],
+            "original_text_words": original_words, "content_source_url": final, "raw_sha256": sha(body),
+            "raw_file": str(raw_path.relative_to(PROJECT))}
 
 
 # ------------------------------------------------------------------ build
+def _published(row):
+    return _date(row.get("published_at_utc") or row.get("publication_date") or "")
+
+
+def _publication_day(row):
+    """Match the classifier's date precedence; collection time is never a fallback."""
+    value = row.get("publication_date") or row.get("published_at_utc") or ""
+    try:
+        return date.fromisoformat(value[:10])
+    except (ValueError, TypeError):
+        return None
+
+
+def window_candidates(rows, start=None, end=None):
+    kept, excluded = [], []
+    for row in rows:
+        when = _publication_day(row)
+        reason = "unknown_publication_date" if when is None else "outside_requested_window" if start and not start <= when <= end else None
+        if reason:
+            excluded.append({**{k: row.get(k, "") for k in ("document_id", "source_id", "feed_id", "publication_date", "published_at_utc", "title", "url")},
+                             "reason": reason, "window_start": start.isoformat() if start else "", "window_end": end.isoformat() if end else ""})
+        else:
+            kept.append(row)
+    return kept, excluded
+
+
+def _merge_matches(target, other):
+    """Keep collection hints and alternate-source provenance when records coalesce."""
+    for field in ("matched_card_ids", "selected_for_card_ids"):
+        target[field] = "|".join(sorted(set(filter(None, ((target.get(field) or "") + "|" + (other.get(field) or "")).split("|")))))
+    for field in ("matched_queries", "matched_keywords"):
+        merged = defaultdict(set)
+        for row in (target, other):
+            try:
+                mapping = json.loads(row.get(field) or "{}")
+            except (ValueError, TypeError):
+                mapping = {}
+            if isinstance(mapping, dict):
+                for k, values in mapping.items():
+                    if isinstance(values, list):
+                        merged[k].update(str(v) for v in values)
+        target[field] = json.dumps({k: sorted(v) for k, v in sorted(merged.items())}, ensure_ascii=False)
+    if other.get("google_link") and not target.get("google_link"):
+        target["google_link"] = other["google_link"]
+    previous = json.loads(target.get("duplicate_evidence") or "[]")
+    previous.append({k: other.get(k, "") for k in ("document_id", "source_id", "feed_id", "url", "google_link", "published_at_utc", "publication_date")})
+    target["duplicate_evidence"] = json.dumps(previous, ensure_ascii=False)
+
+
 def dedupe(rows: list[dict], threshold: float) -> tuple[list[dict], int]:
-    """By URL, then near-identical title; a publisher item wins over a Google News item."""
-    rows = sorted(rows, key=lambda r: (r["source_id"] != SOURCE_ID, r.get("published_at_utc") or ""))
-    kept, seen_urls, dup = [], set(), 0
+    """Prefer original provenance without coalescing distinct official records.
+
+    Official notices often reuse titles/templates: different URLs retain their
+    own evidence even within one day. Cross-publisher/Google title matches still
+    require publication dates within two days; identical URLs may coalesce.
+    """
+    def official(row):
+        return row["source_id"] in OFFICIAL_META or row.get("feed_id", "").startswith("official:")
+
+    def rank(row):
+        priority = 0 if official(row) else 1 if row["source_id"] == SOURCE_ID else 2
+        pub = _published(row)
+        return priority, -(pub.timestamp() if pub else 0)
+    rows = sorted(rows, key=rank)
+    kept, by_url, dup = [], {}, 0
     for r in rows:
         nt = G.norm_title(r["title"])
-        twin = next((k for k in kept if difflib.SequenceMatcher(None, nt, G.norm_title(k["title"])).ratio() >= threshold), None)
-        if r["url"] in seen_urls or twin is not None:
+        when = _published(r)
+        twin = by_url.get(r["url"])
+        if twin is None and when:
+            twin = next((k for k in kept if not (official(r) and official(k))
+                         and _published(k) and abs(when - _published(k)) <= timedelta(days=2)
+                         and difflib.SequenceMatcher(None, nt, G.norm_title(k["title"])).ratio() >= threshold), None)
+        if twin is not None:
             dup += 1
-            if twin is not None and r.get("google_link") and not twin.get("google_link"):
-                twin["google_link"] = r["google_link"]
+            _merge_matches(twin, r)
+            by_url[r["url"]] = twin
             continue
-        seen_urls.add(r["url"]); kept.append(r)
+        by_url[r["url"]] = r; kept.append(r)
     return kept, dup
+
+
+def official_rows(path: Path, queries, start: date, end: date):
+    """Retrieve official candidates with strict and broad, separately labelled rules.
+
+    Google's historical all-terms filter is unchanged. Its misses receive the
+    same broad title/summary keyword recall as publisher RSS; matched_queries
+    on fallback rows are query-origin hints, not proof of all-terms matching.
+    """
+    with path.open(encoding="utf-8-sig", newline="") as handle:
+        rows = list(csv.DictReader(handle))
+    ids = set(json.loads(G.CONFIG.read_text())["official_source_ids"])
+    eligible, scope_exclusions = window_candidates([r for r in rows if r.get("source_id") in ids], start, end)
+    queries = list(queries)
+    index = keyword_index(queries)
+    query_keywords = [(card, query, set(keyword_index([(card, query)]))) for card, query in queries]
+    kept, _ = G.prefilter_official(eligible, queries, ids, start, end)
+    identity = lambda row: (row.get("source_id"), row.get("document_id"), row.get("url"))
+    strict_ids = {identity(row) for row in kept}
+    strict_count = len(kept)
+    dropped = []
+    for row in kept:
+        hits = keyword_hits(html.unescape(row.get("title", "")) + "\n" + html.unescape(row.get("summary", "")), index)
+        row["matched_keywords"] = json.dumps(hits, ensure_ascii=False)
+        row["keep_rule"] = row.get("keep_rule") or "all_terms_official_title_summary_match"
+    for original in eligible:
+        if identity(original) in strict_ids:
+            continue
+        hits = keyword_hits(html.unescape(original.get("title", "")) + "\n" + html.unescape(original.get("summary", "")), index)
+        if not hits:
+            dropped.append({"document_id": original["document_id"], "source_id": original["source_id"],
+                            "publication_date": _publication_day(original).isoformat(),
+                            "title": original.get("title", ""), "url": original.get("url", ""),
+                            "reason": "no broad card keyword matched title or summary"})
+            continue
+        hints = defaultdict(list)
+        for card, query, keywords in query_keywords:
+            if keywords.intersection(hits):
+                hints[card].append(query)
+        cards = "|".join(sorted({card for group in hits.values() for card in group}))
+        kept.append({**original, "matched_keywords": json.dumps(hits, ensure_ascii=False),
+                     "matched_card_ids": cards, "selected_for_card_ids": cards,
+                     "matched_queries": json.dumps(dict(hints), ensure_ascii=False),
+                     "keep_rule": "broad_official_keyword_match"})
+    for row in kept:
+        outlet, tier = OFFICIAL_META.get(row["source_id"], ("Official publisher", "official"))
+        row.update(feed_id="official:" + row["source_id"], outlet=row.get("outlet") or outlet,
+                   source_tier=row.get("source_tier") or tier)
+    return kept, dropped, {"input_rows": len(rows), "kept": len(kept), "filtered_out": len(dropped),
+                           "kept_strict_all_terms": strict_count, "kept_broad_keyword_fallback": len(kept) - strict_count,
+                           "input_sha256": sha(path.read_bytes()), "window": [start.isoformat(), end.isoformat()],
+                           "scope_exclusions": scope_exclusions,
+                           "unsupported_source_rows": sum(r.get("source_id") not in ids for r in rows)}
 
 
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     p.add_argument("--out-dir", type=Path)
     p.add_argument("--google", type=Path, default=PROJECT / "data/events/classifier_inputs/week_2026-11-02/google_news.csv")
+    p.add_argument("--official", type=Path, help="Daily pipeline news.csv; card-query pre-filtered before classification")
+    p.add_argument("--week-start", type=date.fromisoformat)
+    p.add_argument("--week-end", type=date.fromisoformat)
     p.add_argument("--skip-fulltext", action="store_true")
     a = p.parse_args(argv)
+    if bool(a.week_start) != bool(a.week_end):
+        p.error("--week-start and --week-end must be provided together")
+    if a.week_start and a.week_start > a.week_end:
+        p.error("--week-start must not be after --week-end")
     config = json.loads(CONFIG.read_text())
     now = datetime.now(timezone.utc)
     out = a.out_dir or PROJECT / "data/events/classifier_inputs" / f"feeds_{now.date().isoformat()}"
     out.mkdir(parents=True, exist_ok=True)
     cache_dir = PROJECT / config["fulltext_cache_dir"]
-    index = keyword_index(G.load_queries())
+    queries = G.load_queries()
+    index = keyword_index(queries)
     client = Client(config)
     stats = defaultdict(Counter)
-    rows, dropped = [], []
+    rows, dropped, official_dropped, window_excluded = [], [], [], []
+    official_summary = {"status": "not_requested"}
+    window_start = a.week_start or (G.last_full_week(datetime.now(ZoneInfo("America/New_York")).date()) if a.official else None)
+    window_end = a.week_end or (window_start + timedelta(days=6) if window_start else None)
     for feed in config["feeds"]:
         if not client.allowed(feed["url"]):
             stats[feed["id"]]["robots_disallowed_feed"] += 1
@@ -299,27 +536,35 @@ def main(argv=None):
             for g in csv.DictReader(f):
                 hits = keyword_hits(g["title"], index)
                 stats["google_news_existing"]["fetched"] += 1; stats["google_news_existing"]["kept_prefilter"] += 1
-                rows.append({**{k: g.get(k, "") for k in ("document_id", "title", "url", "publication_date", "published_at_utc", "source_id", "outlet", "source_tier", "google_link")},
-                             "summary": "", "feed_id": "google_news_existing", "matched_keywords": json.dumps(hits, ensure_ascii=False),
-                             "matched_card_ids": g.get("matched_card_ids", ""), "content_scope": "headline_only", "fulltext_status": "google_headline_only",
+                rows.append({**g, "summary": g.get("summary", ""), "feed_id": "google_news_existing", "matched_keywords": json.dumps(hits, ensure_ascii=False),
+                             "matched_card_ids": g.get("matched_card_ids", ""),
                              "last_seen": g.get("last_seen", "")})
+    if a.official:
+        incoming, official_dropped, official_summary = official_rows(a.official, queries, window_start, window_end)
+        window_excluded.extend(official_summary.pop("scope_exclusions"))
+        rows.extend(incoming)
+        for row in incoming:
+            stats[row["feed_id"]]["kept_prefilter"] += 1
+    rows, excluded = window_candidates(rows, window_start, window_end)
+    window_excluded.extend(excluded)
+    for row in window_excluded:
+        stats[row.get("feed_id") or "official:" + row["source_id"]][row["reason"]] += 1
     rows, dups = dedupe(rows, config["title_similarity_threshold"])
     for r in rows:
-        if r["source_id"] != SOURCE_ID:
-            continue
         ft = {"fulltext_status": "skipped"} if a.skip_fulltext else fetch_fulltext(r, client, config, cache_dir)
         r.update(ft)
-        r["content_scope"] = "full_text" if ft.get("text_file") else ("summary" if r["summary"] else "headline_only")
+        r["content_scope"] = ("article_excerpt" if ft.get("text_truncated") else "full_text") if ft.get("text_file") else ("summary" if r.get("summary") else "headline_only")
         stats[r["feed_id"]]["scope_" + r["content_scope"]] += 1
         stats[r["feed_id"]]["fulltext_" + ft["fulltext_status"]] += 1
-    for r in rows:
-        if r["source_id"] != SOURCE_ID:
-            stats[r["feed_id"]]["scope_headline_only"] += 1
     rows.sort(key=lambda r: (r.get("published_at_utc") or "", r["document_id"]))
     with (out / "classifier_input.csv").open("w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=FIELDS, extrasaction="ignore", lineterminator="\n"); w.writeheader(); w.writerows(rows)
     with (out / "prefilter_dropped.csv").open("w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=["feed_id", "outlet", "published_at_utc", "title", "url"], lineterminator="\n"); w.writeheader(); w.writerows(dropped)
+    G.write_csv(out / "official_prefilter_dropped.csv", official_dropped,
+                ["document_id", "source_id", "publication_date", "title", "url", "reason"])
+    G.write_csv(out / "outside_window.csv", window_excluded,
+                ["document_id", "source_id", "feed_id", "publication_date", "published_at_utc", "title", "url", "reason", "window_start", "window_end"])
     dates = sorted(r["published_at_utc"][:10] for r in rows if r.get("published_at_utc"))
     summary = {"collected_utc": now.isoformat(timespec="seconds"), "user_agent": config["user_agent"],
                "sec_user_agent_override": bool(os.environ.get(config["sec_user_agent_env"])),
@@ -328,6 +573,9 @@ def main(argv=None):
                "published_range": [dates[0], dates[-1]] if dates else None,
                "requests": [{"kind": k, "status": s, "n": n} for (k, s), n in Counter((e["kind"], e.get("status")) for e in client.log).items()],
                "robots": {h: ("parsed" if not isinstance(v, bool) else ("allow_all" if v else "disallow_all")) for h, v in client.robots.items()},
+               "official_input": official_summary,
+               "requested_window": [window_start.isoformat(), window_end.isoformat()] if window_start else None,
+               "window_exclusions": dict(Counter(row["reason"] for row in window_excluded)),
                "config_sha256": sha(CONFIG.read_bytes()), "queries_sha256": sha(G.QUERIES.read_bytes())}
     (out / "summary.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False) + "\n")
     (out / "request_log.json").write_text(json.dumps(client.log, indent=2) + "\n")

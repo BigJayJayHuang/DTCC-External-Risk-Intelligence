@@ -23,6 +23,10 @@ on:
       - 'Capstone_Project/validation/test_review_promote.py'
       - 'Capstone_Project/validation/weekly_news_run.py'
       - 'Capstone_Project/validation/test_weekly_news_run.py'
+      - 'Capstone_Project/validation/test_news_evidence_scope.py'
+      - 'Capstone_Project/validation/refresh_scoring_inputs.py'
+      - 'Capstone_Project/validation/test_market_refresh.py'
+      - 'Capstone_Project/validation/data.py'
       - 'Capstone_Project/validation/golden_eval.py'
       - 'Capstone_Project/validation/llm_strict_diagnostic.py'
       - 'Capstone_Project/validation/scoring_v1_3.py'
@@ -56,6 +60,7 @@ jobs:
           python -m unittest -v validation.test_llm_prompt_v13 validation.test_llm_flat_schema
           validation.test_google_news validation.test_publisher_feeds validation.test_review_promote
           validation.test_weekly_news_run
+          validation.test_news_evidence_scope validation.test_market_refresh
       - name: Confirm protected files remain unchanged
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}

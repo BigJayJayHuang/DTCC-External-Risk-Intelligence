@@ -42,10 +42,19 @@ jobs:
         run: python github_release.py import-reviewed
       - name: Collect and preserve incremental revisions
         run: python update.py
+      - name: Refresh and audit the scoring market inputs
+        working-directory: Capstone_Project
+        run: python -m validation.refresh_scoring_inputs --refresh --report capstone_database/logs/scoring_input_refresh.json
       - name: Validate source evidence and database
         run: python validate.py
+      - name: Prepare current source completeness report
+        run: python daily_status.py
       - name: Publish the shared snapshot and CSV exports
+        id: publish
         run: python github_release.py publish
+      - name: Report partial collection failures
+        if: always() && steps.publish.outcome == 'success'
+        run: python daily_status.py --snapshot-published --strict
       - name: Keep a recovery copy for this run
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
@@ -58,16 +67,14 @@ jobs:
             Capstone_Project/capstone_database/data/snapshot_manifest.json
             Capstone_Project/capstone_database/exports/
             Capstone_Project/capstone_database/logs/
-      - name: Report partial collection failures
-        run: |
-          python - <<'PY'
-          import json
-          report=json.load(open('logs/latest_update.json'))
-          if report['failed_sources']:
-              for source in report['failed_sources']:
-                  print('::error title=Public source update failed::'+source['source_id'])
-              raise SystemExit('Snapshot published with partial source failures. Previous valid values retained; inspect latest_update.json.')
-          PY
+      - name: Keep scoring market source files
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: capstone-scoring-market-${{ github.run_id }}
+          retention-days: 30
+          if-no-files-found: warn
+          path: Capstone_Project/data/raw/cboe/market_history_*.csv
 
   bedrock:
     name: Bedrock review candidates

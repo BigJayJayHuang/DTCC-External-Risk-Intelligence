@@ -1,0 +1,207 @@
+{
+  "checked_date": "2026-11-09",
+  "user_timezone": "America/New_York",
+  "scope": "Independent source-health and scoring-input audit plus current-year Cboe repair; no model calls or event sign-offs",
+  "screenshots_handling": "LOCAL_REFERENCE_ONLY_NO_AWS_UPLOAD",
+  "daily_runtime": {
+    "run_id": 42547021653,
+    "run_created_utc": "2026-11-09T01:42:59Z",
+    "run_created_new_york": "2026-11-08T20:42:59-05:00",
+    "url": "https://github.com/BigJayJayHuang/DTCC-External-Risk-Intelligence/actions/runs/42547021653",
+    "collection": "success",
+    "validation": "success",
+    "shared_package_publication": "success",
+    "final_partial_source_check": "failure",
+    "failed_sources": [
+      "cftc_press:HTTP403",
+      "Eight RDS cumulative-table endpoints:HTTP404"
+    ],
+    "snapshot_published_with_errors": true,
+    "new_records": 18,
+    "revised_records": 0,
+    "total_records_after_run": 79067,
+    "news_records": 1637,
+    "interpretation": "Latest daily job is red but did not stop successful snapshot publication. No claim about every run since October28."
+  },
+  "latest_five_scheduled_run_ids": [
+    42547021653,
+    42434191108,
+    42326496389,
+    42150115731,
+    41955106728
+  ],
+  "shared_release": {
+    "url": "https://github.com/BigJayJayHuang/DTCC-External-Risk-Intelligence/releases/tag/data-latest",
+    "asset": "Capstone_Project_Complete.zip",
+    "asset_updated_at_utc": "2026-11-09T01:44:38Z",
+    "asset_bytes": 729397863,
+    "downloaded_by_this_audit": false,
+    "interpretation": "A refreshed release timestamp is not proof every included dataset is fresh."
+  },
+  "scoring_layers": {
+    "market_signal_cards": 6,
+    "pqd_v_cards": 6,
+    "public_proxy_v_cards": 10,
+    "simulated_rows_in_main_v_panel": 0,
+    "V_is_available_as_of_2026_11_09_for_all_16": true,
+    "exception_to_latest_quarter": {
+      "card_id": "FICC-GSD-11",
+      "quarter": "2026Q1",
+      "available_date": "2026-09-27",
+      "V": 3,
+      "v_source_tier": "public_proxy"
+    },
+    "proxy_limit": "Observed public proxies are not measurements of internal DTCC buffers; retain caveats and as-of availability."
+  },
+  "events": {
+    "registered_rows": 9,
+    "active_week_of_2026_11_09": [
+      {
+        "event_id": "EV0006",
+        "S": 4,
+        "timing": 1,
+        "active": true
+      },
+      {
+        "event_id": "EV0007",
+        "S": 2,
+        "timing": 0,
+        "active": true
+      }
+    ],
+    "FICC_GSD_03_driving_event": "EV0006",
+    "current_EV0006_signoff_max_S": 4,
+    "EV0006_recheck_when_S5_week": "2026-11-30",
+    "interpretation": "EV0007 is also active but capped atS2 because timing is outside12weeks. OnlyEV0006 drives the current card score; do not say onlyEV0006 is active."
+  },
+  "weekly_classifier": {
+    "week": "2026-11-02 through2026-11-08",
+    "original_status": "invocation_error",
+    "eligible_articles": 93,
+    "original_articles_processed": 92,
+    "original_unprocessed": 1,
+    "relevant_after_resume": 27,
+    "irrelevant_after_resume": 65,
+    "hard_failures": 1,
+    "resume_status": "complete",
+    "known_estimated_cost_usd": "1.426111500",
+    "unresolved_failed_call_reserve_usd": "0.092103",
+    "interpretation": "Preserve original invocation_error and reserve even though one-item recovery completed. Known cost is not a reconciled bill; do not automatically replay the unknown failed request."
+  },
+  "initial_local_scoring_observation_bounds": {
+    "SOFR": "2026-11-03",
+    "EFFR": "2026-11-03",
+    "DGS10": "2026-11-03",
+    "BAA10Y": "2026-11-03",
+    "VIXCLS": "2026-11-03",
+    "MORTGAGE30US": "2026-10-29",
+    "CBOE_CONSOLIDATED": "2026-11-03",
+    "interpretation": "Local files on review branch before repair; not a direct read of observation bounds inside the live729MBrelease."
+  },
+  "market_repair_live": {
+    "mode": "refresh",
+    "model_calls": 0,
+    "scoring_outputs_changed": false,
+    "cboe_refresh": {
+      "source": "cboe",
+      "url": "https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2026.csv",
+      "local_file": "data/raw/cboe/market_history_2026.csv",
+      "downloaded_utc": "2026-11-09T21:03:18+00:00",
+      "http_status": 200,
+      "bytes": 855121,
+      "sha256": "b1f8cd1e41f978f2a57554e889665c09a6cbc09b69901f5db8dea024163e8412",
+      "coverage_start": "2026-01-02",
+      "coverage_end": "2026-11-06",
+      "status": "OK",
+      "note": "Validated current-year refresh; per-venue rows incl FINRA TRFs; historical annual files retained",
+      "changed": true,
+      "previous_sha256": "6bf50c2d5bf3f76e1f9e25d9fe307aea00704e420ccedbf71221626df31df59a",
+      "rows": 4365,
+      "new_venue_day_rows": 63,
+      "revised_venue_day_rows": 0,
+      "removed_venue_day_rows": 0
+    },
+    "as_of": "2026-11-09",
+    "last_observation_dates": {
+      "SOFR": "2026-11-03",
+      "EFFR": "2026-11-03",
+      "DGS10": "2026-11-03",
+      "BAA10Y": "2026-11-03",
+      "VIXCLS": "2026-11-03",
+      "MORTGAGE30US": "2026-10-29",
+      "CBOE_CONSOLIDATED": "2026-11-06"
+    },
+    "observation_age_calendar_days": {
+      "SOFR": 6,
+      "EFFR": 6,
+      "DGS10": 6,
+      "BAA10Y": 6,
+      "VIXCLS": 6,
+      "MORTGAGE30US": 11,
+      "CBOE_CONSOLIDATED": 3
+    },
+    "note": "Observation dates only. Scoring must retain its per-series complete-week/release-date coverage guard.",
+    "audit_errors": [],
+    "failed_sources": [],
+    "status": "ok",
+    "historical_annual_files_unchanged": {
+      "2018": "c74e6dc17777a2ac98199f4cd967bd05fbe5acaf0396510e0019881c40dd2c9b",
+      "2019": "a4f2495c952fff817f5d6d8b8b28ee940e38a889edf8dcf92646cc05fec960c4",
+      "2020": "d43803accac82145271045f062d6e0af57cc9aa40da4b904fc9b90d30a869a0d",
+      "2021": "bb67715fe2bf9c52067b69a6a280fe7b4e827d0ec335d177b2dad3d86d4dc3ad",
+      "2022": "61051498e02558ee1387ae66ca994d9e678342c89c8c1a56a43e513a7aba9788",
+      "2023": "17d673f4ea93a6938e74f41ba70e4aa8477a73e178026b27deb5fe8d704f4500",
+      "2024": "da755580ecf801b6fe89854c58ead811e320f542e5b0c1dc03513c48487b0537",
+      "2025": "3f297d33729dc427e1f08f0ae9c6e05a95334ed9253211c97c2e8d4ce8183578"
+    }
+  },
+  "acceptance_checks": {
+    "tests": "python3 -m unittest validation.test_market_refresh validation.test_scoring_v1_3 -v",
+    "passed": 57,
+    "paid_model_calls": 0,
+    "new_cboe_requests": 1,
+    "historical_cboe_2018_2025_unchanged": true,
+    "register_signoffs_scores_V_panel": {
+      "data/events/event_register.csv": {
+        "sha256": "81bf5b154e5c79247d8695b99c41bffac430cd688d9026f773690f687e6659e2",
+        "matches_review_base": true
+      },
+      "data/events/event_signoffs.csv": {
+        "sha256": "303895fd721c9cd96f7c8f2b509f8a30254e089b5463a923e186140beb5d52ad",
+        "matches_review_base": true
+      },
+      "results/scoring/v1.3_indicator/weekly_scores_v1.3_2026-10-19.json": {
+        "sha256": "f92105cfd009913a521fb7e3ebf2f4326ab68cf62629090401e7907723fe35f9",
+        "matches_review_base": true
+      },
+      "results/scoring/v1.3_indicator/weekly_scores_v1.3_2026-10-26.json": {
+        "sha256": "6e275c042f291115e8101d5dcf9f1ed0d2e51f0f87635fcb02cf10e209f9261a",
+        "matches_review_base": true
+      },
+      "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/data/risk_model_v_inputs.csv": {
+        "sha256": "78f529ccfd95e0e8fc6e484148d281a7fd80ffdf17cad187acda35067ca5c5c4",
+        "matches_review_base": true
+      }
+    }
+  },
+  "safe_next_checks": [
+    "Run collection-only and classifier dry-run with no paid calls; retain content_scope, failed-sources and review status.",
+    "Verify database-export mortgage values are read by the signal builder and preserve complete-week coverage checks.",
+    "Do not sign off events or clear unresolved failed-call budget reserves as part of source repairs.",
+    "Daily snapshot updates do not by themselves refresh frozen quarterlyV; currentV file should remain unchanged during this repair."
+  ],
+  "artifact_refs": {
+    "data/events/weekly/2026-11-02/run_20261109T190208Z/weekly_summary.json": {
+      "sha256": "91161980856dd140e56e826702bf64cfe85b4e8523ac44e73467049ca9c7d5ef"
+    },
+    "data/events/weekly/2026-11-02/run_20261109T190208Z/weekly_completion.json": {
+      "sha256": "9f7619d3d678ef86522c7e843650b9efc19ea760a840b4a7bc91929881d66408"
+    },
+    "data/events/weekly/2026-11-02/run_20261109T190208Z/classifier_runs/v15/summary.json": {
+      "sha256": "54e74ceaf6701d7dfbc172861d59a32f9bcc5d8b5dc97bac47b94a761355c1ac"
+    },
+    "data/events/weekly/2026-11-02/run_20261109T190208Z/resume/classifier_runs/v15_resume/summary.json": {
+      "sha256": "0b9e0b48ced0bd116d5947a9ce6bb32a0711933ee644b8c99dcfbddfba719aed"
+    }
+  }
+}

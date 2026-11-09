@@ -1,0 +1,49 @@
+{
+  "checked_date": "2026-11-09",
+  "python_version": "3.13.10",
+  "review_branch": "feat/news-source-repair-20261109",
+  "review_base": "0579f0ab64ee7117e3710c40882c4ee531bd5dcf",
+  "main_merged": false,
+  "live_shared_release_replaced": false,
+  "aws_calls_this_repair": 0,
+  "screenshots_uploaded": false,
+  "tests": [
+    {
+      "cwd": "Capstone_Project",
+      "command": "python3 -m unittest validation.test_llm_classifier validation.test_llm_daily validation.test_llm_prompt_v13 validation.test_llm_flat_schema validation.test_google_news validation.test_publisher_feeds validation.test_review_promote validation.test_weekly_news_run validation.test_news_evidence_scope validation.test_market_refresh validation.test_scoring_v1_3",
+      "passed": 195,
+      "failed": 0,
+      "result": "OK"
+    },
+    {
+      "cwd": "Capstone_Project/capstone_database",
+      "command": "python3 -m unittest discover -s tests -q",
+      "passed": 39,
+      "failed": 0,
+      "result": "OK"
+    }
+  ],
+  "total_tests_passed": 234,
+  "additional_checks": {
+    "event_scoring_cli": "passed",
+    "actionlint_1_7_7": [
+      ".github/workflows/daily-data.yml",
+      ".github/workflows/llm-classifier.yml"
+    ],
+    "candidate_replay": "176 metadata candidates, no model or network",
+    "classifier_dry_run": "176 eligible records, zero input rejections, zero paid calls",
+    "package_fixture": "Independent tiny production build() fixture: annual 2027 file and health logs bundled; live SQLite/backup excluded; single top-level root; seven manifest hashes match",
+    "artifact_layout": "Database artifact preserves capstone_database common root; Cboe uses separate artifact"
+  },
+  "protected_files_checked": 98,
+  "protected_files_all_unchanged": true,
+  "known_open_issues": [
+    "Six 2026-11-06 EU/UK EMIR CSVs remain HTTP404.",
+    "Google85 candidates remain headline-only; summary/full-text evidence is not invented.",
+    "Two official article spot checks HTTP403, one extraction failed; publisher restrictions not bypassed.",
+    "Broad official candidates include routine notices and require relevance/mechanism review.",
+    "DGS10/BAA10Y latest returned observation is2026-11-05; complete-week guard retained.",
+    "Prior failed invocation unknown-cost reservationUSD0.092103 remains unresolved; new paid weekly batch blocked."
+  ],
+  "delivery_scope": "Code, current-year Cboe source update, finite public metadata inputs and review evidence. Full targeted local snapshot is not a durable production replacement."
+}

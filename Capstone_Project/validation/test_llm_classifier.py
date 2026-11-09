@@ -222,6 +222,20 @@ class ClassifierTests(unittest.TestCase):
             self.assertGreater(Decimal(result["unreported_cost_reserve_usd"]), 0)
             self.assertEqual(len(session.runtime.calls), 1)
 
+    def test_hard_interruption_leaves_a_durable_reservation(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            args=self.fixture_args(tmp)
+            session=FakeSession([])
+            def interrupted(**request):
+                saved=json.loads((Path(tmp)/'classifier_runs/offline/summary.json').read_text())
+                self.assertGreater(Decimal(saved['inflight_reservation_usd']),0)
+                raise KeyboardInterrupt
+            session.runtime.converse=interrupted
+            with patch('builtins.print'),self.assertRaises(KeyboardInterrupt):C.run(args,session)
+            saved=json.loads((Path(tmp)/'classifier_runs/offline/summary.json').read_text())
+            self.assertGreater(Decimal(saved['unreported_cost_reserve_usd']),0)
+            self.assertTrue(saved['inflight_request_sha256'])
+
 
 if __name__ == "__main__":
     unittest.main()

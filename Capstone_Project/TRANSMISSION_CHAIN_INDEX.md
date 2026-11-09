@@ -6,6 +6,8 @@ Use this board to navigate **definitions → tests → data gaps → database �
 
 ## 先看什么 / Start here
 
+**2026-11-09 采集修复 / Collection repair：** [中英文修复说明与证据 / Bilingual repair notes and evidence](reports/pipeline_repair_2026_11_09/README_CN_EN.md)。官方新闻召回、CFTC 新入口、RDS 分期写入、房贷/Cboe 更新和真实故障状态；审阅分支，未合并 main，未改动评分或事件签字。Official-news recall, CFTC index, independent RDS periods, mortgage/Cboe refresh and honest source health; review branch, scores and event sign-offs unchanged.
+
 **当前模型输入 / Current model inputs：** [16卡季度V总入口](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/README.md) · [中文说明](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/README_CN.md) · [English](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/README_EN.md) · [16卡统一V输入](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/data/risk_model_v_inputs.csv) · [驱动检查](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/results/v_driver_checks.csv) · [团队卡片ID对照](risk_business_ml/final16_quarterly_vulnerability_2026_10_27/results/card_id_map.csv)。16张拟定（PROPOSED）卡片、31条组成链，2020Q4–2026Q2各23季度：6张为真实PQD V（含原有缺失值），10张为真实公开代理序列V（public_proxy），主排名不含模拟V。逐行标注V来源层（pqd / public_proxy / simulated / none）；提供按可用日期读取及S×V接口。历史发布时间及数据修订版本未核实。16 PROPOSED cards: 6 pqd V, 10 public_proxy V from real public series; no simulated V in the main ranking.
 
 

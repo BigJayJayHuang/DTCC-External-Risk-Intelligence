@@ -1,0 +1,77 @@
+{
+  "checked_utc": "2026-11-09T21:16:38.553699+00:00",
+  "model_calls": 0,
+  "scope": "Three previously dropped public official notices; configured robots/HTTP restrictions respected",
+  "results": [
+    {
+      "document_id": "c2286239b8c6d69c6f87a3ac0aeeacf2cdb74c7a9a8934e6bf4a29ec837fcab6",
+      "title": "Self-Regulatory Organizations; National Securities Clearing Corporation; Notice of Filing and Immediate Effectiveness of a Proposed Rule Change To Enhance Automated Reasonability Checks for the Submission of ETF Creation and Exemption Transactions",
+      "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22457/self-regulatory-organizations-national-securities-clearing-corporation-notice-of-filing-and",
+      "fulltext_status": "paywalled_or_forbidden_http_403"
+    },
+    {
+      "document_id": "ee886a6ef64ae11852aa688548153f3858539255c863607d42aa6ed4af2fc1a3",
+      "title": "Order Granting Exemptive Relief, Pursuant to Sections 17A and 36(a) of the Securities Exchange Act of 1934, From the Definition of an \u201cEligible Secondary Market Transaction\u201d in Rule 17ad-22(a)",
+      "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22493/order-granting-exemptive-relief-pursuant-to-sections-17a-and-36a-of-the-securities-exchange-act-of",
+      "fulltext_status": "paywalled_or_forbidden_http_403"
+    },
+    {
+      "document_id": "e987e5922bab38f479887ebd8cae5893d9afe84d4a4859f60417baa2c9c11ec8",
+      "title": "CFTC Staff Addresses Use of Trust Companies for Daily Settlements",
+      "url": "https://www.cftc.gov/PressRoom/PressReleases/9322-26",
+      "fulltext_status": "extract_failed"
+    }
+  ],
+  "request_log": [
+    {
+      "kind": "robots",
+      "url": "https://www.federalregister.gov/robots.txt",
+      "fetched_utc": "2026-11-09T21:16:28+00:00",
+      "status": 200,
+      "final_url": "https://www.federalregister.gov/robots.txt",
+      "bytes": 320,
+      "content_type": "text/plain; charset=utf-8"
+    },
+    {
+      "kind": "robots",
+      "url": "https://unblock.federalregister.gov/robots.txt",
+      "fetched_utc": "2026-11-09T21:16:32+00:00",
+      "status": 200,
+      "final_url": "https://unblock.federalregister.gov/robots.txt",
+      "bytes": 27,
+      "content_type": "text/plain"
+    },
+    {
+      "kind": "article",
+      "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22457/self-regulatory-organizations-national-securities-clearing-corporation-notice-of-filing-and",
+      "fetched_utc": "2026-11-09T21:16:30+00:00",
+      "status": 403,
+      "bytes": 0
+    },
+    {
+      "kind": "article",
+      "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22493/order-granting-exemptive-relief-pursuant-to-sections-17a-and-36a-of-the-securities-exchange-act-of",
+      "fetched_utc": "2026-11-09T21:16:34+00:00",
+      "status": 403,
+      "bytes": 0
+    },
+    {
+      "kind": "robots",
+      "url": "https://www.cftc.gov/robots.txt",
+      "fetched_utc": "2026-11-09T21:16:36+00:00",
+      "status": 200,
+      "final_url": "https://www.cftc.gov/robots.txt",
+      "bytes": 4817,
+      "content_type": "text/plain; charset=utf-8"
+    },
+    {
+      "kind": "article",
+      "url": "https://www.cftc.gov/PressRoom/PressReleases/9322-26",
+      "fetched_utc": "2026-11-09T21:16:38+00:00",
+      "status": 200,
+      "final_url": "https://www.cftc.gov/PressRoom/PressReleases/9322-26",
+      "bytes": 34329,
+      "content_type": "text/html; charset=utf-8"
+    }
+  ]
+}

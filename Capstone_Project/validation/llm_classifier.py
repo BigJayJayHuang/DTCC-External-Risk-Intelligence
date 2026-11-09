@@ -57,7 +57,7 @@ CSV_FIELDS = [
 ]
 GOOGLE_NEWS_SOURCE = "google_news_rss"
 PUBLISHER_SOURCE = "publisher_rss"
-COLLECTOR_SCOPES = {"full_text", "summary", "headline_only"}
+COLLECTOR_SCOPES = {"full_text", "article_excerpt", "summary", "headline_only"}
 HINT_NOTE = ("Card ids whose keyword search query matched this item. Retrieval hint only; "
              "it is not a relevance decision or a card assignment.")
 SOURCE_NAMES = {
@@ -128,9 +128,14 @@ def load_news(path: Path, start: date, end: date, limit: int | None):
         row_scope = (row.get("content_scope") or "").strip()
         if row_scope in COLLECTOR_SCOPES:   # set by publisher_feeds.py
             scope = row_scope
-            if scope == "full_text":
+            if scope in {"full_text", "article_excerpt"}:
                 # Full text lives only in the git-ignored cache; the CSV holds its hash.
-                body = (PROJECT / row["text_file"]).read_text(encoding="utf-8")
+                cache_path = (PROJECT / row["text_file"]).resolve()
+                try:
+                    cache_path.relative_to(PROJECT.resolve())
+                except ValueError:
+                    raise ValueError("Article evidence cache must stay inside the project") from None
+                body = cache_path.read_text(encoding="utf-8")
                 if sha(body.encode("utf-8")) != row.get("text_sha256"):
                     raise ValueError("full-text cache does not match text_sha256 for " + row["url"])
                 text = title + "\n\n" + body
@@ -622,13 +627,18 @@ def run(args, session=None):
             key = sha((article["document_id"] + "|" + article["url"]).encode())[:24]
             raw_path = run_dir / "raw" / (key + ".json")
             # Full texts are never committed: the .fulltext.txt suffix is git-ignored.
-            article_path = run_dir / "articles" / (key + (".fulltext.txt" if article["content_scope"] == "full_text" else ".txt"))
+            article_path = run_dir / "articles" / (key + (".fulltext.txt" if article["content_scope"] in {"full_text","article_excerpt"} else ".txt"))
             article_path.parent.mkdir(parents=True, exist_ok=True)
             article_path.write_text(article["text"], encoding="utf-8")
             attempts = []
             def record_error(number, error):
                 attempts.append(error)
                 dump(run_dir / "raw" / f"{key}_attempt_{number}_error.json", error)
+            # Persist before the SDK call: a process interruption must leave a
+            # reservation that later runners can see rather than silently rebill.
+            summary.update(inflight_request_sha256=sha(json.dumps(request,sort_keys=True).encode()),
+                           inflight_reservation_usd=str(reserve),estimated_cost_usd=str(spent))
+            dump(run_dir / 'summary.json',summary)
             try:
                 response, attempt_count = invoke(runtime, request, record_error, config["throttling_retries"], config["retry_base_seconds"])
             except Exception as exc:
@@ -640,6 +650,7 @@ def run(args, session=None):
                 access = error["code"] in {"AccessDeniedException", "UnrecognizedClientException", "ExpiredTokenException"} or any(t in error["message"].lower() for t in ("subscription", "marketplace", "use case", "not authorized"))
                 if error["http_status"] is None:  # A network failure might follow a billed request.
                     unknown_reserve += reserve
+                summary.update(inflight_request_sha256=None,inflight_reservation_usd='0')
                 summary["status"] = "access_or_subscription_error" if access else "invocation_error"
                 summary["invocation_error"] = error
                 print(json.dumps({"stopped": summary["status"], "error": error}), flush=True)
@@ -653,6 +664,7 @@ def run(args, session=None):
             usage = response.get("usage", {})
             if any(type(usage.get(field, 0)) is not int or usage.get(field, 0) < 0 for field in ("inputTokens", "outputTokens", "cacheReadInputTokens", "cacheWriteInputTokens")) or "inputTokens" not in usage or "outputTokens" not in usage:
                 unknown_reserve += reserve
+                summary.update(inflight_request_sha256=None,inflight_reservation_usd='0')
                 summary["articles_processed"] += 1
                 summary["failed_checks"] += 1
                 failures.update(["missing_or_invalid_token_usage"])
@@ -661,6 +673,8 @@ def run(args, session=None):
                 break
             cost = token_cost(usage, config["pricing"])
             spent += cost
+            summary.update(inflight_request_sha256=None,inflight_reservation_usd='0',estimated_cost_usd=str(spent))
+            dump(run_dir / 'summary.json',summary)
             uncached += cost_without_cache(usage, config["pricing"])
             summary["articles_processed"] += 1
             summary["throttling_retries"] += attempt_count - 1
@@ -719,7 +733,7 @@ def run(args, session=None):
     finally:
         candidate_handle.close(); irrelevant_handle.close(); failure_handle.close()
         summary.update(estimated_cost_usd=str(spent), estimated_cost_without_cache_usd=str(uncached),
-                       unreported_cost_reserve_usd=str(unknown_reserve), filled_missing_fields=dict(filled_counts),
+                       unreported_cost_reserve_usd=str(unknown_reserve+Decimal(summary.get('inflight_reservation_usd','0'))), filled_missing_fields=dict(filled_counts),
                        candidates_per_card=dict(counts), failed_check_reasons=dict(failures),
                        articles_unprocessed=len(articles) - summary["articles_processed"],
                        event_register_unchanged=sha(args.register.read_bytes()) == originals[args.register],

@@ -1,0 +1,110 @@
+{
+  "files": [
+    {
+      "file": "README_CN_EN.md",
+      "bytes": 10773,
+      "sha256": "a409506dc736d15e9e60b0da7beaaf3b04d05bca8a7d1eeb552a3024e1fecd73"
+    },
+    {
+      "file": "data/candidate_review_queue.csv",
+      "bytes": 212211,
+      "sha256": "e12bc9babca5544f9238096686b30c696dad75b93db5e23a4275e815cd5ec6ef"
+    },
+    {
+      "file": "data/google_candidates.csv",
+      "bytes": 97009,
+      "sha256": "10779b309cdad3f6dc50f5300ef1aa00a0e15b22ae709941d0d281f20f21448c"
+    },
+    {
+      "file": "data/market_observations_since_2026_11_03.csv",
+      "bytes": 1142,
+      "sha256": "a171f21c3dcce64d93e143bcde619b4c1d6fbcefe4c229778d1f46d46834a9b3"
+    },
+    {
+      "file": "data/official_keyword_exclusions.csv",
+      "bytes": 7798,
+      "sha256": "83e697ed46d0958fce80a4060aef8e1569e5c48719aa7b67995ae283d8784f6f"
+    },
+    {
+      "file": "data/official_news_in_window.csv",
+      "bytes": 79189,
+      "sha256": "3fdb366dcc69a0843c427b03a53f9731cf2baeb045f03d5f9c5b03e05c36f3a2"
+    },
+    {
+      "file": "evidence/acceptance.json",
+      "bytes": 2528,
+      "sha256": "bc87366e27c242fcb11efeda4d73b2fa49b4291c543eaad4618aef8ca028eae7"
+    },
+    {
+      "file": "evidence/candidate_cost_dry_run.json",
+      "bytes": 776,
+      "sha256": "911c9b023d4b93b6049b6c34dba766b971be8c96d51e062f9d8993b855f0fdc0"
+    },
+    {
+      "file": "evidence/candidate_replay.json",
+      "bytes": 1728,
+      "sha256": "eea16ce4ee2f4d891dd3da97b60ac3075b046b9a3bfe7bcefa77420fcdf8f837"
+    },
+    {
+      "file": "evidence/database_integrity.json",
+      "bytes": 1032,
+      "sha256": "73058a26278a1c1153bc62698b3060a20dd55623af48b722d3887230bfc10fd2"
+    },
+    {
+      "file": "evidence/final_market_input_audit.json",
+      "bytes": 701,
+      "sha256": "f09f9118645eda200c116cd522a4086931976fc070f56e7f30a8604467c6fa5f"
+    },
+    {
+      "file": "evidence/health_audit.json",
+      "bytes": 8701,
+      "sha256": "6b3ee544af945daa72a41f4d6d0678f63b851f003171797005f23a36c79599e1"
+    },
+    {
+      "file": "evidence/local_source_health.json",
+      "bytes": 1903,
+      "sha256": "e37c611498eb5d2162024b472c3f3a1529a93cf59d30347c18636e47352d5dce"
+    },
+    {
+      "file": "evidence/market_refresh_live.json",
+      "bytes": 2219,
+      "sha256": "dde8165f451d72f0fae8e9febc2abdec1df430d3c702c9b2a63783fa7491ba10"
+    },
+    {
+      "file": "evidence/official_article_live_checks.json",
+      "bytes": 3489,
+      "sha256": "eba9dbdfd430ec78f08a808c96bd6bcf976ffe98e4a841d0111b90f5ae8d3e72"
+    },
+    {
+      "file": "evidence/protected_files.json",
+      "bytes": 20697,
+      "sha256": "a598c28add55e2cdfaa29bc770b3959b801bbd026f7a9969e317e442cedc666b"
+    },
+    {
+      "file": "evidence/publisher_live_before_recall_fix.json",
+      "bytes": 3528,
+      "sha256": "5475f18b16b649a4ade7535ec27231d2533880693aae0fd6caf7d307178746d0"
+    },
+    {
+      "file": "evidence/source_repairs_live_checks.json",
+      "bytes": 8634,
+      "sha256": "fb00e7f0c7f91978e9b1ebe0454e20e0c754c4c0bee3f4e359da6d7913961e2c"
+    },
+    {
+      "file": "evidence/targeted_collection_result.json",
+      "bytes": 16128,
+      "sha256": "104e5133ddb755afcb4467feb5a2cccd3f369b4c0c984ad09096b082bf3d2abf"
+    },
+    {
+      "file": "evidence/weekly_live_collection_before_recall_fix.json",
+      "bytes": 3688,
+      "sha256": "94d4aa464a3652208c1e08c79390d52adf48b339dc054e0cd52fa95100ae5f36"
+    },
+    {
+      "file": "replay_candidates.py",
+      "bytes": 3192,
+      "sha256": "70ffef0f3dc146e568f52ca84193d3f15f55f8711f0cc60d3af8621df43f675c"
+    }
+  ],
+  "scope": "Public metadata, code replay and verification evidence; no screenshot or article-body upload"
+}

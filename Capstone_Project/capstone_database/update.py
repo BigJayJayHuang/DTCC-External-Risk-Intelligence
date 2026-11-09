@@ -5,7 +5,7 @@ from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from urllib.parse import urlencode, urlsplit
 from zoneinfo import ZoneInfo
-import argparse, collections, json, subprocess, tempfile
+import argparse, collections, json, re, subprocess, tempfile
 import db, parsers
 
 def urls(c,s,as_of):
@@ -27,12 +27,26 @@ def urls(c,s,as_of):
                     '$orderby':'declarationDate','$top':10000,'$skip':0}
         return [s['url']+'?'+urlencode(params)]
     if kind=='repository_weekly':
+        # Publisher UI restricts report labels to Fridays. Their existence and
+        # publication time remain independently checked by the HTTP response.
         latest=as_of-timedelta(days=(as_of.weekday()-4)%7)
         row=c.execute("SELECT max(measurement_date) FROM records WHERE dataset_id='rds_reports' AND source_id=?",(sid,)).fetchone()
-        start=date.fromisoformat(row[0]) if row and row[0] else latest
+        start=min(date.fromisoformat(row[0]),latest) if row and row[0] else latest-timedelta(weeks=3)
         days=[]
         while start<=latest and len(days)<8:
             days.append(start);start+=timedelta(days=7)
+        # A long backlog must never make the current report unreachable. Keep
+        # unresolved recent gaps in the plan even after a later period succeeds.
+        for failed in c.execute("SELECT requested_url FROM fetches f WHERE source_id=? AND status IN ('failed','parse_failed') AND fetch_id=(SELECT max(g.fetch_id) FROM fetches g WHERE g.source_id=f.source_id AND g.requested_url=f.requested_url)",(sid,)):
+            m=re.search(r'(20\d{6})',failed[0])
+            if not m:continue
+            try:day=datetime.strptime(m[1],'%Y%m%d').date()
+            except ValueError:continue
+            if failed[0]!=s['url'].format(report_date=day.strftime('%Y%m%d')) or not latest-timedelta(weeks=7)<=day<=latest:continue
+            found=c.execute("SELECT 1 FROM records WHERE dataset_id='rds_reports' AND source_id=? AND measurement_date=? LIMIT 1",(sid,day.isoformat())).fetchone()
+            if not found:days.append(day)
+        days=sorted(set(days+[latest]))
+        if len(days)>8:days=days[:7]+[latest]
         return [s['url'].format(report_date=d.strftime('%Y%m%d')) for d in days]
     return [s['url']]
 
@@ -83,6 +97,17 @@ def collect(s,jobs):
                 obj=json.loads(page['data']);offset+=10000
     return results
 
+def response_body(c,source_id,response):
+    """A304 may reuse only the bundled successful body for its exact URL."""
+    if response['status']=='downloaded':return response['data']
+    if response['status']!='not_modified':raise ValueError('Unsupported source response status')
+    cached=c.execute("SELECT blob_hash FROM fetches WHERE source_id=? AND requested_url=? AND status IN ('downloaded','not_modified') AND blob_hash IS NOT NULL ORDER BY fetch_id DESC LIMIT 1",
+                     (source_id,response['url'])).fetchone()
+    if cached is None:raise ValueError('HTTP304 has no successful exact-URL cached body')
+    # db.blob explicitly rejects public-snapshot entries whose raw body is not
+    # bundled. It must not silently substitute another period or an empty body.
+    return db.blob(c,cached[0])
+
 def update(path,as_of,force=False,only=None):
     db.restore(path)
     configs=json.loads((db.ROOT/'sources.json').read_text());businesses=json.loads((db.ROOT/'businesses.json').read_text())
@@ -98,8 +123,8 @@ def update(path,as_of,force=False,only=None):
             for url in urls(c,s,as_of):
                 conditional={}
                 prior=c.execute('SELECT blob_hash FROM fetches WHERE source_id=? AND requested_url=? AND status IN (\'downloaded\',\'not_modified\') ORDER BY fetch_id DESC LIMIT 1',(s['id'],url)).fetchone()
-                bundled=c.execute("SELECT 1 FROM evidence_blobs WHERE sha256=? AND compression='zlib'",(old['last_blob_hash'],)).fetchone()
-                if prior and bundled and s['kind'] not in ['market_series','regulatory_documents','disaster_declarations','repository_weekly']:
+                bundled=c.execute("SELECT 1 FROM evidence_blobs WHERE sha256=? AND compression='zlib'",(prior[0],)).fetchone() if prior else None
+                if prior and bundled and prior[0]==old['last_blob_hash'] and s['kind'] not in ['market_series','regulatory_documents','disaster_declarations','repository_weekly']:
                     if old['etag']:conditional['If-None-Match']=old['etag']
                     if old['last_modified']:conditional['If-Modified-Since']=old['last_modified']
                 jobs.append((url,conditional))
@@ -107,7 +132,7 @@ def update(path,as_of,force=False,only=None):
         requests=[url for s,jobs in due for url,h in jobs]
         if len(requests)!=len(set(requests)):raise ValueError('Duplicate URLs in this run; shared sources must be fetched once')
         summary={'run_id':rid,'as_of_date':as_of.isoformat(),'new_records':0,'revised_records':0,'unchanged_records':0,
-                 'successful_sources':[],'failed_sources':[],'skipped_not_due':skipped,'source_results':[],
+                 'successful_sources':[],'partially_successful_sources':[],'failed_sources':[],'skipped_not_due':skipped,'source_results':[],
                  'manual_review_sources':[s['id'] for s in configs if s.get('update_note','').startswith('Manual')],
                  'models_retrained':False,'business_risk_scores_generated':False}
         with ThreadPoolExecutor(max_workers=4) as pool:
@@ -117,11 +142,17 @@ def update(path,as_of,force=False,only=None):
                 try: responses=future.result()
                 except Exception as exc:responses=[{'url':s['url'],'status':'failed','http_status':None,'error':str(exc),'checked_at':db.now()}]
                 failures=[r for r in responses if r['status']=='failed'];counts=collections.Counter();outcomes=[]
-                if not failures:
+                # Separate weekly CSVs are independent report periods. Preserve
+                # valid newer periods when another report is still unavailable.
+                # Paginated agency/FRED responses remain atomic as before.
+                groups=([[r] for r in responses if r['status']!='failed'] if s['kind']=='repository_weekly'
+                        else [responses] if not failures else [])
+                for group in groups:
+                    group_counts=collections.Counter();group_outcomes=[]
                     try:
                         with c:
-                            for r in responses:
-                                data=r['data'] if r['status']=='downloaded' else db.blob(c,c.execute('SELECT last_blob_hash FROM sources WHERE source_id=?',(sid,)).fetchone()[0])
+                            for r in group:
+                                data=response_body(c,sid,r)
                                 h=db.put_blob(c,data);dataset,rows=parsers.parse(s,data,as_of,r['url'])
                                 rows,duplicates=parsers.deduplicate(dataset,rows)
                                 keys=[parsers.record_key(dataset,row) for row in rows]
@@ -131,7 +162,7 @@ def update(path,as_of,force=False,only=None):
                                         prior=c.execute('SELECT payload FROM records WHERE dataset_id=? AND record_key=?',(dataset,key)).fetchone()
                                         if prior:row=dict(json.loads(prior[0]),**row)
                                     row['collected_at_utc']=r['checked_at']
-                                    counts[db.upsert(c,dataset,key,row,rid,sid,h,r['checked_at'])]+=1
+                                    group_counts[db.upsert(c,dataset,key,row,rid,sid,h,r['checked_at'])]+=1
                                     if dataset=='news':
                                         c.execute('DELETE FROM document_business WHERE document_id=?',(row['document_id'],))
                                         for link in row['routing_evidence']:
@@ -141,18 +172,20 @@ def update(path,as_of,force=False,only=None):
                                 headers=r.get('headers',{})
                                 c.execute('UPDATE sources SET last_checked=?,last_success=?,last_status=?,last_error=NULL,last_blob_hash=?,etag=?,last_modified=? WHERE source_id=?',
                                           (r['checked_at'],r['checked_at'],r['status'],h,headers.get('etag'),headers.get('last-modified'),sid))
-                                outcomes.append({'url':r['url'],'rows':len(rows),'duplicates_merged':duplicates,'status':r['status']})
-                        summary['successful_sources'].append(sid)
+                                group_outcomes.append({'url':r['url'],'rows':len(rows),'duplicates_merged':duplicates,'status':r['status']})
+                        counts.update(group_counts);outcomes.extend(group_outcomes)
                     except Exception as exc:
-                        counts=collections.Counter();failures=[{'url':s['url'],'status':'parse_failed','http_status':None,'error':str(exc),'checked_at':db.now()}]
+                        failures.append({'url':group[0]['url'],'status':'parse_failed','http_status':None,'error':str(exc),'checked_at':db.now()})
+                if not failures:summary['successful_sources'].append(sid)
+                elif outcomes:summary['partially_successful_sources'].append(sid)
                 if failures:
                     with c:
                         for r in failures:
                             c.execute('INSERT INTO fetches(run_id,source_id,requested_url,checked_at,status,http_status,error) VALUES(?,?,?,?,?,?,?)',
                                       (rid,sid,r['url'],r['checked_at'],r['status'],r['http_status'],r['error']))
-                        c.execute('UPDATE sources SET last_checked=?,last_status=?,last_error=? WHERE source_id=?',(db.now(),'failed',failures[0]['error'],sid))
+                        c.execute('UPDATE sources SET last_checked=?,last_status=?,last_error=? WHERE source_id=?',(db.now(),'partial_failure' if outcomes else 'failed',failures[0]['error'],sid))
                     summary['failed_sources'].append({'source_id':sid,'error':failures[0]['error'],'http_status':failures[0]['http_status']})
-                    outcomes=[{k:v for k,v in r.items() if k not in ['data','headers']} for r in failures]
+                    outcomes.extend({k:v for k,v in r.items() if k not in ['data','headers']} for r in failures)
                 for key,name in [('new','new_records'),('revised','revised_records'),('unchanged','unchanged_records')]:summary[name]+=counts[key]
                 summary['source_results'].append({'source_id':sid,'counts':dict(counts),'requests':outcomes})
                 print(sid,dict(counts),'FAILED' if failures else 'OK',flush=True)
