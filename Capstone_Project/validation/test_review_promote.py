@@ -10,13 +10,14 @@ from .llm_classifier import PROJECT
 from .test_scoring_v1_3 import CARDS, NO_EVENT, event, mkt, run
 
 WEEK = date(2026, 11, 2)
-CAND_FIELDS = ["event_type", "event_id", "title", "summary", "card_ids", "certainty", "original_certainty", "reach", "original_reach", "reach_basis",
+CAND_FIELDS = ["geography", "new_information", "published_date", "event_type", "event_id", "title", "summary", "card_ids", "certainty", "original_certainty", "reach", "original_reach", "reach_basis",
                "named_participants", "announced_date", "effect_date", "stage", "source_tier", "outlet", "url", "content_scope",
                "same_as_event_id", "evidence_quotes", "llm_confidence", "validation_reasons", "prompt_version", "model_id", "article_file"]
 
 
-def cand(cid, title, cards, outlet, day="2026-11-05", conf=0.55, cert=2, reach=2, quote=None, same_as="", tier="other", summary=None, etype=""):
-    return {"event_type": etype, "event_id": cid, "title": title, "summary": summary or title, "card_ids": cards, "certainty": 1, "original_certainty": cert,
+def cand(cid, title, cards, outlet, day="2026-11-05", conf=0.55, cert=2, reach=2, quote=None, same_as="", tier="other", summary=None, etype="",
+         geo="", new_info="", pub=""):
+    return {"geography": geo, "new_information": new_info, "published_date": pub, "event_type": etype, "event_id": cid, "title": title, "summary": summary or title, "card_ids": cards, "certainty": 1, "original_certainty": cert,
             "reach": reach, "original_reach": reach, "reach_basis": "market_wide", "named_participants": "", "announced_date": day,
             "effect_date": day, "stage": "", "source_tier": tier, "outlet": outlet, "url": f"https://{outlet.lower().replace(' ', '')}.example/{cid}",
             "content_scope": "headline_only", "same_as_event_id": same_as, "evidence_quotes": json.dumps([quote or title]),
@@ -116,6 +117,47 @@ class AmendmentD(Grouping):
                 self.assertEqual(len(list(csv.DictReader(f))), 1)
 
 
+class CodeChecks(Grouping):
+    def test_non_us_filtered_and_logged(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            log = Path(tmp) / "filtered_non_us.csv"
+            cands = [cand("A", "French banking group hit by supply chain cyberattack", "XE-CYBER", "CSO Online", etype="cyber", geo="non_us"),
+                     cand("B", "SEC sets new compliance date for Treasury repo clearing", "FICC-GSD-03", "SEC", etype="regulatory", geo="us", tier="regulator")]
+            with tempfile.TemporaryDirectory(dir=PROJECT / "data") as d:
+                root = Path(d)
+                for c in cands:
+                    (root / f"{c['event_id']}.txt").write_text(c["title"]); c["article_file"] = str((root / f"{c['event_id']}.txt").relative_to(PROJECT))
+                path = root / "c.csv"
+                with path.open("w", newline="") as f:
+                    w = csv.DictWriter(f, fieldnames=CAND_FIELDS); w.writeheader(); w.writerows(cands)
+                rows, _ = RS.build(path, WEEK, log)
+            self.assertEqual([r["candidate_ids"] for r in rows], ["B"])
+            with log.open() as f:
+                logged = list(csv.DictReader(f))
+            self.assertEqual([(r["candidate_id"], r["geography"], r["card_ids"]) for r in logged], [("A", "non_us", "XE-CYBER")])
+
+    def test_duplicate_without_new_information(self):
+        rows, ctx = self.sheet_ctx([cand("A", "DTCC highlights final implementation steps for Treasury clearing mandate", "FICC-GSD-03", "Traders Union",
+                                         etype="regulatory", same_as="EV0006", new_info="False", geo="us"),
+                                    cand("B", "SEC sets new compliance date for Treasury repo clearing", "FICC-GSD-03", "SEC", day="2026-11-03",
+                                         etype="regulatory", same_as="EV0007", new_info="True", geo="us", tier="regulator")])
+        by = {r["candidate_ids"]: r for r in rows}
+        self.assertEqual((by["A"]["review_tier"], by["A"]["new_information"]), ("duplicate", "false"))
+        self.assertNotEqual(by["B"]["review_tier"], "duplicate")
+        self.assertEqual(by["B"]["new_information"], "true")
+        self.assertEqual([(c["card_id"], c["proposed_event_id"]) for c in ctx], [("FICC-GSD-03", by["A"]["proposed_event_id"])])   # related news
+
+    def test_date_flags(self):
+        rows = self.sheet([cand("A", "Thinkorswim outage today: users report trading platform issues", "XE-CYBER", "The Sunday Guardian",
+                                etype="operational", geo="us", pub="2026-11-06"),
+                           cand("B", "Exchange outage halts trading for an hour", "XE-DISRUPT", "Reuters", day="2026-07-16",
+                                etype="operational", geo="us", pub="2026-11-06")])
+        by = {r["candidate_ids"]: r for r in rows}
+        self.assertEqual((by["A"]["date_flags"], by["A"]["review_tier"] in ("required", "auto")), ("date_unverified", True))
+        self.assertEqual((by["B"]["date_flags"], by["B"]["review_tier"]), ("date_unverified|date_mismatch", "date_review"))
+        self.assertEqual(by["A"]["geography"], "us")
+
+
 class Promote(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory(); self.root = Path(self.tmp.name)
@@ -188,6 +230,12 @@ class Promote(unittest.TestCase):
         rows = {r["proposal_id"]: r for r in self.reg_rows() if r.get("proposal_id")}
         self.assertNotIn("P6", rows)
         self.assertEqual((rows["P7"]["card_ids"], rows["P7"]["chain_id"]), ("FICC-GSD-11", "FICC-GSD-11"))
+
+    def test_duplicate_skipped_and_date_review_needs_decision(self):
+        res = PR.promote(self.write_sheet([self.row("P8", "duplicate", same_as="EV0006")]), self.register, spec=self.spec_ok)
+        self.assertEqual((res["duplicate_not_promoted"], res["inserted"]), (["P8"], []))
+        with self.assertRaises(PR.PromotionError):
+            PR.promote(self.write_sheet([self.row("P9", "date_review")]), self.register, spec=self.spec_ok)
 
     def test_bad_rows_rejected(self):
         for bad in (self.row("P1", "required", "approve"), self.row("P1", "required", "maybe", "R"),

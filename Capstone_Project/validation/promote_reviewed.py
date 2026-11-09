@@ -10,6 +10,8 @@ Rules:
 - decision = reject: never inserted.
 - edit: corrected_card_ids / corrected_certainty / corrected_reach replace the proposed values when filled.
 - A row with same_as_event_id updates an existing register event: it is listed for a manual merge, never inserted.
+- review_tier "duplicate" (a recorded event with no new information) is never inserted; "date_review" needs a
+  decision like "required".
 - Amendment D: a review_tier "context" row is never inserted (its items live in context_news.csv); for other rows
   only scored_card_ids enter the register, never the cards on which the event is context.
 - S >= 4 still needs a matching row in event_signoffs.csv, exactly as today: scoring's apply_signoff() clears the
@@ -46,8 +48,8 @@ def check_sheet(rows: list[dict], catalog: set[str]) -> None:
         pid, d = r["proposed_event_id"], (r.get("decision") or "").strip().lower()
         if d not in DECISIONS:
             problems.append(f"{pid}: decision '{r['decision']}' is not approve, edit or reject")
-        if r["review_tier"] == "required" and not d:
-            problems.append(f"{pid}: review_tier required needs a decision")
+        if r["review_tier"] in ("required", "date_review") and not d:
+            problems.append(f"{pid}: review_tier {r['review_tier']} needs a decision")
         if d in ("approve", "edit") and not (r.get("reviewer") or "").strip():
             problems.append(f"{pid}: decision {d} needs a reviewer")
         if d == "edit":
@@ -97,7 +99,7 @@ def promote(sheet: Path, register: Path, dry_run: bool = False, today: str | Non
     numbers = [int(m[1]) for r in existing if (m := re.fullmatch(r"EV(\d+)", r["event_id"]))]
     next_no = max(numbers, default=0) + 1
     today = today or date.today().isoformat()
-    result = {"inserted": [], "skipped_already_promoted": [], "rejected": [], "manual_merge": [], "context_not_promoted": [],
+    result = {"inserted": [], "skipped_already_promoted": [], "rejected": [], "manual_merge": [], "context_not_promoted": [], "duplicate_not_promoted": [],
               "needs_signoff_for_S_ge_4": []}
     new = []
     for r in rows:
@@ -109,6 +111,8 @@ def promote(sheet: Path, register: Path, dry_run: bool = False, today: str | Non
             result["rejected"].append(pid); continue
         if r.get("review_tier") == "context":
             result["context_not_promoted"].append(pid); continue
+        if r.get("review_tier") == "duplicate":       # same_as event with no new information: related news only
+            result["duplicate_not_promoted"].append(pid); continue
         if (r.get("same_as_event_id") or "").strip():
             result["manual_merge"].append({"proposal": pid, "existing_event": r["same_as_event_id"]}); continue
         if d not in ("approve", "edit") and not amendment_c_approved(spec):

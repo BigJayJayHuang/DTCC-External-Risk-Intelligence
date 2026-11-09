@@ -13,6 +13,13 @@ Syndication: sources from different outlets whose headlines have word Jaccard >=
 validate() counts independent outlets; the number collapsed is reported per event.
 Context rule (Amendment D): on an indicator card, an event of type market_move is context; it gets no would-be
 severity, does not count toward review_tier, and is written to the context-news file instead.
+Checks after validate() (prompt v1.6 fields; older candidate files simply skip them):
+  - geography = non_us: dropped before grouping and logged to filtered_non_us.csv;
+  - every item has same_as_event_id and new_information = false: review_tier "duplicate" (never promoted; its items are
+    listed as related news on its cards);
+  - one independent source, headline-only, event_type operational or cyber: date flag "date_unverified";
+  - an item's announced_date more than 14 days from its feed published date: date flag "date_mismatch", and
+    review_tier "date_review" (kept out of the week's tiering until reviewed).
 
 Per proposed event: union of card_ids; the highest model certainty and reach among members; earliest announced_date;
 the effect_date of the most confident member; all sources and evidence quotes. The existing event_scoring.validate()
@@ -40,8 +47,12 @@ INDICATOR_CARDS = {"FICC-GSD-01", "FICC-GSD-02", "FICC-MBSD-01", "ECS-NSCC-LIQ",
 CONTEXT_NEWS = PROJECT / "data/events/context_news.csv"
 CONTEXT_FIELDS = ["week", "card_id", "title", "outlet", "url", "event_type", "proposed_event_id"]
 TIER_ORDER = ["regulator", "dtcc", "official", "issuer_filing", "major_media", "other"]
+DATE_MISMATCH_DAYS = 14
+HEADLINE_SCOPES = {"headline_only", "headline_snippet"}
+FILTERED_FIELDS = ["candidate_id", "title", "card_ids", "event_type", "geography", "outlet", "url", "announced_date", "published_date"]
 FIELDS = ["proposed_event_id", "title", "event_type", "card_ids", "scored_card_ids", "context_card_ids", "certainty", "certainty_before_grouping",
-          "reach", "reach_basis", "announced_date", "effect_date", "would_be_S", "would_be_severity", "review_tier", "same_as_event_id", "stage",
+          "reach", "reach_basis", "announced_date", "effect_date", "would_be_S", "would_be_severity", "review_tier", "geography", "new_information", "date_flags",
+          "same_as_event_id", "stage",
           "named_participants", "independent_outlets", "syndication_collapsed", "member_event_types", "sources", "evidence_quotes", "confidence", "validate_flags", "candidate_ids", "prompt_version", "model",
           "decision", "reviewer", "corrected_card_ids", "corrected_certainty", "corrected_reach", "reviewer_notes"]
 
@@ -108,7 +119,9 @@ def load_candidates(path: Path) -> list[dict]:
                         "headline": text.split("\n", 1)[0] if text else "", "text": text, "same_as_event_id": r["same_as_event_id"],
                         "evidence_quotes": json.loads(r["evidence_quotes"]), "confidence": float(r["llm_confidence"]),
                         "flags": json.loads(r["validation_reasons"]), "prompt_version": r["prompt_version"], "model": r["model_id"],
-                        "event_type": r.get("event_type") or ""})
+                        "event_type": r.get("event_type") or "", "geography": r.get("geography") or "",
+                        "new_information": {"True": True, "False": False}.get(r.get("new_information") or ""),
+                        "published_date": r.get("published_date") or ""})
     return out
 
 
@@ -155,16 +168,32 @@ def proposed_event(members: list[dict], week: date, catalog: set[str], major: se
         tier = "context"
     else:
         tier = "required" if (S is not None and S >= 4) or any((v["severity"] or 0) >= 6 for v in severity.values()) else "auto"
+    # checks after validate()
+    flags = []
+    if len(independent) == 1 and all(m["content_scope"] in HEADLINE_SCOPES for m in members) and event_type in ("operational", "cyber"):
+        flags.append("date_unverified")
+    if any(m["published_date"] and abs(date.fromisoformat(m["announced_date"]) - date.fromisoformat(m["published_date"])) > timedelta(days=DATE_MISMATCH_DAYS)
+           for m in members):
+        flags.append("date_mismatch")
+    duplicate = all(m["same_as_event_id"] for m in members) and all(m["new_information"] is False for m in members)
+    if duplicate:
+        tier = "duplicate"
+    elif "date_mismatch" in flags:
+        tier = "date_review"
+    new_info = "true" if any(m["new_information"] is True for m in members) else ("false" if duplicate else "")
+    geography = "|".join(sorted({m["geography"] for m in members if m["geography"]}))
     ids = sorted(m["candidate_id"] for m in members)
     key = "|".join(ids) + ("#" + "|".join(event.card_ids) if event_type == "market_move" else "")   # per-card market-move events
     pid = "PE-" + week.isoformat() + "-" + hashlib.sha256(key.encode()).hexdigest()[:8]
+    related_cards = event.card_ids if duplicate else context      # duplicates are related news on every card
     ctx_rows = [{"week": week.isoformat(), "card_id": c, "title": m["headline"] or m["title"], "outlet": m["outlet"], "url": m["url"],
-                 "event_type": event_type, "proposed_event_id": pid} for c in context for m in members]
+                 "event_type": event_type, "proposed_event_id": pid} for c in related_cards for m in members]
     return {"proposed_event_id": pid, "title": rep["title"], "event_type": event_type, "card_ids": "|".join(event.card_ids),
             "scored_card_ids": "|".join(scored), "context_card_ids": "|".join(context), "certainty": event.certainty,
             "certainty_before_grouping": max(m["certainty"] for m in members), "reach": event.reach, "reach_basis": event.reach_basis,
             "announced_date": event.announced_date.isoformat(), "effect_date": event.effect_date.isoformat(),
             "would_be_S": "" if S is None else S, "would_be_severity": json.dumps(severity), "review_tier": tier,
+            "geography": geography, "new_information": new_info, "date_flags": "|".join(flags),
             "same_as_event_id": "|".join(sorted({m["same_as_event_id"] for m in members if m["same_as_event_id"]})),
             "stage": "" if event.stage is None else event.stage, "named_participants": "|".join(event.named_participants),
             "independent_outlets": len(outlets), "syndication_collapsed": collapsed,
@@ -179,12 +208,20 @@ def proposed_event(members: list[dict], week: date, catalog: set[str], major: se
             "decision": "", "reviewer": "", "corrected_card_ids": "", "corrected_certainty": "", "corrected_reach": "", "reviewer_notes": ""}, ctx_rows
 
 
-def build(candidates: Path, week: date) -> tuple[list[dict], list[dict]]:
-    """Returns (review-sheet rows sorted by confidence, context-news rows)."""
+def build(candidates: Path, week: date, filtered_out: Path | None = None) -> tuple[list[dict], list[dict]]:
+    """Returns (review-sheet rows sorted by confidence, context-news rows). Non-US candidates are dropped first and,
+    when filtered_out is given, logged there."""
     _, _, catalog, _ = prompt_parts_v13(PROMPT_V14, "v1.4")
     with MAJOR.open(encoding="utf-8-sig", newline="") as f:
         major = {r["name"] for r in csv.DictReader(f) if r.get("name")}
     cands = load_candidates(candidates)
+    non_us = [c for c in cands if c["geography"] == "non_us"]
+    cands = [c for c in cands if c["geography"] != "non_us"]
+    if filtered_out is not None:
+        filtered_out.parent.mkdir(parents=True, exist_ok=True)
+        with filtered_out.open("w", encoding="utf-8", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=FILTERED_FIELDS, extrasaction="ignore", lineterminator="\n"); w.writeheader()
+            w.writerows({**c, "card_ids": "|".join(c["card_ids"])} for c in non_us)
     moves = [c for c in cands if c["event_type"] == "market_move"]
     others = [c for c in cands if c["event_type"] != "market_move"]
     built = [proposed_event(g, week, catalog, major) for g in market_move_groups(moves) + group(others)]
@@ -215,10 +252,11 @@ def main(argv=None):
     p.add_argument("--week", type=date.fromisoformat, required=True, help="Monday of the scoring week")
     p.add_argument("--out", type=Path, required=True)
     p.add_argument("--context-out", type=Path, default=CONTEXT_NEWS)
+    p.add_argument("--filtered-out", type=Path, help="default: filtered_non_us.csv next to --out")
     a = p.parse_args(argv)
     if a.week.weekday() != 0:
         raise SystemExit("--week must be a Monday")
-    rows, ctx = build(a.candidates, a.week)
+    rows, ctx = build(a.candidates, a.week, a.filtered_out or a.out.parent / f"filtered_non_us_{a.week.isoformat()}.csv")
     a.out.parent.mkdir(parents=True, exist_ok=True)
     with a.out.open("x", encoding="utf-8", newline="") as f:          # never overwrite a sheet that may hold decisions
         w = csv.DictWriter(f, fieldnames=FIELDS, lineterminator="\n"); w.writeheader(); w.writerows(rows)

@@ -26,7 +26,7 @@ class Fakes:
 
     def classify(self, args):
         self.calls.append(args)
-        assert (args.prompt_version, args.response_schema, args.prompt_cache, args.budget) == ("v1.5", "flat", "on", Decimal("1.00"))
+        assert (args.prompt_version, args.response_schema, args.prompt_cache, args.budget) == (W.PROMPT_VERSION, "flat", "on", Decimal("1.00"))
         if args.dry_run:
             return {"estimated_full_run_cost_with_cache_usd": str(self.estimate), "estimated_full_run_cost_usd": "9", "coverage": {"selected_articles": 3}}
         with (args.output_dir / f"candidates_{args.run_date.isoformat()}.csv").open("w", newline="") as f:
@@ -78,6 +78,17 @@ class WeeklyRun(unittest.TestCase):
         res = self.run_week(Fakes(cands=[]))
         self.assertTrue(res["review_sheet"].endswith("review_2026-11-02_t.csv"))
         self.assertEqual((self.root / "review/review_2026-11-02.csv").read_text(), "existing decisions\n")
+
+    def test_from_inputs_skips_collection(self):
+        f = Fakes(cands=[])
+        boom = lambda *a, **k: (_ for _ in ()).throw(AssertionError("collector called"))
+        saved = self.root / "saved.csv"; saved.write_text("document_id,title,url,publication_date,published_at_utc,summary,source_id\n")
+        res = W.run_week(MONDAY, Decimal("1.00"), today=date(2026, 11, 9), run_id="r", weekly_dir=self.root / "weekly",
+                         review_dir=self.root / "review", context_path=self.root / "c.csv", collect_google=boom, collect_feeds=boom,
+                         classify=f.classify, from_inputs=saved)
+        self.assertEqual((res["status"], res["inputs_reused"]), ("complete", str(saved)))
+        self.assertTrue(all(a.news == saved for a in f.calls))
+        self.assertEqual(W.PROMPT_VERSION, "v1.6")
 
     def test_week_start_must_be_monday(self):
         with self.assertRaises(ValueError):
