@@ -1,0 +1,57 @@
+{
+  "document_id": "79c9224eaa178aee53ab3cb9f6b642c9f233c5642af19f486f34d629a4cb08d3",
+  "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBIcEpQWXlNZDNkdzk3SmRFYUJqdHNNUXNoWWJaODRGR1VXZDhYbnp6WXc2OUUzRlAtbWhsd2doUlo5Rjd0N2JwTFJxR1lpM2pUbld5ZTQ1OVhBSjZ2M0xfV0x4Sl9nWU5P?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "eeb0a583f898cc63a3545e489928e189dc329fff540cba5a3fabfcfc0dff90ac",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_sggm15QL66TyqSLXeQyUGQ",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline-only article listing ETF holdings for the Roundhill Meme Stock ETF. No concrete event described — no market move, no trading volume spike, no regulatory action, no firm stress. This is a data/informational listing, not an event matching any card's Step 1.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1422,
+    "outputTokens": 461,
+    "totalTokens": 6256,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3330
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

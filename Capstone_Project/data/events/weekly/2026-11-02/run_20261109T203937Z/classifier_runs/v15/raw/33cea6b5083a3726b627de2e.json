@@ -1,0 +1,57 @@
+{
+  "document_id": "fc24eff336bf258bb6169d634bfe5095e07771606c4db6c0c57ec68e4ae3ba47",
+  "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPRk92d1dsaHFuMnVQaUVKaDBlNXd4bW5YWUdSaEpOX2ZxZnRiOURjRkg1cFlhZlRpeEp5dUoxWjhWLVItaGR6WXV2MFE0MlAyTWVDWFNQcms1U2JIT2xNanhpdS1NQXc1c3NFU2JDRWVlR0RCZkhIbnFsNmswTUhNeGRQUWF3ZElVZU1HY1ZJUGZCR2xTSU5EakhKM1JOemtiejZKb2hsUFI4Tkg2WE1OekR5VnM?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "9913775a081ecb513950cb5235778ed1b5941f5d5bfeb60f1083cf8b9d871353",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_4KqPNw5FpCkO2xgVKLJ85S",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline-only article about White House review of SEC crypto broker rule changes. Crypto clears outside DTCC scope, and no link to DTCC, FICC, NSCC, or DTC is stated. No matching card in the catalog.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1490,
+    "outputTokens": 453,
+    "totalTokens": 6316,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3124
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,57 @@
+{
+  "document_id": "af813be59c6e25c3f30db7f7b7e9789641e122953c6379edec26b9a3dd958479",
+  "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOQkc0MGJkMWs5REZEYXFVRnRKaU5WSVBMMk0wRmh1Q0QxRHBxeFJhUGZTLTBMTjMyMzF1WGxfb05PR1EtTGtrajc0bDlNUFNEWlJSUU94ZkNJQUJpVTF2Y1RDYnh0eks2T0ZMeVMyZXdBYXpyR1hVVFhIQ2lIT3UxcXJkM3J1TFY1ZnVhWFVIc0htM2xKQ0w3UXluMDFsTzlqNUd3cDRJeG9tNUE1d1ZESk1TZzRNeFY4VVYyb01hRW04T1RoQjh5LUZwUXNycTB0VEE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "d45594dd463ecf9e43506a1d93d8a2fad964430f6477a9345449fc0f3a58937c",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_0Ju6go9kPtu2xtkD67WODd",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Amcor (AMCR) is a non-financial packaging company; a Deutsche Bank analyst downgrade of its stock does not touch any DTCC process. Not a DTCC member stress event. Irrelevant.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1562,
+    "outputTokens": 448,
+    "totalTokens": 6383,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3149
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,57 @@
+{
+  "document_id": "88227d98f0abd6e01e037d2142b1b208a38952942d32a15107ef2ba927e04ae7",
+  "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQQkR3V21PbXZoSFY1OUtxZGV2eGZIaE5pRjJFUV9fR09tNTNxYWxzT3l6RV8zMUtDcmRVMzJuVk53Z2lyWWhjVzBlR081cUg4TlVEVmtZTWZYNDFJYkpGY3Q1YkxtWGUtY2VMTThIbVRQWTRMVEh3U3d0dkpyU3g2c0xJbS1XZDRjcVdPVQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "1a49138d76d6b1494206cfbc95d352a5c95a883e51214bea34ad43c24a52dcba",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_3FZAHQV3J68TWcdyYo67zB",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Non-US event (South Korea stock market settlement cycle change) with no stated link to US markets, DTCC, FICC, NSCC, or DTC participants. ECS-SET-01 covers changes to the US cash equity settlement cycle only.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1456,
+    "outputTokens": 454,
+    "totalTokens": 6283,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3173
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

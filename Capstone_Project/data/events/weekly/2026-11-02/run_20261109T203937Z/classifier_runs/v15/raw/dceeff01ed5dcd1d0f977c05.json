@@ -1,0 +1,57 @@
+{
+  "document_id": "2d4cce0bb25cf78f7f8118786d7229755c2c4aa20e7743e2ab64e7763fd8a701",
+  "url": "https://www.sec.gov/newsroom/press-releases/2026-112-sec-adopts-amendments-update-definitions-small-entity-investment-companies-investment-advisers",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "0fe967cf216729a7c180c0963f095e4464c5bedf10d5a246ae8103ce8abb6c38",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ob4I9W7AeXRavycf4QqR4t",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Regulatory action concerns definitions of \"small entity\" under the Regulatory Flexibility Act for investment companies and advisers. This has no connection to any catalog card — it does not touch Treasury clearing, settlement cycles, member stress, repo markets, MBS, equities settlement, or any other DTCC process covered by the card catalog.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1366,
+    "outputTokens": 467,
+    "totalTokens": 6206,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3354
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

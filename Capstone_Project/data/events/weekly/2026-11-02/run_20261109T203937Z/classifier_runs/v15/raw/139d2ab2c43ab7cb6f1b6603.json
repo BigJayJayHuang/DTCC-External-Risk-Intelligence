@@ -1,0 +1,61 @@
+{
+  "document_id": "b4bb2df5571ab564b705ef3e4f98cafc5a7138af259ba743d2a2c391d4071100",
+  "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNcmtnOWd5Q0hhS05Dbi1qQ0gxcXpUMlkwa2FtdUJJVzN1dkhWQVpFT2syR0h5NThTcDF3eTgxMlhtaHIyclphX2RobXV3QUJRNGdOQm4zZVBLQ015U3hhczlvRXY5dkRNLVVVeHRTdV9GLTdnVjZ3X0Iyc0VBRzRNYUVlLXNvdVZvVk5DUUFSZ3pGLW91eklrWV8yTmVqWVhNVFpzQnRNb1AxbUlBdW02eGVXSHJEeXVrUWpvQkloQi1oQdIBxwFBVV95cUxOYTZhWDFmRGJLaG5vOXVqS0ZiZFZSTlF4X0k0Z1ZEem9WVVFTeUdLNzhSR0NVampSclY2THNKblRtZlk0UDJIVVpROTZEendZVjdQalNGd3hTRExuTzluRkFiS1pXT1E1MS0wWHBkdU4tVEdWc0h6bW5yTHN1ZzhRR2NiV3VKSFB2MllISVlBRHdidFVRcFFGSkxXUjVlc0dHMGJ4aDVRNW1McHNiZFlMSDI2M3ZIby0yVlJQTkRtNmNGNVFrUnpZ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "bff2e975b4371a3d8712a2388ae6f75a090d186d0bca4347920d1c626ee333ab",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_qlZZdDpZ1PPchHOG93Ndvr",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "market_move",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "Treasury volatility builds, bank stocks watched by retail investors",
+              "summary": "A headline-only article notes that Treasury volatility is building and retail investors are watching three bank stocks. No magnitude, specific yield moves, or named firms are provided.",
+              "card_ids": [
+                "FICC-GSD-01"
+              ],
+              "certainty": 2,
+              "reach": 1,
+              "reach_basis": "group",
+              "named_participants": [],
+              "announced_date": "2026-11-05",
+              "effect_date": "2026-11-05",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "Simply Wall St",
+              "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNcmtnOWd5Q0hhS05Dbi1qQ0gxcXpUMlkwa2FtdUJJVzN1dkhWQVpFT2syR0h5NThTcDF3eTgxMlhtaHIyclphX2RobXV3QUJRNGdOQm4zZVBLQ015U3hhczlvRXY5dkRNLVVVeHRTdV9GLTdnVjZ3X0Iyc0VBRzRNYUVlLXNvdVZvVk5DUUFSZ3pGLW91eklrWV8yTmVqWVhNVFpzQnRNb1AxbUlBdW02eGVXSHJEeXVrUWpvQkloQi1oQdIBxwFBVV95cUxOYTZhWDFmRGJLaG5vOXVqS0ZiZFZSTlF4X0k0Z1ZEem9WVVFTeUdLNzhSR0NVampSclY2THNKblRtZlk0UDJIVVpROTZEendZVjdQalNGd3hTRExuTzluRkFiS1pXT1E1MS0wWHBkdU4tVEdWc0h6bW5yTHN1ZzhRR2NiV3VKSFB2MllISVlBRHdidFVRcFFGSkxXUjVlc0dHMGJ4aDVRNW1McHNiZFlMSDI2M3ZIby0yVlJQTkRtNmNGNVFrUnpZ",
+              "evidence_quotes": [
+                "Treasury Volatility Builds"
+              ],
+              "confidence": 0.35,
+              "notes": "headline_only; no magnitude or specific yield/rate data provided. The headline asserts Treasury volatility is building, which maps to FICC-GSD-01 (sharp yield swings). Three unnamed bank stocks are mentioned but no firm is identified as a major participant. Reach set to 1 (group) given the vague reference to multiple bank stocks. Effect date set to announced date as no separate event date is given."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1771,
+    "outputTokens": 1059,
+    "totalTokens": 7203,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 6396
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

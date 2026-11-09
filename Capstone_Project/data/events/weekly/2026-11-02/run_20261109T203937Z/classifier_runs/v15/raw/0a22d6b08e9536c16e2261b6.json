@@ -1,0 +1,61 @@
+{
+  "document_id": "1e9055fdc6f45c1dccaf6ae9203df301548ec38da24891cb1befd67c0d955a44",
+  "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPc3dTOTdsZjlNY2JadTFUby1YQmhsMlhGOU9vUUxEQldBNjdJVXh5TndmMUZpejQ4cElGTy1qWXg3X1dkYjBBQlpSRUtxU2VpZzhwdGdoZ1dGTDBhdEx6ZUVzaG93T3lZbWFmV05BNFpOUTBaRVR2bXZRWVRyMGxqVHFKNElBYjhrcncyNzA2VFVyM2Z6eGMzSWpzOV8?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "42b0d063704a73923e4ca1391f47a957f3fee0a9d3b2a3f52f8610aa007a17c4",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_5BbSSae5e6Rkee5E5FZ76b",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "regulatory",
+              "geography": "us",
+              "new_information": false,
+              "same_as_event_id": "EV0005",
+              "title": "DTCC highlights final steps for Treasury clearing mandate",
+              "summary": "DTCC published commentary highlighting final implementation steps for the U.S. Treasury clearing mandate. The headline-only article does not provide new dates, figures, or actions beyond what is already recorded in EV0005/EV0006/EV0007.",
+              "card_ids": [
+                "FICC-GSD-03"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-06",
+              "effect_date": "2026-11-06",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "Traders Union",
+              "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPc3dTOTdsZjlNY2JadTFUby1YQmhsMlhGOU9vUUxEQldBNjdJVXh5TndmMUZpejQ4cElGTy1qWXg3X1dkYjBBQlpSRUtxU2VpZzhwdGdoZ1dGTDBhdEx6ZUVzaG93T3lZbWFmV05BNFpOUTBaRVR2bXZRWVRyMGxqVHFKNElBYjhrcncyNzA2VFVyM2Z6eGMzSWpzOV8?oc=5",
+              "evidence_quotes": [
+                "DTCC highlights final implementation steps for U.S. Treasury clearing mandate"
+              ],
+              "confidence": 0.45,
+              "notes": "headline_only; article is dated 2026-11-06, which is after the cash-transaction compliance deadline (2026-12-31) recorded in EV0006, suggesting DTCC may be issuing final readiness guidance. However, no new facts, dates or figures are stated in the text, so new_information is set to false. Effect_date set to announced_date per policy. Matched to EV0005 as the primary recorded event for the Treasury clearing mandate milestones."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1472,
+    "outputTokens": 822,
+    "totalTokens": 6667,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5711
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

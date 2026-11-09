@@ -1,0 +1,35 @@
+{
+  "week_start": "2026-11-02",
+  "week_end": "2026-11-08",
+  "cap_usd": "2.21",
+  "run_dir": "/Users/caiwenqi/Documents/DTCC-External-Risk-Intelligence/Capstone_Project/data/events/weekly/2026-11-02/run_20261109T203937Z",
+  "prompt_version": "v1.6",
+  "status": "complete",
+  "from_inputs": "data/events/weekly/2026-11-02/run_20261109T190208Z/inputs/feeds/classifier_input.csv",
+  "inputs_reused": "data/events/weekly/2026-11-02/run_20261109T190208Z/inputs/feeds/classifier_input.csv",
+  "items_in_window": 93,
+  "estimate_with_cache_usd": "1.441138215",
+  "classifier": {
+    "status": "complete",
+    "relevant": 25,
+    "irrelevant": 68,
+    "failed_checks": 25,
+    "input_tokens": 141461,
+    "output_tokens": 52306,
+    "cache_read_input_tokens": 406689,
+    "cache_write_input_tokens": 0,
+    "estimated_cost_usd": "1.46407767"
+  },
+  "review_sheet": "/Users/caiwenqi/Documents/DTCC-External-Risk-Intelligence/Capstone_Project/data/events/review/review_2026-11-02_run_20261109T203937Z.csv",
+  "proposed_events": 9,
+  "tiers": {
+    "required": 3,
+    "auto": 2,
+    "context": 3,
+    "duplicate": 1,
+    "date_review": 0
+  },
+  "filtered_non_us": 2,
+  "context_rows_added": 20,
+  "next_step": "Review the 'required' rows, then run: python -m validation.promote_reviewed --sheet /Users/caiwenqi/Documents/DTCC-External-Risk-Intelligence/Capstone_Project/data/events/review/review_2026-11-02_run_20261109T203937Z.csv"
+}

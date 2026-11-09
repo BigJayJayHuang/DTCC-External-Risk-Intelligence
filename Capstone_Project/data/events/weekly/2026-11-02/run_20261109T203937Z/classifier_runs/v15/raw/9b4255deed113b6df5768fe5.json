@@ -1,0 +1,57 @@
+{
+  "document_id": "e4b8525830b2515cf537b9fb7ec3c36e010bc92519ac7946a13869fe97f7d708",
+  "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQMk5BV29EUE1vdWFvclB3aC1UOUZlVUwwQm1WZk5HTk5oVlA5c1l0Y09adGZ6dVJ0N25yWVJ1ajVucWdoUTJua2U1OWdZcVpXb2J0SW9DU3FLejlnZmZzUWdSeE41SmxKRjJ0Q2ZGMVJWR09lLWhsNFBWeC1Yb21fVlFMSjdraGxsdnUwaElwbm1YcHhPTHI0aGZhVFFMV1JpbXJBME1qa2JBZ9IBrwFBVV95cUxQOVNHTWxwVnZSSHQ1enlWczExbWsxZUpMdlprc3NPQmtGeTFHS3liQjNueFJpd0tYMWdYX1ZNaTJEbFFMeEtSZTFWSE1POXRjT2hFT1BCcWlZZTBNUHhac0RXam5CNjBBZzJ2MDJ3NkpyNXBrNm1CWFpZTVB4VTZIQmk3TGM2WmhHZmY3QjhNT21JbFljWVp1c19YRWlVeF9GVzZfZzdUWUh3c3Q5RVlZ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "158d97fe122e15a8930362967f9510db2c37019b52e15636a713857ceefa1ec2",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_MFNzaiTzkhapMMa80seUcT",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Explainer/consumer advice article about personal cybersecurity (\"protect yourself against cyberattacks\"). No concrete event, no named financial market participant, no link to DTCC or US market infrastructure.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1703,
+    "outputTokens": 440,
+    "totalTokens": 6516,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2907
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

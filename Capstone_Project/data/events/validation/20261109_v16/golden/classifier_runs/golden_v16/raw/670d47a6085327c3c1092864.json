@@ -1,0 +1,63 @@
+{
+  "document_id": "675e0e8de4aaf20e754c7e3e8008f390c8e133ea83cd6cbc509033c30e690327",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1fVzhWaTBRTTZaa3liaU9QSGsyV1RhWGZLOFhRamh0am9kaFc0aEI5RWREUGkyWHhsdkg1NEMzQkV1cnhnb0NEVEhXamZ3NzVXRjBSS28tbzhWV2NaVk1QYzBJUXFkQ2V1aWozVg?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "3f592cb5b7a829277cc40343582161a8b43183de3492898748c21e41c0e57c31",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_gHDPxGp9jHR2GEaDxMNdLr",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Non-US market event with no stated link to US markets or DTCC. The headline refers to a T+1 settlement transition in 2028 published by a Korean outlet (뉴스웍스), and the text contains no mention of US markets, DTCC, NSCC, or DTC. The US T+1 transition is already recorded (EV0002, effect_date 2024-05-28). This appears to describe a non-US (likely South Korean) market settlement cycle change with no stated US link.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1435,
+    "outputTokens": 517,
+    "totalTokens": 6325,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 4373,
+    "cacheDetails": [
+      {
+        "ttl": "5m",
+        "inputTokens": 4373
+      }
+    ]
+  },
+  "metrics": {
+    "latencyMs": 4662
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

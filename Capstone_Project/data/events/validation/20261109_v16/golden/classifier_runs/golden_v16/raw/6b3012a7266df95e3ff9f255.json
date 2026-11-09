@@ -1,0 +1,57 @@
+{
+  "document_id": "45133d89231e58dc257ffcd6e4dda1d4ca3b19cce167cb50097d042824c0d72c",
+  "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVTZ1WTcyN01zdVpzb0xjTGc3SXk1RldJMDgtQ3IwOHNEeUZHel95TzB0T2o5V3VxdmcxNHpTc3RRQUlEX21QNkVsbzVzLXBReFhaTlBYRkpFaWxQcTNtajYtcU9xOXJvLWg1WkRiOWpWdmpqdUo0Q3RrRXM5blhoNWw4cDFNZ01neDVMWjNkUzNrWEdSb3ZHYklnYWV4UWJPYU9mTUdGSQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "799632a84aacda83754ddb144af1492a1c58bb943929c671a1ac76590e64537e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_sJTFosHc9l1EaaxWYO51Uz",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Explainer/opinion piece asking whether VIX can predict a crash and how markets react after a VIX spike. No concrete market event, no named participant, no new data — purely analytical/educational content with no Step 1 event described.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1532,
+    "outputTokens": 451,
+    "totalTokens": 6356,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3309
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

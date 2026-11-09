@@ -1,0 +1,57 @@
+{
+  "document_id": "917ff7d9d1360019ead7222cef38131b4a7f53042379601bee691ed96b0c40fe",
+  "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPS0NJNjQxWXkyQlUtTlFYaEJnbExveEEzRnpkUXpQbXFsbkZEcEhweFh0WkdxZFhicl90WkdZUGltSks1SnNIOFdiamRxdWVOODVZMHo0Ukk1ZGd4T3hNZG9heUd1cUZkSXZSVzg2QU5waVg3UjVCTUtySlNEbnhNeXdVTXYyVlUxRUZvWlVIN2xnOE9pMWtWbTNLNzVXeDQxanpuZDM4Ry1JanRvTGtDUFVUUzhYaUZkanNsclhZSDVFekhUY0EwU2ZwR0EtN1AyQWZZTmdncWNPQ2h3RDFjWXdoUHJTMFp0c1l1Yk50QWNVYWNwdzg00gH8AUFVX3lxTE1iSVNWN2JFRWhyNW9hODI0WlhzVDdZVFRQeU5LVThBSm1uYmlqQUNwWFpDZnNYaC1SNWlfUkhGZUpaM0Q1dFA1TmZPR1BUeW05RWthQWIyVHJpbkNrTDRWNHNwbDZxeXJtZm9ISVhBUzBSYzd2aTU2bkR2d09Vdnh0b3o5c25ZWEtPdERtV01zcUktYmxKWS1pejhBV0g5blJQN3o4SVI3V2tJRTBoSWVSR1JnM1JIc09SYmMyQ2pmTVVWcWlTaUxDajctOFp5WnJyeWR3VkNCR1p1c0dBY3BVN3htaXBjR3R2YUdBMmhZRnV4dlVrdl9KZmNmMA?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "19a6604bf7b569400a7de18fa8c518e039bf87756c32ca0cca19fc10b565874b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_dw5woz0qyY7WS8kEkJPWrh",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Non-US event (NSE India, gold receipts on Dhanteras) with no stated link to US markets or DTCC participants. Record volume on an Indian exchange is outside the catalog scope.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1917,
+    "outputTokens": 441,
+    "totalTokens": 6731,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3386
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

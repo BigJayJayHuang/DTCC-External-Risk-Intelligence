@@ -1,0 +1,57 @@
+{
+  "document_id": "2ffb9b29fa5ce0778284d789eb21315c408b4404ae3a8870c87c8c8f241de60d",
+  "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFAyOEh4VnFmV2x6OGhWcC1NbFdubU1mcnNFYTI1ZW5LZWVqU000dzRZYU1oT2FOVVBpdFh5UGY1aEg4MWZmaEEycW56c1hvakthbzlueGNmaVVaSU9tM1J2UmExQU1nSjI1TEE2UGw5NXBUN1RZeXc?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "df7164c6cf1ffa9d67e050b09ab7665f144d88ac03ef0e1aed12fa74cbbb3098",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_pY9jGBkWgDnrw8xInaL5df",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Non-US event (China bond market selloff) with no stated link to US markets, DTCC participants, or any covered DTCC process. The article text does not mention US markets, FICC, NSCC, DTC, or any US participant.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1465,
+    "outputTokens": 455,
+    "totalTokens": 6293,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3214
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

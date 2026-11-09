@@ -1,0 +1,57 @@
+{
+  "document_id": "7e875649b61f0e0f5b50137e6e36940d75d5d8757ade150ab055f1ed86220eac",
+  "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPc0pUWHNEUEFibWxmVDlGc2x5QlNMdFl1LXZNTElRbGMtYzFvOEh3Q0c4aHpFRGJBSXQ4RXZCRzZRbGpuSTI3MkV6MWNlQXpseDNhOGpVcUFzeE45al9kbGtuSC11LWZIUkE4d0VRYlk4eGhxSmFtdG9hUGZMczlZTlFaeWNCVldFNmJOUjA0SlNrdnd2UWhreGcyejgtRk4zekFPbjR1SWU0Mll4Rzc2U0lvbnhlTmItRndhUjU3ZTBMNEM0?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "dcd22025bea3e0d0650c0d1b4592b11a63e7b803572139cd94d2875cbf4b33fa",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_hlH860fpBE6TtT8or4r23I",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Non-US market (Korean stock market) with no stated link to US markets or DTCC participants; subject is ETH (cryptocurrency), which is out of scope. No catalog card applies.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1526,
+    "outputTokens": 438,
+    "totalTokens": 6337,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2984
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}
