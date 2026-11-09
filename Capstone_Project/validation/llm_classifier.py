@@ -33,9 +33,12 @@ PROMPT = Path(__file__).with_name("llm_event_classifier_prompt.md")
 PROMPT_V13 = Path(__file__).with_name("llm_event_classifier_prompt_v1.3.md")
 PROMPT_V14 = Path(__file__).with_name("llm_event_classifier_prompt_v1.4.md")
 PROMPT_V15 = Path(__file__).with_name("llm_event_classifier_prompt_v1.5.md")
-PROMPT_FILES = {"v1.2": PROMPT, "v1.3": PROMPT_V13, "v1.4": PROMPT_V14, "v1.5": PROMPT_V15}
-SPLIT_PROMPTS = {"v1.3", "v1.4", "v1.5"}   # static system text + cachePoint, per-item user message
-EVENT_TYPE_PROMPTS = {"v1.5"}               # prompts that define event_type (Amendment D)
+PROMPT_V16 = Path(__file__).with_name("llm_event_classifier_prompt_v1.6.md")
+PROMPT_FILES = {"v1.2": PROMPT, "v1.3": PROMPT_V13, "v1.4": PROMPT_V14, "v1.5": PROMPT_V15, "v1.6": PROMPT_V16}
+SPLIT_PROMPTS = {"v1.3", "v1.4", "v1.5", "v1.6"}   # static system text + cachePoint, per-item user message
+EVENT_TYPE_PROMPTS = {"v1.5", "v1.6"}               # prompts that define event_type (Amendment D)
+GEO_PROMPTS = {"v1.6"}                              # prompts that define geography and new_information
+GEOGRAPHIES = ["us", "non_us_with_us_link", "non_us"]
 EVENT_TYPES = ["market_move", "regulatory", "firm_specific", "operational", "cyber", "other"]
 HEADLINE_SCOPES = {"headline_only", "headline_snippet"}
 CONFIG = Path(__file__).with_name("llm_classifier_config.json")
@@ -48,7 +51,7 @@ CSV_FIELDS = [
     "event_id", "document_id", "is_relevant", "same_as_event_id", "title", "summary",
     "card_ids", "certainty", "reach", "reach_basis", "named_participants",
     "announced_date", "effect_date", "stage", "source_tier", "outlet", "source_url",
-    "url", "evidence_quote", "evidence_quotes", "llm_confidence", "notes", "event_type",
+    "url", "evidence_quote", "evidence_quotes", "llm_confidence", "notes", "event_type", "geography", "new_information", "published_date",
     "entered_by", "needs_review", "validation_passed", "validation_reasons",
     "original_certainty", "original_reach", "model_id", "base_model_id", "region",
     "prompt_version", "input_tokens", "output_tokens", "cache_read_input_tokens",
@@ -176,7 +179,8 @@ def prompt_parts_v13(path: Path = PROMPT_V13, label: str = "v1.3"):
     if len(parts) != 4:
         raise ValueError("Prompt v1.3 must have header, system, user and catalog sections")
     system_body, user_template = parts[1].strip(), parts[2].strip()
-    catalog = parts[3][parts[3].index("| card_id"):].strip()
+    start = parts[3].index("Scope note:") if "Scope note:" in parts[3] else parts[3].index("| card_id")   # catalog v2 scope note
+    catalog = parts[3][start:].strip()
     cards = re.findall(r"^\| ((?:FICC|ECS|XE)-[A-Z0-9-]+) \|", catalog, re.M)
     if len(set(cards)) != 16:
         raise ValueError("Expected the original 16-card catalog")
@@ -212,7 +216,7 @@ def render_prompt(body: str, catalog: str, register: list[dict], article: dict):
     return prompt, {r["event_id"] for r in recent}
 
 
-def output_schema(cards: set[str], event_type: bool = False) -> dict:
+def output_schema(cards: set[str], event_type: bool = False, geo: bool = False) -> dict:
     properties = {
         "is_relevant": {"const": True}, "same_as_event_id": {"type": ["string", "null"]},
         "title": {"type": "string"}, "summary": {"type": "string"},
@@ -230,6 +234,9 @@ def output_schema(cards: set[str], event_type: bool = False) -> dict:
     }
     if event_type:
         properties["event_type"] = {"type": "string", "enum": EVENT_TYPES}
+    if geo:
+        properties["geography"] = {"type": "string", "enum": GEOGRAPHIES}
+        properties["new_information"] = {"type": ["boolean", "null"]}
     relevant = {"type": "object", "properties": properties, "required": list(properties), "additionalProperties": False}
     irrelevant = {"type": "object", "properties": {"is_relevant": {"const": False}, "notes": {"type": "string"}},
                   "required": ["is_relevant", "notes"], "additionalProperties": False}
@@ -243,7 +250,7 @@ FLAT_TOOL_DESCRIPTION = ("Submit the classification record specified by the syst
                          "when is_relevant is false, set every field except notes to null.")
 
 
-def output_schema_flat(cards: set[str], event_type: bool = False) -> dict:
+def output_schema_flat(cards: set[str], event_type: bool = False, geo: bool = False) -> dict:
     """One flat object: every field always present, null where it does not apply. No anyOf/oneOf/if-then/const."""
     enum_or_null = lambda kind, values: {"type": [kind, "null"], "enum": [*values, None]}
     properties = {
@@ -265,6 +272,9 @@ def output_schema_flat(cards: set[str], event_type: bool = False) -> dict:
     }
     if event_type:
         properties["event_type"] = enum_or_null("string", EVENT_TYPES)
+    if geo:
+        properties["geography"] = enum_or_null("string", GEOGRAPHIES)
+        properties["new_information"] = {"type": ["boolean", "null"]}
     return {"type": "object", "properties": properties, "required": list(properties), "additionalProperties": False}
 
 
@@ -276,14 +286,14 @@ OPTIONAL_LIST_FIELDS = ["named_participants"]    # optional: null means none nam
 CORE_FIELDS = ["is_relevant", "card_ids", "certainty", "reach", "evidence_quotes"]   # must be present (value may be null)
 
 
-def prepare_flat(record, cards: set[str], event_type: bool = False):
+def prepare_flat(record, cards: set[str], event_type: bool = False, geo: bool = False):
     """Fill missing optional fields with null, then validate (strict mode off). Returns (internal-shape record,
     filled field names). Core fields (plus event_type when the prompt defines it) must be present. Raises on any
     violation; the caller sends the answer to failed.jsonl, without retry."""
     if not isinstance(record, dict):
         raise ValueError("flat record is not a JSON object")
-    schema = output_schema_flat(cards, event_type)
-    core = CORE_FIELDS + (["event_type"] if event_type else [])
+    schema = output_schema_flat(cards, event_type, geo)
+    core = CORE_FIELDS + (["event_type"] if event_type else []) + (["geography"] if geo else [])
     absent = [k for k in core if k not in record]
     if absent:
         raise ValueError("missing core field(s): " + ", ".join(absent))
@@ -295,16 +305,21 @@ def prepare_flat(record, cards: set[str], event_type: bool = False):
             raise ValueError("irrelevant record without a reason in notes")
         return {"is_relevant": False, "notes": record["notes"]}, filled
     record = {**record, **{k: [] for k in OPTIONAL_LIST_FIELDS if record[k] is None}}
-    missing = [k for k in RELEVANT_REQUIRED + (["event_type"] if event_type else []) if record[k] is None]
+    missing = [k for k in RELEVANT_REQUIRED + (["event_type"] if event_type else []) + (["geography"] if geo else []) if record[k] is None]
     if missing:
         raise ValueError("relevant record with null fields: " + ", ".join(missing))
     if not record["card_ids"] or not record["evidence_quotes"]:
         raise ValueError("relevant record needs at least one card_id and one evidence quote")
+    if geo:   # new_information belongs to same_as_event_id: boolean when set, null otherwise
+        if record["same_as_event_id"] is None:
+            record["new_information"] = None
+        elif record["new_information"] is None:
+            raise ValueError("new_information must be true or false when same_as_event_id is set")
     return dict(record), filled
 
 
-def validate_flat(record, cards: set[str], event_type: bool = False) -> dict:
-    return prepare_flat(record, cards, event_type)[0]
+def validate_flat(record, cards: set[str], event_type: bool = False, geo: bool = False) -> dict:
+    return prepare_flat(record, cards, event_type, geo)[0]
 
 
 def build_request(prompt: str, schema: dict, config: dict, strict: bool = True) -> dict:
@@ -496,6 +511,7 @@ def csv_row(article: dict, result: dict, checked: dict, reasons: list[str], conf
                cache_read_input_tokens=usage.get("cacheReadInputTokens", 0), cache_write_input_tokens=usage.get("cacheWriteInputTokens", 0),
                estimated_cost_usd=str(cost), response_mode=mode, fence_fallback="Y" if fallback else "N", attempts=attempts,
                content_scope=article["content_scope"], review_basis=json.dumps(review_basis(article, reasons)),
+               published_date=article["published_date"],
                article_file=public_path(article_path), raw_output_file=public_path(raw_path))
     return row
 
@@ -539,8 +555,9 @@ def run(args, session=None):
     response_schema = getattr(args, "response_schema", "strict-anyof")   # CLI default: flat
     flat = response_schema == "flat"
     with_type = prompt_version in EVENT_TYPE_PROMPTS
-    schema = output_schema(cards, with_type)          # internal shape used by check_classification
-    tool_schema = output_schema_flat(cards, with_type) if flat else schema
+    with_geo = prompt_version in GEO_PROMPTS
+    schema = output_schema(cards, with_type, with_geo)          # internal shape used by check_classification
+    tool_schema = output_schema_flat(cards, with_type, with_geo) if flat else schema
     Draft202012Validator.check_schema(tool_schema)
     run_id = args.run_id or datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
     if not re.fullmatch(r"[A-Za-z0-9_-]+", run_id):
@@ -671,7 +688,7 @@ def run(args, session=None):
             try:
                 result, mode, fallback = parse_response(response, flat=flat)
                 if flat:   # failure -> failed.jsonl below; never retried
-                    result, filled = prepare_flat(result, cards, with_type)
+                    result, filled = prepare_flat(result, cards, with_type, with_geo)
                     filled_counts.update(filled)
                 summary["fence_fallbacks"] += int(fallback)
                 summary[mode + "_responses"] += 1

@@ -225,3 +225,69 @@ class SafeError(unittest.TestCase):
         self.assertIn("Read timeout on endpoint URL", e["message"])
         self.assertIn("[local-path]", e["message"])
         self.assertEqual(C.safe_error(ValueError())["message"], "ValueError")
+
+
+class PromptV16(unittest.TestCase):
+    def test_catalog_v2_and_scope_note_reach_the_model(self):
+        system, user, cards, version = C.prompt_parts_v13(C.PROMPT_V16, "v1.6")
+        self.assertTrue(version.startswith("classifier-prompt-v1.6:"))
+        self.assertEqual(len(cards), 16)
+        self.assertIn("Scope note: DTCC processes covered here handle US cash securities", system)
+        for text in ("trading hours for US cash equities that settle at NSCC/DTC", "Equity-only fund losses belong to ECS-NSCC-LIQ",
+                     "a DTCC vendor, or US market infrastructure", "downgraded by a rating agency, or in default"):
+            self.assertIn(text, system)
+        self.assertIn("## Geography and new information", system)
+        self.assertEqual(system.count('geography "us"; new_information null'), 3)
+        self.assertIn('"geography": "us",\n  "new_information": null,', system)
+        v15_system = C.prompt_parts_v13(C.PROMPT_V15, "v1.5")[0]
+        self.assertNotIn("Scope note:", v15_system)                                     # earlier catalogs unchanged
+        self.assertIn("Hedge fund or other agent-cleared customer stress", v15_system)
+        self.assertEqual(C.parser().parse_args(["--start", "2026-11-01", "--end", "2026-11-08"]).prompt_version, "v1.2")
+
+
+class GeographyNewInformation(unittest.TestCase):
+    def rel(self, **kw):
+        return {**flat_relevant(), "event_type": "regulatory", "geography": "us", "new_information": None, **kw}
+
+    def test_schema_and_required_fields(self):
+        props = C.output_schema_flat(CARDS, True, True)["properties"]
+        self.assertEqual(props["geography"]["enum"], C.GEOGRAPHIES + [None])
+        self.assertEqual(props["new_information"]["type"], ["boolean", "null"])
+        self.assertEqual(C.validate_flat(self.rel(geography="non_us_with_us_link"), CARDS, True, True)["geography"], "non_us_with_us_link")
+        with self.assertRaises(ValueError):
+            C.validate_flat(self.rel(geography=None), CARDS, True, True)                    # relevant needs geography
+        bad = self.rel(); bad.pop("geography")
+        with self.assertRaises(ValueError):
+            C.prepare_flat(bad, CARDS, True, True)                                          # core field
+        with self.assertRaises(ValidationError):
+            C.validate_flat(self.rel(geography="eu"), CARDS, True, True)
+
+    def test_new_information_follows_same_as(self):
+        self.assertIsNone(C.validate_flat(self.rel(new_information=True), CARDS, True, True)["new_information"])   # no same_as -> null
+        self.assertIs(C.validate_flat(self.rel(same_as_event_id="EV0006", new_information=False), CARDS, True, True)["new_information"], False)
+        with self.assertRaises(ValueError):
+            C.validate_flat(self.rel(same_as_event_id="EV0006", new_information=None), CARDS, True, True)
+        rec, filled = C.prepare_flat({k: v for k, v in self.rel().items() if k != "new_information"}, CARDS, True, True)
+        self.assertEqual((filled, rec["new_information"]), (["new_information"], None))
+
+    def test_v16_run_writes_new_columns(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            news = root / "news.csv"
+            with news.open("w", newline="") as h:
+                w = csv.DictWriter(h, fieldnames=["document_id", "title", "url", "publication_date", "published_at_utc", "summary", "source_id", "outlet", "source_tier"])
+                w.writeheader()
+                w.writerow({"document_id": "g0", "title": "Tech stocks log worst day since 2020", "url": "https://news.google.com/rss/articles/X",
+                            "published_at_utc": "2026-11-05T20:00:00+00:00", "source_id": "google_news_rss", "outlet": "MarketWatch", "source_tier": "major_media"})
+            register = root / "register.csv"
+            register.write_text("event_id,title,card_ids,announced_date,effect_date\nEV1,old,FICC-GSD-03,2025-01-01,2026-12-31\n")
+            major = root / "major.csv"; major.write_text("name\n")
+            session = FakeSession([tool_response({**flat_relevant(), "event_type": "market_move", "geography": "us", "new_information": None}, 400)])
+            args = argparse.Namespace(config=C.CONFIG, register=register, news=news, major=major, start=date(2026, 11, 2), end=date(2026, 11, 8),
+                                      max_articles=None, budget=Decimal("0.5"), dry_run=False, run_date=date(2026, 11, 9), run_id="v16",
+                                      output_dir=root, prompt_version="v1.6", prompt_cache="on", response_schema="flat")
+            C.run(args, session=session)
+            with (root / "candidates_2026-11-09.csv").open() as h:
+                row = next(csv.DictReader(h))
+            self.assertEqual((row["geography"], row["new_information"], row["published_date"]), ("us", "", "2026-11-05"))
+            self.assertTrue(row["prompt_version"].startswith("classifier-prompt-v1.6:"))
