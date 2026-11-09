@@ -1,0 +1,55 @@
+{
+  "document_id": "4f2a0c87070a4bee47f80a5a9f6613ddfe99341bff95e1f7feeed45ced37af50",
+  "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNZFBtOUhpS0xjUzlPSWg2X0kweURPYThlbVRhOVFJOER6Mmx6ck53MXJJelM1Qm1iZUw2X3NmMktFZ24xQ2xtbGNsUnlBV1Bzc0k0Q2ttb3RDeDJ3QWVfZ0tUUDdVOWhFblQtOE1yTXV4Uzg3dHBuR2wyS0ROSDJFSWRGcmcybDFodGtYaXRMZExZWVJLNVMwempNSk5DQUpX?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "afd590258d1d28acf6ed9944ff1eafd96f628748acae4955263afb69dc021157",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_il1XXkfimaHX75UeuwGN5Y",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "EVCM (EverCommerce) is a software/technology company, not a financial institution, bank, dealer, or broker. A Deutsche Bank analyst downgrade of a non-financial firm's stock does not match any card's Step 1 trigger. Not relevant to DTCC processes.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1491,
+    "outputTokens": 425,
+    "totalTokens": 5831,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3134
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

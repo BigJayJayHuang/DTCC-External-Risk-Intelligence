@@ -1,0 +1,55 @@
+{
+  "document_id": "fc24eff336bf258bb6169d634bfe5095e07771606c4db6c0c57ec68e4ae3ba47",
+  "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPRk92d1dsaHFuMnVQaUVKaDBlNXd4bW5YWUdSaEpOX2ZxZnRiOURjRkg1cFlhZlRpeEp5dUoxWjhWLVItaGR6WXV2MFE0MlAyTWVDWFNQcms1U2JIT2xNanhpdS1NQXc1c3NFU2JDRWVlR0RCZkhIbnFsNmswTUhNeGRQUWF3ZElVZU1HY1ZJUGZCR2xTSU5EakhKM1JOemtiejZKb2hsUFI4Tkg2WE1OekR5VnM?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "90579b54b119c4d16daafd85497f1ba478dba454aa759184f6ad1b25698748fa",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Ej2VVSK4UKbUehLQRfYOCq",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline-only article about White House review of SEC crypto broker rule changes. No concrete event matching any card's Step 1 — no market move, no member stress, no settlement/clearing mandate milestone, no operational or cyber incident. Crypto broker rule changes do not map to any catalog card.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1490,
+    "outputTokens": 424,
+    "totalTokens": 5829,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3128
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

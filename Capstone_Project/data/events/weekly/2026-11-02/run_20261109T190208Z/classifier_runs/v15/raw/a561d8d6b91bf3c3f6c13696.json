@@ -1,0 +1,38 @@
+{
+  "document_id": "f8414fe098efbf6850548570c21b4a20deaade1af50ec18e5728f5ac3b9a1843",
+  "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNdHJEdXJ6QTBBMDdBa2xGcmF2VXhTMVR2Z3NUa0M5Tmk2WlFtRTdfUjBmTFVWRWcybjBrLU53RVBxMHdHSmMzVjVHaHZUOC0wZlFGZnJ0aS1UeW5JQ3R2TjlQTF9YWWk1MVlQZlVwekEyb1R5NEtmLTdkM2Z4WHFYMG81ZjRMMnNzanRTbFVNbVRtVnNfRVU4aUdCTEdQQQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "1f7b42e5d3266904a043b943c0fe71795e0e92173f4b7873bce7fa2eb745af2e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_S2XqlOGhLelJS0xIX3kooN",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline describes stock price moves at real-estate/mortgage companies (Rocket Companies, Compass, Zillow) driven by retreating Treasury yields. The focus is on equity performance of non-financial-infrastructure firms, not a Treasury selloff or sharp yield swing that would stress GSD margin. No concrete market-wide yield move magnitude is stated, and the direction (yields retreating) is the opposite of a stress event for FICC-GSD-01. Irrelevant to any catalog card."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1503,
+    "outputTokens": 157,
+    "totalTokens": 5575,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2913
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

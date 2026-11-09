@@ -1,0 +1,55 @@
+{
+  "document_id": "07a14f61a0339f590a48ef3872d50371867aa9677b2d0bd93a57249c617e2081",
+  "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOcXBsTmRaUUo4VW1NRTZfdUh3OVJ2aEI1Ql9zeTJIaXFlTV9YcDVkb0F4UkpxQ0lfeEVGcVdEU2liXzd2dW5mbTY2d3hVZFAyR1QwbC1RWGJiY3R1bmwwNFJHaWFTRXRvX0lJZUFkVmFqLW1sdzA4R2I3MWlULW0zdklkd3FhVWhMNEJUdllMMEtNOEZPNkE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "bea1f5cc9ad2f5a32273079254eb625b65691c40c4d9af2370b840621923fcfb",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_wCPVZsLYvmx4Rb7FYJiJwv",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Korean crypto exchange trading halt; non-US market, no stated link to US markets or DTCC participants. Not a card-relevant event.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1473,
+    "outputTokens": 392,
+    "totalTokens": 5780,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2746
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,55 @@
+{
+  "document_id": "6045eba353261085d3987f842bba14c9b455935e591d0e6260ffdac8c1d860c8",
+  "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPeFBxUXRIcjVKWXBUUUVhR201VFZLTGN5cV9tcmVmc1B3SGNpWXRSS09VT1lhYVdLaWV0WEVfZHJMM3czV2tqaGFJdjNJQldjaHdPNmxfOGJwdmE3SzV1X0p3enJNYzViSGlEQ1RjTHNseDNGY3pKWElTeTJQM3pyMWNpd0JvdXRKVnA2b2F5ZWcyd2RQZnZuaHRWNldrOGdYenFIeU84VmJIamM?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "5bfea12dbecfaa1fa9221ea27c026eadc51b74d14bdf4baeef21624bea2768b8",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_8OxEx2voaxtmRiUWzPtcCM",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline describes trading volume statistics for Boeing stock and tokenized stock trading — no concrete event matching any card's Step 1 (no market-wide selloff, no record NSCC volume event, no member stress, no regulatory action). Single-stock volume surge and a niche tokenized-asset market figure do not map to any catalog card.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1507,
+    "outputTokens": 435,
+    "totalTokens": 5857,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3668
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

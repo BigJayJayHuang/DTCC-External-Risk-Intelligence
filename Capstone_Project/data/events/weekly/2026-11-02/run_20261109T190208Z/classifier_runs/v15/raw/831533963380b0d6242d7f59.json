@@ -1,0 +1,55 @@
+{
+  "document_id": "3fbf0a4e1d1158fe090138062527c264e5df7e0634283567452a7a2af187ca26",
+  "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNa0FEak9WU3FOczQ4ZG9yWXRHcUpUZUVHbmxkdUVOVzJaU3R2U01IekpDa1NfQUwxWFI4WW9uSXg5dy1xcVNsazB6blVENjNZbmtvSmVQMnJLR3dNRHFxYy1hbGcxMGU5WDF3VENjeXZhSVRYNzdvZ3oxMWZXemk0TWY3TVdoOG8?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "c96784bc026956641f0dde50f36ba5da014667428ac1d911e997b75f31f13ded",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_wf49RjmXOiSIqRZdJd9XDp",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "notes": "Cyberattack is at Crédit Mutuel Arkéa, a French retail bank with no stated link to US markets, DTCC, or any DTCC participant. No connection to DTCC processes is described or implied."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1463,
+    "outputTokens": 415,
+    "totalTokens": 5793,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3004
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

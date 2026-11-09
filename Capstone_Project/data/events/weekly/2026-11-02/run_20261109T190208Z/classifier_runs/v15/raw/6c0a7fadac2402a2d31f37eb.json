@@ -1,0 +1,55 @@
+{
+  "document_id": "b2aa86ff568005b2c379f8bc4fdcfb1dc41c2b6c5c5af95fb8585e1b1dcf319b",
+  "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE80YUE1bmdfWWp5YlVzTTJKa1JFbUM5cmNrcnp1VXlaZE5KYnBwdGhsOEg1MXZxcnhIZ1FubTdZR2dybmg2amFRXzRCYUthYm1WWmZmWVQwYVJvZjRIRmpTX0JlaHktcTVOOU42MFd3c1ppNU4yMWfSAXtBVV95cUxNd2R6SkJfaFd0UGRjT2JUVEJSa3lVbW1ZSjRGR1FMbEVQM0I2YUVVN3V3QnBucUxVek9NOHA2dXVqQTJhbko5c1lrd05HcVJFNHFqM3AxVFpEX1lIai1DTGUybTV5VEdqZ3hmWW9WNHVvQXp5SDRZNnNVVTQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "54f8a5cb2d8d07f110f23e12afbf1718aabcce737df461a8e42b04c7401b030f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_unk1rVoha0XwwvqG2YRQQH",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Consumer finance explainer/listicle about mortgage lenders for bad credit. No market event, no DTCC-relevant process described. Not related to any card in the catalog.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1576,
+    "outputTokens": 400,
+    "totalTokens": 5891,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3810
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

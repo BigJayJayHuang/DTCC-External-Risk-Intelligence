@@ -1,0 +1,55 @@
+{
+  "document_id": "6a8a6df432f09c827626e4f05ba42dd3074940657e948501357ff25a4b53f458",
+  "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNbzFzM3BIZm9MWG9RTk1yel9od21QSmtlRWtsS2x6QXRVLUppRERKbHVtVXc5UnVGZktqLUVqVWVKNkJrYTdaQ3BtWllXQVl2a0JvNzAxSmRqdWt5MkRaZkFYYjFZT0NDM0xDM0cwQ2dOalJPZ21DaWI4cTJfZlUxWDVrZzg2dllTdGd3Vmp2NUJ0ZXBDUVJtUjd2WkdjRnhaVm12RUFZZHYydjdTYmpCWEZ4cUFsUl9PVVBEVzl2b2hOREk?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "dc04493c7407d1544d699bd21a0e3b3ecfa3b752dab4a2ecf43cf2489ec7d3c6",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Rr0M5ahjConDh8Vi16ob75",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Cyberattack at a French blood bank — a non-financial institution in a non-US market with no stated link to US markets or DTCC participants. Does not match any card's Step 1.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1502,
+    "outputTokens": 407,
+    "totalTokens": 5824,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3223
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

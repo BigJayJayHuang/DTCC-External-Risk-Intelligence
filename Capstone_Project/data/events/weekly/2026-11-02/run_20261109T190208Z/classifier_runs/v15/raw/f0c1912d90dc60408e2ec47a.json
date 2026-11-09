@@ -1,0 +1,59 @@
+{
+  "document_id": "21fd35758fc926172f212a7114943b30cd6dcb3f22aa2d9b63365fbca6a22706",
+  "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE8tMXJMMHdSUTVyc3BzcDRfUEU2Z0dWV0Z5V2k0d0NNUG1IMHNQQnpkZUYyczdzTTZrc1BIRFl1ZFE3aGdMWVo2Q1JJU1lwekh3QlE2OGE3YU11N0hXYnVXdmFnajM?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "e042a093d87d9c0d54a3102ebefa35f76531daf7f8c3330a33b2957c66453862",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_6eq7jim8VQbegCIjq3xCTI",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "regulatory",
+              "same_as_event_id": null,
+              "title": "Stock settlement cycle to shorten to T+1 in 2028",
+              "summary": "A headline reports that the stock settlement cycle will be shortened to T+1 in 2028, with sellers receiving proceeds the next day. No jurisdiction or regulator is named in the headline-only text.",
+              "card_ids": [
+                "ECS-SET-01"
+              ],
+              "certainty": 1,
+              "reach": 1,
+              "reach_basis": "business_line",
+              "named_participants": [],
+              "announced_date": "2026-11-02",
+              "effect_date": "2028-01-01",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "아시아경제",
+              "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE8tMXJMMHdSUTVyc3BzcDRfUEU2Z0dWV0Z5V2k0d0NNUG1IMHNQQnpkZUYyczdzTTZrc1BIRFl1ZFE3aGdMWVo2Q1JJU1lwekh3QlE2OGE3YU11N0hXYnVXdmFnajM?oc=5",
+              "evidence_quotes": [
+                "Stock Settlement Cycle to Be Shortened to 'T+1' in 2028... Sellers to Receive Proceeds the Next Day"
+              ],
+              "confidence": 0.45,
+              "notes": "headline_only; outlet is Korean (아시아경제), suggesting this may refer to a non-US market (e.g., South Korea) rather than the US. No jurisdiction or regulator named. Effect date of 2028-01-01 is a placeholder inferred from \"2028\" in the headline. Certainty set to 1 (announced/planned) as no confirmation of adoption. Reach set to 1 (business_line) rather than market_wide due to jurisdictional ambiguity. Not matched to an existing recent_event as the US T+1 go-live (EV0002) already occurred in 2024."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1434,
+    "outputTokens": 761,
+    "totalTokens": 6110,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5335
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

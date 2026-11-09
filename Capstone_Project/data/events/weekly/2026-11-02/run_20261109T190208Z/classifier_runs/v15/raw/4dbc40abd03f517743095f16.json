@@ -1,0 +1,55 @@
+{
+  "document_id": "88227d98f0abd6e01e037d2142b1b208a38952942d32a15107ef2ba927e04ae7",
+  "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQQkR3V21PbXZoSFY1OUtxZGV2eGZIaE5pRjJFUV9fR09tNTNxYWxzT3l6RV8zMUtDcmRVMzJuVk53Z2lyWWhjVzBlR081cUg4TlVEVmtZTWZYNDFJYkpGY3Q1YkxtWGUtY2VMTThIbVRQWTRMVEh3U3d0dkpyU3g2c0xJbS1XZDRjcVdPVQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "9bcce597345f3e6e41783bc321685f395932afb4366eb83771fae6cfc044bf7b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_4uvSiA25f27NVFuKiDgLfb",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline-only article about South Korea's domestic stock settlement cycle change to T+1 by 2028. No stated link to US markets or DTCC participants. Non-US market event with no connection to DTCC processes.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1456,
+    "outputTokens": 412,
+    "totalTokens": 5783,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2857
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

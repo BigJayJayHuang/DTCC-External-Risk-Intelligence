@@ -1,0 +1,55 @@
+{
+  "document_id": "4b83060619630b82c06489f4e464095c99a12653dd93fb8e41df303ff4eb55e8",
+  "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB4emhjNmMyV25zY2RsQ01tajRMcmVhRDFzM0JwVmVTRFplbHJtT3ZuN21TYnVqSkxmcGlCTFB1ODExVmZ1WF9vb2wzR3RyUUxSSW03NjhzSkJTR0Ztb1Q0?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "4c339ffb0524b203c0ee82858a2e282406bccd4c018fb65f73657d66eeb9b0c9",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_2JIZ3guebsfPhUSWquCjKT",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Cyberattack is at a French bank (Crédit Mutuel Arkéa) with no stated link to US markets, DTCC participants, or DTCC-connected infrastructure. Non-US financial firm with no US market nexus described.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1404,
+    "outputTokens": 418,
+    "totalTokens": 5737,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3199
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

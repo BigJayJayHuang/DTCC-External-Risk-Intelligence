@@ -1,0 +1,59 @@
+{
+  "document_id": "671d94f34016f5faa0940f2615cc0fe9f1c04df15937fd729e8aa1655f18e86b",
+  "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPSjZvaEVyTm5RN1hBZU81MUszQzNZMWR0OGpWa1hTQXpuZ3haXzVzbEVVZ3o2LUxLeTdETDZYWlhnZndDQnJvRlFFcElFM3B0YjlRcklOcFhOdkNrZjlDbFZIcnp2b2djbUpLamhEUkdOc05BcDhnLUt2NURZZ3FDNmwyQW13aHNoY3k0YVZtemZSbEY1V3FhM3hkVGYwbnlsVENNZDZNalNaTndyak93eF9rbTRXLWR3OTMwMjI2d3g1WFo1a3I4?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "73b6812ea3afdc1f3a29a0d659b614dd40dc7436058c1f9d681e54c253f8ad19",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_hv9mAaW1eFdh42ys5v6xwN",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "market_move",
+              "same_as_event_id": null,
+              "title": "Massive stock market selloff following Democrats' midterm success",
+              "summary": "A major stock market selloff is reported, attributed by Trump to Democrats' midterm election success. The headline indicates a broad equity market decline that could affect NSCC liquidity and variation margin.",
+              "card_ids": [
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-05",
+              "effect_date": "2026-11-05",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "Forbes",
+              "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPSjZvaEVyTm5RN1hBZU81MUszQzNZMWR0OGpWa1hTQXpuZ3haXzVzbEVVZ3o2LUxLeTdETDZYWlhnZndDQnJvRlFFcElFM3B0YjlRcklOcFhOdkNrZjlDbFZIcnp2b2djbUpLamhEUkdOc05BcDhnLUt2NURZZ3FDNmwyQW13aHNoY3k0YVZtemZSbEY1V3FhM3hkVGYwbnlsVENNZDZNalNaTndyak93eF9rbTRXLWR3OTMwMjI2d3g1WFo1a3I4?oc=5",
+              "evidence_quotes": [
+                "Trump Blames Massive Stock Market Selloff On Democrats' Midterm Success"
+              ],
+              "confidence": 0.5,
+              "notes": "headline_only. The word \"Massive\" indicates a significant broad equity selloff, consistent with ECS-NSCC-LIQ (sharp equity selloff). No magnitude, no named participants, no details on NSCC impact. Effect date set to announced date as no separate date is given."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1524,
+    "outputTokens": 775,
+    "totalTokens": 6214,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5440
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

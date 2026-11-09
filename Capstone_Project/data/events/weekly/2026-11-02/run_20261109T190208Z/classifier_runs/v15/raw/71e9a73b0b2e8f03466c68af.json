@@ -1,0 +1,60 @@
+{
+  "document_id": "764bca01db940e44cef32424d59a3fd6fbc4f92e0e87811ddb008af2c4c3b036",
+  "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOa2swWWdnalhUelF5Yl95R1AzMTF4eU5STTJFcEZRVmNmbnIxZFZmSl9XZWkxTXNhdlFERDU5bnVIUW1DVmVzdkQtOEQ5V084UG1XdWR0WTdjSzl5TXVvNXFtLWF2cEZ0ZVRJZkVQd3RxcU1BYVYxdFRVOVppQ19oLXpGZ2R6M1h3SDJrcmNHcGdyc3dxajVscDRaSUVLdXA2WnZ2R19ndGs?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "d3484fb3eb1aeecb0c2646f99fe8b97000ab06b956c5b7b5b463d67c03ddafdb",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_yMKz84RcpE1TFkQcbtKeUp",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "market_move",
+              "same_as_event_id": null,
+              "title": "Stock market selloff triggers liquidity pressure, gold falls",
+              "summary": "A stock market selloff is reported to be triggering liquidity pressure, with gold falling below $4,000. The headline suggests broad market stress conditions relevant to NSCC liquidity and margin processes.",
+              "card_ids": [
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-05",
+              "effect_date": "2026-11-05",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "Equiti Global",
+              "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOa2swWWdnalhUelF5Yl95R1AzMTF4eU5STTJFcEZRVmNmbnIxZFZmSl9XZWkxTXNhdlFERDU5bnVIUW1DVmVzdkQtOEQ5V084UG1XdWR0WTdjSzl5TXVvNXFtLWF2cEZ0ZVRJZkVQd3RxcU1BYVYxdFRVOVppQ19oLXpGZ2R6M1h3SDJrcmNHcGdyc3dxajVscDRaSUVLdXA2WnZ2R19ndGs?oc=5",
+              "evidence_quotes": [
+                "stock market selloff triggers liquidity pressure",
+                "Gold price falls below $4,000"
+              ],
+              "confidence": 0.5,
+              "notes": "headline_only. The headline explicitly states a stock market selloff causing liquidity pressure, which directly matches ECS-NSCC-LIQ Step 1. Gold falling below $4,000 is cited as a symptom of the same stress. No magnitude or named participants provided; certainty set to 2 as the event is described as already occurring. Confidence capped at 0.5 due to headline-only content."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1496,
+    "outputTokens": 777,
+    "totalTokens": 6188,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5564
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

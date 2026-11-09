@@ -1,0 +1,347 @@
+[
+  {
+    "kind": "robots",
+    "url": "https://search.cnbc.com/robots.txt",
+    "fetched_utc": "2026-11-09T19:03:53+00:00",
+    "status": 200,
+    "final_url": "https://search.cnbc.com/robots.txt",
+    "bytes": 383,
+    "content_type": "text/plain"
+  },
+  {
+    "kind": "robots",
+    "url": "https://feeds.content.dowjones.io/robots.txt",
+    "fetched_utc": "2026-11-09T19:03:55+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "feed",
+    "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories",
+    "fetched_utc": "2026-11-09T19:03:57+00:00",
+    "status": 200,
+    "final_url": "https://feeds.content.dowjones.io/public/rss/mw_topstories",
+    "bytes": 8126,
+    "content_type": "application/xml; charset=utf-8"
+  },
+  {
+    "kind": "feed",
+    "url": "https://feeds.content.dowjones.io/public/rss/mw_marketpulse",
+    "fetched_utc": "2026-11-09T19:03:59+00:00",
+    "status": 200,
+    "final_url": "https://feeds.content.dowjones.io/public/rss/mw_marketpulse",
+    "bytes": 13275,
+    "content_type": "application/xml; charset=utf-8"
+  },
+  {
+    "kind": "feed",
+    "url": "https://feeds.content.dowjones.io/public/rss/mw_realtimeheadlines",
+    "fetched_utc": "2026-11-09T19:04:01+00:00",
+    "status": 200,
+    "final_url": "https://feeds.content.dowjones.io/public/rss/mw_realtimeheadlines",
+    "bytes": 5141,
+    "content_type": "application/xml; charset=utf-8"
+  },
+  {
+    "kind": "robots",
+    "url": "https://finance.yahoo.com/robots.txt",
+    "fetched_utc": "2026-11-09T19:04:03+00:00",
+    "status": 200,
+    "final_url": "https://finance.yahoo.com/robots.txt",
+    "bytes": 2539,
+    "content_type": "text/plain"
+  },
+  {
+    "kind": "feed",
+    "url": "https://finance.yahoo.com/news/rssindex",
+    "fetched_utc": "2026-11-09T19:04:05+00:00",
+    "status": 404,
+    "bytes": 0
+  },
+  {
+    "kind": "robots",
+    "url": "https://www.nasdaq.com/robots.txt",
+    "fetched_utc": "2026-11-09T19:04:07+00:00",
+    "status": null,
+    "error": "TimeoutError"
+  },
+  {
+    "kind": "robots",
+    "url": "https://www.federalreserve.gov/robots.txt",
+    "fetched_utc": "2026-11-09T19:04:32+00:00",
+    "status": 404,
+    "bytes": 0
+  },
+  {
+    "kind": "feed",
+    "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+    "fetched_utc": "2026-11-09T19:04:34+00:00",
+    "status": 200,
+    "final_url": "https://www.federalreserve.gov/feeds/press_all.xml",
+    "bytes": 14736,
+    "content_type": "text/xml"
+  },
+  {
+    "kind": "robots",
+    "url": "https://www.sec.gov/robots.txt",
+    "fetched_utc": "2026-11-09T19:04:36+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "feed",
+    "url": "https://www.sec.gov/news/pressreleases.rss",
+    "fetched_utc": "2026-11-09T19:04:38+00:00",
+    "status": 200,
+    "final_url": "https://www.sec.gov/news/pressreleases.rss",
+    "bytes": 18623,
+    "content_type": "application/rss+xml; charset=utf-8"
+  },
+  {
+    "kind": "robots",
+    "url": "https://www.marketwatch.com/robots.txt",
+    "fetched_utc": "2026-11-09T19:04:40+00:00",
+    "status": 200,
+    "final_url": "https://www.marketwatch.com/robots.txt",
+    "bytes": 4404,
+    "content_type": "text/plain; charset=utf-8"
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-88-sec-grants-exemptive-relief-certain-inline-xbrl-filing-or-submission-requirements",
+    "fetched_utc": "2026-11-09T19:04:42+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-89-sec-proposes-rescission-shareholder-proposal-rule-reforms-proxy-solicitation-process",
+    "fetched_utc": "2026-11-09T19:04:44+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-90-sec-issues-innovation-exemption-facilitate-trading-tokenized-nms-stock-request-comment",
+    "fetched_utc": "2026-11-09T19:04:46+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260918a.htm",
+    "fetched_utc": "2026-11-09T19:04:48+00:00",
+    "status": 200,
+    "final_url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260918a.htm",
+    "bytes": 84548,
+    "content_type": "text/html"
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260918b.htm",
+    "fetched_utc": "2026-11-09T19:04:50+00:00",
+    "status": 200,
+    "final_url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260918b.htm",
+    "bytes": 82641,
+    "content_type": "text/html"
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-91-sec-censures-otc-link-llc-repeated-compliance-failures-related-regulation-sci",
+    "fetched_utc": "2026-11-09T19:04:52+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-92-sec-charges-south-florida-resident-his-company-alleged-investment-scheme-defrauding-law-enforcement",
+    "fetched_utc": "2026-11-09T19:04:54+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-93-sec-publishes-updated-market-statistics-highlighting-increase-ipos-proceeds-raised",
+    "fetched_utc": "2026-11-09T19:04:56+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260924a.htm",
+    "fetched_utc": "2026-11-09T19:04:58+00:00",
+    "status": 200,
+    "final_url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260924a.htm",
+    "bytes": 82998,
+    "content_type": "text/html"
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-94-sec-charges-registered-investment-adviser-zoe-financial-failure-disclose-conflict-interest",
+    "fetched_utc": "2026-11-09T19:05:00+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-95-sec-charges-multiple-entities-fraud-schemes-totaling-least-15-million-used-whatsapp-other-platforms",
+    "fetched_utc": "2026-11-09T19:05:02+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20260930a.htm",
+    "fetched_utc": "2026-11-09T19:05:04+00:00",
+    "status": 200,
+    "final_url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20260930a.htm",
+    "bytes": 88661,
+    "content_type": "text/html"
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-96-sec-proposes-amendments-expand-responsible-retailization-private-markets",
+    "fetched_utc": "2026-11-09T19:05:06+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-97-sec-charges-two-individuals-orchestrating-fraud-scheme-targeted-veterans",
+    "fetched_utc": "2026-11-09T19:05:08+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-98-sec-charges-meyer-global-management-its-ceo-defrauding-retail-investors-private-funds-held-interests",
+    "fetched_utc": "2026-11-09T19:05:10+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-99-secs-division-examinations-announces-new-exam-handbook",
+    "fetched_utc": "2026-11-09T19:05:12+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-100-sec-proposal-would-address-how-investment-advisers-funds-can-custody-crypto-assets-under-federal",
+    "fetched_utc": "2026-11-09T19:05:14+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-101-sec-coordinates-global-financial-regulators-raise-fraud-awareness-during-world-investor-week",
+    "fetched_utc": "2026-11-09T19:05:16+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261005a.htm",
+    "fetched_utc": "2026-11-09T19:05:18+00:00",
+    "status": 200,
+    "final_url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261005a.htm",
+    "bytes": 83409,
+    "content_type": "text/html"
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-102-sec-host-virtual-national-compliance-outreach-seminar-investment-companies-investment-advisers",
+    "fetched_utc": "2026-11-09T19:05:20+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-103-sec-seeks-final-judgment-against-former-western-asset-co-cio-ken-leech-cherry-picking-case",
+    "fetched_utc": "2026-11-09T19:05:22+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-104-sec-proposes-expanding-securities-eligible-cross-trading-registered-funds",
+    "fetched_utc": "2026-11-09T19:05:24+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-105-sec-small-business-advisory-committee-discuss-ipo-modernization-regulation-crowdfunding",
+    "fetched_utc": "2026-11-09T19:05:26+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261016a.htm",
+    "fetched_utc": "2026-11-09T19:05:28+00:00",
+    "status": 200,
+    "final_url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261016a.htm",
+    "bytes": 83249,
+    "content_type": "text/html"
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-106-sec-announces-roundtable-machine-understandable-data-age-super-intelligence",
+    "fetched_utc": "2026-11-09T19:05:30+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-107-sec-fsa-hold-autumn-financial-regulatory-dialogue",
+    "fetched_utc": "2026-11-09T19:05:32+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-108-sec-amf-announce-supervisory-mou-enhance-cooperation-investment-advisers-investment-service",
+    "fetched_utc": "2026-11-09T19:05:35+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-109-sec-announces-fiscal-year-2027-examination-priorities",
+    "fetched_utc": "2026-11-09T19:05:37+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-110-two-entities-charged-130-million-fraud-scheme-used-false-sec-filings-boost-investor-confidence",
+    "fetched_utc": "2026-11-09T19:05:39+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261029a.htm",
+    "fetched_utc": "2026-11-09T19:05:41+00:00",
+    "status": 200,
+    "final_url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261029a.htm",
+    "bytes": 83230,
+    "content_type": "text/html"
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-111-sec-issues-exemptive-relief-treasury-clearing-requirements-certain-inter-affiliate-non-us-repo",
+    "fetched_utc": "2026-11-09T19:05:43+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-112-sec-adopts-amendments-update-definitions-small-entity-investment-companies-investment-advisers",
+    "fetched_utc": "2026-11-09T19:05:45+00:00",
+    "status": 403,
+    "bytes": 0
+  }
+]
