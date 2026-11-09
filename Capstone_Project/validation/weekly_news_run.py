@@ -33,9 +33,37 @@ PROMPT_VERSION = "v1.6"
 TIERS = ("required", "auto", "context", "duplicate", "date_review")
 
 
-def unresolved_reservations(week_dir: Path, current_run: Path) -> list[dict]:
-    """Read original classifier receipts; a later resume does not clear an unknown bill."""
+RECONCILIATIONS = WEEKLY / "cost_reconciliations.csv"   # see validation/weekly_cost_reconcile.py
+RECONCILIATION_FIELDS = ["summary_file", "summary_sha256", "reserved_usd", "recorded_charge_usd", "basis", "reconciled_by",
+                         "reconciled_utc", "reason"]
+
+
+def receipt_key(path: Path) -> str:
+    path = Path(path).resolve()
+    try:
+        return path.relative_to(C.PROJECT.resolve()).as_posix()
+    except ValueError:
+        return str(path)
+
+
+def load_reconciliations(ledger: Path = RECONCILIATIONS) -> dict:
+    """(summary_file, summary_sha256) -> recorded charge. The original receipts are never edited."""
+    out = {}
+    if Path(ledger).exists():
+        with Path(ledger).open(encoding="utf-8", newline="") as f:
+            for r in csv.DictReader(f):
+                charge = Decimal(r["recorded_charge_usd"])
+                if not charge.is_finite() or charge < 0 or not r["reconciled_by"].strip():
+                    raise ValueError("Invalid cost reconciliation row for " + r["summary_file"])
+                out[(r["summary_file"], r["summary_sha256"])] = charge
+    return out
+
+
+def unresolved_reservations(week_dir: Path, current_run: Path, ledger: Path = RECONCILIATIONS) -> list[dict]:
+    """Read original classifier receipts; a later resume does not clear an unknown bill. A reservation is resolved
+    only by a ledger row for the unchanged receipt (same sha256) whose recorded charge covers the whole reserve."""
     pending=[]
+    done = load_reconciliations(ledger)
     for path in sorted(Path(week_dir).glob('*/classifier_runs/*/summary.json')):
         if current_run in path.parents:continue
         value=json.loads(path.read_text())
@@ -44,6 +72,9 @@ def unresolved_reservations(week_dir: Path, current_run: Path) -> list[dict]:
         if not reserve.is_finite() or reserve<0:
             raise ValueError('Invalid cost reservation in '+str(path))
         if reserve>0 or inflight>0 or value.get('status')=='running':
+            charged = done.get((receipt_key(path), hashlib.sha256(path.read_bytes()).hexdigest()))
+            if charged is not None and charged >= max(reserve, inflight) and value.get('status') != 'running':
+                continue
             pending.append({'summary_file':str(path),'unreported_cost_reserve_usd':str(max(reserve,inflight)),'status':value.get('status')})
     return pending
 

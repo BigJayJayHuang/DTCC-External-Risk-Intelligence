@@ -11,6 +11,8 @@ aws sso login --profile devx-bedrock
 .venv-llm/bin/python -m validation.weekly_news_run --week-start 2026-11-09 --cap 3
 ```
 
+Two modes never call the model: `--collect-only` stops after collection (step 2), and `--dry-run` stops after the cost estimate (step 3). `--from-inputs <classifier_input.csv>` reuses a saved collection instead of fetching again.
+
 `--week-start` is the Monday of a finished Monday–Sunday week. `--cap` is the most you allow the model calls to cost, in USD. The command then:
 
 1. **Collects news for that week.**
@@ -31,6 +33,14 @@ aws sso login --profile devx-bedrock
    - New rows in `data/events/context_news.csv`.
 
 Everything the run produced is in `data/events/weekly/<Monday>/<run id>/`, including `weekly_summary.json`. Full article texts stay on your computer, in `data/events/fulltext_cache/`, and are never committed.
+
+**If the run stops with `stopped_unresolved_prior_cost_reserve`:** an earlier paid call of that week was interrupted, and its bill is unknown. The receipt (`classifier_runs/<id>/summary.json`) is never edited. To record the whole reserved amount as spent (an upper bound):
+
+```bash
+python -m validation.weekly_cost_reconcile --summary <that summary.json> --reconciled-by "<your name>" --reason "<why the exact bill cannot be confirmed>"
+```
+
+This appends a row to `data/events/weekly/cost_reconciliations.csv`, and paid runs for that week are unblocked.
 
 ## 2. Review (only the "required" rows)
 

@@ -152,5 +152,52 @@ class WeeklyRun(unittest.TestCase):
             W.run_week(date(2026, 11, 3), Decimal("1"), today=date(2026, 11, 20))
 
 
+
+class CostReconciliation(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory(); self.root = Path(self.tmp.name)
+        self.week = self.root / "2026-11-02"; self.ledger = self.root / "cost_reconciliations.csv"
+        self.old = self.week / "run_a/classifier_runs/v15/summary.json"; self.old.parent.mkdir(parents=True)
+        self.old.write_text(json.dumps({"unreported_cost_reserve_usd": "0.092103", "status": "invocation_error"}))
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def pending(self):
+        return W.unresolved_reservations(self.week, self.week / "run_new", ledger=self.ledger)
+
+    def test_recorded_as_charged_unblocks_and_receipt_is_untouched(self):
+        from . import weekly_cost_reconcile as R
+        before = self.old.read_bytes()
+        self.assertEqual(len(self.pending()), 1)
+        row = R.reconcile(self.old, "Wenqi Cai", "billing cannot be confirmed per request", ledger=self.ledger, now="2026-11-09T22:00Z")
+        self.assertEqual((row["reserved_usd"], row["recorded_charge_usd"], row["basis"]), ("0.092103", "0.092103", "upper_bound_recorded_as_charged"))
+        self.assertEqual(self.pending(), [])
+        self.assertEqual(self.old.read_bytes(), before)                         # the original receipt is never edited
+        with self.assertRaises(SystemExit):
+            R.reconcile(self.old, "Wenqi Cai", "again", ledger=self.ledger)     # no duplicate rows
+
+    def test_changed_receipt_or_partial_charge_blocks_again(self):
+        from . import weekly_cost_reconcile as R
+        R.reconcile(self.old, "Wenqi Cai", "upper bound", ledger=self.ledger)
+        self.old.write_text(json.dumps({"unreported_cost_reserve_usd": "0.2", "status": "invocation_error"}))
+        self.assertEqual(len(self.pending()), 1)                                # sha256 no longer matches
+        rows = list(csv.DictReader(self.ledger.open()))
+        rows[0].update(summary_sha256=__import__("hashlib").sha256(self.old.read_bytes()).hexdigest(), recorded_charge_usd="0.1")
+        with self.ledger.open("w", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=W.RECONCILIATION_FIELDS); w.writeheader(); w.writerows(rows)
+        self.assertEqual(len(self.pending()), 1)                                # charge below the reserve
+
+    def test_no_reservation_or_running_refused(self):
+        from . import weekly_cost_reconcile as R
+        clean = self.week / "run_b/classifier_runs/v15/summary.json"; clean.parent.mkdir(parents=True)
+        clean.write_text(json.dumps({"unreported_cost_reserve_usd": "0", "status": "complete"}))
+        with self.assertRaises(SystemExit):
+            R.reconcile(clean, "Wenqi Cai", "x", ledger=self.ledger)
+        self.old.write_text(json.dumps({"unreported_cost_reserve_usd": "0.09", "status": "running"}))
+        with self.assertRaises(SystemExit):
+            R.reconcile(self.old, "Wenqi Cai", "x", ledger=self.ledger)
+
+
 if __name__ == "__main__":
     unittest.main()
