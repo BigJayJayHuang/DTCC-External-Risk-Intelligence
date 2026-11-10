@@ -1,0 +1,57 @@
+{
+  "document_id": "b4c667807fa94eb00051dcd388de03e20eecba15df5dcd98e7250b085cd9441f",
+  "url": "https://www.federalregister.gov/documents/2026/11/06/2026-22716/change-in-bank-control-notices-acquisitions-of-shares-of-a-bank-or-bank-holding-company",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "b9cc29ca13981403580050a74258c0106bc123663be0124e056980ea4cdcbb7d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_KQYwFFgcXKcPU4XAOl5ytC",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Headline-only Federal Register notice of routine bank control/acquisition filings. No named firm under stress, no downgrade, no default, no link to DTCC processes. Does not match any card's Step 1 trigger.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1747,
+    "outputTokens": 447,
+    "totalTokens": 6567,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2953
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,57 @@
+{
+  "document_id": "1b148739013bbf96629bc02f21478e8b2528c808c49d2a138c6830e0342b6e6b",
+  "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22460/self-regulatory-organizations-cboe-bzx-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "b897bca3375a454044e9c6bc4ec265624d6220c9a5e39b106a6830b3f653d7b9",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_vfg38OSkeiSWZ59gHcxX7w",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Cboe BZX rule change introduces enhancements to a Missed Liquidity Report within its Timestamping Service — an internal exchange reporting/analytics product change with no link to DTCC settlement, clearing, member stress, cyber incident, or any other catalog card Step 1 event.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1810,
+    "outputTokens": 462,
+    "totalTokens": 6645,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3123
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

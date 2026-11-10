@@ -1,0 +1,62 @@
+{
+  "document_id": "f20e6e41404eb18589af99800548d61f796192b8d56c4d190bf3465bc15382c6",
+  "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE0tbzg5UDN1Tjd0M3JwX1VmUWg5Q3NkNVVtWFFMVjNSa3FheDl6cjIxTmhxdXFrVEN4b3lwckNzS3B2Z3ZGdlV4RURsZTY1M0l2NW9UenUzSVR3Z29XMk9qajFpZm8wTVBaenNIM1BQbXFHdk5BT0dCdw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "7a4b321373ad01dbf83d312100861b187893ee01909ec1dd94e8a97c99841365",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_XsSFbT8JrIDBVWEFWdR8Lv",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "market_move",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "Invesco QQQ Trust records ~$80B volume amid tech selloff",
+              "summary": "The Invesco QQQ Trust saw record trading volume of approximately $80 billion during a tech selloff on 2026-11-05. The combination of record volume and a broad tech-driven equity decline touches both NSCC CNS settlement capacity and NSCC liquidity/variation margin processes.",
+              "card_ids": [
+                "ECS-NSCC-03",
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 1,
+              "reach_basis": "business_line",
+              "named_participants": [],
+              "announced_date": "2026-11-05",
+              "effect_date": "2026-11-05",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "Crypto Briefing",
+              "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE0tbzg5UDN1Tjd0M3JwX1VmUWg5Q3NkNVVtWFFMVjNSa3FheDl6cjIxTmhxdXFrVEN4b3lwckNzS3B2Z3ZGdlV4RURsZTY1M0l2NW9UenUzSVR3Z29XMk9qajFpZm8wTVBaenNIM1BQbXFHdk5BT0dCdw?oc=5",
+              "evidence_quotes": [
+                "Invesco QQQ Trust sees record trading volume of approximately $80 billion amid tech selloff"
+              ],
+              "confidence": 0.55,
+              "notes": "headline_only. Record volume on a single major ETF (QQQ) during a tech selloff. Reach set to 1 (business_line) rather than 2 because the headline names only one ETF, not a market-wide event; however the $80B figure and \"tech selloff\" framing suggest broader equity stress. Confidence capped at 0.55 due to headline-only content."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1852,
+    "outputTokens": 799,
+    "totalTokens": 7024,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5797
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

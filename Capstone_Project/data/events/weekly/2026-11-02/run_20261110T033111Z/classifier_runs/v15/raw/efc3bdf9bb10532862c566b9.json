@@ -1,0 +1,57 @@
+{
+  "document_id": "260f1da5f099a604d9e312bfa4810946b5084f29e4ab710e161bbd041251538f",
+  "url": "https://www.federalregister.gov/documents/2026/11/06/2026-22741/amendments-to-the-small-business-and-small-organization-definitions-for-investment-companies-and",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "175d7fad5ba732d0fe31dd4f205b034b6a157f86dbb5dd082fb98f167cd9ae28",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_SEUav3Fokg3Fsr9CGvI3JE",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "SEC rulemaking amends administrative \"small business/small organization\" definitions under the Regulatory Flexibility Act for investment companies and advisers. This is a housekeeping/definitional rule with no connection to any card's Step 1 event (no market move, no clearing mandate, no member stress, no settlement disruption, no cyber event). No card fits."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 2058,
+    "outputTokens": 475,
+    "totalTokens": 6906,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3929
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

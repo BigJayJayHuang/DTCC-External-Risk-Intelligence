@@ -1,0 +1,57 @@
+{
+  "document_id": "676946230a7f418a54b15744c3be516940834d9ddc826a3bc2541f1a56e4a47e",
+  "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22261/self-regulatory-organizations-cboe-edga-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "ea05f2c0eaefa41ebe2196a23ce3fe1caa10717fcc72130e7c1ecf6c9421b5fd",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_9xYqXXZZYqwBmwhzOs8cWT",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Cboe EDGA rule change to adopt a \"Start Time Order Instruction\" is a minor exchange order-type rule amendment. It does not describe an exchange halt, market disruption, settlement cycle change, or any other Step 1 event in the card catalog. No card match.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1797,
+    "outputTokens": 459,
+    "totalTokens": 6629,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2954
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

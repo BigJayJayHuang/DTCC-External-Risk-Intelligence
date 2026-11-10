@@ -1,0 +1,57 @@
+{
+  "document_id": "7b4d414c6594d71e04a54855af6f88e67769d99175a95a9d82cfa494cf4f8a1c",
+  "url": "https://files.dtcc.com/download/assets/25166-26/67e5ba90d79711f19b8b36039ce0e230",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "d71061d45d556e67be4553609385854e52f26c2626d3e0df5f4c2b3563238d1f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_NY2FTSJ9OuC7OU8SX9QcKP",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Routine DTC depositary fees notification for a single ADR (Bora Pharmaceutical Spon ADR, CUSIP 09952D100). Administrative/operational notice with no risk event matching any catalog card. No market move, regulatory action, member stress, cyber incident, or settlement disruption described.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1808,
+    "outputTokens": 464,
+    "totalTokens": 6645,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3367
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,57 @@
+{
+  "document_id": "311cecdf611971679005db5a8e8cc8888c4102be4c0e41f23ec410010d9b66cd",
+  "url": "https://files.dtcc.com/download/assets/GOV2281-26/7f17534ed6ee11f1adf17269ad7e0bc8",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "6eac5798b6aace420925dcd214f8027c83246bc1abfe1b2185c5fe338168eb2d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_NMuM1bScUV67pyF5impjGw",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "DTCC notice GOV2281-26 is a generic placeholder/template with no substantive content — the body contains only a boilerplate description (\"Updates/changes impacting DTCC Participant(s)/Member(s) and/or Sponsored Member(s) noted here\") and no concrete event, action, date, firm, or market development. No card Step 1 can be matched."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1748,
+    "outputTokens": 485,
+    "totalTokens": 6606,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3292
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

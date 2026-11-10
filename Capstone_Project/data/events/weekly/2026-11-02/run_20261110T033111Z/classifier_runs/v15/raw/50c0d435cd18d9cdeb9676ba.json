@@ -1,0 +1,57 @@
+{
+  "document_id": "9b16af565c555a5faca90431279fadf3adf188a604605d2e83a184355208d295",
+  "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22483/public-company-accounting-oversight-board-order-granting-approval-of-amendments-to-qc-1000-a-firms",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "1fd0f31aad3f1767e9be6d8d89c1e757b14533606dafc6d1539cd731fd8087cb",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_nizn0lqsJESw23YcjM3Lzt",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Article is about PCAOB amendments to audit firm quality control standards (QC 1000). This is an accounting/auditing regulatory matter with no connection to any card's Step 1 event type (no market move, no DTCC member stress, no cyber incident, no settlement cycle change, no Treasury clearing milestone, etc.).",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1765,
+    "outputTokens": 470,
+    "totalTokens": 6608,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3487
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

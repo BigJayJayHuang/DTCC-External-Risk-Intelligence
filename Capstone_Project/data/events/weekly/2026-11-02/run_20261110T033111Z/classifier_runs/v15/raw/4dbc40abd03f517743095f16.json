@@ -1,0 +1,57 @@
+{
+  "document_id": "88227d98f0abd6e01e037d2142b1b208a38952942d32a15107ef2ba927e04ae7",
+  "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQQkR3V21PbXZoSFY1OUtxZGV2eGZIaE5pRjJFUV9fR09tNTNxYWxzT3l6RV8zMUtDcmRVMzJuVk53Z2lyWWhjVzBlR081cUg4TlVEVmtZTWZYNDFJYkpGY3Q1YkxtWGUtY2VMTThIbVRQWTRMVEh3U3d0dkpyU3g2c0xJbS1XZDRjcVdPVQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "927d3bbab0485e9d495b29a235ef73d7ccc902e2dda2f1e953f2515071102210",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_qm94frih1XaG4zdbgoBOCO",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "Non-US event (South Korea stock settlement cycle change) with no stated link to US markets, DTCC, FICC, NSCC, or DTC participants. ECS-SET-01 covers US cash equities settling at NSCC/DTC only."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1866,
+    "outputTokens": 457,
+    "totalTokens": 6696,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3322
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

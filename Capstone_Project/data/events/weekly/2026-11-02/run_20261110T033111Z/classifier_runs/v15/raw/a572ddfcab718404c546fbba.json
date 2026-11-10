@@ -1,0 +1,57 @@
+{
+  "document_id": "47278d30447049a77956d2b6bca160638f301c673f000cab581357b1706ac05e",
+  "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSXcxeU5qckhPME1ra0JNMTNVUVFnZjlmNmFRRGgxa09ZMVpxY2J4eGN6SE1JRUphZkFxSHRYVkJrUDRCaWF1Mjh1QVZNQ2hNOTJNSzU1NkVUVEthTXdaOHdPM1pybWx0Skx2cWFCZmxjNlZRdE14cmxTSHNXRTl5OG1OeUxDRF94bkNkb0NwMHlNN01mTEd4QUZ1MXJhOVpVZkVz0gGoAUFVX3lxTE9uSGJmbkhEdjUxcThKQjZmMjYtZUFRcm41b0ZKXzZFTGZ4YUlHZG9LOW1WSDBDSkNsOWFYN3RobWF3RG1RSF9CZXVNV3pQTWRQSjNyZHh2Q29rblRwaExCZzZaVy1zS1FzeDU5ZUhqb2c5VFNOMTlTQi13bmg2NThkSm1lUENtV3RRYTdLQUk1UVhKMHpwUWR4T3QzMjgwTUUweV9LX3NPMg?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "5e0ade0c7172e10229fff01e0b527c89eee8b068599954e22040404a92f9470f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Rj83AMFfp5Z07WWCcEEA2M",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Non-US event (French bank) with no stated link to US markets, DTCC participants, or US market infrastructure. XE-CYBER requires a cyberattack at a large US market participant, a DTCC vendor, or US market infrastructure. The article names only a French bank and provides no US nexus.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 2115,
+    "outputTokens": 467,
+    "totalTokens": 6955,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3724
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

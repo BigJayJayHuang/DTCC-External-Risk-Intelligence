@@ -1,0 +1,57 @@
+{
+  "document_id": "da185b1a45185e2f7143632d789b3242b1be3ca5fb79a83c0d59d0e127de826d",
+  "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22453/self-regulatory-organizations-nasdaq-ise-llc-notice-of-filing-of-proposed-rule-change-to-amend-the",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "35c36bf9fa21df66c8ebb6867804b766f50efcd2ce828a0ca675d575118cfbb5",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_wt1BE4cxA8XXkaEmOfxQD7",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Options strike price interval rule change for ETF shares on Nasdaq ISE. Options clear outside DTCC scope; no stated link to FICC, NSCC, DTC or any covered process. No card in the catalog covers options exchange rule changes.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1838,
+    "outputTokens": 452,
+    "totalTokens": 6663,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3435
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,57 @@
+{
+  "document_id": "2993c3bddd49024d05647913b2ad8bc21e65d6f48a70b505640acf65befbd64e",
+  "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261105a.htm",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "52bd7d5ef1abfdfb4239de91b621021aa59b79e2676eaeb4ddbe8d4c39107adc",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_NdsRiAoNhZQhln4fBBRsJo",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Termination of a Fed enforcement action against a small community bank holding company (Nano Banc, Irvine CA). No stress, default, downgrade, or market impact described; the action is resolved, not initiated. None of the catalog cards are triggered — this is a routine regulatory closure for a minor, non-DTCC-member institution.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1912,
+    "outputTokens": 474,
+    "totalTokens": 6759,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3708
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

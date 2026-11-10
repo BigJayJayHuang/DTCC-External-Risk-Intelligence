@@ -1,0 +1,57 @@
+{
+  "document_id": "c2286239b8c6d69c6f87a3ac0aeeacf2cdb74c7a9a8934e6bf4a29ec837fcab6",
+  "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22457/self-regulatory-organizations-national-securities-clearing-corporation-notice-of-filing-and",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "73eb1320585120610d1eed61930ddf3a225a10810875040f1b89cb35e630bf4f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_fk9o8X6Ke1McA0bRq97LqY",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "NSCC internal rule change enhancing automated reasonability checks for ETF creation/exemption transaction submissions. This is an internal DTCC/NSCC operational/procedural rule change with no outside risk event matching any card's Step 1 trigger. No market move, member stress, cyber event, settlement cycle change, or Treasury clearing milestone described.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1820,
+    "outputTokens": 472,
+    "totalTokens": 6665,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3614
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

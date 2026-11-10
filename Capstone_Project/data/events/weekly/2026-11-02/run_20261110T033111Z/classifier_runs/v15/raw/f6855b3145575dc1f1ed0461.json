@@ -1,0 +1,57 @@
+{
+  "document_id": "42ce5212d397bef38291b9bf1dcfbf48b23c07db84175274df9f1561c6a943ed",
+  "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPN3d3MkxQdFpnYTZPQnh0c2xRemg0R0FRTHM0MmgtYWxWN0RiQ0NwLWNWemZISlZ3Z1dMbkVyM1NfSXhtcW83eXAzbzBoNmkxa21sN050TkdGVHp1bklKVTRyR0ZjS19YdHRBVm53WVdaNVRRbUk0X21qeEVuU3cyQWdrblQ2VFFFR09ma0p6S0ltSjZ1eHk0NUpQQm4tNmNHdjNzZEZPMFNwNWx3ajN2N3pSQ1lrZEMwVnozSk5GYkNSQW1yb3g4MjZRTGtHYlMtclVSdm5Wb1IxWjRVdUlv?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "822916d74881f09d749a2698b05a38d85b5586107adc8e376e31d5107bb8e4ba",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_5FYnk42NeAWmKvC7dHPHOQ",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Jana Small Finance Bank Ltd is an Indian bank, not a US bank, broker-dealer, or DTCC member/major participant. The article describes a downgrade to Hold (an analyst rating action) at a non-US financial institution with no stated link to US markets or DTCC participants. No card applies.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1967,
+    "outputTokens": 464,
+    "totalTokens": 6804,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3734
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,57 @@
+{
+  "document_id": "144ba2d33a1535407fe45f3b3d0ad93bcb327146e10263b7d0a193faad4c3bf5",
+  "url": "https://www.federalregister.gov/documents/2026/11/06/2026-22653/self-regulatory-organizations-cboe-bzx-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "6fc1d6bd485ad0b8efd74503f454572e381cc9638e35a80160daeb7e70023f3f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ODkTDT4FAyx12naySkf0s5",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Article concerns a Cboe BZX Exchange rule change to introduce a trade-by-trade report for BZX Options and amend its fee schedule. This is an options exchange administrative/fee matter with no link to DTCC, FICC, NSCC, or DTC processes. Options clear elsewhere and no US cash securities settlement link is stated.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1835,
+    "outputTokens": 474,
+    "totalTokens": 6682,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3615
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

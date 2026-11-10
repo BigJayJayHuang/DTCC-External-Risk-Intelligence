@@ -1,0 +1,57 @@
+{
+  "document_id": "4f2a0c87070a4bee47f80a5a9f6613ddfe99341bff95e1f7feeed45ced37af50",
+  "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNZFBtOUhpS0xjUzlPSWg2X0kweURPYThlbVRhOVFJOER6Mmx6ck53MXJJelM1Qm1iZUw2X3NmMktFZ24xQ2xtbGNsUnlBV1Bzc0k0Q2ttb3RDeDJ3QWVfZ0tUUDdVOWhFblQtOE1yTXV4Uzg3dHBuR2wyS0ROSDJFSWRGcmcybDFodGtYaXRMZExZWVJLNVMwempNSk5DQUpX?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "cee69efd24637b3ab98c270c3677f7d75c6f3cfc944bdc3e48d9f165b00e57de",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_KjqSRRA5Y4HRnpetdteIxX",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "EVCM (EverCommerce Inc.) is a software/technology company, not a US bank, broker-dealer or DTCC member. A Deutsche Bank analyst downgrade with a price target cut on a non-financial firm does not match any catalog card's Step 1 trigger.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1901,
+    "outputTokens": 460,
+    "totalTokens": 6734,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3667
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

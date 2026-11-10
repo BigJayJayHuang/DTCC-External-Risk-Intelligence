@@ -1,0 +1,57 @@
+{
+  "document_id": "7ccf4900437cb0eb9e30ca7f5e6a9c2dacdb56907ae08c5e1520c20fe9583759",
+  "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPcTJLMWtyUlBNNFJuM0kzVF84bDhna1FmSVJYLUlmNXJqcXdaMjZabWEwYzR5NDhDRE9nMFhVaHlSb3NYaU1IWXVhblg5U0tUcEdKZFRYZVFHMUFEd0dEUkx2YWFua1U1d3RHWWduVkxRaWwwR0E1a3hZb0F1RmppY25ELVY?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "c979e4ae41ec13ec14c653e234d270dbd8846416adf928ad59bfd31eac6bd6c9",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_kd8tHyb11BghXkbSezLIPo",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Walleye is slimming its equity business and returning capital, but the headline-only text describes no stress, margin calls, Treasury/repo exposure, or other event matching a catalog card. FICC-GSD-11 requires hedge fund stress specifically in US Treasury or repo markets; this article mentions only an equity business wind-down with no stated link to those markets or to DTCC processes. Irrelevant.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1863,
+    "outputTokens": 489,
+    "totalTokens": 6725,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3945
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

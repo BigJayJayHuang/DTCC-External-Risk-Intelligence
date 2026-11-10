@@ -1,0 +1,57 @@
+{
+  "document_id": "bb1baecb929a72433303b2519b5f81110e99024a3bfef5cc4c170a16cbb7c6fd",
+  "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22459/self-regulatory-organizations-cboe-c2-exchange-inc-notice-of-filing-and-immediate-effectiveness-of-a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "b0cf08daf277203333bcf12d53d81bf84b16dd2a1315f7843b1c163943bde04e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Za57nHmI3Gsjjus0Gvwd6T",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Article describes a Cboe C2 Exchange rule change to enhance a Missed Liquidity Report within its Timestamping Service. This is an internal exchange reporting/analytics product enhancement with no link to DTCC processes, settlement, clearing, member stress, or any other catalog card's Step 1 event. Not relevant.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1813,
+    "outputTokens": 468,
+    "totalTokens": 6654,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3556
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

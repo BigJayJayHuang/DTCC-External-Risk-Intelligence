@@ -1,0 +1,57 @@
+{
+  "document_id": "74171cabaf93290e83467bdd6f1094827e8320c911561beecc11bedec5cc36c5",
+  "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOU1ZwTmRQamtaNjFYLTFWaWJjT3ZSZ0lpa0JhWnRqbUItTEJpbGhQWDZkTllYbGJUOEFvUTgwSEVMY3VpMmtTTzJIUnVkYzAtZlI3S0ctTTBOb01GTjA1VDUtcXZoUFloQ0ZPZWRvbHRKMkplVmNWVFpBSVZqVDZwczZJX3U?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "c4416c74adb6c7b7de4ba6931b5ce492503f8f1fb6a9271308a144e8573e11ba",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_44GstTmZSVrVepZabN2rvO",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "Headline only. \"Arini's credit troubles suggest roach-hunting season is back\" is a commentary/opinion framing with no concrete event stated — no named stress event, no magnitude, no DTCC-relevant action described. Arini is not identified as a DTCC member or major participant, and \"credit troubles\" in a metaphorical headline without any supporting detail does not constitute a concrete firm-specific stress event. Insufficient basis for relevance."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1849,
+    "outputTokens": 497,
+    "totalTokens": 6719,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 4210
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

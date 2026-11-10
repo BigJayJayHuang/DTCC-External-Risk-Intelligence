@@ -1,0 +1,57 @@
+{
+  "document_id": "5d60d49ce915c95d014f1b086fad0a41f57ee550089448842002269832c6b5ca",
+  "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZExreXR6TGFGc0pNa3pBc2dBTmJVdlpUdldDcXlPQ1ZjQm5GSFhNQ3RsRTcwSS10MGhROTM4VDZadzdmUm8tb192U3BnQUY4Ny1iTW1qWE1fTmRJSnNZcm9kSUJCRXBreWR1R2s0UkhOM1BiT2VUQ2daQURxNmtlYWM3MGhWTV9wZUZTLVBNUmpoWWZrNlVQczJ1blBfd2ZjX2ZVWkhwdUtWaFUxbUpSQ2FPcXhMd2Vhb1pIZGhGQQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "f98baa2c6a55750a14a31a05fdb18d977087ee9c3b36765c7364506a4969eff1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_oKUTLvtNl92RMu7TMFu7X9",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Explainer/glossary piece with no concrete event. The headline describes a how-to/educational article about market terminology, not a new market event or development that matches any card's Step 1.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1926,
+    "outputTokens": 440,
+    "totalTokens": 6739,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3520
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

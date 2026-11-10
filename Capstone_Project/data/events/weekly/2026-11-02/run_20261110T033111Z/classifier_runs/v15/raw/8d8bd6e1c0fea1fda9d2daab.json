@@ -1,0 +1,57 @@
+{
+  "document_id": "848664935c71dde1ee05e4a4742b2860d21c032d6b326cf1fc5a08f41a36e11c",
+  "url": "https://files.dtcc.com/download/assets/24786-26/4efca25ed87e11f1af509a76ac91497a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "2aee687b6cc21e8db9fe6733e3ffc6e0888b6ace02933e5a5dfd9aee1f24e8cf",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_WEZVVGZcf5X38HnZJ3Pjl1",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "Routine DTC depositary fees notification for a single security (DSC Holdings Ltd., CUSIP 233369107). This is an administrative/supplemental notice with no risk event matching any catalog card's Step 1."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1790,
+    "outputTokens": 445,
+    "totalTokens": 6608,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3054
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

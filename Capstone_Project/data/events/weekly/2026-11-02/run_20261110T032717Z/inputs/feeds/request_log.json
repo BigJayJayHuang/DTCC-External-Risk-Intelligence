@@ -1,0 +1,712 @@
+[
+  {
+    "kind": "robots",
+    "url": "https://search.cnbc.com/robots.txt",
+    "fetched_utc": "2026-11-10T03:27:29+00:00",
+    "status": 200,
+    "final_url": "https://search.cnbc.com/robots.txt",
+    "bytes": 383,
+    "content_type": "text/plain"
+  },
+  {
+    "kind": "robots",
+    "url": "https://feeds.content.dowjones.io/robots.txt",
+    "fetched_utc": "2026-11-10T03:27:31+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "robots",
+    "url": "https://finance.yahoo.com/robots.txt",
+    "fetched_utc": "2026-11-10T03:27:33+00:00",
+    "status": 200,
+    "final_url": "https://finance.yahoo.com/robots.txt",
+    "bytes": 2539,
+    "content_type": "text/plain"
+  },
+  {
+    "kind": "feed",
+    "url": "https://finance.yahoo.com/news/rssindex",
+    "fetched_utc": "2026-11-10T03:27:35+00:00",
+    "status": 404,
+    "bytes": 0
+  },
+  {
+    "kind": "robots",
+    "url": "https://www.nasdaq.com/robots.txt",
+    "fetched_utc": "2026-11-10T03:27:37+00:00",
+    "status": null,
+    "error": "TimeoutError"
+  },
+  {
+    "kind": "robots",
+    "url": "https://www.federalreserve.gov/robots.txt",
+    "fetched_utc": "2026-11-10T03:28:07+00:00",
+    "status": 404,
+    "bytes": 0
+  },
+  {
+    "kind": "feed",
+    "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+    "fetched_utc": "2026-11-10T03:28:09+00:00",
+    "status": 200,
+    "final_url": "https://www.federalreserve.gov/feeds/press_all.xml",
+    "bytes": 14754,
+    "content_type": "text/xml"
+  },
+  {
+    "kind": "robots",
+    "url": "https://www.sec.gov/robots.txt",
+    "fetched_utc": "2026-11-10T03:28:11+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "robots",
+    "url": "https://files.dtcc.com/robots.txt",
+    "fetched_utc": "2026-11-10T03:28:13+00:00",
+    "status": 404,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/GOV2288-26/4f3c30aeda0911f1aa7b527ec7585796",
+    "fetched_utc": "2026-11-10T03:28:15+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/GOV2288-26/4f3c30aeda0911f1aa7b527ec7585796",
+    "bytes": 877942,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/a9851/3505ab5cda2211f18e1d527ec7585796",
+    "fetched_utc": "2026-11-10T03:28:17+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/a9851/3505ab5cda2211f18e1d527ec7585796",
+    "bytes": 265441,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/25240-26/306b2894da2f11f192c2a2d2c72ada28",
+    "fetched_utc": "2026-11-10T03:28:19+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/25240-26/306b2894da2f11f192c2a2d2c72ada28",
+    "bytes": 101285,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/25241-26/3664c2ccda3011f1902ad221268d22bb",
+    "fetched_utc": "2026-11-10T03:28:21+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/25241-26/3664c2ccda3011f1902ad221268d22bb",
+    "bytes": 101626,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "robots",
+    "url": "https://www.federalregister.gov/robots.txt",
+    "fetched_utc": "2026-11-10T03:28:23+00:00",
+    "status": 200,
+    "final_url": "https://www.federalregister.gov/robots.txt",
+    "bytes": 320,
+    "content_type": "text/plain; charset=utf-8"
+  },
+  {
+    "kind": "robots",
+    "url": "https://unblock.federalregister.gov/robots.txt",
+    "fetched_utc": "2026-11-10T03:28:27+00:00",
+    "status": 200,
+    "final_url": "https://unblock.federalregister.gov/robots.txt",
+    "bytes": 27,
+    "content_type": "text/plain"
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/06/2026-22648/83-investment-group-income-fund-et-al",
+    "fetched_utc": "2026-11-10T03:28:25+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/06/2026-22652/self-regulatory-organizations-cboe-c2-exchange-inc-notice-of-filing-and-immediate-effectiveness-of-a",
+    "fetched_utc": "2026-11-10T03:28:29+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/06/2026-22653/self-regulatory-organizations-cboe-bzx-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+    "fetched_utc": "2026-11-10T03:28:31+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/06/2026-22654/self-regulatory-organizations-cboe-edgx-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+    "fetched_utc": "2026-11-10T03:28:33+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/06/2026-22655/self-regulatory-organizations-the-nasdaq-stock-market-llc-notice-of-filing-and-immediate",
+    "fetched_utc": "2026-11-10T03:28:35+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/06/2026-22716/change-in-bank-control-notices-acquisitions-of-shares-of-a-bank-or-bank-holding-company",
+    "fetched_utc": "2026-11-10T03:28:37+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/06/2026-22741/amendments-to-the-small-business-and-small-organization-definitions-for-investment-companies-and",
+    "fetched_utc": "2026-11-10T03:28:39+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261105a.htm",
+    "fetched_utc": "2026-11-10T03:28:41+00:00",
+    "status": 200,
+    "final_url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261105a.htm",
+    "bytes": 83076,
+    "content_type": "text/html"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/25203-26/1cfabbaad92911f187bc7e06a7e389d7",
+    "fetched_utc": "2026-11-10T03:28:43+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/25203-26/1cfabbaad92911f187bc7e06a7e389d7",
+    "bytes": 195638,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/25204-26/a39e6b16d92911f198daeef7357c04d2",
+    "fetched_utc": "2026-11-10T03:28:45+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/25204-26/a39e6b16d92911f198daeef7357c04d2",
+    "bytes": 196451,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/25205-26/7d9f4452d92a11f197b59a76ac91497a",
+    "fetched_utc": "2026-11-10T03:28:47+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/25205-26/7d9f4452d92a11f197b59a76ac91497a",
+    "bytes": 197065,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/25206-26/2f8ac10ad94411f199dea2d2c72ada28",
+    "fetched_utc": "2026-11-10T03:28:49+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/25206-26/2f8ac10ad94411f199dea2d2c72ada28",
+    "bytes": 697267,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/05/2026-22544/ubs-asset-management-credit-income-opportunities-fund-and-ubs-asset-management-americas-llc",
+    "fetched_utc": "2026-11-10T03:28:51+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/05/2026-22561/self-regulatory-organizations-financial-industry-regulatory-authority-inc-notice-of-filing-and",
+    "fetched_utc": "2026-11-10T03:28:53+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/05/2026-22599/formations-of-acquisitions-by-and-mergers-of-bank-holding-companies",
+    "fetched_utc": "2026-11-10T03:28:55+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/25202-26/a2a98db0d86811f18aee7e06a7e389d7",
+    "fetched_utc": "2026-11-10T03:28:57+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/25202-26/a2a98db0d86811f18aee7e06a7e389d7",
+    "bytes": 699094,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/25145-26/0a2abc7ad86e11f18559ba42506f920a",
+    "fetched_utc": "2026-11-10T03:28:59+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/25145-26/0a2abc7ad86e11f18559ba42506f920a",
+    "bytes": 660819,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/24785-26/c70b2a32d87d11f1b133e255ed29acba",
+    "fetched_utc": "2026-11-10T03:29:01+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/24785-26/c70b2a32d87d11f1b133e255ed29acba",
+    "bytes": 245023,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/24786-26/4efca25ed87e11f1af509a76ac91497a",
+    "fetched_utc": "2026-11-10T03:29:03+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/24786-26/4efca25ed87e11f1af509a76ac91497a",
+    "bytes": 249074,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/GOV2287-26/a91ca11ed88611f19c024aed85cffbfa",
+    "fetched_utc": "2026-11-10T03:29:05+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/GOV2287-26/a91ca11ed88611f19c024aed85cffbfa",
+    "bytes": 925216,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/GOV2286-26/13cfa976d89011f18172eef7357c04d2",
+    "fetched_utc": "2026-11-10T03:29:07+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/GOV2286-26/13cfa976d89011f18172eef7357c04d2",
+    "bytes": 816109,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22449/deregistration-under-section-8f-of-the-investment-company-act-of-1940",
+    "fetched_utc": "2026-11-10T03:29:09+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22452/self-regulatory-organizations-long-term-stock-exchange-inc-notice-of-filing-and-immediate",
+    "fetched_utc": "2026-11-10T03:29:11+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22453/self-regulatory-organizations-nasdaq-ise-llc-notice-of-filing-of-proposed-rule-change-to-amend-the",
+    "fetched_utc": "2026-11-10T03:29:13+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22454/self-regulatory-organizations-nasdaq-phlx-llc-notice-of-filing-and-immediate-effectiveness-of-a",
+    "fetched_utc": "2026-11-10T03:29:15+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22455/self-regulatory-organizations-nasdaq-texas-llc-notice-of-filing-and-immediate-effectiveness-of-a",
+    "fetched_utc": "2026-11-10T03:29:17+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22456/self-regulatory-organizations-the-nasdaq-stock-market-llc-notice-of-filing-and-immediate",
+    "fetched_utc": "2026-11-10T03:29:19+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22457/self-regulatory-organizations-national-securities-clearing-corporation-notice-of-filing-and",
+    "fetched_utc": "2026-11-10T03:29:21+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22458/self-regulatory-organizations-cboe-exchange-inc-notice-of-filing-and-immediate-effectiveness-of-a",
+    "fetched_utc": "2026-11-10T03:29:23+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22459/self-regulatory-organizations-cboe-c2-exchange-inc-notice-of-filing-and-immediate-effectiveness-of-a",
+    "fetched_utc": "2026-11-10T03:29:25+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22460/self-regulatory-organizations-cboe-bzx-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+    "fetched_utc": "2026-11-10T03:29:27+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22461/self-regulatory-organizations-cboe-edgx-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+    "fetched_utc": "2026-11-10T03:29:29+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22483/public-company-accounting-oversight-board-order-granting-approval-of-amendments-to-qc-1000-a-firms",
+    "fetched_utc": "2026-11-10T03:29:31+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22493/order-granting-exemptive-relief-pursuant-to-sections-17a-and-36a-of-the-securities-exchange-act-of",
+    "fetched_utc": "2026-11-10T03:29:33+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22502/formations-of-acquisitions-by-and-mergers-of-bank-holding-companies",
+    "fetched_utc": "2026-11-10T03:29:35+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22503/change-in-bank-control-notices-acquisitions-of-shares-of-a-bank-or-bank-holding-company",
+    "fetched_utc": "2026-11-10T03:29:37+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22521/order-granting-conditional-exemption-for-japan-credit-rating-agency-ltd-from-certain-requirements-of",
+    "fetched_utc": "2026-11-10T03:29:39+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/25165-26/542c9e98d79611f1aa7d22211f7bc0cd",
+    "fetched_utc": "2026-11-10T03:29:41+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/25165-26/542c9e98d79611f1aa7d22211f7bc0cd",
+    "bytes": 738503,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/25164-26/b1891a08d79611f1a32676277c76473d",
+    "fetched_utc": "2026-11-10T03:29:43+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/25164-26/b1891a08d79611f1a32676277c76473d",
+    "bytes": 769199,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/25166-26/67e5ba90d79711f19b8b36039ce0e230",
+    "fetched_utc": "2026-11-10T03:29:45+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/25166-26/67e5ba90d79711f19b8b36039ce0e230",
+    "bytes": 171216,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/GOV2282-26/4c5fc45ed7a711f1a32676277c76473d",
+    "fetched_utc": "2026-11-10T03:29:47+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/GOV2282-26/4c5fc45ed7a711f1a32676277c76473d",
+    "bytes": 1419838,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/25231-26/c8f4dad0d7a811f1bf71ca3e85514d03",
+    "fetched_utc": "2026-11-10T03:29:49+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/25231-26/c8f4dad0d7a811f1bf71ca3e85514d03",
+    "bytes": 164630,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/25033-26/d8eea304d7ac11f1aa014edd4da0a09a",
+    "fetched_utc": "2026-11-10T03:29:51+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/25033-26/d8eea304d7ac11f1aa014edd4da0a09a",
+    "bytes": 189640,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/25034-26/cc299140d7ae11f18a2ed6d26d5485bf",
+    "fetched_utc": "2026-11-10T03:29:53+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/25034-26/cc299140d7ae11f18a2ed6d26d5485bf",
+    "bytes": 190420,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/GOV2283-26/1898c610d7b211f18bc2266dd58c2a6f",
+    "fetched_utc": "2026-11-10T03:29:55+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/GOV2283-26/1898c610d7b211f18bc2266dd58c2a6f",
+    "bytes": 1138241,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/GOV2284-26/52aaa558d7b211f1a32676277c76473d",
+    "fetched_utc": "2026-11-10T03:29:57+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/GOV2284-26/52aaa558d7b211f1a32676277c76473d",
+    "bytes": 1376840,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/GOV2285-26/782a9342d7b211f1904276277c76473d",
+    "fetched_utc": "2026-11-10T03:29:59+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/GOV2285-26/782a9342d7b211f1904276277c76473d",
+    "bytes": 1647029,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/25230-26/83a70c62d7b411f18afb6a2be9a8761b",
+    "fetched_utc": "2026-11-10T03:30:01+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/25230-26/83a70c62d7b411f18afb6a2be9a8761b",
+    "bytes": 155128,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/24784-26/3c9f0600d7cb11f1904276277c76473d",
+    "fetched_utc": "2026-11-10T03:30:03+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/24784-26/3c9f0600d7cb11f1904276277c76473d",
+    "bytes": 312858,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/24596-26/cba3ed32d7d211f1bbf7b24885514406",
+    "fetched_utc": "2026-11-10T03:30:05+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/24596-26/cba3ed32d7d211f1bbf7b24885514406",
+    "bytes": 712717,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/03/2026-22365/emery-partners-income-credit-strategies-fund-et-al",
+    "fetched_utc": "2026-11-10T03:30:07+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/03/2026-22375/self-regulatory-organizations-new-york-stock-exchange-llc-notice-of-filing-and-immediate",
+    "fetched_utc": "2026-11-10T03:30:09+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/03/2026-22376/self-regulatory-organizations-nasdaq-texas-llc-notice-of-filing-and-immediate-effectiveness-of-a",
+    "fetched_utc": "2026-11-10T03:30:11+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/03/2026-22377/self-regulatory-organizations-texas-stock-exchange-llc-notice-of-filing-and-order-granting",
+    "fetched_utc": "2026-11-10T03:30:13+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/03/2026-22398/formations-of-acquisitions-by-and-mergers-of-bank-holding-companies",
+    "fetched_utc": "2026-11-10T03:30:15+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/03/2026-22399/change-in-bank-control-notices-acquisitions-of-shares-of-a-bank-or-bank-holding-company",
+    "fetched_utc": "2026-11-10T03:30:17+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/TIW864/96c7c582d6c611f1bc617269ad7e0bc8",
+    "fetched_utc": "2026-11-10T03:30:19+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/TIW864/96c7c582d6c611f1bc617269ad7e0bc8",
+    "bytes": 212103,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/25229-26/62297b22d6d511f1b509661b1cd0e824",
+    "fetched_utc": "2026-11-10T03:30:21+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/25229-26/62297b22d6d511f1b509661b1cd0e824",
+    "bytes": 158647,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/24594-26/4407efbcd6d911f1ac22661b1cd0e824",
+    "fetched_utc": "2026-11-10T03:30:23+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/24594-26/4407efbcd6d911f1ac22661b1cd0e824",
+    "bytes": 808343,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/GOV2281-26/7f17534ed6ee11f1adf17269ad7e0bc8",
+    "fetched_utc": "2026-11-10T03:30:25+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/GOV2281-26/7f17534ed6ee11f1adf17269ad7e0bc8",
+    "bytes": 588468,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/24782-26/ac2b956ad6f911f1a2f97269ad7e0bc8",
+    "fetched_utc": "2026-11-10T03:30:27+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/24782-26/ac2b956ad6f911f1a2f97269ad7e0bc8",
+    "bytes": 982605,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/24783-26/23ef22c4d6fa11f1ac22661b1cd0e824",
+    "fetched_utc": "2026-11-10T03:30:29+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/24783-26/23ef22c4d6fa11f1ac22661b1cd0e824",
+    "bytes": 777875,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://files.dtcc.com/download/assets/24595-26/ed32ec26d70211f1a1f3267bd53a5992",
+    "fetched_utc": "2026-11-10T03:30:31+00:00",
+    "status": 200,
+    "final_url": "https://files.dtcc.com/download/assets/24595-26/ed32ec26d70211f1a1f3267bd53a5992",
+    "bytes": 797587,
+    "content_type": "application/pdf"
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22250/eldridge-dynamic-income-fund-et-al",
+    "fetched_utc": "2026-11-10T03:30:33+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22259/self-regulatory-organizations-national-securities-clearing-corporation-notice-of-filing-and",
+    "fetched_utc": "2026-11-10T03:30:35+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22260/self-regulatory-organizations-nyse-texas-inc-notice-of-filing-and-immediate-effectiveness-of",
+    "fetched_utc": "2026-11-10T03:30:37+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22261/self-regulatory-organizations-cboe-edga-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+    "fetched_utc": "2026-11-10T03:30:39+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22262/self-regulatory-organizations-cboe-bzx-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+    "fetched_utc": "2026-11-10T03:30:41+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22263/self-regulatory-organizations-nyse-national-inc-notice-of-filing-and-immediate-effectiveness-of",
+    "fetched_utc": "2026-11-10T03:30:43+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22264/self-regulatory-organizations-mx2-llc-notice-of-filing-and-immediate-effectiveness-of-proposed-rule",
+    "fetched_utc": "2026-11-10T03:30:45+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22265/self-regulatory-organizations-nyse-american-llc-notice-of-filing-and-immediate-effectiveness-of-a",
+    "fetched_utc": "2026-11-10T03:30:47+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22266/self-regulatory-organizations-the-nasdaq-stock-market-llc-notice-of-filing-and-immediate",
+    "fetched_utc": "2026-11-10T03:30:49+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22267/self-regulatory-organizations-miax-sapphire-llc-notice-of-filing-and-immediate-effectiveness-of-a",
+    "fetched_utc": "2026-11-10T03:30:51+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22268/self-regulatory-organizations-long-term-stock-exchange-inc-notice-of-filing-and-immediate",
+    "fetched_utc": "2026-11-10T03:30:53+00:00",
+    "status": 403,
+    "bytes": 0
+  },
+  {
+    "kind": "article",
+    "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22333/formations-of-acquisitions-by-and-mergers-of-bank-holding-companies",
+    "fetched_utc": "2026-11-10T03:30:55+00:00",
+    "status": 403,
+    "bytes": 0
+  }
+]

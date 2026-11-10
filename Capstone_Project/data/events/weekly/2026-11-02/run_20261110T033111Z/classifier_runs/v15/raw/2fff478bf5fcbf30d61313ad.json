@@ -1,0 +1,64 @@
+{
+  "document_id": "ebb24c086c730ae811e0884d205d5897e77db386652d9cf2876a5d739d1de5fb",
+  "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22264/self-regulatory-organizations-mx2-llc-notice-of-filing-and-immediate-effectiveness-of-proposed-rule",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "50fae57adfaf787e2a7e36284a7027d5c18df79115b1fc02f0d36da57745ddb7",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_4WWD4x1LuhkpzfnoUNJmIk",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "regulatory",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": "EV0003",
+              "title": "MX2 LLC amends circuit breaker resumption rules for 23-hour trading",
+              "summary": "MX2 LLC filed a rule change with immediate effectiveness to amend Rule 11.23 governing resumption of trading after a Level 3 market-wide circuit breaker halt, in connection with the industry's expansion of trading hours to 23 hours per day, 5 days per week.",
+              "card_ids": [
+                "ECS-SET-01",
+                "XE-DISRUPT"
+              ],
+              "certainty": 2,
+              "reach": 1,
+              "reach_basis": "business_line",
+              "named_participants": [
+                "MX2 LLC"
+              ],
+              "announced_date": "2026-11-02",
+              "effect_date": "2026-11-02",
+              "stage": null,
+              "source_tier": "official",
+              "outlet": "Federal Register",
+              "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22264/self-regulatory-organizations-mx2-llc-notice-of-filing-and-immediate-effectiveness-of-proposed-rule",
+              "evidence_quotes": [
+                "Notice of Filing and Immediate Effectiveness of Proposed Rule Change To Amend Rule 11.23 Concerning the Resumption of Trading Following a Level 3 Market-Wide Circuit Breaker Halt in Connection With the Industry's Expansion of Trading Hours to 23 Hours per Day, 5 Days per Week"
+              ],
+              "confidence": 0.55,
+              "notes": "headline_only. This rule change is directly connected to the 23-hour/5-day trading expansion already recorded as EV0003 (NSCC 24x5 clearing go-live). It addresses how Level 3 market-wide circuit breaker halts and trading resumptions are handled under the expanded hours regime, touching both ECS-SET-01 (settlement cycle/trading hours changes) and XE-DISRUPT (market disruption/halt procedures). MX2 LLC is a single exchange SRO, so reach is set to 1 (business_line) rather than market_wide, as the rule change is one participant's adaptation to the broader industry change. No new information beyond what is in EV0003 regarding the 24x5 expansion itself, but this is a distinct regulatory action (circuit breaker resumption rules) not previously recorded."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1922,
+    "outputTokens": 835,
+    "totalTokens": 7130,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 6816
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

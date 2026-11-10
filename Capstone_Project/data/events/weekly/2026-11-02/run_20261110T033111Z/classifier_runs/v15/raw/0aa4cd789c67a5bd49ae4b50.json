@@ -1,0 +1,57 @@
+{
+  "document_id": "cb8b0c4929a4e904527358935d9e0e34e672142c908d6682b9e1aea38123b6c0",
+  "url": "https://files.dtcc.com/download/assets/24782-26/ac2b956ad6f911f1a2f97269ad7e0bc8",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "8b0a765521bf233f70673b0f91df7833e67d62669236f023a58e6f9191725a7e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_4JecKkoWKNuUAMaCS2E6lw",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "DTC routine corporate action / tax relief notice for a Spanish security (CaixaBank, CUSIP 12803K109). No market event, no risk angle, no card match. Explicitly flagged as non-sensitive supplemental material.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1818,
+    "outputTokens": 450,
+    "totalTokens": 6641,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3343
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

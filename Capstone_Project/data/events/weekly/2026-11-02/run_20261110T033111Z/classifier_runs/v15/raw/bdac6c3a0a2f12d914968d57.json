@@ -1,0 +1,57 @@
+{
+  "document_id": "77d70663bf2e3300ec52e2dbf81bbc31703781604985f886295361ee01deab38",
+  "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPZWlrbjZla096X1dkaE5ZY1QyTVRTTkF6WDF4cFRkN3I2MndfZGxXU1llRVcwWWkwaUJWaWRUR0VFZTJiM18zNlhKaGdQei1nT3RpekFlWTVBSWo1el9ZTDVfUXhsSlM4LUM3aUx4dTlESGZaUFpabDJuT1VNeUpqQkVzSEN4cGtXWjYxVFRuZFhmS1hNSUZtQ0hoVGFVeEpLMkhvb3ZXcXFiMUpJeGtYTmhrak8yaXdKWkNJ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "4da9e25888bb393daa0efb02acfa373e77bea8921bce75809a90aa6fd5ea88d0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_BYCcFQvIschru2UnHkLmyr",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline describes a cyberattack on a French bank (non-US institution). The text states no link to US markets, DTCC participants, or US market infrastructure. Geography is non-US with no stated US link, so no catalog card applies.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1916,
+    "outputTokens": 452,
+    "totalTokens": 6741,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3349
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

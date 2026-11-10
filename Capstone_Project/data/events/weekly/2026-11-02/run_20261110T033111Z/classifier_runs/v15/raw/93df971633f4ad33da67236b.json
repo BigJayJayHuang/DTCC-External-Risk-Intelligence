@@ -1,0 +1,57 @@
+{
+  "document_id": "5bcd9d86566f3783b24d28ef422ec8999d52fc7ef81e1738079f1cc7572431f9",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBqVXNRZUlkcUNvcWpSYVdCMU1sQ3NWRXpKLWwwTWpIYmpkZXhqN0cxUHp6aFEzNHdZVWlSRmlYUVJRclEtZzBJSl8ybWphY25IZGtpZ2lsNEZlWXNKbmEzNVQ0Sk1yNDA4b3padA?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "76ad5d672b1f3f0e1a18f16e03bd213f203a07e674b13cff165a2360011b7a9f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ceLzdG6cgfUZI269z27oyV",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "Headline-only item from a Korean outlet. The text is a generic cautionary commentary about settlement cycle preparation timelines in Europe and Hong Kong — no concrete new event, no US market or DTCC link stated. This is an opinion/explainer piece with no actionable event matching any catalog card."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1842,
+    "outputTokens": 461,
+    "totalTokens": 6676,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3617
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

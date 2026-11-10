@@ -1,0 +1,57 @@
+{
+  "document_id": "fd0953f14df192d165729a659fe8d7d272f57ab996d7eb4fd6e540d80fe2600b",
+  "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQcm03d1BFb2ZJLU5WemE5SHREYldoajRhNkJibTJEV3VaU1FsZV80QmNpbWZQWUZPQXg4N3dLaDZ2SzllNTdVUWswQnVQWURRaFhmRWpqTzE2MWtSRXg0UzhYQlBDaXdPSzhHc1A2WUNoRVAwbWc3WVlJckk2MG50V251NDZDcFVTamlxTFVyQmVTSmJUeE12R2tOYm9kcTBteWpzV1F6X1lFNElKdkJGSHl2ZjVPWWlfV2Q1UkZMSEF5RFZIbWt4U1lZV3BPZ3lxLXVlSUJaTnp0QQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "88f4ee1dfcbc3847f33e6018ca136d03761ad1f023c29e902d229af3cb0db9b1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_XbtEeNC5StUqvGn7h7smSL",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Non-US event (French bank) with no stated link to US markets, US firms, or DTCC participants. The article text does not mention any US market infrastructure or DTCC member. XE-CYBER requires a cyberattack at a large US market participant, a DTCC vendor, or US market infrastructure.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1987,
+    "outputTokens": 468,
+    "totalTokens": 6828,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3997
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

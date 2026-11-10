@@ -1,0 +1,57 @@
+{
+  "document_id": "50278f26e27112518a93690e7a0966bf7de95baf1b72bd1bdd1986cac6db2061",
+  "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1TbUlnbDNNQWlwMnEtUk42VFluM0ZkLUFSUDdrUndsVkw1M2VEcWc3cVBodmh3dGVfemUwdHlnV3haMXhjVDlmNkc1clE3U2wwdTFZSFFtRQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "1d8770db027925035e6d1810ca0b45f7a07aa48b09bb1e9f5a4707ca1da29c06",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_9yRsCkWhi5H0iFIZDyE4el",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "Non-US event (South Korea stock settlement cycle change) with no stated link to US markets, DTCC, FICC, NSCC, or DTC participants. ECS-SET-01 covers changes to the US cash equity settlement cycle only."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1824,
+    "outputTokens": 453,
+    "totalTokens": 6650,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3184
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

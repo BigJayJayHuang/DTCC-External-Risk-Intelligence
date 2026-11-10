@@ -1,0 +1,61 @@
+{
+  "document_id": "286bd0293f54a075865656fface5da12f2173b8a53f8d52f7baa6da1861aa8b4",
+  "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPMnpZaHI1UDRMa3VBSkJ3OTZqdW1OSm9JajR3REN4WVpaUDZtd2c5RTRUMjE5MXFOd2NGOGl4dDFjUWdGSFVCeGVmcUxoTzlLRXoxcmQ5bzIwR1JPY05xVWFIVWs3ajVlSGF3NXRCSnhPVzFBWG0td25Pcm9IMnk4eXFkMU5jX2wtOUlSN1NkT3IzWEdMOHpwS3VmWmN2M1BTOTJ3V1hoV0dWVEM1dHR1NEFqbFA?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "a916918771714376af090235a83c3745b733d7661fcceb9c86bb01590baaadcf",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_bVrGYIjQfGns9r2FgOVU4e",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "market_move",
+              "geography": "non_us_with_us_link",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "Asia hedge funds face steep losses in AI selloff",
+              "summary": "Asia-based hedge funds and wealthy investors are reported to be facing steep losses from a selloff in AI-related assets. The article does not specify the magnitude or which firms are involved.",
+              "card_ids": [
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 1,
+              "reach_basis": "group",
+              "named_participants": [],
+              "announced_date": "2026-11-06",
+              "effect_date": "2026-11-06",
+              "stage": null,
+              "source_tier": "major_media",
+              "outlet": "Bloomberg.com",
+              "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPMnpZaHI1UDRMa3VBSkJ3OTZqdW1OSm9JajR3REN4WVpaUDZtd2c5RTRUMjE5MXFOd2NGOGl4dDFjUWdGSFVCeGVmcUxoTzlLRXoxcmQ5bzIwR1JPY05xVWFIVWs3ajVlSGF3NXRCSnhPVzFBWG0td25Pcm9IMnk4eXFkMU5jX2wtOUlSN1NkT3IzWEdMOHpwS3VmWmN2M1BTOTJ3V1hoV0dWVEM1dHR1NEFqbFA?oc=5",
+              "evidence_quotes": [
+                "Asia Hedge Funds, Rich Investors Face Steep Losses in AI Selloff"
+              ],
+              "confidence": 0.45,
+              "notes": "headline_only. The selloff is described as affecting Asia-based hedge funds and wealthy investors; no explicit US market link is stated in the text, but AI-related equities are predominantly US-listed and hedge fund losses of this type can affect NSCC liquidity. Geography set to non_us_with_us_link cautiously given AI stocks are largely US-listed, but confidence is low due to headline-only content and no explicit US link stated. Reach set to 1 (group) as losses are confined to Asia hedge funds and HNW investors rather than market-wide. No named major participants; certainty 2 as losses are reported as occurring."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1923,
+    "outputTokens": 880,
+    "totalTokens": 7176,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 6690
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

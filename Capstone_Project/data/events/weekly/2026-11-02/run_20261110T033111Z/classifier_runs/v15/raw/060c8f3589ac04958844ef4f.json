@@ -1,0 +1,61 @@
+{
+  "document_id": "e4cc257ee7ac4c90b08ecb5dc0a53b713447e374bb8e72fe12ee78ebb41a96c1",
+  "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOZ29VMXRlekhORHlZRHZ1dk91d2V5eVpSeXp2eFBuTlB0a0NHelpFbjhZT3Vnd3pJRXZkd09PRnVwamFKeU9FeTN4WWdvOW4zTUE3WTZMVGU4dHZBb3Rsa24wT09TOWRmRWZTYlVXcGlGZ09FZ1A0cTJlTTh1YzlqdTZ2Qm90cDlPcTZ4YjlRcTRTenQ2Mm1J?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "a7d8c5d47ba7be1d32a78b2d1bac1d4bf9a240b874c940a739a0113caaaa7fc6",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_c4FwXRxJ4Mzn3qPYdga1WT",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "market_move",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "Stock market selloff deepens amid political blame",
+              "summary": "A US stock market selloff is reported to be deepening, with President Trump blaming Democrats. No magnitude or specific details are provided beyond the headline.",
+              "card_ids": [
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-06",
+              "effect_date": "2026-11-06",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "JournalArta",
+              "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOZ29VMXRlekhORHlZRHZ1dk91d2V5eVpSeXp2eFBuTlB0a0NHelpFbjhZT3Vnd3pJRXZkd09PRnVwamFKeU9FeTN4WWdvOW4zTUE3WTZMVGU4dHZBb3Rsa24wT09TOWRmRWZTYlVXcGlGZ09FZ1A0cTJlTTh1YzlqdTZ2Qm90cDlPcTZ4YjlRcTRTenQ2Mm1J?oc=5",
+              "evidence_quotes": [
+                "Stock Market Selloff Deepens"
+              ],
+              "confidence": 0.5,
+              "notes": "headline_only; no magnitude or specific market details provided; effect_date set to announced_date as no separate date given."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1874,
+    "outputTokens": 698,
+    "totalTokens": 6945,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 4475
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

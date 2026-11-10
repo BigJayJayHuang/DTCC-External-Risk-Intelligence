@@ -1,0 +1,57 @@
+{
+  "document_id": "f6512b30ab4133339c6f8a7631e4d301bc17e63ee207df83ce17b56feaacc7ee",
+  "url": "https://www.federalregister.gov/documents/2026/11/06/2026-22648/83-investment-group-income-fund-et-al",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "b548b29f8021b0a4973857ef98619d8441a760902b0888b1f6d5665b7abfa2e9",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_aPrcmcNkrEjhpPYPO3jis5",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline-only item with no concrete event described. The title \"83 Investment Group Income Fund, et al.\" is a Federal Register docket/filing reference with no stated event matching any card's Step 1 (no market move, no regulatory action on Treasury clearing, no member stress, no cyber incident, etc.). Insufficient information to establish relevance.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1704,
+    "outputTokens": 473,
+    "totalTokens": 6550,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3533
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

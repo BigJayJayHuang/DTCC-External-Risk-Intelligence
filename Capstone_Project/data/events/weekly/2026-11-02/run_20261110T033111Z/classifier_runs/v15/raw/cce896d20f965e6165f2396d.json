@@ -1,0 +1,57 @@
+{
+  "document_id": "52cdbe0753684f8cc4dbd30113a39a74faf6e4cc9457a99afbc6ab3db9148322",
+  "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22503/change-in-bank-control-notices-acquisitions-of-shares-of-a-bank-or-bank-holding-company",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "7123cb72ed618d3ecf1e01447540353d79f25f58f6d22a8367a89ce35ff3ba98",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_rx3OFjMwHrIRQ174BAcVtu",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "Routine Federal Reserve notice of bank control/ownership changes. No stress, default, downgrade, cyber event, or other catalog-type event described. Headline-only with no concrete event matching any card's Step 1."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1749,
+    "outputTokens": 445,
+    "totalTokens": 6567,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3102
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,57 @@
+{
+  "document_id": "09699195d1a3e5f3b6cd493345721a06a0a1cb351609fe7fd666f004bf0c8a46",
+  "url": "https://files.dtcc.com/download/assets/25203-26/1cfabbaad92911f187bc7e06a7e389d7",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "4a3831c898926ed16d514569ae8db588290f952d60998a5391e2dacf4c1aa7b9",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_jnAg8cSRZn1IbUXVNoLqBB",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Routine DTC depositary fees notification for a single security (Leifras Co., Ltd., CUSIP 525330106). The notice itself states it is \"not sensitive, confidential, or non-public information.\" No market event, regulatory action, member stress, or operational/cyber incident described. No card Step 1 is matched.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1796,
+    "outputTokens": 472,
+    "totalTokens": 6641,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3156
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

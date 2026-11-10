@@ -1,0 +1,57 @@
+{
+  "document_id": "7e875649b61f0e0f5b50137e6e36940d75d5d8757ade150ab055f1ed86220eac",
+  "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPc0pUWHNEUEFibWxmVDlGc2x5QlNMdFl1LXZNTElRbGMtYzFvOEh3Q0c4aHpFRGJBSXQ4RXZCRzZRbGpuSTI3MkV6MWNlQXpseDNhOGpVcUFzeE45al9kbGtuSC11LWZIUkE4d0VRYlk4eGhxSmFtdG9hUGZMczlZTlFaeWNCVldFNmJOUjA0SlNrdnd2UWhreGcyejgtRk4zekFPbjR1SWU0Mll4Rzc2U0lvbnhlTmItRndhUjU3ZTBMNEM0?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "893073cba915a979cd778e0b9aa8fb7f6a19be951f7263b1b3e24dcaf0e78499",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_X61ITlcksRYxHo5UlpHomu",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline concerns a Korean stock market selloff and its potential impact on ETH (Ethereum/crypto). Non-US market event with no stated link to US markets or DTCC participants, and crypto is out of scope for the catalog.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1936,
+    "outputTokens": 448,
+    "totalTokens": 6757,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3299
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

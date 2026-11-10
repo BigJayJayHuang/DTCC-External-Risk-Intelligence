@@ -1,0 +1,57 @@
+{
+  "document_id": "17f064327edda215c03c71bcc7d8fb5b2fcebf67998f7fe05f42ccab526eb277",
+  "url": "https://files.dtcc.com/download/assets/25145-26/0a2abc7ad86e11f18559ba42506f920a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "e94182fb18924009aa8eb961e2473336bb19bdea3a442301ab673e238eeffd13",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_2h406cjLaBzHjOeMMX5K9z",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "DTC routine tax relief / corporate action notice for Prosus N.V. (Netherlands). This is an administrative withholding-tax instruction deadline notice for a non-US issuer, not an outside risk event matching any card's Step 1."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1854,
+    "outputTokens": 451,
+    "totalTokens": 6678,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3418
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

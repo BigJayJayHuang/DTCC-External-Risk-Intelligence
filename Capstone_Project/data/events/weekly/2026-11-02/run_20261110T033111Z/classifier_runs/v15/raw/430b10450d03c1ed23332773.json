@@ -1,0 +1,57 @@
+{
+  "document_id": "f54455146b4fd379f50c88863222b35a81fe3de7660b6a723e18c5df47399ea3",
+  "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22250/eldridge-dynamic-income-fund-et-al",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "bd5133d7c6471739259a460bd19e50fac07248bf123284d3ebcd04dacaae1076",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_UbtXfQniGWu0Vrv64Tcifq",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline only: 'Eldridge Dynamic Income Fund, et al.' is a Federal Register filing title with no text describing any event matching a catalog card's Step 1. It appears to be an investment company application or order notice; no market move, regulatory action on Treasury clearing, member stress, cyber incident, or other catalogued event is stated or implied in the available text.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1702,
+    "outputTokens": 477,
+    "totalTokens": 6552,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3877
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

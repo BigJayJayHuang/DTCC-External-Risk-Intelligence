@@ -1,0 +1,57 @@
+{
+  "document_id": "79c9224eaa178aee53ab3cb9f6b642c9f233c5642af19f486f34d629a4cb08d3",
+  "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBIcEpQWXlNZDNkdzk3SmRFYUJqdHNNUXNoWWJaODRGR1VXZDhYbnp6WXc2OUUzRlAtbWhsd2doUlo5Rjd0N2JwTFJxR1lpM2pUbld5ZTQ1OVhBSjZ2M0xfV0x4Sl9nWU5P?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "2218a35d7936b81d3fc9e8498f21649499fbd1804450b6e0c55576ae37714647",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_NFjsmYql4F0t8VqvoIayMt",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline describes a holdings/exposure list for the Roundhill Meme Stock ETF — a product information piece with no concrete event matching any card's Step 1 (no trading volume spike, no market disruption, no regulatory action, no member stress).",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1832,
+    "outputTokens": 454,
+    "totalTokens": 6659,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3249
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

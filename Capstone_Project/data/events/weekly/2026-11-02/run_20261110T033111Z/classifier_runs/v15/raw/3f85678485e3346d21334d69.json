@@ -1,0 +1,57 @@
+{
+  "document_id": "0777b660502369e9c3622e401d342f80b12258b141adca8cb1f63c05bd82da0e",
+  "url": "https://files.dtcc.com/download/assets/24785-26/c70b2a32d87d11f1b133e255ed29acba",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "df8c23faddfc0ce0c3802ad409b7aa3cae34b9c79fa3df3f31c6d916934053b8",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_HOZwC2MRIj4IdyOfPZuQk8",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Routine DTC depositary fees notification for a single security (Belite Bio Inc, CUSIP 07782B104). No market event, no member stress, no operational or cyber incident. Explicitly described as non-sensitive supplemental material with no risk angle matching any catalog card.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1791,
+    "outputTokens": 459,
+    "totalTokens": 6623,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3110
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

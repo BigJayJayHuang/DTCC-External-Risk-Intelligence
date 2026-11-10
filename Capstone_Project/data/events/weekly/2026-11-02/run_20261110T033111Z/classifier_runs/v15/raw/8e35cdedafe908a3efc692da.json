@@ -1,0 +1,57 @@
+{
+  "document_id": "bd7c138aaac12873ed0da1a83345afba9d49f5bf126b35641d91c69ccdc3d450",
+  "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22262/self-regulatory-organizations-cboe-bzx-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "18db17bef2c2f1c316517f115c4c062c2a7f7bbdf9dcd7b2915d8c6bb222e9df",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_kRLPRWCKjumRKDcpvGNKJO",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "Cboe BZX rule change to add a \"Start Time Order Instruction\" is a routine exchange order-type amendment. It does not describe an exchange halt, market disruption, settlement cycle change, or any other Step 1 event in the card catalog. No catalog card is triggered."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1793,
+    "outputTokens": 460,
+    "totalTokens": 6626,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3133
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

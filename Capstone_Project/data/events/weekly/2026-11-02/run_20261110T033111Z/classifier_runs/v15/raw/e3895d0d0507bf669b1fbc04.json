@@ -1,0 +1,63 @@
+{
+  "document_id": "e362a7be6b2491ad4460d3adf6d1f7af5050a9b266dc51c1e88fefcd1fad3d5f",
+  "url": "https://files.dtcc.com/download/assets/GOV2288-26/4f3c30aeda0911f1aa7b527ec7585796",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "151b0eed0bba4ca3a1b7fa91bdcad0438f615ae8d039261717a72dd051bbd7e4",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_lN86jTVLrIBocXrFWQZnCm",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "regulatory",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "Daiwa Capital Markets America joins FICC GSD as Agent Clearing Member",
+              "summary": "DTCC notice GOV2288-26 announces that Daiwa Capital Markets America Inc has been admitted as a new Agent Clearing Member (ACM Omnibus) of FICC's Government Securities Division, assigned GSD Member #94IE.",
+              "card_ids": [
+                "FICC-GSD-11"
+              ],
+              "certainty": 2,
+              "reach": 1,
+              "reach_basis": "single",
+              "named_participants": [
+                "Daiwa Capital Markets America Inc"
+              ],
+              "announced_date": "2026-11-06",
+              "effect_date": "2026-11-06",
+              "stage": null,
+              "source_tier": "dtcc",
+              "outlet": "DTCC",
+              "url": "https://files.dtcc.com/download/assets/GOV2288-26/4f3c30aeda0911f1aa7b527ec7585796",
+              "evidence_quotes": [
+                "New Agent Clearing Member of the Government Securities Division of FICC: Daiwa Capital Markets America Inc / ACM Omnibus – GSD Member #94IE"
+              ],
+              "confidence": 0.72,
+              "notes": "DTCC official notice confirming a new ACM onboarding to GSD. Daiwa Capital Markets America is a mid-sized dealer; reach set to 1 (single participant, not a GSIB/top-tier dealer). Effect date set to announced date as no separate effective date is stated. Card FICC-GSD-11 covers the GSD Agent Clearing Service, which is the process directly affected by a new ACM admission."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1855,
+    "outputTokens": 675,
+    "totalTokens": 6903,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5173
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

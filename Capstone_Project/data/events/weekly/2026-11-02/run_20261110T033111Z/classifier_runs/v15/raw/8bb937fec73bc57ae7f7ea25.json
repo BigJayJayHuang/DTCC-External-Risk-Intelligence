@@ -1,0 +1,57 @@
+{
+  "document_id": "a066b2d5a36a819e82a15feb7ac06a1d438fb98984088ce26129b50279e89eb1",
+  "url": "https://files.dtcc.com/download/assets/25033-26/d8eea304d7ac11f1aa014edd4da0a09a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "a650763f32b44d642772a5556d96b305beb6d61221492d75aaeffc92b8ba157b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_6zLv0OVgvNRbtKBA008Mqq",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Routine DTC depositary fees notification for a single foreign security (Fubon Financial Holding Co. REG S). No market event, no risk angle, no match to any catalog card Step 1. Explicitly described as non-sensitive supplemental material.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1786,
+    "outputTokens": 453,
+    "totalTokens": 6612,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3223
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

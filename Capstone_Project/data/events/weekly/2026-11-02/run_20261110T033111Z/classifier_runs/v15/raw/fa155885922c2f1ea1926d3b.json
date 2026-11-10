@@ -1,0 +1,57 @@
+{
+  "document_id": "311c9efaec6235d9b58c29316beb52f81427166363c824272d5303ab9ce1afa3",
+  "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22265/self-regulatory-organizations-nyse-american-llc-notice-of-filing-and-immediate-effectiveness-of-a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "15d6d435d47bf48ac0c00a38df3e44b33809806fb11a997dc416b03f952840f9",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Rtw4gVBTLCbpoKjYekKJck",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "Irrelevant: NYSE American options fee schedule amendment (waiving floor broker credits on QCC trades and manual billable rebates for October 2026). This is an options exchange fee/rebate administrative change with no link to any DTCC process in the catalog. Options clear elsewhere and no DTCC/FICC/NSCC/DTC link is stated."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1846,
+    "outputTokens": 478,
+    "totalTokens": 6697,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3758
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,57 @@
+{
+  "document_id": "0972817f21237dca7c9be84a62e6b002e3a0fc842e947d78223d4a5ca3c2c725",
+  "url": "https://files.dtcc.com/download/assets/25202-26/a2a98db0d86811f18aee7e06a7e389d7",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "255527b4385e60dcbf3349c422c33e2743c4f35d12a3a05bdba8a309ca0e748e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_8auUpuOcklti3kjalmKZqY",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "DTC routine tax-relief/corporate-action notice for a Swedish issuer (Hennes & Mauritz). No market event, no stress, no regulatory action, no DTCC process risk. Non-US issuer with no stated link to US markets or DTCC processes beyond standard DTC custody administration. Does not match any card's Step 1.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1860,
+    "outputTokens": 474,
+    "totalTokens": 6707,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3673
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

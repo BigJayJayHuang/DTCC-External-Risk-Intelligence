@@ -1,0 +1,57 @@
+{
+  "document_id": "b580a4fae77696f92e6b57ce9003e8eb57b31d5e4c778fb55eb737fd7186b3aa",
+  "url": "https://files.dtcc.com/download/assets/25230-26/83a70c62d7b411f18afb6a2be9a8761b",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "9d7b8cb5bc5fa277194f9837b14465709aa703996bcfb14ddeddc7df3a2b8080",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Devc66hibW4Wec4bHpYk4i",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Routine DTC operational notice lifting chills on a single non-US security (Venator Materials PLC, CUSIP G9329Z118) following a transfer agent replacement. This is an internal DTCC administrative/settlement housekeeping action on one small issuer, not an outside event matching any card's Step 1.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1955,
+    "outputTokens": 469,
+    "totalTokens": 6797,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3694
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,57 @@
+{
+  "document_id": "093a6baa621e2ecf05790f5db6476e2f29b45c56d450e80928c71f05f8761848",
+  "url": "https://www.federalregister.gov/documents/2026/11/06/2026-22652/self-regulatory-organizations-cboe-c2-exchange-inc-notice-of-filing-and-immediate-effectiveness-of-a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "ead8e1d4bf19c1929923a523006259ec26094a93369d4352aa4691aa371cc59d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_5cD1JDuW1ITUzgCbxXpkqU",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Article concerns a Cboe C2 Exchange rule change to introduce a trade-by-trade report for C2 Options and amend its fee schedule. This is an options exchange administrative/fee matter with no link to DTCC processes, US cash securities settlement, Treasury clearing, or any other catalog card's Step 1 event.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1836,
+    "outputTokens": 469,
+    "totalTokens": 6678,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3517
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

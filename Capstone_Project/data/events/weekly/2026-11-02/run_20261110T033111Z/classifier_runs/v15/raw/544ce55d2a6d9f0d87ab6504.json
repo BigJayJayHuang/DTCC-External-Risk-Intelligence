@@ -1,0 +1,57 @@
+{
+  "document_id": "cc0128c1d5beaa55aa6019f1721d052bc90ad7bf31f6a4b39cf22fdb644b5135",
+  "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPc0F5ZnN2MWVVaFdxelhqWU5rRkprc21QQ0w5SWNJWm5OZEt5VmlvR2NOcDdjdHpRNEhObHFPMzkxdzUyMGtZNEJyMTF6UWxyTzJibFVfLXhIS09MZC1Ca0JNWnc4TDMzVlN3LWhJdnBMczRYLVBOYVZpTDFkUzdpYk03QWFYYnhJSElSeHhzbnkyRy10NDczSjIwdXNCOTVmRlkxX2I5VF9sZ0w2VHlsajFB?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "4a9e84cb607d7824c9432cf3c53b385d55880eeed437e5ec820e2326f0832b8b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_wL5t1dleiZqd8wwnq2VgQE",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline-only article about political/electoral developments in Texas affecting SpaceX, a non-financial firm. No event matching any catalog card type (no market move, regulatory action, member stress, cyber incident, or settlement disruption related to DTCC-covered processes).",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1900,
+    "outputTokens": 456,
+    "totalTokens": 6729,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3675
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

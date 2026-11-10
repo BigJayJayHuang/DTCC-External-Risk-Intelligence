@@ -1,0 +1,57 @@
+{
+  "document_id": "19b2d24dcdb7c3f9a1bb739dc3ad38ad5b49358eefce4b25c26d53d3b29b0da6",
+  "url": "https://www.federalregister.gov/documents/2026/11/06/2026-22654/self-regulatory-organizations-cboe-edgx-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "749d9c3e3cc521b275444ecea492dba870fefe670ddcc94f1073f2fab046ef72",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_c85cKxjdIQaExq0EcXfMGQ",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Article concerns a Cboe EDGX options exchange rule change to introduce a trade-by-trade report and associated fees for EDGX Options. This is an options exchange administrative/fee matter with no link to DTCC, FICC, NSCC, or DTC processes. Options clear elsewhere and no US cash securities settlement link is stated.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1836,
+    "outputTokens": 474,
+    "totalTokens": 6683,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 4489
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

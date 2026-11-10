@@ -1,0 +1,61 @@
+{
+  "document_id": "238494e6eb64b3e2e8ba6d9baea2a6c603eae39b625b4c8a12ced047ccdbbf35",
+  "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9PVFJKaVlObnJHeWVWcDN4eWp2MUlSaU1ZUnd0ZDgzeUdkSWNfMmV1YTY5R1FDZ2JUcHlXUTVCS0N6c0ZYTTdKLTlGYVgwbG9DNUxaNk1JMXJoZw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "d8e44f85220ffb0622549596a1eda34a0ba94749287436ab43663cfc0b93ad61",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_fvs0z7Oo6YnU17Hpq6GC0M",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "market_move",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "Tech Stock Rout and VIX Spike Signal Equity Stress",
+              "summary": "A tech stock selloff and spike in the VIX volatility index are reported, raising concerns about broader equity market stress. The article is headline-only with no magnitude or named participants provided.",
+              "card_ids": [
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 1,
+              "reach_basis": "business_line",
+              "named_participants": [],
+              "announced_date": "2026-11-08",
+              "effect_date": "2026-11-08",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "TOKENPOST",
+              "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9PVFJKaVlObnJHeWVWcDN4eWp2MUlSaU1ZUnd0ZDgzeUdkSWNfMmV1YTY5R1FDZ2JUcHlXUTVCS0N6c0ZYTTdKLTlGYVgwbG9DNUxaNk1JMXJoZw?oc=5",
+              "evidence_quotes": [
+                "Tech Stock Rout and VIX Spike Raise Bitcoin Selling Risk"
+              ],
+              "confidence": 0.45,
+              "notes": "headline_only. The headline references a tech stock rout and VIX spike, which maps to ECS-NSCC-LIQ (sharp equity selloff). Bitcoin selling risk is out of scope (crypto), but the underlying equity market stress is relevant. No magnitude, no named participants, and the primary framing is crypto risk, which lowers confidence and reach. Effect date set to announced date as no separate date is given."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1818,
+    "outputTokens": 724,
+    "totalTokens": 6915,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5208
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

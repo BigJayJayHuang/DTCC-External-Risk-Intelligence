@@ -1,0 +1,57 @@
+{
+  "document_id": "b78b5a2d6b739d54818144048552207946a111652ebd28ee7781a6a3a6fcadc2",
+  "url": "https://files.dtcc.com/download/assets/24594-26/4407efbcd6d911f1ac22661b1cd0e824",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "1dcfe924c22ece6ddd92716baca2be39ab45887ed1cc59bf03ba1b516c89e0f1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_P6r2LC9W7ypyZirkwOUEr1",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "DTC Important Notice for a routine tax relief / corporate action (dividend withholding for Perrigo Company PLC, Ireland) — no market event, no risk event, no card match. The notice itself states it is non-sensitive supplemental material.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1855,
+    "outputTokens": 452,
+    "totalTokens": 6680,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3264
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

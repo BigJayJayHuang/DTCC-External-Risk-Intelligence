@@ -1,0 +1,57 @@
+{
+  "document_id": "8d7396dfee0a48227c8a3ab4679587aabc51e0c1d5c33417a6aa36135d58ab86",
+  "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22260/self-regulatory-organizations-nyse-texas-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "e178a10742e450c591ef7fe5c2a687ea59865495f8957979da760ef71e421f73",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ArsvHsqglM4xvXOXgRLi9w",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Bylaw amendment at NYSE Texas is an internal governance/administrative rule change with no stated link to settlement disruption, market closure, or any other catalog Step 1 event. No risk-relevant event described.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1761,
+    "outputTokens": 442,
+    "totalTokens": 6576,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3090
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

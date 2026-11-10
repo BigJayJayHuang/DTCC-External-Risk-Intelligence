@@ -1,0 +1,61 @@
+{
+  "document_id": "64a6decfc3ee7cf7992bdff7c75987c7f6eb3be2219315500f27e0d522a44ce7",
+  "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22259/self-regulatory-organizations-national-securities-clearing-corporation-notice-of-filing-and",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "e683124d06a4df40fb0c7170ffc65995f3f8d3c68b8e7ea968d069c4c27cd18e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_y5mdVDvfInOK58x51TvZNt",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "regulatory",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "NSCC rule change on ACATS for insurance and retirement products",
+              "summary": "NSCC filed a proposed rule change with immediate effectiveness concerning the Automated Customer Account Transfer Service (ACATS) account transfer process for insurance and retirement products, published in the Federal Register on 2026-11-02.",
+              "card_ids": [
+                "ECS-NSCC-08"
+              ],
+              "certainty": 2,
+              "reach": 1,
+              "reach_basis": "business_line",
+              "named_participants": [],
+              "announced_date": "2026-11-02",
+              "effect_date": "2026-11-02",
+              "stage": null,
+              "source_tier": "official",
+              "outlet": "Federal Register",
+              "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22259/self-regulatory-organizations-national-securities-clearing-corporation-notice-of-filing-and",
+              "evidence_quotes": [
+                "Notice of Filing and Immediate Effectiveness of a Proposed Rule Change Concerning the Automated Customer Account Transfer Service Account Transfer Process for Insurance and Retirement Products"
+              ],
+              "confidence": 0.55,
+              "notes": "headline_only. The rule change has immediate effectiveness, so certainty is 2. Reach set to 1 (business_line) as the change is scoped to a specific product segment (insurance and retirement products) within ACATS, not all account transfers. Effect date set to announced date as no separate effective date is stated in the text."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1812,
+    "outputTokens": 633,
+    "totalTokens": 6818,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 4500
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

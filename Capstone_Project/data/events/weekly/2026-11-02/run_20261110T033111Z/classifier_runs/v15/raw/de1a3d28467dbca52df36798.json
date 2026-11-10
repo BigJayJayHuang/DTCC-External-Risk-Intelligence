@@ -1,0 +1,57 @@
+{
+  "document_id": "325e9ac8fee4556dcbfd326c5571b3eb0a80879867b0f9634e37799ee4981359",
+  "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22267/self-regulatory-organizations-miax-sapphire-llc-notice-of-filing-and-immediate-effectiveness-of-a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "499a7fb5a92d7d3800898c37c6b4c2d0d7f77e4eea7a96356e6c1bb46a63ed41",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_bafOYLu33TmL9AUiFPATGR",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Options exchange (MIAX Sapphire) fee rule change for QCC/cQCC transactions and away market maker facilitation of QFOs/cQFOs. This concerns options order fees, not US cash securities, Treasury, repo, MBS, or equities settling at NSCC/DTC. No card in the catalog covers options exchange fee rules. Not relevant.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1892,
+    "outputTokens": 480,
+    "totalTokens": 6745,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3856
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

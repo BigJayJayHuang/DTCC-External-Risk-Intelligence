@@ -1,0 +1,57 @@
+{
+  "document_id": "13fc053f40de3a4a5462f978f45ff5d75e5b858fb5103549e2b3bb333360c5cf",
+  "url": "https://files.dtcc.com/download/assets/25240-26/306b2894da2f11f192c2a2d2c72ada28",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "312eeb25ceeac4edffe0836d335602a2314dbffcb257b62659938e9f2117c18f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Tr3Xtp1jDckbZAs9SGZhDI",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "DTC internal product/system notice: postponement of a DRS transformation go-live. DRS is a DTC internal processing system change, not an outside event of a type described in any card's Step 1. No market move, regulatory mandate, member stress, cyber incident, or settlement-cycle change is described. No catalog card fits."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1788,
+    "outputTokens": 470,
+    "totalTokens": 6631,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3714
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

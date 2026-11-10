@@ -1,0 +1,64 @@
+{
+  "document_id": "3a1063f9a022f994b4aa767fbd93076ad4225de073e11168ad7435ef4e2e68ee",
+  "url": "https://files.dtcc.com/download/assets/25231-26/c8f4dad0d7a811f1bf71ca3e85514d03",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "3ad96b047cb0aafc935e24ed6c487baa23ba21ac150fb153a74319cbbebd78c0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_3ybdazpeMiJW6X3fW4fb3v",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "operational",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "State Street Bank Lending Pass-Through account retirement at DTCC",
+              "summary": "DTCC notice 25231-26 announces the retirement of a State Street Bank & Trust Company Lending Pass-Through account (#7268), representing an operational change impacting a DTCC participant/member.",
+              "card_ids": [
+                "XE-MEMBER"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "major_participant",
+              "named_participants": [
+                "State Street Bank & Trust Company"
+              ],
+              "announced_date": "2026-11-03",
+              "effect_date": "2026-11-03",
+              "stage": 1,
+              "source_tier": "dtcc",
+              "outlet": "DTCC",
+              "url": "https://files.dtcc.com/download/assets/25231-26/c8f4dad0d7a811f1bf71ca3e85514d03",
+              "evidence_quotes": [
+                "Additional Account Retirement: STATE STREET BANK & TRUST COMPANY/LENDING PASS-THROUGH, #7268",
+                "Updates/changes impacting DTCC Participant(s)/Member(s) and/or Sponsored Member(s) noted here."
+              ],
+              "confidence": 0.45,
+              "notes": "Summary-only DTCC notice. The notice records an account retirement for a State Street Bank lending pass-through account. State Street is a major participant (global custodian/settling bank), so reach is set to 2/major_participant. However, this appears to be a routine administrative account retirement rather than a stress or default signal; stage is set to 1 as the lowest XE-MEMBER stage, but confidence is low. No stress, downgrade or default language is present. Effect_date set to announced_date as no separate effective date is given."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1802,
+    "outputTokens": 701,
+    "totalTokens": 6876,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5510
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

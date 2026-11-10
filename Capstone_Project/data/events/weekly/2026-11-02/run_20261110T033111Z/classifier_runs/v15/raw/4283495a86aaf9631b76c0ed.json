@@ -1,0 +1,65 @@
+{
+  "document_id": "c36881475d9a95698659156412d475a7b0603f4d15b507cb33efde47a7ed74c2",
+  "url": "https://files.dtcc.com/download/assets/25229-26/62297b22d6d511f1b509661b1cd0e824",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "ca497d03a258aa6e071209ebbd013f72466126464ffc39d32707f0b4c120c74c",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_WtzwCymnr8fVzAicXXSVsU",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "regulatory",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "Mizuho Securities USA additional account activation at DTCC",
+              "summary": "DTCC Notice 25229-26 announces an additional account activation for Mizuho Securities USA LLC / Mizuho Americas Finance LLC (Participant #4446), reflecting an update or change impacting DTCC participants or members.",
+              "card_ids": [
+                "FICC-GSD-03"
+              ],
+              "certainty": 2,
+              "reach": 1,
+              "reach_basis": "major_participant",
+              "named_participants": [
+                "Mizuho Securities USA LLC",
+                "Mizuho Americas Finance LLC"
+              ],
+              "announced_date": "2026-11-02",
+              "effect_date": "2026-11-02",
+              "stage": null,
+              "source_tier": "dtcc",
+              "outlet": "DTCC",
+              "url": "https://files.dtcc.com/download/assets/25229-26/62297b22d6d511f1b509661b1cd0e824",
+              "evidence_quotes": [
+                "Additional Account Activation: Mizuho Securities USA LLC/Mizuho Americas Finance LLC, #4446",
+                "Updates/changes impacting DTCC Participant(s)/Member(s) and/or Sponsored Member(s) noted here."
+              ],
+              "confidence": 0.45,
+              "notes": "Summary-only DTCC notice. The notice announces an additional account activation for Mizuho Securities USA LLC / Mizuho Americas Finance LLC as DTCC participant #4446. This is most plausibly related to GSD onboarding/Sponsored membership (FICC-GSD-03) given the Treasury clearing mandate context and the mention of Sponsored Members, but the summary provides no further detail on which DTCC service or clearing function is involved. Reach set to 1 (business_line) rather than major_participant because the notice describes an administrative account activation rather than stress or a risk event at the firm; reach_basis adjusted accordingly. Certainty 2 as this is a confirmed DTCC notice of an action taken. Effect_date set to announced_date as no separate effective date is stated."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1792,
+    "outputTokens": 773,
+    "totalTokens": 6938,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 6072
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,57 @@
+{
+  "document_id": "13128e0b1d40f5fcf0fbad19911e1e9f30896acc921947b2f9737f9e326e9b21",
+  "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22456/self-regulatory-organizations-the-nasdaq-stock-market-llc-notice-of-filing-and-immediate",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "2cbf2ec0b2157d32990b835dd97b064b490680acdd1f14662b2e0f37ce91d290",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_CZZJNDERjSOomSaekPewUb",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "Nasdaq housekeeping rule change to delete obsolete references to the CORE FIX Order Entry Protocol in transaction fee schedules. This is an administrative/fee-schedule cleanup with no market risk, settlement, clearing, or member stress angle matching any catalog card."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1886,
+    "outputTokens": 453,
+    "totalTokens": 6712,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3422
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,63 @@
+{
+  "document_id": "3a41f6ede4847da64ff9cd37f0cfba0cb56bfd996c90b740fcc2a80cba43c0ec",
+  "url": "https://files.dtcc.com/download/assets/GOV2282-26/4c5fc45ed7a711f1a32676277c76473d",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "f553f2ec2711860b8cae3878f8b6dbcf248ad9d5ba1dddb76ffea9b843ec02bc",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_1dpN64cTqBVzANc48KeCKI",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "regulatory",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "JP Morgan Chase Bank London Branch joins FICC GSD Netting System",
+              "summary": "DTCC notice GOV2282-26 announces JP Morgan Chase Bank, NA/London Branch as a new participant in the Netting System of FICC's Government Securities Division (GSD #9816). This expands the pool of GSD netting participants.",
+              "card_ids": [
+                "FICC-GSD-03"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "major_participant",
+              "named_participants": [
+                "JP Morgan Chase Bank, NA/London Branch"
+              ],
+              "announced_date": "2026-11-03",
+              "effect_date": "2026-11-03",
+              "stage": null,
+              "source_tier": "dtcc",
+              "outlet": "DTCC",
+              "url": "https://files.dtcc.com/download/assets/GOV2282-26/4c5fc45ed7a711f1a32676277c76473d",
+              "evidence_quotes": [
+                "New Participant in the Netting System of the Government Securities Division of FICC: JP Morgan Chase Bank, NA/London Branch – GSD #9816"
+              ],
+              "confidence": 0.75,
+              "notes": "Summary-only DTCC notice. JP Morgan Chase Bank is a major participant (GSIB). The notice confirms a new GSD netting membership, which is directly relevant to GSD onboarding and Sponsored volume (FICC-GSD-03). Effect date set to announced date as no separate effective date is stated. The London Branch designation may indicate a non-US entity joining under the Treasury clearing mandate, but the article does not explicitly state this link."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1817,
+    "outputTokens": 676,
+    "totalTokens": 6866,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5060
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

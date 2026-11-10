@@ -1,0 +1,61 @@
+{
+  "document_id": "671d94f34016f5faa0940f2615cc0fe9f1c04df15937fd729e8aa1655f18e86b",
+  "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPSjZvaEVyTm5RN1hBZU81MUszQzNZMWR0OGpWa1hTQXpuZ3haXzVzbEVVZ3o2LUxLeTdETDZYWlhnZndDQnJvRlFFcElFM3B0YjlRcklOcFhOdkNrZjlDbFZIcnp2b2djbUpLamhEUkdOc05BcDhnLUt2NURZZ3FDNmwyQW13aHNoY3k0YVZtemZSbEY1V3FhM3hkVGYwbnlsVENNZDZNalNaTndyak93eF9rbTRXLWR3OTMwMjI2d3g1WFo1a3I4?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "0aa42ba4ab6ba3b77e29c78fc7ee836e61a848714b60382a7aa355163751798a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_JqGXjuJwJVen1iTkIUJoBV",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "market_move",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "Trump blames massive stock market selloff on Democrats",
+              "summary": "A massive US stock market selloff is reported, with Trump attributing it to Democrats' midterm election success. No magnitude or specific index figures are provided.",
+              "card_ids": [
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-05",
+              "effect_date": "2026-11-05",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "Forbes",
+              "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPSjZvaEVyTm5RN1hBZU81MUszQzNZMWR0OGpWa1hTQXpuZ3haXzVzbEVVZ3o2LUxLeTdETDZYWlhnZndDQnJvRlFFcElFM3B0YjlRcklOcFhOdkNrZjlDbFZIcnp2b2djbUpLamhEUkdOc05BcDhnLUt2NURZZ3FDNmwyQW13aHNoY3k0YVZtemZSbEY1V3FhM3hkVGYwbnlsVENNZDZNalNaTndyak93eF9rbTRXLWR3OTMwMjI2d3g1WFo1a3I4?oc=5",
+              "evidence_quotes": [
+                "Trump Blames Massive Stock Market Selloff On Democrats' Midterm Success"
+              ],
+              "confidence": 0.5,
+              "notes": "headline_only; the word \"massive\" indicates a significant market-wide equity selloff, consistent with ECS-NSCC-LIQ, but no magnitude, index levels, or specific figures are provided. Effect date set to announced date as no separate event date is given."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1934,
+    "outputTokens": 796,
+    "totalTokens": 7103,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 4861
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

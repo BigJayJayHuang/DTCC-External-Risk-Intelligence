@@ -1,0 +1,57 @@
+{
+  "document_id": "4b83060619630b82c06489f4e464095c99a12653dd93fb8e41df303ff4eb55e8",
+  "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB4emhjNmMyV25zY2RsQ01tajRMcmVhRDFzM0JwVmVTRFplbHJtT3ZuN21TYnVqSkxmcGlCTFB1ODExVmZ1WF9vb2wzR3RyUUxSSW03NjhzSkJTR0Ztb1Q0?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "7f53186ecc1906710f41547733d33426303aa945d0c2aac677b4eea6e76c8bc1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Vls2SXKIEaRYfMkTLjMw8t",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Cyberattack is at a French bank (Crédit Mutuel Arkéa) with no stated link to US markets, DTCC participants, or US market infrastructure. Geography is non-US with no US link mentioned. XE-CYBER requires a large US market participant, a DTCC vendor, or US market infrastructure.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1814,
+    "outputTokens": 472,
+    "totalTokens": 6659,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3421
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

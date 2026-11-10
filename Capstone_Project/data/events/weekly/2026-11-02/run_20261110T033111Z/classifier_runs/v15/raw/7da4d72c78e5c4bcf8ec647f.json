@@ -1,0 +1,57 @@
+{
+  "document_id": "890f086ced8c43dfc1c07305b6c3d4051d5eb5fcedfd19b989dbe09a61410011",
+  "url": "https://files.dtcc.com/download/assets/TIW864/96c7c582d6c611f1bc617269ad7e0bc8",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "0a41fa740cc8377443e845f94aca4a3fb0e6a919fd397167b90e3d7fc9701cdc",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_jkqeZCkG6W3GDGq4HojxzH",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "DTCC Trade Information Warehouse (TIW) notice for a successor event processing on PICARD BONDCO S.A. — this is a credit derivatives reference-data/corporate-action notice for the TIW (CDS trade repository), which covers no US cash securities process in the card catalog. No card's Step 1 is matched.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1735,
+    "outputTokens": 474,
+    "totalTokens": 6582,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3387
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}
