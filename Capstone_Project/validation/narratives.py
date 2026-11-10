@@ -29,6 +29,18 @@ from .paths import PROJECT
 
 REPO = PROJECT.parent
 PROMPT = Path(__file__).with_name("narrative_prompt_v1.md")
+PROMPTS = {"v1": PROMPT, "v2": Path(__file__).with_name("narrative_prompt_v2.md")}
+# Prompt v2: plain names for the six market signals; all are market-wide (never stress at specific firms)
+SIGNAL_PLAIN = {
+    "ust10_abs_change": "daily move in the 10-year Treasury yield, bp",
+    "sofr_effr_adjusted": "SOFR−EFFR repo funding spread (quarter-end adjusted), bp",
+    "baa_widen20": "20-day widening of the Baa corporate bond spread over the 10-year Treasury yield, bp",
+    "vix_jump": "VIX relative to its 20-day average (ratio)",
+    "mbs_spread_abs_wchg": "weekly change in the 30-year mortgage rate minus 10-year Treasury yield spread, bp",
+    "consolidated_shares": "US consolidated equity volume relative to the median of prior weekly peaks (ratio)",
+}
+V_PLAIN = {"stress_loss_to_im": "stress loss to initial margin", "payment_to_qlr": "largest payment obligation to qualifying liquid resources",
+           "top5_client_share": "top-five client share of activity", "max(GSD, NSCC) PQD 18.2.2 percentile": "top-five open-position share (PQD 18.2.2)"}
 SCORES = PROJECT / "results/scoring/v1.3_indicator"
 OUT = PROJECT / "data/narratives"
 TOOL = "submit_narrative"
@@ -50,7 +62,8 @@ def prompt_parts(path: Path = PROMPT):
     parts = path.read_text(encoding="utf-8").split("\n---\n")
     if len(parts) != 3 or "{RECORD}" not in parts[2] or "{RECORD}" in parts[1]:
         raise ValueError("narrative prompt must have header, system and user sections; {RECORD} only in the user section")
-    return parts[1].strip(), parts[2].strip(), "narrative-prompt-v1:" + sha(path.read_bytes())[:12]
+    label = re.sub(r"^narrative_prompt_", "narrative-prompt-", path.stem)          # narrative-prompt-v1 / -v2
+    return parts[1].strip(), parts[2].strip(), label + ":" + sha(path.read_bytes())[:12]
 
 
 def export_module():
@@ -112,6 +125,32 @@ def _build_input(records: list[dict], week_records: list[dict], transmission) ->
                              "label_counts": dict(Counter(n["label"] for n in related if n.get("label")))}}
 
 
+def build_input_v2(records: list[dict], week_records: list[dict], transmission) -> dict:
+    """v1 input plus: every field that sets S (all tied chains, plain names), market-wide scope, the latest available PQD
+    quarter, and a one-line meaning of V."""
+    inp = build_input(records, week_records, transmission)
+    r = records[0]
+    if inp.get("signal"):
+        inp["signal"]["plain_name"] = SIGNAL_PLAIN.get(inp["signal"]["name"], inp["signal"]["description"])
+        inp["signal"]["scope"] = "market-wide"
+    inp["S_signals"] = tidy([{"field": mc["field"], "plain_name": SIGNAL_PLAIN.get(mc["field"], mc["description"]), "scope": "market-wide",
+                              "weekly_peak": mc.get("weekly_peak"), "percentile": mc.get("percentile"), "prior_weeks": mc.get("prior_weeks"),
+                              "S": mc["S"]} for mc in r.get("market_chains") or [] if mc.get("S") is not None and mc["S"] == r.get("S_market")])
+    if r["V_tier"] == "pqd":
+        inp["latest_available_pqd_quarter"] = r["V_quarter"]
+        inp["V_source"] = "PQD (DTCC public quantitative disclosure)"
+    else:
+        inp["V_source"] = "public proxy (" + (r["V_driver"] or "") + "), not DTCC data"
+    if r["V"] is not None:
+        what = V_PLAIN.get(r.get("V_metric") or "", r["V_driver"] or "this buffer measure")
+        unit = ""
+        for line in ("GSD", "MBSD", "NSCC"):
+            if f"({line})" in (r["V_driver"] or ""):
+                unit = f" for {line}"
+        inp["V_meaning"] = f"V {r['V']} = this buffer measure ({what}{unit}) sits at level {r['V']} of 5 versus its own history"
+    return inp
+
+
 def build_request(system: str, user: str, config: dict) -> dict:
     return {"modelId": config["model_id"], "system": [{"text": system}, {"cachePoint": {"type": "default"}}],
             "messages": [{"role": "user", "content": [{"text": user}]}],
@@ -138,10 +177,12 @@ def worst_case(system: str, user: str, prices: dict) -> Decimal:
 
 
 def run(week: str, cap: Decimal, dry_run: bool = False, session=None, run_id: str | None = None, out: Path = OUT,
-        scores_dir: Path = SCORES, transmission=None) -> dict:
+        scores_dir: Path = SCORES, transmission=None, prompt: str = "v1", compare_with: Path | None = None) -> dict:
+    """prompt "v2" with compare_with=<reviewed sheet>: a comparison file next to the sheet, never the review sheet."""
     doc = json.loads((scores_dir / f"weekly_scores_v1.3_{week}.json").read_text())
     config = json.loads(C.CONFIG.read_text())
-    system, user_template, version = prompt_parts()
+    system, user_template, version = prompt_parts(PROMPTS[prompt])
+    make_input = build_input_v2 if prompt == "v2" else build_input
     transmission = transmission or chain_context()
     run_id = run_id or "run_" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     run_dir = out / "runs" / week / run_id
@@ -151,7 +192,7 @@ def run(week: str, cap: Decimal, dry_run: bool = False, session=None, run_id: st
     for r in records:
         if r["status"] == "scored":
             groups.setdefault(r["card_id"], []).append(r)
-    inputs = {cid: build_input(rs, records, transmission) for cid, rs in groups.items()}
+    inputs = {cid: make_input(rs, records, transmission) for cid, rs in groups.items()}
     with (run_dir / "inputs.jsonl").open("w", encoding="utf-8") as f:
         for cid, rs in groups.items():
             f.write(json.dumps({"card_id": cid, "record_ids": [r["record_id"] for r in rs], "input": inputs[cid]}, ensure_ascii=False) + "\n")
@@ -202,12 +243,16 @@ def run(week: str, cap: Decimal, dry_run: bool = False, session=None, run_id: st
         try:
             value = parse(response)
             flags = NC.check(value["so_what"], value["so_now_what"], inputs[cid], value["facts_used"])
+            if prompt == "v2":
+                flags += NC.style_flags(value["so_what"], value["so_now_what"], inputs[cid])
         except Exception as exc:
             value, flags = {"so_what": "", "so_now_what": "", "facts_used": [], "caveats": []}, [f"invalid output: {exc}"[:300]]
         results[cid] = (value, flags)
     summary.update(estimated_cost_usd=str(spent), estimated_cost_without_cache_usd=str(uncached))
     if summary["status"] == "started":
         summary["status"] = "complete"
+    if compare_with is not None:
+        return write_comparison(summary, run_dir, week, compare_with, results, inputs, out)
     rows = []
     for r in records:
         base = {"record_id": r["record_id"], "card_id": r["card_id"], "card_name": r["title"], "business_line": r["business_line"],
@@ -233,17 +278,53 @@ def run(week: str, cap: Decimal, dry_run: bool = False, session=None, run_id: st
     return summary
 
 
+COMPARE_FIELDS = ["card_id", "record_ids", "edited_so_what", "edited_so_now_what", "v2_so_what", "v2_so_now_what", "v2_check_flags",
+                  "v2_style_flags", "latest_not_next_pqd", "no_firm_specific_wording", "plain_names", "shared_signal_mentioned",
+                  "v_meaning_given", "unsupported_inference"]
+
+
+def write_comparison(summary, run_dir, week, sheet, results, inputs, out):
+    """Edited (reviewed) text next to the v2 draft, with the problems the reviewer fixed checked on the v2 text."""
+    with Path(sheet).open(encoding="utf-8", newline="") as f:
+        edited = {}
+        for r in csv.DictReader(f):
+            if r["generated_by"] == "ai":
+                edited.setdefault(r["card_id"], {"rows": [], **r})["rows"].append(r["record_id"])
+    rows = []
+    for cid, (value, flags) in results.items():
+        e = edited.get(cid, {"rows": []})
+        style = NC.style_flags(value["so_what"], value["so_now_what"], inputs[cid]) if value["so_what"] else ["not generated"]
+        yes = lambda bad: "no" if any(bad in f for f in style + flags) else "yes"
+        rows.append({"card_id": cid, "record_ids": "|".join(e["rows"]),
+                     "edited_so_what": e.get("corrected_so_what") or e.get("so_what", ""), "edited_so_now_what": e.get("corrected_so_now_what") or e.get("so_now_what", ""),
+                     "v2_so_what": value["so_what"], "v2_so_now_what": value["so_now_what"],
+                     "v2_check_flags": json.dumps([f for f in flags if f not in style], ensure_ascii=False), "v2_style_flags": json.dumps(style, ensure_ascii=False),
+                     "latest_not_next_pqd": yes("latest available PQD"), "no_firm_specific_wording": yes("specific firms"),
+                     "plain_names": yes("series codes"), "shared_signal_mentioned": "n/a" if not inputs[cid].get("shared_signal") else yes("shared signal"),
+                     "v_meaning_given": yes("V meaning"), "unsupported_inference": "read: no code check"})
+    path = out / f"comparison_narratives_v2_{week}.csv"
+    if path.exists():
+        path = out / f"comparison_narratives_v2_{week}_{summary['run_id']}.csv"
+    with path.open("x", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=COMPARE_FIELDS, lineterminator="\n"); w.writeheader(); w.writerows(rows)
+    summary.update(comparison_file=str(path.relative_to(PROJECT)) if path.is_relative_to(PROJECT) else str(path))
+    C.dump(run_dir / "summary.json", summary)
+    return summary
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     p.add_argument("--week", required=True, help="Monday, YYYY-MM-DD")
     p.add_argument("--cap", type=Decimal, required=True, help="hard USD cap for the model calls")
     p.add_argument("--dry-run", action="store_true", help="build inputs and requests, estimate the cost, no model calls")
+    p.add_argument("--prompt", choices=sorted(PROMPTS), default="v1")
+    p.add_argument("--compare-with", type=Path, help="reviewed sheet: write a v2 comparison file instead of a review sheet")
     a = p.parse_args(argv)
     if date.fromisoformat(a.week).weekday() != 0:
         p.error("--week must be a Monday")
     if not a.cap.is_finite() or a.cap <= 0:
         p.error("--cap must be positive")
-    print(json.dumps(run(a.week, a.cap, a.dry_run), indent=2, ensure_ascii=False))
+    print(json.dumps(run(a.week, a.cap, a.dry_run, prompt=a.prompt, compare_with=a.compare_with), indent=2, ensure_ascii=False))
 
 
 if __name__ == "__main__":

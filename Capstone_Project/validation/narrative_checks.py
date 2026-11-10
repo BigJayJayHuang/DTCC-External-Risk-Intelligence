@@ -152,6 +152,33 @@ def check(so_what: str, so_now_what: str, record_input: dict, facts_used=None) -
     return flags
 
 
+# ------------------------------------------------------------------ prompt v2 style checks (flags on v2 drafts only)
+# Not applied to reviewed text at export: they test the v2 drafting rules, not publication safety.
+SERIES_CODES = re.compile(r"\b(DGS10|MORTGAGE30US|BAA10Y|VIXCLS|[a-z0-9]+(?:_[a-z0-9]+)+)\b|\|\s*Δ")
+NEXT_LATEST_PQD = re.compile(r"\bnext\b[^.;]{0,60}\bPQD\b[^.;]{0,60}\b\d{4}\s?Q[1-4]\b|\bnext\b[^.;]{0,40}\b\d{4}\s?Q[1-4]\b", re.I)
+FIRM_STRESS = re.compile(r"\b(?:member|firm|dealer|bank)s?['’]?\s+(?:credit\s+)?(?:stress|distress)\b|"
+                         r"\bstress (?:at|in|among) (?:specific|individual|particular) (?:firms|members|dealers|banks)\b", re.I)
+V_MEANING = re.compile(r"(versus|relative to|compared with) its own history|\blevel \d of 5\b", re.I)
+
+
+def style_flags(so_what: str, so_now_what: str, record_input: dict) -> list[str]:
+    """Prompt v2 rules: plain names, latest (not next) PQD quarter, no firm-specific wording for market-wide signals,
+    V meaning given. The shared-signal and number rules are in check()."""
+    both = f"{so_what or ''} {so_now_what or ''}"
+    flags = []
+    codes = sorted({m.group(0) for m in SERIES_CODES.finditer(both)})
+    if codes:
+        flags.append("series codes instead of plain names: " + ", ".join(codes))
+    if any(not re.search(r"\b(latest|last|most recent)\b", m.group(0), re.I) for m in NEXT_LATEST_PQD.finditer(both)):
+        # "next … 2026Q2" calls the latest quarter the next one, unless the quarter is labelled latest / last
+        flags.append("latest available PQD quarter described as the next release")
+    if (record_input.get("signal") or {}).get("scope") == "market-wide" and FIRM_STRESS.search(both):
+        flags.append("market-wide signal described as stress at specific firms")
+    if record_input.get("V") is not None and not V_MEANING.search(both):
+        flags.append("V meaning not given (level k of 5 versus its own history)")
+    return flags
+
+
 def load_input(path, record_id: str) -> dict | None:
     """Narrative input for a record from the run's inputs.jsonl (one JSON object per card, with record_ids)."""
     with open(path, encoding="utf-8") as f:

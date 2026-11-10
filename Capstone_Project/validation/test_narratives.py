@@ -138,6 +138,65 @@ class Run(unittest.TestCase):
         self.assertFalse((self.out / f"review_narratives_{WEEK}.csv").exists())
 
 
+class PromptV2(unittest.TestCase):
+    """The 2026-11-02 review fixes, as v2 input fields and v2 style checks."""
+    def setUp(self):
+        self.t = lambda r: {"event": "E", "mechanism": "M", "dtcc_process": "P"}
+        self.rec = lambda rid: [r for r in SCORES["records"] if r["record_id"] == rid]
+
+    def test_inputs_list_tied_signals_latest_pqd_v_meaning_and_plain_names(self):
+        liq = N.build_input_v2(self.rec("ecs-nscc-liq"), SCORES["records"], self.t)
+        self.assertEqual([x["field"] for x in liq["S_signals"]], ["vix_jump", "sofr_effr_adjusted"])          # both tie at S 5
+        self.assertTrue(all(x["scope"] == "market-wide" for x in liq["S_signals"]))
+        self.assertEqual((liq["latest_available_pqd_quarter"], liq["signal"]["plain_name"], liq["signal"]["scope"]),
+                         ("2026Q2", "VIX relative to its 20-day average (ratio)", "market-wide"))
+        self.assertEqual(liq["V_meaning"], "V 3 = this buffer measure (largest payment obligation to qualifying liquid resources for NSCC) "
+                                           "sits at level 3 of 5 versus its own history")
+        vol = N.build_input_v2(self.rec("ecs-nscc-03"), SCORES["records"], self.t)
+        self.assertNotIn("latest_available_pqd_quarter", vol)                                                   # public proxy
+        self.assertTrue(vol["V_source"].startswith("public proxy"))
+        prompt = N.prompt_parts(N.PROMPTS["v2"])[0]
+        for rule in ("never call it the next release", "Never describe it as stress at specific firms", "S_signals",
+                     "instead of series codes", "V_meaning"):
+            self.assertIn(rule, prompt)
+
+    def test_style_flags_catch_the_reviewed_problems(self):
+        xe = N.build_input_v2(self.rec("xe-member-ficc"), SCORES["records"], self.t)
+        v1_text = ("The Baa−10Y spread signals elevated member credit stress; watch |ΔDGS10| and stress_loss_to_im.",
+                   "Track the next PQD release (2026Q2).")
+        flags = NC.style_flags(*v1_text, xe)
+        self.assertEqual(len(flags), 4, flags)
+        self.assertTrue(any("series codes" in f for f in flags) and any("next release" in f for f in flags)
+                        and any("specific firms" in f for f in flags) and any("V meaning" in f for f in flags))
+        edited = ("Baa corporate spreads widened 11 bp, a broad credit signal, not a firm-specific one. V is 1: the top-five "
+                  "open-position share is at level 1 of 5 versus its own history.",
+                  "Watch for any rating actions or stress at US member firms; check the next quarterly PQD release (latest PQD, 2026Q2).")
+        self.assertEqual(NC.style_flags(*edited, xe), [])
+        ok_last = ("Spreads widened; V is 1, level 1 of 5 versus its own history.", "Monitor the next DTCC PQD release (last reflected 2026Q2).")
+        self.assertEqual(NC.style_flags(*ok_last, xe), [])
+
+    def test_comparison_mode_never_writes_the_review_sheet(self):
+        with tempfile.TemporaryDirectory() as d:
+            out = Path(d)
+            sheet = out / "reviewed.csv"
+            with sheet.open("w", newline="") as f:
+                w = csv.DictWriter(f, fieldnames=N.SHEET_FIELDS); w.writeheader()
+                w.writerow({k: "" for k in N.SHEET_FIELDS} | {"record_id": "ecs-nscc-liq", "card_id": "ECS-NSCC-LIQ", "generated_by": "ai",
+                                                               "corrected_so_what": "Edited.", "so_what": "Draft."})
+            v2 = lambda card: {"so_what": "The VIX relative to its 20-day average reached 1.54. V is 3: level 3 of 5 versus its own history.",
+                               "so_now_what": "S is also set by the SOFR−EFFR spread shared with FICC-GSD-02; watch the next quarterly PQD release.",
+                               "facts_used": ["signal.plain_name"], "caveats": []}
+            res = N.run(WEEK, Decimal("0.20"), session=FakeSession(FakeRuntime(v2)), run_id="c1", out=out, transmission=self.t,
+                        prompt="v2", compare_with=sheet)
+            self.assertFalse(any(out.glob("review_narratives_*.csv")))
+            with (out / f"comparison_narratives_v2_{WEEK}.csv").open() as f:
+                rows = {r["card_id"]: r for r in csv.DictReader(f)}
+            liq = rows["ECS-NSCC-LIQ"]
+            self.assertEqual((liq["edited_so_what"], liq["latest_not_next_pqd"], liq["plain_names"], liq["shared_signal_mentioned"],
+                              liq["v_meaning_given"], liq["no_firm_specific_wording"]), ("Edited.", "yes", "yes", "yes", "yes", "yes"))
+            self.assertTrue(res["prompt_version"].startswith("narrative-prompt-v2:"))
+
+
 class ExportGate(unittest.TestCase):
     """docs/data/export_risk_output.py publishes only approved narratives that pass the checks again."""
     def setUp(self):
