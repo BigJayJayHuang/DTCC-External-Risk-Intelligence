@@ -1,0 +1,55 @@
+{
+  "card_id": "FICC-GSD-01",
+  "request_sha256": "bb758ec7ad3af1ab12f29fd7e86ee7b10a51479a9e4ec1949ce2be98aba9fc72",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_POzXIxlqU1ILput9ltJQYc",
+            "name": "submit_narrative",
+            "input": {
+              "so_what": "The daily move in the 10-year Treasury yield reached the 42nd percentile of 461 prior weeks, relevant to GSD margin requirements. V is 1 (PQD – DTCC public quantitative disclosure): stress loss to initial margin for GSD sits at level 1 of 5 versus its own history.",
+              "so_now_what": "Watch the daily move in the 10-year Treasury yield for further swings, and the next quarterly PQD release for any change in GSD's stress-loss-to-initial-margin buffer.",
+              "facts_used": [
+                "signal.plain_name",
+                "signal.percentile",
+                "signal.prior_weeks",
+                "transmission_chain.dtcc_process",
+                "V",
+                "V_source",
+                "V_meaning",
+                "V_tier",
+                "latest_available_pqd_quarter",
+                "S_signals",
+                "shared_signal",
+                "chain_confidence"
+              ],
+              "caveats": [
+                "Chain confidence is Medium.",
+                "Related news is headline-level only and not scored."
+              ]
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1082,
+    "outputTokens": 297,
+    "totalTokens": 3153,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 1774,
+    "cacheDetails": [
+      {
+        "ttl": "5m",
+        "inputTokens": 1774
+      }
+    ]
+  },
+  "estimated_cost_usd": "0.01578885"
+}

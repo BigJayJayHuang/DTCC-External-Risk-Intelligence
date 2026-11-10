@@ -45,6 +45,9 @@ class Checks(unittest.TestCase):
         self.assertEqual(NC.check("VIX at 1.54× with V from a public proxy and low chain confidence.", "Watch the U.S. data, e.g. the daily ratio.",
                                   proxy_low), [])
         self.assertEqual(NC.check("Shared with FICC-GSD-02.", "Watch it.", INPUT, ["signal.value", "nope"]), ["facts_used names unknown fields: nope"])
+        listed = {**INPUT, "related_news": {"top_titles": []}, "S_signals": [{"plain_name": "VIX", "percentile": 0.97}]}
+        self.assertEqual(NC.check("Shared with FICC-GSD-02.", "Watch it.", listed,
+                                  ["related_news.top_titles", "S_signals[0].plain_name", "S_signals[1].percentile", "shared_signal"]), [])
 
 
 class Inputs(unittest.TestCase):

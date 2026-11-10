@@ -63,10 +63,17 @@ def input_numbers(record_input: dict) -> tuple[list[float], set[tuple[int, int, 
 
 
 def field_names(record_input: dict) -> set[str]:
+    """Every field path of the input, including fields whose value is an empty list or object."""
     names = set()
-    for path, _ in _walk(record_input):
-        parts = path.split(".")
-        names.update(".".join(parts[:i]) for i in range(1, len(parts) + 1))
+    def walk(value, path):
+        if isinstance(value, dict):
+            for k, v in value.items():
+                p = f"{path}.{k}" if path else k
+                names.add(p); walk(v, p)
+        elif isinstance(value, list):
+            for v in value:
+                walk(v, path)
+    walk(record_input, "")
     return names
 
 
@@ -146,7 +153,7 @@ def check(so_what: str, so_now_what: str, record_input: dict, facts_used=None) -
             flags.append(f"shared signal with {shared.get('card_id')} not mentioned")
     if facts_used is not None:
         known = field_names(record_input)
-        unknown = [f for f in facts_used if f not in known]
+        unknown = [f for f in facts_used if re.sub(r"\[\d+\]", "", f) not in known]     # S_signals[0].x -> S_signals.x
         if unknown:
             flags.append("facts_used names unknown fields: " + ", ".join(unknown))
     return flags
