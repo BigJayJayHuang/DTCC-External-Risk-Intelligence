@@ -57,7 +57,7 @@ Each item belongs to one snapshot. To show week-over-week change, write the same
 | `status` | no | string | `scored` (default); `no_relevant_news` (grey "No relevant news found (headline-level scan)" box, sorted last; only in weeks whose snapshot has `news_coverage` `headline_level_ai_screen`); `news_not_scanned` (grey "News not scanned" box, sorted last; only in weeks before the weekly news screen); or `data_incomplete` (grey "Data incomplete" box) |
 | `V_tier` | no | string | `pqd` or `public_proxy`, shown next to V |
 | `needs_human_signoff` | no | bool | `true` shows a "Pending review" badge |
-| `analysis_status` | no | string | `pending_llm` while So what / So now what await the LLM step |
+| `analysis_status` | no | string | `pending_llm`: no narrative step for the week. `pending_review`: an AI draft exists but is not approved, so the text is null and the page shows "Analysis pending review". `template`: fixed non-AI text for cards without a scored shock. `ai_reviewed`: AI-drafted text approved or edited by an analyst |
 | `shared_signal` | no | string[] | card_ids of other cards whose S comes from the same signal field (e.g. `sofr_effr_adjusted`); shows "Signal shared with …" |
 | `card_id` | no | string | final16 card id; the validator checks each card/business-line pair against `card_lines.csv` |
 | `risk_family` | yes | string | Credit, Liquidity, Market, Operational, Cyber, Regulatory, Strategic |
@@ -68,7 +68,7 @@ Each item belongs to one snapshot. To show week-over-week change, write the same
 | `summary_line` | no | string | One line under the card title |
 | `what_happened` | no | string | |
 | `transmission` | no | object | `{event, mechanism, dtcc_process}` |
-| `so_what`, `so_now_what` | no | string, or `null` only when `analysis_status` is `pending_llm` (the page then shows a grey dashed "AI analysis – available once the news classifier is connected." box under the heading) | |
+| `so_what`, `so_now_what` | no | string, or `null` only when `analysis_status` is `pending_llm` (grey "AI analysis – available once the news classifier is connected." box) or `pending_review` (grey "Analysis pending review" box) | From `Capstone_Project/data/narratives/review_narratives_<week>.csv`. Only approved or edited AI rows that pass `validation/narrative_checks.py` are published: so_what at most 2 sentences / 45 words, so_now_what at most 2 sentences / 40 words, numbers only from the card's input, no banned phrases. Template rows: "No scored shock this week." / "See the transmission chain for what would trigger a score." |
 | `time_phased` | no | object | `{now, next, later}` |
 | `shock_method` | no | string | `Market indicator` or `Event rubric` |
 | `shock_basis`, `vulnerability_basis` | no | string | How each score was built |
@@ -77,7 +77,8 @@ Each item belongs to one snapshot. To show week-over-week change, write the same
 | `where_we_stand` | no | string | |
 | `shareable_line` | no | string | Has a "Copy line" button |
 | `sources` | no | `[{name, url}]` | A `url` of `""` shows plain text |
-| `ai_generated_fields` | no | string[] | Field names that get an "AI-WRITTEN" tag, e.g. `summary_line`, `so_what`, `so_now_what`, `shareable_line` |
+| `ai_generated_fields` | no | string[] | Field names that get an AI tag, e.g. `summary_line`, `so_what`, `so_now_what`, `shareable_line`. The tag reads `narrative_review_label` when set, otherwise "AI-WRITTEN" |
+| `narrative_review_label` | no | string | "AI-written, reviewed by analyst" on `ai_reviewed` items. `narrative_reviewer`, `narrative_decision` (`approve` / `edit`), `narrative_prompt_version` and `narrative_model` record the provenance |
 | `review_status` | no | string | e.g. `AI-drafted, analyst-checked` |
 | `related_news` | no | `[{title, outlet, url, event_type, proposed_event_id, label?}]` | Headline-level news for this card and week (Amendments D, E and G: market moves on indicator cards, duplicates of recorded events, and new-member notices with `label` "membership/onboarding"). Shown as "Related news · headline-level news, not scored", with the label as a chip; never part of the score |
 | `ai_unreviewed_events` | no | string[] | Active register events on this card entered by the news classifier without a human decision (`llm-auto`/`unreviewed`) |
@@ -98,6 +99,7 @@ The page calculates these itself, so the model should not send them:
 - **Sort:** score high→low (default), score low→high, newest first, oldest first. "Newest" uses `updated_at`. Items with V pending sort last when sorting by score. Unscored cards ("News not scanned", "Data incomplete") always sort last.
 - **Filters:** severity, risk family and region.
 - **Tabs:** all 10 business lines are always shown, each with its item count.
+- **Related news on a card:** one line per label (e.g. "7 new FICC members this week (membership/onboarding)") plus up to 3 other headlines. The detail view lists every item.
 
 ## Running locally
 

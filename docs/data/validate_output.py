@@ -5,6 +5,7 @@ Usage: python3 docs/data/validate_output.py docs/data/risk_output.json
 Exit code 0 = OK, 1 = errors found. Standard library only.
 """
 import csv
+import importlib.util
 import json
 import sys
 from datetime import datetime
@@ -15,7 +16,13 @@ FAMILIES = {"Credit", "Liquidity", "Market", "Operational", "Cyber", "Regulatory
 STATUSES = {"scored", "news_not_scanned", "data_incomplete", "no_relevant_news"}
 UNSCORED = {"news_not_scanned", "data_incomplete", "no_relevant_news"}   # shock may be null only for these
 COVERAGE = {"manual_register_only", "headline_level_ai_screen"}           # snapshots[].news_coverage (Amendment F1)
-ANALYSIS_FIELDS = ("so_what", "so_now_what")                 # null only while analysis_status = "pending_llm"
+ANALYSIS_FIELDS = ("so_what", "so_now_what")                 # null only while analysis_status is pending_llm / pending_review
+ANALYSIS_STATUSES = {"pending_llm", "pending_review", "template", "ai_reviewed"}
+_NC_PATH = Path(__file__).resolve().parents[2] / "Capstone_Project/validation/narrative_checks.py"
+NC = None
+if _NC_PATH.exists():                                         # word limits, banned phrases, fixed texts (standard library)
+    _spec = importlib.util.spec_from_file_location("narrative_checks", _NC_PATH)
+    NC = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(NC)
 # Business-line rows per card (scoring v1.3), including the FICC and ECS rows of cross-entity (XE-) cards
 CARD_LINES = Path(__file__).resolve().parents[2] / "Capstone_Project/results/scoring/v1.3_indicator/config/card_lines.csv"
 
@@ -92,11 +99,35 @@ def main(path):
             errors.append(f"{tag}: news_not_scanned in a week the news screen covered; expected no_relevant_news")
         if status == "no_relevant_news" and it.get("show_on_main"):
             errors.append(f"{tag}: no_relevant_news must have show_on_main false")
+        astatus = it.get("analysis_status")
+        if astatus is not None and astatus not in ANALYSIS_STATUSES:
+            errors.append(f"{tag}: analysis_status '{astatus}' is not one of {sorted(ANALYSIS_STATUSES)}")
         for k in ANALYSIS_FIELDS:
-            if k in it and it[k] is None and it.get("analysis_status") != "pending_llm":
-                errors.append(f"{tag}: {k} is null; allowed only when analysis_status is 'pending_llm'")
+            if k in it and it[k] is None and astatus not in ("pending_llm", "pending_review"):
+                errors.append(f"{tag}: {k} is null; allowed only when analysis_status is 'pending_llm' or 'pending_review'")
             elif it.get(k) is not None and not isinstance(it[k], str):
                 errors.append(f"{tag}: {k} must be a string or null")
+            elif it.get(k) is not None and astatus in ("pending_llm", "pending_review"):
+                errors.append(f"{tag}: {k} has text but analysis_status is {astatus} (unreviewed text is never published)")
+        ai_fields = set(it.get("ai_generated_fields") or [])
+        if astatus == "ai_reviewed":
+            if not {"so_what", "so_now_what"} <= ai_fields:
+                errors.append(f"{tag}: ai_reviewed text must list so_what and so_now_what in ai_generated_fields")
+            if it.get("narrative_review_label") != "AI-written, reviewed by analyst":
+                errors.append(f"{tag}: ai_reviewed text needs narrative_review_label 'AI-written, reviewed by analyst'")
+            if NC is not None:
+                for k in ANALYSIS_FIELDS:
+                    text = it.get(k) or ""
+                    max_sent, max_words = NC.LIMITS[k]
+                    if len(text.split()) > max_words or NC.sentences(text) > max_sent:
+                        errors.append(f"{tag}: {k} exceeds {max_sent} sentences / {max_words} words")
+                    if NC.BANNED.search(text):
+                        errors.append(f"{tag}: {k} contains a banned phrase")
+        if astatus == "template":
+            if ai_fields & {"so_what", "so_now_what"}:
+                errors.append(f"{tag}: template text must not be marked AI-generated")
+            if NC is not None and (it.get("so_what"), it.get("so_now_what")) != (NC.TEMPLATE_SO_WHAT, NC.TEMPLATE_SO_NOW_WHAT):
+                errors.append(f"{tag}: template text differs from the fixed template")
         if card_lines is not None and it.get("card_id"):
             want = card_lines.get((it["card_id"], it.get("business_line")))
             if want is None:
