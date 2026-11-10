@@ -5,7 +5,8 @@
 Steps for one Monday-Sunday week (the week must be over unless --allow-partial-week):
   1. Google News RSS (news_queries.csv; headline filter; 25 per card) -> inputs/google/
   2. Publisher feeds (publisher_feeds_config.json; keyword pre-filter; full text where allowed), the daily official
-     news export (--official; stops if it is missing) and the Google items -> inputs/feeds/classifier_input.csv
+     news export (--official; stops if it is missing), Alpha Vantage NEWS_SENTIMENT summaries (four topics; key from
+     ALPHAVANTAGE_API_KEY; --no-alphavantage to skip) and the Google items -> inputs/feeds/classifier_input.csv
      (--collect-only stops here; --from-inputs reuses a saved classifier_input.csv and skips steps 1-2)
   3. Dry run with prompt v1.6, flat schema, caching (--dry-run stops here). Stops if the cache-aware estimate is above
      --cap, or if an earlier run of the week left an unresolved cost reservation.
@@ -22,6 +23,7 @@ from decimal import Decimal
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from . import alpha_vantage_news as AV
 from . import google_news as G
 from . import llm_classifier as C
 from . import publisher_feeds as P
@@ -90,7 +92,8 @@ def run_week(week_start: date, cap: Decimal, *, today: date | None = None, allow
              weekly_dir: Path = WEEKLY, review_dir: Path = REVIEW_DIR, context_path: Path = RS.CONTEXT_NEWS,
              collect_google=G.collect, collect_feeds=P.main, classify=C.run, from_inputs: Path | None = None,
              prompt_version: str = PROMPT_VERSION, official_news: Path = C.NEWS,
-             collect_only: bool = False, dry_run: bool = False, offline_google_from: Path | None = None) -> dict:
+             collect_only: bool = False, dry_run: bool = False, offline_google_from: Path | None = None,
+             collect_alphavantage=None) -> dict:
     monday, sunday = G.week_window(week_start)
     today = today or datetime.now(ZoneInfo("America/New_York")).date()
     if not allow_partial and today <= sunday:
@@ -129,10 +132,20 @@ def run_week(week_start: date, cap: Decimal, *, today: date | None = None, allow
             return finish('stopped_official_export_unavailable',official_input=str(official_news),
                           reason='Restore or refresh the daily official news export; it must not be silently omitted.')
         result['official_input']={"path":str(official_news),"sha256":hashlib.sha256(Path(official_news).read_bytes()).hexdigest()}
-        feeds = collect_feeds(["--out-dir", str(out / "inputs" / "feeds"), "--google", str(g_dir / "google_news.csv"),
-                               "--official",str(official_news),"--week-start",monday.isoformat(),"--week-end",sunday.isoformat()])
+        feed_args = ["--out-dir", str(out / "inputs" / "feeds"), "--google", str(g_dir / "google_news.csv"),
+                     "--official",str(official_news),"--week-start",monday.isoformat(),"--week-end",sunday.isoformat()]
+        if collect_alphavantage is not None:          # Alpha Vantage NEWS_SENTIMENT (summaries stay in the local cache)
+            try:
+                av = collect_alphavantage(monday, out / "inputs" / "alphavantage")
+            except AV.KeyMissing as e:
+                return finish('stopped_alphavantage_key_missing', reason=str(e))
+            result['alphavantage'] = av['stats']
+            if not av['rows'] and av['stats'].get('errors'):
+                return finish('stopped_alphavantage_unavailable', reason='Alpha Vantage returned no news feed; see inputs/alphavantage/alphavantage_requests.json')
+            feed_args += ["--alphavantage", str(av['items_csv'])]
+        feeds = collect_feeds(feed_args)
         news = out / "inputs" / "feeds" / "classifier_input.csv"
-        result.update(google=g_stats, feeds={k: feeds.get(k) for k in ("items_to_classifier", "scope_totals", "published_range","official_input","per_source")})
+        result.update(google=g_stats, feeds={k: feeds.get(k) for k in ("items_to_classifier", "scope_totals", "published_range","official_input","per_source","alphavantage")})
         if collect_only:
             return finish('collected_for_review_no_model_calls',classifier_input=str(news),
                           next_step='Review evidence coverage; use --dry-run for a cost estimate without invoking AWS.')
@@ -197,12 +210,14 @@ def main(argv=None):
     modes.add_argument('--dry-run',action='store_true',help='Collect and estimate locally; never invoke a model')
     p.add_argument('--official',type=Path,default=C.NEWS,help='Daily official-news CSV; always included through the keyword filter')
     p.add_argument('--offline-google-from',type=Path,help='Reparse an existing RSS batch instead of repeating Google requests')
+    p.add_argument('--no-alphavantage',action='store_true',help='Skip the Alpha Vantage NEWS_SENTIMENT source (needs ALPHAVANTAGE_API_KEY)')
     a = p.parse_args(argv)
     if a.from_inputs and a.collect_only:
         p.error('--from-inputs reuses saved inputs; --collect-only has nothing to collect')
     print(json.dumps(run_week(a.week_start, a.cap, allow_partial=a.allow_partial_week, from_inputs=a.from_inputs,
                              prompt_version=a.prompt_version, context_path=a.context_out, official_news=a.official,
-                             collect_only=a.collect_only,dry_run=a.dry_run,offline_google_from=a.offline_google_from), indent=2, ensure_ascii=False))
+                             collect_only=a.collect_only,dry_run=a.dry_run,offline_google_from=a.offline_google_from,
+                             collect_alphavantage=None if a.no_alphavantage or a.from_inputs else AV.collect), indent=2, ensure_ascii=False))
 
 
 if __name__ == "__main__":

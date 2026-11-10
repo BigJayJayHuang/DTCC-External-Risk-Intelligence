@@ -32,6 +32,8 @@ on:
       - 'Capstone_Project/validation/scoring_v1_3.py'
       - 'Capstone_Project/validation/fixtures/**'
       - 'Capstone_Project/validation/check_register_change.py'
+      - 'Capstone_Project/validation/alpha_vantage_news.py'
+      - 'Capstone_Project/validation/test_alpha_vantage_news.py'
       - 'Capstone_Project/validation/test_check_register_change.py'
       - 'Capstone_Project/data/events/event_register.csv'
       - 'Capstone_Project/data/events/register_changelog.csv'
@@ -64,7 +66,7 @@ jobs:
           python -m unittest -v validation.test_llm_prompt_v13 validation.test_llm_flat_schema
           validation.test_google_news validation.test_publisher_feeds validation.test_review_promote
           validation.test_weekly_news_run
-          validation.test_news_evidence_scope validation.test_market_refresh validation.test_check_register_change
+          validation.test_news_evidence_scope validation.test_market_refresh validation.test_check_register_change validation.test_alpha_vantage_news
       - name: Confirm protected files remain unchanged
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}

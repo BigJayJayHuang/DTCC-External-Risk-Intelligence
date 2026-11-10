@@ -60,6 +60,7 @@ CSV_FIELDS = [
 ]
 GOOGLE_NEWS_SOURCE = "google_news_rss"
 PUBLISHER_SOURCE = "publisher_rss"
+ALPHAVANTAGE_SOURCE = "alphavantage_news"       # summaries read from the local cache (validation/alpha_vantage_news.py)
 COLLECTOR_SCOPES = {"full_text", "article_excerpt", "summary", "headline_only"}
 HINT_NOTE = ("Card ids whose keyword search query matched this item. Retrieval hint only; "
              "it is not a relevance decision or a card assignment.")
@@ -126,13 +127,13 @@ def load_news(path: Path, start: date, end: date, limit: int | None):
         if row.get("source_id") == GOOGLE_NEWS_SOURCE:
             # Outlet and tier come from the collector (google_news.py), never from the model.
             outlet, tier, scope = row.get("outlet") or outlet, row.get("source_tier") or "other", "headline_snippet"
-        if row.get("source_id") == PUBLISHER_SOURCE:
+        if row.get("source_id") in (PUBLISHER_SOURCE, ALPHAVANTAGE_SOURCE):
             outlet, tier = row.get("outlet") or outlet, row.get("source_tier") or "other"
         row_scope = (row.get("content_scope") or "").strip()
         if row_scope in COLLECTOR_SCOPES:   # set by publisher_feeds.py
             scope = row_scope
-            if scope in {"full_text", "article_excerpt"}:
-                # Full text lives only in the git-ignored cache; the CSV holds its hash.
+            if scope in {"full_text", "article_excerpt"} or (scope == "summary" and not has_summary and row.get("text_file")):
+                # Full text (and Alpha Vantage summaries) live only in the git-ignored cache; the CSV holds the hash.
                 cache_path = (PROJECT / row["text_file"]).resolve()
                 try:
                     cache_path.relative_to(PROJECT.resolve())
@@ -142,6 +143,8 @@ def load_news(path: Path, start: date, end: date, limit: int | None):
                 if sha(body.encode("utf-8")) != row.get("text_sha256"):
                     raise ValueError("full-text cache does not match text_sha256 for " + row["url"])
                 text = title + "\n\n" + body
+                if scope == "summary" and not body.strip():
+                    scope, text = "headline_only", title
             elif scope == "summary" and has_summary:
                 text = title + "\n\n" + summary
             else:
@@ -666,7 +669,8 @@ def run(args, session=None):
             key = sha((article["document_id"] + "|" + article["url"]).encode())[:24]
             raw_path = run_dir / "raw" / (key + ".json")
             # Full texts are never committed: the .fulltext.txt suffix is git-ignored.
-            article_path = run_dir / "articles" / (key + (".fulltext.txt" if article["content_scope"] in {"full_text","article_excerpt"} else ".txt"))
+            local_text = article["content_scope"] in {"full_text", "article_excerpt"} or article["source_id"] == ALPHAVANTAGE_SOURCE
+            article_path = run_dir / "articles" / (key + (".fulltext.txt" if local_text else ".txt"))
             article_path.parent.mkdir(parents=True, exist_ok=True)
             article_path.write_text(article["text"], encoding="utf-8")
             attempts = []

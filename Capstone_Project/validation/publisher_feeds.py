@@ -23,6 +23,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from . import alpha_vantage_news as AV
 from . import google_news as G
 
 PROJECT = Path(__file__).resolve().parents[1]
@@ -41,6 +42,15 @@ OFFICIAL_META = {
     "fca_rss": ("FCA", "regulator"), "ecb_press": ("ECB", "official"),
     "esma_news": ("ESMA", "regulator"), "bis_press": ("BIS", "official"),
 }
+# Non-US official publishers reach the model only when title or summary names a US market link (exclusion audit otherwise)
+NON_US_OFFICIAL = {"fca_rss", "ecb_press", "esma_news", "bis_press"}
+US_TERMS_CASE = re.compile(r"(?<![A-Za-z0-9])(US|U\.S\.|SEC|CFTC|DTCC|FICC|NSCC|DTC)(?![A-Za-z0-9])")
+US_TERMS_ANY_CASE = re.compile(r"(?<![A-Za-z0-9])(United States|Federal Reserve|Treasury)(?![A-Za-z0-9])", re.I)
+LOCAL_TEXT_SCOPES = {"full_text", "article_excerpt"}      # body lives in the git-ignored cache; CSV keeps only its hash
+
+
+def us_link(text: str) -> bool:
+    return bool(US_TERMS_CASE.search(text) or US_TERMS_ANY_CASE.search(text))
 
 
 def sha(b: bytes) -> str:
@@ -467,15 +477,100 @@ def official_rows(path: Path, queries, start: date, end: date):
                      "matched_card_ids": cards, "selected_for_card_ids": cards,
                      "matched_queries": json.dumps(dict(hints), ensure_ascii=False),
                      "keep_rule": "broad_official_keyword_match"})
+    non_us = [row for row in kept if row["source_id"] in NON_US_OFFICIAL
+              and not us_link(html.unescape(row.get("title", "")) + "\n" + html.unescape(row.get("summary", "")))]
+    for row in non_us:
+        dropped.append({"document_id": row["document_id"], "source_id": row["source_id"],
+                        "publication_date": _publication_day(row).isoformat(), "title": row.get("title", ""), "url": row.get("url", ""),
+                        "reason": "non-US official source without a US term (US, United States, SEC, CFTC, Federal Reserve, "
+                                  "Treasury, DTCC, FICC, NSCC, DTC) in title or summary"})
+    kept = [row for row in kept if row not in non_us]
     for row in kept:
         outlet, tier = OFFICIAL_META.get(row["source_id"], ("Official publisher", "official"))
         row.update(feed_id="official:" + row["source_id"], outlet=row.get("outlet") or outlet,
                    source_tier=row.get("source_tier") or tier)
     return kept, dropped, {"input_rows": len(rows), "kept": len(kept), "filtered_out": len(dropped),
+                           "non_us_official_without_us_term": len(non_us),
                            "kept_strict_all_terms": strict_count, "kept_broad_keyword_fallback": len(kept) - strict_count,
                            "input_sha256": sha(path.read_bytes()), "window": [start.isoformat(), end.isoformat()],
                            "scope_exclusions": scope_exclusions,
                            "unsupported_source_rows": sum(r.get("source_id") not in ids for r in rows)}
+
+
+def recall_filter(rows: list[dict], queries) -> tuple[list[dict], list[dict]]:
+    """Strict all-terms query match on title + summary, else the broad keyword recall (same rules as official rows)."""
+    queries = list(queries)
+    index = keyword_index(queries)
+    query_keywords = [(card, query, set(keyword_index([(card, query)]))) for card, query in queries]
+    kept, dropped = [], []
+    for r in rows:
+        text = html.unescape(r.get("title", "")) + "\n" + html.unescape(r.get("summary", ""))
+        strict, hits = G.matched_queries(text, queries), keyword_hits(text, index)
+        if strict:
+            cards = "|".join(sorted(strict))
+            kept.append({**r, "matched_card_ids": cards, "selected_for_card_ids": cards, "matched_queries": json.dumps(strict, ensure_ascii=False),
+                         "matched_keywords": json.dumps(hits, ensure_ascii=False), "keep_rule": "all_terms_title_summary_match"})
+        elif hits:
+            hints = defaultdict(list)
+            for card, query, keywords in query_keywords:
+                if keywords.intersection(hits):
+                    hints[card].append(query)
+            cards = "|".join(sorted({c for group in hits.values() for c in group}))
+            kept.append({**r, "matched_card_ids": cards, "selected_for_card_ids": cards, "matched_queries": json.dumps(dict(hints), ensure_ascii=False),
+                         "matched_keywords": json.dumps(hits, ensure_ascii=False), "keep_rule": "broad_keyword_match"})
+        else:
+            dropped.append({"document_id": r["document_id"], "source_id": r["source_id"], "published_at_utc": r.get("published_at_utc", ""),
+                            "title": r.get("title", ""), "url": r.get("url", ""), "reason": "no card query or broad keyword matched title or summary"})
+    return kept, dropped
+
+
+def alphavantage_rows(path: Path) -> list[dict]:
+    majors = set(json.loads(G.CONFIG.read_text())["major_media_outlets"])
+    out = []
+    for r in AV.load_items(path):
+        out.append({"document_id": r["document_id"], "title": r["title"], "url": r["url"], "publication_date": "",
+                    "published_at_utc": r["published_at_utc"], "summary": r["summary"], "source_id": AV.SOURCE_ID,
+                    "feed_id": "alphavantage:" + r["request_topics"], "outlet": r["source"] or r["source_domain"],
+                    "source_tier": "major_media" if r["source"] in majors else "other", "text_file": r["text_file"],
+                    "text_sha256": r["summary_sha256"], "text_words": len(r["summary"].split()), "last_seen": ""})
+    return out
+
+
+def text_chars(row: dict) -> int:
+    return len((row.get("summary") or "").strip()) if (row.get("summary") or "").strip() != (row.get("title") or "").strip() else 0
+
+
+def av_dedupe(rows: list[dict], threshold: float) -> tuple[list[dict], list[dict]]:
+    """Alpha Vantage items against Google / official / publisher items: same URL, or near-identical titles within two
+    days. The version with more text is kept (ties keep the non-Alpha Vantage item); every match is recorded."""
+    others = [r for r in rows if r["source_id"] != AV.SOURCE_ID]
+    avs = [r for r in rows if r["source_id"] == AV.SOURCE_ID]
+    removed, matches = set(), []
+    for a in avs:
+        na, wa = G.norm_title(a["title"]), _published(a)
+        best = None
+        for o in others:
+            if id(o) in removed:
+                continue
+            if o["url"] == a["url"]:
+                best = (o, "url", 1.0); break
+            wo = _published(o)
+            if wa and wo and abs(wa - wo) <= timedelta(days=2):
+                ratio = difflib.SequenceMatcher(None, na, G.norm_title(o["title"])).ratio()
+                if ratio >= threshold and (best is None or ratio > best[2]):
+                    best = (o, "title", ratio)
+        if best is None:
+            continue
+        o, how, ratio = best
+        keep_av = text_chars(a) > text_chars(o)
+        winner, loser = (a, o) if keep_av else (o, a)
+        _merge_matches(winner, loser)
+        removed.add(id(loser))
+        matches.append({"av_document_id": a["document_id"], "av_title": a["title"], "av_url": a["url"], "other_source_id": o["source_id"],
+                        "other_feed_id": o.get("feed_id", ""), "other_document_id": o["document_id"], "other_title": o["title"],
+                        "other_url": o["url"], "match": how, "title_similarity": round(ratio, 3), "kept": "alphavantage" if keep_av else "other",
+                        "av_text_chars": text_chars(a), "other_text_chars": text_chars(o)})
+    return [r for r in rows if id(r) not in removed], matches
 
 
 def main(argv=None):
@@ -486,6 +581,7 @@ def main(argv=None):
     p.add_argument("--week-start", type=date.fromisoformat)
     p.add_argument("--week-end", type=date.fromisoformat)
     p.add_argument("--skip-fulltext", action="store_true")
+    p.add_argument("--alphavantage", type=Path, help="alphavantage_items.csv from validation.alpha_vantage_news (summaries read from the local cache)")
     a = p.parse_args(argv)
     if bool(a.week_start) != bool(a.week_end):
         p.error("--week-start and --week-end must be provided together")
@@ -500,7 +596,7 @@ def main(argv=None):
     index = keyword_index(queries)
     client = Client(config)
     stats = defaultdict(Counter)
-    rows, dropped, official_dropped, window_excluded = [], [], [], []
+    rows, dropped, official_dropped, window_excluded, av_dropped, av_matches = [], [], [], [], [], []
     official_summary = {"status": "not_requested"}
     window_start = a.week_start or (G.last_full_week(datetime.now(ZoneInfo("America/New_York")).date()) if a.official else None)
     window_end = a.week_end or (window_start + timedelta(days=6) if window_start else None)
@@ -545,20 +641,41 @@ def main(argv=None):
         rows.extend(incoming)
         for row in incoming:
             stats[row["feed_id"]]["kept_prefilter"] += 1
+    if a.alphavantage:
+        incoming = alphavantage_rows(a.alphavantage)
+        stats["alphavantage"]["fetched"] += len(incoming)
+        incoming, av_dropped = recall_filter(incoming, queries)
+        stats["alphavantage"]["kept_prefilter"] += len(incoming)
+        stats["alphavantage"]["prefilter_dropped"] += len(av_dropped)
+        rows.extend(incoming)
     rows, excluded = window_candidates(rows, window_start, window_end)
     window_excluded.extend(excluded)
     for row in window_excluded:
         stats[row.get("feed_id") or "official:" + row["source_id"]][row["reason"]] += 1
+    rows, av_matches = av_dedupe(rows, config["title_similarity_threshold"])
+    for m in av_matches:
+        stats["alphavantage"][f"duplicate_of_{m['other_source_id']}_kept_{m['kept']}"] += 1
     rows, dups = dedupe(rows, config["title_similarity_threshold"])
     for r in rows:
-        ft = {"fulltext_status": "skipped"} if a.skip_fulltext else fetch_fulltext(r, client, config, cache_dir)
-        r.update(ft)
-        r["content_scope"] = ("article_excerpt" if ft.get("text_truncated") else "full_text") if ft.get("text_file") else ("summary" if r.get("summary") else "headline_only")
+        if r["source_id"] == AV.SOURCE_ID:            # summary only: the article page is never fetched
+            ft = {"fulltext_status": "not_requested_alphavantage_summary"}
+            r.update(ft); r["content_scope"] = "summary"
+        else:
+            ft = {"fulltext_status": "skipped"} if a.skip_fulltext else fetch_fulltext(r, client, config, cache_dir)
+            r.update(ft)
+            r["content_scope"] = ("article_excerpt" if ft.get("text_truncated") else "full_text") if ft.get("text_file") else ("summary" if r.get("summary") else "headline_only")
         stats[r["feed_id"]]["scope_" + r["content_scope"]] += 1
         stats[r["feed_id"]]["fulltext_" + ft["fulltext_status"]] += 1
     rows.sort(key=lambda r: (r.get("published_at_utc") or "", r["document_id"]))
+    # No article bodies in the CSV: full text, excerpts and Alpha Vantage summaries stay in the local cache (hash kept).
+    written = [{**r, "summary": ""} if r["content_scope"] in LOCAL_TEXT_SCOPES or r["source_id"] == AV.SOURCE_ID else r for r in rows]
     with (out / "classifier_input.csv").open("w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=FIELDS, extrasaction="ignore", lineterminator="\n"); w.writeheader(); w.writerows(rows)
+        w = csv.DictWriter(f, fieldnames=FIELDS, extrasaction="ignore", lineterminator="\n"); w.writeheader(); w.writerows(written)
+    G.write_csv(out / "alphavantage_prefilter_dropped.csv", av_dropped,
+                ["document_id", "source_id", "published_at_utc", "title", "url", "reason"])
+    G.write_csv(out / "alphavantage_dedup.csv", av_matches,
+                ["av_document_id", "av_title", "av_url", "other_source_id", "other_feed_id", "other_document_id", "other_title", "other_url",
+                 "match", "title_similarity", "kept", "av_text_chars", "other_text_chars"])
     with (out / "prefilter_dropped.csv").open("w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=["feed_id", "outlet", "published_at_utc", "title", "url"], lineterminator="\n"); w.writeheader(); w.writerows(dropped)
     G.write_csv(out / "official_prefilter_dropped.csv", official_dropped,
@@ -574,6 +691,9 @@ def main(argv=None):
                "requests": [{"kind": k, "status": s, "n": n} for (k, s), n in Counter((e["kind"], e.get("status")) for e in client.log).items()],
                "robots": {h: ("parsed" if not isinstance(v, bool) else ("allow_all" if v else "disallow_all")) for h, v in client.robots.items()},
                "official_input": official_summary,
+               "alphavantage": {"input": str(a.alphavantage) if a.alphavantage else None, "prefilter_dropped": len(av_dropped),
+                                "duplicates_with_other_sources": len(av_matches),
+                                "kept_alphavantage_version": sum(m["kept"] == "alphavantage" for m in av_matches)},
                "requested_window": [window_start.isoformat(), window_end.isoformat()] if window_start else None,
                "window_exclusions": dict(Counter(row["reason"] for row in window_excluded)),
                "config_sha256": sha(CONFIG.read_bytes()), "queries_sha256": sha(G.QUERIES.read_bytes())}
