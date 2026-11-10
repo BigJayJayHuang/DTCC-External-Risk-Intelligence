@@ -29,7 +29,9 @@ from .paths import PROJECT
 
 REPO = PROJECT.parent
 PROMPT = Path(__file__).with_name("narrative_prompt_v1.md")
-PROMPTS = {"v1": PROMPT, "v2": Path(__file__).with_name("narrative_prompt_v2.md"), "v3": Path(__file__).with_name("narrative_prompt_v3.md")}
+PROMPTS = {"v1": PROMPT, "v2": Path(__file__).with_name("narrative_prompt_v2.md"), "v3": Path(__file__).with_name("narrative_prompt_v3.md"),
+           "v3.1": Path(__file__).with_name("narrative_prompt_v3.1.md")}
+DEFAULT_PROMPT = "v3.1"            # weekly default (WEEKLY_RUNBOOK step 6); v1, v2 and v3 are kept for reproducibility
 # Prompt v2: plain names for the six market signals; all are market-wide (never stress at specific firms)
 SIGNAL_PLAIN = {
     "ust10_abs_change": "daily move in the 10-year Treasury yield, bp",
@@ -167,6 +169,36 @@ def build_input_v3(records: list[dict], week_records: list[dict], transmission) 
     return inp
 
 
+_SOURCES = {}
+FRED_PLAIN = {"VIXCLS": "VIX index (FRED)", "SOFR": "SOFR (FRED)", "EFFR": "effective fed funds rate (FRED)",
+              "DGS10": "10-year Treasury yield (FRED)", "BAA10Y": "Baa corporate spread over the 10-year Treasury (FRED)",
+              "MORTGAGE30US": "30-year mortgage rate (Freddie Mac survey, via FRED)"}
+
+
+def public_sources(record: dict) -> list[str]:
+    """Public data sources for a card: its signal series and, for public-proxy V, the proxy series (names only)."""
+    if not _SOURCES:
+        import runpy
+        ex = export_module()
+        _SOURCES.update(series=ex.SERIES_SOURCE, fields=ex.SIGNAL_SERIES, proxy=runpy.run_path(str(ex.FINAL16_CONFIG))["PUBLIC_PROXY"])
+    names = []
+    for mc in record.get("market_chains") or []:
+        for series in _SOURCES["fields"].get(mc["field"], []):
+            names.append(_SOURCES["series"].get(series, (FRED_PLAIN.get(series, f"FRED series {series}"),))[0])
+    if record.get("V_tier") == "public_proxy" and record["card_id"] in _SOURCES["proxy"]:
+        names.append(re.sub(r"\s*\(existing repo files\)", "", _SOURCES["proxy"][record["card_id"]]["source"]))
+    return list(dict.fromkeys(names))
+
+
+def build_input_v31(records: list[dict], week_records: list[dict], transmission) -> dict:
+    """v3 input plus related-news items with their outlets (for a verbatim, attributed headline) and watch_sources."""
+    inp = build_input_v3(records, week_records, transmission)
+    related = records[0].get("related_news") or []
+    inp["related_news"]["top_items"] = [{"title": n["title"], "outlet": n.get("outlet", "")} for n in related[:5]]
+    inp["watch_sources"] = public_sources(records[0])
+    return inp
+
+
 def build_request(system: str, user: str, config: dict) -> dict:
     return {"modelId": config["model_id"], "system": [{"text": system}, {"cachePoint": {"type": "default"}}],
             "messages": [{"role": "user", "content": [{"text": user}]}],
@@ -193,12 +225,14 @@ def worst_case(system: str, user: str, prices: dict) -> Decimal:
 
 
 def run(week: str, cap: Decimal, dry_run: bool = False, session=None, run_id: str | None = None, out: Path = OUT,
-        scores_dir: Path = SCORES, transmission=None, prompt: str = "v1", compare_with: Path | None = None) -> dict:
+        scores_dir: Path = SCORES, transmission=None, prompt: str = DEFAULT_PROMPT, compare_with: Path | None = None) -> dict:
     """prompt "v2" with compare_with=<reviewed sheet>: a comparison file next to the sheet, never the review sheet."""
     doc = json.loads((scores_dir / f"weekly_scores_v1.3_{week}.json").read_text())
     config = json.loads(C.CONFIG.read_text())
     system, user_template, version = prompt_parts(PROMPTS[prompt])
-    make_input = {"v1": build_input, "v2": build_input_v2, "v3": build_input_v3}[prompt]
+    if compare_with is not None and prompt not in ("v2", "v3"):
+        raise ValueError("comparison mode supports prompts v2 and v3")
+    make_input = {"v1": build_input, "v2": build_input_v2, "v3": build_input_v3, "v3.1": build_input_v31}[prompt]
     transmission = transmission or chain_context()
     run_id = run_id or "run_" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     run_dir = out / "runs" / week / run_id
@@ -259,7 +293,7 @@ def run(week: str, cap: Decimal, dry_run: bool = False, session=None, run_id: st
         try:
             value = parse(response)
             flags = NC.check(value["so_what"], value["so_now_what"], inputs[cid], value["facts_used"])
-            if prompt in ("v2", "v3"):
+            if prompt in ("v2", "v3", "v3.1"):
                 flags += NC.style_flags(value["so_what"], value["so_now_what"], inputs[cid], version=prompt)
         except Exception as exc:
             value, flags = {"so_what": "", "so_now_what": "", "facts_used": [], "caveats": []}, [f"invalid output: {exc}"[:300]]
@@ -386,7 +420,7 @@ def main(argv=None):
     p.add_argument("--week", required=True, help="Monday, YYYY-MM-DD")
     p.add_argument("--cap", type=Decimal, required=True, help="hard USD cap for the model calls")
     p.add_argument("--dry-run", action="store_true", help="build inputs and requests, estimate the cost, no model calls")
-    p.add_argument("--prompt", choices=sorted(PROMPTS), default="v1")
+    p.add_argument("--prompt", choices=sorted(PROMPTS), default=DEFAULT_PROMPT, help=f"default {DEFAULT_PROMPT}")
     p.add_argument("--compare-with", type=Path, help="reviewed sheet: write a v2/v3 comparison file instead of a review sheet")
     a = p.parse_args(argv)
     if date.fromisoformat(a.week).weekday() != 0:

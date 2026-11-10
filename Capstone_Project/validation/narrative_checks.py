@@ -147,6 +147,8 @@ def check(so_what: str, so_now_what: str, record_input: dict, facts_used=None) -
         flags.append("public-proxy V not mentioned")
     if str(record_input.get("chain_confidence", "")).lower() == "low" and not re.search(r"\blow\b.*\bconfidence\b|\bconfidence\b.*\blow\b", both, re.I):
         flags.append("Low chain confidence not mentioned")
+    if record_input.get("V_tier") == "public_proxy" and re.search(r"\bPQD\b", both):
+        flags.append("PQD mentioned on a public-proxy card")         # V comes from a public series, not DTCC's PQD
     for shared in record_input.get("shared_signal") or []:
         names = [shared.get("card_id", ""), shared.get("card_name", "")]
         if not any(n and n.lower() in both.lower() for n in names):
@@ -211,8 +213,6 @@ def style_flags(so_what: str, so_now_what: str, record_input: dict, version: str
     added = sorted({m.group(1).lower() for m in INTERPRETIVE.finditer(text) if m.group(1).lower()[:5] not in allowed})
     if added:
         flags.append("interpretive words not in the input: " + ", ".join(added))
-    if record_input.get("V_tier") == "public_proxy" and re.search(r"\bPQD\b", both):
-        flags.append("PQD mentioned on a public-proxy card")
     signals = record_input.get("S_signals") or []
     for later in signals[1:]:
         if any(a.lower() in (so_what or "").lower() for a in SIGNAL_ALIAS.get(later.get("field"), [])):
@@ -221,6 +221,46 @@ def style_flags(so_what: str, so_now_what: str, record_input: dict, version: str
         pct = _ordinal(round(signals[0]["percentile"] * 100))
         if pct not in (so_what or ""):
             flags.append(f"so_what lacks the percentile of the signal that sets S ({pct})")
+    if version == "v3.1":
+        flags += _v31_flags(so_what or "", so_now_what or "", record_input, signals)
+    return flags
+
+
+STOP = set("the a an and or of to in on for by with from that this its their is are be as at into more less than per day "
+           "which when where while how what make making".split())
+CLAUSE = re.compile(r"[^.;:,—()]+")
+QUOTED = re.compile(r"[\"“‘']([^\"“”‘’']{6,}?)[\"”’'](?=[\s.,;:)]|$)")
+
+
+def _content_words(text: str) -> set[str]:
+    return {w for w in re.findall(r"[a-z][a-z\-']+", text.lower()) if len(w) > 3 and w not in STOP}
+
+
+def _v31_flags(so_what: str, so_now_what: str, record_input: dict, signals: list) -> list[str]:
+    """v3.1: short second-signal clause, so_what linked through the chain mechanism, event date, verbatim headlines."""
+    flags = []
+    for later in signals[1:]:
+        for clause in CLAUSE.findall(so_now_what):
+            if any(a.lower() in clause.lower() for a in SIGNAL_ALIAS.get(later.get("field"), [])) and len(clause.split()) > 8:
+                flags.append(f"second-signal clause longer than 8 words ({len(clause.split())})")
+    mechanism = (record_input.get("transmission_chain") or {}).get("mechanism", "")
+    if mechanism and len(_content_words(mechanism) & _content_words(so_what)) < 2:
+        flags.append("so_what does not use the chain mechanism wording" + (" ('relevant to' is the only link)" if "relevant to" in so_what.lower() else ""))
+    event = record_input.get("driving_event") or {}
+    if not signals and event.get("effect_date"):
+        y, m, d = (int(x) for x in event["effect_date"].split("-"))
+        named = [k for k, v in MONTHS.items() if v == m]
+        if event["effect_date"] not in so_what and not re.search(rf"\b({'|'.join(named)})\.?\s+{d}\b", so_what, re.I):
+            flags.append(f"so_what lacks the date of the event that sets S ({event['effect_date']})")
+    items = (record_input.get("related_news") or {}).get("top_items") or []
+    for text in (so_what, so_now_what):
+        for m in QUOTED.finditer(text):
+            quote = m.group(1).strip()
+            source = next((i for i in items if quote.lower() in i.get("title", "").lower()), None)
+            if source is None:
+                flags.append(f"quoted text is not a related-news headline: '{quote[:40]}'")
+            elif source.get("outlet") and source["outlet"].lower() not in text[:m.start()].lower()[-60:]:
+                flags.append(f"headline not attributed to its outlet ({source['outlet']})")
     return flags
 
 

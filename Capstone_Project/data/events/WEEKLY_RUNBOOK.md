@@ -95,13 +95,18 @@ python -m validation.scoring_v1_3 score --week <Monday>
 
 ```bash
 python -m validation.narratives --week <Monday> --cap 0.50 --dry-run   # inputs and worst-case cost, no model call
-python -m validation.narratives --week <Monday> --cap 0.50
+python -m validation.narratives --week <Monday> --cap 0.50             # prompt v3.1 (the default)
 ```
 
-- **What it writes.** One model call per scored card, with prompt `validation/narrative_prompt_v1.md`. The two rows of a cross-entity card share one call. Cards with any other status get fixed, non-AI template text.
+- **What it writes.** One model call per scored card, with prompt v3.1 (`validation/narrative_prompt_v3.1.md`), the default from the week of 2026-11-09. Prompts v1, v2 and v3 are kept for reproducibility (`--prompt v1`); the week of 2026-11-02 was drafted with v1. The two rows of a cross-entity card share one call. Cards with any other status get fixed, non-AI template text.
 - **Checks.** Every number must come from the card's input; word limits; no banned phrases ("must", "should raise", "recommend that DTCC", …); a public-proxy V, Low chain confidence and a shared signal must be mentioned. The result is in `check_flags`.
 - **Review.** Open `data/narratives/review_narratives_<Monday>.csv`. For each AI row, fill `decision` (`approve`, `edit` or `reject`) and `reviewer`. For `edit`, fill `corrected_so_what` and/or `corrected_so_now_what`. A row with `check_flags` needs an edit before it can be published.
 - **Display only.** This step never changes S, V, severity, status or ranking.
+- **Prompt v3.1 rules.**
+  - so_what = the signal or event that sets S, with its percentile or date; then how it reaches the DTCC process, in the wording of chain step 2; then V in its short form.
+  - A second tied signal is named only in so_now_what, in a clause of at most 8 words.
+  - An optional related-news headline must be quoted word for word and attributed to its outlet.
+  - Public-proxy cards point to their public sources and never mention PQD; the export rejects any such text.
 - **Prompt v3 (trial).** `--prompt v3 --compare-with …` writes `comparison_narratives_v3_<Monday>.csv` with the reviewed text, v2 and v3 side by side, plus word counts. v3 shortens v2: V written as "V k of 5 (low/medium/high vs own history)", so_what names only what sets S, no added interpretive words, no PQD on public-proxy cards.
 - **Prompt v2 (trial).** `--prompt v2 --compare-with data/narratives/review_narratives_<Monday>.csv` drafts with prompt v2 and writes `comparison_narratives_v2_<Monday>.csv`: the reviewed text next to each v2 draft. It never writes the review sheet. v2 adds every field that sets S, plain signal names, the latest PQD quarter and the meaning of V. Its style checks flag series codes, a latest quarter called "next", firm-specific wording for market-wide signals, and a missing V meaning.
 
