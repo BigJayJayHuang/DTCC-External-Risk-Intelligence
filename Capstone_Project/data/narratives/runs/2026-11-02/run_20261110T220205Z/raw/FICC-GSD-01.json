@@ -1,0 +1,53 @@
+{
+  "card_id": "FICC-GSD-01",
+  "request_sha256": "d850129e17ad6404ae5ad5abff2f5ab756172458c5ee6b15495280421a852b3f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_VshGmD7pkcm8LCPoAoXn4h",
+            "name": "submit_narrative",
+            "input": {
+              "so_what": "The absolute daily change in the 10-year Treasury yield sits at the 42nd percentile of 461 prior weeks, indicating moderate market stress that touches GSD margin requirements; V is 1 (PQD), so current DTCC stress-loss coverage is strong.",
+              "so_now_what": "Watch |ΔDGS10| for sustained moves above recent levels and the next PQD release (2026Q2) for any shift in the stress_loss_to_im ratio for GSD.",
+              "facts_used": [
+                "signal.description",
+                "signal.value",
+                "signal.percentile",
+                "signal.prior_weeks",
+                "transmission_chain.dtcc_process",
+                "V",
+                "V_tier",
+                "V_driver",
+                "V_quarter",
+                "chain_confidence"
+              ],
+              "caveats": [
+                "Chain confidence is Medium, so the link from yield moves to GSD margin impact is not fully certain.",
+                "Related news is headline-level only and not scored."
+              ]
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 843,
+    "outputTokens": 283,
+    "totalTokens": 2439,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 1313,
+    "cacheDetails": [
+      {
+        "ttl": "5m",
+        "inputTokens": 1313
+      }
+    ]
+  },
+  "estimated_cost_usd": "0.012867525"
+}
