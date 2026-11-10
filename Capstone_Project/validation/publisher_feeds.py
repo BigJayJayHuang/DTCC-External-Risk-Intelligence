@@ -24,6 +24,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from . import alpha_vantage_news as AV
+from . import official_notice_rules as GR
 from . import google_news as G
 
 PROJECT = Path(__file__).resolve().parents[1]
@@ -450,6 +451,24 @@ def official_rows(path: Path, queries, start: date, end: date):
         rows = list(csv.DictReader(handle))
     ids = set(json.loads(G.CONFIG.read_text())["official_source_ids"])
     eligible, scope_exclusions = window_candidates([r for r in rows if r.get("source_id") in ids], start, end)
+    # Amendment G1-G3 before the keyword filter: stress terms always go on; routine notices are skipped (audited);
+    # new-member notices become related news ("membership/onboarding") and never reach the model.
+    g_dropped, g_routed, g_counts, rest = [], [], Counter(), []
+    for row in eligible:
+        kind, detail, card = GR.rule(html.unescape(row.get("title", "")) + "\n" + html.unescape(row.get("summary", "")))
+        g_counts[kind or "none"] += 1
+        if kind == "skip":
+            g_dropped.append({"document_id": row["document_id"], "source_id": row["source_id"],
+                              "publication_date": _publication_day(row).isoformat(), "title": row.get("title", ""),
+                              "url": row.get("url", ""), "reason": detail})
+        elif kind == "membership":
+            outlet, _ = OFFICIAL_META.get(row["source_id"], ("Official publisher", "official"))
+            g_routed.append({"document_id": row["document_id"], "source_id": row["source_id"], "card_id": card,
+                             "title": GR.display_title(row), "outlet": row.get("outlet") or outlet, "url": row.get("url", ""),
+                             "publication_date": _publication_day(row).isoformat(), "label": GR.LABEL_MEMBERSHIP, "rule": detail})
+        else:
+            rest.append(row)
+    eligible = rest
     queries = list(queries)
     index = keyword_index(queries)
     query_keywords = [(card, query, set(keyword_index([(card, query)]))) for card, query in queries]
@@ -493,8 +512,11 @@ def official_rows(path: Path, queries, start: date, end: date):
         outlet, tier = OFFICIAL_META.get(row["source_id"], ("Official publisher", "official"))
         row.update(feed_id="official:" + row["source_id"], outlet=row.get("outlet") or outlet,
                    source_tier=row.get("source_tier") or tier)
+    dropped = g_dropped + dropped
     return kept, dropped, {"input_rows": len(rows), "kept": len(kept), "filtered_out": len(dropped),
                            "non_us_official_without_us_term": len(non_us),
+                           "amendment_g": {"override": g_counts["override"], "skipped": len(g_dropped), "membership_routed": len(g_routed)},
+                           "membership_routed": g_routed,
                            "kept_strict_all_terms": strict_count, "kept_broad_keyword_fallback": len(kept) - strict_count,
                            "input_sha256": sha(path.read_bytes()), "window": [start.isoformat(), end.isoformat()],
                            "scope_exclusions": scope_exclusions,
@@ -600,7 +622,7 @@ def main(argv=None):
     index = keyword_index(queries)
     client = Client(config)
     stats = defaultdict(Counter)
-    rows, dropped, official_dropped, window_excluded, av_dropped, av_matches = [], [], [], [], [], []
+    rows, dropped, official_dropped, window_excluded, av_dropped, av_matches, routed = [], [], [], [], [], [], []
     official_summary = {"status": "not_requested"}
     window_start = a.week_start or (G.last_full_week(datetime.now(ZoneInfo("America/New_York")).date()) if a.official else None)
     window_end = a.week_end or (window_start + timedelta(days=6) if window_start else None)
@@ -642,6 +664,7 @@ def main(argv=None):
     if a.official:
         incoming, official_dropped, official_summary = official_rows(a.official, queries, window_start, window_end)
         window_excluded.extend(official_summary.pop("scope_exclusions"))
+        routed = official_summary.pop("membership_routed")
         rows.extend(incoming)
         for row in incoming:
             stats[row["feed_id"]]["kept_prefilter"] += 1
@@ -675,6 +698,8 @@ def main(argv=None):
     written = [{**r, "summary": ""} if r["content_scope"] in LOCAL_TEXT_SCOPES or r["source_id"] == AV.SOURCE_ID else r for r in rows]
     with (out / "classifier_input.csv").open("w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=FIELDS, extrasaction="ignore", lineterminator="\n"); w.writeheader(); w.writerows(written)
+    G.write_csv(out / "official_context_routed.csv", routed,          # Amendment G3: related news, never classified
+                ["document_id", "source_id", "card_id", "title", "outlet", "url", "publication_date", "label", "rule"])
     G.write_csv(out / "alphavantage_prefilter_dropped.csv", av_dropped,
                 ["document_id", "source_id", "published_at_utc", "title", "url", "reason"])
     G.write_csv(out / "alphavantage_dedup.csv", av_matches,

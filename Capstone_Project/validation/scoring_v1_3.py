@@ -296,7 +296,8 @@ def load_context_news(path=CONTEXT_NEWS):
         with Path(path).open(encoding='utf-8', newline='') as f:
             for r in csv.DictReader(f):
                 out.setdefault((r['week'], r['card_id']), []).append(
-                    {k: r[k] for k in ('title', 'outlet', 'url', 'event_type', 'proposed_event_id')})
+                    {**{k: r[k] for k in ('title', 'outlet', 'url', 'event_type', 'proposed_event_id')},
+                     **({'label': r['label']} if (r.get('label') or '').strip() else {})})      # Amendment G3 label
     return out
 
 

@@ -289,8 +289,12 @@ class GeographyNewInformation(unittest.TestCase):
     def test_new_information_follows_same_as(self):
         self.assertIsNone(C.validate_flat(self.rel(new_information=True), CARDS, True, True)["new_information"])   # no same_as -> null
         self.assertIs(C.validate_flat(self.rel(same_as_event_id="EV0006", new_information=False), CARDS, True, True)["new_information"], False)
-        with self.assertRaises(ValueError):
-            C.validate_flat(self.rel(same_as_event_id="EV0006", new_information=None), CARDS, True, True)
+        # missing new_information with same_as set: kept as null and flagged for review (not dropped)
+        rec, filled = C.prepare_flat(self.rel(same_as_event_id="EV0006", new_information=None), CARDS, True, True)
+        self.assertEqual((rec["new_information"], rec["same_as_event_id"], filled), (None, "EV0006", ["new_information_missing"]))
+        absent = {k: v for k, v in self.rel(same_as_event_id="EV0006").items() if k != "new_information"}
+        rec, filled = C.prepare_flat(absent, CARDS, True, True)
+        self.assertEqual((rec["new_information"], filled), (None, ["new_information", "new_information_missing"]))
         rec, filled = C.prepare_flat({k: v for k, v in self.rel().items() if k != "new_information"}, CARDS, True, True)
         self.assertEqual((filled, rec["new_information"]), (["new_information"], None))
 

@@ -38,6 +38,7 @@ from datetime import date, timedelta
 from pathlib import Path
 
 from . import event_scoring as E
+from . import official_notice_rules as GR
 from .final16_vulnerability import get_v
 from .llm_classifier import MAJOR, PROJECT, prompt_parts_v13, PROMPT_V14
 
@@ -48,7 +49,9 @@ SYNDICATION_JACCARD = 0.8
 MAX_DAYS = 2
 INDICATOR_CARDS = {"FICC-GSD-01", "FICC-GSD-02", "FICC-MBSD-01", "ECS-NSCC-LIQ", "ECS-NSCC-03", "XE-MEMBER"}   # Amendment D
 CONTEXT_NEWS = PROJECT / "data/events/context_news.csv"
-CONTEXT_FIELDS = ["week", "card_id", "title", "outlet", "url", "event_type", "proposed_event_id"]
+CONTEXT_FIELDS = ["week", "card_id", "title", "outlet", "url", "event_type", "proposed_event_id", "label"]   # label: Amendment G3
+NEW_INFO_MISSING = "new_information_missing"      # same_as_event_id set but new_information missing: review required
+SRO_CAP_FLAG = "sro_filing_capped_auto"            # Amendment G4
 TIER_ORDER = ["regulator", "dtcc", "official", "issuer_filing", "major_media", "other"]
 DATE_MISMATCH_DAYS = 14
 HEADLINE_SCOPES = {"headline_only", "headline_snippet"}
@@ -202,6 +205,13 @@ def proposed_event(members: list[dict], week: date, catalog: set[str], major: se
     if any(m["published_date"] and abs(date.fromisoformat(m["announced_date"]) - date.fromisoformat(m["published_date"])) > timedelta(days=DATE_MISMATCH_DAYS)
            for m in members):
         flags.append("date_mismatch")
+    info_missing = any(NEW_INFO_MISSING in m["flags"] for m in members)
+    sro_capped = (tier == "required" and not info_missing
+                  and all(GR.capped_sro_filing(m["headline"] or m["title"]) for m in members))
+    if sro_capped:                                     # Amendment G4: SRO filings by others than FICC/NSCC/DTC
+        tier = "auto"
+    if info_missing and tier in ("auto", "context"):   # linked to a recorded event without saying whether it is new
+        tier = "required"
     duplicate = all(m["same_as_event_id"] for m in members) and all(m["new_information"] is False for m in members)
     if duplicate:
         tier = "duplicate"
@@ -214,7 +224,7 @@ def proposed_event(members: list[dict], week: date, catalog: set[str], major: se
     pid = "PE-" + week.isoformat() + "-" + hashlib.sha256(key.encode()).hexdigest()[:8]
     related_cards = event.card_ids if duplicate else context      # duplicates are related news on every card
     ctx_rows = [{"week": week.isoformat(), "card_id": c, "title": m["headline"] or m["title"], "outlet": m["outlet"], "url": m["url"],
-                 "event_type": event_type, "proposed_event_id": pid} for c in related_cards for m in members]
+                 "event_type": event_type, "proposed_event_id": pid, "label": ""} for c in related_cards for m in members]
     return {"proposed_event_id": pid, "title": rep["title"], "event_type": event_type, "card_ids": "|".join(event.card_ids),
             "scored_card_ids": "|".join(scored), "context_card_ids": "|".join(context), "certainty": event.certainty,
             "certainty_before_grouping": max(m["certainty"] for m in members), "reach": event.reach, "reach_basis": event.reach_basis,
@@ -230,7 +240,9 @@ def proposed_event(members: list[dict], week: date, catalog: set[str], major: se
                                   ensure_ascii=False),
             "evidence_quotes": json.dumps(quotes, ensure_ascii=False), "confidence": rep["confidence"],
             "validate_flags": json.dumps(event.review_reasons + (["S >= 4: human check before publishing"] if S is not None and S >= 4 else [])
-                                         + ([GATE_FLAG] if any(GATE_FLAG in m["flags"] for m in members) else []), ensure_ascii=False),
+                                         + ([GATE_FLAG] if any(GATE_FLAG in m["flags"] for m in members) else [])
+                                         + ([SRO_CAP_FLAG] if sro_capped else []) + ([NEW_INFO_MISSING] if info_missing else []),
+                                         ensure_ascii=False),
             "candidate_ids": "|".join(ids), "prompt_version": rep["prompt_version"], "model": rep["model"],
             "decision": "", "reviewer": "", "corrected_card_ids": "", "corrected_certainty": "", "corrected_reach": "", "reviewer_notes": ""}, ctx_rows
 
@@ -249,6 +261,7 @@ def build(candidates: Path, week: date, filtered_out: Path | None = None, gate_o
         with filtered_out.open("w", encoding="utf-8", newline="") as f:
             w = csv.DictWriter(f, fieldnames=FILTERED_FIELDS, extrasaction="ignore", lineterminator="\n"); w.writeheader()
             w.writerows({**c, "card_ids": "|".join(c["card_ids"])} for c in non_us)
+    cands, membership_ctx = membership_route(cands, week)
     cands, gate_log = card_gate(cands)
     if gate_out is not None:
         gate_out.parent.mkdir(parents=True, exist_ok=True)
@@ -258,22 +271,50 @@ def build(candidates: Path, week: date, filtered_out: Path | None = None, gate_o
     others = [c for c in cands if c["event_type"] != "market_move"]
     built = [proposed_event(g, week, catalog, major) for g in market_move_groups(moves) + group(others)]
     rows = sorted((r for r, _ in built), key=lambda r: (-r["confidence"], r["proposed_event_id"]))
-    return rows, [c for _, ctx in built for c in ctx]
+    return rows, membership_ctx + [c for _, ctx in built for c in ctx]
+
+
+def membership_route(cands: list[dict], week: date) -> tuple[list[dict], list[dict]]:
+    """Amendment G3 on classifier candidates (for outputs collected before the collector applied it): new-member
+    official notices without a G1 stress term leave the sheet and become related news labelled membership/onboarding."""
+    kept, ctx = [], []
+    for c in cands:
+        kind, _, card = GR.rule(c["text"] or (c["title"] + "\n" + c["summary"])) if c["source_tier"] in ("dtcc", "official", "regulator") else (None, "", None)
+        if kind == "membership":
+            body = (c["text"] or "").split("\n", 2)
+            title = GR.display_title({"summary": body[2] if len(body) > 2 else "", "title": c["headline"] or c["title"]})
+            ctx.append({"week": week.isoformat(), "card_id": card, "title": title, "outlet": c["outlet"], "url": c["url"],
+                        "event_type": c["event_type"] or "regulatory", "proposed_event_id": "", "label": GR.LABEL_MEMBERSHIP})
+        else:
+            kept.append(c)
+    return kept, ctx
+
+
+def routed_context_rows(path: Path, week: date) -> list[dict]:
+    """Rows of the collector's official_context_routed.csv (Amendment G3) as context-news rows."""
+    if not Path(path).exists():
+        return []
+    with Path(path).open(encoding="utf-8", newline="") as f:
+        return [{"week": week.isoformat(), "card_id": r["card_id"], "title": r["title"], "outlet": r["outlet"], "url": r["url"],
+                 "event_type": "regulatory", "proposed_event_id": "", "label": r["label"]} for r in csv.DictReader(f)]
 
 
 def append_context(path: Path, rows: list[dict]) -> int:
-    """Append context-news rows, skipping (week, card_id, url) already present. Never touches the event register."""
-    existing = []
+    """Append context-news rows, skipping (week, card_id, url) already present. Never touches the event register.
+    A file written before the label column existed is rewritten once with the new header (its rows get label "")."""
+    existing, header = [], None
     if path.exists():
         with path.open(encoding="utf-8", newline="") as f:
-            existing = list(csv.DictReader(f))
+            reader = csv.DictReader(f)
+            existing, header = list(reader), reader.fieldnames
     seen = {(r["week"], r["card_id"], r["url"]) for r in existing}
     new = [r for r in rows if (r["week"], r["card_id"], r["url"]) not in seen and not seen.add((r["week"], r["card_id"], r["url"]))]
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("a" if existing else "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=CONTEXT_FIELDS, lineterminator="\n")
-        if not existing:
-            w.writeheader()
+    rewrite = not existing or header != CONTEXT_FIELDS
+    with path.open("w" if rewrite else "a", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=CONTEXT_FIELDS, lineterminator="\n", restval="")
+        if rewrite:
+            w.writeheader(); w.writerows(existing)
         w.writerows(new)
     return len(new)
 

@@ -343,8 +343,8 @@ def prepare_flat(record, cards: set[str], event_type: bool = False, geo: bool = 
     if geo:   # new_information belongs to same_as_event_id: boolean when set, null otherwise
         if record["same_as_event_id"] is None:
             record["new_information"] = None
-        elif record["new_information"] is None:
-            raise ValueError("new_information must be true or false when same_as_event_id is set")
+        elif record["new_information"] is None:   # kept, flagged and sent to review (not dropped)
+            filled = filled + ["new_information_missing"]
     return dict(record), filled
 
 
@@ -724,7 +724,7 @@ def run(args, session=None):
             for source, target in [("inputTokens", "input_tokens"), ("outputTokens", "output_tokens"),
                                    ("cacheReadInputTokens", "cache_read_input_tokens"), ("cacheWriteInputTokens", "cache_write_input_tokens")]:
                 summary[target] += usage.get(source, 0)
-            reasons = []
+            reasons, filled = [], []
             try:
                 result, mode, fallback = parse_response(response, flat=flat)
                 if flat:   # failure -> failed.jsonl below; never retried
@@ -736,6 +736,8 @@ def run(args, session=None):
                     summary["relevant"] += 1
                 checked, reasons = check_classification(result, article, schema, cards, recent_ids, major,
                                                         headline_rules=prompt_version in SPLIT_PROMPTS)
+                if "new_information_missing" in filled:
+                    reasons = reasons + ["new_information_missing"]
                 if result["is_relevant"]:
                     counts.update(checked["card_ids"])
                     row = csv_row(article, result, checked, reasons, config, version, usage, cost, mode, fallback, attempt_count,

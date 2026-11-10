@@ -188,6 +188,8 @@ def run_week(week_start: date, cap: Decimal, *, today: date | None = None, allow
         sheet = review_dir / f"review_{monday.isoformat()}_{run_id}.csv"
     with sheet.open("x", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=RS.FIELDS, lineterminator="\n"); w.writeheader(); w.writerows(rows)
+    feeds_dir = (from_inputs.parent if from_inputs is not None else out / "inputs" / "feeds")
+    ctx = RS.routed_context_rows(feeds_dir / "official_context_routed.csv", monday) + ctx     # Amendment G3
     added = RS.append_context(context_path, ctx)
     tiers = {t: sum(r["review_tier"] == t for r in rows) for t in TIERS}
     with_non_us = sum(1 for _ in csv.DictReader(filtered.open(encoding="utf-8"))) if filtered.exists() else 0

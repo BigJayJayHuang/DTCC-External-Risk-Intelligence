@@ -33,6 +33,7 @@ on:
       - 'Capstone_Project/validation/fixtures/**'
       - 'Capstone_Project/validation/check_register_change.py'
       - 'Capstone_Project/validation/alpha_vantage_news.py'
+      - 'Capstone_Project/validation/official_notice_rules.py'
       - 'Capstone_Project/validation/test_alpha_vantage_news.py'
       - 'Capstone_Project/validation/test_check_register_change.py'
       - 'Capstone_Project/data/events/event_register.csv'

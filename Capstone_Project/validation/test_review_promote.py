@@ -196,6 +196,65 @@ class CardGate(Grouping):                                                # Amend
             self.assertEqual(logged, {"A": ("ECS-NSCC-LIQ", "card_removed"), "C": ("", "item_dropped")})
 
 
+class AmendmentGAndMissingInfo(Grouping):
+    def test_missing_new_information_is_kept_and_required(self):
+        c = cand("A", "Self-Regulatory Organizations; MX2 LLC; Notice of Filing To Amend Rule 11.23", "ECS-SET-01", "Federal Register",
+                 etype="regulatory", same_as="EV0003", geo="us", tier="official", reach=0, cert=1)
+        c["validation_reasons"] = json.dumps(["new_information_missing"])
+        row = self.sheet([c])[0]
+        self.assertEqual((row["review_tier"], row["new_information"]), ("required", ""))
+        self.assertIn("new_information_missing", json.loads(row["validate_flags"]))
+        self.assertNotIn("sro_filing_capped_auto", json.loads(row["validate_flags"]))   # the cap never hides a missing answer
+
+    def test_sro_filings_by_others_capped_at_auto(self):
+        lt = cand("L", "Self-Regulatory Organizations: Long-Term Stock Exchange, Inc.; Notice of Filing and Immediate Effectiveness",
+                  "ECS-SET-01|XE-DISRUPT", "Federal Register", etype="regulatory", geo="us", tier="official")
+        ns = cand("N", "Self-Regulatory Organizations; National Securities Clearing Corporation; Notice of Filing Concerning ACATS",
+                  "ECS-NSCC-08", "Federal Register", etype="regulatory", geo="us", tier="official")
+        by = {r["candidate_ids"]: r for r in self.sheet([lt, ns])}
+        self.assertEqual(by["L"]["review_tier"], "auto")
+        self.assertIn("sro_filing_capped_auto", json.loads(by["L"]["validate_flags"]))
+        self.assertEqual(by["N"]["review_tier"], "required")                     # NSCC filings keep their tier
+
+    def test_new_member_notices_become_membership_context(self):
+        m = cand("M", "GOV2286-26", "FICC-GSD-03", "DTCC", etype="regulatory", geo="us", tier="dtcc",
+                 summary="New Agent Clearing Member of the Government Securities Division of FICC: Citigroup Global Markets Inc./ACM Omnibus Notice: GOV2286-26 Summary: x")
+        s = cand("S", "GOV9999-26", "FICC-GSD-03", "DTCC", etype="regulatory", geo="us", tier="dtcc",
+                 summary="New Sponsored Member of GSD placed on watch list Notice: GOV9999-26")       # G1 override: to the model
+        with tempfile.TemporaryDirectory(dir=PROJECT / "data") as d:
+            root = Path(d)
+            for c in (m, s):
+                (root / f"{c['event_id']}.txt").write_text(c["title"] + "\n\n" + c["summary"]); c["article_file"] = str((root / f"{c['event_id']}.txt").relative_to(PROJECT))
+            path = root / "c.csv"
+            with path.open("w", newline="") as f:
+                w = csv.DictWriter(f, fieldnames=CAND_FIELDS); w.writeheader(); w.writerows([m, s])
+            rows, ctx = RS.build(path, WEEK)
+        self.assertEqual([r["candidate_ids"] for r in rows], ["S"])
+        self.assertEqual([(c["card_id"], c["label"], c["title"][:24]) for c in ctx if c["label"]],
+                         [("FICC-GSD-03", "membership/onboarding", "New Agent Clearing Membe")])
+
+    def test_rule_patterns(self):
+        from . import official_notice_rules as GR
+        self.assertEqual(GR.rule("Additional Account Activation: Mizuho Securities USA LLC, #4446")[0], "skip")
+        self.assertEqual(GR.rule("Depositary Fees Notification Security: X")[0], "skip")
+        self.assertEqual(GR.rule("Tax Relief Country: IRELAND")[0], "skip")
+        self.assertEqual(GR.rule("Additional Account Retirement: firm placed on watch list")[0], "override")
+        self.assertEqual(GR.rule("Delete Sponsored Member Notice: GOV2281-26")[0], None)
+        self.assertEqual(GR.rule("New NSCC member: Example Clearing LLC")[2], "ECS-NSCC-LIQ")
+        self.assertEqual(GR.sro_filer("Self-Regulatory Organizations; Cboe BZX Exchange, Inc.; Notice of Filing"), "Cboe BZX Exchange, Inc.")
+        self.assertFalse(GR.capped_sro_filing("Self-Regulatory Organizations; Fixed Income Clearing Corporation; Notice"))
+        self.assertFalse(GR.capped_sro_filing("Order Granting Exemptive Relief"))
+
+    def test_context_file_gains_label_column_without_losing_rows(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d) / "ctx.csv"
+            p.write_text("week,card_id,title,outlet,url,event_type,proposed_event_id\n2026-11-02,ECS-NSCC-LIQ,T,O,https://a,market_move,PE-1\n")
+            n = RS.append_context(p, [{"week": "2026-11-02", "card_id": "FICC-GSD-03", "title": "New member", "outlet": "DTCC",
+                                       "url": "https://b", "event_type": "regulatory", "proposed_event_id": "", "label": "membership/onboarding"}])
+            rows = list(csv.DictReader(p.open()))
+        self.assertEqual((n, [r["label"] for r in rows], rows[0]["proposed_event_id"]), (1, ["", "membership/onboarding"], "PE-1"))
+
+
 class Promote(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory(); self.root = Path(self.tmp.name)
