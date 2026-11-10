@@ -1,0 +1,45 @@
+{
+  "card_id": "FICC-MBSD-01",
+  "request_sha256": "ea01ad9519eb9647832036ab0b8b26c766f1c089012cf9388d2e8441bf8aafc5",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_XWEJY0cV5M2ZUhvbrlej1e",
+            "name": "submit_narrative",
+            "input": {
+              "so_what": "The weekly change in the 30-year mortgage rate minus 10-year Treasury yield spread reached the 53rd percentile of 460 prior weeks; TBA price swings change marked-to-market positions and affect variation margin and margin requirements; V 1 of 5 (low vs own history).",
+              "so_now_what": "Watch the weekly change in the 30-year mortgage rate minus 10-year Treasury yield spread and the next quarterly PQD release.",
+              "facts_used": [
+                "S_set_by",
+                "signal.percentile",
+                "signal.prior_weeks",
+                "transmission_chain.mechanism",
+                "V_short",
+                "V_tier",
+                "latest_available_pqd_quarter",
+                "watch_sources"
+              ],
+              "caveats": [
+                "chain_confidence is Medium",
+                "no related news items provided"
+              ]
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1166,
+    "outputTokens": 252,
+    "totalTokens": 3745,
+    "cacheReadInputTokens": 2327,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.00877371"
+}

@@ -107,7 +107,7 @@ class Run(unittest.TestCase):
 
     def test_one_call_per_scored_card_templates_and_flags(self):
         rt = FakeRuntime(answer)
-        res = N.run(WEEK, Decimal("0.50"), session=FakeSession(rt), run_id="t1", out=self.out, transmission=self.t)
+        res = N.run(WEEK, Decimal("0.50"), session=FakeSession(rt), run_id="t1", out=self.out, transmission=self.t, prompt="v1")
         scored_cards = {r["card_id"] for r in SCORES["records"] if r["status"] == "scored"}
         self.assertEqual((res["status"], len(rt.requests), res["cards_called"]), ("complete", len(scored_cards), len(scored_cards)))
         req = rt.requests[0]
@@ -121,22 +121,22 @@ class Run(unittest.TestCase):
                                     ("template", NC.TEMPLATE_SO_WHAT, NC.TEMPLATE_SO_NOW_WHAT, "") for r in tpl))
         self.assertIn("shared signal with FICC-GSD-02 not mentioned", json.loads(rows["ecs-nscc-liq"]["check_flags"]))
         self.assertTrue(all(r[k] == "" for r in rows.values() for k in ("decision", "reviewer", "corrected_so_what", "corrected_so_now_what")))
-        res2 = N.run(WEEK, Decimal("0.50"), session=FakeSession(FakeRuntime(answer)), run_id="t2", out=self.out, transmission=self.t)
+        res2 = N.run(WEEK, Decimal("0.50"), session=FakeSession(FakeRuntime(answer)), run_id="t2", out=self.out, transmission=self.t, prompt="v1")
         self.assertTrue(res2["review_sheet"].endswith(f"review_narratives_{WEEK}_t2.csv"))                # never overwritten
 
     def test_cap_stops_before_a_call_that_could_exceed_it(self):
         rt = FakeRuntime(answer)
-        res = N.run(WEEK, Decimal("0.001"), session=FakeSession(rt), run_id="t3", out=self.out, transmission=self.t)
+        res = N.run(WEEK, Decimal("0.001"), session=FakeSession(rt), run_id="t3", out=self.out, transmission=self.t, prompt="v1")
         self.assertEqual((res["status"], len(rt.requests)), ("budget_limit", 0))
         self.assertTrue(all("not generated" in r["check_flags"] for r in self.rows(res).values() if r["status"] == "scored"))
 
     def test_invalid_output_is_flagged_not_published(self):
         rt = FakeRuntime(lambda card: {"so_what": "x", "facts_used": [], "caveats": []})              # so_now_what missing
-        res = N.run(WEEK, Decimal("0.50"), session=FakeSession(rt), run_id="t4", out=self.out, transmission=self.t)
+        res = N.run(WEEK, Decimal("0.50"), session=FakeSession(rt), run_id="t4", out=self.out, transmission=self.t, prompt="v1")
         self.assertTrue(all("invalid output" in r["check_flags"] for r in self.rows(res).values() if r["status"] == "scored"))
 
     def test_dry_run_makes_no_call(self):
-        res = N.run(WEEK, Decimal("0.50"), dry_run=True, session=FakeSession(None), run_id="t5", out=self.out, transmission=self.t)
+        res = N.run(WEEK, Decimal("0.50"), dry_run=True, session=FakeSession(None), run_id="t5", out=self.out, transmission=self.t, prompt="v1")
         self.assertEqual(res["status"], "dry_run")
         self.assertFalse((self.out / f"review_narratives_{WEEK}.csv").exists())
 
@@ -198,6 +198,153 @@ class PromptV2(unittest.TestCase):
             self.assertEqual((liq["edited_so_what"], liq["latest_not_next_pqd"], liq["plain_names"], liq["shared_signal_mentioned"],
                               liq["v_meaning_given"], liq["no_firm_specific_wording"]), ("Edited.", "yes", "yes", "yes", "yes", "yes"))
             self.assertTrue(res["prompt_version"].startswith("narrative-prompt-v2:"))
+
+
+class PromptV3(unittest.TestCase):
+    """v3: V short form, only the setting signal in so_what, no added interpretive words, no PQD on proxy cards."""
+    def setUp(self):
+        self.t = lambda r: {"event": "E", "mechanism": "Members' funding costs rise", "dtcc_process": "P"}
+        self.inp = lambda rid: N.build_input_v3([r for r in SCORES["records"] if r["card_id"] == next(
+            x["card_id"] for x in SCORES["records"] if x["record_id"] == rid)], SCORES["records"], self.t)
+
+    def test_inputs(self):
+        liq, g03, vol = self.inp("ecs-nscc-liq"), self.inp("ficc-gsd-03"), self.inp("ecs-nscc-03")
+        self.assertEqual((liq["V_short"], liq["S_set_by"]), ("V 3 of 5 (medium vs own history)", "VIX relative to its 20-day average (ratio)"))
+        self.assertTrue(g03["S_set_by"].startswith("event: Treasury clearing compliance date") and g03["V_short"].endswith("(medium vs own history)"))
+        self.assertEqual(vol["V_short"], "V 1 of 5 (low vs own history)")
+        self.assertEqual([N.v_level(v) for v in (1, 2, 3, 4, 5)], ["low", "low", "medium", "high", "high"])
+        prompt = N.prompt_parts(N.PROMPTS["v3"])[0]
+        for rule in ("V_short", "in at most 8 words", "interpretive words", "never mention PQD for this card", "at most 45 words"):
+            self.assertIn(rule, prompt)
+
+    def test_style_flags(self):
+        liq, vol = self.inp("ecs-nscc-liq"), self.inp("ecs-nscc-03")
+        good = ("VIX relative to its 20-day average reached the 97th percentile of 457 prior weeks, relevant to NSCC variation "
+                "margin; V 3 of 5 (medium vs own history).", "S is also set by the SOFR−EFFR spread, shared with FICC-GSD-02. "
+                "Watch the daily VIX ratio and the next quarterly PQD release.")
+        self.assertEqual(NC.style_flags(*good, liq, version="v3"), [])
+        bad = ("VIX and the SOFR−EFFR spread show funding stress; the largest payment obligation to qualifying liquid resources "
+               "sits at level 3 of 5 versus its own history.", "Watch the strain.")
+        flags = NC.style_flags(*bad, liq, version="v3")
+        for expect in ("short form", "V ratio name", "interpretive words not in the input: strain, stress", "second tied signal", "lacks the percentile"):
+            self.assertTrue(any(expect in f for f in flags), (expect, flags))
+        proxy = ("US consolidated equity volume reached the 83rd percentile; V 1 of 5 (low vs own history), public proxy.",
+                 "Watch the next quarterly PQD release.")
+        self.assertIn("PQD mentioned on a public-proxy card", NC.check(*proxy, vol))          # base check since v3.1 (all versions)
+        self.assertNotIn("interpretive", " ".join(NC.style_flags("GSD's stress-loss-to-margin ratio; V 1 of 5 (low vs own history).", "",
+                                                                  self.inp("ficc-gsd-01"), version="v3")))
+        self.assertEqual(NC.style_flags("Funding costs rise for members; V 1 of 5 (low vs own history).", "", self.inp("ficc-gsd-01"),
+                                        version="v3")[-1:], ["so_what lacks the percentile of the signal that sets S (42nd)"])
+
+    def test_comparison_file_has_three_texts_and_word_counts(self):
+        with tempfile.TemporaryDirectory() as d:
+            out = Path(d); sheet = out / "reviewed.csv"
+            with sheet.open("w", newline="") as f:
+                w = csv.DictWriter(f, fieldnames=N.SHEET_FIELDS); w.writeheader()
+                w.writerow({k: "" for k in N.SHEET_FIELDS} | {"record_id": "ecs-nscc-liq", "card_id": "ECS-NSCC-LIQ", "generated_by": "ai",
+                                                               "corrected_so_what": "Edited text here.", "corrected_so_now_what": "Watch."})
+            with (out / f"comparison_narratives_v2_{WEEK}.csv").open("w", newline="") as f:
+                w = csv.DictWriter(f, fieldnames=N.COMPARE_FIELDS); w.writeheader()
+                w.writerow({k: "" for k in N.COMPARE_FIELDS} | {"card_id": "ECS-NSCC-LIQ", "v2_so_what": "A b c.", "v2_so_now_what": "D."})
+            v3 = lambda card: {"so_what": "VIX relative to its 20-day average reached the 97th percentile; V 3 of 5 (medium vs own history).",
+                               "so_now_what": "S is also set by the SOFR−EFFR spread, shared with FICC-GSD-02.", "facts_used": ["S_set_by"], "caveats": []}
+            N.run(WEEK, Decimal("0.20"), session=FakeSession(FakeRuntime(v3)), run_id="c3", out=out, transmission=self.t, prompt="v3", compare_with=sheet)
+            with (out / f"comparison_narratives_v3_{WEEK}.csv").open() as f:
+                liq = {r["card_id"]: r for r in csv.DictReader(f)}["ECS-NSCC-LIQ"]
+        self.assertEqual((liq["edited_words"], liq["v2_words"], liq["v3_words"]), ("3/1", "3/1", "18/11"))
+        self.assertEqual((liq["within_limits"], liq["v_short_form"], liq["only_setting_signal_in_so_what"], liq["shared_signal_mentioned"],
+                          liq["no_pqd_on_proxy"]), ("yes", "yes", "yes", "yes", "n/a"))
+
+
+class PromptV31(unittest.TestCase):
+    """v3.1: proxy cards never mention PQD, short second-signal clause, so_what via the chain mechanism, verbatim headlines."""
+    def setUp(self):
+        self.t = N.chain_context()
+        self.inp = lambda cid: N.build_input_v31([r for r in SCORES["records"] if r["card_id"] == cid], SCORES["records"], self.t)
+
+    def test_default_prompt_inputs_and_proxy_shape(self):
+        from . import weekly_news_run as W
+        self.assertEqual((N.DEFAULT_PROMPT, W.NARRATIVE_PROMPT_VERSION), ("v3.1", "v3.1"))
+        self.assertEqual(set(N.PROMPTS), {"v1", "v2", "v3", "v3.1"})                      # older prompts kept
+        vol, liq = self.inp("ECS-NSCC-03"), self.inp("ECS-NSCC-LIQ")
+        self.assertEqual(vol["watch_sources"], ["Cboe U.S. equities market volume history"])
+        self.assertEqual(liq["watch_sources"], ["VIX index (FRED)", "SOFR (FRED)", "effective fed funds rate (FRED)"])
+        self.assertEqual(liq["related_news"]["top_items"][1], {"title": "Tech stocks log worst day since 2020 as carnage comes to the AI trade",
+                                                               "outlet": "MarketWatch"})
+        prompt = N.prompt_parts(N.PROMPTS["v3.1"])[0]
+        for rule in ("Public-proxy cards (never PQD)", "watch_sources", "transmission_chain.mechanism", "at most 8 words", "word for word"):
+            self.assertIn(rule, prompt)
+
+    def test_pqd_rejected_on_public_proxy_cards_in_every_check(self):
+        vol = self.inp("ECS-NSCC-03")
+        self.assertIn("PQD mentioned on a public-proxy card", NC.check("Volume rose; V 1 of 5, public proxy.", "Watch the next PQD release.", vol))
+        self.assertNotIn("PQD mentioned on a public-proxy card",
+                         NC.check("Volume rose; V 1 of 5, public proxy.", "Watch daily consolidated volume and Cboe volume history.", vol))
+        self.assertEqual([f for f in NC.check("Spread rose; V 1 of 5.", "Watch the next PQD release.", self.inp("XE-MEMBER")) if "PQD" in f], [])
+
+    def test_second_signal_clause_at_most_8_words(self):
+        liq = self.inp("ECS-NSCC-LIQ")
+        long = NC.style_flags("x", "Watch the VIX. S is also set by the SOFR−EFFR repo funding spread, shared with FICC-GSD-02.", liq, version="v3.1")
+        self.assertIn("second-signal clause longer than 8 words (10)", long)
+        short = NC.style_flags("x", "S also set by the SOFR−EFFR spread; shared with FICC-GSD-02.", liq, version="v3.1")
+        self.assertFalse(any("second-signal clause" in f for f in short))
+
+    def test_so_what_uses_the_chain_mechanism(self):
+        liq = self.inp("ECS-NSCC-LIQ")           # mechanism: "Daily mark-to-market payments change sharply, requiring members to move more cash that day."
+        weak = NC.style_flags("VIX relative to its 20-day average reached the 97th percentile, relevant to NSCC variation margin; "
+                              "V 3 of 5 (medium vs own history).", "S also set by the SOFR−EFFR spread.", liq, version="v3.1")
+        self.assertIn("so_what does not use the chain mechanism wording ('relevant to' is the only link)", weak)
+        good = NC.style_flags("VIX relative to its 20-day average reached the 97th percentile, so daily mark-to-market payments can change "
+                              "sharply; V 3 of 5 (medium vs own history).", "S also set by the SOFR−EFFR spread; shared with FICC-GSD-02.",
+                              liq, version="v3.1")
+        self.assertEqual(good, [])
+        g03 = self.inp("FICC-GSD-03")
+        self.assertIn("so_what lacks the date of the event that sets S (2026-12-31)",
+                      NC.style_flags("The compliance date drives S; firms onboard to meet the rule; V 3 of 5 (medium vs own history).", "",
+                                     g03, version="v3.1"))
+
+    def test_interpretive_words_allowed_from_the_mechanism(self):
+        g02 = self.inp("FICC-GSD-02")             # mechanism: "Members' funding costs rise, making daily settlement payments harder to fund."
+        self.assertIn("interpretive words not in the input: strain", " ".join(
+            NC.style_flags("The SOFR−EFFR spread reached the 90th percentile, a strain on funding; V 4 of 5 (high vs own history).", "", g02, "v3.1")))
+
+    def test_related_news_headline_must_be_verbatim_and_attributed(self):
+        liq = self.inp("ECS-NSCC-LIQ")
+        base = ("VIX relative to its 20-day average reached the 97th percentile, so daily mark-to-market payments change sharply; "
+                "V 3 of 5 (medium vs own history).")
+        ok = NC.style_flags(base, 'MarketWatch: "Tech stocks log worst day since 2020". S also set by the SOFR−EFFR spread.', liq, "v3.1")
+        self.assertFalse(any("headline" in f or "quoted" in f for f in ok), ok)
+        altered = NC.style_flags(base, 'MarketWatch: "Tech stocks log their worst day in years".', liq, "v3.1")
+        self.assertTrue(any("not a related-news headline" in f for f in altered))
+        unattributed = NC.style_flags(base, 'Headlines said "Tech stocks log worst day since 2020".', liq, "v3.1")
+        self.assertIn("headline not attributed to its outlet (MarketWatch)", unattributed)
+
+
+class NamedSheetWithPublishedText(unittest.TestCase):
+    def test_named_sheet_carries_published_text_and_is_never_overwritten(self):
+        with tempfile.TemporaryDirectory() as d:
+            out = Path(d); reviewed = out / "reviewed.csv"
+            with reviewed.open("w", newline="") as f:
+                w = csv.DictWriter(f, fieldnames=N.SHEET_FIELDS); w.writeheader()
+                w.writerow({k: "" for k in N.SHEET_FIELDS} | {"record_id": "ecs-nscc-liq", "generated_by": "ai", "so_what": "Draft.", "so_now_what": "Draft 2.",
+                                                               "decision": "edit", "reviewer": "Wenqi Cai", "corrected_so_what": "Published edit."})
+                w.writerow({k: "" for k in N.SHEET_FIELDS} | {"record_id": "ficc-gsd-01", "generated_by": "ai", "so_what": "Draft.", "so_now_what": "D."})
+                w.writerow({k: "" for k in N.SHEET_FIELDS} | {"record_id": "ecs-set-01", "generated_by": "template"})
+            sheet = out / f"review_narratives_{WEEK}_v31.csv"
+            t = lambda r: {"event": "E", "mechanism": "M", "dtcc_process": "P"}
+            N.run(WEEK, Decimal("0.50"), session=FakeSession(FakeRuntime(answer)), run_id="n1", out=out, transmission=t, prompt="v1",
+                  sheet_path=sheet, published_from=reviewed)
+            with sheet.open() as f:
+                reader = csv.DictReader(f); rows = {r["record_id"]: r for r in reader}
+            self.assertEqual(reader.fieldnames[reader.fieldnames.index("so_now_what") + 1:][:2], ["published_so_what", "published_so_now_what"])
+            self.assertEqual((rows["ecs-nscc-liq"]["published_so_what"], rows["ecs-nscc-liq"]["published_so_now_what"]), ("Published edit.", "Draft 2."))
+            self.assertEqual(rows["ficc-gsd-01"]["published_so_what"], "")                       # undecided: nothing published
+            self.assertEqual(rows["ecs-set-01"]["published_so_what"], NC.TEMPLATE_SO_WHAT)
+            self.assertTrue(all(r[k] == "" for r in rows.values() for k in ("decision", "reviewer", "corrected_so_what", "corrected_so_now_what")))
+            self.assertFalse((out / f"review_narratives_{WEEK}.csv").exists())
+            with self.assertRaises(FileExistsError):
+                N.run(WEEK, Decimal("0.50"), session=FakeSession(FakeRuntime(answer)), run_id="n2", out=out, transmission=t, prompt="v1",
+                      sheet_path=sheet, published_from=reviewed)
 
 
 class ExportGate(unittest.TestCase):

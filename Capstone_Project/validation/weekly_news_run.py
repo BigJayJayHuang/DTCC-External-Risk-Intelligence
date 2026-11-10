@@ -32,6 +32,7 @@ from . import review_sheet as RS
 WEEKLY = C.PROJECT / "data/events/weekly"
 REVIEW_DIR = C.PROJECT / "data/events/review"
 PROMPT_VERSION = "v1.6"
+NARRATIVE_PROMPT_VERSION = "v3.1"     # so_what / so_now_what step after scoring (validation/narratives.py, runbook step 6)
 TIERS = ("required", "auto", "context", "duplicate", "date_review")
 
 
@@ -196,7 +197,9 @@ def run_week(week_start: date, cap: Decimal, *, today: date | None = None, allow
     gated = sum(1 for _ in csv.DictReader(gate.open(encoding="utf-8"))) if gate.exists() else 0
     return finish("complete" if real.get("status") == "complete" else "partial_budget_limit", review_sheet=str(sheet),
                   proposed_events=len(rows), tiers=tiers, filtered_non_us=with_non_us, card_gate_removals=gated, context_rows_added=added,
-                  next_step="Review the 'required' rows, then run: python -m validation.promote_reviewed --sheet " + str(sheet))
+                  next_step="Review the 'required' rows, then run: python -m validation.promote_reviewed --sheet " + str(sheet)
+                  + f"; after scoring, draft narratives with: python -m validation.narratives --week {monday.isoformat()} --cap 0.50"
+                  + f" --prompt {NARRATIVE_PROMPT_VERSION}")
 
 
 def main(argv=None):

@@ -1,0 +1,51 @@
+{
+  "card_id": "FICC-GSD-03",
+  "request_sha256": "71967150fab0620c78b76bf8e1084338b99ae49fe7396e44f2f148f538cdd960",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_KV0e8UdmtuNPCra74JUPb6",
+            "name": "submit_narrative",
+            "input": {
+              "so_what": "The Treasury clearing compliance date for eligible cash transactions (Dec 31, 2026) drives S; firms onboard to meet the rule, including through Sponsored clearing, changing onboarding demand and volume; V 3 of 5 (medium vs own history). Chain confidence is low.",
+              "so_now_what": "Watch the Dec 31, 2026 compliance date and the next quarterly PQD release; recent DTCC notices show continued GSD onboarding activity across multiple new members.",
+              "facts_used": [
+                "S_set_by",
+                "driving_event.title",
+                "driving_event.effect_date",
+                "driving_event.outlet",
+                "transmission_chain.mechanism",
+                "V_short",
+                "chain_confidence",
+                "V_tier",
+                "latest_available_pqd_quarter",
+                "related_news.top_items",
+                "related_news.label_counts"
+              ],
+              "caveats": [
+                "S set by manual event, no market signal",
+                "chain_confidence is Low",
+                "V has fewer than 8 quarters of history (history_lt_8_quarters flag)",
+                "V5_share_gt_0.5 flag present",
+                "related_news is headline-level only, not scored"
+              ]
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1520,
+    "outputTokens": 337,
+    "totalTokens": 4184,
+    "cacheReadInputTokens": 2327,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.01134441"
+}

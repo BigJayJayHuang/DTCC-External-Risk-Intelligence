@@ -1,0 +1,52 @@
+{
+  "card_id": "FICC-GSD-01",
+  "request_sha256": "65439ed8f42fc1535771ff8fee59c3ca47570acdea88d3c2d087a3cf1d5a8f39",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_tm8VY29nLDKVwdSDZTCwyP",
+            "name": "submit_narrative",
+            "input": {
+              "so_what": "The daily move in the 10-year Treasury yield reached the 42nd percentile of 461 prior weeks; larger price moves on members' cleared positions change required margin at GSD; V 1 of 5 (low vs own history).",
+              "so_now_what": "Watch the daily move in the 10-year Treasury yield (FRED) and the next quarterly PQD release.",
+              "facts_used": [
+                "S_set_by",
+                "signal.percentile",
+                "signal.prior_weeks",
+                "transmission_chain.mechanism",
+                "transmission_chain.dtcc_process",
+                "V_short",
+                "V_tier",
+                "latest_available_pqd_quarter",
+                "watch_sources"
+              ],
+              "caveats": [
+                "chain_confidence is Medium",
+                "related_news is headline-level only and not scored"
+              ]
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1282,
+    "outputTokens": 251,
+    "totalTokens": 3860,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 2327,
+    "cacheDetails": [
+      {
+        "ttl": "5m",
+        "inputTokens": 2327
+      }
+    ]
+  },
+  "estimated_cost_usd": "0.017970975"
+}
