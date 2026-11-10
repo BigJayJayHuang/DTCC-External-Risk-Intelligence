@@ -225,7 +225,8 @@ def worst_case(system: str, user: str, prices: dict) -> Decimal:
 
 
 def run(week: str, cap: Decimal, dry_run: bool = False, session=None, run_id: str | None = None, out: Path = OUT,
-        scores_dir: Path = SCORES, transmission=None, prompt: str = DEFAULT_PROMPT, compare_with: Path | None = None) -> dict:
+        scores_dir: Path = SCORES, transmission=None, prompt: str = DEFAULT_PROMPT, compare_with: Path | None = None,
+        sheet_path: Path | None = None, published_from: Path | None = None) -> dict:
     """prompt "v2" with compare_with=<reviewed sheet>: a comparison file next to the sheet, never the review sheet."""
     doc = json.loads((scores_dir / f"weekly_scores_v1.3_{week}.json").read_text())
     config = json.loads(C.CONFIG.read_text())
@@ -319,15 +320,40 @@ def run(week: str, cap: Decimal, dry_run: bool = False, session=None, run_id: st
                      "facts_used": json.dumps(value["facts_used"], ensure_ascii=False), "caveats": json.dumps(value["caveats"], ensure_ascii=False),
                      "check_flags": json.dumps(flags, ensure_ascii=False), "model": config["model_id"], "input_file": input_file,
                      "input_sha256": sha(json.dumps(inputs[r["card_id"]], sort_keys=True, ensure_ascii=False).encode())})
-    sheet = out / f"review_narratives_{week}.csv"
-    if sheet.exists():
-        sheet = out / f"review_narratives_{week}_{run_id}.csv"
+    fields = SHEET_FIELDS
+    if published_from is not None:       # the currently published text, next to each draft, for comparison only
+        published = published_text(published_from)
+        for row in rows:
+            row["published_so_what"], row["published_so_now_what"] = published.get(row["record_id"], ("", ""))
+        i = SHEET_FIELDS.index("so_now_what") + 1
+        fields = SHEET_FIELDS[:i] + ["published_so_what", "published_so_now_what"] + SHEET_FIELDS[i:]
+    if sheet_path is not None:
+        sheet = Path(sheet_path)                                    # never overwritten ("x" below)
+    else:
+        sheet = out / f"review_narratives_{week}.csv"
+        if sheet.exists():
+            sheet = out / f"review_narratives_{week}_{run_id}.csv"
     with sheet.open("x", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=SHEET_FIELDS, lineterminator="\n"); w.writeheader(); w.writerows(rows)
+        w = csv.DictWriter(f, fieldnames=fields, lineterminator="\n"); w.writeheader(); w.writerows(rows)
     summary.update(review_sheet=str(sheet.relative_to(PROJECT)) if sheet.is_relative_to(PROJECT) else str(sheet),
                    flagged_cards=sum(1 for _, f in results.values() if f))
     C.dump(run_dir / "summary.json", summary)
     return summary
+
+
+def published_text(sheet: Path) -> dict:
+    """record_id -> (so_what, so_now_what) as the dashboard export publishes them from a reviewed sheet: corrected text
+    for edit, generated text for approve, fixed text for template rows; nothing for undecided or rejected rows."""
+    out = {}
+    with Path(sheet).open(encoding="utf-8", newline="") as f:
+        for r in csv.DictReader(f):
+            d = (r.get("decision") or "").strip().lower()
+            if r["generated_by"] == "template":
+                out[r["record_id"]] = (NC.TEMPLATE_SO_WHAT, NC.TEMPLATE_SO_NOW_WHAT)
+            elif d in ("approve", "edit") and (r.get("reviewer") or "").strip():
+                pick = lambda k: (r.get("corrected_" + k) or "").strip() if d == "edit" and (r.get("corrected_" + k) or "").strip() else r[k]
+                out[r["record_id"]] = (pick("so_what"), pick("so_now_what"))
+    return out
 
 
 COMPARE_FIELDS = ["card_id", "record_ids", "edited_so_what", "edited_so_now_what", "v2_so_what", "v2_so_now_what", "v2_check_flags",
@@ -422,12 +448,15 @@ def main(argv=None):
     p.add_argument("--dry-run", action="store_true", help="build inputs and requests, estimate the cost, no model calls")
     p.add_argument("--prompt", choices=sorted(PROMPTS), default=DEFAULT_PROMPT, help=f"default {DEFAULT_PROMPT}")
     p.add_argument("--compare-with", type=Path, help="reviewed sheet: write a v2/v3 comparison file instead of a review sheet")
+    p.add_argument("--sheet", type=Path, help="write the review sheet to this new file (never overwritten)")
+    p.add_argument("--published-from", type=Path, help="reviewed sheet whose published text is added as published_* columns")
     a = p.parse_args(argv)
     if date.fromisoformat(a.week).weekday() != 0:
         p.error("--week must be a Monday")
     if not a.cap.is_finite() or a.cap <= 0:
         p.error("--cap must be positive")
-    print(json.dumps(run(a.week, a.cap, a.dry_run, prompt=a.prompt, compare_with=a.compare_with), indent=2, ensure_ascii=False))
+    print(json.dumps(run(a.week, a.cap, a.dry_run, prompt=a.prompt, compare_with=a.compare_with, sheet_path=a.sheet,
+                         published_from=a.published_from), indent=2, ensure_ascii=False))
 
 
 if __name__ == "__main__":

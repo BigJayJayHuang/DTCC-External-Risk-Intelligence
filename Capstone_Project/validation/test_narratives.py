@@ -320,6 +320,33 @@ class PromptV31(unittest.TestCase):
         self.assertIn("headline not attributed to its outlet (MarketWatch)", unattributed)
 
 
+class NamedSheetWithPublishedText(unittest.TestCase):
+    def test_named_sheet_carries_published_text_and_is_never_overwritten(self):
+        with tempfile.TemporaryDirectory() as d:
+            out = Path(d); reviewed = out / "reviewed.csv"
+            with reviewed.open("w", newline="") as f:
+                w = csv.DictWriter(f, fieldnames=N.SHEET_FIELDS); w.writeheader()
+                w.writerow({k: "" for k in N.SHEET_FIELDS} | {"record_id": "ecs-nscc-liq", "generated_by": "ai", "so_what": "Draft.", "so_now_what": "Draft 2.",
+                                                               "decision": "edit", "reviewer": "Wenqi Cai", "corrected_so_what": "Published edit."})
+                w.writerow({k: "" for k in N.SHEET_FIELDS} | {"record_id": "ficc-gsd-01", "generated_by": "ai", "so_what": "Draft.", "so_now_what": "D."})
+                w.writerow({k: "" for k in N.SHEET_FIELDS} | {"record_id": "ecs-set-01", "generated_by": "template"})
+            sheet = out / f"review_narratives_{WEEK}_v31.csv"
+            t = lambda r: {"event": "E", "mechanism": "M", "dtcc_process": "P"}
+            N.run(WEEK, Decimal("0.50"), session=FakeSession(FakeRuntime(answer)), run_id="n1", out=out, transmission=t, prompt="v1",
+                  sheet_path=sheet, published_from=reviewed)
+            with sheet.open() as f:
+                reader = csv.DictReader(f); rows = {r["record_id"]: r for r in reader}
+            self.assertEqual(reader.fieldnames[reader.fieldnames.index("so_now_what") + 1:][:2], ["published_so_what", "published_so_now_what"])
+            self.assertEqual((rows["ecs-nscc-liq"]["published_so_what"], rows["ecs-nscc-liq"]["published_so_now_what"]), ("Published edit.", "Draft 2."))
+            self.assertEqual(rows["ficc-gsd-01"]["published_so_what"], "")                       # undecided: nothing published
+            self.assertEqual(rows["ecs-set-01"]["published_so_what"], NC.TEMPLATE_SO_WHAT)
+            self.assertTrue(all(r[k] == "" for r in rows.values() for k in ("decision", "reviewer", "corrected_so_what", "corrected_so_now_what")))
+            self.assertFalse((out / f"review_narratives_{WEEK}.csv").exists())
+            with self.assertRaises(FileExistsError):
+                N.run(WEEK, Decimal("0.50"), session=FakeSession(FakeRuntime(answer)), run_id="n2", out=out, transmission=t, prompt="v1",
+                      sheet_path=sheet, published_from=reviewed)
+
+
 class ExportGate(unittest.TestCase):
     """docs/data/export_risk_output.py publishes only approved narratives that pass the checks again."""
     def setUp(self):
