@@ -1,0 +1,133 @@
+{
+  "requests": [
+    {
+      "topic": "financial_markets",
+      "params": {
+        "function": "NEWS_SENTIMENT",
+        "topics": "financial_markets",
+        "time_from": "20261102T0000",
+        "time_to": "20261108T2359",
+        "sort": "LATEST",
+        "limit": "1000"
+      },
+      "requested_utc": "2026-11-10T03:15:44+00:00",
+      "http_status": 200,
+      "status": "no_feed",
+      "message": "Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium endpoints",
+      "stop": true
+    },
+    {
+      "topic": "economy_monetary",
+      "params": {
+        "function": "NEWS_SENTIMENT",
+        "topics": "economy_monetary",
+        "time_from": "20261102T0000",
+        "time_to": "20261108T2359",
+        "sort": "LATEST",
+        "limit": "1000"
+      },
+      "status": "not_requested",
+      "reason": "earlier response was not a news feed"
+    },
+    {
+      "topic": "finance",
+      "params": {
+        "function": "NEWS_SENTIMENT",
+        "topics": "finance",
+        "time_from": "20261102T0000",
+        "time_to": "20261108T2359",
+        "sort": "LATEST",
+        "limit": "1000"
+      },
+      "status": "not_requested",
+      "reason": "earlier response was not a news feed"
+    },
+    {
+      "topic": "economy_macro",
+      "params": {
+        "function": "NEWS_SENTIMENT",
+        "topics": "economy_macro",
+        "time_from": "20261102T0000",
+        "time_to": "20261108T2359",
+        "sort": "LATEST",
+        "limit": "1000"
+      },
+      "status": "not_requested",
+      "reason": "earlier response was not a news feed"
+    }
+  ],
+  "stats": {
+    "requests_this_run": 1,
+    "requests_used_today_utc": 1,
+    "daily_limit": 25,
+    "per_topic": {
+      "financial_markets": "no_feed",
+      "economy_monetary": "not_requested",
+      "finance": "not_requested",
+      "economy_macro": "not_requested"
+    },
+    "unique_articles": 0,
+    "with_summary": 0,
+    "window_utc": [
+      "20261102T0000",
+      "20261108T2359"
+    ],
+    "errors": [
+      {
+        "topic": "financial_markets",
+        "params": {
+          "function": "NEWS_SENTIMENT",
+          "topics": "financial_markets",
+          "time_from": "20261102T0000",
+          "time_to": "20261108T2359",
+          "sort": "LATEST",
+          "limit": "1000"
+        },
+        "requested_utc": "2026-11-10T03:15:44+00:00",
+        "http_status": 200,
+        "status": "no_feed",
+        "message": "Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium endpoints",
+        "stop": true
+      },
+      {
+        "topic": "economy_monetary",
+        "params": {
+          "function": "NEWS_SENTIMENT",
+          "topics": "economy_monetary",
+          "time_from": "20261102T0000",
+          "time_to": "20261108T2359",
+          "sort": "LATEST",
+          "limit": "1000"
+        },
+        "status": "not_requested",
+        "reason": "earlier response was not a news feed"
+      },
+      {
+        "topic": "finance",
+        "params": {
+          "function": "NEWS_SENTIMENT",
+          "topics": "finance",
+          "time_from": "20261102T0000",
+          "time_to": "20261108T2359",
+          "sort": "LATEST",
+          "limit": "1000"
+        },
+        "status": "not_requested",
+        "reason": "earlier response was not a news feed"
+      },
+      {
+        "topic": "economy_macro",
+        "params": {
+          "function": "NEWS_SENTIMENT",
+          "topics": "economy_macro",
+          "time_from": "20261102T0000",
+          "time_to": "20261108T2359",
+          "sort": "LATEST",
+          "limit": "1000"
+        },
+        "status": "not_requested",
+        "reason": "earlier response was not a news feed"
+      }
+    ]
+  }
+}
