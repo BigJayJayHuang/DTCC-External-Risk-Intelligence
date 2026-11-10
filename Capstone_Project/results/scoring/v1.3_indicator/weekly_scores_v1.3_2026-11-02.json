@@ -29,13 +29,17 @@
     {
       "amendment": "G",
       "approved": "Wenqi Cai, 2026-11-10T03:52Z"
+    },
+    {
+      "amendment": "H",
+      "approved": "Wenqi Cai, 2026-11-10T04:06Z"
     }
   ],
   "spec_version": "v1.3-indicator",
   "rubric_version": "event-rubric-v1.2",
   "week": "2026-11-02",
   "week_end": "2026-11-06",
-  "run_utc": "2026-11-10T03:58Z",
+  "run_utc": "2026-11-10T04:06Z",
   "news_coverage": "headline_level_ai_screen",
   "records": [
     {
@@ -876,6 +880,13 @@
           "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQY2RENTBmVGo5XzBoNnZzUkdvNk5lWEVycE5nbnkyMmZQc2ZzZWl5Y3hmOFYxOFdKejJ2cktVMFZzajVmVDZ1TV9ndlhOVmh6Wkg4QjVRNEJLQS1pcFh3ME9qQXAtRkZ5T3RlQktxQ3lNelh6ckcxdEU3YlpBcTcxMEVKdmw?oc=5",
           "event_type": "firm_specific",
           "proposed_event_id": "PE-2026-11-02-51ecda4f"
+        },
+        {
+          "title": "Exclusive | Hedge Funds Dump Positions and Cut Staff as Selloff Deepens",
+          "outlet": "WSJ",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPOFBSNTF3bXFWS1hzT2hRbDZZZFlJTUJlZ2U0OHdTdTBfcEEwdlRUSkk3bFlDM3Ixa1JaR3BUM1dyUFNRU0dWZG5FWE9pZHZwYjBRbGJtZGMzRk9ZZTdaNTAtbUJEWldKT1E0VTI1Q1hfcFEyNmg0WkVwaUdLcGIxZkJCRVZCcWxmX24wRGFEbnhqaFR0ZXNwSW8tNVlTVU5wNk92dVZyLWdiUQ?oc=5",
+          "event_type": "firm_specific",
+          "proposed_event_id": "PE-2026-11-02-9a4a3088"
         }
       ]
     },
