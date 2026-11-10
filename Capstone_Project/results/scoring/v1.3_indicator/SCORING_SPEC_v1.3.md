@@ -303,3 +303,16 @@ Official notices are the rows of the daily official-news export (`official_sourc
   - Notices that remove a member ("Delete Sponsored Member", "Changes in the list of participants") are not new-member notices. They go to the classifier as before.
 - **G4. SRO rule filings.** A proposed event made only of SRO rule filings is capped at `review_tier = auto` and is never `required`. A filing is identified by a title of the form "Self-Regulatory Organizations; <filer>; …", and the cap applies when every filer is an entity other than FICC, NSCC and DTC. The row carries the flag `sro_filing_capped_auto`. Filings by FICC, NSCC or DTC keep their tier.
 - **G5. Order.** G1 → G2 / G3 → keyword pre-filter and the non-US rule → classifier → E checks → D context rule → D5 tier → G4 cap. E3 (`duplicate`) and E4 (`date_review`) still take precedence over the cap.
+
+## Amendment H — same_as_event_id without new_information
+
+Approved: Wenqi Cai, 2026-11-10T04:06Z. It records a rule already in the code (commit 284cabb). It changes no S, V or severity rule.
+
+- **H1. Not dropped.** Sometimes the classifier sets `same_as_event_id` but gives no true/false `new_information` (the field is missing or null). The item is no longer dropped:
+  - `new_information` stays null;
+  - the item carries the flag `new_information_missing`.
+- **H2. Review required.** A proposed event with any such item gets `review_tier = required`, and the flag is listed in `validate_flags`.
+  - It is never `auto` or `context`, and the G4 cap does not apply to it.
+  - E3 does not make it a `duplicate`, because its `new_information` is not false.
+  - E4 `date_review` still takes precedence.
+- **H3. Promotion.** `promote_reviewed.py` treats it like any `required` row: it needs a decision. An approved row with `same_as_event_id` is listed for a manual merge and is not inserted.
