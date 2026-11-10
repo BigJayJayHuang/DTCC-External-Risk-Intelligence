@@ -11,6 +11,8 @@ aws sso login --profile devx-bedrock
 .venv-llm/bin/python -m validation.weekly_news_run --week-start 2026-11-09 --cap 3
 ```
 
+Alpha Vantage news summaries are **off by default**: NEWS_SENTIMENT is a premium endpoint, and a free key gets "This is a premium endpoint". With a premium key in `ALPHAVANTAGE_API_KEY`, add `--alphavantage`.
+
 Two modes never call the model: `--collect-only` stops after collection (step 2), and `--dry-run` stops after the cost estimate (step 3). `--from-inputs <classifier_input.csv>` reuses a saved collection instead of fetching again.
 
 `--week-start` is the Monday of a finished Monday–Sunday week. `--cap` is the most you allow the model calls to cost, in USD. The command then:

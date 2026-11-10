@@ -1,5 +1,10 @@
 """Alpha Vantage NEWS_SENTIMENT source for the weekly news run (one request per topic).
 
+OFF BY DEFAULT. NEWS_SENTIMENT is a premium endpoint: the documentation marks it "Premium", and on 2026-11-10 a free key
+got "This is a premium endpoint. You may subscribe to any of the premium plans ..." (see
+data/events/weekly/2026-11-02/run_20261110T031359Z/inputs/alphavantage/). Enable it with
+`weekly_news_run --alphavantage` only with a premium key in ALPHAVANTAGE_API_KEY.
+
     python -m validation.alpha_vantage_news --week-start 2026-11-02 --out-dir <dir>
 
 - The API key is read only from the environment variable ALPHAVANTAGE_API_KEY. It is never printed, logged or written:

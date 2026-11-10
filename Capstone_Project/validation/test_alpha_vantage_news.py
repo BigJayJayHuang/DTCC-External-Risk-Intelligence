@@ -129,6 +129,11 @@ class Pipeline(unittest.TestCase):
         self.assertTrue(P.us_link("FCA view on U.S. listings"))
         self.assertFalse(P.us_link("FCA warns about loans to contractors; thus us"))           # lower-case "us" is not the US
         self.assertFalse(P.us_link("ESMA consults on securities lending"))
+        for uk in ("FCA and HM Treasury set out new rules", "His Majesty's Treasury consults", "His Majesty’s Treasury update",
+                   "hm treasury response"):
+            self.assertFalse(P.us_link(uk), uk)                                           # UK Treasury is not a US link
+        self.assertTrue(P.us_link("HM Treasury and the US Treasury agree a swap"))       # a separate US term still counts
+        self.assertTrue(P.us_link("Treasury yields rose"))
 
     def test_classifier_input_has_no_bodies_and_classifier_reads_cache(self):
         summary = "Treasury repo rates jumped as funding tightened across dealers and margin calls rose."
@@ -156,6 +161,14 @@ class Pipeline(unittest.TestCase):
 
 
 class WeeklyRunKey(unittest.TestCase):
+    def test_alphavantage_is_off_by_default_on_the_cli(self):
+        seen = {}
+        with mock.patch.object(W, "run_week", side_effect=lambda *a, **k: seen.update(k) or {}):
+            W.main(["--week-start", "2026-11-02", "--cap", "1", "--dry-run"])
+            self.assertIsNone(seen["collect_alphavantage"])
+            W.main(["--week-start", "2026-11-02", "--cap", "1", "--dry-run", "--alphavantage"])
+            self.assertIs(seen["collect_alphavantage"], AV.collect)
+
     def test_missing_key_stops_before_classification(self):
         with tempfile.TemporaryDirectory() as d:
             root = Path(d)

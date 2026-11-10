@@ -46,10 +46,14 @@ OFFICIAL_META = {
 NON_US_OFFICIAL = {"fca_rss", "ecb_press", "esma_news", "bis_press"}
 US_TERMS_CASE = re.compile(r"(?<![A-Za-z0-9])(US|U\.S\.|SEC|CFTC|DTCC|FICC|NSCC|DTC)(?![A-Za-z0-9])")
 US_TERMS_ANY_CASE = re.compile(r"(?<![A-Za-z0-9])(United States|Federal Reserve|Treasury)(?![A-Za-z0-9])", re.I)
+UK_TREASURY = re.compile(r"(?<![A-Za-z0-9])(HM|His Majesty['’]s|Her Majesty['’]s) Treasury(?![A-Za-z0-9])", re.I)   # never a US link
 LOCAL_TEXT_SCOPES = {"full_text", "article_excerpt"}      # body lives in the git-ignored cache; CSV keeps only its hash
 
 
 def us_link(text: str) -> bool:
+    """A US term in the text; "HM Treasury" / "His Majesty's Treasury" are removed first, so the UK Treasury alone does
+    not count (a separate US term in the same text still does)."""
+    text = UK_TREASURY.sub(" ", text)
     return bool(US_TERMS_CASE.search(text) or US_TERMS_ANY_CASE.search(text))
 
 

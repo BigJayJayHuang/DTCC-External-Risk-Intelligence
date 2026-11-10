@@ -5,8 +5,8 @@
 Steps for one Monday-Sunday week (the week must be over unless --allow-partial-week):
   1. Google News RSS (news_queries.csv; headline filter; 25 per card) -> inputs/google/
   2. Publisher feeds (publisher_feeds_config.json; keyword pre-filter; full text where allowed), the daily official
-     news export (--official; stops if it is missing), Alpha Vantage NEWS_SENTIMENT summaries (four topics; key from
-     ALPHAVANTAGE_API_KEY; --no-alphavantage to skip) and the Google items -> inputs/feeds/classifier_input.csv
+     news export (--official; stops if it is missing), optionally Alpha Vantage NEWS_SENTIMENT summaries (--alphavantage;
+     off by default because NEWS_SENTIMENT needs a premium key) and the Google items -> inputs/feeds/classifier_input.csv
      (--collect-only stops here; --from-inputs reuses a saved classifier_input.csv and skips steps 1-2)
   3. Dry run with prompt v1.6, flat schema, caching (--dry-run stops here). Stops if the cache-aware estimate is above
      --cap, or if an earlier run of the week left an unresolved cost reservation.
@@ -210,14 +210,16 @@ def main(argv=None):
     modes.add_argument('--dry-run',action='store_true',help='Collect and estimate locally; never invoke a model')
     p.add_argument('--official',type=Path,default=C.NEWS,help='Daily official-news CSV; always included through the keyword filter')
     p.add_argument('--offline-google-from',type=Path,help='Reparse an existing RSS batch instead of repeating Google requests')
-    p.add_argument('--no-alphavantage',action='store_true',help='Skip the Alpha Vantage NEWS_SENTIMENT source (needs ALPHAVANTAGE_API_KEY)')
+    p.add_argument('--alphavantage',action='store_true',
+                   help='Add the Alpha Vantage NEWS_SENTIMENT source (off by default: it needs a PREMIUM key in ALPHAVANTAGE_API_KEY; '
+                        'a free key gets "This is a premium endpoint" and the run stops)')
     a = p.parse_args(argv)
     if a.from_inputs and a.collect_only:
         p.error('--from-inputs reuses saved inputs; --collect-only has nothing to collect')
     print(json.dumps(run_week(a.week_start, a.cap, allow_partial=a.allow_partial_week, from_inputs=a.from_inputs,
                              prompt_version=a.prompt_version, context_path=a.context_out, official_news=a.official,
                              collect_only=a.collect_only,dry_run=a.dry_run,offline_google_from=a.offline_google_from,
-                             collect_alphavantage=None if a.no_alphavantage or a.from_inputs else AV.collect), indent=2, ensure_ascii=False))
+                             collect_alphavantage=AV.collect if a.alphavantage and not a.from_inputs else None), indent=2, ensure_ascii=False))
 
 
 if __name__ == "__main__":
