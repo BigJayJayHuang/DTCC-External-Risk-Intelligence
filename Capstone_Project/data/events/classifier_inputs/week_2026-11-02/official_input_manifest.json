@@ -1,0 +1,9 @@
+{
+  "source": "release data-latest database snapshot (download_latest.py), news table exported read-only",
+  "snapshot_generated_at_utc": "2026-11-07T01:55:08+00:00",
+  "snapshot_sha256": "3cd93dc9d34043f1d040ab86575f9c3deed25e784c6a83050e3a29b8c49e3f33",
+  "news_csv_sha256": "b4b87e392c1905f469f72a2332863d443e385a86f9b5d09ed916ecebb00ebc07",
+  "news_rows": 1636,
+  "latest_official_publication_date": "2026-11-06",
+  "note": "Full export not committed; the week's 107 official rows are listed in official_prefilter_filtered_out.csv (all filtered)."
+}

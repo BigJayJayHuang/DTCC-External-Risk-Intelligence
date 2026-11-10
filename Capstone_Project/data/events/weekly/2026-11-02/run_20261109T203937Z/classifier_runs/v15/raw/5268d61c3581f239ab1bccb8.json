@@ -1,0 +1,57 @@
+{
+  "document_id": "80cb4c9cea7073cacb93efc068afad41deb0185dff591dd84c3b2b9c1e74b8b4",
+  "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQano5dXRNeGFOYUNQaUNKUS1UZjU4Wk1yNlhELVhWd1NGYjVHa194RkN2cG5lbVU5R3AxQ2tlWnBiR2doUEVZZFJCMXk2Z2NWU242R0ZIR3YtR0VUS2tRUmFkakliNzFwekFIQ0ZWMXg0WDlfX2kwTGY4dldCTzlMNWlaSzhKV3V4UWR0bE1pT0U5cGc2RGhkczlNbjY?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "94a6ae5620acf1c8bb5c85878fdfb148b96838e266b7ead1e3751c3fc1c7b02b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_UHD77658kJ9mO6aXuKI9Bl",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline-only article about a cyberattack on a French bank with no stated link to US markets, DTCC participants, or US market infrastructure. Geography is non-US with no US link mentioned in the text.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1468,
+    "outputTokens": 445,
+    "totalTokens": 6286,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3100
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

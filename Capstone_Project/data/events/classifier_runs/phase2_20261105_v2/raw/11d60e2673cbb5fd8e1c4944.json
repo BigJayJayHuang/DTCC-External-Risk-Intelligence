@@ -1,0 +1,40 @@
+{
+  "document_id": "2db1ef6a1645e150f3b05082c9e212fa4360c605edeef50648db2bc6c22ba531",
+  "url": "https://files.dtcc.com/download/assets/25029-26/0f764db4cef211f19dd5269dbf3d41b0",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "4f2d5dc7e9750818815e2f86fbd4a5febd20d3970452f60d93ad2b9d87588df4",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_njSgnxN1D8PkHhxzvmV9vB",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about tax relief (withholding tax relief at source) for a Swedish security (Telia Company, CUSIP 87960M205). It describes a corporate action tax processing deadline, not an outside market, regulatory, member stress, or infrastructure event that matches any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4227,
+    "outputTokens": 112,
+    "totalTokens": 4339,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1961
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

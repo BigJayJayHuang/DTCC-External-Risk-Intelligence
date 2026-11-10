@@ -1,0 +1,40 @@
+{
+  "document_id": "69c056dc6805afca88b1bce091802894e34721d0f85ff3ff059082664de0ea63",
+  "url": "https://files.dtcc.com/download/assets/24589-26/7d3fd070c8c811f1aa6242bf97f8278d",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "67ce86203be8e1e645bf4d648bf7dac608de664a307573a126cecc8416ca25d8",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_1SL8ocooeK4wPyXsOgFg02",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a tax relief corporate action for Compagnie Financiere Richemont (CUSIP 204319107) in Switzerland. It is routine DTC corporate actions/tax relief administrative notice with no risk event described. No card in the catalog covers corporate action tax relief processing, and there is no outside market, regulatory, member stress, or infrastructure event present."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4180,
+    "outputTokens": 128,
+    "totalTokens": 4308,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2028
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

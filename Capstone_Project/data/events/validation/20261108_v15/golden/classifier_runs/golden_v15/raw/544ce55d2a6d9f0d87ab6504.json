@@ -1,0 +1,55 @@
+{
+  "document_id": "cc0128c1d5beaa55aa6019f1721d052bc90ad7bf31f6a4b39cf22fdb644b5135",
+  "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPc0F5ZnN2MWVVaFdxelhqWU5rRkprc21QQ0w5SWNJWm5OZEt5VmlvR2NOcDdjdHpRNEhObHFPMzkxdzUyMGtZNEJyMTF6UWxyTzJibFVfLXhIS09MZC1Ca0JNWnc4TDMzVlN3LWhJdnBMczRYLVBOYVZpTDFkUzdpYk03QWFYYnhJSElSeHhzbnkyRy10NDczSjIwdXNCOTVmRlkxX2I5VF9sZ0w2VHlsajFB?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:163854b82bd7",
+  "request_sha256": "9d6d1f593c73af7e3934405d418e92ec841174962d5764f1c889d5896d172f8e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_U58xW8uheigB57LEyw7Qs9",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Article is about political/electoral developments in Texas and their implications for SpaceX, a non-financial firm. No event matching any catalog card type (no market move, regulatory action, member stress, cyber incident, or settlement disruption related to DTCC processes).",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1490,
+    "outputTokens": 418,
+    "totalTokens": 5813,
+    "cacheReadInputTokens": 3905,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3050
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

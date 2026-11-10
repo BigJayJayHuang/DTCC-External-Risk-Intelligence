@@ -1,0 +1,57 @@
+{
+  "document_id": "ea06105dcef040a267678d3aed0303bb7a68a97b724e5e59fa9661c49398f476",
+  "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNeUhJVWdvamJMTDRWZ2k1QjAyMkVFMUFQanJOS2NUY0FVWnRNRlhURGpDS0FkOXVaNUY3TGt2VjJHZDhDZ1owb3ZOVFBycVlZcHRMdnJJRndZVEVFZnluRmp0eWRaT2xZdDNqNHdjNkJ6aGVRNmhfZHkyZXRGQWoweTBpUms4V0xjQU1xN2xsRE5VTG5kUGVOcnhsTXZ3MU10VzBZdFlB?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "45d31a621e0a80a9790459dfc5abcba78cca646bfeb1999a6d8a5694ccfb9f9f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_5ofs9NL5OxDOpHW3Ls6DAN",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "Non-US event (Malaysian banks) with no stated link to US markets, US firms, or DTCC participants. XE-CYBER requires a cyberattack at a large US market participant, a DTCC vendor, or US market infrastructure; this article describes disruptions at Malaysian banks only."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1887,
+    "outputTokens": 462,
+    "totalTokens": 6722,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3460
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

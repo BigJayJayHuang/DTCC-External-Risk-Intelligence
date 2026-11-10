@@ -1,0 +1,54 @@
+{
+  "document_id": "47278d30447049a77956d2b6bca160638f301c673f000cab581357b1706ac05e",
+  "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSXcxeU5qckhPME1ra0JNMTNVUVFnZjlmNmFRRGgxa09ZMVpxY2J4eGN6SE1JRUphZkFxSHRYVkJrUDRCaWF1Mjh1QVZNQ2hNOTJNSzU1NkVUVEthTXdaOHdPM1pybWx0Skx2cWFCZmxjNlZRdE14cmxTSHNXRTl5OG1OeUxDRF94bkNkb0NwMHlNN01mTEd4QUZ1MXJhOVpVZkVz0gGoAUFVX3lxTE9uSGJmbkhEdjUxcThKQjZmMjYtZUFRcm41b0ZKXzZFTGZ4YUlHZG9LOW1WSDBDSkNsOWFYN3RobWF3RG1RSF9CZXVNV3pQTWRQSjNyZHh2Q29rblRwaExCZzZaVy1zS1FzeDU5ZUhqb2c5VFNOMTlTQi13bmg2NThkSm1lUENtV3RRYTdLQUk1UVhKMHpwUWR4T3QzMjgwTUUweV9LX3NPMg?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "52048210b6549752c71ef6c2592ec76d12293b77737073b717174c491bd77691",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_SQvrfbOoP5wqT1pjUwfWju",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Headline only. The victim is described as a \"French bank\" with no name given and no stated link to US markets or DTCC participation. XE-CYBER requires a cyberattack at a large DTCC participant or vendor; an unnamed French bank does not meet that threshold. Not relevant."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1705,
+    "outputTokens": 408,
+    "totalTokens": 5798,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3081
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

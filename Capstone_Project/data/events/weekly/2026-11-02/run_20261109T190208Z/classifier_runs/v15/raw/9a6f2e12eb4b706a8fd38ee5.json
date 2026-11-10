@@ -1,0 +1,59 @@
+{
+  "document_id": "5d7502f4c3e74774c6e063661e848bc4e577d632851c588450e38846bf91e348",
+  "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWUkxWGlYbVdselJXOVB0QVNtWEhQNTd6Q3lRcmU2eElhVHdWdDhaWWhDdjN3UjNXWVVuOURRNGtwTEFiUlNOU2NlbnRXREg5cnR6amVfaGVWbG9uYjZsRkFoQzZtMkhUMkdWZlptWnNaWUFTa0poRmt4TE0xSHFGbm80dUFDeVIzeW80S3FyWXpUcmtZckpDNFNhdWIxUDZk?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "9e96add40bb04ad662537debaa324edadc8c17fcb3030dbca5cce2b040f84059",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_QOgbfvyaFnoXMeWkKlMW4u",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "cyber",
+              "same_as_event_id": null,
+              "title": "French banking group hit by supply chain cyberattack",
+              "summary": "A French banking group has been affected by a supply chain cyberattack. No further details on the firm's identity, scope, or impact are provided in the headline-only article.",
+              "card_ids": [
+                "XE-CYBER"
+              ],
+              "certainty": 2,
+              "reach": 0,
+              "reach_basis": "single",
+              "named_participants": [],
+              "announced_date": "2026-11-05",
+              "effect_date": "2026-11-05",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "CSO Online",
+              "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWUkxWGlYbVdselJXOVB0QVNtWEhQNTd6Q3lRcmU2eElhVHdWdDhaWWhDdjN3UjNXWVVuOURRNGtwTEFiUlNOU2NlbnRXREg5cnR6amVfaGVWbG9uYjZsRkFoQzZtMkhUMkdWZlptWnNaWUFTa0poRmt4TE0xSHFGbm80dUFDeVIzeW80S3FyWXpUcmtZckpDNFNhdWIxUDZk?oc=5",
+              "evidence_quotes": [
+                "French banking group hit by supply chain cyberattack"
+              ],
+              "confidence": 0.45,
+              "notes": "headline_only. The affected firm is unnamed and described only as a \"French banking group,\" making it impossible to determine whether it is a DTCC participant or major participant. French domicile suggests limited direct DTCC exposure unless the firm is a US-active dealer or broker, which cannot be confirmed from the text. Reach set to 0 (single, unidentified firm). Certainty set to 2 as the attack is reported as having occurred. Effect_date set to announced_date as no separate event date is given."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1461,
+    "outputTokens": 766,
+    "totalTokens": 6142,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5707
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

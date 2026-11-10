@@ -1,0 +1,60 @@
+{
+  "document_id": "872357177a1d94dbd6c227ef19d6e47bbff27dea43ef99224508c4dbb6ebd3f8",
+  "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPMElhUGVBRThETlplSjM2LTdKWFdqWlRwUDEtTmQxLTFldTU3QW5CeEV4QzJQUHZsbmU2SEVpVm1YV1ZGNGM3MlNGc0wzMGQ0S3FyX3hrSTlfRmJEZHpsVXhTUWNwZXZ4N0djR0kyU3BKM1NiYlNnMnRCWVlyZkJ3dnN0YTd5M1RYb2huZGtfOVpHbkFHandrbnljVnE2WlZwcUM2WlNsVF9vMmRNa3lSNWoxWGs1VXFZWFRJcQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "525a4c783f41cffe59c5115af40b7beeb8fa7014928812c2277c8bf5b44700a5",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_3t5yzsEFzqgyhtDUwOToiU",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "market_move",
+              "same_as_event_id": null,
+              "title": "Tech-led stock selloff deepens, traders flee to Treasuries",
+              "summary": "A tech-led equity selloff is deepening, prompting traders to seek safety in the Treasury market. The broad stock market decline could stress NSCC liquidity and variation margin requirements.",
+              "card_ids": [
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-05",
+              "effect_date": "2026-11-05",
+              "stage": null,
+              "source_tier": "major_media",
+              "outlet": "MarketWatch",
+              "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPMElhUGVBRThETlplSjM2LTdKWFdqWlRwUDEtTmQxLTFldTU3QW5CeEV4QzJQUHZsbmU2SEVpVm1YV1ZGNGM3MlNGc0wzMGQ0S3FyX3hrSTlfRmJEZHpsVXhTUWNwZXZ4N0djR0kyU3BKM1NiYlNnMnRCWVlyZkJ3dnN0YTd5M1RYb2huZGtfOVpHbkFHandrbnljVnE2WlZwcUM2WlNsVF9vMmRNa3lSNWoxWGs1VXFZWFRJcQ?oc=5",
+              "evidence_quotes": [
+                "tech-led stock selloff deepens",
+                "Traders flock to Treasury market for safety"
+              ],
+              "confidence": 0.55,
+              "notes": "headline_only. Headline confirms an ongoing broad equity selloff (tech-led, described as deepening), which maps to ECS-NSCC-LIQ (sharp equity selloff). No magnitude or specific participant details provided; certainty set to 2 as the selloff is described as already occurring. Confidence lowered due to headline-only content."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1520,
+    "outputTokens": 788,
+    "totalTokens": 6223,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5098
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

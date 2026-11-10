@@ -1,0 +1,40 @@
+{
+  "document_id": "9b6e93b48f207022f81de7eb4bdae1a5228aa479b8d2ad91fdc655c86ea05c87",
+  "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261014~e4ca33588e.en.html",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "4bcb124e3fd8a0f26ea89807668744d81f7013aee2611d307f8354f08c29fed2",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Qi23Sp9hDexCbhuSrvWK0M",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only speech by ECB's Frank Elderson about resilience and uncertainty. It contains no specific market event, regulatory action, member stress, or infrastructure issue that maps to any card in the catalog. No actionable content is present beyond the title."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4074,
+    "outputTokens": 99,
+    "totalTokens": 4173,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1713
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

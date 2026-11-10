@@ -1,0 +1,40 @@
+{
+  "document_id": "fd9bb178b78450ac13ac14b293b9db1a781b6f3dae6e9a36b13c4d941f0124f3",
+  "url": "https://files.dtcc.com/download/assets/25220-26/b5d56a10d47d11f1832f2e29ee87f978",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "b528d0f8fe0bb5dfd52b2d36fc85003c466fa79b1c79011d23ae14ab8c6c6731",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_QFMkV25cE5fbWL4Zc6EWKd",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about a tax relief / corporate action (dividend) for AKZO NOBEL (Netherlands). It describes a quick refund CA web instruction deadline for a specific security. No outside market, regulatory, member stress, or infrastructure event is described; no card's Step 1 trigger is met."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4200,
+    "outputTokens": 111,
+    "totalTokens": 4311,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1981
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "666d439d0c12cc36bb37d78d1b02e3848b132305a5b1d8bdffa8e452f744a4fb",
+  "url": "https://files.dtcc.com/download/assets/GOV2280-26/442acec4d48111f1a22a3e570263de11",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "9f19d88f8653096605636fb9a77eecefd0c484f2cac48851d84678917ab767a2",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_PelIWQyyw1xWWdbmwJwnCf",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new participant (The Bank of New York Mellon / London Branch) joining the GSD netting system. It is a routine membership/onboarding administrative notice with no outside risk event described. No card's Step 1 trigger (market stress, regulatory mandate, member failure, cyber incident, etc.) is present."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4145,
+    "outputTokens": 121,
+    "totalTokens": 4266,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2056
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

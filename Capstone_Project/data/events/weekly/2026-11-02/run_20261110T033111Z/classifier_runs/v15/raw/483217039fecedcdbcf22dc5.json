@@ -1,0 +1,57 @@
+{
+  "document_id": "715f849f068347a6d6f57b58875228f2076ef03c51390866ec582a3e68197772",
+  "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxObmU3ZHdRR0lPYlpRZmxhZHRsUi1nM2YxU2pzZGNtcThhQ0lSR3NYa0k1TkJtSEdFNWVfd2VJVHM5N3lMZGpaUE1Ya1k3djl2cTZQd3Nmd1RuOXk0UGkxMnJKZ3dRMWV2Mi1WdEdyZEQ0ak9HUE9VUlhRWXZySDMtZWtIX3NocWJHSXphcVVDdWFCRi1wVDczeVlVY1g1WHJi?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "b06479b2234b6fc5f578639f5c98860061d3749eb49c32ebcc7f0916a8623b3e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_bd9WtpB6CQfP8UhxjXwhg1",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Cyberattack targets French blood banks — a non-US healthcare/insurance entity with no stated link to US markets, DTCC participants, or any covered financial infrastructure. Out of scope for all catalog cards.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1888,
+    "outputTokens": 443,
+    "totalTokens": 6704,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3259
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

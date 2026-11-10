@@ -1,0 +1,40 @@
+{
+  "document_id": "7a1a5eef933910dc2ba766d56fe4498bb2e3f4ee941080ef4b81d952fb0827c0",
+  "url": "https://files.dtcc.com/download/assets/25026-26/9c1fd19eccb911f192c5b2cdd0355e03",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "aed4b1849c581e72372c46f00eb2a8775f6455c8f2c32456e4ba6960476e0810",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_bPTxScubwaWEuWfxOI3sIW",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for a single security (Steakholder Foods Ltd., CUSIP 583435508). It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that matches any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4154,
+    "outputTokens": 101,
+    "totalTokens": 4255,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1807
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

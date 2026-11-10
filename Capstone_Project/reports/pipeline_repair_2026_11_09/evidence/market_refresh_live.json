@@ -1,0 +1,57 @@
+{
+  "mode": "refresh",
+  "model_calls": 0,
+  "scoring_outputs_changed": false,
+  "cboe_refresh": {
+    "source": "cboe",
+    "url": "https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2026.csv",
+    "local_file": "data/raw/cboe/market_history_2026.csv",
+    "downloaded_utc": "2026-11-09T21:03:18+00:00",
+    "http_status": 200,
+    "bytes": 855121,
+    "sha256": "b1f8cd1e41f978f2a57554e889665c09a6cbc09b69901f5db8dea024163e8412",
+    "coverage_start": "2026-01-02",
+    "coverage_end": "2026-11-06",
+    "status": "OK",
+    "note": "Validated current-year refresh; per-venue rows incl FINRA TRFs; historical annual files retained",
+    "changed": true,
+    "previous_sha256": "6bf50c2d5bf3f76e1f9e25d9fe307aea00704e420ccedbf71221626df31df59a",
+    "rows": 4365,
+    "new_venue_day_rows": 63,
+    "revised_venue_day_rows": 0,
+    "removed_venue_day_rows": 0
+  },
+  "as_of": "2026-11-09",
+  "last_observation_dates": {
+    "SOFR": "2026-11-03",
+    "EFFR": "2026-11-03",
+    "DGS10": "2026-11-03",
+    "BAA10Y": "2026-11-03",
+    "VIXCLS": "2026-11-03",
+    "MORTGAGE30US": "2026-10-29",
+    "CBOE_CONSOLIDATED": "2026-11-06"
+  },
+  "observation_age_calendar_days": {
+    "SOFR": 6,
+    "EFFR": 6,
+    "DGS10": 6,
+    "BAA10Y": 6,
+    "VIXCLS": 6,
+    "MORTGAGE30US": 11,
+    "CBOE_CONSOLIDATED": 3
+  },
+  "note": "Observation dates only. Scoring must retain its per-series complete-week/release-date coverage guard.",
+  "audit_errors": [],
+  "failed_sources": [],
+  "status": "ok",
+  "historical_annual_files_unchanged": {
+    "2018": "c74e6dc17777a2ac98199f4cd967bd05fbe5acaf0396510e0019881c40dd2c9b",
+    "2019": "a4f2495c952fff817f5d6d8b8b28ee940e38a889edf8dcf92646cc05fec960c4",
+    "2020": "d43803accac82145271045f062d6e0af57cc9aa40da4b904fc9b90d30a869a0d",
+    "2021": "bb67715fe2bf9c52067b69a6a280fe7b4e827d0ec335d177b2dad3d86d4dc3ad",
+    "2022": "61051498e02558ee1387ae66ca994d9e678342c89c8c1a56a43e513a7aba9788",
+    "2023": "17d673f4ea93a6938e74f41ba70e4aa8477a73e178026b27deb5fe8d704f4500",
+    "2024": "da755580ecf801b6fe89854c58ead811e320f542e5b0c1dc03513c48487b0537",
+    "2025": "3f297d33729dc427e1f08f0ae9c6e05a95334ed9253211c97c2e8d4ce8183578"
+  }
+}

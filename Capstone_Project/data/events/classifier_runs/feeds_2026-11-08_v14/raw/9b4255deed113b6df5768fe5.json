@@ -1,0 +1,40 @@
+{
+  "document_id": "e4b8525830b2515cf537b9fb7ec3c36e010bc92519ac7946a13869fe97f7d708",
+  "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQMk5BV29EUE1vdWFvclB3aC1UOUZlVUwwQm1WZk5HTk5oVlA5c1l0Y09adGZ6dVJ0N25yWVJ1ajVucWdoUTJua2U1OWdZcVpXb2J0SW9DU3FLejlnZmZzUWdSeE41SmxKRjJ0Q2ZGMVJWR09lLWhsNFBWeC1Yb21fVlFMSjdraGxsdnUwaElwbm1YcHhPTHI0aGZhVFFMV1JpbXJBME1qa2JBZ9IBrwFBVV95cUxQOVNHTWxwVnZSSHQ1enlWczExbWsxZUpMdlprc3NPQmtGeTFHS3liQjNueFJpd0tYMWdYX1ZNaTJEbFFMeEtSZTFWSE1POXRjT2hFT1BCcWlZZTBNUHhac0RXam5CNjBBZzJ2MDJ3NkpyNXBrNm1CWFpZTVB4VTZIQmk3TGM2WmhHZmY3QjhNT21JbFljWVp1c19YRWlVeF9GVzZfZzdUWUh3c3Q5RVlZ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "88565bd7a9fc6331474ad8689e1e4984680007db1f742ba9e61d18f491d574c8",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Swr9zZsAyqmCX3xWWn0XnT",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline-only consumer advice/explainer piece about protecting oneself from cyberattacks (IoT devices to bank accounts). No concrete event at a financial institution or DTCC participant; purely a how-to/opinion piece with no new event matching any catalog card."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1703,
+    "outputTokens": 100,
+    "totalTokens": 5511,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2024
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

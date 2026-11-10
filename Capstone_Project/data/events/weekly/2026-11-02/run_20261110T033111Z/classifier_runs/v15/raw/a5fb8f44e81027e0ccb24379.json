@@ -1,0 +1,57 @@
+{
+  "document_id": "79e8014b29c2e7373d26c42e51289cf5e73a18529ec6af24e3f7499057d0ff7a",
+  "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE05YWhCMW80ZTZrdmVDVTNZOVJaNGdxTDVmMXpLTmpzMlk1b0xkVFpGOWJ1eXk3NkJfeWZtSGZ3NkN5SzhXNUI4THg4MDZSMWZfR3o0aHZNcFNaeEQ5MGc?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "3c499618752632a254da6640c3dab94891e9af82736f9f9d6517eed0353bd2e4",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Q3FdHdEpkx9dIkyVNsGfu4",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Opinion/commentary tweet with no concrete event. The text is a generic market quip (\"Every stock is a meme stock in this market\") with no specific price move, volume figure, named firm, or regulatory action that maps to any catalog card.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1833,
+    "outputTokens": 449,
+    "totalTokens": 6655,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3282
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

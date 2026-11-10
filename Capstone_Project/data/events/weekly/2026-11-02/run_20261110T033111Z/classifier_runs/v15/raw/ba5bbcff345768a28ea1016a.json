@@ -1,0 +1,57 @@
+{
+  "document_id": "0be061e01cc561833592cb4653991799fb0ec3c5b6d0f2257354359f6fab6413",
+  "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22502/formations-of-acquisitions-by-and-mergers-of-bank-holding-companies",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "cbf382a9f7efe5306ff0dad6744910d182c620a67dd900eff0af35e7800f34ce",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_fNPAGD1FCaqw5OX6TXu6hv",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Headline-only Federal Register routine notice of bank holding company formations/acquisitions/mergers. No specific firm stress, default, downgrade, or other event matching any catalog card's Step 1. Generic administrative notice with no risk angle relevant to DTCC processes.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1731,
+    "outputTokens": 454,
+    "totalTokens": 6558,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3171
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

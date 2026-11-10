@@ -1,0 +1,54 @@
+{
+  "document_id": "bd26c539afb5ad26af7ff193bf6da45150d0ad8702bc3245b397a2a367176d87",
+  "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPdkhSbENSNFdiaWIwZXh1ZjEzTEZCaXZJM3ctLWtFWjRSdlNsUDNJamtGVHBMcmwxM1d6bjBvbnFHSTRqQkgtMUxSaVRXMXZDRzh4aTFCMVlqR3Z2NWtBWGszM0VFRmxtcm1aaHM4Z0Q5LTE4TUxNeEhqTFh6M0NNSGhIX1hBd2lGX1hUY25mWWNxMllQUUJvN0lBYWd0dk51MkF1aXB1dUNINUhuRU5ZZlREV3k0WTc1dWJOLWZfc2x2YzlMaE9CQzRnLVgyWk5pM2RDMzdXcTBtYlVrUllLazJDMWRNdnc?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "f7278fa75789285cd04f756ed063cfa21d58d6c60e179aab86284ac5810e6f58",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_MnAHk709TcMLFqNv11gCra",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Axis Bank is an Indian bank, not a DTCC member or US market participant. A downgrade by an Indian financial analytics firm (MarketsMOJO) based on bearish technicals and valuation concerns has no stated link to US markets or DTCC processes. Not relevant to any catalog card."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1596,
+    "outputTokens": 409,
+    "totalTokens": 5690,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2844
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

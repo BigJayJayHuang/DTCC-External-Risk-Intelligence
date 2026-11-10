@@ -1,0 +1,40 @@
+{
+  "document_id": "b09d8bae3fd80fdbe39908f4316f2c94aef60b3417e9f87482f819744f9a8857",
+  "url": "https://files.dtcc.com/download/assets/25019-26/8b2e1108cc9f11f198baeea7eae1d37b",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "9eebcc7e5776ac8493e6aa7b5cf120a2aeaac4a020198bb39bf7c7563c8a55c7",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_vHAffjBLpK3xly0Nw2VbSs",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for a single security (Lead-Real Estate Co., Ltd, CUSIP 52168R109). It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that matches any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4159,
+    "outputTokens": 103,
+    "totalTokens": 4262,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1861
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

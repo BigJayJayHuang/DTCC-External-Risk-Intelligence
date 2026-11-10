@@ -1,0 +1,57 @@
+{
+  "document_id": "a4e7a03e421275f557017e04c3bec665afaf29abcc74fe7316ffb960a0f04ff7",
+  "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxONmdzeFVRS2wwSlFnTzlnMEd6dEhUd2hzSlh6NkphMUFIdFlMSmZpMG4tRFdUZk9DX25nUVQ4MnNqLWpMM3Njb2lVX1FYbTdfUGt5TjVOSkI4M3BmRG1MbjZGQXdvaUlvcGl0aFZPeXA3cUNveGdERHNJc1Q1WThLbVdBLThvN20tTFBGLW5aTXpqR1RabDZFRGQ0bmlxQ2gzQnpwOVc0TUdpUnB2WEVqdUlXWVp3V0NEc0J1YVJramhVNW5w?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "296d7e06ed3e22042e6e4e520ffc921aa3e4ce14bc90f5262e497f16766f266a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_m6KqOIVPAclvmzuUmWD9GL",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Article is about Polymarket's futures broker approval from a US industry organization. Futures and prediction markets are out of scope for the card catalog, and there is no stated link to DTCC, FICC, NSCC, or DTC processes. ECS-NSCC-08 (retail broker failure/exit) does not apply as this is an approval/entry event, not a failure or abrupt exit.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1515,
+    "outputTokens": 488,
+    "totalTokens": 6376,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3818
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

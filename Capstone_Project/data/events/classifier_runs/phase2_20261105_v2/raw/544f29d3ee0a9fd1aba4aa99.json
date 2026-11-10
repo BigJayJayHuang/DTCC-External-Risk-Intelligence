@@ -1,0 +1,40 @@
+{
+  "document_id": "bbaf7619b2226a87f9825093998c3c91b8d3e2116aa21246ba877781c689e51e",
+  "url": "https://files.dtcc.com/download/assets/MBS1607-26/710457b4d20e11f1b0e8467ce8cf4cce",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "49af6f6e6fc9f8b1c0357c56499f8425a5b68365fe651a71faee464b69a70160",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Jpw7leeSnPZmuO7yL0unm1",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is an internal DTCC notice clarifying the MBSD Schedule of Haircuts and Concentration Limits for Eligible Clearing Fund Securities. It is an administrative/operational clarification notice from DTCC itself, not an outside market, regulatory, member, or infrastructure event described by any card's Step 1 trigger. No external risk event is present."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4128,
+    "outputTokens": 121,
+    "totalTokens": 4249,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1864
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

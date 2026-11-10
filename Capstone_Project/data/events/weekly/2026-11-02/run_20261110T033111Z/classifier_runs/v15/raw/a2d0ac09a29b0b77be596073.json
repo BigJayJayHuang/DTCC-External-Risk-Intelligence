@@ -1,0 +1,57 @@
+{
+  "document_id": "455609ac18d81cf28261047b9e8c5d52cd9996c67c34bc673cac22a50f49ad8e",
+  "url": "https://files.dtcc.com/download/assets/25206-26/2f8ac10ad94411f199dea2d2c72ada28",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "5d35b11dfd265b4a04ea575ec9c09b482a54e762351d8d097f34221ea0242209",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_NmFoqCTv3FeI6FG9YuGw8s",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "DTC Important Notice is a routine tax relief / corporate action instruction notice for a Swedish security (ASSA ABLOY, CUSIP 045387107). It describes no market event, regulatory action, member stress, cyber incident, or settlement disruption matching any catalog card. Non-US issuer with no stated link to DTCC processes or US markets beyond a standard DTC custody/CA instruction deadline.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1854,
+    "outputTokens": 484,
+    "totalTokens": 6711,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3835
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,57 @@
+{
+  "document_id": "4004987982646c0330fafff4e987511b4c8277bad3dc84c4a4a4b0b6c0de21d2",
+  "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQmowNkVTVUhwTW9qR1k0bUdrcWtGYjN2dUVQVE9vSDk4WlN1SjJvdzZmbjY0NUZ5anRXRWQzZENmbldqNUhqSHJtdXVHQVBrOVV0aVowZThtYlAzdm1rZzFYdHRpX0I0V2xtLXE0clVPUkRzTnhzTVl5d3lpSDZ3NU55WWxCWGxBYjlZeFVuZ09Qb2ZWV0hWOXpfaFU?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "6f1823f3c22b4917f31c20a32c2c90c2a9c7a83cf3d7d2e8734273f92d3a7b22",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_vM6MMQeZhgC06HpAMApb91",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Cyberattack on a French bank with no stated link to US markets, DTCC participants, or US market infrastructure. Geography is non-US and the article text provides no connection to DTCC or US financial markets.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1897,
+    "outputTokens": 446,
+    "totalTokens": 6716,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3332
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

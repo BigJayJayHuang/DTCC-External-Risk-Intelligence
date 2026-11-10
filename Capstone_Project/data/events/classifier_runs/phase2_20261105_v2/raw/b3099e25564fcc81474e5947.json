@@ -1,0 +1,40 @@
+{
+  "document_id": "7585d6c3d9a14f239d46ecdea51204d4a115283e0dc0410ee17dd3fed6c43c1e",
+  "url": "https://www.sec.gov/newsroom/press-releases/2026-109-sec-announces-fiscal-year-2027-examination-priorities",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "a1f67cedb041690ff1acc20a6738516a9d69b74df05cc70bd0f26fbb7721b55a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Qjiprzyf5zj0WpDh7nx99T",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article announces the SEC Division of Examinations' FY2027 examination priorities. This is a routine regulatory housekeeping/compliance announcement with no specific market event, member stress, infrastructure disruption, or regulatory mandate milestone that maps to any card in the catalog. It does not describe an outside event touching a DTCC process."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4122,
+    "outputTokens": 113,
+    "totalTokens": 4235,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1890
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

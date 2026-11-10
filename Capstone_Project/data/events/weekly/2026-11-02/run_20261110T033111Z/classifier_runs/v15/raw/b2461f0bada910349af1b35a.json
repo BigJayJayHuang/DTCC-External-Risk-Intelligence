@@ -1,0 +1,57 @@
+{
+  "document_id": "eedce4cb2a5488a2bc9f8c56978a7cc685c63e741cfde1aca69304b14405b630",
+  "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOOENVZHZkVU1pMEpIblNFVmlDamQ4WTcyNE4zVTliUHNGQUJKVDI0c3o4QjQ5cm9iVUtVRG5ZU0dwalUtT2J1M3N0aFBXc01nYlk5NTNvR0QwUXI5S1g0THhxQ1dNY0g2d3czVmI2TzdkNFA2anllbm5kdkFQYjBWT2IyalFnM3hKdFp0UC1lUjRaN2dac1pUWm5EVTZSQ1QzR1pmamh1MA?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "63c5c1c94f68e75104e39f1b431c82c251d3e93fc87b99ca25dcf405ce5952d0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_WN5JzdMn5FpkoDNwPOB1xS",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Non-US event (Kenya/CBK — Central Bank of Kenya) involving Kenyan banks and a Kenyan Treasury capital requirement. No stated link to US markets, US firms, or DTCC participants. Out of scope.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1908,
+    "outputTokens": 447,
+    "totalTokens": 6728,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3327
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

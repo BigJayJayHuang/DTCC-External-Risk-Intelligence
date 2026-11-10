@@ -1,0 +1,28 @@
+{
+  "mode": "audit_only",
+  "model_calls": 0,
+  "scoring_outputs_changed": false,
+  "as_of": "2026-11-09",
+  "last_observation_dates": {
+    "SOFR": "2026-11-06",
+    "EFFR": "2026-11-06",
+    "DGS10": "2026-11-05",
+    "BAA10Y": "2026-11-05",
+    "VIXCLS": "2026-11-06",
+    "MORTGAGE30US": "2026-11-05",
+    "CBOE_CONSOLIDATED": "2026-11-06"
+  },
+  "observation_age_calendar_days": {
+    "SOFR": 3,
+    "EFFR": 3,
+    "DGS10": 4,
+    "BAA10Y": 4,
+    "VIXCLS": 3,
+    "MORTGAGE30US": 4,
+    "CBOE_CONSOLIDATED": 3
+  },
+  "note": "Observation dates only. Scoring must retain its per-series complete-week/release-date coverage guard.",
+  "audit_errors": [],
+  "failed_sources": [],
+  "status": "ok"
+}

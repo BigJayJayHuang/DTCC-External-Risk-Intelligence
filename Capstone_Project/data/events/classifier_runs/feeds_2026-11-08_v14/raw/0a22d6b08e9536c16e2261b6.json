@@ -1,0 +1,40 @@
+{
+  "document_id": "1e9055fdc6f45c1dccaf6ae9203df301548ec38da24891cb1befd67c0d955a44",
+  "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPc3dTOTdsZjlNY2JadTFUby1YQmhsMlhGOU9vUUxEQldBNjdJVXh5TndmMUZpejQ4cElGTy1qWXg3X1dkYjBBQlpSRUtxU2VpZzhwdGdoZ1dGTDBhdEx6ZUVzaG93T3lZbWFmV05BNFpOUTBaRVR2bXZRWVRyMGxqVHFKNElBYjhrcncyNzA2VFVyM2Z6eGMzSWpzOV8?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "fab2f3b8e21a8d221ae3d39ceac62e405148ce954d57421948682b9aac3c2aaa",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_VYTHZjSRT8whSYpuIirnOq",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline-only item with no concrete new event stated. 'DTCC highlights final implementation steps' is a generic reference to ongoing Treasury clearing mandate activity, not a new milestone, deadline change, or regulatory action. All known compliance dates are already recorded in EV0005, EV0006, and EV0007. No new fact can be extracted from this headline alone."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1472,
+    "outputTokens": 124,
+    "totalTokens": 5304,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1978
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

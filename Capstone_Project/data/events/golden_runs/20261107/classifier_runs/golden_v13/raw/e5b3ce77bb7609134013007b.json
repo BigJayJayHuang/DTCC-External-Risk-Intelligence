@@ -1,0 +1,40 @@
+{
+  "document_id": "22bfb250f155552d3bd6ce80c6ed5ea6cfde5eff885b37da1f2fc9194665ddfd",
+  "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNczVCVUNjOHE4dGNUYW0xcjRkZGJ6X1dwQV9TLUF3SVFycTFxRThNRFByclh3Q0FicW5KT2NWOU9Fcnl0WUpjOVRXYWFqT2RwdUpKOHlhWlN5QUhSSmRFY3diY0Y5WWd6MW5YV29GLWFqV0FUdzV3UkNFS282YU9ISUdhT3dodlBfbG9iLXphYmtBX1RHNWRDOUlXaWtFQzdaTGhZRm8xbUd2Y21LTEotT3U0WlE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.3:aab5ad825775",
+  "request_sha256": "0435b0230dd1be05dff3d3983b82b6aefdfb9a146ad4cac867ebab350a01bf6d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_k3FaRbCNwmEdFJ7IuBfxzW",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline-only snippet. States a general warning from a National CERT about AI-powered cyberattacks on banks and critical infrastructure, but names no specific participant, institution, or confirmed incident. No concrete event matching XE-CYBER's Step 1 (actual cyberattack or major outage at a large participant or vendor) is described — only a generic advisory warning. Insufficient specificity to classify as relevant."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1501,
+    "outputTokens": 133,
+    "totalTokens": 4714,
+    "cacheReadInputTokens": 3080,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2381
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

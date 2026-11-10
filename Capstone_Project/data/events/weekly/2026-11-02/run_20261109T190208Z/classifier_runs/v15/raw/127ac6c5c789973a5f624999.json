@@ -1,0 +1,55 @@
+{
+  "document_id": "9dcd6322bb6d357cb8ea2b8e6bdf304b78c75ec0695ad785ca7a27108d8181d2",
+  "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNVVZqSHpsUzlYV091eXR4akNEZmNRNTNXcGRJWXJwNXpBd2Y3eXNRWVB5eF9FTHZoS1RFaENGajUzaXJuS3NmWkNYa2xJaVpoUGlMeEh0S0ZMdmZLcHJmb0EwZWxvWmNvZThOSE50MGZ3QWQxT0dkelBUVTQwRWtGYm5UcXMtc3FSN2FNQ1FsNEhGT1hpd0QxXzE1ellRRFRfM3A1b2dlMTl6UzktRUFJTXM4TGxsNGfSAcQBQVVfeXFMTTFzaTBhYW1JU1NFdGtMZS1VN240Q3ZJMC0zQm02X2ZpVUl2cEhNSmxkNlV3WEdiT1J1bDIyMzlWalg5a1NHRmdfRUpjdi1LNjNkbzV6eVJSOGNLaHRiazhSX192UDFVRWptRWZsRHIwazNnVVpIR0RtRHhkVG9Bckpnb0xFUVB1T2lRVkhkT0VPQy1DdEh1ZWV6ZDF0bVo5RjhiazRjTEdfV2dlUjJYek85V2U1S3Q5N0F2ck9sTDZVSWk5Yw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "edac4f96194ad1692992b9dc5bbd4347664a512df333ac585c67bc806d84330c",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_e4VzuShUfiMIvBWJ6mZsp7",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "The cyberattack is at Credit Mutuel Arkea, a French regional bank. The article contains no stated link to US markets, DTCC participants, or any DTCC-connected infrastructure. A non-US, non-major-participant firm with no stated US nexus does not match XE-CYBER or any other card's Step 1.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1765,
+    "outputTokens": 440,
+    "totalTokens": 6120,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3792
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "875e97b272b39eee977d77959821ae4cdc889b6d31d72b96b7fb7035f17b7d94",
+  "url": "https://www.esma.europa.eu/press-news/esma-news/european-supervisory-authorities-set-priorities-2027",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "0534d0768056300d19d72affd45db13308abb6773318cb0be43df3f8e4df264f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_GbWbwpNF9XCPOu6PP4ETd4",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about the European Supervisory Authorities (EBA, EIOPA, ESMA) setting priorities for 2027. This is a European regulatory planning announcement with no connection to any DTCC process described in the card catalog. No card's Step 1 trigger (Treasury market stress, repo stress, equity selloff, member default, cyber incident, settlement cycle change, etc.) is present."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4096,
+    "outputTokens": 130,
+    "totalTokens": 4226,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2201
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

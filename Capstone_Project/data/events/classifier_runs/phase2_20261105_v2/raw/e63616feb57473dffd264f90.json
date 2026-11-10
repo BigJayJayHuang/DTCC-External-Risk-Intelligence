@@ -1,0 +1,40 @@
+{
+  "document_id": "f192f3e2a26dacaa2befaab01766935d2c677fc9936ecde65a3eed593012b098",
+  "url": "https://files.dtcc.com/download/assets/25196-26/1d07f11ad16011f19af5fa6709c2e69e",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "3d5053ac1f2d3417f38b1d4408a3688726e2f9c99418f4555ab5e6fef69077a8",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_KKyWH8tZ3Qi6iT5EpTwDxt",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about a tax relief corporate action (dividend) for ASML Holding (Netherlands). It describes a standard DTC corporate action notification with record/payable dates and a quick refund cut-off. No outside market, regulatory, member stress, or infrastructure event is described; no card in the catalog covers routine corporate action processing notices."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4190,
+    "outputTokens": 120,
+    "totalTokens": 4310,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2263
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

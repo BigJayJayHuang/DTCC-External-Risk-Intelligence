@@ -1,0 +1,40 @@
+{
+  "document_id": "af813be59c6e25c3f30db7f7b7e9789641e122953c6379edec26b9a3dd958479",
+  "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOQkc0MGJkMWs5REZEYXFVRnRKaU5WSVBMMk0wRmh1Q0QxRHBxeFJhUGZTLTBMTjMyMzF1WGxfb05PR1EtTGtrajc0bDlNUFNEWlJSUU94ZkNJQUJpVTF2Y1RDYnh0eks2T0ZMeVMyZXdBYXpyR1hVVFhIQ2lIT3UxcXJkM3J1TFY1ZnVhWFVIc0htM2xKQ0w3UXluMDFsTzlqNUd3cDRJeG9tNUE1d1ZESk1TZzRNeFY4VVYyb01hRW04T1RoQjh5LUZwUXNycTB0VEE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "ccd879e741e5d67fd8e57a7c41d71886f17ed7a0bc7e069dd132a483d7908efb",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_OGtRWRyigsJIUhi1Dmjk96",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Amcor (AMCR) is a packaging company, not a financial firm or DTCC participant. A stock downgrade for a non-financial issuer does not match any card's Step 1 event."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1562,
+    "outputTokens": 91,
+    "totalTokens": 5361,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1503
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

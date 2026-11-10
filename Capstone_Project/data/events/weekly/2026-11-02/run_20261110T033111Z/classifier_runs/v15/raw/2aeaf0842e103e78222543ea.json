@@ -1,0 +1,63 @@
+{
+  "document_id": "872357177a1d94dbd6c227ef19d6e47bbff27dea43ef99224508c4dbb6ebd3f8",
+  "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPMElhUGVBRThETlplSjM2LTdKWFdqWlRwUDEtTmQxLTFldTU3QW5CeEV4QzJQUHZsbmU2SEVpVm1YV1ZGNGM3MlNGc0wzMGQ0S3FyX3hrSTlfRmJEZHpsVXhTUWNwZXZ4N0djR0kyU3BKM1NiYlNnMnRCWVlyZkJ3dnN0YTd5M1RYb2huZGtfOVpHbkFHandrbnljVnE2WlZwcUM2WlNsVF9vMmRNa3lSNWoxWGs1VXFZWFRJcQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "6af4d82156ba4195954ba2e24a6a396f6b24fbe9dd4688562ad793b3d8685101",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_iNIRkPlrNW8WFO5FwLOgIR",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "market_move",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "Tech-led stock selloff deepens, traders flee to Treasuries",
+              "summary": "A tech-led equity selloff is deepening, prompting traders to seek safety in the Treasury market. The headline suggests a broad market-wide equity decline that could stress NSCC liquidity and margin processes.",
+              "card_ids": [
+                "ECS-NSCC-LIQ",
+                "FICC-GSD-01"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-05",
+              "effect_date": "2026-11-05",
+              "stage": null,
+              "source_tier": "major_media",
+              "outlet": "MarketWatch",
+              "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPMElhUGVBRThETlplSjM2LTdKWFdqWlRwUDEtTmQxLTFldTU3QW5CeEV4QzJQUHZsbmU2SEVpVm1YV1ZGNGM3MlNGc0wzMGQ0S3FyX3hrSTlfRmJEZHpsVXhTUWNwZXZ4N0djR0kyU3BKM1NiYlNnMnRCWVlyZkJ3dnN0YTd5M1RYb2huZGtfOVpHbkFHandrbnljVnE2WlZwcUM2WlNsVF9vMmRNa3lSNWoxWGs1VXFZWFRJcQ?oc=5",
+              "evidence_quotes": [
+                "tech-led stock selloff deepens",
+                "Traders flock to Treasury market for safety"
+              ],
+              "confidence": 0.55,
+              "notes": "headline_only. Equity selloff described as deepening and market-wide (tech-led but broad flight to safety). Treasury flight-to-safety move also suggests yield/price swings relevant to FICC-GSD-01. No magnitude or specific figures given; certainty set to 2 as the event is described as ongoing/confirmed. Confidence lowered due to headline-only content."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1930,
+    "outputTokens": 847,
+    "totalTokens": 7150,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 6077
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

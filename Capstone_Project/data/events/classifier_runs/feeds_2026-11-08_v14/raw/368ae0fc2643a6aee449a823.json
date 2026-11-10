@@ -1,0 +1,40 @@
+{
+  "document_id": "45d8cdbda90d39cd6e6cf1dcaf2f31cc19f75c5bb9e64ab4c7ba6acb85d2b5e7",
+  "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNSGc3NElKaEc5R2NRSXpENHZXb0RsWlExalRISzNHOUxTM2kxSGlpNlU4VTZ6d1VBSkMzaGpweWRranRZWlJjZnFNWXRCbnpZdXlUYjQ0R1huc1pQSTFNVGlMQ3dUSEV0MlJSVWtaS0JBOGt1VFVETXdZUHVqNk9JRkNBMXdJczZ0LUNSNEZR?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "1b4015d866b82885b6cae06b4bd4deac6f9f473a42e1f05d46572db493b65066",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_LDWzeCos6CaoiQoYDhyYGR",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes Korea Exchange shortening its settlement cycle to T+1. This is a non-US market event with no stated link to US markets or DTCC participants. ECS-SET-01 covers US settlement cycle changes (T+1, T+0, 24x5) affecting NSCC and DTC. A Korean exchange settlement change has no stated connection to DTCC processes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1455,
+    "outputTokens": 127,
+    "totalTokens": 5290,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2217
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

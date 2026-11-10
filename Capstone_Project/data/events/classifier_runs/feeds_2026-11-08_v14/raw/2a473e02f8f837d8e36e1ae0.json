@@ -1,0 +1,40 @@
+{
+  "document_id": "8a08233e69f6b51ee822e7c399596d820e012375d11e9221f7d2035df63936e0",
+  "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOUFppeDBuZUlDMXNlcURWLTVHSmlCQlVacUtPbjNuWWlpWl93Ty1BRUY1Z0JmN0t2aWZjMVN1QXhBd0xBUUFNekpHajhWdURlUXJFblRXbzRia2RCRDRqNUdpbS1LQURtUlpwLWVwUWNncDkwYmo0SUhlR2daRUM2MGIydHJOQ3B1aDlSY05vRFFvY1hQNmFwMThiUmRmWktfdTRLM3JiR3N6LXN2VlBJREdMLXFRU2M?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "073d800d2ccbe7a10c9ea1ec06f80e25c5c4438273dec82c981952e7846ffeae",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_6Gb9qNWBWVCFBzBi655ITY",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline describes a selloff in Asian stock markets only, with no stated link to US markets or DTCC participants. Non-US market event with no US nexus mentioned."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1504,
+    "outputTokens": 80,
+    "totalTokens": 5292,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1387
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

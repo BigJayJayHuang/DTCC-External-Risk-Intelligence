@@ -1,0 +1,57 @@
+{
+  "document_id": "42ce5212d397bef38291b9bf1dcfbf48b23c07db84175274df9f1561c6a943ed",
+  "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPN3d3MkxQdFpnYTZPQnh0c2xRemg0R0FRTHM0MmgtYWxWN0RiQ0NwLWNWemZISlZ3Z1dMbkVyM1NfSXhtcW83eXAzbzBoNmkxa21sN050TkdGVHp1bklKVTRyR0ZjS19YdHRBVm53WVdaNVRRbUk0X21qeEVuU3cyQWdrblQ2VFFFR09ma0p6S0ltSjZ1eHk0NUpQQm4tNmNHdjNzZEZPMFNwNWx3ajN2N3pSQ1lrZEMwVnozSk5GYkNSQW1yb3g4MjZRTGtHYlMtclVSdm5Wb1IxWjRVdUlv?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "6ff5f490b9b21f0e5022b5cdcff2a5991209d9b53ad3d96956c712021ae5c768",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_m7Or02Jqm9adN88CEVUDUm",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Jana Small Finance Bank Ltd is an Indian bank with no stated link to US markets or DTCC participants; the downgrade is a non-US firm-specific event outside the catalog's scope.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1557,
+    "outputTokens": 438,
+    "totalTokens": 6368,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2991
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

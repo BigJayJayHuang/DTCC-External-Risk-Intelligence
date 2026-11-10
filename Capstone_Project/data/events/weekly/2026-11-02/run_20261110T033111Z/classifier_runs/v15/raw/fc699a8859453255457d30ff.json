@@ -1,0 +1,64 @@
+{
+  "document_id": "708096d193aa3d8de62e0c4f629150ca70e443a4160a73e1d898eade4db25076",
+  "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22268/self-regulatory-organizations-long-term-stock-exchange-inc-notice-of-filing-and-immediate",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "308bf141d3206b3280441ac65ca2d6a6dbdd6725ee61fc84c6ef4a55b9e420ad",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_uoziej3xnPlI5hSr2Vm7h0",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "regulatory",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "LTSE amends rule on Level 3 circuit breaker trading resumption",
+              "summary": "The Long-Term Stock Exchange filed a rule change with immediate effectiveness to amend Rule 11.280, governing the resumption of trading following a Level 3 market-wide circuit breaker halt. A Level 3 halt represents a full market closure, and changes to resumption procedures are directly relevant to settlement timeframes and market disruption handling at DTCC.",
+              "card_ids": [
+                "XE-DISRUPT",
+                "ECS-SET-01"
+              ],
+              "certainty": 2,
+              "reach": 1,
+              "reach_basis": "business_line",
+              "named_participants": [
+                "Long-Term Stock Exchange, Inc."
+              ],
+              "announced_date": "2026-11-02",
+              "effect_date": "2026-11-02",
+              "stage": null,
+              "source_tier": "official",
+              "outlet": "Federal Register",
+              "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22268/self-regulatory-organizations-long-term-stock-exchange-inc-notice-of-filing-and-immediate",
+              "evidence_quotes": [
+                "Notice of Filing and Immediate Effectiveness of Proposed Rule Change To Amend Rule 11.280 Concerning the Resumption of Trading Following a Level 3 Market-Wide Circuit Breaker Halt"
+              ],
+              "confidence": 0.55,
+              "notes": "headline_only. Rule change is immediately effective (certainty 2). LTSE is a smaller exchange, so reach is limited to business_line rather than market_wide; the rule concerns Level 3 halts (full market closure) which would affect all US equity settlement at DTCC/NSCC/DTC. No detail on the substance of the amendment is available from the headline alone, lowering confidence."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1872,
+    "outputTokens": 714,
+    "totalTokens": 6959,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5537
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

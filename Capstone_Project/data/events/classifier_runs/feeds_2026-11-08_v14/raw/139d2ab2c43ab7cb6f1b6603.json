@@ -1,0 +1,40 @@
+{
+  "document_id": "b4bb2df5571ab564b705ef3e4f98cafc5a7138af259ba743d2a2c391d4071100",
+  "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNcmtnOWd5Q0hhS05Dbi1qQ0gxcXpUMlkwa2FtdUJJVzN1dkhWQVpFT2syR0h5NThTcDF3eTgxMlhtaHIyclphX2RobXV3QUJRNGdOQm4zZVBLQ015U3hhczlvRXY5dkRNLVVVeHRTdV9GLTdnVjZ3X0Iyc0VBRzRNYUVlLXNvdVZvVk5DUUFSZ3pGLW91eklrWV8yTmVqWVhNVFpzQnRNb1AxbUlBdW02eGVXSHJEeXVrUWpvQkloQi1oQdIBxwFBVV95cUxOYTZhWDFmRGJLaG5vOXVqS0ZiZFZSTlF4X0k0Z1ZEem9WVVFTeUdLNzhSR0NVampSclY2THNKblRtZlk0UDJIVVpROTZEendZVjdQalNGd3hTRExuTzluRkFiS1pXT1E1MS0wWHBkdU4tVEdWc0h6bW5yTHN1ZzhRR2NiV3VKSFB2MllISVlBRHdidFVRcFFGSkxXUjVlc0dHMGJ4aDVRNW1McHNiZFlMSDI2M3ZIby0yVlJQTkRtNmNGNVFrUnpZ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "539249f271d785de15050c29bdb66155d29d988ec972b0c942621135c7bd8e38",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_wNhP7FGmv9eCr6zT1Vt7VK",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline-only article about retail investors watching bank stocks amid Treasury volatility. No concrete market event described — no yield swing magnitude, no named stress event, no margin call, no funding disruption. This is a stock-watching/opinion piece with no actionable event matching any card's Step 1."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1771,
+    "outputTokens": 106,
+    "totalTokens": 5585,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1960
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,59 @@
+{
+  "document_id": "b2e11372d63e77c8ae05cee711f5d2816c1664dc581e7fd2c8858eb961ebd9ca",
+  "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQbDA4cHA0VW1QeXpLdHhZRTQ3UENaTmpvbmFET1dZTTNmX1RHSTR1X0VJZFVkRVlKV3dNeWRzZHZaN2VDSjVuaDlCV0JDQ0VKb3RVMjFOd1d6OW5LRGx2WTN3UGNBTGJ6WDBkX0dOU2d1XzZBMHU5Q3JORFZDb0gxWnhpZ0hMdnNWMmZjWmg0a1VvZlZaUTRIenVQUlh5ZE9vNG1kMnl5dkROUzRWMVBXcE1R?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:163854b82bd7",
+  "request_sha256": "bbb8ef4bdff22c44862b10073381497995ef82386886f648a549bb1f71328ce3",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_f29kOFEh0wQVtcSZLM1im0",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "same_as_event_id": null,
+              "title": "Tech stocks log worst day since 2020",
+              "summary": "Tech stocks suffered their worst single-day decline since 2020, with heavy losses concentrated in AI-related names, indicating a broad equity market selloff.",
+              "card_ids": [
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-05",
+              "effect_date": "2026-11-05",
+              "stage": null,
+              "source_tier": "major_media",
+              "outlet": "MarketWatch",
+              "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQbDA4cHA0VW1QeXpLdHhZRTQ3UENaTmpvbmFET1dZTTNmX1RHSTR1X0VJZFVkRVlKV3dNeWRzZHZaN2VDSjVuaDlCV0JDQ0VKb3RVMjFOd1d6OW5LRGx2WTN3UGNBTGJ6WDBkX0dOU2d1XzZBMHU5Q3JORFZDb0gxWnhpZ0hMdnNWMmZjWmg0a1VvZlZaUTRIenVQUlh5ZE9vNG1kMnl5dkROUzRWMVBXcE1R?oc=5",
+              "evidence_quotes": [
+                "Tech stocks log worst day since 2020 as carnage comes to the AI trade"
+              ],
+              "confidence": 0.55,
+              "notes": "headline_only. Headline clearly states a market-wide equity selloff of significant magnitude (\"worst day since 2020\"), matching ECS-NSCC-LIQ Step 1 (sharp equity selloff). No magnitude in points/percent, no named firms, no volume data — certainty held at 2 (event already happened) but confidence lowered due to lack of detail.",
+              "event_type": "market_move"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1513,
+    "outputTokens": 772,
+    "totalTokens": 6190,
+    "cacheReadInputTokens": 3905,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5134
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,58 @@
+{
+  "document_id": "d11ce2588d9d565cb0d8d942998a2d0ad4b58917ff129641cc8b68e170b2bdda",
+  "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBZYnJiS1Z4RXNmX3lMdU1nQm1sa0ctYVBDOVRYQnl2STdVbThZZXpINGRucUN1NF9RS21uSXkwalZxQXUxNU1iWXBYZ3FBbTl6b0M5VTZmQ2pFWU5QNDZYeW5fQjRCd9IBXEFVX3lxTE9tRDRBVkpEcXVkdnZ5ekRYS0F2cThTWHVTTi13bi1YZnNZdjdVaFNseWlTMlp3SWthSUYxOE9DcmtMZ2QySjVCd0prVUpZeTV0WUxseWlGRElXTTRI?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "0e6eeb8fe6a9a42deec5e1786fe26897729133decad1ecacf677d8287c536fcd",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_QM2yWBl1Y5GlbmqHmfOqPE",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "same_as_event_id": null,
+              "title": "French bank loses $100 million in cyberattack",
+              "summary": "A French bank reports that an online hacking incident stole approximately $100 million. The event involves a major financial institution and could signal participant system disruption relevant to DTCC processes.",
+              "card_ids": [
+                "XE-CYBER"
+              ],
+              "certainty": 2,
+              "reach": 1,
+              "reach_basis": "group",
+              "named_participants": [],
+              "announced_date": "2026-11-05",
+              "effect_date": "2026-11-05",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "Modern Ghana",
+              "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBZYnJiS1Z4RXNmX3lMdU1nQm1sa0ctYVBDOVRYQnl2STdVbThZZXpINGRucUN1NF9RS21uSXkwalZxQXUxNU1iWXBYZ3FBbTl6b0M5VTZmQ2pFWU5QNDZYeW5fQjRCd9IBXEFVX3lxTE9tRDRBVkpEcXVkdnZ5ekRYS0F2cThTWHVTTi13bi1YZnNZdjdVaFNseWlTMlp3SWthSUYxOE9DcmtMZ2QySjVCd0prVUpZeTV0WUxseWlGRElXTTRI?oc=5",
+              "evidence_quotes": [
+                "Cyberattack: French bank says online hacking stole around $100 million"
+              ],
+              "confidence": 0.45,
+              "notes": "headline_only. The bank is unnamed and described as French; it is unclear whether it is a DTCC participant. No details on systems affected or US market linkage. Reach set to 1/group rather than 2/major_participant because the bank is not named and cannot be confirmed as a major participant. Certainty set to 2 as the bank itself is reported to have confirmed the theft. Effect_date set to announced_date as no separate event date is given."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1524,
+    "outputTokens": 789,
+    "totalTokens": 5998,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5317
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

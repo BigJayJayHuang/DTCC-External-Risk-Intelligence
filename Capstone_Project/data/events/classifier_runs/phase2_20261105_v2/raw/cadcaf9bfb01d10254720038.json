@@ -1,0 +1,40 @@
+{
+  "document_id": "cfb6c2ff93db91a503f09522570d085eba2cc065c46c17bde65b846d02adef87",
+  "url": "https://files.dtcc.com/download/assets/DAS-001/8a31d732d2d311f1a30ef632b7f70f6d",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "b44c897ea30416ff54467cc5ebda4edd5ab154eb74ab50b4675d0481953313be",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_uMLgaojOABgOPPSrsWGesa",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC product launch announcement (DTC Tokenization Service go-live). It is a DTCC internal/marketing notice with no risk angle matching any card's Step 1 trigger — no market stress, regulatory mandate, member distress, cyber event, or infrastructure disruption described."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4132,
+    "outputTokens": 107,
+    "totalTokens": 4239,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1784
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

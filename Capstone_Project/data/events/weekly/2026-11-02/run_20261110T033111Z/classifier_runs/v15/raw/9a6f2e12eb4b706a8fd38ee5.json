@@ -1,0 +1,61 @@
+{
+  "document_id": "5d7502f4c3e74774c6e063661e848bc4e577d632851c588450e38846bf91e348",
+  "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWUkxWGlYbVdselJXOVB0QVNtWEhQNTd6Q3lRcmU2eElhVHdWdDhaWWhDdjN3UjNXWVVuOURRNGtwTEFiUlNOU2NlbnRXREg5cnR6amVfaGVWbG9uYjZsRkFoQzZtMkhUMkdWZlptWnNaWUFTa0poRmt4TE0xSHFGbm80dUFDeVIzeW80S3FyWXpUcmtZckpDNFNhdWIxUDZk?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "1add1ac41671cf5aa84d95ac061cbb16c53b334dbd30b78eefec4458ce014039",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_uISmdgZmqtAJtwQhChJNET",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "cyber",
+              "geography": "non_us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "French banking group hit by supply chain cyberattack",
+              "summary": "A French banking group has been struck by a supply chain cyberattack. No details on the firm's identity, the nature of the attack, or any link to US markets or DTCC participants are provided.",
+              "card_ids": [
+                "XE-CYBER"
+              ],
+              "certainty": 2,
+              "reach": 0,
+              "reach_basis": "single",
+              "named_participants": [],
+              "announced_date": "2026-11-05",
+              "effect_date": "2026-11-05",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "CSO Online",
+              "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWUkxWGlYbVdselJXOVB0QVNtWEhQNTd6Q3lRcmU2eElhVHdWdDhaWWhDdjN3UjNXWVVuOURRNGtwTEFiUlNOU2NlbnRXREg5cnR6amVfaGVWbG9uYjZsRkFoQzZtMkhUMkdWZlptWnNaWUFTa0poRmt4TE0xSHFGbm80dUFDeVIzeW80S3FyWXpUcmtZckpDNFNhdWIxUDZk?oc=5",
+              "evidence_quotes": [
+                "French banking group hit by supply chain cyberattack"
+              ],
+              "confidence": 0.35,
+              "notes": "headline_only. The affected firm is a French (non-US) banking group with no stated link to US markets or DTCC participants. XE-CYBER is triggered only if the victim is a large US market participant, a DTCC vendor, or US market infrastructure; that condition is not met here. Reach set to 0 (single, non-US firm). Geography is non_us. Confidence is low due to headline-only content and absence of any US nexus."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1871,
+    "outputTokens": 800,
+    "totalTokens": 7044,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5783
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

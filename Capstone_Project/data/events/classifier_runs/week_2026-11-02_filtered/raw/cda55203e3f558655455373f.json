@@ -1,0 +1,40 @@
+{
+  "document_id": "b5f8b5c8fbb611a92859e4cae9c88be6cf87fdc9f59ed8e85ae0854a1dd506c8",
+  "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOQTBOZlJERHFqRWdWbzRndXpCLUhxdWlkaWNQMWFZdkptbC14Vjk3b1VqXzdHcDZBZzBwcy1LaGNaUHJyaDFtRnJUV1NnSmlOUWJEWGJhNEtjMkdKV240QWZrZkdfeG1JSUF6QVRpOXc5MVQ3OURlQ2NaR1J1Qi1HRW9rWm50WnRIQzdHZHJQeEpXSW45dlRHanRMZXQ3NmZZN2xRaTd6RHNZaXZNS2htTnZhb3U0RUx3VWtBdDNFS2w2aDl4QUx4TGRmU3ZIYThyR1pKemJpYXhWTVk0VjZiU05HN2U?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "f18481dac7d1fe3060a9d40e0360cd284a8be40eb71d36741c556cbd2b3a6c51",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_8jLoojpW2JpwtXfZghDKDx",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only snippet about a stock analyst downgrade of Sun Life Financial (a Canadian insurer) by National Bank Financial. Sun Life is not a DTCC member bank, dealer, or broker under stress; this is a routine equity analyst rating change with no indication of financial distress, default, or any event matching a card's Step 1 trigger. No actionable risk event for any DTCC process."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4408,
+    "outputTokens": 132,
+    "totalTokens": 4540,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2380
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

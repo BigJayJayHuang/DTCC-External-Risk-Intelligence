@@ -1,0 +1,40 @@
+{
+  "document_id": "a600520892d02d5f6c57188f9fe32b6400bd6401ce81c2c61ee2c491dc6a00e4",
+  "url": "https://files.dtcc.com/download/assets/24784-26/3c9f0600d7cb11f1904276277c76473d",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "f6be612171a71b5fd1dd213e730927d071ef1eaf5dcc90881dc5a4276204e79b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_vDbyZgmm4Y8UEdxkBWUUff",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification for Metaplanet Inc. (CUSIP 59141L109), issued as an 'Important Notice' with no sensitive or non-public information. It describes no outside market, regulatory, member stress, or infrastructure event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4153,
+    "outputTokens": 114,
+    "totalTokens": 4267,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1751
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "42ce5212d397bef38291b9bf1dcfbf48b23c07db84175274df9f1561c6a943ed",
+  "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPN3d3MkxQdFpnYTZPQnh0c2xRemg0R0FRTHM0MmgtYWxWN0RiQ0NwLWNWemZISlZ3Z1dMbkVyM1NfSXhtcW83eXAzbzBoNmkxa21sN050TkdGVHp1bklKVTRyR0ZjS19YdHRBVm53WVdaNVRRbUk0X21qeEVuU3cyQWdrblQ2VFFFR09ma0p6S0ltSjZ1eHk0NUpQQm4tNmNHdjNzZEZPMFNwNWx3ajN2N3pSQ1lrZEMwVnozSk5GYkNSQW1yb3g4MjZRTGtHYlMtclVSdm5Wb1IxWjRVdUlv?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "2294353659beb1628fbc9675f453ea16700cf00bbab96fcadb39a29b4e455af0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_OTrLzWHAAnioSEOXcV6TTq",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Jana Small Finance Bank Ltd is an Indian small finance bank, not a US DTCC member or major participant. A downgrade of a non-US, non-DTCC-participant firm has no stated link to US markets or DTCC processes. Not relevant to any catalog card."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1557,
+    "outputTokens": 103,
+    "totalTokens": 5368,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1840
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

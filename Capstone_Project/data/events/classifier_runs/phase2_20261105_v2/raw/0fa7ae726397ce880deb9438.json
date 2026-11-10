@@ -1,0 +1,40 @@
+{
+  "document_id": "ffb5752959b7724fb1789ab19b6a40e32f618512ee8af0fc1c7af8dc110bb2d2",
+  "url": "https://files.dtcc.com/download/assets/25030-26/2c9dcf4ad17511f1b6e8b65631424f55",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "f7f1b9ada60e3816c9ebfae5c399b97f61ffc055d1d40b400de620bea659b3ec",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_GKgpBf7dtIKQ9qsLjPyVKU",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification (Important Notice) for Lufax Holding Ltd (CUSIP 54975P300). It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4156,
+    "outputTokens": 107,
+    "totalTokens": 4263,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1888
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

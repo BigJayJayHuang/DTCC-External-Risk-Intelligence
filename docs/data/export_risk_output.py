@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 """Build docs/data/risk_output.json from the scoring v1.3-indicator weekly files.
 
-Usage (from the repo root):  python3 docs/data/export_risk_output.py [--week 2026-10-19 --week 2026-10-26]
+Usage (from the repo root):  python3 docs/data/export_risk_output.py [--week 2026-10-19 --week 2026-10-26 --week 2026-11-02]
 Then check it:               python3 docs/data/validate_output.py docs/data/risk_output.json
 
 Standard library only. Every text field is a fixed template filled with numbers, ids, dates and URLs from the
 scoring records, the chain registry and the source manifests; no prose is generated. All v1.3 record fields are
 kept on each item as extra fields. so_what and so_now_what are reserved for future AI text: they are null, with
 analysis_status = "pending_llm"; no placeholder text is written into the data. Output is deterministic for the same inputs.
+related_news (Amendment D4/E3) is passed through from the scoring records; ai_unreviewed_events lists the active register events
+on the card that are AI-classified and not reviewed (Amendment C1), whether or not they set S.
 """
-import argparse, csv, hashlib, json, runpy
+import argparse, csv, hashlib, json, runpy, urllib.parse
 from datetime import date
 from pathlib import Path
 
@@ -21,7 +23,8 @@ FINAL16_CONFIG = CP / 'risk_business_ml' / 'final16_quarterly_vulnerability_2026
 CHAIN_REGISTRY = CP / 'risk_business_ml' / 'new_reference_chain_tests_2026_10_21' / 'chain_registry_v3_with_test_status.json'
 PQD_MANIFEST = CP / 'risk_business_ml' / 'event_vulnerability_tests_2026_10_06' / 'source_manifest.json'
 OUT = REPO / 'docs' / 'data' / 'risk_output.json'
-WEEKS = ['2026-10-19', '2026-10-26']
+WEEKS = ['2026-10-19', '2026-10-26', '2026-11-02']
+AI_UNREVIEWED_LABEL = 'AI-classified, not reviewed'
 
 # Real calendar dates only (lines.*.coming).
 COMING = {
@@ -51,6 +54,8 @@ TIER_TEXT = {'pqd': 'DTCC public quantitative disclosure (PQD)', 'public_proxy':
 NOT_SCORED = {
     'news_not_scanned': 'Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.',
     'data_incomplete': 'Not scored: market data for this week is incomplete ({reason}).',
+    'no_relevant_news': ('Not scored: no market indicator for this card and no active register event; '
+                         'the weekly headline-level news screen found no relevant news.'),        # Amendment F
 }
 
 
@@ -115,7 +120,10 @@ def sources(r, proxy, pqd_urls):
     for e in r['event_manual']['events']:
         for u in e.get('source_urls') or []:
             by_url.setdefault(u, [e.get('outlet') or 'Source', []])[1].append(e['event_id'])
-    out += [{'name': f"{outlet} ({', '.join(ids)})", 'url': u} for u, (outlet, ids) in by_url.items()]
+    multi = {i for e in r['event_manual']['events'] if len(e.get('source_urls') or []) > 1 for i in [e['event_id']]}
+    host = lambda u: (urllib.parse.urlparse(u).hostname or '').removeprefix('www.')
+    out += [{'name': f"{outlet} ({', '.join(ids)})" + (f" · {host(u)}" if multi.intersection(ids) else ''), 'url': u}
+            for u, (outlet, ids) in by_url.items()]
     if r['V_tier'] == 'pqd':
         period = r['V_quarter'][:4] + ' Q' + r['V_quarter'][-1]
         out.append({'name': f'DTCC CPMI-IOSCO public quantitative disclosure, {period}', 'url': pqd_urls.get(period, '')})
@@ -137,6 +145,12 @@ def review_status(r):
     return None
 
 
+def ai_unreviewed_events(r):
+    """Amendment C1: active register events on this card entered by llm-auto or still unreviewed."""
+    return [e['event_id'] for e in r['event_manual']['events']
+            if e.get('entered_by') == 'llm-auto' or e.get('review_status') == 'unreviewed']
+
+
 def item(r, run_utc, cards, chains, proxy, pqd_urls):
     what, basis = texts(r)
     tchain, tr = transmission(r, cards, chains)
@@ -150,7 +164,10 @@ def item(r, run_utc, cards, chains, proxy, pqd_urls):
                                 if r['V'] is not None else (r.get('V_null_reason') or '')),
         'transmission': tr, 'transmission_chain_id': tchain,
         'sources': sources(r, proxy, pqd_urls), 'ai_generated_fields': [],
-        'so_what': None, 'so_now_what': None, 'analysis_status': 'pending_llm'})   # slots reserved for the LLM step
+        'so_what': None, 'so_now_what': None, 'analysis_status': 'pending_llm',   # slots reserved for the LLM step
+        'related_news': r.get('related_news') or [], 'ai_unreviewed_events': ai_unreviewed_events(r)})
+    # display label: also when an unreviewed AI event is active on the card without setting S (event_review_label is kept as scored)
+    it['ai_review_label'] = AI_UNREVIEWED_LABEL if (it['ai_unreviewed_events'] or r.get('event_review_label')) else None
     if r['S_source']:
         it['shock_method'] = SHOCK_METHOD[r['S_source']]
     rs = review_status(r)
@@ -163,9 +180,14 @@ def summary(items):
     scored = [i for i in items if i['status'] == 'scored']
     main = sum(1 for i in scored if i['show_on_main'])
     ns = sum(1 for i in items if i['status'] == 'news_not_scanned')
+    nr = sum(1 for i in items if i['status'] == 'no_relevant_news')
     di = sum(1 for i in items if i['status'] == 'data_incomplete')
     s = lambda n, w: f"{n} {w}{'' if n == 1 else 's'}"
-    text = f"{main} of {s(len(scored), 'scored card')} at severity ≥ 6; {s(ns, 'card')} not yet scanned for news"
+    text = f"{main} of {s(len(scored), 'scored card')} at severity ≥ 6"
+    if ns or not nr:                               # weeks before the news run keep their original wording
+        text += f"; {s(ns, 'card')} not yet scanned for news"
+    if nr:
+        text += f"; {s(nr, 'card')} with no relevant news found (headline-level scan)"
     return text + (f"; {s(di, 'card')} with incomplete market data." if di else '.')
 
 
@@ -191,13 +213,16 @@ def build(weeks):
             entry['coming'] = COMING[line]
         lines[line] = entry
     label = lambda w: 'Week of ' + date.fromisoformat(w).strftime('%b %-d, %Y')
+    latest = max(docs, key=lambda d: d['week'])                       # spec metadata of the latest scored week
+    by_week = {d['week']: d for d in docs}
     return {
         'schema_version': '1.0', 'generated_at': max(iso(d['run_utc']) for d in docs), 'model_version': 'v1.3-indicator',
-        'sample': False, 'news_coverage': 'manual_register_only',
-        'spec': docs[0]['spec'], 'spec_status': docs[0]['spec_status'].replace('**', ''), 'spec_amendments': docs[0].get('spec_amendments', []),
+        'sample': False, 'news_coverage': latest.get('news_coverage', 'manual_register_only'),   # latest week (Amendment F1)
+        'spec': latest['spec'], 'spec_status': latest['spec_status'].replace('**', ''), 'spec_amendments': latest.get('spec_amendments', []),
         'source_files': [{'file': str((V13 / f'weekly_scores_v1.3_{w}.json').relative_to(REPO)),
                           'sha256': hashlib.sha256((V13 / f'weekly_scores_v1.3_{w}.json').read_bytes()).hexdigest()} for w in weeks],
-        'snapshots': [{'id': w, 'date': w, 'label': label(w)} for w in sorted(weeks, reverse=True)],
+        'snapshots': [{'id': w, 'date': w, 'label': label(w), 'news_coverage': by_week[w].get('news_coverage', 'manual_register_only')}
+                      for w in sorted(weeks, reverse=True)],
         'lines': lines, 'items': items}
 
 

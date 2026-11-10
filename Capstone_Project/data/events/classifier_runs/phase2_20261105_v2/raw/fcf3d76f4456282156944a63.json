@@ -1,0 +1,40 @@
+{
+  "document_id": "0de9b4c1021a7c35a896c6b7292563e25fd2105dd905e71b7f4c30b39465971a",
+  "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261020~97e2e4bc38.en.html",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "c948944bbf8b0291270e04e7b44c31c9c777e7d5ec64e97da601b51dde5a1b20",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_mmu7bDt75yrTI4YWggM23h",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only interview with ECB official Frank Elderson in Die Presse. No substantive content is available, and the title alone describes no market, regulatory, member, or infrastructure event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4070,
+    "outputTokens": 95,
+    "totalTokens": 4165,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1690
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

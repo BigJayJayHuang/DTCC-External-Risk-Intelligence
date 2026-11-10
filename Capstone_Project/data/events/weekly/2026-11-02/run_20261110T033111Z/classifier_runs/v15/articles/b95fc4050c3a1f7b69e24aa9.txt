@@ -1,0 +1,9 @@
+25230-26
+
+DTC CHILLS | UK SEAS | Venator Materials PLC | G9329Z118 Notice: 25230-26 Summary: Please be advised that effective November 03, 2026, chills relating to Delivery Orders, Segregation and Pledge will be removed, allowing broker-to-broker Delivery Order activity to settle for Venator Materials PLC, CUSIP G9329Z118.
+
+Further to Important notice B25119-26, the retiring Transfer Agent Computershare has now provided replacement physical inventory for the prior FAST balance.
+
+Additionally, DTC has coded this security as non-transferable, which will allow participants to PREM their position if desired.
+
+For UK SEAS securities, the approach DTC are taking may be used following a triggering event that terminates the SEAS agreement, provided the retiring Transfer Agent can deliver physical inventory representing the position to DTC. This approach is possible because Delivery Order activity is not subject to UK Stamp Duty.

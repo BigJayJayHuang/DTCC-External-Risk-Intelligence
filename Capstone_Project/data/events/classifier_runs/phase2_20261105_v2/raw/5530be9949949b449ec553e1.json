@@ -1,0 +1,40 @@
+{
+  "document_id": "22b12d9e21ee175d8baaee9918a4b68f010e59e12707538745dc6ae21ad4b544",
+  "url": "https://files.dtcc.com/download/assets/24855-26+/a279e900cbfe11f192ee2e0a36a1e00a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "a71ecb13da23ce17bc0b9eaad871fd5d8c5e3d7a7d9c44d1c535251772b7a398",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_iIKql0CG0QvVyHCju5lSoY",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a tax relief corporate action for Elisa OYJ (Finland), providing routine CA Web instruction deadlines and record/payable dates. It is an operational/administrative notice with no risk angle and does not describe any outside market, regulatory, member stress, or infrastructure event matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4210,
+    "outputTokens": 115,
+    "totalTokens": 4325,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1976
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "58ceedc8ff696303d190ca33bba414a812cf40ff47de97fd817a6ffb8c1d6324",
+  "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNbF8xNWdfVEt6clgxbXZWMDN0WWtiZnpPckNpalZ5UTFoWGpBZVh1dUNILUg0Sk01MUtSY1RkV3cyeHZjVUY1bmZxSW5GbFhzazliSl9adkd6NU5HbEpkckN6SFBvNnlpNldWNDhXSHNzN2ZaVWxDbFB0SnJ6bGZvVEFLSVdJbUNEbnBGQUYxNEo0Wk50QkR6WXB5WUhfTUdtbkRHSUFRa21XZ1VrNjl0dw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "f87baa4843283ecea446418b84555f809d6f9a9dc19a80be98c96a9b4d63dd7e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Rwtqhaw9q3m1gBtKHyr0lZ",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about a cyberattack on French banking institutions with no stated link to US markets, DTCC participants, or any DTCC-connected infrastructure. Non-US market event with no US nexus mentioned."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1504,
+    "outputTokens": 89,
+    "totalTokens": 5301,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1754
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

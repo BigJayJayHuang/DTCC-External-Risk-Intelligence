@@ -1,0 +1,132 @@
+{
+  "collected_utc": "2026-11-09T19:03:53+00:00",
+  "user_agent": "DTCC-External-Risk-Intelligence-capstone/0.1 (research prototype; +https://github.com/BigJayJayHuang/DTCC-External-Risk-Intelligence)",
+  "sec_user_agent_override": false,
+  "per_source": {
+    "cnbc_top_news": {
+      "robots_disallowed_feed": 1
+    },
+    "cnbc_finance": {
+      "robots_disallowed_feed": 1
+    },
+    "cnbc_economy": {
+      "robots_disallowed_feed": 1
+    },
+    "cnbc_investing": {
+      "robots_disallowed_feed": 1
+    },
+    "marketwatch_top_stories": {
+      "feed_http_200": 1,
+      "fetched": 10,
+      "kept_prefilter": 1,
+      "scope_summary": 1,
+      "fulltext_robots_disallowed": 1
+    },
+    "marketwatch_market_pulse": {
+      "feed_http_200": 1,
+      "fetched": 30,
+      "kept_prefilter": 6,
+      "scope_headline_only": 6,
+      "fulltext_robots_disallowed": 6
+    },
+    "marketwatch_realtime": {
+      "feed_http_200": 1,
+      "fetched": 10,
+      "kept_prefilter": 2,
+      "scope_headline_only": 2,
+      "fulltext_robots_disallowed": 2
+    },
+    "yahoo_finance_news": {
+      "feed_http_404": 1
+    },
+    "nasdaq_markets": {
+      "robots_disallowed_feed": 1
+    },
+    "nasdaq_stocks": {
+      "robots_disallowed_feed": 1
+    },
+    "fed_press_all": {
+      "feed_http_200": 1,
+      "fetched": 20,
+      "kept_prefilter": 7,
+      "scope_full_text": 7,
+      "fulltext_ok_paragraphs": 7
+    },
+    "sec_press_releases": {
+      "feed_http_200": 1,
+      "fetched": 25,
+      "kept_prefilter": 25,
+      "scope_summary": 25,
+      "fulltext_paywalled_or_forbidden_http_403": 25
+    },
+    "google_news_existing": {
+      "fetched": 92,
+      "kept_prefilter": 92,
+      "scope_headline_only": 92
+    }
+  },
+  "duplicates_merged": 0,
+  "items_to_classifier": 133,
+  "scope_totals": {
+    "headline_only": 100,
+    "summary": 26,
+    "full_text": 7
+  },
+  "published_range": [
+    "2024-07-29",
+    "2026-11-09"
+  ],
+  "requests": [
+    {
+      "kind": "robots",
+      "status": 200,
+      "n": 3
+    },
+    {
+      "kind": "robots",
+      "status": 403,
+      "n": 2
+    },
+    {
+      "kind": "feed",
+      "status": 200,
+      "n": 5
+    },
+    {
+      "kind": "feed",
+      "status": 404,
+      "n": 1
+    },
+    {
+      "kind": "robots",
+      "status": null,
+      "n": 1
+    },
+    {
+      "kind": "robots",
+      "status": 404,
+      "n": 1
+    },
+    {
+      "kind": "article",
+      "status": 403,
+      "n": 25
+    },
+    {
+      "kind": "article",
+      "status": 200,
+      "n": 7
+    }
+  ],
+  "robots": {
+    "https://search.cnbc.com": "parsed",
+    "https://feeds.content.dowjones.io": "allow_all",
+    "https://finance.yahoo.com": "parsed",
+    "https://www.nasdaq.com": "disallow_all",
+    "https://www.federalreserve.gov": "allow_all",
+    "https://www.sec.gov": "allow_all",
+    "https://www.marketwatch.com": "parsed"
+  },
+  "config_sha256": "989034077a010645f83e52f85bae90932f5d2302e85e3f8fb6bd7e80e60bce4d",
+  "queries_sha256": "ec2598cf556c95cb9206be2a515168f4a83d5b27a3e4a3dc1e038dab94843bad"
+}

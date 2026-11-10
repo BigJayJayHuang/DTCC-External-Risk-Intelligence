@@ -1,0 +1,59 @@
+{
+  "document_id": "f290926ca5974baa5e9cf1b100f2b4c80fa3cf14326992f443dfd6346b285c05",
+  "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPV0VpLXotVnNwVDBRRngtVXNuRGw0TUU5d1VCYXNTRm9tMVZwd0pZb01Vd0VtRXMtWVVaMjRNOGwtVmQ1VkpycjVYQUZNRDVsN1hLRmRPaVlUcmMyLW0wUVZwenlsR21VNFNzeUUtZ2FxQ1FsWWZlV0lsVHNXQ0NsVjhpWDRfVmhxZUcxdXNrQTN0SGhZVGoza2x4R2FIVWdTci1FRUNZZ2Q2ZHMyR0E?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "b7884439850772210292a89943e8a3f4911d83096dc57e64c14a3d213165411c",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_nIebe46SzerUp1KgsxocWZ",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "market_move",
+              "same_as_event_id": null,
+              "title": "Stock rout boosts dollar, Sterling dips",
+              "summary": "A broad equity selloff (\"stock rout\") drove dollar strength and weighed on Sterling, suggesting a market-wide risk-off move that could pressure NSCC liquidity and variation margin.",
+              "card_ids": [
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-06",
+              "effect_date": "2026-11-06",
+              "stage": null,
+              "source_tier": "major_media",
+              "outlet": "Reuters",
+              "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPV0VpLXotVnNwVDBRRngtVXNuRGw0TUU5d1VCYXNTRm9tMVZwd0pZb01Vd0VtRXMtWVVaMjRNOGwtVmQ1VkpycjVYQUZNRDVsN1hLRmRPaVlUcmMyLW0wUVZwenlsR21VNFNzeUUtZ2FxQ1FsWWZlV0lsVHNXQ0NsVjhpWDRfVmhxZUcxdXNrQTN0SGhZVGoza2x4R2FIVWdTci1FRUNZZ2Q2ZHMyR0E?oc=5",
+              "evidence_quotes": [
+                "stock rout boosts dollar"
+              ],
+              "confidence": 0.45,
+              "notes": "headline_only. The phrase \"stock rout\" indicates a broad equity selloff consistent with ECS-NSCC-LIQ (sharp equity selloff). No magnitude, no named participants, and no US-specific detail provided. Confidence is low due to headline-only content."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1505,
+    "outputTokens": 740,
+    "totalTokens": 6160,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 8268
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,91 @@
+{
+  "week_start": "2026-11-02",
+  "week_end": "2026-11-08",
+  "cap_usd": "4",
+  "run_dir": "/Users/caiwenqi/Documents/DTCC-External-Risk-Intelligence/Capstone_Project/data/events/weekly/2026-11-02/run_20261110T031359Z",
+  "prompt_version": "v1.6",
+  "status": "stopped_alphavantage_unavailable",
+  "from_inputs": null,
+  "paid_calls": 0,
+  "collect_only": false,
+  "dry_run": true,
+  "official_input": {
+    "path": "/Users/caiwenqi/Documents/DTCC-External-Risk-Intelligence/Capstone_Project/capstone_database/exports/news.csv",
+    "sha256": "59525783c4d8dc2905ceaacb52f7d2694d11bb1dd7a3b19b3b95b84010894482"
+  },
+  "alphavantage": {
+    "requests_this_run": 1,
+    "requests_used_today_utc": 1,
+    "daily_limit": 25,
+    "per_topic": {
+      "financial_markets": "no_feed",
+      "economy_monetary": "not_requested",
+      "finance": "not_requested",
+      "economy_macro": "not_requested"
+    },
+    "unique_articles": 0,
+    "with_summary": 0,
+    "window_utc": [
+      "20261102T0000",
+      "20261108T2359"
+    ],
+    "errors": [
+      {
+        "topic": "financial_markets",
+        "params": {
+          "function": "NEWS_SENTIMENT",
+          "topics": "financial_markets",
+          "time_from": "20261102T0000",
+          "time_to": "20261108T2359",
+          "sort": "LATEST",
+          "limit": "1000"
+        },
+        "requested_utc": "2026-11-10T03:15:44+00:00",
+        "http_status": 200,
+        "status": "no_feed",
+        "message": "Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium endpoints",
+        "stop": true
+      },
+      {
+        "topic": "economy_monetary",
+        "params": {
+          "function": "NEWS_SENTIMENT",
+          "topics": "economy_monetary",
+          "time_from": "20261102T0000",
+          "time_to": "20261108T2359",
+          "sort": "LATEST",
+          "limit": "1000"
+        },
+        "status": "not_requested",
+        "reason": "earlier response was not a news feed"
+      },
+      {
+        "topic": "finance",
+        "params": {
+          "function": "NEWS_SENTIMENT",
+          "topics": "finance",
+          "time_from": "20261102T0000",
+          "time_to": "20261108T2359",
+          "sort": "LATEST",
+          "limit": "1000"
+        },
+        "status": "not_requested",
+        "reason": "earlier response was not a news feed"
+      },
+      {
+        "topic": "economy_macro",
+        "params": {
+          "function": "NEWS_SENTIMENT",
+          "topics": "economy_macro",
+          "time_from": "20261102T0000",
+          "time_to": "20261108T2359",
+          "sort": "LATEST",
+          "limit": "1000"
+        },
+        "status": "not_requested",
+        "reason": "earlier response was not a news feed"
+      }
+    ]
+  },
+  "reason": "Alpha Vantage returned no news feed; see inputs/alphavantage/alphavantage_requests.json"
+}

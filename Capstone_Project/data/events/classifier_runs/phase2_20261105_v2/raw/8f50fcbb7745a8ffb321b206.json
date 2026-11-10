@@ -1,0 +1,40 @@
+{
+  "document_id": "3ab93559fa48e9c2be9fb4869d2d75fb0fa9eb803f207573eab9d1dbca468c9b",
+  "url": "https://www.esma.europa.eu/press-news/esma-news/one-year-go-t1-settlement-regulatory-framework-complete-now-lets-make-it",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "d25e0120c6f37d9e15905a2bd1dfe198614c6060a45a7a0ea4c0fb5bf4f4a820",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_cFjIxPcPQADHBWdtSzi9aX",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes the EU/European T+1 settlement transition (go-live 11 October 2027). No card in the catalog covers EU settlement cycle changes; all ECS-SET-01 entries relate to US markets. The event does not directly touch any DTCC process described in the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4128,
+    "outputTokens": 110,
+    "totalTokens": 4238,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2165
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

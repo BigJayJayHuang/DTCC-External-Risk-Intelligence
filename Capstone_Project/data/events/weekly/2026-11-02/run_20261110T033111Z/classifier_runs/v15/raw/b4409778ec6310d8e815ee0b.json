@@ -1,0 +1,57 @@
+{
+  "document_id": "a600520892d02d5f6c57188f9fe32b6400bd6401ce81c2c61ee2c491dc6a00e4",
+  "url": "https://files.dtcc.com/download/assets/24784-26/3c9f0600d7cb11f1904276277c76473d",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "b38a8e529ebf6045451d74842d80113a3b0fbe293dd9d7ed3a4eba06d09307d7",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_EuOs28y8hujVmQcacRpbjR",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Routine DTC depositary fees notification for Metaplanet Inc. (CUSIP 59141L109). Administrative/operational notice with no risk event; no market move, regulatory action, member stress, cyber incident, or settlement disruption described. Explicitly flagged as non-sensitive, non-confidential supplemental material.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1795,
+    "outputTokens": 469,
+    "totalTokens": 6637,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3192
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "80c1dce5f731e4abb4123dd1c259dcaf86ff76fee3903169c45b474f8e5d4cd3",
+  "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPOFBSNTF3bXFWS1hzT2hRbDZZZFlJTUJlZ2U0OHdTdTBfcEEwdlRUSkk3bFlDM3Ixa1JaR3BUM1dyUFNRU0dWZG5FWE9pZHZwYjBRbGJtZGMzRk9ZZTdaNTAtbUJEWldKT1E0VTI1Q1hfcFEyNmg0WkVwaUdLcGIxZkJCRVZCcWxmX24wRGFEbnhqaFR0ZXNwSW8tNVlTVU5wNk92dVZyLWdiUQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.3:aab5ad825775",
+  "request_sha256": "dff22dd67b60716d27c06a41baed8529d5f18047e42c5a09e778a2a44c21ffc5",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_L5vCBvxWhEljgrRkOuvYqb",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline-only item. The headline references a selloff and hedge funds dumping positions, but states no concrete event with sufficient specificity — no named funds, no scale, no market context, no date of event. Too vague to support a card assignment under headline-only rules."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1525,
+    "outputTokens": 103,
+    "totalTokens": 4708,
+    "cacheReadInputTokens": 3080,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2150
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -210,3 +210,109 @@ Approved: Wenqi Cai, 2026-11-05T05:15Z. Written before the re-run of the weeks o
 - **B2.** `shared_signal` lists the other cards in the same week that take S from at least one of the same signal fields. A shared raw input no longer counts. For example, DGS10 feeds both `ust10_abs_change` and `mbs_spread_abs_wchg`, so FICC-GSD-01 and FICC-MBSD-01 do not share a signal.
 - **B3.** `shared_signal_series` is replaced by `shared_signal_fields`: `{card_id: [signal field]}` for each card in `shared_signal`.
 - **B4.** The two records of one cross-entity card still do not list each other. Records that do not take S from a market signal have `shared_signal = []`.
+
+## Amendment C — unreviewed AI-classified events
+
+Approved: Wenqi Cai, 2026-11-08T01:10Z. Proposed 2026-11-08. When approved it changed no existing output: no register row had `entered_by = llm-auto`. `validation/promote_reviewed.py` inserts such rows only while this `Approved:` line is present.
+
+- **C1.** A register event with `entered_by = "llm-auto"` or `review_status = "unreviewed"` (inserted by `promote_reviewed.py` without a human decision) is an *unreviewed AI event*. Each entry in `event_manual.events` carries `entered_by` and `review_status`.
+- **C2.** When an unreviewed AI event alone sets S (`S_source = event_manual`), the record has `show_on_main = false`, whatever its severity. If the market S is equal or higher, the market alone justifies S, and `show_on_main` follows §7.
+- **C3.** Records whose S comes wholly or partly from an unreviewed AI event carry `event_review_label = "AI-classified, not reviewed"`.
+- **C4.** S, V, severity and `needs_human_signoff` are unchanged. S ≥ 4 from any event still needs the matching sign-off, as in A1.
+- **C5.** The dashboard must honour `show_on_main` and show `event_review_label`. This needs a `docs/` change that is not part of this amendment.
+
+## Amendment D — market-move news is context on indicator cards
+
+Approved: Wenqi Cai, 2026-11-08T01:10Z. Written before any code change for it. It changes no existing v1.3 score: S, V, severity, status, show_on_main and needs_human_signoff are computed as before, and no register row exists yet that it would reclassify.
+
+- **D1. Event type.** The classifier records `event_type` for every relevant item. Values:
+  - `market_move`: price, yield, spread, volatility or volume moves of a market or asset class;
+  - `regulatory`: rules, deadlines, regulator or DTCC actions;
+  - `firm_specific`: something happening to one or more identified firms (losses, margin calls, downgrades, deleveraging, default);
+  - `operational`: outages and system or settlement problems that are not cyber;
+  - `cyber`;
+  - `other`.
+- **D2. Indicator cards.** FICC-GSD-01, FICC-GSD-02, FICC-MBSD-01, ECS-NSCC-LIQ, ECS-NSCC-03 and XE-MEMBER. For each card of an event: if the card is an indicator card and `event_type = market_move`, the event is *context* for that card. It does not set `S_event`, does not count toward `review_tier`, and appears only as related news. On every other card, the event is scored as before.
+- **D3. Context file.** Context items go to `data/events/context_news.csv` (week, card_id, title, outlet, url, event_type, proposed_event_id). They never go to `event_register.csv`. `promote_reviewed.py` never inserts a context-tier row, and for an event that is context on some cards it inserts only the scored cards.
+- **D4. Related news.** `scoring_v1_3` adds a `related_news` list to each record from that file, matching card_id and week. It is display only.
+- **D5. Review tier**, computed after the context rule:
+  - `required` if any scored (non-context) card has a would-be S ≥ 4 or severity ≥ 6;
+  - `context` if every card of the event is context;
+  - otherwise `auto`.
+
+## Amendment E — review-sheet checks after validate()
+
+Approved: Wenqi Cai, 2026-11-09T21:12Z. E1–E4 describe checks already in `validation/review_sheet.py` (prompt v1.6, commit 7ed9f5d); this amendment is written before the code for E5. It changes no existing v1.3 score: S, V, severity, status, show_on_main and needs_human_signoff are computed as before. It decides only which proposed events can reach the register and which items appear as related news.
+
+- **E1. Fields (prompt v1.6).** For every relevant item the classifier records:
+  - `geography`: `us`; `non_us_with_us_link` (only when the text itself states a link to US markets, US firms or DTCC participants); or `non_us`.
+  - `new_information`: set only when `same_as_event_id` is set. It is `true` if the text adds a new date, action, figure or stage compared with the recorded event, otherwise `false`. It is null when `same_as_event_id` is null.
+
+  Both are null for irrelevant items. Candidate files from older prompts lack these fields; E2 and E3 then do not apply.
+- **E2. Non-US filter.** An item with `geography = non_us` is dropped before grouping and logged to `filtered_non_us.csv` in the run folder. It never reaches the review sheet, the register or the related news.
+- **E3. Duplicate tier.** A proposed event whose items all have `same_as_event_id` set and `new_information = false` gets `review_tier = duplicate`.
+  - `promote_reviewed.py` never inserts it.
+  - Its items go to `context_news.csv` as related news on each of its cards (D3, D4).
+  - An event with new information keeps its tier and, as before, is listed for a manual merge.
+- **E4. Date flags (`date_flags` column).**
+  - `date_unverified`: one independent source, every item headline-only, and `event_type` operational or cyber. It is a flag for the reviewer only; the tier is unchanged.
+  - `date_mismatch`: an item's `announced_date` is more than 14 days from its feed published date. The event gets `review_tier = date_review` and is kept out of the week's tiering. Like `required`, it needs a decision before `promote_reviewed.py` runs.
+- **E5. FICC-GSD-11 gate.** After the non-US filter and before grouping, FICC-GSD-11 stays on an item only if its headline, summary or text contains one of these terms: Treasury, Treasuries, repo, basis trade, SOFR, sponsored, agent clearing.
+  - Matching ignores case and uses whole words. The plurals "repos" and "basis trades" and the hyphenated "basis-trade" and "agent-clearing" also count.
+  - Otherwise the card is removed from that item, and an item left with no card is dropped.
+  - Each removal is logged to `card_gate.csv` in the run folder and added to the item's flags.
+  - Grouping, the D2 context rule and the D5 tier are computed after the gate.
+- **E6. Order and precedence.** validate() per item → E2 → E5 → grouping → validate() on the combined sources → D2 context rule → D5 tier. Then `duplicate` (E3) replaces any tier, and otherwise `date_review` (E4) replaces any tier.
+
+## Amendment F — weeks covered by the weekly news run
+
+Approved: Wenqi Cai, 2026-11-09T21:30Z. Written before any code change for it. It changes no S, V or severity. It changes only the status (and its reason) of cards with no market signal and no active register event, and adds `news_coverage` per week.
+
+- **F1. News coverage per week.** Every scored week records `news_coverage`:
+  - `headline_level_ai_screen`: the weekly news run (`validation/weekly_news_run.py`) completed for that Monday–Sunday week, and every `required` and `date_review` row of its review sheet has a decision. This applies to the week of 2026-11-02 (run `run_20261109T203937Z`, sheet `review_2026-11-02_run_20261109T203937Z.csv`).
+  - `manual_register_only`: any other week. The weeks of 2026-10-19 and 2026-10-26 keep this value.
+
+  The list is kept in `results/scoring/v1.3_indicator/config/news_coverage.csv`. A week that is not listed is `manual_register_only`.
+- **F2. New status `no_relevant_news`.** In a week with `news_coverage = headline_level_ai_screen`, a card with no market signal and no active register event gets `status = no_relevant_news`:
+  - S and `S_source` are null, and severity is null;
+  - V and its fields are shown as usual;
+  - `show_on_main = false` and `needs_human_signoff = false`.
+- **F3.** `news_not_scanned` remains only for weeks with `news_coverage = manual_register_only`.
+- **F4. Unchanged.**
+  - Cards with a market signal follow D1 (`data_incomplete`) and resolved §11.2 as before.
+  - Context and duplicate news (Amendments D and E) still appear only in `related_news` and never set S.
+  - Items rejected in review are neither scored nor shown.
+- **F5. Display.** The dashboard shows `no_relevant_news` as "No relevant news found (headline-level scan)". Like the other unscored statuses, it sorts after the scored cards.
+
+## Amendment G — official notices: routine skips, membership context, SRO filings
+
+Approved: Wenqi Cai, 2026-11-10T03:52Z. Written before any code change for it. It changes no S, V or severity rule. It decides which official notices reach the classifier, which become related news, and the highest review tier of SRO rule filings.
+
+Official notices are the rows of the daily official-news export (`official_source_ids` in `google_news_config.json`: DTCC notices and insights, Federal Register, SEC, CFTC, Fed, FCA, ECB, ESMA, BIS). The patterns are applied to the title and summary together, ignoring case. They run inside the window, before the keyword pre-filter.
+
+- **G1. Override first.** A notice whose title or summary mentions cease to act, watch list, restriction, suspension, default, wind-down, margin, clearing fund or liquidity always goes to the classifier. G2 and G3 do not apply to it.
+- **G2. Pre-model skip.** Routine notices never reach the classifier. Each is logged to the exclusion audit (`official_prefilter_dropped.csv`, reason "Amendment G2: …"). Routine means:
+  - DTCC additional account activation or retirement;
+  - fee or depositary-fee notifications;
+  - tax-relief notices;
+  - routine corporate-action notices: "corporate action" or "CA Web" instructions.
+- **G3. New-member notices.** These are new members of FICC GSD, FICC MBSD or NSCC, and new Agent Clearing, Sponsoring or Sponsored Members. "New Participant in the Netting System" counts as a new GSD member.
+  - They never reach the classifier.
+  - Each becomes a related-news row in `context_news.csv` with `label = "membership/onboarding"`, on FICC-GSD-03 for FICC (GSD/MBSD) and on ECS-NSCC-LIQ for NSCC.
+  - `context_news.csv` gains an optional `label` column, which D4 passes through to `related_news`.
+  - Notices that remove a member ("Delete Sponsored Member", "Changes in the list of participants") are not new-member notices. They go to the classifier as before.
+- **G4. SRO rule filings.** A proposed event made only of SRO rule filings is capped at `review_tier = auto` and is never `required`. A filing is identified by a title of the form "Self-Regulatory Organizations; <filer>; …", and the cap applies when every filer is an entity other than FICC, NSCC and DTC. The row carries the flag `sro_filing_capped_auto`. Filings by FICC, NSCC or DTC keep their tier.
+- **G5. Order.** G1 → G2 / G3 → keyword pre-filter and the non-US rule → classifier → E checks → D context rule → D5 tier → G4 cap. E3 (`duplicate`) and E4 (`date_review`) still take precedence over the cap.
+
+## Amendment H — same_as_event_id without new_information
+
+Approved: Wenqi Cai, 2026-11-10T04:06Z. It records a rule already in the code (commit 284cabb). It changes no S, V or severity rule.
+
+- **H1. Not dropped.** Sometimes the classifier sets `same_as_event_id` but gives no true/false `new_information` (the field is missing or null). The item is no longer dropped:
+  - `new_information` stays null;
+  - the item carries the flag `new_information_missing`.
+- **H2. Review required.** A proposed event with any such item gets `review_tier = required`, and the flag is listed in `validate_flags`.
+  - It is never `auto` or `context`, and the G4 cap does not apply to it.
+  - E3 does not make it a `duplicate`, because its `new_information` is not false.
+  - E4 `date_review` still takes precedence.
+- **H3. Promotion.** `promote_reviewed.py` treats it like any `required` row: it needs a decision. An approved row with `same_as_event_id` is listed for a manual merge and is not inserted.

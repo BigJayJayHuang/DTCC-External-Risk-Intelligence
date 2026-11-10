@@ -1,0 +1,40 @@
+{
+  "document_id": "fd6934a731d15ae97335bfa1b80e510a0a6ae945a2e8d3342c61ab9734235d0e",
+  "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE83b0hPY0hMR1JfNGQtcE5hV0xCZmhkYWM5U1dkaEhhS2g3bHVOSnA2bEtlMndXTU4tN3M4VFZFd2Jha0hZY25yQ0dMdkRkSklIek1hZk5SZGhVaV95MXJoSTJjRTQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "1934053cdb5875f032a76c322599ec32b303eb60183fc3134050d98081e13776",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_KBfiHD6Dku592xNdDJwtRs",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Explainer/listicle article ('5 Top Stocks for November 2026') with no concrete market event. No selloff, no record volume, no stress event described. Not relevant to any catalog card."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1414,
+    "outputTokens": 89,
+    "totalTokens": 5211,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1627
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

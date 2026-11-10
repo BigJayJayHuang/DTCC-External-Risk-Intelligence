@@ -1,0 +1,63 @@
+{
+  "document_id": "2047d56e6e234493381abb7d8e9cac6f64b32dee3ccfd2d641bca6e91857754e",
+  "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPQTREcm13Mlg0LTBDQ0c5bEVjYXctTFJEcVZYcF8xMDlBS3NreExrXzlvd0NQejZaekxES3dvSHB5MVppem51LXhJUHk5Y3FqN013Rm1hNnRpald1T255WFRaZ2xOV1cyVUNxTF9lVWFFQnlSa3V5SlFFNjhpRlBlR0F1d1JnVzBpTVVnbTNTczhaTUFYU2l1aXEtSVhCay1wYzVNdXBRcE5BOEp6VkNKQmExREk4NWR0bDZDa0xmWU8ybU04QWc?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "63a78789e898eaa15d3c29878c171627389aa1e108d6ba33f905ba2416bc7c53",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ZfnVDXjQAdTbown4rc9i42",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "firm_specific",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "Bank of America shares fall 1.1% after analyst downgrade",
+              "summary": "Bank of America shares fell 1.1% following an analyst downgrade. As a global systemically important bank and major DTCC participant, a downgrade is a stress signal relevant to member surveillance.",
+              "card_ids": [
+                "XE-MEMBER"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "major_participant",
+              "named_participants": [
+                "Bank of America"
+              ],
+              "announced_date": "2026-11-02",
+              "effect_date": "2026-11-02",
+              "stage": 1,
+              "source_tier": "other",
+              "outlet": "MarketBeat",
+              "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPQTREcm13Mlg0LTBDQ0c5bEVjYXctTFJEcVZYcF8xMDlBS3NreExrXzlvd0NQejZaekxES3dvSHB5MVppem51LXhJUHk5Y3FqN013Rm1hNnRpald1T255WFRaZ2xOV1cyVUNxTF9lVWFFQnlSa3V5SlFFNjhpRlBlR0F1d1JnVzBpTVVnbTNTczhaTUFYU2l1aXEtSVhCay1wYzVNdXBRcE5BOEp6VkNKQmExREk4NWR0bDZDa0xmWU8ybU04QWc?oc=5",
+              "evidence_quotes": [
+                "Bank of America (NYSE:BAC) Shares Down 1.1% Following Analyst Downgrade"
+              ],
+              "confidence": 0.45,
+              "notes": "headline_only. The article reports both a share price decline and an analyst downgrade. A 1.1% share move alone is minor, but the analyst downgrade qualifies as a stress signal (stage 1) for a major participant. Confidence is low due to headline-only content; no detail on the nature or severity of the downgrade is provided."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1532,
+    "outputTokens": 833,
+    "totalTokens": 6738,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5073
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

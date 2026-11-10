@@ -1,0 +1,40 @@
+{
+  "document_id": "45d8cdbda90d39cd6e6cf1dcaf2f31cc19f75c5bb9e64ab4c7ba6acb85d2b5e7",
+  "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNSGc3NElKaEc5R2NRSXpENHZXb0RsWlExalRISzNHOUxTM2kxSGlpNlU4VTZ6d1VBSkMzaGpweWRranRZWlJjZnFNWXRCbnpZdXlUYjQ0R1huc1pQSTFNVGlMQ3dUSEV0MlJSVWtaS0JBOGt1VFVETXdZUHVqNk9JRkNBMXdJczZ0LUNSNEZR?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "d6afc4896bdda5389e471abf4fc714a17533525751afcb736451bdb07154eaf8",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_RzASDEE7101CtFbuBPykJ0",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article reports on Korea Exchange shortening its settlement cycle to T+1, which is a foreign market infrastructure change. ECS-SET-01 covers shorter settlement cycles but in the context of DTCC/US markets (NSCC and DTC settlement). A Korean exchange settlement change does not directly touch any DTCC process described in the card catalog. The article is also a headline snippet only with no substantive detail."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4287,
+    "outputTokens": 133,
+    "totalTokens": 4420,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2373
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

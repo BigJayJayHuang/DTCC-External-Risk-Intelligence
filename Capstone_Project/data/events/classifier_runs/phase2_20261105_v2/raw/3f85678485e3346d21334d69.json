@@ -1,0 +1,40 @@
+{
+  "document_id": "0777b660502369e9c3622e401d342f80b12258b141adca8cb1f63c05bd82da0e",
+  "url": "https://files.dtcc.com/download/assets/24785-26/c70b2a32d87d11f1b133e255ed29acba",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "9781b4ea74339f38030acf35816e175387efdc38a92aceeacd44092baad46d3c",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_mKc1cZ0lbD9xicWs9Q1aA5",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification for Belite Bio Inc (CUSIP 07782B104), a standard corporate action/important notice. It does not describe any outside market, regulatory, member stress, or infrastructure event that matches any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4149,
+    "outputTokens": 104,
+    "totalTokens": 4253,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1678
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

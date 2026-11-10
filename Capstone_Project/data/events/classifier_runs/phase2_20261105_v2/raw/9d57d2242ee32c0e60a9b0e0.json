@@ -1,0 +1,40 @@
+{
+  "document_id": "79a79c0627ac602e7c43aca8a866894599f2d47cec541c257d380694d98b23a6",
+  "url": "https://files.dtcc.com/download/assets/a9848/9a0314f6d24111f1afef42275106fa04",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "a869a140e33b040f5e4c990e6de1575374c786c480fc02ff16071374a25326c2",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_m9BFLvtfA8EdyxoIJasecP",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is an internal DTCC operational notice announcing a bank holiday charge collection procedure (42% additional Volatility charge ahead of Veterans Day 2026). It describes a routine DTCC administrative action, not an outside market, regulatory, member, or infrastructure event that maps to any card's Step 1 trigger."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4122,
+    "outputTokens": 110,
+    "totalTokens": 4232,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1826
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

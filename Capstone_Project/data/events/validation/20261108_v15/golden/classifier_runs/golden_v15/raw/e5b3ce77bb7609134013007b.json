@@ -1,0 +1,59 @@
+{
+  "document_id": "22bfb250f155552d3bd6ce80c6ed5ea6cfde5eff885b37da1f2fc9194665ddfd",
+  "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNczVCVUNjOHE4dGNUYW0xcjRkZGJ6X1dwQV9TLUF3SVFycTFxRThNRFByclh3Q0FicW5KT2NWOU9Fcnl0WUpjOVRXYWFqT2RwdUpKOHlhWlN5QUhSSmRFY3diY0Y5WWd6MW5YV29GLWFqV0FUdzV3UkNFS282YU9ISUdhT3dodlBfbG9iLXphYmtBX1RHNWRDOUlXaWtFQzdaTGhZRm8xbUd2Y21LTEotT3U0WlE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:163854b82bd7",
+  "request_sha256": "0c5ae044fd57c235c160575934be0e295fa5512d08236fbbb1cd168881151965",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_GoiuV7B2OrEyg7sjXJUowH",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "same_as_event_id": null,
+              "title": "National CERT warns of AI-powered cyberattacks on banks",
+              "summary": "A national CERT has issued a warning about AI-powered cyberattacks targeting banks and critical infrastructure, signaling a potential cyber threat to large financial participants.",
+              "card_ids": [
+                "XE-CYBER"
+              ],
+              "certainty": 1,
+              "reach": 1,
+              "reach_basis": "group",
+              "named_participants": [],
+              "announced_date": "2026-11-07",
+              "effect_date": "2026-11-07",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "PhoneWorld",
+              "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNczVCVUNjOHE4dGNUYW0xcjRkZGJ6X1dwQV9TLUF3SVFycTFxRThNRFByclh3Q0FicW5KT2NWOU9Fcnl0WUpjOVRXYWFqT2RwdUpKOHlhWlN5QUhSSmRFY3diY0Y5WWd6MW5YV29GLWFqV0FUdzV3UkNFS282YU9ISUdhT3dodlBfbG9iLXphYmtBX1RHNWRDOUlXaWtFQzdaTGhZRm8xbUd2Y21LTEotT3U0WlE?oc=5",
+              "evidence_quotes": [
+                "National CERT Warns of AI-Powered Cyberattacks on Banks and Critical Infrastructure"
+              ],
+              "confidence": 0.45,
+              "event_type": "cyber",
+              "notes": "headline_only. Warning issued by a national CERT (unspecified country) about AI-powered cyberattacks on banks and critical infrastructure. No specific attack confirmed, no named institutions, no stated link to US markets or DTCC participants. Certainty set to 1 (official warning/announcement, not a confirmed attack). Reach set to 1 (group — banks broadly) as no major named participant identified. Confidence low due to headline-only content and lack of geographic or institutional specificity."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1501,
+    "outputTokens": 786,
+    "totalTokens": 6192,
+    "cacheReadInputTokens": 3905,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5253
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

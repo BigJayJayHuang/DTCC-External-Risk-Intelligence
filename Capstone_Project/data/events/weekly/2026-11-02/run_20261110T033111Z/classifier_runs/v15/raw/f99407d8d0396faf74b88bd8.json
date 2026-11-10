@@ -1,0 +1,57 @@
+{
+  "document_id": "c151854fa37dd204a4116e1d9c66f0e6498b57e1d9acb865b9ea1793bea0fd08",
+  "url": "https://files.dtcc.com/download/assets/25034-26/cc299140d7ae11f18a2ed6d26d5485bf",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "40ec970c055d3334ac8b7b1c8fe84214260d9e7fd5fc4d74fbf46d0681858f48",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_BturBxhRthB7tneq81P8bC",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Routine DTC depositary fees notification for a single security (Fubon Financial Holding Co. 144A, CUSIP 359515301). This is an administrative/operational notice with no risk event matching any catalog card. The text itself states it is \"not sensitive, confidential, or non-public information.\" No market move, regulatory action, member stress, cyber incident, or settlement disruption is described.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1788,
+    "outputTokens": 486,
+    "totalTokens": 6647,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3553
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

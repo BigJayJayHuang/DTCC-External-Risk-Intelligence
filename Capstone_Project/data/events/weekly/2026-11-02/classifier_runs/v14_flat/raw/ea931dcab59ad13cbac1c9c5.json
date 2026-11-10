@@ -1,0 +1,54 @@
+{
+  "document_id": "91f85c46d6929ffc4846753190644643636a999139bcb179b9f3a9d3054f1c18",
+  "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPNURNYWVac0FDTkNVNnEzUDJKaDJmOEZDckp3aVlDNk1KbDZ1cXVQcGZRZlA3VEFzbVNIeDdYTFY4bEVfTTJCTEdSR2JXN2Q2NTFBVGRJcy1oNlI4XzNObmlyZlJUaWQ3c2tHRlRHT2dPU19CN3hrbXFkMFh4Skg5cDJpdVZLRzV6T05TdFJvd2hldFdFalE2YXctNnU0VUhqUjVveXpiTHlVeFVzZGN4c0hsal9DZw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "cd315089958757f4b38a1fa297e41f37e1419b925d64eb7752aac54bc3e8cdbc",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_gUgDXKWpGHGv5Plwaik9G3",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Single small ETF delisting and liquidation; not a member stress event, not a market-wide or volume event, and no link to any catalog card's Step 1 trigger. A minor product wind-down at a non-major participant does not match any card."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1527,
+    "outputTokens": 400,
+    "totalTokens": 5612,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3172
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

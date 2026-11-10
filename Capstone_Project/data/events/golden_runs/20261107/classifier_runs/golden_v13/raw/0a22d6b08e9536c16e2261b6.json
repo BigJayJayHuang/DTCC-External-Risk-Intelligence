@@ -1,0 +1,40 @@
+{
+  "document_id": "1e9055fdc6f45c1dccaf6ae9203df301548ec38da24891cb1befd67c0d955a44",
+  "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPc3dTOTdsZjlNY2JadTFUby1YQmhsMlhGOU9vUUxEQldBNjdJVXh5TndmMUZpejQ4cElGTy1qWXg3X1dkYjBBQlpSRUtxU2VpZzhwdGdoZ1dGTDBhdEx6ZUVzaG93T3lZbWFmV05BNFpOUTBaRVR2bXZRWVRyMGxqVHFKNElBYjhrcncyNzA2VFVyM2Z6eGMzSWpzOV8?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.3:aab5ad825775",
+  "request_sha256": "25296a2f3635c4655f747c4d3a98d2823bcbac5c1755538075774b70b32b07d3",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_coSebgniF3YWuIrgTsPPMc",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline-only item with no concrete new event stated. 'DTCC highlights final implementation steps for U.S. Treasury clearing mandate' is a generic reference to the mandate's implementation process, but states no specific milestone, deadline change, extension, or action that is not already captured in EV0004–EV0007. No new facts can be extracted from the text."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1472,
+    "outputTokens": 124,
+    "totalTokens": 4676,
+    "cacheReadInputTokens": 3080,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2116
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

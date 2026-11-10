@@ -1,0 +1,40 @@
+{
+  "document_id": "db13a77055dc350fe2dc8f99e60023ba5fbbd6e51e1fe246d9aa781bb1af555a",
+  "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxON1REajFYZmUyX1J1YWlHVTZINWpyTlhSSmh0Y1dXR0Q4SDQ0YjJSQVh0QkFnYzhmUTAwdXA1d3RFWVhTRWR2eXpBVm1oMXhmdHdMVDlDb1RhZTZ5dXNBUGkyWGZDaW1LTVQzcnpKdHlYYjltZ3RJcmRONUl3WTFuUDhqYktEMmdicTIyQUlYSnVLbWJYZUZ4R0RNZ2F1QnJkaVl1VXJud3dyZHFxM0Fwa0xuOG1nN3fSAbwBQVVfeXFMT2VzRDA5cURvZWNlbjA5NG9LR3RRUW5jV0ZkNlJIVDE3RlJCdzFZLXowUGg0cjRHOFBrTE52eHhxbXl1UUkzOXlMYU9KVktjNGt3cFZYdzUzdVYyYXFGM2xLelhscWc2Um9mQ0l6Yjl4ZXpGenFBdWt3cTBRMHlaMlFGWW5yMXJGVEgtRHJILTN0UkNvTUJPcDhGTVFfNGZ2UUxvaXViUk5WOHFIbDZPXzN2cHFmUDM1TjRKYUc?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "e159ad92876cfcb6c80f5484d029f43ccf25741f2d070bfee30c065478672931",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_7k8mUB7LzFrptCBhlYl6mO",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline snippet only about cyberattacks and bank disruptions in Malaysia. It contains no substantive information about a specific cyberattack on a DTCC member, clearing bank, or major US market participant. The geographic scope (Malaysia) and lack of any detail connecting the event to DTCC-relevant entities means no card can be supported by evidence quotes from the text."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4571,
+    "outputTokens": 124,
+    "totalTokens": 4695,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2268
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

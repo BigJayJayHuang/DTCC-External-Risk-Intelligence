@@ -1,0 +1,62 @@
+{
+  "document_id": "cfc896b0b7d69eaad48ad0ca6072ef65c0a3a2950e10ea532dd2dfc9535f7970",
+  "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5aaGJjZjh4ak5fMmZQeU9nTW93aHhlc3VqMGZ6MmxpLWN0MlFNWFBjaHlsc0kyUVRnczgxYkNVSDB5VDNkVWgtVl9PRGpiOWVVNWhWNE4wRGViUFhCN1VfcFpFbzFjR0xvSFBob2xRMHVyLWpj0gF6QVVfeXFMUHFoa1ZEOFpyZlozb1d6RkdFUjBHR3VCby05alhkZUFWWmREZzExR3F4cXJwNC1tMnROU1JYaGpCNXVDRm9SUlc4ZHZFNFBMZlREVlN1UDVFcFh6NWFyZTZOVlotRHMwNEFOMmxRVXlXczRCOURQN1lGb0E?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "077d8c5710eab8f72a2224a21dfe50826ad6a29c88c60dc97f4af26fcbf2728f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_UMzPOTjYUlkfUjLKQoICYK",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "market_move",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "Magnificent 7 loses $1 trillion in tech stock plunge",
+              "summary": "The seven largest US tech stocks collectively lost $1 trillion in market value in a single day's selloff, representing a sharp broad equity market decline.",
+              "card_ids": [
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-05",
+              "effect_date": "2026-11-05",
+              "stage": null,
+              "source_tier": "major_media",
+              "outlet": "CNBC",
+              "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5aaGJjZjh4ak5fMmZQeU9nTW93aHhlc3VqMGZ6MmxpLWN0MlFNWFBjaHlsc0kyUVRnczgxYkNVSDB5VDNkVWgtVl9PRGpiOWVVNWhWNE4wRGViUFhCN1VfcFpFbzFjR0xvSFBob2xRMHVyLWpj0gF6QVVfeXFMUHFoa1ZEOFpyZlozb1d6RkdFUjBHR3VCby05alhkZUFWWmREZzExR3F4cXJwNC1tMnROU1JYaGpCNXVDRm9SUlc4ZHZFNFBMZlREVlN1UDVFcFh6NWFyZTZOVlotRHMwNEFOMmxRVXlXczRCOURQN1lGb0E",
+              "evidence_quotes": [
+                "Magnificent 7 loses $1 trillion",
+                "Thursday's tech stock plunge"
+              ],
+              "confidence": 0.55,
+              "notes": "headline_only. A $1 trillion single-day loss across the Magnificent 7 constitutes a sharp equity selloff consistent with ECS-NSCC-LIQ (NSCC variation margin, liquidity, Supplemental Liquidity Deposits). Reach set to 2 / market_wide given the scale ($1 trillion loss across the largest US equities). No named DTCC participants; no further detail available from headline alone."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 2011,
+    "outputTokens": 896,
+    "totalTokens": 7280,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 6090
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

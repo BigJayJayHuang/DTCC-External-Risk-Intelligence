@@ -1,0 +1,40 @@
+{
+  "document_id": "06a2367a17bff190697c435a5d932a3c79463feab65dd0225d62db05ef9a922f",
+  "url": "https://www.federalregister.gov/documents/2026/10/16/2026-21215/stellus-capital-investment-corporation-et-al",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "f7db1739002c87338ffee4717d0449ae94795da60e588c701ba6d45ca42545d5",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_qRP4kTc3PS3JPSGSnZ0ctF",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a Federal Register notice titled 'Stellus Capital Investment Corporation, et al.' with headline-only content. There is no substantive information about any market event, regulatory action, member stress, cyber incident, or other outside event that maps to any card in the catalog. Stellus Capital is a business development company (BDC); the notice likely relates to an Investment Company Act exemptive application, which has no bearing on DTCC processes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4060,
+    "outputTokens": 140,
+    "totalTokens": 4200,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2040
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

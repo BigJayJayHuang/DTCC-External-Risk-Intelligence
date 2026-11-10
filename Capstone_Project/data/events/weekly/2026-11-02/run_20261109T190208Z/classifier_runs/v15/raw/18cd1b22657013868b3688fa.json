@@ -1,0 +1,55 @@
+{
+  "document_id": "50278f26e27112518a93690e7a0966bf7de95baf1b72bd1bdd1986cac6db2061",
+  "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1TbUlnbDNNQWlwMnEtUk42VFluM0ZkLUFSUDdrUndsVkw1M2VEcWc3cVBodmh3dGVfemUwdHlnV3haMXhjVDlmNkc1clE3U2wwdTFZSFFtRQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "1c6aa83b3d8416b5367fe824b53ef33f5aaf6c2c920e8efa5c291c618414ac75",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Zx3CkSFNDJ9HXy2Cv2XunO",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "South Korea's T+1 settlement plan is a non-US market event with no stated link to US markets or DTCC participants. ECS-SET-01 covers US settlement cycle changes; a foreign market shortening its cycle does not touch DTCC processes.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1414,
+    "outputTokens": 419,
+    "totalTokens": 5748,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3820
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

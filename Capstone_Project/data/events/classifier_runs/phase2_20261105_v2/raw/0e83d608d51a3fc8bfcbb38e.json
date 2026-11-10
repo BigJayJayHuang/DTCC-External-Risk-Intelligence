@@ -1,0 +1,40 @@
+{
+  "document_id": "22c2afdb33252b8bab220f0e5246e053848756b34bf856a16bbc607e68b400df",
+  "url": "https://www.fca.org.uk/news/press-releases/three-arrests-major-fca-operation-against-criminal-insider-dealing-ring",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "015c6349ce95ff3038ce8c8605010669f9ead1c05b0cb6261b6aca2bc2fc9ab6",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_qcWDela5ee7HoNiGGVjyca",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes an FCA/NCA law enforcement operation arresting individuals for insider dealing and money laundering. This is a criminal enforcement action against private individuals, not a market, regulatory, member/counterparty, infrastructure, or cyber event that maps to any card in the catalog. No DTCC process is touched."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4433,
+    "outputTokens": 109,
+    "totalTokens": 4542,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1732
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

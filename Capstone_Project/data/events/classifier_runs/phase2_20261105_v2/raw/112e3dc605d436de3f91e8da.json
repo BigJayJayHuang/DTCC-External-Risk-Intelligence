@@ -1,0 +1,40 @@
+{
+  "document_id": "08c3a4693c735fcbb3b071346e2df4cd831a715ed595e38ceff532e93e5c0fc2",
+  "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22258/self-regulatory-organizations-nyse-arca-inc-notice-of-filing-and-immediate-effectiveness-of-proposed",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ef6dd1a2ea1df95f87767b4a757c25655ebc66601a271259b08a119189529381",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_qgG7OPcj6jSgv20gXMdIt9",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only notice about NYSE Arca amending an internal rule (Rule 3.2(b)(3)(C)(ii)). No market event, member stress, infrastructure disruption, or regulatory change described that maps to any card in the catalog. The article contains no substantive content beyond the filing title."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4146,
+    "outputTokens": 112,
+    "totalTokens": 4258,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1731
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

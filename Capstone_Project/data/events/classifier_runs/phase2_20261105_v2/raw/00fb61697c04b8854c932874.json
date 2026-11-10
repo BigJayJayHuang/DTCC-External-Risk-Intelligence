@@ -1,0 +1,40 @@
+{
+  "document_id": "aca40441af58fae4614a33cec94fdc3a766880baed805795eb08fc8dec2b55d1",
+  "url": "https://www.federalregister.gov/documents/2026/10/22/2026-21579/agency-information-collection-activities-under-omb-review",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "9ea0cd9cf100f12a69d292c76992aae6a135601d812c12469c60bf0cdd715b69",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_HpOmsvkV3SObOyJk3XwcNv",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a routine Paperwork Reduction Act / OMB review notice with no market, regulatory, member, or infrastructure event described. It does not match any card's Step 1 trigger."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4152,
+    "outputTokens": 85,
+    "totalTokens": 4237,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1444
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

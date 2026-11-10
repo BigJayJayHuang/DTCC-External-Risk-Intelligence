@@ -1,0 +1,59 @@
+{
+  "document_id": "47278d30447049a77956d2b6bca160638f301c673f000cab581357b1706ac05e",
+  "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSXcxeU5qckhPME1ra0JNMTNVUVFnZjlmNmFRRGgxa09ZMVpxY2J4eGN6SE1JRUphZkFxSHRYVkJrUDRCaWF1Mjh1QVZNQ2hNOTJNSzU1NkVUVEthTXdaOHdPM1pybWx0Skx2cWFCZmxjNlZRdE14cmxTSHNXRTl5OG1OeUxDRF94bkNkb0NwMHlNN01mTEd4QUZ1MXJhOVpVZkVz0gGoAUFVX3lxTE9uSGJmbkhEdjUxcThKQjZmMjYtZUFRcm41b0ZKXzZFTGZ4YUlHZG9LOW1WSDBDSkNsOWFYN3RobWF3RG1RSF9CZXVNV3pQTWRQSjNyZHh2Q29rblRwaExCZzZaVy1zS1FzeDU5ZUhqb2c5VFNOMTlTQi13bmg2NThkSm1lUENtV3RRYTdLQUk1UVhKMHpwUWR4T3QzMjgwTUUweV9LX3NPMg?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "d2e1151b86f22b2cb008abcfcbccc2fa39f37c32799d543aeca8d76a1865d4c0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_p9TpomiCYn5RSjexiYqVYI",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "cyber",
+              "same_as_event_id": null,
+              "title": "French bank loses €100M in massive cyberattack",
+              "summary": "An unnamed French bank reportedly lost 100 million euros in a large cyberattack. No further details on the bank's identity, DTCC membership, or attack specifics are provided.",
+              "card_ids": [
+                "XE-CYBER"
+              ],
+              "certainty": 1,
+              "reach": 0,
+              "reach_basis": "single",
+              "named_participants": [],
+              "announced_date": "2026-11-07",
+              "effect_date": "2026-11-07",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "Inshorts",
+              "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSXcxeU5qckhPME1ra0JNMTNVUVFnZjlmNmFRRGgxa09ZMVpxY2J4eGN6SE1JRUphZkFxSHRYVkJrUDRCaWF1Mjh1QVZNQ2hNOTJNSzU1NkVUVEthTXdaOHdPM1pybWx0Skx2cWFCZmxjNlZRdE14cmxTSHNXRTl5OG1OeUxDRF94bkNkb0NwMHlNN01mTEd4QUZ1MXJhOVpVZkVz0gGoAUFVX3lxTE9uSGJmbkhEdjUxcThKQjZmMjYtZUFRcm41b0ZKXzZFTGZ4YUlHZG9LOW1WSDBDSkNsOWFYN3RobWF3RG1RSF9CZXVNV3pQTWRQSjNyZHh2Q29rblRwaExCZzZaVy1zS1FzeDU5ZUhqb2c5VFNOMTlTQi13bmg2NThkSm1lUENtV3RRYTdLQUk1UVhKMHpwUWR4T3QzMjgwTUUweV9LX3NPMg",
+              "evidence_quotes": [
+                "French bank loses 100 million euros in massive cyberattack"
+              ],
+              "confidence": 0.4,
+              "notes": "headline_only. Bank is unnamed and French-domiciled; DTCC membership and any US market linkage are unconfirmed. Reach set to 0/single as no major participant is identified. Certainty set to 1 as the event is reported but unverified from a low-tier aggregator source."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1705,
+    "outputTokens": 942,
+    "totalTokens": 6562,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5867
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

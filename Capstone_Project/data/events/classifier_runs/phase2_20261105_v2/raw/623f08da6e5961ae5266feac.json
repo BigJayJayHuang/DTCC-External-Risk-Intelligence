@@ -1,0 +1,40 @@
+{
+  "document_id": "e2138f2aa75a1947f0c9feffb11ba5c86b5fd611a16657134fc464069c71741a",
+  "url": "https://files.dtcc.com/download/assets/25153-26/6abf3636c8a811f1b9129ebdd6a8b805",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "7e2c799de626170834d8889038f6870be1704f0857f09b371b66012ac044db86",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_UUme3KEozZngTkDct2cQsy",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification (Important Notice) for a single security (International Consolidated Airlines Group S.A., CUSIP 459348108). It is an administrative/operational notice with no market event, regulatory action, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4155,
+    "outputTokens": 113,
+    "totalTokens": 4268,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1915
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

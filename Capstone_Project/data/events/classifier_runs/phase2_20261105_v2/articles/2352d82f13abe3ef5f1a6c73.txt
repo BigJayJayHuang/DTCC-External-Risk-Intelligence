@@ -1,0 +1,13 @@
+B25218-26
+
+DTC CHILLS | IRISH SEAS | RVL Pharmaceuticals PLC | G6S41R101 Notice: B25218-26 Summary: Please be advised that effective November 02, 2026, RVL Pharmaceuticals PLC (RVL), CUSIP G6S41R101, will be globally locked for all activity at DTC including Delivery Orders.
+
+This action is being taken following the resignation of the Transfer Agent, Computershare, without the appointment of a successor, and the securities’ delisting from primary exchange NASDAQ both occurring in 2023.
+
+This resulted in the security no longer meeting DTC’s eligibility requirements under Special Eligibility Agreement for Securities (SEAS) for Irish entities.
+
+RVL ceased to exist as a legal entity on September 5, 2025, pursuant to an order of the High Court of Ireland. The court order states that RVL’s assets had been realized to the extent possible and that no assets remained for distribution to shareholders.
+
+DTC is providing notice of one calendar week to allow clients to complete outstanding trades & resolve fails before the CUSIP is globally locked indefinitely.
+
+For further information on what a Global Lock at DTC means, please refer to the SEC Investor Bulletin on DTC Chills and Freezes: https://www.sec.gov/investor/alerts/dtcfreezes.pdf

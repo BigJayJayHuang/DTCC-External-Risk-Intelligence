@@ -1,0 +1,65 @@
+{
+  "document_id": "3672331c4e9b915236bdbd11b5318604deab5f0fcc23227631194bb446ba0b4e",
+  "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQY2RENTBmVGo5XzBoNnZzUkdvNk5lWEVycE5nbnkyMmZQc2ZzZWl5Y3hmOFYxOFdKejJ2cktVMFZzajVmVDZ1TV9ndlhOVmh6Wkg4QjVRNEJLQS1pcFh3ME9qQXAtRkZ5T3RlQktxQ3lNelh6ckcxdEU3YlpBcTcxMEVKdmw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "7a353d197de70b98655a1ae9f346a769d745cf3c0b6d12f4e49bbc5d45045873",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_txF3Mwv4bBR7glUYdNvVWy",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "firm_specific",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "Marshall Wace and Millennium hit in October AI rout",
+              "summary": "Hedge funds Marshall Wace and Millennium suffered losses during an AI-driven market selloff in October 2026. The headline indicates broader hedge fund stress but provides no detail on magnitude or asset class.",
+              "card_ids": [
+                "FICC-GSD-11",
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 1,
+              "reach_basis": "group",
+              "named_participants": [
+                "Marshall Wace",
+                "Millennium"
+              ],
+              "announced_date": "2026-11-03",
+              "effect_date": "2026-11-03",
+              "stage": null,
+              "source_tier": "major_media",
+              "outlet": "Financial Times",
+              "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQY2RENTBmVGo5XzBoNnZzUkdvNk5lWEVycE5nbnkyMmZQc2ZzZWl5Y3hmOFYxOFdKejJ2cktVMFZzajVmVDZ1TV9ndlhOVmh6Wkg4QjVRNEJLQS1pcFh3ME9qQXAtRkZ5T3RlQktxQ3lNelh6ckcxdEU3YlpBcTcxMEVKdmw?oc=5",
+              "evidence_quotes": [
+                "Marshall Wace and Millennium hit as hedge funds suffer in October's AI rout"
+              ],
+              "confidence": 0.45,
+              "notes": "headline_only. Two named hedge funds (Marshall Wace and Millennium) are confirmed as suffering losses in an October AI-driven market rout. The headline does not specify whether losses are in equities, Treasuries, or repo, so both FICC-GSD-11 (hedge fund stress in Treasury/repo) and ECS-NSCC-LIQ (equity selloff) are plausible but unconfirmed. Reach set to group (multiple hedge funds affected) rather than major_participant as neither firm is confirmed as a DTCC major participant from the text alone. Certainty 2 as the event is reported as having occurred."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1858,
+    "outputTokens": 842,
+    "totalTokens": 7073,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 6122
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

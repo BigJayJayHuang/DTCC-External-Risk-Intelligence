@@ -1,0 +1,40 @@
+{
+  "document_id": "2ffb9b29fa5ce0778284d789eb21315c408b4404ae3a8870c87c8c8f241de60d",
+  "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFAyOEh4VnFmV2x6OGhWcC1NbFdubU1mcnNFYTI1ZW5LZWVqU000dzRZYU1oT2FOVVBpdFh5UGY1aEg4MWZmaEEycW56c1hvakthbzlueGNmaVVaSU9tM1J2UmExQU1nSjI1TEE2UGw5NXBUN1RZeXc?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "dc3080fd16945f2bc9bfe0d921d64826903a8e552f388a430f4c0dced6a1bfac",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_pNQp0fkZ5GBqFBK4Q2ffPB",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a China bond market selloff affecting domestic wealth management product NAVs. This is a China-specific event with no direct connection to any DTCC process described in the card catalog. No US Treasury market, US repo, US equity, MBS, or DTCC member stress angle is present in the article text."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4297,
+    "outputTokens": 111,
+    "totalTokens": 4408,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1899
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

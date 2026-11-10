@@ -1,0 +1,57 @@
+{
+  "document_id": "c2e3a3175cf194c1b5cf3c33efaf1d8d4c62034de8ca27e27102b6c5acc46c80",
+  "url": "https://www.federalregister.gov/documents/2026/11/05/2026-22561/self-regulatory-organizations-financial-industry-regulatory-authority-inc-notice-of-filing-and",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "4335789cf01b100bb67f042f11e29d96f28effe56f1cab207bfb888f11ac32d1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_6zcxPfpeoTHwOJjo0dHL7P",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "FINRA continuing education rule for senior leaders (Rule 1240.03) — internal broker-dealer personnel training requirement with no link to any DTCC clearing or settlement process described in the card catalog.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1819,
+    "outputTokens": 441,
+    "totalTokens": 6633,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2910
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

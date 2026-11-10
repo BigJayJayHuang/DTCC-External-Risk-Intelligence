@@ -1,0 +1,40 @@
+{
+  "document_id": "b957c0d943df5c67e2d4fcb396fcee00c7bbe3237e427f3d8d2919fabf5e498a",
+  "url": "https://www.federalregister.gov/documents/2026/10/13/2026-20807/self-regulatory-organizations-nasdaq-texas-llc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "7d4d45ed8e67347443e21b73da6b03632188714e9af29fc695a904e2c652fbda",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_J5ikvVWGuNqWCsMAYCPIvg",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a Nasdaq Texas rule change amending its 'Clearly Erroneous Transactions' rule (Equity 11, Rule 11890). This is an internal exchange rule housekeeping change with no risk angle matching any card's Step 1 trigger — it does not describe a market event, member stress, cyber incident, settlement cycle change, Treasury clearing mandate, or any other outside event that touches a DTCC process."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4157,
+    "outputTokens": 136,
+    "totalTokens": 4293,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2137
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

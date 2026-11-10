@@ -1,0 +1,40 @@
+{
+  "document_id": "1c639577255721b2ff87ad6e3eb6cb2f21a06d4d5c6a703809fe9733f2ff5c07",
+  "url": "https://files.dtcc.com/download/assets/MBS1611-26/9925ed90d17111f1ac7f8ed39b037a9a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "2d7f0557f2330c23bafa1f4ef53b1f7e80ca6a854c426362ae398d2fe53dd5ac",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_0NxXcj34JefQ9rb0ZsTlJX",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal participant notice (MBS1611-26) announcing a 'Final Retire Notice' for J.P. Morgan Securities LLC participants JFAT & JFAU. It is an administrative/operational housekeeping notice with no outside market, regulatory, member stress, or infrastructure risk event described. No card in the catalog covers participant retire/deactivation notices of this type."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4132,
+    "outputTokens": 131,
+    "totalTokens": 4263,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1976
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

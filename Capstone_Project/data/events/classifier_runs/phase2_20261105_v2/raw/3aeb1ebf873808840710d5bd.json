@@ -1,0 +1,40 @@
+{
+  "document_id": "7208058fd586b7a278966ee963eeb61b7f3afa0b10be8b555e85d02ef0ab7fdf",
+  "url": "https://files.dtcc.com/download/assets/24820-26/85bc1bd6c80111f1889dbe8b9adb5281",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "6e58438d31e7c3ab0c9cc0d89404094e2b2da23a77c3649f3cf485b2b979702d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_BDwT3aYiNpapZkEFJqehD1",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification (Important Notice) for Evotec SE (CUSIP 30050E105) issued by JPMorgan Chase Bank, N.A. It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4159,
+    "outputTokens": 118,
+    "totalTokens": 4277,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1976
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

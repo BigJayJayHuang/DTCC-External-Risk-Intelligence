@@ -1,0 +1,40 @@
+{
+  "document_id": "caaa3629fc4ee811809f50b2a2651d888960ee9d731617a95c3c496b995c5a5a",
+  "url": "https://www.federalregister.gov/documents/2026/10/22/2026-21575/self-regulatory-organizations-long-term-stock-exchange-inc-notice-of-filing-and-immediate",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "8388d91e62e953ea0cfa0b116f349a32d039e2244d4797cd16ea55a284b693d9",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_DxCaCsSxwP1YQfManpG8wl",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a Long-Term Stock Exchange proposed rule change modifying listing rules for dually-listed securities. This is an exchange listing rule administrative matter and does not describe any outside event matching a card's Step 1 trigger (no market stress, no clearing mandate, no member default, no cyber event, no settlement cycle change, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4139,
+    "outputTokens": 114,
+    "totalTokens": 4253,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1912
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

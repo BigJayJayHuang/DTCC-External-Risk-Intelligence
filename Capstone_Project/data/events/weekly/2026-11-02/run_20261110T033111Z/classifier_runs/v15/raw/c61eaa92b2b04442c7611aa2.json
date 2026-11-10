@@ -1,0 +1,57 @@
+{
+  "document_id": "7b3aa4207e1e1380dc5addc5a01515f2c083ebeabdee00e949e583d2843b1fb1",
+  "url": "https://www.federalregister.gov/documents/2026/11/03/2026-22398/formations-of-acquisitions-by-and-mergers-of-bank-holding-companies",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "36622af5944a319ae72b4adc219d0745bfea8dd810510eb73172097eec5381c7",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_TUYVNpLZk4ntOoXaTqa2FV",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline-only Federal Register notice about routine bank holding company formations/acquisitions/mergers. No specific firm stress, default, downgrade, or other event matching any card's Step 1 is described. Generic regulatory notice with no concrete risk event.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1737,
+    "outputTokens": 451,
+    "totalTokens": 6561,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3108
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

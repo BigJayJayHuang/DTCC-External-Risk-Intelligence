@@ -1,0 +1,40 @@
+{
+  "document_id": "7b7f5adf10a3b9f7d2f15801022a04c9ad7ad47f2d2276cf4292a8783db3fe7a",
+  "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.mp261029~9a493adf17.en.html",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "47a08484ee90ff9c1b1225d42b46b21fae0b5fd8d09df310754b870b537de35e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_KBNpmUcrEFAV3NTyZhoh2v",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article contains only the headline 'Monetary policy decisions' from the ECB with no substantive content. There is no described event, market move, regulatory action, or participant stress that maps to any card in the catalog. The content_scope is 'headline_only' and the text provides no actionable information."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4059,
+    "outputTokens": 110,
+    "totalTokens": 4169,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1569
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

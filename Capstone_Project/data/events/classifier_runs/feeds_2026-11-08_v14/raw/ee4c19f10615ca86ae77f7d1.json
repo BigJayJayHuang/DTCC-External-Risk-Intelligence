@@ -1,0 +1,40 @@
+{
+  "document_id": "d745860cdddc6a5ce18f5aaecd3ef6f3f1c395c6a84c130fedbfe4e412bbe15e",
+  "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQSndhMllGRXdPQnBnQ0FrM3MwV0VLc2l2VUNyMHl1aC1oWXMyMVh1QThVaUM1ajliWDZVOFRDZGRFby1WZWtTQ3BKaEJkZDJheHFMbDRzUzN4TElwUmFlME1MOUhqVjhhNlZFWllHU3JZRmR2Y0ZoNFhwYmhKZTZsWm01MXMxb25CV3QzSE41Y05aNWo3ZWlsdXU4QmhtSEpFMW9kUjBibw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "6048fec50c41d560cc77278fbdbe206ee1f27a0fb864ae02e7856644ee908b42",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_c9a804rIQnSkHd0DLgD1Ap",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Cyberattack targets the Moldovan government, not a US financial market participant or DTCC-connected entity. No stated link to US markets, DTCC participants, or any card's Step 1 scenario."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1485,
+    "outputTokens": 91,
+    "totalTokens": 5284,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1632
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

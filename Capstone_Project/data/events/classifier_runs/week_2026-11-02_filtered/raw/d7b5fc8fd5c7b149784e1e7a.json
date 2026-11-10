@@ -1,0 +1,40 @@
+{
+  "document_id": "c16bc85cc09118c5e28fe6aad320dbb82e357fb887fb0548de58ebe883f04d4f",
+  "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQVkVocHY2djBJSWlTckdUS3IxS0hVNXJwblpaRXpYX1dsS215cjRLb1ZzYTB6MWVRQ0JoNV9Yck93VVRxQzdReXRkOTNyVEdtd2lGckdaQ1JvblFKRnhHVzFhMzJWdnVSMUVITzFIZ2JiQnJvRjNJajhvXzhkS1ZvdU1aRFktNE80R0pMQVBOMmxuaFdsd3hZSWVxUTkycUN0S1E?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "744e087b2fcc259e9ccf8cb8bff6b2cef7a77c72e8d18af497667d68a8caacc9",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_d1j5Jy4qCovlaG27gCMxoK",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a headline snippet only ('Dollar Rises as Global Stock Market Selloff Spreads') with no substantive content. While a global stock market selloff could in principle touch ECS-NSCC-LIQ, the article provides no facts, figures, participants, or details beyond the headline — insufficient to support any evidence quotes or card assignment."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4314,
+    "outputTokens": 120,
+    "totalTokens": 4434,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1922
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

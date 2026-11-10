@@ -1,0 +1,40 @@
+{
+  "document_id": "9eadc21a517cd05484fc050dbcea21d30e3da5e3f77d38dc720cd87b75dbd882",
+  "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261029~e9b57c3495.en.html",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "12a31a8a8097f02bd5bf16fc087a58abcf43d9c5979c0150024e5ccada689a3b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_9XUEKs14iHkob5UO1LjLuC",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only ECB speech about next-day securities settlement, tokenisation, and European financial infrastructure transformation. It concerns European (ECB/EU) market infrastructure, not a US market event or regulatory action that touches any DTCC card's Step 1 trigger. No card in the catalog covers European settlement reform or ECB tokenisation initiatives."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4092,
+    "outputTokens": 118,
+    "totalTokens": 4210,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2008
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

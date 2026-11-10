@@ -1,0 +1,40 @@
+{
+  "document_id": "28ecdf5762805e2175a1e29596d3611e1a217be1d35fcdceab97188081662947",
+  "url": "https://files.dtcc.com/download/assets/GOV2278-26/dea3f09ed3c711f1bca83614c0f1364f",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "39123740b6de292475c40b87326ccc6910c22d37cc5d2db85d27b357d624a037",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_LjiWuaw9muxVeyHLwlRCXR",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing BNP Paribas Securities Corp. as a new Agent Clearing Member of FICC GSD. It is a routine membership/onboarding administrative notice with no outside risk event described. It does not describe a market event, regulatory action, member stress, or infrastructure disruption that maps to any card's Step 1 trigger."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4149,
+    "outputTokens": 125,
+    "totalTokens": 4274,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1814
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

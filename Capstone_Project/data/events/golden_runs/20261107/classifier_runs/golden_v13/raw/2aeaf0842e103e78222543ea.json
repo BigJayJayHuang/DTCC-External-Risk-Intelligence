@@ -1,0 +1,40 @@
+{
+  "document_id": "872357177a1d94dbd6c227ef19d6e47bbff27dea43ef99224508c4dbb6ebd3f8",
+  "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPMElhUGVBRThETlplSjM2LTdKWFdqWlRwUDEtTmQxLTFldTU3QW5CeEV4QzJQUHZsbmU2SEVpVm1YV1ZGNGM3MlNGc0wzMGQ0S3FyX3hrSTlfRmJEZHpsVXhTUWNwZXZ4N0djR0kyU3BKM1NiYlNnMnRCWVlyZkJ3dnN0YTd5M1RYb2huZGtfOVpHbkFHandrbnljVnE2WlZwcUM2WlNsVF9vMmRNa3lSNWoxWGs1VXFZWFRJcQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.3:aab5ad825775",
+  "request_sha256": "fad4b1c9d52ae4cb5e5d1231aa1ad8a77faa0bea5317ee45577cedaeb39d052a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_F3y0dO21jGgcSaGEbpwPhs",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline-only item. States a flight-to-safety move into Treasuries during a tech-led stock selloff, but provides no concrete detail about the magnitude of the selloff, margin calls, liquidity stress, or any other specific event that would map to a card's Step 1. Too vague to classify as a market-wide equity selloff (ECS-NSCC-LIQ) or Treasury yield swing (FICC-GSD-01) without additional facts."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1520,
+    "outputTokens": 149,
+    "totalTokens": 4749,
+    "cacheReadInputTokens": 3080,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2513
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

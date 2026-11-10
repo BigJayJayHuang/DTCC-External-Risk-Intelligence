@@ -1,0 +1,57 @@
+{
+  "document_id": "a1f0774de14421e4eb0b16a5626925ba71527429ebd2e0ff8ac687d0e348d445",
+  "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNVC1FdzU0cDRIWEl3TXpfZ0wwdGNSVmhfekpJdGotTEIwQWxVVHBmc3BpR2l2OHpJdExYMy1GdlBsWFJQOHkzUEMzQ0xDb0pGX2kxNGJLZGFlNE42U2tjVEk3Tnl3X3JCZ3g3UWRoS2FrVVVsYjctdk81ZVdWdGFjT3JLRFdLZVVlNkhZa2h4NDc1Ml83di1KQ1BLSklHWE95bU5nRHhoTHQyNzQ0VjQ5c0lKRQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "ed33d387c6c329001e22b089ede71946c6d3e696d9b41bb90c4820c31a2515ee",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_UGBrw7u04B6EADieR3597X",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Non-US event (Argentina peso debt/bonds) with no stated link to US markets, DTCC participants, or any catalog card. The query hint to FICC-GSD-02 is not supported by the text.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1504,
+    "outputTokens": 447,
+    "totalTokens": 6324,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3386
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

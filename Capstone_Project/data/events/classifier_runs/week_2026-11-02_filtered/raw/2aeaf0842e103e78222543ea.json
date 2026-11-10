@@ -1,0 +1,40 @@
+{
+  "document_id": "872357177a1d94dbd6c227ef19d6e47bbff27dea43ef99224508c4dbb6ebd3f8",
+  "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPMElhUGVBRThETlplSjM2LTdKWFdqWlRwUDEtTmQxLTFldTU3QW5CeEV4QzJQUHZsbmU2SEVpVm1YV1ZGNGM3MlNGc0wzMGQ0S3FyX3hrSTlfRmJEZHpsVXhTUWNwZXZ4N0djR0kyU3BKM1NiYlNnMnRCWVlyZkJ3dnN0YTd5M1RYb2huZGtfOVpHbkFHandrbnljVnE2WlZwcUM2WlNsVF9vMmRNa3lSNWoxWGs1VXFZWFRJcQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "d9881b3fd2424b124d503de80d718341fc66bba61e1a564eab85e0a0ca3194e2",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_n6k4V662kgiO5cV3ojc40w",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a headline snippet only — 'Traders flock to Treasury market for safety as tech-led stock selloff deepens' — with no substantive content beyond the title. While a tech-led stock selloff could in principle touch ECS-NSCC-LIQ or FICC-GSD-01, the article provides zero factual detail (no magnitude, no named participants, no market data, no regulatory action) to support any card assignment or evidence quotes. A headline alone with no body text is insufficient to classify as a relevant event."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4352,
+    "outputTokens": 163,
+    "totalTokens": 4515,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2451
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

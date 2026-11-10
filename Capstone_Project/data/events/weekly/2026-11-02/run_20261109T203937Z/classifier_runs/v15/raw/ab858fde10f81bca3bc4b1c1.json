@@ -1,0 +1,57 @@
+{
+  "document_id": "98504d48ed1dccb338e11b78761ca2a30b9f6cff8066d93fd72831b999777b8f",
+  "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBvcTV6TVpka1N1Y2tteHVVRmxZZFhjSTFmLU00RmVwN29iS1g2V1pHVzRqdWtNQkFHWmFOMFc2OThvYnNiM0JhU3JycmctWlkteUlSTTFWUkV5aExzNzg4TU4tRzRMdnhwN1AzMDVsOVFqZw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "20371abf5f6f93f09a785c9360602152c783fac306c076a2da86e8ab7ec590aa",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_wUlLcqT2oeOHwXHyu2U2Rp",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Cyberattack targets French blood banks — a non-financial, non-US entity with no stated link to US markets, DTCC participants, or any covered financial infrastructure. Out of scope.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1408,
+    "outputTokens": 440,
+    "totalTokens": 6221,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2813
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

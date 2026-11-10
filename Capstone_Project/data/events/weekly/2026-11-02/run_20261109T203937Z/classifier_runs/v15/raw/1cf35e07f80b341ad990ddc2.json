@@ -1,0 +1,57 @@
+{
+  "document_id": "8f8f3c3ca63ab3849404c2f65f65c83d2bf32997d14c0bd0c13eebba0ed3ab30",
+  "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNNFBlcTAtVnJZaXpEbTlZTkFwb09WWHktX0EzSDF1Q09KVDdSVTVOeUs5QTZEWlpTM2V3NzFRb2lQUjQ0OXh2Xzd2ckhJc3pCWHQxeTZZU004RTg0MUNvWkE4aW1HQ194bTJWeHNPeDI2UlVpS0NMRHV5M0xpZkh2ak5STk4?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "3d7139f66852dba109c9329e4bef607e297d60090d1d8f69028c6ddb9215cd19",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_DnucgSH34DKtbBN7dbuPf0",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline concerns UK bank rate rise and its effect on tracker mortgages in the UK market. No stated link to US markets, US MBS, DTCC, FICC or any catalog card. Non-US event with no US link mentioned.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1442,
+    "outputTokens": 451,
+    "totalTokens": 6266,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3168
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

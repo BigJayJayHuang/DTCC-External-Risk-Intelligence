@@ -1,0 +1,40 @@
+{
+  "document_id": "1d8e2bdb6a96372172d18fba3eed1573544e9a87f25b0f89da7a5b4a47035f5f",
+  "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22272/notice-of-potential-change-to-increase-maximum-fixed-dollar-amount-for-alternative-compliance",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "02cecbbc1e6f4eb6d04d75e16192f76adc523a4b0348607e2788fa662e027cdb",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_yTRNNTnKX0HxVdAvHmNdWg",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article concerns an SEC notice about the alternative compliance mechanism for security-based swap dealers with limited security-based swap activities. This is a swap dealer regulatory matter and does not map to any card in the catalog — it does not touch Treasury clearing, repo, equity settlement, MBS, member stress, cyber, or any other covered DTCC process."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4152,
+    "outputTokens": 114,
+    "totalTokens": 4266,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1931
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,57 @@
+{
+  "document_id": "2d4cce0bb25cf78f7f8118786d7229755c2c4aa20e7743e2ab64e7763fd8a701",
+  "url": "https://www.sec.gov/newsroom/press-releases/2026-112-sec-adopts-amendments-update-definitions-small-entity-investment-companies-investment-advisers",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "635bc70e53cd355d118a8db4a7192bf402ee2eefe1731548ac99ff9b22f5ea3a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_3CPbDTn49tXCqt7dAARPog",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "Regulatory amendment concerns definitions of \"small entity\" under the Regulatory Flexibility Act for investment companies and investment advisers. This is an administrative/definitional rule with no connection to any card's Step 1 (no Treasury clearing, no settlement cycle change, no market stress, no member default, no cyber event, etc.). No card in the catalog covers this type of rule."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1796,
+    "outputTokens": 477,
+    "totalTokens": 6646,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3574
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

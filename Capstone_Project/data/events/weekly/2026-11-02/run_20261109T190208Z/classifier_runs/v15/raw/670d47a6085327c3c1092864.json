@@ -1,0 +1,59 @@
+{
+  "document_id": "675e0e8de4aaf20e754c7e3e8008f390c8e133ea83cd6cbc509033c30e690327",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1fVzhWaTBRTTZaa3liaU9QSGsyV1RhWGZLOFhRamh0am9kaFc0aEI5RWREUGkyWHhsdkg1NEMzQkV1cnhnb0NEVEhXamZ3NzVXRjBSS28tbzhWV2NaVk1QYzBJUXFkQ2V1aWozVg?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "c3d7bded512a18b0e845da995556ceec4413387b564cf153a7f6862e759cce09",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_n2ByAYwg6HtP4JdPAOwGro",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "regulatory",
+              "same_as_event_id": null,
+              "title": "Non-US market pursuing T+1 settlement transition in 2028",
+              "summary": "A non-US market (source outlet is Korean) is reported to be pursuing a T+1 settlement cycle transition in 2028, marking the first change to its stock settlement cycle in 50 years. No direct link to US markets or DTCC participants is stated.",
+              "card_ids": [
+                "ECS-SET-01"
+              ],
+              "certainty": 0,
+              "reach": 0,
+              "reach_basis": "single",
+              "named_participants": [],
+              "announced_date": "2026-11-02",
+              "effect_date": "2028-01-01",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "뉴스웍스",
+              "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1fVzhWaTBRTTZaa3liaU9QSGsyV1RhWGZLOFhRamh0am9kaFc0aEI5RWREUGkyWHhsdkg1NEMzQkV1cnhnb0NEVEhXamZ3NzVXRjBSS28tbzhWV2NaVk1QYzBJUXFkQ2V1aWozVg?oc=5",
+              "evidence_quotes": [
+                "Stock settlement cycle changes for the first time in 50 years...Pursuing a 'T +1' transition in 2028"
+              ],
+              "confidence": 0.3,
+              "notes": "headline_only. Outlet is Korean (뉴스웍스), suggesting this refers to the South Korean market, not US markets. No stated link to US markets or DTCC participants. Certainty set to 0 (pursuing/planning language). Effect date estimated as 2028-01-01 as no specific date given. Reach set to 0 as this appears to be a non-US single market with no stated DTCC connection. Relevance is marginal; classified as relevant only because T+1 settlement cycle changes are within ECS-SET-01 scope, but confidence is low given the apparent non-US context."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1435,
+    "outputTokens": 771,
+    "totalTokens": 6121,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 10059
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

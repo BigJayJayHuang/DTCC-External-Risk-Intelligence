@@ -1,0 +1,54 @@
+{
+  "document_id": "443db35850df326e760b0934871e1faf617207399e29faf8a72e5c903868c304",
+  "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBRNnh5WnBreUdPWG5NVlMwWUNhMUpjTnltaENLNTh2aVp6NWJJT0V3N0E4Unh2VHdZVTRzSDdhNVdLUzlOV25EbllMeVlZaUVSNXVtcmQzN1BZdS1JeGFNbkNFOFlfeENmZHp3RmFDRzhIR3JW?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "3dfb7401b30717c5a5c59af2332f8a3ea0e55ada00d78bd6c7567d659bbbd201",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_S8jKuv2SmbFpWKqJXce6QL",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Bank Rakyat is a Malaysian bank, not a DTCC participant or US financial market participant. The cyberattack is on a non-US institution with no stated link to US markets or DTCC processes. XE-CYBER requires a large participant or vendor in DTCC's ecosystem.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1456,
+    "outputTokens": 408,
+    "totalTokens": 5549,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5781
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

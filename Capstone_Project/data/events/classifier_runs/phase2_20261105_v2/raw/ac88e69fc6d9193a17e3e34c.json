@@ -1,0 +1,40 @@
+{
+  "document_id": "98837189d81f0775310bf3d8c97d152ee970b9d586e8eab3ee9757962778bd51",
+  "url": "https://www.esma.europa.eu/press-news/esma-news/new-qas-available-27",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "1f408bf38b1bc43b63a79c2f1a0dd805f3f703f1a5b0d879df699390bb58cc23",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_J38x811lqkGJk8TEeAIGIo",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article contains only the headline 'New Q&As available' from ESMA with no substantive content. It does not describe any outside market, regulatory, member, infrastructure, or cyber event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4043,
+    "outputTokens": 93,
+    "totalTokens": 4136,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1326
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

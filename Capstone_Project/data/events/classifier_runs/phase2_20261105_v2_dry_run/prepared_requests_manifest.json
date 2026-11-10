@@ -1,0 +1,6 @@
+{
+  "file": "prepared_requests.jsonl",
+  "sha256": "92de5967cf1a4a1289c88a03a2386a14082016cebd96ffa927ce50eb9b909468",
+  "requests": 481,
+  "distribution": "Requests are built locally by --dry-run and excluded from Git to avoid repeated full prompt copies; rebuild from the frozen news, prompt, register and config."
+}

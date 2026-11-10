@@ -1,0 +1,205 @@
+{
+  "tools": [
+    {
+      "toolSpec": {
+        "name": "submit_event_classification",
+        "description": "Submit the classification record specified by the system prompt.",
+        "strict": true,
+        "inputSchema": {
+          "json": {
+            "type": "object",
+            "properties": {
+              "classification": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "is_relevant": {
+                        "const": true
+                      },
+                      "same_as_event_id": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "summary": {
+                        "type": "string"
+                      },
+                      "card_ids": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "ECS-DTC-01",
+                            "ECS-NSCC-03",
+                            "ECS-NSCC-08",
+                            "ECS-NSCC-09",
+                            "ECS-NSCC-LIQ",
+                            "ECS-SET-01",
+                            "FICC-GSD-01",
+                            "FICC-GSD-02",
+                            "FICC-GSD-03",
+                            "FICC-GSD-11",
+                            "FICC-MBSD-01",
+                            "FICC-MBSD-02",
+                            "XE-CYBER",
+                            "XE-DISRUPT",
+                            "XE-MEMBER",
+                            "XE-SETTLEBANK"
+                          ]
+                        },
+                        "minItems": 1
+                      },
+                      "certainty": {
+                        "type": "integer",
+                        "enum": [
+                          0,
+                          1,
+                          2
+                        ]
+                      },
+                      "reach": {
+                        "type": "integer",
+                        "enum": [
+                          0,
+                          1,
+                          2
+                        ]
+                      },
+                      "reach_basis": {
+                        "type": "string",
+                        "enum": [
+                          "market_wide",
+                          "business_line",
+                          "major_participant",
+                          "group",
+                          "single"
+                        ]
+                      },
+                      "named_participants": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "announced_date": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "format": "date"
+                      },
+                      "effect_date": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "format": "date"
+                      },
+                      "stage": {
+                        "anyOf": [
+                          {
+                            "type": "integer",
+                            "enum": [
+                              1,
+                              2,
+                              3,
+                              4
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "source_tier": {
+                        "type": "string",
+                        "enum": [
+                          "regulator",
+                          "dtcc",
+                          "issuer_filing",
+                          "official",
+                          "major_media",
+                          "other"
+                        ]
+                      },
+                      "outlet": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "type": "string"
+                      },
+                      "evidence_quotes": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "minItems": 1
+                      },
+                      "confidence": {
+                        "type": "number"
+                      },
+                      "notes": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "is_relevant",
+                      "same_as_event_id",
+                      "title",
+                      "summary",
+                      "card_ids",
+                      "certainty",
+                      "reach",
+                      "reach_basis",
+                      "named_participants",
+                      "announced_date",
+                      "effect_date",
+                      "stage",
+                      "source_tier",
+                      "outlet",
+                      "url",
+                      "evidence_quotes",
+                      "confidence",
+                      "notes"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "is_relevant": {
+                        "const": false
+                      },
+                      "notes": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "is_relevant",
+                      "notes"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              }
+            },
+            "required": [
+              "classification"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    }
+  ],
+  "toolChoice": {
+    "tool": {
+      "name": "submit_event_classification"
+    }
+  }
+}

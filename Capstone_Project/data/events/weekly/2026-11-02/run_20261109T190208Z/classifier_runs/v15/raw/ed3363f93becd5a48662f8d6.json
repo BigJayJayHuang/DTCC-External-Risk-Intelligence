@@ -1,0 +1,55 @@
+{
+  "document_id": "ebf16e1bdd193c0888d68c132641121d0a7e7d45b686fc8931e7c16a05e67f5a",
+  "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5GSS1BMkJ5ek5jM2pjbGtJNUdWU25sUmxScVJzTTNod250OU4wbjlISW9kSUlOcVV6QWNHQlhZdzJrdlFZTmVjNVdNdXJLNkRQbEZLRzhJN0ZVbHNLRVNz0gFkQVVfeXFMTmlieUFGN1VLVkVpSllsWTc5N2lXYk1LeWtDb0J6czdiTTVnVFZmMXJLSDR3ajhhbnJKbE5wYjdjS2kzdXltWlM0d3UzaDNINUJxMnk4d3pZdFZfOVVISEV6UFZpTQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "d6f8e2b5f50b2294daf0916ce5954aa489924a495be7726d884eb936632c40f0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_fsvE6rW2DzPoZMDhKHx3so",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Consumer-facing listicle ranking mortgage lenders. No market event, no regulatory action, no firm stress, no operational issue. Does not describe any event matching a catalog card's Step 1.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1510,
+    "outputTokens": 403,
+    "totalTokens": 5828,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3120
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

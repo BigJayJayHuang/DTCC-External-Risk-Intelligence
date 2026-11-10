@@ -1,0 +1,40 @@
+{
+  "document_id": "9d469783facbe0564e1b8c0eb6a75de20913895d3732b4d1fc56c002c05bba9e",
+  "url": "https://files.dtcc.com/download/assets/24783-26/23ef22c4d6fa11f1ac22661b1cd0e824",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "b213d929004b59b7aa2ceee3ff510907f722a2fb772742312a9dd0e1159a0312",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Tc6q2e6DiiyX2CthG2tDqh",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a tax relief corporate action (dividend) for Naturgy Energy Group, S.A. (a Spanish security). It is routine DTC corporate actions/tax relief notification with no risk angle matching any card's Step 1 trigger. No market event, regulatory change, member stress, or infrastructure issue is described."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4175,
+    "outputTokens": 117,
+    "totalTokens": 4292,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1966
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

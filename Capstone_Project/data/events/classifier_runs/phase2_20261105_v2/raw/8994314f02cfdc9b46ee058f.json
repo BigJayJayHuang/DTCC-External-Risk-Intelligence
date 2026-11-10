@@ -1,0 +1,40 @@
+{
+  "document_id": "dbe2801184e0e81481d8e11d3f0358e66897c8468ac373dc66c597f552d4aca9",
+  "url": "https://www.fca.org.uk/news/press-releases/fca-stops-htxs-crypto-promotions",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "49d21294af18a3df99e4d8d1751f17d13390a7eaeb61bd1fa4eec6b0a877e790",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_A2HknL9Ntcp8UJ5m31vCgr",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes FCA enforcement action against HTX (Huobi), a crypto exchange, for illegal UK financial promotions. This is a crypto regulatory matter with no connection to any DTCC process described in the card catalog. HTX is not a DTCC member, and the event does not touch Treasury clearing, repo, equity settlement, MBS, or any other DTCC-relevant market infrastructure."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4606,
+    "outputTokens": 128,
+    "totalTokens": 4734,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2211
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

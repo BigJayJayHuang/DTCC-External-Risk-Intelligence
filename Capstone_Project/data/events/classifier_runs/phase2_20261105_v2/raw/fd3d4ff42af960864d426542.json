@@ -1,0 +1,40 @@
+{
+  "document_id": "643d15ab6c60ae0bb81d6e3f78b064d52b6625dff21f3aebf4412459ea53e132",
+  "url": "https://www.fca.org.uk/news/press-releases/liam-coleman-appointed-chair-financial-ombudsman-service",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "7c8014d11084d513e5612727a1d23f3596aa99ee5d1ffe740edad2d880a04dd8",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_j6LLOi5wCwq57tOH1FAiGR",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article reports the appointment of Liam Coleman as chair of the UK Financial Ombudsman Service. This is a UK regulatory/administrative staffing announcement with no connection to any card's Step 1 trigger (no market event, no member stress, no clearing mandate, no cyber/infrastructure issue, no settlement disruption)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4590,
+    "outputTokens": 111,
+    "totalTokens": 4701,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1937
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,57 @@
+{
+  "document_id": "2298ba9718c72d479b2cb270fda9a10d8d65fcb19e66d09b587fb987db464aea",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5TcXJHRFJSTDRZM0xHU1JFRk9Td0N0d24tc0cwbUxQaTdLbzdoUEJKVktMN1dseXRfZ0cwQ1NvTDZlNDVPSkl4dW5BdENrZ24yZkE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "6de20e708d00cc0b1923c038b4e3f2a20aeacd5d9b52f34e1d964aabd9ffccdb",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_gRCxkWCfayf6g12qZOo74a",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Explainer/listicle reviewing historical VIX spikes. No new concrete event described; purely retrospective educational content with no specific market move, firm stress, or regulatory action.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1809,
+    "outputTokens": 437,
+    "totalTokens": 6619,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3063
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

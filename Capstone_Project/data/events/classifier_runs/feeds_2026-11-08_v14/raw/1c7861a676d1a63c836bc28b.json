@@ -1,0 +1,40 @@
+{
+  "document_id": "768418a04182717e2703ab042c4d7be8740bcf8dc2e3628a6ca330b41fabbd05",
+  "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBEaGVvSHRZc1hOR25USlVjSXlrYVRSb3k2by1VZHMwRTFpREVOVEVjX0FwN0Z5azFwVHk5T0RoT1BuNHZGQ3ROMXFDbDFQN3g1TVFQWXpNUWd4UUR6LW80Sk8zNXQ5YndDMVV2Znl0UjlxZ0xmcEE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "6b016bc4e468d7f84db22a8358b72cf69eb3c23ae350473c8275760abffa9401",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_jVV6Kfe8nlNBQYoQbpfb3x",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a retail investor's impulsive purchase on the Taiwan stock market. This is a non-US market event involving a single retail participant with no stated link to US markets or DTCC participants. Does not match any catalog card's Step 1."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1492,
+    "outputTokens": 96,
+    "totalTokens": 5296,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1952
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

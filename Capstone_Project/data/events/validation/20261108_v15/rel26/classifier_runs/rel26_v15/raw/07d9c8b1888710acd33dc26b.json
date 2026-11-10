@@ -1,0 +1,59 @@
+{
+  "document_id": "4e91d8a46c48ad5ec34c51cc8c257b937e108012c4def794d85bad38bcddfd22",
+  "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPZElOeXZTazI3SDF4bFpjbUJWZkl1LWI2NW1DN096SWphOW51VVEycUhlZm41NmRJZktNalhCeUhtN3pJcXhycXhSRnltZEowTWNyazg1T3l6cnVmYlBzb21iaXpTNWsxc1VLa3NSVnB1YWFFTUQxTTdNWU9naUZBTlJ2MktPUjVyTFBZV1oyUzBtLTZGWUM1YmdlMjROY1VTcGx2VlRUNThBTjRFQk1z?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:163854b82bd7",
+  "request_sha256": "670f40ab27d2dcc5c9a5aa5b1fe338cc282fee73bfe6dfbe5627bbc58b3dd310",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_N9yUblm5Kn1eVYwnrQqSXE",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "same_as_event_id": null,
+              "title": "Chip stock rout wipes $18B from AI elite, spreads to Asia",
+              "summary": "A sharp selloff in chip and AI-related stocks erased $18 billion from top AI-sector investors, with the rout spreading to Asian markets. This constitutes a broad equity market decline relevant to NSCC liquidity and margin processes.",
+              "card_ids": [
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-06",
+              "effect_date": "2026-11-06",
+              "stage": null,
+              "source_tier": "major_media",
+              "outlet": "Bloomberg.com",
+              "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPZElOeXZTazI3SDF4bFpjbUJWZkl1LWI2NW1DN096SWphOW51VVEycUhlZm41NmRJZktNalhCeUhtN3pJcXhycXhSRnltZEowTWNyazg1T3l6cnVmYlBzb21iaXpTNWsxc1VLa3NSVnB1YWFFTUQxTTdNWU9naUZBTlJ2MktPUjVyTFBZV1oyUzBtLTZGWUM1YmdlMjROY1VTcGx2VlRUNThBTjRFQk1z?oc=5",
+              "evidence_quotes": [
+                "AI Elite Lose $18 Billion as Chip Stock Rout Spreads to Asia"
+              ],
+              "confidence": 0.55,
+              "notes": "headline_only. Headline describes a concrete sharp equity selloff ($18B loss, multi-market spread) consistent with ECS-NSCC-LIQ Step 1 (sharp equity selloff). No body text available to confirm magnitude or specific participants; confidence and certainty capped accordingly.",
+              "event_type": "market_move"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1501,
+    "outputTokens": 769,
+    "totalTokens": 6175,
+    "cacheReadInputTokens": 3905,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5171
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

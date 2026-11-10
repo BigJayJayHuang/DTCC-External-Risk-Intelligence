@@ -1,0 +1,40 @@
+{
+  "document_id": "3d2974065340b06ac20c9709b50fc8adc12a051b9a1dc9ec944f815d9192fb2c",
+  "url": "https://www.fca.org.uk/news/news-stories/jarvis-investment-management-limited-enters-special-administration",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "26d83d34591e608d6f5cae6d968a83f0b040665be840a719c096ebcbc1fe29c3",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_jxhKY4GzgCCS9CgQIxpAEt",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Jarvis Investment Management Limited is a UK wealth management firm entering special administration. It is FCA-regulated and UK-based, with no indication it is a DTCC member, a US broker-dealer, or a participant in any DTCC-cleared market. The article describes a UK insolvency proceeding with no connection to DTCC processes covered by any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4174,
+    "outputTokens": 126,
+    "totalTokens": 4300,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2070
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

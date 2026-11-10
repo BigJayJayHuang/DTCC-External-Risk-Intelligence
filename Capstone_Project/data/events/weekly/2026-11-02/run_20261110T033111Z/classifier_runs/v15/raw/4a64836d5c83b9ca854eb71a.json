@@ -1,0 +1,57 @@
+{
+  "document_id": "db13a77055dc350fe2dc8f99e60023ba5fbbd6e51e1fe246d9aa781bb1af555a",
+  "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxON1REajFYZmUyX1J1YWlHVTZINWpyTlhSSmh0Y1dXR0Q4SDQ0YjJSQVh0QkFnYzhmUTAwdXA1d3RFWVhTRWR2eXpBVm1oMXhmdHdMVDlDb1RhZTZ5dXNBUGkyWGZDaW1LTVQzcnpKdHlYYjltZ3RJcmRONUl3WTFuUDhqYktEMmdicTIyQUlYSnVLbWJYZUZ4R0RNZ2F1QnJkaVl1VXJud3dyZHFxM0Fwa0xuOG1nN3fSAbwBQVVfeXFMT2VzRDA5cURvZWNlbjA5NG9LR3RRUW5jV0ZkNlJIVDE3RlJCdzFZLXowUGg0cjRHOFBrTE52eHhxbXl1UUkzOXlMYU9KVktjNGt3cFZYdzUzdVYyYXFGM2xLelhscWc2Um9mQ0l6Yjl4ZXpGenFBdWt3cTBRMHlaMlFGWW5yMXJGVEgtRHJILTN0UkNvTUJPcDhGTVFfNGZ2UUxvaXViUk5WOHFIbDZPXzN2cHFmUDM1TjRKYUc?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "a1fd73ca542cf8d0314c8dc0af502acc29f352d9f71a640d3f10b100008825cd",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_do7c8QQMhRBo7gj1z34Ubp",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline describes cyberattacks affecting Malaysian banks only. No stated link to US markets, US firms, or DTCC participants. Geography is non-US with no US link mentioned in the text.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 2149,
+    "outputTokens": 440,
+    "totalTokens": 6962,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3596
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

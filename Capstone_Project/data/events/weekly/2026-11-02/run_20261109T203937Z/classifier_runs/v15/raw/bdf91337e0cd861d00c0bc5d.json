@@ -1,0 +1,57 @@
+{
+  "document_id": "5d60d49ce915c95d014f1b086fad0a41f57ee550089448842002269832c6b5ca",
+  "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZExreXR6TGFGc0pNa3pBc2dBTmJVdlpUdldDcXlPQ1ZjQm5GSFhNQ3RsRTcwSS10MGhROTM4VDZadzdmUm8tb192U3BnQUY4Ny1iTW1qWE1fTmRJSnNZcm9kSUJCRXBreWR1R2s0UkhOM1BiT2VUQ2daQURxNmtlYWM3MGhWTV9wZUZTLVBNUmpoWWZrNlVQczJ1blBfd2ZjX2ZVWkhwdUtWaFUxbUpSQ2FPcXhMd2Vhb1pIZGhGQQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "f0362cb39adeba297a092ac52fd329944fa44399616277d2eabc7ebbd6659114",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_QDvpnd6Vk6Hol3W0khoM94",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Explainer/glossary piece with no concrete event described. Headline only states a definitional guide (\"Terms for Navigating a Market Meltdown\"), not an actual market event.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1516,
+    "outputTokens": 438,
+    "totalTokens": 6327,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3156
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

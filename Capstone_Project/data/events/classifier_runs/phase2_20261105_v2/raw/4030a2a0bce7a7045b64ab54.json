@@ -1,0 +1,40 @@
+{
+  "document_id": "c376ad1f9b8950bac021000f874bcdaecb6d81fc4fc3578755cbc312414d9bf7",
+  "url": "https://www.esma.europa.eu/press-news/esma-news/esma-proposes-simpler-eu-taxonomy-reporting",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "1aa8c68899638efd5c724ddcad193879962dcd182907a88dea4f9f868f24a5f3",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_7sqV2f3YJRdX5p1dM7iQP3",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about ESMA proposing simpler EU Taxonomy reporting requirements. This is an EU sustainability/ESG disclosure regulatory proposal with no connection to any DTCC process described in the card catalog (no Treasury clearing, repo, equity settlement, member stress, cyber, or other relevant event)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4087,
+    "outputTokens": 105,
+    "totalTokens": 4192,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1938
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

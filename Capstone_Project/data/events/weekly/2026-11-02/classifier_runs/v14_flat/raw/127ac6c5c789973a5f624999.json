@@ -1,0 +1,54 @@
+{
+  "document_id": "9dcd6322bb6d357cb8ea2b8e6bdf304b78c75ec0695ad785ca7a27108d8181d2",
+  "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNVVZqSHpsUzlYV091eXR4akNEZmNRNTNXcGRJWXJwNXpBd2Y3eXNRWVB5eF9FTHZoS1RFaENGajUzaXJuS3NmWkNYa2xJaVpoUGlMeEh0S0ZMdmZLcHJmb0EwZWxvWmNvZThOSE50MGZ3QWQxT0dkelBUVTQwRWtGYm5UcXMtc3FSN2FNQ1FsNEhGT1hpd0QxXzE1ellRRFRfM3A1b2dlMTl6UzktRUFJTXM4TGxsNGfSAcQBQVVfeXFMTTFzaTBhYW1JU1NFdGtMZS1VN240Q3ZJMC0zQm02X2ZpVUl2cEhNSmxkNlV3WEdiT1J1bDIyMzlWalg5a1NHRmdfRUpjdi1LNjNkbzV6eVJSOGNLaHRiazhSX192UDFVRWptRWZsRHIwazNnVVpIR0RtRHhkVG9Bckpnb0xFUVB1T2lRVkhkT0VPQy1DdEh1ZWV6ZDF0bVo5RjhiazRjTEdfV2dlUjJYek85V2U1S3Q5N0F2ck9sTDZVSWk5Yw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "ba81453250acbd937a22b7922940058b4f9fe296c8bca509b58d69fd06803a46",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Ef5pbkcqzDDV4ptW8Reacv",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Credit Mutuel Arkea is a French retail/regional bank with no stated link to US markets or DTCC participation; the cyberattack is at a non-US institution with no stated connection to DTCC processes or US clearing infrastructure."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1765,
+    "outputTokens": 396,
+    "totalTokens": 5846,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2828
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

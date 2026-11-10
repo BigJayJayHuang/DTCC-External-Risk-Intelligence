@@ -1,0 +1,55 @@
+{
+  "document_id": "45133d89231e58dc257ffcd6e4dda1d4ca3b19cce167cb50097d042824c0d72c",
+  "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVTZ1WTcyN01zdVpzb0xjTGc3SXk1RldJMDgtQ3IwOHNEeUZHel95TzB0T2o5V3VxdmcxNHpTc3RRQUlEX21QNkVsbzVzLXBReFhaTlBYRkpFaWxQcTNtajYtcU9xOXJvLWg1WkRiOWpWdmpqdUo0Q3RrRXM5blhoNWw4cDFNZ01neDVMWjNkUzNrWEdSb3ZHYklnYWV4UWJPYU9mTUdGSQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:163854b82bd7",
+  "request_sha256": "9ea77317c1c686f6daeba4da8c62149ba9b58abb7566cc5986e91d19d5328b3c",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_9GNN2ZteVwzBDzaGjHNzyQ",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Explainer/opinion piece asking whether VIX can predict a crash and how markets react after a VIX spike. No concrete market event is described; it is a how-to/analytical piece with no new event matching any card's Step 1.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1532,
+    "outputTokens": 416,
+    "totalTokens": 5853,
+    "cacheReadInputTokens": 3905,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2999
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

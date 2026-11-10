@@ -1,0 +1,40 @@
+{
+  "document_id": "1c46f40829ef716178f6b4960823d27f5b746769454312e4035c0abe7f0cd48d",
+  "url": "https://www.fca.org.uk/news/press-releases/former-chief-executive-banned-after-misconduct-led-4m-losses-high-risk-investments",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "b4ac705c0e6421f05e21619a5c6b38d6e9ab6de8d063879820f756bcb8d3ed7f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Jya32100oMfgdd5cOp2EPc",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes FCA enforcement action against individuals at Vector Wealth Ltd (a small UK wealth firm) for mini-bond misconduct. This is a retail investment fraud/regulatory enforcement matter with no connection to any DTCC process described in the card catalog — no Treasury clearing, repo, equity settlement, member stress at a DTCC-relevant firm, cyber incident, or other covered event."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 5103,
+    "outputTokens": 123,
+    "totalTokens": 5226,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2329
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

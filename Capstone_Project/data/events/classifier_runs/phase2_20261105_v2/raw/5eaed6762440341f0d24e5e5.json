@@ -1,0 +1,40 @@
+{
+  "document_id": "995a2369a7ff72f62bdb53897bbd1a6b13c80c2355a39b1124431932610bb530",
+  "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261104~caf181d7ac.en.html",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "22e2f239494aed7acc2b45c436a277b21199de3d46f93e7c3a9979f1684f1bfd",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_8SIU5I3D1FdjLfmDPSXrZd",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article reports on ECB wage tracker data showing slightly higher wage growth in 2027 vs 2026. This is a macroeconomic data release with no direct connection to any card's Step 1 trigger (no Treasury selloff, repo stress, clearing mandate, equity selloff, member stress, cyber event, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4097,
+    "outputTokens": 113,
+    "totalTokens": 4210,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1799
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

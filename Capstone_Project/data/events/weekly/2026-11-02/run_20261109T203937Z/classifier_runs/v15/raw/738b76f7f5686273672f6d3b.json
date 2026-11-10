@@ -1,0 +1,62 @@
+{
+  "document_id": "80c1dce5f731e4abb4123dd1c259dcaf86ff76fee3903169c45b474f8e5d4cd3",
+  "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPOFBSNTF3bXFWS1hzT2hRbDZZZFlJTUJlZ2U0OHdTdTBfcEEwdlRUSkk3bFlDM3Ixa1JaR3BUM1dyUFNRU0dWZG5FWE9pZHZwYjBRbGJtZGMzRk9ZZTdaNTAtbUJEWldKT1E0VTI1Q1hfcFEyNmg0WkVwaUdLcGIxZkJCRVZCcWxmX24wRGFEbnhqaFR0ZXNwSW8tNVlTVU5wNk92dVZyLWdiUQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "b51eba450bc4f733e3a040c1d2e022d655bdc533212b2134e84be7ccae83ed24",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_FYGpYjInqAocDZf21VIltU",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "firm_specific",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "Hedge funds dump positions, cut staff as selloff deepens",
+              "summary": "Hedge funds are reportedly liquidating positions and reducing headcount amid a deepening market selloff, suggesting broad deleveraging stress across the sector.",
+              "card_ids": [
+                "FICC-GSD-11",
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 1,
+              "reach_basis": "group",
+              "named_participants": [],
+              "announced_date": "2026-11-06",
+              "effect_date": "2026-11-06",
+              "stage": null,
+              "source_tier": "major_media",
+              "outlet": "WSJ",
+              "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPOFBSNTF3bXFWS1hzT2hRbDZZZFlJTUJlZ2U0OHdTdTBfcEEwdlRUSkk3bFlDM3Ixa1JaR3BUM1dyUFNRU0dWZG5FWE9pZHZwYjBRbGJtZGMzRk9ZZTdaNTAtbUJEWldKT1E0VTI1Q1hfcFEyNmg0WkVwaUdLcGIxZkJCRVZCcWxmX24wRGFEbnhqaFR0ZXNwSW8tNVlTVU5wNk92dVZyLWdiUQ?oc=5",
+              "evidence_quotes": [
+                "Hedge Funds Dump Positions and Cut Staff as Selloff Deepens"
+              ],
+              "confidence": 0.5,
+              "notes": "headline_only. No specific firms named, no asset class specified. \"Dump positions\" suggests broad deleveraging relevant to FICC-GSD-11 (Treasury/repo basis-trade unwinds) and ECS-NSCC-LIQ (equity selloff/liquidity stress). Certainty set to 2 as the headline describes an ongoing/confirmed event (\"deepens\"). Reach set to 1 (group of hedge funds) as no major named participant identified. Effect date set to announced date per absence of a separate event date."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1513,
+    "outputTokens": 851,
+    "totalTokens": 6737,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5898
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

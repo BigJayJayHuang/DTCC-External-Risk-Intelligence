@@ -1,0 +1,40 @@
+{
+  "document_id": "7ee820ef399756dbb28dad377469a58de6e1ea994c08a373bd4cf1333f7f4011",
+  "url": "https://files.dtcc.com/download/assets/25177-26/dbc5c432ccc011f19e8edaf30ca0c3fa",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ebea2a1e2e55df4b38e65d01a26d13db38c8e54237266a5d1302406f80ea6e2c",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_orfcb9s0oqwLR1P9lNpMGN",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification (Important Notice) for Lynas Rare Earths Limited (CUSIP 551073307). It is an administrative/operational notice with no market event, regulatory action, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4153,
+    "outputTokens": 110,
+    "totalTokens": 4263,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1921
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

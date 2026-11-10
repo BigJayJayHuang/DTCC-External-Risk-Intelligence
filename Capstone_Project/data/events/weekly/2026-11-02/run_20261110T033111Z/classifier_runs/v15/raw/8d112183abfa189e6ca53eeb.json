@@ -1,0 +1,57 @@
+{
+  "document_id": "8c24ba6208a3f214269649056b62984f1b54db64e64bd3986a48faaabe665fb7",
+  "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22263/self-regulatory-organizations-nyse-national-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "da2b71988ea5bf9f21701873c30d1a9883e9c8271cef5b3b944e1350a97e902f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_pOWVmgIeiBPA1XcYcYeuY8",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Headline-only article describes a routine NYSE National bylaw amendment filing with no stated link to any catalog Step 1 event (no market disruption, settlement change, member stress, cyber incident, or clearing mandate milestone). XE-DISRUPT requires an exchange halt, moratorium, or declared emergency — a bylaw amendment does not qualify.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1756,
+    "outputTokens": 470,
+    "totalTokens": 6599,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3506
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

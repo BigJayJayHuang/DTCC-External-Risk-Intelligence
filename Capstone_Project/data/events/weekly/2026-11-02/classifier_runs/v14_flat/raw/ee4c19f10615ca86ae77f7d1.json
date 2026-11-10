@@ -1,0 +1,54 @@
+{
+  "document_id": "d745860cdddc6a5ce18f5aaecd3ef6f3f1c395c6a84c130fedbfe4e412bbe15e",
+  "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQSndhMllGRXdPQnBnQ0FrM3MwV0VLc2l2VUNyMHl1aC1oWXMyMVh1QThVaUM1ajliWDZVOFRDZGRFby1WZWtTQ3BKaEJkZDJheHFMbDRzUzN4TElwUmFlME1MOUhqVjhhNlZFWllHU3JZRmR2Y0ZoNFhwYmhKZTZsWm01MXMxb25CV3QzSE41Y05aNWo3ZWlsdXU4QmhtSEpFMW9kUjBibw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "b1bee6908ccf418defd72013bf9808739dec710ed5b7db77a3372d65b3c058b5",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_vUufTXdFQWyJUDtXW6sGdT",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Cyberattack on Moldova's government with Moldovan banks monitoring transactions — non-US market, no stated link to US markets or DTCC participants. Not relevant to any catalog card.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1485,
+    "outputTokens": 384,
+    "totalTokens": 5554,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2628
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

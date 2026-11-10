@@ -1,0 +1,57 @@
+{
+  "document_id": "d46fc77bef7dc4108a9fd01e3d61b37378040616379d5120043e39365a0c4b88",
+  "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPcTZ6MUpQeFp6UnZDMmFSUjZVajRiaDhETU9zbkM0bGZoVUd5YThfcDR5RU9FbFdtcjRCbkllaWVuZTRjaWZtb1dId2gyUlA0Z2c3V1JmTWJEdU4wVF95eWl1c3hHTm9oVld2M1hTSzVZY2JJYnMyZi1RenI4NWdtT0s4cnliR1M3NU5sa3p4dmo3RlY2dFlSV0hJcnRYUU5KMU8xRkRxM1hVZ3RnRzRnS0hRMHExM25GUFVrVjRPdERWYnIx?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "1836e667e7175657fdc0bca3ab7b695e94e37704a4de2b8e32bd66dd88acfca3",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_BronQ0449hGVcLLpcflVan",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "LegalZoom.com (LZ) is a non-financial legal services company, not a DTCC member or major market participant. A stock downgrade for a non-financial firm does not match any card's Step 1 trigger.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1940,
+    "outputTokens": 450,
+    "totalTokens": 6763,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3270
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

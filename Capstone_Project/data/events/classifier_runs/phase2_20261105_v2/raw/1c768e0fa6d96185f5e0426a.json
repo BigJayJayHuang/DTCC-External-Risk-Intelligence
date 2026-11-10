@@ -1,0 +1,40 @@
+{
+  "document_id": "fcdf492dcc44ac8a0f2fb03cfb83600a4edc1f298d2eff1856f9ea4a677cc06d",
+  "url": "https://www.sec.gov/newsroom/press-releases/2026-110-two-entities-charged-130-million-fraud-scheme-used-false-sec-filings-boost-investor-confidence",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "9c671dabded05dcd3f92755874905978ce4de365502a179c35dd89fc93b57a9c",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_0NfJIbpaRFF0Lb5DUdLW1g",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes an SEC enforcement action against two foreign-operated entities (BG Wealth Sharing Ltd and DSJ Exchange Pty Ltd) for a $130 million fraud scheme using false SEC filings. This is a securities fraud enforcement case involving small, obscure entities — it does not describe any of the Step 1 world events covered by the card catalog (e.g., market stress, clearing mandate milestones, member default, cyber incident, settlement disruption, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4168,
+    "outputTokens": 145,
+    "totalTokens": 4313,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2080
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

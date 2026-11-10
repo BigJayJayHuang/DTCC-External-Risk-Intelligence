@@ -1,0 +1,57 @@
+{
+  "document_id": "768418a04182717e2703ab042c4d7be8740bcf8dc2e3628a6ca330b41fabbd05",
+  "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBEaGVvSHRZc1hOR25USlVjSXlrYVRSb3k2by1VZHMwRTFpREVOVEVjX0FwN0Z5azFwVHk5T0RoT1BuNHZGQ3ROMXFDbDFQN3g1TVFQWXpNUWd4UUR6LW80Sk8zNXQ5YndDMVV2Znl0UjlxZ0xmcEE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "585348a2da180e1eb0aaf7c2dd0200979f1b972b6d9bf79297eb740f80168582",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_wbXgMVu7IIceAn3vHt2whB",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "Non-US event (Taiwan stock market, Taiwan ETF 00631L, NT$ settlement) with no stated link to US markets, DTCC participants, or any catalog card. Single retail investor anecdote; not a market-wide event relevant to DTCC processes."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1902,
+    "outputTokens": 457,
+    "totalTokens": 6732,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3554
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

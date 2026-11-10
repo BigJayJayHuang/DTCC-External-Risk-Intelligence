@@ -1,0 +1,40 @@
+{
+  "document_id": "73b563b44df86010f68edadd11675e7071d6e6040d54323fa2d6170e8dbe7ac6",
+  "url": "https://www.federalregister.gov/documents/2026/10/23/2026-21632/agency-information-collection-activities-submission-for-omb-review-comment-request-extension-rule",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "cd7cedfbb2acb6fd8a00908b8a9ea725b812a0593f15c4c5eef08c809c5c510e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_75oV62ymeMbbsx9UpG3EHk",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Rule 17Ad-3(b) is an SEC information collection activity related to transfer agent recordkeeping requirements. This is a routine OMB paperwork extension notice with no market event, regulatory mandate change, member stress, or infrastructure disruption that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4108,
+    "outputTokens": 103,
+    "totalTokens": 4211,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1795
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

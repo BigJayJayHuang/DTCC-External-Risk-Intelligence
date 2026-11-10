@@ -1,0 +1,40 @@
+{
+  "document_id": "cb8b0c4929a4e904527358935d9e0e34e672142c908d6682b9e1aea38123b6c0",
+  "url": "https://files.dtcc.com/download/assets/24782-26/ac2b956ad6f911f1a2f97269ad7e0bc8",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "a1b675ff4fba439a00c543ae928d3f8afddd8dcfd44be7196182b7ce9f8d402a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_NDJGCdchWRUByoYY2iJ0FY",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a tax relief corporate action for CaixaBank (CUSIP 12803K109) in Spain. It is a routine DTC corporate action notification, not an outside market, regulatory, member stress, or infrastructure event described by any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4189,
+    "outputTokens": 106,
+    "totalTokens": 4295,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1869
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

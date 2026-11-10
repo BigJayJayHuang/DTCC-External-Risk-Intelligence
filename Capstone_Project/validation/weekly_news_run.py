@@ -1,0 +1,228 @@
+"""Weekly news run: collect, pre-filter, estimate, classify, group, apply the context rule, write the review sheet.
+
+    python -m validation.weekly_news_run --week-start 2026-11-09 --cap 3
+
+Steps for one Monday-Sunday week (the week must be over unless --allow-partial-week):
+  1. Google News RSS (news_queries.csv; headline filter; 25 per card) -> inputs/google/
+  2. Publisher feeds (publisher_feeds_config.json; keyword pre-filter; full text where allowed), the daily official
+     news export (--official; stops if it is missing), optionally Alpha Vantage NEWS_SENTIMENT summaries (--alphavantage;
+     off by default because NEWS_SENTIMENT needs a premium key) and the Google items -> inputs/feeds/classifier_input.csv
+     (--collect-only stops here; --from-inputs reuses a saved classifier_input.csv and skips steps 1-2)
+  3. Dry run with prompt v1.6, flat schema, caching (--dry-run stops here). Stops if the cache-aware estimate is above
+     --cap, or if an earlier run of the week left an unresolved cost reservation.
+  4. Classify with the same settings, hard budget --cap.
+  5. Drop non-US items, apply the FICC-GSD-11 gate (Amendment E), group candidates into proposed events, apply
+     Amendment D (market-move news on indicator cards = context).
+  6. Write data/events/review/review_<Monday>.csv (never overwritten) and append context rows to
+     data/events/context_news.csv.
+Never writes the event register or sign-offs. See data/events/WEEKLY_RUNBOOK.md.
+"""
+import argparse, csv, hashlib, json, re
+from datetime import date, datetime, timezone
+from decimal import Decimal
+from pathlib import Path
+from zoneinfo import ZoneInfo
+
+from . import alpha_vantage_news as AV
+from . import google_news as G
+from . import llm_classifier as C
+from . import publisher_feeds as P
+from . import review_sheet as RS
+
+WEEKLY = C.PROJECT / "data/events/weekly"
+REVIEW_DIR = C.PROJECT / "data/events/review"
+PROMPT_VERSION = "v1.6"
+TIERS = ("required", "auto", "context", "duplicate", "date_review")
+
+
+RECONCILIATIONS = WEEKLY / "cost_reconciliations.csv"   # see validation/weekly_cost_reconcile.py
+RECONCILIATION_FIELDS = ["summary_file", "summary_sha256", "reserved_usd", "recorded_charge_usd", "basis", "reconciled_by",
+                         "reconciled_utc", "reason"]
+
+
+def receipt_key(path: Path) -> str:
+    path = Path(path).resolve()
+    try:
+        return path.relative_to(C.PROJECT.resolve()).as_posix()
+    except ValueError:
+        return str(path)
+
+
+def load_reconciliations(ledger: Path = RECONCILIATIONS) -> dict:
+    """(summary_file, summary_sha256) -> recorded charge. The original receipts are never edited."""
+    out = {}
+    if Path(ledger).exists():
+        with Path(ledger).open(encoding="utf-8", newline="") as f:
+            for r in csv.DictReader(f):
+                charge = Decimal(r["recorded_charge_usd"])
+                if not charge.is_finite() or charge < 0 or not r["reconciled_by"].strip():
+                    raise ValueError("Invalid cost reconciliation row for " + r["summary_file"])
+                out[(r["summary_file"], r["summary_sha256"])] = charge
+    return out
+
+
+def unresolved_reservations(week_dir: Path, current_run: Path, ledger: Path = RECONCILIATIONS) -> list[dict]:
+    """Read original classifier receipts; a later resume does not clear an unknown bill. A reservation is resolved
+    only by a ledger row for the unchanged receipt (same sha256) whose recorded charge covers the whole reserve."""
+    pending=[]
+    done = load_reconciliations(ledger)
+    for path in sorted(Path(week_dir).glob('*/classifier_runs/*/summary.json')):
+        if current_run in path.parents:continue
+        value=json.loads(path.read_text())
+        reserve=Decimal(str(value.get('unreported_cost_reserve_usd','0')))
+        inflight=Decimal(str(value.get('inflight_reservation_usd','0')))
+        if not reserve.is_finite() or reserve<0:
+            raise ValueError('Invalid cost reservation in '+str(path))
+        if reserve>0 or inflight>0 or value.get('status')=='running':
+            charged = done.get((receipt_key(path), hashlib.sha256(path.read_bytes()).hexdigest()))
+            if charged is not None and charged >= max(reserve, inflight) and value.get('status') != 'running':
+                continue
+            pending.append({'summary_file':str(path),'unreported_cost_reserve_usd':str(max(reserve,inflight)),'status':value.get('status')})
+    return pending
+
+
+def classifier_args(news: Path, out: Path, monday: date, sunday: date, cap: Decimal, run_date: date, dry_run: bool,
+                    prompt_version: str = PROMPT_VERSION):
+    return argparse.Namespace(config=C.CONFIG, register=C.REGISTER, major=C.MAJOR, news=news, start=monday, end=sunday,
+                              max_articles=None, budget=cap, dry_run=dry_run, run_date=run_date, run_id="v15", output_dir=out,
+                              prompt_version=prompt_version, prompt_cache="on", response_schema="flat")
+
+
+def run_week(week_start: date, cap: Decimal, *, today: date | None = None, allow_partial: bool = False, run_id: str | None = None,
+             weekly_dir: Path = WEEKLY, review_dir: Path = REVIEW_DIR, context_path: Path = RS.CONTEXT_NEWS,
+             collect_google=G.collect, collect_feeds=P.main, classify=C.run, from_inputs: Path | None = None,
+             prompt_version: str = PROMPT_VERSION, official_news: Path = C.NEWS,
+             collect_only: bool = False, dry_run: bool = False, offline_google_from: Path | None = None,
+             collect_alphavantage=None) -> dict:
+    monday, sunday = G.week_window(week_start)
+    today = today or datetime.now(ZoneInfo("America/New_York")).date()
+    if not allow_partial and today <= sunday:
+        raise SystemExit(f"The week {monday}..{sunday} is not over yet (today {today}); use --allow-partial-week to run anyway.")
+    if not cap.is_finite() or cap <= 0:
+        raise SystemExit("--cap must be finite and positive")
+    if collect_only and dry_run:
+        raise SystemExit("Choose --collect-only or --dry-run")
+    if collect_only and from_inputs is not None:
+        raise SystemExit("--from-inputs reuses saved inputs; --collect-only has nothing to collect")
+    run_id = run_id or "run_" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    if not re.fullmatch(r'[A-Za-z0-9_-]+',run_id):
+        raise ValueError('Invalid weekly run ID')
+    out = weekly_dir / monday.isoformat() / run_id
+    out.mkdir(parents=True, exist_ok=False)
+    result = {"week_start": monday.isoformat(), "week_end": sunday.isoformat(), "cap_usd": str(cap), "run_dir": str(out),
+              "prompt_version": prompt_version, "status": "started", "from_inputs": str(from_inputs) if from_inputs else None,
+              "paid_calls": 0, "collect_only": collect_only, "dry_run": dry_run}
+    def finish(status, **kw):
+        result.update(status=status, **kw)
+        (out / "weekly_summary.json").write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
+        return result
+
+    # 1-2. collect and pre-filter (or reuse a saved classifier input: no fetching)
+    if from_inputs is not None:
+        news = from_inputs
+        result.update(inputs_reused=str(from_inputs))
+    else:
+        g_dir = out / "inputs" / "google"
+        google_kwargs = {"offline_dir":offline_google_from} if offline_google_from else {}
+        g_rows, g_manifest, g_stats, g_dropped = collect_google(json.loads(G.CONFIG.read_text()), G.load_queries(), monday, g_dir, **google_kwargs)
+        G.write_csv(g_dir / "google_news.csv", g_rows, G.BASE_FIELDS + G.EXTRA_FIELDS)
+        (g_dir/'fetch_manifest.json').write_text(json.dumps(g_manifest,indent=2)+'\n')
+        (g_dir/'filtered_out.json').write_text(json.dumps(g_dropped,ensure_ascii=False,indent=2)+'\n')
+        if not Path(official_news).is_file():
+            return finish('stopped_official_export_unavailable',official_input=str(official_news),
+                          reason='Restore or refresh the daily official news export; it must not be silently omitted.')
+        result['official_input']={"path":str(official_news),"sha256":hashlib.sha256(Path(official_news).read_bytes()).hexdigest()}
+        feed_args = ["--out-dir", str(out / "inputs" / "feeds"), "--google", str(g_dir / "google_news.csv"),
+                     "--official",str(official_news),"--week-start",monday.isoformat(),"--week-end",sunday.isoformat()]
+        if collect_alphavantage is not None:          # Alpha Vantage NEWS_SENTIMENT (summaries stay in the local cache)
+            try:
+                av = collect_alphavantage(monday, out / "inputs" / "alphavantage")
+            except AV.KeyMissing as e:
+                return finish('stopped_alphavantage_key_missing', reason=str(e))
+            result['alphavantage'] = av['stats']
+            if not av['rows'] and av['stats'].get('errors'):
+                return finish('stopped_alphavantage_unavailable', reason='Alpha Vantage returned no news feed; see inputs/alphavantage/alphavantage_requests.json')
+            feed_args += ["--alphavantage", str(av['items_csv'])]
+        feeds = collect_feeds(feed_args)
+        news = out / "inputs" / "feeds" / "classifier_input.csv"
+        result.update(google=g_stats, feeds={k: feeds.get(k) for k in ("items_to_classifier", "scope_totals", "published_range","official_input","per_source","alphavantage")})
+        if collect_only:
+            return finish('collected_for_review_no_model_calls',classifier_input=str(news),
+                          next_step='Review evidence coverage; use --dry-run for a cost estimate without invoking AWS.')
+
+    # 3. dry run and cap check
+    run_date = today
+    dry = classify(classifier_args(news, out, monday, sunday, cap, run_date, dry_run=True, prompt_version=prompt_version))
+    estimate = Decimal(str(dry.get("estimated_full_run_cost_with_cache_usd") or dry["estimated_full_run_cost_usd"]))
+    result.update(items_in_window=dry["coverage"]["selected_articles"], estimate_with_cache_usd=str(estimate))
+    if dry_run:
+        return finish('dry_run_no_model_calls',estimate_above_cap=estimate>cap,classifier_input=str(news))
+    if estimate > cap:
+        return finish("stopped_estimate_above_cap")
+    pending=unresolved_reservations(out.parent,out)
+    if pending:
+        return finish('stopped_unresolved_prior_cost_reserve',pending_reservations=pending,
+                      next_step='Reconcile prior interrupted request costs before starting another paid weekly batch. Collection and dry-run modes remain available.')
+
+    # 4. classify
+    result['paid_calls']=None  # Exact paid-call count belongs to the classifier receipt.
+    real = classify(classifier_args(news, out, monday, sunday, cap, run_date, dry_run=False, prompt_version=prompt_version))
+    result.update(classifier={k: real.get(k) for k in ("status", "relevant", "irrelevant", "failed_checks", "input_tokens", "output_tokens",
+                                                      "cache_read_input_tokens", "cache_write_input_tokens", "estimated_cost_usd")})
+    result['classifier']['unreported_cost_reserve_usd']=real.get('unreported_cost_reserve_usd','0')
+    # A transport interruption may leave an unresolved reservation. Preserve it;
+    # do not automatically resume or represent the run as a clean completion.
+    if Decimal(str(real.get('unreported_cost_reserve_usd','0')))>0:
+        return finish('stopped_unresolved_cost_reserve',next_step='Reconcile the saved response/reservation before any new paid call.')
+    if real.get("status") not in ("complete", "budget_limit"):
+        return finish("stopped_classifier_" + str(real.get("status")))
+
+    # 5-6. group, context rule, review sheet, context news
+    candidates = out / f"candidates_{run_date.isoformat()}.csv"
+    filtered = out / "filtered_non_us.csv"
+    gate = out / "card_gate.csv"
+    rows, ctx = RS.build(candidates, monday, filtered, gate) if candidates.exists() else ([], [])
+    review_dir.mkdir(parents=True, exist_ok=True)
+    sheet = review_dir / f"review_{monday.isoformat()}.csv"
+    if sheet.exists():   # never overwrite a sheet that may already hold decisions
+        sheet = review_dir / f"review_{monday.isoformat()}_{run_id}.csv"
+    with sheet.open("x", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=RS.FIELDS, lineterminator="\n"); w.writeheader(); w.writerows(rows)
+    feeds_dir = (from_inputs.parent if from_inputs is not None else out / "inputs" / "feeds")
+    ctx = RS.routed_context_rows(feeds_dir / "official_context_routed.csv", monday) + ctx     # Amendment G3
+    added = RS.append_context(context_path, ctx)
+    tiers = {t: sum(r["review_tier"] == t for r in rows) for t in TIERS}
+    with_non_us = sum(1 for _ in csv.DictReader(filtered.open(encoding="utf-8"))) if filtered.exists() else 0
+    gated = sum(1 for _ in csv.DictReader(gate.open(encoding="utf-8"))) if gate.exists() else 0
+    return finish("complete" if real.get("status") == "complete" else "partial_budget_limit", review_sheet=str(sheet),
+                  proposed_events=len(rows), tiers=tiers, filtered_non_us=with_non_us, card_gate_removals=gated, context_rows_added=added,
+                  next_step="Review the 'required' rows, then run: python -m validation.promote_reviewed --sheet " + str(sheet))
+
+
+def main(argv=None):
+    p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    p.add_argument("--week-start", type=date.fromisoformat, default=G.last_full_week(datetime.now(ZoneInfo("America/New_York")).date()))
+    p.add_argument("--cap", type=Decimal, required=True, help="hard USD cap for the model calls of this week")
+    p.add_argument("--allow-partial-week", action="store_true")
+    p.add_argument("--from-inputs", type=Path, help="reuse a saved classifier_input.csv instead of collecting (no fetching)")
+    p.add_argument("--prompt-version", default=PROMPT_VERSION, choices=sorted(C.PROMPT_FILES))
+    p.add_argument("--context-out", type=Path, default=RS.CONTEXT_NEWS)
+    modes=p.add_mutually_exclusive_group()
+    modes.add_argument('--collect-only',action='store_true',help='Collect/filter/cache evidence only; never invoke a model')
+    modes.add_argument('--dry-run',action='store_true',help='Collect and estimate locally; never invoke a model')
+    p.add_argument('--official',type=Path,default=C.NEWS,help='Daily official-news CSV; always included through the keyword filter')
+    p.add_argument('--offline-google-from',type=Path,help='Reparse an existing RSS batch instead of repeating Google requests')
+    p.add_argument('--alphavantage',action='store_true',
+                   help='Add the Alpha Vantage NEWS_SENTIMENT source (off by default: it needs a PREMIUM key in ALPHAVANTAGE_API_KEY; '
+                        'a free key gets "This is a premium endpoint" and the run stops)')
+    a = p.parse_args(argv)
+    if a.from_inputs and a.collect_only:
+        p.error('--from-inputs reuses saved inputs; --collect-only has nothing to collect')
+    print(json.dumps(run_week(a.week_start, a.cap, allow_partial=a.allow_partial_week, from_inputs=a.from_inputs,
+                             prompt_version=a.prompt_version, context_path=a.context_out, official_news=a.official,
+                             collect_only=a.collect_only,dry_run=a.dry_run,offline_google_from=a.offline_google_from,
+                             collect_alphavantage=AV.collect if a.alphavantage and not a.from_inputs else None), indent=2, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()

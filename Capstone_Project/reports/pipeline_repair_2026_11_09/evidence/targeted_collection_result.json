@@ -1,0 +1,576 @@
+{
+  "run_id": "2026-11-09T21:05:20+00:00_a9f60bb7",
+  "as_of_date": "2026-11-09",
+  "new_records": 4586,
+  "revised_records": 23,
+  "unchanged_records": 3751,
+  "successful_sources": [
+    "fed_press",
+    "cftc_press",
+    "sec_press",
+    "fred_EFFR",
+    "ecb_press",
+    "fred_SOFR",
+    "bis_press",
+    "fred_DGS10",
+    "fred_VIXCLS",
+    "fred_BAA10Y",
+    "federal_register",
+    "fca_rss",
+    "esma_news",
+    "dtcc_notice_feed",
+    "rds_uk_sftr_table1",
+    "fred_MORTGAGE30US",
+    "rds_uk_sftr_table2"
+  ],
+  "partially_successful_sources": [
+    "rds_esma_table3",
+    "rds_esma_table1",
+    "rds_esma_table2",
+    "rds_fca_table1",
+    "rds_fca_table2",
+    "rds_fca_table3"
+  ],
+  "failed_sources": [
+    {
+      "source_id": "rds_esma_table3",
+      "error": "curl: (22) The requested URL returned error: 404",
+      "http_status": 404
+    },
+    {
+      "source_id": "rds_esma_table1",
+      "error": "curl: (22) The requested URL returned error: 404",
+      "http_status": 404
+    },
+    {
+      "source_id": "rds_esma_table2",
+      "error": "curl: (22) The requested URL returned error: 404",
+      "http_status": 404
+    },
+    {
+      "source_id": "rds_fca_table1",
+      "error": "curl: (22) The requested URL returned error: 404",
+      "http_status": 404
+    },
+    {
+      "source_id": "rds_fca_table2",
+      "error": "curl: (22) The requested URL returned error: 404",
+      "http_status": 404
+    },
+    {
+      "source_id": "rds_fca_table3",
+      "error": "curl: (22) The requested URL returned error: 404",
+      "http_status": 404
+    }
+  ],
+  "skipped_not_due": [],
+  "source_results": [
+    {
+      "source_id": "fed_press",
+      "counts": {
+        "new": 4,
+        "unchanged": 16
+      },
+      "requests": [
+        {
+          "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+          "rows": 20,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source_id": "cftc_press",
+      "counts": {
+        "new": 21,
+        "revised": 16
+      },
+      "requests": [
+        {
+          "url": "https://www.cftc.gov/PressRoom/PressReleases",
+          "rows": 37,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source_id": "sec_press",
+      "counts": {
+        "new": 4,
+        "unchanged": 21
+      },
+      "requests": [
+        {
+          "url": "https://www.sec.gov/news/pressreleases.rss",
+          "rows": 25,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source_id": "fred_EFFR",
+      "counts": {
+        "unchanged": 273,
+        "new": 12
+      },
+      "requests": [
+        {
+          "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=EFFR&cosd=2025-10-05&coed=2026-11-09",
+          "rows": 285,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source_id": "ecb_press",
+      "counts": {
+        "new": 15
+      },
+      "requests": [
+        {
+          "url": "https://www.ecb.europa.eu/rss/press.html",
+          "rows": 15,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source_id": "fred_SOFR",
+      "counts": {
+        "unchanged": 273,
+        "new": 12
+      },
+      "requests": [
+        {
+          "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=SOFR&cosd=2025-10-05&coed=2026-11-09",
+          "rows": 285,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source_id": "bis_press",
+      "counts": {},
+      "requests": [
+        {
+          "url": "https://www.bis.org/doclist/all_pressrels.rss",
+          "rows": 0,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source_id": "fred_DGS10",
+      "counts": {
+        "unchanged": 273,
+        "new": 11
+      },
+      "requests": [
+        {
+          "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2025-10-05&coed=2026-11-09",
+          "rows": 284,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source_id": "fred_VIXCLS",
+      "counts": {
+        "unchanged": 273,
+        "new": 12
+      },
+      "requests": [
+        {
+          "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=VIXCLS&cosd=2025-10-05&coed=2026-11-09",
+          "rows": 285,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source_id": "fred_BAA10Y",
+      "counts": {
+        "unchanged": 273,
+        "new": 11
+      },
+      "requests": [
+        {
+          "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAA10Y&cosd=2025-10-05&coed=2026-11-09",
+          "rows": 284,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source_id": "federal_register",
+      "counts": {
+        "unchanged": 49,
+        "new": 120
+      },
+      "requests": [
+        {
+          "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bpublication_date%5D%5Bgte%5D=2026-10-16&conditions%5Bpublication_date%5D%5Blte%5D=2026-11-09&conditions%5Bagencies%5D%5B%5D=securities-and-exchange-commission&conditions%5Bagencies%5D%5B%5D=commodity-futures-trading-commission&conditions%5Bagencies%5D%5B%5D=federal-reserve-system&per_page=1000&order=oldest",
+          "rows": 169,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source_id": "fca_rss",
+      "counts": {
+        "new": 19,
+        "revised": 1
+      },
+      "requests": [
+        {
+          "url": "https://www.fca.org.uk/news/rss.xml",
+          "rows": 20,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source_id": "esma_news",
+      "counts": {
+        "new": 4,
+        "unchanged": 6
+      },
+      "requests": [
+        {
+          "url": "https://www.esma.europa.eu/press-news/esma-news",
+          "rows": 10,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source_id": "dtcc_notice_feed",
+      "counts": {
+        "new": 112,
+        "unchanged": 881,
+        "revised": 6
+      },
+      "requests": [
+        {
+          "url": "https://www.dtcc.com/rss-feeds/legal/all-important-notices",
+          "rows": 999,
+          "duplicates_merged": 1,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source_id": "rds_esma_table3",
+      "counts": {
+        "unchanged": 8,
+        "new": 16
+      },
+      "requests": [
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_3_OTC_Agg_20261016.csv",
+          "rows": 8,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_3_OTC_Agg_20261023.csv",
+          "rows": 8,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_3_OTC_Agg_20261030.csv",
+          "rows": 8,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_3_OTC_Agg_20261106.csv",
+          "status": "failed",
+          "http_status": 404,
+          "error": "curl: (22) The requested URL returned error: 404",
+          "checked_at": "2026-11-09T21:05:22+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "rds_esma_table1",
+      "counts": {
+        "unchanged": 14,
+        "new": 28
+      },
+      "requests": [
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_1_OTC_Agg_20261016.csv",
+          "rows": 14,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_1_OTC_Agg_20261023.csv",
+          "rows": 14,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_1_OTC_Agg_20261030.csv",
+          "rows": 14,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_1_OTC_Agg_20261106.csv",
+          "status": "failed",
+          "http_status": 404,
+          "error": "curl: (22) The requested URL returned error: 404",
+          "checked_at": "2026-11-09T21:05:22+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "rds_esma_table2",
+      "counts": {
+        "unchanged": 20,
+        "new": 40
+      },
+      "requests": [
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_2_OTC_Agg_20261016.csv",
+          "rows": 20,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_2_OTC_Agg_20261023.csv",
+          "rows": 20,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_2_OTC_Agg_20261030.csv",
+          "rows": 20,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_2_OTC_Agg_20261106.csv",
+          "status": "failed",
+          "http_status": 404,
+          "error": "curl: (22) The requested URL returned error: 404",
+          "checked_at": "2026-11-09T21:05:22+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "rds_fca_table1",
+      "counts": {
+        "unchanged": 14,
+        "new": 28
+      },
+      "requests": [
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_1_OTC_Agg_20261016.csv",
+          "rows": 14,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_1_OTC_Agg_20261023.csv",
+          "rows": 14,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_1_OTC_Agg_20261030.csv",
+          "rows": 14,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_1_OTC_Agg_20261106.csv",
+          "status": "failed",
+          "http_status": 404,
+          "error": "curl: (22) The requested URL returned error: 404",
+          "checked_at": "2026-11-09T21:05:23+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "rds_fca_table2",
+      "counts": {
+        "unchanged": 20,
+        "new": 40
+      },
+      "requests": [
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_2_OTC_Agg_20261016.csv",
+          "rows": 20,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_2_OTC_Agg_20261023.csv",
+          "rows": 20,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_2_OTC_Agg_20261030.csv",
+          "rows": 20,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_2_OTC_Agg_20261106.csv",
+          "status": "failed",
+          "http_status": 404,
+          "error": "curl: (22) The requested URL returned error: 404",
+          "checked_at": "2026-11-09T21:05:23+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "rds_fca_table3",
+      "counts": {
+        "unchanged": 8,
+        "new": 16
+      },
+      "requests": [
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_3_OTC_Agg_20261016.csv",
+          "rows": 8,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_3_OTC_Agg_20261023.csv",
+          "rows": 8,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_3_OTC_Agg_20261030.csv",
+          "rows": 8,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_3_OTC_Agg_20261106.csv",
+          "status": "failed",
+          "http_status": 404,
+          "error": "curl: (22) The requested URL returned error: 404",
+          "checked_at": "2026-11-09T21:05:23+00:00"
+        }
+      ]
+    },
+    {
+      "source_id": "rds_uk_sftr_table1",
+      "counts": {
+        "unchanged": 208,
+        "new": 662
+      },
+      "requests": [
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_1_SFT_C_RP_ORG_20261016.CSV",
+          "rows": 208,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_1_SFT_C_RP_ORG_20261023.CSV",
+          "rows": 225,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_1_SFT_C_RP_ORG_20261030.CSV",
+          "rows": 197,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_1_SFT_C_RP_ORG_20261106.CSV",
+          "rows": 240,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source_id": "fred_MORTGAGE30US",
+      "counts": {
+        "new": 57
+      },
+      "requests": [
+        {
+          "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MORTGAGE30US&cosd=2025-10-05&coed=2026-11-09",
+          "rows": 57,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        }
+      ]
+    },
+    {
+      "source_id": "rds_uk_sftr_table2",
+      "counts": {
+        "unchanged": 1121,
+        "new": 3342
+      },
+      "requests": [
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_2_SFT_C_OUT_ORG_20261016.CSV",
+          "rows": 1121,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_2_SFT_C_OUT_ORG_20261023.CSV",
+          "rows": 1115,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_2_SFT_C_OUT_ORG_20261030.CSV",
+          "rows": 1113,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        },
+        {
+          "url": "https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_2_SFT_C_OUT_ORG_20261106.CSV",
+          "rows": 1114,
+          "duplicates_merged": 0,
+          "status": "downloaded"
+        }
+      ]
+    }
+  ],
+  "manual_review_sources": [
+    "dtcc_press",
+    "dtcc_insights",
+    "dtcc_policy",
+    "dtcc_financials",
+    "ici_fund_flows",
+    "ici_money_market_release"
+  ],
+  "models_retrained": false,
+  "business_risk_scores_generated": false,
+  "status": "partial_failure",
+  "snapshot": {
+    "file": "capstone.sqlite3.gz",
+    "sha256": "8a597ec01573274fb9cb0f0b3d03713b6fe1dc4ea337e2f291c19e7cfcbd7558",
+    "bytes": 20219604
+  }
+}

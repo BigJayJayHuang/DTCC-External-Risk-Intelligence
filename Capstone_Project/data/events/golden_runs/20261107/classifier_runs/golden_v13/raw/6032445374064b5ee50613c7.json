@@ -1,0 +1,40 @@
+{
+  "document_id": "af813be59c6e25c3f30db7f7b7e9789641e122953c6379edec26b9a3dd958479",
+  "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOQkc0MGJkMWs5REZEYXFVRnRKaU5WSVBMMk0wRmh1Q0QxRHBxeFJhUGZTLTBMTjMyMzF1WGxfb05PR1EtTGtrajc0bDlNUFNEWlJSUU94ZkNJQUJpVTF2Y1RDYnh0eks2T0ZMeVMyZXdBYXpyR1hVVFhIQ2lIT3UxcXJkM3J1TFY1ZnVhWFVIc0htM2xKQ0w3UXluMDFsTzlqNUd3cDRJeG9tNUE1d1ZESk1TZzRNeFY4VVYyb01hRW04T1RoQjh5LUZwUXNycTB0VEE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.3:aab5ad825775",
+  "request_sha256": "2083aa4c548f33546f9233e66d6f0211b859e3a2fe61956c6a349c62b7e8f658",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_DqRYhXeEmBjoeY5AACQ2ql",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about a Deutsche Bank downgrade of Amcor (AMCR) stock, a packaging company. This is a stock analyst rating change on a non-financial issuer with no connection to DTCC processes, member stress, or any card's Step 1 trigger."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1562,
+    "outputTokens": 104,
+    "totalTokens": 4746,
+    "cacheReadInputTokens": 3080,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1803
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

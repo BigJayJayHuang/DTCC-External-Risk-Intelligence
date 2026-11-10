@@ -1,0 +1,40 @@
+{
+  "document_id": "ed8ef0c3dfecb641db4ecb77894ccafe65454aa5d2136d1aa744f79bbf6a2462",
+  "url": "https://www.federalregister.gov/documents/2026/10/30/2026-22132/self-regulatory-organizations-nyse-american-llc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "5567ce2dfe834abd2319e47a74f2aba022f9878f0d80dbb3b2ff62824c87449e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_YxNFOwNit1z6RTD4U6emYA",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about NYSE American LLC modifying Binary Return Derivatives rules. This is an exchange rule change for a niche derivatives product and does not describe any outside event (market stress, regulatory mandate, member failure, cyber incident, infrastructure disruption) that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4119,
+    "outputTokens": 102,
+    "totalTokens": 4221,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1738
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "d4b0c289fed6bc7a33937b8440e644bd7f503ef5530f9391242867803adc6e17",
+  "url": "https://www.esma.europa.eu/press-news/esma-news/esma-updates-its-manual-transparency-new-guidance-otc-derivatives-and-tick",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "697998bad7f5519b7df180312c8f2e270f4618b77b3536987129c5d0aad03827",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_jzIm3XD0dk4rXUSIaTOxjs",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about ESMA updating its transparency manual with guidance on OTC derivatives and tick-size regime — an EU regulatory publication with no connection to any DTCC process described in the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4116,
+    "outputTokens": 84,
+    "totalTokens": 4200,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1407
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,59 @@
+{
+  "document_id": "c16bc85cc09118c5e28fe6aad320dbb82e357fb887fb0548de58ebe883f04d4f",
+  "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQVkVocHY2djBJSWlTckdUS3IxS0hVNXJwblpaRXpYX1dsS215cjRLb1ZzYTB6MWVRQ0JoNV9Yck93VVRxQzdReXRkOTNyVEdtd2lGckdaQ1JvblFKRnhHVzFhMzJWdnVSMUVITzFIZ2JiQnJvRjNJajhvXzhkS1ZvdU1aRFktNE80R0pMQVBOMmxuaFdsd3hZSWVxUTkycUN0S1E?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:163854b82bd7",
+  "request_sha256": "f96729bb81fb0dcff4c85547c79672468a7fca5ff41287c3f83b7b958cb6b808",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_GJrHMea0ydC4IZbLRSfVka",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "same_as_event_id": null,
+              "title": "Global stock market selloff spreads, dollar rises",
+              "summary": "A global equity selloff is spreading, with the dollar rising in tandem. The event matches the sharp equity selloff trigger for NSCC variation margin and liquidity processes.",
+              "card_ids": [
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-06",
+              "effect_date": "2026-11-06",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "Global Banking & Finance Review",
+              "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQVkVocHY2djBJSWlTckdUS3IxS0hVNXJwblpaRXpYX1dsS215cjRLb1ZzYTB6MWVRQ0JoNV9Yck93VVRxQzdReXRkOTNyVEdtd2lGckdaQ1JvblFKRnhHVzFhMzJWdnVSMUVITzFIZ2JiQnJvRjNJajhvXzhkS1ZvdU1aRFktNE80R0pMQVBOMmxuaFdsd3hZSWVxUTkycUN0S1E?oc=5",
+              "evidence_quotes": [
+                "Dollar Rises as Global Stock Market Selloff Spreads"
+              ],
+              "confidence": 0.5,
+              "notes": "headline_only; no magnitude or specific market details provided; reach set to market_wide based on \"global\" scope of selloff described in headline.",
+              "event_type": "market_move"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1482,
+    "outputTokens": 695,
+    "totalTokens": 6082,
+    "cacheReadInputTokens": 3905,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 4284
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

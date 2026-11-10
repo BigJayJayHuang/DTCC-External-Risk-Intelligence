@@ -1,0 +1,40 @@
+{
+  "document_id": "898dfcb2f58fb3b97abc0fcdebafede4adbda2bd04a4056a82a24debaf83cb30",
+  "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBweDhGZnc3UmJSN1d6ZGUyVWZ0eEZTMUdVbDBsVEZ6WUpqaDlucFVGWDJ6T0U1SmhUQjZ1Rk94UldjRG9OdThEUmhhM0l1aXZBOEc0eEU0OG1wT3g2N0tsbVk1cE5lLWFpMlVwM3Q4bUdJNFBGQVE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "88de9d0fd7d93dd4590ca390694d83e87a35a9f4d8c69e804f333ad08619546f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_3td1bpKC9yG2xVYQu7cyfM",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes South Korea's domestic stock market settlement cycle change targeting 2028. This is a non-US market event with no stated link to US markets or DTCC participants. ECS-SET-01 covers US settlement cycle changes (T+1, T+0, 24x5) affecting NSCC and DTC processes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1465,
+    "outputTokens": 115,
+    "totalTokens": 5288,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3859
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

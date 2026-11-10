@@ -1,0 +1,61 @@
+{
+  "document_id": "ec6a1aeaca9d783e675fb7545bfad0ef1c176918e32107b0db209e92f598b945",
+  "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPQk9sdTFtR1poMDJELXc3ZTNRS3czSHZ4NUNweVdYY1BHUWRweHFSbWQ0dEpNdE5fdXNTM2hqalRfOHRuczVyXzlrTjNWQWhOYXJnVkFfZ0R3eTd1V0oxMVNwT1kySkZweTJHRGkwQnN1cDJTUkdpbWZ4QXB4NG5RT1VDNmFYWXV4TDhQSUVkTlJXSkZSeVVkTXFtTDNPbS1DUVVpUnNwMDM2Nk5ueW1GbVRmeWRvMlRUTXpPRDJMSmhLbEU2TFpWdzk0bnFLMTRW?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "1252bc554a7112e654f612c4a306357fbfa6b33e9bcff1b4bb713d16dd0b0fa5",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_aASwgImvJcILCHxgZwe7Np",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "market_move",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "VIX volatility index spikes 70%",
+              "summary": "The VIX volatility index spiked 70%, signaling a sharp increase in equity market volatility. Historical context is discussed but no specific cause or magnitude of equity move is provided.",
+              "card_ids": [
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-06",
+              "effect_date": "2026-11-06",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "Yahoo Finance",
+              "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPQk9sdTFtR1poMDJELXc3ZTNRS3czSHZ4NUNweVdYY1BHUWRweHFSbWQ0dEpNdE5fdXNTM2hqalRfOHRuczVyXzlrTjNWQWhOYXJnVkFfZ0R3eTd1V0oxMVNwT1kySkZweTJHRGkwQnN1cDJTUkdpbWZ4QXB4NG5RT1VDNmFYWXV4TDhQSUVkTlJXSkZSeVVkTXFtTDNPbS1DUVVpUnNwMDM2Nk5ueW1GbVRmeWRvMlRUTXpPRDJMSmhLbEU2TFpWdzk0bnFLMTRW?oc=5",
+              "evidence_quotes": [
+                "The VIX volatility index just spiked 70%."
+              ],
+              "confidence": 0.55,
+              "notes": "headline_only. A 70% VIX spike is a concrete market event consistent with a sharp equity volatility surge, which maps to NSCC variation margin and liquidity stress (ECS-NSCC-LIQ). No underlying equity price move magnitude, no named participants, and no DTCC-specific detail provided. Effect date set to announced date as no separate event date is given."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1555,
+    "outputTokens": 853,
+    "totalTokens": 6781,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5503
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

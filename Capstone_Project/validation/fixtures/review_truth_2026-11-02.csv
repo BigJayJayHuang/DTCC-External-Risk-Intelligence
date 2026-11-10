@@ -1,0 +1,19 @@
+proposed_event_id,title,tier,decision,reason
+PE-2026-11-02-1e8cd493,US regulator advances route to 24-hour stock trading,required,reject,"CFTC approval of continuous equity futures trading, not NSCC/DTC."
+PE-2026-11-02-c7d07f39,Hedge Funds Dump Positions and Cut Staff as Selloff Deepens,required,reject,"Equity long-short funds, no Treasury or repo link; stays as context on ECS-NSCC-LIQ."
+PE-2026-11-02-1f565142,DTCC highlights final implementation steps for Treasury clearing mandate,required,reject,No new information; already covered by EV0006.
+PE-2026-11-02-c25bff32,French banking group hit by supply chain cyberattack,required,reject,"Crédit Mutuel Arkéa: non-US, no US link."
+PE-2026-11-02-b970bc72,Thinkorswim trading platform outage reported by users,required,reject,"The article is from 2026-07-16, not this week."
+PE-2026-11-02-59b09a07,Stock settlement cycle to shorten to T+1 in 2028,auto,reject,Korea T+1: non-US.
+PE-2026-11-02-1609bdc0,Non-US market pursuing T+1 settlement transition in 2028,auto,reject,Korea T+1: non-US.
+PE-2026-11-02-c6d01837,Bank of America shares fall 1.1% after analyst downgrade,auto,reject,Bank of America analyst downgrade: trivial.
+PE-2026-11-02-c771bfa5,French bank loses €100 million in major cyberattack,auto,reject,Non-US weekend item; same occurrence as the Arkéa event.
+PE-2026-11-02-5a1aeeb0,Arini Offloads $800M in Debt Amid Margin Calls,auto,reject,"London credit fund; not a US bank, broker-dealer or DTCC member under card catalog v2 (changed from keep on 2026-11-09)"
+PE-2026-11-02-6ed3e28b,Citigroup Global Markets joins FICC GSD as Agent Clearing Member,required,reject,"New FICC Agent Clearing Members (Citigroup, Zions, Daiwa, NatWest, Vanguard, JPM London, BNS): onboarding ahead of the mandate, not a shock. Related news on FICC-GSD-03. [run_20261110T033111Z]"
+PE-2026-11-02-4cbc12b7,SEC exempts certain non-US and affiliated repo transactions from the Treasury clearing requirement (Release 34-106789),required,keep,"approved with edits (FICC-GSD-03, certainty 2, reach 2, announced 2026-10-30, effect 2027-06-30): Narrows the scope of the repo clearing mandate; does not change the 2026-12-31 / 2027-06-30 compliance dates. [run_20261110T033111Z]"
+PE-2026-11-02-5b99e177,LTSE amends rule on Level 3 circuit breaker trading resumption,required,reject,LTSE: routine SRO filing. [run_20261110T033111Z]
+PE-2026-11-02-e960a9f3,NSCC rule change on ACATS for insurance and retirement products,required,reject,"NSCC product expansion, no risk angle. [run_20261110T033111Z]"
+PE-2026-11-02-9a4a3088,Hedge funds dump positions and cut staff amid deepening selloff,required,reject,Rejected earlier: equity long-short funds; context on ECS-NSCC-LIQ. [run_20261110T033111Z]
+PE-2026-11-02-1d6ffbfe,Mizuho Securities USA additional account activation at DTCC,required,reject,Routine account notice. [run_20261110T033111Z]
+PE-2026-11-02-51ecda4f,Marshall Wace and Millennium hit in October AI rout,required,reject,Equity hedge funds; context on ECS-NSCC-LIQ. [run_20261110T033111Z]
+PE-2026-11-02-99e81ba3,State Street Bank Lending Pass-Through account retirement at DTCC,required,reject,Routine account notice. [run_20261110T033111Z]

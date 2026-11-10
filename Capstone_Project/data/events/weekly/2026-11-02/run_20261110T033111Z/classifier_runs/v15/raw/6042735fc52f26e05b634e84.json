@@ -1,0 +1,57 @@
+{
+  "document_id": "50e76a4bde7c3384fcf5df312137d43a30f65808fbcdb3d51e2130f24b876964",
+  "url": "https://files.dtcc.com/download/assets/25241-26/3664c2ccda3011f1902ad221268d22bb",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "bd607188ec16d3defdd8f84c52334255282fa07f7f5eb24acc1a125d66e3df57",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_vNxq4AtjY0pJARIWm9fSNO",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "DTC internal product/infrastructure notice: the DRS transformation (SPA go-live timeline change) is an internal DTCC operational milestone, not an outside event of a type described in any card's Step 1. No card in the catalog covers DTC's Direct Registration System transformation schedule. The hint cards (ECS-NSCC-09, FICC-MBSD-01) do not match this content."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1785,
+    "outputTokens": 488,
+    "totalTokens": 6646,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3576
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

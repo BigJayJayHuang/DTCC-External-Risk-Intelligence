@@ -1,0 +1,57 @@
+{
+  "document_id": "31702bda918b621836598681c82b5a1d1130d43fa4d7d6f5643663a016a4fb7b",
+  "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNVi10ck9tNzhJODVOeDVYSHRnQUpjV1UwRVkxa1VGdHpjSDRGTFhoSFhlbWZhbzhqcmItMk1sM2cxLXlGUjZJY281X0VOb19vcWxnVTMwRkthdnVheGhmQWNzclpYTEs0Slhvemxfem52LUxPcVlDbkRzVjlFc0NyTGMtRVFrd0NKbmJ0czZiQjhQRFZxMTdMU1FlTFk1UWJYX2k1MVZWZw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "1f835fe782eaa9a0c2028cb76df4be6f4431837496da8e50f76674ec8f6505bd",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_EUJJoucSvE4nK0A6YMAopK",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Clariant is a Swiss specialty chemicals company, not a US bank, broker-dealer or DTCC member. Deutsche Bank's downgrade of Clariant stock is an equity analyst action on a non-financial issuer with no stated link to US markets or DTCC processes. No catalog card applies.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1470,
+    "outputTokens": 462,
+    "totalTokens": 6305,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3212
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

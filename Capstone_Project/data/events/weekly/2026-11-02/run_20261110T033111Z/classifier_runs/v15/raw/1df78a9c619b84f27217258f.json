@@ -1,0 +1,61 @@
+{
+  "document_id": "71098d3919f462cf8ce79a36389845874c50b719c21d46b862484e0c5affa9c8",
+  "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPdXp3a0FPd0hXUUl4RXVZX21rbUtkRTh3bUlPc0U1QWowS1ZELWNLcmtVMlE0MzZKSDNXSTJPcEpsajI5RFhrN3NVTkcycVI3NnJxQXJndWRvb0NNX2lKOVZJT290bUNkR3FELUJ5cUYwT1lOLWZ3SWVzTkxLSG5UODNWNldieHNNVjJSbGo4VXNlTnJqdG9OeUlRSFF4ODNVcHNPamx1TjVvUlMtQU1td0dHZnpOZ3Q4SzBBdWllMThHLWJNZjdscW9ITmdnQQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "6243564bf94e15ddea6407ff6107df1435c462cbf41ca58e21538484b91f206b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_uwvpBE07Qwdsp3cimuw3Xg",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "market_move",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "Treasury rally boosted as election pressures AI trade",
+              "summary": "A Treasury rally is gaining momentum following an election that has weighed on the AI trade, implying a shift in yields. The headline suggests a notable move in Treasury prices/yields.",
+              "card_ids": [
+                "FICC-GSD-01"
+              ],
+              "certainty": 2,
+              "reach": 1,
+              "reach_basis": "business_line",
+              "named_participants": [],
+              "announced_date": "2026-11-08",
+              "effect_date": "2026-11-08",
+              "stage": null,
+              "source_tier": "major_media",
+              "outlet": "Bloomberg.com",
+              "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPdXp3a0FPd0hXUUl4RXVZX21rbUtkRTh3bUlPc0U1QWowS1ZELWNLcmtVMlE0MzZKSDNXSTJPcEpsajI5RFhrN3NVTkcycVI3NnJxQXJndWRvb0NNX2lKOVZJT290bUNkR1FELUJ5cUYwT1lOLWZ3SWVzTkxLSG5UODNWNldieHNNVjJSbGo0VXNlTnJqdG9OeUlRSFF4ODNVcHNPamx1TjVvUlMtQU1td0dHZnpOZ3Q0SzBBdWllMThHLWJNZjdscW9ITmdnQQ",
+              "evidence_quotes": [
+                "Treasury Rally Gets New Boost as Election Hammers the AI Trade"
+              ],
+              "confidence": 0.45,
+              "notes": "headline_only. Headline implies a Treasury price rally (yield decline) driven by post-election rotation out of AI stocks. Magnitude and direction of yield move not specified; certainty set to 2 as the rally is described as ongoing/confirmed. Reach set to 1 (business_line) rather than 2 as no market-wide stress or major participant is named."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1939,
+    "outputTokens": 830,
+    "totalTokens": 7142,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 6144
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

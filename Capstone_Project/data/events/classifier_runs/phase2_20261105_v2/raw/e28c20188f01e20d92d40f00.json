@@ -1,0 +1,40 @@
+{
+  "document_id": "c2286239b8c6d69c6f87a3ac0aeeacf2cdb74c7a9a8934e6bf4a29ec837fcab6",
+  "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22457/self-regulatory-organizations-national-securities-clearing-corporation-notice-of-filing-and",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ee41f303a8a20b678e78040a086f884b5170a60e56e1d09bdc91b5da8cb1ca1d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_tA0hd9YRIDM2r9QOqUztDt",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is an internal NSCC rule change to enhance automated reasonability checks for ETF creation and exemption transaction submissions. It is an operational/procedural rule filing with no risk angle matching any card's Step 1 trigger — no market stress, no member default, no settlement cycle change, no clearing mandate milestone, no cyber event, etc."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4158,
+    "outputTokens": 115,
+    "totalTokens": 4273,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1997
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

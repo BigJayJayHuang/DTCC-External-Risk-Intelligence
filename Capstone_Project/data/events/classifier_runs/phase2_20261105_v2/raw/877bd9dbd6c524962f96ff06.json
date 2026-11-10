@@ -1,0 +1,40 @@
+{
+  "document_id": "8467e2124a16c5439120fe349559e1c9eb51a7fd67063141558aa433aa1bd926",
+  "url": "https://files.dtcc.com/download/assets/a9835/78df1b84c3d811f18c6c2a109482d4f7",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "43f974024925a6d9b7201f2b0a625a6035be4a14f7dbb692f11b0e5b0077aeca",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_kpICjvk0YiZTjegMiuZG7w",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This DTCC notice announces the decommissioning of SOAP-based XML IFT Web Service Messages for Insurance & Retirement Solutions. It is an internal DTCC product/service change with no risk angle matching any card in the catalog — it does not describe a market event, regulatory action, member stress, or infrastructure disruption that touches any of the listed DTCC clearing or settlement processes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4100,
+    "outputTokens": 127,
+    "totalTokens": 4227,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1908
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

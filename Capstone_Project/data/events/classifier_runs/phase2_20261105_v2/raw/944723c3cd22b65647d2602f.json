@@ -1,0 +1,40 @@
+{
+  "document_id": "ca688a27006cdc18bac09fd5edb687c617913c993eb5627f3893a13939502053",
+  "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261013a.htm",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "79a6d91f79808cd02d0ef3a8f5723036b18707d69a2c43ba715543d96283bfc7",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_GzPOd6kTQgDoh4S0srLbBQ",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is only a title/headline for Federal Reserve Board discount rate meeting minutes (August–September 2026). It contains no market event, regulatory action, member stress, or infrastructure disruption that maps to any card in the catalog. No actionable risk-relevant content is present."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4078,
+    "outputTokens": 101,
+    "totalTokens": 4179,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1814
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

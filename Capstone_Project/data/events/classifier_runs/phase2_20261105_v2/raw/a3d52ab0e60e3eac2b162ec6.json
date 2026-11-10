@@ -1,0 +1,40 @@
+{
+  "document_id": "0087b95c4fc4a02464a843940ceac2d402af0bf0278deee8ec91930f14a0e943",
+  "url": "https://www.federalregister.gov/documents/2026/10/16/2026-21185/agency-information-collection-activities-information-collection-extension-submission-for-omb-review",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "f23ae6a9ad85b1ef8db1a69e74203f0000b818c7d554e53e62edbd9b5316a6c2",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_sxXFiUXPQlOfmTyK6wHbNY",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a routine OMB paperwork extension for the FFIEC 101 regulatory capital reporting form. This is an administrative information-collection renewal with no new market event, regulatory mandate, member stress, or infrastructure change that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4377,
+    "outputTokens": 98,
+    "totalTokens": 4475,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1913
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

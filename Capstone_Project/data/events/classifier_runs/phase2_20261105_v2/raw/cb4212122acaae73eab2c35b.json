@@ -1,0 +1,40 @@
+{
+  "document_id": "65d71cd70dfd4489a4fc5c397af385f05cdfa926c85c8133dba602529a12f2ef",
+  "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22266/self-regulatory-organizations-the-nasdaq-stock-market-llc-notice-of-filing-and-immediate",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "3d9c7127cadd1bdf675aea13c28b827277097e42a095b51e385f3b5b94d09754",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_AORYHEgA2sJAMs4lf4eBqZ",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only notice about Nasdaq revising its interpretive material IM-8310-3 (a membership/disciplinary rule). This is an internal SRO rule housekeeping change with no market event, stress, or operational risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4145,
+    "outputTokens": 107,
+    "totalTokens": 4252,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1918
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "92df74592ef078af01d679a6d4b0aee2981b2057b2282555118ab4d8b323c840",
+  "url": "https://www.cftc.gov/PressRoom/PressReleases/9317-26",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "2c433c5c2aada16eeb8c904cbbb6dbc5046c0ea7435eabd55180c01c164d5ba1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_FT1ejNOoK1hkbVQdRLfJ95",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only press release about CFTC Chairman Selig attending an agricultural conference (AgCon 2026) in Kansas. It describes no market event, regulatory action, member stress, or infrastructure issue that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4098,
+    "outputTokens": 99,
+    "totalTokens": 4197,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1586
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "4e91d8a46c48ad5ec34c51cc8c257b937e108012c4def794d85bad38bcddfd22",
+  "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPZElOeXZTazI3SDF4bFpjbUJWZkl1LWI2NW1DN096SWphOW51VVEycUhlZm41NmRJZktNalhCeUhtN3pJcXhycXhSRnltZEowTWNyazg1T3l6cnVmYlBzb21iaXpTNWsxc1VLa3NSVnB1YWFFTUQxTTdNWU9naUZBTlJ2MktPUjVyTFBZV1oyUzBtLTZGWUM1YmdlMjROY1VTcGx2VlRUNThBTjRFQk1z?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "0809b8ea7f0f11cebc5e38d4b4b5c65f9e4c059a2d488bff4bb78b01534b82db",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Y3EQHq9qsBKjq09q29CwfH",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a headline snippet about AI/chip stock losses spreading to Asia. While it describes a market selloff that could theoretically touch NSCC liquidity, the article provides no substantive detail beyond the headline — no volume data, no margin stress, no participant stress, no regulatory action. A headline-only snippet with no supporting content is insufficient to establish relevance under the card criteria."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4333,
+    "outputTokens": 124,
+    "totalTokens": 4457,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2029
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

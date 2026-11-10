@@ -1,0 +1,57 @@
+{
+  "document_id": "f8414fe098efbf6850548570c21b4a20deaade1af50ec18e5728f5ac3b9a1843",
+  "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNdHJEdXJ6QTBBMDdBa2xGcmF2VXhTMVR2Z3NUa0M5Tmk2WlFtRTdfUjBmTFVWRWcybjBrLU53RVBxMHdHSmMzVjVHaHZUOC0wZlFGZnJ0aS1UeW5JQ3R2TjlQTF9YWWk1MVlQZlVwekEyb1R5NEtmLTdkM2Z4WHFYMG81ZjRMMnNzanRTbFVNbVRtVnNfRVU4aUdCTEdQQQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "e437929b8b265dc119c8855762b8c316eedff959ab0a695c755731017b548ed8",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_VGacq9Gnj182Dwwoi9xsVk",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "Headline describes individual equity price moves (real estate/mortgage sector stocks) driven by a Treasury yield retreat. No Treasury market stress, no sharp yield swing, no DTCC process touched. Single-stock/sector moves at non-major-participant issuers; no card match."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1503,
+    "outputTokens": 457,
+    "totalTokens": 6333,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3836
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

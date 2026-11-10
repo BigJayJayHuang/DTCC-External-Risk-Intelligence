@@ -1,0 +1,61 @@
+{
+  "document_id": "21fd35758fc926172f212a7114943b30cd6dcb3f22aa2d9b63365fbca6a22706",
+  "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE8tMXJMMHdSUTVyc3BzcDRfUEU2Z0dWV0Z5V2k0d0NNUG1IMHNQQnpkZUYyczdzTTZrc1BIRFl1ZFE3aGdMWVo2Q1JJU1lwekh3QlE2OGE3YU11N0hXYnVXdmFnajM?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "c9011f5da958f3193221e50888a07e0eb44322a0023c8c57d7081f3fcb442d3b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_86qF5g0OhnzTDKY4Fv9Wtp",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "regulatory",
+              "geography": "non_us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "Non-US market to shorten stock settlement to T+1 in 2028",
+              "summary": "A non-US market (source outlet is Korean: 아시아경제) is reported to be shortening its stock settlement cycle to T+1 in 2028, with sellers to receive proceeds the next day. No link to US markets, DTCC, NSCC or DTC is stated in the article.",
+              "card_ids": [
+                "ECS-SET-01"
+              ],
+              "certainty": 1,
+              "reach": 0,
+              "reach_basis": "single",
+              "named_participants": [],
+              "announced_date": "2026-11-02",
+              "effect_date": "2028-01-01",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "아시아경제",
+              "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE8tMXJMMHdSUTVyc3BzcDRfUEU2Z0dWV0Z5V2k0d0NNUG1IMHNQQnpkZUYyczdzTTZrc1BIRFl1ZFE3aGdMWVo2Q1JJU1lwekh3QlE2OGE3YU11N0hXYnVXdmFnajM?oc=5",
+              "evidence_quotes": [
+                "Stock Settlement Cycle to Be Shortened to 'T+1' in 2028... Sellers to Receive Proceeds the Next Day"
+              ],
+              "confidence": 0.35,
+              "notes": "headline_only. Outlet is Korean (아시아경제), suggesting this refers to the South Korean market, not US markets. No link to US markets, DTCC, NSCC or DTC is stated. Geography set to non_us. ECS-SET-01 is technically a match for settlement cycle changes but the card scope note specifies US cash equities settling at NSCC/DTC; relevance is marginal. Reach set to 0 (single non-US market). Effect date of 2028-01-01 is approximate as no specific date is given in the headline."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1844,
+    "outputTokens": 813,
+    "totalTokens": 7030,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 6041
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

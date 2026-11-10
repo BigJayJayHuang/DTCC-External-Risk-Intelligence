@@ -1,0 +1,48 @@
+card_id,query
+FICC-GSD-01,"""Treasury yields"" surge"
+FICC-GSD-01,"""Treasury yields"" plunge"
+FICC-GSD-01,"""bond market selloff"""
+FICC-GSD-01,"""Treasury volatility"""
+FICC-GSD-02,"""repo rates"" spike"
+FICC-GSD-02,SOFR spike
+FICC-GSD-02,"""repo market"" stress"
+FICC-GSD-02,"""money market funds"" repo"
+FICC-GSD-03,"""Treasury clearing"" mandate"
+FICC-GSD-03,"""central clearing"" Treasury SEC"
+FICC-GSD-03,"""sponsored repo"""
+FICC-MBSD-01,"""mortgage rates"" jump"
+FICC-MBSD-01,"""MBS spreads"""
+FICC-MBSD-01,"""mortgage-backed securities"" selloff"
+FICC-GSD-11,"""hedge fund"" losses Treasury"
+FICC-GSD-11,"""basis trade"" unwind"
+FICC-GSD-11,"""hedge fund"" ""margin call"""
+FICC-MBSD-02,TBA settlement fails
+FICC-MBSD-02,"""mortgage pool"" delivery"
+ECS-NSCC-LIQ,"""stock market selloff"""
+ECS-NSCC-LIQ,VIX spike
+ECS-NSCC-LIQ,"broker ""margin calls"""
+ECS-NSCC-03,"""record trading volume"""
+ECS-NSCC-03,"stock ""volume surge"""
+ECS-NSCC-03,"""meme stock"""
+ECS-SET-01,"""T+0"" settlement"
+ECS-SET-01,"""24-hour"" stock trading"
+ECS-SET-01,"""settlement cycle"""
+ECS-NSCC-08,brokerage collapse
+ECS-NSCC-08,"""broker-dealer"" shutdown"
+ECS-NSCC-08,"""account transfers"" frozen"
+ECS-NSCC-09,"""securities lending"" stress"
+ECS-NSCC-09,"""securities financing"" repo"
+ECS-DTC-01,"""commercial paper"" stress"
+ECS-DTC-01,"""money market fund"" outflows"
+XE-MEMBER,bank downgrade
+XE-MEMBER,"""broker-dealer"" default"
+XE-MEMBER,"""clearing member"" default"
+XE-DISRUPT,"exchange ""trading halt"""
+XE-DISRUPT,"""market closure"""
+XE-DISRUPT,exchange outage
+XE-SETTLEBANK,Fedwire outage
+XE-SETTLEBANK,"""settlement bank"""
+XE-SETTLEBANK,bank payments outage
+XE-CYBER,cyberattack bank
+XE-CYBER,"ransomware ""financial firm"""
+XE-CYBER,trading platform outage

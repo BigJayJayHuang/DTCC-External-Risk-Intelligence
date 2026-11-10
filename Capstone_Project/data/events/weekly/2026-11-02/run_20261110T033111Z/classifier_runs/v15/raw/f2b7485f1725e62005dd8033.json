@@ -1,0 +1,57 @@
+{
+  "document_id": "d7e1d7af384bd68bdaf597c3f61a0cd02802d033fcb68cf713a184e7913d36a6",
+  "url": "https://files.dtcc.com/download/assets/25164-26/b1891a08d79611f1a32676277c76473d",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "53ae7c4ddcc171c90b260ef83ac88e4c7392b200da210f67bcedc8e4ed6e7743",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_92gafGJmAj1aHlLDT8YV1j",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Routine DTC corporate action / tax relief notice for CRH PLC (Ireland); describes dividend record/payable dates and instruction deadlines for a non-US issuer. No market event, regulatory action, member stress, or operational disruption matching any catalog card. The notice itself states it is non-sensitive supplemental material.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1854,
+    "outputTokens": 468,
+    "totalTokens": 6695,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3481
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

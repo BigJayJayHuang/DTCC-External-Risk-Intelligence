@@ -1,0 +1,55 @@
+{
+  "document_id": "79e8014b29c2e7373d26c42e51289cf5e73a18529ec6af24e3f7499057d0ff7a",
+  "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE05YWhCMW80ZTZrdmVDVTNZOVJaNGdxTDVmMXpLTmpzMlk1b0xkVFpGOWJ1eXk3NkJfeWZtSGZ3NkN5SzhXNUI4THg4MDZSMWZfR3o0aHZNcFNaeEQ5MGc?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "1d1795ac9ea9e6c97e6fc078928b585d70abcd76a53a621c6e4cf2b9baa49977",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_YrgGuQY9FnR1GUzhGJ01Bm",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Opinion/commentary post from a social media account with no concrete event described. The quote \"Every stock is a meme stock in this market\" is a generic market opinion with no specific event, data, or named participant. Not relevant to any catalog card.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1423,
+    "outputTokens": 414,
+    "totalTokens": 5752,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3021
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "74e805482992b9845c3ced593924e8090178548e92738b552c36a59181c308f4",
+  "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNWVZOYjEwOW5TT1B4OW1FeDVfSFcxa1ZOQ0RlbmZKZG1ET0RXY2J5SmprV2xiR1hxTC1aQmVDanVnc3ZQN1IwWElwMVJhb2Z0eFNFY3hpck5seTlxYkY4U0tIdGZlMFdBbDdyU1NSTmpqVDhoTjhhZHZaaHZYQnNCUG9teTBfaVUtYlZNSkdEUmtLMjFSSEhFWkdWUGhnUUlUUjVrMlY3M1dhMlZhTUNoWA?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "8183f2bd93392cb200370e6d70dc60ab46d994c4b22ff3b0cfd8562d2594c81b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_kuJo193ruZGFEaLfegThyR",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a headline snippet only: 'Arini Offloads $800 Million in Debt Amid Margin Calls'. There is no substantive content beyond the headline — no details about the firm, the nature of the debt, the counterparties, the cause of the margin calls, or any market-wide impact. The snippet does not provide enough information to confirm a card-level event (e.g., a major participant stress, a liquidity squeeze, or a member default). With only a headline and no supporting text, the article cannot be reliably classified as relevant under any card."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4345,
+    "outputTokens": 171,
+    "totalTokens": 4516,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2618
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

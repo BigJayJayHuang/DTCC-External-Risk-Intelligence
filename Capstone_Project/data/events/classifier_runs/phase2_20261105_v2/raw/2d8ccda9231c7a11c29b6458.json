@@ -1,0 +1,40 @@
+{
+  "document_id": "30e0c8919c4cefd91d4c8267a383ff8ab2f5a69d4c126d04b4c701e48a8cbdcf",
+  "url": "https://www.fca.org.uk/news/press-releases/two-plead-guilty-after-clients-lose-2m-fraud-case",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "eb59bb94a11c86f8c97eb6370921ff04802150ccc5606afba6f7af2d3e6885d2",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_LfBgwzVN2AKwMLvcqvqL6P",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a UK retail investment fraud case (FCA prosecution of two individuals at Nexus IFA/Nexus IM) with no connection to any DTCC process, market infrastructure, clearing, or settlement event covered by the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4594,
+    "outputTokens": 95,
+    "totalTokens": 4689,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1653
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

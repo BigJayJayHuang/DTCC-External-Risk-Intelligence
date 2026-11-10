@@ -1,0 +1,57 @@
+{
+  "document_id": "15ca2c4eeb1200538aa175c39417a4e043b05b99c3d15f29155ea207160f79c5",
+  "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBVOFhXQm85NmlXMXNHejZnVDBSV1lleUFocjdDNFpVSHRkVDFMOXhKWWw3NTdFcngtaDNuYk9GMEZ3RDVhMUVkVWhldndqbWVNNXJkd0lTMA?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "216beeba478931fa9c9f82bd4c906cdee3342c2d9229123b8f6bb2e185b1de56",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_rFQ6ZjyToKBtqw9GmfBt9n",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Korean brokerages extending US stock trading hours for their retail customers is a non-US brokerage service change. The article states no link to DTCC, NSCC, DTC, or any US settlement infrastructure. It does not describe a change to the US settlement cycle or US trading hours at a US exchange. No catalog card is triggered.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1803,
+    "outputTokens": 471,
+    "totalTokens": 6647,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3718
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

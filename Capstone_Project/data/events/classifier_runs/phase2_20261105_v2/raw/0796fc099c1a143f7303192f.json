@@ -1,0 +1,40 @@
+{
+  "document_id": "41bee9e79717cc88d6fa87ea5190734b53e63d3c4ce2db2afef698bfda74502e",
+  "url": "https://www.federalregister.gov/documents/2026/10/28/2026-21925/self-regulatory-organizations-nyse-texas-inc-notice-of-filing-of-amendment-no-1-and-order-granting",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "a872c17a31ebca6f7fc5ad179c86f7256beb364bb1b72364c21d0564b3108045",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_JUb76BGaLZ9NN3SVHnVk7U",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article concerns NYSE Texas, Inc. filing a rule change to offer complimentary products and services. This is an exchange administrative/commercial matter with no risk angle matching any card's Step 1 trigger (no market stress, no clearing mandate, no member default, no cyber event, no settlement disruption, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4177,
+    "outputTokens": 109,
+    "totalTokens": 4286,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1874
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

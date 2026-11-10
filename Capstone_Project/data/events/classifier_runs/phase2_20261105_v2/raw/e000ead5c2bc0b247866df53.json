@@ -1,0 +1,40 @@
+{
+  "document_id": "e0a79badc41504c72f919c5756bbec8f29892298e6cbe2377662e87938e2ee37",
+  "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261029~abbb6dc64b.en.html",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "5712e70fc748f2388c5cbb8ff2db86d6659b9be716e6d04af07e916857318d83",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_vxo99YOJzNYqAfsVtTYYOD",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article reports only that ECB President Lagarde will step down on 7 February 2027. This is a central bank leadership succession event and does not match any card's Step 1 trigger (no market stress, no regulatory mandate, no member/counterparty stress, no infrastructure or cyber event affecting DTCC processes)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4077,
+    "outputTokens": 114,
+    "totalTokens": 4191,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1724
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

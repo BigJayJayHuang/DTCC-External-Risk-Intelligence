@@ -1,0 +1,64 @@
+{
+  "document_id": "a814f6720041aef3155ae0007bdf587b241e0ff0179798e0f1bc3b77cdfe1717",
+  "url": "https://files.dtcc.com/download/assets/GOV2285-26/782a9342d7b211f1904276277c76473d",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "f7b158b231bcc483c2394013b7c9d01cf88dfe5480fc98b5e7e9581a154b7985",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_oTreRVYz5t2JwCFi0P8r8v",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "regulatory",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "NatWest Markets Securities joins FICC GSD as Sponsoring Member",
+              "summary": "DTCC notice GOV2285-26 announces that NatWest Markets Securities Inc. has become a new Sponsoring Member of FICC's Government Securities Division (Omnibus CIL – GSD #94GR), expanding the pool of GSD sponsored-clearing participants.",
+              "card_ids": [
+                "FICC-GSD-03"
+              ],
+              "certainty": 2,
+              "reach": 1,
+              "reach_basis": "major_participant",
+              "named_participants": [
+                "NatWest Markets Securities Inc."
+              ],
+              "announced_date": "2026-11-03",
+              "effect_date": "2026-11-03",
+              "stage": null,
+              "source_tier": "dtcc",
+              "outlet": "DTCC",
+              "url": "https://files.dtcc.com/download/assets/GOV2285-26/782a9342d7b211f1904276277c76473d",
+              "evidence_quotes": [
+                "New Sponsoring Member of the Government Securities Division of FICC: Natwest Markets Securities Inc. / Omnibus Cil – GSD #94GR",
+                "Updates/changes impacting DTCC Participant(s)/Member(s) and/or Sponsored Member(s) noted here."
+              ],
+              "confidence": 0.72,
+              "notes": "DTCC official notice confirming a new Sponsoring Member onboarding to GSD, directly relevant to GSD Sponsored volume growth (FICC-GSD-03). Reach set to 1/business_line rather than market_wide as this is a single new entrant; NatWest Markets Securities is a notable dealer but the notice is summary-only with no volume or market-wide impact stated. Effect date set to announced_date as no separate effective date is given."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1845,
+    "outputTokens": 719,
+    "totalTokens": 6937,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5718
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

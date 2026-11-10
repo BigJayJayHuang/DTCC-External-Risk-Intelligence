@@ -1,0 +1,40 @@
+{
+  "document_id": "277a186038383a125cad1d1d48ffbc99bdb813aafb5f85989644e4779680be0f",
+  "url": "https://www.federalregister.gov/documents/2026/10/09/2026-20714/cboe-clear-us-llc-notice-of-filing-of-an-amendment-to-application-for-registration-as-a-clearing",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "465249a9bb072999c64e72a8cbf790045b66e53b76a23c78560ccd9becd055ec",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_zWXePIOvWtOIvWfgRQuQBt",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a notice of a filing by Cboe Clear U.S., LLC to amend its application for registration as a clearing agency. This is a regulatory/administrative filing by a competitor clearing agency, not an outside market, member stress, infrastructure, or cyber event that maps to any card in the catalog. No card's Step 1 trigger is matched."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4141,
+    "outputTokens": 119,
+    "totalTokens": 4260,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2057
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

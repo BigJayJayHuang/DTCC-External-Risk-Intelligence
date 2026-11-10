@@ -1,0 +1,40 @@
+{
+  "document_id": "2298ba9718c72d479b2cb270fda9a10d8d65fcb19e66d09b587fb987db464aea",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5TcXJHRFJSTDRZM0xHU1JFRk9Td0N0d24tc0cwbUxQaTdLbzdoUEJKVktMN1dseXRfZ0cwQ1NvTDZlNDVPSkl4dW5BdENrZ24yZkE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "91ee576fc2e9a39b2189922857f49159d346168990bad3eb8f063af2eca188d6",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_bIAWsv7GCSK8Uervhezcrl",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Explainer/listicle reviewing historical VIX spikes. No new concrete market event described; purely retrospective educational content with no actionable event matching any card's Step 1."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1399,
+    "outputTokens": 83,
+    "totalTokens": 5190,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1681
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "a1f62ab14c5631cf1f35549f03510f0e46dea6db7789711f2fb58a756200c8cc",
+  "url": "https://files.dtcc.com/download/assets/A9847/c1bf801acf2111f19cf8cacb765c66ae",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "c82b8949974b42a1720df3f88283f32d407b2ec473617c07ec3b5649feea9a4f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_I4Vv6IoGHvFaWnkTpVm9sW",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is an internal DTCC operational notice (A9847) announcing updated client milestone dates for ETF Modernization within NSCC. It is a product/process timeline update with no risk angle — no outside market event, regulatory action, member stress, or infrastructure disruption described. No card in the catalog covers ETF Modernization milestone scheduling."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4113,
+    "outputTokens": 118,
+    "totalTokens": 4231,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1914
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

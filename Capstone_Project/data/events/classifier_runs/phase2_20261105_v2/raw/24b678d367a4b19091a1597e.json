@@ -1,0 +1,40 @@
+{
+  "document_id": "381f5de28aa00d37631162df4810a74973b65c7dc3d26294e2f788b9788bc10d",
+  "url": "https://www.federalregister.gov/documents/2026/10/16/2026-21133/self-regulatory-organizations-miami-international-securities-exchange-llc-notice-of-filing-and",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "bee41abf32dba98d18a25dd8035af00205489721ea54706dd94470945b7eb4f6",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_1ndkkxjAZsKREi87xEu5AJ",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This article is about Miami International Securities Exchange amending its fee schedule to modify a Priority Customer Rebate Program for complex options orders. It does not describe any outside market, regulatory, member stress, infrastructure, or cyber event that maps to any card in the catalog. It is a routine exchange fee rule filing with no risk angle relevant to DTCC processes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4159,
+    "outputTokens": 116,
+    "totalTokens": 4275,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1877
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

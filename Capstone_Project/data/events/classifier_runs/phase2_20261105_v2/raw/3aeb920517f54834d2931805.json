@@ -1,0 +1,40 @@
+{
+  "document_id": "8a5d6f4db75561d18ba173e5d1d398fec2967798e4564cb040a3ad2197a7ff1f",
+  "url": "https://files.dtcc.com/download/assets/24595-26/ed32ec26d70211f1a1f3267bd53a5992",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "295edbe9217f061c281684811be1928755b3c86e9eb08e365722ad3c3dda520c",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_2E3iQ2HDortqJeZhm0osgk",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about tax relief processing for a TE Connectivity PLC dividend (Ireland tax relief at source). It describes an administrative corporate action notice with cut-off dates for CA Web instructions, not an outside market, regulatory, member stress, or infrastructure event matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4227,
+    "outputTokens": 108,
+    "totalTokens": 4335,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2018
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

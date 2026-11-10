@@ -1,0 +1,55 @@
+{
+  "document_id": "74171cabaf93290e83467bdd6f1094827e8320c911561beecc11bedec5cc36c5",
+  "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOU1ZwTmRQamtaNjFYLTFWaWJjT3ZSZ0lpa0JhWnRqbUItTEJpbGhQWDZkTllYbGJUOEFvUTgwSEVMY3VpMmtTTzJIUnVkYzAtZlI3S0ctTTBOb01GTjA1VDUtcXZoUFloQ0ZPZWRvbHRKMkplVmNWVFpBSVZqVDZwczZJX3U?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "c50b0bbca11071b4f518c63982201b6c7e374a61d829f669489a79d212ec5c2b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_vaqiq4wHpn7pY08OY08TGv",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline only. \"Arini's credit troubles\" is vague — no concrete event described (no default, no margin call, no named DTCC-member stress, no identified FICC/GSD impact). \"Roach-hunting season\" is a metaphorical opinion phrase. Insufficient factual content to match any card's Step 1 trigger. Not enough to classify as relevant under headline-only rules.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1439,
+    "outputTokens": 453,
+    "totalTokens": 5807,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3705
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

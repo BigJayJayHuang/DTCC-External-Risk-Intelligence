@@ -1,0 +1,40 @@
+{
+  "document_id": "eedce4cb2a5488a2bc9f8c56978a7cc685c63e741cfde1aca69304b14405b630",
+  "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOOENVZHZkVU1pMEpIblNFVmlDamQ4WTcyNE4zVTliUHNGQUJKVDI0c3o4QjQ5cm9iVUtVRG5ZU0dwalUtT2J1M3N0aFBXc01nYlk5NTNvR0QwUXI5S1g0THhxQ1dNY0g2d3czVmI2TzdkNFA2anllbm5kdkFQYjBWT2IyalFnM3hKdFp0UC1lUjRaN2dac1pUWm5EVTZSQ1QzR1pmamh1MA?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "d05f00fb44f80321579556d184063810da41ba4a0c7c16a8597f60ba8ae89643",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Vvd7lWE3TpdQ8QmIZZp9Zw",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article concerns 14 Kenyan banks facing downgrade by the Central Bank of Kenya (CBK) over a local capital requirement deadline — a purely domestic Kenyan regulatory matter with no connection to DTCC processes, US markets, or any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4330,
+    "outputTokens": 99,
+    "totalTokens": 4429,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2860
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

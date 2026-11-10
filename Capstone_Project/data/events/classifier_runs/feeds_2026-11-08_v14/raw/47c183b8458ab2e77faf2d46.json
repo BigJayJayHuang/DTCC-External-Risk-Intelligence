@@ -1,0 +1,40 @@
+{
+  "document_id": "e73b50b4fb26aeb8b8943aed75c1bc530346cd7c10c5e7d10a16b4c4c8347d80",
+  "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPeDBfdnUzSGUzellWZVNfdElQclhWWFFORHpKZGJZSnREN1RRNC1SaFdsRmFaTDN6WFJYMGdSc2pOOUFpTnF5cHNsVHVaQl9DOS1ycVphdWh6dnFnbGp6WGhDU2wycWw0SHpqV3VEYzQ3cDhzUDVtZFoxaFF1TVc0SzBGaGF1QmoxN2ZhNUdfYy14em90N2dyUm1zV0tZY0Zmd0xyLWdiUkExNVRtRFozaVhYQzhEcFo1UzRYWGdIYlplSEpocUxVMVNkR2k1cXB3MW5kM0pwM21zRy0x?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "15ced69ab138d2f3ae71c15d8770122088f56bee3acdd7d3632800500775c56f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_QG8EBKOsbsE8JxzJyYkjzl",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Cyberattack targets French blood banks and European supermarkets — non-financial firms in non-US markets with no stated link to US markets or DTCC participants."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1543,
+    "outputTokens": 80,
+    "totalTokens": 5331,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1498
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

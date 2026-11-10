@@ -1,0 +1,40 @@
+{
+  "document_id": "fd1d4b6f8c322435b55844a3edc32dc6d8549803f65d9bef69e4eead5e3299b9",
+  "url": "https://www.marketwatch.com/story/medicare-prescription-drug-costs-will-jump-50-in-2027-doing-nothing-could-cost-you-b701dfb7?mod=mw_rss_topstories",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "066ef5246a081fc9319c15466b3220b175647bd9fac846bd56dafe2f05adaf50",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_csqW7G6gBjSUBQgXV7KhhL",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about Medicare prescription drug costs and open enrollment — a healthcare/consumer finance topic with no connection to any catalog card event type or DTCC process."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1348,
+    "outputTokens": 75,
+    "totalTokens": 5131,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1571
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

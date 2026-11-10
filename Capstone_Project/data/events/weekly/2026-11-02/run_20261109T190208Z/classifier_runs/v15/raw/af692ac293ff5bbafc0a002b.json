@@ -1,0 +1,55 @@
+{
+  "document_id": "bf7d1d3ae0446858a5232ec7b5d3ab193f6361b7737b46a32fa19a11ee8128c7",
+  "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9OQWFMZkFRcGtnS1dSam00SkxySTJrM01KdlZPRnAzRjNlM2xWa0FGNEhiZmJPWjlQNzNFUGRzdFR4ZnFDeWhOOGJTNzV2VjlSMEh3bEhWc0hOWjNKY3NNd0l6UmRvVWI1RE8wRjJaSDFVZDhESy1MSmEtOW7SAYIBQVVfeXFMT3pBUUlPYWs1YklyM3A3MmRDNTdmcllUcWFfVEdwRGQzclZhZUkzdVFOSjI5TVE5QTVkdHE3VDBLRkFGOUxBUmFveWQxV09HcFh4eWY4ZW9uU1pBSjIxcFhCYU9UeHByaUR1Z1pfVTRQak5QcVJJbU5HX0RPX1l1Z1M4UQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "99ddfd758765a6acc49960fcb6001ad84761b630623ead1f6c30d643861f2e62",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_zHl9FnEAspHaSmybqtzmwq",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Consumer finance listicle recommending mortgage lenders for first-time homebuyers. No market event, regulatory action, or firm stress described. Not relevant to any catalog card.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1604,
+    "outputTokens": 399,
+    "totalTokens": 5918,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 14779
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

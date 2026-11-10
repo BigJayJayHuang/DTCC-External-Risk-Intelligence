@@ -1,0 +1,40 @@
+{
+  "document_id": "671d94f34016f5faa0940f2615cc0fe9f1c04df15937fd729e8aa1655f18e86b",
+  "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPSjZvaEVyTm5RN1hBZU81MUszQzNZMWR0OGpWa1hTQXpuZ3haXzVzbEVVZ3o2LUxLeTdETDZYWlhnZndDQnJvRlFFcElFM3B0YjlRcklOcFhOdkNrZjlDbFZIcnp2b2djbUpLamhEUkdOc05BcDhnLUt2NURZZ3FDNmwyQW13aHNoY3k0YVZtemZSbEY1V3FhM3hkVGYwbnlsVENNZDZNalNaTndyak93eF9rbTRXLWR3OTMwMjI2d3g1WFo1a3I4?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "22032a50f5be2895ac8c86edee9267d02e056518265d1da91abc430903851a55",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_rm0NapTXcnh4eL6PTfB5Am",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline only; describes a political attribution for a stock market selloff but contains no concrete market data, magnitude, or event details sufficient to confirm a market-wide selloff event. The text is purely a political blame statement with no actionable financial event described."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1524,
+    "outputTokens": 97,
+    "totalTokens": 5329,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1919
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

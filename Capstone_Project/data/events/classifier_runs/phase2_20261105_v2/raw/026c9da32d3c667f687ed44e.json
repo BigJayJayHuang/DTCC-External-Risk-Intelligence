@@ -1,0 +1,40 @@
+{
+  "document_id": "98e7b12542dbe24cb1205a425ff68ad75de76e2910bc921ead95b165aa2c3bf3",
+  "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261023~a3d201c97c.en.html",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ddb2cad61d52f4137ec68f37029af9c29dc6f666de07543d637d2bf6754f0559",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_QpNaNujAHTbApViwSsvgtz",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only reference to the ECB Consumer Expectations Survey for September 2026. It contains no information about a market event, regulatory action, member stress, infrastructure issue, or cyber incident that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4068,
+    "outputTokens": 94,
+    "totalTokens": 4162,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1477
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

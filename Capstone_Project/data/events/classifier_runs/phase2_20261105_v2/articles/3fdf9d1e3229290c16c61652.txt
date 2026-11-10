@@ -1,0 +1,3 @@
+A9845
+
+Calibration of NAV-based Create/Redeem Reasonability Check Notice: A9845 Summary: Effective October 29, 2026, National Securities Clearing Corporation ("NSCC") will lower the NAV-based reasonability check threshold applied to Exchange-Traded Fund ("ETF") create/redeem instructions from 98% to 50%.

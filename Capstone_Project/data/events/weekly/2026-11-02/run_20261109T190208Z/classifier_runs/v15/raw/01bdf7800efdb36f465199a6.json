@@ -1,0 +1,60 @@
+{
+  "document_id": "417f7824c6f9deebc7dafdc35cf2c93f3babed52a920725648297804a1620c69",
+  "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRG02RXdnOUdVdG5heW1rdll4NGtPY2gzam5SbFNoY1RZZ0pQclREUjYtNFBPX3BnQlVsRU5leHVPcjJpN0JBcWFJck8wREhyczE1NGRIa1V3ei0tQVJjcVYtN0d3SHdwSVVMMS1jMVF0Vl91eXBSeXRCTHNXWFZOTmZkaEh2eGFNRjlnbl9UWUZBazlSeHNZb1RwTnppdGZRUTZNN1huYUNtSDUxSWY4LUxjaw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "ddcd8fffe58fb9319f2d794d671b759bea64d01f9a76ad701aaff881291fbfbf",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_0kQL9syCGZtarPLprVR7H9",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "market_move",
+              "same_as_event_id": null,
+              "title": "Sudden chain reaction selloff rattles Wall Street",
+              "summary": "A sudden chain-reaction selloff rattled Wall Street, per a Bloomberg headline dated 2026-11-06. No magnitude, asset class, or participant details are provided beyond the headline.",
+              "card_ids": [
+                "ECS-NSCC-LIQ",
+                "FICC-GSD-01"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-06",
+              "effect_date": "2026-11-06",
+              "stage": null,
+              "source_tier": "major_media",
+              "outlet": "Bloomberg.com",
+              "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRG02RXdnOUdVdG5heW1rdll4NGtPY2gzam5SbFNoY1RZZ0pQclREUjYtNFBPX3BnQlVsRU5leHVPcjJpN0JBcWFJck8wREhyczE1NGRIa1V3ei0tQVJjcVYtN0d3SHdwSVVMMS1jMVF0Vl91eXBSeXRCTHNXWFZOTmZkaEh2eGFNRjlnbl9UWUZBazlSeHNZb1RwTnppdGZRUTZNN1huYUNtSDUxSWY4LUxjaw?oc=5",
+              "evidence_quotes": [
+                "Anatomy of a Selloff: Sudden Chain Reaction Rattles Wall Street"
+              ],
+              "confidence": 0.45,
+              "notes": "headline_only. The phrase \"chain reaction\" and \"rattles Wall Street\" suggests a broad market selloff, which maps to NSCC liquidity stress (ECS-NSCC-LIQ) and potentially sharp yield/futures moves (FICC-GSD-01). No asset class, magnitude, or participant details are available to confirm scope or severity. Confidence and certainty are limited accordingly. FICC-GSD-11 (hint card) was not selected as there is no mention of hedge funds or agent-cleared customers specifically."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1503,
+    "outputTokens": 821,
+    "totalTokens": 6239,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5677
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

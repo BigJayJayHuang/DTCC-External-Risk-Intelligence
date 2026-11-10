@@ -1,0 +1,167 @@
+{
+  "week_start": "2026-11-02",
+  "week_end": "2026-11-08",
+  "cap_usd": "3",
+  "run_dir": "/Users/caiwenqi/Documents/DTCC-External-Risk-Intelligence/Capstone_Project/data/events/weekly/2026-11-02/run_20261109T214051Z",
+  "prompt_version": "v1.6",
+  "status": "collected_for_review_no_model_calls",
+  "from_inputs": null,
+  "paid_calls": 0,
+  "collect_only": true,
+  "dry_run": false,
+  "official_input": {
+    "path": "/Users/caiwenqi/Documents/DTCC-External-Risk-Intelligence/Capstone_Project/capstone_database/exports/news.csv",
+    "sha256": "59525783c4d8dc2905ceaacb52f7d2694d11bb1dd7a3b19b3b95b84010894482"
+  },
+  "google": {
+    "queries": 47,
+    "requests": 47,
+    "http_errors": 0,
+    "raw_hits_in_week": 547,
+    "after_dedup": 510,
+    "kept_after_cap": 83,
+    "duplicates_merged": 37,
+    "headline_filter": {
+      "passed": 113,
+      "dropped": 397,
+      "passed_by_rule": {
+        "all_terms_headline_match": 98,
+        "major_media_outlet": 15
+      },
+      "passed_by_headline_term_match": {
+        "full": 98,
+        "partial": 2,
+        "none": 13
+      }
+    },
+    "dropped_by_card_cap": 30,
+    "kept_by_rule": {
+      "all_terms_headline_match": 68,
+      "major_media_outlet": 15
+    }
+  },
+  "feeds": {
+    "items_to_classifier": 172,
+    "scope_totals": {
+      "full_text": 9,
+      "headline_only": 125,
+      "summary": 37,
+      "article_excerpt": 1
+    },
+    "published_range": [
+      "2026-11-02",
+      "2026-11-08"
+    ],
+    "official_input": {
+      "input_rows": 1637,
+      "kept": 89,
+      "filtered_out": 19,
+      "kept_strict_all_terms": 0,
+      "kept_broad_keyword_fallback": 89,
+      "input_sha256": "59525783c4d8dc2905ceaacb52f7d2694d11bb1dd7a3b19b3b95b84010894482",
+      "window": [
+        "2026-11-02",
+        "2026-11-08"
+      ],
+      "unsupported_source_rows": 1
+    },
+    "per_source": {
+      "cnbc_top_news": {
+        "robots_disallowed_feed": 1
+      },
+      "cnbc_finance": {
+        "robots_disallowed_feed": 1
+      },
+      "cnbc_economy": {
+        "robots_disallowed_feed": 1
+      },
+      "cnbc_investing": {
+        "robots_disallowed_feed": 1
+      },
+      "marketwatch_top_stories": {
+        "robots_disallowed_feed": 1
+      },
+      "marketwatch_market_pulse": {
+        "robots_disallowed_feed": 1
+      },
+      "marketwatch_realtime": {
+        "robots_disallowed_feed": 1
+      },
+      "yahoo_finance_news": {
+        "feed_http_404": 1
+      },
+      "nasdaq_markets": {
+        "robots_disallowed_feed": 1
+      },
+      "nasdaq_stocks": {
+        "robots_disallowed_feed": 1
+      },
+      "fed_press_all": {
+        "feed_http_200": 1,
+        "fetched": 20,
+        "kept_prefilter": 9,
+        "outside_requested_window": 8
+      },
+      "sec_press_releases": {
+        "robots_disallowed_feed": 1
+      },
+      "google_news_existing": {
+        "fetched": 83,
+        "kept_prefilter": 83,
+        "scope_headline_only": 83,
+        "fulltext_no_publisher_url": 83
+      },
+      "official:fca_rss": {
+        "kept_prefilter": 8,
+        "outside_requested_window": 38,
+        "scope_full_text": 8,
+        "fulltext_ok_paragraphs": 8
+      },
+      "official:federal_register": {
+        "kept_prefilter": 44,
+        "outside_requested_window": 173,
+        "scope_headline_only": 42,
+        "fulltext_paywalled_or_forbidden_http_403": 44,
+        "scope_summary": 2
+      },
+      "official:dtcc_notice_feed": {
+        "kept_prefilter": 34,
+        "outside_requested_window": 1141,
+        "scope_summary": 34,
+        "fulltext_pdf_extractor_unavailable": 34
+      },
+      "official:sec_press": {
+        "kept_prefilter": 1,
+        "outside_requested_window": 38,
+        "scope_summary": 1,
+        "fulltext_robots_disallowed": 1
+      },
+      "official:fed_press": {
+        "kept_prefilter": 1,
+        "outside_requested_window": 34,
+        "scope_full_text": 1,
+        "fulltext_ok_paragraphs": 1
+      },
+      "official:ecb_press": {
+        "kept_prefilter": 1,
+        "outside_requested_window": 47,
+        "scope_article_excerpt": 1,
+        "fulltext_ok_paragraphs": 1
+      },
+      "official:cftc_press": {
+        "outside_requested_window": 20
+      },
+      "official:bis_press": {
+        "outside_requested_window": 17
+      },
+      "official:esma_news": {
+        "outside_requested_window": 19
+      },
+      "official:dtcc_insight_20261014": {
+        "outside_requested_window": 1
+      }
+    }
+  },
+  "classifier_input": "/Users/caiwenqi/Documents/DTCC-External-Risk-Intelligence/Capstone_Project/data/events/weekly/2026-11-02/run_20261109T214051Z/inputs/feeds/classifier_input.csv",
+  "next_step": "Review evidence coverage; use --dry-run for a cost estimate without invoking AWS."
+}

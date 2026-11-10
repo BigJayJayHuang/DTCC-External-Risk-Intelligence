@@ -1,0 +1,57 @@
+{
+  "document_id": "8a5d6f4db75561d18ba173e5d1d398fec2967798e4564cb040a3ad2197a7ff1f",
+  "url": "https://files.dtcc.com/download/assets/24595-26/ed32ec26d70211f1a1f3267bd53a5992",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "81360a5684b2d71ac13ee15c5c6db45e2109d0429c34d763077cccc7fd1b3520",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_mS8V155pwBYFzhzX2hTOZu",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "DTC routine corporate action / tax relief notice for TE Connectivity PLC (Ireland). This is an administrative Important Notice about a dividend tax relief process, not an outside risk event matching any card's Step 1.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1856,
+    "outputTokens": 443,
+    "totalTokens": 6672,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3184
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

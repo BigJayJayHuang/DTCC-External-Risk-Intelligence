@@ -1,0 +1,40 @@
+{
+  "document_id": "336a2fabecaa8b4a084b1d6537cf7f10bd439f460ae91267cc7dd78e3a09a70b",
+  "url": "https://news.google.com/rss/articles/CBMixAJBVV95cUxOZDNyaXZPbmJSS3dGN1JOUnRXTWJ1dXpjNWk2YnNtaXVIR0tvTTVYQUZQT1FIaHNLR01sdWxKU29YZHVBd1FfOVBiM0c5am1WZWxxeWhYcTdtLVQ1QVFWZmtFa0NDM2JVWXpFMU95S2hhdnNZVVBiaGdjS0JYcmxzeWNwRjFyWXJYLVFnV2xCVkdpU2RFWWdEdzZFQkhYaUlaVmFTdW9paEdEREcyLTVHZzFuZmhycjlLd0t6b25JYWtGeVlZQlZraW9WUHQzaVZheTJ4V0xaeFBCTTBxZmNEakpBSkdEV0xKVGE3Z0VzRW5Na2FoaFFxWWxtZWk0WkVRZ05VTXVlZ0J1OEo1dlVmTlI3YUt2eUNHa2h0V2s2M1pyUUFLem13c05qdnk2TjA3SUVCTGZ1QUJYZ3BaVlZWdFJ2TU8?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "7f9b87f17e93c4be44a7ba819c2ac950b4d943811e8f72708b25f8140b98ec2f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_IIs00suQeFw5tZuoaZVDAd",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline-only item about employment data driving rate hike expectations and rising Treasury yields. While yields rising is adjacent to FICC-GSD-01, the headline describes a macroeconomic data release and market sentiment shift, not a sharp Treasury selloff, yield swing, or futures move of the kind that would directly stress GSD margin requirements. No concrete event magnitude, no named participant stress, no market disruption described. Insufficient basis for relevance."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1687,
+    "outputTokens": 140,
+    "totalTokens": 5535,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2646
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

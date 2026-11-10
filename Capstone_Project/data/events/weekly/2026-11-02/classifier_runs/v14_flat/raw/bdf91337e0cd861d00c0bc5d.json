@@ -1,0 +1,54 @@
+{
+  "document_id": "5d60d49ce915c95d014f1b086fad0a41f57ee550089448842002269832c6b5ca",
+  "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZExreXR6TGFGc0pNa3pBc2dBTmJVdlpUdldDcXlPQ1ZjQm5GSFhNQ3RsRTcwSS10MGhROTM4VDZadzdmUm8tb192U3BnQUY4Ny1iTW1qWE1fTmRJSnNZcm9kSUJCRXBreWR1R2s0UkhOM1BiT2VUQ2daQURxNmtlYWM3MGhWTV9wZUZTLVBNUmpoWWZrNlVQczJ1blBfd2ZjX2ZVWkhwdUtWaFUxbUpSQ2FPcXhMd2Vhb1pIZGhGQQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "e33bb086560ea6f59a91932017e5ef2a4246a19a0d9c47403cc3812ba9152f0b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Z1XD6djXHcOJ6zmEQ2IIpi",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Explainer/glossary piece with no concrete market event; headline describes a definitional how-to article, not an outside event matching any catalog card."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1516,
+    "outputTokens": 375,
+    "totalTokens": 5576,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2460
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

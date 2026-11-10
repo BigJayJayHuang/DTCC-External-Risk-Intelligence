@@ -1,0 +1,40 @@
+{
+  "document_id": "072d53504945317d1e6e7596c4a063be8f4e2ce598f564dc3c3aae7d25781c1b",
+  "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261021_1~d190f2c349.en.pdf",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "d7cfc7205c098a7172dc2f66f4d8b5ca65ba5b1add9adba37732a3028c3fd4be",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_flVRMkgPiclMVtaXfUIi7f",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only ECB speech by Piero Cipollone about opportunities for banks ('Pontes and Appia'). No market event, regulatory action, member stress, or infrastructure issue described that maps to any card in the catalog. Content scope is 'headline_only' with no substantive information."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4091,
+    "outputTokens": 112,
+    "totalTokens": 4203,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1715
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

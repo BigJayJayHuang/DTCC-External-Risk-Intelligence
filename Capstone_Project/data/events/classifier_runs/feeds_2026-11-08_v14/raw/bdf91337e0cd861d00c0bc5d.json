@@ -1,0 +1,40 @@
+{
+  "document_id": "5d60d49ce915c95d014f1b086fad0a41f57ee550089448842002269832c6b5ca",
+  "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZExreXR6TGFGc0pNa3pBc2dBTmJVdlpUdldDcXlPQ1ZjQm5GSFhNQ3RsRTcwSS10MGhROTM4VDZadzdmUm8tb192U3BnQUY4Ny1iTW1qWE1fTmRJSnNZcm9kSUJCRXBreWR1R2s0UkhOM1BiT2VUQ2daQURxNmtlYWM3MGhWTV9wZUZTLVBNUmpoWWZrNlVQczJ1blBfd2ZjX2ZVWkhwdUtWaFUxbUpSQ2FPcXhMd2Vhb1pIZGhGQQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "1535483633832a85128f4e61ac5c8d8bff93b8fe27790b65d27e72a91756a488",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_EYYVBhQgg6hUNC1ELcfHJH",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Explainer/glossary piece with no concrete event described. Headline states 'Terms for Navigating a Market Meltdown' — this is a how-to/educational article, not a report of an actual market event."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1516,
+    "outputTokens": 93,
+    "totalTokens": 5317,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1549
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

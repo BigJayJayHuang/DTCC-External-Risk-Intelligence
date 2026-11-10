@@ -1,0 +1,40 @@
+{
+  "document_id": "c16bc85cc09118c5e28fe6aad320dbb82e357fb887fb0548de58ebe883f04d4f",
+  "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQVkVocHY2djBJSWlTckdUS3IxS0hVNXJwblpaRXpYX1dsS215cjRLb1ZzYTB6MWVRQ0JoNV9Yck93VVRxQzdReXRkOTNyVEdtd2lGckdaQ1JvblFKRnhHVzFhMzJWdnVSMUVITzFIZ2JiQnJvRjNJajhvXzhkS1ZvdU1aRFktNE80R0pMQVBOMmxuaFdsd3hZSWVxUTkycUN0S1E?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "0b9a496aef674cf5d35195b27cd29b21a278b32d7fee6da928fb9ef4ed21ddc4",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_WL1jnwcDRUk7QYmdfwoagK",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline only with no concrete magnitude, named participants, or specific market event details. 'Global stock market selloff spreads' is a generic descriptor without evidence of a sharp equity selloff sufficient to touch NSCC liquidity or margin processes. Insufficient content to establish relevance under headline-only rules."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1482,
+    "outputTokens": 108,
+    "totalTokens": 5298,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2081
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

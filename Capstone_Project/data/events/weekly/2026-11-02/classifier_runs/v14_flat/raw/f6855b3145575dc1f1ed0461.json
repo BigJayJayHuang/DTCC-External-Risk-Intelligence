@@ -1,0 +1,54 @@
+{
+  "document_id": "42ce5212d397bef38291b9bf1dcfbf48b23c07db84175274df9f1561c6a943ed",
+  "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPN3d3MkxQdFpnYTZPQnh0c2xRemg0R0FRTHM0MmgtYWxWN0RiQ0NwLWNWemZISlZ3Z1dMbkVyM1NfSXhtcW83eXAzbzBoNmkxa21sN050TkdGVHp1bklKVTRyR0ZjS19YdHRBVm53WVdaNVRRbUk0X21qeEVuU3cyQWdrblQ2VFFFR09ma0p6S0ltSjZ1eHk0NUpQQm4tNmNHdjNzZEZPMFNwNWx3ajN2N3pSQ1lrZEMwVnozSk5GYkNSQW1yb3g4MjZRTGtHYlMtclVSdm5Wb1IxWjRVdUlv?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "3317a2cab5498ae4dd6a4a9b9a3fb8b06d5b86043fc7dc63fb055d164e83381f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_KWeBivmNMV0rZYhg0cisjQ",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Jana Small Finance Bank Ltd is an Indian small finance bank, not a DTCC member or US market participant. A downgrade to Hold is an analyst rating action on a non-US, non-DTCC-participant firm with no stated link to US markets or DTCC processes. Not relevant to any catalog card."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1557,
+    "outputTokens": 410,
+    "totalTokens": 5652,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2985
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

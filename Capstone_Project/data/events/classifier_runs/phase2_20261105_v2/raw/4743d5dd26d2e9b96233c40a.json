@@ -1,0 +1,40 @@
+{
+  "document_id": "f13a72ba0107c598a34ecd085495022b7853fb676d00c44484d76fd8c4a784d2",
+  "url": "https://www.federalregister.gov/documents/2026/11/03/2026-22399/change-in-bank-control-notices-acquisitions-of-shares-of-a-bank-or-bank-holding-company",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "86b42822585167fd4c2a816b83168fd5ab4d7e8c1061a1289a9cc045cc9632d5",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_CClaYH2tNpLkePHtAVTzii",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a routine Federal Register notice about bank control acquisitions. It does not describe any market event, regulatory action, member stress, infrastructure disruption, or cyber incident that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4101,
+    "outputTokens": 86,
+    "totalTokens": 4187,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1417
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

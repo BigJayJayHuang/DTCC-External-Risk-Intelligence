@@ -1,0 +1,57 @@
+{
+  "document_id": "65d71cd70dfd4489a4fc5c397af385f05cdfa926c85c8133dba602529a12f2ef",
+  "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22266/self-regulatory-organizations-the-nasdaq-stock-market-llc-notice-of-filing-and-immediate",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "666b14c947298131f6b03b53e74eb3c118027b2bc80230204e6718da3ec6e7c0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_robCAUlu1xzvaq7Dt0YUBf",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "Headline-only notice of a Nasdaq rule change to revise interpretive material IM-8310-3 (a membership/disciplinary rule). No concrete event matching any card's Step 1 is described — no market move, no settlement cycle change, no clearing mandate, no member stress, no cyber/operational incident. The rule change concerns Nasdaq's own internal interpretive guidance, not a DTCC process."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1836,
+    "outputTokens": 488,
+    "totalTokens": 6697,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3894
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

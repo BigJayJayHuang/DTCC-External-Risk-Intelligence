@@ -1,0 +1,40 @@
+{
+  "document_id": "74e805482992b9845c3ced593924e8090178548e92738b552c36a59181c308f4",
+  "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNWVZOYjEwOW5TT1B4OW1FeDVfSFcxa1ZOQ0RlbmZKZG1ET0RXY2J5SmprV2xiR1hxTC1aQmVDanVnc3ZQN1IwWElwMVJhb2Z0eFNFY3hpck5seTlxYkY4U0tIdGZlMFdBbDdyU1NSTmpqVDhoTjhhZHZaaHZYQnNCUG9teTBfaVUtYlZNSkdEUmtLMjFSSEhFWkdWUGhnUUlUUjVrMlY3M1dhMlZhTUNoWA?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.3:aab5ad825775",
+  "request_sha256": "9908596136f656027fe71b9d567610cc2bc6034bd62c858e39dfae9e6ddf6943",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_VCMvU4baZV3SZz5o9UFIi8",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline-only snippet. 'Arini' is not a recognized major DTCC participant, and the headline states only that a single firm offloaded debt amid margin calls. No concrete market-wide or major-participant stress event is described that maps to a card's Step 1. Insufficient information to classify as relevant."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1513,
+    "outputTokens": 114,
+    "totalTokens": 4707,
+    "cacheReadInputTokens": 3080,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2310
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

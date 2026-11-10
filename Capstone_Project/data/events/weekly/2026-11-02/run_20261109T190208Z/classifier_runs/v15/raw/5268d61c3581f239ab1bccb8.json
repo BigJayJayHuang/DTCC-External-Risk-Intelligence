@@ -1,0 +1,59 @@
+{
+  "document_id": "80cb4c9cea7073cacb93efc068afad41deb0185dff591dd84c3b2b9c1e74b8b4",
+  "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQano5dXRNeGFOYUNQaUNKUS1UZjU4Wk1yNlhELVhWd1NGYjVHa194RkN2cG5lbVU5R3AxQ2tlWnBiR2doUEVZZFJCMXk2Z2NWU242R0ZIR3YtR0VUS2tRUmFkakliNzFwekFIQ0ZWMXg0WDlfX2kwTGY4dldCTzlMNWlaSzhKV3V4UWR0bE1pT0U5cGc2RGhkczlNbjY?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "cc217d7b56f3ec47d723124be01492f51165ed77d85f9386bca00b538fd880c1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_6sqbOUNIrHdGrMoTiEPyxz",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "cyber",
+              "same_as_event_id": null,
+              "title": "French bank loses €100 million in major cyberattack",
+              "summary": "A French bank reportedly lost €100 million as a result of a major cyberattack. No further details on the bank's identity or DTCC membership are provided in the headline.",
+              "card_ids": [
+                "XE-CYBER"
+              ],
+              "certainty": 2,
+              "reach": 1,
+              "reach_basis": "single",
+              "named_participants": [],
+              "announced_date": "2026-11-08",
+              "effect_date": "2026-11-08",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "Big News Network.com",
+              "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQano5dXRNeGFOYUNQaUNKUS1UZjU4Wk1yNlhELVhWd1NGYjVHa194RkN2cG5lbVU5R3AxQ2tlWnBiR2doUEVZZFJCMXk2Z2NWU242R0ZIR3YtR0VUS2tRUmFkakliNzFwekFIQ0ZWMXg0WDlfX2kwTGY4dldCTzlMNWlaSzhKV3V4UWR0bE1pT0U5cGc2RGhkczlNbjY?oc=5",
+              "evidence_quotes": [
+                "French bank loses €100 million in major cyberattack"
+              ],
+              "confidence": 0.45,
+              "notes": "headline_only. Bank is unnamed and described as French; no confirmation of DTCC membership or US market participation. Reach set to 1 (single institution, group-level uncertainty) rather than 2 because the bank is not identified as a major participant. Effect_date set to announced_date as no separate event date is given."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1468,
+    "outputTokens": 726,
+    "totalTokens": 6109,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5018
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "8a08233e69f6b51ee822e7c399596d820e012375d11e9221f7d2035df63936e0",
+  "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOUFppeDBuZUlDMXNlcURWLTVHSmlCQlVacUtPbjNuWWlpWl93Ty1BRUY1Z0JmN0t2aWZjMVN1QXhBd0xBUUFNekpHajhWdURlUXJFblRXbzRia2RCRDRqNUdpbS1LQURtUlpwLWVwUWNncDkwYmo0SUhlR2daRUM2MGIydHJOQ3B1aDlSY05vRFFvY1hQNmFwMThiUmRmWktfdTRLM3JiR3N6LXN2VlBJREdMLXFRU2M?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "9207ddd605472c47e96388701f183d212f5fb85d094241172d37802041837ebf",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_7CdHjWLsKpGQb3eTKe4g5q",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a headline-only snippet about an AI-driven selloff in Asian stock markets. There is no substantive content describing a specific event that maps to any card in the catalog. The text provides no details about the nature, scale, or participants involved beyond the headline, and Asian equity market moves do not directly touch DTCC processes without further evidence of US market impact, member stress, or settlement disruption."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4336,
+    "outputTokens": 129,
+    "totalTokens": 4465,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2226
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

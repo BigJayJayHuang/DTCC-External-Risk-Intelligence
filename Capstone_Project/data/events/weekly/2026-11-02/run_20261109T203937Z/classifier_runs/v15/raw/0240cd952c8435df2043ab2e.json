@@ -1,0 +1,63 @@
+{
+  "document_id": "74e805482992b9845c3ced593924e8090178548e92738b552c36a59181c308f4",
+  "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNWVZOYjEwOW5TT1B4OW1FeDVfSFcxa1ZOQ0RlbmZKZG1ET0RXY2J5SmprV2xiR1hxTC1aQmVDanVnc3ZQN1IwWElwMVJhb2Z0eFNFY3hpck5seTlxYkY4U0tIdGZlMFdBbDdyU1NSTmpqVDhoTjhhZHZaaHZYQnNCUG9teTBfaVUtYlZNSkdEUmtLMjFSSEhFWkdWUGhnUUlUUjVrMlY3M1dhMlZhTUNoWA?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "4bf5149f1b862549f171e86a977a6229bacaf52a0b01adad4f63825e37778940",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_vftFIC8ap91hG013bxAHfg",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "firm_specific",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "Arini offloads $800M in debt amid margin calls",
+              "summary": "Arini, a credit fund, sold approximately $800 million in debt assets amid margin calls, suggesting leveraged-position stress at the firm.",
+              "card_ids": [
+                "XE-MEMBER"
+              ],
+              "certainty": 2,
+              "reach": 0,
+              "reach_basis": "single",
+              "named_participants": [
+                "Arini"
+              ],
+              "announced_date": "2026-11-02",
+              "effect_date": "2026-11-02",
+              "stage": 1,
+              "source_tier": "major_media",
+              "outlet": "WSJ",
+              "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNWVZOYjEwOW5TT1B4OW1FeDVfSFcxa1ZOQ0RlbmZKZG1ET0RXY2J5SmprV2xiR1hxTC1aQmVDanVnc3ZQN1IwWElwMVJhb2Z0eFNFY3hpck5seTlxYkY4U0tIdGZlMFdBbDdyU1NSTmpqVDhoTjhhZHZaaHZYQnNCUG9teTBfaVUtYlZNSkdEUmtLMjFSSEhFWkdWUGhnUUlUUjVrMlY3M1dhMlZhTUNoWA?oc=5",
+              "evidence_quotes": [
+                "Arini Offloads $800 Million in Debt Amid Margin Calls"
+              ],
+              "confidence": 0.45,
+              "notes": "headline_only. Arini is a credit/hedge fund; it is not confirmed to be a DTCC member or major participant. Margin calls and forced debt sales are a Stage 1 stress signal. Reach set to 0 (single, non-major participant) given no evidence Arini is a GSIB or top-tier dealer/broker. Debt assets sold are not specified as US Treasuries or equities, so XE-MEMBER is the best fit over FICC-GSD-11. Effect date set to announced date as no separate event date is given."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1513,
+    "outputTokens": 848,
+    "totalTokens": 6734,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 6074
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

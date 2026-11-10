@@ -1,0 +1,40 @@
+{
+  "document_id": "555d9bfc862c2a5d3e4f93af8de7a92b3b229b2dc74a54a9186de11d8a14ba91",
+  "url": "https://www.federalregister.gov/documents/2026/10/22/2026-21577/notice-of-intention-to-cancel-registrations-of-certain-transfer-agents",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "a12e27dfdc2f4bfc2955eaf584e2c65f1fd16ab94c1fec5e2c01e0c1283a2d3f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_YkIw0wkqyAWLnrPiVm6nDw",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a notice of intention to cancel registrations of certain transfer agents. Transfer agent registration cancellations do not map to any card in the catalog — they do not describe a market event, member stress, infrastructure disruption, cyber incident, or regulatory milestone that touches a DTCC process listed in the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4086,
+    "outputTokens": 109,
+    "totalTokens": 4195,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1685
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

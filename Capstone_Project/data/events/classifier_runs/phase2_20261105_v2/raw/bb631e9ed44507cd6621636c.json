@@ -1,0 +1,40 @@
+{
+  "document_id": "30caf3b94138834d5e634ba1ec8e1f664baf609fa5d393c21263d17a50f7439a",
+  "url": "https://www.dtcc.com/insights/2026/why-data-quality-will-shape-the-next-era-of-regulatory-reporting",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "24b125468e39b1fcbe3c39dc773850b4ea84e9af770d3b7cb98c9d10a00e44d9",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_MlQZ5aNH51CMXyWL1sHWqt",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a DTCC opinion/thought-leadership piece about data quality in regulatory reporting. It describes no outside market, regulatory, member, or infrastructure event that maps to any card in the catalog. Headline-only content with no new risk event."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4073,
+    "outputTokens": 95,
+    "totalTokens": 4168,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1615
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

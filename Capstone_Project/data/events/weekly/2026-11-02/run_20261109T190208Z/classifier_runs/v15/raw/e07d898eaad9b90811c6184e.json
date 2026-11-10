@@ -1,0 +1,55 @@
+{
+  "document_id": "1115639c3e5ae799733f7c7698751732aa7276d6304ddc658fe1ba298daf8f3c",
+  "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNTmNKb25IZHBMZXhRajhqZWgtaldPTEF0bkJ1VjY1SHZ6bDNwVDlkMl9PeDlTWmlPdmFvNUc3ZlhZdkp2U0NBYkhTRE83VFBpZWpKLVhCRFljS3U0a0k5YUFxVzd3aE15ekUxT0RfMzBFT0g2dGhGbzBKVzZ1MFBlc0tqS1pLaWJkdjlMMw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "2c7b44a1032fc396ade6033af34f521a6a3fdc5b1a0ad9fd9d49bba6a1154ec1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_q8vVZ46RFkxEJJkiVSKXoc",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Consumer finance explainer listing best savings account rates. No event matching any catalog card type — no market disruption, no firm stress, no regulatory action, no operational incident.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1468,
+    "outputTokens": 397,
+    "totalTokens": 5780,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 4441
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

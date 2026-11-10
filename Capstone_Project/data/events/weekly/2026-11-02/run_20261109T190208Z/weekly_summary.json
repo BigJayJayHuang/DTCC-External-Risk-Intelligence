@@ -1,0 +1,60 @@
+{
+  "week_start": "2026-11-02",
+  "week_end": "2026-11-08",
+  "cap_usd": "3",
+  "run_dir": "/Users/caiwenqi/Documents/DTCC-External-Risk-Intelligence/Capstone_Project/data/events/weekly/2026-11-02/run_20261109T190208Z",
+  "prompt_version": "v1.5",
+  "status": "stopped_classifier_invocation_error",
+  "google": {
+    "queries": 47,
+    "requests": 47,
+    "http_errors": 0,
+    "raw_hits_in_week": 558,
+    "after_dedup": 522,
+    "kept_after_cap": 92,
+    "duplicates_merged": 36,
+    "headline_filter": {
+      "passed": 122,
+      "dropped": 400,
+      "passed_by_rule": {
+        "all_terms_headline_match": 99,
+        "major_media_outlet": 23
+      },
+      "passed_by_headline_term_match": {
+        "full": 99,
+        "none": 20,
+        "partial": 3
+      }
+    },
+    "dropped_by_card_cap": 30,
+    "kept_by_rule": {
+      "all_terms_headline_match": 69,
+      "major_media_outlet": 23
+    }
+  },
+  "feeds": {
+    "items_to_classifier": 133,
+    "scope_totals": {
+      "headline_only": 100,
+      "summary": 26,
+      "full_text": 7
+    },
+    "published_range": [
+      "2024-07-29",
+      "2026-11-09"
+    ]
+  },
+  "items_in_window": 93,
+  "estimate_with_cache_usd": "1.421914395",
+  "classifier": {
+    "status": "invocation_error",
+    "relevant": 27,
+    "irrelevant": 64,
+    "failed_checks": 28,
+    "input_tokens": 139984,
+    "output_tokens": 48652,
+    "cache_read_input_tokens": 356265,
+    "cache_write_input_tokens": 3915,
+    "estimated_cost_usd": "1.398422025"
+  }
+}

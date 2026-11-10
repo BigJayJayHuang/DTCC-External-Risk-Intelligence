@@ -1,0 +1,40 @@
+{
+  "document_id": "13eb40a645cd754eedd147fa7f75f6206c29e85341009032e404a53f754e1e1c",
+  "url": "https://files.dtcc.com/download/assets/24825-26/c9ac1d50c96e11f18da9fa332a5e4d7e",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "848f606e2b17152bc161c186adb81b1209d6cb539e4178ab1a88b655abb880f6",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_gpQfta6TwzG71Kva9MqkSL",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for Whitbread PLC (CUSIP 96342K100) issued by JPMorgan Chase Bank, N.A. It is an administrative/operational notice with no risk angle and does not describe any outside market, regulatory, member stress, or infrastructure event matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4160,
+    "outputTokens": 117,
+    "totalTokens": 4277,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1823
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

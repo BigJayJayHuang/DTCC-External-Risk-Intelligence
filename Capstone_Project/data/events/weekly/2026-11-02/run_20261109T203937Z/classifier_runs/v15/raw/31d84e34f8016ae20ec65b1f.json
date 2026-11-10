@@ -1,0 +1,57 @@
+{
+  "document_id": "07a14f61a0339f590a48ef3872d50371867aa9677b2d0bd93a57249c617e2081",
+  "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOcXBsTmRaUUo4VW1NRTZfdUh3OVJ2aEI1Ql9zeTJIaXFlTV9YcDVkb0F4UkpxQ0lfeEVGcVdEU2liXzd2dW5mbTY2d3hVZFAyR1QwbC1RWGJiY3R1bmwwNFJHaWFTRXRvX0lJZUFkVmFqLW1sdzA4R2I3MWlULW0zdklkd3FhVWhMNEJUdllMMEtNOEZPNkE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "e1bdd9c3d4567ff46d3ad630a1149b934258a4d4510d12859406639cc439bee8",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_wWNUmzvYJOHnop5TayLbJi",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Gopax is a South Korean crypto exchange. The article describes a trading halt at a non-US crypto venue with no stated link to US markets, DTCC, or any DTCC participant. Crypto exchanges are out of scope per catalog scope note, and no US link is stated in the text.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1473,
+    "outputTokens": 462,
+    "totalTokens": 6308,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3330
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

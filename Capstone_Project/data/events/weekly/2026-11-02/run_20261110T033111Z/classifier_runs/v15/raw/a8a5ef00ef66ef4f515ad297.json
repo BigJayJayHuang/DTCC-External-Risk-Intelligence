@@ -1,0 +1,57 @@
+{
+  "document_id": "595a360a99bf8f51673ab9ab7f56580524e84ad1e8a61e64b7afad5ee642343f",
+  "url": "https://www.federalregister.gov/documents/2026/11/05/2026-22599/formations-of-acquisitions-by-and-mergers-of-bank-holding-companies",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "e164f6c0778b975b595ae8bc9ca20ac68fedb586228fe457546206ca5298e7f6",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Bl6x9HLOS8UFxA1BHikZec",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "Headline-only Federal Register routine notice of bank holding company formations/acquisitions/mergers. No specific firm stress, default, downgrade, or other event matching any catalog card's Step 1 is described. Generic regulatory notice with no risk-relevant content."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1734,
+    "outputTokens": 453,
+    "totalTokens": 6560,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3230
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

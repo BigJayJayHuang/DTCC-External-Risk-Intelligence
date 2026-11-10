@@ -1,0 +1,63 @@
+{
+  "document_id": "52e355737e3300e80bc3a963023ffce2d0f47c0ba3bb7a6094e8d6cde723cd21",
+  "url": "https://files.dtcc.com/download/assets/GOV2286-26/13cfa976d89011f18172eef7357c04d2",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "4ab4b2539823ff005af88f220ec7e8ec65b61b6abf3dbd74616130454a4a8b52",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_SaN4WPM2Uh76deTHXPv04H",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "regulatory",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "Citigroup Global Markets joins FICC GSD as Agent Clearing Member",
+              "summary": "DTCC notice GOV2286-26 announces that Citigroup Global Markets Inc. has become a new Agent Clearing Member (ACM) of FICC's Government Securities Division, assigned GSD Member #94CP.",
+              "card_ids": [
+                "FICC-GSD-11"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "major_participant",
+              "named_participants": [
+                "Citigroup Global Markets Inc."
+              ],
+              "announced_date": "2026-11-04",
+              "effect_date": "2026-11-04",
+              "stage": null,
+              "source_tier": "dtcc",
+              "outlet": "DTCC",
+              "url": "https://files.dtcc.com/download/assets/GOV2286-26/13cfa976d89011f18172eef7357c04d2",
+              "evidence_quotes": [
+                "New Agent Clearing Member of the Government Securities Division of FICC: Citigroup Global Markets Inc./ACM Omnibus – GSD Member #94CP"
+              ],
+              "confidence": 0.8,
+              "notes": "DTCC official notice confirming Citigroup Global Markets Inc. as a new ACM in FICC GSD. This is a membership/onboarding event relevant to the GSD Agent Clearing Service (FICC-GSD-11). Effect date set to announced date as no separate effective date is stated. Summary-only content scope; limited detail beyond the membership addition."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1848,
+    "outputTokens": 652,
+    "totalTokens": 6873,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 4699
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

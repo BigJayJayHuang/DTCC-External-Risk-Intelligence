@@ -1,0 +1,57 @@
+{
+  "document_id": "9d469783facbe0564e1b8c0eb6a75de20913895d3732b4d1fc56c002c05bba9e",
+  "url": "https://files.dtcc.com/download/assets/24783-26/23ef22c4d6fa11f1ac22661b1cd0e824",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "d80812714e8ad307cb56cb59add15418e36c090f94da9704fe9f74212317035d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_qPzgn3fAoekZI9Mhs8r9dd",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "DTC routine tax-relief/corporate-action notice for a non-US issuer (Naturgy Energy Group, Spain). No market event, no DTCC process stress, no card match. The notice itself states it is non-sensitive supplemental material.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1804,
+    "outputTokens": 453,
+    "totalTokens": 6630,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3181
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

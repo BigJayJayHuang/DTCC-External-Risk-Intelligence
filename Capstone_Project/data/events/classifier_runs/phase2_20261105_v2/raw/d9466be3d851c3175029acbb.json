@@ -1,0 +1,40 @@
+{
+  "document_id": "8b1ee3d859dbb44cfb15fa5404612f77c14ad2dbb881728b4733feebdc6f6efd",
+  "url": "https://www.federalregister.gov/documents/2026/10/22/2026-21621/neostellar-capital-corp-et-al",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ca0ccacc9a0fc87d504576e3c428688ecbc5e12958bda8f0ff931d6327ad00cd",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_unS7USpvhXkmUafFsRxoJQ",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is headline-only and contains no substantive information beyond the name 'Neostellar Capital Corp., et al.' from the Federal Register. There is no description of a market event, regulatory action, member stress, or any other outside event that maps to a card in the catalog. Insufficient content to classify as relevant."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4064,
+    "outputTokens": 113,
+    "totalTokens": 4177,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1640
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,4 @@
+week,news_coverage,run_id,review_sheet,note
+2026-10-19,manual_register_only,,,before the weekly news run
+2026-10-26,manual_register_only,,,before the weekly news run
+2026-11-02,headline_level_ai_screen,data/events/weekly/2026-11-02/run_20261109T203937Z,data/events/review/review_2026-11-02_run_20261109T203937Z.csv,prompt v1.6; every required row decided by Wenqi Cai

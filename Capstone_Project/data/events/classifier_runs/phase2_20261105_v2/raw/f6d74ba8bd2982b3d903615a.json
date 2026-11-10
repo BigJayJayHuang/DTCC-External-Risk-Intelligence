@@ -1,0 +1,40 @@
+{
+  "document_id": "32fa6a012ba927db083bd3284e272f6e8755be04cd5ffb1208c1084f729228f7",
+  "url": "https://files.dtcc.com/download/assets/GOV2262-26/ef5ca852cd6b11f194f02e7def2a5925",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "eb3f9774110021ffa3bf6e24f329966a414607866fad0fadf0cd5d1f09ef019a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_U36h31zBEdN4GjOy96mm7r",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new participant (Deutsche Bank AG, Frankfurt Branch) joining the GSD netting system. It is a routine membership/onboarding administrative notice with no outside risk event described — no market stress, regulatory change, member distress, or infrastructure disruption. No card's Step 1 trigger is met."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4136,
+    "outputTokens": 117,
+    "totalTokens": 4253,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1879
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,57 @@
+{
+  "document_id": "e1883a1343d2a4d63813218378bcd9e162c8a9f1c5e0a76f1d47f0554e33ee4b",
+  "url": "https://www.federalregister.gov/documents/2026/11/03/2026-22377/self-regulatory-organizations-texas-stock-exchange-llc-notice-of-filing-and-order-granting",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "f3342c3098e26dbbc1c6ebb9ae216cb6e5a58c569b44ec1d2e0dc2601f874482",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_9Bgdyyh8T54ovQ1LjoxbQP",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Headline-only item. The rule change concerns Commodity-Based Trust Shares (e.g. commodity ETPs) listed on the Texas Stock Exchange — a listing/product rule amendment with no stated link to DTCC settlement processes, NSCC/DTC clearing, Treasury clearing, or any other catalog Step 1 event. No card fits.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1830,
+    "outputTokens": 473,
+    "totalTokens": 6676,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3933
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

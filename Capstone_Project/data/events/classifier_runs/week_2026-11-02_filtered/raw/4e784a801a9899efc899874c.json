@@ -1,0 +1,40 @@
+{
+  "document_id": "d11ce2588d9d565cb0d8d942998a2d0ad4b58917ff129641cc8b68e170b2bdda",
+  "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBZYnJiS1Z4RXNmX3lMdU1nQm1sa0ctYVBDOVRYQnl2STdVbThZZXpINGRucUN1NF9RS21uSXkwalZxQXUxNU1iWXBYZ3FBbTl6b0M5VTZmQ2pFWU5QNDZYeW5fQjRCd9IBXEFVX3lxTE9tRDRBVkpEcXVkdnZ5ekRYS0F2cThTWHVTTi13bi1YZnNZdjdVaFNseWlTMlp3SWthSUYxOE9DcmtMZ2QySjVCd0prVUpZeTV0WUxseWlGRElXTTRI?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "dd387e216741430a3a5f760e1d55e012b931705754c8b168d314a7399dfec717",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_QGCnEVspLcDCvJbizh9gj4",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only snippet about a cyberattack on an unnamed French bank. There is no indication the bank is a DTCC member or participant, no detail about operational impact on any DTCC-connected system, and the content is too thin (headline snippet only) to support any card assignment. The XE-CYBER card requires a cyberattack at a large participant or vendor affecting DTCC processes; this article does not establish that link."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4356,
+    "outputTokens": 142,
+    "totalTokens": 4498,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2616
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

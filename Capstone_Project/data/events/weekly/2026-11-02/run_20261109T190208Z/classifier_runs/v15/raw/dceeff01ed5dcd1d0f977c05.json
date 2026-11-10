@@ -1,0 +1,55 @@
+{
+  "document_id": "2d4cce0bb25cf78f7f8118786d7229755c2c4aa20e7743e2ab64e7763fd8a701",
+  "url": "https://www.sec.gov/newsroom/press-releases/2026-112-sec-adopts-amendments-update-definitions-small-entity-investment-companies-investment-advisers",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "10b65fad2c20b01dc099961997d132027a58d4cb2e4a69cdf502fe9453a1bf10",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_YGCvnP7d2bYnKr3p3x8Rwt",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Article describes SEC amendments updating definitions of \"small entity\" for investment companies and investment advisers under the Regulatory Flexibility Act. This is an administrative/definitional rulemaking with no connection to any card's Step 1 event (no Treasury clearing, settlement cycle, market disruption, member stress, cyber, etc.).",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1366,
+    "outputTokens": 430,
+    "totalTokens": 5711,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3189
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

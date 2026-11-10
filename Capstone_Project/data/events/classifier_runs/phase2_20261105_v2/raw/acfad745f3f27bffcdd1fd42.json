@@ -1,0 +1,40 @@
+{
+  "document_id": "17f064327edda215c03c71bcc7d8fb5b2fcebf67998f7fe05f42ccab526eb277",
+  "url": "https://files.dtcc.com/download/assets/25145-26/0a2abc7ad86e11f18559ba42506f920a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "e68e82ae67bf7f249e26e032b5e104b60dcb19caa7a82de5b352a27a0650891b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_1OnGJWxpfvNBdIqKhx3D36",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a tax relief/corporate action for Prosus N.V. (CUSIP 74365P108, Netherlands), providing deadlines for Relief at Source and Quick Refund instructions. It is a routine DTC corporate action notice with no risk event described — no market stress, regulatory change, member stress, cyber incident, or other Step 1 trigger matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4225,
+    "outputTokens": 134,
+    "totalTokens": 4359,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2155
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "1cd956d878698e3cb6f7b896054c9de447cb6a496bd313bb73678374d0fe95bf",
+  "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxObUVoajhGN1Jjc2tzR2dTMHl6VHU4Z05kVHRWeUhEWnFJTnd5NFFmY3J5NUpRWVlzelNYNmdyZ0k2NXFzSXBXMGczd1dQUTRjRHY2ZXRlZjRSX0lNX09kQkQxN0V6NkxLNkFVQnJRX0poaG5lX01QVzJneC1MUWJRZjBGMjFfOG9LSHlpMHVSbS1GT3l1NHFhN3d6T2o0eGRaX2Z5YnRDdXJYOHVYVkltNFNUWXRSWV80TVpjLWxudmlON1lW0gHLAUFVX3lxTE9fdWY2WVlSdm5tLTgxbGRvWHNNMXprV3VtalVFc3oybFJaaTBuTWNfMTBHQlB4RlVxMURoLVRUTS1oaThsazJmYWcyOEUzOTdyM0ctUHNrOVUzckhiNHJBdE5RWkVfMGw5bHo5NWE5ZlV0enhhTHJTR1hwYzFacWpPNXd4d2Z5SlU4SnFvRURrbnpzN1dPbW41SHRzcDlfT1pYUzJqMVB5QmZqYWkwRjNROEpMTllxMUljOVRiMm5vdVV6Q00zQXhlVUpV?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "efc9d98e41f0336b0d4ba84933d49330ae84375f9fc927d268fbd484324f0900",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_FOKoITJkyY4uyH6tjm3sfs",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a headline-only snippet attributing a U.S. stock market selloff to a political event (Democrats' midterm win). It contains no factual detail about the magnitude, duration, or market-structure impact of any selloff, and provides no evidence sufficient to support a card assignment. It reads as political opinion/commentary rather than a reportable market or regulatory event."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4603,
+    "outputTokens": 123,
+    "totalTokens": 4726,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2036
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

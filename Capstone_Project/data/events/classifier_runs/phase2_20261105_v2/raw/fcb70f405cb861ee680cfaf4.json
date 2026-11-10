@@ -1,0 +1,40 @@
+{
+  "document_id": "d5e6d2832746adb33598bceb75987289ef928d74c2ee4c571fa63c18ba1deb85",
+  "url": "https://www.federalregister.gov/documents/2026/10/29/2026-22026/self-regulatory-organizations-ice-clear-credit-llc-order-approving-proposed-rule-change-relating-to",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "213dd9cc3514985a0bb2d193263ca056f49a042f8c4e2761f471b62771fd92aa",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_VOtOgZhyTqfOKm4ifYz8mM",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article concerns ICE Clear Credit LLC's recovery and wind-down plan rule change approval — an internal governance/regulatory matter for a competitor CCP (ICE Clear Credit), not an outside market, member, or infrastructure event that maps to any DTCC card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4136,
+    "outputTokens": 100,
+    "totalTokens": 4236,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1816
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

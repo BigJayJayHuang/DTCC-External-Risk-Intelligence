@@ -1,0 +1,15 @@
+series_id,observation_date,value,units,frequency,source_id,checked_at
+EFFR,2026-11-04,3.88,percent,daily,fred_EFFR,2026-11-09T21:05:21+00:00
+SOFR,2026-11-04,3.94,percent,daily,fred_SOFR,2026-11-09T21:05:21+00:00
+DGS10,2026-11-04,4.9,percent,daily,fred_DGS10,2026-11-09T21:05:21+00:00
+VIXCLS,2026-11-04,16.61,index points,daily,fred_VIXCLS,2026-11-09T21:05:21+00:00
+BAA10Y,2026-11-04,1.52,percentage points,daily,fred_BAA10Y,2026-11-09T21:05:21+00:00
+EFFR,2026-11-05,3.88,percent,daily,fred_EFFR,2026-11-09T21:05:21+00:00
+SOFR,2026-11-05,3.92,percent,daily,fred_SOFR,2026-11-09T21:05:21+00:00
+DGS10,2026-11-05,4.84,percent,daily,fred_DGS10,2026-11-09T21:05:21+00:00
+VIXCLS,2026-11-05,28.18,index points,daily,fred_VIXCLS,2026-11-09T21:05:21+00:00
+BAA10Y,2026-11-05,1.57,percentage points,daily,fred_BAA10Y,2026-11-09T21:05:21+00:00
+MORTGAGE30US,2026-11-05,7.18,percent,weekly,fred_MORTGAGE30US,2026-11-09T21:05:23+00:00
+EFFR,2026-11-06,3.88,percent,daily,fred_EFFR,2026-11-09T21:05:21+00:00
+SOFR,2026-11-06,3.89,percent,daily,fred_SOFR,2026-11-09T21:05:21+00:00
+VIXCLS,2026-11-06,25.64,index points,daily,fred_VIXCLS,2026-11-09T21:05:21+00:00

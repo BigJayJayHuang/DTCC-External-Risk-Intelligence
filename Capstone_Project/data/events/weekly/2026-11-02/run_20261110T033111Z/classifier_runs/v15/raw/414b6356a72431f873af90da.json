@@ -1,0 +1,57 @@
+{
+  "document_id": "270b48e5b5941390c570c488c156ea0f22456a8289d6c4a2b44213bed39f3883",
+  "url": "https://files.dtcc.com/download/assets/a9851/3505ab5cda2211f18e1d527ec7585796",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "e854a59c38a88cc999cfeca7cb761e9c1038080463891d45486ff10a80f7a4f0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Mmw0wS8YDnZDNThFSaaDYZ",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Generic DTCC administrative notice announcing unspecified participant/member list changes with no concrete event, named firm, stress signal, or other detail that matches any card's Step 1. The text is a boilerplate summary only.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1741,
+    "outputTokens": 446,
+    "totalTokens": 6560,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3189
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

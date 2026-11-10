@@ -1,0 +1,40 @@
+{
+  "document_id": "898dfcb2f58fb3b97abc0fcdebafede4adbda2bd04a4056a82a24debaf83cb30",
+  "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBweDhGZnc3UmJSN1d6ZGUyVWZ0eEZTMUdVbDBsVEZ6WUpqaDlucFVGWDJ6T0U1SmhUQjZ1Rk94UldjRG9OdThEUmhhM0l1aXZBOEc0eEU0OG1wT3g2N0tsbVk1cE5lLWFpMlVwM3Q4bUdJNFBGQVE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "9e456eaa2f59158c922519358c75bf90baef4f37b4e524d047151a3e60182da5",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_2c91VyKco77ykkLebW5qH2",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes South Korea's domestic stock market moving to a T+1 settlement cycle by 2028. This is a foreign market regulatory change with no direct connection to DTCC processes, which are US-focused. No card in the catalog covers foreign market settlement cycle changes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4297,
+    "outputTokens": 101,
+    "totalTokens": 4398,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3727
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

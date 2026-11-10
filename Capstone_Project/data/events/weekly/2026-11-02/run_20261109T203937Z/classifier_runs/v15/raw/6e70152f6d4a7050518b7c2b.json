@@ -1,0 +1,57 @@
+{
+  "document_id": "6a88039a848cfcb166f5e6b4d1b130485867e0d792cc11d21f8e25c3a0742422",
+  "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1ZQzdxZVR2cF81RkZaZXBDTGNXZmxyS18tMWZVR1BtVnRLZk9UOXJGM0pvMFVUSXNZcnNVYWs5SG9jNzlNWS1DYmJpWFQzZXZOcXB1aldOOGtQNGVRc3VtTzhYUW00UkNHbENaUm4wM1Voa1prT2VV?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "04c509fa7457bd116f1c84770f1c255f83990c976b35ce10f0536c81fe8bd169",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_bNni32VDRjmGWHD8ltcJvF",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Cyberattack targets French blood banks — a non-financial, non-US entity with no stated link to US markets, DTCC participants, or US market infrastructure. Does not match any catalog card.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1417,
+    "outputTokens": 442,
+    "totalTokens": 6232,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2898
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

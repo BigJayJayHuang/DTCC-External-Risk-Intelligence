@@ -1,0 +1,40 @@
+{
+  "document_id": "b7119a22e981d80385cdd2fee878114ae6a56769ef7fc08c0f71403afcc14bfd",
+  "url": "https://files.dtcc.com/download/assets/24853-26/ed6815f0cbfd11f1a3aae694c785b3e1",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "1c6d3d665a4dc399597b91324ba0ce2e6de0c7e72b55dc9479eccb36006e677d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_2nj5xZEMARW71XbjQ94p0y",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a tax relief corporate action (dividend) for Orion (CUSIP 68628Y104) in Finland. It is an operational/administrative notice about a CA Web instruction deadline, not an outside market, regulatory, member stress, or infrastructure event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4205,
+    "outputTokens": 113,
+    "totalTokens": 4318,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2044
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

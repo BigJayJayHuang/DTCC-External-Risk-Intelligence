@@ -1,0 +1,57 @@
+{
+  "document_id": "ca2c9432382d12a79d2867bbdddd34a8e343858381c5f6beedbdd7d48e32c176",
+  "url": "https://files.dtcc.com/download/assets/25165-26/542c9e98d79611f1aa7d22211f7bc0cd",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "85b6582e6f97ee20a1a806bfaa2c8cc04ba865213553a51107d5fe65ed53f744",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_eByoAcbW08sHo9u8NKdTIr",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Routine DTC Important Notice for a tax relief / corporate action (dividend) on Eaton Corporation PLC (Ireland). This is an administrative corporate-action notice with no risk event matching any catalog card — no market move, no regulatory milestone, no member stress, no operational disruption.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1858,
+    "outputTokens": 458,
+    "totalTokens": 6689,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3703
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

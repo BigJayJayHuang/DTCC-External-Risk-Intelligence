@@ -1,0 +1,40 @@
+{
+  "document_id": "a9af02a4689cf3a3b7eae6eaf53588dc05cfadfb5c35533c03f527b88ee4d981",
+  "url": "https://files.dtcc.com/download/assets/25179-26/25408862ccc211f1a8523620b33cb3f0",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "6cdfb2c2bf17d551b6c99909325d44eb219665997b734d627c5795332279ff65",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_h41QWCnvXBsHvNI9nIsW1x",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification (Important Notice) for Can-Fite BioPharma (CUSIP 13471N409) issued by Bank of New York Mellon. It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4158,
+    "outputTokens": 119,
+    "totalTokens": 4277,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1998
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

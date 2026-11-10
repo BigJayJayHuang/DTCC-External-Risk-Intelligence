@@ -1,0 +1,40 @@
+{
+  "document_id": "e14f505ad84d0dc9fbabfc87339415226029527a3f1c9e8db8328491d84ba225",
+  "url": "https://files.dtcc.com/download/assets/GOV2267-26/b4832b06ce4d11f188cba23e1d707fac",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ce9c3ec2e817b6ad1c26ab55856be8273d9eaeec37e674ab8e00ff02f19e26cf",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Br3DPq0fBwgs2uYkn30z05",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new Agent Clearing Member (National Bank Financial Inc.) joining FICC GSD. It is an administrative membership onboarding notice with no risk event angle — no market stress, no regulatory mandate milestone, no member distress, no operational disruption. It does not describe an outside event matching any card's Step 1 trigger."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4141,
+    "outputTokens": 123,
+    "totalTokens": 4264,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1940
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

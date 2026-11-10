@@ -1,0 +1,64 @@
+{
+  "document_id": "3655b6f2e677fd701e689d6991b107d9f7d23dc073e3abab99dc3e532a0c972d",
+  "url": "https://files.dtcc.com/download/assets/GOV2287-26/a91ca11ed88611f19c024aed85cffbfa",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "4ee5c31c2f7ea0f3ba1f15fee35545ad7ce13c5e3a7d8da4521ec8e6a20e4d95",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_DoYZESUaMJjfWJOJj5p4Jz",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "regulatory",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "Zions Bancorporation joins FICC GSD as Agent Clearing Member",
+              "summary": "Zions Bancorporation, NA has been admitted as a new Agent Clearing Member (ACM Omnibus) of FICC's Government Securities Division, assigned GSD Member #94GS, per DTCC notice GOV2287-26 dated 2026-11-04.",
+              "card_ids": [
+                "FICC-GSD-03",
+                "FICC-GSD-11"
+              ],
+              "certainty": 2,
+              "reach": 1,
+              "reach_basis": "group",
+              "named_participants": [
+                "Zions Bancorporation, NA"
+              ],
+              "announced_date": "2026-11-04",
+              "effect_date": "2026-11-04",
+              "stage": null,
+              "source_tier": "dtcc",
+              "outlet": "DTCC",
+              "url": "https://files.dtcc.com/download/assets/GOV2287-26/a91ca11ed88611f19c024aed85cffbfa",
+              "evidence_quotes": [
+                "New Agent Clearing Member of the Government Securities Division of FICC: Zions Bancorporation, NA/ACM Omnibus – GSD Member #94GS"
+              ],
+              "confidence": 0.75,
+              "notes": "DTCC official notice confirming a new ACM onboarding at GSD. Relevant to FICC-GSD-03 (GSD onboarding/Sponsored volume milestones) and FICC-GSD-11 (Agent Clearing Service). Zions Bancorporation is a regional bank; not classified as a global systemically important bank, so reach is group/1 rather than major_participant/2. Summary-only content; no further detail on effective date beyond publication date."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1802,
+    "outputTokens": 710,
+    "totalTokens": 6885,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5333
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

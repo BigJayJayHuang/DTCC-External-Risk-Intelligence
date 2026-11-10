@@ -1,0 +1,40 @@
+{
+  "document_id": "8f8f3c3ca63ab3849404c2f65f65c83d2bf32997d14c0bd0c13eebba0ed3ab30",
+  "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNNFBlcTAtVnJZaXpEbTlZTkFwb09WWHktX0EzSDF1Q09KVDdSVTVOeUs5QTZEWlpTM2V3NzFRb2lQUjQ0OXh2Xzd2ckhJc3pCWHQxeTZZU004RTg0MUNvWkE4aW1HQ194bTJWeHNPeDI2UlVpS0NMRHV5M0xpZkh2ak5STk4?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "fcd6315a9e4a8df76e06d7b6af90ade34352f7dc734d517a273449848e1201e8",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_5JNUa6d5OJTOHfhhbMzvZJ",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline snippet about UK bank rate rises affecting tracker mortgages. This is a UK retail mortgage market story with no connection to any DTCC process described in the card catalog. While the query hint suggested FICC-MBSD-01, the article does not describe MBS spreads widening, TBA pipeline stress, or any US mortgage-backed securities market event."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4274,
+    "outputTokens": 124,
+    "totalTokens": 4398,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2153
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

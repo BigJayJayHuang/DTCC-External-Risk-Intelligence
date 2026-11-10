@@ -1,0 +1,57 @@
+{
+  "document_id": "a1f0774de14421e4eb0b16a5626925ba71527429ebd2e0ff8ac687d0e348d445",
+  "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNVC1FdzU0cDRIWEl3TXpfZ0wwdGNSVmhfekpJdGotTEIwQWxVVHBmc3BpR2l2OHpJdExYMy1GdlBsWFJQOHkzUEMzQ0xDb0pGX2kxNGJLZGFlNE42U2tjVEk3Tnl3X3JCZ3g3UWRoS2FrVVVsYjctdk81ZVdWdGFjT3JLRFdLZVVlNkhZa2h4NDc1Ml83di1KQ1BLSklHWE95bU5nRHhoTHQyNzQ0VjQ5c0lKRQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "9ac3f3d27b8a443fa779e651284ee01eba994ad0ee0fd0907783e2f753423b2b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ghYMzvEPEXHH9LqqensHHj",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Non-US event (Argentina sovereign bonds / peso debt) with no stated link to US markets, DTCC participants, or any covered DTCC process. No card in the catalog covers non-US sovereign debt markets without an explicit US link.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1914,
+    "outputTokens": 449,
+    "totalTokens": 6736,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3420
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

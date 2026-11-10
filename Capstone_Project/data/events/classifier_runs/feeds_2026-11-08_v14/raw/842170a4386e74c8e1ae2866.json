@@ -1,0 +1,40 @@
+{
+  "document_id": "f20e6e41404eb18589af99800548d61f796192b8d56c4d190bf3465bc15382c6",
+  "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE0tbzg5UDN1Tjd0M3JwX1VmUWg5Q3NkNVVtWFFMVjNSa3FheDl6cjIxTmhxdXFrVEN4b3lwckNzS3B2Z3ZGdlV4RURsZTY1M0l2NW9UenUzSVR3Z29XMk9qajFpZm8wTVBaenNIM1BQbXFHdk5BT0dCdw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "c282051ab3d4d4203fafdaf913b067f21587b4bb3d7358835771641653217ae1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_cd9kdq0EDcU2VxNGSEGuBE",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline describes record trading volume in a single ETF (Invesco QQQ Trust) during a tech selloff. While high volume in one instrument could hint at broader market stress, the headline names only one product and provides no evidence of market-wide record volume or NSCC settlement stress. A single ETF's trading volume does not meet the threshold for any card's Step 1 trigger. Insufficient basis for relevance."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1442,
+    "outputTokens": 135,
+    "totalTokens": 5285,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2460
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

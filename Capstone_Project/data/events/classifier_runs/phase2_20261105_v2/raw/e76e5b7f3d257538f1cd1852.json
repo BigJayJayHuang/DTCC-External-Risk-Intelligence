@@ -1,0 +1,40 @@
+{
+  "document_id": "86d45ddd5252b0cc7d31664eaed6e34849f73f277c81ea21e1f743428d99c51b",
+  "url": "https://files.dtcc.com/download/assets/25134-26/0dc08486c71c11f1974476d02c351b47",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "995758059e3b8ff47922d3ac5b837ad5023ce1e39d10bfa335709c11e55a23d0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_R77Zc5kdhrLKgw36poiJ1C",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about a tax relief/dividend corporate action for Telenor ASA (Norway), providing record dates, payable dates, and instruction deadlines. It is an operational/administrative notice with no risk angle and does not describe any outside market, regulatory, member stress, or infrastructure event matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4235,
+    "outputTokens": 116,
+    "totalTokens": 4351,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2028
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

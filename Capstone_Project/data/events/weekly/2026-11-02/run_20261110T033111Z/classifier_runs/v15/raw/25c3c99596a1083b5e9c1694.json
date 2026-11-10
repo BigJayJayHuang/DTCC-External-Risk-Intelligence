@@ -1,0 +1,61 @@
+{
+  "document_id": "625a9a2cb5a9b9f7c2533db05c693caf71c74ef66276d3e76884696cbde7923c",
+  "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPUDhuTElvaGtYeVdwSmM0SC04dEVRaXVWeFpwd21nMTRWTEJmT0d2T0RtNzJRbVZkQ2xRaDBzRHo0RGZFN3AxUGFBOC1LNU5ZTUZONW9PNi1QOEtEendFMkhFbHBFUW1sOGl4aTVjdFJldmtUeDBjTjh0VWlUNU9KOUVtQ3gxWGtrMUh0cVc4NVZxb0dNM1lNMGRWb3NyUUtJRUE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "884b5bce9f9e562c186acf23fcfb76cd2b1a26472e0e04a17c97ec70409a89fc",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Pp12VqwSnWHQAJPleaUtJE",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "market_move",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "US Employment Surge Drives Rate Hike Bets, Treasury Yields Rise",
+              "summary": "A surge in US employment has fueled expectations of interest rate hikes, pushing Treasury yields higher. Rising yields indicate a Treasury selloff that could affect GSD margin requirements.",
+              "card_ids": [
+                "FICC-GSD-01"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-06",
+              "effect_date": "2026-11-06",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "GuruFocus",
+              "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPUDhuTElvaGtYeVdwSmM0SC04dEVRaXVWeFpwd21nMTRWTEJmT0d2T0RtNzJRbVZkQ2xRaDBzRHo0RGZFN3AxUGFBOC1LNU5ZTUZONW9PNi1QOEtEendFMkhFbHBFUW1sOGl4aTVjdFJldmtUeDBjTjh0VWlUNU9KOUVtQ3gxWGtrMUh0cVc4NVZxb0dNM1lNMGRWb3NyUUtJRUE?oc=5",
+              "evidence_quotes": [
+                "US Employment Surge Fuels Rate Hike Bets, Treasury Yields Rise"
+              ],
+              "confidence": 0.5,
+              "notes": "headline_only; Treasury yield rise consistent with FICC-GSD-01 (sharp yield swings affecting GSD margin). No magnitude or specific yield levels provided. Effect date set to announced date as no separate date given."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1900,
+    "outputTokens": 760,
+    "totalTokens": 7033,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 4779
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

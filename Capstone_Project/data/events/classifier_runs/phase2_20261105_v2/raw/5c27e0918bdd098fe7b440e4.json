@@ -1,0 +1,40 @@
+{
+  "document_id": "4eb34fa0de2e4d95d8df4a5692d823773136a93d933eaa6a019cb7be25048887",
+  "url": "https://www.federalregister.gov/documents/2026/10/23/2026-21691/change-in-bank-control-notices-acquisitions-of-shares-of-a-bank-or-bank-holding-company",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "9a624d78aca424e5f78a122f331bf45f00a673c89fc2e06592313b29c3a3f6db",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_94yPDAJ9ssljWxCzzLkkB8",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a routine Federal Register notice about bank control acquisitions. It does not describe any market event, regulatory action, member stress, infrastructure issue, or cyber event that maps to any card in the catalog. The content is limited to a headline-only notice about share acquisitions in a bank or bank holding company, with no named participants, no stress signals, and no connection to DTCC processes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4102,
+    "outputTokens": 125,
+    "totalTokens": 4227,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1839
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

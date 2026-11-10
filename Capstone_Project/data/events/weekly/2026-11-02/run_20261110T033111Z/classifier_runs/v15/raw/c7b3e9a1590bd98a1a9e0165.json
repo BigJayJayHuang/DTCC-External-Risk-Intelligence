@@ -1,0 +1,64 @@
+{
+  "document_id": "0a940b6efb8d091bf1d1d2a86e2af5b1b546a21282e2e5cb2a7b12713ffe0bf0",
+  "url": "https://news.google.com/rss/articles/CBMirAJBVV95cUxQcVlDRmF4YmhZckoxUm5zM2JqbnNUV1pNZnhFOTJZTEZWOGpMclp3Sm5kYnZFbGh3MWtJOFlfNHJwdTR6X043U3VtNl9SZU8yRjllZmN2WG4wTXlqN01fOU84TnozTUdfMDJiLWpXWkx1UFZteFA2VnZJenlCTTZHYndCTkcwbW1SYjdLbDJ4NmwycEdjOS1OZEpiRXlWNjBKRlhJMWgyWGpmZUJ4ampnLW5kNGVOLVdMSFhRdF9hMWt6LXplZjJxcmpWdm9Vak95ckhoei1GbWc4WndMa0lMV1VEVzNjYmRQM1REVWtoV2h5X3luU0lPQlFGMXdIN242emgtaFBiLXJvdHRsamZfZGFvRzdzbUVrNExqRmh1S055Z0g4QXRoczFvOUvSAbICQVVfeXFMUGRNNTd5OUxKVk4xeTh5dVQ2cWx6UUxIWmJ4VXpPSnlSbm0zZzVEUjBKbUpCN1RsaHl4MHMtMnRrT013VHFqZ2p6VTJQWTZOY25wMjE1SkdWRjB4b2xndVkxNldWUHFJRktMWHY2S3FtaFdmR01wT0RGb0hfRHptQzVoaEIxRjdHMTVTVnc5aEhwQy1KYnZXQnpRdlJmLVRLREUzZElEUm8yVVdZZW9oMGJNUUMyTmQ1ZC1ISU15Q012S1htSUdKT1pJX2Q0M3lOdm9Fa3h0bkNScDZ1dHVZMm5uZXY3OExXWkw4eGhoakVLYUlCSWpzLU9PdlpvQ3RNTUN3SDBpLUU0NkczUk5TTTQtZEhqaFJpd0hFcEU1bUpNRDdocG9lS0FZV3RFWVJvb2Jn?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "9f7c8ba953cc93bd284a54fbca8881964ae597ece9345fd0d1ca392b3ea5946d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_JUDibE8i78i1wtjKnoHvuU",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "operational",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "Thinkorswim trading platform outage reported by users",
+              "summary": "Users are reporting an outage affecting the Thinkorswim trading platform, including the app, website, login, and account access in the US. No details on cause, duration, or scope are provided.",
+              "card_ids": [
+                "XE-CYBER"
+              ],
+              "certainty": 2,
+              "reach": 0,
+              "reach_basis": "single",
+              "named_participants": [
+                "Thinkorswim"
+              ],
+              "announced_date": "2026-11-06",
+              "effect_date": "2026-11-06",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "The Sunday Guardian",
+              "url": "https://news.google.com/rss/articles/CBMirAJBVV95cUxQcVlDRmF4YmhZckoxUm5zM2JqbnNUV1pNZnhFOTJZTEZWOGpMclp3Sm5kYnZFbGh3MWtJOFlfNHJwdTR6X043U3VtNl9TZU8yRjllZmN2WG4wTXlqN01fOU84TnozTUdfMDJiLWpXWkx1UFZteFA2VnZJenlCTTZHYndCTkcwbW1SYjdLbDJ4NmwycEdjOS1OZEpiRXlWNjBKRlhJMWgyWGpmZUJ4ampnLW5kNGVOLVdMSFhRdF9hMWt6LXplZjJxcmpWdm9Vak95ckhoei1GbWc4WndMa0lMV1VEVzNjYmRQM1REVWtoV2h5X3luU0lPQlFGMXdIN242emgtaFBiLXJvdHRsamZfZGFvRzdzbUVrNExqRmh1S055Z0g0QXRoczFvOUvSAbICQVVfeXFMUGRNNTd5OUxKVk4xeTh5dVQ2cWx6UUxIWmJ4VXpPSnlSbm0zZzVEUjBKbUpCN1RsaHl4MHMtMnRrT013VHFqZ2p6VTJQWTZOY25wMjE1SkdWRjB4b2xndVkxNldWUHFJRktMWHY2S3FtaFdmR01wT0RGb0hfRHptQzVoaEIxRjdHMTVTVnc5aEhwQy1KYnZXQnpRdlJmLVRLREUzZElEUm8yVVdZZW9oMGJNUUMyTmQ1ZC1ISU15Q012S1htSUdKT1pJX2Q0M3lOdm9Fa3h0bkNScDZ1dHVZMm5uZXY3OExXWkw4eGhoakVLYUlCSWpzLU9PdlpvQ3RNTUN3SDBpLUU0NkczUk5TTTQtZEhqaFJpd0hFcEU1bUpNRDdocG9lS0FZV3RFWVJvb2Jn?oc=5",
+              "evidence_quotes": [
+                "Users Report Trading Platform, App, Website, Login & Account Access Issues",
+                "Thinkorswim Outage Today: Is Thinkorswim Down in the US?"
+              ],
+              "confidence": 0.4,
+              "notes": "headline_only. Thinkorswim is a retail brokerage trading platform (TD Ameritrade/Schwab). The outage is operational/potentially cyber in nature but no cause is stated. Reach is low (single retail platform); Thinkorswim is not a major participant in DTCC's sense. XE-CYBER is the closest card (participant system disruption). Certainty is 2 as users are actively reporting the outage. Confidence is low due to headline-only content and no detail on cause or severity."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 2495,
+    "outputTokens": 1389,
+    "totalTokens": 8257,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 8181
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

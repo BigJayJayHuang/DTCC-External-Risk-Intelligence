@@ -1,0 +1,142 @@
+{
+  "week_start": "2026-11-02",
+  "week_end": "2026-11-08",
+  "cap_usd": "3",
+  "run_dir": "data/events/weekly/2026-11-02/run_20261109T210715Z",
+  "prompt_version": "v1.5",
+  "status": "collected_for_review_no_model_calls",
+  "paid_calls": 0,
+  "collect_only": true,
+  "dry_run": false,
+  "official_input": {
+    "path": "capstone_database/exports/news.csv",
+    "sha256": "2861934162092689cd8862ac6b544a826a7d826608ece31b39e4f53e544eb2ab"
+  },
+  "google": {
+    "queries": 47,
+    "requests": 47,
+    "http_errors": 0,
+    "raw_hits_in_week": 547,
+    "after_dedup": 508,
+    "kept_after_cap": 85,
+    "duplicates_merged": 39,
+    "headline_filter": {
+      "passed": 114,
+      "dropped": 394,
+      "passed_by_rule": {
+        "all_terms_headline_match": 98,
+        "major_media_outlet": 16
+      },
+      "passed_by_headline_term_match": {
+        "full": 98,
+        "partial": 2,
+        "none": 14
+      }
+    },
+    "dropped_by_card_cap": 29,
+    "kept_by_rule": {
+      "all_terms_headline_match": 69,
+      "major_media_outlet": 16
+    }
+  },
+  "feeds": {
+    "items_to_classifier": 85,
+    "scope_totals": {
+      "headline_only": 85
+    },
+    "published_range": [
+      "2026-11-02",
+      "2026-11-08"
+    ],
+    "official_input": {
+      "input_rows": 1675,
+      "kept": 0,
+      "filtered_out": 113,
+      "input_sha256": "2861934162092689cd8862ac6b544a826a7d826608ece31b39e4f53e544eb2ab",
+      "window": [
+        "2026-11-02",
+        "2026-11-08"
+      ],
+      "unsupported_source_rows": 1
+    },
+    "per_source": {
+      "cnbc_top_news": {
+        "robots_disallowed_feed": 1
+      },
+      "cnbc_finance": {
+        "robots_disallowed_feed": 1
+      },
+      "cnbc_economy": {
+        "robots_disallowed_feed": 1
+      },
+      "cnbc_investing": {
+        "robots_disallowed_feed": 1
+      },
+      "marketwatch_top_stories": {
+        "robots_disallowed_feed": 1
+      },
+      "marketwatch_market_pulse": {
+        "robots_disallowed_feed": 1
+      },
+      "marketwatch_realtime": {
+        "robots_disallowed_feed": 1
+      },
+      "yahoo_finance_news": {
+        "feed_http_404": 1
+      },
+      "nasdaq_markets": {
+        "robots_disallowed_feed": 1
+      },
+      "nasdaq_stocks": {
+        "robots_disallowed_feed": 1
+      },
+      "fed_press_all": {
+        "feed_http_200": 1,
+        "fetched": 20,
+        "kept_prefilter": 6,
+        "outside_requested_window": 6
+      },
+      "sec_press_releases": {
+        "robots_disallowed_feed": 1
+      },
+      "google_news_existing": {
+        "fetched": 85,
+        "kept_prefilter": 85,
+        "scope_headline_only": 85,
+        "fulltext_no_publisher_url": 85
+      },
+      "official:fed_press": {
+        "outside_requested_window": 35
+      },
+      "official:sec_press": {
+        "outside_requested_window": 38
+      },
+      "official:ecb_press": {
+        "outside_requested_window": 44
+      },
+      "official:bis_press": {
+        "outside_requested_window": 16
+      },
+      "official:dtcc_notice_feed": {
+        "outside_requested_window": 1151
+      },
+      "official:cftc_press": {
+        "outside_requested_window": 32
+      },
+      "official:fca_rss": {
+        "outside_requested_window": 38
+      },
+      "official:esma_news": {
+        "outside_requested_window": 20
+      },
+      "official:federal_register": {
+        "outside_requested_window": 186
+      },
+      "official:dtcc_insight_20261014": {
+        "outside_requested_window": 1
+      }
+    }
+  },
+  "classifier_input": "data/events/weekly/2026-11-02/run_20261109T210715Z/inputs/feeds/classifier_input.csv",
+  "next_step": "Review evidence coverage; use --dry-run for a cost estimate without invoking AWS."
+}

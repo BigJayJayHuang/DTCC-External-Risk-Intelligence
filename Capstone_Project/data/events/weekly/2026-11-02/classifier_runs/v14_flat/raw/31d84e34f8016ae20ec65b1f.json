@@ -1,0 +1,54 @@
+{
+  "document_id": "07a14f61a0339f590a48ef3872d50371867aa9677b2d0bd93a57249c617e2081",
+  "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOcXBsTmRaUUo4VW1NRTZfdUh3OVJ2aEI1Ql9zeTJIaXFlTV9YcDVkb0F4UkpxQ0lfeEVGcVdEU2liXzd2dW5mbTY2d3hVZFAyR1QwbC1RWGJiY3R1bmwwNFJHaWFTRXRvX0lJZUFkVmFqLW1sdzA4R2I3MWlULW0zdklkd3FhVWhMNEJUdllMMEtNOEZPNkE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "16e077264ddacec65f4f6391ced554ee8e51dc82e5c910beddd6d7af16a473c4",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_5IPGT9hx0NSA6tJGYzQWui",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Gopax is a South Korean cryptocurrency exchange. A trading halt there has no stated link to US markets or DTCC participants; non-US crypto venue is outside the catalog scope."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1473,
+    "outputTokens": 381,
+    "totalTokens": 5539,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2555
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

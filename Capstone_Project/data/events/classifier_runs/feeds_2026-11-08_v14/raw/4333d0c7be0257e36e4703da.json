@@ -1,0 +1,40 @@
+{
+  "document_id": "1cd956d878698e3cb6f7b896054c9de447cb6a496bd313bb73678374d0fe95bf",
+  "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxObUVoajhGN1Jjc2tzR2dTMHl6VHU4Z05kVHRWeUhEWnFJTnd5NFFmY3J5NUpRWVlzelNYNmdyZ0k2NXFzSXBXMGczd1dQUTRjRHY2ZXRlZjRSX0lNX09kQkQxN0V6NkxLNkFVQnJRX0poaG5lX01QVzJneC1MUWJRZjBGMjFfOG9LSHlpMHVSbS1GT3l1NHFhN3d6T2o0eGRaX2Z5YnRDdXJYOHVYVkltNFNUWXRSWV80TVpjLWxudmlON1lW0gHLAUFVX3lxTE9fdWY2WVlSdm5tLTgxbGRvWHNNMXprV3VtalVFc3oybFJaaTBuTWNfMTBHQlB4RlVxMURoLVRUTS1oaThsazJmYWcyOEUzOTdyM0ctUHNrOVUzckhiNHJBdE5RWkVfMGw5bHo5NWE5ZlV0enhhTHJTR1hwYzFacWpPNXd4d2Z5SlU4SnFvRURrbnpzN1dPbW41SHRzcDlfT1pYUzJqMVB5QmZqYWkwRjNROEpMTllxMUljOVRiMm5vdVV6Q00zQXhlVUpV?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "0bc73679ee2d830182c2f4493114ebd0eaba5c64687c878009d32a67f59b843e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_X8ZCNs3oeHVTg6RcsmAsAb",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline only. The text attributes a stock market selloff to a political event but provides no concrete magnitude, no named participants, and no details about the selloff itself. A bare political attribution headline with no market data or participant stress is insufficient to confirm a card-triggering event; certainty and evidence are too thin to classify."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1771,
+    "outputTokens": 111,
+    "totalTokens": 5590,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2227
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

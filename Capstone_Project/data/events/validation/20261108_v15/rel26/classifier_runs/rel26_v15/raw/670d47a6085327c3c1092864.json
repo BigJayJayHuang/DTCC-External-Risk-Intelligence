@@ -1,0 +1,59 @@
+{
+  "document_id": "675e0e8de4aaf20e754c7e3e8008f390c8e133ea83cd6cbc509033c30e690327",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1fVzhWaTBRTTZaa3liaU9QSGsyV1RhWGZLOFhRamh0am9kaFc0aEI5RWREUGkyWHhsdkg1NEMzQkV1cnhnb0NEVEhXamZ3NzVXRjBSS28tbzhWV2NaVk1QYzBJUXFkQ2V1aWozVg?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:163854b82bd7",
+  "request_sha256": "9ad19483c2d9fd8ac47e52d20573058de5c90be07909986f61aba2dfd4d43f75",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_zqt6CaWdKrWHFK8YOUHl9Q",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "same_as_event_id": null,
+              "title": "Country pursues T+1 settlement transition in 2028",
+              "summary": "A market is reported to be pursuing a T+1 settlement cycle transition in 2028, marking the first change to its stock settlement cycle in 50 years. No further details are provided in the headline-only article.",
+              "card_ids": [
+                "ECS-SET-01"
+              ],
+              "certainty": 0,
+              "reach": 1,
+              "reach_basis": "group",
+              "named_participants": [],
+              "announced_date": "2026-11-02",
+              "effect_date": "2028-01-01",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "뉴스웍스",
+              "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1fVzhWaTBRTTZaa3liaU9QSGsyV1RhWGZLOFhRamh0am9kaFc0aEI5RWREUGkyWHhsdkg1NEMzQkV1cnhnb0NEVEhXamZ3NzVXRjBSS28tbzhWV2NaVk1QYzBJUXFkQ2V1aWozVg?oc=5",
+              "evidence_quotes": [
+                "Stock settlement cycle changes for the first time in 50 years...Pursuing a 'T +1' transition in 2028"
+              ],
+              "confidence": 0.35,
+              "event_type": "regulatory",
+              "notes": "headline_only. Source is a Korean-language outlet (뉴스웍스), suggesting this refers to a non-US market (likely South Korea) pursuing T+1. No explicit link to US markets or DTCC participants is stated. Certainty set to 0 (speculative/pursuing). Effect date of 2028-01-01 is estimated from \"2028\" in headline; no specific date given. Reach set to 1 (group) as a foreign market T+1 transition could affect cross-border participants but no direct US/DTCC link is stated. Confidence is low due to headline-only and foreign market context."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1435,
+    "outputTokens": 760,
+    "totalTokens": 6100,
+    "cacheReadInputTokens": 3905,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5588
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,61 @@
+{
+  "document_id": "ee886a6ef64ae11852aa688548153f3858539255c863607d42aa6ed4af2fc1a3",
+  "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22493/order-granting-exemptive-relief-pursuant-to-sections-17a-and-36a-of-the-securities-exchange-act-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "e2190710fded2f7d1b2620061cae9d1b40f97f48df609bfe7f3c915a63fc8928",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_lyv3QRfIDR1hJBW6PFXE7n",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "regulatory",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "SEC grants exemptive relief from eligible secondary market transaction definition",
+              "summary": "The SEC issued an order granting exemptive relief under Sections 17A and 36(a) of the Securities Exchange Act of 1934 from the definition of an \"Eligible Secondary Market Transaction\" in Rule 17ad-22(a). This rule governs clearing agency standards and directly relates to Treasury clearing requirements under FICC-GSD-03.",
+              "card_ids": [
+                "FICC-GSD-03"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-04",
+              "effect_date": "2026-11-04",
+              "stage": null,
+              "source_tier": "regulator",
+              "outlet": "Federal Register",
+              "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22493/order-granting-exemptive-relief-pursuant-to-sections-17a-and-36a-of-the-securities-exchange-act-of",
+              "evidence_quotes": [
+                "Order Granting Exemptive Relief, Pursuant to Sections 17A and 36(a) of the Securities Exchange Act of 1934, From the Definition of an \"Eligible Secondary Market Transaction\" in Rule 17ad-22(a)"
+              ],
+              "confidence": 0.55,
+              "notes": "headline_only. Rule 17ad-22(a) defines \"Eligible Secondary Market Transaction\" which is central to the Treasury clearing mandate under FICC-GSD-03. An exemptive order from this definition would affect which transactions must be centrally cleared through FICC GSD, making it a milestone in the Treasury clearing mandate. No further detail available from headline alone; certainty set to 2 as this is a final SEC order published in the Federal Register. Confidence lowered due to headline-only content."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1866,
+    "outputTokens": 741,
+    "totalTokens": 6980,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5321
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

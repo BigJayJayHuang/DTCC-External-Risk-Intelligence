@@ -1,0 +1,57 @@
+{
+  "document_id": "f13a72ba0107c598a34ecd085495022b7853fb676d00c44484d76fd8c4a784d2",
+  "url": "https://www.federalregister.gov/documents/2026/11/03/2026-22399/change-in-bank-control-notices-acquisitions-of-shares-of-a-bank-or-bank-holding-company",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "f464927960c7226e9c5e41e6eb3327e732170777f0264a364fad95c52e5bd748",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_cFHxNYZ9Gevf8FOY6758di",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Routine Federal Register notice of bank control/acquisition filings. No named firm under stress, no downgrade, no default, no operational issue — does not describe any event matching a card's Step 1. Generic regulatory notice with no risk angle for DTCC processes.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1748,
+    "outputTokens": 454,
+    "totalTokens": 6575,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3276
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

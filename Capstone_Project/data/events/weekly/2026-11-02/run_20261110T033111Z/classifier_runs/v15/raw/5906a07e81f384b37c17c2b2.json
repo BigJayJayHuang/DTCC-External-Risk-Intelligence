@@ -1,0 +1,57 @@
+{
+  "document_id": "f545fd8e61ef54d58dd01f354fd7ac9e6b783a92583c99dc776c2d73c9d39fb7",
+  "url": "https://files.dtcc.com/download/assets/24596-26/cba3ed32d7d211f1bbf7b24885514406",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "5d97e921799037cc34443a69f5998d37d88e8913a045cf5908d7e2851de13592",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_VM3KJysC6RLc4F5rMAiNrj",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "DTC Important Notice for a routine corporate action (tax relief / dividend) on KB Financial Group (Korea). No market event, no DTCC process stress, no card Step 1 match. Non-US issuer with no stated link to US markets or DTCC processes beyond standard DTC custody administration."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1856,
+    "outputTokens": 463,
+    "totalTokens": 6692,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3405
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

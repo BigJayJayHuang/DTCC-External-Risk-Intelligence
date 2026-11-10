@@ -1,0 +1,40 @@
+{
+  "document_id": "07a14f61a0339f590a48ef3872d50371867aa9677b2d0bd93a57249c617e2081",
+  "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOcXBsTmRaUUo4VW1NRTZfdUh3OVJ2aEI1Ql9zeTJIaXFlTV9YcDVkb0F4UkpxQ0lfeEVGcVdEU2liXzd2dW5mbTY2d3hVZFAyR1QwbC1RWGJiY3R1bmwwNFJHaWFTRXRvX0lJZUFkVmFqLW1sdzA4R2I3MWlULW0zdklkd3FhVWhMNEJUdllMMEtNOEZPNkE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "72604d78c9a49e307a21e38fa6708dfe8cf63a3121d185245e72f3900d0ebf6e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_MFedWIROwlrU4GEpFQp9nU",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article concerns a trading halt at Gopax, a Korean cryptocurrency exchange. No stated link to US markets or DTCC participants. Non-US crypto exchange event does not match any catalog card's Step 1."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1473,
+    "outputTokens": 87,
+    "totalTokens": 5268,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1678
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

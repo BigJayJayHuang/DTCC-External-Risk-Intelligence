@@ -1,0 +1,57 @@
+{
+  "document_id": "99dabd4d296a581d2652a8da22952322f324829493d65c55cce8fa7ea32151ab",
+  "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQNDIzVlZZRll0d2dlZllvaUpoc0pCcWM5SjJQbHJubnljTExZNGZOMlBkUl8tVXdHNE1VYU9oSVNBZmVCUjlOSW5xZ0l0eHYyWGdhVE82SlMtZnVsWklmaUpOcWFuUEs4M19ITzVTM3hxLWpDQWhGOFNBNkFTeFJMWEdITmg1clFhaFFSNE1UOGZyZnlxZm1HX2tfZEZnbElaSEk2UlRkbXdtaU80ekZvbTc3TVVUZWxpRVZaT2Z1ZF9PZnlhZ00wNzNTdVZOM1E?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "7b7738296c253d2982cffce40efad0c0ae85ef0a8e425c378290a424612c4252",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_yWood1lSIMXdL2e7AEKTI7",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Single small ETF delisting and liquidation. Not a DTCC member stress event, not a market-wide move, not a settlement cycle change, and not a record volume event. No card in the catalog covers a single minor ETF wind-down with no stated link to DTCC processes.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1957,
+    "outputTokens": 461,
+    "totalTokens": 6791,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3695
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

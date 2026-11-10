@@ -1,0 +1,55 @@
+{
+  "document_id": "6f6f65d443e37d69c616c220dd156ecc90e82e54d0ec21451c0d40aea760c317",
+  "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOV09Yb0RfcEdqV2VTTm91cW1uV0dmTkxZNkY2WVpmb3I3UWZ2WGg2TWRfNDRHUmRpS2JONVd0QWdEekg3TmhMSjJJWDhXb1BTbEhPZVhkQkRWa3NZUHZoeGt5aEY3dy04bHF0M3hSTVRCd3doVFFDMENRVWxHV1QzRjcwUlRHVlJUbS1ISmIwajFQMjItaVJv?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "dffaa69ad79c8b0e01c59f0d0a1228e58296175169f269484381a87f75734498",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_jR5YqvDGuQLipYQah7yJeh",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Marvell Technology is a semiconductor/technology company, not a financial firm or DTCC participant. A potential stock price decline due to an acquisition is a non-financial industry event with no stated link to DTCC processes or US financial markets clearing and settlement.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1470,
+    "outputTokens": 417,
+    "totalTokens": 5802,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3391
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

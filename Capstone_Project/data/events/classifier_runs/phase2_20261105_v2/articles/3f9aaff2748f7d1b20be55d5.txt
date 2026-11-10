@@ -1,0 +1,3 @@
+A9840
+
+X9 Financial Public Key Infrastructure (PKI) Certificates Notice: A9840 Summary: As communicated in NSCC Important Notice A9791, DTCC is adopting X9 Financial PKI for certain system connections. In addition to the protocols identified in the prior notice, clients using REST API and SOAP API connections for DTCC Insurance Products are required to add X9 Financial PKI certificate chain to their applicable trust stores to avoid service disruption.

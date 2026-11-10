@@ -1,0 +1,63 @@
+{
+  "document_id": "9751aba6b40749907bd9ccee6ac20ae4eddb380e58b851ea5207178cc20c8f03",
+  "url": "https://files.dtcc.com/download/assets/GOV2284-26/52aaa558d7b211f1a32676277c76473d",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "2f92e768ebd134d9a0a62b11e2c220386edbc62b0613076076631413e29ea69f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_d1B4lbWmW8Z9LOjGxM4Kei",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "regulatory",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "Bank of Nova Scotia joins FICC GSD Netting System",
+              "summary": "The Bank of Nova Scotia, New York Agency / BNS Toronto has been added as a new participant in the Netting System of FICC's Government Securities Division, as announced in DTCC notice GOV2284-26.",
+              "card_ids": [
+                "FICC-GSD-03"
+              ],
+              "certainty": 2,
+              "reach": 1,
+              "reach_basis": "group",
+              "named_participants": [
+                "The Bank of Nova Scotia, New York Agency"
+              ],
+              "announced_date": "2026-11-03",
+              "effect_date": "2026-11-03",
+              "stage": null,
+              "source_tier": "dtcc",
+              "outlet": "DTCC",
+              "url": "https://files.dtcc.com/download/assets/GOV2284-26/52aaa558d7b211f1a32676277c76473d",
+              "evidence_quotes": [
+                "New Participant in the Netting System of the Government Securities Division of FICC: The Bank of Nova Scotia, New York Agency / BNS Toronto – GSD #94IC"
+              ],
+              "confidence": 0.72,
+              "notes": "DTCC official notice confirming a new GSD netting participant. Relevant to FICC-GSD-03 as it reflects ongoing GSD onboarding activity consistent with the Treasury clearing mandate. Reach set to 1 (group/business_line) as this is a single new participant joining, not a market-wide event. Effect date set to announced date as no separate effective date is stated. Content is summary-only."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1815,
+    "outputTokens": 664,
+    "totalTokens": 6852,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 4857
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

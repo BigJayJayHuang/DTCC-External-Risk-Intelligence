@@ -1,0 +1,63 @@
+{
+  "document_id": "c0dc5e8175d3c8fcb1da367edc8c9e4bd14a77e8448643acd8ad060df96c1167",
+  "url": "https://files.dtcc.com/download/assets/GOV2283-26/1898c610d7b211f18bc2266dd58c2a6f",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "e174287d24f81b12721f3f3ba0b1de072c155baec197018b1148797423a4e842",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_7Lkj2KXuEzcWpgqNV9D1bc",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "regulatory",
+              "geography": "us",
+              "new_information": null,
+              "same_as_event_id": null,
+              "title": "Vanguard Marketing Corporation joins FICC GSD Netting System",
+              "summary": "DTCC notice GOV2283-26 announces that Vanguard Marketing Corporation has become a new participant in the Netting System of FICC's Government Securities Division (GSD #94GV), expanding the pool of cleared Treasury participants.",
+              "card_ids": [
+                "FICC-GSD-03"
+              ],
+              "certainty": 2,
+              "reach": 1,
+              "reach_basis": "single",
+              "named_participants": [
+                "Vanguard Marketing Corporation"
+              ],
+              "announced_date": "2026-11-03",
+              "effect_date": "2026-11-03",
+              "stage": null,
+              "source_tier": "dtcc",
+              "outlet": "DTCC",
+              "url": "https://files.dtcc.com/download/assets/GOV2283-26/1898c610d7b211f18bc2266dd58c2a6f",
+              "evidence_quotes": [
+                "New Participant in the Netting System of the Government Securities Division of FICC: Vanguard Marketing Corporation – GSD #94GV"
+              ],
+              "confidence": 0.75,
+              "notes": "DTCC official notice confirming a new GSD netting participant. Vanguard Marketing Corporation is the broker-dealer arm of Vanguard; it is a notable but not a globally systemic dealer, so reach is set to 1/single rather than 2/major_participant. Effect date set to announced date as no separate effective date is stated. This is consistent with the Treasury clearing mandate onboarding wave (FICC-GSD-03) but is a distinct new-participant event, not the same as any recorded event."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1800,
+    "outputTokens": 684,
+    "totalTokens": 6857,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5221
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

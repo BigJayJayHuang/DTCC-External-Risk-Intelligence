@@ -1,0 +1,57 @@
+{
+  "document_id": "898dfcb2f58fb3b97abc0fcdebafede4adbda2bd04a4056a82a24debaf83cb30",
+  "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBweDhGZnc3UmJSN1d6ZGUyVWZ0eEZTMUdVbDBsVEZ6WUpqaDlucFVGWDJ6T0U1SmhUQjZ1Rk94UldjRG9OdThEUmhhM0l1aXZBOEc0eEU0OG1wT3g2N0tsbVk1cE5lLWFpMlVwM3Q4bUdJNFBGQVE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "276bf05b981c9e399b02addfae2f63e7b36ffc75467ec99ed2c8a72ac0550fcb",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_AImCsrUBp78e8PrrUmGlDY",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "Non-US event (South Korea stock market settlement cycle change) with no stated link to US markets, DTCC, FICC, NSCC or DTC. ECS-SET-01 covers changes to the US cash equity settlement cycle only."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1465,
+    "outputTokens": 452,
+    "totalTokens": 6290,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3100
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

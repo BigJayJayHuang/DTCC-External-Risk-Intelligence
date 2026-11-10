@@ -1,0 +1,40 @@
+{
+  "document_id": "00736281c34efcc85fb81d1c2b9b7aaf9c26781961a2dc075356140212bdcf92",
+  "url": "https://www.federalregister.gov/documents/2026/10/23/2026-21651/self-regulatory-organizations-texas-stock-exchange-llc-notice-of-filing-and-immediate-effectiveness",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "695d92a2a95bca1459882439341137eba4c432b83e5ac9331bd3738f554890b2",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_VKc2B4Q4idVcQzkETVMjJV",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes Texas Stock Exchange adopting corporate listing fees — a routine exchange fee rule change. This does not match any card's Step 1 trigger (no market stress, no clearing mandate, no member default, no cyber event, no settlement disruption, etc.). Not relevant to any DTCC process in the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4127,
+    "outputTokens": 110,
+    "totalTokens": 4237,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1994
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

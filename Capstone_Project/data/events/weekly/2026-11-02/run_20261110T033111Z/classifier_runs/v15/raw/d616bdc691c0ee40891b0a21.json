@@ -1,0 +1,57 @@
+{
+  "document_id": "8cbcc27c32f6f5142025db45c5526487650430e6cd8846caffd3e94e6376ac63",
+  "url": "https://www.federalregister.gov/documents/2026/11/03/2026-22376/self-regulatory-organizations-nasdaq-texas-llc-notice-of-filing-and-immediate-effectiveness-of-a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "267c41bfa31f9e18dc042fd409abad0d917119643daf71a303d2bf163a65e509",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_t6rP2ZMt5BhNks7XcLnna0",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "Irrelevant: the filing amends Nasdaq Texas Rule 4120 (trading halts/market-wide circuit breakers) to align it with Nasdaq Stock Market rules. This is a routine housekeeping rule alignment at a single exchange with no stated link to DTCC settlement processes, member stress, market disruption, or any other catalog Step 1 event. No concrete risk event is described."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1849,
+    "outputTokens": 485,
+    "totalTokens": 6707,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3710
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

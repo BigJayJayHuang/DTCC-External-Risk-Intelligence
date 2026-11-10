@@ -1,0 +1,55 @@
+{
+  "document_id": "768418a04182717e2703ab042c4d7be8740bcf8dc2e3628a6ca330b41fabbd05",
+  "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBEaGVvSHRZc1hOR25USlVjSXlrYVRSb3k2by1VZHMwRTFpREVOVEVjX0FwN0Z5azFwVHk5T0RoT1BuNHZGQ3ROMXFDbDFQN3g1TVFQWXpNUWd4UUR6LW80Sk8zNXQ5YndDMVV2Znl0UjlxZ0xmcEE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "70a6cc4d6fd1baf3d038c21bb357e8b9397729df706c31665aa60f00ba6ad442",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_o19fsGlyAwtRijITrz726q",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Article describes a retail investor's impulsive purchase during a Taiwan stock market selloff. The event is in a non-US market (Taiwan) with no stated link to US markets or DTCC participants. No card applies.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1492,
+    "outputTokens": 409,
+    "totalTokens": 5816,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3534
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

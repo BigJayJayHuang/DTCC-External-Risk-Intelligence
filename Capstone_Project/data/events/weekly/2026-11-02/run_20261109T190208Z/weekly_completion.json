@@ -1,0 +1,29 @@
+{
+  "note": "Weekly run stopped at item 92 of 92 with an invocation error masked as AttributeError (safe_error bug, fixed). The one unprocessed item was classified in resume/ (irrelevant); grouping and the review sheet were produced with the same review_sheet functions the runner uses.",
+  "review_sheet": "data/events/review/review_2026-11-02_run_20261109T190208Z.csv",
+  "proposed_events": 14,
+  "tiers": {
+    "required": 5,
+    "auto": 5,
+    "context": 4
+  },
+  "context_rows_added": 20,
+  "candidates": "data/events/weekly/2026-11-02/run_20261109T190208Z/candidates_2026-11-09.csv",
+  "cost_usd": {
+    "main": "1.398422025",
+    "resume": "0.027689475",
+    "total": "1.426111500",
+    "unreported_reserve_for_failed_call": "0.092103"
+  },
+  "tokens": {
+    "input_tokens": 141461,
+    "output_tokens": 49056,
+    "cache_read_input_tokens": 356265,
+    "cache_write_input_tokens": 7830
+  },
+  "classified": {
+    "relevant": 27,
+    "irrelevant": 65,
+    "hard_failures": 1
+  }
+}

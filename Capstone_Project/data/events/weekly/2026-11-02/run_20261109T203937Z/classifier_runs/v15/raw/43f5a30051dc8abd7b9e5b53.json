@@ -1,0 +1,57 @@
+{
+  "document_id": "578465f5e75ac5a36990f02d6d0f5f2ead7f2a13df5218a2c2aa2b63bff6bfda",
+  "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNYUl3TmVnN2FLUXpzdnFYX2RDbDdod0xCVVc2SnM4X0VqYnY2cmNUb3hYemZfR0dCR2Z4WFFVQW4zeFktNlp6MU1JX1ZHU2RUR2pCZWN6dVpDMkhxOUtfeU9uWDJuOThHVHZ6ZVh0aF84cDBCRTZySFV5N0g1MnhoR0xiSjF4YkQ2Q2VLazlIMEl6ZXJTaTdjamxOZ0NnSnRrazlUNVg3ZDBPR1czZ0xXaUpuTFNGUS1KTlVpN2JOdXN0WnhiNlBvcQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "6041aadbf0e4c948dcea97f7bec667d54617567ac4076c85f94cf7c205c0db23",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_OQXcJefTnv2iX0jdxzCqwo",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Non-US event (Japan credit unions) with no stated link to US markets, US firms, or DTCC participants. ATM outages at Japanese credit unions do not match any card's Step 1.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1535,
+    "outputTokens": 442,
+    "totalTokens": 6350,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3258
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

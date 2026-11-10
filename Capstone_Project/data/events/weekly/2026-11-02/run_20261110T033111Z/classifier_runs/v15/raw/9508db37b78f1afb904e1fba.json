@@ -1,0 +1,57 @@
+{
+  "document_id": "431e6e2b52d998c2391da16ad1770ed3bfe27b0b02e3f17ae76066a979e18752",
+  "url": "https://files.dtcc.com/download/assets/25205-26/7d9f4452d92a11f197b59a76ac91497a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "3202c2e353e24e41decaa76964dab28d28c619a5c3604f3094ee55afdc2e050d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_7H6oWnlbOefMz9FNDjJWB4",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Routine DTC depositary fees notification for a single security (Onward Medical, CUSIP 68339U102). No market event, no stress, no regulatory action, no operational or cyber incident. Does not match any card's Step 1.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1795,
+    "outputTokens": 452,
+    "totalTokens": 6620,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2863
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

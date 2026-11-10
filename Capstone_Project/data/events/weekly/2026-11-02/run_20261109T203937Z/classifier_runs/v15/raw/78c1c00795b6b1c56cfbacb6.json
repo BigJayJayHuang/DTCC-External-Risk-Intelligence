@@ -1,0 +1,57 @@
+{
+  "document_id": "7c9a7a33a6da81b95b65c5062b90feac29671db602ac14ac77ffbdcd8e724ece",
+  "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5yMWJEQzYyMTFhQV8zay03cHg5am1wWFBpSVhYSmR3amNaRXA3WEtoYUtnRFFzTllDSktLN2RKZ21ZeHFKTFlzaFd5QVBSaFN0YkVVNy1BekwzM0pfNFJiUXpnUWd5ZmFwN0hYdkxRbERzeExwOHVN0gF8QVVfeXFMTXhVbTVfTWtJb01sYmh3Y1d5Tm00Z05LUHpSUHF0dkxrYjFoU2FnSTdRUUE0aGhBdWc5YjlyS1NvUGZxNDd4MUc5SWN5OE41VGV6N3A4SWN5Rjg4ZmpoNUNzeGVXekhjZDM1Z2JGU1N3ZnNnUEh2QTNXOFdyaQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "ae2a6afcabc44b2a2db9b5977a046946003a9687e4195d15c95efa3ef328b047",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_tBFWnHpGivEFvCWhog6tfh",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Consumer finance explainer about mortgage qualification — no market event, no DTCC-relevant process described. No match to any catalog card.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1585,
+    "outputTokens": 426,
+    "totalTokens": 6384,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2877
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

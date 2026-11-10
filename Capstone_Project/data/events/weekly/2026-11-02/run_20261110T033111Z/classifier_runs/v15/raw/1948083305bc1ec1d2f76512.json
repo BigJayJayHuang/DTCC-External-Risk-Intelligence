@@ -1,0 +1,57 @@
+{
+  "document_id": "d5b69f0a93e07e12d5b525fc826f4627ba2e21108a209c925f98015b716744ad",
+  "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22521/order-granting-conditional-exemption-for-japan-credit-rating-agency-ltd-from-certain-requirements-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "f39529f0841477612b194033ddab4c60e69c065205429e33f6555ed67aff714b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_n72PZkSTW5YvA4SCxJrv0r",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "Regulatory action concerns a conditional exemption for a Japanese credit rating agency from Section 15E(t) of the Securities Exchange Act. This is a non-US credit rating agency compliance matter with no stated link to DTCC, FICC, NSCC, DTC, or any catalog card's Step 1 event type."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1788,
+    "outputTokens": 469,
+    "totalTokens": 6630,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3325
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

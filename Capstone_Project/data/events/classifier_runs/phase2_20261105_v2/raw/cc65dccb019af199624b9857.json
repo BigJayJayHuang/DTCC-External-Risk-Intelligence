@@ -1,0 +1,40 @@
+{
+  "document_id": "579642f9c4e155451e009c9e2919c40296f0a05b705e5c64bec3480e670a7ecc",
+  "url": "https://files.dtcc.com/download/assets/24593-26/cbacfab0d3c411f185aaa24f43a22b58",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "9560c704453e449720c9498c71e1317c0b356082584fd24821ebf229eb2af0c7",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ieI2MF0rYzfRANGDPLkYOM",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a tax relief/corporate action for STERIS PLC (Ireland) — a routine DTC corporate action notice covering dividend withholding tax relief and refund deadlines. It does not describe any outside market, regulatory, member stress, infrastructure, or cyber event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4227,
+    "outputTokens": 115,
+    "totalTokens": 4342,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2017
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "fc8303a40781c1fdfe1be493dbaa1c6cc28d152f971741f930b5bc325a5ab063",
+  "url": "https://files.dtcc.com/download/assets/25187-26/e8a9cfc6ccc611f1b8d2e694c785b3e1",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "8be1870d580db2ed029ff1da6e70f92fe7f01b4048f8f178060fe990ffe9a650",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_uCWpdL80ZWF59jt1sOrLmY",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for PayPay Corporation (CUSIP 70450C101). It is an administrative/operational notice with no risk angle and does not describe any outside market, regulatory, member stress, or infrastructure event matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4154,
+    "outputTokens": 102,
+    "totalTokens": 4256,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1666
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

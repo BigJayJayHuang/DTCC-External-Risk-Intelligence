@@ -1,0 +1,3 @@
+25130-26
+
+Direct Registration System (DRS) Transformation - DRS Centralized Billing Notice: 25130-26 Summary: DTC is expanding DRS Centralized Billing to include DRS Profile Deposits, DRS Deliver Orders, and DRS Withdrawal-by-Transfer transactions as part of the DRS transformation program. Beginning November 13, 2026 (pending regulatory approval), FAST transfer agents will be required to use SPA for centralized fee billing, replacing manual invoicing to participants, and must establish their DRS fees in SPA by November 5, 2026.

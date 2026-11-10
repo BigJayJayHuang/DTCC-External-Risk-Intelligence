@@ -1,0 +1,40 @@
+{
+  "document_id": "568e9bedbdff7812cb9112339d8ed231638df25384f0243498b144ae830647bc",
+  "url": "https://files.dtcc.com/download/assets/25175-26/c1547da6ccbf11f1aa0e1ece464eee8a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "c003e7212deb498f20beea1351588ecbd6be80041ef1eb41b01517c4ded86c02",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_5ScC6GyVPOgv4moQggtar5",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification (Important Notice) for a single security (Genenta, CUSIP 36870W100) issued by Bank of New York Mellon. It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4147,
+    "outputTokens": 117,
+    "totalTokens": 4264,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1810
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

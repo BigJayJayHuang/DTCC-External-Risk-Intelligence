@@ -1,0 +1,40 @@
+{
+  "document_id": "0fa677c652fe0e502f62198260394622ab266322efcf66ec4038d488141338a1",
+  "url": "https://files.dtcc.com/download/assets/25027-26/bf64e2b4ccbb11f1a6cada016f7bddbe",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "59ff0c47ab31f332bf49562e723a6d039e8d6fece97b82cec4a70efd980557a4",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_MVrPAo34bvK8BWYgeloJMD",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for argenx (CUSIP 04016X101) issued by Bank of New York Mellon. It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4145,
+    "outputTokens": 106,
+    "totalTokens": 4251,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1915
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

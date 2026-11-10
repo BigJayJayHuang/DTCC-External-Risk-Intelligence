@@ -1,0 +1,40 @@
+{
+  "document_id": "f8414fe098efbf6850548570c21b4a20deaade1af50ec18e5728f5ac3b9a1843",
+  "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNdHJEdXJ6QTBBMDdBa2xGcmF2VXhTMVR2Z3NUa0M5Tmk2WlFtRTdfUjBmTFVWRWcybjBrLU53RVBxMHdHSmMzVjVHaHZUOC0wZlFGZnJ0aS1UeW5JQ3R2TjlQTF9YWWk1MVlQZlVwekEyb1R5NEtmLTdkM2Z4WHFYMG81ZjRMMnNzanRTbFVNbVRtVnNfRVU4aUdCTEdQQQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.3:aab5ad825775",
+  "request_sha256": "0bdced5a8fbdb435d934f93c5681abde7399b0f168b7384e690aecfcd375aa24",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_JfxKOzrJDEfbM1RzIEpicD",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline describes stock price moves for Rocket Companies, Compass, and Zillow following a retreat in Treasury yields. This is a market reaction story about individual equities in the real estate/mortgage sector, not a Treasury selloff or sharp yield swing event that would stress FICC GSD margin or any other DTCC process. No concrete event matching any card's Step 1 is described."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1503,
+    "outputTokens": 127,
+    "totalTokens": 4710,
+    "cacheReadInputTokens": 3080,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2272
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

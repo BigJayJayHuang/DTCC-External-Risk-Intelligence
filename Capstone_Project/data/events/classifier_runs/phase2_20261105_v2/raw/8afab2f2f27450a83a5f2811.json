@@ -1,0 +1,40 @@
+{
+  "document_id": "1f11dc353e771bce714eed43135a9b64a5bf980f44f1963d7273333d949a90c8",
+  "url": "https://www.fca.org.uk/news/press-releases/new-fca-rules-bring-esg-rating-providers-uk-regulation-first-time",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "aede1dda35d6bf4b0dbdc7a9bfd6464f489b5ec4e5f62380194517d8022a6b31",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_xKvSylUol7sdoQUkOfiePc",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes new FCA rules regulating ESG rating providers in the UK. This is a UK regulatory development affecting ESG data/ratings firms and has no connection to any of the DTCC process cards (Treasury clearing, repo, equity settlement, member stress, cyber, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4821,
+    "outputTokens": 102,
+    "totalTokens": 4923,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1712
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

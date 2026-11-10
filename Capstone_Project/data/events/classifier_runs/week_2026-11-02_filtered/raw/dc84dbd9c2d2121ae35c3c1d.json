@@ -1,0 +1,40 @@
+{
+  "document_id": "7e875649b61f0e0f5b50137e6e36940d75d5d8757ade150ab055f1ed86220eac",
+  "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPc0pUWHNEUEFibWxmVDlGc2x5QlNMdFl1LXZNTElRbGMtYzFvOEh3Q0c4aHpFRGJBSXQ4RXZCRzZRbGpuSTI3MkV6MWNlQXpseDNhOGpVcUFzeE45al9kbGtuSC11LWZIUkE4d0VRYlk4eGhxSmFtdG9hUGZMczlZTlFaeWNCVldFNmJOUjA0SlNrdnd2UWhreGcyejgtRk4zekFPbjR1SWU0Mll4Rzc2U0lvbnhlTmItRndhUjU3ZTBMNEM0?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "ed853dc3a0f2d50e8ab559859ebfaeb86db7d9d8981a93dc9157eb51191ae407",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Hay22p6394YTVi8IzEOs1x",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a headline-only snippet speculating that a Korean stock market selloff could cause pain for ETH (Ethereum). It contains no new market event, regulatory action, or participant stress that maps to any card in the catalog. The content is speculative opinion with no actionable DTCC-relevant event described."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4358,
+    "outputTokens": 109,
+    "totalTokens": 4467,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1881
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

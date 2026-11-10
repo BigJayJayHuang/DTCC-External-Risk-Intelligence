@@ -1,0 +1,40 @@
+{
+  "document_id": "8efb6dd5b12cf56c7e326948b689a00d2adfa6b37879a601f2f0d6acd801d44f",
+  "url": "https://files.dtcc.com/download/assets/GOV2276-26/9a1655fcd24111f1bfe65af1a4e61f4f",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "dd2ed106ca8a6eb517f258ca583f0d416ac89c2e80f204addf2674367ce421db",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_gyS85MOQhA9nKpNNQoYsP1",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTCC administrative notice announcing a new participant (FHN Financial Securities Corp.) joining the GSD netting system. It is an internal membership/onboarding notice with no risk angle — no market event, regulatory change, member stress, or infrastructure disruption described. No card's Step 1 trigger is met."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4146,
+    "outputTokens": 115,
+    "totalTokens": 4261,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1836
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

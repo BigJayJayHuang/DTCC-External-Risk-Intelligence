@@ -1,0 +1,16 @@
+{
+  "feed_url": "https://news.google.com/rss/search",
+  "feed_params": {"hl": "en-US", "gl": "US", "ceid": "US:en"},
+  "user_agent": "DTCC-External-Risk-Intelligence-capstone/0.1 (research prototype; +https://github.com/BigJayJayHuang/DTCC-External-Risk-Intelligence)",
+  "min_request_interval_seconds": 2.0,
+  "timeout_seconds": 30,
+  "max_items_per_card": 25,
+  "title_similarity_threshold": 0.9,
+  "headline_filter": true,
+  "content_scope": "headline_snippet",
+  "source_id": "google_news_rss",
+  "official_source_ids": ["federal_register", "dtcc_notice_feed", "dtcc_insight_20261014", "sec_press", "cftc_press", "fed_press", "fca_rss", "ecb_press", "esma_news", "bis_press"],
+  "major_media_outlets": ["Reuters", "Bloomberg", "Bloomberg.com", "The Wall Street Journal", "WSJ", "Financial Times", "Associated Press", "AP News", "CNBC", "The New York Times", "The Washington Post", "Barron's", "MarketWatch"],
+  "tier_by_outlet_host": {"sec.gov": "regulator", "federalreserve.gov": "regulator", "cftc.gov": "regulator", "treasury.gov": "regulator", "dtcc.com": "dtcc"},
+  "notes": "Edit major_media_outlets with the team; outlets not listed are tier 'other'. Publisher URLs are not resolved: Google News article links redirect only through a JavaScript page (checked 2026-11-07)."
+}

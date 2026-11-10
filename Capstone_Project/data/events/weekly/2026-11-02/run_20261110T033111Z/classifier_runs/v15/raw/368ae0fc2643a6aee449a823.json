@@ -1,0 +1,57 @@
+{
+  "document_id": "45d8cdbda90d39cd6e6cf1dcaf2f31cc19f75c5bb9e64ab4c7ba6acb85d2b5e7",
+  "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNSGc3NElKaEc5R2NRSXpENHZXb0RsWlExalRISzNHOUxTM2kxSGlpNlU4VTZ6d1VBSkMzaGpweWRranRZWlJjZnFNWXRCbnpZdXlUYjQ0R1huc1pQSTFNVGlMQ3dUSEV0MlJSVWtaS0JBOGt1VFVETXdZUHVqNk9JRkNBMXdJczZ0LUNSNEZR?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "9b15eeb8ef7b0769344d6c4fea68825695c162bd5cd48eb8c2992e1c5a37bd34",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_mMzj3cyt4zDoruK0djB8fd",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "Non-US event (Korea Exchange) with no stated link to US markets, DTCC participants, or DTCC processes. ECS-SET-01 covers changes to the US cash equity settlement cycle only. Article text does not mention any US connection."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1865,
+    "outputTokens": 452,
+    "totalTokens": 6690,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3376
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

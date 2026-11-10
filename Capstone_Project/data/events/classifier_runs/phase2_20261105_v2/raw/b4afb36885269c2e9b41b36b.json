@@ -1,0 +1,40 @@
+{
+  "document_id": "fb13146bf2f3ebf0c88e61c83e9eb453b44382e036fd47ec5341f6f36ca43932",
+  "url": "https://files.dtcc.com/download/assets/MBS1605-26/ae8c65fac67311f1ab6b7a5d1f723cab",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "82eb7ec78f8b151c819cf90f4ec069b7fb9154d6f34bb23e51c06008eed117dc",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_1rz9RMxfoqSmQ8O9CwRfwk",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal operational notice (EPN Sub-Accounts Addition Notice MBS1605-26) announcing an update to participant sub-accounts. It is a routine administrative/product notice with no outside market, regulatory, member stress, or infrastructure risk event described. No card's Step 1 trigger is present."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4118,
+    "outputTokens": 112,
+    "totalTokens": 4230,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2056
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

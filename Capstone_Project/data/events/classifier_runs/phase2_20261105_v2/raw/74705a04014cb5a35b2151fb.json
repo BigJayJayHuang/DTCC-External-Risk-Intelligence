@@ -1,0 +1,40 @@
+{
+  "document_id": "f545939e673419ee03f3e2b84fd583107919a4ce3ae18e663c78368e6ab088f6",
+  "url": "https://files.dtcc.com/download/assets/MBS1613-26/7c2ce83ad22d11f1a2e8d67cee1dbbfa",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "133c05ac9b0e9047806cdf3cd641e3e5714e3355edbc3cccbe5e1d2712257843",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Xn3mv1vhiF1rfneabKa60p",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC holiday schedule notice (Thanksgiving Day) for FICC MBSD. It is an internal operational/administrative notice informing clients of holiday observance and its impact on clearing and settlement services. It does not describe an outside market, regulatory, member, or infrastructure event that maps to any card's Step 1 trigger."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4128,
+    "outputTokens": 116,
+    "totalTokens": 4244,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2057
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

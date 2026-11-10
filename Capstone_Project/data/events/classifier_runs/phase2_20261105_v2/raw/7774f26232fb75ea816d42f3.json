@@ -1,0 +1,40 @@
+{
+  "document_id": "7d125a10de8046b373fb1c4837777339c45798c701786efdbad2462b45ca693b",
+  "url": "https://files.dtcc.com/download/assets/GOV2270-26/b19c6d1cd17711f1a100fa6709c2e69e",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "d1598c1fe50e92d8613e04835f242be365dc92b0d8c91bca07a511dc1cf533bb",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_xB5e5zn5NQr2pztNRJP9zQ",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new participant (J.P. Morgan Securities LLC/CFTC 22.2 CUST CLR SWAP) joining the GSD Netting System. It is a routine membership/onboarding administrative notice with no outside risk event described — no market stress, regulatory mandate milestone, member distress, or infrastructure disruption. No card's Step 1 trigger is met."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4154,
+    "outputTokens": 137,
+    "totalTokens": 4291,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1986
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

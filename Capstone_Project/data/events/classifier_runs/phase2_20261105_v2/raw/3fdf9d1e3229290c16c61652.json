@@ -1,0 +1,40 @@
+{
+  "document_id": "73ca6ef260458ae0f0b083fec3a85940de346eeb1984a4252260bbb06da3c752",
+  "url": "https://files.dtcc.com/download/assets/A9845/ccc02576cf1e11f18b5782c68e1198d2",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "28b7cc6e81757436d1e8039a5f9bec59a09b17fe98ca5f9e00db4bd71974acb0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_B2rqAxWXStVzj6AmkU9z2M",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is an internal DTCC operational/product notice announcing a calibration change to NSCC's NAV-based ETF create/redeem reasonability check threshold. It is a procedural parameter adjustment (lowering threshold from 98% to 50%) with no outside market, regulatory, member stress, or infrastructure event described. No card in the catalog covers internal NSCC instruction-validation threshold changes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4140,
+    "outputTokens": 130,
+    "totalTokens": 4270,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2236
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

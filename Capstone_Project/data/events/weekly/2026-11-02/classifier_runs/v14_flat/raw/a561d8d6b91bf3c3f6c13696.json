@@ -1,0 +1,54 @@
+{
+  "document_id": "f8414fe098efbf6850548570c21b4a20deaade1af50ec18e5728f5ac3b9a1843",
+  "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNdHJEdXJ6QTBBMDdBa2xGcmF2VXhTMVR2Z3NUa0M5Tmk2WlFtRTdfUjBmTFVWRWcybjBrLU53RVBxMHdHSmMzVjVHaHZUOC0wZlFGZnJ0aS1UeW5JQ3R2TjlQTF9YWWk1MVlQZlVwekEyb1R5NEtmLTdkM2Z4WHFYMG81ZjRMMnNzanRTbFVNbVRtVnNfRVU4aUdCTEdQQQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "eea419ba5915a4ba433a729ef8cac2d45382fd2a72de87403a25fb5385c8143b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_APKJmaEAiZgW8SpQY9Itwv",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline describes stock price moves at real-estate/mortgage companies (Rocket Companies, Compass, Zillow) driven by retreating Treasury yields. No concrete event matching any card's Step 1: no sharp yield swing causing margin stress, no repo/funding disruption, no clearing mandate milestone. The Treasury yield retreat is mentioned only as context for equity gains at non-DTCC-member real-estate firms. Irrelevant.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1503,
+    "outputTokens": 436,
+    "totalTokens": 5624,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3579
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

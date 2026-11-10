@@ -2,7 +2,7 @@
 
     python -m pytest -v validation/test_scoring_v1_3.py      (from Capstone_Project/)
 """
-import hashlib, json, unittest
+import hashlib, json, tempfile, unittest
 from pathlib import Path
 
 import pandas as pd
@@ -44,12 +44,13 @@ def days(peak, n=5):
                              for i in range(n - 1)] + [{'date': str(FRI.date()), 'value': peak}], 'daily_inputs': {}}
 
 
-def run(card_id, market=None, ev=NO_EVENT, V=3, last=FULL, check=None, releases=None, daily=None):
+def run(card_id, market=None, ev=NO_EVENT, V=3, last=FULL, check=None, releases=None, daily=None, news_coverage=S13.NEWS_COVERAGE):
     card = CARDS[card_id]
     cov = S13.coverage([m['field'] for m in card['market_chains']], last, FRI, releases)
     if daily is None:   # consistent fixture daily values for every market chain
         daily = {c: days(r['weekly_peak']) for c, r in (market or {}).items() if r.get('weekly_peak') is not None}
-    return S13.card_week(card, WEEK, market_recs=market or {}, cov=cov, ev=ev, v=vrec(V), check=check or {}, daily=daily)
+    return S13.card_week(card, WEEK, market_recs=market or {}, cov=cov, ev=ev, v=vrec(V), check=check or {}, daily=daily,
+                         news_coverage=news_coverage)
 
 
 class ReuseV12(unittest.TestCase):
@@ -84,6 +85,27 @@ class Status(unittest.TestCase):
         r = run('XE-CYBER', V=5)
         self.assertEqual(r['status'], 'news_not_scanned')
         self.assertEqual(r['chain_confidence'], {'level': 'Low', 'rule': 'untested', 'chain_id': None, 'chains': {}})
+
+    def test_screened_week_without_event_is_no_relevant_news(self):            # Amendment F2/F3
+        r = run('FICC-GSD-03', V=3, news_coverage=S13.NEWS_SCREENED)
+        self.assertEqual((r['status'], r['S'], r['S_source'], r['news_coverage']), ('no_relevant_news', None, None, 'headline_level_ai_screen'))
+        self.assertEqual((r['V'], r['severity'], r['show_on_main'], r['needs_human_signoff']), (3, None, False, False))
+        self.assertEqual(run('FICC-GSD-03', ev=event(4), V=3, news_coverage=S13.NEWS_SCREENED)['status'], 'scored')
+        m = run('FICC-GSD-01', market={'FICC-GSD-01': mkt(3, peak=7.0, pct=0.55)}, V=1, news_coverage=S13.NEWS_SCREENED)
+        self.assertEqual((m['status'], m['S']), ('scored', 3))                   # market cards unchanged
+        self.assertEqual(run('ECS-SET-01', last={}, news_coverage=S13.NEWS_SCREENED)['status'], 'no_relevant_news')
+
+    def test_news_coverage_file(self):
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / 'nc.csv'
+            f.write_text('week,news_coverage,run_id,review_sheet\n2026-11-02,headline_level_ai_screen,r,s\n')
+            self.assertEqual(S13.load_news_coverage(f), {'2026-11-02': 'headline_level_ai_screen'})
+            f.write_text('week,news_coverage,run_id,review_sheet\n2026-11-02,full_text,r,s\n')
+            with self.assertRaises(ValueError):
+                S13.load_news_coverage(f)
+        real = S13.load_news_coverage()
+        self.assertEqual((real.get('2026-11-02'), real.get('2026-10-26', S13.NEWS_COVERAGE), real.get('2026-10-19', S13.NEWS_COVERAGE)),
+                         ('headline_level_ai_screen', 'manual_register_only', 'manual_register_only'))
 
     def test_every_record_has_news_coverage(self):
         for cid in CARDS:

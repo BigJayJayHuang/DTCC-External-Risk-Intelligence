@@ -1,0 +1,40 @@
+{
+  "document_id": "ec0da774fac80138a170dee49e0c9b61a3f23d264f0bc86bb0bb4680367b627c",
+  "url": "https://files.dtcc.com/download/assets/24847-26+/1fe7dabec64b11f1b6f4da8ad9c50d9d",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "8d26e12837903b9ba27dca2e54b9a45ce88f3c84338ae9a0376fea52132a899d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_dLdiRi3gwvNvGXv1YewB5T",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a corporate action tax relief event for Epiroc Aktiebolag (Sweden) — a routine DTC CA Web instruction notice. It describes no outside market, regulatory, member stress, or infrastructure event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4200,
+    "outputTokens": 104,
+    "totalTokens": 4304,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1912
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

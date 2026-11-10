@@ -1,0 +1,46 @@
+{
+  "document_id": "675e0e8de4aaf20e754c7e3e8008f390c8e133ea83cd6cbc509033c30e690327",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1fVzhWaTBRTTZaa3liaU9QSGsyV1RhWGZLOFhRamh0am9kaFc0aEI5RWREUGkyWHhsdkg1NEMzQkV1cnhnb0NEVEhXamZ3NzVXRjBSS28tbzhWV2NaVk1QYzBJUXFkQ2V1aWozVg?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.3:aab5ad825775",
+  "request_sha256": "ec109645205dd79c7df25f887271e85af98d149352c9a01a234b2b91d4bd4be9",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_8eNeWEIkyhWKSwmX6GbjUp",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline-only item. The text references a 'T+1 transition in 2028' but provides no concrete event details — no jurisdiction, no regulator, no formal proposal or announcement. The headline appears to describe a non-US market (Korean-language outlet '뉴스웍스') pursuing T+1, but there is insufficient information in the article text to confirm a concrete regulatory event matching a card's Step 1. Cannot establish facts without going beyond the article text."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1435,
+    "outputTokens": 148,
+    "totalTokens": 4663,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 3080,
+    "cacheDetails": [
+      {
+        "ttl": "5m",
+        "inputTokens": 3080
+      }
+    ]
+  },
+  "metrics": {
+    "latencyMs": 3119
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

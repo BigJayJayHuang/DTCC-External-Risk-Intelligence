@@ -1,0 +1,40 @@
+{
+  "document_id": "7c4c2f9ef111a8dc4a9abba7c55654e3c367b4ec1ad26fb3f7d117bac6eea167",
+  "url": "https://www.federalregister.gov/documents/2026/10/27/2026-21842/change-in-bank-control-notices-acquisitions-of-shares-of-a-bank-or-bank-holding-company-correction",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "1bde10eafbd812c54af2ace083fc0b19244699965ab6f8161e1db457d6fa3288",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_4uOHJ2ehLtu4mt2Pf0ZPUS",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a Federal Register correction notice about a Change in Bank Control filing that contained incorrect information. It does not describe any market event, regulatory action, member stress, infrastructure issue, or cyber event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4180,
+    "outputTokens": 91,
+    "totalTokens": 4271,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1591
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

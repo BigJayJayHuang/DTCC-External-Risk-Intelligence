@@ -1,0 +1,40 @@
+{
+  "document_id": "116cf971800a3bfb4c7a508b6442c082d1688266a307f22391f32d5c7bb78ec0",
+  "url": "https://www.ecb.europa.eu//press/govcdec/otherdec/2026/html/ecb.gc261030~e40f864093.en.html",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "652130ec6eefac41b73f92c455b40ae337fdd80b1b91682520a5a08276ca7de5",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Lv7m4IcoxG85YrKDXUMzMR",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a headline-only ECB Governing Council decisions notice (non-interest-rate decisions). The full text is not provided and the title alone contains no information about a specific market, regulatory, member, or infrastructure event that maps to any card in the catalog. No actionable risk signal can be extracted."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4089,
+    "outputTokens": 108,
+    "totalTokens": 4197,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1918
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

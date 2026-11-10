@@ -1,0 +1,40 @@
+{
+  "document_id": "50278f26e27112518a93690e7a0966bf7de95baf1b72bd1bdd1986cac6db2061",
+  "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1TbUlnbDNNQWlwMnEtUk42VFluM0ZkLUFSUDdrUndsVkw1M2VEcWc3cVBodmh3dGVfemUwdHlnV3haMXhjVDlmNkc1clE3U2wwdTFZSFFtRQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "bcbcd545ba2c146600417ca0000ac2f0038c29b8102dcd2ccf3b782acfdb721a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_DVtxdT5J6sNBgBFunV8kSy",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "South Korea's T+1 settlement plan is a non-US market event. The article states no link to US markets or DTCC participants. Per the rules, events in non-US markets with no stated link to US markets or DTCC participants are not relevant."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1414,
+    "outputTokens": 100,
+    "totalTokens": 5222,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1847
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

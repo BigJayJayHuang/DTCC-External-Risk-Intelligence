@@ -1,0 +1,40 @@
+{
+  "document_id": "657cb0906d19e88eae934cb5a18555dc4b05f2deb44c831f95106df741c01c02",
+  "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBkRkZwaFV3d0JFQm1GUlY5c0VLYVJBMjZqOTQxTC1aLTAyc29OSGsyQ0ZtSGJqQm9hbGZKYWNhMm40OEQ1NF82b3M2NmlTNE51UVNhTXk0VjIzcmh4WFJ5ckI2SGx0S0s0dzhlZjZBUTZMaER1MGc?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "2e272523de3c56f851f5b5028ec4fe646ee060869b9273dc7f966b5bc2c55ae5",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_AxCzyn940oERv3O8PdLut2",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a volume surge on the Taiwan Stock Market and an interbank transfer jam at Bank SinoPac in Taiwan. This is a foreign market/banking event with no connection to any DTCC process described in the card catalog. No card's Step 1 scenario matches a Taiwanese equity market volume surge or a Taiwanese bank's interbank transfer disruption."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4299,
+    "outputTokens": 119,
+    "totalTokens": 4418,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2024
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

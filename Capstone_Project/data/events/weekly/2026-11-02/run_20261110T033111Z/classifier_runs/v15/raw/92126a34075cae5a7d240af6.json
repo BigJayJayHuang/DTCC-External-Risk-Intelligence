@@ -1,0 +1,57 @@
+{
+  "document_id": "d35ef6288fb90862adae0f8296f0e62ebe19c7a3ad4dbd88a4c555fb20f02418",
+  "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22455/self-regulatory-organizations-nasdaq-texas-llc-notice-of-filing-and-immediate-effectiveness-of-a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "66713874da304761a23e32269bf9ba2a46037c6fcd87e42a12a0bf4626bb2742",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_QCv3FMLTNw21lCkIngaGX9",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Administrative rule change by Nasdaq Texas to delete obsolete references to the CORE FIX Order Entry Protocol in transaction fee schedules. This is a routine housekeeping amendment with no market disruption, settlement, clearing, or member stress angle. No card Step 1 is matched.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1826,
+    "outputTokens": 458,
+    "totalTokens": 6657,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3260
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

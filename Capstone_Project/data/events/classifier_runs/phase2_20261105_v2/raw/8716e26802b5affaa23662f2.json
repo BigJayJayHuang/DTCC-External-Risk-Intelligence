@@ -1,0 +1,40 @@
+{
+  "document_id": "924170d709eb9a8536ac8c5838af8fea059359a1eee448d56b57cea6a25923b4",
+  "url": "https://files.dtcc.com/download/assets/a9838/63942f88d20d11f19a293e2ee78144e7",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "b6ef08de7cb6397a87e02ef92a437ba73e0a99352c65a6d26cba45d72f8f3f25",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Pz6HeBZQQ7zm38vqA2a0CK",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is an internal DTCC administrative notice clarifying the NSCC Schedule of Haircuts and Concentration Limits for Eligible Clearing Fund Securities. It is a procedural/operational clarification with no new outside risk event (market, regulatory, member, infrastructure, or cyber) described. No card in the catalog covers internal DTCC rule clarifications of this type."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4114,
+    "outputTokens": 123,
+    "totalTokens": 4237,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1928
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

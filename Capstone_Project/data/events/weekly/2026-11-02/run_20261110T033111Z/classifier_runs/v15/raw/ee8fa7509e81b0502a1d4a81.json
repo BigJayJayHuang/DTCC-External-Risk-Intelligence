@@ -1,0 +1,57 @@
+{
+  "document_id": "cf2c317341c6b005cf3f1eef8c50e7f0c10be217535f78a8875ee46a5868af12",
+  "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22449/deregistration-under-section-8f-of-the-investment-company-act-of-1940",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "7147550cb6a8368f5e52a35602e8ec7f774713b1bed96df312ea895700f30efb",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_IqXHOnXRa2Bf9fQrtrbbMV",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Routine Investment Company Act deregistration filing by a small closed-end fund that transferred assets to another fund. No market stress, no DTCC process touched, no card match.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1872,
+    "outputTokens": 436,
+    "totalTokens": 6681,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 7765
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

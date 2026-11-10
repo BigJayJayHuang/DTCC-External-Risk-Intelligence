@@ -1,0 +1,40 @@
+{
+  "document_id": "13128e0b1d40f5fcf0fbad19911e1e9f30896acc921947b2f9737f9e326e9b21",
+  "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22456/self-regulatory-organizations-the-nasdaq-stock-market-llc-notice-of-filing-and-immediate",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "8de2d8c5e4610ff97c4ed82fd77cf4f8805b3fb6b418b09f56a9a33078ecc6f4",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_mSHxLby93y74Te5EXSWVX0",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes Nasdaq amending transaction fees to delete obsolete references to the CORE FIX Order Entry Protocol. This is a minor housekeeping rule change at an exchange with no connection to any card's Step 1 trigger (no market stress, no clearing mandate, no member default, no cyber event, no settlement cycle change, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4195,
+    "outputTokens": 116,
+    "totalTokens": 4311,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1985
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "c5b43462eb46efc2d094e80c71d6fb28e4887fd708e7ca4cca2dcd65e4ac8ecc",
+  "url": "https://files.dtcc.com/download/assets/25028-26/d92fa3b8cef111f1a0b3269dbf3d41b0",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "440e6a1fd83eadd70a0f63f2b9d856640106b5ecbaa6c925f0bcb3af6feed7f4",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_vaaa6EQi3LUa2zY9B2oV1m",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about a tax relief corporate action for a Japan ADR (TOKYO LIFESTYLECO., LTD., CUSIP 98741L200). It is an operational/administrative notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4196,
+    "outputTokens": 113,
+    "totalTokens": 4309,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1849
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

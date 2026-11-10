@@ -46,8 +46,8 @@
   {
     "id": "cftc_press",
     "name": "US Commodity Futures Trading Commission",
-    "url": "https://www.cftc.gov/RSS/RSSGP/rssgp.xml",
-    "kind": "rss",
+    "url": "https://www.cftc.gov/PressRoom/PressReleases",
+    "kind": "official_press_index",
     "business_lines": [
       "FICC",
       "ECS",
@@ -60,10 +60,13 @@
       "Data Services",
       "Consulting"
     ],
-    "extension": "xml",
+    "extension": "html",
     "reference_url": "https://www.cftc.gov/RSS/index.htm",
     "enabled": true,
-    "refresh_hours": 20
+    "refresh_hours": 20,
+    "retired_url": "https://www.cftc.gov/RSS/RSSGP/rssgp.xml",
+    "update_note": "CFTC officially temporarily disabled RSS in October2026. Use the dated official press-release index; article bodies remain separate.",
+    "transport_notice_url": "https://www.cftc.gov/RSS/index.htm"
   },
   {
     "id": "ecb_press",
@@ -3611,7 +3614,7 @@
   },
   {
     "id": "rds_esma_table1",
-    "name": "rds_esma_table1_20261009",
+    "name": "rds_esma_table1 weekly public report",
     "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_1_OTC_Agg_{report_date}.csv",
     "kind": "repository_weekly",
     "business_lines": [
@@ -3620,11 +3623,14 @@
     ],
     "extension": "csv",
     "enabled": true,
-    "refresh_hours": 20
+    "refresh_hours": 20,
+    "reference_url": "https://www.dtcc.com/market-index-data/emir-public-reports",
+    "report_date_weekday": "Friday (publisher UI; availability checked per report)",
+    "update_note": "Each weekly CSV ingested independently. Missing periods remain recorded; available newer reports are retained. EU and UK cannot simply be added."
   },
   {
     "id": "rds_esma_table2",
-    "name": "rds_esma_table2_20261009",
+    "name": "rds_esma_table2 weekly public report",
     "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_2_OTC_Agg_{report_date}.csv",
     "kind": "repository_weekly",
     "business_lines": [
@@ -3633,11 +3639,14 @@
     ],
     "extension": "csv",
     "enabled": true,
-    "refresh_hours": 20
+    "refresh_hours": 20,
+    "reference_url": "https://www.dtcc.com/market-index-data/emir-public-reports",
+    "report_date_weekday": "Friday (publisher UI; availability checked per report)",
+    "update_note": "Each weekly CSV ingested independently. Missing periods remain recorded; available newer reports are retained. EU and UK cannot simply be added."
   },
   {
     "id": "rds_esma_table3",
-    "name": "rds_esma_table3_20261009",
+    "name": "rds_esma_table3 weekly public report",
     "url": "https://cms-prod.dtcc.com/PublicReports/reports/esma/ESMA_Table_3_OTC_Agg_{report_date}.csv",
     "kind": "repository_weekly",
     "business_lines": [
@@ -3646,11 +3655,14 @@
     ],
     "extension": "csv",
     "enabled": true,
-    "refresh_hours": 20
+    "refresh_hours": 20,
+    "reference_url": "https://www.dtcc.com/market-index-data/emir-public-reports",
+    "report_date_weekday": "Friday (publisher UI; availability checked per report)",
+    "update_note": "Each weekly CSV ingested independently. Missing periods remain recorded; available newer reports are retained. EU and UK cannot simply be added."
   },
   {
     "id": "rds_fca_table1",
-    "name": "rds_fca_table1_20261009",
+    "name": "rds_fca_table1 weekly public report",
     "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_1_OTC_Agg_{report_date}.csv",
     "kind": "repository_weekly",
     "business_lines": [
@@ -3659,11 +3671,14 @@
     ],
     "extension": "csv",
     "enabled": true,
-    "refresh_hours": 20
+    "refresh_hours": 20,
+    "reference_url": "https://www.dtcc.com/market-index-data/emir-public-reports-uk",
+    "report_date_weekday": "Friday (publisher UI; availability checked per report)",
+    "update_note": "Each weekly CSV ingested independently. Missing periods remain recorded; available newer reports are retained. EU and UK cannot simply be added."
   },
   {
     "id": "rds_fca_table2",
-    "name": "rds_fca_table2_20261009",
+    "name": "rds_fca_table2 weekly public report",
     "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_2_OTC_Agg_{report_date}.csv",
     "kind": "repository_weekly",
     "business_lines": [
@@ -3672,11 +3687,14 @@
     ],
     "extension": "csv",
     "enabled": true,
-    "refresh_hours": 20
+    "refresh_hours": 20,
+    "reference_url": "https://www.dtcc.com/market-index-data/emir-public-reports-uk",
+    "report_date_weekday": "Friday (publisher UI; availability checked per report)",
+    "update_note": "Each weekly CSV ingested independently. Missing periods remain recorded; available newer reports are retained. EU and UK cannot simply be added."
   },
   {
     "id": "rds_fca_table3",
-    "name": "rds_fca_table3_20261009",
+    "name": "rds_fca_table3 weekly public report",
     "url": "https://cms-prod.dtcc.com/PublicReports/reports/fca/FCA_Table_3_OTC_Agg_{report_date}.csv",
     "kind": "repository_weekly",
     "business_lines": [
@@ -3685,11 +3703,14 @@
     ],
     "extension": "csv",
     "enabled": true,
-    "refresh_hours": 20
+    "refresh_hours": 20,
+    "reference_url": "https://www.dtcc.com/market-index-data/emir-public-reports-uk",
+    "report_date_weekday": "Friday (publisher UI; availability checked per report)",
+    "update_note": "Each weekly CSV ingested independently. Missing periods remain recorded; available newer reports are retained. EU and UK cannot simply be added."
   },
   {
     "id": "rds_uk_sftr_table1",
-    "name": "rds_uk_sftr_table1_20261009",
+    "name": "rds_uk_sftr_table1 weekly public report",
     "url": "https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_1_SFT_C_RP_ORG_{report_date}.CSV",
     "kind": "repository_weekly",
     "business_lines": [
@@ -3699,11 +3720,14 @@
     ],
     "extension": "csv",
     "enabled": true,
-    "refresh_hours": 20
+    "refresh_hours": 20,
+    "reference_url": "https://www.dtcc.com/market-index-data/sftr-public-reports-uk",
+    "report_date_weekday": "Friday (publisher UI; availability checked per report)",
+    "update_note": "Each weekly CSV ingested independently. Missing periods remain recorded; available newer reports are retained. EU and UK cannot simply be added."
   },
   {
     "id": "rds_uk_sftr_table2",
-    "name": "rds_uk_sftr_table2_20261009",
+    "name": "rds_uk_sftr_table2 weekly public report",
     "url": "https://cms-prod.dtcc.com/PublicReports/reports/fcasftr/FCAS_TABLE_2_SFT_C_OUT_ORG_{report_date}.CSV",
     "kind": "repository_weekly",
     "business_lines": [
@@ -3713,7 +3737,10 @@
     ],
     "extension": "csv",
     "enabled": true,
-    "refresh_hours": 20
+    "refresh_hours": 20,
+    "reference_url": "https://www.dtcc.com/market-index-data/sftr-public-reports-uk",
+    "report_date_weekday": "Friday (publisher UI; availability checked per report)",
+    "update_note": "Each weekly CSV ingested independently. Missing periods remain recorded; available newer reports are retained. EU and UK cannot simply be added."
   },
   {
     "id": "research_ae16487e8922464f6693",
@@ -4381,5 +4408,24 @@
       "Asset Services"
     ],
     "refresh_note": "Explicit batch import; these added source adapters are not enabled for daily refresh."
+  },
+  {
+    "id": "fred_MORTGAGE30US",
+    "name": "30-Year Fixed Rate Mortgage Average in the United States",
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MORTGAGE30US",
+    "kind": "market_series",
+    "business_lines": [
+      "FICC",
+      "ECS"
+    ],
+    "extension": "csv",
+    "series_id": "MORTGAGE30US",
+    "units": "percent",
+    "frequency": "weekly",
+    "definition_url": "https://fred.stlouisfed.org/series/MORTGAGE30US",
+    "measurement_scope": "Freddie Mac PMMS weekly survey via FRED; external mortgage-rate context, not a direct traded MBS yield or DTCC internal performance metric",
+    "vintage": "current retrieval vintage; historical revisions possible",
+    "enabled": true,
+    "refresh_hours": 20
   }
 ]

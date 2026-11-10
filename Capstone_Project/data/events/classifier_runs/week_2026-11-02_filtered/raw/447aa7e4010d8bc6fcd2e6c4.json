@@ -1,0 +1,40 @@
+{
+  "document_id": "336a2fabecaa8b4a084b1d6537cf7f10bd439f460ae91267cc7dd78e3a09a70b",
+  "url": "https://news.google.com/rss/articles/CBMixAJBVV95cUxOZDNyaXZPbmJSS3dGN1JOUnRXTWJ1dXpjNWk2YnNtaXVIR0tvTTVYQUZQT1FIaHNLR01sdWxKU29YZHVBd1FfOVBiM0c5am1WZWxxeWhYcTdtLVQ1QVFWZmtFa0NDM2JVWXpFMU95S2hhdnNZVVBiaGdjS0JYcmxzeWNwRjFyWXJYLVFnV2xCVkdpU2RFWWdEdzZFQkhYaUlaVmFTdW9paEdEREcyLTVHZzFuZmhycjlLd0t6b25JYWtGeVlZQlZraW9WUHQzaVZheTJ4V0xaeFBCTTBxZmNEakpBSkdEV0xKVGE3Z0VzRW5Na2FoaFFxWWxtZWk0WkVRZ05VTXVlZ0J1OEo1dlVmTlI3YUt2eUNHa2h0V2s2M1pyUUFLem13c05qdnk2TjA3SUVCTGZ1QUJYZ3BaVlZWdFJ2TU8?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "4175ba8557bab1916fb5bb083dc0c86b14d9471c72e31268d0cb21909b6e4742",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_s6juH3XtDXzKmBIDaXWqbz",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a headline-only snippet with no substantive content beyond 'US Employment Surge Fuels Rate Hike Bets, Treasury Yields Rise'. While a Treasury yield rise could theoretically touch FICC-GSD-01, the article provides no factual detail about the magnitude of yield moves, market stress, or any specific event — only a headline. There is insufficient evidence to support any card assignment or evidence quotes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4519,
+    "outputTokens": 137,
+    "totalTokens": 4656,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3117
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

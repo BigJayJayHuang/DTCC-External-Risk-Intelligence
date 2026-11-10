@@ -1,0 +1,40 @@
+{
+  "document_id": "7e875649b61f0e0f5b50137e6e36940d75d5d8757ade150ab055f1ed86220eac",
+  "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPc0pUWHNEUEFibWxmVDlGc2x5QlNMdFl1LXZNTElRbGMtYzFvOEh3Q0c4aHpFRGJBSXQ4RXZCRzZRbGpuSTI3MkV6MWNlQXpseDNhOGpVcUFzeE45al9kbGtuSC11LWZIUkE4d0VRYlk4eGhxSmFtdG9hUGZMczlZTlFaeWNCVldFNmJOUjA0SlNrdnd2UWhreGcyejgtRk4zekFPbjR1SWU0Mll4Rzc2U0lvbnhlTmItRndhUjU3ZTBMNEM0?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "a8c6eec8d9c0af467ff19fe981bda5997f55de9a90874ac5f938576fffb02d67",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_PY4cmnJB5hQlrnj7w1cWpm",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline-only opinion/warning piece about a Korean stock market selloff and its potential effect on ETH (Ethereum). The event is in a non-US market (Korea) with no stated link to US markets or DTCC participants, and the ETH reference is a cryptocurrency with no connection to DTCC-cleared instruments. No concrete event matching any catalog card is described."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1526,
+    "outputTokens": 123,
+    "totalTokens": 5357,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2008
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

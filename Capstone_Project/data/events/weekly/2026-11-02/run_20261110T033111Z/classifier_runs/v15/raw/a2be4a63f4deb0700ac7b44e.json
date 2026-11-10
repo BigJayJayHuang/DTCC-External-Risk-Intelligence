@@ -1,0 +1,57 @@
+{
+  "document_id": "b0d4df0ff98e41b297b4d15bbaa94463e7b1bdf77a6b163038eef4dbf4bcfdae",
+  "url": "https://files.dtcc.com/download/assets/25204-26/a39e6b16d92911f198daeef7357c04d2",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "19cfca8eabac2e61359a752fefba9115103bbcd59bbd33168a2bb1bac4d95764",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_7dq7fHITaYlbkk4Abcs3jb",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "DTC Important Notice is a routine depositary fees notification for a single security (Agomab Therapeutics). It describes no outside event matching any card's Step 1 — no market move, regulatory action, member stress, cyber incident, or settlement disruption.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1801,
+    "outputTokens": 454,
+    "totalTokens": 6628,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3142
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

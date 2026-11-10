@@ -1,0 +1,40 @@
+{
+  "document_id": "676946230a7f418a54b15744c3be516940834d9ddc826a3bc2541f1a56e4a47e",
+  "url": "https://www.federalregister.gov/documents/2026/11/02/2026-22261/self-regulatory-organizations-cboe-edga-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "2d4a5af1292b6f5d5725d0535744d454f745b85048170308802f0bb57328bfe2",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_tTJEhS21lTrPl0p7j1dldV",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a Cboe EDGA Exchange rule change to adopt a 'Start Time Order Instruction' — a minor exchange order-type rule amendment. This does not match any card's Step 1 trigger (no market stress, no clearing mandate, no member default, no cyber event, no settlement cycle change, etc.). Only the headline is available and it contains no risk-relevant event for any DTCC process."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4165,
+    "outputTokens": 132,
+    "totalTokens": 4297,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2388
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

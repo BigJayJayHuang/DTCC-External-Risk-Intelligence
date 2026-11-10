@@ -1,0 +1,40 @@
+{
+  "document_id": "1e3d72509fda57fdf8217627670965fbbc95bbca9fb2da1bd22b43256466cc5e",
+  "url": "https://www.fca.org.uk/news/press-releases/fca-restricts-6-firms-following-concerns-over-anti-money-laundering-controls",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "754cb3f4a81d6371aee8bcccad5f48eba042e2bf9c220c970f6bc5aa8cd5e061",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_2GkF9eOXbx2nPQuBGUUyWh",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes FCA restrictions on 6 unregulated UK lenders (Annex 1 firms) for anti-money laundering control deficiencies. These are small, unregulated UK lending firms with no connection to DTCC clearing processes. None of the card Step 1 triggers (Treasury/repo stress, equity selloffs, member bank stress, cyber incidents, settlement cycle changes, etc.) are present. The firms named are not DTCC members or major participants in US markets."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4806,
+    "outputTokens": 149,
+    "totalTokens": 4955,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2481
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

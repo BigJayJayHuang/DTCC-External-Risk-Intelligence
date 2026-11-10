@@ -1,0 +1,57 @@
+{
+  "document_id": "3fbf0a4e1d1158fe090138062527c264e5df7e0634283567452a7a2af187ca26",
+  "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNa0FEak9WU3FOczQ4ZG9yWXRHcUpUZUVHbmxkdUVOVzJaU3R2U01IekpDa1NfQUwxWFI4WW9uSXg5dy1xcVNsazB6blVENjNZbmtvSmVQMnJLR3dNRHFxYy1hbGcxMGU5WDF3VENjeXZhSVRYNzdvZ3oxMWZXemk0TWY3TVdoOG8?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "fbef62a20accf3f2cadb992b17ffa52a0b72c75ee2d43b0248df66adfa6df231",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_uux4T4hBz0JYcQhTQC63bw",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "notes": "Non-US cyberattack on a French bank (Crédit Mutuel Arkéa) with no stated link to US markets, US firms, or DTCC participants. XE-CYBER requires a large US market participant, a DTCC vendor, or US market infrastructure. Article text does not assert any such connection.",
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1463,
+    "outputTokens": 470,
+    "totalTokens": 6306,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 9642
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

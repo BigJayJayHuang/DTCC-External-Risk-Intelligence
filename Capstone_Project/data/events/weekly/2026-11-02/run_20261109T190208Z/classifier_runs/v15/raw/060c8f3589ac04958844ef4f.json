@@ -1,0 +1,59 @@
+{
+  "document_id": "e4cc257ee7ac4c90b08ecb5dc0a53b713447e374bb8e72fe12ee78ebb41a96c1",
+  "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOZ29VMXRlekhORHlZRHZ1dk91d2V5eVpSeXp2eFBuTlB0a0NHelpFbjhZT3Vnd3pJRXZkd09PRnVwamFKeU9FeTN4WWdvOW4zTUE3WTZMVGU4dHZBb3Rsa24wT09TOWRmRWZTYlVXcGlGZ09FZ1A0cTJlTTh1YzlqdTZ2Qm90cDlPcTZ4YjlRcTRTenQ2Mm1J?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "8956eb8235fc294b53e9993a16b11e5f70e43429148576ecd030e4dc47f0a5e7",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ZRORuOXPTjPeaT8c98O5c4",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "event_type": "market_move",
+              "same_as_event_id": null,
+              "title": "Stock market selloff deepens amid political blame",
+              "summary": "A broad stock market selloff is deepening, with political commentary from Trump blaming Democrats. No magnitude or specific index levels are provided.",
+              "card_ids": [
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-06",
+              "effect_date": "2026-11-06",
+              "stage": null,
+              "source_tier": "other",
+              "outlet": "JournalArta",
+              "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOZ29VMXRlekhORHlZRHZ1dk91d2V5eVpSeXp2eFBuTlB0a0NHelpFbjhZT3Vnd3pJRXZkd09PRnVwamFKeU9FeTN4WWdvOW4zTUE3WTZMVGU4dHZBb3Rsa24wT09TOWRmRWZTYlVXcGlGZ09FZ1A0cTJlTTh1YzlqdTZ2Qm90cDlPcTZ4YjlRcTRTenQ2Mm1J?oc=5",
+              "evidence_quotes": [
+                "Stock Market Selloff Deepens"
+              ],
+              "confidence": 0.45,
+              "notes": "headline_only; no magnitude, index levels, or specific market details provided; selloff described as deepening implies ongoing and worsening market-wide equity decline, consistent with ECS-NSCC-LIQ Step 1. Low confidence due to minimal information."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1464,
+    "outputTokens": 690,
+    "totalTokens": 6069,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 6357
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

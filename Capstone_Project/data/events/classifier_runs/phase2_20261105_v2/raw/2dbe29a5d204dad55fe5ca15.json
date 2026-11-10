@@ -1,0 +1,40 @@
+{
+  "document_id": "068045ae81f279ab2fb794ebd48656c29abe1e3ccd7fd2d3fb2de0ef7a1b28f8",
+  "url": "https://files.dtcc.com/download/assets/GOV2248-26/81d1cacac66c11f1b93f3ecf2a325fcc",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "761105087161633a0ada7a912dd6b82393b2b104b84fa05c7cd255d3088e9166",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ZQ7rjJRSnwE6QEpRlF4O7V",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal holiday schedule notice (Veterans Day) informing clients of holiday observance and its impact on clearing and settlement services. It is an operational/administrative notice with no outside risk event described — no market stress, regulatory change, member stress, or infrastructure disruption. No card in the catalog covers routine holiday schedule notices."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4129,
+    "outputTokens": 113,
+    "totalTokens": 4242,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2014
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

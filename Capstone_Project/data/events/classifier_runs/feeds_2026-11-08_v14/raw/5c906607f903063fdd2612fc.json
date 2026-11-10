@@ -1,0 +1,40 @@
+{
+  "document_id": "0785a1cc1498f5870ec611364f57584663fa6ad76d5ffa736209b620865b125b",
+  "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQNXpudWpkMlNJdlR6YlAxclhuWHl0UVhjby1JXzNlZFFMSVo1WnotWnhrTzNOenJlcEt5TWE0LUVRU1NjM0VPOGVvN181TUZEeWp0RWJ6RWlyMjFjV1FjNXBvQjlPSnJDN3QxdHkyVEJ2eU1ndzNSNTdQeld5TDctNWU5MGs2UE5aVGNnWDFCU0dHaHJUcEx6TzhBTlZsVmQ1NnUyQy03SWQ2WWNheHJlaVdrLWNDZw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "d8174ef67738e84d6ee0b93602f2d74337772608d90c85025a2212027f745041",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Nzu2HgDHMTVxXt8nFmpBbb",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline only with no concrete event details. 'Advances route to 24-hour stock trading' is too vague to confirm a specific regulatory action, milestone, or go-live date. No facts can be extracted beyond a generic forward-looking statement. A similar event (NSCC 24x5 clearing go-live, EV0003) is already in the register, but this headline does not confirm it is the same event nor provide new information. Insufficient to classify as relevant under headline-only rules."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1485,
+    "outputTokens": 154,
+    "totalTokens": 5347,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2447
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

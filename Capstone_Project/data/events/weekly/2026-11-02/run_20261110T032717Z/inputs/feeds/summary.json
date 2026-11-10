@@ -1,0 +1,188 @@
+{
+  "collected_utc": "2026-11-10T03:27:29+00:00",
+  "user_agent": "DTCC-External-Risk-Intelligence-capstone/0.1 (research prototype; +https://github.com/BigJayJayHuang/DTCC-External-Risk-Intelligence)",
+  "sec_user_agent_override": false,
+  "per_source": {
+    "cnbc_top_news": {
+      "robots_disallowed_feed": 1
+    },
+    "cnbc_finance": {
+      "robots_disallowed_feed": 1
+    },
+    "cnbc_economy": {
+      "robots_disallowed_feed": 1
+    },
+    "cnbc_investing": {
+      "robots_disallowed_feed": 1
+    },
+    "marketwatch_top_stories": {
+      "robots_disallowed_feed": 1
+    },
+    "marketwatch_market_pulse": {
+      "robots_disallowed_feed": 1
+    },
+    "marketwatch_realtime": {
+      "robots_disallowed_feed": 1
+    },
+    "yahoo_finance_news": {
+      "feed_http_404": 1
+    },
+    "nasdaq_markets": {
+      "robots_disallowed_feed": 1
+    },
+    "nasdaq_stocks": {
+      "robots_disallowed_feed": 1
+    },
+    "fed_press_all": {
+      "feed_http_200": 1,
+      "fetched": 20,
+      "kept_prefilter": 9,
+      "outside_requested_window": 8
+    },
+    "sec_press_releases": {
+      "robots_disallowed_feed": 1
+    },
+    "google_news_existing": {
+      "fetched": 85,
+      "kept_prefilter": 85,
+      "scope_headline_only": 85,
+      "fulltext_no_publisher_url": 85
+    },
+    "official:federal_register": {
+      "kept_prefilter": 44,
+      "outside_requested_window": 173,
+      "scope_headline_only": 42,
+      "fulltext_paywalled_or_forbidden_http_403": 44,
+      "scope_summary": 2
+    },
+    "official:dtcc_notice_feed": {
+      "kept_prefilter": 34,
+      "outside_requested_window": 1141,
+      "scope_summary": 34,
+      "fulltext_pdf_extractor_unavailable": 34
+    },
+    "official:sec_press": {
+      "kept_prefilter": 1,
+      "outside_requested_window": 38,
+      "scope_summary": 1,
+      "fulltext_robots_disallowed": 1
+    },
+    "official:fed_press": {
+      "kept_prefilter": 1,
+      "outside_requested_window": 34,
+      "scope_full_text": 1,
+      "fulltext_ok_paragraphs": 1
+    },
+    "official:cftc_press": {
+      "outside_requested_window": 20
+    },
+    "official:ecb_press": {
+      "outside_requested_window": 47
+    },
+    "official:bis_press": {
+      "outside_requested_window": 17
+    },
+    "official:fca_rss": {
+      "outside_requested_window": 38
+    },
+    "official:esma_news": {
+      "outside_requested_window": 19
+    },
+    "official:dtcc_insight_20261014": {
+      "outside_requested_window": 1
+    }
+  },
+  "duplicates_merged": 1,
+  "items_to_classifier": 165,
+  "scope_totals": {
+    "headline_only": 127,
+    "summary": 37,
+    "full_text": 1
+  },
+  "published_range": [
+    "2026-11-02",
+    "2026-11-08"
+  ],
+  "requests": [
+    {
+      "kind": "robots",
+      "status": 200,
+      "n": 4
+    },
+    {
+      "kind": "robots",
+      "status": 403,
+      "n": 2
+    },
+    {
+      "kind": "feed",
+      "status": 404,
+      "n": 1
+    },
+    {
+      "kind": "robots",
+      "status": null,
+      "n": 1
+    },
+    {
+      "kind": "robots",
+      "status": 404,
+      "n": 2
+    },
+    {
+      "kind": "feed",
+      "status": 200,
+      "n": 1
+    },
+    {
+      "kind": "article",
+      "status": 200,
+      "n": 35
+    },
+    {
+      "kind": "article",
+      "status": 403,
+      "n": 44
+    }
+  ],
+  "robots": {
+    "https://search.cnbc.com": "parsed",
+    "https://feeds.content.dowjones.io": "disallow_all",
+    "https://finance.yahoo.com": "parsed",
+    "https://www.nasdaq.com": "disallow_all",
+    "https://www.federalreserve.gov": "allow_all",
+    "https://www.sec.gov": "disallow_all",
+    "https://files.dtcc.com": "allow_all",
+    "https://www.federalregister.gov": "parsed",
+    "https://unblock.federalregister.gov": "parsed"
+  },
+  "official_input": {
+    "input_rows": 1637,
+    "kept": 80,
+    "filtered_out": 28,
+    "non_us_official_without_us_term": 9,
+    "kept_strict_all_terms": 0,
+    "kept_broad_keyword_fallback": 80,
+    "input_sha256": "59525783c4d8dc2905ceaacb52f7d2694d11bb1dd7a3b19b3b95b84010894482",
+    "window": [
+      "2026-11-02",
+      "2026-11-08"
+    ],
+    "unsupported_source_rows": 1
+  },
+  "alphavantage": {
+    "input": null,
+    "prefilter_dropped": 0,
+    "duplicates_with_other_sources": 0,
+    "kept_alphavantage_version": 0
+  },
+  "requested_window": [
+    "2026-11-02",
+    "2026-11-08"
+  ],
+  "window_exclusions": {
+    "outside_requested_window": 1536
+  },
+  "config_sha256": "3936b51225a3f1f3a7122ce0b498579ab0f8252a1727c3f689649cfbe336c362",
+  "queries_sha256": "ec2598cf556c95cb9206be2a515168f4a83d5b27a3e4a3dc1e038dab94843bad"
+}

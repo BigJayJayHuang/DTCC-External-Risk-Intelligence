@@ -1,0 +1,40 @@
+{
+  "document_id": "2298ba9718c72d479b2cb270fda9a10d8d65fcb19e66d09b587fb987db464aea",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5TcXJHRFJSTDRZM0xHU1JFRk9Td0N0d24tc0cwbUxQaTdLbzdoUEJKVktMN1dseXRfZ0cwQ1NvTDZlNDVPSkl4dW5BdENrZ24yZkE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "961c0dbadeb7a19af5b1bf1756d3384d41fd050f59ebfe3bdee85d561191c928",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_EwPvbimyKoeme8sPoa3NmC",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a historical retrospective ('10 market panics and their causes') with only a headline/snippet and no new market event, regulatory action, or participant stress. It is an opinion/educational piece with no actionable outside event described."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4231,
+    "outputTokens": 94,
+    "totalTokens": 4325,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1683
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

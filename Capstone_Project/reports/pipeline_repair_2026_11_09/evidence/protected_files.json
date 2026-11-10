@@ -1,0 +1,399 @@
+{
+  "base": "0579f0ab64ee7117e3710c40882c4ee531bd5dcf",
+  "checked_files": 98,
+  "all_unchanged": true,
+  "files": {
+    "data/events/event_register.csv": {
+      "sha256": "81bf5b154e5c79247d8695b99c41bffac430cd688d9026f773690f687e6659e2",
+      "matches_review_base": true
+    },
+    "data/events/event_signoffs.csv": {
+      "sha256": "303895fd721c9cd96f7c8f2b509f8a30254e089b5463a923e186140beb5d52ad",
+      "matches_review_base": true
+    },
+    "results/scoring/SCORING_SPEC.md": {
+      "sha256": "eec27c3ab936ff1c3b578e855ec8f91876e8b8d08c45d27ce6b731ad071f69d0",
+      "matches_review_base": true
+    },
+    "results/scoring/compare_v1.0_v1.1.csv": {
+      "sha256": "28095ea8d43aade7c3775eaa105ae7dd629c5f1255233413a110d66f86ab48b3",
+      "matches_review_base": true
+    },
+    "results/scoring/compare_v1.1_v1.2.csv": {
+      "sha256": "8bceb3815c62cc9e2e3cde9225e285e1fbfe6c7619ef074d8f162cb92cfa80c1",
+      "matches_review_base": true
+    },
+    "results/scoring/figures/payment_to_qlr_history.png": {
+      "sha256": "3d48b2d254448b55ccedb60630edb6acfea024ff231c566b3e476aa4496d7e8c",
+      "matches_review_base": true
+    },
+    "results/scoring/figures/peak_payment_to_qlr_history_v1.1.png": {
+      "sha256": "1cb67107bc081fb32e8bb0003db18297c97a4b1ff9ca36a638273c2ea86e8620",
+      "matches_review_base": true
+    },
+    "results/scoring/figures/shock_scores_history.png": {
+      "sha256": "b267530c86a036438c50b8c1268e8c6c35bde4ead5b4d6383c98d2ea8a0b939a",
+      "matches_review_base": true
+    },
+    "results/scoring/figures/shock_scores_history_v1.0.png": {
+      "sha256": "ca3cfb3c5f4d0f3e740d2993730708c2048d4f2b4edabee6b16ff3bef0da9c1c",
+      "matches_review_base": true
+    },
+    "results/scoring/figures/shock_scores_history_v1.1.png": {
+      "sha256": "fad160a06fefedc23e63618308af426b066dd4d3ad61572814b788bd3f90ca84",
+      "matches_review_base": true
+    },
+    "results/scoring/payment_to_qlr_summary.json": {
+      "sha256": "041a419889a686a5da3ab7df634439c80bcc7556c5106d82aa67ef357e51d253",
+      "matches_review_base": true
+    },
+    "results/scoring/peak_payment_to_qlr_summary_v1.1.json": {
+      "sha256": "dc63e40e409160babd6f422c15c4d4f01dd440180957c14e4e90739ff20cfe71",
+      "matches_review_base": true
+    },
+    "results/scoring/proposals/ranking_2026-10-05_v1.1_vs_proposal.csv": {
+      "sha256": "cb645f207a7100ae64d0f4b72d8291cfbc7b91d30499e2beb60598393f2dcc86",
+      "matches_review_base": true
+    },
+    "results/scoring/proposals/v_7_3_1_evidence.json": {
+      "sha256": "95eea79f4fdeaa22c0017a9e5e02d96891af57876ea93ce71adcd3a71b7876a4",
+      "matches_review_base": true
+    },
+    "results/scoring/proposals/v_7_3_1_quarters.csv": {
+      "sha256": "7fb03d5b2dfb342da80b120e4989fb689ad25e20e85dec663f6de8a05306f2ac",
+      "matches_review_base": true
+    },
+    "results/scoring/sanity_check.json": {
+      "sha256": "af66c49ef5aac57f445bc0e5153c2daf3ef8ae4224eca40360a03305990e1176",
+      "matches_review_base": true
+    },
+    "results/scoring/sanity_check_v1.0.json": {
+      "sha256": "fa3057d12dbd184d500daaef37e65fd8e6773ff4b407cbcd159fc641028be75a",
+      "matches_review_base": true
+    },
+    "results/scoring/sanity_check_v1.1.json": {
+      "sha256": "43fa972bb5aa556502b6442455c055e098ca7620014505d7d8f71c13c4b454c2",
+      "matches_review_base": true
+    },
+    "results/scoring/v1.1_rerun/figures/shock_scores_history.png": {
+      "sha256": "ac03df567de360ac068d6119f830719de7c2b78dffa25e35f5a9a3576e88b6ce",
+      "matches_review_base": true
+    },
+    "results/scoring/v1.1_rerun/sanity_check.json": {
+      "sha256": "2400f9f0896d4209e7d8dfb2e06fe5781e2a2e531a615c4ce734c8ef464500f0",
+      "matches_review_base": true
+    },
+    "results/scoring/v1.1_rerun/weekly_scores.json": {
+      "sha256": "15d430a608b7f874ed88a7ee5b6d8f3f59e590a24acea66bab92f966af361032",
+      "matches_review_base": true
+    },
+    "results/scoring/v1.1_rerun/weekly_scores_history.csv": {
+      "sha256": "58699d9f86015c8d989b59150969c9a15c7c900a9948e29ea16bad52abb45d8f",
+      "matches_review_base": true
+    },
+    "results/scoring/v1.3_indicator/SCORING_SPEC_v1.3.md": {
+      "sha256": "51befa9909c046f81c41e6d466636e7535c70d541f4543d5bd567e7241c61368",
+      "matches_review_base": true
+    },
+    "results/scoring/v1.3_indicator/config/card_lines.csv": {
+      "sha256": "fa322a1df30894896778de607117af4ec1faca4eaa545729049f414bd5cc82cd",
+      "matches_review_base": true
+    },
+    "results/scoring/v1.3_indicator/protected_files.json": {
+      "sha256": "3e5b974fdfbf11eeee404bc2531631450acd3bfb9dc082c2453fced6291b410a",
+      "matches_review_base": true
+    },
+    "results/scoring/v1.3_indicator/weekly_scores_v1.3_2026-10-19.json": {
+      "sha256": "f92105cfd009913a521fb7e3ebf2f4326ab68cf62629090401e7907723fe35f9",
+      "matches_review_base": true
+    },
+    "results/scoring/v1.3_indicator/weekly_scores_v1.3_2026-10-26.json": {
+      "sha256": "6e275c042f291115e8101d5dcf9f1ed0d2e51f0f87635fcb02cf10e209f9261a",
+      "matches_review_base": true
+    },
+    "results/scoring/weekly_scores.json": {
+      "sha256": "10ac2954f22cd1dd493467f8a725b38c1894a49c49f67b41cefcd99e9c525682",
+      "matches_review_base": true
+    },
+    "results/scoring/weekly_scores_history.csv": {
+      "sha256": "458d6c0d09fe3ea0803584be202c430accb2f8a839723d8ccaf35ba91bd07d12",
+      "matches_review_base": true
+    },
+    "results/scoring/weekly_scores_history_v1.0.csv": {
+      "sha256": "4823dc4aa9f1ad0be5e3f8411b23948ccec68fcab7bb18679baa827a082ccbf1",
+      "matches_review_base": true
+    },
+    "results/scoring/weekly_scores_history_v1.1.csv": {
+      "sha256": "7878654c036ae719a615fd1c7adeda610e50414704fb6b8645f76bc6153990c1",
+      "matches_review_base": true
+    },
+    "results/scoring/weekly_scores_v1.0.json": {
+      "sha256": "34abc26fe3f3cd34849f89ef86951f2d9f61a159c9bf772fda0d7d76eda753ed",
+      "matches_review_base": true
+    },
+    "results/scoring/weekly_scores_v1.1.json": {
+      "sha256": "a5598507dddeec2cbc96e3d4707db2885c43b6af1df0b786dd14c4ce67f89b1a",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/.gitattributes": {
+      "sha256": "d3046994ea9d7c6f5fcd83bd666ab10c5a03307a4442a8a12b955c3a8cfeff19",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/.gitignore": {
+      "sha256": "3187e0d454a39f02cd38e8ac28a3f0e19608dd41ddd5fcfc937db92593bb93a1",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/README.md": {
+      "sha256": "9c566dd27aeaf9a7584fc0e8c10da9ad49bffb6c310329c1f2520bc04c3a8cfe",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/README_CN.md": {
+      "sha256": "d03bf09c66cca60f824588f2e96b1978297486e0e047c18a822fa94725f261ee",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/README_EN.md": {
+      "sha256": "c619a94cd9a5f7be5965664aa6d43ee4c09b045423cbd9a934a30359d5143705",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/config/card_registry.json": {
+      "sha256": "9f54abcd62a99235052633bdf1c3b15d5ad14576cad69967f047b10d20b33a29",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/config/simulated_buffer_parameters.json": {
+      "sha256": "2539ca697f94d12a8156d18e2e4b082044d92247a2ff18222fc2c3f80a2d1e43",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/data/V_scores_wide.csv": {
+      "sha256": "872a44bc690334119c9bf819023fb3870271cc3c889e035fc1f944070bc949dc",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/data/final16_vulnerability.sqlite3.gz": {
+      "sha256": "7cebbd41a8f9eb04d6f2ae3fd9b418e49fabe721f3b587a6d363825ceb5ab0b9",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/data/observed_ofr_gav_nav.csv": {
+      "sha256": "52b7e3391b05f336f3177285a9eaaa4cbc374c5e1259413584bb881f23b62895",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/data/observed_public_drivers_quarterly.csv": {
+      "sha256": "feaad0e5e9788a81d797202232d27630021fd15d8e6e04a5989628202f21df69",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/data/quarterly_vulnerability_OBSERVED.csv": {
+      "sha256": "ed10dd52af61802b1eed592b36e6566a9f1a1b65ab0f918423fcb8af2f4669c3",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/data/quarterly_vulnerability_PUBLIC_PROXY.csv": {
+      "sha256": "bb8674c0f8eeae2350b00926ccced1d4ff93649d08b67e8bf71273d1ae8148a6",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/data/risk_model_v_inputs.csv": {
+      "sha256": "78f529ccfd95e0e8fc6e484148d281a7fd80ffdf17cad187acda35067ca5c5c4",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/data/s_signals_quarterly.csv": {
+      "sha256": "a1c5dcd1b0e41c2629d7b51857f1014f607344bb3c25d7ae2192f089c1847c69",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/docs/final_version_chains_confirmed.docx": {
+      "sha256": "8727fa635c32813593ea853a3941d7239a94655737365822e5a0a281b5326e93",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/fetch_manifest.json": {
+      "sha256": "013b73f47c305222c78bc78bf473dc14bfae6f8ca6667016c5aa417722eb218e",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/observed/baa_credit_daily.csv": {
+      "sha256": "240d2b37f5ad27ab5074c9cde1ab7ee95b9e40fe70b53b16f317863bf2bc1962",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/observed/core_chain_configuration.json": {
+      "sha256": "3d7309504873b08fdfef41fe0e4b40da0819fcb9518b971c36554111032f0f91",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/observed/cp_bill_daily.csv": {
+      "sha256": "81f49139dfe23c3ea2c2800feffaee0eae9afbb2bde8c1ade625551e8e0d215f",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/observed/equity_volume_daily.csv": {
+      "sha256": "cede489d1e1b9bdf67a24f46b00e48a59cfed5c6de89f9f97a32b295eede4aac",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/observed/existing_card_catalog.md": {
+      "sha256": "5659cdf7160162cc23b2b67ca23ec984d37ae2e4d6b3c1312eb0500954c7d30f",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/observed/existing_scoring_reference.py": {
+      "sha256": "badd2c5a2487f297467904f0587d0b2158958c6ec2ee75c53353aeb9748a8e60",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/observed/existing_source_log.csv": {
+      "sha256": "3f729bc795557560beb8e38ad2a5aed4d2c7f82cd7b215e79b26b63d2b36998f",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/observed/fred_components.csv": {
+      "sha256": "17ba7782d7f3ad782d289e3eeca84a57782c96c8482fa0bcb14bc97cc8bd43cf",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/observed/funding_daily.csv": {
+      "sha256": "cc90d32987da11f407499b7033a04885dd4cbbc7900c0f5c67d65b80bbda6c86",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/observed/mortgage_weekly.csv": {
+      "sha256": "9e30080ead837d820e6766ed88533b4d8c20c3849c097dc1868daa78c1a4a79f",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/observed/public_proxy/cboe_trf_share_daily.csv": {
+      "sha256": "7b398de959a294ee0d29daa6579b216f916c63e52d532d4d407cefc7f90817e9",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/observed/public_proxy/frb_cp_outstanding_weekly.csv": {
+      "sha256": "4b1061b6101d296a02eed071cbfdb4b1533aa7c3926ef8363d3aafbfff6f9619",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/observed/public_proxy/nasdaq_bkx_daily.csv": {
+      "sha256": "df3b9eade7d444343c5ae505995a7e66611c64744f725bf90a2327b6f417ae37",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/observed/public_proxy/nasdaq_trading_halts_daily.csv": {
+      "sha256": "9c523dcfcbd807a9722aa9a751dbf672db554146253a106304efb8402eb3dd0e",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/observed/public_proxy/nvd_cves_quarterly.csv": {
+      "sha256": "e32a117abc461e03844a3e61321fbe6d91aebaa5b237ff21a1a3729afed3f66e",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/observed/public_proxy/nyfed_mortgage_originations_quarterly.csv": {
+      "sha256": "9f5a1653e9b315751bad35d0159e4687de091905721f0e9c10aca9d9ddbae7cf",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/observed/public_proxy/nyfed_sofr_volume_daily.csv": {
+      "sha256": "735a51b6b20f49c7fcecbde28c6d5cf5bab2e7c8eb86e971faccdb0cc732c503",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/observed/public_proxy/sec_cns_ftd_daily.csv": {
+      "sha256": "fb05e447f454880658f4d5faf44831bbeedfa0377be86c40330b306e277f82ab",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/observed/public_proxy/xbd_daily.csv": {
+      "sha256": "b876e8773b0d88ee5e753c2075412ddf685991fbb02cc198d0105c8caf677af3",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/observed/real_pqd_panel.csv": {
+      "sha256": "110269920f0d1eba42251825598c9238d96990e6dffab213a6f1583df7dfb523",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/observed/vix_daily.csv": {
+      "sha256": "0f5753c14755f35ef1233be9b58cd109821f0003ef78e18e8040f81dfccc24e5",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/protected_existing_outputs.json": {
+      "sha256": "1fedefa6f3e71b5518e1324e42af7e89716254137dd7e4c352a91e626d363d8e",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/raw/FPF-ALLQHF_GAV_SUM.json": {
+      "sha256": "0fc2109d7c14666e64483d582f251ccd0b1f291f209a22e97f368638fca8e574",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/raw/FPF-ALLQHF_NAV_SUM.json": {
+      "sha256": "e348539975be9c93119c53064e2f2839e389192e0770e94f7f977c739856fec2",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/raw/ofr_leverage_search.json": {
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/inputs/shared_observed_sources.json": {
+      "sha256": "9d118d3fbc7cff0c6164d9971b4e2bf712ec0030a732d5eca19070fc7e888080",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/requirements.txt": {
+      "sha256": "7973e03409c27bb36b593f8614f0da1b3e91dfad1c19287a595fccb56b2991ab",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/results/build_manifest.json": {
+      "sha256": "c631e5e2bd74d9ea81486eb66dfab488ee593a2db408b8860d919e010242436e",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/results/card_id_map.csv": {
+      "sha256": "c4ef0b31b3a25da62ff6b94baac6236de60c8f7cf518b801d9fcd7e640ff6a04",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/results/latest_quarter.csv": {
+      "sha256": "771ecf7d275bf1474bc7f59311e27fbfc4377bbfcbb32480400510f737949205",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/results/test_receipt.json": {
+      "sha256": "97f37660970277c7fe49d97bd05a5e4e12c4e70bceef667ad0847f2fb7301bea",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/results/v_driver_checks.csv": {
+      "sha256": "b05725214f28be9860abf610f03eab8e91fc131b207ceddc90c347fdba50ab31",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/results/v_driver_checks.json": {
+      "sha256": "7413f730d22af7db97a1c07b07bb7ec8405687898f256395583bde750e63800a",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/results/v_driver_s_correlations.csv": {
+      "sha256": "25dc68f6771057b144bc9a883b47567f620c2496d9e1db4f3d8362b893efd73f",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/results/verification.json": {
+      "sha256": "00e65e45ec49e1b41bf1bbb130966ab97f4472e0855c12ea9abe5a4b73ba3145",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/src/build_quarterly.py": {
+      "sha256": "5564425a844f811daebf502b77b5373cb53d5ebd3ae7e841ea261d2072f2428a",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/src/config.py": {
+      "sha256": "898ebd445638a290ea14c1e95f6d00d15815ce3f41c007818f18ae50166f7f3f",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/src/fetch_public_drivers.py": {
+      "sha256": "c9c5f5189964ffcf53c77e78002a2fe81600fc71e321115fe319c9ee15214da5",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/src/prepare_inputs.py": {
+      "sha256": "4e1ae2ab8d1b59bbb7198fedcad7116da367e47f991900adfe0f5e7e25dfb65b",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/src/simulation_mode.py": {
+      "sha256": "53417075fa2e6cbaa1166bbe776f55ff6826e5ddd7a04bc388ef1e9c327764ea",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/src/update_selected_document.py": {
+      "sha256": "f4c48c3c97f696d04c46919332347fcaa1f77968497d7f4cc5c010500fcaf51d",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/src/v_rule.py": {
+      "sha256": "92b9091fa08b324a970b8a9b1cc99b805d40b083042afef022bf078053c3cca6",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/src/verify_quarterly.py": {
+      "sha256": "09f0e427731bb5979169963e01d0481f5514cbd2a3d8604feff69cc1f3adbd92",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/src/write_notes.py": {
+      "sha256": "18e5c9c4ce79253799fd52aa3cc60982396b5aebe444ad36ba21f4241e12b928",
+      "matches_review_base": true
+    },
+    "risk_business_ml/final16_quarterly_vulnerability_2026_10_27/tests/test_quarterly_v.py": {
+      "sha256": "7c10993641c701965bad8643f42e4b84953a588bf9037c892d6ff70e4a24f7e1",
+      "matches_review_base": true
+    },
+    "validation/llm_classifier_config.json": {
+      "sha256": "e0844e22be3769197a2a7b0674d1c139cda7ea89f2cb36b17c7d8db539d6e129",
+      "matches_review_base": true
+    },
+    "validation/llm_daily.py": {
+      "sha256": "425fc0720f65c81c44c014e9fb514048fe2330ad792a06ba5be56fe7c308b31e",
+      "matches_review_base": true
+    },
+    "validation/llm_daily_release.py": {
+      "sha256": "c54ea640440a98b0cb2082271468b7d3a1d143e6e135f819ac3638843f2bcf40",
+      "matches_review_base": true
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "document_id": "eedce4cb2a5488a2bc9f8c56978a7cc685c63e741cfde1aca69304b14405b630",
+  "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOOENVZHZkVU1pMEpIblNFVmlDamQ4WTcyNE4zVTliUHNGQUJKVDI0c3o4QjQ5cm9iVUtVRG5ZU0dwalUtT2J1M3N0aFBXc01nYlk5NTNvR0QwUXI5S1g0THhxQ1dNY0g2d3czVmI2TzdkNFA2anllbm5kdkFQYjBWT2IyalFnM3hKdFp0UC1lUjRaN2dac1pUWm5EVTZSQ1QzR1pmamh1MA?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "e0c046429c31c86fb7455377f66c9eb4fec0d587f026ddbedefea39136172dfa",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_B7J9iqJob05zMNvAa58QAi",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline refers to Kenyan banks (CBK = Central Bank of Kenya) facing downgrade over a Ksh10 billion capital requirement — a non-US market event with no stated link to US markets or DTCC participants. Not relevant to any catalog card.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1498,
+    "outputTokens": 419,
+    "totalTokens": 5832,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3389
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,57 @@
+{
+  "document_id": "e2c682e1cde121189e9ea158ead16f81f5cf3bda643050318cd5cb7873d3b9cc",
+  "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxORXJ4M25HZ0dlMTR5LWNVMGNUT18zNjA1UmJyTzFYRTRnSnR2aW9tNmo3NUdIaFJLb0ptMlZBMWVvTDBQRFV0R1FwMTlOZ2xZYmF2b2p5dWZrQWZ3UVNvSFNUNVFOVmhvRnl3WlRUMm9qTmVrX3pnbjJMdGNRUzNvcG5NbFM1RWpJeDV5SEtWYUtpRHB4ZXNBQlVYLW5XZVUxNmlV?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "4a533b93e87c189821961484884ca865407e3e410e2a194d266b90a7ff6dc5b8",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_3hNXzaWyCA0sZJn83J4hZf",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "Non-US event (French bank) with no stated link to US markets, DTCC participants, or US market infrastructure. XE-CYBER requires a cyberattack at a large US market participant, a DTCC vendor, or US market infrastructure; this article names only a French bank and states no US connection."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1508,
+    "outputTokens": 466,
+    "totalTokens": 6347,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3417
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

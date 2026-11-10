@@ -1,0 +1,40 @@
+{
+  "document_id": "fbacc69607319913adecf9c54973890b3ff17560e45996b0390606c39951cd87",
+  "url": "https://www.esma.europa.eu/press-news/esma-news/esma-promotes-clarity-claims-impact-and-transition",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "35fb4506a95996a55ea2d887eeacd2dd45b1d8bacfe55eb238037f731abdd3b3",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ha0SKm37YjRXiDjyxcfizh",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is about ESMA promoting clarity in ESG/sustainability claims (impact and transition). This is a European regulatory topic with no connection to any DTCC process described in the card catalog. The article text is truncated but contains no market event, member stress, infrastructure issue, or regulatory milestone relevant to DTCC operations."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4082,
+    "outputTokens": 111,
+    "totalTokens": 4193,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1837
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

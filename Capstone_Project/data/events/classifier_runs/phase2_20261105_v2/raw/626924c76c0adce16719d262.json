@@ -1,0 +1,40 @@
+{
+  "document_id": "78d3632e9094f296861f57ac878ecc65b1374503b7d7ccbd19bb4fc06999d2b2",
+  "url": "https://files.dtcc.com/download/assets/25025-26/91f6b0aeccb711f1b8d2e694c785b3e1",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "3cd3050f93e9f572faa4db275b87a6edb87a88a14d32539d85d6a54e85e2af45",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_fnXI7qXKY098EVrJo5OwZd",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification (Important Notice) for a single security (Foresight Autonomous, CUSIP 345523401). It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4156,
+    "outputTokens": 109,
+    "totalTokens": 4265,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1770
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

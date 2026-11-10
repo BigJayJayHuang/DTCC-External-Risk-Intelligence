@@ -1,0 +1,58 @@
+{
+  "document_id": "417f7824c6f9deebc7dafdc35cf2c93f3babed52a920725648297804a1620c69",
+  "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRG02RXdnOUdVdG5heW1rdll4NGtPY2gzam5SbFNoY1RZZ0pQclREUjYtNFBPX3BnQlVsRU5leHVPcjJpN0JBcWFJck8wREhyczE1NGRIa1V3ei0tQVJjcVYtN0d3SHdwSVVMMS1jMVF0Vl91eXBSeXRCTHNXWFZOTmZkaEh2eGFNRjlnbl9UWUZBazlSeHNZb1RwTnppdGZRUTZNN1huYUNtSDUxSWY4LUxjaw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "aade98b91ac281a162d3bb37972d6cdd91b769fbee0e19ea1369aa3f3cc246dc",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_0MrOu1k24KtDx3tWwkOnij",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": true,
+              "same_as_event_id": null,
+              "title": "Sudden chain reaction selloff rattles Wall Street",
+              "summary": "A sudden chain-reaction selloff rattled Wall Street, according to a Bloomberg headline. No magnitude, named firms, or mechanism details are provided.",
+              "card_ids": [
+                "ECS-NSCC-LIQ"
+              ],
+              "certainty": 2,
+              "reach": 2,
+              "reach_basis": "market_wide",
+              "named_participants": [],
+              "announced_date": "2026-11-06",
+              "effect_date": "2026-11-06",
+              "stage": null,
+              "source_tier": "major_media",
+              "outlet": "Bloomberg.com",
+              "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRG02RXdnOUdVdG5heW1rdll4NGtPY2gzam5SbFNoY1RZZ0pQclREUjYtNFBPX3BnQlVsRU5leHVPcjJpN0JBcWFJck8wREhyczE1NGRIa1V3ei0tQVJjcVYtN0d3SHdwSVVMMS1jMVF0Vl91eXBSeXRCTHNXWFZOTmZkaEh2eGFNRjlnbl9UWUZBazlSeHNZb1RwTnppdGZRUTZNN1huYUNtSDUxSWY4LUxjaw?oc=5",
+              "evidence_quotes": [
+                "Anatomy of a Selloff: Sudden Chain Reaction Rattles Wall Street"
+              ],
+              "confidence": 0.45,
+              "notes": "headline_only. The headline describes a market-wide selloff with a chain-reaction dynamic, consistent with ECS-NSCC-LIQ (sharp equity selloff). No magnitude, specific firms, or mechanism details are available. FICC-GSD-11 (hedge fund stress) is a plausible secondary angle but there is no mention of hedge funds or agent-cleared customers in the text; ECS-NSCC-LIQ is the better fit. Certainty set to 2 as the event is described as having already occurred. Confidence lowered to 0.45 due to headline-only content."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1503,
+    "outputTokens": 799,
+    "totalTokens": 5987,
+    "cacheReadInputTokens": 3685,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 5286
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

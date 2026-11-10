@@ -1,0 +1,40 @@
+{
+  "document_id": "22bfb250f155552d3bd6ce80c6ed5ea6cfde5eff885b37da1f2fc9194665ddfd",
+  "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNczVCVUNjOHE4dGNUYW0xcjRkZGJ6X1dwQV9TLUF3SVFycTFxRThNRFByclh3Q0FicW5KT2NWOU9Fcnl0WUpjOVRXYWFqT2RwdUpKOHlhWlN5QUhSSmRFY3diY0Y5WWd6MW5YV29GLWFqV0FUdzV3UkNFS282YU9ISUdhT3dodlBfbG9iLXphYmtBX1RHNWRDOUlXaWtFQzdaTGhZRm8xbUd2Y21LTEotT3U0WlE?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "b6566c4f46f56d54145b8f5aaf9354ec02ea4aefcc07dd026a6d02e57bceb99b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_hIOTbiSDwtDicE8VBCRFei",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline-only generic warning from a national CERT about AI-powered cyberattacks on banks and critical infrastructure. No specific attack, named institution, confirmed incident, or concrete event described — this is a generic advisory/warning with no concrete Step 1 event matching any card."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1501,
+    "outputTokens": 103,
+    "totalTokens": 5312,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1931
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

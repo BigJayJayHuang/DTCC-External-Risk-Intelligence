@@ -1,0 +1,40 @@
+{
+  "document_id": "04f2f46961646f73774adc4b98d293a0e64e2fa77abfe0e08b80f4c52a293641",
+  "url": "https://files.dtcc.com/download/assets/24848-26/ac814294c67311f1a99ca6e328764c48",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "0b85af7dd8a31ae5e6eb9186e31f9035f163780b13ca18a43e66a1ce69e3b565",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_QDa9HXd1lOeE9lKspPDPLU",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for a single security (Metallium Limited, CUSIP 59125U109). It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4151,
+    "outputTokens": 101,
+    "totalTokens": 4252,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1823
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

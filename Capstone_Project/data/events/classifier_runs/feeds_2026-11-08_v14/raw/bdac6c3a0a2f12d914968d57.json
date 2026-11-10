@@ -1,0 +1,40 @@
+{
+  "document_id": "77d70663bf2e3300ec52e2dbf81bbc31703781604985f886295361ee01deab38",
+  "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPZWlrbjZla096X1dkaE5ZY1QyTVRTTkF6WDF4cFRkN3I2MndfZGxXU1llRVcwWWkwaUJWaWRUR0VFZTJiM18zNlhKaGdQei1nT3RpekFlWTVBSWo1el9ZTDVfUXhsSlM4LUM3aUx4dTlESGZaUFpabDJuT1VNeUpqQkVzSEN4cGtXWjYxVFRuZFhmS1hNSUZtQ0hoVGFVeEpLMkhvb3ZXcXFiMUpJeGtYTmhrak8yaXdKWkNJ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "request_sha256": "e9315bf7eda042ee76b814e1040f8490edce6080b5a58929e36430bbe6ba6863",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_lZMXlm0GwtyLWxhssyRAKH",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Cyberattack is at a French bank with no stated link to US markets, DTCC participants, or DTCC infrastructure. The article does not identify the bank as a DTCC member or major US participant, and there is no mention of impact on US clearing or settlement. Headline-only; insufficient basis to connect to XE-CYBER."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1506,
+    "outputTokens": 120,
+    "totalTokens": 5334,
+    "cacheReadInputTokens": 3708,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2332
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

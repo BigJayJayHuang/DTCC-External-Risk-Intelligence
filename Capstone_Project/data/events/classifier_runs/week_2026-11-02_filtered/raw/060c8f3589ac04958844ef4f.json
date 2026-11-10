@@ -1,0 +1,40 @@
+{
+  "document_id": "e4cc257ee7ac4c90b08ecb5dc0a53b713447e374bb8e72fe12ee78ebb41a96c1",
+  "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOZ29VMXRlekhORHlZRHZ1dk91d2V5eVpSeXp2eFBuTlB0a0NHelpFbjhZT3Vnd3pJRXZkd09PRnVwamFKeU9FeTN4WWdvOW4zTUE3WTZMVGU4dHZBb3Rsa24wT09TOWRmRWZTYlVXcGlGZ09FZ1A0cTJlTTh1YzlqdTZ2Qm90cDlPcTZ4YjlRcTRTenQ2Mm1J?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "36f9d8bf636d8dd0c95316dfa8eba76e196f76d55a695ca811c779d8ddbde088",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_FPj0lusse7CshiDLWGPx3n",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a headline-only snippet ('Trump Blames Democrats as Stock Market Selloff Deepens') with no substantive facts about the nature, scale, or participants of the selloff. There is insufficient content to confirm a market-wide equity selloff event that would touch NSCC liquidity or any other card process. A bare headline with no supporting detail cannot meet the evidence_quotes requirement."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4296,
+    "outputTokens": 128,
+    "totalTokens": 4424,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2113
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

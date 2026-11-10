@@ -1,0 +1,40 @@
+{
+  "document_id": "f20e6e41404eb18589af99800548d61f796192b8d56c4d190bf3465bc15382c6",
+  "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE0tbzg5UDN1Tjd0M3JwX1VmUWg5Q3NkNVVtWFFMVjNSa3FheDl6cjIxTmhxdXFrVEN4b3lwckNzS3B2Z3ZGdlV4RURsZTY1M0l2NW9UenUzSVR3Z29XMk9qajFpZm8wTVBaenNIM1BQbXFHdk5BT0dCdw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.3:aab5ad825775",
+  "request_sha256": "37d79c7d239d9e8fe3e2c1410e9a2d56b118e179bdcc5c9eae24837b30c43259",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_fO8r9oOw5SO4zQZPIeQgSJ",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline reports record trading volume in a single ETF (Invesco QQQ Trust) during a tech selloff. While this hints at high volume, the headline-only text does not describe a market-wide or broad record volume event sufficient to map to ECS-NSCC-03 (record trading volume stressing NSCC CNS settlement). A single ETF's volume, even at $80B, does not on its own indicate a market-wide record volume event. No other card fits."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1442,
+    "outputTokens": 152,
+    "totalTokens": 4674,
+    "cacheReadInputTokens": 3080,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2485
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

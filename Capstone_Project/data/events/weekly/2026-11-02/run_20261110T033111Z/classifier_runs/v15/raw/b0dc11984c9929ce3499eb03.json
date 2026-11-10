@@ -1,0 +1,57 @@
+{
+  "document_id": "8c2b71ed18f227197a345db244b2444263c3ec25f4e22e265c3b36e0256da418",
+  "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22452/self-regulatory-organizations-long-term-stock-exchange-inc-notice-of-filing-and-immediate",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "5a32378fcc4d7ffd6f9ed4f9a261da1890b311b53599274730e92850dac8000b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_r8Pa6QZ40fMstlBJMIBx2S",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null,
+              "notes": "Headline-only notice of a routine LTSE rule amendment (Rule 3.291). No concrete event matching any card's Step 1 is described — no market move, no settlement cycle change, no clearing mandate milestone, no member stress, no disruption. LTSE is a small exchange and the amendment's subject matter is not stated; no link to DTCC processes can be drawn from the text alone."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1795,
+    "outputTokens": 486,
+    "totalTokens": 6654,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 4069
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

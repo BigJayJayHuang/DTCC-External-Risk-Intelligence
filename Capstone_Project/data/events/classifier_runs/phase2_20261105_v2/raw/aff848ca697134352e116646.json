@@ -1,0 +1,40 @@
+{
+  "document_id": "4405b0113d3d476a7f0b13d13a4b72921280cb18b452fd08cc7cb7cddb09cac4",
+  "url": "https://www.federalregister.gov/documents/2026/10/16/2026-21130/self-regulatory-organizations-nasdaq-ise-llc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "5cd64a7d67ac59caa7330098795f4ceb33330e1007c55d6bd9c0a50775ab6165",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_CfPQZLnC4Yow4d9qbrqJLx",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article concerns Nasdaq ISE LLC amending its market-wide speed bump and kill switch rules for options trading. This is an internal exchange rule change with no direct connection to any DTCC process described in the card catalog (no Treasury clearing, repo stress, equity selloff, member default, cyber event, settlement cycle change, etc.)."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4137,
+    "outputTokens": 113,
+    "totalTokens": 4250,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2042
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

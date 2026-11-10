@@ -1,0 +1,40 @@
+{
+  "document_id": "da625a458fb2a3422e53520bd1dde7a9905244234f76e79cee39f0df8197c3b2",
+  "url": "https://files.dtcc.com/download/assets/CMU226-26/4b9270f4ccb611f1a3fb066af7203eca",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "033f30c48dba57ffbef814c5d0a8479907f61fee98653cfec15c7ae1492be1c0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_7QJ04XJahdcA5fJ7Dhknxm",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a DTCC notice (CMU226-26) referencing 'SEVEN SEVENTEEN CR UN WARREN O HIO SH CTF' — this appears to be a routine certificate/share transfer notice for a specific credit union instrument. It does not describe any outside market, regulatory, member stress, infrastructure, or cyber event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4107,
+    "outputTokens": 124,
+    "totalTokens": 4231,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1802
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

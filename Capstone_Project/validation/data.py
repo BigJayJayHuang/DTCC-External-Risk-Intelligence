@@ -27,15 +27,27 @@ quarter_end_weekdays, block_ci, bh, spearman_rho = OLD.quarter_end_weekdays, OLD
 # ---------------------------------------------------------------- market series
 @lru_cache(None)
 def fred(series_id):
-    if series_id == 'MORTGAGE30US':
-        d = pd.read_csv(RAW / 'fred' / 'MORTGAGE30US.csv')
-        d.columns = ['observation_date', 'value']
-    else:
-        d = pd.read_csv(MARKET_DAILY)
-        d = d[d.series_id == series_id][['observation_date', 'value']]
-    d['observation_date'] = pd.to_datetime(d.observation_date)
-    s = pd.to_numeric(d.value, errors='coerce')
-    s.index = d.observation_date
+    """The refreshed export wins overlaps; mortgage's frozen file fills history only."""
+    from .refresh_scoring_inputs import today_ny
+    frames = []
+    fallback = RAW / 'fred' / 'MORTGAGE30US.csv'
+    if series_id == 'MORTGAGE30US' and fallback.exists():
+        d = pd.read_csv(fallback)
+        if len(d.columns) != 2:
+            raise ValueError('Frozen mortgage CSV schema changed')
+        d.columns = ['observation_date', 'value'];frames.append(d)
+    if MARKET_DAILY.exists():
+        d = pd.read_csv(MARKET_DAILY, usecols=['series_id', 'observation_date', 'value'])
+        frames.append(d[d.series_id == series_id][['observation_date', 'value']])
+    if not frames:return pd.Series(dtype=float, name=series_id)
+    d = pd.concat(frames, ignore_index=True)
+    d['observation_date'] = pd.to_datetime(d.observation_date, errors='coerce')
+    d['value'] = pd.to_numeric(d.value, errors='coerce')
+    # Missing new observations do not erase older valid history; future-dated
+    # source rows never enter a live signal. Backtest week filters still apply.
+    d = d[d.observation_date.notna() & d.value.notna() & np.isfinite(d.value)
+          & (d.observation_date <= pd.Timestamp(today_ny()))]
+    s = pd.Series(d.value.to_numpy(), index=d.observation_date)
     s = s[~s.index.duplicated(keep='last')].sort_index().dropna()
     s.name = series_id
     return s
@@ -82,16 +94,15 @@ def mbs_spread_abs_weekly_change():
 
 
 def cboe_consolidated_shares():
+    from .refresh_scoring_inputs import cboe_rows, aggregate_cboe, write_derived
     out = DERIVED / 'cboe_consolidated_daily.csv'
-    frames = []
-    for p in sorted((RAW / 'cboe').glob('market_history_*.csv')):
-        d = pd.read_csv(p, usecols=['Day', 'Market Participant', 'Total Shares'])
-        frames.append(d)
-    d = pd.concat(frames)
-    d['Day'] = pd.to_datetime(d.Day)
-    g = d.groupby('Day').agg(total_shares=('Total Shares', 'sum'), venues=('Market Participant', 'nunique'))
+    rows = cboe_rows(RAW / 'cboe')
+    g = pd.DataFrame(aggregate_cboe(rows))
+    g['Day'] = pd.to_datetime(g.Day)
+    g['total_shares'] = pd.to_numeric(g.total_shares)
+    g = g.set_index('Day')
     DERIVED.mkdir(parents=True, exist_ok=True)
-    g.to_csv(out)
+    write_derived(rows, out)
     return g
 
 

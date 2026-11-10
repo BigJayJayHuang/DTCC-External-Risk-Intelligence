@@ -1,0 +1,40 @@
+{
+  "document_id": "eab5a983b028c1d59addc9d9fdf5e5cef052e2f95abfefba440e5037746747fa",
+  "url": "https://files.dtcc.com/download/assets/24823-26/577aaa7cc96d11f19eadfa332a5e4d7e",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "1f950b0da181255caf41a0d8166a6882c1e183b8783d613b13f622af6ade544a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_C84dRhtO9Qdyby8PmROcGS",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification (Important Notice) for Impala Platinum Holding LTD (CUSIP 452553308) issued by JPMorgan Chase Bank, N.A. It is an administrative/operational notice with no market event, regulatory action, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4165,
+    "outputTokens": 124,
+    "totalTokens": 4289,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2004
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

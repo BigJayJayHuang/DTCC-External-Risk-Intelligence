@@ -1,0 +1,40 @@
+{
+  "document_id": "0765f367a2766953580e2e81bcbd1655a24e88764725c627ced16cfd39b85578",
+  "url": "https://www.bis.org/media-releases/20261013-basel-committee-finds-australia-japan-korea-switzerland-compliant-and-canada-united-kingdom",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "22a608f4931bbfc045d11717b2ce90c2ae77ae3e23a3adbc87a670426ebafc18",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_jTn0VuUebq9THmaruPwnws",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article reports Basel Committee compliance assessments of the leverage ratio framework for six countries (Australia, Canada, Japan, Korea, Switzerland, UK). This is a regulatory compliance review with no direct connection to any card's Step 1 trigger — no Treasury selloff, repo stress, clearing mandate milestone, member default, cyber event, or other DTCC-relevant outside event described in the card catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4182,
+    "outputTokens": 124,
+    "totalTokens": 4306,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 8394
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

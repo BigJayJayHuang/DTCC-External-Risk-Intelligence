@@ -1,0 +1,40 @@
+{
+  "document_id": "b2e11372d63e77c8ae05cee711f5d2816c1664dc581e7fd2c8858eb961ebd9ca",
+  "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQbDA4cHA0VW1QeXpLdHhZRTQ3UENaTmpvbmFET1dZTTNmX1RHSTR1X0VJZFVkRVlKV3dNeWRzZHZaN2VDSjVuaDlCV0JDQ0VKb3RVMjFOd1d6OW5LRGx2WTN3UGNBTGJ6WDBkX0dOU2d1XzZBMHU5Q3JORFZDb0gxWnhpZ0hMdnNWMmZjWmg0a1VvZlZaUTRIenVQUlh5ZE9vNG1kMnl5dkROUzRWMVBXcE1R?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.3:aab5ad825775",
+  "request_sha256": "dc00eb070ad9b83f0956d07bdd5fa15f8357a6c00cc1c9f4f1aaa3613f6cee2e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_oKyS7RvcmqygGEhvWCD6bg",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Headline-only item. While it references a sharp tech stock selloff ('worst day since 2020'), it contains no concrete details about market-wide equity stress, trading volumes, margin calls, or liquidity pressure sufficient to substantiate a card match. The headline alone is too vague to confirm a market-wide selloff event that would touch NSCC variation margin or liquidity processes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1513,
+    "outputTokens": 126,
+    "totalTokens": 4719,
+    "cacheReadInputTokens": 3080,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2546
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

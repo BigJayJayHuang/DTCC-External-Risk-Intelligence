@@ -1,0 +1,40 @@
+{
+  "document_id": "98504d48ed1dccb338e11b78761ca2a30b9f6cff8066d93fd72831b999777b8f",
+  "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBvcTV6TVpka1N1Y2tteHVVRmxZZFhjSTFmLU00RmVwN29iS1g2V1pHVzRqdWtNQkFHWmFOMFc2OThvYnNiM0JhU3JycmctWlkteUlSTTFWUkV5aExzNzg4TU4tRzRMdnhwN1AzMDVsOVFqZw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.3:aab5ad825775",
+  "request_sha256": "9a7ace7499a532294328359914089c28778c63a9fb1edef81e08815c9d9800c3",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_RzQiZvA7JYXLShrPwqszqq",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Cyberattack targets French blood bank websites, not a financial market participant, exchange, clearing member, or vendor relevant to DTCC processes. No card in the catalog covers attacks on healthcare infrastructure."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1408,
+    "outputTokens": 85,
+    "totalTokens": 4573,
+    "cacheReadInputTokens": 3080,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1762
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

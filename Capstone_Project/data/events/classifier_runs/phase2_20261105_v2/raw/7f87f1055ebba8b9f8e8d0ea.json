@@ -1,0 +1,40 @@
+{
+  "document_id": "e326403b67ac06d6e7c0c31515b4dbba5618e41e18c5c99751b53e2373454388",
+  "url": "https://files.dtcc.com/download/assets/25176-26/4715e13cccc011f18cf6fe268f1c5c9a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "cfa97698b04c23fa407fbda6eddc3fd613c27c303007b1981ea38edcf3c48afa",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_WktOpIKu8h1N0a85x4DHSv",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for Quoin Pharmaceuticals, Ltd. (CUSIP 74907L409). It is an administrative/operational notice with no risk angle — no market event, regulatory action, member stress, or infrastructure issue that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4157,
+    "outputTokens": 107,
+    "totalTokens": 4264,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1679
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

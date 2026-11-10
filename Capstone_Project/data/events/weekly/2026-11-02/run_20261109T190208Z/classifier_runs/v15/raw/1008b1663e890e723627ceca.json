@@ -1,0 +1,55 @@
+{
+  "document_id": "ab988ff330e35c353513995bb97e773556658ebcd6d954cc19d727cd49725a93",
+  "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQcHVWalNhX3pWVE9zaDYxT0x1RlB5dDlQREhTZ1BTdVMxR3dxb2dCSnpwMmFIVHFsNUxCeUhiNHBXWkUxbURWb2RwU3dfTkdBNG80eFZxakdNUVQ5NS16V2p1VnVjcTZSazVqbTRxaVRjMEZOQXdYM2lqMm9tdnNCRU1VSkNzcVg3cWlsd3hIXzNHRFRxbk1yNEp5dTRldHc4Wkc1TWVRZlpidWozN0JoMTFGc3FWRk92MGZVOEpRelMzamFnc1BWTEtQNnRGU0VHSXR3RUdQZmbSAd4BQVVfeXFMTnBXMldUTjloTzRoSElGeE81MWN2NG1ib2N0QzRPQzY4ckNvQUtYU0NxYlRoazh0UzdrSGF4YUgzS21FWF84eGdlenM0NEFpNGZYaHpSNWFSeEVITGk3eHc4Sy1pcGpBRk83YXNiMmtYalc1OXJ0MkUyV2I4M0lBTi1jUzNLanhMYXBGQnhwakF2MHM4SGRCaXBnYmdTdjV1OWVCbmZnQ0hRQmlNUWZwMWJxclpRcEMtQlJnT3FuOHFNeDcwcmptYnhhenF4UE9WSnNjWmJCYTFjR01tNmxB?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "bce10336022f6d89f76ec91851e717810269ea8458fcb360e614f6e909ed44bf",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_yMDo5fVi74iGepI9xUso5w",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline is a stock valuation opinion piece about CME Group equity being overvalued. No concrete event matching any card's Step 1 (the record trading volume mention is incidental context in a valuation article about a non-DTCC exchange operator's stock price). No market-wide volume event, no NSCC process impact described.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1820,
+    "outputTokens": 435,
+    "totalTokens": 6170,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3724
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

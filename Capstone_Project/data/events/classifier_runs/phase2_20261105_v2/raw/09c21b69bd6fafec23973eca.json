@@ -1,0 +1,40 @@
+{
+  "document_id": "2264af3c29a9e9a49c57cad2ba29c19f2f277de35406a2e5d596b967ff70c28c",
+  "url": "https://files.dtcc.com/download/assets/24822-26/400865bec96d11f19cf52613f04d7ff8",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "4e6b706b7fb51755964748fc7159079a99cb376e756fd353e4efe9bdfa64bfd3",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_NR25KE4nVFFeh3XX7DalFo",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Depositary Fees Notification (Important Notice) for Sanofi (CUSIP 80105N105) issued by JPMorgan Chase Bank, N.A. It is an administrative/operational notice with no market event, regulatory action, member stress, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4159,
+    "outputTokens": 119,
+    "totalTokens": 4278,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1925
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

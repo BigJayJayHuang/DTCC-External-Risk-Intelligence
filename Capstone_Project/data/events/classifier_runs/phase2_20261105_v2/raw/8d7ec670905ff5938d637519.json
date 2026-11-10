@@ -1,0 +1,40 @@
+{
+  "document_id": "6f613c7119f763508607d423f713b84188534c16e69dfd8928bb78f6f2ca756d",
+  "url": "https://www.federalregister.gov/documents/2026/10/23/2026-21692/notice-of-proposals-to-engage-in-or-to-acquire-companies-engaged-in-permissible-nonbanking",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "35a3963631f4ff5c20c63f0fbb81bca48c5f1bc50804c388b62641914840a600",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ejs6Ffl22ZesrNuQbbGE1V",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a generic Federal Register notice about bank holding company proposals to engage in or acquire nonbanking activities. The headline-only content provides no specific event, participant, market stress, regulatory action, or infrastructure issue that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4109,
+    "outputTokens": 96,
+    "totalTokens": 4205,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1742
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

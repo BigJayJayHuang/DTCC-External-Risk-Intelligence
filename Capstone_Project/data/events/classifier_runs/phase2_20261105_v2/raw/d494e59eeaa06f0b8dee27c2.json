@@ -1,0 +1,40 @@
+{
+  "document_id": "711aa35cd0c454d49684938231f2c863aa1aeee40d10c223e763e8963335e1dd",
+  "url": "https://files.dtcc.com/download/assets/25163-26/a91cb910d2d711f1b2b30a62007606a0",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "a6ab109c8fd4db4ba3c8f19809f86e14e642780871dd0f50f80c1e32ea0fc727",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Mg2mDmh0RNLiOr4XxVr1ma",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC Important Notice about a tax relief corporate action for a Japanese equity (PARK24 CO LTD, CUSIP 701491102). It is a routine DTC corporate action/tax relief notice with no risk angle and does not describe any outside market, regulatory, member, or infrastructure event matching any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4193,
+    "outputTokens": 117,
+    "totalTokens": 4310,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1992
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

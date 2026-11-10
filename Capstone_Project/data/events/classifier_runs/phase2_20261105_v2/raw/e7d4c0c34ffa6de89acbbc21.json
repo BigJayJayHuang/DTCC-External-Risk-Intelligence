@@ -1,0 +1,40 @@
+{
+  "document_id": "40ab437f0dc7c202b022ea9e27cf4ed201f87d93913ae55acf3de127329df80d",
+  "url": "https://www.fca.org.uk/news/press-releases/brits-nearly-twice-likely-spot-pressure-tactics-horror-films-investment-red-flags",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "95a06a3e1c70789a47d9746f8f3ecbb6de9cfbac51147b7d2b180886b5280e08",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_VogMOtWdAkhilA73fvsjGz",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is an FCA consumer awareness campaign about investment scam pressure tactics. It describes no market event, regulatory action, member stress, or infrastructure issue that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4725,
+    "outputTokens": 82,
+    "totalTokens": 4807,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1455
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

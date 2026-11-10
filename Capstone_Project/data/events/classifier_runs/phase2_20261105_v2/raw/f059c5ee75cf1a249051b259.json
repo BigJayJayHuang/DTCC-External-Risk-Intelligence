@@ -1,0 +1,40 @@
+{
+  "document_id": "15bf7ba448eb6621864d7c592919438526c2d87ae7ff68d110fedfb42822048b",
+  "url": "https://www.fca.org.uk/news/speeches/reshaping-regulation-deliberately",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "10de8a5bea0274897868a0e6fa1be1860b4a37f746092570369c70a8dc66861f",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_DlxJC7nlHSWONKIG1IDRA4",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is a speech by the FCA's deputy chief executive about UK retail investment regulation reform (advice/guidance rules, Consumer Duty, targeted support). It describes no outside market event, member stress, infrastructure disruption, or regulatory change that maps to any card in the catalog. It is a UK regulator opinion/policy speech with no risk angle relevant to DTCC processes."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4343,
+    "outputTokens": 121,
+    "totalTokens": 4464,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2237
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

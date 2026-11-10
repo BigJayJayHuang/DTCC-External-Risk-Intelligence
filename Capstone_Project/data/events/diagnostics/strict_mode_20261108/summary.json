@@ -1,0 +1,117 @@
+{
+  "run_utc": "2026-11-08T00:41:54+00:00",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+  "budget_usd": "0.10",
+  "estimated_cost_usd": "0.05528622",
+  "calls": [
+    {
+      "call": 1,
+      "strict": true,
+      "input": "v1.4 worked example 1",
+      "document_id": "diagnostic-example-1",
+      "content_scope": "headline_only",
+      "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+      "stopReason": "tool_use",
+      "usage": {
+        "inputTokens": 1185,
+        "outputTokens": 48,
+        "totalTokens": 4941,
+        "cacheReadInputTokens": 0,
+        "cacheWriteInputTokens": 3708,
+        "cacheDetails": [
+          {
+            "ttl": "5m",
+            "inputTokens": 3708
+          }
+        ]
+      },
+      "estimated_cost_usd": "0.0199980",
+      "attempts": 1,
+      "response_mode": "tool",
+      "fence_fallback": false,
+      "is_relevant": false,
+      "card_ids": null,
+      "schema_valid_in_code": true,
+      "schema_errors": []
+    },
+    {
+      "call": 2,
+      "strict": true,
+      "input": "golden: Tech stocks log worst day since 2020",
+      "document_id": "b2e11372d63e77c8ae05cee711f5d2816c1664dc581e7fd2c8858eb961ebd9ca",
+      "content_scope": "headline_snippet",
+      "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+      "stopReason": "tool_use",
+      "usage": {
+        "inputTokens": 1513,
+        "outputTokens": 150,
+        "totalTokens": 5371,
+        "cacheReadInputTokens": 3708,
+        "cacheWriteInputTokens": 0
+      },
+      "estimated_cost_usd": "0.00869154",
+      "attempts": 1,
+      "response_mode": "tool",
+      "fence_fallback": false,
+      "is_relevant": false,
+      "card_ids": null,
+      "schema_valid_in_code": true,
+      "schema_errors": []
+    },
+    {
+      "call": 3,
+      "strict": false,
+      "input": "v1.4 worked example 1",
+      "document_id": "diagnostic-example-1",
+      "content_scope": "headline_only",
+      "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+      "stopReason": "tool_use",
+      "usage": {
+        "inputTokens": 1185,
+        "outputTokens": 357,
+        "totalTokens": 5250,
+        "cacheReadInputTokens": 3708,
+        "cacheWriteInputTokens": 0
+      },
+      "estimated_cost_usd": "0.01102464",
+      "attempts": 1,
+      "response_mode": "tool",
+      "fence_fallback": false,
+      "is_relevant": true,
+      "card_ids": [
+        "ECS-NSCC-LIQ",
+        "XE-MEMBER"
+      ],
+      "schema_valid_in_code": true,
+      "schema_errors": []
+    },
+    {
+      "call": 4,
+      "strict": false,
+      "input": "golden: Tech stocks log worst day since 2020",
+      "document_id": "b2e11372d63e77c8ae05cee711f5d2816c1664dc581e7fd2c8858eb961ebd9ca",
+      "content_scope": "headline_snippet",
+      "prompt_version": "classifier-prompt-v1.4:83ad6672fcbc",
+      "stopReason": "tool_use",
+      "usage": {
+        "inputTokens": 1513,
+        "outputTokens": 567,
+        "totalTokens": 5788,
+        "cacheReadInputTokens": 3708,
+        "cacheWriteInputTokens": 0
+      },
+      "estimated_cost_usd": "0.01557204",
+      "attempts": 1,
+      "response_mode": "tool",
+      "fence_fallback": false,
+      "is_relevant": true,
+      "card_ids": [
+        "ECS-NSCC-LIQ"
+      ],
+      "schema_valid_in_code": true,
+      "schema_errors": []
+    }
+  ],
+  "event_register_unchanged": true
+}

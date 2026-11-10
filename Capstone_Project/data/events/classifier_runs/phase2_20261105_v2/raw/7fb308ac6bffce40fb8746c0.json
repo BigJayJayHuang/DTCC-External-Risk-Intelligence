@@ -1,0 +1,40 @@
+{
+  "document_id": "3a400e08adf02fd4a2e32081ed45e3b3856eb5f146e8ec595f2c79add2d349d1",
+  "url": "https://www.federalregister.gov/documents/2026/10/26/2026-21743/self-regulatory-organizations-nyse-texas-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "7601ca9514960f765d22a2a738ec3568d56b39469630c7eaf49d9b2232291d3c",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_22Fc68OQQ0IpEXZaR6FFfX",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes NYSE Texas amending its own trading halt rules (Rules 7.18, 7.35(a)(8)(A), and 7.35(f)). This is an internal exchange rule change about the mechanics of trading halts on that exchange, not an actual trading halt or market disruption event. No card in the catalog covers an exchange amending its halt procedures as a prospective rule change; XE-DISRUPT requires an actual exchange halt or declared emergency, not a rule amendment about how halts are administered."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4177,
+    "outputTokens": 156,
+    "totalTokens": 4333,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2517
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

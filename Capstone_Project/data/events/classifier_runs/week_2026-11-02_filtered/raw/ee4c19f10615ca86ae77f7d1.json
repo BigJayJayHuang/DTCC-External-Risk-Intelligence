@@ -1,0 +1,40 @@
+{
+  "document_id": "d745860cdddc6a5ce18f5aaecd3ef6f3f1c395c6a84c130fedbfe4e412bbe15e",
+  "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQSndhMllGRXdPQnBnQ0FrM3MwV0VLc2l2VUNyMHl1aC1oWXMyMVh1QThVaUM1ajliWDZVOFRDZGRFby1WZWtTQ3BKaEJkZDJheHFMbDRzUzN4TElwUmFlME1MOUhqVjhhNlZFWllHU3JZRmR2Y0ZoNFhwYmhKZTZsWm01MXMxb25CV3QzSE41Y05aNWo3ZWlsdXU4QmhtSEpFMW9kUjBibw?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "06c9f5936b235a1bd21413ce5e7e71006f4362ef8ef4ad4a574a073f93b01978",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_QFwxZoJKJaTj2ankY9PBFF",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article describes a cyberattack on Moldova's government, with Moldovan banks asked to monitor transactions. This is a foreign government/domestic banking event with no connection to DTCC members, US markets, or any DTCC-relevant infrastructure. The XE-CYBER card requires a cyberattack at a large DTCC participant or vendor; Moldovan banks are not DTCC participants."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4317,
+    "outputTokens": 130,
+    "totalTokens": 4447,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2105
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

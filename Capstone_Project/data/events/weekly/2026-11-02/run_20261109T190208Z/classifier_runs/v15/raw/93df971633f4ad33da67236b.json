@@ -1,0 +1,55 @@
+{
+  "document_id": "5bcd9d86566f3783b24d28ef422ec8999d52fc7ef81e1738079f1cc7572431f9",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBqVXNRZUlkcUNvcWpSYVdCMU1sQ3NWRXpKLWwwTWpIYmpkZXhqN0cxUHp6aFEzNHdZVWlSRmlYUVJRclEtZzBJSl8ybWphY25IZGtpZ2lsNEZlWXNKbmEzNVQ0Sk1yNDA4b3padA?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "7c025063b298a482c8b546844fc89fe07add486f7a1480f61ae41ebd0174888e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_oRVAEpwsJ2SQwlmLfXiQYf",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline-only item from a Korean outlet. The text is a generic cautionary observation about settlement cycle preparation timelines in Europe and Hong Kong — no concrete new event, no regulatory action, no named participant stress, and no stated link to US markets or DTCC processes. This is an opinion/commentary piece with no new event matching any card's Step 1.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1432,
+    "outputTokens": 438,
+    "totalTokens": 5785,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3894
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

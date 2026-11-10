@@ -1,0 +1,55 @@
+{
+  "document_id": "79c9224eaa178aee53ab3cb9f6b642c9f233c5642af19f486f34d629a4cb08d3",
+  "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBIcEpQWXlNZDNkdzk3SmRFYUJqdHNNUXNoWWJaODRGR1VXZDhYbnp6WXc2OUUzRlAtbWhsd2doUlo5Rjd0N2JwTFJxR1lpM2pUbld5ZTQ1OVhBSjZ2M0xfV0x4Sl9nWU5P?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.5:45e13410630e",
+  "request_sha256": "6dae55614e6dbaa1f3a1d47cd07f0f425d9e8113020d54f630a16b4a919251d7",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_w4QrywWTx8oVgK8mzcdWrT",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Headline-only item describing the holdings list and exposure of the Roundhill Meme Stock ETF. This is a product/data listing, not a concrete event matching any card's Step 1 (no market move, no record volume, no stress event). Irrelevant.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1422,
+    "outputTokens": 423,
+    "totalTokens": 5760,
+    "cacheReadInputTokens": 3915,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 4515
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

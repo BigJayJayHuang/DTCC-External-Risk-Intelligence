@@ -1,0 +1,40 @@
+{
+  "document_id": "d7e1d7af384bd68bdaf597c3f61a0cd02802d033fcb68cf713a184e7913d36a6",
+  "url": "https://files.dtcc.com/download/assets/25164-26/b1891a08d79611f1a32676277c76473d",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "54e1bf97669507a8e9b17c313adf159999f021719032d242d7793f813820900d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_A8jDvZN4UHDgYHyhAnt2YT",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC Important Notice about a tax relief / corporate action (dividend) for CRH PLC (CUSIP G25508105) with record and payable dates. It describes a standard DTC corporate actions web cut-off and instruction deadline, not an outside market, regulatory, member stress, or infrastructure event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4225,
+    "outputTokens": 121,
+    "totalTokens": 4346,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2091
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,57 @@
+{
+  "document_id": "ebc5712a7fa0edbc5b78ff9781e6e377bb84378f2553a36c8a49163c3358038b",
+  "url": "https://www.federalregister.gov/documents/2026/11/04/2026-22454/self-regulatory-organizations-nasdaq-phlx-llc-notice-of-filing-and-immediate-effectiveness-of-a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "9cc76a6ed2cdb3ccbfa350a298313899045ab45fdcc38e1d3293895739601f21",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_njm80gxzCPYajIdwfo37yx",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Administrative rule change by Nasdaq PHLX to delete obsolete references to the CORE FIX Order Entry Protocol in transaction fees. This is a routine housekeeping filing with no risk event, no market disruption, no operational outage, and no link to any DTCC process described in the card catalog.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1821,
+    "outputTokens": 465,
+    "totalTokens": 6659,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 3337
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "f8414fe098efbf6850548570c21b4a20deaade1af50ec18e5728f5ac3b9a1843",
+  "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNdHJEdXJ6QTBBMDdBa2xGcmF2VXhTMVR2Z3NUa0M5Tmk2WlFtRTdfUjBmTFVWRWcybjBrLU53RVBxMHdHSmMzVjVHaHZUOC0wZlFGZnJ0aS1UeW5JQ3R2TjlQTF9YWWk1MVlQZlVwekEyb1R5NEtmLTdkM2Z4WHFYMG81ZjRMMnNzanRTbFVNbVRtVnNfRVU4aUdCTEdQQQ?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "460e74a9b4eddbb566007942ae39acd4b372a9723d099982b6ae139e642b0908",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_T5iu6sJU5QbbQow7Wt38b2",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "The article is a headline snippet reporting that real-estate-related stocks (Rocket Companies, Compass, Zillow) rose as Treasury yields retreated. This is a stock price movement story with no new market event that maps to any card's Step 1 trigger. A yield retreat (yields falling) is the opposite of the sharp yield swings/selloff described in FICC-GSD-01, and the article contains no substantive information about Treasury market stress, repo rates, clearing mandates, or any other card trigger."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4335,
+    "outputTokens": 156,
+    "totalTokens": 4491,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2542
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

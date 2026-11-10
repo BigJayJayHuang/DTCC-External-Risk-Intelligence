@@ -1,0 +1,40 @@
+{
+  "document_id": "066fb8d24af28b487fe39e265232db72463528b0a798667d04bbd57dc4ced671",
+  "url": "https://files.dtcc.com/download/assets/25183-26/89857254ccc411f1b8d2e694c785b3e1",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "0e2625be1bd2520c4614ffddd43e760dd53253cfa9771e2590bf5f2260b2f8b5",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_lDL1fJ4aG8DCNAgHn0MMJq",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a routine DTC depositary fees notification for a single security (The Trendlines, CUSIP 89487L108). It is an administrative/operational notice with no market, regulatory, member stress, or infrastructure risk angle that matches any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4149,
+    "outputTokens": 101,
+    "totalTokens": 4250,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1694
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

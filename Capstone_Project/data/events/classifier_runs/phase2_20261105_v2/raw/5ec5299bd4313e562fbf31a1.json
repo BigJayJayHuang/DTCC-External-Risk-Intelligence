@@ -1,0 +1,40 @@
+{
+  "document_id": "d47465a8e68c43e54115d29dfc43b14881f6ff04fcf690a7df28d6d286bf9a56",
+  "url": "https://www.federalregister.gov/documents/2026/10/26/2026-21736/self-regulatory-organizations-cboe-edga-exchange-inc-notice-of-filing-and-immediate-effectiveness-of",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "e7b173b79e3295cb796ba79a8607b79f7e1b883d4a5740a14217d359911d66a0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_CcDJqIuRhUEcErf1dND1oW",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article describes a Cboe EDGA Exchange rule change amending information circular requirements (Rule 14.1). This is an internal exchange administrative/procedural rule change with no market, member stress, cyber, or infrastructure risk angle that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4153,
+    "outputTokens": 100,
+    "totalTokens": 4253,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1723
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

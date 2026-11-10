@@ -1,0 +1,40 @@
+{
+  "document_id": "109997b2335db186173c0578d416d79e7b47612dfd25f3c07c8727f9fa8b9064",
+  "url": "https://files.dtcc.com/download/assets/GOV2279-26/7fc441ccd45e11f1a4a62e29ee87f978",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "12e992944792627dfd9c93318bac9270d3123be6b027ecd07b444c01f4cd2ef0",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_SERNcdKd4p1KrWWB4p0SRR",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal product/reporting announcement — the release of a new Funds-Only Settlement transaction-level report. It describes a new operational report, not an outside market, regulatory, member, or infrastructure event that maps to any card in the catalog."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4116,
+    "outputTokens": 98,
+    "totalTokens": 4214,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1632
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

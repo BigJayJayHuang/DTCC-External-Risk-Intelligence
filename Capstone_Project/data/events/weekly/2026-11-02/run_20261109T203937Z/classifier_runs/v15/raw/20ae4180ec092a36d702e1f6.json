@@ -1,0 +1,57 @@
+{
+  "document_id": "e9babefa9cfd4c04ae935d61397f46ca3f9e9e5f4f0588d567b7e83c4f17db14",
+  "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPRjNsaW1BVU5WMkMtcXh0Z2tlbmxfcDRDU2IyNkwwOEhnVWRDcGpQYWUycG5nUnRsVUtBdWpfUTZtS1E3cjE0WVppUHlkbWZsQ3BwTVBGOVBZUjI3VXRvamMzU0NMNFdmTmFpME5tem5QRlkxYjFIS1ZQT3FxTXBxWVp4RHB5bk9HRy1YeGROS04?oc=5",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "classifier-prompt-v1.6:0ed6cdbf0b01",
+  "request_sha256": "4d1bb7b455df9b16d223854e0c89e5828526623cdb59b92e8ad34b12f7c01a26",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Y7SyOnLK0mpw4b6c2YQ7d6",
+            "name": "submit_event_classification",
+            "input": {
+              "is_relevant": false,
+              "notes": "Cyberattack at a blood bank in Saint-Denis, France. Non-US healthcare institution with no stated link to US markets or DTCC participants. Does not match any catalog card.",
+              "same_as_event_id": null,
+              "title": null,
+              "summary": null,
+              "card_ids": null,
+              "certainty": null,
+              "reach": null,
+              "reach_basis": null,
+              "named_participants": null,
+              "announced_date": null,
+              "effect_date": null,
+              "stage": null,
+              "source_tier": null,
+              "outlet": null,
+              "url": null,
+              "evidence_quotes": null,
+              "confidence": null,
+              "event_type": null,
+              "geography": null,
+              "new_information": null
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1476,
+    "outputTokens": 439,
+    "totalTokens": 6288,
+    "cacheReadInputTokens": 4373,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2870
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "cc017c539b4fe36cd05f220b5217c47f37a9fac6eb730f4db808cb6c6171e62d",
+  "url": "https://www.fca.org.uk/news/blogs/act-now-be-resilient-quantum-future",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "4cd7e9ac2ca6ca96bc9bacd8dec85ca44ee13e930cb39f1c7afad5dd36fa456e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_X4fdiUDbpKgCmFr7u25UXs",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "Article is an FCA blog post about post-quantum cryptography (PQC) migration guidance for UK financial firms. While it touches on cyber resilience, it describes a long-horizon regulatory guidance/preparation exercise (milestones in 2028, 2031, 2035), not a concrete cyberattack, major outage, or participant system disruption event that maps to XE-CYBER or any other card in the catalog. No DTCC process is directly touched by this forward-looking PQC advisory."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4771,
+    "outputTokens": 156,
+    "totalTokens": 4927,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 2513
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}

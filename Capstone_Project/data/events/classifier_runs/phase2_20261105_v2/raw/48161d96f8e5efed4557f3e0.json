@@ -1,0 +1,40 @@
+{
+  "document_id": "9126eb17cf14b3fdf3d0d78b1f59a70d60f8e050d4fea8be72117865435a9711",
+  "url": "https://files.dtcc.com/download/assets/GOV2246-26/a16f9c70c3f811f196a69a06627ff10a",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "prompt_version": "event-rubric-v1.2:5659cdf71601",
+  "request_sha256": "1ca56c527f42e316ba5ba67362c202468cbb5e2318aca4999115c2da52da5083",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_B66mcCrCeksdzHmlW9HQan",
+            "name": "submit_event_classification",
+            "input": {
+              "classification": {
+                "is_relevant": false,
+                "notes": "This is a DTCC internal notice announcing a new participant (High Hill Securities, LLC) joining the GSD netting system. It is an administrative membership notice with no risk angle — no market event, regulatory change, member stress, or infrastructure disruption described. No card's Step 1 trigger is met."
+              }
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 4140,
+    "outputTokens": 109,
+    "totalTokens": 4249,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "metrics": {
+    "latencyMs": 1924
+  },
+  "attempts": 1,
+  "sdk_retry_attempts": 0
+}
