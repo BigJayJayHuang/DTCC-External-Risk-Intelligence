@@ -1,0 +1,48 @@
+{
+  "card_id": "FICC-MBSD-01",
+  "request_sha256": "f28e873a37365567e260c8b92c0638c1ddc4ca260d345bd97ed22676f45932cd",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_fWXJWkPE8n3gPlCjAXWDU0",
+            "name": "submit_narrative",
+            "input": {
+              "so_what": "The absolute weekly change in MBS spread sat at 8.0 bp, the 53rd percentile of 460 prior weeks, a moderate shock to MBSD margin and variation margin; V is 1 (DTCC PQD), keeping overall severity low.",
+              "so_now_what": "Watch the weekly |Δ(MORTGAGE30US − DGS10)| reading for movement above recent percentiles, and monitor the next DTCC PQD release (last reflected 2026Q2) for any shift in MBSD stress-loss-to-IM.",
+              "facts_used": [
+                "signal.description",
+                "signal.value",
+                "signal.percentile",
+                "signal.prior_weeks",
+                "transmission_chain.dtcc_process",
+                "V",
+                "V_tier",
+                "V_driver",
+                "V_quarter",
+                "severity",
+                "chain_confidence"
+              ],
+              "caveats": [
+                "Chain confidence is Medium, so the link from MBS spread moves to MBSD margin impact carries some uncertainty.",
+                "No related news or driving event was supplied for this card."
+              ]
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 801,
+    "outputTokens": 308,
+    "totalTokens": 2422,
+    "cacheReadInputTokens": 1313,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.00815859"
+}

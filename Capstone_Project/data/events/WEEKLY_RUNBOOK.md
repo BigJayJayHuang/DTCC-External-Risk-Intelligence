@@ -85,11 +85,31 @@ Until that row exists, scoring keeps the event flagged for a human check. A sign
 
 ```bash
 python -m validation.scoring_v1_3 score --week <Monday>
-python3 ../docs/data/export_risk_output.py --week <Monday> ...
 ```
 
 - **Scoring** uses market indicators plus register events.
 - **Unreviewed AI events** (`llm-auto`) never put a card on the main page by themselves.
 - **Context news** appears in each card's `related_news`.
+
+## 6. Draft and review the So what / So now what text
+
+```bash
+python -m validation.narratives --week <Monday> --cap 0.50 --dry-run   # inputs and worst-case cost, no model call
+python -m validation.narratives --week <Monday> --cap 0.50
+```
+
+- **What it writes.** One model call per scored card, with prompt `validation/narrative_prompt_v1.md`. The two rows of a cross-entity card share one call. Cards with any other status get fixed, non-AI template text.
+- **Checks.** Every number must come from the card's input; word limits; no banned phrases ("must", "should raise", "recommend that DTCC", …); a public-proxy V, Low chain confidence and a shared signal must be mentioned. The result is in `check_flags`.
+- **Review.** Open `data/narratives/review_narratives_<Monday>.csv`. For each AI row, fill `decision` (`approve`, `edit` or `reject`) and `reviewer`. For `edit`, fill `corrected_so_what` and/or `corrected_so_now_what`. A row with `check_flags` needs an edit before it can be published.
+- **Display only.** This step never changes S, V, severity, status or ranking.
+- **Prompt v2 (trial).** `--prompt v2 --compare-with data/narratives/review_narratives_<Monday>.csv` drafts with prompt v2 and writes `comparison_narratives_v2_<Monday>.csv`: the reviewed text next to each v2 draft. It never writes the review sheet. v2 adds every field that sets S, plain signal names, the latest PQD quarter and the meaning of V. Its style checks flag series codes, a latest quarter called "next", firm-specific wording for market-wide signals, and a missing V meaning.
+
+## 7. Export the dashboard
+
+```bash
+python3 ../docs/data/export_risk_output.py --week <Monday> ...
+```
+
+The export publishes approved narratives only, after re-running the checks: approve, or edit using the corrected text. They are labelled "AI-written, reviewed by analyst". Rows without a decision, rejected rows, and rows that fail the checks show "Analysis pending review". Template rows show their fixed text, without an AI label.
 
 Check the export with `python3 ../docs/data/validate_output.py ../docs/data/risk_output.json` before publishing.

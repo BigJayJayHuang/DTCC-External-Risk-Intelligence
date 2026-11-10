@@ -5045,12 +5045,20 @@
           "url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
         }
       ],
-      "ai_generated_fields": [],
-      "so_what": null,
-      "so_now_what": null,
-      "analysis_status": "pending_llm",
+      "ai_generated_fields": [
+        "so_what",
+        "so_now_what"
+      ],
+      "so_what": "The daily move in the 10-year Treasury yield sits at the 42nd percentile of 461 prior weeks, a moderate shock for GSD margin requirements. V is 1 (PQD): GSD's stress-loss-to-margin ratio is low versus its own history.",
+      "so_now_what": "Watch for sustained larger daily moves in the 10-year yield, and check the next quarterly PQD release for any change in GSD's stress-loss-to-margin ratio.",
+      "analysis_status": "ai_reviewed",
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "narrative_review_label": "AI-written, reviewed by analyst",
+      "narrative_reviewer": "Wenqi Cai",
+      "narrative_decision": "edit",
+      "narrative_prompt_version": "narrative-prompt-v1:1c4d886006a8",
+      "narrative_model": "us.anthropic.claude-sonnet-4-6",
       "shock_method": "Market indicator"
     },
     {
@@ -5252,12 +5260,20 @@
           "url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
         }
       ],
-      "ai_generated_fields": [],
-      "so_what": null,
-      "so_now_what": null,
-      "analysis_status": "pending_llm",
+      "ai_generated_fields": [
+        "so_what",
+        "so_now_what"
+      ],
+      "so_what": "The SOFR−EFFR spread (quarter-end adjusted) reached 8.0 bp, the 90th percentile of 422 prior weeks, pointing to repo funding pressure on GSD settlement liquidity. V is 4 (PQD): GSD's liquidity ratio is high versus its own history.",
+      "so_now_what": "The spread eased to 0.0 bp by Nov 6, 2026, so check whether the pressure persists beyond early November. This signal also drives ECS-NSCC-LIQ; watch the next quarterly PQD liquidity release.",
+      "analysis_status": "ai_reviewed",
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "narrative_review_label": "AI-written, reviewed by analyst",
+      "narrative_reviewer": "Wenqi Cai",
+      "narrative_decision": "edit",
+      "narrative_prompt_version": "narrative-prompt-v1:1c4d886006a8",
+      "narrative_model": "us.anthropic.claude-sonnet-4-6",
       "shock_method": "Market indicator"
     },
     {
@@ -5488,12 +5504,20 @@
           "url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
         }
       ],
-      "ai_generated_fields": [],
-      "so_what": null,
-      "so_now_what": null,
-      "analysis_status": "pending_llm",
+      "ai_generated_fields": [
+        "so_what",
+        "so_now_what"
+      ],
+      "so_what": "The SEC compliance date for clearing eligible cash Treasury transactions is Dec 31, 2026 (S 4, from a reviewed register event), and V is 3 (PQD), keeping GSD onboarding and Sponsored volume in focus. Chain confidence is Low.",
+      "so_now_what": "Watch progress toward the Dec 31, 2026 deadline, including this week's new FICC membership and onboarding notices, and the next PQD top-five client share for GSD.",
+      "analysis_status": "ai_reviewed",
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "narrative_review_label": "AI-written, reviewed by analyst",
+      "narrative_reviewer": "Wenqi Cai",
+      "narrative_decision": "edit",
+      "narrative_prompt_version": "narrative-prompt-v1:1c4d886006a8",
+      "narrative_model": "us.anthropic.claude-sonnet-4-6",
       "shock_method": "Event rubric (hand-entered register)",
       "review_status": "Event EV0006 signed off by Wenqi Cai 2026-11-05T04:45Z"
     },
@@ -5621,12 +5645,20 @@
           "url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
         }
       ],
-      "ai_generated_fields": [],
-      "so_what": null,
-      "so_now_what": null,
-      "analysis_status": "pending_llm",
+      "ai_generated_fields": [
+        "so_what",
+        "so_now_what"
+      ],
+      "so_what": "The weekly change in the mortgage-rate-to-Treasury spread was 8.0 bp, the 53rd percentile of 460 prior weeks, a moderate shock for MBSD margin. V is 1 (PQD), so severity stays low.",
+      "so_now_what": "Watch the weekly mortgage-rate-to-Treasury spread for larger moves, and check the next quarterly PQD release for any change in MBSD's stress-loss-to-margin ratio.",
+      "analysis_status": "ai_reviewed",
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "narrative_review_label": "AI-written, reviewed by analyst",
+      "narrative_reviewer": "Wenqi Cai",
+      "narrative_decision": "edit",
+      "narrative_prompt_version": "narrative-prompt-v1:1c4d886006a8",
+      "narrative_model": "us.anthropic.claude-sonnet-4-6",
       "shock_method": "Market indicator"
     },
     {
@@ -5933,12 +5965,20 @@
           "url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
         }
       ],
-      "ai_generated_fields": [],
-      "so_what": null,
-      "so_now_what": null,
-      "analysis_status": "pending_llm",
+      "ai_generated_fields": [
+        "so_what",
+        "so_now_what"
+      ],
+      "so_what": "The VIX jumped to 1.54 times its 20-day average, the 97th percentile of 457 prior weeks, as headlines reported the worst tech-stock day since 2020. This raises NSCC margin and liquidity needs; V is 3 (PQD).",
+      "so_now_what": "S 5 is also set by the SOFR−EFFR repo signal shared with FICC-GSD-02. Watch whether the VIX ratio (1.36 on Nov 6) keeps easing, and the next quarterly PQD liquidity release.",
+      "analysis_status": "ai_reviewed",
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "narrative_review_label": "AI-written, reviewed by analyst",
+      "narrative_reviewer": "Wenqi Cai",
+      "narrative_decision": "edit",
+      "narrative_prompt_version": "narrative-prompt-v1:1c4d886006a8",
+      "narrative_model": "us.anthropic.claude-sonnet-4-6",
       "shock_method": "Market indicator"
     },
     {
@@ -6089,12 +6129,20 @@
           "url": "https://www.cboe.com/us/equities/market_statistics/historical_market_volume/"
         }
       ],
-      "ai_generated_fields": [],
-      "so_what": null,
-      "so_now_what": null,
-      "analysis_status": "pending_llm",
+      "ai_generated_fields": [
+        "so_what",
+        "so_now_what"
+      ],
+      "so_what": "US consolidated equity volume reached the 83rd percentile of 409 prior weeks, raising settlement volumes that could pressure NSCC CNS settlement and fails. V is 1, from a public proxy rather than DTCC data, so severity stays low.",
+      "so_now_what": "Watch daily consolidated volume (roughly 17.5 bn to 28.0 bn shares on Nov 2–6) and published fails-to-deliver data for signs of settlement strain.",
+      "analysis_status": "ai_reviewed",
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "narrative_review_label": "AI-written, reviewed by analyst",
+      "narrative_reviewer": "Wenqi Cai",
+      "narrative_decision": "edit",
+      "narrative_prompt_version": "narrative-prompt-v1:1c4d886006a8",
+      "narrative_model": "us.anthropic.claude-sonnet-4-6",
       "shock_method": "Market indicator"
     },
     {
@@ -6185,11 +6233,12 @@
         }
       ],
       "ai_generated_fields": [],
-      "so_what": null,
-      "so_now_what": null,
-      "analysis_status": "pending_llm",
+      "so_what": "No scored shock this week.",
+      "so_now_what": "See the transmission chain for what would trigger a score.",
+      "analysis_status": "template",
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "narrative_source": "template"
     },
     {
       "record_id": "xe-member-ficc",
@@ -6360,12 +6409,20 @@
           "url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
         }
       ],
-      "ai_generated_fields": [],
-      "so_what": null,
-      "so_now_what": null,
-      "analysis_status": "pending_llm",
+      "ai_generated_fields": [
+        "so_what",
+        "so_now_what"
+      ],
+      "so_what": "Baa corporate spreads widened 11 bp over 20 days, the 77th percentile of 457 prior weeks: a broad credit signal, not a firm-specific one, relevant to member credit surveillance. V is 1 (PQD), so severity stays at 4.",
+      "so_now_what": "Watch whether spreads keep widening (6 bp to 11 bp over Nov 2–6) and for any rating actions or stress at US member firms; check the next quarterly PQD top-five open-position share.",
+      "analysis_status": "ai_reviewed",
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "narrative_review_label": "AI-written, reviewed by analyst",
+      "narrative_reviewer": "Wenqi Cai",
+      "narrative_decision": "edit",
+      "narrative_prompt_version": "narrative-prompt-v1:1c4d886006a8",
+      "narrative_model": "us.anthropic.claude-sonnet-4-6",
       "shock_method": "Market indicator"
     },
     {
@@ -6537,12 +6594,20 @@
           "url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
         }
       ],
-      "ai_generated_fields": [],
-      "so_what": null,
-      "so_now_what": null,
-      "analysis_status": "pending_llm",
+      "ai_generated_fields": [
+        "so_what",
+        "so_now_what"
+      ],
+      "so_what": "Baa corporate spreads widened 11 bp over 20 days, the 77th percentile of 457 prior weeks: a broad credit signal, not a firm-specific one, relevant to member credit surveillance. V is 1 (PQD), so severity stays at 4.",
+      "so_now_what": "Watch whether spreads keep widening (6 bp to 11 bp over Nov 2–6) and for any rating actions or stress at US member firms; check the next quarterly PQD top-five open-position share.",
+      "analysis_status": "ai_reviewed",
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "narrative_review_label": "AI-written, reviewed by analyst",
+      "narrative_reviewer": "Wenqi Cai",
+      "narrative_decision": "edit",
+      "narrative_prompt_version": "narrative-prompt-v1:1c4d886006a8",
+      "narrative_model": "us.anthropic.claude-sonnet-4-6",
       "shock_method": "Market indicator"
     },
     {
@@ -6632,11 +6697,12 @@
         }
       ],
       "ai_generated_fields": [],
-      "so_what": null,
-      "so_now_what": null,
-      "analysis_status": "pending_llm",
+      "so_what": "No scored shock this week.",
+      "so_now_what": "See the transmission chain for what would trigger a score.",
+      "analysis_status": "template",
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "narrative_source": "template"
     },
     {
       "record_id": "xe-disrupt-ecs",
@@ -6725,11 +6791,12 @@
         }
       ],
       "ai_generated_fields": [],
-      "so_what": null,
-      "so_now_what": null,
-      "analysis_status": "pending_llm",
+      "so_what": "No scored shock this week.",
+      "so_now_what": "See the transmission chain for what would trigger a score.",
+      "analysis_status": "template",
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "narrative_source": "template"
     },
     {
       "record_id": "xe-settlebank-ficc",
@@ -6819,11 +6886,12 @@
         }
       ],
       "ai_generated_fields": [],
-      "so_what": null,
-      "so_now_what": null,
-      "analysis_status": "pending_llm",
+      "so_what": "No scored shock this week.",
+      "so_now_what": "See the transmission chain for what would trigger a score.",
+      "analysis_status": "template",
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "narrative_source": "template"
     },
     {
       "record_id": "xe-settlebank-ecs",
@@ -6913,11 +6981,12 @@
         }
       ],
       "ai_generated_fields": [],
-      "so_what": null,
-      "so_now_what": null,
-      "analysis_status": "pending_llm",
+      "so_what": "No scored shock this week.",
+      "so_now_what": "See the transmission chain for what would trigger a score.",
+      "analysis_status": "template",
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "narrative_source": "template"
     },
     {
       "record_id": "xe-cyber-ficc",
@@ -7010,11 +7079,12 @@
         }
       ],
       "ai_generated_fields": [],
-      "so_what": null,
-      "so_now_what": null,
-      "analysis_status": "pending_llm",
+      "so_what": "No scored shock this week.",
+      "so_now_what": "See the transmission chain for what would trigger a score.",
+      "analysis_status": "template",
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "narrative_source": "template"
     },
     {
       "record_id": "xe-cyber-ecs",
@@ -7107,11 +7177,12 @@
         }
       ],
       "ai_generated_fields": [],
-      "so_what": null,
-      "so_now_what": null,
-      "analysis_status": "pending_llm",
+      "so_what": "No scored shock this week.",
+      "so_now_what": "See the transmission chain for what would trigger a score.",
+      "analysis_status": "template",
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "narrative_source": "template"
     },
     {
       "record_id": "ficc-gsd-11",
@@ -7201,11 +7272,12 @@
         }
       ],
       "ai_generated_fields": [],
-      "so_what": null,
-      "so_now_what": null,
-      "analysis_status": "pending_llm",
+      "so_what": "No scored shock this week.",
+      "so_now_what": "See the transmission chain for what would trigger a score.",
+      "analysis_status": "template",
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "narrative_source": "template"
     },
     {
       "record_id": "ficc-mbsd-02",
@@ -7290,11 +7362,12 @@
         }
       ],
       "ai_generated_fields": [],
-      "so_what": null,
-      "so_now_what": null,
-      "analysis_status": "pending_llm",
+      "so_what": "No scored shock this week.",
+      "so_now_what": "See the transmission chain for what would trigger a score.",
+      "analysis_status": "template",
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "narrative_source": "template"
     },
     {
       "record_id": "ecs-nscc-08",
@@ -7382,11 +7455,12 @@
         }
       ],
       "ai_generated_fields": [],
-      "so_what": null,
-      "so_now_what": null,
-      "analysis_status": "pending_llm",
+      "so_what": "No scored shock this week.",
+      "so_now_what": "See the transmission chain for what would trigger a score.",
+      "analysis_status": "template",
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "narrative_source": "template"
     },
     {
       "record_id": "ecs-nscc-09",
@@ -7476,11 +7550,12 @@
         }
       ],
       "ai_generated_fields": [],
-      "so_what": null,
-      "so_now_what": null,
-      "analysis_status": "pending_llm",
+      "so_what": "No scored shock this week.",
+      "so_now_what": "See the transmission chain for what would trigger a score.",
+      "analysis_status": "template",
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "narrative_source": "template"
     },
     {
       "record_id": "ecs-dtc-01",
@@ -7568,11 +7643,12 @@
         }
       ],
       "ai_generated_fields": [],
-      "so_what": null,
-      "so_now_what": null,
-      "analysis_status": "pending_llm",
+      "so_what": "No scored shock this week.",
+      "so_now_what": "See the transmission chain for what would trigger a score.",
+      "analysis_status": "template",
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "narrative_source": "template"
     }
   ]
 }

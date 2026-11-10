@@ -8,10 +8,18 @@ Standard library only. Every text field is a fixed template filled with numbers,
 scoring records, the chain registry and the source manifests; no prose is generated. All v1.3 record fields are
 kept on each item as extra fields. so_what and so_now_what are reserved for future AI text: they are null, with
 analysis_status = "pending_llm"; no placeholder text is written into the data. Output is deterministic for the same inputs.
+Narratives (so_what / so_now_what) come only from Capstone_Project/data/narratives/review_narratives_<week>.csv:
+- AI rows with decision approve or edit (and a reviewer) are published, the edit text when given, after the checks of
+  validation/narrative_checks.py pass again against the stored input (input_sha256 must match); they get
+  analysis_status "ai_reviewed", ai_generated_fields ["so_what", "so_now_what"] and narrative_review_label
+  "AI-written, reviewed by analyst";
+- template rows (non-scored records) publish their fixed text with analysis_status "template" and no AI label;
+- anything else (no decision, reject, failed checks) stays null with analysis_status "pending_review".
+Weeks without a narrative sheet keep analysis_status "pending_llm".
 related_news (Amendment D4/E3) is passed through from the scoring records; ai_unreviewed_events lists the active register events
 on the card that are AI-classified and not reviewed (Amendment C1), whether or not they set S.
 """
-import argparse, csv, hashlib, json, runpy, urllib.parse
+import argparse, csv, hashlib, importlib.util, json, runpy, urllib.parse
 from datetime import date
 from pathlib import Path
 
@@ -23,6 +31,9 @@ FINAL16_CONFIG = CP / 'risk_business_ml' / 'final16_quarterly_vulnerability_2026
 CHAIN_REGISTRY = CP / 'risk_business_ml' / 'new_reference_chain_tests_2026_10_21' / 'chain_registry_v3_with_test_status.json'
 PQD_MANIFEST = CP / 'risk_business_ml' / 'event_vulnerability_tests_2026_10_06' / 'source_manifest.json'
 OUT = REPO / 'docs' / 'data' / 'risk_output.json'
+NARRATIVES = CP / 'data' / 'narratives'
+_spec = importlib.util.spec_from_file_location('narrative_checks', CP / 'validation' / 'narrative_checks.py')
+NC = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(NC)          # standard library only
 WEEKS = ['2026-10-19', '2026-10-26', '2026-11-02']
 AI_UNREVIEWED_LABEL = 'AI-classified, not reviewed'
 
@@ -151,7 +162,39 @@ def ai_unreviewed_events(r):
             if e.get('entered_by') == 'llm-auto' or e.get('review_status') == 'unreviewed']
 
 
-def item(r, run_utc, cards, chains, proxy, pqd_urls):
+def load_narratives(week, folder=None):
+    """record_id -> review-sheet row, or None when the week has no narrative sheet."""
+    path = (folder or NARRATIVES) / f'review_narratives_{week}.csv'
+    if not path.exists():
+        return None
+    with path.open(encoding='utf-8', newline='') as f:
+        return {row['record_id']: row for row in csv.DictReader(f)}
+
+
+def narrative_fields(record_id, row):
+    """Published narrative fields for one item (see the module docstring)."""
+    if row is None:
+        return {'so_what': None, 'so_now_what': None, 'analysis_status': 'pending_review'}
+    if row['generated_by'] == 'template':
+        return {'so_what': NC.TEMPLATE_SO_WHAT, 'so_now_what': NC.TEMPLATE_SO_NOW_WHAT, 'analysis_status': 'template',
+                'narrative_source': 'template'}
+    decision = (row.get('decision') or '').strip().lower()
+    reviewer = (row.get('reviewer') or '').strip()
+    if decision in ('approve', 'edit') and reviewer:
+        pick = lambda k: (row.get('corrected_' + k) or '').strip() if decision == 'edit' and (row.get('corrected_' + k) or '').strip() else row[k]
+        so_what, so_now_what = pick('so_what'), pick('so_now_what')
+        path = CP / row['input_file']
+        record_input = NC.load_input(path, record_id) if path.exists() else None
+        digest = hashlib.sha256(json.dumps(record_input, sort_keys=True, ensure_ascii=False).encode()).hexdigest() if record_input else None
+        if record_input is not None and digest == row['input_sha256'] and not NC.check(so_what, so_now_what, record_input):
+            return {'so_what': so_what, 'so_now_what': so_now_what, 'analysis_status': 'ai_reviewed',
+                    'ai_generated_fields': ['so_what', 'so_now_what'], 'narrative_review_label': NC.REVIEW_LABEL,
+                    'narrative_reviewer': reviewer, 'narrative_decision': decision, 'narrative_prompt_version': row.get('prompt_version'),
+                    'narrative_model': row.get('model')}
+    return {'so_what': None, 'so_now_what': None, 'analysis_status': 'pending_review'}
+
+
+def item(r, run_utc, cards, chains, proxy, pqd_urls, narratives=None):
     what, basis = texts(r)
     tchain, tr = transmission(r, cards, chains)
     it = dict(r)                                   # every v1.3 field is kept
@@ -168,6 +211,8 @@ def item(r, run_utc, cards, chains, proxy, pqd_urls):
         'related_news': r.get('related_news') or [], 'ai_unreviewed_events': ai_unreviewed_events(r)})
     # display label: also when an unreviewed AI event is active on the card without setting S (event_review_label is kept as scored)
     it['ai_review_label'] = AI_UNREVIEWED_LABEL if (it['ai_unreviewed_events'] or r.get('event_review_label')) else None
+    if narratives is not None:                     # this week has a narrative review sheet
+        it.update(narrative_fields(r['record_id'], narratives.get(r['record_id'])))
     if r['S_source']:
         it['shock_method'] = SHOCK_METHOD[r['S_source']]
     rs = review_status(r)
@@ -202,7 +247,8 @@ def build(weeks):
     proxy = runpy.run_path(str(FINAL16_CONFIG))['PUBLIC_PROXY']
     pqd_urls = {m['reporting_period']: (m.get('source_urls') or [''])[0]
                 for m in json.loads(PQD_MANIFEST.read_text()) if m.get('document_kind') == 'public_quantitative_disclosure'}
-    items = [item(r, iso(d['run_utc']), cards, chains, proxy, pqd_urls) for d in docs for r in d['records']]
+    narratives = {d['week']: load_narratives(d['week']) for d in docs}
+    items = [item(r, iso(d['run_utc']), cards, chains, proxy, pqd_urls, narratives[d['week']]) for d in docs for r in d['records']]
     lines = {}
     for line in sorted({i['business_line'] for i in items} | set(COMING)):
         entry = {'review': []}

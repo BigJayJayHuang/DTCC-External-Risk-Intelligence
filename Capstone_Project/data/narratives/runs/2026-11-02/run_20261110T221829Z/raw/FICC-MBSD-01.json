@@ -1,0 +1,50 @@
+{
+  "card_id": "FICC-MBSD-01",
+  "request_sha256": "1262119d73ac4eaa7589ab064281e03e4e4314ea8baf8016501d240337813201",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_88NXr7tRhdIP9Q4TSvJ6Gv",
+            "name": "submit_narrative",
+            "input": {
+              "so_what": "The weekly change in the 30-year mortgage rate minus 10-year Treasury yield spread reached the 53rd percentile of 460 prior weeks, relevant to MBSD margin and variation margin. V is 1 (PQD — DTCC public quantitative disclosure): stress loss to initial margin for MBSD sits at level 1 of 5 versus its own history.",
+              "so_now_what": "Watch the weekly change in the 30-year mortgage rate minus 10-year Treasury yield spread for further movement, and the next quarterly PQD release for any update to MBSD stress loss to initial margin.",
+              "facts_used": [
+                "signal.plain_name",
+                "signal.percentile",
+                "signal.prior_weeks",
+                "transmission_chain.dtcc_process",
+                "V",
+                "V_meaning",
+                "V_source",
+                "V_tier",
+                "latest_available_pqd_quarter",
+                "S_signals",
+                "shared_signal",
+                "driving_event",
+                "chain_confidence"
+              ],
+              "caveats": [
+                "No related news headlines provided for this card.",
+                "Chain confidence is Medium."
+              ]
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1063,
+    "outputTokens": 314,
+    "totalTokens": 3151,
+    "cacheReadInputTokens": 1774,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.00927432"
+}
