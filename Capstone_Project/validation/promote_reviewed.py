@@ -8,7 +8,10 @@ Rules:
 - review_tier "auto": inserted with entered_by = "llm-auto", review_status = "unreviewed" and needs_review = "Y",
   unless decision = reject. approve/edit on an auto row makes it a reviewed row like above.
 - decision = reject: never inserted.
-- edit: corrected_card_ids / corrected_certainty / corrected_reach replace the proposed values when filled.
+- edit: corrected_card_ids / corrected_certainty / corrected_reach / corrected_title / corrected_announced_date /
+  corrected_effect_date / corrected_reach_basis / corrected_sources (JSON list of {url, outlet, source_tier}) replace the
+  proposed values when filled. S for the sign-off list is recomputed from the corrected values.
+- Event ids are never reused: numbering continues after the highest id in the register and in register_changelog.csv.
 - A row with same_as_event_id updates an existing register event: it is listed for a manual merge, never inserted.
 - review_tier "duplicate" (a recorded event with no new information) is never inserted; "date_review" needs a
   decision like "required".
@@ -26,12 +29,26 @@ import argparse, csv, json, os, re, tempfile
 from datetime import date
 from pathlib import Path
 
+from . import event_scoring as E
 from .llm_classifier import PROJECT, PROMPT_V14, REGISTER, prompt_parts_v13
 
 SPEC = PROJECT / "results/scoring/v1.3_indicator/SCORING_SPEC_v1.3.md"
 DECISIONS = {"", "approve", "edit", "reject"}
 EXTRA_COLUMNS = ["review_status", "proposal_id"]
 TIER_ORDER = ["regulator", "dtcc", "official", "issuer_filing", "major_media", "other"]
+REACH_BASES = {"market_wide", "business_line", "major_participant", "group", "single"}
+CHANGELOG = PROJECT / "data/events/register_changelog.csv"
+
+
+def corrected_sources(r: dict):
+    raw = (r.get("corrected_sources") or "").strip()
+    if not raw:
+        return None
+    value = json.loads(raw)
+    if not isinstance(value, list) or not value or not all(isinstance(s, dict) and str(s.get("url", "")).startswith(("https://", "http://"))
+                                                          and s.get("outlet") and s.get("source_tier") in TIER_ORDER for s in value):
+        raise ValueError("corrected_sources must be a non-empty JSON list of {url, outlet, source_tier}")
+    return value
 
 
 class PromotionError(ValueError):
@@ -59,6 +76,20 @@ def check_sheet(rows: list[dict], catalog: set[str]) -> None:
             for k in ("corrected_certainty", "corrected_reach"):
                 if (r.get(k) or "").strip() not in ("", "0", "1", "2"):
                     problems.append(f"{pid}: {k} must be 0, 1 or 2")
+            for k in ("corrected_announced_date", "corrected_effect_date"):
+                if (r.get(k) or "").strip():
+                    try:
+                        date.fromisoformat(r[k].strip())
+                    except ValueError:
+                        problems.append(f"{pid}: {k} must be YYYY-MM-DD")
+            if (r.get("corrected_reach_basis") or "").strip() not in {""} | REACH_BASES:
+                problems.append(f"{pid}: corrected_reach_basis must be one of {sorted(REACH_BASES)}")
+            try:
+                corrected_sources(r)
+            except (ValueError, TypeError) as e:
+                problems.append(f"{pid}: {e}")
+        if (r.get("route_context_card_ids") or "").strip() and d != "reject":
+            problems.append(f"{pid}: route_context_card_ids only goes with decision reject")
     if problems:
         raise PromotionError("Review sheet not ready; nothing written:\n  " + "\n  ".join(problems))
 
@@ -71,22 +102,36 @@ def register_row(r: dict, event_id: str, today: str) -> dict:
     cards = [c for c in (r.get("corrected_card_ids") or "").split("|") if c] if edit and r.get("corrected_card_ids") else (scored or r["card_ids"].split("|"))
     certainty = r["corrected_certainty"] if edit and (r.get("corrected_certainty") or "").strip() else r["certainty"]
     reach = r["corrected_reach"] if edit and (r.get("corrected_reach") or "").strip() else r["reach"]
-    sources = json.loads(r["sources"])
+    pick = lambda k: r["corrected_" + k].strip() if edit and (r.get("corrected_" + k) or "").strip() else r[k]
+    fixed = corrected_sources(r) if edit else None
+    sources = fixed if fixed else json.loads(r["sources"])
     note = f"Promoted from {r['proposed_event_id']} ({d or 'auto, not reviewed'}); candidates {r['candidate_ids']}."
     if (r.get("reviewer_notes") or "").strip():
         note += " Reviewer notes: " + r["reviewer_notes"].strip()
-    return {"event_id": event_id, "chain_id": cards[0], "title": r["title"], "announced_date": r["announced_date"], "effect_date": r["effect_date"],
+    return {"event_id": event_id, "chain_id": cards[0], "title": pick("title"), "announced_date": pick("announced_date"), "effect_date": pick("effect_date"),
             "certainty": certainty, "reach": reach, "evidence_quote": " || ".join(json.loads(r["evidence_quotes"])),
             "source_url": " ; ".join(s["url"] for s in sources), "entered_by": r["reviewer"].strip() if reviewed else "llm-auto",
             "needs_review": "N" if reviewed else "Y", "notes": note, "card_ids": "|".join(cards),
             "stage": r.get("stage", ""), "source_tier": min((s["source_tier"] for s in sources), key=TIER_ORDER.index),
             "outlet": "; ".join(dict.fromkeys(s["outlet"] for s in sources)), "llm_confidence": r["confidence"],
-            "named_participants": r.get("named_participants", ""), "reach_basis": r["reach_basis"], "updated_date": today,
+            "named_participants": r.get("named_participants", ""), "reach_basis": pick("reach_basis"), "updated_date": today,
             "prompt_version": r.get("prompt_version", ""), "model": r.get("model", ""), "article_file": "",
             "review_status": "reviewed" if reviewed else "unreviewed", "proposal_id": r["proposed_event_id"]}
 
 
-def promote(sheet: Path, register: Path, dry_run: bool = False, today: str | None = None, spec: Path = SPEC) -> dict:
+def recomputed_s(row: dict, r: dict) -> int | None:
+    """S of the register row as it will be scored in the sheet's week (rubric v1.2)."""
+    week = re.match(r"PE-(\d{4}-\d{2}-\d{2})-", r["proposed_event_id"])
+    if not week:
+        return int(r["would_be_S"]) if str(r.get("would_be_S", "")).strip() else None
+    ev = E.Event(event_id=row["event_id"], card_ids=row["card_ids"].split("|"), title=row["title"],
+                 announced_date=date.fromisoformat(row["announced_date"]), effect_date=date.fromisoformat(row["effect_date"]),
+                 certainty=int(row["certainty"]), reach=int(row["reach"]), evidence_quotes=[], sources=[])
+    return E.event_score(ev, date.fromisoformat(week[1]))["S"]
+
+
+def promote(sheet: Path, register: Path, dry_run: bool = False, today: str | None = None, spec: Path = SPEC,
+            changelog: Path = CHANGELOG) -> dict:
     _, _, catalog, _ = prompt_parts_v13(PROMPT_V14, "v1.4")
     with sheet.open(encoding="utf-8", newline="") as f:
         rows = list(csv.DictReader(f))
@@ -96,7 +141,11 @@ def promote(sheet: Path, register: Path, dry_run: bool = False, today: str | Non
         header, existing = list(reader.fieldnames), list(reader)
     header += [c for c in EXTRA_COLUMNS if c not in header]
     present = {r.get("proposal_id") for r in existing if r.get("proposal_id")}
-    numbers = [int(m[1]) for r in existing if (m := re.fullmatch(r"EV(\d+)", r["event_id"]))]
+    removed = []
+    if changelog.exists():
+        with changelog.open(encoding="utf-8", newline="") as f:
+            removed = [r["event_id"] for r in csv.DictReader(f)]
+    numbers = [int(m[1]) for e in [r["event_id"] for r in existing] + removed if (m := re.fullmatch(r"EV(\d+)", e))]
     next_no = max(numbers, default=0) + 1
     today = today or date.today().isoformat()
     result = {"inserted": [], "skipped_already_promoted": [], "rejected": [], "manual_merge": [], "context_not_promoted": [], "duplicate_not_promoted": [],
@@ -121,7 +170,9 @@ def promote(sheet: Path, register: Path, dry_run: bool = False, today: str | Non
         next_no += 1
         new.append(row)
         result["inserted"].append({"event_id": row["event_id"], "proposal": pid, "entered_by": row["entered_by"], "review_status": row["review_status"]})
-        if str(r.get("would_be_S", "")).strip() and int(r["would_be_S"]) >= 4:
+        s_now = recomputed_s(row, r)
+        result["inserted"][-1]["S_in_week"] = s_now
+        if s_now is not None and s_now >= 4:
             result["needs_signoff_for_S_ge_4"].append(row["event_id"])
     if new and not dry_run:
         fd, tmp = tempfile.mkstemp(dir=register.parent, prefix=".register.", suffix=".tmp")

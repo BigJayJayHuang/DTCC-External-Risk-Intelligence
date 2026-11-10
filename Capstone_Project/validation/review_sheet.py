@@ -64,7 +64,9 @@ FIELDS = ["proposed_event_id", "title", "event_type", "card_ids", "scored_card_i
           "reach", "reach_basis", "announced_date", "effect_date", "would_be_S", "would_be_severity", "review_tier", "geography", "new_information", "date_flags",
           "same_as_event_id", "stage",
           "named_participants", "independent_outlets", "syndication_collapsed", "member_event_types", "sources", "evidence_quotes", "confidence", "validate_flags", "candidate_ids", "prompt_version", "model",
-          "decision", "reviewer", "corrected_card_ids", "corrected_certainty", "corrected_reach", "reviewer_notes"]
+          "decision", "reviewer", "corrected_card_ids", "corrected_certainty", "corrected_reach",
+          "corrected_title", "corrected_announced_date", "corrected_effect_date", "corrected_reach_basis", "corrected_sources",
+          "route_context_card_ids", "route_context_label", "reviewer_notes"]
 
 
 def words(text: str) -> set[str]:
@@ -288,6 +290,27 @@ def membership_route(cands: list[dict], week: date) -> tuple[list[dict], list[di
         else:
             kept.append(c)
     return kept, ctx
+
+
+def reviewed_context_rows(rows: list[dict], week: date) -> list[dict]:
+    """Related-news rows of a reviewed sheet: context-tier rows on their context cards, duplicate rows on their cards, and
+    rejected rows the reviewer routed to context (route_context_card_ids, optional route_context_label)."""
+    out = []
+    for r in rows:
+        if r["review_tier"] == "context":
+            cards = [c for c in r["context_card_ids"].split("|") if c]
+        elif r["review_tier"] == "duplicate":
+            cards = [c for c in r["card_ids"].split("|") if c]
+        elif (r.get("decision") or "").strip().lower() == "reject":
+            cards = [c for c in (r.get("route_context_card_ids") or "").split("|") if c]
+        else:
+            cards = []
+        for c in cards:
+            for s in json.loads(r["sources"]):
+                out.append({"week": week.isoformat(), "card_id": c, "title": s.get("headline") or r["title"], "outlet": s["outlet"],
+                            "url": s["url"], "event_type": r["event_type"], "proposed_event_id": r["proposed_event_id"],
+                            "label": (r.get("route_context_label") or "").strip()})
+    return out
 
 
 def routed_context_rows(path: Path, week: date) -> list[dict]:

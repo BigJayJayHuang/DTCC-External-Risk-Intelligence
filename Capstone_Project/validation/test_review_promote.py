@@ -290,6 +290,42 @@ class Promote(unittest.TestCase):
         with self.register.open() as f:
             return list(csv.DictReader(f))
 
+    def test_edit_with_corrected_fields_and_recomputed_s(self):
+        src = [{"url": "https://www.sec.gov/files/rules/exorders/2026/34-106789.pdf", "outlet": "SEC", "source_tier": "regulator"},
+               {"url": "https://www.federalregister.gov/d/2026-22493", "outlet": "Federal Register", "source_tier": "official"}]
+        sheet = self.write_sheet([self.row("PE-2026-11-02-aaaa0001", "required", "edit", "Wenqi Cai", card_ids="FICC-GSD-03", would_be_S="5",
+                                           corrected_title="SEC exempts certain repo transactions", corrected_certainty="2", corrected_reach="2",
+                                           corrected_reach_basis="market_wide", corrected_announced_date="2026-10-30",
+                                           corrected_effect_date="2027-06-30", corrected_sources=json.dumps(src),
+                                           reviewer_notes="Narrows the scope of the repo clearing mandate.")])
+        res = PR.promote(sheet, self.register, today="2026-11-10", spec=self.spec_ok)
+        row = self.reg_rows()[-1]
+        self.assertEqual((row["title"], row["announced_date"], row["effect_date"], row["certainty"], row["reach"], row["reach_basis"]),
+                         ("SEC exempts certain repo transactions", "2026-10-30", "2027-06-30", "2", "2", "market_wide"))
+        self.assertEqual((row["source_url"].split(" ; ")[0], row["source_tier"], row["outlet"]), (src[0]["url"], "regulator", "SEC; Federal Register"))
+        self.assertEqual((row["entered_by"], row["review_status"], row["needs_review"]), ("Wenqi Cai", "reviewed", "N"))
+        self.assertEqual(res["inserted"][0]["S_in_week"], 2)                    # effect far off: timing 0 caps S at 2
+        self.assertEqual(res["needs_signoff_for_S_ge_4"], [])                   # the model's would_be_S 5 no longer counts
+        self.assertIn("Narrows the scope", row["notes"])
+
+    def test_bad_corrections_and_routing_refused(self):
+        for kw in ({"corrected_effect_date": "30/06/2027"}, {"corrected_reach_basis": "global"},
+                   {"corrected_sources": json.dumps([{"url": "ftp://x", "outlet": "SEC", "source_tier": "regulator"}])}):
+            with self.assertRaises(PR.PromotionError):
+                PR.promote(self.write_sheet([self.row("P1", "required", "edit", "Wenqi Cai", **kw)]), self.register, spec=self.spec_ok)
+        with self.assertRaises(PR.PromotionError):
+            PR.promote(self.write_sheet([self.row("P1", "required", "approve", "Wenqi Cai", route_context_card_ids="FICC-GSD-03")]),
+                       self.register, spec=self.spec_ok)
+
+    def test_rejected_rows_routed_to_context(self):
+        rows = [self.row("PE-2026-11-02-r1", "required", "reject", "Wenqi Cai", route_context_card_ids="FICC-GSD-03",
+                         route_context_label="membership/onboarding", event_type="regulatory", context_card_ids=""),
+                self.row("PE-2026-11-02-r2", "required", "reject", "Wenqi Cai", event_type="regulatory", context_card_ids=""),
+                self.row("PE-2026-11-02-c1", "context", event_type="market_move", context_card_ids="ECS-NSCC-LIQ")]
+        ctx = RS.reviewed_context_rows(rows, date(2026, 11, 2))
+        self.assertEqual([(c["card_id"], c["label"], c["proposed_event_id"][-2:]) for c in ctx],
+                         [("FICC-GSD-03", "membership/onboarding", "r1"), ("ECS-NSCC-LIQ", "", "c1")])
+
     def test_required_without_decision_refused_and_nothing_written(self):
         before = self.register.read_text()
         with self.assertRaises(PR.PromotionError):
@@ -309,7 +345,9 @@ class Promote(unittest.TestCase):
         self.assertEqual((rows["P5"]["certainty"], rows["P5"]["card_ids"], rows["P5"]["chain_id"]), ("2", "ECS-NSCC-LIQ|FICC-GSD-11", "ECS-NSCC-LIQ"))
         self.assertEqual(res["rejected"], ["P3"]); self.assertEqual(res["manual_merge"], [{"proposal": "P4", "existing_event": "EV0006"}])
         self.assertEqual(sorted(res["needs_signoff_for_S_ge_4"]), sorted([rows["P1"]["event_id"], rows["P5"]["event_id"]]))
-        nxt = max(int(r["event_id"][2:]) for r in csv.DictReader(io.StringIO((PROJECT / "data/events/event_register.csv").read_text()))) + 1
+        ids = [r["event_id"] for r in csv.DictReader(io.StringIO((PROJECT / "data/events/event_register.csv").read_text()))]
+        ids += [r["event_id"] for r in csv.DictReader(io.StringIO((PROJECT / "data/events/register_changelog.csv").read_text()))]
+        nxt = max(int(e[2:]) for e in ids) + 1                                                  # removed ids are never reused
         self.assertEqual([r["event_id"] for r in self.reg_rows()][-3:], [f"EV{n:04d}" for n in range(nxt, nxt + 3)])   # numbering continues
         again = PR.promote(sheet, self.register, today="2026-11-08", spec=self.spec_ok)                # idempotent
         self.assertEqual((len(self.reg_rows()), again["inserted"]), (n0 + 3, []))
