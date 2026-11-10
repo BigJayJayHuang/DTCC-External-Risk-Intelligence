@@ -283,3 +283,23 @@ Approved: Wenqi Cai, 2026-11-09T21:30Z. Written before any code change for it. I
   - Context and duplicate news (Amendments D and E) still appear only in `related_news` and never set S.
   - Items rejected in review are neither scored nor shown.
 - **F5. Display.** The dashboard shows `no_relevant_news` as "No relevant news found (headline-level scan)". Like the other unscored statuses, it sorts after the scored cards.
+
+## Amendment G — official notices: routine skips, membership context, SRO filings
+
+Approved: Wenqi Cai, 2026-11-10T03:52Z. Written before any code change for it. It changes no S, V or severity rule. It decides which official notices reach the classifier, which become related news, and the highest review tier of SRO rule filings.
+
+Official notices are the rows of the daily official-news export (`official_source_ids` in `google_news_config.json`: DTCC notices and insights, Federal Register, SEC, CFTC, Fed, FCA, ECB, ESMA, BIS). The patterns are applied to the title and summary together, ignoring case. They run inside the window, before the keyword pre-filter.
+
+- **G1. Override first.** A notice whose title or summary mentions cease to act, watch list, restriction, suspension, default, wind-down, margin, clearing fund or liquidity always goes to the classifier. G2 and G3 do not apply to it.
+- **G2. Pre-model skip.** Routine notices never reach the classifier. Each is logged to the exclusion audit (`official_prefilter_dropped.csv`, reason "Amendment G2: …"). Routine means:
+  - DTCC additional account activation or retirement;
+  - fee or depositary-fee notifications;
+  - tax-relief notices;
+  - routine corporate-action notices: "corporate action" or "CA Web" instructions.
+- **G3. New-member notices.** These are new members of FICC GSD, FICC MBSD or NSCC, and new Agent Clearing, Sponsoring or Sponsored Members. "New Participant in the Netting System" counts as a new GSD member.
+  - They never reach the classifier.
+  - Each becomes a related-news row in `context_news.csv` with `label = "membership/onboarding"`, on FICC-GSD-03 for FICC (GSD/MBSD) and on ECS-NSCC-LIQ for NSCC.
+  - `context_news.csv` gains an optional `label` column, which D4 passes through to `related_news`.
+  - Notices that remove a member ("Delete Sponsored Member", "Changes in the list of participants") are not new-member notices. They go to the classifier as before.
+- **G4. SRO rule filings.** A proposed event made only of SRO rule filings is capped at `review_tier = auto` and is never `required`. A filing is identified by a title of the form "Self-Regulatory Organizations; <filer>; …", and the cap applies when every filer is an entity other than FICC, NSCC and DTC. The row carries the flag `sro_filing_capped_auto`. Filings by FICC, NSCC or DTC keep their tier.
+- **G5. Order.** G1 → G2 / G3 → keyword pre-filter and the non-US rule → classifier → E checks → D context rule → D5 tier → G4 cap. E3 (`duplicate`) and E4 (`date_review`) still take precedence over the cap.
