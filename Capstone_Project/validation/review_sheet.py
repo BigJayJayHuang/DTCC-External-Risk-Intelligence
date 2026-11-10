@@ -292,9 +292,11 @@ def membership_route(cands: list[dict], week: date) -> tuple[list[dict], list[di
     return kept, ctx
 
 
-def reviewed_context_rows(rows: list[dict], week: date) -> list[dict]:
+def reviewed_context_rows(rows: list[dict], week: date, display: dict | None = None) -> list[dict]:
     """Related-news rows of a reviewed sheet: context-tier rows on their context cards, duplicate rows on their cards, and
-    rejected rows the reviewer routed to context (route_context_card_ids, optional route_context_label)."""
+    rejected rows the reviewer routed to context (route_context_card_ids, optional route_context_label). `display` maps
+    url -> readable title (DTCC notices are titled by notice number; their summary names the member)."""
+    display = display or {}
     out = []
     for r in rows:
         if r["review_tier"] == "context":
@@ -307,7 +309,7 @@ def reviewed_context_rows(rows: list[dict], week: date) -> list[dict]:
             cards = []
         for c in cards:
             for s in json.loads(r["sources"]):
-                out.append({"week": week.isoformat(), "card_id": c, "title": s.get("headline") or r["title"], "outlet": s["outlet"],
+                out.append({"week": week.isoformat(), "card_id": c, "title": display.get(s["url"]) or s.get("headline") or r["title"], "outlet": s["outlet"],
                             "url": s["url"], "event_type": r["event_type"], "proposed_event_id": r["proposed_event_id"],
                             "label": (r.get("route_context_label") or "").strip()})
     return out
