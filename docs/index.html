@@ -195,7 +195,10 @@ const UNSCORED_LVLS=["Pending","Unscanned","Incomplete","NoNews"];
 const TIER_TEXT={pqd:"PQD",public_proxy:"public proxy"};
 const PH=`<span class="ph">AI analysis – available once the news classifier is connected.</span>`;
 const PH_REVIEW=`<span class="ph">Analysis pending review</span>`;          /* AI draft exists but is not approved */
-const phFor=i=>i.analysis==="pending_review"?PH_REVIEW:PH;
+/* weeks before the narrative step: "Narrative analysis starts from the week of <first week with narratives>." */
+let NARR_START=null;
+const phFor=i=>i.analysis==="pending_review"?PH_REVIEW:
+  (NARR_START&&i.analysis!=="ai_reviewed"&&i.analysis!=="template"?`<span class="ph">Narrative analysis starts from the week of ${esc(fmtDay(NARR_START))}.</span>`:PH);
 const LABEL_SUMMARY={"membership/onboarding":(n,i)=>`${n} new ${i.cardId.startsWith("ECS")?"NSCC":"FICC"} member${n===1?"":"s"} this week`};
 const AI_LABEL="AI-classified, not reviewed";
 const NEWS_NOTE="headline-level news, not scored";
@@ -531,6 +534,8 @@ async function load(){
   asArr(DATA.items).forEach(i=>{if(i.snapshot&&!SNAPS.some(s=>s.id===i.snapshot)){const d=toDate(i.snapshot); if(d) SNAPS.push({id:i.snapshot,date:d,label:"Week of "+fmtDay(d)});}});
   SNAPS.sort((a,b)=>b.date-a.date);
   state.snap=SNAPS.length?SNAPS[0].id:null;
+  const narr=asArr(DATA.items).filter(i=>["ai_reviewed","template","pending_review"].includes(i.analysis_status)).map(i=>snapObj(i.snapshot)).filter(Boolean);
+  NARR_START=narr.length?narr.reduce((a,b)=>a.date<b.date?a:b).date:null;
   window.addEventListener("hashchange",route);
   route();
 }
