@@ -1,0 +1,250 @@
+"""AI-drafted so_what / so_now_what for one scored week (display only), written to a review sheet.
+
+    python -m validation.narratives --week 2026-11-02 --cap 0.50 [--dry-run]
+
+- Input per card: the scoring v1.3 record (results/scoring/v1.3_indicator/weekly_scores_v1.3_<week>.json) and the
+  transmission chain the dashboard export shows. One model call per scored card: the two records of a cross-entity card
+  (e.g. xe-member-ficc / xe-member-ecs) share one call and one text.
+- Records with any other status get fixed, non-AI template text and no call.
+- Model: config of validation/llm_classifier_config.json (us.anthropic.claude-sonnet-4-6, temperature 0), prompt
+  validation/narrative_prompt_v1.md with the system text cached, forced tool `submit_narrative`, flat schema with strict
+  mode off, validated in code; then validation/narrative_checks.py. Every flag is recorded; flagged rows are never
+  published.
+- Hard USD cap: before each call the worst case (input estimate + max_tokens output) must fit under the cap.
+- Writes data/narratives/runs/<week>/<run_id>/ (inputs.jsonl, raw/, summary.json) and
+  data/narratives/review_narratives_<week>.csv (never overwritten: a later run gets a _<run_id> suffix).
+Never changes S, V, severity, status or ranking, and never writes the event register, sign-offs or docs/.
+"""
+import argparse, csv, hashlib, importlib.util, json, re
+from collections import Counter
+from datetime import date, datetime, timezone
+from decimal import Decimal
+from pathlib import Path
+
+from jsonschema import Draft202012Validator
+
+from . import llm_classifier as C
+from . import narrative_checks as NC
+from .paths import PROJECT
+
+REPO = PROJECT.parent
+PROMPT = Path(__file__).with_name("narrative_prompt_v1.md")
+SCORES = PROJECT / "results/scoring/v1.3_indicator"
+OUT = PROJECT / "data/narratives"
+TOOL = "submit_narrative"
+MAX_TOKENS = 800
+SCHEMA = {"type": "object", "additionalProperties": False, "required": ["so_what", "so_now_what", "facts_used", "caveats"],
+          "properties": {"so_what": {"type": "string"}, "so_now_what": {"type": "string"},
+                         "facts_used": {"type": "array", "items": {"type": "string"}},
+                         "caveats": {"type": "array", "items": {"type": "string"}}}}
+SHEET_FIELDS = ["record_id", "card_id", "card_name", "business_line", "status", "S", "V", "severity", "generated_by",
+                "so_what", "so_now_what", "facts_used", "caveats", "check_flags", "prompt_version", "model", "input_file",
+                "input_sha256", "decision", "reviewer", "corrected_so_what", "corrected_so_now_what"]
+
+
+def sha(b: bytes) -> str:
+    return hashlib.sha256(b).hexdigest()
+
+
+def prompt_parts(path: Path = PROMPT):
+    parts = path.read_text(encoding="utf-8").split("\n---\n")
+    if len(parts) != 3 or "{RECORD}" not in parts[2] or "{RECORD}" in parts[1]:
+        raise ValueError("narrative prompt must have header, system and user sections; {RECORD} only in the user section")
+    return parts[1].strip(), parts[2].strip(), "narrative-prompt-v1:" + sha(path.read_bytes())[:12]
+
+
+def export_module():
+    """The dashboard export (docs/data/export_risk_output.py), for the exact transmission chain it shows."""
+    spec = importlib.util.spec_from_file_location("export_risk_output", REPO / "docs/data/export_risk_output.py")
+    mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+    return mod
+
+
+def chain_context():
+    ex = export_module()
+    cards = {c["card_id"]: c for c in json.loads(ex.CARD_REGISTRY.read_text())}
+    chains = {c["chain_id"]: c for c in json.loads(ex.CHAIN_REGISTRY.read_text())["chains"]}
+    return lambda r: ex.transmission(r, cards, chains)[1]
+
+
+def tidy(value):
+    """Round floats to 4 decimals (removes float noise such as 8.000000000000052) for the model and the checks."""
+    if isinstance(value, float):
+        return round(value, 4) + 0.0
+    if isinstance(value, dict):
+        return {k: tidy(v) for k, v in value.items()}
+    if isinstance(value, list):
+        return [tidy(v) for v in value]
+    return value
+
+
+def build_input(records: list[dict], week_records: list[dict], transmission) -> dict:
+    """Structured facts for one card (the records of a cross-entity card share them)."""
+    return tidy(_build_input(records, week_records, transmission))
+
+
+def _build_input(records: list[dict], week_records: list[dict], transmission) -> dict:
+    r = records[0]
+    chains = [transmission(x) for x in records]
+    chain = {"world_event": chains[0]["event"], "mechanism": chains[0]["mechanism"], "dtcc_process": chains[0]["dtcc_process"]}
+    if any(c != chains[0] for c in chains[1:]):          # cross-entity card whose lines show different chains
+        chain["dtcc_process"] = "; ".join(f"{x['business_line']}: {c['dtcc_process']}" for x, c in zip(records, chains))
+    sig = r.get("signal")
+    signal = None if not sig else {k: sig.get(k) for k in ("name", "description", "value", "percentile", "prior_weeks")}
+    if sig and sig.get("daily_values"):
+        signal["daily_values"] = [{"date": d["date"], "value": d["value"]} for d in sig["daily_values"]]
+    ev = r["event_manual"]
+    driving = next((e for e in ev["events"] if ev["driving_event_ids"] and e["event_id"] == ev["driving_event_ids"][0]), None)
+    names = {x["card_id"]: x["title"] for x in week_records}
+    related = r.get("related_news") or []
+    return {"card_id": r["card_id"], "card_name": r["title"], "business_lines": [x["business_line"] for x in records],
+            "transmission_chain": chain,
+            "status": r["status"], "S": r["S"], "S_source": r["S_source"], "signal": signal,
+            "driving_event": None if not driving else {"title": driving["title"], "effect_date": driving["effect_date"],
+                                                       "outlet": driving.get("outlet"), "source_url": (driving.get("source_urls") or [None])[0]},
+            "V": r["V"], "V_tier": r["V_tier"], "V_driver": r["V_driver"], "V_quarter": r["V_quarter"], "V_flags": r["V_flags"],
+            "severity": r["severity"], "chain_confidence": r["chain_confidence"]["level"],
+            # Amendment B: the shared field may be one of several chains that set this card's S (not only `signal`)
+            "shared_signal": [{"card_id": c, "card_name": names.get(c, c), "signal_fields": (r.get("shared_signal_fields") or {}).get(c, []),
+                               "note": "this card's S also comes from the shared field(s)"} for c in r.get("shared_signal") or []],
+            "S_signal_fields": sorted({mc["field"] for mc in r.get("market_chains") or [] if mc.get("S") is not None and mc.get("S") == r.get("S_market")}),
+            "related_news": {"top_titles": [n["title"] for n in related[:5]],
+                             "label_counts": dict(Counter(n["label"] for n in related if n.get("label")))}}
+
+
+def build_request(system: str, user: str, config: dict) -> dict:
+    return {"modelId": config["model_id"], "system": [{"text": system}, {"cachePoint": {"type": "default"}}],
+            "messages": [{"role": "user", "content": [{"text": user}]}],
+            "inferenceConfig": {"temperature": config["temperature"], "maxTokens": MAX_TOKENS},
+            "toolConfig": {"tools": [{"toolSpec": {"name": TOOL, "description": "Submit so_what, so_now_what, facts_used and caveats for the card.",
+                                                   "inputSchema": {"json": SCHEMA}}}],
+                           "toolChoice": {"tool": {"name": TOOL}}}}
+
+
+def parse(response: dict) -> dict:
+    if response.get("stopReason") not in ("tool_use", "end_turn"):
+        raise ValueError("incomplete_response:" + str(response.get("stopReason")))
+    tools = [p["toolUse"] for p in response.get("output", {}).get("message", {}).get("content", []) if "toolUse" in p]
+    if len(tools) != 1 or tools[0].get("name") != TOOL or not isinstance(tools[0].get("input"), dict):
+        raise ValueError("expected exactly one submit_narrative call")
+    value = tools[0]["input"]
+    Draft202012Validator(SCHEMA).validate(value)                 # strict mode is off: the schema is enforced here
+    return value
+
+
+def worst_case(system: str, user: str, prices: dict) -> Decimal:
+    tokens_in = Decimal(len((system + user).encode("utf-8")) // 2 + 200)   # generous: ~4 chars per token in practice
+    return (tokens_in * Decimal(prices["input_per_million"]) + Decimal(MAX_TOKENS) * Decimal(prices["output_per_million"])) / Decimal(1_000_000)
+
+
+def run(week: str, cap: Decimal, dry_run: bool = False, session=None, run_id: str | None = None, out: Path = OUT,
+        scores_dir: Path = SCORES, transmission=None) -> dict:
+    doc = json.loads((scores_dir / f"weekly_scores_v1.3_{week}.json").read_text())
+    config = json.loads(C.CONFIG.read_text())
+    system, user_template, version = prompt_parts()
+    transmission = transmission or chain_context()
+    run_id = run_id or "run_" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    run_dir = out / "runs" / week / run_id
+    run_dir.mkdir(parents=True, exist_ok=False)
+    records = doc["records"]
+    groups = {}
+    for r in records:
+        if r["status"] == "scored":
+            groups.setdefault(r["card_id"], []).append(r)
+    inputs = {cid: build_input(rs, records, transmission) for cid, rs in groups.items()}
+    with (run_dir / "inputs.jsonl").open("w", encoding="utf-8") as f:
+        for cid, rs in groups.items():
+            f.write(json.dumps({"card_id": cid, "record_ids": [r["record_id"] for r in rs], "input": inputs[cid]}, ensure_ascii=False) + "\n")
+    input_path = run_dir / "inputs.jsonl"
+    input_file = str(input_path.relative_to(PROJECT)) if input_path.is_relative_to(PROJECT) else str(input_path)
+    summary = {"week": week, "run_id": run_id, "prompt_version": version, "model": config["model_id"], "cap_usd": str(cap),
+               "dry_run": dry_run, "cards_called": len(groups), "records": len(records), "template_records": sum(r["status"] != "scored" for r in records),
+               "input_tokens": 0, "output_tokens": 0, "cache_read_input_tokens": 0, "cache_write_input_tokens": 0,
+               "estimated_cost_usd": "0", "estimated_cost_without_cache_usd": "0", "status": "started"}
+    users = {cid: user_template.replace("{RECORD}", json.dumps(inputs[cid], ensure_ascii=False, indent=1)) for cid in groups}
+    estimate = sum(worst_case(system, users[c], config["pricing"]) for c in groups)
+    summary["worst_case_estimate_usd"] = str(estimate.quantize(Decimal("0.0001")))
+    if dry_run:
+        with (run_dir / "prepared_requests.jsonl").open("w", encoding="utf-8") as f:       # derived from scores only; no article text
+            for c in groups:
+                f.write(json.dumps(build_request(system, users[c], config), ensure_ascii=False) + "\n")
+        summary["status"] = "dry_run"
+        C.dump(run_dir / "summary.json", summary)
+        return summary
+    if session is None:
+        from botocore.config import Config
+        session = C.aws_session(config)
+        sdk = Config(retries={"total_max_attempts": 1}, connect_timeout=10, read_timeout=config["read_timeout_seconds"])
+        sts, runtime = session.client("sts", config=sdk), session.client("bedrock-runtime", config=sdk)
+    else:
+        sts, runtime = session.client("sts"), session.client("bedrock-runtime")
+    if sts.get_caller_identity()["Account"] != config["expected_account_id"]:
+        raise ValueError("AWS account does not match the approved config")
+    spent, uncached, results = Decimal(0), Decimal(0), {}
+    for cid in groups:
+        reserve = worst_case(system, users[cid], config["pricing"])
+        if spent + reserve > cap:
+            summary["status"] = "budget_limit"; break
+        request = build_request(system, users[cid], config)
+        try:
+            response, _ = C.invoke(runtime, request, lambda n, e: C.dump(run_dir / "raw" / f"{cid}_attempt_{n}_error.json", e),
+                                   config["throttling_retries"], config["retry_base_seconds"])
+        except Exception as exc:
+            summary.update(status="invocation_error", invocation_error=C.safe_error(exc), unreported_cost_reserve_usd=str(reserve)); break
+        usage = response.get("usage", {})
+        cost = C.token_cost(usage, config["pricing"]); spent += cost; uncached += C.cost_without_cache(usage, config["pricing"])
+        for src, dst in (("inputTokens", "input_tokens"), ("outputTokens", "output_tokens"), ("cacheReadInputTokens", "cache_read_input_tokens"),
+                         ("cacheWriteInputTokens", "cache_write_input_tokens")):
+            summary[dst] += usage.get(src, 0)
+        C.dump(run_dir / "raw" / f"{cid}.json", {"card_id": cid, "request_sha256": sha(json.dumps(request, sort_keys=True).encode()),
+                                                "output": response.get("output"), "stopReason": response.get("stopReason"), "usage": usage,
+                                                "estimated_cost_usd": str(cost)})
+        try:
+            value = parse(response)
+            flags = NC.check(value["so_what"], value["so_now_what"], inputs[cid], value["facts_used"])
+        except Exception as exc:
+            value, flags = {"so_what": "", "so_now_what": "", "facts_used": [], "caveats": []}, [f"invalid output: {exc}"[:300]]
+        results[cid] = (value, flags)
+    summary.update(estimated_cost_usd=str(spent), estimated_cost_without_cache_usd=str(uncached))
+    if summary["status"] == "started":
+        summary["status"] = "complete"
+    rows = []
+    for r in records:
+        base = {"record_id": r["record_id"], "card_id": r["card_id"], "card_name": r["title"], "business_line": r["business_line"],
+                "status": r["status"], "S": r["S"], "V": r["V"], "severity": r["severity"], "prompt_version": version,
+                "decision": "", "reviewer": "", "corrected_so_what": "", "corrected_so_now_what": ""}
+        if r["status"] != "scored":
+            rows.append({**base, "generated_by": "template", "so_what": NC.TEMPLATE_SO_WHAT, "so_now_what": NC.TEMPLATE_SO_NOW_WHAT,
+                         "facts_used": "", "caveats": "", "check_flags": "", "model": "", "input_file": "", "input_sha256": ""})
+            continue
+        value, flags = results.get(r["card_id"], ({"so_what": "", "so_now_what": "", "facts_used": [], "caveats": []}, ["not generated (stopped before this card)"]))
+        rows.append({**base, "generated_by": "ai", "so_what": value["so_what"], "so_now_what": value["so_now_what"],
+                     "facts_used": json.dumps(value["facts_used"], ensure_ascii=False), "caveats": json.dumps(value["caveats"], ensure_ascii=False),
+                     "check_flags": json.dumps(flags, ensure_ascii=False), "model": config["model_id"], "input_file": input_file,
+                     "input_sha256": sha(json.dumps(inputs[r["card_id"]], sort_keys=True, ensure_ascii=False).encode())})
+    sheet = out / f"review_narratives_{week}.csv"
+    if sheet.exists():
+        sheet = out / f"review_narratives_{week}_{run_id}.csv"
+    with sheet.open("x", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=SHEET_FIELDS, lineterminator="\n"); w.writeheader(); w.writerows(rows)
+    summary.update(review_sheet=str(sheet.relative_to(PROJECT)) if sheet.is_relative_to(PROJECT) else str(sheet),
+                   flagged_cards=sum(1 for _, f in results.values() if f))
+    C.dump(run_dir / "summary.json", summary)
+    return summary
+
+
+def main(argv=None):
+    p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    p.add_argument("--week", required=True, help="Monday, YYYY-MM-DD")
+    p.add_argument("--cap", type=Decimal, required=True, help="hard USD cap for the model calls")
+    p.add_argument("--dry-run", action="store_true", help="build inputs and requests, estimate the cost, no model calls")
+    a = p.parse_args(argv)
+    if date.fromisoformat(a.week).weekday() != 0:
+        p.error("--week must be a Monday")
+    if not a.cap.is_finite() or a.cap <= 0:
+        p.error("--cap must be positive")
+    print(json.dumps(run(a.week, a.cap, a.dry_run), indent=2, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()
