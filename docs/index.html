@@ -233,7 +233,7 @@ const latestSnap=()=>SNAPS[0];
 const asArr=v=>Array.isArray(v)?v:(v==null||v===""?[]:[v]);
 const httpUrl=u=>/^https?:\/\//i.test(String(u||""));
 function relatedNews(v){const seen=new Set(); return asArr(v).filter(n=>n&&n.title&&!seen.has(n.url||n.title)&&seen.add(n.url||n.title))
-  .map(n=>({title:String(n.title),outlet:n.outlet?String(n.outlet):"",url:httpUrl(n.url)?String(n.url):""}));}
+  .map(n=>({title:String(n.title),outlet:n.outlet?String(n.outlet):"",url:httpUrl(n.url)?String(n.url):"",label:n.label?String(n.label):""}));}
 
 /* Normalise one model record into what the page needs. Missing fields are tolerated. */
 function norm(raw){
@@ -378,12 +378,12 @@ function aiChip(i){return i.aiLabel?`<span class="chip aiev">${esc(i.aiLabel)}</
 function aiNote(i){return i.aiLabel&&i.aiEvents.length?`<span class="shared">${esc(i.aiLabel)}: event${i.aiEvents.length>1?"s":""} ${esc(i.aiEvents.join(", "))} entered by the news classifier without a human decision.</span>`:"";}
 function relatedLine(i){
   if(!i.related.length) return "";
-  const top=i.related.slice(0,3).map(n=>esc(n.title)+(n.outlet?` (${esc(n.outlet)})`:"")).join("; ");
+  const top=i.related.slice(0,3).map(n=>esc(n.title)+(n.outlet?` (${esc(n.outlet)})`:"")+(n.label?` [${esc(n.label)}]`:"")).join("; ");
   return `<span class="cnews"><b>Related news</b> · ${NEWS_NOTE}: ${top}${i.related.length>3?`; and ${i.related.length-3} more`:""}</span>`;}
 function relatedSection(i){
   if(!i.related.length) return "";
   return `<section class="sec related"><h3 class="lab">Related news<span class="rnote">${NEWS_NOTE}</span></h3>
-    <ul>${i.related.map(n=>`<li>${n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.title)}</a>`:esc(n.title)}${n.outlet?` <span class="o">· ${esc(n.outlet)}</span>`:""}</li>`).join("")}</ul></section>`;}
+    <ul>${i.related.map(n=>`<li>${n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.title)}</a>`:esc(n.title)}${n.outlet?` <span class="o">· ${esc(n.outlet)}</span>`:""}${n.label?` <span class="chip o">${esc(n.label)}</span>`:""}</li>`).join("")}</ul></section>`;}
 function sharedNote(i){
   if(!i.shared.length) return "";
   const names=i.shared.map(cid=>{const o=ALL().find(x=>x.cardId===cid&&x.snapshot===i.snapshot); return o?`${o.title} (${cid})`:cid;});

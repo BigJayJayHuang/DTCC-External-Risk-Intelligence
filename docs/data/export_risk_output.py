@@ -11,7 +11,7 @@ analysis_status = "pending_llm"; no placeholder text is written into the data. O
 related_news (Amendment D4/E3) is passed through from the scoring records; ai_unreviewed_events lists the active register events
 on the card that are AI-classified and not reviewed (Amendment C1), whether or not they set S.
 """
-import argparse, csv, hashlib, json, runpy
+import argparse, csv, hashlib, json, runpy, urllib.parse
 from datetime import date
 from pathlib import Path
 
@@ -120,7 +120,10 @@ def sources(r, proxy, pqd_urls):
     for e in r['event_manual']['events']:
         for u in e.get('source_urls') or []:
             by_url.setdefault(u, [e.get('outlet') or 'Source', []])[1].append(e['event_id'])
-    out += [{'name': f"{outlet} ({', '.join(ids)})", 'url': u} for u, (outlet, ids) in by_url.items()]
+    multi = {i for e in r['event_manual']['events'] if len(e.get('source_urls') or []) > 1 for i in [e['event_id']]}
+    host = lambda u: (urllib.parse.urlparse(u).hostname or '').removeprefix('www.')
+    out += [{'name': f"{outlet} ({', '.join(ids)})" + (f" · {host(u)}" if multi.intersection(ids) else ''), 'url': u}
+            for u, (outlet, ids) in by_url.items()]
     if r['V_tier'] == 'pqd':
         period = r['V_quarter'][:4] + ' Q' + r['V_quarter'][-1]
         out.append({'name': f'DTCC CPMI-IOSCO public quantitative disclosure, {period}', 'url': pqd_urls.get(period, '')})

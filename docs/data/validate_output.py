@@ -119,6 +119,8 @@ def main(path):
                 for k, n in enumerate(rel):
                     if not isinstance(n, dict) or not n.get("title") or not str(n.get("url", "")).startswith(("https://", "http://")):
                         errors.append(f"{tag}: related_news[{k}] needs a title and an http(s) url")
+                    elif n.get("label") not in (None, "", "membership/onboarding"):
+                        errors.append(f"{tag}: related_news[{k}] label '{n.get('label')}' is not a known label (Amendment G3)")
         ai_ev = it.get("ai_unreviewed_events")
         if ai_ev is not None and not (isinstance(ai_ev, list) and all(isinstance(x, str) for x in ai_ev)):
             errors.append(f"{tag}: ai_unreviewed_events must be a list of event ids")
