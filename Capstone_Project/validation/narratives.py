@@ -29,7 +29,7 @@ from .paths import PROJECT
 
 REPO = PROJECT.parent
 PROMPT = Path(__file__).with_name("narrative_prompt_v1.md")
-PROMPTS = {"v1": PROMPT, "v2": Path(__file__).with_name("narrative_prompt_v2.md")}
+PROMPTS = {"v1": PROMPT, "v2": Path(__file__).with_name("narrative_prompt_v2.md"), "v3": Path(__file__).with_name("narrative_prompt_v3.md")}
 # Prompt v2: plain names for the six market signals; all are market-wide (never stress at specific firms)
 SIGNAL_PLAIN = {
     "ust10_abs_change": "daily move in the 10-year Treasury yield, bp",
@@ -151,6 +151,22 @@ def build_input_v2(records: list[dict], week_records: list[dict], transmission) 
     return inp
 
 
+def v_level(v: int) -> str:
+    return "low" if v <= 2 else "medium" if v == 3 else "high"
+
+
+def build_input_v3(records: list[dict], week_records: list[dict], transmission) -> dict:
+    """v2 input plus V_short ("V k of 5 (low/medium/high vs own history)") and S_set_by (the first signal or the event)."""
+    inp = build_input_v2(records, week_records, transmission)
+    if inp.get("V") is not None:
+        inp["V_short"] = f"V {inp['V']} of 5 ({v_level(inp['V'])} vs own history)"
+    if inp.get("S_signals"):
+        inp["S_set_by"] = inp["S_signals"][0]["plain_name"]
+    elif inp.get("driving_event"):
+        inp["S_set_by"] = f"event: {inp['driving_event']['title']} (effect {inp['driving_event']['effect_date']})"
+    return inp
+
+
 def build_request(system: str, user: str, config: dict) -> dict:
     return {"modelId": config["model_id"], "system": [{"text": system}, {"cachePoint": {"type": "default"}}],
             "messages": [{"role": "user", "content": [{"text": user}]}],
@@ -182,7 +198,7 @@ def run(week: str, cap: Decimal, dry_run: bool = False, session=None, run_id: st
     doc = json.loads((scores_dir / f"weekly_scores_v1.3_{week}.json").read_text())
     config = json.loads(C.CONFIG.read_text())
     system, user_template, version = prompt_parts(PROMPTS[prompt])
-    make_input = build_input_v2 if prompt == "v2" else build_input
+    make_input = {"v1": build_input, "v2": build_input_v2, "v3": build_input_v3}[prompt]
     transmission = transmission or chain_context()
     run_id = run_id or "run_" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     run_dir = out / "runs" / week / run_id
@@ -243,8 +259,8 @@ def run(week: str, cap: Decimal, dry_run: bool = False, session=None, run_id: st
         try:
             value = parse(response)
             flags = NC.check(value["so_what"], value["so_now_what"], inputs[cid], value["facts_used"])
-            if prompt == "v2":
-                flags += NC.style_flags(value["so_what"], value["so_now_what"], inputs[cid])
+            if prompt in ("v2", "v3"):
+                flags += NC.style_flags(value["so_what"], value["so_now_what"], inputs[cid], version=prompt)
         except Exception as exc:
             value, flags = {"so_what": "", "so_now_what": "", "facts_used": [], "caveats": []}, [f"invalid output: {exc}"[:300]]
         results[cid] = (value, flags)
@@ -252,6 +268,8 @@ def run(week: str, cap: Decimal, dry_run: bool = False, session=None, run_id: st
     if summary["status"] == "started":
         summary["status"] = "complete"
     if compare_with is not None:
+        if prompt == "v3":
+            return write_comparison_v3(summary, run_dir, week, compare_with, results, inputs, out)
         return write_comparison(summary, run_dir, week, compare_with, results, inputs, out)
     rows = []
     for r in records:
@@ -312,13 +330,64 @@ def write_comparison(summary, run_dir, week, sheet, results, inputs, out):
     return summary
 
 
+COMPARE_FIELDS_V3 = ["card_id", "record_ids", "edited_so_what", "edited_so_now_what", "edited_words", "v2_so_what", "v2_so_now_what", "v2_words",
+                     "v3_so_what", "v3_so_now_what", "v3_words", "v3_check_flags", "v3_style_flags", "within_limits", "latest_not_next_pqd",
+                     "no_firm_specific_wording", "plain_names", "shared_signal_mentioned", "v_short_form", "no_interpretive_words",
+                     "no_pqd_on_proxy", "only_setting_signal_in_so_what", "unsupported_inference"]
+
+
+def words(a: str, b: str) -> str:
+    return f"{len((a or '').split())}/{len((b or '').split())}"
+
+
+def write_comparison_v3(summary, run_dir, week, sheet, results, inputs, out):
+    """Reviewed text, the v2 draft (from comparison_narratives_v2_<week>.csv when present) and the v3 draft, with the
+    review's problems checked on v3 and word counts (so_what/so_now_what) for all three."""
+    with Path(sheet).open(encoding="utf-8", newline="") as f:
+        edited = {}
+        for r in csv.DictReader(f):
+            if r["generated_by"] == "ai":
+                edited.setdefault(r["card_id"], {"rows": [], **r})["rows"].append(r["record_id"])
+    v2 = {}
+    v2_path = out / f"comparison_narratives_v2_{week}.csv"
+    if v2_path.exists():
+        with v2_path.open(encoding="utf-8", newline="") as f:
+            v2 = {r["card_id"]: r for r in csv.DictReader(f)}
+    rows = []
+    for cid, (value, flags) in results.items():
+        e, p2 = edited.get(cid, {"rows": []}), v2.get(cid, {})
+        style = NC.style_flags(value["so_what"], value["so_now_what"], inputs[cid], version="v3") if value["so_what"] else ["not generated"]
+        base = [f for f in flags if f not in style]
+        yes = lambda *bad: "no" if any(b in f for b in bad for f in style + base) else "yes"
+        es, en = e.get("corrected_so_what") or e.get("so_what", ""), e.get("corrected_so_now_what") or e.get("so_now_what", "")
+        rows.append({"card_id": cid, "record_ids": "|".join(e["rows"]), "edited_so_what": es, "edited_so_now_what": en, "edited_words": words(es, en),
+                     "v2_so_what": p2.get("v2_so_what", ""), "v2_so_now_what": p2.get("v2_so_now_what", ""),
+                     "v2_words": words(p2.get("v2_so_what", ""), p2.get("v2_so_now_what", "")) if p2 else "",
+                     "v3_so_what": value["so_what"], "v3_so_now_what": value["so_now_what"], "v3_words": words(value["so_what"], value["so_now_what"]),
+                     "v3_check_flags": json.dumps(base, ensure_ascii=False), "v3_style_flags": json.dumps(style, ensure_ascii=False),
+                     "within_limits": yes("words >", "sentences >"), "latest_not_next_pqd": yes("latest available PQD"),
+                     "no_firm_specific_wording": yes("specific firms"), "plain_names": yes("series codes"),
+                     "shared_signal_mentioned": "n/a" if not inputs[cid].get("shared_signal") else yes("shared signal"),
+                     "v_short_form": yes("short form", "V ratio name"), "no_interpretive_words": yes("interpretive"),
+                     "no_pqd_on_proxy": "n/a" if inputs[cid].get("V_tier") != "public_proxy" else yes("PQD mentioned"),
+                     "only_setting_signal_in_so_what": yes("second tied signal", "lacks the percentile"), "unsupported_inference": "read: no code check"})
+    path = out / f"comparison_narratives_v3_{week}.csv"
+    if path.exists():
+        path = out / f"comparison_narratives_v3_{week}_{summary['run_id']}.csv"
+    with path.open("x", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=COMPARE_FIELDS_V3, lineterminator="\n"); w.writeheader(); w.writerows(rows)
+    summary.update(comparison_file=str(path.relative_to(PROJECT)) if path.is_relative_to(PROJECT) else str(path))
+    C.dump(run_dir / "summary.json", summary)
+    return summary
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     p.add_argument("--week", required=True, help="Monday, YYYY-MM-DD")
     p.add_argument("--cap", type=Decimal, required=True, help="hard USD cap for the model calls")
     p.add_argument("--dry-run", action="store_true", help="build inputs and requests, estimate the cost, no model calls")
     p.add_argument("--prompt", choices=sorted(PROMPTS), default="v1")
-    p.add_argument("--compare-with", type=Path, help="reviewed sheet: write a v2 comparison file instead of a review sheet")
+    p.add_argument("--compare-with", type=Path, help="reviewed sheet: write a v2/v3 comparison file instead of a review sheet")
     a = p.parse_args(argv)
     if date.fromisoformat(a.week).weekday() != 0:
         p.error("--week must be a Monday")

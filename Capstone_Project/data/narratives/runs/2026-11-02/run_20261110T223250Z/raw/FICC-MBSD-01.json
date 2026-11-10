@@ -1,0 +1,49 @@
+{
+  "card_id": "FICC-MBSD-01",
+  "request_sha256": "237b610bf85c17afee4e4952f99a6db9c9c3e43b1c918763470726997c50c40c",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_O2BHn5QTi4OfjevGRuWmec",
+            "name": "submit_narrative",
+            "input": {
+              "so_what": "The weekly change in the 30-year mortgage rate minus 10-year Treasury yield spread reached the 53rd percentile of 460 prior weeks, relevant to MBSD margin and variation margin; V 1 of 5 (low vs own history).",
+              "so_now_what": "Watch the mortgage-Treasury spread for further movement; the next quarterly PQD release will update the buffer measure.",
+              "facts_used": [
+                "S_set_by",
+                "signal.percentile",
+                "signal.prior_weeks",
+                "transmission_chain.dtcc_process",
+                "V_short",
+                "V_tier",
+                "latest_available_pqd_quarter",
+                "signal.scope",
+                "S_signals",
+                "shared_signal",
+                "driving_event"
+              ],
+              "caveats": [
+                "chain_confidence is Medium",
+                "No related news headlines provided",
+                "No driving event active this week"
+              ]
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1116,
+    "outputTokens": 262,
+    "totalTokens": 3411,
+    "cacheReadInputTokens": 2033,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.00867669"
+}

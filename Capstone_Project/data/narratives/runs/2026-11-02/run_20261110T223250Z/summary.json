@@ -1,0 +1,20 @@
+{
+  "week": "2026-11-02",
+  "run_id": "run_20261110T223250Z",
+  "prompt_version": "narrative-prompt-v3:1ee217b41673",
+  "model": "us.anthropic.claude-sonnet-4-6",
+  "cap_usd": "0.20",
+  "dry_run": false,
+  "cards_called": 7,
+  "records": 20,
+  "template_records": 12,
+  "input_tokens": 8930,
+  "output_tokens": 2148,
+  "cache_read_input_tokens": 12198,
+  "cache_write_input_tokens": 2033,
+  "estimated_cost_usd": "0.077322465",
+  "estimated_cost_without_cache_usd": "0.1118733",
+  "status": "complete",
+  "worst_case_estimate_usd": "0.1895",
+  "comparison_file": "data/narratives/comparison_narratives_v3_2026-11-02.csv"
+}

@@ -1,0 +1,53 @@
+{
+  "card_id": "FICC-GSD-01",
+  "request_sha256": "1d6ca7dbd66e3178e4aeb53923c7a2d399726f211ffd6e788a38b48b7099c6d2",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Y5lT6xAFQjyGUfPBSP0OXu",
+            "name": "submit_narrative",
+            "input": {
+              "so_what": "The daily move in the 10-year Treasury yield reached the 42nd percentile of 461 prior weeks, relevant to GSD margin requirements; V 1 of 5 (low vs own history).",
+              "so_now_what": "Watch the daily move in the 10-year Treasury yield and the next quarterly PQD release for any change in the GSD buffer measure.",
+              "facts_used": [
+                "S_set_by",
+                "signal.percentile",
+                "signal.prior_weeks",
+                "transmission_chain.dtcc_process",
+                "V_short",
+                "V_tier",
+                "latest_available_pqd_quarter",
+                "signal.plain_name",
+                "signal.scope"
+              ],
+              "caveats": [
+                "chain_confidence is Medium, not High",
+                "Related news is headline-level only and not scored",
+                "No driving event present"
+              ]
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1127,
+    "outputTokens": 256,
+    "totalTokens": 3416,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 2033,
+    "cacheDetails": [
+      {
+        "ttl": "5m",
+        "inputTokens": 2033
+      }
+    ]
+  },
+  "estimated_cost_usd": "0.016329225"
+}

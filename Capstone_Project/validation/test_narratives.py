@@ -200,6 +200,62 @@ class PromptV2(unittest.TestCase):
             self.assertTrue(res["prompt_version"].startswith("narrative-prompt-v2:"))
 
 
+class PromptV3(unittest.TestCase):
+    """v3: V short form, only the setting signal in so_what, no added interpretive words, no PQD on proxy cards."""
+    def setUp(self):
+        self.t = lambda r: {"event": "E", "mechanism": "Members' funding costs rise", "dtcc_process": "P"}
+        self.inp = lambda rid: N.build_input_v3([r for r in SCORES["records"] if r["card_id"] == next(
+            x["card_id"] for x in SCORES["records"] if x["record_id"] == rid)], SCORES["records"], self.t)
+
+    def test_inputs(self):
+        liq, g03, vol = self.inp("ecs-nscc-liq"), self.inp("ficc-gsd-03"), self.inp("ecs-nscc-03")
+        self.assertEqual((liq["V_short"], liq["S_set_by"]), ("V 3 of 5 (medium vs own history)", "VIX relative to its 20-day average (ratio)"))
+        self.assertTrue(g03["S_set_by"].startswith("event: Treasury clearing compliance date") and g03["V_short"].endswith("(medium vs own history)"))
+        self.assertEqual(vol["V_short"], "V 1 of 5 (low vs own history)")
+        self.assertEqual([N.v_level(v) for v in (1, 2, 3, 4, 5)], ["low", "low", "medium", "high", "high"])
+        prompt = N.prompt_parts(N.PROMPTS["v3"])[0]
+        for rule in ("V_short", "in at most 8 words", "interpretive words", "never mention PQD for this card", "at most 45 words"):
+            self.assertIn(rule, prompt)
+
+    def test_style_flags(self):
+        liq, vol = self.inp("ecs-nscc-liq"), self.inp("ecs-nscc-03")
+        good = ("VIX relative to its 20-day average reached the 97th percentile of 457 prior weeks, relevant to NSCC variation "
+                "margin; V 3 of 5 (medium vs own history).", "S is also set by the SOFR−EFFR spread, shared with FICC-GSD-02. "
+                "Watch the daily VIX ratio and the next quarterly PQD release.")
+        self.assertEqual(NC.style_flags(*good, liq, version="v3"), [])
+        bad = ("VIX and the SOFR−EFFR spread show funding stress; the largest payment obligation to qualifying liquid resources "
+               "sits at level 3 of 5 versus its own history.", "Watch the strain.")
+        flags = NC.style_flags(*bad, liq, version="v3")
+        for expect in ("short form", "V ratio name", "interpretive words not in the input: strain, stress", "second tied signal", "lacks the percentile"):
+            self.assertTrue(any(expect in f for f in flags), (expect, flags))
+        proxy = ("US consolidated equity volume reached the 83rd percentile; V 1 of 5 (low vs own history), public proxy.",
+                 "Watch the next quarterly PQD release.")
+        self.assertIn("PQD mentioned on a public-proxy card", NC.style_flags(*proxy, vol, version="v3"))
+        self.assertNotIn("interpretive", " ".join(NC.style_flags("GSD's stress-loss-to-margin ratio; V 1 of 5 (low vs own history).", "",
+                                                                  self.inp("ficc-gsd-01"), version="v3")))
+        self.assertEqual(NC.style_flags("Funding costs rise for members; V 1 of 5 (low vs own history).", "", self.inp("ficc-gsd-01"),
+                                        version="v3")[-1:], ["so_what lacks the percentile of the signal that sets S (42nd)"])
+
+    def test_comparison_file_has_three_texts_and_word_counts(self):
+        with tempfile.TemporaryDirectory() as d:
+            out = Path(d); sheet = out / "reviewed.csv"
+            with sheet.open("w", newline="") as f:
+                w = csv.DictWriter(f, fieldnames=N.SHEET_FIELDS); w.writeheader()
+                w.writerow({k: "" for k in N.SHEET_FIELDS} | {"record_id": "ecs-nscc-liq", "card_id": "ECS-NSCC-LIQ", "generated_by": "ai",
+                                                               "corrected_so_what": "Edited text here.", "corrected_so_now_what": "Watch."})
+            with (out / f"comparison_narratives_v2_{WEEK}.csv").open("w", newline="") as f:
+                w = csv.DictWriter(f, fieldnames=N.COMPARE_FIELDS); w.writeheader()
+                w.writerow({k: "" for k in N.COMPARE_FIELDS} | {"card_id": "ECS-NSCC-LIQ", "v2_so_what": "A b c.", "v2_so_now_what": "D."})
+            v3 = lambda card: {"so_what": "VIX relative to its 20-day average reached the 97th percentile; V 3 of 5 (medium vs own history).",
+                               "so_now_what": "S is also set by the SOFR−EFFR spread, shared with FICC-GSD-02.", "facts_used": ["S_set_by"], "caveats": []}
+            N.run(WEEK, Decimal("0.20"), session=FakeSession(FakeRuntime(v3)), run_id="c3", out=out, transmission=self.t, prompt="v3", compare_with=sheet)
+            with (out / f"comparison_narratives_v3_{WEEK}.csv").open() as f:
+                liq = {r["card_id"]: r for r in csv.DictReader(f)}["ECS-NSCC-LIQ"]
+        self.assertEqual((liq["edited_words"], liq["v2_words"], liq["v3_words"]), ("3/1", "3/1", "18/11"))
+        self.assertEqual((liq["within_limits"], liq["v_short_form"], liq["only_setting_signal_in_so_what"], liq["shared_signal_mentioned"],
+                          liq["no_pqd_on_proxy"]), ("yes", "yes", "yes", "yes", "n/a"))
+
+
 class ExportGate(unittest.TestCase):
     """docs/data/export_risk_output.py publishes only approved narratives that pass the checks again."""
     def setUp(self):

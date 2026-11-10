@@ -102,6 +102,7 @@ python -m validation.narratives --week <Monday> --cap 0.50
 - **Checks.** Every number must come from the card's input; word limits; no banned phrases ("must", "should raise", "recommend that DTCC", …); a public-proxy V, Low chain confidence and a shared signal must be mentioned. The result is in `check_flags`.
 - **Review.** Open `data/narratives/review_narratives_<Monday>.csv`. For each AI row, fill `decision` (`approve`, `edit` or `reject`) and `reviewer`. For `edit`, fill `corrected_so_what` and/or `corrected_so_now_what`. A row with `check_flags` needs an edit before it can be published.
 - **Display only.** This step never changes S, V, severity, status or ranking.
+- **Prompt v3 (trial).** `--prompt v3 --compare-with …` writes `comparison_narratives_v3_<Monday>.csv` with the reviewed text, v2 and v3 side by side, plus word counts. v3 shortens v2: V written as "V k of 5 (low/medium/high vs own history)", so_what names only what sets S, no added interpretive words, no PQD on public-proxy cards.
 - **Prompt v2 (trial).** `--prompt v2 --compare-with data/narratives/review_narratives_<Monday>.csv` drafts with prompt v2 and writes `comparison_narratives_v2_<Monday>.csv`: the reviewed text next to each v2 draft. It never writes the review sheet. v2 adds every field that sets S, plain signal names, the latest PQD quarter and the meaning of V. Its style checks flag series codes, a latest quarter called "next", firm-specific wording for market-wide signals, and a missing V meaning.
 
 ## 7. Export the dashboard

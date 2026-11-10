@@ -168,9 +168,21 @@ FIRM_STRESS = re.compile(r"\b(?:member|firm|dealer|bank)s?['’]?\s+(?:credit\s+
 V_MEANING = re.compile(r"(versus|relative to|compared with) its own history|\blevel \d of 5\b", re.I)
 
 
-def style_flags(so_what: str, so_now_what: str, record_input: dict) -> list[str]:
-    """Prompt v2 rules: plain names, latest (not next) PQD quarter, no firm-specific wording for market-wide signals,
-    V meaning given. The shared-signal and number rules are in check()."""
+INTERPRETIVE = re.compile(r"\b(stress\w*|tight\w*|pressur\w*|strain\w*)\b", re.I)
+SIGNAL_ALIAS = {"sofr_effr_adjusted": ["SOFR"], "vix_jump": ["VIX"], "baa_widen20": ["Baa"], "ust10_abs_change": ["10-year Treasury yield"],
+                "mbs_spread_abs_wchg": ["mortgage"], "consolidated_shares": ["equity volume"]}
+NON_INTERPRETIVE_FIELDS = {"V_meaning", "V_driver", "V_source", "V_short"}      # measure names, not interpretation
+
+
+def _ordinal(n: int) -> str:
+    return f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
+
+
+def style_flags(so_what: str, so_now_what: str, record_input: dict, version: str = "v2") -> list[str]:
+    """Prompt v2 / v3 drafting rules (flags on drafts only). v2 and v3: plain names, latest (not next) PQD quarter, no
+    firm-specific wording for market-wide signals. v2: V meaning given. v3: V short form, no V ratio name in so_what,
+    no added interpretive words, no PQD on public-proxy cards, so_what names only the first signal that sets S (with
+    its percentile). The shared-signal and number rules are in check()."""
     both = f"{so_what or ''} {so_now_what or ''}"
     flags = []
     codes = sorted({m.group(0) for m in SERIES_CODES.finditer(both)})
@@ -181,8 +193,34 @@ def style_flags(so_what: str, so_now_what: str, record_input: dict) -> list[str]
         flags.append("latest available PQD quarter described as the next release")
     if (record_input.get("signal") or {}).get("scope") == "market-wide" and FIRM_STRESS.search(both):
         flags.append("market-wide signal described as stress at specific firms")
-    if record_input.get("V") is not None and not V_MEANING.search(both):
-        flags.append("V meaning not given (level k of 5 versus its own history)")
+    if version == "v2":
+        if record_input.get("V") is not None and not V_MEANING.search(both):
+            flags.append("V meaning not given (level k of 5 versus its own history)")
+        return flags
+    short = record_input.get("V_short")
+    if short and short.lower() not in both.lower():
+        flags.append(f"V not in its short form ('{short}')")
+    measure = re.search(r"\(([^()]*(?:\([^()]*\))?[^()]*)\) sits at level", record_input.get("V_meaning") or "")
+    if measure:
+        name = re.sub(r"\s+for (GSD|MBSD|NSCC)$", "", measure.group(1)).strip()
+        if name and name.lower() in (so_what or "").lower():
+            flags.append(f"V ratio name in so_what ('{name}')")
+    allowed = " ".join(str(v) for path, v in _walk({k: v for k, v in record_input.items() if k not in NON_INTERPRETIVE_FIELDS})
+                       if isinstance(v, str)).lower()
+    text = re.sub(r"\bstress[- ]loss\w*", " ", both, flags=re.I)        # a measure name (covered by the ratio-name rule)
+    added = sorted({m.group(1).lower() for m in INTERPRETIVE.finditer(text) if m.group(1).lower()[:5] not in allowed})
+    if added:
+        flags.append("interpretive words not in the input: " + ", ".join(added))
+    if record_input.get("V_tier") == "public_proxy" and re.search(r"\bPQD\b", both):
+        flags.append("PQD mentioned on a public-proxy card")
+    signals = record_input.get("S_signals") or []
+    for later in signals[1:]:
+        if any(a.lower() in (so_what or "").lower() for a in SIGNAL_ALIAS.get(later.get("field"), [])):
+            flags.append(f"second tied signal ({later.get('field')}) in so_what")
+    if signals and signals[0].get("percentile") is not None:
+        pct = _ordinal(round(signals[0]["percentile"] * 100))
+        if pct not in (so_what or ""):
+            flags.append(f"so_what lacks the percentile of the signal that sets S ({pct})")
     return flags
 
 
