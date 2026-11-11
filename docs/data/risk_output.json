@@ -285,6 +285,21 @@
       "related_news": [],
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Treasury selloff or sharp yield swings",
+        "Price moves shift required margin",
+        "GSD margin requirements"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "FRED (10-year Treasury) · DTCC quarterly disclosures",
       "shock_method": "Market indicator"
     },
     {
@@ -491,6 +506,21 @@
       "related_news": [],
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Repo rates spike or funding tightens",
+        "Members' daily settlement funding costs rise",
+        "GSD settlement payments and liquidity"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "FRED (SOFR, EFFR) · DTCC quarterly disclosures",
       "shock_method": "Market indicator"
     },
     {
@@ -630,6 +660,21 @@
       "related_news": [],
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Treasury central clearing deadlines shift",
+        "Firms rush or delay GSD onboarding",
+        "GSD onboarding and Sponsored volume"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Federal Register (SEC) · DTCC quarterly disclosures",
       "shock_method": "Event rubric (hand-entered register)",
       "review_status": "Event EV0006 signed off by Wenqi Cai 2026-11-05T04:45Z"
     },
@@ -762,6 +807,21 @@
       "related_news": [],
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Mortgage rates or MBS spreads jump",
+        "TBA price swings shift margin requirements",
+        "MBSD margin and variation margin calls"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "FRED (mortgage rate, 10-year Treasury) · DTCC quarterly disclosures",
       "shock_method": "Market indicator"
     },
     {
@@ -967,6 +1027,21 @@
       "related_news": [],
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Sharp equity selloff, large price swings",
+        "Daily mark-to-market payments change sharply",
+        "NSCC variation margin calls"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "FRED (VIX, SOFR, EFFR) · DTCC quarterly disclosures",
       "shock_method": "Market indicator"
     },
     {
@@ -1089,6 +1164,21 @@
       "related_news": [],
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Equity trading volume surges",
+        "More positions left undelivered",
+        "NSCC CNS settlement and fails"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Cboe volume data",
       "shock_method": "Market indicator"
     },
     {
@@ -1182,7 +1272,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Shorter settlement cycle, longer trading hours",
+        "Processing and affirmation windows compress",
+        "NSCC and DTC settlement"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "SEC fails-to-deliver data"
     },
     {
       "record_id": "xe-member-ficc",
@@ -1358,6 +1463,21 @@
       "related_news": [],
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Bank or dealer credit deteriorates",
+        "Member default and liquidity risk rise",
+        "FICC surveillance and NSCC member requirements"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "FRED (Baa spread) · DTCC quarterly disclosures",
       "shock_method": "Market indicator"
     },
     {
@@ -1534,6 +1654,21 @@
       "related_news": [],
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Bank or dealer credit deteriorates",
+        "Member default and liquidity risk rise",
+        "FICC surveillance and NSCC member requirements"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "FRED (Baa spread) · DTCC quarterly disclosures",
       "shock_method": "Market indicator"
     },
     {
@@ -1626,7 +1761,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Market-wide disruption or declared emergency",
+        "Settlement timeframes may be adjusted",
+        "MBSD and DTC settlement timeframes"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Nasdaq trade-halt history"
     },
     {
       "record_id": "xe-disrupt-ecs",
@@ -1718,7 +1868,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Market-wide disruption or declared emergency",
+        "Settlement timeframes may be adjusted",
+        "MBSD and DTC settlement timeframes"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Nasdaq trade-halt history"
     },
     {
       "record_id": "xe-settlebank-ficc",
@@ -1811,7 +1976,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Clearing or settling bank fails operationally",
+        "Fedwire payments and deliveries cannot complete",
+        "GSD and NSCC settlement disrupted"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Nasdaq index data"
     },
     {
       "record_id": "xe-settlebank-ecs",
@@ -1904,7 +2084,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Clearing or settling bank fails operationally",
+        "Fedwire payments and deliveries cannot complete",
+        "GSD and NSCC settlement disrupted"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Nasdaq index data"
     },
     {
       "record_id": "xe-cyber-ficc",
@@ -2000,7 +2195,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Cyber event hits large member",
+        "Member connectivity and submissions disrupted",
+        "MBSD and DTC participant system disruption"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "NIST vulnerability database"
     },
     {
       "record_id": "xe-cyber-ecs",
@@ -2096,7 +2306,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Cyber event hits large member",
+        "Member connectivity and submissions disrupted",
+        "MBSD and DTC participant system disruption"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "NIST vulnerability database"
     },
     {
       "record_id": "ficc-gsd-11",
@@ -2189,7 +2414,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Buy-side customer under stress or fails",
+        "Agent Clearing Member absorbs customer exposure",
+        "GSD Agent Clearing Service stressed"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "OFR Hedge Fund Monitor"
     },
     {
       "record_id": "ficc-mbsd-02",
@@ -2277,7 +2517,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "MBS pool data or supply breaks",
+        "Pool deliveries fail",
+        "MBSD pool settlement and fails charges"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "New York Fed household debt data"
     },
     {
       "record_id": "ecs-nscc-08",
@@ -2368,7 +2623,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Retail broker fails or exits abruptly",
+        "Mass account transfers concentrate in ACATS",
+        "NSCC ACATS transfer and settlement activity"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Yahoo Finance (broker-dealer index)"
     },
     {
       "record_id": "ecs-nscc-09",
@@ -2461,7 +2731,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Securities financing markets under stress",
+        "SFT positions reprice and remargin sharply",
+        "NSCC SFT clearing service obligations spike"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "New York Fed markets data"
     },
     {
       "record_id": "ecs-dtc-01",
@@ -2552,7 +2837,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Money market issuer funding problem",
+        "Issuing agent withholds funding acknowledgment",
+        "DTC MMI settlement stalls"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Federal Reserve CP release"
     },
     {
       "record_id": "ficc-gsd-01",
@@ -2674,6 +2974,21 @@
       "related_news": [],
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Treasury selloff or sharp yield swings",
+        "Price moves shift required margin",
+        "GSD margin requirements"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "FRED (10-year Treasury) · DTCC quarterly disclosures",
       "shock_method": "Market indicator"
     },
     {
@@ -2880,6 +3195,21 @@
       "related_news": [],
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Repo rates spike or funding tightens",
+        "Members' daily settlement funding costs rise",
+        "GSD settlement payments and liquidity"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "FRED (SOFR, EFFR) · DTCC quarterly disclosures",
       "shock_method": "Market indicator"
     },
     {
@@ -3019,6 +3349,21 @@
       "related_news": [],
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Treasury central clearing deadlines shift",
+        "Firms rush or delay GSD onboarding",
+        "GSD onboarding and Sponsored volume"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Federal Register (SEC) · DTCC quarterly disclosures",
       "shock_method": "Event rubric (hand-entered register)",
       "review_status": "Event EV0006 signed off by Wenqi Cai 2026-11-05T04:45Z"
     },
@@ -3188,6 +3533,21 @@
       "related_news": [],
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Mortgage rates or MBS spreads jump",
+        "TBA price swings shift margin requirements",
+        "MBSD margin and variation margin calls"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "FRED (mortgage rate, 10-year Treasury) · DTCC quarterly disclosures",
       "shock_method": "Market indicator"
     },
     {
@@ -3415,6 +3775,21 @@
       "related_news": [],
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Sharp equity selloff, large price swings",
+        "Daily mark-to-market payments change sharply",
+        "NSCC variation margin calls"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "FRED (VIX, SOFR, EFFR) · DTCC quarterly disclosures",
       "shock_method": "Market indicator"
     },
     {
@@ -3537,6 +3912,21 @@
       "related_news": [],
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Equity trading volume surges",
+        "More positions left undelivered",
+        "NSCC CNS settlement and fails"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Cboe volume data",
       "shock_method": "Market indicator"
     },
     {
@@ -3630,7 +4020,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Shorter settlement cycle, longer trading hours",
+        "Processing and affirmation windows compress",
+        "NSCC and DTC settlement"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "SEC fails-to-deliver data"
     },
     {
       "record_id": "xe-member-ficc",
@@ -3759,6 +4164,21 @@
       "related_news": [],
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Bank or dealer credit deteriorates",
+        "Member default and liquidity risk rise",
+        "FICC surveillance and NSCC member requirements"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "FRED (Baa spread) · DTCC quarterly disclosures",
       "shock_method": "Market indicator"
     },
     {
@@ -3888,6 +4308,21 @@
       "related_news": [],
       "ai_unreviewed_events": [],
       "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Bank or dealer credit deteriorates",
+        "Member default and liquidity risk rise",
+        "FICC surveillance and NSCC member requirements"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "FRED (Baa spread) · DTCC quarterly disclosures",
       "shock_method": "Market indicator"
     },
     {
@@ -3980,7 +4415,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Market-wide disruption or declared emergency",
+        "Settlement timeframes may be adjusted",
+        "MBSD and DTC settlement timeframes"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Nasdaq trade-halt history"
     },
     {
       "record_id": "xe-disrupt-ecs",
@@ -4072,7 +4522,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Market-wide disruption or declared emergency",
+        "Settlement timeframes may be adjusted",
+        "MBSD and DTC settlement timeframes"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Nasdaq trade-halt history"
     },
     {
       "record_id": "xe-settlebank-ficc",
@@ -4165,7 +4630,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Clearing or settling bank fails operationally",
+        "Fedwire payments and deliveries cannot complete",
+        "GSD and NSCC settlement disrupted"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Nasdaq index data"
     },
     {
       "record_id": "xe-settlebank-ecs",
@@ -4258,7 +4738,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Clearing or settling bank fails operationally",
+        "Fedwire payments and deliveries cannot complete",
+        "GSD and NSCC settlement disrupted"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Nasdaq index data"
     },
     {
       "record_id": "xe-cyber-ficc",
@@ -4354,7 +4849,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Cyber event hits large member",
+        "Member connectivity and submissions disrupted",
+        "MBSD and DTC participant system disruption"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "NIST vulnerability database"
     },
     {
       "record_id": "xe-cyber-ecs",
@@ -4450,7 +4960,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Cyber event hits large member",
+        "Member connectivity and submissions disrupted",
+        "MBSD and DTC participant system disruption"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "NIST vulnerability database"
     },
     {
       "record_id": "ficc-gsd-11",
@@ -4543,7 +5068,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Buy-side customer under stress or fails",
+        "Agent Clearing Member absorbs customer exposure",
+        "GSD Agent Clearing Service stressed"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "OFR Hedge Fund Monitor"
     },
     {
       "record_id": "ficc-mbsd-02",
@@ -4631,7 +5171,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "MBS pool data or supply breaks",
+        "Pool deliveries fail",
+        "MBSD pool settlement and fails charges"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "New York Fed household debt data"
     },
     {
       "record_id": "ecs-nscc-08",
@@ -4722,7 +5277,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Retail broker fails or exits abruptly",
+        "Mass account transfers concentrate in ACATS",
+        "NSCC ACATS transfer and settlement activity"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Yahoo Finance (broker-dealer index)"
     },
     {
       "record_id": "ecs-nscc-09",
@@ -4815,7 +5385,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Securities financing markets under stress",
+        "SFT positions reprice and remargin sharply",
+        "NSCC SFT clearing service obligations spike"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "New York Fed markets data"
     },
     {
       "record_id": "ecs-dtc-01",
@@ -4906,7 +5491,22 @@
       "analysis_status": "pending_llm",
       "related_news": [],
       "ai_unreviewed_events": [],
-      "ai_review_label": null
+      "ai_review_label": null,
+      "front_status": "none",
+      "front_headline": null,
+      "front_what_happened": null,
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Money market issuer funding problem",
+        "Issuing agent withholds funding acknowledgment",
+        "DTC MMI settlement stalls"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Federal Reserve CP release"
     },
     {
       "record_id": "ficc-gsd-01",
@@ -5059,6 +5659,30 @@
       "narrative_decision": "approve",
       "narrative_prompt_version": "narrative-prompt-v3.1:d2d9295568b0",
       "narrative_model": "us.anthropic.claude-sonnet-4-6",
+      "front_status": "ai_reviewed",
+      "front_headline": "Moderate Treasury yield moves: GSD margin may shift",
+      "front_what_happened": "The daily move in the 10-year Treasury yield reached 6.0 basis points this week.",
+      "front_so_what": "Price swings on cleared positions can shift the margin members are required to post at GSD.",
+      "front_so_now_what": "Monitor GSD margin calls and member payment activity closely.",
+      "front_action_id": "FICC-GSD-01.a1",
+      "front_ai_fields": [
+        "front_headline",
+        "front_what_happened",
+        "front_so_what",
+        "front_so_now_what"
+      ],
+      "front_review_label": "AI-drafted · analyst-reviewed",
+      "front_chain_short": [
+        "Treasury selloff or sharp yield swings",
+        "Price moves shift required margin",
+        "GSD margin requirements"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "FRED (10-year Treasury) · DTCC quarterly disclosures",
+      "front_reviewer": "Wenqi Cai",
+      "front_decision": "edit",
+      "front_prompt_version": "card-front-prompt-v1:71cf3db75c34",
+      "front_model": "us.anthropic.claude-sonnet-4-6",
       "shock_method": "Market indicator"
     },
     {
@@ -5274,6 +5898,30 @@
       "narrative_decision": "approve",
       "narrative_prompt_version": "narrative-prompt-v3.1:d2d9295568b0",
       "narrative_model": "us.anthropic.claude-sonnet-4-6",
+      "front_status": "ai_reviewed",
+      "front_headline": "Repo funding spread spikes Nov 3: watch GSD liquidity",
+      "front_what_happened": "The SOFR−EFFR repo funding spread hit 8 basis points on Nov 3, then fell to 0 by Nov 6.",
+      "front_so_what": "Tighter repo funding can raise members' daily settlement costs, affecting GSD settlement payments and liquidity.",
+      "front_so_now_what": "Confirm GSD treasury operations have intraday liquidity resources ready for elevated settlement demands.",
+      "front_action_id": "FICC-GSD-02.a2",
+      "front_ai_fields": [
+        "front_headline",
+        "front_what_happened",
+        "front_so_what",
+        "front_so_now_what"
+      ],
+      "front_review_label": "AI-drafted · analyst-reviewed",
+      "front_chain_short": [
+        "Repo rates spike or funding tightens",
+        "Members' daily settlement funding costs rise",
+        "GSD settlement payments and liquidity"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "FRED (SOFR, EFFR) · DTCC quarterly disclosures",
+      "front_reviewer": "Wenqi Cai",
+      "front_decision": "edit",
+      "front_prompt_version": "card-front-prompt-v1:71cf3db75c34",
+      "front_model": "us.anthropic.claude-sonnet-4-6",
       "shock_method": "Market indicator"
     },
     {
@@ -5518,6 +6166,30 @@
       "narrative_decision": "edit",
       "narrative_prompt_version": "narrative-prompt-v3.1:d2d9295568b0",
       "narrative_model": "us.anthropic.claude-sonnet-4-6",
+      "front_status": "ai_reviewed",
+      "front_headline": "Treasury clearing deadline nears; new firms onboard to GSD",
+      "front_what_happened": "The SEC's cash Treasury clearing deadline is Dec 31, 2026; 7 new FICC members were announced this week.",
+      "front_so_what": "Approaching deadlines can drive more GSD onboarding, raising demand on onboarding operations and Sponsored clearing volume.",
+      "front_so_now_what": "Confirm onboarding operations teams are ready to handle demand surges or slowdowns.",
+      "front_action_id": "FICC-GSD-03.a2",
+      "front_ai_fields": [
+        "front_headline",
+        "front_what_happened",
+        "front_so_what",
+        "front_so_now_what"
+      ],
+      "front_review_label": "AI-drafted · analyst-reviewed",
+      "front_chain_short": [
+        "Treasury central clearing deadlines shift",
+        "Firms rush or delay GSD onboarding",
+        "GSD onboarding and Sponsored volume"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Federal Register (SEC) · DTCC quarterly disclosures",
+      "front_reviewer": "Wenqi Cai",
+      "front_decision": "edit",
+      "front_prompt_version": "card-front-prompt-v1:71cf3db75c34",
+      "front_model": "us.anthropic.claude-sonnet-4-6",
       "shock_method": "Event rubric (hand-entered register)",
       "review_status": "Event EV0006 signed off by Wenqi Cai 2026-11-05T04:45Z"
     },
@@ -5659,6 +6331,30 @@
       "narrative_decision": "approve",
       "narrative_prompt_version": "narrative-prompt-v3.1:d2d9295568b0",
       "narrative_model": "us.anthropic.claude-sonnet-4-6",
+      "front_status": "ai_reviewed",
+      "front_headline": "Modest MBS spread move: MBSD margin may shift",
+      "front_what_happened": "The 30-year mortgage rate minus 10-year Treasury yield spread moved 8 basis points this week.",
+      "front_so_what": "TBA price swings from spread moves can shift marked-to-market positions and change MBSD margin and variation margin calls.",
+      "front_so_now_what": "Monitor TBA price movements and MBSD margin call activity daily.",
+      "front_action_id": "FICC-MBSD-01.a1",
+      "front_ai_fields": [
+        "front_headline",
+        "front_what_happened",
+        "front_so_what",
+        "front_so_now_what"
+      ],
+      "front_review_label": "AI-drafted · analyst-reviewed",
+      "front_chain_short": [
+        "Mortgage rates or MBS spreads jump",
+        "TBA price swings shift margin requirements",
+        "MBSD margin and variation margin calls"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "FRED (mortgage rate, 10-year Treasury) · DTCC quarterly disclosures",
+      "front_reviewer": "Wenqi Cai",
+      "front_decision": "edit",
+      "front_prompt_version": "card-front-prompt-v1:71cf3db75c34",
+      "front_model": "us.anthropic.claude-sonnet-4-6",
       "shock_method": "Market indicator"
     },
     {
@@ -5979,6 +6675,30 @@
       "narrative_decision": "edit",
       "narrative_prompt_version": "narrative-prompt-v3.1:d2d9295568b0",
       "narrative_model": "us.anthropic.claude-sonnet-4-6",
+      "front_status": "ai_reviewed",
+      "front_headline": "Equity sell-off: NSCC margin calls may rise",
+      "front_what_happened": "MarketWatch reported tech stocks' worst day since 2020; the VIX jumped to 1.54 times its 20-day average.",
+      "front_so_what": "Large daily price swings can sharply change mark-to-market payments, raising the cash members may owe NSCC.",
+      "front_so_now_what": "Alert relationship teams that members may face elevated variation margin calls.",
+      "front_action_id": "ECS-NSCC-LIQ.a1",
+      "front_ai_fields": [
+        "front_headline",
+        "front_what_happened",
+        "front_so_what",
+        "front_so_now_what"
+      ],
+      "front_review_label": "AI-drafted · analyst-reviewed",
+      "front_chain_short": [
+        "Sharp equity selloff, large price swings",
+        "Daily mark-to-market payments change sharply",
+        "NSCC variation margin calls"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "FRED (VIX, SOFR, EFFR) · DTCC quarterly disclosures · MarketWatch",
+      "front_reviewer": "Wenqi Cai",
+      "front_decision": "edit",
+      "front_prompt_version": "card-front-prompt-v1:71cf3db75c34",
+      "front_model": "us.anthropic.claude-sonnet-4-6",
       "shock_method": "Market indicator"
     },
     {
@@ -6143,6 +6863,30 @@
       "narrative_decision": "edit",
       "narrative_prompt_version": "narrative-prompt-v3.1:d2d9295568b0",
       "narrative_model": "us.anthropic.claude-sonnet-4-6",
+      "front_status": "ai_reviewed",
+      "front_headline": "Equity volume surges: watch NSCC settlement fails",
+      "front_what_happened": "US equity volume peaked near 28 billion shares on Nov 5, high versus its recent median.",
+      "front_so_what": "Higher delivery demand can leave more positions undelivered in NSCC CNS settlement.",
+      "front_so_now_what": "Confirm settlement operations teams are prepared for elevated fail volumes.",
+      "front_action_id": "ECS-NSCC-03.a2",
+      "front_ai_fields": [
+        "front_headline",
+        "front_what_happened",
+        "front_so_what",
+        "front_so_now_what"
+      ],
+      "front_review_label": "AI-drafted · analyst-reviewed",
+      "front_chain_short": [
+        "Equity trading volume surges",
+        "More positions left undelivered",
+        "NSCC CNS settlement and fails"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Cboe volume data",
+      "front_reviewer": "Wenqi Cai",
+      "front_decision": "edit",
+      "front_prompt_version": "card-front-prompt-v1:71cf3db75c34",
+      "front_model": "us.anthropic.claude-sonnet-4-6",
       "shock_method": "Market indicator"
     },
     {
@@ -6238,7 +6982,22 @@
       "analysis_status": "template",
       "ai_unreviewed_events": [],
       "ai_review_label": null,
-      "narrative_source": "template"
+      "narrative_source": "template",
+      "front_status": "template",
+      "front_headline": "Settlement cycle and processing",
+      "front_what_happened": "No market signal or relevant news this week.",
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Shorter settlement cycle, longer trading hours",
+        "Processing and affirmation windows compress",
+        "NSCC and DTC settlement"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "SEC fails-to-deliver data"
     },
     {
       "record_id": "xe-member-ficc",
@@ -6423,6 +7182,30 @@
       "narrative_decision": "edit",
       "narrative_prompt_version": "narrative-prompt-v3.1:d2d9295568b0",
       "narrative_model": "us.anthropic.claude-sonnet-4-6",
+      "front_status": "ai_reviewed",
+      "front_headline": "Corporate credit spreads widen: watch member credit",
+      "front_what_happened": "The 20-day widening of the Baa corporate bond spread over the 10-year Treasury yield reached 11 bp on Nov 5.",
+      "front_so_what": "Wider market credit spreads can precede problems at member firms, which would raise demands on FICC surveillance.",
+      "front_so_now_what": "Brief FICC and NSCC credit surveillance teams on wider market credit spreads.",
+      "front_action_id": "XE-MEMBER.a1",
+      "front_ai_fields": [
+        "front_headline",
+        "front_what_happened",
+        "front_so_what",
+        "front_so_now_what"
+      ],
+      "front_review_label": "AI-drafted · analyst-reviewed",
+      "front_chain_short": [
+        "Bank or dealer credit deteriorates",
+        "Member default and liquidity risk rise",
+        "FICC surveillance and NSCC member requirements"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "FRED (Baa spread) · DTCC quarterly disclosures",
+      "front_reviewer": "Wenqi Cai",
+      "front_decision": "edit",
+      "front_prompt_version": "card-front-prompt-v1:71cf3db75c34",
+      "front_model": "us.anthropic.claude-sonnet-4-6",
       "shock_method": "Market indicator"
     },
     {
@@ -6608,6 +7391,30 @@
       "narrative_decision": "edit",
       "narrative_prompt_version": "narrative-prompt-v3.1:d2d9295568b0",
       "narrative_model": "us.anthropic.claude-sonnet-4-6",
+      "front_status": "ai_reviewed",
+      "front_headline": "Corporate credit spreads widen: watch member credit",
+      "front_what_happened": "The 20-day widening of the Baa corporate bond spread over the 10-year Treasury yield reached 11 bp on Nov 5.",
+      "front_so_what": "Wider market credit spreads can precede problems at member firms, which would raise demands on FICC surveillance.",
+      "front_so_now_what": "Brief FICC and NSCC credit surveillance teams on wider market credit spreads.",
+      "front_action_id": "XE-MEMBER.a1",
+      "front_ai_fields": [
+        "front_headline",
+        "front_what_happened",
+        "front_so_what",
+        "front_so_now_what"
+      ],
+      "front_review_label": "AI-drafted · analyst-reviewed",
+      "front_chain_short": [
+        "Bank or dealer credit deteriorates",
+        "Member default and liquidity risk rise",
+        "FICC surveillance and NSCC member requirements"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "FRED (Baa spread) · DTCC quarterly disclosures",
+      "front_reviewer": "Wenqi Cai",
+      "front_decision": "edit",
+      "front_prompt_version": "card-front-prompt-v1:71cf3db75c34",
+      "front_model": "us.anthropic.claude-sonnet-4-6",
       "shock_method": "Market indicator"
     },
     {
@@ -6702,7 +7509,22 @@
       "analysis_status": "template",
       "ai_unreviewed_events": [],
       "ai_review_label": null,
-      "narrative_source": "template"
+      "narrative_source": "template",
+      "front_status": "template",
+      "front_headline": "Market disruption",
+      "front_what_happened": "No market signal or relevant news this week.",
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Market-wide disruption or declared emergency",
+        "Settlement timeframes may be adjusted",
+        "MBSD and DTC settlement timeframes"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Nasdaq trade-halt history"
     },
     {
       "record_id": "xe-disrupt-ecs",
@@ -6796,7 +7618,22 @@
       "analysis_status": "template",
       "ai_unreviewed_events": [],
       "ai_review_label": null,
-      "narrative_source": "template"
+      "narrative_source": "template",
+      "front_status": "template",
+      "front_headline": "Market disruption",
+      "front_what_happened": "No market signal or relevant news this week.",
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Market-wide disruption or declared emergency",
+        "Settlement timeframes may be adjusted",
+        "MBSD and DTC settlement timeframes"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Nasdaq trade-halt history"
     },
     {
       "record_id": "xe-settlebank-ficc",
@@ -6891,7 +7728,22 @@
       "analysis_status": "template",
       "ai_unreviewed_events": [],
       "ai_review_label": null,
-      "narrative_source": "template"
+      "narrative_source": "template",
+      "front_status": "template",
+      "front_headline": "Settling bank",
+      "front_what_happened": "No market signal or relevant news this week.",
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Clearing or settling bank fails operationally",
+        "Fedwire payments and deliveries cannot complete",
+        "GSD and NSCC settlement disrupted"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Nasdaq index data"
     },
     {
       "record_id": "xe-settlebank-ecs",
@@ -6986,7 +7838,22 @@
       "analysis_status": "template",
       "ai_unreviewed_events": [],
       "ai_review_label": null,
-      "narrative_source": "template"
+      "narrative_source": "template",
+      "front_status": "template",
+      "front_headline": "Settling bank",
+      "front_what_happened": "No market signal or relevant news this week.",
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Clearing or settling bank fails operationally",
+        "Fedwire payments and deliveries cannot complete",
+        "GSD and NSCC settlement disrupted"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Nasdaq index data"
     },
     {
       "record_id": "xe-cyber-ficc",
@@ -7084,7 +7951,22 @@
       "analysis_status": "template",
       "ai_unreviewed_events": [],
       "ai_review_label": null,
-      "narrative_source": "template"
+      "narrative_source": "template",
+      "front_status": "template",
+      "front_headline": "Cyber and system events",
+      "front_what_happened": "No market signal or relevant news this week.",
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Cyber event hits large member",
+        "Member connectivity and submissions disrupted",
+        "MBSD and DTC participant system disruption"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "NIST vulnerability database"
     },
     {
       "record_id": "xe-cyber-ecs",
@@ -7182,7 +8064,22 @@
       "analysis_status": "template",
       "ai_unreviewed_events": [],
       "ai_review_label": null,
-      "narrative_source": "template"
+      "narrative_source": "template",
+      "front_status": "template",
+      "front_headline": "Cyber and system events",
+      "front_what_happened": "No market signal or relevant news this week.",
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Cyber event hits large member",
+        "Member connectivity and submissions disrupted",
+        "MBSD and DTC participant system disruption"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "NIST vulnerability database"
     },
     {
       "record_id": "ficc-gsd-11",
@@ -7277,7 +8174,22 @@
       "analysis_status": "template",
       "ai_unreviewed_events": [],
       "ai_review_label": null,
-      "narrative_source": "template"
+      "narrative_source": "template",
+      "front_status": "template",
+      "front_headline": "Agent-cleared customer stress",
+      "front_what_happened": "No market signal or relevant news this week.",
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Buy-side customer under stress or fails",
+        "Agent Clearing Member absorbs customer exposure",
+        "GSD Agent Clearing Service stressed"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "OFR Hedge Fund Monitor"
     },
     {
       "record_id": "ficc-mbsd-02",
@@ -7367,7 +8279,22 @@
       "analysis_status": "template",
       "ai_unreviewed_events": [],
       "ai_review_label": null,
-      "narrative_source": "template"
+      "narrative_source": "template",
+      "front_status": "template",
+      "front_headline": "Pool delivery",
+      "front_what_happened": "No market signal or relevant news this week.",
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "MBS pool data or supply breaks",
+        "Pool deliveries fail",
+        "MBSD pool settlement and fails charges"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "New York Fed household debt data"
     },
     {
       "record_id": "ecs-nscc-08",
@@ -7460,7 +8387,22 @@
       "analysis_status": "template",
       "ai_unreviewed_events": [],
       "ai_review_label": null,
-      "narrative_source": "template"
+      "narrative_source": "template",
+      "front_status": "template",
+      "front_headline": "ACATS account transfers",
+      "front_what_happened": "No market signal or relevant news this week.",
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Retail broker fails or exits abruptly",
+        "Mass account transfers concentrate in ACATS",
+        "NSCC ACATS transfer and settlement activity"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Yahoo Finance (broker-dealer index)"
     },
     {
       "record_id": "ecs-nscc-09",
@@ -7555,7 +8497,22 @@
       "analysis_status": "template",
       "ai_unreviewed_events": [],
       "ai_review_label": null,
-      "narrative_source": "template"
+      "narrative_source": "template",
+      "front_status": "template",
+      "front_headline": "SFT securities financing",
+      "front_what_happened": "No market signal or relevant news this week.",
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Securities financing markets under stress",
+        "SFT positions reprice and remargin sharply",
+        "NSCC SFT clearing service obligations spike"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "New York Fed markets data"
     },
     {
       "record_id": "ecs-dtc-01",
@@ -7648,7 +8605,22 @@
       "analysis_status": "template",
       "ai_unreviewed_events": [],
       "ai_review_label": null,
-      "narrative_source": "template"
+      "narrative_source": "template",
+      "front_status": "template",
+      "front_headline": "MMI commercial-paper settlement",
+      "front_what_happened": "No market signal or relevant news this week.",
+      "front_so_what": null,
+      "front_so_now_what": null,
+      "front_action_id": null,
+      "front_ai_fields": [],
+      "front_review_label": null,
+      "front_chain_short": [
+        "Money market issuer funding problem",
+        "Issuing agent withholds funding acknowledgment",
+        "DTC MMI settlement stalls"
+      ],
+      "playbook_reviewer": "Wenqi Cai",
+      "front_sources_line": "Federal Reserve CP release"
     }
   ]
 }
