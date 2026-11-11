@@ -252,7 +252,7 @@ def front_fields(r, rows, playbook):
                front_ai_fields=['front_headline', 'front_what_happened', 'front_so_what', 'front_so_now_what'],
                front_review_label=FC.FRONT_REVIEW_LABEL, front_reviewer=front['reviewer'], front_decision=front['decision'],
                front_prompt_version=row.get('prompt_version'), front_model=row.get('model'),
-               front_sources_line=FC.sources_line(r, SIGNAL_SERIES, FC.headline_outlet(record_input, row.get('headline_source') or '')))
+               front_sources_line=FC.sources_line(r, SIGNAL_SERIES, FC.headline_outlet(record_input, front['headline_source'])))
     return out
 
 

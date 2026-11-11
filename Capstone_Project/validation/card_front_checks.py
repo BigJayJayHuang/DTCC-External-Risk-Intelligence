@@ -14,7 +14,9 @@ the v3.1 narrative) stays in the analyst view. Display only: nothing here change
 - drafting_flags(front, record_input): reviewer hints on drafts only (not re-run at export): the headline introduces
   words that are not in the input, is not grounded in the source it names, so_what_front does not follow chain steps
   2/3, its wording does not match the size of this week's signal (S 1-3 vs 4-5), superlatives outside a headline that
-  cites them, predictions ("likely", "will"), or what_happened restating a related-news headline as fact.
+  cites them, predictions ("likely", "will"), or what_happened restating a related-news headline as fact. A superlative
+  or a restated headline in what_happened is accepted when the sentence names that headline's outlet ("MarketWatch
+  reported ..."). Hyphens inside words are ignored when words are compared ("sell-off" = "selloff").
 - sources_line(record, ...): short source names, e.g. "FRED (VIX, SOFR, EFFR) · DTCC quarterly disclosures · MarketWatch".
 """
 from __future__ import annotations
@@ -70,7 +72,15 @@ def words(text: str | None) -> int:
 
 
 def _stems(text: str) -> set[str]:
-    return {w[:5] for w in re.findall(r"[a-z][a-z\-']+", (text or "").lower()) if len(w) > 3 and w not in _STOP}
+    """Content-word stems (first 5 letters). Hyphens inside words are dropped first, so "sell-off" = "selloff"."""
+    text = re.sub(r"(?<=[a-z])-(?=[a-z])", "", (text or "").lower())
+    return {w[:5] for w in re.findall(r"[a-z][a-z\-']+", text) if len(w) > 3 and w not in _STOP}
+
+
+def _names_outlet(text: str, outlet: str | None) -> bool:
+    """The sentence names the outlet, e.g. "MarketWatch reported ..." (outlet "Bloomberg.com" also matches "Bloomberg")."""
+    name = re.sub(r"\.(com|net|org)$", "", (outlet or "").strip(), flags=re.I)
+    return bool(name) and re.search(rf"\b{re.escape(name)}\b", text or "", re.I) is not None
 
 
 def _actions(row: dict) -> list[tuple[str, str]]:
@@ -208,17 +218,22 @@ def drafting_flags(front: dict, record_input: dict) -> list[str]:
     if not (_stems(so_what) & _stems(steps)):
         flags.append("so_what_front does not follow chain steps 2/3")
     what = front.get("what_happened") or ""
+    items = (record_input.get("related_news") or {}).get("top_items") or []
     for name, text in (("what_happened", what), ("so_what_front", so_what)):
-        if SUPERLATIVE.search(text):
-            flags.append(f"{name}: superlative ('{SUPERLATIVE.search(text).group(0)}'); allowed only in a headline that cites it")
+        m = SUPERLATIVE.search(text)
+        attributed = name == "what_happened" and m and any(
+            m.group(0).lower() in i.get("title", "").lower() and _names_outlet(text, i.get("outlet")) for i in items)
+        if m and not attributed:
+            flags.append(f"{name}: superlative ('{m.group(0)}'); allowed only in a headline that cites it, or in what_happened "
+                         "attributed to the outlet whose headline says it")
     sup = SUPERLATIVE.search(headline)
     if sup and sup.group(0).lower() not in (source or "").lower():
         flags.append(f"headline: superlative not in the cited source ('{sup.group(0)}')")
     for name, text in (("headline", headline), ("so_what_front", so_what)):
         if SPECULATIVE.search(text):
             flags.append(f"{name}: prediction ('{SPECULATIVE.search(text).group(0)}'); use may / can")
-    for n, item in enumerate((record_input.get("related_news") or {}).get("top_items") or []):
-        if len(_stems(what) & _stems(item.get("title", ""))) >= 4:
+    for n, item in enumerate(items):
+        if len(_stems(what) & _stems(item.get("title", ""))) >= 4 and not _names_outlet(what, item.get("outlet")):
             flags.append(f"what_happened restates related-news headline {n} ({item.get('outlet')}) as fact; attribute it or use the signal")
     s = record_input.get("S")
     text = f"{headline} {so_what}"
@@ -271,6 +286,25 @@ def _pick(row: dict, key: str, decision: str) -> str:
     return corrected if decision == "edit" and corrected else (row.get(key) or "").strip()
 
 
+def action_kinds(row: dict) -> dict:
+    """action_id -> kind, the reviewer's corrected kind when given."""
+    return {row[f"action_{k}_id"]: ((row.get(f"corrected_action_{k}_kind") or "").strip().lower() or row.get(f"action_{k}_kind", ""))
+            for k in (1, 2, 3) if (row.get(f"action_{k}_text") or "").strip()}
+
+
+def effective_row(row: dict) -> dict:
+    """The playbook row with the reviewer's corrected text and kinds applied (for edit)."""
+    d = reviewed(row) or "approve"
+    eff = dict(row)
+    for k in ("chain_short_1", "chain_short_2", "chain_short_3", "action_1_text", "action_2_text", "action_3_text"):
+        eff[k] = _pick(row, k, d)
+    if d == "edit":
+        for k in (1, 2, 3):
+            if (row.get(f"corrected_action_{k}_kind") or "").strip():
+                eff[f"action_{k}_kind"] = row[f"corrected_action_{k}_kind"].strip().lower()
+    return eff
+
+
 def effective_playbook(row: dict) -> dict | None:
     """A reviewed playbook row that passes playbook_flags: {chain_short: [3], actions: {id: text}, reviewer}; else None."""
     decision = reviewed(row)
@@ -290,7 +324,7 @@ def effective_front(row: dict, playbook: dict | None, record_input: dict | None)
     decision = reviewed(row)
     if not decision or playbook is None or record_input is None:
         return None
-    front = {k: _pick(row, k, decision) for k in ("headline", "what_happened", "so_what_front", "action_id")}
+    front = {k: _pick(row, k, decision) for k in ("headline", "headline_source", "what_happened", "so_what_front", "action_id")}
     front["so_now_what_front"] = playbook["actions"].get(front["action_id"], "")
     if publication_flags(front, record_input, playbook["actions"]):
         return None

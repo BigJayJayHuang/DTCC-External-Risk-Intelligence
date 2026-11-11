@@ -220,12 +220,93 @@ class ExportGate(unittest.TestCase):
                          ("template", unscored["title"], "No market signal or relevant news this week.", None, []))
         self.assertEqual(self.ex.front_fields(self.rec, None, {})["front_status"], "none")
 
-    def test_current_export_differs_from_published_only_by_front_fields(self):
-        data = self.ex.build(self.ex.WEEKS)
-        for it in data["items"]:
-            for k in [k for k in it if k.startswith("front_") or k == "playbook_reviewer"]:
-                del it[k]
-        self.assertEqual(json.loads(json.dumps(data, ensure_ascii=False)), json.loads((REPO / "docs/data/risk_output.json").read_text()))
+    def test_published_file_is_the_export_of_the_reviewed_sheets(self):
+        """docs/data/risk_output.json is exactly what the export builds from the committed (reviewed) sheets."""
+        data = json.loads(json.dumps(self.ex.build(self.ex.WEEKS), ensure_ascii=False))
+        self.assertEqual(data, json.loads((REPO / "docs/data/risk_output.json").read_text()))
+        week = [i for i in data["items"] if i["snapshot"] == WEEK]
+        self.assertEqual({i["front_status"] for i in week if i["status"] == "scored"}, {"ai_reviewed"})
+        self.assertEqual({i["front_status"] for i in week if i["status"] != "scored"}, {"template"})
+        self.assertEqual({i["front_status"] for i in data["items"] if i["snapshot"] != WEEK}, {"none"})
+
+
+class CheckFixes(unittest.TestCase):
+    """Hyphenated words and attributed news in what_happened (review of 2026-11-02)."""
+    def test_hyphens_ignored_when_words_are_compared(self):
+        inp = {**INPUT, "related_news": {"top_items": [{"title": "Tech-led equity selloff deepens", "outlet": "MarketWatch"}]}}
+        flags = F.drafting_flags({**FRONT, "headline": "Equity sell-off: NSCC margin calls may rise", "headline_source": "related_news:0"}, inp)
+        self.assertFalse(any("possible new event" in f or "shares no words" in f for f in flags), flags)
+        self.assertEqual(F._stems("sell-off mark-to-market"), F._stems("selloff marktomarket"))
+
+    def test_attributed_superlative_and_headline_accepted(self):
+        attributed = "MarketWatch reported tech stocks' worst day since 2020; the VIX jumped to 1.54 times its 20-day average."
+        self.assertEqual(F.drafting_flags({**FRONT, "what_happened": attributed}, INPUT), [])
+        bare = "Tech stocks logged their worst day since 2020 as a sharp selloff hit markets."
+        flags = F.drafting_flags({**FRONT, "what_happened": bare}, INPUT)
+        self.assertTrue(any("superlative ('worst')" in f for f in flags) and any("restates related-news headline 0" in f for f in flags))
+        wrong_outlet = "CNBC reported tech stocks log worst day since 2020."                     # outlet of another headline
+        self.assertTrue(any("superlative" in f for f in F.drafting_flags({**FRONT, "what_happened": wrong_outlet}, INPUT)))
+        self.assertTrue(any("superlative" in f for f in F.drafting_flags({**FRONT, "so_what_front": "MarketWatch: worst NSCC margin day."}, INPUT)))
+        self.assertTrue(F._names_outlet("Bloomberg reported it", "Bloomberg.com") and not F._names_outlet("Bloomberg", ""))
+
+
+class ReviewerColumns(unittest.TestCase):
+    def test_corrected_kind_and_text(self):
+        row = {**PB, "decision": "edit", "reviewer": "W", "corrected_action_2_kind": "communicate", "corrected_chain_short_1": "Prices move"}
+        self.assertEqual(F.action_kinds(row), {"ECS-NSCC-LIQ.a1": "communicate", "ECS-NSCC-LIQ.a2": "communicate"})
+        eff = F.effective_row(row)
+        self.assertEqual((eff["chain_short_1"], eff["action_2_kind"]), ("Prices move", "communicate"))
+        self.assertIn("all actions of one kind", F.playbook_flags(eff, F.action_kinds(eff)))
+        self.assertEqual(F.effective_row({**row, "decision": "approve"})["chain_short_1"], PB["chain_short_1"])   # approve ignores corrections
+
+    def test_corrected_headline_source_drives_the_sources_line(self):
+        g = ExportGate(); g.setUp()
+        try:
+            news = g.f(decision="approve", reviewer="W")
+            sig = g.f(decision="edit", reviewer="W", corrected_headline_source="signal")
+            self.assertTrue(news["front_sources_line"].endswith("MarketWatch"))
+            self.assertEqual(sig["front_sources_line"], "FRED (VIX, SOFR, EFFR) · DTCC quarterly disclosures")
+        finally:
+            g.tearDown()
+
+
+class CheckReviewed(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory(); d = Path(self.tmp.name)
+        self.pb, self.fr = d / "pb.csv", d / "fr.csv"
+        self.pb.write_bytes(CF.PLAYBOOK.read_bytes()); self.fr.write_bytes((CF.OUT / f"review_front_{WEEK}.csv").read_bytes())
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def edit(self, path, key, value, **cols):
+        with path.open(encoding="utf-8", newline="") as f:
+            rows = list(csv.DictReader(f))
+        for r in rows:
+            if value in (r.get("record_id"), r.get("card_id")) and (key == "card_id" or r.get("record_id") == value):
+                r.update(cols)
+        with path.open("w", encoding="utf-8", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=list(rows[0].keys()), lineterminator="\n"); w.writeheader(); w.writerows(rows)
+
+    def test_committed_review_passes_every_check(self):
+        self.assertEqual(CF.check_reviewed(self.pb, self.fr), {"playbook_rows": 16, "failures": []})
+        with self.assertRaises(SystemExit) as e:
+            CF.main(["check-reviewed", "--playbook", str(self.pb), "--front", str(self.fr)])
+        self.assertEqual(e.exception.code, 0)
+
+    def test_failures_are_reported(self):
+        self.edit(self.fr, "record_id", "ficc-gsd-01", corrected_headline="Treasury yields surge: margin must jump")
+        self.edit(self.fr, "record_id", "ficc-gsd-02", decision="")
+        self.edit(self.pb, "card_id", "XE-CYBER", corrected_action_1_kind="decide")
+        res = CF.check_reviewed(self.pb, self.fr)
+        by = {(f["sheet"], f["row"]): f["flags"] for f in res["failures"]}
+        self.assertTrue(any("banned phrase 'must'" in f for f in by[("front", "ficc-gsd-01")]))
+        self.assertTrue(any("stronger than this week's signal" in f for f in by[("front", "ficc-gsd-01")]))
+        self.assertEqual(by[("front", "ficc-gsd-02")], ["not reviewed (decision approve/edit and reviewer)"])
+        self.assertIn("unknown action kind: decide", by[("playbook", "XE-CYBER")])
+        with self.assertRaises(SystemExit) as e:
+            CF.main(["check-reviewed", "--playbook", str(self.pb), "--front", str(self.fr)])
+        self.assertEqual(e.exception.code, 1)
 
 
 class Validator(unittest.TestCase):

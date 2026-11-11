@@ -51,12 +51,13 @@ PLAYBOOK_FIELDS = ["card_id", "card_name", "business_lines", "chain_short_1", "c
                    "action_1_id", "action_1_kind", "action_1_text", "action_2_id", "action_2_kind", "action_2_text",
                    "action_3_id", "action_3_kind", "action_3_text", "check_flags", "source_chain_ids", "prompt_version", "model",
                    "decision", "reviewer", "corrected_chain_short_1", "corrected_chain_short_2", "corrected_chain_short_3",
-                   "corrected_action_1_text", "corrected_action_2_text", "corrected_action_3_text"]
+                   "corrected_action_1_text", "corrected_action_2_text", "corrected_action_3_text",
+                   "corrected_action_1_kind", "corrected_action_2_kind", "corrected_action_3_kind"]
 FRONT_FIELDS = ["record_id", "card_id", "card_name", "business_line", "status", "severity", "headline", "headline_source",
                 "what_happened", "so_what_front", "action_id", "so_now_what_front", "action_reason", "alternative_actions",
                 "chain_short", "sources_line", "check_flags", "drafting_flags", "prompt_version", "model", "input_file",
                 "input_sha256", "decision", "reviewer", "corrected_headline", "corrected_what_happened",
-                "corrected_so_what_front", "corrected_action_id"]
+                "corrected_so_what_front", "corrected_action_id", "corrected_headline_source"]
 
 
 def sha(b: bytes) -> str:
@@ -317,8 +318,8 @@ def recheck(playbook_path: Path = PLAYBOOK, front_path: Path | None = None) -> d
 
     def pb(r):
         if r["chain_short_1"]:
-            r["check_flags"] = json.dumps(F.playbook_flags(r, {r[f"action_{k}_id"]: r[f"action_{k}_kind"] for k in (1, 2, 3)
-                                                               if r[f"action_{k}_text"]}), ensure_ascii=False)
+            draft = {k: v for k, v in r.items() if not k.startswith("corrected_")}       # the drafted text and kinds
+            r["check_flags"] = json.dumps(F.playbook_flags(draft, F.action_kinds(draft)), ensure_ascii=False)
     res = {"playbook_flagged": sum(1 for r in rewrite(playbook_path, pb) if json.loads(r["check_flags"]))}
     if front_path is not None:
         def fr(r):
@@ -336,12 +337,51 @@ def recheck(playbook_path: Path = PLAYBOOK, front_path: Path | None = None) -> d
     return res
 
 
+def check_reviewed(playbook_path: Path = PLAYBOOK, front_path: Path | None = None) -> dict:
+    """Every check on the reviewed text (corrected columns applied), without writing anything or calling a model:
+    playbook rows (playbook_flags with the effective kinds), front rows (publication_flags against the stored input
+    and the reviewed playbook; drafting_flags with the reviewed chain_short). Unreviewed rows are reported as such."""
+    with Path(playbook_path).open(encoding="utf-8", newline="") as f:
+        pb_rows = list(csv.DictReader(f))
+    failures, reviewed_pb = [], {}
+    for r in pb_rows:
+        d = F.reviewed(r)
+        if not d:
+            failures.append({"sheet": "playbook", "row": r["card_id"], "flags": ["not reviewed (decision approve/edit and reviewer)"]}); continue
+        eff = F.effective_row(r)
+        flags = F.playbook_flags(eff, F.action_kinds(eff))
+        if flags:
+            failures.append({"sheet": "playbook", "row": r["card_id"], "flags": flags})
+        reviewed_pb[r["card_id"]] = F.effective_playbook(r)
+    if front_path is not None:
+        with Path(front_path).open(encoding="utf-8", newline="") as f:
+            for r in csv.DictReader(f):
+                d = F.reviewed(r)
+                if not d:
+                    failures.append({"sheet": "front", "row": r["record_id"], "flags": ["not reviewed (decision approve/edit and reviewer)"]}); continue
+                inp = F.NC.load_input(PROJECT / r["input_file"], r["record_id"])
+                if sha(json.dumps(inp, sort_keys=True, ensure_ascii=False).encode()) != r["input_sha256"]:
+                    failures.append({"sheet": "front", "row": r["record_id"], "flags": ["stored input does not match input_sha256"]}); continue
+                pb = reviewed_pb.get(r["card_id"])
+                front = {k: F._pick(r, k, d) for k in ("headline", "headline_source", "what_happened", "so_what_front", "action_id")}
+                front["so_now_what_front"] = (pb or {"actions": {}})["actions"].get(front["action_id"], "")
+                flags = F.publication_flags(front, inp, (pb or {"actions": {}})["actions"]) if pb else ["playbook row of this card not usable"]
+                reviewed_inp = {**inp, "playbook": {"chain_short": pb["chain_short"], "actions": [{"action_id": a, "text": t} for a, t in pb["actions"].items()]}} if pb else inp
+                flags += F.drafting_flags(front, reviewed_inp)
+                if flags:
+                    failures.append({"sheet": "front", "row": r["record_id"], "flags": flags})
+    return {"playbook_rows": len(pb_rows), "failures": failures}
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     sub = p.add_subparsers(dest="cmd", required=True)
     rc = sub.add_parser("recheck", help="recompute the flag columns from the drafts and stored inputs (no model call)")
     rc.add_argument("--front", type=Path, help="front review sheet to recheck as well")
     rc.add_argument("--playbook", type=Path, default=PLAYBOOK)
+    cr = sub.add_parser("check-reviewed", help="run every check on the reviewed text (no writes, no model call)")
+    cr.add_argument("--front", type=Path, help="reviewed front sheet")
+    cr.add_argument("--playbook", type=Path, default=PLAYBOOK)
     pb = sub.add_parser("playbook", help="draft data/narratives/card_playbook.csv (one-time card config)")
     fr = sub.add_parser("front", help="draft the front layer of one scored week")
     fr.add_argument("--week", required=True, help="Monday, YYYY-MM-DD")
@@ -352,6 +392,10 @@ def main(argv=None):
     a = p.parse_args(argv)
     if a.cmd == "recheck":
         print(json.dumps(recheck(a.playbook, a.front), indent=2)); return
+    if a.cmd == "check-reviewed":
+        res = check_reviewed(a.playbook, a.front)
+        print(json.dumps(res, indent=2, ensure_ascii=False))
+        raise SystemExit(1 if res["failures"] else 0)
     if not a.cap.is_finite() or a.cap <= 0:
         p.error("--cap must be positive")
     if a.cmd == "playbook":

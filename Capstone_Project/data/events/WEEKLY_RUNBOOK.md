@@ -123,7 +123,7 @@ python -m validation.card_front playbook --cap 0.30
 
 - It writes `data/narratives/card_playbook.csv`, one row per final16 card: `chain_short_1/2/3` (at most 6 words each; shown in the detail view) and 2–3 suggested actions (`<card_id>.a1`…, at most 15 words, starting with a verb: communicate, prepare, verify, escalate or monitor). An existing file is never overwritten.
 - `check_flags` lists the rule failures: labels over 6 words, an action that does not start with a verb, a risk-parameter or policy decision (changing margin, haircuts, limits or rules), a legal or regulatory decision, a possible firm name, or a number.
-- Review each row: `decision` (`approve`, `edit` or `reject`) and `reviewer`; for `edit`, fill the `corrected_*` columns. Only reviewed rows that pass the checks reach the dashboard.
+- Review each row: `decision` (`approve`, `edit` or `reject`) and `reviewer`; for `edit`, fill the `corrected_*` columns (`corrected_action_k_kind` changes only an action's category). Only reviewed rows that pass the checks reach the dashboard.
 
 **Each week, after step 6: the front text.**
 
@@ -134,7 +134,14 @@ python -m validation.card_front front --week <Monday> --cap 0.20
 
 - **What it writes.** One model call per scored card (prompt `validation/card_front_prompt_v1.md`; the input is the narrative v3.1 input plus the card's playbook). `data/narratives/review_front_<Monday>.csv` has one row per scored record: headline (at most 10 words), headline_source, what_happened (one sentence, at most 20 words), so_what_front (one sentence, at most 20 words), the chosen `action_id` with its text, the alternative actions and the sources line. Unscored cards need no row: the export gives them the card name and "No market signal or relevant news this week."
 - **Checks.** `check_flags` (re-run by the export; a flagged row is never published, so edit it): word and sentence limits, every number from the input, banned phrases, no percentiles / "V k of 5" / series codes / jargon in the headline and so what, no firm-specific wording for market-wide signals, so now what equal to a playbook action. `drafting_flags` are hints for you: headline words not in the input, a headline not grounded in its source, so what not following chain steps 2/3, wording stronger or weaker than this week's S, superlatives, predictions ("likely"), or a news headline restated as fact.
-- **Review.** Fill `decision` and `reviewer`. For `edit`, fill `corrected_headline`, `corrected_what_happened`, `corrected_so_what_front` and/or `corrected_action_id` (another action of the same card). The published so now what is always the reviewed playbook text of that action.
+- **Review.** Fill `decision` and `reviewer`. For `edit`, fill `corrected_headline`, `corrected_what_happened`, `corrected_so_what_front`, `corrected_action_id` (another action of the same card) and/or `corrected_headline_source` (`signal`, `driving_event` or `related_news:<n>`; it sets the outlet in the sources line). The published so now what is always the reviewed playbook text of that action.
+- **Before exporting**, run every check on the reviewed text (no writes, no model call; exit code 1 lists each failing row and reason):
+
+  ```bash
+  python -m validation.card_front check-reviewed --front data/narratives/review_front_<Monday>.csv
+  ```
+
+  A superlative or a restated news headline in what_happened passes only when the sentence names that headline's outlet ("MarketWatch reported …").
 - After a change to `validation/card_front_checks.py`, `python -m validation.card_front recheck --front data/narratives/review_front_<Monday>.csv` recomputes the flag columns from the stored inputs (no model call).
 - **Display only.** This step never changes S, V, severity, status or ranking.
 
