@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Check a Risk Horizon output file before committing it.
 
-Usage: python3 docs/data/validate_output.py docs/data/risk_output.json
+Usage: python3 docs/data/validate_output.py docs/data/risk_output.json [--playbook <card_playbook.csv>]
 Exit code 0 = OK, 1 = errors found. Standard library only.
 """
 import csv
@@ -23,6 +23,88 @@ NC = None
 if _NC_PATH.exists():                                         # word limits, banned phrases, fixed texts (standard library)
     _spec = importlib.util.spec_from_file_location("narrative_checks", _NC_PATH)
     NC = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(NC)
+_FC_PATH = Path(__file__).resolve().parents[2] / "Capstone_Project/validation/card_front_checks.py"
+FC = None
+if _FC_PATH.exists():                                         # card front limits, fixed texts, reviewed playbook (standard library)
+    _fspec = importlib.util.spec_from_file_location("card_front_checks", _FC_PATH)
+    FC = importlib.util.module_from_spec(_fspec); _fspec.loader.exec_module(FC)
+PLAYBOOK = Path(__file__).resolve().parents[2] / "Capstone_Project/data/narratives/card_playbook.csv"
+FRONT_STATUSES = {"none", "pending_review", "template", "ai_reviewed"}
+FRONT_TEXT = ("front_headline", "front_what_happened", "front_so_what", "front_so_now_what", "front_action_id")
+
+
+def load_playbook(path=None):
+    """card_id -> reviewed playbook ({chain_short, actions}) as the export uses it, or None when not checkable."""
+    path = Path(path) if path else PLAYBOOK
+    if FC is None or not path.exists():
+        return None
+    with path.open(newline="", encoding="utf-8") as f:
+        rows = {r["card_id"]: FC.effective_playbook(r) for r in csv.DictReader(f)}
+    return {k: v for k, v in rows.items() if v}
+
+
+def front_errors(it, playbook):
+    """Card front layer (front_* fields): published text only when reviewed, within limits and from the reviewed playbook."""
+    errs = []
+    fs = it.get("front_status")
+    if fs is None:
+        return errs
+    if fs not in FRONT_STATUSES:
+        return [f"front_status '{fs}' is not one of {sorted(FRONT_STATUSES)}"]
+    status = it.get("status") or "scored"
+    labelled = bool(it.get("front_review_label")) or bool(it.get("front_ai_fields"))
+    chain = it.get("front_chain_short")
+    if chain is not None:
+        if not (isinstance(chain, list) and len(chain) == 3 and all(isinstance(c, str) and c.strip() for c in chain)):
+            errs.append("front_chain_short must be a list of 3 labels or null")
+        elif FC is not None and any(FC.words(c) > FC.CHAIN_WORDS for c in chain):
+            errs.append(f"front_chain_short label over {FC.CHAIN_WORDS if FC else 6} words")
+        elif playbook is not None and (playbook.get(it.get("card_id")) or {}).get("chain_short") != chain:
+            errs.append("front_chain_short is not the reviewed card_playbook.csv text")
+    if not isinstance(it.get("front_sources_line"), str):
+        errs.append("front_sources_line must be a string")
+    if fs in ("none", "pending_review"):
+        if any(it.get(k) is not None for k in FRONT_TEXT):
+            errs.append(f"front text published but front_status is {fs} (unreviewed front text is never published)")
+        if labelled:
+            errs.append(f"front_status {fs} must not carry an AI front label")
+    elif fs == "template":
+        if status == "scored":
+            errs.append("a scored record cannot have template front text")
+        if it.get("front_headline") != it.get("title"):
+            errs.append("template front headline must be the card name")
+        if FC is not None and it.get("front_what_happened") != FC.TEMPLATE_WHAT_HAPPENED.get(status):
+            errs.append("template front what_happened differs from the fixed text")
+        if any(it.get(k) is not None for k in ("front_so_what", "front_so_now_what", "front_action_id")):
+            errs.append("template front has no so what / so now what")
+        if labelled:
+            errs.append("template front text must not be marked AI-drafted")
+    elif fs == "ai_reviewed":
+        if status != "scored":
+            errs.append("only scored records can have AI front text")
+        if FC is not None and it.get("front_review_label") != FC.FRONT_REVIEW_LABEL:
+            errs.append(f"ai_reviewed front needs front_review_label '{FC.FRONT_REVIEW_LABEL}'")
+        if not {"front_headline", "front_so_what", "front_so_now_what"} <= set(it.get("front_ai_fields") or []):
+            errs.append("ai_reviewed front must list its fields in front_ai_fields")
+        if any(not isinstance(it.get(k), str) or not it[k].strip() for k in FRONT_TEXT):
+            errs.append("ai_reviewed front needs headline, what_happened, so_what, so_now_what and action_id")
+        elif FC is not None:
+            for k, limit, one in (("front_headline", 10, False), ("front_what_happened", 20, True), ("front_so_what", 20, True),
+                                  ("front_so_now_what", FC.ACTION_WORDS, False)):
+                if FC.words(it[k]) > limit or (one and FC.NC.sentences(it[k]) > 1):
+                    errs.append(f"{k} exceeds {'1 sentence / ' if one else ''}{limit} words")
+                if FC.NC.BANNED.search(it[k]):
+                    errs.append(f"{k} contains a banned phrase")
+            for k in ("front_headline", "front_so_what"):
+                if FC.JARGON.search(it[k]):
+                    errs.append(f"{k} contains percentiles, scores or jargon ('{FC.JARGON.search(it[k]).group(0)}')")
+            if playbook is not None:
+                pb = playbook.get(it.get("card_id"))
+                if pb is None or pb["actions"].get(it["front_action_id"]) != it["front_so_now_what"]:
+                    errs.append("front_so_now_what is not a reviewed card_playbook.csv action of this card")
+    return errs
+
+
 # Business-line rows per card (scoring v1.3), including the FICC and ECS rows of cross-entity (XE-) cards
 CARD_LINES = Path(__file__).resolve().parents[2] / "Capstone_Project/results/scoring/v1.3_indicator/config/card_lines.csv"
 
@@ -52,7 +134,7 @@ def score_ok(v, allow_none=False):
     return isinstance(v, int) and not isinstance(v, bool) and 1 <= v <= 5
 
 
-def main(path):
+def main(path, playbook_path=None):
     errors, warnings = [], []
     with open(path, encoding="utf-8") as f:
         data = json.load(f)
@@ -69,6 +151,7 @@ def main(path):
             errors.append(f"snapshots[{n}]: news_coverage '{s['news_coverage']}' is not one of {sorted(COVERAGE)}")
     coverage = {s.get("id"): s.get("news_coverage", "manual_register_only") for s in snaps}
 
+    playbook = load_playbook(playbook_path)
     card_lines = load_card_lines()
     if card_lines is None:
         warnings.append(f"{CARD_LINES} not found: card/business-line rows not checked")
@@ -157,6 +240,7 @@ def main(path):
             errors.append(f"{tag}: ai_unreviewed_events must be a list of event ids")
         if ai_ev and it.get("ai_review_label") != "AI-classified, not reviewed":
             errors.append(f"{tag}: unreviewed AI events {ai_ev} but no 'AI-classified, not reviewed' label")
+        errors.extend(f"{tag}: {e}" for e in front_errors(it, playbook))
         tr = it.get("transmission")
         if tr is not None and not all(k in tr for k in ("event", "mechanism", "dtcc_process")):
             warnings.append(f"{tag}: transmission should have event, mechanism, dtcc_process")
@@ -175,4 +259,8 @@ def main(path):
 
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv[1] if len(sys.argv) > 1 else "docs/data/risk_output.json"))
+    args = sys.argv[1:]
+    pb = None
+    if "--playbook" in args:                                  # local tests: check against another card_playbook.csv
+        i = args.index("--playbook"); pb = args[i + 1]; del args[i:i + 2]
+    sys.exit(main(args[0] if args else "docs/data/risk_output.json", pb))

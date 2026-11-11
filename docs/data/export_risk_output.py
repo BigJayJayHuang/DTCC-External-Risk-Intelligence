@@ -16,6 +16,16 @@ Narratives (so_what / so_now_what) come only from Capstone_Project/data/narrativ
 - template rows (non-scored records) publish their fixed text with analysis_status "template" and no AI label;
 - anything else (no decision, reject, failed checks) stays null with analysis_status "pending_review".
 Weeks without a narrative sheet keep analysis_status "pending_llm".
+Card front layer (front_* fields; display only) comes from Capstone_Project/data/narratives/review_front_<week>.csv and
+card_playbook.csv:
+- a scored record publishes headline, what happened, so what and one playbook action only when its front row has decision
+  approve or edit with a reviewer, its card's playbook row is reviewed the same way, and validation/card_front_checks.py
+  publication checks pass again against the stored input (input_sha256 must match); so_now_what is the reviewed playbook
+  text of the chosen (or corrected) action_id. front_status "ai_reviewed", label "AI-drafted · analyst-reviewed";
+- unscored records get fixed, non-AI text: the card name and "No market signal or relevant news this week." (front_status "template");
+- anything else: front_status "pending_review" (or "none" for weeks without a front sheet), front text null; the page then
+  shows the card name and the detailed narrative stays in the analyst view.
+front_chain_short (detail view) comes only from reviewed playbook rows; front_sources_line is built from the record (non-AI).
 related_news (Amendment D4/E3) is passed through from the scoring records; ai_unreviewed_events lists the active register events
 on the card that are AI-classified and not reviewed (Amendment C1), whether or not they set S.
 """
@@ -34,6 +44,8 @@ OUT = REPO / 'docs' / 'data' / 'risk_output.json'
 NARRATIVES = CP / 'data' / 'narratives'
 _spec = importlib.util.spec_from_file_location('narrative_checks', CP / 'validation' / 'narrative_checks.py')
 NC = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(NC)          # standard library only
+_fspec = importlib.util.spec_from_file_location('card_front_checks', CP / 'validation' / 'card_front_checks.py')
+FC = importlib.util.module_from_spec(_fspec); _fspec.loader.exec_module(FC)       # standard library only
 WEEKS = ['2026-10-19', '2026-10-26', '2026-11-02']
 AI_UNREVIEWED_LABEL = 'AI-classified, not reviewed'
 
@@ -194,7 +206,57 @@ def narrative_fields(record_id, row):
     return {'so_what': None, 'so_now_what': None, 'analysis_status': 'pending_review'}
 
 
-def item(r, run_utc, cards, chains, proxy, pqd_urls, narratives=None):
+def load_front(week, folder=None):
+    """record_id -> front review-sheet row, or None when the week has no front sheet."""
+    path = (folder or NARRATIVES) / f'review_front_{week}.csv'
+    if not path.exists():
+        return None
+    with path.open(encoding='utf-8', newline='') as f:
+        return {row['record_id']: row for row in csv.DictReader(f)}
+
+
+def load_playbook(folder=None):
+    """card_id -> reviewed playbook ({chain_short, actions, reviewer, decision}); unreviewed or failing rows are left out."""
+    path = (folder or NARRATIVES) / 'card_playbook.csv'
+    if not path.exists():
+        return {}
+    with path.open(encoding='utf-8', newline='') as f:
+        rows = {row['card_id']: FC.effective_playbook(row) for row in csv.DictReader(f)}
+    return {k: v for k, v in rows.items() if v}
+
+
+def front_fields(r, rows, playbook):
+    """front_* fields for one item (see the module docstring). rows: the week's front sheet, or None."""
+    pb = playbook.get(r['card_id'])
+    out = {'front_status': 'none', 'front_headline': None, 'front_what_happened': None, 'front_so_what': None,
+           'front_so_now_what': None, 'front_action_id': None, 'front_ai_fields': [], 'front_review_label': None,
+           'front_chain_short': pb['chain_short'] if pb else None, 'playbook_reviewer': pb['reviewer'] if pb else None,
+           'front_sources_line': FC.sources_line(r, SIGNAL_SERIES)}
+    if rows is None:
+        return out
+    if r['status'] != 'scored':
+        out.update(front_status='template', front_headline=r['title'], front_what_happened=FC.TEMPLATE_WHAT_HAPPENED[r['status']])
+        return out
+    out['front_status'] = 'pending_review'
+    row = rows.get(r['record_id'])
+    if row is None or not row.get('input_file'):
+        return out
+    path = CP / row['input_file']
+    record_input = NC.load_input(path, r['record_id']) if path.exists() else None
+    digest = hashlib.sha256(json.dumps(record_input, sort_keys=True, ensure_ascii=False).encode()).hexdigest() if record_input else None
+    front = FC.effective_front(row, pb, record_input) if digest == row.get('input_sha256') else None
+    if front is None:
+        return out
+    out.update(front_status='ai_reviewed', front_headline=front['headline'], front_what_happened=front['what_happened'],
+               front_so_what=front['so_what_front'], front_so_now_what=front['so_now_what_front'], front_action_id=front['action_id'],
+               front_ai_fields=['front_headline', 'front_what_happened', 'front_so_what', 'front_so_now_what'],
+               front_review_label=FC.FRONT_REVIEW_LABEL, front_reviewer=front['reviewer'], front_decision=front['decision'],
+               front_prompt_version=row.get('prompt_version'), front_model=row.get('model'),
+               front_sources_line=FC.sources_line(r, SIGNAL_SERIES, FC.headline_outlet(record_input, row.get('headline_source') or '')))
+    return out
+
+
+def item(r, run_utc, cards, chains, proxy, pqd_urls, narratives=None, front_rows=None, playbook=None):
     what, basis = texts(r)
     tchain, tr = transmission(r, cards, chains)
     it = dict(r)                                   # every v1.3 field is kept
@@ -213,6 +275,7 @@ def item(r, run_utc, cards, chains, proxy, pqd_urls, narratives=None):
     it['ai_review_label'] = AI_UNREVIEWED_LABEL if (it['ai_unreviewed_events'] or r.get('event_review_label')) else None
     if narratives is not None:                     # this week has a narrative review sheet
         it.update(narrative_fields(r['record_id'], narratives.get(r['record_id'])))
+    it.update(front_fields(r, front_rows, playbook or {}))
     if r['S_source']:
         it['shock_method'] = SHOCK_METHOD[r['S_source']]
     rs = review_status(r)
@@ -240,15 +303,18 @@ def iso(run_utc):
     return run_utc[:-1] + ':00Z' if len(run_utc) == 17 and run_utc.endswith('Z') else run_utc
 
 
-def build(weeks):
+def build(weeks, narratives_dir=None):
     docs = [json.loads((V13 / f'weekly_scores_v1.3_{w}.json').read_text()) for w in weeks]
     cards = {c['card_id']: c for c in json.loads(CARD_REGISTRY.read_text())}
     chains = {c['chain_id']: c for c in json.loads(CHAIN_REGISTRY.read_text())['chains']}
     proxy = runpy.run_path(str(FINAL16_CONFIG))['PUBLIC_PROXY']
     pqd_urls = {m['reporting_period']: (m.get('source_urls') or [''])[0]
                 for m in json.loads(PQD_MANIFEST.read_text()) if m.get('document_kind') == 'public_quantitative_disclosure'}
-    narratives = {d['week']: load_narratives(d['week']) for d in docs}
-    items = [item(r, iso(d['run_utc']), cards, chains, proxy, pqd_urls, narratives[d['week']]) for d in docs for r in d['records']]
+    narratives = {d['week']: load_narratives(d['week'], narratives_dir) for d in docs}
+    fronts = {d['week']: load_front(d['week'], narratives_dir) for d in docs}
+    playbook = load_playbook(narratives_dir)
+    items = [item(r, iso(d['run_utc']), cards, chains, proxy, pqd_urls, narratives[d['week']], fronts[d['week']], playbook)
+             for d in docs for r in d['records']]
     lines = {}
     for line in sorted({i['business_line'] for i in items} | set(COMING)):
         entry = {'review': []}
@@ -276,8 +342,10 @@ def main():
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     p.add_argument('--week', action='append', help='Monday, YYYY-MM-DD (repeatable); default: ' + ', '.join(WEEKS))
     p.add_argument('--out', type=Path, default=OUT)
+    p.add_argument('--narratives-dir', type=Path, help='folder with the review sheets and card_playbook.csv (default: '
+                   'Capstone_Project/data/narratives; for local tests only)')
     a = p.parse_args()
-    data = build(a.week or WEEKS)
+    data = build(a.week or WEEKS, a.narratives_dir)
     a.out.write_text(json.dumps(data, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
     print(f"{a.out}: {len(data['items'])} items, {len(data['snapshots'])} snapshots")
 
