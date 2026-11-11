@@ -5727,6 +5727,7 @@
         {
           "index": 1,
           "top": true,
+          "pinned": false,
           "published": "2026-11-06",
           "keyword": "Treasury yields",
           "priority_outlet": null,
@@ -5737,6 +5738,7 @@
         {
           "index": 0,
           "top": true,
+          "pinned": false,
           "published": "2026-11-05",
           "keyword": null,
           "priority_outlet": "MarketWatch",
@@ -5747,6 +5749,7 @@
         {
           "index": 2,
           "top": false,
+          "pinned": false,
           "published": "2026-11-08",
           "keyword": null,
           "priority_outlet": "Bloomberg",
@@ -6267,6 +6270,7 @@
         {
           "index": 7,
           "top": true,
+          "pinned": false,
           "published": "2026-11-06",
           "keyword": "Treasury clearing",
           "priority_outlet": null,
@@ -6277,6 +6281,7 @@
         {
           "index": 6,
           "top": false,
+          "pinned": false,
           "published": "2026-11-06",
           "keyword": null,
           "priority_outlet": null,
@@ -6287,6 +6292,7 @@
         {
           "index": 0,
           "top": false,
+          "pinned": false,
           "published": "2026-11-04",
           "keyword": null,
           "priority_outlet": null,
@@ -6297,6 +6303,7 @@
         {
           "index": 3,
           "top": false,
+          "pinned": false,
           "published": "2026-11-04",
           "keyword": null,
           "priority_outlet": null,
@@ -6307,6 +6314,7 @@
         {
           "index": 1,
           "top": false,
+          "pinned": false,
           "published": "2026-11-03",
           "keyword": null,
           "priority_outlet": null,
@@ -6317,6 +6325,7 @@
         {
           "index": 2,
           "top": false,
+          "pinned": false,
           "published": "2026-11-03",
           "keyword": null,
           "priority_outlet": null,
@@ -6327,6 +6336,7 @@
         {
           "index": 4,
           "top": false,
+          "pinned": false,
           "published": "2026-11-03",
           "keyword": null,
           "priority_outlet": null,
@@ -6337,6 +6347,7 @@
         {
           "index": 5,
           "top": false,
+          "pinned": false,
           "published": "2026-11-03",
           "keyword": null,
           "priority_outlet": null,
@@ -6857,8 +6868,31 @@
       "front_model": "us.anthropic.claude-sonnet-4-6",
       "related_news_display": [
         {
+          "index": 0,
+          "top": true,
+          "pinned": true,
+          "published": "2026-11-05",
+          "keyword": null,
+          "priority_outlet": "MarketWatch",
+          "excluded": null,
+          "label": null,
+          "reason": "cited by the reviewed card front (headline source); published 2026-11-05"
+        },
+        {
+          "index": 1,
+          "top": true,
+          "pinned": true,
+          "published": "2026-11-05",
+          "keyword": null,
+          "priority_outlet": "MarketWatch",
+          "excluded": null,
+          "label": null,
+          "reason": "cited by the reviewed card front (outlet named in What happened: MarketWatch); published 2026-11-05"
+        },
+        {
           "index": 8,
           "top": true,
+          "pinned": false,
           "published": "2026-11-06",
           "keyword": "VIX",
           "priority_outlet": null,
@@ -6869,6 +6903,7 @@
         {
           "index": 4,
           "top": true,
+          "pinned": false,
           "published": "2026-11-06",
           "keyword": "VIX",
           "priority_outlet": null,
@@ -6879,6 +6914,7 @@
         {
           "index": 5,
           "top": true,
+          "pinned": false,
           "published": "2026-11-05",
           "keyword": "stock market selloff",
           "priority_outlet": null,
@@ -6888,7 +6924,8 @@
         },
         {
           "index": 10,
-          "top": true,
+          "top": false,
+          "pinned": false,
           "published": "2026-11-06",
           "keyword": null,
           "priority_outlet": "Bloomberg",
@@ -6898,7 +6935,8 @@
         },
         {
           "index": 14,
-          "top": true,
+          "top": false,
+          "pinned": false,
           "published": "2026-11-06",
           "keyword": null,
           "priority_outlet": "WSJ",
@@ -6907,18 +6945,9 @@
           "reason": "no card keyword; priority outlet (WSJ); published 2026-11-06"
         },
         {
-          "index": 1,
-          "top": false,
-          "published": "2026-11-05",
-          "keyword": null,
-          "priority_outlet": "MarketWatch",
-          "excluded": null,
-          "label": null,
-          "reason": "no card keyword; priority outlet (MarketWatch); published 2026-11-05"
-        },
-        {
           "index": 3,
           "top": false,
+          "pinned": false,
           "published": "2026-11-05",
           "keyword": null,
           "priority_outlet": "CNBC",
@@ -6927,18 +6956,9 @@
           "reason": "no card keyword; priority outlet (CNBC); published 2026-11-05"
         },
         {
-          "index": 0,
-          "top": false,
-          "published": "2026-11-05",
-          "keyword": null,
-          "priority_outlet": "MarketWatch",
-          "excluded": null,
-          "label": null,
-          "reason": "no card keyword; priority outlet (MarketWatch); published 2026-11-05"
-        },
-        {
           "index": 13,
           "top": false,
+          "pinned": false,
           "published": "2026-11-03",
           "keyword": null,
           "priority_outlet": "Financial Times",
@@ -6949,6 +6969,7 @@
         {
           "index": 2,
           "top": false,
+          "pinned": false,
           "published": "2026-11-05",
           "keyword": null,
           "priority_outlet": null,
@@ -6959,6 +6980,7 @@
         {
           "index": 12,
           "top": false,
+          "pinned": false,
           "published": "2026-11-08",
           "keyword": "VIX",
           "priority_outlet": null,
@@ -6969,6 +6991,7 @@
         {
           "index": 7,
           "top": false,
+          "pinned": false,
           "published": "2026-11-06",
           "keyword": "stock market selloff",
           "priority_outlet": null,
@@ -6979,6 +7002,7 @@
         {
           "index": 9,
           "top": false,
+          "pinned": false,
           "published": "2026-11-06",
           "keyword": "stock market selloff",
           "priority_outlet": null,
@@ -6989,6 +7013,7 @@
         {
           "index": 6,
           "top": false,
+          "pinned": false,
           "published": "2026-11-05",
           "keyword": "stock market selloff",
           "priority_outlet": null,
@@ -6999,6 +7024,7 @@
         {
           "index": 11,
           "top": false,
+          "pinned": false,
           "published": "2026-11-06",
           "keyword": null,
           "priority_outlet": "Reuters",
@@ -7199,6 +7225,7 @@
         {
           "index": 0,
           "top": true,
+          "pinned": false,
           "published": "2026-11-05",
           "keyword": "record trading volume",
           "priority_outlet": null,

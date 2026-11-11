@@ -3,12 +3,14 @@
 Display-only: nothing here changes scores, statuses, events or narratives, and no item is removed. The dashboard detail
 view shows the top items (config top_n, 5) and lists every item under "Show all". Deterministic, no model:
 
-  1. items whose title contains one of the card's query keywords (validation/news_queries.csv; each quoted phrase is
-     one keyword, each bare word another, matched as the Google filter matches them: case-insensitive, whole word,
-     plural or inflection suffix allowed);
-  2. then items from a priority outlet (validation/related_news_display.json);
-  3. then newest first (publication time from the week's committed collection files, matched by URL); undated last;
-  4. ties keep the original order.
+  0. items the reviewed card front cites (pinned, always at the top): the headline source, then items whose outlet
+     what_happened names (see validation/card_front_checks.cited_news);
+  1. then, in tiers: priority outlet with a card keyword; card keyword only; priority outlet only; neither. A card
+     keyword is a query keyword of the card (validation/news_queries.csv; each quoted phrase is one keyword, each bare
+     word another, matched as the Google filter matches them: case-insensitive, whole word, plural or inflection suffix
+     allowed); priority outlets are in validation/related_news_display.json;
+  2. within a tier, newest first (publication time from the week's committed collection files, matched by URL);
+     undated last; ties keep the original order.
 
 Items matching exclude_always (political commentary, crypto) never enter the top; items matching
 exclude_unless_keyword (gold, oil, sterling, currency …) enter it only when the title also has a card keyword.
@@ -75,9 +77,11 @@ def priority_outlet(outlet: str, config: dict) -> str | None:
     return next((name for name, aliases in config["priority_outlets"].items() if o in aliases), None)
 
 
-def rank(related: list[dict], keywords: list[str], dates: dict[str, str], config: dict) -> list[dict]:
-    """One entry per related-news item, in display order: {index, top, published, keyword, priority_outlet, excluded,
-    label, reason}. Ranked items first (top ones at the start), then excluded ones, then labelled ones."""
+def rank(related: list[dict], keywords: list[str], dates: dict[str, str], config: dict, pinned=()) -> list[dict]:
+    """One entry per related-news item, in display order: {index, top, pinned, published, keyword, priority_outlet,
+    excluded, label, reason}. Pinned items first (cited by the reviewed card front: [(index, why)], in that order),
+    then ranked items (top ones at the start), then excluded ones, then labelled ones. Pinned items are always in the
+    top, even when excluded or labelled."""
     entries = []
     for i, n in enumerate(related or []):
         title, label = n.get("title") or "", n.get("label") or None
@@ -94,16 +98,26 @@ def rank(related: list[dict], keywords: list[str], dates: dict[str, str], config
                 hit = first_match(title, terms)
                 if hit:
                     excluded = f"{group} (“{hit}”) without a card keyword"; break
-        entries.append({"index": i, "top": False, "published": when[:10] if when else None, "keyword": kw, "priority_outlet": outlet,
-                        "excluded": excluded, "label": label, "_when": when or ""})
-    ranked = _order([e for e in entries if not e["label"] and not e["excluded"]])
-    excluded = _order([e for e in entries if not e["label"] and e["excluded"]])
-    labelled = _order([e for e in entries if e["label"]], by_signal=False)
-    for e in ranked[:config.get("top_n", 5)]:
+        entries.append({"index": i, "top": False, "pinned": False, "published": when[:10] if when else None, "keyword": kw,
+                        "priority_outlet": outlet, "excluded": excluded, "label": label, "_when": when or ""})
+    why = {}
+    for i, w in pinned:
+        if 0 <= i < len(entries) and i not in why:
+            why[i] = w
+    pins = [entries[i] for i in why]
+    for e in pins:
+        e["pinned"] = True
+    rest = [e for e in entries if not e["pinned"]]
+    ranked = _order([e for e in rest if not e["label"] and not e["excluded"]])
+    excluded = _order([e for e in rest if not e["label"] and e["excluded"]])
+    labelled = _order([e for e in rest if e["label"]], by_signal=False)
+    for e in (pins + ranked)[:max(config.get("top_n", 5), len(pins))]:
         e["top"] = True
     for e in entries:
         parts = []
-        if e["label"]:
+        if e["pinned"]:
+            parts.append(f"cited by the reviewed card front ({why[e['index']]})")
+        elif e["label"]:
             parts.append(f"labelled {e['label']} (summarised at the top)")
         elif e["excluded"]:
             parts.append("excluded from the top: " + e["excluded"])
@@ -113,14 +127,18 @@ def rank(related: list[dict], keywords: list[str], dates: dict[str, str], config
         parts.append(f"published {e['published']}" if e["published"] else "publication date unknown")
         e["reason"] = "; ".join(parts)
         del e["_when"]
-    return ranked + excluded + labelled
+    return pins + ranked + excluded + labelled
+
+
+TIERS = {(True, True): 0, (True, False): 1, (False, True): 2, (False, False): 3}   # (keyword, priority outlet) -> tier
 
 
 def _order(entries: list[dict], by_signal: bool = True) -> list[dict]:
-    """Keyword first, then priority outlet, then newest first (undated last), ties in original order (stable sorts)."""
+    """Tiers (priority outlet with a card keyword; keyword only; priority outlet only; neither), then newest first
+    (undated last), ties in original order (stable sorts)."""
     out = sorted(entries, key=lambda e: e["index"])
     out = sorted(out, key=lambda e: e["_when"], reverse=True)          # "" (undated) sorts last; stable for equal times
-    return sorted(out, key=lambda e: (e["keyword"] is None, e["priority_outlet"] is None)) if by_signal else out
+    return sorted(out, key=lambda e: TIERS[(e["keyword"] is not None, e["priority_outlet"] is not None)]) if by_signal else out
 
 
 def label_sources(related: list[dict], config: dict) -> list[str]:

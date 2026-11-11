@@ -107,7 +107,8 @@ def front_errors(it, playbook):
 
 def news_display_errors(it):
     """related_news_display (display order of related_news): every item exactly once, at most 5 at the top and listed
-    first, never an excluded or labelled item at the top."""
+    first (more only when more items are pinned), pinned items first, never an excluded or labelled item at the top
+    unless it is pinned (cited by the reviewed card front)."""
     disp = it.get("related_news_display")
     if disp is None:
         return []
@@ -118,10 +119,13 @@ def news_display_errors(it):
     if sorted(e["index"] for e in disp) != list(range(len(rel))):
         errs.append("related_news_display must list every related_news item exactly once")
     tops = [n for n, e in enumerate(disp) if e.get("top")]
-    if len(tops) > 5 or tops != list(range(len(tops))):
+    pinned = sum(bool(e.get("pinned")) for e in disp)
+    if len(tops) > max(5, pinned) or tops != list(range(len(tops))):
         errs.append("related_news_display: at most 5 top items, listed first")
-    if any(e.get("top") and (e.get("excluded") or e.get("label")) for e in disp):
-        errs.append("related_news_display: an excluded or labelled item is in the top")
+    if any(e.get("top") and (e.get("excluded") or e.get("label")) and not e.get("pinned") for e in disp):
+        errs.append("related_news_display: an excluded or labelled item is in the top (allowed only when pinned)")
+    if any(e.get("pinned") and not e.get("top") for e in disp) or [e.get("pinned") for e in disp] != sorted((bool(e.get("pinned")) for e in disp), reverse=True):
+        errs.append("related_news_display: pinned items must be top items listed first")
     return errs
 
 

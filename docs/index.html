@@ -467,7 +467,7 @@ function reviewChip(i){return i.needsReview?`<span class="chip rev">Pending revi
 function aiChip(i){return i.aiLabel?`<span class="chip aiev">${esc(i.aiLabel)}</span>`:"";}
 function aiNote(i){return i.aiLabel&&i.aiEvents.length?`<span class="shared">${esc(i.aiLabel)}: event${i.aiEvents.length>1?"s":""} ${esc(i.aiEvents.join(", "))} entered by the news classifier without a human decision.</span>`:"";}
 function tagFor(i,f){return i.aiFields.includes(f)?` <span class="ai">${esc(i.reviewLabel||"AI-WRITTEN")}</span>`:"";}
-function newsLi(n,why){return `<li${why?` title="${esc(why)}"`:""}>${n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.title)}</a>`:esc(n.title)}${n.outlet?` <span class="o">· ${esc(n.outlet)}</span>`:""}${n.label?` <span class="chip o">${esc(n.label)}</span>`:""}</li>`;}
+function newsLi(n,why,pinned){return `<li${why?` title="${esc(why)}"`:""}>${n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.title)}</a>`:esc(n.title)}${n.outlet?` <span class="o">· ${esc(n.outlet)}</span>`:""}${pinned?` <span class="chip o">Cited in the summary</span>`:""}${n.label?` <span class="chip o">${esc(n.label)}</span>`:""}</li>`;}
 /* Related news: one summary line per label, the top items (related_news_display, from the export), the rest under "Show all N". */
 function relatedSection(i){
   if(!i.related.length) return "";
@@ -478,10 +478,10 @@ function relatedSection(i){
   const head=`<section class="sec related"><h3 class="lab">Related news<span class="rnote">${NEWS_NOTE}</span></h3>${sums}`;
   if(!disp.length) return head+`<ul>${i.related.map(n=>newsLi(n)).join("")}</ul></section>`;   /* older files without a display order */
   const seen=new Set(disp.map(e=>e.index));
-  const ordered=[...disp.map(e=>({n:byIdx[e.index],why:e.reason||""})),...i.related.filter(n=>!seen.has(n.idx)).map(n=>({n,why:""}))];
-  const top=disp.filter(e=>e.top).map(e=>({n:byIdx[e.index],why:e.reason||""}));
-  return head+`${top.length?`<p class="rrule">Top ${top.length}: headlines with the card's search keywords first, then major outlets, then newest. Political and crypto headlines, and commodity or currency headlines without a card keyword, are listed only under "Show all".</p><ul class="rtop">${top.map(x=>newsLi(x.n,x.why)).join("")}</ul>`:""}
-    ${ordered.length>top.length?`<details class="morenews"><summary>Show all ${ordered.length}</summary><ul class="rall">${ordered.map(x=>newsLi(x.n,x.why)).join("")}</ul></details>`:""}</section>`;}
+  const ordered=[...disp.map(e=>({n:byIdx[e.index],why:e.reason||"",pin:!!e.pinned})),...i.related.filter(n=>!seen.has(n.idx)).map(n=>({n,why:"",pin:false}))];
+  const top=disp.filter(e=>e.top).map(e=>({n:byIdx[e.index],why:e.reason||"",pin:!!e.pinned}));
+  return head+`${top.length?`<p class="rrule">Top ${top.length}: items the card summary cites first; then major outlets with the card's search keywords, keywords only, major outlets only, each newest first. Political and crypto headlines, and commodity or currency headlines without a card keyword, are listed only under "Show all".</p><ul class="rtop">${top.map(x=>newsLi(x.n,x.why,x.pin)).join("")}</ul>`:""}
+    ${ordered.length>top.length?`<details class="morenews"><summary>Show all ${ordered.length}</summary><ul class="rall">${ordered.map(x=>newsLi(x.n,x.why,x.pin)).join("")}</ul></details>`:""}</section>`;}
 function sharedNote(i){
   if(!i.shared.length) return "";
   const names=i.shared.map(cid=>{const o=ALL().find(x=>x.cardId===cid&&x.snapshot===i.snapshot); return o?`${o.title} (${cid})`:cid;});

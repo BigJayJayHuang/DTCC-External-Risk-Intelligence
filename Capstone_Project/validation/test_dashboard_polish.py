@@ -38,6 +38,11 @@ class Ranking(unittest.TestCase):
         self.assertEqual(out[1]["reason"], "no card keyword; priority outlet (Reuters); published 2026-11-05")
         self.assertEqual(out[-1]["reason"], "no card keyword; not a priority outlet; publication date unknown")
 
+    def test_tiers_priority_with_keyword_then_keyword_then_priority(self):
+        rel = [news("Quiet day", "Reuters", "a"), news("VIX jumps", "Other", "b"), news("VIX slides", "CNBC", "c"), news("Calm", "Other", "d")]
+        dates = {"a": "2026-11-07T00:00:00+00:00", "b": "2026-11-06T00:00:00+00:00", "c": "2026-11-02T00:00:00+00:00", "d": "2026-11-08T00:00:00+00:00"}
+        self.assertEqual([e["index"] for e in R.rank(rel, ["VIX"], dates, CFG)], [2, 1, 0, 3])   # older tier-0 item still first
+
     def test_ties_keep_the_original_order_and_aliases_match(self):
         rel = [news("One", "Bloomberg.com", "a"), news("Two", "The Wall Street Journal", "b"), news("Three", "AP News", "c")]
         out = R.rank(rel, [], {u: "2026-11-05T00:00:00+00:00" for u in "abc"}, CFG)
@@ -87,6 +92,33 @@ class Exclusions(unittest.TestCase):
         self.assertEqual(CFG["top_n"], 5)
 
 
+class Pinned(unittest.TestCase):
+    """Items the reviewed card front cites are always at the top."""
+    def test_pinned_first_even_when_excluded_or_labelled(self):
+        rel = [news("VIX jumps", "Other", "a"), news("Trump blames Democrats", "Forbes", "b"), news("New member", "DTCC", "c", "membership/onboarding")]
+        out = R.rank(rel, ["VIX"], {}, CFG, pinned=[(1, "headline source"), (2, "outlet named in What happened: DTCC")])
+        self.assertEqual([(e["index"], e["top"], e["pinned"]) for e in out], [(1, True, True), (2, True, True), (0, True, False)])
+        self.assertEqual(out[0]["reason"], "cited by the reviewed card front (headline source); publication date unknown")
+
+    def test_more_pins_than_top_n_are_all_shown(self):
+        rel = [news(f"Item {k}", "Other", str(k)) for k in range(7)]
+        out = R.rank(rel, [], {}, CFG, pinned=[(k, "x") for k in range(6)])
+        self.assertEqual(sum(e["top"] for e in out), 6)
+
+    def test_cited_news_from_the_reviewed_front(self):
+        it = item("ecs-nscc-liq")
+        inp = {"related_news": {"top_items": [{"title": n["title"], "outlet": n["outlet"]} for n in it["related_news"][:5]]}}
+        cited = F.cited_news(it["related_news"], inp, "related_news:0", it["front_what_happened"])
+        self.assertEqual(cited, [(0, "headline source"), (1, "outlet named in What happened: MarketWatch")])
+        self.assertEqual(F.cited_news(it["related_news"], inp, "signal", "MarketWatch reported a quiet session."), [])   # outlet, no shared words
+        self.assertEqual(F.cited_news(it["related_news"], inp, "signal", "Tech stocks log worst day since 2020."), [])  # shared words, no outlet
+
+    def test_published_pins(self):
+        disp = item("ecs-nscc-liq")["related_news_display"]
+        self.assertEqual([(e["index"], e["pinned"]) for e in disp[:3]], [(0, True), (1, True), (8, False)])      # 8: Benzinga, first unpinned
+        self.assertFalse(any(e["pinned"] for i in PUBLISHED["items"] if i["id"] != "ecs-nscc-liq" for e in i["related_news_display"]))
+
+
 class Labels(unittest.TestCase):
     def test_labelled_items_are_not_ranked_and_name_their_source(self):
         rel = [news("New member A", "DTCC", "a", "membership/onboarding"), news("Clearing deadline", "Other", "b")]
@@ -106,7 +138,7 @@ class Labels(unittest.TestCase):
 class Published(unittest.TestCase):
     def test_week_top_five(self):
         top = lambda id_: [item(id_)["related_news"][e["index"]]["outlet"] for e in item(id_)["related_news_display"] if e["top"]]
-        self.assertEqual(top("ecs-nscc-liq"), ["Benzinga", "Yahoo Finance", "Equiti Global", "Bloomberg.com", "WSJ"])
+        self.assertEqual(top("ecs-nscc-liq"), ["MarketWatch", "MarketWatch", "Benzinga", "Yahoo Finance", "Equiti Global"])
         self.assertEqual(top("ficc-gsd-01"), ["GuruFocus", "MarketWatch"])
         self.assertEqual(top("ficc-gsd-03"), ["Traders Union"])
         self.assertEqual(top("ecs-nscc-03"), ["Crypto Briefing"])
@@ -118,7 +150,16 @@ class Published(unittest.TestCase):
 
     def test_validator_check(self):
         it = item("ecs-nscc-liq")
+        pinned_excluded = [dict(e, top=True, pinned=True) if e["index"] == 6 else dict(e, top=False) if e["index"] == 5 else e
+                           for e in it["related_news_display"]]                       # index 6 is excluded (political)
+        pinned_excluded.sort(key=lambda e: not e.get("pinned"))
+        data = dict(PUBLISHED, items=[dict(it, related_news_display=pinned_excluded)])
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+            json.dump(data, f)
+        res = subprocess.run([sys.executable, str(REPO / "docs/data/validate_output.py"), f.name], capture_output=True, text=True)
+        self.assertEqual(res.returncode, 0, res.stdout)                                  # a pinned excluded item may be in the top
         bad = [dict(it, related_news_display=it["related_news_display"][1:]),
+               dict(it, related_news_display=it["related_news_display"][2:] + it["related_news_display"][:2]),   # pinned not first
                dict(it, related_news_display=[dict(e, top=True) for e in it["related_news_display"]]),
                dict(it, related_news_display=[dict(e, top=True) if e["excluded"] else e for e in it["related_news_display"]])]
         for b in bad:
@@ -199,6 +240,7 @@ class Page(unittest.TestCase):
     def test_related_news_top_five_and_show_all(self):
         page = self.open(f"item/ecs-nscc-liq/{WEEK}")
         self.assertEqual(page.locator(".related ul.rtop li").count(), 5)
+        self.assertEqual(page.locator(".related ul.rtop li").filter(has_text="Cited in the summary").count(), 2)
         more = page.locator(".related details.morenews")
         self.assertEqual(more.locator("summary").inner_text(), "Show all 15")
         more.locator("summary").click()
