@@ -1,0 +1,78 @@
+{
+  "_comment": "Display-only. Orders the related news shown in the dashboard detail view (validation/related_news_rank.py, run by docs/data/export_risk_output.py). Never used for scores, statuses, ranking of cards, events or narratives; nothing is deleted: items outside the top are listed under 'Show all'. A title matching any term in 'exclude' never enters the top, even with a card keyword, unless the reviewed card front cites it (pinned).",
+  "top_n": 5,
+  "priority_outlets": {
+    "Reuters": [
+      "reuters",
+      "reuters.com"
+    ],
+    "Bloomberg": [
+      "bloomberg",
+      "bloomberg.com",
+      "bloomberg news"
+    ],
+    "WSJ": [
+      "wsj",
+      "the wall street journal",
+      "wall street journal",
+      "wsj.com"
+    ],
+    "Financial Times": [
+      "financial times",
+      "ft",
+      "ft.com"
+    ],
+    "CNBC": [
+      "cnbc",
+      "cnbc.com"
+    ],
+    "MarketWatch": [
+      "marketwatch",
+      "marketwatch.com"
+    ],
+    "AP": [
+      "ap",
+      "associated press",
+      "ap news",
+      "apnews.com"
+    ],
+    "Barron's": [
+      "barron's",
+      "barrons",
+      "barrons.com"
+    ]
+  },
+  "exclude": {
+    "political commentary": [
+      "Trump",
+      "Democrat",
+      "Republican",
+      "midterm",
+      "election",
+      "blame"
+    ],
+    "crypto": [
+      "bitcoin",
+      "crypto",
+      "cryptocurrency",
+      "token",
+      "ethereum",
+      "blockchain"
+    ],
+    "commodity or currency headline": [
+      "gold",
+      "oil",
+      "crude",
+      "sterling",
+      "currency",
+      "currencies",
+      "dollar",
+      "yen",
+      "euro",
+      "forex"
+    ]
+  },
+  "label_sources": {
+    "membership/onboarding": "DTCC member notices"
+  }
+}

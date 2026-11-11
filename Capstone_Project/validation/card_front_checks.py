@@ -22,6 +22,7 @@ the v3.1 narrative) stays in the analyst view. Display only: nothing here change
 from __future__ import annotations
 
 import importlib.util
+import json
 import re
 from pathlib import Path
 
@@ -193,6 +194,25 @@ def _source_text(record_input: dict, source: str) -> str | None:
     return None
 
 
+def cited_news(related: list[dict], record_input: dict, headline_source: str, what_happened: str) -> list[tuple[int, str]]:
+    """Related-news items a reviewed card front cites, as [(index into related, why)]: the headline source
+    (related_news:<n> of the stored input, matched by title and outlet), then items whose outlet what_happened names
+    and whose title shares at least two content words with it (e.g. "MarketWatch reported tech stocks' worst day ...")."""
+    out = []
+    m = re.fullmatch(r"related_news:(\d+)", headline_source or "")
+    items = (record_input.get("related_news") or {}).get("top_items") or []
+    if m and int(m.group(1)) < len(items):
+        src = items[int(m.group(1))]
+        idx = next((i for i, n in enumerate(related) if n.get("title") == src.get("title") and (n.get("outlet") or "") == (src.get("outlet") or "")), None)
+        if idx is not None:
+            out.append((idx, "headline source"))
+    for i, n in enumerate(related):
+        if i not in (j for j, _ in out) and _names_outlet(what_happened, n.get("outlet")) and \
+                len(_stems(what_happened) & _stems(n.get("title", ""))) >= 2:
+            out.append((i, f"outlet named in What happened: {n.get('outlet')}"))
+    return out
+
+
 def headline_outlet(record_input: dict, source: str) -> str | None:
     m = re.fullmatch(r"related_news:(\d+)", source or "")
     items = (record_input.get("related_news") or {}).get("top_items") or []
@@ -253,8 +273,13 @@ PROXY_SHORT = {"ECS-NSCC-03": "Cboe volume data", "ECS-SET-01": "SEC fails-to-de
                "ECS-NSCC-09": "New York Fed markets data", "ECS-DTC-01": "Federal Reserve CP release"}
 
 
+# labelled related news implies a source, e.g. membership/onboarding -> "DTCC member notices" (display config)
+LABEL_SOURCES = json.loads(Path(__file__).with_name("related_news_display.json").read_text(encoding="utf-8"))["label_sources"]
+
+
 def sources_line(record: dict, signal_series: dict, headline_outlet_name: str | None = None) -> str:
-    """record: a scoring v1.3 record. signal_series: field -> series codes (export SIGNAL_SERIES)."""
+    """record: a scoring v1.3 record. signal_series: field -> series codes (export SIGNAL_SERIES). A card whose related
+    news carries a label in LABEL_SOURCES also names that source (e.g. "DTCC member notices")."""
     fred, other = [], []
     for mc in record.get("market_chains") or []:
         for s in signal_series.get(mc["field"], []):
@@ -265,6 +290,8 @@ def sources_line(record: dict, signal_series: dict, headline_outlet_name: str | 
     for e in record.get("event_manual", {}).get("events") or []:
         if e["event_id"] in ids and e.get("outlet"):
             parts.append(e["outlet"])
+    labels = {n.get("label") for n in record.get("related_news") or [] if n.get("label")}
+    parts += [name for label, name in LABEL_SOURCES.items() if label in labels]
     if record.get("V_tier") == "pqd":
         parts.append("DTCC quarterly disclosures")
     elif record.get("V_tier") == "public_proxy":

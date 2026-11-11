@@ -300,6 +300,7 @@
       ],
       "playbook_reviewer": "Wenqi Cai",
       "front_sources_line": "FRED (10-year Treasury) · DTCC quarterly disclosures",
+      "related_news_display": [],
       "shock_method": "Market indicator"
     },
     {
@@ -521,6 +522,7 @@
       ],
       "playbook_reviewer": "Wenqi Cai",
       "front_sources_line": "FRED (SOFR, EFFR) · DTCC quarterly disclosures",
+      "related_news_display": [],
       "shock_method": "Market indicator"
     },
     {
@@ -675,6 +677,7 @@
       ],
       "playbook_reviewer": "Wenqi Cai",
       "front_sources_line": "Federal Register (SEC) · DTCC quarterly disclosures",
+      "related_news_display": [],
       "shock_method": "Event rubric (hand-entered register)",
       "review_status": "Event EV0006 signed off by Wenqi Cai 2026-11-05T04:45Z"
     },
@@ -822,6 +825,7 @@
       ],
       "playbook_reviewer": "Wenqi Cai",
       "front_sources_line": "FRED (mortgage rate, 10-year Treasury) · DTCC quarterly disclosures",
+      "related_news_display": [],
       "shock_method": "Market indicator"
     },
     {
@@ -1042,6 +1046,7 @@
       ],
       "playbook_reviewer": "Wenqi Cai",
       "front_sources_line": "FRED (VIX, SOFR, EFFR) · DTCC quarterly disclosures",
+      "related_news_display": [],
       "shock_method": "Market indicator"
     },
     {
@@ -1179,6 +1184,7 @@
       ],
       "playbook_reviewer": "Wenqi Cai",
       "front_sources_line": "Cboe volume data",
+      "related_news_display": [],
       "shock_method": "Market indicator"
     },
     {
@@ -1287,7 +1293,8 @@
         "NSCC and DTC settlement"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "SEC fails-to-deliver data"
+      "front_sources_line": "SEC fails-to-deliver data",
+      "related_news_display": []
     },
     {
       "record_id": "xe-member-ficc",
@@ -1478,6 +1485,7 @@
       ],
       "playbook_reviewer": "Wenqi Cai",
       "front_sources_line": "FRED (Baa spread) · DTCC quarterly disclosures",
+      "related_news_display": [],
       "shock_method": "Market indicator"
     },
     {
@@ -1669,6 +1677,7 @@
       ],
       "playbook_reviewer": "Wenqi Cai",
       "front_sources_line": "FRED (Baa spread) · DTCC quarterly disclosures",
+      "related_news_display": [],
       "shock_method": "Market indicator"
     },
     {
@@ -1776,7 +1785,8 @@
         "MBSD and DTC settlement timeframes"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "Nasdaq trade-halt history"
+      "front_sources_line": "Nasdaq trade-halt history",
+      "related_news_display": []
     },
     {
       "record_id": "xe-disrupt-ecs",
@@ -1883,7 +1893,8 @@
         "MBSD and DTC settlement timeframes"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "Nasdaq trade-halt history"
+      "front_sources_line": "Nasdaq trade-halt history",
+      "related_news_display": []
     },
     {
       "record_id": "xe-settlebank-ficc",
@@ -1991,7 +2002,8 @@
         "GSD and NSCC settlement disrupted"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "Nasdaq index data"
+      "front_sources_line": "Nasdaq index data",
+      "related_news_display": []
     },
     {
       "record_id": "xe-settlebank-ecs",
@@ -2099,7 +2111,8 @@
         "GSD and NSCC settlement disrupted"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "Nasdaq index data"
+      "front_sources_line": "Nasdaq index data",
+      "related_news_display": []
     },
     {
       "record_id": "xe-cyber-ficc",
@@ -2210,7 +2223,8 @@
         "MBSD and DTC participant system disruption"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "NIST vulnerability database"
+      "front_sources_line": "NIST vulnerability database",
+      "related_news_display": []
     },
     {
       "record_id": "xe-cyber-ecs",
@@ -2321,7 +2335,8 @@
         "MBSD and DTC participant system disruption"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "NIST vulnerability database"
+      "front_sources_line": "NIST vulnerability database",
+      "related_news_display": []
     },
     {
       "record_id": "ficc-gsd-11",
@@ -2429,7 +2444,8 @@
         "GSD Agent Clearing Service stressed"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "OFR Hedge Fund Monitor"
+      "front_sources_line": "OFR Hedge Fund Monitor",
+      "related_news_display": []
     },
     {
       "record_id": "ficc-mbsd-02",
@@ -2532,7 +2548,8 @@
         "MBSD pool settlement and fails charges"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "New York Fed household debt data"
+      "front_sources_line": "New York Fed household debt data",
+      "related_news_display": []
     },
     {
       "record_id": "ecs-nscc-08",
@@ -2638,7 +2655,8 @@
         "NSCC ACATS transfer and settlement activity"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "Yahoo Finance (broker-dealer index)"
+      "front_sources_line": "Yahoo Finance (broker-dealer index)",
+      "related_news_display": []
     },
     {
       "record_id": "ecs-nscc-09",
@@ -2746,7 +2764,8 @@
         "NSCC SFT clearing service obligations spike"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "New York Fed markets data"
+      "front_sources_line": "New York Fed markets data",
+      "related_news_display": []
     },
     {
       "record_id": "ecs-dtc-01",
@@ -2852,7 +2871,8 @@
         "DTC MMI settlement stalls"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "Federal Reserve CP release"
+      "front_sources_line": "Federal Reserve CP release",
+      "related_news_display": []
     },
     {
       "record_id": "ficc-gsd-01",
@@ -2989,6 +3009,7 @@
       ],
       "playbook_reviewer": "Wenqi Cai",
       "front_sources_line": "FRED (10-year Treasury) · DTCC quarterly disclosures",
+      "related_news_display": [],
       "shock_method": "Market indicator"
     },
     {
@@ -3210,6 +3231,7 @@
       ],
       "playbook_reviewer": "Wenqi Cai",
       "front_sources_line": "FRED (SOFR, EFFR) · DTCC quarterly disclosures",
+      "related_news_display": [],
       "shock_method": "Market indicator"
     },
     {
@@ -3364,6 +3386,7 @@
       ],
       "playbook_reviewer": "Wenqi Cai",
       "front_sources_line": "Federal Register (SEC) · DTCC quarterly disclosures",
+      "related_news_display": [],
       "shock_method": "Event rubric (hand-entered register)",
       "review_status": "Event EV0006 signed off by Wenqi Cai 2026-11-05T04:45Z"
     },
@@ -3548,6 +3571,7 @@
       ],
       "playbook_reviewer": "Wenqi Cai",
       "front_sources_line": "FRED (mortgage rate, 10-year Treasury) · DTCC quarterly disclosures",
+      "related_news_display": [],
       "shock_method": "Market indicator"
     },
     {
@@ -3790,6 +3814,7 @@
       ],
       "playbook_reviewer": "Wenqi Cai",
       "front_sources_line": "FRED (VIX, SOFR, EFFR) · DTCC quarterly disclosures",
+      "related_news_display": [],
       "shock_method": "Market indicator"
     },
     {
@@ -3927,6 +3952,7 @@
       ],
       "playbook_reviewer": "Wenqi Cai",
       "front_sources_line": "Cboe volume data",
+      "related_news_display": [],
       "shock_method": "Market indicator"
     },
     {
@@ -4035,7 +4061,8 @@
         "NSCC and DTC settlement"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "SEC fails-to-deliver data"
+      "front_sources_line": "SEC fails-to-deliver data",
+      "related_news_display": []
     },
     {
       "record_id": "xe-member-ficc",
@@ -4179,6 +4206,7 @@
       ],
       "playbook_reviewer": "Wenqi Cai",
       "front_sources_line": "FRED (Baa spread) · DTCC quarterly disclosures",
+      "related_news_display": [],
       "shock_method": "Market indicator"
     },
     {
@@ -4323,6 +4351,7 @@
       ],
       "playbook_reviewer": "Wenqi Cai",
       "front_sources_line": "FRED (Baa spread) · DTCC quarterly disclosures",
+      "related_news_display": [],
       "shock_method": "Market indicator"
     },
     {
@@ -4430,7 +4459,8 @@
         "MBSD and DTC settlement timeframes"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "Nasdaq trade-halt history"
+      "front_sources_line": "Nasdaq trade-halt history",
+      "related_news_display": []
     },
     {
       "record_id": "xe-disrupt-ecs",
@@ -4537,7 +4567,8 @@
         "MBSD and DTC settlement timeframes"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "Nasdaq trade-halt history"
+      "front_sources_line": "Nasdaq trade-halt history",
+      "related_news_display": []
     },
     {
       "record_id": "xe-settlebank-ficc",
@@ -4645,7 +4676,8 @@
         "GSD and NSCC settlement disrupted"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "Nasdaq index data"
+      "front_sources_line": "Nasdaq index data",
+      "related_news_display": []
     },
     {
       "record_id": "xe-settlebank-ecs",
@@ -4753,7 +4785,8 @@
         "GSD and NSCC settlement disrupted"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "Nasdaq index data"
+      "front_sources_line": "Nasdaq index data",
+      "related_news_display": []
     },
     {
       "record_id": "xe-cyber-ficc",
@@ -4864,7 +4897,8 @@
         "MBSD and DTC participant system disruption"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "NIST vulnerability database"
+      "front_sources_line": "NIST vulnerability database",
+      "related_news_display": []
     },
     {
       "record_id": "xe-cyber-ecs",
@@ -4975,7 +5009,8 @@
         "MBSD and DTC participant system disruption"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "NIST vulnerability database"
+      "front_sources_line": "NIST vulnerability database",
+      "related_news_display": []
     },
     {
       "record_id": "ficc-gsd-11",
@@ -5083,7 +5118,8 @@
         "GSD Agent Clearing Service stressed"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "OFR Hedge Fund Monitor"
+      "front_sources_line": "OFR Hedge Fund Monitor",
+      "related_news_display": []
     },
     {
       "record_id": "ficc-mbsd-02",
@@ -5186,7 +5222,8 @@
         "MBSD pool settlement and fails charges"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "New York Fed household debt data"
+      "front_sources_line": "New York Fed household debt data",
+      "related_news_display": []
     },
     {
       "record_id": "ecs-nscc-08",
@@ -5292,7 +5329,8 @@
         "NSCC ACATS transfer and settlement activity"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "Yahoo Finance (broker-dealer index)"
+      "front_sources_line": "Yahoo Finance (broker-dealer index)",
+      "related_news_display": []
     },
     {
       "record_id": "ecs-nscc-09",
@@ -5400,7 +5438,8 @@
         "NSCC SFT clearing service obligations spike"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "New York Fed markets data"
+      "front_sources_line": "New York Fed markets data",
+      "related_news_display": []
     },
     {
       "record_id": "ecs-dtc-01",
@@ -5506,7 +5545,8 @@
         "DTC MMI settlement stalls"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "Federal Reserve CP release"
+      "front_sources_line": "Federal Reserve CP release",
+      "related_news_display": []
     },
     {
       "record_id": "ficc-gsd-01",
@@ -5683,6 +5723,41 @@
       "front_decision": "edit",
       "front_prompt_version": "card-front-prompt-v1:71cf3db75c34",
       "front_model": "us.anthropic.claude-sonnet-4-6",
+      "related_news_display": [
+        {
+          "index": 1,
+          "top": true,
+          "pinned": false,
+          "published": "2026-11-06",
+          "keyword": "Treasury yields",
+          "priority_outlet": null,
+          "excluded": null,
+          "label": null,
+          "reason": "card keyword “Treasury yields”; not a priority outlet; published 2026-11-06"
+        },
+        {
+          "index": 0,
+          "top": true,
+          "pinned": false,
+          "published": "2026-11-05",
+          "keyword": null,
+          "priority_outlet": "MarketWatch",
+          "excluded": null,
+          "label": null,
+          "reason": "no card keyword; priority outlet (MarketWatch); published 2026-11-05"
+        },
+        {
+          "index": 2,
+          "top": false,
+          "pinned": false,
+          "published": "2026-11-08",
+          "keyword": null,
+          "priority_outlet": "Bloomberg",
+          "excluded": "political commentary (“election”)",
+          "label": null,
+          "reason": "excluded from the top: political commentary (“election”); published 2026-11-08"
+        }
+      ],
       "shock_method": "Market indicator"
     },
     {
@@ -5922,6 +5997,7 @@
       "front_decision": "edit",
       "front_prompt_version": "card-front-prompt-v1:71cf3db75c34",
       "front_model": "us.anthropic.claude-sonnet-4-6",
+      "related_news_display": [],
       "shock_method": "Market indicator"
     },
     {
@@ -6185,11 +6261,101 @@
         "GSD onboarding and Sponsored volume"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "Federal Register (SEC) · DTCC quarterly disclosures",
+      "front_sources_line": "Federal Register (SEC) · DTCC member notices · DTCC quarterly disclosures",
       "front_reviewer": "Wenqi Cai",
       "front_decision": "edit",
       "front_prompt_version": "card-front-prompt-v1:71cf3db75c34",
       "front_model": "us.anthropic.claude-sonnet-4-6",
+      "related_news_display": [
+        {
+          "index": 7,
+          "top": true,
+          "pinned": false,
+          "published": "2026-11-06",
+          "keyword": "Treasury clearing",
+          "priority_outlet": null,
+          "excluded": null,
+          "label": null,
+          "reason": "card keyword “Treasury clearing”; not a priority outlet; published 2026-11-06"
+        },
+        {
+          "index": 6,
+          "top": false,
+          "pinned": false,
+          "published": "2026-11-06",
+          "keyword": null,
+          "priority_outlet": null,
+          "excluded": null,
+          "label": "membership/onboarding",
+          "reason": "labelled membership/onboarding (summarised at the top); published 2026-11-06"
+        },
+        {
+          "index": 0,
+          "top": false,
+          "pinned": false,
+          "published": "2026-11-04",
+          "keyword": null,
+          "priority_outlet": null,
+          "excluded": null,
+          "label": "membership/onboarding",
+          "reason": "labelled membership/onboarding (summarised at the top); published 2026-11-04"
+        },
+        {
+          "index": 3,
+          "top": false,
+          "pinned": false,
+          "published": "2026-11-04",
+          "keyword": null,
+          "priority_outlet": null,
+          "excluded": null,
+          "label": "membership/onboarding",
+          "reason": "labelled membership/onboarding (summarised at the top); published 2026-11-04"
+        },
+        {
+          "index": 1,
+          "top": false,
+          "pinned": false,
+          "published": "2026-11-03",
+          "keyword": null,
+          "priority_outlet": null,
+          "excluded": null,
+          "label": "membership/onboarding",
+          "reason": "labelled membership/onboarding (summarised at the top); published 2026-11-03"
+        },
+        {
+          "index": 2,
+          "top": false,
+          "pinned": false,
+          "published": "2026-11-03",
+          "keyword": null,
+          "priority_outlet": null,
+          "excluded": null,
+          "label": "membership/onboarding",
+          "reason": "labelled membership/onboarding (summarised at the top); published 2026-11-03"
+        },
+        {
+          "index": 4,
+          "top": false,
+          "pinned": false,
+          "published": "2026-11-03",
+          "keyword": null,
+          "priority_outlet": null,
+          "excluded": null,
+          "label": "membership/onboarding",
+          "reason": "labelled membership/onboarding (summarised at the top); published 2026-11-03"
+        },
+        {
+          "index": 5,
+          "top": false,
+          "pinned": false,
+          "published": "2026-11-03",
+          "keyword": null,
+          "priority_outlet": null,
+          "excluded": null,
+          "label": "membership/onboarding",
+          "reason": "labelled membership/onboarding (summarised at the top); published 2026-11-03"
+        }
+      ],
       "shock_method": "Event rubric (hand-entered register)",
       "review_status": "Event EV0006 signed off by Wenqi Cai 2026-11-05T04:45Z"
     },
@@ -6355,6 +6521,7 @@
       "front_decision": "edit",
       "front_prompt_version": "card-front-prompt-v1:71cf3db75c34",
       "front_model": "us.anthropic.claude-sonnet-4-6",
+      "related_news_display": [],
       "shock_method": "Market indicator"
     },
     {
@@ -6699,6 +6866,173 @@
       "front_decision": "edit",
       "front_prompt_version": "card-front-prompt-v1:71cf3db75c34",
       "front_model": "us.anthropic.claude-sonnet-4-6",
+      "related_news_display": [
+        {
+          "index": 0,
+          "top": true,
+          "pinned": true,
+          "published": "2026-11-05",
+          "keyword": null,
+          "priority_outlet": "MarketWatch",
+          "excluded": null,
+          "label": null,
+          "reason": "cited by the reviewed card front (headline source); published 2026-11-05"
+        },
+        {
+          "index": 1,
+          "top": true,
+          "pinned": true,
+          "published": "2026-11-05",
+          "keyword": null,
+          "priority_outlet": "MarketWatch",
+          "excluded": null,
+          "label": null,
+          "reason": "cited by the reviewed card front (outlet named in What happened: MarketWatch); published 2026-11-05"
+        },
+        {
+          "index": 8,
+          "top": true,
+          "pinned": false,
+          "published": "2026-11-06",
+          "keyword": "VIX",
+          "priority_outlet": null,
+          "excluded": null,
+          "label": null,
+          "reason": "card keyword “VIX”; not a priority outlet; published 2026-11-06"
+        },
+        {
+          "index": 4,
+          "top": true,
+          "pinned": false,
+          "published": "2026-11-06",
+          "keyword": "VIX",
+          "priority_outlet": null,
+          "excluded": null,
+          "label": null,
+          "reason": "card keyword “VIX”; not a priority outlet; published 2026-11-06"
+        },
+        {
+          "index": 10,
+          "top": true,
+          "pinned": false,
+          "published": "2026-11-06",
+          "keyword": null,
+          "priority_outlet": "Bloomberg",
+          "excluded": null,
+          "label": null,
+          "reason": "no card keyword; priority outlet (Bloomberg); published 2026-11-06"
+        },
+        {
+          "index": 14,
+          "top": false,
+          "pinned": false,
+          "published": "2026-11-06",
+          "keyword": null,
+          "priority_outlet": "WSJ",
+          "excluded": null,
+          "label": null,
+          "reason": "no card keyword; priority outlet (WSJ); published 2026-11-06"
+        },
+        {
+          "index": 3,
+          "top": false,
+          "pinned": false,
+          "published": "2026-11-05",
+          "keyword": null,
+          "priority_outlet": "CNBC",
+          "excluded": null,
+          "label": null,
+          "reason": "no card keyword; priority outlet (CNBC); published 2026-11-05"
+        },
+        {
+          "index": 13,
+          "top": false,
+          "pinned": false,
+          "published": "2026-11-03",
+          "keyword": null,
+          "priority_outlet": "Financial Times",
+          "excluded": null,
+          "label": null,
+          "reason": "no card keyword; priority outlet (Financial Times); published 2026-11-03"
+        },
+        {
+          "index": 2,
+          "top": false,
+          "pinned": false,
+          "published": "2026-11-05",
+          "keyword": null,
+          "priority_outlet": null,
+          "excluded": null,
+          "label": null,
+          "reason": "no card keyword; not a priority outlet; published 2026-11-05"
+        },
+        {
+          "index": 12,
+          "top": false,
+          "pinned": false,
+          "published": "2026-11-08",
+          "keyword": "VIX",
+          "priority_outlet": null,
+          "excluded": "crypto (“bitcoin”)",
+          "label": null,
+          "reason": "excluded from the top: crypto (“bitcoin”); published 2026-11-08"
+        },
+        {
+          "index": 7,
+          "top": false,
+          "pinned": false,
+          "published": "2026-11-06",
+          "keyword": "stock market selloff",
+          "priority_outlet": null,
+          "excluded": "political commentary (“Trump”)",
+          "label": null,
+          "reason": "excluded from the top: political commentary (“Trump”); published 2026-11-06"
+        },
+        {
+          "index": 9,
+          "top": false,
+          "pinned": false,
+          "published": "2026-11-06",
+          "keyword": "stock market selloff",
+          "priority_outlet": null,
+          "excluded": "political commentary (“Trump”)",
+          "label": null,
+          "reason": "excluded from the top: political commentary (“Trump”); published 2026-11-06"
+        },
+        {
+          "index": 6,
+          "top": false,
+          "pinned": false,
+          "published": "2026-11-05",
+          "keyword": "stock market selloff",
+          "priority_outlet": null,
+          "excluded": "political commentary (“Trump”)",
+          "label": null,
+          "reason": "excluded from the top: political commentary (“Trump”); published 2026-11-05"
+        },
+        {
+          "index": 5,
+          "top": false,
+          "pinned": false,
+          "published": "2026-11-05",
+          "keyword": "stock market selloff",
+          "priority_outlet": null,
+          "excluded": "commodity or currency headline (“gold”)",
+          "label": null,
+          "reason": "excluded from the top: commodity or currency headline (“gold”); published 2026-11-05"
+        },
+        {
+          "index": 11,
+          "top": false,
+          "pinned": false,
+          "published": "2026-11-06",
+          "keyword": null,
+          "priority_outlet": "Reuters",
+          "excluded": "commodity or currency headline (“sterling”)",
+          "label": null,
+          "reason": "excluded from the top: commodity or currency headline (“sterling”); published 2026-11-06"
+        }
+      ],
       "shock_method": "Market indicator"
     },
     {
@@ -6887,6 +7221,19 @@
       "front_decision": "edit",
       "front_prompt_version": "card-front-prompt-v1:71cf3db75c34",
       "front_model": "us.anthropic.claude-sonnet-4-6",
+      "related_news_display": [
+        {
+          "index": 0,
+          "top": true,
+          "pinned": false,
+          "published": "2026-11-05",
+          "keyword": "record trading volume",
+          "priority_outlet": null,
+          "excluded": null,
+          "label": null,
+          "reason": "card keyword “record trading volume”; not a priority outlet; published 2026-11-05"
+        }
+      ],
       "shock_method": "Market indicator"
     },
     {
@@ -6997,7 +7344,8 @@
         "NSCC and DTC settlement"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "SEC fails-to-deliver data"
+      "front_sources_line": "SEC fails-to-deliver data",
+      "related_news_display": []
     },
     {
       "record_id": "xe-member-ficc",
@@ -7206,6 +7554,7 @@
       "front_decision": "edit",
       "front_prompt_version": "card-front-prompt-v1:71cf3db75c34",
       "front_model": "us.anthropic.claude-sonnet-4-6",
+      "related_news_display": [],
       "shock_method": "Market indicator"
     },
     {
@@ -7415,6 +7764,7 @@
       "front_decision": "edit",
       "front_prompt_version": "card-front-prompt-v1:71cf3db75c34",
       "front_model": "us.anthropic.claude-sonnet-4-6",
+      "related_news_display": [],
       "shock_method": "Market indicator"
     },
     {
@@ -7524,7 +7874,8 @@
         "MBSD and DTC settlement timeframes"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "Nasdaq trade-halt history"
+      "front_sources_line": "Nasdaq trade-halt history",
+      "related_news_display": []
     },
     {
       "record_id": "xe-disrupt-ecs",
@@ -7633,7 +7984,8 @@
         "MBSD and DTC settlement timeframes"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "Nasdaq trade-halt history"
+      "front_sources_line": "Nasdaq trade-halt history",
+      "related_news_display": []
     },
     {
       "record_id": "xe-settlebank-ficc",
@@ -7743,7 +8095,8 @@
         "GSD and NSCC settlement disrupted"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "Nasdaq index data"
+      "front_sources_line": "Nasdaq index data",
+      "related_news_display": []
     },
     {
       "record_id": "xe-settlebank-ecs",
@@ -7853,7 +8206,8 @@
         "GSD and NSCC settlement disrupted"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "Nasdaq index data"
+      "front_sources_line": "Nasdaq index data",
+      "related_news_display": []
     },
     {
       "record_id": "xe-cyber-ficc",
@@ -7966,7 +8320,8 @@
         "MBSD and DTC participant system disruption"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "NIST vulnerability database"
+      "front_sources_line": "NIST vulnerability database",
+      "related_news_display": []
     },
     {
       "record_id": "xe-cyber-ecs",
@@ -8079,7 +8434,8 @@
         "MBSD and DTC participant system disruption"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "NIST vulnerability database"
+      "front_sources_line": "NIST vulnerability database",
+      "related_news_display": []
     },
     {
       "record_id": "ficc-gsd-11",
@@ -8189,7 +8545,8 @@
         "GSD Agent Clearing Service stressed"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "OFR Hedge Fund Monitor"
+      "front_sources_line": "OFR Hedge Fund Monitor",
+      "related_news_display": []
     },
     {
       "record_id": "ficc-mbsd-02",
@@ -8294,7 +8651,8 @@
         "MBSD pool settlement and fails charges"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "New York Fed household debt data"
+      "front_sources_line": "New York Fed household debt data",
+      "related_news_display": []
     },
     {
       "record_id": "ecs-nscc-08",
@@ -8402,7 +8760,8 @@
         "NSCC ACATS transfer and settlement activity"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "Yahoo Finance (broker-dealer index)"
+      "front_sources_line": "Yahoo Finance (broker-dealer index)",
+      "related_news_display": []
     },
     {
       "record_id": "ecs-nscc-09",
@@ -8512,7 +8871,8 @@
         "NSCC SFT clearing service obligations spike"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "New York Fed markets data"
+      "front_sources_line": "New York Fed markets data",
+      "related_news_display": []
     },
     {
       "record_id": "ecs-dtc-01",
@@ -8620,7 +8980,8 @@
         "DTC MMI settlement stalls"
       ],
       "playbook_reviewer": "Wenqi Cai",
-      "front_sources_line": "Federal Reserve CP release"
+      "front_sources_line": "Federal Reserve CP release",
+      "related_news_display": []
     }
   ]
 }
