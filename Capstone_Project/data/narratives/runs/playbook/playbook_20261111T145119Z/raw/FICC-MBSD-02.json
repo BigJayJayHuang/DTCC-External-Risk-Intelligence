@@ -1,0 +1,38 @@
+{
+  "key": "FICC-MBSD-02",
+  "request_sha256": "14527396ca7c8cd95b1a7a14c884194d0c195e407c34038abbfb8fa964bc2d55",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_xz7NfXc8kJjWoH982G9l4Z",
+            "name": "submit_card_playbook",
+            "input": {
+              "chain_short_1": "Mortgage-backed pool data or supply breaks down",
+              "chain_short_2": "Members miss pool delivery obligations, deliveries fail",
+              "chain_short_3": "MBSD pool settlement and fails charges",
+              "action_1_text": "Monitor MBSD pool settlement fail rates and fails charge activity closely.",
+              "action_1_kind": "monitor",
+              "action_2_text": "Alert MBSD operations teams to heightened pool delivery failure risk this period.",
+              "action_2_kind": "communicate",
+              "action_3_text": "Verify with MBSD risk and operations that fails charge processing is functioning correctly.",
+              "action_3_kind": "verify"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 615,
+    "outputTokens": 270,
+    "totalTokens": 2136,
+    "cacheReadInputTokens": 1251,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.00689733"
+}

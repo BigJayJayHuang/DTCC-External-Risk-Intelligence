@@ -1,0 +1,38 @@
+{
+  "key": "XE-DISRUPT",
+  "request_sha256": "496ff738d23fdadf50a6458bdd6c2a32cde738846420fa23601813c4a5b678f9",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_dnnXzxoqnOJK6Io1TYHAul",
+            "name": "submit_card_playbook",
+            "input": {
+              "chain_short_1": "Market-wide disruption or declared emergency",
+              "chain_short_2": "DTCC invokes force-majeure settlement powers",
+              "chain_short_3": "MBSD and DTC settlement timeframes disrupted",
+              "action_1_text": "Brief relationship and client-facing teams on potential settlement timeline changes.",
+              "action_1_kind": "communicate",
+              "action_2_text": "Confirm operations teams are ready to execute modified MBSD and DTC settlement procedures.",
+              "action_2_kind": "prepare",
+              "action_3_text": "Monitor public market-disruption announcements and verify status with FICC and ECS operations leads.",
+              "action_3_kind": "monitor"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 707,
+    "outputTokens": 278,
+    "totalTokens": 2236,
+    "cacheReadInputTokens": 1251,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.00733293"
+}

@@ -1,0 +1,38 @@
+{
+  "key": "ECS-NSCC-08",
+  "request_sha256": "2a565820fe400bfd7652c310997b767c6c7cd3d9a48f8d541e70d58b0d7ccd9e",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_oyMEcda0Qgub5tYJ9Y0CHR",
+            "name": "submit_card_playbook",
+            "input": {
+              "chain_short_1": "Retail broker fails or exits abruptly",
+              "chain_short_2": "Mass account transfers concentrate in ACATS",
+              "chain_short_3": "NSCC ACATS transfer and settlement activity",
+              "action_1_text": "Alert ECS operations teams to monitor ACATS transfer volumes for unusual spikes.",
+              "action_1_kind": "monitor",
+              "action_2_text": "Confirm NSCC operations are prepared to handle concentrated ACATS settlement activity.",
+              "action_2_kind": "prepare",
+              "action_3_text": "Brief relationship teams on potential member stress driving elevated account transfer requests.",
+              "action_3_kind": "communicate"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 600,
+    "outputTokens": 270,
+    "totalTokens": 2121,
+    "cacheReadInputTokens": 1251,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.00684783"
+}

@@ -1,0 +1,38 @@
+{
+  "key": "ECS-NSCC-09",
+  "request_sha256": "9799beb550b1412bf61312ca44023455e9d3a3e70599778920b1af5f637985d7",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_446A6KDPnmfIj5OX3cKlsq",
+            "name": "submit_card_playbook",
+            "input": {
+              "chain_short_1": "Securities financing markets under stress",
+              "chain_short_2": "SFT positions reprice and remargin sharply",
+              "chain_short_3": "NSCC SFT clearing service obligations spike",
+              "action_1_text": "Monitor NSCC SFT clearing service for unusual collateral and settlement obligation movements.",
+              "action_1_kind": "monitor",
+              "action_2_text": "Confirm with operations that NSCC settlement teams are ready for elevated SFT activity.",
+              "action_2_kind": "prepare",
+              "action_3_text": "Brief relationship teams on potential member stress in repo and stock-loan markets.",
+              "action_3_kind": "communicate"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 613,
+    "outputTokens": 274,
+    "totalTokens": 2138,
+    "cacheReadInputTokens": 1251,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.00695673"
+}

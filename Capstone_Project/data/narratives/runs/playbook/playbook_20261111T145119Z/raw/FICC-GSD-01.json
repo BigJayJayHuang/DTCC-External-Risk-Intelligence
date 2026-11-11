@@ -1,0 +1,44 @@
+{
+  "key": "FICC-GSD-01",
+  "request_sha256": "e47700b10467c22a8183f417a809e5905a28de6c4b7b9c524eee02cf60dd2f76",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_EiwjmyBVdaIBLj9o6G3XOE",
+            "name": "submit_card_playbook",
+            "input": {
+              "chain_short_1": "Treasury selloff or sharp yield swings",
+              "chain_short_2": "Price moves shift required margin",
+              "chain_short_3": "GSD margin requirements",
+              "action_1_text": "Monitor GSD margin calls and member payment activity closely.",
+              "action_1_kind": "monitor",
+              "action_2_text": "Confirm GSD operations and treasury teams are ready for elevated margin activity.",
+              "action_2_kind": "prepare",
+              "action_3_text": "Brief FICC relationship teams on potential margin pressure facing clearing members.",
+              "action_3_kind": "communicate"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 579,
+    "outputTokens": 253,
+    "totalTokens": 2083,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 1251,
+    "cacheDetails": [
+      {
+        "ttl": "5m",
+        "inputTokens": 1251
+      }
+    ]
+  },
+  "estimated_cost_usd": "0.011245575"
+}

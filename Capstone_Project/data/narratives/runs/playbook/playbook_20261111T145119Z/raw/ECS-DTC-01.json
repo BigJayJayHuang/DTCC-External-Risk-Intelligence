@@ -1,0 +1,38 @@
+{
+  "key": "ECS-DTC-01",
+  "request_sha256": "819954ef0ef0c7b3ac1e9b29454284f5372c11f85888678f5b7c521b75cf2eb3",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_laCsMpILVsJGWVeAXzd9Wj",
+            "name": "submit_card_playbook",
+            "input": {
+              "chain_short_1": "Money market issuer funding problem",
+              "chain_short_2": "Issuing agent withholds funding acknowledgment",
+              "chain_short_3": "DTC MMI settlement stalls",
+              "action_1_text": "Monitor DTC MMI settlement queues for stalled acronyms awaiting funding acknowledgment.",
+              "action_1_kind": "monitor",
+              "action_2_text": "Confirm ECS operations teams are ready to manage MMI maturity and issuance backlogs.",
+              "action_2_kind": "prepare",
+              "action_3_text": "Brief relationship teams on potential DTC MMI settlement delays affecting participants.",
+              "action_3_kind": "communicate"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 616,
+    "outputTokens": 275,
+    "totalTokens": 2142,
+    "cacheReadInputTokens": 1251,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.00698313"
+}

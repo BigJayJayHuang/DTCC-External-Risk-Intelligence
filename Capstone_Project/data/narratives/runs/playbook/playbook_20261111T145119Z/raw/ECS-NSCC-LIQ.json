@@ -1,0 +1,38 @@
+{
+  "key": "ECS-NSCC-LIQ",
+  "request_sha256": "d4347694436b25d886baaf7fe49a3448314454c2f1ed5d0004936d0d4414a796",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_cyWN7t4EiHS5H4vuVPOA4D",
+            "name": "submit_card_playbook",
+            "input": {
+              "chain_short_1": "Sharp equity selloff or large price swings",
+              "chain_short_2": "Daily mark-to-market payments change sharply",
+              "chain_short_3": "NSCC variation margin calls",
+              "action_1_text": "Alert relationship teams that members may face elevated variation margin calls.",
+              "action_1_kind": "communicate",
+              "action_2_text": "Confirm with treasury operations that intraday liquidity coverage is ready for elevated cash movements.",
+              "action_2_kind": "prepare",
+              "action_3_text": "Monitor NSCC settlement activity and cash collection rates throughout the day.",
+              "action_3_kind": "monitor"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 589,
+    "outputTokens": 266,
+    "totalTokens": 2106,
+    "cacheReadInputTokens": 1251,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.00674553"
+}
