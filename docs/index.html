@@ -183,6 +183,25 @@ details.json pre{overflow-x:auto;font-family:var(--f-mono);font-size:12.5px;line
 .daily{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;font-size:13.5px}
 .daily span{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:1px 8px;font-variant-numeric:tabular-nums}
 
+/* unscored cards collapsed under the scored ones (list view) */
+.others{border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.others>summary{cursor:pointer;padding:12px 16px;font-weight:600;font-size:15px;color:var(--ink);display:flex;gap:10px;align-items:baseline;list-style:none}
+.others>summary::-webkit-details-marker{display:none}
+.others>summary::before{content:"▸";color:var(--brand-2);font-weight:700;display:inline-block;transition:transform .15s}
+.others[open]>summary::before{transform:rotate(90deg)}
+.others>summary .oh{margin-left:auto;font-size:13.5px;font-weight:700;color:var(--brand-2);white-space:nowrap}
+.others[open]>summary .oh .s{display:none}.others:not([open])>summary .oh .h{display:none}
+.orows{list-style:none;margin:0;padding:0 16px 6px}
+.orow{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;padding:9px 0;border-top:1px solid var(--line)}
+.oname{font-weight:600;flex:1 1 200px;min-width:0}
+.orow .chips{margin:0}
+.olink{border:0;background:none;color:var(--brand-2);font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap;padding:4px 0}
+.rsum{margin:0 0 8px;font-size:14.5px}
+.rrule{font-size:13px;color:var(--muted);margin:0 0 8px;max-width:80ch}
+details.morenews{margin-top:8px}
+details.morenews>summary{cursor:pointer;font-weight:700;color:var(--brand-2);font-size:14.5px}
+details.morenews ul{margin-top:6px}
+
 @media (max-width:640px){
   .wrap{padding-inline:16px}
   .fbox{grid-template-columns:minmax(0,1fr)}
@@ -223,6 +242,8 @@ const phFor=i=>i.analysis==="pending_review"?PH_REVIEW:
   (NARR_START&&i.analysis!=="ai_reviewed"&&i.analysis!=="template"?`<span class="ph">Narrative analysis starts from the week of ${esc(fmtDay(NARR_START))}.</span>`:PH);
 const AI_LABEL="AI-classified, not reviewed";
 const NEWS_NOTE="headline-level news, not scored";
+const LABEL_SUMMARY={"membership/onboarding":(n,i)=>`${n} new ${i.cardId.startsWith("ECS")?"NSCC":"FICC"} member${n===1?"":"s"} this week`};
+const COLLAPSED={no_relevant_news:1,news_not_scanned:1};   /* unscored cards folded into one block on the list view */
 
 /* All 10 DTCC business lines, always shown as tabs (order = tab order). */
 const LINE_META={
@@ -243,7 +264,7 @@ const RANGES=[{k:"week",t:"Selected week"},{k:"30",t:"Last 30 days"},{k:"90",t:"
 const SORTS=[{k:"score",t:"Score: high → low"},{k:"score-asc",t:"Score: low → high"},{k:"newest",t:"Newest first"},{k:"oldest",t:"Oldest first"}];
 
 let DATA=null, SNAPS=[], LOAD_ERR=null;
-const state={line:"FICC",snap:null,range:"week",sort:"score",sev:"All",fam:"All",region:"All"};
+const state={line:"FICC",snap:null,range:"week",sort:"score",sev:"All",fam:"All",region:"All",othersOpen:false};
 try{const s=localStorage.getItem("rh-line"); if(s&&LINE_META[s]) state.line=s;}catch(e){}
 try{const s=localStorage.getItem("rh-sort"); if(s&&SORTS.some(x=>x.k===s)) state.sort=s;}catch(e){}
 
@@ -259,8 +280,8 @@ const snapObj=id=>SNAPS.find(s=>s.id===id);
 const latestSnap=()=>SNAPS[0];
 const asArr=v=>Array.isArray(v)?v:(v==null||v===""?[]:[v]);
 const httpUrl=u=>/^https?:\/\//i.test(String(u||""));
-function relatedNews(v){const seen=new Set(); return asArr(v).filter(n=>n&&n.title&&!seen.has(n.url||n.title)&&seen.add(n.url||n.title))
-  .map(n=>({title:String(n.title),outlet:n.outlet?String(n.outlet):"",url:httpUrl(n.url)?String(n.url):"",label:n.label?String(n.label):""}));}
+function relatedNews(v){const seen=new Set(); return asArr(v).map((n,idx)=>({n,idx})).filter(({n})=>n&&n.title&&!seen.has(n.url||n.title)&&seen.add(n.url||n.title))
+  .map(({n,idx})=>({idx,title:String(n.title),outlet:n.outlet?String(n.outlet):"",url:httpUrl(n.url)?String(n.url):"",label:n.label?String(n.label):""}));}
 
 /* Normalise one model record into what the page needs. Missing fields are tolerated. */
 function norm(raw){
@@ -281,7 +302,7 @@ function norm(raw){
     whyLine:raw.why_this_line||"",unknowns:asArr(raw.key_unknowns),stand:raw.where_we_stand||"",share:raw.shareable_line||"",
     sources:asArr(raw.sources).map(s=>typeof s==="string"?{name:s,url:""}:{name:s.name||s.url||"Source",url:s.url||""}),
     analysis:raw.analysis_status||"",reviewLabel:raw.narrative_review_label||"",
-    aiFields:asArr(raw.ai_generated_fields),related:relatedNews(raw.related_news),aiEvents:asArr(raw.ai_unreviewed_events).map(String),
+    aiFields:asArr(raw.ai_generated_fields),related:relatedNews(raw.related_news),newsDisplay:asArr(raw.related_news_display).filter(e=>e&&Number.isInteger(e.index)),aiEvents:asArr(raw.ai_unreviewed_events).map(String),
     aiLabel:raw.ai_review_label||raw.event_review_label||(asArr(raw.ai_unreviewed_events).length?AI_LABEL:""),
     /* card front layer (front_* fields): only reviewed text is ever in the file; otherwise the front falls back to the card name */
     fStatus:raw.front_status||"none",fHead:raw.front_headline||"",fWhat:raw.front_what_happened||"",fSoWhat:raw.front_so_what||"",
@@ -394,7 +415,7 @@ function renderList(){
     <span class="showing">Showing ${shown.length} of ${all.length}${state.range==="week"?"":" · "+rangeT.toLowerCase()}</span>
   </div>
   <div class="list">
-  ${shown.length?shown.map(cardHtml).join(""):emptyHtml(all.length)}
+  ${shown.length?listHtml(shown):emptyHtml(all.length)}
   </div>
   ${review.length?`<section class="review" aria-label="Awaiting review">
     <h3>${review.length} potential connection${review.length>1?"s":""} awaiting analyst review</h3>
@@ -411,6 +432,28 @@ function renderList(){
   const cl=document.getElementById("clear"); if(cl) cl.onclick=resetFilters;
   const r=document.getElementById("reset"); if(r) r.onclick=resetFilters;
   document.querySelectorAll("[data-open]").forEach(b=>b.onclick=()=>setHash("item/"+encodeURIComponent(b.dataset.open)+"/"+encodeURIComponent(b.dataset.snap)));
+  const ot=document.getElementById("others"); if(ot) ot.addEventListener("toggle",()=>{state.othersOpen=ot.open;});
+}
+/* Scored (and data-incomplete) cards in full; "no relevant news" / "news not scanned" cards in one collapsed block,
+   unless that filter is selected, which shows them as full cards. */
+function listHtml(shown){
+  const expand=state.sev==="NoNews"||state.sev==="Unscanned";
+  const full=expand?shown:shown.filter(i=>!COLLAPSED[i.status]);
+  const folded=expand?[]:shown.filter(i=>COLLAPSED[i.status]);
+  return full.map(cardHtml).join("")+(folded.length?othersHtml(folded):"");
+}
+function othersHtml(folded){
+  const nr=folded.filter(i=>i.status==="no_relevant_news").length, ns=folded.length-nr, wk=state.range==="week";
+  const what=ns===0?`no market signal or relevant news${wk?" this week":""}`:nr===0?"news not scanned":`no market signal or relevant news (${nr}); news not scanned (${ns})`;
+  return `<details class="others" id="others"${state.othersOpen?" open":""}>
+    <summary><span>${folded.length} other card${folded.length===1?"":"s"}: ${what}</span><span class="oh"><span class="s">Show</span><span class="h">Hide</span></span></summary>
+    <ul class="orows">${folded.map(otherRow).join("")}</ul></details>`;
+}
+function otherRow(i){
+  const otherWeek=state.range!=="week"&&i.snapshot!==state.snap;
+  return `<li class="orow"><span class="oname">${esc(frontTitle(i))}</span>
+    <span class="chips">${otherWeek?`<span class="chip wk">Week of ${esc(fmtDay(i.snapDate))}</span>`:""}<span class="chip">${esc(i.line)}${i.sub?" · "+esc(i.sub):""}</span><span class="chip o">Confidence: ${esc(i.conf)}</span><span class="chip o">V ${i.V??"pending"}${i.vTier?" · "+esc(TIER_TEXT[i.vTier]||i.vTier):""}</span>${aiChip(i)}</span>
+    <button class="olink" data-open="${esc(i.id)}" data-snap="${esc(i.snapshot)}" aria-label="Details: ${esc(frontTitle(i))}">Details ›</button></li>`;
 }
 function resetFilters(){state.sev="All";state.fam="All";state.region="All";renderList();}
 function sevBox(i,showChg=true){
@@ -424,10 +467,21 @@ function reviewChip(i){return i.needsReview?`<span class="chip rev">Pending revi
 function aiChip(i){return i.aiLabel?`<span class="chip aiev">${esc(i.aiLabel)}</span>`:"";}
 function aiNote(i){return i.aiLabel&&i.aiEvents.length?`<span class="shared">${esc(i.aiLabel)}: event${i.aiEvents.length>1?"s":""} ${esc(i.aiEvents.join(", "))} entered by the news classifier without a human decision.</span>`:"";}
 function tagFor(i,f){return i.aiFields.includes(f)?` <span class="ai">${esc(i.reviewLabel||"AI-WRITTEN")}</span>`:"";}
+function newsLi(n,why){return `<li${why?` title="${esc(why)}"`:""}>${n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.title)}</a>`:esc(n.title)}${n.outlet?` <span class="o">· ${esc(n.outlet)}</span>`:""}${n.label?` <span class="chip o">${esc(n.label)}</span>`:""}</li>`;}
+/* Related news: one summary line per label, the top items (related_news_display, from the export), the rest under "Show all N". */
 function relatedSection(i){
   if(!i.related.length) return "";
-  return `<section class="sec related"><h3 class="lab">Related news<span class="rnote">${NEWS_NOTE}</span></h3>
-    <ul>${i.related.map(n=>`<li>${n.url?`<a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.title)}</a>`:esc(n.title)}${n.outlet?` <span class="o">· ${esc(n.outlet)}</span>`:""}${n.label?` <span class="chip o">${esc(n.label)}</span>`:""}</li>`).join("")}</ul></section>`;}
+  const byIdx=Object.fromEntries(i.related.map(n=>[n.idx,n]));
+  const disp=i.newsDisplay.filter(e=>byIdx[e.index]);
+  const counts={}; i.related.forEach(n=>{if(n.label) counts[n.label]=(counts[n.label]||0)+1;});
+  const sums=Object.entries(counts).map(([l,n])=>`<p class="rsum"><b>${esc(LABEL_SUMMARY[l]?LABEL_SUMMARY[l](n,i):`${n} item${n===1?"":"s"}`)}</b> <span class="chip o">${esc(l)}</span></p>`).join("");
+  const head=`<section class="sec related"><h3 class="lab">Related news<span class="rnote">${NEWS_NOTE}</span></h3>${sums}`;
+  if(!disp.length) return head+`<ul>${i.related.map(n=>newsLi(n)).join("")}</ul></section>`;   /* older files without a display order */
+  const seen=new Set(disp.map(e=>e.index));
+  const ordered=[...disp.map(e=>({n:byIdx[e.index],why:e.reason||""})),...i.related.filter(n=>!seen.has(n.idx)).map(n=>({n,why:""}))];
+  const top=disp.filter(e=>e.top).map(e=>({n:byIdx[e.index],why:e.reason||""}));
+  return head+`${top.length?`<p class="rrule">Top ${top.length}: headlines with the card's search keywords first, then major outlets, then newest. Political and crypto headlines, and commodity or currency headlines without a card keyword, are listed only under "Show all".</p><ul class="rtop">${top.map(x=>newsLi(x.n,x.why)).join("")}</ul>`:""}
+    ${ordered.length>top.length?`<details class="morenews"><summary>Show all ${ordered.length}</summary><ul class="rall">${ordered.map(x=>newsLi(x.n,x.why)).join("")}</ul></details>`:""}</section>`;}
 function sharedNote(i){
   if(!i.shared.length) return "";
   const names=i.shared.map(cid=>{const o=ALL().find(x=>x.cardId===cid&&x.snapshot===i.snapshot); return o?`${o.title} (${cid})`:cid;});
@@ -475,7 +529,7 @@ function header(){
 function footer(){
   const gen=DATA&&toDate(DATA.generated_at);
   return `<footer class="method">
-  <span><b>Severity (1–25) = External Shock (1–5) × Internal Vulnerability (1–5).</b> Shock comes from a market indicator's percentile against its own history, or the event rubric for reviewed register events. Vulnerability comes from the card's latest published DTCC PQD or, where no PQD field fits the card, a public proxy series; each card shows its V tier (PQD or public proxy). Cards with no market indicator and no active register event show "No relevant news found (headline-level scan)" in weeks covered by the weekly news screen, and "News not scanned" in earlier weeks, instead of a score; where V is missing the card shows "V pending". Related news is headline-level and never scored. High 15–25 · Medium 8–14 · Low 1–7. Each card compares with the previous weekly run. Confidence is shown beside the score, never multiplied in. Card fronts (headline, what happened, so what, one action from an approved per-card playbook) are AI-drafted and shown only after analyst review; scores, percentiles and the detailed narrative are in each card's analyst view.</span>
+  <span><b>Severity (1–25) = External Shock (1–5) × Internal Vulnerability (1–5).</b> Shock comes from a market indicator's percentile against its own history, or the event rubric for reviewed register events. Vulnerability comes from the card's latest published DTCC PQD or, where no PQD field fits the card, a public proxy series; each card shows its V tier (PQD or public proxy). Cards with no market indicator and no active register event show "No relevant news found (headline-level scan)" in weeks covered by the weekly news screen, and "News not scanned" in earlier weeks, instead of a score, and are grouped in one collapsed block under the scored cards (shown in full with the "No relevant news" or "Not scanned" filter); where V is missing the card shows "V pending". Related news is headline-level and never scored. High 15–25 · Medium 8–14 · Low 1–7. Each card compares with the previous weekly run. Confidence is shown beside the score, never multiplied in. Card fronts (headline, what happened, so what, one action from an approved per-card playbook) are AI-drafted and shown only after analyst review; scores, percentiles and the detailed narrative are in each card's analyst view.</span>
   <span>Prototype for the DTCC × Duke capstone. Public data only.${DATA&&DATA.sample?" Everything on this page is sample data for layout testing.":""}${gen?" Model output generated "+esc(fmtStamp(gen))+".":""}${DATA&&DATA.model_version?" Model "+esc(DATA.model_version)+".":""}</span>
 </footer>`}
 function bindCommon(){const s=document.getElementById("snap"); if(s) s.onchange=e=>{

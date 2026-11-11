@@ -22,6 +22,7 @@ the v3.1 narrative) stays in the analyst view. Display only: nothing here change
 from __future__ import annotations
 
 import importlib.util
+import json
 import re
 from pathlib import Path
 
@@ -253,8 +254,13 @@ PROXY_SHORT = {"ECS-NSCC-03": "Cboe volume data", "ECS-SET-01": "SEC fails-to-de
                "ECS-NSCC-09": "New York Fed markets data", "ECS-DTC-01": "Federal Reserve CP release"}
 
 
+# labelled related news implies a source, e.g. membership/onboarding -> "DTCC member notices" (display config)
+LABEL_SOURCES = json.loads(Path(__file__).with_name("related_news_display.json").read_text(encoding="utf-8"))["label_sources"]
+
+
 def sources_line(record: dict, signal_series: dict, headline_outlet_name: str | None = None) -> str:
-    """record: a scoring v1.3 record. signal_series: field -> series codes (export SIGNAL_SERIES)."""
+    """record: a scoring v1.3 record. signal_series: field -> series codes (export SIGNAL_SERIES). A card whose related
+    news carries a label in LABEL_SOURCES also names that source (e.g. "DTCC member notices")."""
     fred, other = [], []
     for mc in record.get("market_chains") or []:
         for s in signal_series.get(mc["field"], []):
@@ -265,6 +271,8 @@ def sources_line(record: dict, signal_series: dict, headline_outlet_name: str | 
     for e in record.get("event_manual", {}).get("events") or []:
         if e["event_id"] in ids and e.get("outlet"):
             parts.append(e["outlet"])
+    labels = {n.get("label") for n in record.get("related_news") or [] if n.get("label")}
+    parts += [name for label, name in LABEL_SOURCES.items() if label in labels]
     if record.get("V_tier") == "pqd":
         parts.append("DTCC quarterly disclosures")
     elif record.get("V_tier") == "public_proxy":

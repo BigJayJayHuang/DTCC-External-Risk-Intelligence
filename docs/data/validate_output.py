@@ -105,6 +105,26 @@ def front_errors(it, playbook):
     return errs
 
 
+def news_display_errors(it):
+    """related_news_display (display order of related_news): every item exactly once, at most 5 at the top and listed
+    first, never an excluded or labelled item at the top."""
+    disp = it.get("related_news_display")
+    if disp is None:
+        return []
+    rel = it.get("related_news") or []
+    if not isinstance(disp, list) or not all(isinstance(e, dict) and isinstance(e.get("index"), int) for e in disp):
+        return ["related_news_display must be a list of {index, top, ...}"]
+    errs = []
+    if sorted(e["index"] for e in disp) != list(range(len(rel))):
+        errs.append("related_news_display must list every related_news item exactly once")
+    tops = [n for n, e in enumerate(disp) if e.get("top")]
+    if len(tops) > 5 or tops != list(range(len(tops))):
+        errs.append("related_news_display: at most 5 top items, listed first")
+    if any(e.get("top") and (e.get("excluded") or e.get("label")) for e in disp):
+        errs.append("related_news_display: an excluded or labelled item is in the top")
+    return errs
+
+
 # Business-line rows per card (scoring v1.3), including the FICC and ECS rows of cross-entity (XE-) cards
 CARD_LINES = Path(__file__).resolve().parents[2] / "Capstone_Project/results/scoring/v1.3_indicator/config/card_lines.csv"
 
@@ -241,6 +261,7 @@ def main(path, playbook_path=None):
         if ai_ev and it.get("ai_review_label") != "AI-classified, not reviewed":
             errors.append(f"{tag}: unreviewed AI events {ai_ev} but no 'AI-classified, not reviewed' label")
         errors.extend(f"{tag}: {e}" for e in front_errors(it, playbook))
+        errors.extend(f"{tag}: {e}" for e in news_display_errors(it))
         tr = it.get("transmission")
         if tr is not None and not all(k in tr for k in ("event", "mechanism", "dtcc_process")):
             warnings.append(f"{tag}: transmission should have event, mechanism, dtcc_process")

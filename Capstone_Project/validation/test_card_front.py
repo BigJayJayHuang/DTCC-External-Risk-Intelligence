@@ -87,7 +87,7 @@ class FrontChecks(unittest.TestCase):
         ex = CF.N.export_module()
         self.assertEqual(F.sources_line(r, ex.SIGNAL_SERIES, "MarketWatch"), "FRED (VIX, SOFR, EFFR) · DTCC quarterly disclosures · MarketWatch")
         g3 = next(x for x in SCORES["records"] if x["record_id"] == "ficc-gsd-03")
-        self.assertEqual(F.sources_line(g3, ex.SIGNAL_SERIES), "Federal Register (SEC) · DTCC quarterly disclosures")
+        self.assertEqual(F.sources_line(g3, ex.SIGNAL_SERIES), "Federal Register (SEC) · DTCC member notices · DTCC quarterly disclosures")
 
 
 class FakeRuntime:

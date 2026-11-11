@@ -25,7 +25,11 @@ card_playbook.csv:
 - unscored records get fixed, non-AI text: the card name and "No market signal or relevant news this week." (front_status "template");
 - anything else: front_status "pending_review" (or "none" for weeks without a front sheet), front text null; the page then
   shows the card name and the detailed narrative stays in the analyst view.
-front_chain_short (detail view) comes only from reviewed playbook rows; front_sources_line is built from the record (non-AI).
+front_chain_short (detail view) comes only from reviewed playbook rows; front_sources_line is built from the record (non-AI),
+and names "DTCC member notices" when the card has related news labelled membership/onboarding.
+related_news_display (display only) is the detail view's order of related_news: one entry per item with top (the first
+5 shown), publication date, the matching card keyword, priority outlet, exclusion and a reason; see
+validation/related_news_rank.py and validation/related_news_display.json. related_news itself is passed through unchanged.
 related_news (Amendment D4/E3) is passed through from the scoring records; ai_unreviewed_events lists the active register events
 on the card that are AI-classified and not reviewed (Amendment C1), whether or not they set S.
 """
@@ -46,6 +50,8 @@ _spec = importlib.util.spec_from_file_location('narrative_checks', CP / 'validat
 NC = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(NC)          # standard library only
 _fspec = importlib.util.spec_from_file_location('card_front_checks', CP / 'validation' / 'card_front_checks.py')
 FC = importlib.util.module_from_spec(_fspec); _fspec.loader.exec_module(FC)       # standard library only
+_rspec = importlib.util.spec_from_file_location('related_news_rank', CP / 'validation' / 'related_news_rank.py')
+RN = importlib.util.module_from_spec(_rspec); _rspec.loader.exec_module(RN)       # standard library only, display order
 WEEKS = ['2026-10-19', '2026-10-26', '2026-11-02']
 AI_UNREVIEWED_LABEL = 'AI-classified, not reviewed'
 
@@ -256,7 +262,7 @@ def front_fields(r, rows, playbook):
     return out
 
 
-def item(r, run_utc, cards, chains, proxy, pqd_urls, narratives=None, front_rows=None, playbook=None):
+def item(r, run_utc, cards, chains, proxy, pqd_urls, narratives=None, front_rows=None, playbook=None, news_rank=None):
     what, basis = texts(r)
     tchain, tr = transmission(r, cards, chains)
     it = dict(r)                                   # every v1.3 field is kept
@@ -276,6 +282,8 @@ def item(r, run_utc, cards, chains, proxy, pqd_urls, narratives=None, front_rows
     if narratives is not None:                     # this week has a narrative review sheet
         it.update(narrative_fields(r['record_id'], narratives.get(r['record_id'])))
     it.update(front_fields(r, front_rows, playbook or {}))
+    if news_rank is not None:                      # display order of related_news (top 5 + "Show all")
+        it['related_news_display'] = news_rank(r)
     if r['S_source']:
         it['shock_method'] = SHOCK_METHOD[r['S_source']]
     rs = review_status(r)
@@ -313,7 +321,10 @@ def build(weeks, narratives_dir=None):
     narratives = {d['week']: load_narratives(d['week'], narratives_dir) for d in docs}
     fronts = {d['week']: load_front(d['week'], narratives_dir) for d in docs}
     playbook = load_playbook(narratives_dir)
-    items = [item(r, iso(d['run_utc']), cards, chains, proxy, pqd_urls, narratives[d['week']], fronts[d['week']], playbook)
+    rn_config, rn_keywords = RN.load_config(), RN.card_keywords()
+    rn_dates = {d['week']: RN.week_dates(d['week']) for d in docs}
+    ranker = lambda week: lambda r: RN.rank(r.get('related_news') or [], rn_keywords.get(r['card_id'], []), rn_dates[week], rn_config)
+    items = [item(r, iso(d['run_utc']), cards, chains, proxy, pqd_urls, narratives[d['week']], fronts[d['week']], playbook, ranker(d['week']))
              for d in docs for r in d['records']]
     lines = {}
     for line in sorted({i['business_line'] for i in items} | set(COMING)):
