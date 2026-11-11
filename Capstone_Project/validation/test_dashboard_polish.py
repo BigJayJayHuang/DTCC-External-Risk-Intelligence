@@ -76,11 +76,17 @@ class Exclusions(unittest.TestCase):
         self.assertTrue(all(not e["top"] and e["excluded"] for e in out.values()))
         self.assertTrue(out[0]["excluded"].startswith("political commentary") and out[1]["excluded"].startswith("crypto"))
 
-    def test_commodity_and_currency_only_with_a_card_keyword(self):
+    def test_exclusions_are_absolute_even_with_a_card_keyword(self):
         out = self.ranked("Gold price falls below $4,000 as stock market selloff triggers liquidity pressure",
-                          "Sterling dips as stock rout boosts dollar", "Oil jumps", "Yen weakens")
-        self.assertTrue(out[0]["top"] and out[0]["excluded"] is None)                     # keyword: allowed
-        self.assertTrue(all(out[i]["excluded"] and "without a card keyword" in out[i]["excluded"] for i in (1, 2, 3)))
+                          "Sterling dips as stock market selloff boosts dollar", "Oil jumps", "Yen weakens", "Stock market selloff deepens")
+        self.assertTrue(all(not out[i]["top"] and out[i]["excluded"].startswith("commodity or currency headline") for i in (0, 1, 2, 3)))
+        self.assertEqual(out[0]["keyword"], "stock market selloff")                      # the keyword is recorded, but does not lift it
+        self.assertTrue(out[4]["top"] and out[4]["excluded"] is None)
+
+    def test_a_pinned_item_is_shown_even_when_excluded(self):
+        rel = [news("Gold price falls as stock market selloff deepens", "Other", "a"), news("Quiet", "Other", "b")]
+        out = R.rank(rel, ["stock market selloff"], {}, CFG, pinned=[(0, "headline source")])
+        self.assertEqual([(e["index"], e["top"], e["pinned"]) for e in out], [(0, True, True), (1, True, False)])
 
     def test_whole_words_only(self):
         out = self.ranked("Goldman Sachs trims risk", "Turmoil in repo", "Europe stocks", "Tokenization pilot", keywords=())
@@ -88,6 +94,8 @@ class Exclusions(unittest.TestCase):
 
     def test_config_is_display_only_and_complete(self):
         self.assertIn("Display-only", CFG["_comment"])
+        self.assertEqual(set(CFG["exclude"]), {"political commentary", "crypto", "commodity or currency headline"})
+        self.assertNotIn("exclude_unless_keyword", CFG)
         self.assertEqual(set(CFG["priority_outlets"]), {"Reuters", "Bloomberg", "WSJ", "Financial Times", "CNBC", "MarketWatch", "AP", "Barron's"})
         self.assertEqual(CFG["top_n"], 5)
 
@@ -138,7 +146,7 @@ class Labels(unittest.TestCase):
 class Published(unittest.TestCase):
     def test_week_top_five(self):
         top = lambda id_: [item(id_)["related_news"][e["index"]]["outlet"] for e in item(id_)["related_news_display"] if e["top"]]
-        self.assertEqual(top("ecs-nscc-liq"), ["MarketWatch", "MarketWatch", "Benzinga", "Yahoo Finance", "Equiti Global"])
+        self.assertEqual(top("ecs-nscc-liq"), ["MarketWatch", "MarketWatch", "Benzinga", "Yahoo Finance", "Bloomberg.com"])
         self.assertEqual(top("ficc-gsd-01"), ["GuruFocus", "MarketWatch"])
         self.assertEqual(top("ficc-gsd-03"), ["Traders Union"])
         self.assertEqual(top("ecs-nscc-03"), ["Crypto Briefing"])
@@ -150,8 +158,11 @@ class Published(unittest.TestCase):
 
     def test_validator_check(self):
         it = item("ecs-nscc-liq")
-        pinned_excluded = [dict(e, top=True, pinned=True) if e["index"] == 6 else dict(e, top=False) if e["index"] == 5 else e
-                           for e in it["related_news_display"]]                       # index 6 is excluded (political)
+        disp = it["related_news_display"]
+        excl = next(e["index"] for e in disp if e["excluded"])                           # an excluded item, made pinned
+        last = [e["index"] for e in disp if e["top"] and not e["pinned"]][-1]           # dropped from the top to keep 5
+        pinned_excluded = [dict(e, top=True, pinned=True) if e["index"] == excl else dict(e, top=False) if e["index"] == last else e
+                           for e in disp]
         pinned_excluded.sort(key=lambda e: not e.get("pinned"))
         data = dict(PUBLISHED, items=[dict(it, related_news_display=pinned_excluded)])
         with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:

@@ -480,7 +480,7 @@ function relatedSection(i){
   const seen=new Set(disp.map(e=>e.index));
   const ordered=[...disp.map(e=>({n:byIdx[e.index],why:e.reason||"",pin:!!e.pinned})),...i.related.filter(n=>!seen.has(n.idx)).map(n=>({n,why:"",pin:false}))];
   const top=disp.filter(e=>e.top).map(e=>({n:byIdx[e.index],why:e.reason||"",pin:!!e.pinned}));
-  return head+`${top.length?`<p class="rrule">Top ${top.length}: items the card summary cites first; then major outlets with the card's search keywords, keywords only, major outlets only, each newest first. Political and crypto headlines, and commodity or currency headlines without a card keyword, are listed only under "Show all".</p><ul class="rtop">${top.map(x=>newsLi(x.n,x.why,x.pin)).join("")}</ul>`:""}
+  return head+`${top.length?`<p class="rrule">Top ${top.length}: items the card summary cites first; then major outlets with the card's search keywords, keywords only, major outlets only, each newest first. Political, crypto, commodity and currency headlines are listed only under "Show all", unless the card summary cites them.</p><ul class="rtop">${top.map(x=>newsLi(x.n,x.why,x.pin)).join("")}</ul>`:""}
     ${ordered.length>top.length?`<details class="morenews"><summary>Show all ${ordered.length}</summary><ul class="rall">${ordered.map(x=>newsLi(x.n,x.why,x.pin)).join("")}</ul></details>`:""}</section>`;}
 function sharedNote(i){
   if(!i.shared.length) return "";

@@ -6912,19 +6912,8 @@
           "reason": "card keyword “VIX”; not a priority outlet; published 2026-11-06"
         },
         {
-          "index": 5,
-          "top": true,
-          "pinned": false,
-          "published": "2026-11-05",
-          "keyword": "stock market selloff",
-          "priority_outlet": null,
-          "excluded": null,
-          "label": null,
-          "reason": "card keyword “stock market selloff”; not a priority outlet; published 2026-11-05"
-        },
-        {
           "index": 10,
-          "top": false,
+          "top": true,
           "pinned": false,
           "published": "2026-11-06",
           "keyword": null,
@@ -7022,15 +7011,26 @@
           "reason": "excluded from the top: political commentary (“Trump”); published 2026-11-05"
         },
         {
+          "index": 5,
+          "top": false,
+          "pinned": false,
+          "published": "2026-11-05",
+          "keyword": "stock market selloff",
+          "priority_outlet": null,
+          "excluded": "commodity or currency headline (“gold”)",
+          "label": null,
+          "reason": "excluded from the top: commodity or currency headline (“gold”); published 2026-11-05"
+        },
+        {
           "index": 11,
           "top": false,
           "pinned": false,
           "published": "2026-11-06",
           "keyword": null,
           "priority_outlet": "Reuters",
-          "excluded": "commodity or currency headline (“sterling”) without a card keyword",
+          "excluded": "commodity or currency headline (“sterling”)",
           "label": null,
-          "reason": "excluded from the top: commodity or currency headline (“sterling”) without a card keyword; published 2026-11-06"
+          "reason": "excluded from the top: commodity or currency headline (“sterling”); published 2026-11-06"
         }
       ],
       "shock_method": "Market indicator"

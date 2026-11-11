@@ -12,8 +12,8 @@ view shows the top items (config top_n, 5) and lists every item under "Show all"
   2. within a tier, newest first (publication time from the week's committed collection files, matched by URL);
      undated last; ties keep the original order.
 
-Items matching exclude_always (political commentary, crypto) never enter the top; items matching
-exclude_unless_keyword (gold, oil, sterling, currency …) enter it only when the title also has a card keyword.
+Items matching any exclude term (political commentary, crypto, gold, oil, sterling, currency …) never enter the top,
+even when the title has a card keyword, unless they are pinned.
 Labelled items (e.g. "membership/onboarding") are summarised in one line at the top of the section and are not ranked.
 """
 from __future__ import annotations
@@ -89,15 +89,10 @@ def rank(related: list[dict], keywords: list[str], dates: dict[str, str], config
         outlet = priority_outlet(n.get("outlet") or "", config)
         when = dates.get(n.get("url") or "")
         excluded = None
-        for group, terms in config["exclude_always"].items():
+        for group, terms in config["exclude"].items():           # absolute: a card keyword does not lift it
             hit = first_match(title, terms)
             if hit:
                 excluded = f"{group} (“{hit}”)"; break
-        if not excluded and not kw:
-            for group, terms in config["exclude_unless_keyword"].items():
-                hit = first_match(title, terms)
-                if hit:
-                    excluded = f"{group} (“{hit}”) without a card keyword"; break
         entries.append({"index": i, "top": False, "pinned": False, "published": when[:10] if when else None, "keyword": kw,
                         "priority_outlet": outlet, "excluded": excluded, "label": label, "_when": when or ""})
     why = {}
