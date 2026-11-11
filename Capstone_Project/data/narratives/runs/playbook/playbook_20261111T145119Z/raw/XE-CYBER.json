@@ -1,0 +1,38 @@
+{
+  "key": "XE-CYBER",
+  "request_sha256": "e3b31eb500dd944227c02356f29dd67ad073882b1aed59ab06d97b095445540b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Fdb2f7t8aQ6bpIOeDggG4w",
+            "name": "submit_card_playbook",
+            "input": {
+              "chain_short_1": "Cyber event hits large member",
+              "chain_short_2": "Member connectivity and submissions disrupted",
+              "chain_short_3": "MBSD and DTC participant system disruption",
+              "action_1_text": "Alert FICC and ECS operations teams to monitor member connectivity and submission activity.",
+              "action_1_kind": "monitor",
+              "action_2_text": "Confirm participant system disruption procedures are ready to invoke across MBSD and DTC.",
+              "action_2_kind": "prepare",
+              "action_3_text": "Brief relationship teams so they can track affected member status and pending instructions.",
+              "action_3_kind": "communicate"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 707,
+    "outputTokens": 268,
+    "totalTokens": 2226,
+    "cacheReadInputTokens": 1251,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.00716793"
+}

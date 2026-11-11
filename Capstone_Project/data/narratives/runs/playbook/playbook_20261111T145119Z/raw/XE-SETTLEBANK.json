@@ -1,0 +1,38 @@
+{
+  "key": "XE-SETTLEBANK",
+  "request_sha256": "1be6e0d60716581d4c9a73954f6d05340b082fd143ef7780760e8c2cb568479a",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_fuJC8volO5RtreGZs1FWkd",
+            "name": "submit_card_playbook",
+            "input": {
+              "chain_short_1": "Clearing or settling bank fails operationally",
+              "chain_short_2": "Fedwire payments and deliveries cannot complete",
+              "chain_short_3": "GSD and NSCC settlement disrupted",
+              "action_1_text": "Alert FICC and ECS operations teams to monitor settling bank status closely.",
+              "action_1_kind": "communicate",
+              "action_2_text": "Verify with GSD and NSCC settlement operations that contingency procedures are ready to activate.",
+              "action_2_kind": "prepare",
+              "action_3_text": "Monitor Fedwire activity and settlement completion rates for early signs of disruption.",
+              "action_3_kind": "monitor"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 695,
+    "outputTokens": 277,
+    "totalTokens": 2223,
+    "cacheReadInputTokens": 1251,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.00727683"
+}

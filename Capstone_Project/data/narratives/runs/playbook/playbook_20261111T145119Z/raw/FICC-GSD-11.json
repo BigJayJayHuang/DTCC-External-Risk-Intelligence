@@ -1,0 +1,38 @@
+{
+  "key": "FICC-GSD-11",
+  "request_sha256": "79cdd95b9108a1fcb43dd00f8fc56f558c08cf32eabe8a23299e9cc4e4a1b91d",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_kqAgPRaBgAipUQdZC2zFan",
+            "name": "submit_card_playbook",
+            "input": {
+              "chain_short_1": "Buy-side customer under stress or fails",
+              "chain_short_2": "Agent Clearing Member absorbs customer exposure",
+              "chain_short_3": "GSD Agent Clearing Service stressed",
+              "action_1_text": "Monitor GSD Agent Clearing Member exposure levels for signs of concentrated stress.",
+              "action_1_kind": "monitor",
+              "action_2_text": "Verify with FICC risk operations that agent member default procedures are ready to activate.",
+              "action_2_kind": "verify",
+              "action_3_text": "Brief relationship teams to stay alert to distress signals from agent clearing members.",
+              "action_3_kind": "communicate"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 607,
+    "outputTokens": 267,
+    "totalTokens": 2125,
+    "cacheReadInputTokens": 1251,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.00682143"
+}

@@ -1,0 +1,38 @@
+{
+  "key": "FICC-MBSD-01",
+  "request_sha256": "2a327468d215b5be2879db8d844abc3ec79db66f388536339f2159d673ccc40b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_IUKkPTK6rR7k0C1TjvQ3Mb",
+            "name": "submit_card_playbook",
+            "input": {
+              "chain_short_1": "Mortgage rates jump or MBS spreads widen",
+              "chain_short_2": "TBA price swings shift margin requirements",
+              "chain_short_3": "MBSD margin and variation margin calls",
+              "action_1_text": "Monitor TBA price movements and MBSD margin call activity daily.",
+              "action_1_kind": "monitor",
+              "action_2_text": "Confirm MBSD operations teams are ready to process elevated variation margin activity.",
+              "action_2_kind": "prepare",
+              "action_3_text": "Brief relationship teams on potential for increased MBSD margin obligations this period.",
+              "action_3_kind": "communicate"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 593,
+    "outputTokens": 268,
+    "totalTokens": 2112,
+    "cacheReadInputTokens": 1251,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.00679173"
+}

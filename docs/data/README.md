@@ -12,7 +12,7 @@ docs/data/risk_output.json
 To publish a new week:
 
 1. Score it with `python -m validation.scoring_v1_3 score --week <Monday>` (from `Capstone_Project/`), then run `python3 docs/data/export_risk_output.py --week ...`.
-2. Run `python3 docs/data/validate_output.py docs/data/risk_output.json`.
+2. Run `python3 docs/data/validate_output.py docs/data/risk_output.json`. It also checks the front layer: front text only when reviewed, word limits, fixed template text, and `front_so_now_what` / `front_chain_short` equal to the reviewed `card_playbook.csv` (`--playbook <file>` checks against another playbook, for local tests).
 3. Commit and push to `main`. GitHub Pages updates in about a minute.
 
 ## File format
@@ -69,6 +69,13 @@ Each item belongs to one snapshot. To show week-over-week change, write the same
 | `what_happened` | no | string | |
 | `transmission` | no | object | `{event, mechanism, dtcc_process}` |
 | `so_what`, `so_now_what` | no | string, or `null` only when `analysis_status` is `pending_llm` (weeks before the narrative step: grey "Narrative analysis starts from the week of <first week with narratives>." box) or `pending_review` (grey "Analysis pending review" box) | From `Capstone_Project/data/narratives/review_narratives_<week>.csv`. Only approved or edited AI rows that pass `validation/narrative_checks.py` are published: so_what at most 2 sentences / 45 words, so_now_what at most 2 sentences / 40 words, numbers only from the card's input, no banned phrases. Template rows: "No scored shock this week." / "See the transmission chain for what would trigger a score." |
+| `front_status` | no | string | Card front layer (what the GM reads first). `ai_reviewed`: reviewed AI front text below; `template`: unscored card, front shows the card name and one fixed line; `pending_review`: a front draft exists but is not approved (front shows the card name and "Summary pending analyst review"); `none`: no front step for the week |
+| `front_headline` | no | string or `null` | At most 10 words: what happened plus its consequence for the DTCC process. Shown as the card title; the card name (`title`) then appears only in the detail view. `template`: the card name. `null` unless `ai_reviewed` or `template` |
+| `front_what_happened` | no | string or `null` | One sentence, at most 20 words, numbers only from the card's input. `template`: "No market signal or relevant news this week." |
+| `front_so_what`, `front_so_now_what` | no | string or `null` | So what: one plain-English sentence, at most 20 words, no percentiles, "V k of 5", series codes or jargon. So now what: one action copied from the card's reviewed playbook (`front_action_id`). Only for `ai_reviewed` |
+| `front_chain_short` | no | string[3] or `null` | Three labels of at most 6 words (world event, mechanism, DTCC process) from a reviewed row of `Capstone_Project/data/narratives/card_playbook.csv`. Shown in the detail view only, above the analyst view, with the full chain text below |
+| `front_sources_line` | no | string | Short source names built from the record, e.g. "FRED (VIX, SOFR, EFFR) · DTCC quarterly disclosures · MarketWatch" (non-AI) |
+| `front_ai_fields`, `front_review_label` | no | string[], string | On `ai_reviewed` fronts: the AI-drafted front fields and "AI-drafted · analyst-reviewed" (shown as a small footer). `front_reviewer`, `front_decision`, `front_prompt_version`, `front_model` and `playbook_reviewer` record the provenance |
 | `time_phased` | no | object | `{now, next, later}` |
 | `shock_method` | no | string | `Market indicator` or `Event rubric` |
 | `shock_basis`, `vulnerability_basis` | no | string | How each score was built |
@@ -90,6 +97,12 @@ The page calculates these itself, so the model should not send them:
 - level: High 15–25, Medium 8–14, Low 1–7
 - change versus the previous week
 
+## Card front and detail view
+
+- **Card front** (the list), in order: score box with level and change arrow (▲/▼ from the previous score, or NEW); `front_headline` as the title (the card name when there is no reviewed front); chips for risk family, business line and confidence (plus "Pending review" and "AI-classified, not reviewed" when they apply); a "What happened" line; two boxes, "So what" and "So now what"; a sources line; the small footer "AI-drafted · analyst-reviewed" when the front text is reviewed AI text. Unscored cards show the card name and only the line "No market signal or relevant news this week."
+- **Detail view**: the same title, chips and "What happened" line; then the card name and the three `front_chain_short` boxes (the last one highlighted), followed by the full transmission-chain text; then the front "So what" / "So now what" and sources line; then the **Analyst view**: Shock × Vulnerability with the V tier, the signal with its percentile and daily values, the shared-signal note, the detailed narrative (`so_what` / `so_now_what`) with its AI label, how the score was built, confidence, related news, the full sources list and the structured record.
+- The export publishes front text only from reviewed rows of `review_front_<week>.csv` (decision `approve` or `edit` with a reviewer), only with an action from a reviewed `card_playbook.csv` row of that card, and only when `validation/card_front_checks.py` passes again against the stored input. Otherwise the front falls back to the card name and the detailed narrative stays in the analyst view.
+
 ## What the page controls do
 
 - **Snapshot:** which weekly run to view.
@@ -99,7 +112,7 @@ The page calculates these itself, so the model should not send them:
 - **Sort:** score high→low (default), score low→high, newest first, oldest first. "Newest" uses `updated_at`. Items with V pending sort last when sorting by score. Unscored cards ("News not scanned", "Data incomplete") always sort last.
 - **Filters:** severity, risk family and region.
 - **Tabs:** all 10 business lines are always shown, each with its item count.
-- **Related news on a card:** one line per label (e.g. "7 new FICC members this week (membership/onboarding)") plus up to 3 other headlines. The detail view lists every item.
+- **Related news:** listed in the detail view's analyst view, with its label as a chip; it is no longer shown on the card front.
 
 ## Running locally
 

@@ -1,0 +1,38 @@
+{
+  "key": "FICC-GSD-02",
+  "request_sha256": "7b6657769866e3c25715a59c13d3f896a4e6ecab4580defc72a8978dd3b20b11",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_ueGj7TqXGHQaU8Z17EaQ0G",
+            "name": "submit_card_playbook",
+            "input": {
+              "chain_short_1": "Repo rates spike or funding tightens",
+              "chain_short_2": "Members' daily settlement funding costs rise",
+              "chain_short_3": "GSD settlement payments and liquidity",
+              "action_1_text": "Monitor repo rate movements and GSD member settlement payment patterns daily.",
+              "action_1_kind": "monitor",
+              "action_2_text": "Confirm GSD treasury operations have intraday liquidity resources ready for elevated settlement demands.",
+              "action_2_kind": "prepare",
+              "action_3_text": "Alert GSD relationship teams to watch for member funding stress signals this period.",
+              "action_3_kind": "communicate"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 590,
+    "outputTokens": 266,
+    "totalTokens": 2107,
+    "cacheReadInputTokens": 1251,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.00674883"
+}

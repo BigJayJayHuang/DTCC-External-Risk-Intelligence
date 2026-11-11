@@ -1,0 +1,36 @@
+{
+  "key": "FICC-MBSD-01",
+  "request_sha256": "53f9ec14d596f076fb3a622b50fd67bf51be2b37baf7d5a1207f5bac801a0bb1",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_7uaJz6mOu5RWDXEfg72qS4",
+            "name": "submit_card_front",
+            "input": {
+              "headline": "MBS spread shift: margin requirements may move",
+              "headline_source": "signal",
+              "what_happened": "The 30-year mortgage rate minus 10-year Treasury yield spread moved 8 basis points this week.",
+              "so_what_front": "TBA price swings from spread moves can shift marked-to-market positions and change MBSD margin and variation margin calls.",
+              "action_id": "FICC-MBSD-01.a1",
+              "so_now_what_front": "Monitor TBA price movements and MBSD margin call activity daily.",
+              "action_reason": "S is moderate at 3 and V is low; daily monitoring is the proportionate response with no need to escalate yet."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1375,
+    "outputTokens": 256,
+    "totalTokens": 3119,
+    "cacheReadInputTokens": 1488,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.00925254"
+}

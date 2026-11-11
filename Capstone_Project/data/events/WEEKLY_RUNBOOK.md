@@ -110,6 +110,41 @@ python -m validation.narratives --week <Monday> --cap 0.50             # prompt 
 - **Prompt v3 (trial).** `--prompt v3 --compare-with …` writes `comparison_narratives_v3_<Monday>.csv` with the reviewed text, v2 and v3 side by side, plus word counts. v3 shortens v2: V written as "V k of 5 (low/medium/high vs own history)", so_what names only what sets S, no added interpretive words, no PQD on public-proxy cards.
 - **Prompt v2 (trial).** `--prompt v2 --compare-with data/narratives/review_narratives_<Monday>.csv` drafts with prompt v2 and writes `comparison_narratives_v2_<Monday>.csv`: the reviewed text next to each v2 draft. It never writes the review sheet. v2 adds every field that sets S, plain signal names, the latest PQD quarter and the meaning of V. Its style checks flag series codes, a latest quarter called "next", firm-specific wording for market-wide signals, and a missing V meaning.
 
+## 6b. Draft and review the card front
+
+The card front is what the GM reads first: a headline, one "What happened" line, one "So what" sentence and one action from the card's playbook. Scores, percentiles and the detailed narrative from step 6 stay in the card's analyst view.
+
+**Once (and when a card or its chain changes): the card playbook.**
+
+```bash
+python -m validation.card_front playbook --cap 0.30 --dry-run
+python -m validation.card_front playbook --cap 0.30
+```
+
+- It writes `data/narratives/card_playbook.csv`, one row per final16 card: `chain_short_1/2/3` (at most 6 words each; shown in the detail view) and 2–3 suggested actions (`<card_id>.a1`…, at most 15 words, starting with a verb: communicate, prepare, verify, escalate or monitor). An existing file is never overwritten.
+- `check_flags` lists the rule failures: labels over 6 words, an action that does not start with a verb, a risk-parameter or policy decision (changing margin, haircuts, limits or rules), a legal or regulatory decision, a possible firm name, or a number.
+- Review each row: `decision` (`approve`, `edit` or `reject`) and `reviewer`; for `edit`, fill the `corrected_*` columns (`corrected_action_k_kind` changes only an action's category). Only reviewed rows that pass the checks reach the dashboard.
+
+**Each week, after step 6: the front text.**
+
+```bash
+python -m validation.card_front front --week <Monday> --cap 0.20 --dry-run
+python -m validation.card_front front --week <Monday> --cap 0.20
+```
+
+- **What it writes.** One model call per scored card (prompt `validation/card_front_prompt_v1.md`; the input is the narrative v3.1 input plus the card's playbook). `data/narratives/review_front_<Monday>.csv` has one row per scored record: headline (at most 10 words), headline_source, what_happened (one sentence, at most 20 words), so_what_front (one sentence, at most 20 words), the chosen `action_id` with its text, the alternative actions and the sources line. Unscored cards need no row: the export gives them the card name and "No market signal or relevant news this week."
+- **Checks.** `check_flags` (re-run by the export; a flagged row is never published, so edit it): word and sentence limits, every number from the input, banned phrases, no percentiles / "V k of 5" / series codes / jargon in the headline and so what, no firm-specific wording for market-wide signals, so now what equal to a playbook action. `drafting_flags` are hints for you: headline words not in the input, a headline not grounded in its source, so what not following chain steps 2/3, wording stronger or weaker than this week's S, superlatives, predictions ("likely"), or a news headline restated as fact.
+- **Review.** Fill `decision` and `reviewer`. For `edit`, fill `corrected_headline`, `corrected_what_happened`, `corrected_so_what_front`, `corrected_action_id` (another action of the same card) and/or `corrected_headline_source` (`signal`, `driving_event` or `related_news:<n>`; it sets the outlet in the sources line). The published so now what is always the reviewed playbook text of that action.
+- **Before exporting**, run every check on the reviewed text (no writes, no model call; exit code 1 lists each failing row and reason):
+
+  ```bash
+  python -m validation.card_front check-reviewed --front data/narratives/review_front_<Monday>.csv
+  ```
+
+  A superlative or a restated news headline in what_happened passes only when the sentence names that headline's outlet ("MarketWatch reported …").
+- After a change to `validation/card_front_checks.py`, `python -m validation.card_front recheck --front data/narratives/review_front_<Monday>.csv` recomputes the flag columns from the stored inputs (no model call).
+- **Display only.** This step never changes S, V, severity, status or ranking.
+
 ## 7. Export the dashboard
 
 ```bash
@@ -117,5 +152,7 @@ python3 ../docs/data/export_risk_output.py --week <Monday> ...
 ```
 
 The export publishes approved narratives only, after re-running the checks: approve, or edit using the corrected text. They are labelled "AI-written, reviewed by analyst". Rows without a decision, rejected rows, and rows that fail the checks show "Analysis pending review". Template rows show their fixed text, without an AI label.
+
+The card front is published only from reviewed front rows whose card has a reviewed playbook row, after the checks pass again; it is labelled "AI-drafted · analyst-reviewed". Otherwise the card shows its name and "Summary pending analyst review", and the detailed narrative stays in the analyst view.
 
 Check the export with `python3 ../docs/data/validate_output.py ../docs/data/risk_output.json` before publishing.

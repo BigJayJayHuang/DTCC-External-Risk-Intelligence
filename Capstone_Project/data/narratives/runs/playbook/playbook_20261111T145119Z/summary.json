@@ -1,0 +1,20 @@
+{
+  "kind": "playbook",
+  "run_id": "playbook_20261111T145119Z",
+  "prompt_version": "card-playbook-prompt-v1:d05b1f9717fe",
+  "model": "us.anthropic.claude-sonnet-4-6",
+  "cap_usd": "0.30",
+  "dry_run": false,
+  "cards": 16,
+  "reference_week": "2026-11-02",
+  "input_tokens": 9987,
+  "output_tokens": 4309,
+  "cache_read_input_tokens": 18765,
+  "cache_write_input_tokens": 1251,
+  "estimated_cost_usd": "0.115408425",
+  "estimated_cost_without_cache_usd": "0.1701084",
+  "status": "complete",
+  "worst_case_estimate_usd": "0.2968",
+  "playbook_sheet": "data/narratives/card_playbook.csv",
+  "flagged_cards": 11
+}

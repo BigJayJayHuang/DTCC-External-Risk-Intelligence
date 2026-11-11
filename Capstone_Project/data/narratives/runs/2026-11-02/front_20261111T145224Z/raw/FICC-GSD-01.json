@@ -1,0 +1,42 @@
+{
+  "key": "FICC-GSD-01",
+  "request_sha256": "e3020f243fb26286770a5c322310fce6742818686575621be61380170a0c91b4",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_pSLWUrykzX98nfIO7GLPlR",
+            "name": "submit_card_front",
+            "input": {
+              "headline": "Treasury yield swings: margin requirements may shift",
+              "headline_source": "signal",
+              "what_happened": "The daily move in the 10-year Treasury yield reached 6.0 basis points this week.",
+              "so_what_front": "Price swings on cleared positions can shift the margin members are required to post at GSD.",
+              "action_id": "FICC-GSD-01.a1",
+              "so_now_what_front": "Monitor GSD margin calls and member payment activity closely.",
+              "action_reason": "S is moderate at 3 and V is low; routine monitoring is the proportionate response this week."
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 1473,
+    "outputTokens": 237,
+    "totalTokens": 3198,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 1488,
+    "cacheDetails": [
+      {
+        "ttl": "5m",
+        "inputTokens": 1488
+      }
+    ]
+  },
+  "estimated_cost_usd": "0.0149094"
+}

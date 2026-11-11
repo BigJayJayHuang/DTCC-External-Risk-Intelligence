@@ -1,0 +1,38 @@
+{
+  "key": "ECS-SET-01",
+  "request_sha256": "8d9f242d2cdd59afea9208c3ae81a2ad5ff94f84af591afe2a43373a39b1e785",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_XoBMm8Pr2F3FLZJjrnQLOR",
+            "name": "submit_card_playbook",
+            "input": {
+              "chain_short_1": "Shorter settlement cycle or longer trading hours",
+              "chain_short_2": "Processing and affirmation windows compress",
+              "chain_short_3": "NSCC and DTC settlement CNS and non-CNS",
+              "action_1_text": "Monitor NSCC and DTC settlement fail rates across CNS and non-CNS activity.",
+              "action_1_kind": "monitor",
+              "action_2_text": "Confirm ECS operations teams are ready for compressed affirmation and funding windows.",
+              "action_2_kind": "prepare",
+              "action_3_text": "Brief relationship teams on any evidence of increased manual processing bottlenecks at DTC or NSCC.",
+              "action_3_kind": "communicate"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 618,
+    "outputTokens": 284,
+    "totalTokens": 2153,
+    "cacheReadInputTokens": 1251,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.00713823"
+}

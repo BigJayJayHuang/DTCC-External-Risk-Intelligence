@@ -1,0 +1,38 @@
+{
+  "key": "FICC-GSD-03",
+  "request_sha256": "734d6c6e7ed7c1f79242de50bb84dd8653038ad6b47e639012fbbc1a1aad429b",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_2iKichY1tewNFxkIN5QV9b",
+            "name": "submit_card_playbook",
+            "input": {
+              "chain_short_1": "Treasury central clearing deadlines shift",
+              "chain_short_2": "Firms rush or delay GSD onboarding",
+              "chain_short_3": "GSD onboarding and Sponsored volume",
+              "action_1_text": "Monitor GSD onboarding pipeline and Sponsored clearing volume trends closely.",
+              "action_1_kind": "monitor",
+              "action_2_text": "Confirm onboarding operations teams are ready to handle demand surges or slowdowns.",
+              "action_2_kind": "prepare",
+              "action_3_text": "Brief relationship teams on current GSD onboarding status and Sponsored clearing capacity.",
+              "action_3_kind": "communicate"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 599,
+    "outputTokens": 271,
+    "totalTokens": 2121,
+    "cacheReadInputTokens": 1251,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.00686103"
+}

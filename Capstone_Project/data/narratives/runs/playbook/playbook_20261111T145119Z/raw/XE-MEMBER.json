@@ -1,0 +1,38 @@
+{
+  "key": "XE-MEMBER",
+  "request_sha256": "db406c92b200f2a7000677ce4a3556cd576f42ebda67acfc60b0459e77e6a231",
+  "output": {
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "toolUse": {
+            "toolUseId": "tooluse_Yrt8cEEHqFlfX5ubd06TF1",
+            "name": "submit_card_playbook",
+            "input": {
+              "chain_short_1": "Bank or dealer credit deteriorates",
+              "chain_short_2": "Member default risk and liquidity strain rise",
+              "chain_short_3": "FICC surveillance and NSCC member requirements",
+              "action_1_text": "Brief FICC and NSCC credit surveillance teams on any members showing stress signals.",
+              "action_1_kind": "communicate",
+              "action_2_text": "Confirm default-management preparedness procedures are current and ready to activate.",
+              "action_2_kind": "prepare",
+              "action_3_text": "Monitor member credit and position data for early warning signs of further deterioration.",
+              "action_3_kind": "monitor"
+            },
+            "type": "tool_use"
+          }
+        }
+      ]
+    }
+  },
+  "stopReason": "tool_use",
+  "usage": {
+    "inputTokens": 676,
+    "outputTokens": 268,
+    "totalTokens": 2195,
+    "cacheReadInputTokens": 1251,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.00706563"
+}
