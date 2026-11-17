@@ -2,6 +2,8 @@
 
 **[传导链统一工作台 / Transmission Chain Board](TRANSMISSION_CHAIN_INDEX.md)** — 按定义、检验、数据缺口、数据库和队友周度评分集中导航。
 
+**2026-11-17 DAS新增 / DAS public monitor:** [运行入口](risk_business_ml/das_public_monitor_2026_11_17/README.md) · [中文结果](risk_business_ml/das_public_monitor_2026_11_17/RESULTS_CN.md) · [English results](risk_business_ml/das_public_monitor_2026_11_17/RESULTS_EN.md)。公开软件公告与监管/网络变更监测、授权订单接入及独立SQLite快照；内部V仍缺失，未给出DAS风险分数。
+
 这里集中保存我们已经完成的数据采集、处理、指标检验、报告和共享数据库。先从此页进入，无需逐个寻找散落文件。
 
 ## 从哪里开始

@@ -1,0 +1,10 @@
+# Original AWS receipts contain the SSO principal identity. Share the sanitized
+# usage receipt and source-checked facts, not local authentication metadata.
+aws_reading/
+# Original publisher bodies remain in the local evidence cache. The review branch
+# shares findings, hashes and a body-stripped database rather than entire websites.
+evidence/
+inputs/*.txt
+data/*.sqlite3
+data/*.sqlite3-wal
+data/*.sqlite3-shm

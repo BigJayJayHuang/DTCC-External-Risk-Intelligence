@@ -1,0 +1,26 @@
+{
+  "created_at_utc": "2026-11-17T16:51:11.740304+00:00",
+  "status": "NEEDS_REVISION",
+  "manual_run": true,
+  "automation_enabled": false,
+  "automatic_retries": 0,
+  "region": "us-east-2",
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "budget_usd": "1",
+  "conservative_reserve_usd": "0.2395899",
+  "max_output_tokens": 3200,
+  "pricing_verified_date": "2026-11-05",
+  "pricing_note": "Estimate from existing approved config; not live pricing or an AWS invoice",
+  "human_review_required": true,
+  "usage": {
+    "inputTokens": 13860,
+    "outputTokens": 2566,
+    "totalTokens": 16426,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "estimated_cost_usd": "0.088077",
+  "stop_reason": "end_turn",
+  "expected_temporary_sso_identity_verified": true,
+  "local_source_review": "results/aws_source_review.json"
+}

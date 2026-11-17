@@ -1,0 +1,4 @@
+﻿metric_id,value,unit,source_id,as_of_date,interpretation,coverage,pagination_truncated,limitation
+sources_retrieved,12,sources,,2026-11-17,"Monitor output, not internal V or a DAS risk score",,,
+besu_advisories_in_window,2,advisories,besu_advisories,2026-11-17,"Monitor output, not internal V or a DAS risk score",At most 100 publisher advisories; configured date window; withdrawn advisories excluded,False,
+canton_published_sv_entries,13,configured entries,canton_dso,2026-11-17,"Monitor output, not internal V or a DAS risk score",,,"Configuration context only, not live-node health or DTS exposure; no V mapping is accepted."

@@ -1,0 +1,823 @@
+{
+  "summary": {
+    "as_of_date": "2026-11-17",
+    "window_start": "2026-11-09",
+    "window_end_inclusive": "2026-11-17",
+    "business_line": "DAS",
+    "mode": "PUBLIC_EVIDENCE_MONITOR",
+    "sources_retrieved": 12,
+    "sources_expected": 12,
+    "applicability_reviews": 2,
+    "future_change_watchlist": 1,
+    "aws_interpreted_source_checked_facts": 10,
+    "stale_aws_fact_ids": [],
+    "risk_score": null,
+    "internal_V": null,
+    "accepted_proxy_V": null,
+    "empirical_validation": false,
+    "automation_enabled": false,
+    "historical_point_in_time_verified": false,
+    "bounds": "Public events and documentation; no authorized business telemetry was obtained."
+  },
+  "sources": [
+    {
+      "source_id": "launch",
+      "url": "https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-goes-live",
+      "publication_date": "2026-10-28",
+      "kind": "official_service_scope",
+      "collected_at_utc": "2026-11-17T16:47:36.877254+00:00",
+      "classification": "PUBLIC_PUBLISHER_SOURCE",
+      "business_line": "DAS",
+      "http_status": 200,
+      "final_url": "https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-goes-live",
+      "content_type": "text/html; charset=utf-8",
+      "status": "retrieved",
+      "raw_file": "evidence/launch.html",
+      "text_file": "inputs/launch.txt",
+      "raw_sha256": "1f40247ac9dc0e658751a016e4e6769b9e2891b7ed80b249420ac091708d03d5",
+      "text_sha256": "b027f58eb58961f7917aee40b5f432416a9c1a0d7e5501098cd6136795435fc5",
+      "byte_count": 316169,
+      "text_characters": 9197,
+      "retrieval_method": "html_visible_text",
+      "full_document": true
+    },
+    {
+      "source_id": "solana",
+      "url": "https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-to-connect-with-solana",
+      "publication_date": "2026-11-12",
+      "kind": "official_future_change",
+      "collected_at_utc": "2026-11-17T16:47:36.877618+00:00",
+      "classification": "PUBLIC_PUBLISHER_SOURCE",
+      "business_line": "DAS",
+      "http_status": 200,
+      "final_url": "https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-to-connect-with-solana",
+      "content_type": "text/html; charset=utf-8",
+      "status": "retrieved",
+      "raw_file": "evidence/solana.html",
+      "text_file": "inputs/solana.txt",
+      "raw_sha256": "00a8ef70c5595a681de1087401b2e23e1b50665fc48149610dbd395d0251bdf6",
+      "text_sha256": "2523657a3a0beac1448da5a2b88d3d1d66b2a365b0228ecedcf3b012afc8f781",
+      "byte_count": 310097,
+      "text_characters": 6758,
+      "retrieval_method": "html_visible_text",
+      "full_document": true
+    },
+    {
+      "source_id": "hub",
+      "url": "https://www.dtcc.com/products-and-services/digital-assets/tokenization/hub",
+      "publication_date": null,
+      "kind": "official_discovery_index",
+      "collected_at_utc": "2026-11-17T16:47:36.877722+00:00",
+      "classification": "PUBLIC_PUBLISHER_SOURCE",
+      "business_line": "DAS",
+      "http_status": 200,
+      "final_url": "https://www.dtcc.com/products-and-services/digital-assets/tokenization/hub",
+      "content_type": "text/html; charset=utf-8",
+      "status": "retrieved",
+      "raw_file": "evidence/hub.html",
+      "text_file": "inputs/hub.txt",
+      "raw_sha256": "815736171828e02ed66718b73b263e190db5b42ee97da1f8ea9a50942168e4a0",
+      "text_sha256": "359ad403972a35beccee09dfff07ed4b11fcee6783462c20a5fc953392d54f30",
+      "byte_count": 597042,
+      "text_characters": 5202,
+      "retrieval_method": "html_visible_text",
+      "full_document": true
+    },
+    {
+      "source_id": "sec_letter",
+      "url": "https://www.sec.gov/files/tm/no-action/dtc-nal-121125.pdf",
+      "publication_date": "2025-12-11",
+      "kind": "official_regulatory_document",
+      "collected_at_utc": "2026-11-17T16:47:36.877793+00:00",
+      "classification": "PUBLIC_PUBLISHER_SOURCE",
+      "business_line": "DAS",
+      "http_status": 200,
+      "final_url": "https://www.sec.gov/files/tm/no-action/dtc-nal-121125.pdf",
+      "content_type": "application/pdf",
+      "status": "retrieved",
+      "raw_file": "evidence/sec_letter.pdf",
+      "text_file": "inputs/sec_letter.txt",
+      "raw_sha256": "c4e71495d01f3d548c92df87124a7661f96c53208dca2f33ee8185a9f2e2906a",
+      "text_sha256": "74fb239721a989e50ffe65fe7874d7eb6af42b7b08241143b6d9031d7b37524a",
+      "byte_count": 935096,
+      "text_characters": 124878,
+      "retrieval_method": "pdf_text_extraction",
+      "full_document": true
+    },
+    {
+      "source_id": "notice_das001",
+      "url": "https://files.dtcc.com/download/assets/DAS-001/8a31d732d2d311f1a30ef632b7f70f6d",
+      "publication_date": "2026-10-28",
+      "kind": "official_service_notice",
+      "collected_at_utc": "2026-11-17T16:47:37.609321+00:00",
+      "classification": "PUBLIC_PUBLISHER_SOURCE",
+      "business_line": "DAS",
+      "http_status": 200,
+      "final_url": "https://files.dtcc.com/download/assets/DAS-001/8a31d732d2d311f1a30ef632b7f70f6d",
+      "content_type": "application/pdf",
+      "status": "retrieved",
+      "raw_file": "evidence/notice_das001.pdf",
+      "text_file": "inputs/notice_das001.txt",
+      "raw_sha256": "815f5ad39370afa1d31c32f4bb0dc2c459c3ffbf8d41e02ba9806c2c6e47eece",
+      "text_sha256": "6d31a41d31ed25ee402a0ce8e60599e44ff953e95dcfb617650039676f1a44f8",
+      "byte_count": 167898,
+      "text_characters": 1747,
+      "retrieval_method": "pdf_text_extraction",
+      "full_document": true
+    },
+    {
+      "source_id": "besu_advisories",
+      "url": "https://api.github.com/repos/besu-eth/besu/security-advisories?per_page=100",
+      "publication_date": null,
+      "kind": "maintainer_advisory_api",
+      "collected_at_utc": "2026-11-17T16:47:38.043389+00:00",
+      "classification": "PUBLIC_PUBLISHER_SOURCE",
+      "business_line": "DAS",
+      "http_status": 200,
+      "final_url": "https://api.github.com/repos/besu-eth/besu/security-advisories?per_page=100",
+      "content_type": "application/json; charset=utf-8",
+      "status": "retrieved",
+      "raw_file": "evidence/besu_advisories.json",
+      "text_file": "inputs/besu_advisories.txt",
+      "raw_sha256": "0e5fa7182d4e9f525057934f6d85718dc65660482f2bb9b7e081d95523e7a7fe",
+      "text_sha256": "0e5fa7182d4e9f525057934f6d85718dc65660482f2bb9b7e081d95523e7a7fe",
+      "byte_count": 251140,
+      "text_characters": 250863,
+      "retrieval_method": "publisher_json",
+      "full_document": true
+    },
+    {
+      "source_id": "besu_qbft",
+      "url": "https://github.com/besu-eth/besu/security/advisories/GHSA-hhgq-3gvc-4jhp",
+      "publication_date": "2026-11-10",
+      "kind": "maintainer_security_advisory",
+      "collected_at_utc": "2026-11-17T16:47:38.348350+00:00",
+      "classification": "PUBLIC_PUBLISHER_SOURCE",
+      "business_line": "DAS",
+      "http_status": 200,
+      "final_url": "https://github.com/besu-eth/besu/security/advisories/GHSA-hhgq-3gvc-4jhp",
+      "content_type": "text/html; charset=utf-8",
+      "status": "retrieved",
+      "raw_file": "evidence/besu_qbft.html",
+      "text_file": "inputs/besu_qbft.txt",
+      "raw_sha256": "8ffc4c3bff86873be2103d6bcc066e5dbc4668111c4711e5cf4cf77f38d08ae7",
+      "text_sha256": "727e21e86b452f3f60f1d556f26fdb7eac6143f36ef748944e5ca42cac9495fa",
+      "byte_count": 143269,
+      "text_characters": 4341,
+      "retrieval_method": "html_visible_text",
+      "full_document": true
+    },
+    {
+      "source_id": "besu_ibft",
+      "url": "https://github.com/besu-eth/besu/security/advisories/GHSA-6pcq-hcgg-5q76",
+      "publication_date": "2026-11-10",
+      "kind": "maintainer_security_advisory",
+      "collected_at_utc": "2026-11-17T16:47:38.363591+00:00",
+      "classification": "PUBLIC_PUBLISHER_SOURCE",
+      "business_line": "DAS",
+      "http_status": 200,
+      "final_url": "https://github.com/besu-eth/besu/security/advisories/GHSA-6pcq-hcgg-5q76",
+      "content_type": "text/html; charset=utf-8",
+      "status": "retrieved",
+      "raw_file": "evidence/besu_ibft.html",
+      "text_file": "inputs/besu_ibft.txt",
+      "raw_sha256": "6787c3fbb97d9c4166fecd4fcfbd6d604a125cb84684666dd060eef77f40daac",
+      "text_sha256": "6580930bfd2c6c5ecd09c8a20f4c5900d9469e457a664d572ef46c42bffb553f",
+      "byte_count": 143592,
+      "text_characters": 4637,
+      "retrieval_method": "html_visible_text",
+      "full_document": true
+    },
+    {
+      "source_id": "canton_status",
+      "url": "https://canton.foundation/sv-network-status-2/",
+      "publication_date": null,
+      "kind": "network_context_not_dts_health",
+      "collected_at_utc": "2026-11-17T16:47:38.600447+00:00",
+      "classification": "PUBLIC_PUBLISHER_SOURCE",
+      "business_line": "DAS",
+      "http_status": 200,
+      "final_url": "https://canton.foundation/sv-network-status-2/",
+      "content_type": "text/html; charset=UTF-8",
+      "status": "retrieved",
+      "raw_file": "evidence/canton_status.html",
+      "text_file": "inputs/canton_status.txt",
+      "raw_sha256": "6acdf38e62abd677163e58c79fb1faae742f3812497f4d6d8d051da95235432f",
+      "text_sha256": "60085c0e027df1169715570fdd12088577d75716b5fd04086f68b9fdb1b08454",
+      "byte_count": 94292,
+      "text_characters": 1809,
+      "retrieval_method": "html_visible_text",
+      "full_document": true
+    },
+    {
+      "source_id": "canton_dso",
+      "url": "https://docs.global.canton.network.sync.global/dso",
+      "publication_date": null,
+      "kind": "network_context_not_dts_health",
+      "collected_at_utc": "2026-11-17T16:47:38.820885+00:00",
+      "classification": "PUBLIC_PUBLISHER_SOURCE",
+      "business_line": "DAS",
+      "http_status": 200,
+      "final_url": "https://docs.global.canton.network.sync.global/dso",
+      "content_type": "application/json",
+      "status": "retrieved",
+      "raw_file": "evidence/canton_dso.json",
+      "text_file": "inputs/canton_dso.txt",
+      "raw_sha256": "c84f8e426dd2b4d1f6e7eb480c548154bd867eac700d9e014d594a086f631506",
+      "text_sha256": "c84f8e426dd2b4d1f6e7eb480c548154bd867eac700d9e014d594a086f631506",
+      "byte_count": 69474,
+      "text_characters": 69474,
+      "retrieval_method": "publisher_json",
+      "full_document": true
+    },
+    {
+      "source_id": "api_reference",
+      "url": "https://dtcc-da.com/api/tokenization-service/api-reference-guide/content",
+      "publication_date": null,
+      "kind": "public_documentation_not_business_data",
+      "collected_at_utc": "2026-11-17T16:47:39.486296+00:00",
+      "classification": "PUBLIC_PUBLISHER_SOURCE",
+      "business_line": "DAS",
+      "http_status": 200,
+      "final_url": "https://dtcc-da.com/api/tokenization-service/api-reference-guide/content",
+      "content_type": "text/html",
+      "status": "retrieved",
+      "raw_file": "evidence/api_reference.html",
+      "text_file": "inputs/api_reference.txt",
+      "raw_sha256": "d467008d014635cb49a614afc0d47f2694959ec8281e652094dd8a86c144de39",
+      "text_sha256": "850bd104e8a6ca69d4fa36f385e3b36d6f5a1cdba4eed013b7f7a298cc54e7c0",
+      "byte_count": 345122,
+      "text_characters": 202976,
+      "retrieval_method": "html_visible_text",
+      "full_document": true
+    },
+    {
+      "source_id": "official_onboarding",
+      "url": "https://dtcclearning.com/helpfiles/dda/tokenization_service/Content/Topics/tokenization_srvc/getting_started.htm",
+      "publication_date": null,
+      "kind": "official_domain_provenance",
+      "collected_at_utc": "2026-11-17T16:47:39.755359+00:00",
+      "classification": "PUBLIC_PUBLISHER_SOURCE",
+      "business_line": "DAS",
+      "http_status": 200,
+      "final_url": "https://dtcclearning.com/helpfiles/dda/tokenization_service/Content/Topics/tokenization_srvc/getting_started.htm",
+      "content_type": "text/html; charset=UTF-8",
+      "status": "retrieved",
+      "raw_file": "evidence/official_onboarding.html",
+      "text_file": "inputs/official_onboarding.txt",
+      "raw_sha256": "2fd8034d55210f4ee1b3dd1706357eedc02a5c58c0bc41e014e68021d636ab3f",
+      "text_sha256": "86219553e44bc263be5d2444f85cf447ce2a9eef117af54eb1af05a158301219",
+      "byte_count": 36648,
+      "text_characters": 3084,
+      "retrieval_method": "html_visible_text",
+      "full_document": true
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "GHSA-hhgq-3gvc-4jhp",
+      "source_id": "besu_advisories",
+      "source_ids": [
+        "launch",
+        "besu_advisories"
+      ],
+      "title": "QBFT RoundChange executes the piggybacked block before the free hash check, letting a non-validator replay one captured signature with substituted blocks",
+      "publication_date": "2026-11-10",
+      "source_url": "https://github.com/besu-eth/besu/security/advisories/GHSA-hhgq-3gvc-4jhp",
+      "chain_ids": [
+        "DAS-01"
+      ],
+      "event_type": "dependency_security_advisory",
+      "publisher_severity": "medium",
+      "severity_scale": "GitHub maintainer severity, not DAS risk score",
+      "source_checked_conditions": [
+        "Confirm the DTCC private Besu version is affected.",
+        "Confirm that the deployed consensus algorithm is QBFT.",
+        "Confirm relevant devp2p access, ability to obtain the required signed message and peering exposure.",
+        "Trusted-node peering can reduce exposure; the advisory lists no workaround and identifies a patched release.",
+        "Private Besu integration does not reveal version, consensus algorithm or peering configuration.",
+        "This is a vendor advisory, not evidence of an incident or outage at DTCC."
+      ],
+      "affected_versions": [
+        "<= 26.10.1"
+      ],
+      "patched_versions": [
+        "26.10.2"
+      ],
+      "review_status": "APPLICABILITY_REVIEW_REQUIRED",
+      "applicability": "UNKNOWN_DEPLOYED_VERSION_AND_CONFIGURATION",
+      "proposed_pathway": "If the deployed Besu version and configuration are affected, availability degradation could delay DTS processing.",
+      "internal_V": null,
+      "shock_score": null,
+      "risk_score": null,
+      "confirmed_DAS_incident": null,
+      "next_action": "Ask the DTS service owner to confirm deployed version, consensus configuration, peering exposure and patch status."
+    },
+    {
+      "finding_id": "GHSA-6pcq-hcgg-5q76",
+      "source_id": "besu_advisories",
+      "source_ids": [
+        "launch",
+        "besu_advisories"
+      ],
+      "title": "IBFT Accepts Oversized Base Fees That Can Stop Block Production",
+      "publication_date": "2026-11-10",
+      "source_url": "https://github.com/besu-eth/besu/security/advisories/GHSA-6pcq-hcgg-5q76",
+      "chain_ids": [
+        "DAS-01"
+      ],
+      "event_type": "dependency_security_advisory",
+      "publisher_severity": "medium",
+      "severity_scale": "GitHub maintainer severity, not DAS risk score",
+      "source_checked_conditions": [
+        "Confirm the DTCC private Besu version is affected (the advisory lists <= 26.10.1).",
+        "Confirm that the deployed consensus algorithm is IBFT 2.0.",
+        "Confirm the stated four-validator, London-only, zeroBaseFee configuration and the malicious-current-validator precondition.",
+        "Do not generalize the demonstrated effect to default fee-market configurations, QBFT, permanence, a fork or fund losses.",
+        "The public launch source does not disclose DTCC version, consensus algorithm, validator count or fee-market configuration.",
+        "This is a vendor advisory, not evidence of an incident or outage at DTCC."
+      ],
+      "affected_versions": [
+        "<= 26.10.1"
+      ],
+      "patched_versions": [
+        "26.10.2"
+      ],
+      "review_status": "APPLICABILITY_REVIEW_REQUIRED",
+      "applicability": "UNKNOWN_DEPLOYED_VERSION_AND_CONFIGURATION",
+      "proposed_pathway": "If the deployed Besu version and configuration are affected, availability degradation could delay DTS processing.",
+      "internal_V": null,
+      "shock_score": null,
+      "risk_score": null,
+      "confirmed_DAS_incident": null,
+      "next_action": "Ask the DTS service owner to confirm deployed version, consensus configuration, peering exposure and patch status."
+    },
+    {
+      "finding_id": "DTS-SOLANA-20261112",
+      "source_id": "solana",
+      "source_url": "https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-to-connect-with-solana",
+      "title": "Solana integration planned for H2 2027",
+      "publication_date": "2026-11-12",
+      "chain_ids": [
+        "DAS-04"
+      ],
+      "event_type": "future_service_change",
+      "review_status": "FUTURE_CHANGE_WATCHLIST",
+      "applicability": "PLANNED_NETWORK_NOT_CURRENT_OUTAGE_EXPOSURE",
+      "next_action": "Monitor official readiness, approved network scope and launch notices before changing current exposure.",
+      "internal_V": null,
+      "shock_score": null,
+      "risk_score": null,
+      "confirmed_DAS_incident": null
+    }
+  ],
+  "facts": [
+    {
+      "fact_id": "live_networks",
+      "source_id": "launch",
+      "source_url": "https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-goes-live",
+      "evidence_quote": "currently integrated with the Canton Network and DTCC’s private Besu network",
+      "statement": "DTS launch evidence documents Canton and DTCC private Besu as integrated networks.",
+      "evidence_status": "SOURCE_SUPPORTED"
+    },
+    {
+      "fact_id": "solana_future",
+      "source_id": "solana",
+      "source_url": "https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-to-connect-with-solana",
+      "evidence_quote": "planned for the second half of 2027",
+      "statement": "Solana integration is planned for H2 2027; this is not evidence of current production deployment.",
+      "evidence_status": "SOURCE_SUPPORTED"
+    },
+    {
+      "fact_id": "report_deadline",
+      "source_id": "sec_letter",
+      "source_url": "https://www.sec.gov/files/tm/no-action/dtc-nal-121125.pdf",
+      "evidence_quote": "the third Friday following each quarter’s end date",
+      "statement": "The quarterly report is due to SEC staff no later than the third Friday following quarter end.",
+      "evidence_status": "SOURCE_SUPPORTED"
+    },
+    {
+      "fact_id": "relief_expiry",
+      "source_id": "sec_letter",
+      "source_url": "https://www.sec.gov/files/tm/no-action/dtc-nal-121125.pdf",
+      "evidence_quote": "three years from the date DTC launches operation",
+      "statement": "Relief expiry depends on formal Preliminary Base Version launch; no exact expiry date is assumed.",
+      "evidence_status": "SOURCE_SUPPORTED"
+    },
+    {
+      "fact_id": "conversion_window",
+      "source_id": "notice_das001",
+      "source_url": "https://files.dtcc.com/download/assets/DAS-001/8a31d732d2d311f1a30ef632b7f70f6d",
+      "evidence_quote": "Monday through Friday between 2:00 a.m. and 6:00 p.m.",
+      "statement": "The published order submission window is weekdays 02:00–18:00 ET; actual order delays are not observed.",
+      "evidence_status": "SOURCE_SUPPORTED"
+    },
+    {
+      "source_id": "launch",
+      "quote": "today launched the DTCC Tokenization Service (DTS). The service brings tokenized securities into regulated financial markets",
+      "statement": "DTCC reported that DTS launched on 2026-10-28. This source confirms the public service launch, rather than only a future launch plan.",
+      "chain_ids": [
+        "DAS-01",
+        "DAS-04"
+      ],
+      "applicability_conditions": [
+        "Use 2026-10-28 as the date of the public DTS launch announcement.",
+        "Do not equate this announcement with the separately notified Preliminary Base Version start date without confirming that regulatory milestone."
+      ],
+      "change_reason": "Retained the source-supported launch fact; removed an unnecessary approximate May 2026 pilot date and separated public launch from the regulatory expiry trigger.",
+      "fact_id": "AWS-DAS-001",
+      "original_fact_index": 0,
+      "review_status": "LOCAL_SOURCE_REVIEWED_API_CANDIDATE_NOT_HUMAN_APPROVED",
+      "source_text_sha256": "b027f58eb58961f7917aee40b5f432416a9c1a0d7e5501098cd6136795435fc5",
+      "review_label": "LOCAL_SOURCE_REVIEW_ONLY_NOT_BUSINESS_SIGNOFF",
+      "source_url": "https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-goes-live",
+      "evidence_quote": "today launched the DTCC Tokenization Service (DTS). The service brings tokenized securities into regulated financial markets",
+      "evidence_status": "API_INTERPRETATION_LOCALLY_SOURCE_CHECKED_NOT_BUSINESS_SIGNOFF"
+    },
+    {
+      "source_id": "launch",
+      "quote": "currently integrated with the Canton Network and DTCC’s private Besu network",
+      "statement": "The 2026-10-28 launch source reports current integration with Canton Network and DTCC’s private Besu network, with additional networks planned for 2027.",
+      "chain_ids": [
+        "DAS-01"
+      ],
+      "applicability_conditions": [
+        "Treat current integrations separately from future planned connections.",
+        "An advisory for Besu software applies to the private deployment only after version, consensus algorithm and relevant configuration are verified."
+      ],
+      "change_reason": "Replaced a nonmatching straight apostrophe with the exact source wording and shortened the quote; retained current versus planned integration distinction.",
+      "fact_id": "AWS-DAS-002",
+      "original_fact_index": 1,
+      "review_status": "LOCAL_SOURCE_REVIEWED_API_CANDIDATE_NOT_HUMAN_APPROVED",
+      "source_text_sha256": "b027f58eb58961f7917aee40b5f432416a9c1a0d7e5501098cd6136795435fc5",
+      "review_label": "LOCAL_SOURCE_REVIEW_ONLY_NOT_BUSINESS_SIGNOFF",
+      "source_url": "https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-goes-live",
+      "evidence_quote": "currently integrated with the Canton Network and DTCC’s private Besu network",
+      "evidence_status": "API_INTERPRETATION_LOCALLY_SOURCE_CHECKED_NOT_BUSINESS_SIGNOFF"
+    },
+    {
+      "source_id": "launch",
+      "quote": "20 DTC Participants (clients) have signed agreements to access DTS including Alpaca, Apex Clearing",
+      "statement": "At launch on 2026-10-28, 20 named DTC Participants had signed access agreements for DTS. Future participants are to be onboarded on a rolling basis.",
+      "chain_ids": [
+        "DAS-04"
+      ],
+      "applicability_conditions": [
+        "Signed agreements indicate eligibility and intent; they do not confirm that all 20 participants were operationally active on launch day.",
+        "Monitor should track participant count changes as a rolling-onboarding signal."
+      ],
+      "change_reason": "Original source quote passes unchanged. Retained signed-agreement count with the existing limitation that agreements do not prove active use.",
+      "fact_id": "AWS-DAS-003",
+      "original_fact_index": 2,
+      "review_status": "LOCAL_SOURCE_REVIEWED_API_CANDIDATE_NOT_HUMAN_APPROVED",
+      "source_text_sha256": "b027f58eb58961f7917aee40b5f432416a9c1a0d7e5501098cd6136795435fc5",
+      "review_label": "LOCAL_SOURCE_REVIEW_ONLY_NOT_BUSINESS_SIGNOFF",
+      "source_url": "https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-goes-live",
+      "evidence_quote": "20 DTC Participants (clients) have signed agreements to access DTS including Alpaca, Apex Clearing",
+      "evidence_status": "API_INTERPRETATION_LOCALLY_SOURCE_CHECKED_NOT_BUSINESS_SIGNOFF"
+    },
+    {
+      "source_id": "solana",
+      "quote": "DTC-tokenized assets expected to be available on Solana in the second half of 2027",
+      "statement": "DTCC announced on 2026-11-12 that DTC-tokenized assets are expected to be available on Solana in the second half of 2027. This announcement establishes a planned connection, not confirmed live operation.",
+      "chain_ids": [
+        "DAS-01"
+      ],
+      "applicability_conditions": [
+        "The announcement date is 2026-11-12 and the stated planned availability is H2 2027.",
+        "Do not use a Solana incident as evidence of an affected live DAS connection without a subsequent live-integration confirmation."
+      ],
+      "change_reason": "Retained the supported planned H2 2027 date; replaced categorical absence-of-live-service wording with the narrower evidence distinction.",
+      "fact_id": "AWS-DAS-004",
+      "original_fact_index": 3,
+      "review_status": "LOCAL_SOURCE_REVIEWED_API_CANDIDATE_NOT_HUMAN_APPROVED",
+      "source_text_sha256": "2523657a3a0beac1448da5a2b88d3d1d66b2a365b0228ecedcf3b012afc8f781",
+      "review_label": "LOCAL_SOURCE_REVIEW_ONLY_NOT_BUSINESS_SIGNOFF",
+      "source_url": "https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-to-connect-with-solana",
+      "evidence_quote": "DTC-tokenized assets expected to be available on Solana in the second half of 2027",
+      "evidence_status": "API_INTERPRETATION_LOCALLY_SOURCE_CHECKED_NOT_BUSINESS_SIGNOFF"
+    },
+    {
+      "source_id": "besu_qbft",
+      "quote": "QBFT RoundChange executes the piggybacked block before the free hash check, letting a non-validator replay one captured signature",
+      "statement": "Besu advisory GHSA-hhgq-3gvc-4jhp, published 2026-11-10 with Moderate severity, lists versions <= 26.10.1 as affected and 26.10.2 as patched. It describes QBFT availability pressure from replayed RoundChange messages and repeated block execution. It makes no consensus-split or safety claim and says IBFT does not share the second ordering defect.",
+      "chain_ids": [
+        "DAS-01"
+      ],
+      "applicability_conditions": [
+        "Confirm the DTCC private Besu version is affected.",
+        "Confirm that the deployed consensus algorithm is QBFT.",
+        "Confirm relevant devp2p access, ability to obtain the required signed message and peering exposure.",
+        "Trusted-node peering can reduce exposure; the advisory lists no workaround and identifies a patched release.",
+        "Private Besu integration does not reveal version, consensus algorithm or peering configuration.",
+        "This is a vendor advisory, not evidence of an incident or outage at DTCC."
+      ],
+      "change_reason": "Kept supported advisory metadata and conditional mapping; narrowed the IBFT distinction to the second ordering defect and distinguished exposure reduction from a workaround.",
+      "fact_id": "AWS-DAS-005",
+      "original_fact_index": 4,
+      "review_status": "LOCAL_SOURCE_REVIEWED_API_CANDIDATE_NOT_HUMAN_APPROVED",
+      "source_text_sha256": "727e21e86b452f3f60f1d556f26fdb7eac6143f36ef748944e5ca42cac9495fa",
+      "review_label": "LOCAL_SOURCE_REVIEW_ONLY_NOT_BUSINESS_SIGNOFF",
+      "source_url": "https://github.com/besu-eth/besu/security/advisories/GHSA-hhgq-3gvc-4jhp",
+      "evidence_quote": "QBFT RoundChange executes the piggybacked block before the free hash check, letting a non-validator replay one captured signature",
+      "evidence_status": "API_INTERPRETATION_LOCALLY_SOURCE_CHECKED_NOT_BUSINESS_SIGNOFF"
+    },
+    {
+      "source_id": "besu_ibft",
+      "quote": "A current validator can stop block production in the stated four-validator, London-only, zeroBaseFee IBFT configuration.",
+      "statement": "A moderate-severity advisory (GHSA-6pcq-hcgg-5q76) published 2026-11-10 describes an IBFT 2.0 availability vulnerability in Hyperledger Besu versions <= 26.10.1, fixed in 26.10.2. The advisory lists no known CVE. The vulnerability allows a Byzantine current validator to halt block production in a four-validator, London-only, zeroBaseFee IBFT configuration. The advisory explicitly limits its impact claim to that specific configuration and does not claim permanence, a same-height fork, fund impact, or QBFT impact.",
+      "chain_ids": [
+        "DAS-01"
+      ],
+      "applicability_conditions": [
+        "Confirm the DTCC private Besu version is affected (the advisory lists <= 26.10.1).",
+        "Confirm that the deployed consensus algorithm is IBFT 2.0.",
+        "Confirm the stated four-validator, London-only, zeroBaseFee configuration and the malicious-current-validator precondition.",
+        "Do not generalize the demonstrated effect to default fee-market configurations, QBFT, permanence, a fork or fund losses.",
+        "The public launch source does not disclose DTCC version, consensus algorithm, validator count or fee-market configuration.",
+        "This is a vendor advisory, not evidence of an incident or outage at DTCC."
+      ],
+      "change_reason": "Replaced the over-20-word quote with an exact 15-word impact sentence and restored the four-validator and malicious-validator preconditions. Replaced the categorical CVE-assignment claim with the source’s narrower no-known-CVE wording.",
+      "fact_id": "AWS-DAS-006",
+      "original_fact_index": 5,
+      "review_status": "LOCAL_SOURCE_REVIEWED_API_CANDIDATE_NOT_HUMAN_APPROVED",
+      "source_text_sha256": "6580930bfd2c6c5ecd09c8a20f4c5900d9469e457a664d572ef46c42bffb553f",
+      "review_label": "LOCAL_SOURCE_REVIEW_ONLY_NOT_BUSINESS_SIGNOFF",
+      "source_url": "https://github.com/besu-eth/besu/security/advisories/GHSA-6pcq-hcgg-5q76",
+      "evidence_quote": "A current validator can stop block production in the stated four-validator, London-only, zeroBaseFee IBFT configuration.",
+      "evidence_status": "API_INTERPRETATION_LOCALLY_SOURCE_CHECKED_NOT_BUSINESS_SIGNOFF"
+    },
+    {
+      "source_id": "sec_letter",
+      "quote": "This letter is withdrawn without further action three years from the date DTC launches operation of the Preliminary Base Version",
+      "statement": "The 2025-12-11 SEC staff letter states that the letter is withdrawn without further action three years after DTC launches operation of the Preliminary Base Version, with written notice at launch. The response concerns staff enforcement discretion and may be modified or revoked; it is not Commission approval.",
+      "chain_ids": [
+        "DAS-04"
+      ],
+      "applicability_conditions": [
+        "Confirm the actual Preliminary Base Version operational launch and written notice before calculating a calendar expiry.",
+        "Do not assume that the 2026-10-28 public DTS launch announcement identifies that regulatory clock start.",
+        "The AWS input used selected material from the first 11 pages of the full 39-page PDF; additional request details are outside that excerpt.",
+        "The staff position is conditional on the stated facts and circumstances and may be modified or revoked."
+      ],
+      "change_reason": "Retained the supported three-year trigger; removed the unsupported inferred 2029-10-28 expiry date and clarified revocation and notice conditions.",
+      "fact_id": "AWS-DAS-007",
+      "original_fact_index": 6,
+      "review_status": "LOCAL_SOURCE_REVIEWED_API_CANDIDATE_NOT_HUMAN_APPROVED",
+      "source_text_sha256": "74fb239721a989e50ffe65fe7874d7eb6af42b7b08241143b6d9031d7b37524a",
+      "review_label": "LOCAL_SOURCE_REVIEW_ONLY_NOT_BUSINESS_SIGNOFF",
+      "source_url": "https://www.sec.gov/files/tm/no-action/dtc-nal-121125.pdf",
+      "evidence_quote": "This letter is withdrawn without further action three years from the date DTC launches operation of the Preliminary Base Version",
+      "evidence_status": "API_INTERPRETATION_LOCALLY_SOURCE_CHECKED_NOT_BUSINESS_SIGNOFF"
+    },
+    {
+      "source_id": "sec_letter",
+      "quote": "no later than the third Friday following each quarter’s end date",
+      "statement": "The staff letter describes DTC management providing quarterly reporting to Division staff no later than the third Friday following each quarter-end. The package includes participation, tokenization, transfer, de-tokenization, wallet, blockchain, reversal and unavailability information.",
+      "chain_ids": [
+        "DAS-01",
+        "DAS-02",
+        "DAS-04"
+      ],
+      "applicability_conditions": [
+        "This reporting is to SEC Division staff, with subsequent delivery to the DTCC board.",
+        "The stated regulatory reporting obligation does not establish public availability of the quarterly package.",
+        "Any voluntarily published operating metrics require separate collection and source verification."
+      ],
+      "change_reason": "Replaced a long nonmatching quote with the exact 11-word deadline; preserved regulatory reporting versus public data availability distinction.",
+      "fact_id": "AWS-DAS-008",
+      "original_fact_index": 7,
+      "review_status": "LOCAL_SOURCE_REVIEWED_API_CANDIDATE_NOT_HUMAN_APPROVED",
+      "source_text_sha256": "74fb239721a989e50ffe65fe7874d7eb6af42b7b08241143b6d9031d7b37524a",
+      "review_label": "LOCAL_SOURCE_REVIEW_ONLY_NOT_BUSINESS_SIGNOFF",
+      "source_url": "https://www.sec.gov/files/tm/no-action/dtc-nal-121125.pdf",
+      "evidence_quote": "no later than the third Friday following each quarter’s end date",
+      "evidence_status": "API_INTERPRETATION_LOCALLY_SOURCE_CHECKED_NOT_BUSINESS_SIGNOFF"
+    },
+    {
+      "source_id": "sec_letter",
+      "quote": "LedgerScan’s record would constitute DTC’s official books and records.",
+      "statement": "The staff letter describes LedgerScan as an off-chain cloud system recording token movements and registered-wallet holdings in near real time; its record would constitute DTC’s official books and records. It describes Tier 2-or-better LedgerScan and Factory commitments, including primary/secondary operation, a maximum four-hour recovery time objective, at most two minutes of outage data loss, and annual out-of-region recovery testing.",
+      "chain_ids": [
+        "DAS-01",
+        "DAS-02"
+      ],
+      "applicability_conditions": [
+        "These are described design and control commitments, not observed achievement of recovery or data-loss targets.",
+        "Public statements of targets must not be converted into measured DAS internal vulnerability values.",
+        "Actual incident, recovery-test and performance records would be needed to evaluate operating effectiveness."
+      ],
+      "change_reason": "Corrected the quote to the exact source subject (LedgerScan’s record) and separated public commitments from measured performance.",
+      "fact_id": "AWS-DAS-009",
+      "original_fact_index": 8,
+      "review_status": "LOCAL_SOURCE_REVIEWED_API_CANDIDATE_NOT_HUMAN_APPROVED",
+      "source_text_sha256": "74fb239721a989e50ffe65fe7874d7eb6af42b7b08241143b6d9031d7b37524a",
+      "review_label": "LOCAL_SOURCE_REVIEW_ONLY_NOT_BUSINESS_SIGNOFF",
+      "source_url": "https://www.sec.gov/files/tm/no-action/dtc-nal-121125.pdf",
+      "evidence_quote": "LedgerScan’s record would constitute DTC’s official books and records.",
+      "evidence_status": "API_INTERPRETATION_LOCALLY_SOURCE_CHECKED_NOT_BUSINESS_SIGNOFF"
+    },
+    {
+      "source_id": "sec_letter",
+      "quote": "Eligible Securities: limited to (i) securities in the Russell 1000 Index",
+      "statement": "The described eligibility scope covers Russell 1000 securities at Preliminary Base Version launch plus later additions, notwithstanding subsequent index removals; U.S. Treasury bills, bonds and notes; and ETFs tracking major indices. DTC would assign tokenized entitlements no collateral or settlement value for its Net Debit Cap and Collateral Monitor calculations.",
+      "chain_ids": [
+        "DAS-04",
+        "DAS-05"
+      ],
+      "applicability_conditions": [
+        "Subsequent removal from the Russell 1000 is not an automatic exclusion under the quoted eligibility description.",
+        "Check later DTCC and SEC materials before asserting changed eligibility, expanded functionality or a required filing.",
+        "The zero collateral/settlement-value restriction concerns the stated DTC risk calculations; do not infer CCP collateral use or measured loss protection."
+      ],
+      "change_reason": "Replaced an ellipsis-containing long quote with an exact 11-word excerpt; corrected the API’s mistaken exclusion of subsequent Russell 1000 removals and removed a blanket future-filing claim.",
+      "fact_id": "AWS-DAS-010",
+      "original_fact_index": 9,
+      "review_status": "LOCAL_SOURCE_REVIEWED_API_CANDIDATE_NOT_HUMAN_APPROVED",
+      "source_text_sha256": "74fb239721a989e50ffe65fe7874d7eb6af42b7b08241143b6d9031d7b37524a",
+      "review_label": "LOCAL_SOURCE_REVIEW_ONLY_NOT_BUSINESS_SIGNOFF",
+      "source_url": "https://www.sec.gov/files/tm/no-action/dtc-nal-121125.pdf",
+      "evidence_quote": "Eligible Securities: limited to (i) securities in the Russell 1000 Index",
+      "evidence_status": "API_INTERPRETATION_LOCALLY_SOURCE_CHECKED_NOT_BUSINESS_SIGNOFF"
+    }
+  ],
+  "scope": [
+    {
+      "card_id": "DAS-01",
+      "implementation_status": "ACTIVE_PUBLIC_MONITOR",
+      "name_cn": "软件安全／基础设施事件",
+      "name_en": "Software and infrastructure",
+      "available_output": "维护方安全公告；当前部署范围",
+      "minimum_missing_data": "Actual version, consensus configuration, patch and failover evidence",
+      "internal_V": null,
+      "risk_score": null,
+      "model_status": "NOT_EMPIRICALLY_VALIDATED"
+    },
+    {
+      "card_id": "DAS-02",
+      "implementation_status": "DEFER_INTERNAL_MEASUREMENT",
+      "name_cn": "记录与对账",
+      "name_en": "Records and reconciliation",
+      "available_output": "保留定义，暂不评分",
+      "minimum_missing_data": "Reconciliation breaks, backlog, resolution capacity and timestamps",
+      "internal_V": null,
+      "risk_score": null,
+      "model_status": "NOT_EMPIRICALLY_VALIDATED"
+    },
+    {
+      "card_id": "DAS-03",
+      "implementation_status": "DEFER_INTERNAL_MEASUREMENT",
+      "name_cn": "钱包与安全控制",
+      "name_en": "Wallet and security controls",
+      "available_output": "保留定义，暂不做未知钱包制裁筛查",
+      "minimum_missing_data": "Registered-wallet inventory, key-control attestations and screening logs",
+      "internal_V": null,
+      "risk_score": null,
+      "model_status": "NOT_EMPIRICALLY_VALIDATED"
+    },
+    {
+      "card_id": "DAS-04",
+      "implementation_status": "ACTIVE_PUBLIC_MONITOR",
+      "name_cn": "监管、资格与网络变更",
+      "name_en": "Regulation, eligibility and scope",
+      "available_output": "官方规则、网络变更及报告日历",
+      "minimum_missing_data": "Formal launch notice, contingency capacity and affected positions",
+      "internal_V": null,
+      "risk_score": null,
+      "model_status": "NOT_EMPIRICALLY_VALIDATED"
+    },
+    {
+      "card_id": "DAS-05",
+      "implementation_status": "AUTHORIZED_DATA_ADAPTER_READY",
+      "name_cn": "转换及公司行动处理",
+      "name_en": "Conversion and corporate actions",
+      "available_output": "授权订单CSV／JSON接入已准备",
+      "minimum_missing_data": "Actual order and completion logs; capacity benchmarks and corporate-action outcomes",
+      "internal_V": null,
+      "risk_score": null,
+      "model_status": "NOT_EMPIRICALLY_VALIDATED"
+    }
+  ],
+  "networks": [
+    {
+      "network_id": "Canton",
+      "source_id": "launch",
+      "deployment_status": "DOCUMENTED_LIVE",
+      "publication_date": "2026-10-28",
+      "as_of_date": "2026-11-17",
+      "monitor_scope": "public_dependency_context",
+      "internal_service_health": null,
+      "limitation": "Deployment statement does not identify DTS versions, balances or service uptime."
+    },
+    {
+      "network_id": "Besu",
+      "source_id": "launch",
+      "deployment_status": "DOCUMENTED_LIVE",
+      "publication_date": "2026-10-28",
+      "as_of_date": "2026-11-17",
+      "monitor_scope": "public_dependency_context",
+      "internal_service_health": null,
+      "limitation": "Deployment statement does not identify DTS versions, balances or service uptime."
+    },
+    {
+      "network_id": "Solana",
+      "source_id": "solana",
+      "deployment_status": "PLANNED_NOT_LIVE_IN_THIS_EVIDENCE",
+      "publication_date": "2026-11-12",
+      "planned_window": "H2 2027",
+      "as_of_date": "2026-11-17",
+      "include_in_current_outage_assessment": false,
+      "internal_service_health": null
+    }
+  ],
+  "metrics": [
+    {
+      "metric_id": "sources_retrieved",
+      "value": 12,
+      "unit": "sources",
+      "source_id": null,
+      "as_of_date": "2026-11-17",
+      "interpretation": "Monitor output, not internal V or a DAS risk score"
+    },
+    {
+      "metric_id": "besu_advisories_in_window",
+      "value": 2,
+      "unit": "advisories",
+      "source_id": "besu_advisories",
+      "as_of_date": "2026-11-17",
+      "interpretation": "Monitor output, not internal V or a DAS risk score",
+      "coverage": "At most 100 publisher advisories; configured date window; withdrawn advisories excluded",
+      "pagination_truncated": false
+    },
+    {
+      "metric_id": "canton_published_sv_entries",
+      "value": 13,
+      "unit": "configured entries",
+      "source_id": "canton_dso",
+      "as_of_date": "2026-11-17",
+      "interpretation": "Monitor output, not internal V or a DAS risk score",
+      "limitation": "Configuration context only, not live-node health or DTS exposure; no V mapping is accepted."
+    }
+  ],
+  "deadlines": [
+    {
+      "deadline_id": "SEC-REPORT-2026-12-31",
+      "source_id": "sec_letter",
+      "card_id": "DAS-04",
+      "reporting_quarter": "2026Q4",
+      "quarter_end": "2026-12-31",
+      "deadline": "2027-01-15",
+      "calendar_days_remaining": 59,
+      "as_of_date": "2026-11-17",
+      "status": "UPCOMING",
+      "submission_status": "NOT_PUBLICLY_OBSERVED",
+      "limitation": "A non-public SEC staff report is not assumed missing or late because it is absent from public websites."
+    },
+    {
+      "deadline_id": "SEC-RELIEF-EXPIRY",
+      "source_id": "sec_letter",
+      "card_id": "DAS-04",
+      "deadline": null,
+      "as_of_date": "2026-11-17",
+      "status": "FORMAL_LAUNCH_DATE_CONFIRMATION_REQUIRED",
+      "limitation": "Do not substitute the letter date, July trials or October press launch for formal written launch notice."
+    }
+  ],
+  "authorized_orders": {
+    "availability": "awaiting_authorized_data",
+    "metric_kind": "observed_operating_outcomes_not_internal_buffer",
+    "source_url": "https://dtcc-da.com/api/tokenization-service/api-reference-guide/content",
+    "source_checked_on": "2026-11-17",
+    "window": {
+      "start_inclusive": "2026-11-09T05:00:00Z",
+      "end_exclusive": "2026-11-18T05:00:00Z",
+      "cohort": "created_at",
+      "state_cutoff": "updated_at < end_exclusive"
+    },
+    "scope": "provided_authorized_export_only; completeness_not_established",
+    "input_rows": 0,
+    "invalid_rows": 0,
+    "excluded_rows": 0,
+    "duplicate_rows_removed": 0,
+    "conflicting_order_ids": [],
+    "data_quality_issues": [],
+    "orders": [],
+    "unknown_status_counts": {},
+    "metrics": {
+      "order_count": null,
+      "completed_count": null,
+      "failed_count": null,
+      "processing_count": null,
+      "unknown_status_count": null,
+      "completed_share_of_observed_orders": null,
+      "failed_share_of_observed_orders": null,
+      "terminal_failure_rate": null,
+      "completed_duration_sample_count": null,
+      "mean_completed_duration_seconds": null,
+      "median_completed_duration_seconds": null,
+      "observed_completion_over_15m_count": null
+    },
+    "duration_policy": "Completed plus separately verified confirmed_completed_at only; updated_at is never completion time",
+    "target_policy": "15 minutes is a published service target, not an established SLA or internal V"
+  }
+}

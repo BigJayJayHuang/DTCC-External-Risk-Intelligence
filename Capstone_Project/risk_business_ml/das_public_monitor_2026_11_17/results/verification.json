@@ -1,0 +1,18 @@
+{
+  "as_of_date": "2026-11-17",
+  "offline_tests_passed": 30,
+  "test_scope": "routing, date windows, source trust, order semantics, database preservation; not model accuracy",
+  "sources_retrieved": 12,
+  "paid_aws_document_calls": 1,
+  "estimated_aws_cost_usd": "0.088077",
+  "raw_model_source_check_status": "NEEDS_REVISION",
+  "reviewed_facts_source_check_errors": 0,
+  "applicability_review_items": 2,
+  "future_change_items": 1,
+  "internal_V": null,
+  "risk_score": null,
+  "empirical_validation": false,
+  "production_register_modified": false,
+  "scheduled_paid_calls_enabled": false,
+  "project_database_preservation": "results/project_database_preservation.json"
+}

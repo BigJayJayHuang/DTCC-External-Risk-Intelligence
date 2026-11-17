@@ -1,5 +1,7 @@
 # Capstone Project · 总入口
 
+**2026-11-17 DAS新增 / DAS public monitor:** [统一入口](Capstone_Project/risk_business_ml/das_public_monitor_2026_11_17/README.md) · [中文结果](Capstone_Project/risk_business_ml/das_public_monitor_2026_11_17/RESULTS_CN.md) · [English results](Capstone_Project/risk_business_ml/das_public_monitor_2026_11_17/RESULTS_EN.md)。两类公开监测、订单数据接口、复核队列及独立数据库快照；未使用模拟V或输出缺乏数据支持的风险分数。
+
 **[传导链统一工作台 / Transmission Chain Board](Capstone_Project/TRANSMISSION_CHAIN_INDEX.md)** — 56条链的真实数据优先分流、缺口模拟、历史检验、数据库与队友评分入口。
 
 **当前成果 / Current work：** [真实数据优先修正版](Capstone_Project/risk_business_ml/synthetic_data_scope_revision_2026_10_27/README.md) · [中文结果](Capstone_Project/risk_business_ml/synthetic_data_scope_revision_2026_10_27/RESULTS_CN.md) · [English results](Capstone_Project/risk_business_ml/synthetic_data_scope_revision_2026_10_27/RESULTS_EN.md)。已有真实数据的环节保留原检验，只对缺失环节做条件模拟；此前广泛模拟保留为历史材料。

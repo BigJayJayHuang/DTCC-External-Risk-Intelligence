@@ -1,0 +1,210 @@
+{
+  "schema_version": "1.0",
+  "reviewed_at_utc": "2026-11-17T16:54:18.520391+00:00",
+  "status": "LOCAL_SOURCE_REVIEWED_API_CANDIDATES_NOT_HUMAN_APPROVED",
+  "origin": "AWS Bedrock candidate interpretation, followed by local source and quote correction",
+  "human_review_required": true,
+  "business_chain_approval": false,
+  "not_a_risk_score": true,
+  "source_understanding_file": "aws_reading/understanding.json",
+  "facts": [
+    {
+      "source_id": "launch",
+      "quote": "today launched the DTCC Tokenization Service (DTS). The service brings tokenized securities into regulated financial markets",
+      "statement": "DTCC reported that DTS launched on 2026-10-28. This source confirms the public service launch, rather than only a future launch plan.",
+      "chain_ids": [
+        "DAS-01",
+        "DAS-04"
+      ],
+      "applicability_conditions": [
+        "Use 2026-10-28 as the date of the public DTS launch announcement.",
+        "Do not equate this announcement with the separately notified Preliminary Base Version start date without confirming that regulatory milestone."
+      ],
+      "change_reason": "Retained the source-supported launch fact; removed an unnecessary approximate May 2026 pilot date and separated public launch from the regulatory expiry trigger.",
+      "fact_id": "AWS-DAS-001",
+      "original_fact_index": 0,
+      "review_status": "LOCAL_SOURCE_REVIEWED_API_CANDIDATE_NOT_HUMAN_APPROVED",
+      "source_text_sha256": "b027f58eb58961f7917aee40b5f432416a9c1a0d7e5501098cd6136795435fc5",
+      "review_label": "LOCAL_SOURCE_REVIEW_ONLY_NOT_BUSINESS_SIGNOFF"
+    },
+    {
+      "source_id": "launch",
+      "quote": "currently integrated with the Canton Network and DTCC’s private Besu network",
+      "statement": "The 2026-10-28 launch source reports current integration with Canton Network and DTCC’s private Besu network, with additional networks planned for 2027.",
+      "chain_ids": [
+        "DAS-01"
+      ],
+      "applicability_conditions": [
+        "Treat current integrations separately from future planned connections.",
+        "An advisory for Besu software applies to the private deployment only after version, consensus algorithm and relevant configuration are verified."
+      ],
+      "change_reason": "Replaced a nonmatching straight apostrophe with the exact source wording and shortened the quote; retained current versus planned integration distinction.",
+      "fact_id": "AWS-DAS-002",
+      "original_fact_index": 1,
+      "review_status": "LOCAL_SOURCE_REVIEWED_API_CANDIDATE_NOT_HUMAN_APPROVED",
+      "source_text_sha256": "b027f58eb58961f7917aee40b5f432416a9c1a0d7e5501098cd6136795435fc5",
+      "review_label": "LOCAL_SOURCE_REVIEW_ONLY_NOT_BUSINESS_SIGNOFF"
+    },
+    {
+      "source_id": "launch",
+      "quote": "20 DTC Participants (clients) have signed agreements to access DTS including Alpaca, Apex Clearing",
+      "statement": "At launch on 2026-10-28, 20 named DTC Participants had signed access agreements for DTS. Future participants are to be onboarded on a rolling basis.",
+      "chain_ids": [
+        "DAS-04"
+      ],
+      "applicability_conditions": [
+        "Signed agreements indicate eligibility and intent; they do not confirm that all 20 participants were operationally active on launch day.",
+        "Monitor should track participant count changes as a rolling-onboarding signal."
+      ],
+      "change_reason": "Original source quote passes unchanged. Retained signed-agreement count with the existing limitation that agreements do not prove active use.",
+      "fact_id": "AWS-DAS-003",
+      "original_fact_index": 2,
+      "review_status": "LOCAL_SOURCE_REVIEWED_API_CANDIDATE_NOT_HUMAN_APPROVED",
+      "source_text_sha256": "b027f58eb58961f7917aee40b5f432416a9c1a0d7e5501098cd6136795435fc5",
+      "review_label": "LOCAL_SOURCE_REVIEW_ONLY_NOT_BUSINESS_SIGNOFF"
+    },
+    {
+      "source_id": "solana",
+      "quote": "DTC-tokenized assets expected to be available on Solana in the second half of 2027",
+      "statement": "DTCC announced on 2026-11-12 that DTC-tokenized assets are expected to be available on Solana in the second half of 2027. This announcement establishes a planned connection, not confirmed live operation.",
+      "chain_ids": [
+        "DAS-01"
+      ],
+      "applicability_conditions": [
+        "The announcement date is 2026-11-12 and the stated planned availability is H2 2027.",
+        "Do not use a Solana incident as evidence of an affected live DAS connection without a subsequent live-integration confirmation."
+      ],
+      "change_reason": "Retained the supported planned H2 2027 date; replaced categorical absence-of-live-service wording with the narrower evidence distinction.",
+      "fact_id": "AWS-DAS-004",
+      "original_fact_index": 3,
+      "review_status": "LOCAL_SOURCE_REVIEWED_API_CANDIDATE_NOT_HUMAN_APPROVED",
+      "source_text_sha256": "2523657a3a0beac1448da5a2b88d3d1d66b2a365b0228ecedcf3b012afc8f781",
+      "review_label": "LOCAL_SOURCE_REVIEW_ONLY_NOT_BUSINESS_SIGNOFF"
+    },
+    {
+      "source_id": "besu_qbft",
+      "quote": "QBFT RoundChange executes the piggybacked block before the free hash check, letting a non-validator replay one captured signature",
+      "statement": "Besu advisory GHSA-hhgq-3gvc-4jhp, published 2026-11-10 with Moderate severity, lists versions <= 26.10.1 as affected and 26.10.2 as patched. It describes QBFT availability pressure from replayed RoundChange messages and repeated block execution. It makes no consensus-split or safety claim and says IBFT does not share the second ordering defect.",
+      "chain_ids": [
+        "DAS-01"
+      ],
+      "applicability_conditions": [
+        "Confirm the DTCC private Besu version is affected.",
+        "Confirm that the deployed consensus algorithm is QBFT.",
+        "Confirm relevant devp2p access, ability to obtain the required signed message and peering exposure.",
+        "Trusted-node peering can reduce exposure; the advisory lists no workaround and identifies a patched release.",
+        "Private Besu integration does not reveal version, consensus algorithm or peering configuration.",
+        "This is a vendor advisory, not evidence of an incident or outage at DTCC."
+      ],
+      "change_reason": "Kept supported advisory metadata and conditional mapping; narrowed the IBFT distinction to the second ordering defect and distinguished exposure reduction from a workaround.",
+      "fact_id": "AWS-DAS-005",
+      "original_fact_index": 4,
+      "review_status": "LOCAL_SOURCE_REVIEWED_API_CANDIDATE_NOT_HUMAN_APPROVED",
+      "source_text_sha256": "727e21e86b452f3f60f1d556f26fdb7eac6143f36ef748944e5ca42cac9495fa",
+      "review_label": "LOCAL_SOURCE_REVIEW_ONLY_NOT_BUSINESS_SIGNOFF"
+    },
+    {
+      "source_id": "besu_ibft",
+      "quote": "A current validator can stop block production in the stated four-validator, London-only, zeroBaseFee IBFT configuration.",
+      "statement": "A moderate-severity advisory (GHSA-6pcq-hcgg-5q76) published 2026-11-10 describes an IBFT 2.0 availability vulnerability in Hyperledger Besu versions <= 26.10.1, fixed in 26.10.2. The advisory lists no known CVE. The vulnerability allows a Byzantine current validator to halt block production in a four-validator, London-only, zeroBaseFee IBFT configuration. The advisory explicitly limits its impact claim to that specific configuration and does not claim permanence, a same-height fork, fund impact, or QBFT impact.",
+      "chain_ids": [
+        "DAS-01"
+      ],
+      "applicability_conditions": [
+        "Confirm the DTCC private Besu version is affected (the advisory lists <= 26.10.1).",
+        "Confirm that the deployed consensus algorithm is IBFT 2.0.",
+        "Confirm the stated four-validator, London-only, zeroBaseFee configuration and the malicious-current-validator precondition.",
+        "Do not generalize the demonstrated effect to default fee-market configurations, QBFT, permanence, a fork or fund losses.",
+        "The public launch source does not disclose DTCC version, consensus algorithm, validator count or fee-market configuration.",
+        "This is a vendor advisory, not evidence of an incident or outage at DTCC."
+      ],
+      "change_reason": "Replaced the over-20-word quote with an exact 15-word impact sentence and restored the four-validator and malicious-validator preconditions. Replaced the categorical CVE-assignment claim with the source’s narrower no-known-CVE wording.",
+      "fact_id": "AWS-DAS-006",
+      "original_fact_index": 5,
+      "review_status": "LOCAL_SOURCE_REVIEWED_API_CANDIDATE_NOT_HUMAN_APPROVED",
+      "source_text_sha256": "6580930bfd2c6c5ecd09c8a20f4c5900d9469e457a664d572ef46c42bffb553f",
+      "review_label": "LOCAL_SOURCE_REVIEW_ONLY_NOT_BUSINESS_SIGNOFF"
+    },
+    {
+      "source_id": "sec_letter",
+      "quote": "This letter is withdrawn without further action three years from the date DTC launches operation of the Preliminary Base Version",
+      "statement": "The 2025-12-11 SEC staff letter states that the letter is withdrawn without further action three years after DTC launches operation of the Preliminary Base Version, with written notice at launch. The response concerns staff enforcement discretion and may be modified or revoked; it is not Commission approval.",
+      "chain_ids": [
+        "DAS-04"
+      ],
+      "applicability_conditions": [
+        "Confirm the actual Preliminary Base Version operational launch and written notice before calculating a calendar expiry.",
+        "Do not assume that the 2026-10-28 public DTS launch announcement identifies that regulatory clock start.",
+        "The AWS input used selected material from the first 11 pages of the full 39-page PDF; additional request details are outside that excerpt.",
+        "The staff position is conditional on the stated facts and circumstances and may be modified or revoked."
+      ],
+      "change_reason": "Retained the supported three-year trigger; removed the unsupported inferred 2029-10-28 expiry date and clarified revocation and notice conditions.",
+      "fact_id": "AWS-DAS-007",
+      "original_fact_index": 6,
+      "review_status": "LOCAL_SOURCE_REVIEWED_API_CANDIDATE_NOT_HUMAN_APPROVED",
+      "source_text_sha256": "74fb239721a989e50ffe65fe7874d7eb6af42b7b08241143b6d9031d7b37524a",
+      "review_label": "LOCAL_SOURCE_REVIEW_ONLY_NOT_BUSINESS_SIGNOFF"
+    },
+    {
+      "source_id": "sec_letter",
+      "quote": "no later than the third Friday following each quarter’s end date",
+      "statement": "The staff letter describes DTC management providing quarterly reporting to Division staff no later than the third Friday following each quarter-end. The package includes participation, tokenization, transfer, de-tokenization, wallet, blockchain, reversal and unavailability information.",
+      "chain_ids": [
+        "DAS-01",
+        "DAS-02",
+        "DAS-04"
+      ],
+      "applicability_conditions": [
+        "This reporting is to SEC Division staff, with subsequent delivery to the DTCC board.",
+        "The stated regulatory reporting obligation does not establish public availability of the quarterly package.",
+        "Any voluntarily published operating metrics require separate collection and source verification."
+      ],
+      "change_reason": "Replaced a long nonmatching quote with the exact 11-word deadline; preserved regulatory reporting versus public data availability distinction.",
+      "fact_id": "AWS-DAS-008",
+      "original_fact_index": 7,
+      "review_status": "LOCAL_SOURCE_REVIEWED_API_CANDIDATE_NOT_HUMAN_APPROVED",
+      "source_text_sha256": "74fb239721a989e50ffe65fe7874d7eb6af42b7b08241143b6d9031d7b37524a",
+      "review_label": "LOCAL_SOURCE_REVIEW_ONLY_NOT_BUSINESS_SIGNOFF"
+    },
+    {
+      "source_id": "sec_letter",
+      "quote": "LedgerScan’s record would constitute DTC’s official books and records.",
+      "statement": "The staff letter describes LedgerScan as an off-chain cloud system recording token movements and registered-wallet holdings in near real time; its record would constitute DTC’s official books and records. It describes Tier 2-or-better LedgerScan and Factory commitments, including primary/secondary operation, a maximum four-hour recovery time objective, at most two minutes of outage data loss, and annual out-of-region recovery testing.",
+      "chain_ids": [
+        "DAS-01",
+        "DAS-02"
+      ],
+      "applicability_conditions": [
+        "These are described design and control commitments, not observed achievement of recovery or data-loss targets.",
+        "Public statements of targets must not be converted into measured DAS internal vulnerability values.",
+        "Actual incident, recovery-test and performance records would be needed to evaluate operating effectiveness."
+      ],
+      "change_reason": "Corrected the quote to the exact source subject (LedgerScan’s record) and separated public commitments from measured performance.",
+      "fact_id": "AWS-DAS-009",
+      "original_fact_index": 8,
+      "review_status": "LOCAL_SOURCE_REVIEWED_API_CANDIDATE_NOT_HUMAN_APPROVED",
+      "source_text_sha256": "74fb239721a989e50ffe65fe7874d7eb6af42b7b08241143b6d9031d7b37524a",
+      "review_label": "LOCAL_SOURCE_REVIEW_ONLY_NOT_BUSINESS_SIGNOFF"
+    },
+    {
+      "source_id": "sec_letter",
+      "quote": "Eligible Securities: limited to (i) securities in the Russell 1000 Index",
+      "statement": "The described eligibility scope covers Russell 1000 securities at Preliminary Base Version launch plus later additions, notwithstanding subsequent index removals; U.S. Treasury bills, bonds and notes; and ETFs tracking major indices. DTC would assign tokenized entitlements no collateral or settlement value for its Net Debit Cap and Collateral Monitor calculations.",
+      "chain_ids": [
+        "DAS-04",
+        "DAS-05"
+      ],
+      "applicability_conditions": [
+        "Subsequent removal from the Russell 1000 is not an automatic exclusion under the quoted eligibility description.",
+        "Check later DTCC and SEC materials before asserting changed eligibility, expanded functionality or a required filing.",
+        "The zero collateral/settlement-value restriction concerns the stated DTC risk calculations; do not infer CCP collateral use or measured loss protection."
+      ],
+      "change_reason": "Replaced an ellipsis-containing long quote with an exact 11-word excerpt; corrected the API’s mistaken exclusion of subsequent Russell 1000 removals and removed a blanket future-filing claim.",
+      "fact_id": "AWS-DAS-010",
+      "original_fact_index": 9,
+      "review_status": "LOCAL_SOURCE_REVIEWED_API_CANDIDATE_NOT_HUMAN_APPROVED",
+      "source_text_sha256": "74fb239721a989e50ffe65fe7874d7eb6af42b7b08241143b6d9031d7b37524a",
+      "review_label": "LOCAL_SOURCE_REVIEW_ONLY_NOT_BUSINESS_SIGNOFF"
+    }
+  ]
+}

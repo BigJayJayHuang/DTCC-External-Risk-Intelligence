@@ -1,0 +1,19 @@
+{
+  "phase": "after_targeted_import_verified",
+  "protected_non_monitor_records": 63482,
+  "protected_non_monitor_sha256": "6837086b7240f8c40b515ed0cc34b16cc49c87d5b46bd9c39f422f151efe75a3",
+  "master_snapshot_sha256": "fb5735c86ebda4a3a098ad5c04597ab7882a48d11c7ad5230aa0785622f1d45e",
+  "after_non_monitor_records": 63482,
+  "after_non_monitor_sha256": "6837086b7240f8c40b515ed0cc34b16cc49c87d5b46bd9c39f422f151efe75a3",
+  "unchanged_non_monitor_records": true,
+  "master_snapshot_unchanged": true,
+  "monitor_dataset_counts": {
+    "das_monitor_deadlines": 2,
+    "das_monitor_facts": 15,
+    "das_monitor_findings": 3,
+    "das_monitor_metrics": 3,
+    "das_monitor_networks": 3,
+    "das_monitor_scope": 5,
+    "das_monitor_sources": 12
+  }
+}

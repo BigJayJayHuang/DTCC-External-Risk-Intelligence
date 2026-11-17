@@ -1,0 +1,6 @@
+﻿card_id,implementation_status,name_cn,name_en,available_output,minimum_missing_data,internal_V,risk_score,model_status
+DAS-01,ACTIVE_PUBLIC_MONITOR,软件安全／基础设施事件,Software and infrastructure,维护方安全公告；当前部署范围,"Actual version, consensus configuration, patch and failover evidence",,,NOT_EMPIRICALLY_VALIDATED
+DAS-02,DEFER_INTERNAL_MEASUREMENT,记录与对账,Records and reconciliation,保留定义，暂不评分,"Reconciliation breaks, backlog, resolution capacity and timestamps",,,NOT_EMPIRICALLY_VALIDATED
+DAS-03,DEFER_INTERNAL_MEASUREMENT,钱包与安全控制,Wallet and security controls,保留定义，暂不做未知钱包制裁筛查,"Registered-wallet inventory, key-control attestations and screening logs",,,NOT_EMPIRICALLY_VALIDATED
+DAS-04,ACTIVE_PUBLIC_MONITOR,监管、资格与网络变更,"Regulation, eligibility and scope",官方规则、网络变更及报告日历,"Formal launch notice, contingency capacity and affected positions",,,NOT_EMPIRICALLY_VALIDATED
+DAS-05,AUTHORIZED_DATA_ADAPTER_READY,转换及公司行动处理,Conversion and corporate actions,授权订单CSV／JSON接入已准备,Actual order and completion logs; capacity benchmarks and corporate-action outcomes,,,NOT_EMPIRICALLY_VALIDATED

@@ -1,0 +1,50 @@
+{
+  "imported_at_utc": "2026-11-17T16:59:50.936047+00:00",
+  "scope": "Only das_monitor_* datasets; no score or event-register writes",
+  "portable": {
+    "run_id": "2026-11-17T16:59:50+00:00_6c787f65",
+    "changes": {
+      "unchanged": 41,
+      "revised": 2
+    },
+    "rows_imported": {
+      "das_monitor_sources": 12,
+      "das_monitor_findings": 3,
+      "das_monitor_facts": 15,
+      "das_monitor_scope": 5,
+      "das_monitor_networks": 3,
+      "das_monitor_metrics": 3,
+      "das_monitor_deadlines": 2
+    },
+    "integrity_check": "ok",
+    "foreign_key_errors": 0,
+    "registered_sources": 12,
+    "paid_api_calls": 0,
+    "master_snapshot_rewritten": false,
+    "snapshot": {
+      "file": "das_monitor.sqlite3.gz",
+      "sha256": "a30316c0ab080ee6f15fb98381c99459a22fa225935e48885a349eb4f5eb86c3",
+      "bytes": 36710
+    }
+  },
+  "project_database": {
+    "run_id": "2026-11-17T16:59:51+00:00_98970eca",
+    "changes": {
+      "new": 43
+    },
+    "rows_imported": {
+      "das_monitor_sources": 12,
+      "das_monitor_findings": 3,
+      "das_monitor_facts": 15,
+      "das_monitor_scope": 5,
+      "das_monitor_networks": 3,
+      "das_monitor_metrics": 3,
+      "das_monitor_deadlines": 2
+    },
+    "integrity_check": "ok",
+    "foreign_key_errors": 0,
+    "registered_sources": 12,
+    "paid_api_calls": 0,
+    "master_snapshot_rewritten": false
+  }
+}

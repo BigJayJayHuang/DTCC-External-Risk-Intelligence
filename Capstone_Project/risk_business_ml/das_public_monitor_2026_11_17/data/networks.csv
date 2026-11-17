@@ -1,0 +1,4 @@
+﻿network_id,source_id,deployment_status,publication_date,as_of_date,monitor_scope,internal_service_health,limitation,planned_window,include_in_current_outage_assessment
+Canton,launch,DOCUMENTED_LIVE,2026-10-28,2026-11-17,public_dependency_context,,"Deployment statement does not identify DTS versions, balances or service uptime.",,
+Besu,launch,DOCUMENTED_LIVE,2026-10-28,2026-11-17,public_dependency_context,,"Deployment statement does not identify DTS versions, balances or service uptime.",,
+Solana,solana,PLANNED_NOT_LIVE_IN_THIS_EVIDENCE,2026-11-12,2026-11-17,,,,H2 2027,False

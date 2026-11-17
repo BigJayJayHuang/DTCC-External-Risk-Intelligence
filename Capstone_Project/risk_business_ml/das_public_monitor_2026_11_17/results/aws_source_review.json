@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "reviewed_at_utc": "2026-11-17T16:54:18.520391+00:00",
+  "status": "STRUCTURE_AND_SOURCE_QUOTE_CHECKS_PASSED_REVIEW_REQUIRED",
+  "review_type": "LOCAL_REVIEW_OF_AWS_CANDIDATES",
+  "human_review_required": true,
+  "business_chain_approval": false,
+  "original_fact_count": 10,
+  "retained_fact_count": 10,
+  "fully_dropped_fact_count": 0,
+  "new_api_calls": 0,
+  "original_validation_error_count": 7,
+  "final_validation_errors": [],
+  "quote_max_words": 20,
+  "word_count_method": "Whitespace words after Unicode NFKC and whitespace normalization",
+  "limits": [
+    "Source and structural review does not prove DTCC deployment applicability.",
+    "A software advisory does not prove an incident at DTCC.",
+    "Public targets, announcements and regulatory commitments are not measured internal V.",
+    "No calendar expiry is asserted until the applicable Preliminary Base Version launch is independently confirmed."
+  ],
+  "removed_or_corrected_claims": [
+    {
+      "original_fact_index": 0,
+      "claim": "Approximate May 2026 pilot date",
+      "disposition": "Removed as unnecessary and not established by the retained launch evidence."
+    },
+    {
+      "original_fact_index": 3,
+      "claim": "Categorical not-live statement",
+      "disposition": "Narrowed to what the announcement does not establish."
+    },
+    {
+      "original_fact_index": 4,
+      "claim": "IBFT does not share the entire specific defect",
+      "disposition": "Corrected to the source’s second-ordering-defect limitation."
+    },
+    {
+      "original_fact_index": 6,
+      "claim": "Approximately 2029-10-28 expiry",
+      "disposition": "Dropped because the regulatory launch-clock correspondence is unconfirmed."
+    },
+    {
+      "original_fact_index": 8,
+      "claim": "Public design commitments establish achieved recovery performance",
+      "disposition": "Explicitly disallowed; operating measurements remain needed."
+    },
+    {
+      "original_fact_index": 9,
+      "claim": "Subsequent Russell 1000 removals excluded",
+      "disposition": "Corrected: source says notwithstanding subsequent removal."
+    },
+    {
+      "original_fact_index": 9,
+      "claim": "Any expansion requires a new filing",
+      "disposition": "Dropped as an overbroad regulatory conclusion."
+    }
+  ],
+  "fact_reviews": [
+    {
+      "fact_id": "AWS-DAS-001",
+      "original_fact_index": 0,
+      "source_id": "launch",
+      "change_reason": "Retained the source-supported launch fact; removed an unnecessary approximate May 2026 pilot date and separated public launch from the regulatory expiry trigger.",
+      "quote_words": 16,
+      "source_text_sha256": "b027f58eb58961f7917aee40b5f432416a9c1a0d7e5501098cd6136795435fc5"
+    },
+    {
+      "fact_id": "AWS-DAS-002",
+      "original_fact_index": 1,
+      "source_id": "launch",
+      "change_reason": "Replaced a nonmatching straight apostrophe with the exact source wording and shortened the quote; retained current versus planned integration distinction.",
+      "quote_words": 11,
+      "source_text_sha256": "b027f58eb58961f7917aee40b5f432416a9c1a0d7e5501098cd6136795435fc5"
+    },
+    {
+      "fact_id": "AWS-DAS-003",
+      "original_fact_index": 2,
+      "source_id": "launch",
+      "change_reason": "Original source quote passes unchanged. Retained signed-agreement count with the existing limitation that agreements do not prove active use.",
+      "quote_words": 14,
+      "source_text_sha256": "b027f58eb58961f7917aee40b5f432416a9c1a0d7e5501098cd6136795435fc5"
+    },
+    {
+      "fact_id": "AWS-DAS-004",
+      "original_fact_index": 3,
+      "source_id": "solana",
+      "change_reason": "Retained the supported planned H2 2027 date; replaced categorical absence-of-live-service wording with the narrower evidence distinction.",
+      "quote_words": 14,
+      "source_text_sha256": "2523657a3a0beac1448da5a2b88d3d1d66b2a365b0228ecedcf3b012afc8f781"
+    },
+    {
+      "fact_id": "AWS-DAS-005",
+      "original_fact_index": 4,
+      "source_id": "besu_qbft",
+      "change_reason": "Kept supported advisory metadata and conditional mapping; narrowed the IBFT distinction to the second ordering defect and distinguished exposure reduction from a workaround.",
+      "quote_words": 18,
+      "source_text_sha256": "727e21e86b452f3f60f1d556f26fdb7eac6143f36ef748944e5ca42cac9495fa"
+    },
+    {
+      "fact_id": "AWS-DAS-006",
+      "original_fact_index": 5,
+      "source_id": "besu_ibft",
+      "change_reason": "Replaced the over-20-word quote with an exact 15-word impact sentence and restored the four-validator and malicious-validator preconditions. Replaced the categorical CVE-assignment claim with the source’s narrower no-known-CVE wording.",
+      "quote_words": 15,
+      "source_text_sha256": "6580930bfd2c6c5ecd09c8a20f4c5900d9469e457a664d572ef46c42bffb553f"
+    },
+    {
+      "fact_id": "AWS-DAS-007",
+      "original_fact_index": 6,
+      "source_id": "sec_letter",
+      "change_reason": "Retained the supported three-year trigger; removed the unsupported inferred 2029-10-28 expiry date and clarified revocation and notice conditions.",
+      "quote_words": 20,
+      "source_text_sha256": "74fb239721a989e50ffe65fe7874d7eb6af42b7b08241143b6d9031d7b37524a"
+    },
+    {
+      "fact_id": "AWS-DAS-008",
+      "original_fact_index": 7,
+      "source_id": "sec_letter",
+      "change_reason": "Replaced a long nonmatching quote with the exact 11-word deadline; preserved regulatory reporting versus public data availability distinction.",
+      "quote_words": 11,
+      "source_text_sha256": "74fb239721a989e50ffe65fe7874d7eb6af42b7b08241143b6d9031d7b37524a"
+    },
+    {
+      "fact_id": "AWS-DAS-009",
+      "original_fact_index": 8,
+      "source_id": "sec_letter",
+      "change_reason": "Corrected the quote to the exact source subject (LedgerScan’s record) and separated public commitments from measured performance.",
+      "quote_words": 9,
+      "source_text_sha256": "74fb239721a989e50ffe65fe7874d7eb6af42b7b08241143b6d9031d7b37524a"
+    },
+    {
+      "fact_id": "AWS-DAS-010",
+      "original_fact_index": 9,
+      "source_id": "sec_letter",
+      "change_reason": "Replaced an ellipsis-containing long quote with an exact 11-word excerpt; corrected the API’s mistaken exclusion of subsequent Russell 1000 removals and removed a blanket future-filing claim.",
+      "quote_words": 11,
+      "source_text_sha256": "74fb239721a989e50ffe65fe7874d7eb6af42b7b08241143b6d9031d7b37524a"
+    }
+  ],
+  "unchanged_aws_evidence_sha256": {
+    "aws_reading/attempt.json": "a7b7a8abf47305cec6a085515e58e6b0284fb0a8f58bc51dd02e774f468cb6e1",
+    "aws_reading/request.json": "70d90f6152a55670d7b5abfc056db0815bb9dd5b13c0f639a93147920cbd9ae9",
+    "aws_reading/response.json": "371e03c59f6676362056942e016a11c17106cbab1997d5fd47167e6ba1cb6c77",
+    "aws_reading/understanding.json": "f88f4c75681774693ed99a08ff9ea1b774c16b78ffb3efcac9986d3ca0e41df8",
+    "aws_reading/validation.json": "0fb382437bc0a7cc53dc9fbfdbac07c9409fdc93b1070ce32a56e354c0edffb2"
+  },
+  "review_label": "LOCAL_SOURCE_REVIEW_ONLY_NOT_BUSINESS_SIGNOFF"
+}

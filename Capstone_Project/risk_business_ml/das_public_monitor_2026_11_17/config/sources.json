@@ -1,0 +1,14 @@
+[
+  {"source_id":"launch","url":"https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-goes-live","publication_date":"2026-10-28","kind":"official_service_scope"},
+  {"source_id":"solana","url":"https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-to-connect-with-solana","publication_date":"2026-11-12","kind":"official_future_change"},
+  {"source_id":"hub","url":"https://www.dtcc.com/products-and-services/digital-assets/tokenization/hub","publication_date":null,"kind":"official_discovery_index"},
+  {"source_id":"sec_letter","url":"https://www.sec.gov/files/tm/no-action/dtc-nal-121125.pdf","publication_date":"2025-12-11","kind":"official_regulatory_document"},
+  {"source_id":"notice_das001","url":"https://files.dtcc.com/download/assets/DAS-001/8a31d732d2d311f1a30ef632b7f70f6d","publication_date":"2026-10-28","kind":"official_service_notice"},
+  {"source_id":"besu_advisories","url":"https://api.github.com/repos/besu-eth/besu/security-advisories?per_page=100","publication_date":null,"kind":"maintainer_advisory_api"},
+  {"source_id":"besu_qbft","url":"https://github.com/besu-eth/besu/security/advisories/GHSA-hhgq-3gvc-4jhp","publication_date":"2026-11-10","kind":"maintainer_security_advisory"},
+  {"source_id":"besu_ibft","url":"https://github.com/besu-eth/besu/security/advisories/GHSA-6pcq-hcgg-5q76","publication_date":"2026-11-10","kind":"maintainer_security_advisory"},
+  {"source_id":"canton_status","url":"https://canton.foundation/sv-network-status-2/","publication_date":null,"kind":"network_context_not_dts_health"},
+  {"source_id":"canton_dso","url":"https://docs.global.canton.network.sync.global/dso","publication_date":null,"kind":"network_context_not_dts_health"},
+  {"source_id":"api_reference","url":"https://dtcc-da.com/api/tokenization-service/api-reference-guide/content","publication_date":null,"kind":"public_documentation_not_business_data"},
+  {"source_id":"official_onboarding","url":"https://dtcclearning.com/helpfiles/dda/tokenization_service/Content/Topics/tokenization_srvc/getting_started.htm","publication_date":null,"kind":"official_domain_provenance"}
+]
