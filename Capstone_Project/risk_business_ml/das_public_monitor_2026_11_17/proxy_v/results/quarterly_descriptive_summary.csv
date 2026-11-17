@@ -1,0 +1,2 @@
+﻿quarter,sample_count,first_sample_at_et,last_sample_at_et,mean_sampled_baseline_wait_hours,maximum_sampled_baseline_wait_hours,baseline_closed_sample_share,coverage,internal_V,accepted_proxy_V,risk_score,historical_point_in_time_verified
+2026Q4,470,2026-10-29T00:00:00-04:00,2026-11-17T12:00:00-05:00,11.080851063829787,57.0,0.5340425531914894,PARTIAL_QUARTER_POST_NOTICE_BASELINE_ONLY,,,,False

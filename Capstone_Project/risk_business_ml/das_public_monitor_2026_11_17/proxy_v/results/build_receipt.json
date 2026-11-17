@@ -1,0 +1,39 @@
+{
+  "as_of_timestamp_utc": "2026-11-17T17:24:21+00:00",
+  "as_of_timestamp_et": "2026-11-17T12:24:21-05:00",
+  "policy_id": "DAS05-CONVERSION-ACCESS-PROXY-v0.1",
+  "status": "RESEARCH_PUBLIC_PROXY_NOT_ACCEPTED_INTERNAL_V",
+  "start_local_date": "2026-10-29",
+  "hourly_rows": 470,
+  "daily_rows": 20,
+  "hypothetical_scenarios": 3,
+  "quarter_summaries": [
+    {
+      "quarter": "2026Q4",
+      "sample_count": 470,
+      "first_sample_at_et": "2026-10-29T00:00:00-04:00",
+      "last_sample_at_et": "2026-11-17T12:00:00-05:00",
+      "mean_sampled_baseline_wait_hours": 11.080851063829787,
+      "maximum_sampled_baseline_wait_hours": 57.0,
+      "baseline_closed_sample_share": 0.5340425531914894,
+      "coverage": "PARTIAL_QUARTER_POST_NOTICE_BASELINE_ONLY",
+      "internal_V": null,
+      "accepted_proxy_V": null,
+      "risk_score": null,
+      "historical_point_in_time_verified": false
+    }
+  ],
+  "current_baseline_wait_hours": 0.0,
+  "current_candidate_proxy_v_score_1_5": 1,
+  "maximum_sampled_baseline_wait_hours": 57.0,
+  "calendar_status": "UNCONFIRMED_HOLIDAYS_AND_SPECIAL_HOURS",
+  "calendar_confirmed_wait_hours": null,
+  "internal_V": null,
+  "accepted_proxy_V": null,
+  "risk_score": null,
+  "empirical_validation": false,
+  "paid_api_calls": 0,
+  "official_event_register_modified": false,
+  "production_scoring_modified": false,
+  "historical_point_in_time_verified": false
+}

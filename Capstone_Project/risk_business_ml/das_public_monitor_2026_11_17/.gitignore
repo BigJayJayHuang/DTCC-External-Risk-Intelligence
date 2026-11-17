@@ -8,3 +8,9 @@ inputs/*.txt
 data/*.sqlite3
 data/*.sqlite3-wal
 data/*.sqlite3-shm
+proxy_v/data/*.sqlite3
+proxy_v/data/*.sqlite3-wal
+proxy_v/data/*.sqlite3-shm
+proxy_v/data/*.sqlite3.lock
+# The reproducible import payload duplicates CSVs and the public database.
+proxy_v/results/database_payload.json

@@ -1,0 +1,55 @@
+{
+  "policy_id": "DAS05-CONVERSION-ACCESS-PROXY-v0.1",
+  "scope": "Research proxy metrics only; scenarios excluded",
+  "portable": {
+    "run_id": "2026-11-17T17:31:32+00:00_3f3883aa",
+    "changes": {
+      "unchanged": 493
+    },
+    "rows_imported": {
+      "das_monitor_sources": 2,
+      "das_monitor_metrics": 491
+    },
+    "integrity_check": "ok",
+    "foreign_key_errors": 0,
+    "registered_sources": 2,
+    "paid_api_calls": 0,
+    "master_snapshot_rewritten": false,
+    "snapshot": {
+      "file": "das05_proxy.sqlite3.gz",
+      "sha256": "b208ab47df178af6b9c8fb5d8e01ca41d1175e4a0ae91847bb4f443bcf01d6a5",
+      "bytes": 119826
+    }
+  },
+  "production_scoring_modified": false,
+  "official_event_register_modified": false,
+  "paid_api_calls": 0,
+  "project_database": {
+    "run_id": "2026-11-17T17:31:32+00:00_33e0704d",
+    "changes": {
+      "unchanged": 2,
+      "new": 491
+    },
+    "rows_imported": {
+      "das_monitor_sources": 2,
+      "das_monitor_metrics": 491
+    },
+    "integrity_check": "ok",
+    "foreign_key_errors": 0,
+    "registered_sources": 2,
+    "paid_api_calls": 0,
+    "master_snapshot_rewritten": false
+  },
+  "unrelated_record_preservation": {
+    "before": {
+      "records": 63525,
+      "sha256": "e52f51d845c049f3db3eddcc4b7b34f2485bba54907fef296ca0f4a1f78a0c2c"
+    },
+    "after": {
+      "records": 63525,
+      "sha256": "e52f51d845c049f3db3eddcc4b7b34f2485bba54907fef296ca0f4a1f78a0c2c"
+    },
+    "unchanged": true
+  },
+  "master_snapshot_unchanged": true
+}

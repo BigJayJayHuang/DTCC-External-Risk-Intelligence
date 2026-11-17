@@ -4,6 +4,10 @@ The runnable scope is intentionally small: DAS-01 software/infrastructure eviden
 
 本目录把五条研究链落成两个公开监测模块和一个授权订单接入接口。先阅读 [中文运行结果](RESULTS_CN.md) 或 [English results](RESULTS_EN.md)。[结果表](data/findings.csv)、[链的取舍](data/scope.csv)、[报告日历](data/deadlines.csv)及[完整机器输出](results/monitor.json)可直接供团队复核。
 
+## DAS-05 public proxy experiment / DAS-05公开代理试验
+
+The separate [conversion-window proxy module](proxy_v/README.md) computes hours until the next nominal order-submission window and proposed1–5 research bins. It preserves calendar uncertainty and keeps hypothetical S×V examples separate. It does not replace quarterly internalV, populate accepted proxyV, or change the monitor's official score fields. See [中文结果](proxy_v/RESULTS_CN.md) / [English results](proxy_v/RESULTS_EN.md).
+
 ## Reproduce the saved result / 重现本次结果
 
 Run from this directory with the local evidence cache present. Rebuilding and importing do not call AWS:

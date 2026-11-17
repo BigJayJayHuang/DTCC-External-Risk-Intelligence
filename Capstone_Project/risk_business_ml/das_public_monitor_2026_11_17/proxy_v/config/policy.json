@@ -1,0 +1,27 @@
+{
+  "policy_id": "DAS05-CONVERSION-ACCESS-PROXY-v0.1",
+  "card_id": "DAS-05",
+  "timezone": "America/New_York",
+  "first_supported_local_date": "2026-10-29",
+  "first_supported_date_reason": "First full day after the public launch notice; not a claim about the exact regulatory commencement date.",
+  "opening_local_time": "02:00",
+  "closing_local_time": "18:00",
+  "opening_inclusive": true,
+  "closing_inclusive": false,
+  "closing_boundary_assumption": "The published notice does not specify endpoint inclusivity; research implementation conservatively excludes exactly 18:00.",
+  "source_id": "notice_das001",
+  "hours_quote": "Monday through Friday between 2:00 a.m. and 6:00 p.m.",
+  "holiday_source_id": "api_reference",
+  "holiday_quote": "Request submitted outside operational hours or on a holiday.",
+  "score_status": "PROPOSED_FIXED_BINS_NOT_EMPIRICALLY_CALIBRATED",
+  "score_bins": [
+    {"score": 1, "wait_hours": "0"},
+    {"score": 2, "wait_hours": "(0, 8]"},
+    {"score": 3, "wait_hours": "(8, 24]"},
+    {"score": 4, "wait_hours": "(24, 48]"},
+    {"score": 5, "wait_hours": "(48, infinity)"}
+  ],
+  "score_rationale": "Zero submission wait, one ordinary overnight closure, one day, two days, and longer. Fixed research bins; no fitted or validated economic thresholds.",
+  "quarterly_internal_v_replacement": false,
+  "official_scoring_enabled": false
+}

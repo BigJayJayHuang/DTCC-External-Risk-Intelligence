@@ -1,0 +1,22 @@
+{
+  "evidence": [
+    {
+      "source_id": "notice_das001",
+      "url": "https://files.dtcc.com/download/assets/DAS-001/8a31d732d2d311f1a30ef632b7f70f6d",
+      "quote": "Monday through Friday between 2:00 a.m. and 6:00 p.m.",
+      "text_sha256": "6d31a41d31ed25ee402a0ce8e60599e44ff953e95dcfb617650039676f1a44f8",
+      "collected_at_utc": "2026-11-17T16:47:37.609321+00:00",
+      "publication_date": "2026-10-28"
+    },
+    {
+      "source_id": "api_reference",
+      "url": "https://dtcc-da.com/api/tokenization-service/api-reference-guide/content",
+      "quote": "Request submitted outside operational hours or on a holiday.",
+      "text_sha256": "850bd104e8a6ca69d4fa36f385e3b36d6f5a1cdba4eed013b7f7a298cc54e7c0",
+      "collected_at_utc": "2026-11-17T16:47:39.486296+00:00",
+      "publication_date": null
+    }
+  ],
+  "policy_sha256": "328b242a216126ede2a77ebbf237dfcc7bfa6a32edad7f12d6129be736447701",
+  "calendar_sha256": "3c70344bbc11d9116b129d77fc841af8549911debbaf366350daefe63c6138d4"
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "scope": "DTS_CONVERSION_ORDER_SUBMISSION",
+  "review_status": "UNCONFIRMED",
+  "coverage_start": null,
+  "coverage_end": null,
+  "coverage_source_url": null,
+  "coverage_published_at": null,
+  "days": {},
+  "limitation": "The API documents holiday rejection but a dated DTS conversion calendar was not obtained. No NYSE, Federal Reserve, or DTC settlement calendar is substituted."
+}
