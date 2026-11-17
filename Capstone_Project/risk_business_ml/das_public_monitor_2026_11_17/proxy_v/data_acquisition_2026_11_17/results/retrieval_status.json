@@ -1,0 +1,20 @@
+{
+  "checked_date": "2026-11-17",
+  "scope": "Bounded official-source search plus local files and read-only project database inventory",
+  "authorized_local_order_rows": 0,
+  "actual_DAS_delay_measurements_obtained": 0,
+  "actual_DAS_tested_capacity_measurements_obtained": 0,
+  "accepted_DAS_stress_event_labels": 0,
+  "canonical_register_total_rows": 9,
+  "rule_derived_proxy_metric_rows": 491,
+  "hypothetical_S3_examples_excluded": 3,
+  "public_context_disclosures_added": 1,
+  "empirical_calibration_possible_with_current_inputs": false,
+  "internal_V_fill_supported": false,
+  "formal_risk_score_fill_supported": false,
+  "reason": "No paired actual request/order outcomes, tested buffers, or accepted DAS shock labels; a single disclosed collateral amount supplies no conversion timing or service-wide denominator.",
+  "team_access_status": "User is unsure whether the DTCC contact can provide an anonymized export.",
+  "third_parties_contacted": false,
+  "restricted_participant_APIs_called": false,
+  "next_required_step": "Use the minimum data request with the DTCC project contact; inspect any authorized export before promising calibration."
+}

@@ -2,6 +2,8 @@
 
 Start with [中文结果](RESULTS_CN.md) or [English results](RESULTS_EN.md).
 
+Follow-up: [missing-data retrieval and minimum request](data_acquisition_2026_11_17/README.md). A real public collateral-use disclosure was added; actual order outcomes and internal buffers are still unavailable, so the proxy is not empirically calibrated.
+
 This module implements the user-selected **hours until the next nominal conversion-order submission window**. Source-backed weekly hours are distinct from actual service availability and conversion capacity. The API explicitly mentions holiday rejection, but an applicable dated calendar has not been obtained. Current outputs are conditional weekly baselines, not verified actual waiting times.
 
 ## Reproduce / 重现

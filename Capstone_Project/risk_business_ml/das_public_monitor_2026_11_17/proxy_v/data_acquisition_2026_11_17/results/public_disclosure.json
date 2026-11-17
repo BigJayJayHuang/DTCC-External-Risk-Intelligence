@@ -1,0 +1,49 @@
+{
+  "sources": [
+    {
+      "source_id": "sg_tokenized_treasury_collateral",
+      "url": "https://wholesale.banking.societegenerale.com/fileadmin/user_upload/groupe_AMER/pdf/Societe_Generale_Completes_Tokenized_US_Treasury_Collateral_Transaction_on_Canton.pdf",
+      "final_url": "https://wholesale.banking.societegenerale.com/fileadmin/user_upload/groupe_AMER/pdf/Societe_Generale_Completes_Tokenized_US_Treasury_Collateral_Transaction_on_Canton.pdf",
+      "status": "retrieved",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "classification": "PUBLIC_OFFICIAL_COUNTERPARTY_TRANSACTION_DISCLOSURE",
+      "collected_at_utc": "2026-11-17T19:47:32.068652+00:00",
+      "publication_date": "2026-11-02",
+      "raw_file": "evidence/sg_transaction.pdf",
+      "text_file": "inputs/sg_transaction.txt",
+      "raw_sha256": "19b8e703a0fb209c6614a69191c47c7fe2594738bb23b49dcc9d720549aa5073",
+      "text_sha256": "df1ec96379e144d80e178c73a0b384ced90ec1d526d20c02314414150d0dd901",
+      "text_characters": 8828,
+      "publication_date_basis": "Date printed in official participant press release; actual transaction date remains unknown"
+    }
+  ],
+  "facts": [
+    {
+      "fact_id": "DAS-PUBLIC-SG-COLLATERAL-20261102",
+      "source_id": "sg_tokenized_treasury_collateral",
+      "business_line": "DAS",
+      "publication_date": "2026-11-02",
+      "event_date": null,
+      "event_time": null,
+      "source_url": "https://wholesale.banking.societegenerale.com/fileadmin/user_upload/groupe_AMER/pdf/Societe_Generale_Completes_Tokenized_US_Treasury_Collateral_Transaction_on_Canton.pdf",
+      "source_text_sha256": "df1ec96379e144d80e178c73a0b384ced90ec1d526d20c02314414150d0dd901",
+      "evidence_quote": "acceptance of USD 10 million in tokenized US Treasuries as eligible collateral",
+      "statement": "Societe Generale disclosed one controlled transaction accepting USD10 million in tokenized US Treasuries as collateral on Canton, using assets tokenized through DTS. The announcement is dated November2,2026; the actual transaction time and operating performance are not disclosed.",
+      "record_type": "PUBLIC_PARTICIPANT_TRANSACTION_DISCLOSURE",
+      "disclosed_collateral_amount": 10000000,
+      "currency": "USD",
+      "measurement_scope": "One disclosed controlled collateral transaction, not total DTS volume",
+      "conversion_latency_hours": null,
+      "conversion_backlog": null,
+      "tested_conversion_capacity": null,
+      "internal_V": null,
+      "accepted_proxy_V": null,
+      "risk_score": null,
+      "event_shock_score": null,
+      "usable_for_empirical_delay_calibration": false,
+      "service_wide_metric": false,
+      "review_status": "LOCAL_SOURCE_CHECKED_PUBLIC_DISCLOSURE_NOT_ACCEPTED_STRESS_EVENT"
+    }
+  ]
+}

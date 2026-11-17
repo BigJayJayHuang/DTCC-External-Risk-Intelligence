@@ -1,0 +1,18 @@
+[
+  {
+    "source_id": "sg_tokenized_treasury_collateral",
+    "url": "https://wholesale.banking.societegenerale.com/fileadmin/user_upload/groupe_AMER/pdf/Societe_Generale_Completes_Tokenized_US_Treasury_Collateral_Transaction_on_Canton.pdf",
+    "final_url": "https://wholesale.banking.societegenerale.com/fileadmin/user_upload/groupe_AMER/pdf/Societe_Generale_Completes_Tokenized_US_Treasury_Collateral_Transaction_on_Canton.pdf",
+    "status": "retrieved",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "classification": "PUBLIC_OFFICIAL_COUNTERPARTY_TRANSACTION_DISCLOSURE",
+    "collected_at_utc": "2026-11-17T19:47:32.068652+00:00",
+    "publication_date": null,
+    "raw_file": "evidence/sg_transaction.pdf",
+    "text_file": "inputs/sg_transaction.txt",
+    "raw_sha256": "19b8e703a0fb209c6614a69191c47c7fe2594738bb23b49dcc9d720549aa5073",
+    "text_sha256": "df1ec96379e144d80e178c73a0b384ced90ec1d526d20c02314414150d0dd901",
+    "text_characters": 8828
+  }
+]

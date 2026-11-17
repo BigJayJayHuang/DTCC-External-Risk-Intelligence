@@ -1,0 +1,17 @@
+{
+  "existing_project_record_contents_preserved": 64016,
+  "new_public_source_and_disclosure_records": 2,
+  "master_snapshot_unchanged": true,
+  "portable_integrity_check": "ok",
+  "portable_foreign_key_errors": 0,
+  "publisher_bodies_in_shared_snapshot": 0,
+  "actual_calibration_outcomes_added": 0,
+  "internal_V_or_formal_risk_scores_filled": false,
+  "source_quote_and_hash_checked": true,
+  "source_quote_total_words": 12,
+  "third_parties_contacted": false,
+  "restricted_data_apis_called": false,
+  "paid_aws_reads": 1,
+  "estimated_aws_cost_usd": "0.0248094",
+  "snapshot_sha256": "e752e493aa09ffdcba493bd46a3ca5c5068b221f08a4ce6e53d63e95a4a30269"
+}

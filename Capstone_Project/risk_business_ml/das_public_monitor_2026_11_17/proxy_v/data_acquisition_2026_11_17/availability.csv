@@ -1,0 +1,12 @@
+﻿requirement_id,card_id,priority,required_information,retrieval_status,evidence_or_limitation,suggested_data_owner,details
+DAS05-CALENDAR,DAS-05,P0,Official dated DTS conversion submission calendar,NOT_OBTAINED,"Official published weekly hours; holiday rejection documented, dated exceptions missing",DTS service owner,DATA_REQUEST_CN.md
+DAS05-REQUESTS,DAS-05,P0,"Anonymous request attempts, rejected attempts, and retry linkage",NOT_OBTAINED,Authenticated participant/integration logs; no public export,Participant integration owner / DTS operations,DATA_REQUEST_CN.md
+DAS05-ORDERS,DAS-05,P0,Actual order lifecycle with explicit completion timestamps,NOT_OBTAINED,CSV export documented; local authorized template contains0rows,DTS participant / operations,DATA_REQUEST_CN.md
+DAS05-LOAD,DAS-05,P0,Concurrent queue/load and interruption history,NOT_OBTAINED,No applicable public numerical history obtained in bounded search,DTS service owner,DATA_REQUEST_CN.md
+DAS05-CAPACITY,DAS-05,P0,Tested orders/hour and comparable peak incoming demand,NOT_OBTAINED,Public service goals are not measured throughput or capacity,DTS capacity/operations owner,DATA_REQUEST_CN.md
+DAS-EVENT-LABELS,DAS,P1,Business-reviewed actual stress events and measured outcomes,NOT_OBTAINED,Canonical register has9events and0DASrows,DTCC project / business risk owner,DATA_REQUEST_CN.md
+DAS01-DR,DAS-01,P1,Actual failover throughput and recovery-test results,NOT_OBTAINED,Published recovery commitments are not test results,DTS resilience owner,DATA_REQUEST_CN.md
+DAS02-RECON,DAS-02,P1,Reconciliation backlog and resolution capacity,NOT_OBTAINED,Account balances alone do not establish breaks/capacity,DTS reconciliation owner,DATA_REQUEST_CN.md
+DAS03-CONTROL,DAS-03,P1,Verified protected assets / total assets,NOT_OBTAINED,Wallet registration does not establish protection coverage,DTS wallet/control owner,DATA_REQUEST_CN.md
+DAS04-CONTINGENCY,DAS-04,P1,Contingency de-tokenization capacity and affected positions,NOT_OBTAINED,No applicable public quantitative buffer history obtained,DTS business / regulatory owner,DATA_REQUEST_CN.md
+SG-PUBLIC-USECASE,DAS,CONTEXT,USD10million participant collateral transaction disclosure,OBTAINED_PUBLIC_CONTEXT_ONLY,Actual event time and conversion performance are undisclosed,Public SG announcement,results/public_disclosure.json

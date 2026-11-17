@@ -1,0 +1,39 @@
+{
+  "imported_at_utc": "2026-11-17T19:52:21.688230+00:00",
+  "scope": "Only das_monitor_* datasets; no score or event-register writes",
+  "portable": {
+    "run_id": "2026-11-17T19:52:21+00:00_9ca9a599",
+    "changes": {
+      "new": 2
+    },
+    "rows_imported": {
+      "das_monitor_sources": 1,
+      "das_monitor_facts": 1
+    },
+    "integrity_check": "ok",
+    "foreign_key_errors": 0,
+    "registered_sources": 1,
+    "paid_api_calls": 0,
+    "master_snapshot_rewritten": false,
+    "snapshot": {
+      "file": "das_monitor.sqlite3.gz",
+      "sha256": "e752e493aa09ffdcba493bd46a3ca5c5068b221f08a4ce6e53d63e95a4a30269",
+      "bytes": 6082
+    }
+  },
+  "project_database": {
+    "run_id": "2026-11-17T19:52:22+00:00_960c4d04",
+    "changes": {
+      "new": 2
+    },
+    "rows_imported": {
+      "das_monitor_sources": 1,
+      "das_monitor_facts": 1
+    },
+    "integrity_check": "ok",
+    "foreign_key_errors": 0,
+    "registered_sources": 1,
+    "paid_api_calls": 0,
+    "master_snapshot_rewritten": false
+  }
+}

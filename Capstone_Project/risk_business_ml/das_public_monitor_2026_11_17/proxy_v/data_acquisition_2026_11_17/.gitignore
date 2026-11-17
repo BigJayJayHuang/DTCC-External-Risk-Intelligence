@@ -1,0 +1,13 @@
+evidence/
+inputs/*.txt
+aws_reading/
+config/
+__pycache__/
+# Preserve the detailed API review locally; share the compact source-bound fact.
+read_sg_transaction.py
+results/reviewed_facts.json
+results/source_review.json
+data/*.sqlite3
+data/*.sqlite3-wal
+data/*.sqlite3-shm
+data/*.sqlite3.lock

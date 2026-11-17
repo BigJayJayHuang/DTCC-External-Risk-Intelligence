@@ -1,0 +1,66 @@
+{
+  "status": "SOURCE_QUOTES_AND_HASHES_PASSED_REVIEW_REQUIRED",
+  "reviewed_at_utc": "2026-11-17T19:49:13.858252+00:00",
+  "human_review_required": true,
+  "model_id": "us.anthropic.claude-sonnet-4-6",
+  "region": "us-east-2",
+  "manual_api_calls": 1,
+  "automatic_retries": 0,
+  "estimated_cost_usd": "0.0248094",
+  "budget_usd": "0.20",
+  "conservative_reserve_usd": "0.0709104",
+  "usage": {
+    "inputTokens": 2988,
+    "outputTokens": 906,
+    "totalTokens": 3894,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "request_sha256": "9b761716ba23011cb431f0f3f9958eca991a6698d680281f31ab89dbfa564e27",
+  "pricing_note": "Estimate from existing approved config; not live pricing or an AWS invoice",
+  "source_id": "sg_tokenized_treasury_collateral",
+  "source_url": "https://wholesale.banking.societegenerale.com/fileadmin/user_upload/groupe_AMER/pdf/Societe_Generale_Completes_Tokenized_US_Treasury_Collateral_Transaction_on_Canton.pdf",
+  "source_raw_sha256": "19b8e703a0fb209c6614a69191c47c7fe2594738bb23b49dcc9d720549aa5073",
+  "source_text_sha256": "df1ec96379e144d80e178c73a0b384ced90ec1d526d20c02314414150d0dd901",
+  "original_validation_errors": [
+    "facts[1]: quote is not an exact normalized source excerpt",
+    "facts[2]: quote is not an exact normalized source excerpt"
+  ],
+  "review_validation_errors": [],
+  "quote_max_words": 12,
+  "local_changes": [
+    {
+      "original_fact_index": 0,
+      "reason": "Retained amount and announcement-date distinction after source comparison; actual event date remains unknown."
+    },
+    {
+      "original_fact_index": 1,
+      "reason": "Corrected the source quote and removed the unsupported inference that DTS was still non-full-production on the announcement date."
+    },
+    {
+      "original_fact_index": 2,
+      "reason": "Replaced a nonmatching curly-apostrophe quote with exact source wording and kept operational metrics explicitly unavailable."
+    },
+    {
+      "original_fact_index": 3,
+      "reason": "Retained the source-supported forward-looking limitation; plans are not confirmed deployment measurements."
+    }
+  ],
+  "empirical_calibration_obtained": false,
+  "internal_V_observations_obtained": 0,
+  "accepted_stress_S_or_outcome_labels_obtained": 0,
+  "unchanged_private_local_aws_evidence_sha256": {
+    "aws_reading/attempt.json": "c20ad18ab9e69c749a808123104a25eeb2a1c9d5a9d30badf615c8fc122160f6",
+    "aws_reading/request.json": "9b761716ba23011cb431f0f3f9958eca991a6698d680281f31ab89dbfa564e27",
+    "aws_reading/response.json": "52bfb130d2bdc72e635411a85b82154dc0be3cc04fd396c98c874a82d1c6bf14",
+    "aws_reading/understanding.json": "cfa020208b96f29eb396db89e69f2190a824c5daa90b30a5f8637d176aad45ac",
+    "aws_reading/validation.json": "3816dddc90cad2f7cb9fe07744dae69d3519479075172fa757d83f428179c2fe"
+  },
+  "distribution_note": "Raw PDF/text, full API request/response, and unsanitized identity receipts are ignored locally; this receipt contains no AWS account identity or credentials.",
+  "shareable_fact_quote_policy": {
+    "quoted_facts": 1,
+    "combined_distinct_verbatim_quote_words": 12,
+    "remaining_facts": "Source-bound local-reviewed paraphrases with source ID and SHA; no verbatim quotation supplied."
+  },
+  "quote_validation_scope": "Exact-source validator applied to the sole quoted fact. Remaining statements are local source-reviewed paraphrases, not independently quoted evidence."
+}
