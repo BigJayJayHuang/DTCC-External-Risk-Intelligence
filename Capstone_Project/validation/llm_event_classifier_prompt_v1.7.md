@@ -127,6 +127,7 @@ Some articles are about an uncertain future event that a prediction market price
   - `government_shutdown`: whether a US federal government shutdown (funding lapse) happens.
   - `debt_limit_breach`: whether the US debt limit is not raised in time (the Treasury reaches its X-date).
   - `recession`: whether the US enters a recession.
+  - `other`: a different uncertain future event that a prediction market could price, with a clear subject and outcome (for example whether a named executive returns to a company, whether a merger closes, whether a bill passes, whether a stock index ends a period above a level). Set `forward_subject`.
   - `none`: the article is not mainly about one of these future events. Use `none` for articles about something that already happened, unless the text also states an expectation about the next decision.
 - `forward_lean`: which way the article itself says the event is going, for the topic's question as written above:
   - `yes`: the text says the event is likely or expected ("traders now expect a cut", "shutdown looks all but certain").
@@ -134,6 +135,7 @@ Some articles are about an uncertain future event that a prediction market price
   - `neutral`: the text reports the topic without saying which way it is going.
   Set it to null when `forward_topic` is `none`.
 - `forward_quote`: the shortest exact words from the article that show the lean. Code rejects a quote that does not appear in the text. Null when `forward_lean` is `neutral` or null.
+- `forward_subject`: for `other`, a short search phrase of at most 8 words naming who or what and the future outcome, using names as written in the article (for example "Jensen Huang return as Nvidia CEO"). Code uses it to search prediction markets; at least half of its words must appear in the article. For the four named topics it may be null. Null when `forward_topic` is `none`. For `other`, `forward_lean` means: does the article say the outcome in `forward_subject` is likely (`yes`), unlikely (`no`) or not say (`neutral`).
 
 Rules 1 to 5 apply: use only the article, never facts from memory; when unsure between `yes`/`no` and `neutral`, choose `neutral`. These fields never change `certainty`, `reach` or `card_ids`.
 
@@ -141,6 +143,9 @@ Examples (headline only):
 - "Traders pile into bets on a December Fed cut after weak jobs report" → forward_topic "fed_cut"; forward_lean "yes"; forward_quote "bets on a December Fed cut".
 - "Senate leaders say funding deal is close, easing shutdown fears" → forward_topic "government_shutdown"; forward_lean "no"; forward_quote "funding deal is close".
 - "What a government shutdown would mean for markets" → forward_topic "government_shutdown"; forward_lean "neutral"; forward_quote null.
+- "Jensen Huang steps down as Nvidia CEO; board says search begins" → forward_topic "other"; forward_subject "Jensen Huang return as Nvidia CEO"; forward_lean "neutral"; forward_quote null.
+- "Sources say Huang in talks to return to Nvidia within weeks" → forward_topic "other"; forward_subject "Huang return to Nvidia"; forward_lean "yes"; forward_quote "in talks to return to Nvidia within weeks".
+- "Nvidia shares fall 8% after earnings" → forward_topic "none" (already happened; no stated expectation).
 
 ## Output
 
@@ -170,6 +175,7 @@ Return only this JSON object:
   "forward_topic": "none",
   "forward_lean": null,
   "forward_quote": null,
+  "forward_subject": null,
   "confidence": 0.85,
   "notes": "anything a reviewer should know, or empty"
 }

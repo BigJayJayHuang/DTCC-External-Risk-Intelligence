@@ -216,6 +216,8 @@ details.morenews ul{margin-top:6px}
 .mkt .mf{display:block;font-size:13px;color:var(--muted)}
 .mkt .mag{font-weight:700}.mkt .mag.agrees{color:var(--brand-2)}.mkt .mag.disagrees{color:var(--high-ink)}
 .mkt a{font-weight:700}
+.mkt .mrow{display:block}.mkt .mrow+.mrow{border-top:1px solid var(--line);margin-top:8px;padding-top:8px}
+.mkt.multi .mq{font-size:13.5px}.mkt.multi .mtop b{font-size:16px}.mkt .mfoot{margin-top:6px}
 @media (max-width:900px){.fbox.three{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.fbox.three .mkt{grid-column:1/-1}}
 @media (max-width:640px){
   .wrap{padding-inline:16px}
@@ -510,20 +512,34 @@ function frontBoxes(i,detail){
   return `<span class="fbox ${m?"three":"two"}">
     <span class="box"><span class="lab">So what</span>${i.fSoWhat?esc(i.fSoWhat):frontPh(i)}</span>
     <span class="box now"><span class="lab">So now what</span>${i.fNowWhat?esc(i.fNowWhat):frontPh(i)}</span>${m}</span>`;}
-/* "What the market expects": YES left, NO right, bar in the middle, values on top. Links only in the detail view
-   (cards are buttons). Sits as a third column next to So what / So now what on scored cards. The factor is shown as proposed until the export applies it after analyst review. */
-function marketBox(i,detail){
-  const m=i.mv; if(!m) return "";
-  const y=Math.round(m.p_yes*100), n=100-y;
-  const ch=m.change_pp==null||m.p_yes_week_ago==null?"":`${m.change_pp>0?"▲ up":m.change_pp<0?"▼ down":"no change,"} ${Math.abs(Math.round(m.change_pp))} pts from ${Math.round(m.p_yes_week_ago*100)}% a week ago`;
-  const ag={agrees:"Market agrees with this article",disagrees:"Market disagrees with this article",split:"Market is split on this article's view",no_lean:"Article takes no side"}[m.agreement]||"";
-  const f=m.factor&&m.factor!==1?` · ${m.applied?"applied":"proposed"} ×${Number(m.factor).toFixed(2)}`:"";
-  return `<span class="mkt" role="group" aria-label="What the market expects: ${esc(m.question)} Yes ${y} percent, No ${n} percent">
-    <span class="lab">What the market expects · Kalshi</span><span class="mq">${esc(m.question)}</span>
+/* "What the market expects": up to 3 markets, each with YES left, NO right, a bar in the middle and the values on top.
+   Prices are point in time (as of the end of the card's week). Links only in the detail view (cards are buttons).
+   Sits as a third column next to So what / So now what on scored cards. Vetted topics may show a proposed factor;
+   subject matches ("auto") are context only. */
+function marketAsOf(m){
+  const t=Date.parse(m.as_of||""); if(isNaN(t)) return "";
+  return new Date(t-60000).toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric",timeZone:"America/New_York"});}
+function marketRow(r,detail){
+  const y=Math.round(r.p_yes*100), n=100-y;
+  const ch=r.change_pp==null||r.p_yes_week_ago==null?"":`${r.change_pp>0?"▲ up":r.change_pp<0?"▼ down":"no change,"} ${Math.abs(Math.round(r.change_pp))} pts in the week before`;
+  const bits=[ch, r.resolves?`resolves ${fmtDay(toDate(r.resolves))}`:""].filter(Boolean).join(" · ");
+  return `<span class="mrow"><span class="mq">${esc(r.question)}</span>
     <span class="mtop"><span class="my"><b>${y}%</b> YES</span><span class="mn">NO <b>${n}%</b></span></span>
     <span class="mbar" aria-hidden="true"><span class="yes" style="width:${y}%"></span><span class="no" style="width:${n}%"></span></span>
-    <span class="mf">${esc(ch)}${ch?" · ":""}<span class="mag ${esc(m.agreement)}">${esc(ag)}</span>${esc(f)}${m.resolves?` · resolves ${esc(fmtDay(toDate(m.resolves)))}`:""}${detail&&httpUrl(m.url)?` · <a href="${esc(m.url)}" target="_blank" rel="noopener">See the market ›</a>`:""}</span>
-    ${detail&&m.article_title?`<span class="mf">Article: ${esc(m.article_title)}${m.forward_quote?` · “${esc(m.forward_quote)}”`:""}</span>`:""}
+    <span class="mf">${esc(bits)}${detail&&httpUrl(r.url)?` · <a href="${esc(r.url)}" target="_blank" rel="noopener">See the market ›</a>`:""}</span></span>`;}
+function marketBox(i,detail){
+  const m=i.mv; if(!m) return "";
+  const rows=(Array.isArray(m.rows)&&m.rows.length?m.rows:[m]).slice(0,3);
+  const ag={agrees:"Market agrees with this article",disagrees:"Market disagrees with this article",split:"Market is split on this article's view",
+            no_lean:"Article takes no side",auto_matched:"Matched to the news by subject · context only"}[m.agreement]||"";
+  const f=m.factor&&m.factor!==1?` · ${m.applied?"applied":"proposed"} ×${Number(m.factor).toFixed(2)}`:"";
+  const asof=marketAsOf(m);
+  const arts=detail&&Array.isArray(m.articles)?m.articles.filter(a=>a.article_title).map(a=>`${esc(a.article_title)}${a.forward_quote?` · “${esc(a.forward_quote)}”`:""}`):[];
+  return `<span class="mkt${rows.length>1?" multi":""}" role="group" aria-label="What the market expected${asof?" as of "+esc(asof):""}: ${rows.map(r=>`${esc(r.question)} Yes ${Math.round(r.p_yes*100)} percent`).join("; ")}">
+    <span class="lab">What the market expects · Kalshi${asof?` · as of ${esc(asof)}`:""}</span>
+    ${rows.map(r=>marketRow(r,detail)).join("")}
+    <span class="mf mfoot"><span class="mag ${esc(m.agreement)}">${esc(ag)}</span>${esc(f)}</span>
+    ${arts.length?`<span class="mf">Article${arts.length>1?"s":""}: ${arts.join(" | ")}</span>`:""}
   </span>`;
 }
 function frontLabel(i){return i.fAi.length?`<span class="flabel">${esc(i.fLabel||FRONT_LABEL)}</span>`:"";}

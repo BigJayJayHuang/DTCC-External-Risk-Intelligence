@@ -24,7 +24,7 @@ Two modes never call the model: `--collect-only` stops after collection (step 2)
    - Google items are kept only when the headline contains all the words of a search, or when they come from a major outlet.
    - Feed items are kept when they contain any search keyword.
 3. **Estimates the cost (dry run).** If the estimate with caching is above `--cap`, it stops here and has spent nothing.
-4. **Classifies each item** with prompt v1.6, the flat answer format and caching. It never spends more than `--cap`.
+4. **Classifies each item** with prompt v1.7, the flat answer format and caching. It never spends more than `--cap`. v1.7 is v1.6 plus four tags for articles about a future event a prediction market prices (`forward_topic`, `forward_lean`, `forward_quote`, `forward_subject`); use `--prompt-version v1.6` to run the old prompt.
 5. **Applies the Amendment E checks, then groups items about the same occurrence into proposed events.**
    - Items with geography `non_us` are dropped and logged to `filtered_non_us.csv`.
    - FICC-GSD-11 stays on an item only when its source text names Treasury, repo, basis trade, SOFR, sponsored or agent clearing. Removals are logged to `card_gate.csv`.
@@ -33,6 +33,8 @@ Two modes never call the model: `--collect-only` stops after collection (step 2)
 6. **Writes two files:**
    - `data/events/review/review_<Monday>.csv`, the review sheet. An existing sheet is never overwritten.
    - New rows in `data/events/context_news.csv`.
+
+7. **Adds the market box.** Takes a point-in-time Kalshi snapshot for the week (prices as of the Sunday close, US Eastern; `data/kalshi/<Monday>/kalshi_candidates.csv`) and matches the articles tagged with a forward-looking topic or subject (for example "Jensen Huang return as Nvidia CEO"), up to 3 markets per card, written to `data/market_views/market_views_<Monday>.json`. Public data, no key. The export reads it automatically and shows "What the market expects" next to So what / So now what. The market factor is only *proposed*; it changes scores only when the export runs with `--apply-market-factor` after review. If Kalshi can't be reached, the week still completes and `weekly_summary.json` shows a `market_box` retry command. `--no-market-box` skips this step. Details: `prediction_markets/README.md`.
 
 Everything the run produced is in `data/events/weekly/<Monday>/<run id>/`, including `weekly_summary.json`. Full article texts stay on your computer, in `data/events/fulltext_cache/`, and are never committed.
 

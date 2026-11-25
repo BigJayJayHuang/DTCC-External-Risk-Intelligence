@@ -1,5 +1,5 @@
 {
- "_note": "SIMULATED fixture data for offline tests. Shaped like Kalshi API responses; not real prices.",
+ "_note": "SIMULATED fixture data for offline tests. Shaped like Kalshi API responses; not real prices or real events.",
  "events": [
   {
    "event_ticker": "KXFEDDECISION-26DEC",
@@ -9,6 +9,7 @@
    "markets": [
     {
      "ticker": "KXFEDDECISION-26DEC-H0",
+     "title": "Fed decision in December 2026",
      "yes_sub_title": "Hold",
      "status": "active",
      "yes_bid_dollars": "0.6100",
@@ -19,37 +20,42 @@
      "open_time": "2026-10-01T14:00:00Z",
      "close_time": "2026-12-09T19:00:00Z",
      "expected_expiration_time": "2026-12-09T19:00:00Z",
+     "result": "",
      "rules_primary": "If the Federal Reserve leaves the target rate unchanged at its December 2026 meeting, the market resolves to Yes.",
      "event_ticker": "KXFEDDECISION-26DEC"
     },
     {
      "ticker": "KXFEDDECISION-26DEC-C25",
+     "title": "Fed decision in December 2026",
      "yes_sub_title": "Cut 25bps",
      "status": "active",
-     "yes_bid_dollars": "0.3300",
-     "yes_ask_dollars": "0.3500",
-     "last_price_dollars": "0.3400",
+     "yes_bid_dollars": "0.3500",
+     "yes_ask_dollars": "0.3700",
+     "last_price_dollars": "0.3600",
      "open_interest_fp": "180000.00",
      "volume_24h_fp": "30000.00",
      "open_time": "2026-10-01T14:00:00Z",
      "close_time": "2026-12-09T19:00:00Z",
      "expected_expiration_time": "2026-12-09T19:00:00Z",
-     "rules_primary": "If Cut 25bps happens as described for this event, the market resolves to Yes. Settlement uses the official source named in the contract terms. This text is long enough to test that rules are shortened to about two hundred characters for the CSV.",
+     "result": "",
+     "rules_primary": "If cut 25bps as described in the title, the market resolves to Yes. Settlement uses the official source named in the contract terms; this text is long enough to test that rules are shortened to about two hundred characters.",
      "event_ticker": "KXFEDDECISION-26DEC"
     },
     {
      "ticker": "KXFEDDECISION-26DEC-H25",
+     "title": "Fed decision in December 2026",
      "yes_sub_title": "Hike 25bps",
      "status": "active",
-     "yes_bid_dollars": "0.0100",
-     "yes_ask_dollars": "0.0200",
-     "last_price_dollars": "0.0100",
+     "yes_bid_dollars": "0.0050",
+     "yes_ask_dollars": "0.0250",
+     "last_price_dollars": "0.0150",
      "open_interest_fp": "400.00",
      "volume_24h_fp": "10.00",
      "open_time": "2026-10-01T14:00:00Z",
      "close_time": "2026-12-09T19:00:00Z",
      "expected_expiration_time": "2026-12-09T19:00:00Z",
-     "rules_primary": "If Hike 25bps happens as described for this event, the market resolves to Yes. Settlement uses the official source named in the contract terms. This text is long enough to test that rules are shortened to about two hundred characters for the CSV.",
+     "result": "",
+     "rules_primary": "If hike 25bps as described in the title, the market resolves to Yes. Settlement uses the official source named in the contract terms; this text is long enough to test that rules are shortened to about two hundred characters.",
      "event_ticker": "KXFEDDECISION-26DEC"
     }
    ]
@@ -62,17 +68,19 @@
    "markets": [
     {
      "ticker": "KXGOVSHUT-27JAN30",
+     "title": "Government shutdown by January 30, 2027?",
      "yes_sub_title": "Shutdown begins",
      "status": "active",
-     "yes_bid_dollars": "0.4000",
-     "yes_ask_dollars": "0.4400",
+     "yes_bid_dollars": "0.4100",
+     "yes_ask_dollars": "0.4300",
      "last_price_dollars": "0.4200",
      "open_interest_fp": "52000.00",
      "volume_24h_fp": "6000.00",
      "open_time": "2026-10-01T14:00:00Z",
      "close_time": "2027-01-30T05:00:00Z",
      "expected_expiration_time": "2027-01-30T05:00:00Z",
-     "rules_primary": "If Shutdown begins happens as described for this event, the market resolves to Yes. Settlement uses the official source named in the contract terms. This text is long enough to test that rules are shortened to about two hundred characters for the CSV.",
+     "result": "",
+     "rules_primary": "If shutdown begins as described in the title, the market resolves to Yes. Settlement uses the official source named in the contract terms; this text is long enough to test that rules are shortened to about two hundred characters.",
      "event_ticker": "KXGOVSHUT-27JAN30"
     }
    ]
@@ -85,9 +93,10 @@
    "markets": [
     {
      "ticker": "KXSTABLE-27",
+     "title": "Will a stablecoin market structure bill become law in 2027?",
      "yes_sub_title": "Signed into law",
      "status": "active",
-     "yes_bid_dollars": "0.5500",
+     "yes_bid_dollars": "0.5600",
      "yes_ask_dollars": "0.5800",
      "last_price_dollars": "0.5700",
      "open_interest_fp": "9000.00",
@@ -95,7 +104,8 @@
      "open_time": "2026-10-01T14:00:00Z",
      "close_time": "2027-12-31T23:59:00Z",
      "expected_expiration_time": "2027-12-31T23:59:00Z",
-     "rules_primary": "If Signed into law happens as described for this event, the market resolves to Yes. Settlement uses the official source named in the contract terms. This text is long enough to test that rules are shortened to about two hundred characters for the CSV.",
+     "result": "",
+     "rules_primary": "If signed into law as described in the title, the market resolves to Yes. Settlement uses the official source named in the contract terms; this text is long enough to test that rules are shortened to about two hundred characters.",
      "event_ticker": "KXSTABLE-27"
     }
    ]
@@ -108,17 +118,19 @@
    "markets": [
     {
      "ticker": "KXBTC-26DEC31-T150000",
+     "title": "Bitcoin price on Dec 31, 2026",
      "yes_sub_title": "Above $150,000",
      "status": "active",
      "yes_bid_dollars": "0.2000",
      "yes_ask_dollars": "0.2200",
      "last_price_dollars": "0.2100",
      "open_interest_fp": "900000.00",
-     "volume_24h_fp": "90000.00",
+     "volume_24h_fp": "2000.00",
      "open_time": "2026-10-01T14:00:00Z",
      "close_time": "2026-12-31T22:00:00Z",
      "expected_expiration_time": "2026-12-31T22:00:00Z",
-     "rules_primary": "If Above $150,000 happens as described for this event, the market resolves to Yes. Settlement uses the official source named in the contract terms. This text is long enough to test that rules are shortened to about two hundred characters for the CSV.",
+     "result": "",
+     "rules_primary": "If above $150,000 as described in the title, the market resolves to Yes. Settlement uses the official source named in the contract terms; this text is long enough to test that rules are shortened to about two hundred characters.",
      "event_ticker": "KXBTC-26DEC31"
     }
    ]
@@ -131,17 +143,19 @@
    "markets": [
     {
      "ticker": "KXNFLGAME-26DEC06KCBUF-KC",
+     "title": "Chiefs vs Bills",
      "yes_sub_title": "Chiefs",
      "status": "active",
-     "yes_bid_dollars": "0.5000",
-     "yes_ask_dollars": "0.5200",
-     "last_price_dollars": "0.5100",
+     "yes_bid_dollars": "0.4900",
+     "yes_ask_dollars": "0.5100",
+     "last_price_dollars": "0.5000",
      "open_interest_fp": "500000.00",
-     "volume_24h_fp": "100000.00",
+     "volume_24h_fp": "2000.00",
      "open_time": "2026-10-01T14:00:00Z",
      "close_time": "2026-12-07T04:00:00Z",
      "expected_expiration_time": "2026-12-07T04:00:00Z",
-     "rules_primary": "If Chiefs happens as described for this event, the market resolves to Yes. Settlement uses the official source named in the contract terms. This text is long enough to test that rules are shortened to about two hundred characters for the CSV.",
+     "result": "",
+     "rules_primary": "If chiefs as described in the title, the market resolves to Yes. Settlement uses the official source named in the contract terms; this text is long enough to test that rules are shortened to about two hundred characters.",
      "event_ticker": "KXNFLGAME-26DEC06KCBUF"
     }
    ]
@@ -154,17 +168,19 @@
    "markets": [
     {
      "ticker": "KXMVECROSS-26DEC-X1-A",
+     "title": "Fed cuts and Chiefs win",
      "yes_sub_title": "Yes",
      "status": "active",
-     "yes_bid_dollars": "0.1000",
-     "yes_ask_dollars": "0.1200",
-     "last_price_dollars": "0.1100",
+     "yes_bid_dollars": "0.4900",
+     "yes_ask_dollars": "0.5100",
+     "last_price_dollars": "0.5000",
      "open_interest_fp": "100.00",
-     "volume_24h_fp": "5.00",
+     "volume_24h_fp": "2000.00",
      "open_time": "2026-10-01T14:00:00Z",
      "close_time": "2026-12-10T04:00:00Z",
      "expected_expiration_time": "2026-12-10T04:00:00Z",
-     "rules_primary": "If Yes happens as described for this event, the market resolves to Yes. Settlement uses the official source named in the contract terms. This text is long enough to test that rules are shortened to about two hundred characters for the CSV.",
+     "result": "",
+     "rules_primary": "If yes as described in the title, the market resolves to Yes. Settlement uses the official source named in the contract terms; this text is long enough to test that rules are shortened to about two hundred characters.",
      "event_ticker": "KXMVECROSS-26DEC-X1"
     }
    ]
@@ -177,17 +193,19 @@
    "markets": [
     {
      "ticker": "KXEARN-26Q4-B",
+     "title": "Second-quarter corporate earnings season beats",
      "yes_sub_title": "Beats",
      "status": "active",
-     "yes_bid_dollars": "0.6000",
-     "yes_ask_dollars": "0.6200",
-     "last_price_dollars": "0.6100",
+     "yes_bid_dollars": "0.4900",
+     "yes_ask_dollars": "0.5100",
+     "last_price_dollars": "0.5000",
      "open_interest_fp": "3000.00",
-     "volume_24h_fp": "100.00",
+     "volume_24h_fp": "2000.00",
      "open_time": "2026-10-01T14:00:00Z",
      "close_time": "2027-02-28T22:00:00Z",
      "expected_expiration_time": "2027-02-28T22:00:00Z",
-     "rules_primary": "If Beats happens as described for this event, the market resolves to Yes. Settlement uses the official source named in the contract terms. This text is long enough to test that rules are shortened to about two hundred characters for the CSV.",
+     "result": "",
+     "rules_primary": "If beats as described in the title, the market resolves to Yes. Settlement uses the official source named in the contract terms; this text is long enough to test that rules are shortened to about two hundred characters.",
      "event_ticker": "KXEARN-26Q4"
     }
    ]
@@ -200,17 +218,19 @@
    "markets": [
     {
      "ticker": "KXCPI-28AUG-T3",
+     "title": "CPI in August 2028",
      "yes_sub_title": "Above 3%",
      "status": "active",
-     "yes_bid_dollars": "0.3000",
-     "yes_ask_dollars": "0.3200",
-     "last_price_dollars": "0.3100",
+     "yes_bid_dollars": "0.4900",
+     "yes_ask_dollars": "0.5100",
+     "last_price_dollars": "0.5000",
      "open_interest_fp": "5000.00",
-     "volume_24h_fp": "100.00",
+     "volume_24h_fp": "2000.00",
      "open_time": "2026-10-01T14:00:00Z",
      "close_time": "2028-09-12T12:30:00Z",
      "expected_expiration_time": "2028-09-12T12:30:00Z",
-     "rules_primary": "If Above 3% happens as described for this event, the market resolves to Yes. Settlement uses the official source named in the contract terms. This text is long enough to test that rules are shortened to about two hundred characters for the CSV.",
+     "result": "",
+     "rules_primary": "If above 3% as described in the title, the market resolves to Yes. Settlement uses the official source named in the contract terms; this text is long enough to test that rules are shortened to about two hundred characters.",
      "event_ticker": "KXCPI-28AUG"
     }
    ]
@@ -223,17 +243,19 @@
    "markets": [
     {
      "ticker": "KXAILAW-27",
+     "title": "Will Congress pass an AI safety law in 2027?",
      "yes_sub_title": "Passes",
      "status": "active",
-     "yes_bid_dollars": "0.1800",
-     "yes_ask_dollars": "0.2200",
+     "yes_bid_dollars": "0.1900",
+     "yes_ask_dollars": "0.2100",
      "last_price_dollars": "0.2000",
      "open_interest_fp": "300.00",
      "volume_24h_fp": "20.00",
-     "open_time": "2026-11-27T15:00:00Z",
+     "open_time": "2026-11-18T15:00:00Z",
      "close_time": "2027-12-31T23:59:00Z",
      "expected_expiration_time": "2027-12-31T23:59:00Z",
-     "rules_primary": "If Passes happens as described for this event, the market resolves to Yes. Settlement uses the official source named in the contract terms. This text is long enough to test that rules are shortened to about two hundred characters for the CSV.",
+     "result": "",
+     "rules_primary": "If passes as described in the title, the market resolves to Yes. Settlement uses the official source named in the contract terms; this text is long enough to test that rules are shortened to about two hundred characters.",
      "event_ticker": "KXAILAW-27"
     }
    ]
@@ -246,17 +268,19 @@
    "markets": [
     {
      "ticker": "KXSOTU-27",
+     "title": "Will the State of the Union mention the unemployment rate?",
      "yes_sub_title": "Mentions it",
      "status": "active",
-     "yes_bid_dollars": "0.7000",
-     "yes_ask_dollars": "0.7200",
-     "last_price_dollars": "0.7100",
+     "yes_bid_dollars": "0.4900",
+     "yes_ask_dollars": "0.5100",
+     "last_price_dollars": "0.5000",
      "open_interest_fp": "2000.00",
-     "volume_24h_fp": "50.00",
+     "volume_24h_fp": "2000.00",
      "open_time": "2026-10-01T14:00:00Z",
      "close_time": "2027-02-28T04:00:00Z",
      "expected_expiration_time": "2027-02-28T04:00:00Z",
-     "rules_primary": "If Mentions it happens as described for this event, the market resolves to Yes. Settlement uses the official source named in the contract terms. This text is long enough to test that rules are shortened to about two hundred characters for the CSV.",
+     "result": "",
+     "rules_primary": "If mentions it as described in the title, the market resolves to Yes. Settlement uses the official source named in the contract terms; this text is long enough to test that rules are shortened to about two hundred characters.",
      "event_ticker": "KXSOTU-27"
     }
    ]
@@ -269,6 +293,7 @@
    "markets": [
     {
      "ticker": "KXHURLAND-27",
+     "title": "Will a Category 5 hurricane make US landfall in 2027?",
      "yes_sub_title": "Yes",
      "status": "active",
      "yes_bid_dollars": "0.1200",
@@ -279,8 +304,109 @@
      "open_time": "2026-10-01T14:00:00Z",
      "close_time": "2027-11-30T23:59:00Z",
      "expected_expiration_time": "2027-11-30T23:59:00Z",
-     "rules_primary": "If Yes happens as described for this event, the market resolves to Yes. Settlement uses the official source named in the contract terms. This text is long enough to test that rules are shortened to about two hundred characters for the CSV.",
+     "result": "",
+     "rules_primary": "If yes as described in the title, the market resolves to Yes. Settlement uses the official source named in the contract terms; this text is long enough to test that rules are shortened to about two hundred characters.",
      "event_ticker": "KXHURLAND-27"
+    }
+   ]
+  },
+  {
+   "event_ticker": "KXNVDACEO-26DEC31",
+   "series_ticker": "KXNVDACEO",
+   "category": "Companies",
+   "title": "Will Jensen Huang be Nvidia CEO on Dec 31, 2026?",
+   "markets": [
+    {
+     "ticker": "KXNVDACEO-26DEC31",
+     "title": "Will Jensen Huang be Nvidia CEO on Dec 31, 2026?",
+     "yes_sub_title": "Yes",
+     "status": "active",
+     "yes_bid_dollars": "0.3700",
+     "yes_ask_dollars": "0.3900",
+     "last_price_dollars": "0.3800",
+     "open_interest_fp": "40000.00",
+     "volume_24h_fp": "5000.00",
+     "open_time": "2026-11-10T15:00:00Z",
+     "close_time": "2026-12-31T23:59:00Z",
+     "expected_expiration_time": "2026-12-31T23:59:00Z",
+     "result": "",
+     "rules_primary": "If yes as described in the title, the market resolves to Yes. Settlement uses the official source named in the contract terms; this text is long enough to test that rules are shortened to about two hundred characters.",
+     "event_ticker": "KXNVDACEO-26DEC31"
+    }
+   ]
+  },
+  {
+   "event_ticker": "KXNVDACEO-26NOV30",
+   "series_ticker": "KXNVDACEO",
+   "category": "Companies",
+   "title": "Will Jensen Huang return as Nvidia CEO by Nov 30, 2026?",
+   "markets": [
+    {
+     "ticker": "KXNVDACEO-26NOV30",
+     "title": "Will Jensen Huang return as Nvidia CEO by Nov 30, 2026?",
+     "yes_sub_title": "Yes",
+     "status": "active",
+     "yes_bid_dollars": "0.1100",
+     "yes_ask_dollars": "0.1300",
+     "last_price_dollars": "0.1200",
+     "open_interest_fp": "20000.00",
+     "volume_24h_fp": "3000.00",
+     "open_time": "2026-11-10T15:00:00Z",
+     "close_time": "2026-11-30T23:59:00Z",
+     "expected_expiration_time": "2026-11-30T23:59:00Z",
+     "result": "",
+     "rules_primary": "If yes as described in the title, the market resolves to Yes. Settlement uses the official source named in the contract terms; this text is long enough to test that rules are shortened to about two hundred characters.",
+     "event_ticker": "KXNVDACEO-26NOV30"
+    }
+   ]
+  },
+  {
+   "event_ticker": "KXHUANGSENATE-27",
+   "series_ticker": "KXHUANGSENATE",
+   "category": "World",
+   "title": "Will Jensen Huang testify before the Senate in 2027?",
+   "markets": [
+    {
+     "ticker": "KXHUANGSENATE-27",
+     "title": "Will Jensen Huang testify before the Senate in 2027?",
+     "yes_sub_title": "Yes",
+     "status": "active",
+     "yes_bid_dollars": "0.4400",
+     "yes_ask_dollars": "0.4600",
+     "last_price_dollars": "0.4500",
+     "open_interest_fp": "800.00",
+     "volume_24h_fp": "50.00",
+     "open_time": "2026-11-10T15:00:00Z",
+     "close_time": "2027-12-31T23:59:00Z",
+     "expected_expiration_time": "2027-12-31T23:59:00Z",
+     "result": "",
+     "rules_primary": "If yes as described in the title, the market resolves to Yes. Settlement uses the official source named in the contract terms; this text is long enough to test that rules are shortened to about two hundred characters.",
+     "event_ticker": "KXHUANGSENATE-27"
+    }
+   ]
+  },
+  {
+   "event_ticker": "KXNASDAQ100-26DEC31",
+   "series_ticker": "KXNASDAQ100",
+   "category": "Financials",
+   "title": "Nasdaq-100 on Dec 31, 2026",
+   "markets": [
+    {
+     "ticker": "KXNASDAQ100-26DEC31-T25000",
+     "title": "Nasdaq-100 on Dec 31, 2026",
+     "yes_sub_title": "Above 25,000",
+     "status": "active",
+     "yes_bid_dollars": "0.4500",
+     "yes_ask_dollars": "0.4700",
+     "last_price_dollars": "0.4600",
+     "open_interest_fp": "70000.00",
+     "volume_24h_fp": "8000.00",
+     "open_time": "2026-10-01T14:00:00Z",
+     "close_time": "2026-12-31T21:00:00Z",
+     "expected_expiration_time": "2026-12-31T21:00:00Z",
+     "result": "",
+     "rules_primary": "If above 25,000 as described in the title, the market resolves to Yes. Settlement uses the official source named in the contract terms; this text is long enough to test that rules are shortened to about two hundred characters.",
+     "event_ticker": "KXNASDAQ100-26DEC31"
     }
    ]
   }

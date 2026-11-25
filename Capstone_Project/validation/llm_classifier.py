@@ -40,7 +40,8 @@ SPLIT_PROMPTS = {"v1.3", "v1.4", "v1.5", "v1.6", "v1.7"}   # static system text 
 EVENT_TYPE_PROMPTS = {"v1.5", "v1.6", "v1.7"}               # prompts that define event_type (Amendment D)
 GEO_PROMPTS = {"v1.6", "v1.7"}                       # prompts that define geography and new_information
 MARKET_PROMPTS = {"v1.7"}                            # prompts that define forward_topic / forward_lean / forward_quote (prediction markets)
-FORWARD_TOPICS = ["fed_cut", "government_shutdown", "debt_limit_breach", "recession", "none"]
+FORWARD_TOPICS = ["fed_cut", "government_shutdown", "debt_limit_breach", "recession", "other", "none"]
+FORWARD_STOPWORDS = {"the", "and", "for", "will", "with", "from", "that", "this", "into", "back", "by", "of", "to", "in", "on", "a", "an", "be", "is", "as", "at", "or", "its", "his", "her", "their"}
 FORWARD_LEANS = ["yes", "no", "neutral"]
 GEOGRAPHIES = ["us", "non_us_with_us_link", "non_us"]
 EVENT_TYPES = ["market_move", "regulatory", "firm_specific", "operational", "cyber", "other"]
@@ -55,7 +56,7 @@ CSV_FIELDS = [
     "event_id", "document_id", "is_relevant", "same_as_event_id", "title", "summary",
     "card_ids", "certainty", "reach", "reach_basis", "named_participants",
     "announced_date", "effect_date", "stage", "source_tier", "outlet", "source_url",
-    "url", "evidence_quote", "evidence_quotes", "llm_confidence", "notes", "event_type", "geography", "new_information", "forward_topic", "forward_lean", "forward_quote", "published_date",
+    "url", "evidence_quote", "evidence_quotes", "llm_confidence", "notes", "event_type", "geography", "new_information", "forward_topic", "forward_lean", "forward_quote", "forward_subject", "published_date",
     "entered_by", "needs_review", "validation_passed", "validation_reasons",
     "original_certainty", "original_reach", "model_id", "base_model_id", "region",
     "prompt_version", "input_tokens", "output_tokens", "cache_read_input_tokens",
@@ -275,6 +276,7 @@ def output_schema(cards: set[str], event_type: bool = False, geo: bool = False, 
         properties["forward_topic"] = {"type": "string", "enum": FORWARD_TOPICS}
         properties["forward_lean"] = {"type": ["string", "null"], "enum": [*FORWARD_LEANS, None]}
         properties["forward_quote"] = {"type": ["string", "null"]}
+        properties["forward_subject"] = {"type": ["string", "null"], "maxLength": 80}
     relevant = {"type": "object", "properties": properties, "required": list(properties), "additionalProperties": False}
     irrelevant = {"type": "object", "properties": {"is_relevant": {"const": False}, "notes": {"type": "string"}},
                   "required": ["is_relevant", "notes"], "additionalProperties": False}
@@ -317,6 +319,7 @@ def output_schema_flat(cards: set[str], event_type: bool = False, geo: bool = Fa
         properties["forward_topic"] = enum_or_null("string", FORWARD_TOPICS)
         properties["forward_lean"] = enum_or_null("string", FORWARD_LEANS)
         properties["forward_quote"] = {"type": ["string", "null"]}
+        properties["forward_subject"] = {"type": ["string", "null"], "maxLength": 80}
     return {"type": "object", "properties": properties, "required": list(properties), "additionalProperties": False}
 
 
@@ -362,11 +365,28 @@ def prepare_flat(record, cards: set[str], event_type: bool = False, geo: bool = 
     return dict(record), filled
 
 
+def subject_words(subject: str | None) -> list[str]:
+    return [w for w in re.findall(r"[A-Za-z0-9&$.%-]+", subject or "") if len(w) >= 3 and w.lower() not in FORWARD_STOPWORDS]
+
+
+def subject_supported(subject: str | None, text: str) -> bool:
+    """At least half of the subject's content words must appear in the article (case-insensitive), so a market search
+    is never driven by names or facts the model added from memory."""
+    words = subject_words(subject)
+    low = (text or "").lower()
+    return bool(words) and sum(w.lower() in low for w in words) * 2 >= len(words)
+
+
 def normalize_forward(record: dict) -> dict:
-    """forward_topic none/null -> lean and quote null; topic with no lean -> neutral; neutral lean -> no quote."""
+    """forward_topic none/null -> lean, quote and subject null; 'other' without a subject -> none; topic with no lean ->
+    neutral; neutral lean -> no quote."""
     record = dict(record)
+    subj = (record.get("forward_subject") or "").strip()
+    record["forward_subject"] = subj or None
+    if record.get("forward_topic") == "other" and not subj:
+        record["forward_topic"] = "none"
     if record.get("forward_topic") in (None, "none"):
-        record.update(forward_topic="none", forward_lean=None, forward_quote=None)
+        record.update(forward_topic="none", forward_lean=None, forward_quote=None, forward_subject=None)
     elif record.get("forward_lean") is None:
         record.update(forward_lean="neutral", forward_quote=None)
     elif record["forward_lean"] == "neutral":
@@ -466,6 +486,9 @@ def check_classification(result: dict, article: dict, schema: dict, cards: set[s
                                                          or result["forward_quote"] not in article["text"]):
         reasons.append("forward_quote missing or not found verbatim; lean treated as neutral")   # prompt v1.7
         checked.update(forward_lean="neutral", forward_quote=None)
+    if result.get("forward_topic") == "other" and not subject_supported(result.get("forward_subject"), article["text"]):
+        reasons.append("forward_subject not supported by the article text; forward_topic treated as none")   # prompt v1.7
+        checked.update(forward_topic="none", forward_lean=None, forward_quote=None, forward_subject=None)
     # Source authority comes from the supplied feed, never the model's assertion.
     if result["source_tier"] != article["source_tier"]:
         reasons.append("source_tier differs from input source classification")

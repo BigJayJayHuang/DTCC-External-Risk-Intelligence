@@ -127,6 +127,23 @@ class WeeklyRun(unittest.TestCase):
             self.assertEqual([(r["card_id"], r["event_type"]) for r in csv.DictReader(fh)], [("ECS-NSCC-LIQ", "market_move")])
         self.assertIn("promote_reviewed --sheet", res["next_step"])
 
+    def test_market_box_runs_after_classifier_and_never_stops_the_week(self):
+        cands = [cand("C", "SEC sets new compliance date for Treasury repo clearing", "FICC-GSD-03", "SEC", tier="regulator", etype="regulatory")]
+        for c in cands:
+            c["article_file"] = ""
+        seen = []
+        ok = lambda path, monday: seen.append((path.name, monday)) or {"status": "ok", "cards": 1, "skipped": 0}
+        res = self.run_week(Fakes(cands=cands), attach_markets=ok)
+        self.assertEqual((res["status"], res["market_box"]["status"]), ("complete", "ok"))
+        self.assertEqual(seen, [("candidates_2026-11-09.csv", MONDAY)])
+        def boom(path, monday):
+            raise ConnectionError("Kalshi unreachable")
+        res = W.run_week(MONDAY, Decimal("1.00"), today=date(2026, 11, 9), run_id="t2", weekly_dir=self.root / "weekly",
+                         review_dir=self.root / "review", context_path=self.root / "c.csv", collect_google=Fakes().google,
+                         collect_feeds=Fakes().feeds, classify=Fakes(cands=cands).classify, official_news=self.official, attach_markets=boom)
+        self.assertEqual((res["status"], res["market_box"]["status"]), ("complete", "failed"))
+        self.assertIn("attach_market_views.py", res["market_box"]["retry"])
+
     def test_refuses_unfinished_week_and_keeps_existing_sheet(self):
         with self.assertRaises(SystemExit):
             W.run_week(MONDAY, Decimal("1.00"), today=date(2026, 11, 8))             # Sunday 11-08 not over
@@ -145,7 +162,7 @@ class WeeklyRun(unittest.TestCase):
                          classify=f.classify, from_inputs=saved)
         self.assertEqual((res["status"], res["inputs_reused"]), ("complete", str(saved)))
         self.assertTrue(all(a.news == saved for a in f.calls))
-        self.assertEqual(W.PROMPT_VERSION, "v1.6")
+        self.assertEqual(W.PROMPT_VERSION, "v1.7")
 
     def test_week_start_must_be_monday(self):
         with self.assertRaises(ValueError):

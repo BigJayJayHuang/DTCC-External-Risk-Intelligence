@@ -9,7 +9,7 @@ from .test_llm_classifier import article, relevant
 
 def flat_v17(**over):
     r = {**relevant(), "event_type": "regulatory", "geography": "us", "new_information": None,
-         "forward_topic": "none", "forward_lean": None, "forward_quote": None}
+         "forward_topic": "none", "forward_lean": None, "forward_quote": None, "forward_subject": None}
     r.update(over)
     return r
 
@@ -61,8 +61,21 @@ class V17Tests(unittest.TestCase):
         self.assertEqual(checked["forward_lean"], "neutral")
         self.assertTrue([x for x in reasons if "forward_quote" in x])
 
+    def test_other_topic_needs_a_subject_from_the_article(self):
+        schema = C.output_schema(self.cards, True, True, True)
+        a = article(); a["text"] = "Jensen Huang steps down as Nvidia CEO. The board says a search begins."
+        ok = flat_v17(forward_topic="other", forward_lean="neutral", forward_subject="Jensen Huang return as Nvidia CEO")
+        checked, reasons = C.check_classification(ok, a, schema, self.cards, set(), set())
+        self.assertEqual((checked["forward_topic"], checked["forward_subject"]), ("other", "Jensen Huang return as Nvidia CEO"))
+        made_up = flat_v17(forward_topic="other", forward_lean="neutral", forward_subject="Lisa Su replaces Huang at AMD board")
+        checked, reasons = C.check_classification(made_up, a, schema, self.cards, set(), set())
+        self.assertEqual((checked["forward_topic"], checked["forward_subject"]), ("none", None))
+        self.assertTrue([x for x in reasons if "forward_subject" in x])
+        out, _ = C.prepare_flat(flat_v17(forward_topic="other", forward_lean="yes", forward_subject=" "), self.cards, True, True, True)
+        self.assertEqual((out["forward_topic"], out["forward_lean"], out["forward_subject"]), ("none", None, None))
+
     def test_csv_has_forward_columns(self):
-        for k in ("forward_topic", "forward_lean", "forward_quote"):
+        for k in ("forward_topic", "forward_lean", "forward_quote", "forward_subject"):
             self.assertIn(k, C.CSV_FIELDS)
 
 

@@ -8,13 +8,18 @@ Steps for one Monday-Sunday week (the week must be over unless --allow-partial-w
      news export (--official; stops if it is missing), optionally Alpha Vantage NEWS_SENTIMENT summaries (--alphavantage;
      off by default because NEWS_SENTIMENT needs a premium key) and the Google items -> inputs/feeds/classifier_input.csv
      (--collect-only stops here; --from-inputs reuses a saved classifier_input.csv and skips steps 1-2)
-  3. Dry run with prompt v1.6, flat schema, caching (--dry-run stops here). Stops if the cache-aware estimate is above
+  3. Dry run with prompt v1.7 (v1.6 + forward-looking market tags), flat schema, caching (--dry-run stops here). Stops if the cache-aware estimate is above
      --cap, or if an earlier run of the week left an unresolved cost reservation.
   4. Classify with the same settings, hard budget --cap.
   5. Drop non-US items, apply the FICC-GSD-11 gate (Amendment E), group candidates into proposed events, apply
      Amendment D (market-move news on indicator cards = context).
   6. Write data/events/review/review_<Monday>.csv (never overwritten) and append context rows to
      data/events/context_news.csv.
+  7. Market box: a point-in-time Kalshi snapshot for the week (as of the Sunday close; data/kalshi/<Monday>/) and the
+     articles the classifier tagged with a forward-looking topic or subject (prompt v1.7) matched to it
+     (prediction_markets/attach_market_views.py) -> data/market_views/market_views_<Monday>.json, which the
+     export puts on the cards. Public data, no key. A Kalshi failure is logged and never stops the week (--no-market-box
+     skips it).
 Never writes the event register or sign-offs. See data/events/WEEKLY_RUNBOOK.md.
 """
 import argparse, csv, hashlib, json, re
@@ -31,7 +36,7 @@ from . import review_sheet as RS
 
 WEEKLY = C.PROJECT / "data/events/weekly"
 REVIEW_DIR = C.PROJECT / "data/events/review"
-PROMPT_VERSION = "v1.6"
+PROMPT_VERSION = "v1.7"     # v1.6 + forward_topic / forward_lean / forward_quote for the market box
 NARRATIVE_PROMPT_VERSION = "v3.1"     # so_what / so_now_what step after scoring (validation/narratives.py, runbook step 6)
 TIERS = ("required", "auto", "context", "duplicate", "date_review")
 
@@ -82,6 +87,18 @@ def unresolved_reservations(week_dir: Path, current_run: Path, ledger: Path = RE
     return pending
 
 
+def attach_market_box(candidates: Path, monday: date) -> dict:
+    """Step 7: match tagged candidates to Kalshi markets and write data/market_views/market_views_<Monday>.json."""
+    import sys
+    pm = str(C.PROJECT / "prediction_markets")
+    if pm not in sys.path:
+        sys.path.insert(0, pm)
+    import attach_market_views as AMV
+    res = AMV.main(["--week", monday.isoformat(), "--candidates", str(candidates)])
+    return {"status": "ok", "cards": len(res["cards"]), "skipped": len(res["skipped"]),
+            "file": str(AMV.OUT_DIR / f"market_views_{monday.isoformat()}.json")}
+
+
 def classifier_args(news: Path, out: Path, monday: date, sunday: date, cap: Decimal, run_date: date, dry_run: bool,
                     prompt_version: str = PROMPT_VERSION):
     return argparse.Namespace(config=C.CONFIG, register=C.REGISTER, major=C.MAJOR, news=news, start=monday, end=sunday,
@@ -94,7 +111,7 @@ def run_week(week_start: date, cap: Decimal, *, today: date | None = None, allow
              collect_google=G.collect, collect_feeds=P.main, classify=C.run, from_inputs: Path | None = None,
              prompt_version: str = PROMPT_VERSION, official_news: Path = C.NEWS,
              collect_only: bool = False, dry_run: bool = False, offline_google_from: Path | None = None,
-             collect_alphavantage=None) -> dict:
+             collect_alphavantage=None, attach_markets=None) -> dict:
     monday, sunday = G.week_window(week_start)
     today = today or datetime.now(ZoneInfo("America/New_York")).date()
     if not allow_partial and today <= sunday:
@@ -192,6 +209,17 @@ def run_week(week_start: date, cap: Decimal, *, today: date | None = None, allow
     feeds_dir = (from_inputs.parent if from_inputs is not None else out / "inputs" / "feeds")
     ctx = RS.routed_context_rows(feeds_dir / "official_context_routed.csv", monday) + ctx     # Amendment G3
     added = RS.append_context(context_path, ctx)
+    # 7. market box (only prompts that tag forward-looking topics; never stops the week)
+    if attach_markets is not None and prompt_version in C.MARKET_PROMPTS and candidates.exists():
+        try:
+            result["market_box"] = attach_markets(candidates, monday)
+        except BaseException as e:  # noqa: BLE001  (network errors, SystemExit from argparse, ...)
+            if isinstance(e, KeyboardInterrupt):
+                raise
+            result["market_box"] = {"status": "failed", "error": f"{type(e).__name__}: {e}",
+                                    "retry": f"python3 prediction_markets/attach_market_views.py --week {monday.isoformat()} --candidates {candidates}"}
+    elif attach_markets is not None:
+        result["market_box"] = {"status": "skipped", "reason": f"prompt {prompt_version} does not tag market topics" if prompt_version not in C.MARKET_PROMPTS else "no candidates"}
     tiers = {t: sum(r["review_tier"] == t for r in rows) for t in TIERS}
     with_non_us = sum(1 for _ in csv.DictReader(filtered.open(encoding="utf-8"))) if filtered.exists() else 0
     gated = sum(1 for _ in csv.DictReader(gate.open(encoding="utf-8"))) if gate.exists() else 0
@@ -215,6 +243,7 @@ def main(argv=None):
     modes.add_argument('--dry-run',action='store_true',help='Collect and estimate locally; never invoke a model')
     p.add_argument('--official',type=Path,default=C.NEWS,help='Daily official-news CSV; always included through the keyword filter')
     p.add_argument('--offline-google-from',type=Path,help='Reparse an existing RSS batch instead of repeating Google requests')
+    p.add_argument('--no-market-box', action='store_true', help='skip step 7 (Kalshi market box)')
     p.add_argument('--alphavantage',action='store_true',
                    help='Add the Alpha Vantage NEWS_SENTIMENT source (off by default: it needs a PREMIUM key in ALPHAVANTAGE_API_KEY; '
                         'a free key gets "This is a premium endpoint" and the run stops)')
@@ -224,7 +253,8 @@ def main(argv=None):
     print(json.dumps(run_week(a.week_start, a.cap, allow_partial=a.allow_partial_week, from_inputs=a.from_inputs,
                              prompt_version=a.prompt_version, context_path=a.context_out, official_news=a.official,
                              collect_only=a.collect_only,dry_run=a.dry_run,offline_google_from=a.offline_google_from,
-                             collect_alphavantage=AV.collect if a.alphavantage and not a.from_inputs else None), indent=2, ensure_ascii=False))
+                             collect_alphavantage=AV.collect if a.alphavantage and not a.from_inputs else None,
+                             attach_markets=None if a.no_market_box else attach_market_box), indent=2, ensure_ascii=False))
 
 
 if __name__ == "__main__":

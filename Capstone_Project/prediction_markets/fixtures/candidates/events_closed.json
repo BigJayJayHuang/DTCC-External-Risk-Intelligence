@@ -1,0 +1,83 @@
+{
+ "_note": "SIMULATED fixture data for offline tests. Shaped like Kalshi API responses; not real prices or real events.",
+ "events": [
+  {
+   "event_ticker": "KXNVDACEO-26NOV20",
+   "series_ticker": "KXNVDACEO",
+   "category": "Companies",
+   "title": "Will Jensen Huang return as Nvidia CEO by Nov 20, 2026?",
+   "markets": [
+    {
+     "ticker": "KXNVDACEO-26NOV20",
+     "title": "Will Jensen Huang return as Nvidia CEO by Nov 20, 2026?",
+     "yes_sub_title": "Yes",
+     "status": "finalized",
+     "yes_bid_dollars": "0.0200",
+     "yes_ask_dollars": "0.0400",
+     "last_price_dollars": "0.0300",
+     "open_interest_fp": "15000.00",
+     "volume_24h_fp": "2000.00",
+     "open_time": "2026-11-10T15:00:00Z",
+     "close_time": "2026-11-20T23:59:00Z",
+     "expected_expiration_time": "2026-11-20T23:59:00Z",
+     "result": "no",
+     "rules_primary": "If yes as described in the title, the market resolves to Yes. Settlement uses the official source named in the contract terms; this text is long enough to test that rules are shortened to about two hundred characters.",
+     "settlement_ts": "2026-11-20T23:59:00Z",
+     "event_ticker": "KXNVDACEO-26NOV20"
+    }
+   ]
+  },
+  {
+   "event_ticker": "KXGOVSHUT-26NOV14",
+   "series_ticker": "KXGOVSHUT",
+   "category": "Politics",
+   "title": "Government shutdown by November 14, 2026?",
+   "markets": [
+    {
+     "ticker": "KXGOVSHUT-26NOV14",
+     "title": "Government shutdown by November 14, 2026?",
+     "yes_sub_title": "Shutdown begins",
+     "status": "finalized",
+     "yes_bid_dollars": "0.0100",
+     "yes_ask_dollars": "0.0300",
+     "last_price_dollars": "0.0200",
+     "open_interest_fp": "60000.00",
+     "volume_24h_fp": "2000.00",
+     "open_time": "2026-10-01T14:00:00Z",
+     "close_time": "2026-11-14T05:00:00Z",
+     "expected_expiration_time": "2026-11-14T05:00:00Z",
+     "result": "no",
+     "rules_primary": "If shutdown begins as described in the title, the market resolves to Yes. Settlement uses the official source named in the contract terms; this text is long enough to test that rules are shortened to about two hundred characters.",
+     "settlement_ts": "2026-11-14T05:00:00Z",
+     "event_ticker": "KXGOVSHUT-26NOV14"
+    }
+   ]
+  },
+  {
+   "event_ticker": "KXNFLGAME-26NOV22",
+   "series_ticker": "KXNFLGAME",
+   "category": "Sports",
+   "title": "Jets vs Dolphins",
+   "markets": [
+    {
+     "ticker": "KXNFLGAME-26NOV22-NYJ",
+     "title": "Jets vs Dolphins",
+     "yes_sub_title": "Jets",
+     "status": "finalized",
+     "yes_bid_dollars": "0.4900",
+     "yes_ask_dollars": "0.5100",
+     "last_price_dollars": "0.5000",
+     "open_interest_fp": "300000.00",
+     "volume_24h_fp": "2000.00",
+     "open_time": "2026-10-01T14:00:00Z",
+     "close_time": "2026-11-23T04:00:00Z",
+     "expected_expiration_time": "2026-11-23T04:00:00Z",
+     "result": "yes",
+     "rules_primary": "If jets as described in the title, the market resolves to Yes. Settlement uses the official source named in the contract terms; this text is long enough to test that rules are shortened to about two hundred characters.",
+     "settlement_ts": "2026-11-23T04:00:00Z",
+     "event_ticker": "KXNFLGAME-26NOV22"
+    }
+   ]
+  }
+ ]
+}

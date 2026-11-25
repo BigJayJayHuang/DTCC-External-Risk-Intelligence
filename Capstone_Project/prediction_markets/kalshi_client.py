@@ -100,6 +100,23 @@ class KalshiClient:
         """All open events with their markets nested (one paged call; the events endpoint caps pages at 200)."""
         return self.paged("/events", "events", {"status": "open", "with_nested_markets": "true"}, page_size=200, max_pages=200)
 
+    def markets_closed_since(self, min_close_ts: int) -> list[dict]:
+        """Markets that closed or settled after min_close_ts (for point-in-time snapshots of past weeks).
+        Combo/parlay markets are excluded server side; older settled markets are read from /historical/markets."""
+        out, seen = [], set()
+        for status in ("closed", "settled"):
+            for m in self.paged("/markets", "markets", {"status": status, "min_close_ts": int(min_close_ts), "mve_filter": "exclude"},
+                                max_pages=200):
+                if m.get("ticker") not in seen:
+                    seen.add(m.get("ticker")); out.append(m)
+        try:
+            for m in self.paged("/historical/markets", "markets", {"min_close_ts": int(min_close_ts), "mve_filter": "exclude"}, max_pages=200):
+                if m.get("ticker") not in seen:
+                    seen.add(m.get("ticker")); out.append(m)
+        except KalshiError:
+            pass
+        return out
+
     def event(self, event_ticker: str) -> dict:
         return self.get(f"/events/{event_ticker}", {"with_nested_markets": "false"}).get("event") or {}
 

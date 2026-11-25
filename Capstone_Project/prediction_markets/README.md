@@ -51,16 +51,16 @@ python3 test1.py --series KXFEDDECISION                  # Test 1
 
 Left to the team so this folder doesn't clash with `validation/` or `docs/data/export_risk_output.py`.
 
-## Market box on the card (v0.2)
+## Market box on the card (v0.3, point in time)
 
-When a news article is about a future event a market prices, the card shows **What the market expects**: YES % on the left, NO % on the right, a bar in the middle, the change over a week, and whether the market agrees with the article.
+When a news article is about a future event, the card shows **What the market expects**, next to So what / So now what: up to 3 markets, each with YES % on the left, NO % on the right and a bar in the middle, **as of the end of the card's week** (Sunday close, US Eastern). Past weeks never use today's prices.
 
-1. **Tag (AI):** news classifier prompt **v1.7** (`validation/llm_event_classifier_prompt_v1.7.md`, v1.6 unchanged) adds `forward_topic` (fed_cut, government_shutdown, debt_limit_breach, recession, none), `forward_lean` (yes / no / neutral) and `forward_quote` (checked verbatim; a missing quote turns the lean neutral). Run with `--prompt-version v1.7`.
-2. **Match (code):** `attach_market_views.py --week <Monday> --candidates <run>/candidates.csv` finds the Kalshi market from `config/topics.json` (the AI never picks tickers), checks the resolution date is close to the article's date, skips thin markets, and writes `../data/market_views/market_views_<week>.json`.
-3. **Factor:** article leans yes/no → factor = 0.75 + 0.5 × (market probability of the article's side), so 50% = 1.0, 80% agreement = 1.15, 20% = 0.85. Neutral articles get the box with factor 1.0. Combined with the social-media hype factor, the total stays within 0.75–1.25.
-4. **Show (export + page):** `docs/data/export_risk_output.py` adds `market_view` to the card. The factor only changes the score with `--apply-market-factor` (after analyst review), and only for event-scored cards; it adds `shock_adjusted` and never overwrites `shock`. Without a market-views file the export output is byte-for-byte the same as before.
+1. **Tag (AI, prompt v1.7):** `forward_topic` (fed_cut, government_shutdown, debt_limit_breach, recession, **other**, none), `forward_lean` (yes / no / neutral), `forward_quote` (checked verbatim) and `forward_subject` (for `other`: a short search phrase such as "Jensen Huang return as Nvidia CEO"; at least half its words must be in the article).
+2. **Snapshot (code):** `kalshi_candidates.py` builds that week's point-in-time list, `data/kalshi/<Monday>/kalshi_candidates.csv`, with the articles' subjects added to the search.
+3. **Match (code, never the AI):** vetted topics use the series in `config/topics.json` and the event resolving closest to the article's date; `other` searches the week's markets by the subject words and keeps up to 3 events (e.g. back by end of month, by end of year). Writes `data/market_views/market_views_<Monday>.json`.
+4. **Factor:** vetted topics with a yes/no lean propose factor = 0.75 + 0.5 × (market probability of the article's side); subject matches are **box only** (factor 1.0). Combined with hype, the total stays within 0.75–1.25. The export applies it only with `--apply-market-factor`, after review, and only to event-scored cards.
 
-Tests: `python3 -m unittest test_market_view` (here) and `python3 -m unittest validation.test_llm_classifier_v17 validation.test_market_view_export` (from Capstone_Project). Before switching the weekly run to v1.7, re-run the golden eval to confirm the new fields don't change the other labels.
+The weekly news run (`python -m validation.weekly_news_run`) does steps 1–3 automatically (step 7 of the runbook). `run_once.py` back-fills past weeks from their saved news.
 
 ## Run it once (one command, for a teammate)
 
@@ -68,29 +68,29 @@ From the repo root, in a normal terminal (Kalshi is blocked on some school/VPN/s
 
 ```bash
 python3 Capstone_Project/prediction_markets/run_once.py --week 2026-11-02 --offline   # 10-second dry run, simulated data, no network
-python3 Capstone_Project/prediction_markets/run_once.py --week 2026-11-23              # real run: classifier v1.7 -> Kalshi -> export
+python3 Capstone_Project/prediction_markets/run_once.py --week 2026-11-09              # back-fill a past week: v1.7 on its saved news -> point-in-time Kalshi -> export
 ```
 
 It checks Kalshi, runs the classifier with prompt v1.7 into `data/market_views/classifier_runs/` (the team's `data/events` files are not touched), writes `data/market_views/market_views_<week>.json`, and exports to `docs/data/risk_output_kalshi.json` (the live `risk_output.json` is not touched). Open `docs/index.html?data=data/risk_output_kalshi.json` to see the boxes next to So what / So now what. Use `--candidates <csv>` to skip the classifier, `--max-articles` / `--budget` to cap Bedrock cost, and `--apply-market-factor` only after an analyst has reviewed the boxes. The `--week` must be a snapshot week the export knows.
 
-## Weekly candidate list (kalshi_candidates.py)
+## Weekly candidate list (kalshi_candidates.py, point in time)
 
-A broad scan of open Kalshi markets for the team to map to risk families and cards. One row per binary market.
+A scan of the Kalshi markets that were live at the end of each dashboard week, for the team to map to risk families and cards. One row per binary market, one file per week.
 
 ```bash
-python3 Capstone_Project/prediction_markets/kalshi_candidates.py --snapshot-date 2026-11-30 --offline   # simulated dry run
-python3 Capstone_Project/prediction_markets/kalshi_candidates.py --snapshot-date 2026-11-30             # real run (normal terminal)
+python3 Capstone_Project/prediction_markets/kalshi_candidates.py --week 2026-11-02 --week 2026-11-09 --week 2026-11-16 --offline
+python3 Capstone_Project/prediction_markets/kalshi_candidates.py --week 2026-11-02 --week 2026-11-09 --week 2026-11-16
 ```
 
-Writes `Capstone_Project/data/kalshi/<snapshot_date>/kalshi_candidates.csv`, `raw/` (events and candlesticks JSON) and `run_log.json` (API calls, categories seen, filter counts, price source).
+Writes `Capstone_Project/data/kalshi/<Monday>/kalshi_candidates.csv`, `raw/` and `run_log.json`.
 
-- **Which markets** (`config/candidates.json`): open, closing within 18 months; Economics, Financials, Politics (government-operation keywords only), Science and Technology, Climate and Weather, and Crypto only for stablecoin / market-structure / SEC / CFTC markets (never price levels). Combo/parlay markets (`KXMVE…`) dropped. Keywords match whole words, so "rate" doesn't match "corporate" and "SEC" doesn't match "second". After the first live run, check `categories_seen` in the run log and fix any category spelling in the config.
-- **Prices** are 0–1. `prob_now` = mid of the yes bid/ask (else last price) when run on or before the snapshot date. When run later, it is the daily candle close on the snapshot date instead; `prob_source` says which. `prob_7d_ago` = daily close 7 days earlier (blank if the market is newer). `volume_7d` = sum of the last 7 daily candles (Kalshi has no 7-day field). `liquidity_ok` = Y if open interest ≥ 1,000 or 7-day volume ≥ 1,000 (set in the config).
-- **Mapping columns** are left blank. Re-running the same week keeps anything already typed into them (matched by `market_ticker`).
-- **All or nothing:** the files are written to a temp folder and swapped in only if every call succeeded. If any call fails, the previous snapshot stays and the error is saved in `data/kalshi/_errors/`.
-- `kalshi_url` points to the series page (`kalshi.com/markets/<series>`); Kalshi's event page slugs are not in the API.
+- **Snapshot:** the end of that week's Sunday, US Eastern (week of Nov 2 → as of Nov 8). A market is included only if it was live then (`open_time <= as_of < close_time`); markets that have since closed or settled are fetched from the closed/settled and historical endpoints.
+- **Prices:** `prob_as_of` = daily candle close at the snapshot, `prob_7d_before` = close 7 days earlier, `change_7d_pts` from the two; volume and open interest from the candles. For the current, unfinished week, live quotes are used (`prob_source` says which). Bid/ask columns are blank for past weeks (today's quotes would be look-ahead).
+- **Outcome columns** `result` (yes / no / open / pending), `settled_at`, `outcome_note`: for the "expected vs happened" slide only, never shown on the main page.
+- **Which markets** (`config/candidates.json`): Economics, Financials, Companies, Politics (government keywords only), Science and Technology, Climate and Weather, Crypto (regulation only, never price levels); combo/parlay markets dropped; whole-word keywords incl. Nvidia, Nasdaq, S&P 500, tech, semiconductor, AI stocks, market cap, volatility, VIX. `--subjects-from <candidates.csv>` adds the week's news subjects (any category except Sports/Entertainment/Culture/Mentions/Social). Check `categories_seen` in the run log after the first live run and fix spellings in the config.
+- **Mapping columns** are left blank and kept on re-run. **All or nothing:** a failed call leaves the previous file and logs to `data/kalshi/_errors/`.
 
-Tests: `python3 -m unittest test_kalshi_candidates -v`.
+Tests: `python3 -m unittest test_kalshi_candidates test_market_view -v`.
 
 ## Before relying on it
 

@@ -4,8 +4,11 @@
 Steps:
   1. Check Kalshi is reachable (public market data, no key).
   2. Run the news classifier with prompt v1.7 (Bedrock, your normal AWS SSO login) into its own folder,
-     so it never touches the team's data/events files.
-  3. Match tagged articles to Kalshi markets -> Capstone_Project/data/market_views/market_views_<week>.json
+     so it never touches the team's data/events files. For a past week it reuses that week's saved news
+     (data/events/weekly/<monday>/<run>/inputs/feeds/classifier_input.csv), so nothing is re-collected.
+  3. Build that week's point-in-time Kalshi snapshot (as of the Sunday close) and match the tagged articles
+     -> Capstone_Project/data/kalshi/<week>/ and Capstone_Project/data/market_views/market_views_<week>.json
+     (the weekly news run does steps 2-3 itself; this script is for back-filling past weeks)
   4. Export the dashboard data to docs/data/risk_output_kalshi.json (the live risk_output.json is not touched).
   5. Print a summary and the link to open.
 
@@ -56,6 +59,10 @@ def run_classifier(a) -> Path:
     out.mkdir(parents=True, exist_ok=True)
     cmd = [sys.executable, str(CP / "validation" / "llm_classifier.py"), "--start", a.start.isoformat(),
            "--end", a.end.isoformat(), "--prompt-version", "v1.7", "--output-dir", str(out)]
+    saved = sorted((CP / "data" / "events" / "weekly" / a.week).glob("*/inputs/feeds/classifier_input.csv"))
+    if saved:
+        cmd += ["--news", str(saved[-1])]
+        print(f"    reusing the week's saved news: {saved[-1]}")
     if a.max_articles:
         cmd += ["--max-articles", str(a.max_articles)]
     if a.budget:
@@ -86,9 +93,11 @@ def summary(a):
     mv = json.loads((a.mv_dir / f"market_views_{a.week}.json").read_text())
     cards = mv.get("cards", {})
     print(f"    {len(cards)} card(s) got a market box; {len(mv.get('skipped', []))} tagged article(s) had no usable market.")
+    print(f"    prices as of {mv.get('as_of')}")
     for cid, v in sorted(cards.items()):
-        print(f"    - {cid}: {v['question']}  YES {round(v['p_yes'] * 100)}%  lean={v.get('lean')}  "
-              f"{v.get('agreement')}  factor x{v['factor']:.2f}")
+        print(f"    - {cid}: {v.get('agreement')}  factor x{v['factor']:.2f}")
+        for r in v.get("rows", []):
+            print(f"        {r['question']}  YES {round(r['p_yes'] * 100)}%  (resolves {r['resolves']})")
     for s in mv.get("skipped", [])[:10]:
         print(f"    skipped {s.get('candidate_id')}: {s.get('topic')} ({s.get('reason')})")
     print(f"\n    Open docs/index.html?data=data/{a.out_json.name} through the local server or GitHub Pages to see the boxes.")
@@ -125,12 +134,9 @@ def main(argv=None):
     else:
         cands = [run_classifier(a)]
 
-    step(3, "Match articles to Kalshi markets")
+    step(3, "Point-in-time Kalshi snapshot and matching")
     args = ["--week", a.week, "--candidates", *map(str, cands), "--out-dir", str(a.mv_dir)] + (["--offline"] if a.offline else [])
     attach_market_views.main(args)
-    if a.offline:  # attach names offline files *_offline.json; the export looks for market_views_<week>.json
-        src = a.mv_dir / f"market_views_{a.week}_offline.json"
-        src.replace(a.mv_dir / f"market_views_{a.week}.json")
 
     step(4, "Export dashboard data")
     run_export(a)
