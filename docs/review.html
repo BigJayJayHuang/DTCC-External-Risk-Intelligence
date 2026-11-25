@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Risk Horizon · Review</title>
+<meta name="description" content="Analyst review queue for Risk Horizon: approve news onto the board (demo sign-in).">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+<style>
+/* Same palette as index.html (DTCC capstone theme) */
+:root{
+  --bg:#FFFFFF; --surface:#FBF9F3; --line:#DCE7E3; --ink:#1E2B28; --muted:#5F6B68;
+  --brand:#0E5447; --brand-2:#129B76; --on-brand:#FFFFFF; --brand-soft:#E6F3EF;
+  --note:#F5EAD9; --note-line:#E9D9BF; --note-ink:#7A5A1E;
+  --high:#D9673B; --high-soft:#FBE4D9; --high-ink:#9C4119; --med:#E2AC3D; --on-med:#2A2108; --low:#BFD9CF; --on-low:#1B2621;
+  --pend:#E4E8E6; --on-pend:#3F4B46; --focus:#129B76;
+  --f-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif; --f-body:"Source Sans 3","Segoe UI",Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5;margin:0}
+[hidden]{display:none!important}
+button,select,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+a{color:var(--brand-2)}
+.wrap{max-width:1180px;margin:0 auto;padding:20px 20px 48px}
+.top{border-bottom:3px solid var(--brand-2);padding-bottom:14px;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;margin-bottom:18px}
+.brand{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.brand h1{font-family:var(--f-display);font-weight:700;font-size:30px;letter-spacing:.02em;text-transform:uppercase;color:var(--brand);margin:0;line-height:1}
+.brand span{color:var(--muted);font-size:14.5px}
+.acts{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:7px 14px;font-weight:700;font-size:14px;cursor:pointer;text-decoration:none;color:var(--ink)}
+.btn:hover{border-color:var(--brand-2)}
+.btn.pri{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+.btn.ok{background:var(--brand-2);border-color:var(--brand-2);color:#fff}
+.btn.no{background:var(--bg);border-color:var(--high);color:var(--high-ink)}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.banner{background:var(--note);border:1px solid var(--note-line);color:var(--note-ink);border-radius:10px;padding:10px 14px;font-size:14px;margin-bottom:16px}
+/* login */
+.login{max-width:400px;margin:40px auto;border:1px solid var(--line);border-radius:14px;padding:26px;background:var(--surface)}
+.login h2{margin:0 0 4px;color:var(--brand);font-size:22px}
+.login p{margin:0 0 18px;color:var(--muted);font-size:14.5px}
+.fld{display:grid;gap:4px;margin-bottom:14px;font-weight:600;font-size:14px}
+.fld input{border:1px solid var(--line);border-radius:8px;padding:9px 12px;background:var(--bg);font-weight:400;font-size:16px}
+.err{color:var(--high-ink);font-size:14px;min-height:20px;margin:0 0 10px}
+.small{font-size:13px;color:var(--muted)}
+/* queue */
+.grid{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:20px;align-items:start}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.filters select{border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:14px;background:var(--bg)}
+.count{font-size:13.5px;color:var(--muted);margin-bottom:8px}
+.list{display:grid;gap:8px;max-height:calc(100vh - 210px);overflow:auto;padding-right:4px}
+.qi{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;text-align:left;border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:10px;cursor:pointer;width:100%}
+.qi[aria-current="true"]{border-color:var(--brand);box-shadow:0 0 0 2px var(--brand-soft)}
+.qi .s{border-radius:8px;display:grid;place-items:center;font-weight:700;font-size:18px;height:44px;background:var(--pend);color:var(--on-pend)}
+.qi .s.h{background:var(--high);color:#fff}.qi .s.m{background:var(--med);color:var(--on-med)}.qi .s.l{background:var(--low);color:var(--on-low)}
+.qi .t{font-weight:700;font-size:14.5px;line-height:1.3;display:block}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}
+.chip{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--muted);background:var(--bg);white-space:nowrap}
+.chip.app{background:var(--brand-soft);border-color:var(--brand-2);color:var(--brand)}
+.chip.den{background:var(--high-soft);border-color:var(--high);color:var(--high-ink)}
+.chip.req{background:var(--note);border-color:var(--note-line);color:var(--note-ink)}
+.detail{border:1px solid var(--line);border-radius:14px;padding:18px 20px;background:var(--bg);min-width:0}
+.detail h2{margin:0 0 6px;font-size:22px;line-height:1.25}
+.meta{color:var(--muted);font-size:14px;margin-bottom:12px}
+.sec{margin:16px 0 0}
+.lab{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--note-ink);margin:0 0 6px}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
+.kv div{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:var(--surface)}
+.kv b{display:block;font-size:18px}
+.kv span{font-size:12.5px;color:var(--muted)}
+ul.src{margin:0;padding-left:18px}ul.src li{margin:4px 0;font-size:14.5px}
+.flags{margin:0;padding-left:18px;color:var(--high-ink);font-size:14px}
+.cards{display:grid;gap:6px}
+.cards label{display:flex;gap:8px;align-items:flex-start;font-size:14.5px;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+.cards label small{color:var(--muted)}
+.add{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}.add select{border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:14px;max-width:100%}
+textarea{width:100%;min-height:64px;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:14.5px}
+.decide{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.done{background:var(--brand-soft);border:1px solid var(--brand-2);border-radius:10px;padding:10px 12px;font-size:14.5px;margin-top:14px}
+.done.den{background:var(--high-soft);border-color:var(--high)}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:#fff;border-radius:10px;padding:10px 16px;font-size:14.5px;display:flex;gap:12px;align-items:center;z-index:20;max-width:calc(100% - 32px)}
+.toast a{color:var(--low);font-weight:700}
+.empty{color:var(--muted);padding:20px;text-align:center}
+@media (max-width:820px){
+  .wrap{padding-inline:16px}
+  .grid{grid-template-columns:minmax(0,1fr)}
+  .list{max-height:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"><p class="empty">Loading…</p></div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script>
+/* Admin review page (demo). Sign-in is checked in the browser against salted PBKDF2 hashes in data/admin_users.json:
+   fine for a demo, not real security (GitHub Pages has no server). Decisions are kept in this browser
+   (localStorage "rh-review-v1"); approved news shows on the board in this browser via the "Live view" button, and
+   "Export decisions" downloads them for the repo. */
+const PARAMS=new URLSearchParams(location.search);
+const DATA_URL=PARAMS.get("data")||"data/risk_output.json";
+const QUEUE_URL="data/review_queue.json", USERS_URL="data/admin_users.json";
+const KEY="rh-review-v1", SKEY="rh-admin";
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const httpUrl=u=>/^https?:\/\//i.test(String(u||""));
+const app=document.getElementById("app");
+let USERS=[], QUEUE=[], CARDS={}, ME=null, SEL=null;
+const F={week:"",status:"pending",tier:"all"};
+
+function readJSON(store,k,d){try{const v=store.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}
+function writeJSON(store,k,v){try{store.setItem(k,JSON.stringify(v));return true}catch(e){return false}}
+const decisions=()=>readJSON(localStorage,KEY,{decisions:{}}).decisions||{};
+function saveDecision(id,d){const all=readJSON(localStorage,KEY,{decisions:{}});all.decisions=all.decisions||{};
+  if(d) all.decisions[id]=d; else delete all.decisions[id]; return writeJSON(localStorage,KEY,all);}
+const hex2buf=h=>new Uint8Array(h.match(/../g).map(x=>parseInt(x,16)));
+const buf2hex=b=>[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("");
+async function pbkdf2(pw,salt,iter){
+  const key=await crypto.subtle.importKey("raw",new TextEncoder().encode(pw),"PBKDF2",false,["deriveBits"]);
+  return buf2hex(await crypto.subtle.deriveBits({name:"PBKDF2",hash:"SHA-256",salt:hex2buf(salt),iterations:iter},key,256));}
+async function getJSON(u){const r=await fetch(u,{cache:"no-store"}); if(!r.ok) throw new Error(`HTTP ${r.status} for ${u}`); return r.json();}
+
+function header(){
+  return `<header class="top"><div class="brand"><h1>Risk Horizon</h1><span>Analyst review${ME?` · signed in as ${esc(ME.name||ME.username)}`:""}</span></div>
+  <div class="acts">${ME?`<a class="btn pri" href="index.html${DATA_URL!=="data/risk_output.json"?"?data="+encodeURIComponent(DATA_URL):""}">Live view ›</a>
+    <button class="btn" id="exp" type="button">Export decisions</button><button class="btn" id="out" type="button">Sign out</button>`
+    :`<a class="btn" href="index.html">‹ Back to the board</a>`}</div></header>`;}
+
+/* ---------- login ---------- */
+function loginView(msg){
+  app.innerHTML=header()+`<form class="login" id="lf" autocomplete="on"><h2>Admin login</h2>
+    <p>Sign in with the account the team created for you to review news before it goes on the board.</p>
+    <label class="fld" for="u">Username<input id="u" name="username" autocomplete="username" required></label>
+    <label class="fld" for="p">Password<input id="p" name="password" type="password" autocomplete="current-password" required></label>
+    <p class="err" id="e" role="alert">${esc(msg||"")}</p>
+    <button class="btn pri" type="submit" style="width:100%;justify-content:center">Sign in</button>
+    <p class="small" style="margin-top:14px">Demo sign-in: accounts are created by the team with docs/data/create_admin_user.py. Decisions are saved in this browser.</p></form>`;
+  document.getElementById("u").focus();
+  document.getElementById("lf").onsubmit=async ev=>{
+    ev.preventDefault();
+    const u=document.getElementById("u").value.trim().toLowerCase(), p=document.getElementById("p").value, e=document.getElementById("e");
+    e.textContent="Checking…";
+    const user=USERS.find(x=>x.username===u);
+    let ok=false;
+    try{ ok=!!user&&(await pbkdf2(p,user.salt,user.iterations||150000))===user.hash; }catch(x){ e.textContent="This browser can't check the password here (open the page over https or localhost)."; return; }
+    if(!ok){ e.textContent="Wrong username or password."; return; }
+    ME={username:user.username,name:user.name,role:user.role,at:new Date().toISOString()};
+    writeJSON(sessionStorage,SKEY,ME); route();
+  };
+}
+
+/* ---------- queue ---------- */
+const lvl=n=>n==null?"":n>=15?"h":n>=8?"m":"l";
+function statusOf(q){const d=decisions()[q.id]; if(d) return d.decision; const s=(q.sheet_decision||"").toLowerCase();
+  return /approve|accept|keep/.test(s)?"approved":/reject|deny|drop/.test(s)?"denied":"pending";}
+function topSev(q){const v=Object.values(q.severity||{}).map(x=>x&&x.severity).filter(x=>typeof x==="number"); return v.length?Math.max(...v):null;}
+function visible(){return QUEUE.filter(q=>(!F.week||q.week===F.week)&&(F.status==="all"||statusOf(q)===F.status)&&(F.tier==="all"||q.tier===F.tier))
+  .sort((a,b)=>(topSev(b)??-1)-(topSev(a)??-1));}
+const cardName=(id,week)=>{const c=CARDS[week+"|"+id]; return c?c.title:"";};
+function chipFor(s){return s==="approved"?`<span class="chip app">Approved</span>`:s==="denied"?`<span class="chip den">Denied</span>`:`<span class="chip">Pending</span>`;}
+
+function queueView(){
+  const weeks=[...new Set(QUEUE.map(q=>q.week))].sort().reverse();
+  if(!F.week&&weeks.length) F.week=weeks[0];
+  const items=visible(), all=QUEUE.filter(q=>!F.week||q.week===F.week);
+  const n=s=>all.filter(q=>statusOf(q)===s).length;
+  if(SEL&&!items.some(q=>q.id===SEL)) SEL=null;
+  if(!SEL&&items.length) SEL=items[0].id;
+  app.innerHTML=header()+`<div class="banner">Demo review queue: news the AI proposed for the board this week. Approve to put an article on its card (open <b>Live view</b> to see it); deny to keep it off. ${n("pending")} pending · ${n("approved")} approved · ${n("denied")} denied.</div>
+  <div class="grid"><div>
+    <div class="filters" role="group" aria-label="Filters">
+      <select id="fw" aria-label="Week">${weeks.map(w=>`<option value="${esc(w)}" ${w===F.week?"selected":""}>Week of ${esc(w)}</option>`).join("")}</select>
+      <select id="fs" aria-label="Status">${[["pending","Pending"],["approved","Approved"],["denied","Denied"],["all","All"]].map(([v,l])=>`<option value="${v}" ${v===F.status?"selected":""}>${l}</option>`).join("")}</select>
+      <select id="ft" aria-label="Review tier">${[["all","All tiers"],["required","Review required"],["auto","Auto"]].map(([v,l])=>`<option value="${v}" ${v===F.tier?"selected":""}>${l}</option>`).join("")}</select>
+    </div>
+    <div class="count">${items.length} item${items.length===1?"":"s"} · keys J / K to move, A approve, D deny</div>
+    <div class="list" id="list">${items.length?items.map(q=>{const s=topSev(q); return `<button class="qi" type="button" data-id="${esc(q.id)}" aria-current="${q.id===SEL}">
+      <span class="s ${lvl(s)}" aria-label="Would-be severity ${s??"not scored"}">${s??"–"}</span>
+      <span><span class="t">${esc(q.title)}</span><span class="chips">${chipFor(statusOf(q))}${q.tier==="required"?`<span class="chip req">Review required</span>`:""}${q.card_ids.map(c=>`<span class="chip">${esc(c)}</span>`).join("")}</span></span></button>`;}).join("")
+      :`<p class="empty">Nothing here. Try another status or week.</p>`}</div>
+  </div><div id="detail">${detailView()}</div></div>`;
+  bindQueue();
+}
+
+function detailView(){
+  const q=QUEUE.find(x=>x.id===SEL); if(!q) return `<div class="detail"><p class="empty">Select an item.</p></div>`;
+  const d=decisions()[q.id], st=statusOf(q), s=topSev(q);
+  const weekCards=Object.values(CARDS).filter(c=>c.snapshot===q.week);
+  const chosen=d&&d.cards?d.cards:q.card_ids.filter(c=>CARDS[q.week+"|"+c]);
+  const extra=chosen.filter(c=>!q.card_ids.includes(c));
+  const cardRow=c=>`<label><input type="checkbox" name="card" value="${esc(c)}" ${chosen.includes(c)?"checked":""} ${st!=="pending"?"disabled":""}>
+    <span><b>${esc(c)}</b> ${esc(cardName(c,q.week)||"(not on the board this week)")}${q.severity[c]?` <small>· would-be V ${esc(q.severity[c].V)}, severity ${esc(q.severity[c].severity)}</small>`:""}</span></label>`;
+  return `<div class="detail" aria-live="polite">
+    <h2>${esc(q.title)}</h2>
+    <div class="meta">Week of ${esc(q.week)} · ${esc(q.id)} · ${chipFor(st)}</div>
+    <div class="kv"><div><span>Would-be shock S</span><b>${q.S??"–"}</b></div><div><span>Top severity</span><b>${s??"–"}</b></div>
+      <div><span>Certainty · reach</span><b>${esc(q.certainty||"–")} · ${esc(q.reach||"–")}</b></div><div><span>Outlets</span><b>${esc(q.outlets||q.sources.length)}</b></div>
+      <div><span>AI confidence</span><b>${esc(q.confidence||"–")}</b></div></div>
+    ${q.flags.length?`<section class="sec"><h3 class="lab">Why it needs a human</h3><ul class="flags">${q.flags.map(f=>`<li>${esc(f)}</li>`).join("")}</ul></section>`:""}
+    <section class="sec"><h3 class="lab">Sources (${q.sources.length})</h3><ul class="src">${q.sources.slice(0,8).map(x=>`<li>${httpUrl(x.url)?`<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.headline)}</a>`:esc(x.headline)} <span class="small">· ${esc(x.outlet)}</span></li>`).join("")}</ul>
+      ${q.sources.length>8?`<p class="small">and ${q.sources.length-8} more</p>`:""}</section>
+    <section class="sec"><h3 class="lab">Put it on these cards</h3><div class="cards" id="cards">${[...q.card_ids,...extra].map(cardRow).join("")}</div>
+      ${st==="pending"?`<div class="add"><select id="addc" aria-label="Add another card"><option value="">Add another card…</option>${weekCards.filter(c=>!q.card_ids.includes(c.card_id)&&!extra.includes(c.card_id)).map(c=>`<option value="${esc(c.card_id)}">${esc(c.card_id)} · ${esc(c.title)}</option>`).join("")}</select></div>`:""}</section>
+    <section class="sec"><h3 class="lab"><label for="note">Note for the team</label></h3><textarea id="note" ${st!=="pending"?"disabled":""} placeholder="Optional: why you approved or denied it">${esc(d&&d.note||"")}</textarea></section>
+    ${st==="pending"?`<div class="decide"><button class="btn ok" id="ap" type="button">Approve · put on board (A)</button><button class="btn no" id="dn" type="button">Deny (D)</button><span class="small" id="msg"></span></div>`
+      :`<div class="done ${st==="denied"?"den":""}">${st==="approved"?`Approved${d?` by ${esc(d.by)} on ${esc(new Date(d.at).toLocaleString())}`:" in the review sheet"} · on ${esc((d&&d.cards||q.card_ids).join(", "))}. <a href="index.html">See it in Live view ›</a>`:`Denied${d?` by ${esc(d.by)}`:" in the review sheet"}; it stays off the board.`}
+        ${d?` <button class="btn" id="undo" type="button" style="margin-left:8px">Undo</button>`:""}</div>`}
+  </div>`;
+}
+
+function decide(kind){
+  const q=QUEUE.find(x=>x.id===SEL); if(!q||statusOf(q)!=="pending") return;
+  const cards=[...document.querySelectorAll('#cards input[name="card"]:checked')].map(x=>x.value);
+  if(kind==="approved"&&!cards.length){ document.getElementById("msg").textContent="Pick at least one card."; return; }
+  const ok=saveDecision(q.id,{decision:kind,cards,note:document.getElementById("note").value.trim(),by:ME.name||ME.username,
+    at:new Date().toISOString(),week:q.week,title:q.title,S:q.S,sev:q.severity,
+    sources:q.sources.slice(0,5).map(s=>({headline:s.headline,outlet:s.outlet,url:s.url}))});
+  toast(ok?(kind==="approved"?`Approved: on ${cards.join(", ")} now. <a href="index.html">Open Live view ›</a>`:"Denied: kept off the board."):"This browser blocked saving (private mode?).");
+  const items=visible(), idx=items.findIndex(x=>x.id===q.id);
+  SEL=null; queueView(); const next=visible()[Math.min(idx,visible().length-1)]; if(next){SEL=next.id; queueView();}
+}
+let tt; function toast(h){const t=document.getElementById("toast"); t.innerHTML=h; t.hidden=false; clearTimeout(tt); tt=setTimeout(()=>t.hidden=true,6000);}
+
+function exportDecisions(){
+  const d=decisions(), rows=QUEUE.filter(q=>d[q.id]).map(q=>({proposed_event_id:q.id,week:q.week,title:q.title,
+    decision:d[q.id].decision==="approved"?"approve":"reject",corrected_card_ids:(d[q.id].cards||[]).join("|"),
+    reviewer:d[q.id].by,reviewer_notes:d[q.id].note,decided_at:d[q.id].at}));
+  if(!rows.length){ toast("No decisions to export yet."); return; }
+  const blob=new Blob([JSON.stringify({exported_at:new Date().toISOString(),exported_by:ME.username,decisions:rows},null,2)],{type:"application/json"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=`review_decisions_${F.week||"all"}.json`; document.body.appendChild(a); a.click(); a.remove();
+}
+
+function bindQueue(){
+  const re=()=>{SEL=null;queueView();};
+  document.getElementById("fw").onchange=e=>{F.week=e.target.value;re();};
+  document.getElementById("fs").onchange=e=>{F.status=e.target.value;re();};
+  document.getElementById("ft").onchange=e=>{F.tier=e.target.value;re();};
+  document.querySelectorAll(".qi").forEach(b=>b.onclick=()=>{SEL=b.dataset.id;queueView();
+    if(matchMedia("(max-width:820px)").matches) document.getElementById("detail").scrollIntoView({behavior:"smooth"});});
+  const ap=document.getElementById("ap"), dn=document.getElementById("dn"), un=document.getElementById("undo"), add=document.getElementById("addc");
+  if(ap) ap.onclick=()=>decide("approved"); if(dn) dn.onclick=()=>decide("denied");
+  if(un) un.onclick=()=>{saveDecision(SEL,null);toast("Decision undone.");queueView();};
+  if(add) add.onchange=()=>{if(!add.value) return; const box=document.getElementById("cards"); const c=add.value, q=QUEUE.find(x=>x.id===SEL);
+    box.insertAdjacentHTML("beforeend",`<label><input type="checkbox" name="card" value="${esc(c)}" checked><span><b>${esc(c)}</b> ${esc(cardName(c,q.week))}</span></label>`);
+    add.querySelector(`option[value="${CSS.escape(c)}"]`).remove(); add.value="";};
+  document.getElementById("exp").onclick=exportDecisions;
+  document.getElementById("out").onclick=()=>{try{sessionStorage.removeItem(SKEY)}catch(e){} ME=null; route();};
+}
+document.addEventListener("keydown",e=>{
+  if(!ME||/input|textarea|select/i.test(e.target.tagName)) return;
+  const k=e.key.toLowerCase(), items=visible(), i=items.findIndex(q=>q.id===SEL);
+  if(k==="j"&&i<items.length-1){SEL=items[i+1].id;queueView();}
+  else if(k==="k"&&i>0){SEL=items[i-1].id;queueView();}
+  else if(k==="a") decide("approved"); else if(k==="d") decide("denied");
+});
+
+function route(){ ME=readJSON(sessionStorage,SKEY,null); ME?queueView():loginView(); }
+(async()=>{
+  try{
+    const [u,q,d]=await Promise.all([getJSON(USERS_URL),getJSON(QUEUE_URL),getJSON(DATA_URL).catch(()=>({items:[]}))]);
+    USERS=u.users||[]; QUEUE=q.items||[];
+    (d.items||[]).forEach(i=>{CARDS[i.snapshot+"|"+i.card_id]={card_id:i.card_id,snapshot:i.snapshot,title:i.front_headline||i.title||i.card_id};});
+  }catch(e){ app.innerHTML=header()+`<div class="banner">Could not load the review data (${esc(e.message)}). Run docs/data/export_review_queue.py and open the page through a web server.</div>`; return; }
+  route();
+})();
+</script>
+</body>
+</html>

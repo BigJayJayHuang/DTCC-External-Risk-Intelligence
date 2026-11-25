@@ -40,8 +40,12 @@ a{color:var(--brand-2)}
 .brand{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
 .brand h1{font-family:var(--f-display);font-weight:700;font-size:30px;letter-spacing:.02em;text-transform:uppercase;color:var(--brand);margin:0;line-height:1}
 .brand span{color:var(--muted);font-size:14.5px}
-.snap{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:14px;color:var(--muted);min-width:0;max-width:100%}
+.snap{margin-left:auto;justify-content:flex-end;display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:14px;color:var(--muted);min-width:0;max-width:100%}
 .snap select{max-width:100%;min-width:0;border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:6px 10px;font-size:14px}
+.adminbtn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--brand);color:var(--brand);background:var(--bg);border-radius:8px;padding:6px 12px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}
+.adminbtn:hover{background:var(--brand);color:var(--on-brand)}
+.livenote{background:var(--brand-soft);border:1px solid var(--brand-2);color:var(--ink);border-radius:10px;padding:9px 14px;font-size:14px;margin:0 0 14px}
+.chip.new{background:var(--brand-soft);border-color:var(--brand-2);color:var(--brand);font-weight:700}
 .sample{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--note-ink);background:var(--note);border:1px solid var(--note-line);border-radius:999px;padding:3px 10px;white-space:nowrap}
 
 /* tabs */
@@ -260,7 +264,7 @@ const phFor=i=>i.analysis==="pending_review"?PH_REVIEW:
   (NARR_START&&i.analysis!=="ai_reviewed"&&i.analysis!=="template"?`<span class="ph">Narrative analysis starts from the week of ${esc(fmtDay(NARR_START))}.</span>`:PH);
 const AI_LABEL="AI-classified, not reviewed";
 const NEWS_NOTE="headline-level news, not scored";
-const LABEL_SUMMARY={"membership/onboarding":(n,i)=>`${n} new ${i.cardId.startsWith("ECS")?"NSCC":"FICC"} member${n===1?"":"s"} this week`};
+const LABEL_SUMMARY={"Analyst-approved":n=>`${n} article${n===1?"":"s"} approved by an analyst in the review queue`,"membership/onboarding":(n,i)=>`${n} new ${i.cardId.startsWith("ECS")?"NSCC":"FICC"} member${n===1?"":"s"} this week`};
 const COLLAPSED={no_relevant_news:1,news_not_scanned:1};   /* unscored cards folded into one block on the list view */
 
 /* All 10 DTCC business lines, always shown as tabs (order = tab order). */
@@ -553,7 +557,7 @@ function cardHtml(i){
       <span class="chips">
         ${otherWeek?`<span class="chip wk">Week of ${esc(fmtDay(i.snapDate))}</span>`:""}
         <span class="chip">${esc(i.family)}</span><span class="chip">${esc(i.line)}${i.sub?" · "+esc(i.sub):""}</span>
-        <span class="chip o">Confidence: ${esc(i.conf)}</span>${reviewChip(i)}${aiChip(i)}
+        <span class="chip o">Confidence: ${esc(i.conf)}</span>${reviewChip(i)}${aiChip(i)}${i.raw._approved?`<span class="chip new">New · analyst-approved${i.raw._provisional?" · provisional score":""}</span>`:""}
       </span>
       ${i.fWhat?`<span class="fwhat"><b>What happened ·</b> ${esc(i.fWhat)}</span>`:""}
       ${scored?frontBoxes(i):marketBox(i,false)}
@@ -575,8 +579,9 @@ function header(){
 <header class="top">
   <div class="brand"><h1>Risk Horizon</h1><span>External risk brief for the business-line GM</span></div>
   <div class="snap">${badge}${SNAPS.length?`<label for="snap">Snapshot</label>
-  <select id="snap">${SNAPS.map((s,n)=>`<option value="${esc(s.id)}" ${s.id===state.snap?"selected":""}>${esc(s.label)}${n===0?" (latest)":""}</option>`).join("")}</select>`:""}</div>
-</header>`}
+  <select id="snap">${SNAPS.map((s,n)=>`<option value="${esc(s.id)}" ${s.id===state.snap?"selected":""}>${esc(s.label)}${n===0?" (latest)":""}</option>`).join("")}</select>`:""}
+  <a class="adminbtn" href="review.html${PARAMS.get("data")?"?data="+encodeURIComponent(DATA_URL):""}">${ADMIN?"Review queue ›":"Admin login"}</a></div>
+</header>${LIVE.n?`<div class="livenote" role="note"><b>Live view:</b> ${LIVE.n} analyst-approved article${LIVE.n===1?"":"s"} from the review queue ${LIVE.n===1?"is":"are"} on the board (saved in this browser only). <a href="review.html">Review queue ›</a></div>`:""}`}
 function footer(){
   const gen=DATA&&toDate(DATA.generated_at);
   return `<footer class="method">
@@ -682,6 +687,35 @@ function route(){
   renderList();
 }
 
+/* ---------- live view: news an analyst approved on review.html (demo; kept in this browser's localStorage) ----------
+   Each approved article is added to its cards' related news for that week, pinned at the top, and the card gets a
+   "New" chip. Nothing is written to the data file; Export decisions on the review page saves them for the repo. */
+let ADMIN=false; const LIVE={n:0};
+function applyApprovals(){
+  try{ ADMIN=!!sessionStorage.getItem("rh-admin"); }catch(e){}
+  let d={}; try{ d=(JSON.parse(localStorage.getItem("rh-review-v1")||"{}").decisions)||{}; }catch(e){}
+  const items=asArr(DATA.items);
+  Object.entries(d).forEach(([id,x])=>{
+    if(!x||x.decision!=="approved") return;
+    let hit=false;
+    asArr(x.cards).forEach(cid=>items.filter(i=>i.card_id===cid&&i.snapshot===x.week).forEach(it=>{   /* XE cards appear once per line */
+      it.related_news=asArr(it.related_news).slice(); it.related_news_display=asArr(it.related_news_display).slice();
+      const src=asArr(x.sources)[0]||{};
+      const idx=it.related_news.push({title:x.title,outlet:src.outlet||"",url:src.url||"",label:"Analyst-approved"})-1;
+      if(it.related_news_display.length) it.related_news_display.unshift({index:idx,top:true,pinned:false,reason:`Approved by ${x.by||"an analyst"}`});
+      /* a card with no scored news this week goes on the board with the queue's would-be score, marked provisional */
+      const V=x.sev&&x.sev[cid]&&isNum(x.sev[cid].V)?x.sev[cid].V:it.vulnerability;
+      if(it.status!=="scored"&&isNum(x.S)&&isNum(V)){
+        Object.assign(it,{status:"scored",shock:x.S,vulnerability:V,_provisional:true,
+          front_what_happened:`${x.title}${src.outlet?` (${src.outlet})`:""}`,
+          status_reason:"Provisional: score from the review queue (would-be shock × vulnerability); the weekly scoring run sets the final score."});
+      }
+      it._approved=(it._approved||0)+1; hit=true;
+    }));
+    if(hit) LIVE.n++;
+  });
+}
+
 /* ---------- load ---------- */
 async function load(){
   try{
@@ -689,6 +723,7 @@ async function load(){
     if(!r.ok) throw new Error("HTTP "+r.status+" for "+DATA_URL);
     DATA=await r.json();
   }catch(e){ DATA={items:[],snapshots:[]}; LOAD_ERR=e.message||String(e); }
+  applyApprovals();
   SNAPS=asArr(DATA.snapshots).map(s=>({id:String(s.id),date:toDate(s.date||s.id),label:s.label||("Week of "+fmtDay(toDate(s.date||s.id)))}))
     .filter(s=>s.date).sort((a,b)=>b.date-a.date);
   /* snapshots referenced by items but not listed are added automatically */

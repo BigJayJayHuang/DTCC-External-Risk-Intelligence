@@ -1,0 +1,13 @@
+{
+  "_note": "Demo sign-in for docs/review.html. Salted PBKDF2-SHA256 hashes only; checked in the browser, so this is not real security. Manage with docs/data/create_admin_user.py.",
+  "users": [
+    {
+      "username": "analyst",
+      "name": "Risk analyst",
+      "role": "analyst",
+      "salt": "968e0adc0126646d499698cc31146646",
+      "iterations": 150000,
+      "hash": "f0778d4b5ee0d03a4a42d420929b6cf3bb75586310c9b67365aa296a3de9bfed"
+    }
+  ]
+}
