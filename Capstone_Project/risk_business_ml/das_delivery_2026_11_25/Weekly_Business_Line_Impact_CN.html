@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DTCC 十条业务线影响分析 · 2026-11-25</title>
+<style>
+:root{color-scheme:light;font:16px/1.58 system-ui,sans-serif;color:#202b36;background:#f5f7fa}
+body{margin:0}
+main{max-width:1140px;margin:auto;padding:36px 20px 60px}
+h1,h2,h3{line-height:1.25;margin:0 0 12px}
+h1{font-size:clamp(1.9rem,5vw,3rem)}
+h2{margin-top:30px}
+p{margin:8px 0}
+a{color:#084d77;text-underline-offset:3px}
+.eyebrow,.muted{color:#4c5a66}
+.eyebrow,.links,nav{font-size:.88rem}
+.intro{max-width:800px}
+.summary{background:#e9f1f6;border-radius:10px;padding:16px 18px;margin-top:18px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+article,details{background:#fff;border:1px solid #dce3e8;border-radius:10px;padding:16px 18px}
+article h3{margin:6px 0}
+article:target{border-color:#09688f;box-shadow:0 0 0 2px #d8eef8}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+nav a{background:#fff;border:1px solid #dce3e8;border-radius:5px;padding:4px 8px}
+.tag{display:inline-block;color:#154f5a;background:#e5f3f2;border-radius:4px;padding:2px 7px;font-size:.9rem}
+dl{margin:10px 0 0}dt{font-weight:650}dd{margin:0 0 8px}
+details{margin-top:12px}summary{cursor:pointer;font-weight:650}
+table{border-collapse:collapse;width:100%;margin-top:10px;font-variant-numeric:tabular-nums}
+th,td{text-align:right;padding:4px 8px;border-bottom:1px solid #dce3e8}
+th:first-child{text-align:left}
+footer{border-top:1px solid #dce3e8;margin:28px 0 0;padding-top:10px;color:#4c5a66}
+@media(max-width:750px){.grid{grid-template-columns:1fr}main{padding-top:22px}th,td{padding:4px}}
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">2026 年 11 月 25 日核查 · 行情截至 11 月 24 日完整收盘（纽约时间）</p>
+  <h1>DTCC 十条业务线影响分析</h1>
+  <p class="intro">使用公司公告、市场行情和监管文件追踪 11 月 12–25 日的变化。卡片给出业务传导路径和验证指标。实际保证金、交收异常、经营损失及风险分数均未由本期公开资料确认。</p>
+  <div class="summary">
+    <b>本期优先核查</b>
+    <p><a href="#ecs">ECS</a> 和 <a href="#itp">ITP</a> 检查股市急涨急跌有没有带来清算、匹配和交收压力。<a href="#ficc">FICC</a> 单独核查美债利率及回购。<a href="#asset-services">Asset Services</a> 跟踪英伟达股息、ANT 新股及 DRS 实施。<a href="#das">DAS</a> 与 <a href="#dda">DDA</a> 分别核查各自产品对 Besu 更新的适用性。</p>
+  </div>
+  <h2>公开证据</h2>
+  <div class="grid"><article>
+          <div class="eyebrow">2026-11-12、11-17、11-23</div>
+          <h3>英伟达财报、现金股息和管理层变化</h3>
+          <p>11 月 12 日公布黄仁勋辞任，CFO Colette Kress 出任临时 CEO。11 月 17 日盘后公布 FY2027 Q3 营收 1,158 亿美元，同比增长 103%，并宣布每股 0.25 美元季度现金股息，12 月 2 日登记、12 月 23 日支付。11 月 23 日公布黄仁勋复任总裁、CEO 和董事。</p>
+          <p class="muted">财报、现金股息和管理层变化是三个不同信号。首个财报后交易日大盘表现分化，之后的市场波动仍需考虑宏观和其他公司事件。</p>
+          <p class="links"><a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-CEO-Transition/default.aspx" target="_blank" rel="noopener noreferrer">NVIDIA 11 月 12 日管理层公告</a> · <a href="https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027" target="_blank" rel="noopener noreferrer">NVIDIA 财报与股息公告</a> · <a href="https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director" target="_blank" rel="noopener noreferrer">NVIDIA 董事会公告</a></p>
+        </article><article>
+          <div class="eyebrow">2026-11-16 至 11-24</div>
+          <h3>美股急跌后反弹，短端融资变化较小</h3>
+          <p>11 月 20 日 S&amp;P 500 跌 3.70%、Nasdaq Composite 跌 5.28%，VIX 升至 35.89，Cboe 汇总的美股市场成交约 258.3 亿股，比前一交易日多约 21%。11 月 23 日两大股指分别反弹 4.73% 和 6.51%。10 年期美国国债收益率从 11 月 13 日 5.15% 降至 11 月 24 日 4.91%。11 月 18 日至 24 日，SOFR–EFFR 从 +2 个基点升至 +6 个基点。</p>
+          <p class="muted">股市双向波动、国债重定价和回购利差分开观察。五个交易日 2–6 个基点的利差本身不足以认定融资失灵。Freddie Mac 的 30 年房贷均值从 11 月 12 日的 7.11% 升至 19 日的 7.28%，25 日回落至 7.21%，可作为 MBSD 的背景指标。</p>
+          <p class="links"><a href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&amp;field_tdr_date_value_month=202611" target="_blank" rel="noopener noreferrer">美债收益率 · U.S. Treasury</a> · <a href="https://fred.stlouisfed.org/data/SOFR" target="_blank" rel="noopener noreferrer">SOFR · FRED / NY Fed</a> · <a href="https://fred.stlouisfed.org/data/EFFR" target="_blank" rel="noopener noreferrer">EFFR · FRED / NY Fed</a> · <a href="https://www.freddiemac.com/pmms/pmms_archives" target="_blank" rel="noopener noreferrer">Freddie Mac 房贷利率</a> · <a href="https://www.cboe.com/insights/posts/week-of-11-23-2026-vix-jumps-to-1-year-high-but-no-panic-as-ai-trade-unwinds" target="_blank" rel="noopener noreferrer">Cboe 波动复盘</a> · <a href="https://www.cboe.com/markets/us/equities/market-statistics/historical-market-volume" target="_blank" rel="noopener noreferrer">Cboe 全市场成交口径</a></p>
+        </article><article>
+          <div class="eyebrow">2026-11-19、11-20</div>
+          <h3>Anthropic 大型 IPO</h3>
+          <p>ANT 于 11 月 19 日在 Nasdaq 开始交易。公司 11 月 20 日公告发行完成，公开发行每股 83 美元，含承销商选择权在内的发行总额约 935 亿美元。</p>
+          <p class="muted">优先核对新股发行资格、机构分配及交收。同期私募单独处理，其清算路径未在本次核实。</p>
+          <p class="links"><a href="https://www.nasdaq.com/newsroom/anthropic-marks-ipo-at-nasdaq" target="_blank" rel="noopener noreferrer">Nasdaq 上市公告</a> · <a href="https://nasdaqtrader.com/TraderNews.aspx?id=DTN2026-28" target="_blank" rel="noopener noreferrer">Nasdaq 代码映射通知</a> · <a href="https://www.anthropic.com/news/ipo-close" target="_blank" rel="noopener noreferrer">Anthropic 发行完成公告</a></p>
+        </article><article>
+          <div class="eyebrow">2026-11-23、11-24</div>
+          <h3>FICC 与 NSCC 清算规则节点</h3>
+          <p>SEC 11 月 24 日刊出 FICC 的申报，涉及在 GSD 的 ACS Triparty 回购清算中纳入符合条件的大宗交易。NSCC 文件将 11 月 23 日列为 ETF 创建与赎回的自动合理性校验规则实施日。</p>
+          <p class="muted">FICC 的申报生效与实际执行是两个节点。NSCC 文件记载了计划实施日，实际切换情况仍需确认。两条规则分别用于跟踪参与者准备、上线和异常核查。</p>
+          <p class="links"><a href="https://www.sec.gov/files/rules/sro/ficc/2026/34-106981.pdf" target="_blank" rel="noopener noreferrer">SEC FICC 34-106981</a> · <a href="https://www.sec.gov/files/rules/sro/nscc/2026/34-106784_0.pdf" target="_blank" rel="noopener noreferrer">SEC NSCC 34-106784</a></p>
+        </article><article>
+          <div class="eyebrow">2026-11-18、11-23</div>
+          <h3>DTC 直接登记系统现代化与 Besu 上游版本更新</h3>
+          <p>SEC 11 月 18 日批准 DRS 现代化修订案，涉及现有登记和转移流程，实施期限为 2027 年 6 月 30 日，具体切换日看 DTC 公告。Besu 11 月 23 日发布 26.11.2。</p>
+          <p class="muted">DRS 修订范围排除对 DTS 的修改和互操作。Besu 上游发布可触发适用性核查，DTS 或 AppChain 的本地部署与实际影响仍待确认。</p>
+          <p class="links"><a href="https://www.sec.gov/files/rules/sro/dtc/2026/34-106927.pdf" target="_blank" rel="noopener noreferrer">SEC 34-106927</a> · <a href="https://github.com/besu-eth/besu/releases/tag/26.11.2" target="_blank" rel="noopener noreferrer">Besu 发布方 26.11.2</a> · <a href="https://www.dtcc.com/press-releases/2025/dtcc-announces-new-platform-for-tokenized-real-time-collateral-management" target="_blank" rel="noopener noreferrer">DTCC Collateral AppChain 依赖说明</a></p>
+        </article></div>
+  <details><summary>查看事件前后市场收盘数据</summary>
+    <table aria-label="2026 年 11 月选定交易日的市场收盘数据">
+      <thead><tr><th scope="col">日期</th><th scope="col">标普 500</th><th scope="col">纳斯达克综合</th><th scope="col">VIX</th><th scope="col">成交量（十亿股）</th></tr></thead>
+      <tbody><tr><th scope='row'>11-13</th><td>7,561.67</td><td>25,136.27</td><td>19.30</td><td>—</td></tr><tr><th scope='row'>11-17</th><td>7,340.53</td><td>24,328.38</td><td>25.46</td><td>—</td></tr><tr><th scope='row'>11-18</th><td>7,323.63</td><td>24,429.88</td><td>24.56</td><td>—</td></tr><tr><th scope='row'>11-19</th><td>7,175.83</td><td>23,879.20</td><td>28.44</td><td>21.41</td></tr><tr><th scope='row'>11-20</th><td>6,910.39</td><td>22,617.73</td><td>35.89</td><td>25.83</td></tr><tr><th scope='row'>11-23</th><td>7,237.17</td><td>24,089.56</td><td>26.62</td><td>22.86</td></tr><tr><th scope='row'>11-24</th><td>7,201.09</td><td>23,733.54</td><td>26.36</td><td>19.46</td></tr></tbody>
+    </table>
+    <p class="links"><a href="https://fred.stlouisfed.org/data/SP500" target="_blank" rel="noopener noreferrer">S&amp;P 500 · FRED / S&amp;P DJI</a> · <a href="https://fred.stlouisfed.org/data/NASDAQCOM" target="_blank" rel="noopener noreferrer">Nasdaq Composite · FRED / Nasdaq</a> · <a href="https://fred.stlouisfed.org/data/VIXCLS" target="_blank" rel="noopener noreferrer">VIX · FRED / Cboe</a> · <a href="https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2026.csv" target="_blank" rel="noopener noreferrer">Cboe 全市场成交量 CSV</a></p>
+  </details>
+  <h2>逐业务线分析</h2>
+  <nav aria-label="业务线"><a href="#ficc">FICC</a> <a href="#ecs">ECS</a> <a href="#rds">RDS</a> <a href="#wis">WIS</a> <a href="#itp">ITP</a> <a href="#asset-services">Asset Services</a> <a href="#das">DAS</a> <a href="#dda">DDA</a> <a href="#data-services">Data Services</a> <a href="#consulting">Consulting</a></nav>
+  <div class="grid"><article id="ficc">
+          <div class="eyebrow">Fixed Income Clearing Corporation</div>
+          <h3>FICC</h3>
+          <p class="tag">优先核查利率与融资</p>
+          <dl>
+            <dt>英伟达、股市与发行</dt><dd>英伟达股价变化本身属于股权事件。若再平衡引起国债或机构 MBS 集中交易，才可能经保证金或交割传到 FICC。</dd>
+            <dt>利率与融资</dt><dd>国债收益率波动可能影响 GSD 保证金，回购融资利差变化可能影响 GSD 流动性需求。若机构 MBS 价格或利差也动，另核查 MBSD。 本期直接证据是国债收益率变动；短端利差仅小幅走阔。 Freddie Mac 房贷报价为背景。MBSD 的实际压力需要机构 MBS 价格、利差和保证金核查。</dd>
+            <dt>监管及数字资产事项</dt><dd>11 月 24 日 SEC 刊出的 ACS Triparty 文件涉及将合资格大宗交易纳入 GSD 清算。跟踪实际实施日、参与者接入和大宗交易流量。</dd>
+            <dt>验证所需的业务数据</dt><dd>先核对美国国债收益率、SOFR–EFFR、机构 MBS 利差及 FICC 公开清算量。用 GSD／MBSD 的保证金和流动性披露核对结果口径，季度值仅作背景。</dd>
+          </dl>
+        </article><article id="ecs">
+          <div class="eyebrow">Equity Clearing &amp; Settlement</div>
+          <h3>ECS</h3>
+          <p class="tag">优先核查股市交易</p>
+          <dl>
+            <dt>英伟达、股市与发行</dt><dd>若英伟达及相关 ETF 的实际成交量上升，NSCC 清算与净额计算量可能增加，DTC 随后需处理对应的 T+1 交收。方向和幅度要用成交及清算数据核查。 把 ANT 新股首日与 NVDA 存量股交易分开核对，避免把个股成交放大直接当作清算压力。</dd>
+            <dt>利率与融资</dt><dd>若清算会员同时面临短期资金紧张，应检查 NSCC 流动性与结算付款。利率变化本身只提供背景。</dd>
+            <dt>监管及数字资产事项</dt><dd>NSCC 文件列明 11 月 23 日为 ETF 创建与赎回合理性校验规则实施日。可核查实际切换及暂挂交易的确认。DRS 则以登记与转让代理流程为主。</dd>
+            <dt>验证所需的业务数据</dt><dd>对照个股／ETF 成交量、NSCC 清算和净额规模、DTC 交收量及失败率。将 T 日交易与下一结算业务日结果对齐。</dd>
+          </dl>
+        </article><article id="rds">
+          <div class="eyebrow">Repository &amp; Derivatives Services</div>
+          <h3>RDS</h3>
+          <p class="tag">按可报告交易核查</p>
+          <dl>
+            <dt>英伟达、股市与发行</dt><dd>若科技股波动带动需向交易资料库申报的 OTC 股票互换等交易，才可能增加 GTR 的报告和生命周期消息。</dd>
+            <dt>利率与融资</dt><dd>若利率互换或纳入申报范围的证券融资活动增加，应分别检查对应司法辖区的记录。</dd>
+            <dt>监管及数字资产事项</dt><dd>DRS 现代化和 Besu 更新未识别到 GTR 或 TIW 的直接报告要求变化。</dd>
+            <dt>验证所需的业务数据</dt><dd>按资产类别及司法辖区对照报告笔数、名义金额和更正／拒绝率。交易所期权成交量保留为市场背景。</dd>
+          </dl>
+        </article><article id="wis">
+          <div class="eyebrow">Wealth &amp; Investment Solutions</div>
+          <h3>WIS</h3>
+          <p class="tag">按基金资金流核查</p>
+          <dl>
+            <dt>英伟达、股市与发行</dt><dd>若科技股波动引起投资者基金申购、赎回或转换，可能传到 Fund/SERV 等基金处理服务。仅凭指数变化无法确定流向。</dd>
+            <dt>利率与融资</dt><dd>短端收益率变化可能改变货币市场基金的吸引力。方向以实际基金流量为准。</dd>
+            <dt>监管及数字资产事项</dt><dd>本轮 DRS 与 Besu 事项未识别到基金、保险或私募市场处理规则变化。</dd>
+            <dt>验证所需的业务数据</dt><dd>先区分股权基金和货币基金流量，再看适用产品的申购赎回量、拒绝和手工处理积压。</dd>
+          </dl>
+        </article><article id="itp">
+          <div class="eyebrow">Institutional Trade Processing</div>
+          <h3>ITP</h3>
+          <p class="tag">优先核查匹配与确认</p>
+          <dl>
+            <dt>英伟达、股市与发行</dt><dd>机构成交增多可能增加 CTM 的分配与匹配，以及 TradeSuite ID 的确认工作量。匹配与确认有时限，业务压力取决于异常和晚确认。 ANT 上市的机构配售和二级交易应分别核对适用的确认流程。</dd>
+            <dt>利率与融资</dt><dd>只在波动实际引起受支持工具的机构交易指令增加时，检查相应工作量。</dd>
+            <dt>监管及数字资产事项</dt><dd>DRS 的登记流程独立于机构交易匹配。若出现涉及 ITP 的后续接口变化，再单独记录。</dd>
+            <dt>验证所需的业务数据</dt><dd>按交易日对照机构处理量、同日匹配和截止前确认率、异常量及手工处理。</dd>
+          </dl>
+        </article><article id="asset-services">
+          <div class="eyebrow">DTC Asset Services</div>
+          <h3>Asset Services</h3>
+          <p class="tag">优先跟踪 DRS 实施</p>
+          <dl>
+            <dt>英伟达、股市与发行</dt><dd>英伟达宣布季度现金股息每股 0.25 美元，12 月 2 日登记、12 月 23 日支付。实际涉及 DTC 持仓的款项会进入 Asset Services 的权益确认与分配流程，具体指令和处理状态待核对 DTC 公告。</dd>
+            <dt>利率与融资</dt><dd>利率变化可能逐步影响发行品种和新券规模，经 DTC 承销与资格处理传入。用实际发行数据验证。</dd>
+            <dt>监管及数字资产事项</dt><dd>DRS 现代化直接涉及证券登记、券商与转让代理的电子转移流程。记录 DTC 实施公告、参与方测试及切换准备。 ANT 则从新券资格和承销建档角度核查，区分公开发行和同期私募。</dd>
+            <dt>验证所需的业务数据</dt><dd>跟踪实施日期和重要通知、DRS 请求异常／拒绝及处理时长。公司行动则核对记录日、支付日和指令准确性。</dd>
+          </dl>
+        </article><article id="das">
+          <div class="eyebrow">DTC Digital Asset Solutions</div>
+          <h3>DAS</h3>
+          <p class="tag">核查 DTS 依赖与监管范围</p>
+          <dl>
+            <dt>英伟达、股市与发行</dt><dd>英伟达和大盘走势当前仅作外围背景。服务风险需有 DTS 资产资格、代币化指令、持仓或运行事件的直接证据。</dd>
+            <dt>利率与融资</dt><dd>常规回购和 DTS 的转换流程分开衡量。若出现明确的获准抵押品或转换用途变化，再追踪该路径。</dd>
+            <dt>监管及数字资产事项</dt><dd>Besu 上游版本更新已触发 DAS-01 的适用性核查。DRS 规则明确排除对 DTS 的修改或互操作，本期监测将该文件记录为范围外。</dd>
+            <dt>验证所需的业务数据</dt><dd>比对公开服务通知与获支持网络／资产的变更。通过已授权渠道核对依赖版本和变更状态，公开材料不足时保持待确认。</dd>
+          </dl>
+        </article><article id="dda">
+          <div class="eyebrow">DTCC Digital Assets</div>
+          <h3>DDA</h3>
+          <p class="tag">核查平台适用性</p>
+          <dl>
+            <dt>英伟达、股市与发行</dt><dd>股市波动可能改变客户兴趣，平台影响须由实际采用、服务或合作事项支持。</dd>
+            <dt>利率与融资</dt><dd>资金压力让抵押品调拨的使用场景更值得观察。平台采用量或实际利用率仍需独立数据。</dd>
+            <dt>监管及数字资产事项</dt><dd>DTCC 公开说明使用 ComposerX 的 Collateral AppChain 基于 Besu。上游版本更新可进入该产品适用性核查，部署与升级状态仍需确认。</dd>
+            <dt>验证所需的业务数据</dt><dd>跟踪 AppChain／ComposerX 产品公告，以及获授权的环境适用性、服务可用性、变更记录和采用数据。</dd>
+          </dl>
+        </article><article id="data-services">
+          <div class="eyebrow">DTCC Data Services</div>
+          <h3>Data Services</h3>
+          <p class="tag">监测数据质量</p>
+          <dl>
+            <dt>英伟达、股市与发行</dt><dd>若成交放大，检查由 NSCC Universal Trade Capture 汇总的 Equity Kinetics 数据覆盖率和发布延迟。使用量和订阅变化以产品自身数据核实。</dd>
+            <dt>利率与融资</dt><dd>利率与回购波动使有关数据时效更重要。先确认产品覆盖和上游源，避免用市场成交量推断销售。</dd>
+            <dt>监管及数字资产事项</dt><dd>Nasdaq 要求数据分发商为 ANT 建立代码映射。可对照核查相关产品的首日证券主数据、覆盖和分发。DRS 或数字资产变化在影响产品字段或接口时另行跟踪。</dd>
+            <dt>验证所需的业务数据</dt><dd>核对发布延迟、缺失和修订率、接口可用性。若有授权数据，再核对使用量和订阅变化。</dd>
+          </dl>
+        </article><article id="consulting">
+          <div class="eyebrow">DTCC Consulting Services</div>
+          <h3>Consulting</h3>
+          <p class="tag">跟踪准备工作机会</p>
+          <dl>
+            <dt>英伟达、股市与发行</dt><dd>英伟达和股市波动可用于压力场景，业务影响需明确的客户需求或项目记录。</dd>
+            <dt>利率与融资</dt><dd>国债与回购变化可用于讨论清算准备和运营容量，后续观察客户的实际需求。</dd>
+            <dt>监管及数字资产事项</dt><dd>DRS 现代化提出参与方适配和实施准备的工作场景。关注正式切换日期和清晰的交付要求。</dd>
+            <dt>验证所需的业务数据</dt><dd>按公开实施节点列出准备事项。项目线索、订单及收入以各自独立记录验证。</dd>
+          </dl>
+        </article></div>
+  <footer><a href="DAS_Risk_Horizon.html#das">打开 DAS 周度核查页</a> · 业务路径依据项目传导链及公开服务说明，核查优先级依据事件与业务流程的直接程度。</footer>
+</main>
+</body>
+</html>

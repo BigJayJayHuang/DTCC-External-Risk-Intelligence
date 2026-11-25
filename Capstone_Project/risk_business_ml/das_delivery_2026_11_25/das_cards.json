@@ -3,11 +3,11 @@
     "id": "das-01",
     "card_id": "DAS-01",
     "business_line": "DAS",
-    "snapshot": "das-public-2026-11-17",
+    "snapshot": "das-public-2026-11-25",
     "region": "US",
     "risk_family": "Cyber",
     "title": "DAS-01 · Technology dependency watch",
-    "updated_at": "2026-11-17",
+    "updated_at": "2026-11-25",
     "status": "monitoring_only",
     "review_status": "Applicability pending",
     "confidence": "Public evidence",
@@ -15,9 +15,9 @@
     "vulnerability": null,
     "severity": null,
     "show_on_main": false,
-    "what_happened": "2 Besu publisher advisories captured in the reviewed evidence window.",
+    "what_happened": "New upstream Besu release. The two earlier advisories remain under applicability review.",
     "transmission": {
-      "event": "2 Besu publisher advisories captured in the reviewed evidence window.",
+      "event": "New upstream Besu release. The two earlier advisories remain under applicability review.",
       "mechanism": "A publisher advisory warrants review when its affected dependency matches the DTS integration.",
       "dtcc_process": "DTS infrastructure continuity and tokenization workflow."
     },
@@ -35,6 +35,34 @@
       {
         "name": "Besu publisher advisory B",
         "url": "https://github.com/besu-eth/besu/security/advisories/GHSA-6pcq-hcgg-5q76"
+      },
+      {
+        "name": "Besu 26.11.2 upstream release",
+        "url": "https://github.com/besu-eth/besu/releases/tag/26.11.2"
+      }
+    ],
+    "review_actions": [
+      {
+        "card_id": "DAS-01",
+        "date": "2026-11-23",
+        "title": "Besu 26.11.2 upstream release",
+        "change": "New",
+        "status": "Applicability pending",
+        "reviewer": "DTS infrastructure review",
+        "action": "Compare the publisher notice with the approved DTS deployment and change record.",
+        "close": "Record a supported applicability decision and, if applicable, the approved mitigation disposition.",
+        "source": "https://github.com/besu-eth/besu/releases/tag/26.11.2"
+      },
+      {
+        "card_id": "DAS-01",
+        "date": "2026-11-10",
+        "title": "Two existing Besu publisher advisories",
+        "change": "Carried forward",
+        "status": "Applicability pending",
+        "reviewer": "DTS infrastructure review",
+        "action": "Obtain or record the deployment owner’s applicability assessment for each advisory.",
+        "close": "Each advisory has an evidence-backed disposition.",
+        "source": "https://github.com/besu-eth/besu/security/advisories"
       }
     ]
   },
@@ -42,11 +70,11 @@
     "id": "das-04",
     "card_id": "DAS-04",
     "business_line": "DAS",
-    "snapshot": "das-public-2026-11-17",
+    "snapshot": "das-public-2026-11-25",
     "region": "US",
     "risk_family": "Regulatory",
     "title": "DAS-04 · Reporting calendar and network changes",
-    "updated_at": "2026-11-17",
+    "updated_at": "2026-11-25",
     "status": "monitoring_only",
     "review_status": "Scheduled and planned",
     "confidence": "Public evidence",
@@ -74,6 +102,31 @@
       {
         "name": "DTCC Tokenization Service launch",
         "url": "https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-goes-live"
+      }
+    ],
+    "review_actions": [
+      {
+        "card_id": "DAS-04",
+        "date": "2027-01-15",
+        "date_label": "Derived milestone",
+        "title": "Q4 2026 reporting milestone",
+        "change": "Carried forward",
+        "status": "Submission unobserved",
+        "reviewer": "DTS regulatory reporting review",
+        "action": "Track the calculated date and record authorized confirmation of submission if available.",
+        "close": "Record the reporting owner’s confirmation of submission or an official change to the obligation.",
+        "source": "https://www.sec.gov/files/tm/no-action/dtc-nal-121125.pdf"
+      },
+      {
+        "card_id": "DAS-04",
+        "date": "2026-11-12",
+        "title": "Solana connection planned for H2 2027",
+        "change": "Carried forward",
+        "status": "Planned",
+        "reviewer": "DTS product and eligibility review",
+        "action": "Check official notices for an effective activation date and eligible scope.",
+        "close": "Record an official activation, scope change, deferral, or cancellation.",
+        "source": "https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-to-connect-with-solana"
       }
     ]
   }

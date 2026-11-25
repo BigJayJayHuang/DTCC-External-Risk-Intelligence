@@ -1,0 +1,66 @@
+{
+  "window_start": "2026-11-18",
+  "as_of": "2026-11-25",
+  "previous_snapshot": "2026-11-17",
+  "source_checks": [
+    {"name": "Besu publisher releases", "url": "https://github.com/besu-eth/besu/releases", "finding": "November 23 upstream release added to the applicability review."},
+    {"name": "DTCC Tokenization Hub", "url": "https://www.dtcc.com/products-and-services/digital-assets/tokenization/hub", "finding": "The hub still lists the November 12 Solana announcement as a plan. No activation evidence was found on this page."},
+    {"name": "SEC DTC rulemaking index", "url": "https://www.sec.gov/rules-regulations/self-regulatory-organization-rulemaking/dtc", "finding": "Reviewed the November 18 Direct Registration System order. Its scope excludes changes to DTS."}
+  ],
+  "actions": [
+    {
+      "card_id": "DAS-01",
+      "date": "2026-11-23",
+      "title": "Besu 26.11.2 upstream release",
+      "change": "New",
+      "status": "Applicability pending",
+      "reviewer": "DTS infrastructure review",
+      "action": "Compare the publisher notice with the approved DTS deployment and change record.",
+      "close": "Record a supported applicability decision and, if applicable, the approved mitigation disposition.",
+      "source": "https://github.com/besu-eth/besu/releases/tag/26.11.2"
+    },
+    {
+      "card_id": "DAS-01",
+      "date": "2026-11-10",
+      "title": "Two existing Besu publisher advisories",
+      "change": "Carried forward",
+      "status": "Applicability pending",
+      "reviewer": "DTS infrastructure review",
+      "action": "Obtain or record the deployment owner’s applicability assessment for each advisory.",
+      "close": "Each advisory has an evidence-backed disposition.",
+      "source": "https://github.com/besu-eth/besu/security/advisories"
+    },
+    {
+      "card_id": "DAS-04",
+      "date": "2027-01-15",
+      "date_label": "Derived milestone",
+      "title": "Q4 2026 reporting milestone",
+      "change": "Carried forward",
+      "status": "Submission unobserved",
+      "reviewer": "DTS regulatory reporting review",
+      "action": "Track the calculated date and record authorized confirmation of submission if available.",
+      "close": "Record the reporting owner’s confirmation of submission or an official change to the obligation.",
+      "source": "https://www.sec.gov/files/tm/no-action/dtc-nal-121125.pdf"
+    },
+    {
+      "card_id": "DAS-04",
+      "date": "2026-11-12",
+      "title": "Solana connection planned for H2 2027",
+      "change": "Carried forward",
+      "status": "Planned",
+      "reviewer": "DTS product and eligibility review",
+      "action": "Check official notices for an effective activation date and eligible scope.",
+      "close": "Record an official activation, scope change, deferral, or cancellation.",
+      "source": "https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-to-connect-with-solana"
+    }
+  ],
+  "screened": [
+    {
+      "date": "2026-11-18",
+      "title": "SEC order on DTC Direct Registration System modernization",
+      "status": "Outside DAS scope",
+      "reason": "The order records that DRS modernization leaves the DTCC Tokenization Service and its interoperability outside the approved change.",
+      "source": "https://www.sec.gov/rules-regulations/self-regulatory-organization-rulemaking/sr-dtc-2026-012"
+    }
+  ]
+}

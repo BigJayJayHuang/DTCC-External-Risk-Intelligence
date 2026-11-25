@@ -1,0 +1,76 @@
+{
+  "market_points": [
+    {"date": "11-13", "sp500": 7561.67, "nasdaq": 25136.27, "vix": 19.30},
+    {"date": "11-17", "sp500": 7340.53, "nasdaq": 24328.38, "vix": 25.46},
+    {"date": "11-18", "sp500": 7323.63, "nasdaq": 24429.88, "vix": 24.56},
+    {"date": "11-19", "sp500": 7175.83, "nasdaq": 23879.20, "vix": 28.44, "shares_bn": 21.41},
+    {"date": "11-20", "sp500": 6910.39, "nasdaq": 22617.73, "vix": 35.89, "shares_bn": 25.83},
+    {"date": "11-23", "sp500": 7237.17, "nasdaq": 24089.56, "vix": 26.62, "shares_bn": 22.86},
+    {"date": "11-24", "sp500": 7201.09, "nasdaq": 23733.54, "vix": 26.36, "shares_bn": 19.46}
+  ],
+  "market_sources": [
+    {"name": "S&P 500 · FRED / S&P DJI", "url": "https://fred.stlouisfed.org/data/SP500"},
+    {"name": "Nasdaq Composite · FRED / Nasdaq", "url": "https://fred.stlouisfed.org/data/NASDAQCOM"},
+    {"name": "VIX · FRED / Cboe", "url": "https://fred.stlouisfed.org/data/VIXCLS"},
+    {"name": "Cboe 全市场成交量 CSV", "url": "https://cdn.cboe.com/resources/us/equities/market-statistics/historical-market-volume/market_history_2026.csv"}
+  ],
+  "events": [
+    {
+      "date": "2026-11-12、11-17、11-23",
+      "title": "英伟达财报、现金股息和管理层变化",
+      "fact": "11 月 12 日公布黄仁勋辞任，CFO Colette Kress 出任临时 CEO。11 月 17 日盘后公布 FY2027 Q3 营收 1,158 亿美元，同比增长 103%，并宣布每股 0.25 美元季度现金股息，12 月 2 日登记、12 月 23 日支付。11 月 23 日公布黄仁勋复任总裁、CEO 和董事。",
+      "boundary": "财报、现金股息和管理层变化是三个不同信号。首个财报后交易日大盘表现分化，之后的市场波动仍需考虑宏观和其他公司事件。",
+      "sources": [
+        {"name": "NVIDIA 11 月 12 日管理层公告", "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-CEO-Transition/default.aspx"},
+        {"name": "NVIDIA 财报与股息公告", "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027"},
+        {"name": "NVIDIA 董事会公告", "url": "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director"}
+      ]
+    },
+    {
+      "date": "2026-11-16 至 11-24",
+      "title": "美股急跌后反弹，短端融资变化较小",
+      "fact": "11 月 20 日 S&P 500 跌 3.70%、Nasdaq Composite 跌 5.28%，VIX 升至 35.89，Cboe 汇总的美股市场成交约 258.3 亿股，比前一交易日多约 21%。11 月 23 日两大股指分别反弹 4.73% 和 6.51%。10 年期美国国债收益率从 11 月 13 日 5.15% 降至 11 月 24 日 4.91%。11 月 18 日至 24 日，SOFR–EFFR 从 +2 个基点升至 +6 个基点。",
+      "boundary": "股市双向波动、国债重定价和回购利差分开观察。五个交易日 2–6 个基点的利差本身不足以认定融资失灵。Freddie Mac 的 30 年房贷均值从 11 月 12 日的 7.11% 升至 19 日的 7.28%，25 日回落至 7.21%，可作为 MBSD 的背景指标。",
+      "sources": [
+        {"name": "美债收益率 · U.S. Treasury", "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611"},
+        {"name": "SOFR · FRED / NY Fed", "url": "https://fred.stlouisfed.org/data/SOFR"},
+        {"name": "EFFR · FRED / NY Fed", "url": "https://fred.stlouisfed.org/data/EFFR"},
+        {"name": "Freddie Mac 房贷利率", "url": "https://www.freddiemac.com/pmms/pmms_archives"},
+        {"name": "Cboe 波动复盘", "url": "https://www.cboe.com/insights/posts/week-of-11-23-2026-vix-jumps-to-1-year-high-but-no-panic-as-ai-trade-unwinds"},
+        {"name": "Cboe 全市场成交口径", "url": "https://www.cboe.com/markets/us/equities/market-statistics/historical-market-volume"}
+      ]
+    },
+    {
+      "date": "2026-11-19、11-20",
+      "title": "Anthropic 大型 IPO",
+      "fact": "ANT 于 11 月 19 日在 Nasdaq 开始交易。公司 11 月 20 日公告发行完成，公开发行每股 83 美元，含承销商选择权在内的发行总额约 935 亿美元。",
+      "boundary": "优先核对新股发行资格、机构分配及交收。同期私募单独处理，其清算路径未在本次核实。",
+      "sources": [
+        {"name": "Nasdaq 上市公告", "url": "https://www.nasdaq.com/newsroom/anthropic-marks-ipo-at-nasdaq"},
+        {"name": "Nasdaq 代码映射通知", "url": "https://nasdaqtrader.com/TraderNews.aspx?id=DTN2026-28"},
+        {"name": "Anthropic 发行完成公告", "url": "https://www.anthropic.com/news/ipo-close"}
+      ]
+    },
+    {
+      "date": "2026-11-23、11-24",
+      "title": "FICC 与 NSCC 清算规则节点",
+      "fact": "SEC 11 月 24 日刊出 FICC 的申报，涉及在 GSD 的 ACS Triparty 回购清算中纳入符合条件的大宗交易。NSCC 文件将 11 月 23 日列为 ETF 创建与赎回的自动合理性校验规则实施日。",
+      "boundary": "FICC 的申报生效与实际执行是两个节点。NSCC 文件记载了计划实施日，实际切换情况仍需确认。两条规则分别用于跟踪参与者准备、上线和异常核查。",
+      "sources": [
+        {"name": "SEC FICC 34-106981", "url": "https://www.sec.gov/files/rules/sro/ficc/2026/34-106981.pdf"},
+        {"name": "SEC NSCC 34-106784", "url": "https://www.sec.gov/files/rules/sro/nscc/2026/34-106784_0.pdf"}
+      ]
+    },
+    {
+      "date": "2026-11-18、11-23",
+      "title": "DTC 直接登记系统现代化与 Besu 上游版本更新",
+      "fact": "SEC 11 月 18 日批准 DRS 现代化修订案，涉及现有登记和转移流程，实施期限为 2027 年 6 月 30 日，具体切换日看 DTC 公告。Besu 11 月 23 日发布 26.11.2。",
+      "boundary": "DRS 修订范围排除对 DTS 的修改和互操作。Besu 上游发布可触发适用性核查，DTS 或 AppChain 的本地部署与实际影响仍待确认。",
+      "sources": [
+        {"name": "SEC 34-106927", "url": "https://www.sec.gov/files/rules/sro/dtc/2026/34-106927.pdf"},
+        {"name": "Besu 发布方 26.11.2", "url": "https://github.com/besu-eth/besu/releases/tag/26.11.2"},
+        {"name": "DTCC Collateral AppChain 依赖说明", "url": "https://www.dtcc.com/press-releases/2025/dtcc-announces-new-platform-for-tokenized-real-time-collateral-management"}
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "public_evidence_as_of": "2026-11-17",
+  "public_evidence_as_of": "2026-11-25",
   "included_das_cards": [
     "DAS-01",
     "DAS-04"
@@ -10,6 +10,11 @@
     "viewer.html": "8ec2e54797c73cd8f4f38e8453925ed0ad5a8a2c23a29befa78d28cbedced01c",
     "risk_output.json": "d095067dd19d12e3242d791f07013751979d69e46f7cc5482977617c22726ed8",
     "monitor_evidence.json": "8730e73d0524362ef0c3e0e352f13a35e1b40a08bd65a6bd30c103ef5296a9c0",
-    "DAS_Risk_Horizon.html": "fa46ee381aaa277b4fa667fc14bd1e2bdd7d07ad736b752a4192d373536d3f0f"
+    "weekly_review.json": "b41487a99c47fa4f0b976732260dedc4d3c4d2ca73d48d5524d0b4343f4427f8",
+    "recent_events.json": "b0ba049285f247ba2f704f4bba2336984c25cf97d713aaf1d4f65adfd9524529",
+    "business_line_analysis.json": "2e11a33b0d39c1cb7141d52e17b8b16a65469f4064211f00de50ea9718804ce9",
+    "DAS_Risk_Horizon.html": "ce67c19c9a141130babedf1e76956f1042b1fe45a9f69e60435e3354b67c35b7",
+    "Weekly_Business_Line_Impact_CN.html": "7d3e8429cc0007a2dc5de71493ed0c24f931ddacce610f29f5cc36204b91ff71",
+    "das_cards.json": "9ca58cfc161f5283a3a0b73af0e3aba928fbb4dcfa201d204b79c51525b10911"
   }
 }

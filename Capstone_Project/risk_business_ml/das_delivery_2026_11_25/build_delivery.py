@@ -4,17 +4,22 @@ import json
 import re
 from pathlib import Path
 
+from render_impact import render_impact
+
 HERE = Path(__file__).resolve().parent
 INPUTS = HERE / "inputs"
 MONITOR = INPUTS / "monitor_evidence.json"
+WEEKLY = INPUTS / "weekly_review.json"
 VIEWER = INPUTS / "viewer.html"
 BASE = INPUTS / "risk_output.json"
 OUTPUT = HERE / "DAS_Risk_Horizon.html"
+IMPACT = HERE / "Weekly_Business_Line_Impact_CN.html"
 
 
 def build_data():
     data = json.loads(BASE.read_text(encoding="utf-8"))
     source = json.loads(MONITOR.read_text(encoding="utf-8"))
+    weekly = json.loads(WEEKLY.read_text(encoding="utf-8"))
     summary = source["summary"]
     as_of = summary["as_of_date"]
     snapshot = f"das-public-{as_of}"
@@ -67,7 +72,31 @@ def build_data():
     data["lines"]["DAS"] = {"summary": {
         snapshot: f"Two public monitoring cards. Evidence window {summary['window_start']} to {as_of}. Formal severity unscored."
     }}
-    data["das_public_snapshot"] = snapshot
+    if weekly["previous_snapshot"] != as_of:
+        raise ValueError("Weekly review does not match the baseline snapshot")
+    latest = f"das-public-{weekly['as_of']}"
+    current = []
+    for original in cards:
+        actions = [item for item in weekly["actions"] if item["card_id"] == original["card_id"]]
+        current_card = dict(original, snapshot=latest, updated_at=weekly["as_of"], review_actions=actions)
+        if original["card_id"] == "DAS-01":
+            headline = "New upstream Besu release. The two earlier advisories remain under applicability review."
+            release = next(item for item in actions if item["change"] == "New")
+            current_card.update(
+                what_happened=headline,
+                transmission=dict(original["transmission"], event=headline),
+                sources=original["sources"] + [{"name": release["title"], "url": release["source"]}],
+            )
+        current.append(current_card)
+    data["items"].extend(current)
+    data["snapshots"].insert(0, {"id": latest, "date": weekly["as_of"],
+                                 "label": f"DAS weekly review · {weekly['as_of']}"})
+    data["lines"]["DAS"]["summary"][latest] = (
+        f"Reviewed sources for {weekly['window_start']} to {weekly['as_of']}. "
+        f"Compared with {as_of}. Formal severity unscored."
+    )
+    data["das_public_snapshot"] = latest
+    data["weekly_review"] = weekly
     return data
 
 
@@ -77,11 +106,57 @@ def replace_one(body, old, new):
     return body.replace(old, new, 1)
 
 
+REVIEW_JS = """
+function actionList(actions){
+  return actions.map(a=>`<article class="review-item">
+    <div class="review-state">${esc(a.card_id)} · ${esc(a.change)} · ${esc(a.status)}</div>
+    <h4>${esc(a.title)}</h4>
+    <p><b>Suggested reviewer</b> ${esc(a.reviewer)}</p>
+    <p><b>Next action</b> ${esc(a.action)}</p>
+    <p><b>Close when</b> ${esc(a.close)}</p>
+    <div class="review-state">${esc(a.date_label || "Published")} · ${esc(a.date)}</div>
+    <a href="${esc(a.source)}" target="_blank" rel="noopener noreferrer">View source</a>
+  </article>`).join("");
+}
+function weeklyReview(){
+  if(state.line!=="DAS" || state.snap!==DATA.das_public_snapshot) return "";
+  const review=DATA.weekly_review;
+  const newCount=review.actions.filter(a=>a.change==="New").length;
+  return `<section class="review-panel" aria-label="Weekly public evidence review">
+    <h3>Weekly review · ${esc(review.as_of)}</h3>
+    <p>${newCount} new upstream item · ${review.actions.length-newCount} carried forward · ${review.screened.length} screened outside DAS</p>
+    <p><a href="Weekly_Business_Line_Impact_CN.html">查看十条业务线影响分析 ›</a></p>
+    <div class="review-grid">${actionList(review.actions)}</div>
+    <details><summary>Source checks and screening decisions</summary>
+      <ul>${review.source_checks.map(s=>`<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.name)}</a> — ${esc(s.finding)}</li>`).join("")}</ul>
+      <ul>${review.screened.map(s=>`<li><a href="${esc(s.source)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a> · ${esc(s.date)} · <b>${esc(s.status)}</b> — ${esc(s.reason)}</li>`).join("")}</ul>
+    </details>
+  </section>`;
+}
+"""
+
+
 def render(data):
     body = VIEWER.read_text(encoding="utf-8")
     body = re.sub(r'^<link rel="(?:preconnect|stylesheet)" href="https://fonts\.[^\n]+\n', "", body, flags=re.M)
     edits = [
         ("<title>Risk Horizon</title>", "<title>Risk Horizon | DAS public monitoring</title>"),
+        ("</style>", """
+.review-panel{border:1px solid var(--line);border-radius:12px;padding:20px;margin:16px 0;background:var(--card,#fff)}
+.review-panel h3,.review-item h4{margin:0 0 8px}
+.review-panel p,.review-item p{margin:6px 0}
+.review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:10px;margin:12px 0}
+.review-item{border:1px solid var(--line);border-radius:8px;padding:12px}
+.review-state{color:var(--muted);font-size:.83rem;margin-bottom:5px}
+.review-panel summary{cursor:pointer;font-weight:600}
+</style>"""),
+        ("function renderList(){", REVIEW_JS + "\nfunction renderList(){"),
+        ('  <div class="filters" role="group" aria-label="Time and sort">',
+         '  ${weeklyReview()}\n  <div class="filters" role="group" aria-label="Time and sort">'),
+        ('  <details class="json"><summary>Structured record behind this card',
+         '  ${i.raw.review_actions?.length?\'<section class="review-panel"><h3>Review actions</h3>'
+         '<div class="review-grid">\'+actionList(i.raw.review_actions)+\'</div></section>\':""}\n'
+         '  <details class="json"><summary>Structured record behind this card'),
         ('const PARAMS=new URLSearchParams(location.search);\nconst DATA_URL=PARAMS.get("data")||"data/risk_output.json";',
          "const OFFLINE_DATA=JSON.parse(document.getElementById('offline-data').textContent);"),
         ('const LINE_KEYS=Object.keys(LINE_META);', 'const LINE_KEYS=["DAS","FICC","ECS"];'),
@@ -114,11 +189,13 @@ def render(data):
         ('if(L&&L!==state.line){state.line=L;try{localStorage.setItem("rh-line",L)}catch(e){}}',
          'if(L){state.line=L; if(!ALL().some(i=>i.line===L&&i.snapshot===state.snap)) {\n'
          '    const available=SNAPS.find(s=>ALL().some(i=>i.line===L&&i.snapshot===s.id));\n'
-         '    if(available && (state.snap===DATA.das_public_snapshot || L==="DAS")) state.snap=available.id;\n  }}'),
+         '    if(available) state.snap=available.id;\n  }}'),
         ('  route();};}', '  renderList();};}'),
     ]
     for old, new in edits:
         body = replace_one(body, old, new)
+    body = body.replace("esc(fmtStamp(i.upd))",
+                        'esc(i.status==="monitoring_only"?fmtDay(i.upd):fmtStamp(i.upd))')
     body = body.replace('["Pending","Unscanned","Incomplete"].filter(k=>c[k])',
                         '["Pending","Unscanned","Incomplete","Monitoring"].filter(k=>c[k])')
     # A monitoring page has a count by evidence state. The ranked severity
@@ -140,17 +217,20 @@ def main():
     data = build_data()
     base_items = json.loads(BASE.read_text(encoding="utf-8"))["items"]
     assert [r for r in data["items"] if r["business_line"] != "DAS"] == base_items
-    cards = [r for r in data["items"] if r["business_line"] == "DAS"]
+    cards = [r for r in data["items"] if r["snapshot"] == data["das_public_snapshot"]]
     assert [r["card_id"] for r in cards] == ["DAS-01", "DAS-04"]
     assert all(r["shock"] is r["vulnerability"] is r["severity"] is None for r in cards)
     OUTPUT.write_text(render(data), encoding="utf-8")
+    IMPACT.write_text(render_impact(INPUTS), encoding="utf-8")
     (HERE / "das_cards.json").write_text(json.dumps(cards, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (HERE / "data_receipt.json").write_text(json.dumps({
         "public_evidence_as_of": data["snapshots"][0]["date"],
         "included_das_cards": [r["card_id"] for r in cards],
         "historical_reference_records": len(base_items),
         "historical_reference_records_preserved": True,
-        "sha256": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in (VIEWER, BASE, MONITOR, OUTPUT)},
+        "sha256": {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
+                   for p in (VIEWER, BASE, MONITOR, WEEKLY, INPUTS / "recent_events.json",
+                             INPUTS / "business_line_analysis.json", OUTPUT, IMPACT, HERE / "das_cards.json")},
     }, indent=2) + "\n", encoding="utf-8")
     print(OUTPUT)
 
