@@ -170,6 +170,8 @@ details.json pre{overflow-x:auto;font-family:var(--f-mono);font-size:12.5px;line
 .fbox .box{display:block;padding:10px 12px;font-size:14.5px;line-height:1.45}
 .fbox .lab{display:block;margin:0 0 4px}
 .fbox .ph{display:block;border:0;background:none;padding:0;font-size:14px}
+.fbox.three{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr)}
+.fbox .mkt{margin:0}
 .srcline{display:block;font-size:13px;color:var(--muted);overflow-wrap:anywhere}
 .srcline b{color:var(--ink);font-weight:600}
 .flabel{font-size:12px;font-weight:600;color:var(--note-ink);background:var(--note);border:1px solid var(--note-line);border-radius:4px;padding:0 6px;white-space:nowrap}
@@ -202,9 +204,23 @@ details.morenews{margin-top:8px}
 details.morenews>summary{cursor:pointer;font-weight:700;color:var(--brand-2);font-size:14.5px}
 details.morenews ul{margin-top:6px}
 
+/* prediction-market box (Kalshi): YES left, NO right, bar in the middle; display only unless the factor is applied */
+.mkt{display:block;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 12px;margin:0 0 8px;font-size:14px}
+.mkt .lab{display:block;margin:0 0 2px}
+.mkt .mq{display:block;font-weight:700;color:var(--ink);margin-bottom:6px}
+.mkt .mtop{display:flex;justify-content:space-between;align-items:baseline;font-variant-numeric:tabular-nums}
+.mkt .mtop b{font-size:20px;line-height:1}
+.mkt .my{color:var(--brand)} .mkt .mn{color:var(--muted)}
+.mkt .mbar{display:flex;height:12px;border-radius:6px;overflow:hidden;margin:4px 0 6px;background:var(--pend)}
+.mkt .mbar .yes{background:var(--brand)} .mkt .mbar .no{background:#C9D3CF}
+.mkt .mf{display:block;font-size:13px;color:var(--muted)}
+.mkt .mag{font-weight:700}.mkt .mag.agrees{color:var(--brand-2)}.mkt .mag.disagrees{color:var(--high-ink)}
+.mkt a{font-weight:700}
+@media (max-width:900px){.fbox.three{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.fbox.three .mkt{grid-column:1/-1}}
 @media (max-width:640px){
   .wrap{padding-inline:16px}
   .fbox{grid-template-columns:minmax(0,1fr)}
+  .fbox.three{grid-template-columns:minmax(0,1fr)}
   .card{grid-template-columns:58px minmax(0,1fr);gap:12px;padding:14px}
   .sev{height:58px}.sev .n{font-size:24px}.sev .l{font-size:10px}.sev.Pending .n{font-size:18px}.sev.Unscanned .n,.sev.Incomplete .n{font-size:12px}
   .sev.NoNews{height:auto;min-height:58px;padding:5px 3px}.sev.NoNews .n{font-size:10.5px}.sev.NoNews .q{font-size:9px}
@@ -287,11 +303,13 @@ function relatedNews(v){const seen=new Set(); return asArr(v).map((n,idx)=>({n,i
 function norm(raw){
   const snap=snapObj(raw.snapshot);
   const S=isNum(raw.shock)?raw.shock:null, V=isNum(raw.vulnerability)?raw.vulnerability:null;
-  const score=S!=null&&V!=null?S*V:null;
+  const mv=raw.market_view&&raw.market_view.ok?raw.market_view:null;            /* prediction-market box (Kalshi) */
+  const Sm=mv&&mv.applied&&isNum(raw.shock_adjusted)?raw.shock_adjusted:null;  /* only when the export applied the reviewed factor */
+  const score=S!=null&&V!=null?(Sm!=null?Math.round(Sm*V):S*V):null;
   const status=raw.status||"scored";
   const upd=toDate(raw.updated_at)||(snap&&snap.date)||null;
   return {raw,id:String(raw.id),snapshot:raw.snapshot,snapDate:snap?snap.date:upd,line:raw.business_line,sub:raw.sub_line||"",
-    region:raw.region||"US",family:raw.risk_family||"Unassigned",conf:raw.confidence||"Not rated",S,V,score,
+    region:raw.region||"US",family:raw.risk_family||"Unassigned",conf:raw.confidence||"Not rated",S,V,score,mv,Sm,
     lvl:UNSCORED[status]||level(score),status,statusReason:raw.status_reason||"",vTier:raw.V_tier||"",
     review:raw.review_status||"",needsReview:raw.needs_human_signoff===true,cardId:raw.card_id||"",shared:asArr(raw.shared_signal),
     upd,title:raw.title||"(untitled)",line1:raw.summary_line||"",what:raw.what_happened||"",
@@ -487,10 +505,27 @@ function sharedNote(i){
   const names=i.shared.map(cid=>{const o=ALL().find(x=>x.cardId===cid&&x.snapshot===i.snapshot); return o?`${o.title} (${cid})`:cid;});
   return `<span class="shared">Signal shared with ${esc(names.join(", "))}</span>`;}
 /* So what / So now what boxes of the card front (reviewed front text, or a placeholder; the detailed narrative is in the analyst view) */
-function frontBoxes(i){
-  return `<span class="fbox two">
+function frontBoxes(i,detail){
+  const m=marketBox(i,!!detail);
+  return `<span class="fbox ${m?"three":"two"}">
     <span class="box"><span class="lab">So what</span>${i.fSoWhat?esc(i.fSoWhat):frontPh(i)}</span>
-    <span class="box now"><span class="lab">So now what</span>${i.fNowWhat?esc(i.fNowWhat):frontPh(i)}</span></span>`;}
+    <span class="box now"><span class="lab">So now what</span>${i.fNowWhat?esc(i.fNowWhat):frontPh(i)}</span>${m}</span>`;}
+/* "What the market expects": YES left, NO right, bar in the middle, values on top. Links only in the detail view
+   (cards are buttons). Sits as a third column next to So what / So now what on scored cards. The factor is shown as proposed until the export applies it after analyst review. */
+function marketBox(i,detail){
+  const m=i.mv; if(!m) return "";
+  const y=Math.round(m.p_yes*100), n=100-y;
+  const ch=m.change_pp==null||m.p_yes_week_ago==null?"":`${m.change_pp>0?"▲ up":m.change_pp<0?"▼ down":"no change,"} ${Math.abs(Math.round(m.change_pp))} pts from ${Math.round(m.p_yes_week_ago*100)}% a week ago`;
+  const ag={agrees:"Market agrees with this article",disagrees:"Market disagrees with this article",split:"Market is split on this article's view",no_lean:"Article takes no side"}[m.agreement]||"";
+  const f=m.factor&&m.factor!==1?` · ${m.applied?"applied":"proposed"} ×${Number(m.factor).toFixed(2)}`:"";
+  return `<span class="mkt" role="group" aria-label="What the market expects: ${esc(m.question)} Yes ${y} percent, No ${n} percent">
+    <span class="lab">What the market expects · Kalshi</span><span class="mq">${esc(m.question)}</span>
+    <span class="mtop"><span class="my"><b>${y}%</b> YES</span><span class="mn">NO <b>${n}%</b></span></span>
+    <span class="mbar" aria-hidden="true"><span class="yes" style="width:${y}%"></span><span class="no" style="width:${n}%"></span></span>
+    <span class="mf">${esc(ch)}${ch?" · ":""}<span class="mag ${esc(m.agreement)}">${esc(ag)}</span>${esc(f)}${m.resolves?` · resolves ${esc(fmtDay(toDate(m.resolves)))}`:""}${detail&&httpUrl(m.url)?` · <a href="${esc(m.url)}" target="_blank" rel="noopener">See the market ›</a>`:""}</span>
+    ${detail&&m.article_title?`<span class="mf">Article: ${esc(m.article_title)}${m.forward_quote?` · “${esc(m.forward_quote)}”`:""}</span>`:""}
+  </span>`;
+}
 function frontLabel(i){return i.fAi.length?`<span class="flabel">${esc(i.fLabel||FRONT_LABEL)}</span>`:"";}
 function cardHtml(i){
   const otherWeek=state.range!=="week"&&i.snapshot!==state.snap;
@@ -505,7 +540,7 @@ function cardHtml(i){
         <span class="chip o">Confidence: ${esc(i.conf)}</span>${reviewChip(i)}${aiChip(i)}
       </span>
       ${i.fWhat?`<span class="fwhat"><b>What happened ·</b> ${esc(i.fWhat)}</span>`:""}
-      ${scored?frontBoxes(i):""}
+      ${scored?frontBoxes(i):marketBox(i,false)}
       ${scored&&i.fSources?`<span class="srcline"><b>Sources</b> · ${esc(i.fSources)}</span>`:""}
       <span class="cfoot"><span>${frontLabel(i)}</span><span class="more">Details ›</span></span>
     </span>
@@ -575,7 +610,7 @@ function renderDetail(id,snap){
     </div>`):""}
     ${i.fChain&&i.playbookReviewed?`<div class="stamp">Short chain: <span class="flabel">${FRONT_LABEL}</span></div>`:""}
   </section>
-  ${i.status==="scored"?`<section class="sec">${frontBoxes(i)}
+  ${i.status==="scored"?`<section class="sec">${frontBoxes(i,true)}
     ${i.fSources?`<span class="srcline"><b>Sources</b> · ${esc(i.fSources)}</span>`:""}
     ${i.fAi.length?`<div style="margin-top:6px">${frontLabel(i)}</div>`:""}</section>`:""}
   <section class="analyst" aria-label="Analyst view">
@@ -596,7 +631,8 @@ function renderDetail(id,snap){
     <div class="box"><h3 class="lab">How the score was built</h3><div class="calc">
       <span><b>${i.S!=null?`Shock ${i.S}`:"Shock not scored"}</b>${i.shockMethod?" · "+esc(i.shockMethod):""}${i.shockText?(i.S!=null?": ":" · ")+esc(i.shockText):""}</span>
       <span><b>${vText(i)}</b>${i.vulnText?" · "+esc(i.vulnText):i.V==null?" · no vulnerability reading for this card yet":""}</span>
-      <span class="eq">${i.score!=null?`${i.S} × ${i.V} = ${i.score} → ${i.lvl}`:i.lvl==="Unscanned"?"Not scored · news not yet scanned":i.lvl==="NoNews"?"Not scored · no relevant news found (headline-level scan)":i.lvl==="Incomplete"?"Not scored · market data incomplete":`Shock ${i.S??"–"} only · score waits on V`}</span>
+      ${i.mv&&i.mv.factor&&i.mv.factor!==1?`<span><b>Market check ×${Number(i.mv.factor).toFixed(2)}</b> · ${i.Sm!=null?`applied: shock ${i.S} → ${i.Sm}`:/event/.test(i.raw.S_source||"")?"proposed, not applied yet (needs analyst review)":"context only: this card's shock comes from a market indicator, so the factor is not applied"}</span>`:""}
+      <span class="eq">${i.score!=null?`${i.Sm!=null?i.Sm:i.S} × ${i.V} = ${i.score} → ${i.lvl}`:i.lvl==="Unscanned"?"Not scored · news not yet scanned":i.lvl==="NoNews"?"Not scored · no relevant news found (headline-level scan)":i.lvl==="Incomplete"?"Not scored · market data incomplete":`Shock ${i.S??"–"} only · score waits on V`}</span>
       ${i.whyLine?`<span style="color:var(--muted);font-size:14px">${esc(i.whyLine)}</span>`:""}</div></div>
     <div class="box"><h3 class="lab">${i.unknowns.length?"Confidence and key unknowns":"Confidence"}</h3><ul><li><b>${esc(i.conf)}</b> confidence</li>${i.unknowns.map(u=>`<li>${esc(u)}</li>`).join("")}</ul></div>
   </section>

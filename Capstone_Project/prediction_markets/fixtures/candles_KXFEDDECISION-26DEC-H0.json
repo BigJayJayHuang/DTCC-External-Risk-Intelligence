@@ -1,0 +1,69 @@
+{
+ "_note": "SIMULATED fixture data for offline tests. Shaped like Kalshi API responses; not real prices.",
+ "ticker": "KXFEDDECISION-26DEC-H0",
+ "candlesticks": [
+  {
+   "end_period_ts": 1794873600,
+   "price": {
+    "close_dollars": "0.4000"
+   },
+   "volume_fp": "500.00"
+  },
+  {
+   "end_period_ts": 1794960000,
+   "price": {
+    "close_dollars": "0.4100"
+   },
+   "volume_fp": "500.00"
+  },
+  {
+   "end_period_ts": 1795046400,
+   "price": {
+    "close_dollars": "0.4500"
+   },
+   "volume_fp": "500.00"
+  },
+  {
+   "end_period_ts": 1795132800,
+   "price": {
+    "close_dollars": "0.5200"
+   },
+   "volume_fp": "500.00"
+  },
+  {
+   "end_period_ts": 1795219200,
+   "price": {
+    "close_dollars": "0.5800"
+   },
+   "volume_fp": "500.00"
+  },
+  {
+   "end_period_ts": 1795305600,
+   "price": {
+    "close_dollars": "0.6000"
+   },
+   "volume_fp": "500.00"
+  },
+  {
+   "end_period_ts": 1795392000,
+   "price": {
+    "close_dollars": "0.6100"
+   },
+   "volume_fp": "500.00"
+  },
+  {
+   "end_period_ts": 1795478400,
+   "price": {
+    "close_dollars": "0.6200"
+   },
+   "volume_fp": "500.00"
+  },
+  {
+   "end_period_ts": 1795564800,
+   "price": {
+    "close_dollars": "0.6200"
+   },
+   "volume_fp": "500.00"
+  }
+ ]
+}

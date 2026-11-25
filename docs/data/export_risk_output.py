@@ -33,6 +33,10 @@ always at the top), publication date, the matching card keyword, priority outlet
 validation/related_news_rank.py and validation/related_news_display.json. related_news itself is passed through unchanged.
 related_news (Amendment D4/E3) is passed through from the scoring records; ai_unreviewed_events lists the active register events
 on the card that are AI-classified and not reviewed (Amendment C1), whether or not they set S.
+market_view (display; prediction markets) comes from Capstone_Project/data/market_views/market_views_<week>.json, written by
+Capstone_Project/prediction_markets/attach_market_views.py from news-classifier prompt v1.7 tags: what Kalshi expects for the
+event, whether it agrees with the article, and a factor in [0.75, 1.25]. The factor changes nothing unless --apply-market-factor
+is given; then, for event-scored cards only, shock_adjusted = min(5, shock x factor) is added and the page uses it.
 """
 import argparse, csv, hashlib, importlib.util, json, runpy, urllib.parse
 from datetime import date
@@ -47,6 +51,7 @@ CHAIN_REGISTRY = CP / 'risk_business_ml' / 'new_reference_chain_tests_2026_10_21
 PQD_MANIFEST = CP / 'risk_business_ml' / 'event_vulnerability_tests_2026_10_06' / 'source_manifest.json'
 OUT = REPO / 'docs' / 'data' / 'risk_output.json'
 NARRATIVES = CP / 'data' / 'narratives'
+MARKET_VIEWS = CP / 'data' / 'market_views'
 _spec = importlib.util.spec_from_file_location('narrative_checks', CP / 'validation' / 'narrative_checks.py')
 NC = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(NC)          # standard library only
 _fspec = importlib.util.spec_from_file_location('card_front_checks', CP / 'validation' / 'card_front_checks.py')
@@ -296,6 +301,24 @@ def item(r, run_utc, cards, chains, proxy, pqd_urls, narratives=None, front_rows
     return it
 
 
+def load_market_views(week, folder=None):
+    """{card_id: view} for one week, or {} when the prediction-market step has not run for that week."""
+    path = (folder or MARKET_VIEWS) / f'market_views_{week}.json'
+    return json.loads(path.read_text(encoding='utf-8')).get('cards', {}) if path.exists() else {}
+
+
+def attach_market_view(it, view, apply_factor=False):
+    """Display box always; the shock changes only when apply_factor is set and the card's shock comes from an event."""
+    if not view:
+        return it
+    v = dict(view, applied=False)
+    if apply_factor and it.get('shock') is not None and 'event' in (it.get('S_source') or '') and v.get('factor', 1) != 1:
+        it['shock_adjusted'] = round(min(5.0, it['shock'] * v['factor']), 1)
+        v['applied'] = True
+    it['market_view'] = v
+    return it
+
+
 def summary(items):
     scored = [i for i in items if i['status'] == 'scored']
     main = sum(1 for i in scored if i['show_on_main'])
@@ -315,7 +338,7 @@ def iso(run_utc):
     return run_utc[:-1] + ':00Z' if len(run_utc) == 17 and run_utc.endswith('Z') else run_utc
 
 
-def build(weeks, narratives_dir=None):
+def build(weeks, narratives_dir=None, market_views_dir=None, apply_market_factor=False):
     docs = [json.loads((V13 / f'weekly_scores_v1.3_{w}.json').read_text()) for w in weeks]
     cards = {c['card_id']: c for c in json.loads(CARD_REGISTRY.read_text())}
     chains = {c['chain_id']: c for c in json.loads(CHAIN_REGISTRY.read_text())['chains']}
@@ -330,6 +353,9 @@ def build(weeks, narratives_dir=None):
     ranker = lambda week: lambda r, cited: RN.rank(r.get('related_news') or [], rn_keywords.get(r['card_id'], []), rn_dates[week], rn_config, cited)
     items = [item(r, iso(d['run_utc']), cards, chains, proxy, pqd_urls, narratives[d['week']], fronts[d['week']], playbook, ranker(d['week']))
              for d in docs for r in d['records']]
+    views = {d['week']: load_market_views(d['week'], market_views_dir) for d in docs}
+    for it in items:                               # prediction-market box (display; factor applied only on request)
+        attach_market_view(it, views[it['snapshot']].get(it.get('card_id')), apply_market_factor)
     lines = {}
     for line in sorted({i['business_line'] for i in items} | set(COMING)):
         entry = {'review': []}
@@ -359,8 +385,11 @@ def main():
     p.add_argument('--out', type=Path, default=OUT)
     p.add_argument('--narratives-dir', type=Path, help='folder with the review sheets and card_playbook.csv (default: '
                    'Capstone_Project/data/narratives; for local tests only)')
+    p.add_argument('--market-views-dir', type=Path, help='folder with market_views_<week>.json (default: Capstone_Project/data/market_views)')
+    p.add_argument('--apply-market-factor', action='store_true',
+                   help='apply the reviewed prediction-market factor to event-scored shocks (adds shock_adjusted); off by default')
     a = p.parse_args()
-    data = build(a.week or WEEKS, a.narratives_dir)
+    data = build(a.week or WEEKS, a.narratives_dir, a.market_views_dir, a.apply_market_factor)
     a.out.write_text(json.dumps(data, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
     print(f"{a.out}: {len(data['items'])} items, {len(data['snapshots'])} snapshots")
 

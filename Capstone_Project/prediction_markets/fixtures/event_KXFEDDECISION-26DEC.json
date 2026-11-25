@@ -1,0 +1,7 @@
+{
+ "_note": "SIMULATED fixture data for offline tests. Shaped like Kalshi API responses; not real prices.",
+ "event": {
+  "event_ticker": "KXFEDDECISION-26DEC",
+  "title": "Fed decision in December 2026"
+ }
+}

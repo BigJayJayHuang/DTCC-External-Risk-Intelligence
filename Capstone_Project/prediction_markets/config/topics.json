@@ -1,0 +1,37 @@
+{
+  "version": "pm-topics-v0.1",
+  "note": "Forward topics the news classifier (prompt v1.7) can tag, and the Kalshi market behind each. 'risk_side' says which side of the market is the article's 'yes'. max_gap_days = how far the market's resolution date may be from the article's effect date.",
+  "agree_threshold": 0.6,
+  "disagree_threshold": 0.4,
+  "factor_range": [0.75, 1.25],
+  "topics": {
+    "fed_cut": {
+      "question": "Will the Fed cut rates at its next meeting?",
+      "series": ["KXFEDDECISION"],
+      "yes_rule": {"outcome_contains": ["cut"]},
+      "max_gap_days": 45,
+      "status": "confirmed series; 'yes' = sum of all cut outcomes"
+    },
+    "government_shutdown": {
+      "question": "Will there be a government shutdown?",
+      "series": ["KXGOVSHUT", "KXSHUTDOWNBY"],
+      "yes_rule": {"risk_side": "yes"},
+      "max_gap_days": 21,
+      "status": "confirmed series"
+    },
+    "debt_limit_breach": {
+      "question": "Will the debt limit be missed (X-date reached without a raise)?",
+      "series": [],
+      "yes_rule": {"risk_side": "no"},
+      "max_gap_days": 30,
+      "status": "ticker to find (collect.py discover --search debt ceiling); markets are usually phrased 'raised before X-date', so 'yes' here = the market's NO side"
+    },
+    "recession": {
+      "question": "Will the US enter a recession this year?",
+      "series": [],
+      "yes_rule": {"risk_side": "yes"},
+      "max_gap_days": 400,
+      "status": "ticker to find"
+    }
+  }
+}

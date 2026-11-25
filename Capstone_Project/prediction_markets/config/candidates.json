@@ -1,0 +1,20 @@
+{
+  "version": "2026-11-25",
+  "_note": "Settings for kalshi_candidates.py. Category names must match the API's event 'category' value exactly; the run log lists every category seen so you can fix spellings after the first live run.",
+  "horizon_months": 18,
+  "categories": ["Economics", "Financials", "Politics", "Science and Technology", "Tech & Science", "Climate and Weather", "Climate", "Crypto"],
+  "politics_categories": ["Politics"],
+  "crypto_categories": ["Crypto"],
+  "keywords": ["Fed", "Federal Reserve", "FOMC", "rate", "rates", "interest rate", "CPI", "inflation", "recession", "GDP", "unemployment",
+               "Treasury", "Treasuries", "yield", "yields", "shutdown", "debt ceiling", "debt limit", "SEC", "CFTC", "bank failure",
+               "bank failures", "stablecoin", "stablecoins", "market structure", "tariff", "tariffs", "AI", "artificial intelligence",
+               "hurricane", "hurricanes", "outage", "outages", "cyber", "cyberattack", "cybersecurity"],
+  "case_sensitive_keywords": ["AI", "SEC", "CFTC", "FOMC", "CPI", "GDP", "Fed"],
+  "politics_keywords": ["Fed", "Federal Reserve", "Treasury", "shutdown", "debt ceiling", "debt limit", "SEC", "CFTC", "tariff", "tariffs",
+                        "stablecoin", "stablecoins", "market structure", "bank failure", "AI", "artificial intelligence", "cyber", "cybersecurity"],
+  "crypto_keywords": ["stablecoin", "stablecoins", "market structure", "SEC", "CFTC"],
+  "exclude_ticker_prefixes": ["KXMVE"],
+  "crypto_coins": ["Bitcoin", "BTC", "Ethereum", "ETH", "Solana", "SOL", "XRP", "Dogecoin", "DOGE", "Cardano", "Litecoin"],
+  "liquidity": {"min_open_interest": 1000, "min_volume_7d": 1000},
+  "rules_chars": 200
+}

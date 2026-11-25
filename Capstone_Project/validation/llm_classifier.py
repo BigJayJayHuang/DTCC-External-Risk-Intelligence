@@ -34,10 +34,14 @@ PROMPT_V13 = Path(__file__).with_name("llm_event_classifier_prompt_v1.3.md")
 PROMPT_V14 = Path(__file__).with_name("llm_event_classifier_prompt_v1.4.md")
 PROMPT_V15 = Path(__file__).with_name("llm_event_classifier_prompt_v1.5.md")
 PROMPT_V16 = Path(__file__).with_name("llm_event_classifier_prompt_v1.6.md")
-PROMPT_FILES = {"v1.2": PROMPT, "v1.3": PROMPT_V13, "v1.4": PROMPT_V14, "v1.5": PROMPT_V15, "v1.6": PROMPT_V16}
-SPLIT_PROMPTS = {"v1.3", "v1.4", "v1.5", "v1.6"}   # static system text + cachePoint, per-item user message
-EVENT_TYPE_PROMPTS = {"v1.5", "v1.6"}               # prompts that define event_type (Amendment D)
-GEO_PROMPTS = {"v1.6"}                              # prompts that define geography and new_information
+PROMPT_V17 = Path(__file__).with_name("llm_event_classifier_prompt_v1.7.md")
+PROMPT_FILES = {"v1.2": PROMPT, "v1.3": PROMPT_V13, "v1.4": PROMPT_V14, "v1.5": PROMPT_V15, "v1.6": PROMPT_V16, "v1.7": PROMPT_V17}
+SPLIT_PROMPTS = {"v1.3", "v1.4", "v1.5", "v1.6", "v1.7"}   # static system text + cachePoint, per-item user message
+EVENT_TYPE_PROMPTS = {"v1.5", "v1.6", "v1.7"}               # prompts that define event_type (Amendment D)
+GEO_PROMPTS = {"v1.6", "v1.7"}                       # prompts that define geography and new_information
+MARKET_PROMPTS = {"v1.7"}                            # prompts that define forward_topic / forward_lean / forward_quote (prediction markets)
+FORWARD_TOPICS = ["fed_cut", "government_shutdown", "debt_limit_breach", "recession", "none"]
+FORWARD_LEANS = ["yes", "no", "neutral"]
 GEOGRAPHIES = ["us", "non_us_with_us_link", "non_us"]
 EVENT_TYPES = ["market_move", "regulatory", "firm_specific", "operational", "cyber", "other"]
 HEADLINE_SCOPES = {"headline_only", "headline_snippet"}
@@ -51,7 +55,7 @@ CSV_FIELDS = [
     "event_id", "document_id", "is_relevant", "same_as_event_id", "title", "summary",
     "card_ids", "certainty", "reach", "reach_basis", "named_participants",
     "announced_date", "effect_date", "stage", "source_tier", "outlet", "source_url",
-    "url", "evidence_quote", "evidence_quotes", "llm_confidence", "notes", "event_type", "geography", "new_information", "published_date",
+    "url", "evidence_quote", "evidence_quotes", "llm_confidence", "notes", "event_type", "geography", "new_information", "forward_topic", "forward_lean", "forward_quote", "published_date",
     "entered_by", "needs_review", "validation_passed", "validation_reasons",
     "original_certainty", "original_reach", "model_id", "base_model_id", "region",
     "prompt_version", "input_tokens", "output_tokens", "cache_read_input_tokens",
@@ -246,7 +250,7 @@ def render_prompt(body: str, catalog: str, register: list[dict], article: dict):
     return prompt, {r["event_id"] for r in recent}
 
 
-def output_schema(cards: set[str], event_type: bool = False, geo: bool = False) -> dict:
+def output_schema(cards: set[str], event_type: bool = False, geo: bool = False, market: bool = False) -> dict:
     properties = {
         "is_relevant": {"const": True}, "same_as_event_id": {"type": ["string", "null"]},
         "title": {"type": "string"}, "summary": {"type": "string"},
@@ -267,6 +271,10 @@ def output_schema(cards: set[str], event_type: bool = False, geo: bool = False) 
     if geo:
         properties["geography"] = {"type": "string", "enum": GEOGRAPHIES}
         properties["new_information"] = {"type": ["boolean", "null"]}
+    if market:
+        properties["forward_topic"] = {"type": "string", "enum": FORWARD_TOPICS}
+        properties["forward_lean"] = {"type": ["string", "null"], "enum": [*FORWARD_LEANS, None]}
+        properties["forward_quote"] = {"type": ["string", "null"]}
     relevant = {"type": "object", "properties": properties, "required": list(properties), "additionalProperties": False}
     irrelevant = {"type": "object", "properties": {"is_relevant": {"const": False}, "notes": {"type": "string"}},
                   "required": ["is_relevant", "notes"], "additionalProperties": False}
@@ -280,7 +288,7 @@ FLAT_TOOL_DESCRIPTION = ("Submit the classification record specified by the syst
                          "when is_relevant is false, set every field except notes to null.")
 
 
-def output_schema_flat(cards: set[str], event_type: bool = False, geo: bool = False) -> dict:
+def output_schema_flat(cards: set[str], event_type: bool = False, geo: bool = False, market: bool = False) -> dict:
     """One flat object: every field always present, null where it does not apply. No anyOf/oneOf/if-then/const."""
     enum_or_null = lambda kind, values: {"type": [kind, "null"], "enum": [*values, None]}
     properties = {
@@ -305,6 +313,10 @@ def output_schema_flat(cards: set[str], event_type: bool = False, geo: bool = Fa
     if geo:
         properties["geography"] = enum_or_null("string", GEOGRAPHIES)
         properties["new_information"] = {"type": ["boolean", "null"]}
+    if market:
+        properties["forward_topic"] = enum_or_null("string", FORWARD_TOPICS)
+        properties["forward_lean"] = enum_or_null("string", FORWARD_LEANS)
+        properties["forward_quote"] = {"type": ["string", "null"]}
     return {"type": "object", "properties": properties, "required": list(properties), "additionalProperties": False}
 
 
@@ -316,13 +328,13 @@ OPTIONAL_LIST_FIELDS = ["named_participants"]    # optional: null means none nam
 CORE_FIELDS = ["is_relevant", "card_ids", "certainty", "reach", "evidence_quotes"]   # must be present (value may be null)
 
 
-def prepare_flat(record, cards: set[str], event_type: bool = False, geo: bool = False):
+def prepare_flat(record, cards: set[str], event_type: bool = False, geo: bool = False, market: bool = False):
     """Fill missing optional fields with null, then validate (strict mode off). Returns (internal-shape record,
     filled field names). Core fields (plus event_type when the prompt defines it) must be present. Raises on any
     violation; the caller sends the answer to failed.jsonl, without retry."""
     if not isinstance(record, dict):
         raise ValueError("flat record is not a JSON object")
-    schema = output_schema_flat(cards, event_type, geo)
+    schema = output_schema_flat(cards, event_type, geo, market)
     core = CORE_FIELDS + (["event_type"] if event_type else []) + (["geography"] if geo else [])
     absent = [k for k in core if k not in record]
     if absent:
@@ -345,11 +357,25 @@ def prepare_flat(record, cards: set[str], event_type: bool = False, geo: bool = 
             record["new_information"] = None
         elif record["new_information"] is None:   # kept, flagged and sent to review (not dropped)
             filled = filled + ["new_information_missing"]
+    if market:   # forward fields are optional: a missing topic means "none"; a topic without a lean is "neutral"
+        record = normalize_forward(record)
     return dict(record), filled
 
 
-def validate_flat(record, cards: set[str], event_type: bool = False, geo: bool = False) -> dict:
-    return prepare_flat(record, cards, event_type, geo)[0]
+def normalize_forward(record: dict) -> dict:
+    """forward_topic none/null -> lean and quote null; topic with no lean -> neutral; neutral lean -> no quote."""
+    record = dict(record)
+    if record.get("forward_topic") in (None, "none"):
+        record.update(forward_topic="none", forward_lean=None, forward_quote=None)
+    elif record.get("forward_lean") is None:
+        record.update(forward_lean="neutral", forward_quote=None)
+    elif record["forward_lean"] == "neutral":
+        record["forward_quote"] = None
+    return record
+
+
+def validate_flat(record, cards: set[str], event_type: bool = False, geo: bool = False, market: bool = False) -> dict:
+    return prepare_flat(record, cards, event_type, geo, market)[0]
 
 
 def build_request(prompt: str, schema: dict, config: dict, strict: bool = True) -> dict:
@@ -436,6 +462,10 @@ def check_classification(result: dict, article: dict, schema: dict, cards: set[s
         reasons.append("stage supplied for a non-member card")
     if any(not q.strip() or q not in article["text"] for q in result["evidence_quotes"]):
         reasons.append("evidence quote not found verbatim in supplied article text")
+    if result.get("forward_lean") in ("yes", "no") and (not (result.get("forward_quote") or "").strip()
+                                                         or result["forward_quote"] not in article["text"]):
+        reasons.append("forward_quote missing or not found verbatim; lean treated as neutral")   # prompt v1.7
+        checked.update(forward_lean="neutral", forward_quote=None)
     # Source authority comes from the supplied feed, never the model's assertion.
     if result["source_tier"] != article["source_tier"]:
         reasons.append("source_tier differs from input source classification")
@@ -586,8 +616,9 @@ def run(args, session=None):
     flat = response_schema == "flat"
     with_type = prompt_version in EVENT_TYPE_PROMPTS
     with_geo = prompt_version in GEO_PROMPTS
-    schema = output_schema(cards, with_type, with_geo)          # internal shape used by check_classification
-    tool_schema = output_schema_flat(cards, with_type, with_geo) if flat else schema
+    with_market = prompt_version in MARKET_PROMPTS
+    schema = output_schema(cards, with_type, with_geo, with_market)          # internal shape used by check_classification
+    tool_schema = output_schema_flat(cards, with_type, with_geo, with_market) if flat else schema
     Draft202012Validator.check_schema(tool_schema)
     run_id = args.run_id or datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
     if not re.fullmatch(r"[A-Za-z0-9_-]+", run_id):
@@ -728,7 +759,7 @@ def run(args, session=None):
             try:
                 result, mode, fallback = parse_response(response, flat=flat)
                 if flat:   # failure -> failed.jsonl below; never retried
-                    result, filled = prepare_flat(result, cards, with_type, with_geo)
+                    result, filled = prepare_flat(result, cards, with_type, with_geo, with_market)
                     filled_counts.update(filled)
                 summary["fence_fallbacks"] += int(fallback)
                 summary[mode + "_responses"] += 1

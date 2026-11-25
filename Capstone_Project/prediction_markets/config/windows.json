@@ -1,0 +1,8 @@
+{
+  "note": "Pre-set event windows for Test 1 on prediction-market repricing. Set before testing; confirm the series history covers each window (Kalshi's KX-prefixed series may start later than some windows).",
+  "KXFEDDECISION": [
+    {"start": "2024-08-01", "end": "2024-08-09", "what": "Weak July jobs report; markets price a bigger, faster cut"},
+    {"start": "2024-12-18", "end": "2024-12-20", "what": "Hawkish December FOMC; next-meeting cut odds collapse"},
+    {"start": "2025-04-02", "end": "2025-04-11", "what": "Tariff shock; cut odds jump"}
+  ]
+}

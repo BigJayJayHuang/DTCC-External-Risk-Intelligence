@@ -1,0 +1,76 @@
+{
+  "version": "pm-config-v0.1",
+  "note": "Which Kalshi series feed which transmission chains. 'status' says whether the series ticker has been checked against Kalshi. Run `python3 collect.py discover --search <words>` to find or confirm tickers before freezing.",
+  "defaults": {
+    "min_open_interest": 1000,
+    "min_volume_24h": 100,
+    "repricing_lookback_days": 7,
+    "jump_pp": 20
+  },
+  "series": [
+    {
+      "series": "KXFEDDECISION",
+      "label": "Fed rate decision at the next FOMC meeting",
+      "mode": "multi_outcome",
+      "use": "market_signal",
+      "chains": ["FICC-GSD-01", "FICC-MBSD-01", "RDS-02", "AS-02"],
+      "status": "confirmed: ticker seen on kalshi.com market pages (e.g. KXFEDDECISION-26SEP)",
+      "why": "How sharply the market re-priced the next Fed decision this week. A big repricing means rates expectations moved fast, which drives Treasury volatility, swap hedging and refunding waves."
+    },
+    {
+      "series": "KXCPI",
+      "label": "Monthly CPI change",
+      "mode": "multi_outcome",
+      "use": "market_signal",
+      "chains": ["FICC-GSD-01", "RDS-02"],
+      "status": "to confirm: run discover --search CPI",
+      "why": "Market expectation going into the CPI release; a large repricing flags an inflation surprise risk for rates."
+    },
+    {
+      "series": "KXGOVSHUT",
+      "label": "Government shutdown on a given date",
+      "mode": "binary_risk",
+      "use": "event_rubric",
+      "chains": ["XE-SHUTDOWN-01"],
+      "reach": 1,
+      "reach_basis": "market_wide",
+      "status": "confirmed: ticker seen on kalshi.com (e.g. KXGOVSHUT-26JAN31)",
+      "why": "Probability and date of a funding lapse feed the rubric's certainty and timing."
+    },
+    {
+      "series": "KXSHUTDOWNBY",
+      "label": "Government shutdown by a deadline",
+      "mode": "binary_risk",
+      "use": "event_rubric",
+      "chains": ["XE-SHUTDOWN-01"],
+      "reach": 1,
+      "reach_basis": "market_wide",
+      "status": "confirmed: ticker seen on kalshi.com (e.g. KXSHUTDOWNBY-26DEC31)",
+      "why": "Backup to KXGOVSHUT when no single-date market is open."
+    },
+    {
+      "series": null,
+      "discover_search": ["debt ceiling", "debt limit", "X-date", "default"],
+      "label": "Debt ceiling / US Treasury payment risk",
+      "mode": "binary_risk",
+      "use": "event_rubric",
+      "chains": ["FICC-DEBT-01"],
+      "reach": 2,
+      "reach_basis": "market_wide",
+      "status": "to find: no ticker confirmed yet; only listed when Congress is near a debt-limit deadline",
+      "why": "Probability that the debt limit is not raised by the X-date feeds certainty; the X-date feeds timing."
+    },
+    {
+      "series": null,
+      "discover_search": ["recession"],
+      "label": "US recession this year",
+      "mode": "binary_risk",
+      "use": "context_only",
+      "chains": ["XE-MEMBER", "RDS-03A"],
+      "reach": 2,
+      "reach_basis": "market_wide",
+      "status": "to find",
+      "why": "Context on the card only; not scored until tested."
+    }
+  ]
+}

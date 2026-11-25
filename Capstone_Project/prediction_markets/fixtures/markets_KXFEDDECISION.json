@@ -1,0 +1,66 @@
+{
+ "_note": "SIMULATED fixture data for offline tests. Shaped like Kalshi API responses; not real prices.",
+ "markets": [
+  {
+   "ticker": "KXFEDDECISION-26DEC-H0",
+   "event_ticker": "KXFEDDECISION-26DEC",
+   "yes_sub_title": "Hold",
+   "status": "open",
+   "yes_bid_dollars": "0.6100",
+   "yes_ask_dollars": "0.6300",
+   "last_price_dollars": "0.6200",
+   "open_interest_fp": "250000.00",
+   "volume_24h_fp": "40000.00",
+   "close_time": "2026-12-09T19:00:00Z"
+  },
+  {
+   "ticker": "KXFEDDECISION-26DEC-C25",
+   "event_ticker": "KXFEDDECISION-26DEC",
+   "yes_sub_title": "Cut 25bp",
+   "status": "open",
+   "yes_bid_dollars": "0.3300",
+   "yes_ask_dollars": "0.3500",
+   "last_price_dollars": "0.3400",
+   "open_interest_fp": "180000.00",
+   "volume_24h_fp": "35000.00",
+   "close_time": "2026-12-09T19:00:00Z"
+  },
+  {
+   "ticker": "KXFEDDECISION-26DEC-C26",
+   "event_ticker": "KXFEDDECISION-26DEC",
+   "yes_sub_title": "Cut >25bp",
+   "status": "open",
+   "yes_bid_dollars": "0.0200",
+   "yes_ask_dollars": "0.0300",
+   "last_price_dollars": "0.0250",
+   "open_interest_fp": "40000.00",
+   "volume_24h_fp": "3000.00",
+   "close_time": "2026-12-09T19:00:00Z"
+  },
+  {
+   "ticker": "KXFEDDECISION-26DEC-H25",
+   "event_ticker": "KXFEDDECISION-26DEC",
+   "yes_sub_title": "Hike 25bp",
+   "status": "open",
+   "yes_bid_dollars": "0.0100",
+   "yes_ask_dollars": "0.0200",
+   "last_price_dollars": "0.0150",
+   "open_interest_fp": "20000.00",
+   "volume_24h_fp": "800.00",
+   "close_time": "2026-12-09T19:00:00Z"
+  },
+  {
+   "ticker": "KXFEDDECISION-26OCT-H0",
+   "event_ticker": "KXFEDDECISION-26OCT",
+   "yes_sub_title": "Hold",
+   "status": "settled",
+   "yes_bid_dollars": "0.9800",
+   "yes_ask_dollars": "0.9900",
+   "last_price_dollars": "0.9850",
+   "open_interest_fp": "1.00",
+   "volume_24h_fp": "0.00",
+   "close_time": "2026-10-28T18:00:00Z"
+  }
+ ],
+ "cursor": ""
+}

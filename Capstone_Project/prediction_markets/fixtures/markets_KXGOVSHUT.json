@@ -1,0 +1,18 @@
+{
+ "_note": "SIMULATED fixture data for offline tests. Shaped like Kalshi API responses; not real prices.",
+ "markets": [
+  {
+   "ticker": "KXGOVSHUT-26DEC12",
+   "event_ticker": "KXGOVSHUT-26DEC12",
+   "yes_sub_title": "Government shut down on Dec 12",
+   "status": "open",
+   "yes_bid_dollars": "0.6600",
+   "yes_ask_dollars": "0.7000",
+   "last_price_dollars": "0.6800",
+   "open_interest_fp": "90000.00",
+   "volume_24h_fp": "12000.00",
+   "close_time": "2026-12-12T23:59:00Z"
+  }
+ ],
+ "cursor": ""
+}

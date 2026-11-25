@@ -1,0 +1,6 @@
+event_id,card_ids,title,url,effect_date,forward_topic,forward_lean,forward_quote
+CAND-TEST-1,FICC-GSD-01|RDS-02,Traders pile into bets on a December Fed cut,https://example.com/test-fed,2026-12-09,fed_cut,yes,bets on a December Fed cut
+CAND-TEST-2,XE-SHUTDOWN-01,Funding talks stall as shutdown deadline nears,https://example.com/test-shutdown,2026-12-12,government_shutdown,yes,shutdown looks all but certain
+CAND-TEST-3,ECS-NSCC-LIQ,What a shutdown would mean for markets,https://example.com/test-neutral,2026-12-12,government_shutdown,neutral,
+CAND-TEST-4,FICC-GSD-03,Clearing deadline extended,https://example.com/test-none,2026-12-31,none,,
+CAND-TEST-5,FICC-DEBT-01,Debt limit fight looms,https://example.com/test-debt,2027-01-15,debt_limit_breach,yes,X-date

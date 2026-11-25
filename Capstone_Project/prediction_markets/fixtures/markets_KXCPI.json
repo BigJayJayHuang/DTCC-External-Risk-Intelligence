@@ -1,0 +1,30 @@
+{
+ "_note": "SIMULATED fixture data for offline tests. Shaped like Kalshi API responses; not real prices.",
+ "markets": [
+  {
+   "ticker": "KXCPI-26NOV-T0.3",
+   "event_ticker": "KXCPI-26NOV",
+   "yes_sub_title": "Above 0.3%",
+   "status": "open",
+   "yes_bid_dollars": "0.4000",
+   "yes_ask_dollars": "0.4800",
+   "last_price_dollars": "0.4400",
+   "open_interest_fp": "300.00",
+   "volume_24h_fp": "20.00",
+   "close_time": "2026-12-10T13:30:00Z"
+  },
+  {
+   "ticker": "KXCPI-26NOV-T0.2",
+   "event_ticker": "KXCPI-26NOV",
+   "yes_sub_title": "Above 0.2%",
+   "status": "open",
+   "yes_bid_dollars": "0.7000",
+   "yes_ask_dollars": "0.7800",
+   "last_price_dollars": "0.7400",
+   "open_interest_fp": "250.00",
+   "volume_24h_fp": "15.00",
+   "close_time": "2026-12-10T13:30:00Z"
+  }
+ ],
+ "cursor": ""
+}
