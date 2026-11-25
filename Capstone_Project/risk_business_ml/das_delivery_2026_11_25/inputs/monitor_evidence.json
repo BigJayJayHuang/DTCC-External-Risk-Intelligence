@@ -1,0 +1,46 @@
+{
+  "summary": {
+    "window_start": "2026-11-09",
+    "as_of_date": "2026-11-17"
+  },
+  "sources": [
+    {
+      "source_id": "launch",
+      "url": "https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-goes-live"
+    },
+    {
+      "source_id": "solana",
+      "url": "https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-to-connect-with-solana"
+    },
+    {
+      "source_id": "sec_letter",
+      "url": "https://www.sec.gov/files/tm/no-action/dtc-nal-121125.pdf"
+    },
+    {
+      "source_id": "besu_qbft",
+      "url": "https://github.com/besu-eth/besu/security/advisories/GHSA-hhgq-3gvc-4jhp"
+    },
+    {
+      "source_id": "besu_ibft",
+      "url": "https://github.com/besu-eth/besu/security/advisories/GHSA-6pcq-hcgg-5q76"
+    }
+  ],
+  "deadlines": [
+    {
+      "deadline_id": "SEC-REPORT-2026-12-31",
+      "deadline": "2027-01-15",
+      "submission_status": "NOT_PUBLICLY_OBSERVED"
+    }
+  ],
+  "findings": [
+    {
+      "review_status": "APPLICABILITY_REVIEW_REQUIRED"
+    },
+    {
+      "review_status": "APPLICABILITY_REVIEW_REQUIRED"
+    },
+    {
+      "review_status": "FUTURE_CHANGE_WATCHLIST"
+    }
+  ]
+}

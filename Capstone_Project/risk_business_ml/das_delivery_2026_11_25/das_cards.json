@@ -1,0 +1,80 @@
+[
+  {
+    "id": "das-01",
+    "card_id": "DAS-01",
+    "business_line": "DAS",
+    "snapshot": "das-public-2026-11-17",
+    "region": "US",
+    "risk_family": "Cyber",
+    "title": "DAS-01 · Technology dependency watch",
+    "updated_at": "2026-11-17",
+    "status": "monitoring_only",
+    "review_status": "Applicability pending",
+    "confidence": "Public evidence",
+    "shock": null,
+    "vulnerability": null,
+    "severity": null,
+    "show_on_main": false,
+    "what_happened": "2 Besu publisher advisories captured in the reviewed evidence window.",
+    "transmission": {
+      "event": "2 Besu publisher advisories captured in the reviewed evidence window.",
+      "mechanism": "A publisher advisory warrants review when its affected dependency matches the DTS integration.",
+      "dtcc_process": "DTS infrastructure continuity and tokenization workflow."
+    },
+    "so_what": "DTCC identifies private Besu as a DTS integration. Public evidence leaves deployment applicability unresolved.",
+    "so_now_what": "Track publisher changes and official service notices. Review if DTS scope or incident evidence changes.",
+    "sources": [
+      {
+        "name": "DTCC Tokenization Service launch",
+        "url": "https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-goes-live"
+      },
+      {
+        "name": "Besu publisher advisory A",
+        "url": "https://github.com/besu-eth/besu/security/advisories/GHSA-hhgq-3gvc-4jhp"
+      },
+      {
+        "name": "Besu publisher advisory B",
+        "url": "https://github.com/besu-eth/besu/security/advisories/GHSA-6pcq-hcgg-5q76"
+      }
+    ]
+  },
+  {
+    "id": "das-04",
+    "card_id": "DAS-04",
+    "business_line": "DAS",
+    "snapshot": "das-public-2026-11-17",
+    "region": "US",
+    "risk_family": "Regulatory",
+    "title": "DAS-04 · Reporting calendar and network changes",
+    "updated_at": "2026-11-17",
+    "status": "monitoring_only",
+    "review_status": "Scheduled and planned",
+    "confidence": "Public evidence",
+    "shock": null,
+    "vulnerability": null,
+    "severity": null,
+    "show_on_main": false,
+    "what_happened": "Q4 2026 SEC staff reporting milestone: 2027-01-15. DTCC plans Solana integration for H2 2027.",
+    "transmission": {
+      "event": "Q4 2026 SEC staff reporting milestone: 2027-01-15. DTCC plans Solana integration for H2 2027.",
+      "mechanism": "Published requirements and network announcements determine which obligations and scope changes to track.",
+      "dtcc_process": "DTS regulatory reporting and service eligibility."
+    },
+    "so_what": "The reporting date is derived from the reviewed SEC staff terms. Submission status is unobserved. Solana is a planned integration.",
+    "so_now_what": "Track the reporting milestone and effective launch or eligibility notices. Confirm formal commencement before dating relief expiry.",
+    "sources": [
+      {
+        "name": "SEC staff no-action letter",
+        "url": "https://www.sec.gov/files/tm/no-action/dtc-nal-121125.pdf"
+      },
+      {
+        "name": "DTCC Solana announcement",
+        "url": "https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-to-connect-with-solana"
+      },
+      {
+        "name": "DTCC Tokenization Service launch",
+        "url": "https://www.dtcc.com/press-releases/2026/dtcc-tokenization-service-goes-live"
+      }
+    ]
+  }
+]

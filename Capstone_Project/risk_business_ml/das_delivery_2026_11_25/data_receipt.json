@@ -1,0 +1,15 @@
+{
+  "public_evidence_as_of": "2026-11-17",
+  "included_das_cards": [
+    "DAS-01",
+    "DAS-04"
+  ],
+  "historical_reference_records": 40,
+  "historical_reference_records_preserved": true,
+  "sha256": {
+    "viewer.html": "8ec2e54797c73cd8f4f38e8453925ed0ad5a8a2c23a29befa78d28cbedced01c",
+    "risk_output.json": "d095067dd19d12e3242d791f07013751979d69e46f7cc5482977617c22726ed8",
+    "monitor_evidence.json": "8730e73d0524362ef0c3e0e352f13a35e1b40a08bd65a6bd30c103ef5296a9c0",
+    "DAS_Risk_Horizon.html": "fa46ee381aaa277b4fa667fc14bd1e2bdd7d07ad736b752a4192d373536d3f0f"
+  }
+}

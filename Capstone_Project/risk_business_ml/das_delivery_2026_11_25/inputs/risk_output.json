@@ -1,0 +1,4754 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-05T05:16:00Z",
+  "model_version": "v1.3-indicator",
+  "sample": false,
+  "news_coverage": "manual_register_only",
+  "spec": "results/scoring/v1.3_indicator/SCORING_SPEC_v1.3.md",
+  "spec_status": "APPROVED (Wenqi Cai, 2026-11-05T04:45Z)",
+  "spec_amendments": [
+    {
+      "amendment": "A",
+      "approved": "Wenqi Cai, 2026-11-05T04:55Z"
+    },
+    {
+      "amendment": "B",
+      "approved": "Wenqi Cai, 2026-11-05T05:15Z"
+    }
+  ],
+  "source_files": [
+    {
+      "file": "Capstone_Project/results/scoring/v1.3_indicator/weekly_scores_v1.3_2026-10-19.json",
+      "sha256": "f92105cfd009913a521fb7e3ebf2f4326ab68cf62629090401e7907723fe35f9"
+    },
+    {
+      "file": "Capstone_Project/results/scoring/v1.3_indicator/weekly_scores_v1.3_2026-10-26.json",
+      "sha256": "6e275c042f291115e8101d5dcf9f1ed0d2e51f0f87635fcb02cf10e209f9261a"
+    }
+  ],
+  "snapshots": [
+    {
+      "id": "2026-10-26",
+      "date": "2026-10-26",
+      "label": "Week of Oct 26, 2026"
+    },
+    {
+      "id": "2026-10-19",
+      "date": "2026-10-19",
+      "label": "Week of Oct 19, 2026"
+    }
+  ],
+  "lines": {
+    "ECS": {
+      "review": [],
+      "summary": {
+        "2026-10-19": "1 of 3 scored cards at severity ≥ 6; 7 cards not yet scanned for news.",
+        "2026-10-26": "1 of 3 scored cards at severity ≥ 6; 7 cards not yet scanned for news."
+      },
+      "coming": [
+        {
+          "date": "2026-12-18",
+          "title": "Triple witching"
+        }
+      ]
+    },
+    "FICC": {
+      "review": [],
+      "summary": {
+        "2026-10-19": "2 of 5 scored cards at severity ≥ 6; 5 cards not yet scanned for news.",
+        "2026-10-26": "2 of 5 scored cards at severity ≥ 6; 5 cards not yet scanned for news."
+      },
+      "coming": [
+        {
+          "date": "2026-12-31",
+          "title": "Treasury clearing compliance: eligible cash transactions"
+        },
+        {
+          "date": "2027-06-30",
+          "title": "Treasury clearing compliance: eligible repo transactions"
+        }
+      ]
+    },
+    "ITP": {
+      "review": [],
+      "coming": [
+        {
+          "date": "2027-10-11",
+          "title": "EU move to T+1 settlement"
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "record_id": "ficc-gsd-01",
+      "business_line": "FICC",
+      "sub_line": "GSD",
+      "card_id": "FICC-GSD-01",
+      "week": "2026-10-19",
+      "week_end": "2026-10-23",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Treasury volatility and GSD margin",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Market",
+      "cross_entity": false,
+      "entities": [
+        "GSD"
+      ],
+      "legacy_v12_cards": [
+        "FICC-GSD-01"
+      ],
+      "news_coverage": "manual_register_only",
+      "status": "scored",
+      "status_reason": null,
+      "S": 5,
+      "S_source": "market",
+      "S_market": 5,
+      "S_event": null,
+      "signal": {
+        "name": "ust10_abs_change",
+        "description": "|ΔDGS10| daily, bp (FRED)",
+        "chain_id": "FICC-GSD-01",
+        "value": 16.999999999999993,
+        "percentile": 0.9705882352941176,
+        "prior_weeks": 459,
+        "method": "percentile",
+        "daily_values": [
+          {
+            "date": "2026-10-19",
+            "value": 6.00000000000005
+          },
+          {
+            "date": "2026-10-20",
+            "value": 3.000000000000025
+          },
+          {
+            "date": "2026-10-21",
+            "value": 0.9999999999999787
+          },
+          {
+            "date": "2026-10-22",
+            "value": 16.999999999999993
+          },
+          {
+            "date": "2026-10-23",
+            "value": 4.0000000000000036
+          }
+        ],
+        "daily_inputs": {
+          "DGS10": [
+            {
+              "date": "2026-10-19",
+              "value": 5.15
+            },
+            {
+              "date": "2026-10-20",
+              "value": 5.12
+            },
+            {
+              "date": "2026-10-21",
+              "value": 5.13
+            },
+            {
+              "date": "2026-10-22",
+              "value": 4.96
+            },
+            {
+              "date": "2026-10-23",
+              "value": 5.0
+            }
+          ]
+        },
+        "peak_check": true
+      },
+      "market_chains": [
+        {
+          "chain_id": "FICC-GSD-01",
+          "field": "ust10_abs_change",
+          "description": "|ΔDGS10| daily, bp (FRED)",
+          "S": 5,
+          "weekly_peak": 16.999999999999993,
+          "percentile": 0.9705882352941176,
+          "prior_weeks": 459,
+          "method": "percentile",
+          "reason": null
+        }
+      ],
+      "data_coverage": {
+        "DGS10": {
+          "last_date": "2026-11-03",
+          "required_date": "2026-10-23",
+          "ok": true
+        }
+      },
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 1,
+      "V_base": 1,
+      "V_tier": "pqd",
+      "V_driver": "PQD stress_loss_to_im (GSD)",
+      "V_metric": "stress_loss_to_im",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-09-01",
+      "V_flags": [],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": 5,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Medium",
+        "rule": "signal_chain",
+        "chain_id": "FICC-GSD-01",
+        "chains": {
+          "FICC-GSD-01": "Medium"
+        }
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "ficc-gsd-01",
+      "snapshot": "2026-10-19",
+      "shock": 5,
+      "vulnerability": 1,
+      "confidence": "Medium",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Weekly peak absolute daily change in the 10-year Treasury yield 17 bp, 97th percentile of 459 prior weeks",
+      "shock_basis": "Weekly peak absolute daily change in the 10-year Treasury yield 17 bp, 97th percentile of 459 prior weeks",
+      "vulnerability_basis": "PQD stress_loss_to_im (GSD); 2026Q2; DTCC public quantitative disclosure (PQD)",
+      "transmission": {
+        "event": "Treasury selloff or sharp yield swings.",
+        "mechanism": "Larger price moves on members' cleared positions change required margin.",
+        "dtcc_process": "GSD margin requirements."
+      },
+      "transmission_chain_id": "FICC-GSD-01",
+      "sources": [
+        {
+          "name": "FRED: DGS10",
+          "url": "https://fred.stlouisfed.org/series/DGS10"
+        },
+        {
+          "name": "DTCC CPMI-IOSCO public quantitative disclosure, 2026 Q2",
+          "url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
+      "shock_method": "Market indicator"
+    },
+    {
+      "record_id": "ficc-gsd-02",
+      "business_line": "FICC",
+      "sub_line": "GSD",
+      "card_id": "FICC-GSD-02",
+      "week": "2026-10-19",
+      "week_end": "2026-10-23",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Repo funding and GSD liquidity",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Liquidity",
+      "cross_entity": false,
+      "entities": [
+        "GSD"
+      ],
+      "legacy_v12_cards": [
+        "FICC-GSD-02"
+      ],
+      "news_coverage": "manual_register_only",
+      "status": "scored",
+      "status_reason": null,
+      "S": 4,
+      "S_source": "market",
+      "S_market": 4,
+      "S_event": null,
+      "signal": {
+        "name": "sofr_effr_adjusted",
+        "description": "SOFR−EFFR quarter-end adjusted, bp",
+        "chain_id": "FICC-GSD-02",
+        "value": 3.000000000000025,
+        "percentile": 0.7416666666666667,
+        "prior_weeks": 420,
+        "method": "percentile",
+        "daily_values": [
+          {
+            "date": "2026-10-19",
+            "value": -2.0000000000000018
+          },
+          {
+            "date": "2026-10-20",
+            "value": -1.0000000000000009
+          },
+          {
+            "date": "2026-10-21",
+            "value": -0.9999999999999787
+          },
+          {
+            "date": "2026-10-22",
+            "value": 1.000000000000023
+          },
+          {
+            "date": "2026-10-23",
+            "value": 3.000000000000025
+          }
+        ],
+        "daily_inputs": {
+          "SOFR": [
+            {
+              "date": "2026-10-19",
+              "value": 3.87
+            },
+            {
+              "date": "2026-10-20",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-21",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-22",
+              "value": 3.9
+            },
+            {
+              "date": "2026-10-23",
+              "value": 3.92
+            }
+          ],
+          "EFFR": [
+            {
+              "date": "2026-10-19",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-20",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-21",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-22",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-23",
+              "value": 3.88
+            }
+          ]
+        },
+        "peak_check": true
+      },
+      "market_chains": [
+        {
+          "chain_id": "FICC-GSD-02",
+          "field": "sofr_effr_adjusted",
+          "description": "SOFR−EFFR quarter-end adjusted, bp",
+          "S": 4,
+          "weekly_peak": 3.000000000000025,
+          "percentile": 0.7416666666666667,
+          "prior_weeks": 420,
+          "method": "percentile",
+          "reason": null
+        }
+      ],
+      "data_coverage": {
+        "SOFR": {
+          "last_date": "2026-11-03",
+          "required_date": "2026-10-23",
+          "ok": true
+        },
+        "EFFR": {
+          "last_date": "2026-11-03",
+          "required_date": "2026-10-23",
+          "ok": true
+        }
+      },
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 4,
+      "V_base": 4,
+      "V_tier": "pqd",
+      "V_driver": "PQD payment_to_qlr (GSD)",
+      "V_metric": "payment_to_qlr",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-09-01",
+      "V_flags": [],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": 16,
+      "show_on_main": true,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Medium",
+        "rule": "signal_chain",
+        "chain_id": "FICC-GSD-02",
+        "chains": {
+          "FICC-GSD-02": "Medium"
+        }
+      },
+      "shared_signal": [
+        "ECS-NSCC-LIQ"
+      ],
+      "shared_signal_fields": {
+        "ECS-NSCC-LIQ": [
+          "sofr_effr_adjusted"
+        ]
+      },
+      "id": "ficc-gsd-02",
+      "snapshot": "2026-10-19",
+      "shock": 4,
+      "vulnerability": 4,
+      "confidence": "Medium",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Weekly peak SOFR–EFFR spread (quarter-end adjusted) 3 bp, 74th percentile of 420 prior weeks",
+      "shock_basis": "Weekly peak SOFR–EFFR spread (quarter-end adjusted) 3 bp, 74th percentile of 420 prior weeks",
+      "vulnerability_basis": "PQD payment_to_qlr (GSD); 2026Q2; DTCC public quantitative disclosure (PQD)",
+      "transmission": {
+        "event": "Repo rates spike or short-term funding tightens.",
+        "mechanism": "Members' funding costs rise, making daily settlement payments harder to fund.",
+        "dtcc_process": "GSD settlement payments and liquidity."
+      },
+      "transmission_chain_id": "FICC-GSD-02",
+      "sources": [
+        {
+          "name": "FRED: SOFR",
+          "url": "https://fred.stlouisfed.org/series/SOFR"
+        },
+        {
+          "name": "FRED: EFFR",
+          "url": "https://fred.stlouisfed.org/series/EFFR"
+        },
+        {
+          "name": "DTCC CPMI-IOSCO public quantitative disclosure, 2026 Q2",
+          "url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
+      "shock_method": "Market indicator"
+    },
+    {
+      "record_id": "ficc-gsd-03",
+      "business_line": "FICC",
+      "sub_line": "GSD",
+      "card_id": "FICC-GSD-03",
+      "week": "2026-10-19",
+      "week_end": "2026-10-23",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Clearing mandate and onboarding",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Regulatory",
+      "cross_entity": false,
+      "entities": [
+        "GSD"
+      ],
+      "legacy_v12_cards": [
+        "FICC-GSD-03"
+      ],
+      "news_coverage": "manual_register_only",
+      "status": "scored",
+      "status_reason": null,
+      "S": 4,
+      "S_source": "event_manual",
+      "S_market": null,
+      "S_event": 4,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 2,
+        "driving_event_ids": [
+          "EV0006"
+        ],
+        "needs_review": false,
+        "events": [
+          {
+            "event_id": "EV0006",
+            "title": "Treasury clearing compliance date: eligible cash transactions",
+            "S": 4,
+            "certainty": 2,
+            "reach": 2,
+            "timing": 1,
+            "effect_date": "2026-12-31",
+            "needs_review": false,
+            "review_reasons": [
+              "S >= 4: human check before publishing"
+            ],
+            "signed_off_by": "Wenqi Cai 2026-11-05T04:45Z",
+            "outlet": "Federal Register (SEC)",
+            "source_tier": "regulator",
+            "source_urls": [
+              "https://www.govinfo.gov/content/pkg/FR-2025-03-04/html/2025-03351.htm"
+            ]
+          },
+          {
+            "event_id": "EV0007",
+            "title": "Treasury clearing compliance date: eligible repo transactions",
+            "S": 2,
+            "certainty": 2,
+            "reach": 2,
+            "timing": 0,
+            "effect_date": "2027-06-30",
+            "needs_review": false,
+            "review_reasons": [],
+            "signed_off_by": null,
+            "outlet": "Federal Register (SEC)",
+            "source_tier": "regulator",
+            "source_urls": [
+              "https://www.govinfo.gov/content/pkg/FR-2025-03-04/html/2025-03351.htm"
+            ]
+          }
+        ]
+      },
+      "V": 3,
+      "V_base": 3,
+      "V_tier": "pqd",
+      "V_driver": "PQD top5_client_share (GSD)",
+      "V_metric": "top5_client_share",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-09-01",
+      "V_flags": [
+        "V5_share_gt_0.5",
+        "history_lt_8_quarters"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "More than half of quarters score V=5 for this driver.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": 12,
+      "show_on_main": true,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "driving_event_chain",
+        "chain_id": "FICC-GSD-03",
+        "chains": {
+          "FICC-GSD-03": "Low"
+        }
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "ficc-gsd-03",
+      "snapshot": "2026-10-19",
+      "shock": 4,
+      "vulnerability": 3,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Hand-entered event EV0006: Treasury clearing compliance date: eligible cash transactions, effective 2026-12-31, source Federal Register (SEC): https://www.govinfo.gov/content/pkg/FR-2025-03-04/html/2025-03351.htm",
+      "shock_basis": "Event EV0006: certainty 2 + reach 2 + timing 1 = 5 → S 4 (rubric v1.2)",
+      "vulnerability_basis": "PQD top5_client_share (GSD); 2026Q2; DTCC public quantitative disclosure (PQD)",
+      "transmission": {
+        "event": "Treasury central clearing deadlines approach, are extended, or change.",
+        "mechanism": "Firms onboard to meet the rule, including through Sponsored clearing, changing onboarding demand and volume.",
+        "dtcc_process": "GSD onboarding and Sponsored volume."
+      },
+      "transmission_chain_id": "FICC-GSD-03",
+      "sources": [
+        {
+          "name": "Federal Register (SEC) (EV0006, EV0007)",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-03-04/html/2025-03351.htm"
+        },
+        {
+          "name": "DTCC CPMI-IOSCO public quantitative disclosure, 2026 Q2",
+          "url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
+      "shock_method": "Event rubric (hand-entered register)",
+      "review_status": "Event EV0006 signed off by Wenqi Cai 2026-11-05T04:45Z"
+    },
+    {
+      "record_id": "ficc-mbsd-01",
+      "business_line": "FICC",
+      "sub_line": "MBSD",
+      "card_id": "FICC-MBSD-01",
+      "week": "2026-10-19",
+      "week_end": "2026-10-23",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "MBS and MBSD margin",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Market",
+      "cross_entity": false,
+      "entities": [
+        "MBSD"
+      ],
+      "legacy_v12_cards": [
+        "FICC-MBSD-01"
+      ],
+      "news_coverage": "manual_register_only",
+      "status": "scored",
+      "status_reason": null,
+      "S": 3,
+      "S_source": "market",
+      "S_market": 3,
+      "S_event": null,
+      "signal": {
+        "name": "mbs_spread_abs_wchg",
+        "description": "|Δ(MORTGAGE30US − DGS10)| weekly, bp",
+        "chain_id": "FICC-MBSD-01",
+        "value": 5.999999999999972,
+        "percentile": 0.4279475982532751,
+        "prior_weeks": 458,
+        "method": "percentile"
+      },
+      "market_chains": [
+        {
+          "chain_id": "FICC-MBSD-01",
+          "field": "mbs_spread_abs_wchg",
+          "description": "|Δ(MORTGAGE30US − DGS10)| weekly, bp",
+          "S": 3,
+          "weekly_peak": 5.999999999999972,
+          "percentile": 0.4279475982532751,
+          "prior_weeks": 458,
+          "method": "percentile",
+          "reason": null
+        }
+      ],
+      "data_coverage": {
+        "MORTGAGE30US": {
+          "last_date": "2026-10-29",
+          "required_date": "2026-10-22",
+          "ok": true
+        },
+        "DGS10": {
+          "last_date": "2026-11-03",
+          "required_date": "2026-10-23",
+          "ok": true
+        }
+      },
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 1,
+      "V_base": 1,
+      "V_tier": "pqd",
+      "V_driver": "PQD stress_loss_to_im (MBSD)",
+      "V_metric": "stress_loss_to_im",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-09-01",
+      "V_flags": [],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": 3,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Medium",
+        "rule": "signal_chain",
+        "chain_id": "FICC-MBSD-01",
+        "chains": {
+          "FICC-MBSD-01": "Medium"
+        }
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "ficc-mbsd-01",
+      "snapshot": "2026-10-19",
+      "shock": 3,
+      "vulnerability": 1,
+      "confidence": "Medium",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Weekly change in the 30-year mortgage rate minus 10-year Treasury spread 6 bp, 43rd percentile of 458 prior weeks",
+      "shock_basis": "Weekly change in the 30-year mortgage rate minus 10-year Treasury spread 6 bp, 43rd percentile of 458 prior weeks",
+      "vulnerability_basis": "PQD stress_loss_to_im (MBSD); 2026Q2; DTCC public quantitative disclosure (PQD)",
+      "transmission": {
+        "event": "Mortgage rates jump or MBS spreads widen.",
+        "mechanism": "TBA price swings change marked-to-market positions and affect variation margin and margin requirements.",
+        "dtcc_process": "MBSD margin and variation margin."
+      },
+      "transmission_chain_id": "FICC-MBSD-01",
+      "sources": [
+        {
+          "name": "FRED: MORTGAGE30US",
+          "url": "https://fred.stlouisfed.org/series/MORTGAGE30US"
+        },
+        {
+          "name": "FRED: DGS10",
+          "url": "https://fred.stlouisfed.org/series/DGS10"
+        },
+        {
+          "name": "DTCC CPMI-IOSCO public quantitative disclosure, 2026 Q2",
+          "url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
+      "shock_method": "Market indicator"
+    },
+    {
+      "record_id": "ecs-nscc-liq",
+      "business_line": "ECS",
+      "sub_line": "NSCC",
+      "card_id": "ECS-NSCC-LIQ",
+      "week": "2026-10-19",
+      "week_end": "2026-10-23",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "NSCC liquidity",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Liquidity",
+      "cross_entity": false,
+      "entities": [
+        "NSCC"
+      ],
+      "legacy_v12_cards": [
+        "NSCC liquidity"
+      ],
+      "news_coverage": "manual_register_only",
+      "status": "scored",
+      "status_reason": null,
+      "S": 4,
+      "S_source": "market",
+      "S_market": 4,
+      "S_event": null,
+      "signal": {
+        "name": "vix_jump",
+        "description": "VIX ÷ 20-day average",
+        "chain_id": "ECS-NSCC-01",
+        "value": 1.1762215771649736,
+        "percentile": 0.7714285714285715,
+        "prior_weeks": 455,
+        "method": "percentile",
+        "daily_values": [
+          {
+            "date": "2026-10-19",
+            "value": 1.159092337670501
+          },
+          {
+            "date": "2026-10-20",
+            "value": 1.0775647410358564
+          },
+          {
+            "date": "2026-10-21",
+            "value": 1.0335212838465826
+          },
+          {
+            "date": "2026-10-22",
+            "value": 1.16698350401668
+          },
+          {
+            "date": "2026-10-23",
+            "value": 1.1762215771649736
+          }
+        ],
+        "daily_inputs": {
+          "VIXCLS": [
+            {
+              "date": "2026-10-19",
+              "value": 18.44
+            },
+            {
+              "date": "2026-10-20",
+              "value": 17.31
+            },
+            {
+              "date": "2026-10-21",
+              "value": 16.68
+            },
+            {
+              "date": "2026-10-22",
+              "value": 19.03
+            },
+            {
+              "date": "2026-10-23",
+              "value": 19.45
+            }
+          ]
+        },
+        "peak_check": true
+      },
+      "market_chains": [
+        {
+          "chain_id": "ECS-NSCC-01",
+          "field": "vix_jump",
+          "description": "VIX ÷ 20-day average",
+          "S": 4,
+          "weekly_peak": 1.1762215771649736,
+          "percentile": 0.7714285714285715,
+          "prior_weeks": 455,
+          "method": "percentile",
+          "reason": null
+        },
+        {
+          "chain_id": "ECS-NSCC-02",
+          "field": "sofr_effr_adjusted",
+          "description": "SOFR−EFFR quarter-end adjusted, bp",
+          "S": 4,
+          "weekly_peak": 3.000000000000025,
+          "percentile": 0.7416666666666667,
+          "prior_weeks": 420,
+          "method": "percentile",
+          "reason": null
+        }
+      ],
+      "data_coverage": {
+        "VIXCLS": {
+          "last_date": "2026-11-03",
+          "required_date": "2026-10-23",
+          "ok": true
+        },
+        "SOFR": {
+          "last_date": "2026-11-03",
+          "required_date": "2026-10-23",
+          "ok": true
+        },
+        "EFFR": {
+          "last_date": "2026-11-03",
+          "required_date": "2026-10-23",
+          "ok": true
+        }
+      },
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 3,
+      "V_base": 3,
+      "V_tier": "pqd",
+      "V_driver": "PQD payment_to_qlr (NSCC)",
+      "V_metric": "payment_to_qlr",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-09-01",
+      "V_flags": [],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": 12,
+      "show_on_main": true,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Medium",
+        "rule": "signal_chain",
+        "chain_id": "ECS-NSCC-01",
+        "chains": {
+          "ECS-NSCC-01": "Medium",
+          "ECS-NSCC-02": "Medium"
+        }
+      },
+      "shared_signal": [
+        "FICC-GSD-02"
+      ],
+      "shared_signal_fields": {
+        "FICC-GSD-02": [
+          "sofr_effr_adjusted"
+        ]
+      },
+      "id": "ecs-nscc-liq",
+      "snapshot": "2026-10-19",
+      "shock": 4,
+      "vulnerability": 3,
+      "confidence": "Medium",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Weekly peak VIX relative to its 20-day average 1.18×, 77th percentile of 455 prior weeks",
+      "shock_basis": "Weekly peak VIX relative to its 20-day average 1.18×, 77th percentile of 455 prior weeks",
+      "vulnerability_basis": "PQD payment_to_qlr (NSCC); 2026Q2; DTCC public quantitative disclosure (PQD)",
+      "transmission": {
+        "event": "A sharp equity selloff or large price swings.",
+        "mechanism": "Daily mark-to-market payments change sharply, requiring members to move more cash that day.",
+        "dtcc_process": "NSCC variation margin."
+      },
+      "transmission_chain_id": "ECS-NSCC-01",
+      "sources": [
+        {
+          "name": "FRED: VIXCLS",
+          "url": "https://fred.stlouisfed.org/series/VIXCLS"
+        },
+        {
+          "name": "FRED: SOFR",
+          "url": "https://fred.stlouisfed.org/series/SOFR"
+        },
+        {
+          "name": "FRED: EFFR",
+          "url": "https://fred.stlouisfed.org/series/EFFR"
+        },
+        {
+          "name": "DTCC CPMI-IOSCO public quantitative disclosure, 2026 Q2",
+          "url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
+      "shock_method": "Market indicator"
+    },
+    {
+      "record_id": "ecs-nscc-03",
+      "business_line": "ECS",
+      "sub_line": "NSCC",
+      "card_id": "ECS-NSCC-03",
+      "week": "2026-10-19",
+      "week_end": "2026-10-23",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Volume and settlement",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Operational",
+      "cross_entity": false,
+      "entities": [
+        "NSCC"
+      ],
+      "legacy_v12_cards": [
+        "ECS-NSCC-03"
+      ],
+      "news_coverage": "manual_register_only",
+      "status": "scored",
+      "status_reason": null,
+      "S": 1,
+      "S_source": "market",
+      "S_market": 1,
+      "S_event": null,
+      "signal": {
+        "name": "consolidated_shares",
+        "description": "US consolidated equity volume, shares (Cboe, all venues incl. TRFs)",
+        "chain_id": "ECS-NSCC-03",
+        "value": 0.9118466505112206,
+        "percentile": 0.19901719901719903,
+        "prior_weeks": 407,
+        "method": "percentile"
+      },
+      "market_chains": [
+        {
+          "chain_id": "ECS-NSCC-03",
+          "field": "consolidated_shares",
+          "description": "US consolidated equity volume, shares (Cboe, all venues incl. TRFs)",
+          "S": 1,
+          "weekly_peak": 0.9118466505112206,
+          "percentile": 0.19901719901719903,
+          "prior_weeks": 407,
+          "method": "percentile",
+          "reason": null
+        }
+      ],
+      "data_coverage": {
+        "CBOE_CONSOLIDATED": {
+          "last_date": "2026-11-03",
+          "required_date": "2026-10-23",
+          "ok": true
+        }
+      },
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 1,
+      "V_base": 1,
+      "V_tier": "public_proxy",
+      "V_driver": "Off-exchange (TRF) share of consolidated equity volume, quarterly mean of daily share",
+      "V_metric": "cboe_trf_share",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-07-07",
+      "V_flags": [
+        "detrended"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "Detrended: ratio to own trailing 8-quarter median.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": 1,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Medium",
+        "rule": "signal_chain",
+        "chain_id": "ECS-NSCC-03",
+        "chains": {
+          "ECS-NSCC-03": "Medium"
+        }
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "ecs-nscc-03",
+      "snapshot": "2026-10-19",
+      "shock": 1,
+      "vulnerability": 1,
+      "confidence": "Medium",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Weekly peak US consolidated equity volume relative to the median of the prior 52 weekly peaks 0.91×, 20th percentile of 407 prior weeks",
+      "shock_basis": "Weekly peak US consolidated equity volume relative to the median of the prior 52 weekly peaks 0.91×, 20th percentile of 407 prior weeks",
+      "vulnerability_basis": "Off-exchange (TRF) share of consolidated equity volume, quarterly mean of daily share; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "Equity-market trading volume surges.",
+        "mechanism": "Higher delivery demand and securities-availability pressures may leave more positions undelivered.",
+        "dtcc_process": "NSCC CNS settlement and outstanding fails."
+      },
+      "transmission_chain_id": "ECS-NSCC-03",
+      "sources": [
+        {
+          "name": "Cboe U.S. equities market volume history",
+          "url": "https://www.cboe.com/us/equities/market_statistics/historical_market_volume/"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
+      "shock_method": "Market indicator"
+    },
+    {
+      "record_id": "ecs-set-01",
+      "business_line": "ECS",
+      "sub_line": "NSCC · DTC",
+      "card_id": "ECS-SET-01",
+      "week": "2026-10-19",
+      "week_end": "2026-10-23",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Settlement cycle and processing",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Regulatory",
+      "cross_entity": false,
+      "entities": [
+        "NSCC",
+        "DTC"
+      ],
+      "legacy_v12_cards": [
+        "ECS-SET-01"
+      ],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 5,
+      "V_base": 5,
+      "V_tier": "public_proxy",
+      "V_driver": "SEC CNS fails-to-deliver stock, quarterly mean of daily USD value",
+      "V_metric": "sec_cns_ftd_value",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-08-14",
+      "V_flags": [],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "lowest_tested_chain (S null)",
+        "chain_id": "ECS-SET-01",
+        "chains": {
+          "ECS-SET-01": "Low"
+        }
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "ecs-set-01",
+      "snapshot": "2026-10-19",
+      "shock": null,
+      "vulnerability": 5,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "SEC CNS fails-to-deliver stock, quarterly mean of daily USD value; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "A shorter settlement cycle or longer trading hours, such as T+1, T+0, or 24x5.",
+        "mechanism": "Changed processing, affirmation, and funding windows may make late or manual steps bottlenecks; any increase in fails requires evidence.",
+        "dtcc_process": "NSCC and DTC settlement; retain separate CNS and non-CNS outcomes."
+      },
+      "transmission_chain_id": "ECS-SET-01",
+      "sources": [
+        {
+          "name": "SEC fails-to-deliver data (existing repo files)",
+          "url": "https://www.sec.gov/data-research/sec-markets-data/fails-deliver-data"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "xe-member-ficc",
+      "business_line": "FICC",
+      "sub_line": "GSD · MBSD",
+      "card_id": "XE-MEMBER",
+      "week": "2026-10-19",
+      "week_end": "2026-10-23",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Member stress and default",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Credit",
+      "cross_entity": true,
+      "entities": [
+        "GSD",
+        "NSCC",
+        "MBSD"
+      ],
+      "legacy_v12_cards": [
+        "FICC-GSD-04",
+        "ECS-NSCC-04"
+      ],
+      "news_coverage": "manual_register_only",
+      "status": "scored",
+      "status_reason": null,
+      "S": 4,
+      "S_source": "market",
+      "S_market": 4,
+      "S_event": null,
+      "signal": {
+        "name": "baa_widen20",
+        "description": "Baa−10Y 20-day widening, bp",
+        "chain_id": "FICC-GSD-04",
+        "value": 8.000000000000007,
+        "percentile": 0.701098901098901,
+        "prior_weeks": 455,
+        "method": "percentile",
+        "daily_values": [
+          {
+            "date": "2026-10-19",
+            "value": 6.000000000000005
+          },
+          {
+            "date": "2026-10-20",
+            "value": 2.0000000000000018
+          },
+          {
+            "date": "2026-10-21",
+            "value": 2.0000000000000018
+          },
+          {
+            "date": "2026-10-22",
+            "value": 7.000000000000006
+          },
+          {
+            "date": "2026-10-23",
+            "value": 8.000000000000007
+          }
+        ],
+        "daily_inputs": {
+          "BAA10Y": [
+            {
+              "date": "2026-10-19",
+              "value": 1.46
+            },
+            {
+              "date": "2026-10-20",
+              "value": 1.44
+            },
+            {
+              "date": "2026-10-21",
+              "value": 1.44
+            },
+            {
+              "date": "2026-10-22",
+              "value": 1.46
+            },
+            {
+              "date": "2026-10-23",
+              "value": 1.47
+            }
+          ]
+        },
+        "peak_check": true
+      },
+      "market_chains": [
+        {
+          "chain_id": "FICC-GSD-04",
+          "field": "baa_widen20",
+          "description": "Baa−10Y 20-day widening, bp",
+          "S": 4,
+          "weekly_peak": 8.000000000000007,
+          "percentile": 0.701098901098901,
+          "prior_weeks": 455,
+          "method": "percentile",
+          "reason": null
+        }
+      ],
+      "data_coverage": {
+        "BAA10Y": {
+          "last_date": "2026-11-03",
+          "required_date": "2026-10-23",
+          "ok": true
+        }
+      },
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 1,
+      "V_base": 1,
+      "V_tier": "pqd",
+      "V_driver": "PQD 18.2.2 top-five open-position share: max(GSD, NSCC) percentile series, ranked on its own history",
+      "V_metric": "max(GSD, NSCC) PQD 18.2.2 percentile",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-09-01",
+      "V_flags": [
+        "V5_share_gt_0.5"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "More than half of quarters score V=5 for this driver.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": 4,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Medium",
+        "rule": "signal_chain",
+        "chain_id": "FICC-GSD-04",
+        "chains": {
+          "FICC-GSD-04": "Medium",
+          "ECS-NSCC-04": "Low"
+        }
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "xe-member-ficc",
+      "snapshot": "2026-10-19",
+      "shock": 4,
+      "vulnerability": 1,
+      "confidence": "Medium",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Weekly peak 20-day widening of the Baa–10-year Treasury spread 8 bp, 70th percentile of 455 prior weeks",
+      "shock_basis": "Weekly peak 20-day widening of the Baa–10-year Treasury spread 8 bp, 70th percentile of 455 prior weeks",
+      "vulnerability_basis": "PQD 18.2.2 top-five open-position share: max(GSD, NSCC) percentile series, ranked on its own history; 2026Q2; DTCC public quantitative disclosure (PQD)",
+      "transmission": {
+        "event": "A bank or dealer member is downgraded, reports losses, or deteriorates in credit without a confirmed default.",
+        "mechanism": "Higher member default risk increases surveillance and default-management preparedness; an actual default routes to GSD-06.",
+        "dtcc_process": "FICC member credit surveillance and default-management preparedness."
+      },
+      "transmission_chain_id": "FICC-GSD-04",
+      "sources": [
+        {
+          "name": "FRED: BAA10Y",
+          "url": "https://fred.stlouisfed.org/series/BAA10Y"
+        },
+        {
+          "name": "DTCC CPMI-IOSCO public quantitative disclosure, 2026 Q2",
+          "url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
+      "shock_method": "Market indicator"
+    },
+    {
+      "record_id": "xe-member-ecs",
+      "business_line": "ECS",
+      "sub_line": "NSCC",
+      "card_id": "XE-MEMBER",
+      "week": "2026-10-19",
+      "week_end": "2026-10-23",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Member stress and default",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Credit",
+      "cross_entity": true,
+      "entities": [
+        "GSD",
+        "NSCC",
+        "MBSD"
+      ],
+      "legacy_v12_cards": [
+        "FICC-GSD-04",
+        "ECS-NSCC-04"
+      ],
+      "news_coverage": "manual_register_only",
+      "status": "scored",
+      "status_reason": null,
+      "S": 4,
+      "S_source": "market",
+      "S_market": 4,
+      "S_event": null,
+      "signal": {
+        "name": "baa_widen20",
+        "description": "Baa−10Y 20-day widening, bp",
+        "chain_id": "FICC-GSD-04",
+        "value": 8.000000000000007,
+        "percentile": 0.701098901098901,
+        "prior_weeks": 455,
+        "method": "percentile",
+        "daily_values": [
+          {
+            "date": "2026-10-19",
+            "value": 6.000000000000005
+          },
+          {
+            "date": "2026-10-20",
+            "value": 2.0000000000000018
+          },
+          {
+            "date": "2026-10-21",
+            "value": 2.0000000000000018
+          },
+          {
+            "date": "2026-10-22",
+            "value": 7.000000000000006
+          },
+          {
+            "date": "2026-10-23",
+            "value": 8.000000000000007
+          }
+        ],
+        "daily_inputs": {
+          "BAA10Y": [
+            {
+              "date": "2026-10-19",
+              "value": 1.46
+            },
+            {
+              "date": "2026-10-20",
+              "value": 1.44
+            },
+            {
+              "date": "2026-10-21",
+              "value": 1.44
+            },
+            {
+              "date": "2026-10-22",
+              "value": 1.46
+            },
+            {
+              "date": "2026-10-23",
+              "value": 1.47
+            }
+          ]
+        },
+        "peak_check": true
+      },
+      "market_chains": [
+        {
+          "chain_id": "FICC-GSD-04",
+          "field": "baa_widen20",
+          "description": "Baa−10Y 20-day widening, bp",
+          "S": 4,
+          "weekly_peak": 8.000000000000007,
+          "percentile": 0.701098901098901,
+          "prior_weeks": 455,
+          "method": "percentile",
+          "reason": null
+        }
+      ],
+      "data_coverage": {
+        "BAA10Y": {
+          "last_date": "2026-11-03",
+          "required_date": "2026-10-23",
+          "ok": true
+        }
+      },
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 1,
+      "V_base": 1,
+      "V_tier": "pqd",
+      "V_driver": "PQD 18.2.2 top-five open-position share: max(GSD, NSCC) percentile series, ranked on its own history",
+      "V_metric": "max(GSD, NSCC) PQD 18.2.2 percentile",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-09-01",
+      "V_flags": [
+        "V5_share_gt_0.5"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "More than half of quarters score V=5 for this driver.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": 4,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Medium",
+        "rule": "signal_chain",
+        "chain_id": "FICC-GSD-04",
+        "chains": {
+          "FICC-GSD-04": "Medium",
+          "ECS-NSCC-04": "Low"
+        }
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "xe-member-ecs",
+      "snapshot": "2026-10-19",
+      "shock": 4,
+      "vulnerability": 1,
+      "confidence": "Medium",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Weekly peak 20-day widening of the Baa–10-year Treasury spread 8 bp, 70th percentile of 455 prior weeks",
+      "shock_basis": "Weekly peak 20-day widening of the Baa–10-year Treasury spread 8 bp, 70th percentile of 455 prior weeks",
+      "vulnerability_basis": "PQD 18.2.2 top-five open-position share: max(GSD, NSCC) percentile series, ranked on its own history; 2026Q2; DTCC public quantitative disclosure (PQD)",
+      "transmission": {
+        "event": "A bank or dealer member is downgraded, reports losses, or deteriorates in credit without a confirmed default.",
+        "mechanism": "Higher member default risk increases surveillance and default-management preparedness; an actual default routes to GSD-06.",
+        "dtcc_process": "FICC member credit surveillance and default-management preparedness."
+      },
+      "transmission_chain_id": "FICC-GSD-04",
+      "sources": [
+        {
+          "name": "FRED: BAA10Y",
+          "url": "https://fred.stlouisfed.org/series/BAA10Y"
+        },
+        {
+          "name": "DTCC CPMI-IOSCO public quantitative disclosure, 2026 Q2",
+          "url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
+      "shock_method": "Market indicator"
+    },
+    {
+      "record_id": "xe-disrupt-ficc",
+      "business_line": "FICC",
+      "sub_line": "MBSD",
+      "card_id": "XE-DISRUPT",
+      "week": "2026-10-19",
+      "week_end": "2026-10-23",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Market disruption",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Operational",
+      "cross_entity": true,
+      "entities": [
+        "MBSD",
+        "DTC"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 4,
+      "V_base": 4,
+      "V_tier": "public_proxy",
+      "V_driver": "US trading halts incl. LULD pauses reported by Nasdaq Trader, quarterly count",
+      "V_metric": "nasdaq_trading_halts",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-07-07",
+      "V_flags": [
+        "detrended"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "Detrended: ratio to own trailing 8-quarter median.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "xe-disrupt-ficc",
+      "snapshot": "2026-10-19",
+      "shock": null,
+      "vulnerability": 4,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "US trading halts incl. LULD pauses reported by Nasdaq Trader, quarterly count; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "Market-wide disruption (exchange trading halt, banking moratorium, or declared emergency)",
+        "mechanism": "The Corporation invokes its market-disruption / force-majeure powers to suspend, extend, or modify settlement timeframes and obligations",
+        "dtcc_process": "MBSD settlement timeframes under market disruption"
+      },
+      "transmission_chain_id": "FICC-MBSD-04",
+      "sources": [
+        {
+          "name": "Nasdaq Trader trade-halt history",
+          "url": "https://www.nasdaqtrader.com/Trader.aspx?id=TradeHalts"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "xe-disrupt-ecs",
+      "business_line": "ECS",
+      "sub_line": "DTC",
+      "card_id": "XE-DISRUPT",
+      "week": "2026-10-19",
+      "week_end": "2026-10-23",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Market disruption",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Operational",
+      "cross_entity": true,
+      "entities": [
+        "MBSD",
+        "DTC"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 4,
+      "V_base": 4,
+      "V_tier": "public_proxy",
+      "V_driver": "US trading halts incl. LULD pauses reported by Nasdaq Trader, quarterly count",
+      "V_metric": "nasdaq_trading_halts",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-07-07",
+      "V_flags": [
+        "detrended"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "Detrended: ratio to own trailing 8-quarter median.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "xe-disrupt-ecs",
+      "snapshot": "2026-10-19",
+      "shock": null,
+      "vulnerability": 4,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "US trading halts incl. LULD pauses reported by Nasdaq Trader, quarterly count; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "Market-wide disruption (exchange halt, banking moratorium, or declared emergency)",
+        "mechanism": "The Corporation invokes its market-disruption / force-majeure powers to suspend, extend, or modify DTC settlement obligations and timeframes",
+        "dtcc_process": "DTC settlement timeframes under market disruption"
+      },
+      "transmission_chain_id": "ECS-DTC-03",
+      "sources": [
+        {
+          "name": "Nasdaq Trader trade-halt history",
+          "url": "https://www.nasdaqtrader.com/Trader.aspx?id=TradeHalts"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "xe-settlebank-ficc",
+      "business_line": "FICC",
+      "sub_line": "GSD",
+      "card_id": "XE-SETTLEBANK",
+      "week": "2026-10-19",
+      "week_end": "2026-10-23",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Settling bank",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Credit",
+      "cross_entity": true,
+      "entities": [
+        "NSCC",
+        "GSD",
+        "DTC"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 2,
+      "V_base": 2,
+      "V_tier": "public_proxy",
+      "V_driver": "KBW Nasdaq Bank Index (BKX) drawdown from trailing 52-week high, quarterly max",
+      "V_metric": "kbw_bank_drawdown",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-07-07",
+      "V_flags": [
+        "corr_gt_0.7_with_S"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "V driver correlates |r|>0.7 with an S signal; S×V may double-count.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "xe-settlebank-ficc",
+      "snapshot": "2026-10-19",
+      "shock": null,
+      "vulnerability": 2,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "KBW Nasdaq Bank Index (BKX) drawdown from trailing 52-week high, quarterly max; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "A clearing bank performing a GSD settlement role has an operational or credit problem.",
+        "mechanism": "Securities delivery and Fedwire payment through that bank cannot complete on time, interrupting the affected GSD settlement.",
+        "dtcc_process": "GSD securities settlement via clearing banks."
+      },
+      "transmission_chain_id": "FICC-GSD-08",
+      "sources": [
+        {
+          "name": "Nasdaq index historical data API",
+          "url": "https://www.nasdaq.com/market-activity/index/bkx/historical"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "xe-settlebank-ecs",
+      "business_line": "ECS",
+      "sub_line": "NSCC · DTC",
+      "card_id": "XE-SETTLEBANK",
+      "week": "2026-10-19",
+      "week_end": "2026-10-23",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Settling bank",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Credit",
+      "cross_entity": true,
+      "entities": [
+        "NSCC",
+        "GSD",
+        "DTC"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 2,
+      "V_base": 2,
+      "V_tier": "public_proxy",
+      "V_driver": "KBW Nasdaq Bank Index (BKX) drawdown from trailing 52-week high, quarterly max",
+      "V_metric": "kbw_bank_drawdown",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-07-07",
+      "V_flags": [
+        "corr_gt_0.7_with_S"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "V driver correlates |r|>0.7 with an S signal; S×V may double-count.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "xe-settlebank-ecs",
+      "snapshot": "2026-10-19",
+      "shock": null,
+      "vulnerability": 2,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "KBW Nasdaq Bank Index (BKX) drawdown from trailing 52-week high, quarterly max; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "A settling bank has an operational or credit problem",
+        "mechanism": "The settling bank refuses or fails to settle a member’s net-net balance over Fedwire, so NSCC money settlement for that member cannot complete on time",
+        "dtcc_process": "NSCC settling-bank money settlement"
+      },
+      "transmission_chain_id": "ECS-NSCC-07",
+      "sources": [
+        {
+          "name": "Nasdaq index historical data API",
+          "url": "https://www.nasdaq.com/market-activity/index/bkx/historical"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "xe-cyber-ficc",
+      "business_line": "FICC",
+      "sub_line": "MBSD",
+      "card_id": "XE-CYBER",
+      "week": "2026-10-19",
+      "week_end": "2026-10-23",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Cyber and system events",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Cyber",
+      "cross_entity": true,
+      "entities": [
+        "MBSD",
+        "DTC"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 5,
+      "V_base": 5,
+      "V_tier": "public_proxy",
+      "V_driver": "NVD published CVEs, quarterly count",
+      "V_metric": "nvd_published_cves",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-07-07",
+      "V_flags": [
+        "V5_share_gt_0.5",
+        "weak_proxy",
+        "detrended"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "Weak proxy: counts all published CVEs, not DTCC-specific exposure.",
+        "Detrended: ratio to own trailing 8-quarter median.",
+        "More than half of quarters score V=5 for this driver.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "xe-cyber-ficc",
+      "snapshot": "2026-10-19",
+      "shock": null,
+      "vulnerability": 5,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "NVD published CVEs, quarterly count; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "A cyber event or major outage hits a large member’s systems",
+        "mechanism": "The member’s connectivity to DTCC systems is impaired, so its submissions and deliveries are disrupted and the Corporation can act under the participant-system-disruption rule",
+        "dtcc_process": "MBSD participant system disruption"
+      },
+      "transmission_chain_id": "FICC-MBSD-05",
+      "sources": [
+        {
+          "name": "NIST National Vulnerability Database CVE API 2.0",
+          "url": "https://nvd.nist.gov/developers/vulnerabilities"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "xe-cyber-ecs",
+      "business_line": "ECS",
+      "sub_line": "DTC",
+      "card_id": "XE-CYBER",
+      "week": "2026-10-19",
+      "week_end": "2026-10-23",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Cyber and system events",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Cyber",
+      "cross_entity": true,
+      "entities": [
+        "MBSD",
+        "DTC"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 5,
+      "V_base": 5,
+      "V_tier": "public_proxy",
+      "V_driver": "NVD published CVEs, quarterly count",
+      "V_metric": "nvd_published_cves",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-07-07",
+      "V_flags": [
+        "V5_share_gt_0.5",
+        "weak_proxy",
+        "detrended"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "Weak proxy: counts all published CVEs, not DTCC-specific exposure.",
+        "Detrended: ratio to own trailing 8-quarter median.",
+        "More than half of quarters score V=5 for this driver.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "xe-cyber-ecs",
+      "snapshot": "2026-10-19",
+      "shock": null,
+      "vulnerability": 5,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "NVD published CVEs, quarterly count; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "A large DTC participant suffers a cyber event or major system outage.",
+        "mechanism": "Impaired participant connectivity or instruction transmission disrupts book-entry transfers and settlement, potentially invoking participant-system-disruption handling.",
+        "dtcc_process": "DTC participant system disruption and affected instructions."
+      },
+      "transmission_chain_id": "ECS-DTC-05",
+      "sources": [
+        {
+          "name": "NIST National Vulnerability Database CVE API 2.0",
+          "url": "https://nvd.nist.gov/developers/vulnerabilities"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "ficc-gsd-11",
+      "business_line": "FICC",
+      "sub_line": "GSD",
+      "card_id": "FICC-GSD-11",
+      "week": "2026-10-19",
+      "week_end": "2026-10-23",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Agent-cleared customer stress",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Credit",
+      "cross_entity": false,
+      "entities": [
+        "GSD"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 3,
+      "V_base": 3,
+      "V_tier": "public_proxy",
+      "V_driver": "OFR qualifying hedge fund gross assets / net assets",
+      "V_metric": "ofr_hf_gav_to_nav",
+      "V_quarter": "2026Q1",
+      "V_available_date": "2026-09-27",
+      "V_flags": [
+        "V5_share_gt_0.5",
+        "detrended"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "Detrended: ratio to own trailing 8-quarter median.",
+        "More than half of quarters score V=5 for this driver.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "ficc-gsd-11",
+      "snapshot": "2026-10-19",
+      "shock": null,
+      "vulnerability": 3,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "OFR qualifying hedge fund gross assets / net assets; 2026Q1; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "A buy-side executing-firm customer (for example a hedge fund) comes under stress or fails",
+        "mechanism": "The Agent Clearing Member that submitted the customer’s trades remains responsible to the Corporation for them, so the stress is concentrated on that agent member",
+        "dtcc_process": "GSD Agent Clearing Service"
+      },
+      "transmission_chain_id": "FICC-GSD-11",
+      "sources": [
+        {
+          "name": "OFR Hedge Fund Monitor API (Form PF aggregates)",
+          "url": "https://www.financialresearch.gov/hedge-fund-monitor/api/"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "ficc-mbsd-02",
+      "business_line": "FICC",
+      "sub_line": "MBSD",
+      "card_id": "FICC-MBSD-02",
+      "week": "2026-10-19",
+      "week_end": "2026-10-23",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Pool delivery",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Operational",
+      "cross_entity": false,
+      "entities": [
+        "MBSD"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 3,
+      "V_base": 3,
+      "V_tier": "public_proxy",
+      "V_driver": "Mortgage origination volume, USD bn per quarter",
+      "V_metric": "nyfed_mortgage_originations",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-08-29",
+      "V_flags": [],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "ficc-mbsd-02",
+      "snapshot": "2026-10-19",
+      "shock": null,
+      "vulnerability": 3,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "Mortgage origination volume, USD bn per quarter; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "Mortgage-backed pool supply or reference data breaks down (for example pool allocation or data errors around month-end settlement)",
+        "mechanism": "Members cannot satisfy their Pool Deliver Obligations on time, so deliveries fail and the Corporation applies the fails charge to the funds amount of each failed position",
+        "dtcc_process": "MBSD pool settlement and fails charge"
+      },
+      "transmission_chain_id": "FICC-MBSD-02",
+      "sources": [
+        {
+          "name": "New York Fed Household Debt and Credit Report (CCP/Equifax), Page 6 data",
+          "url": "https://www.newyorkfed.org/microeconomics/hhdc"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "ecs-nscc-08",
+      "business_line": "ECS",
+      "sub_line": "NSCC",
+      "card_id": "ECS-NSCC-08",
+      "week": "2026-10-19",
+      "week_end": "2026-10-23",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "ACATS account transfers",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Credit",
+      "cross_entity": false,
+      "entities": [
+        "NSCC"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 3,
+      "V_base": 3,
+      "V_tier": "public_proxy",
+      "V_driver": "NYSE Arca Securities Broker/Dealer Index (XBD) drawdown from trailing 52-week high, quarterly max",
+      "V_metric": "xbd_broker_dealer_drawdown",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-07-07",
+      "V_flags": [
+        "corr_gt_0.7_with_S"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "V driver correlates |r|>0.7 with an S signal; S×V may double-count.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "ecs-nscc-08",
+      "snapshot": "2026-10-19",
+      "shock": null,
+      "vulnerability": 3,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "NYSE Arca Securities Broker/Dealer Index (XBD) drawdown from trailing 52-week high, quarterly max; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "A retail broker fails or exits abruptly",
+        "mechanism": "A wave of customer accounts is moved through the Automated Customer Account Transfer Service (ACATS) within fixed timeframes, concentrating transfer and settlement activity",
+        "dtcc_process": "NSCC ACATS customer account transfers"
+      },
+      "transmission_chain_id": "ECS-NSCC-08",
+      "sources": [
+        {
+          "name": "Yahoo Finance chart API (^XBD index closes)",
+          "url": "https://finance.yahoo.com/quote/%5EXBD/history/"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "ecs-nscc-09",
+      "business_line": "ECS",
+      "sub_line": "NSCC",
+      "card_id": "ECS-NSCC-09",
+      "week": "2026-10-19",
+      "week_end": "2026-10-23",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "SFT securities financing",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Liquidity",
+      "cross_entity": false,
+      "entities": [
+        "NSCC"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 3,
+      "V_base": 3,
+      "V_tier": "public_proxy",
+      "V_driver": "SOFR underlying transaction volume, USD bn, quarterly mean",
+      "V_metric": "sofr_volume",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-07-07",
+      "V_flags": [
+        "V5_share_gt_0.5",
+        "detrended"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "Detrended: ratio to own trailing 8-quarter median.",
+        "More than half of quarters score V=5 for this driver.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "ecs-nscc-09",
+      "snapshot": "2026-10-19",
+      "shock": null,
+      "vulnerability": 3,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "SOFR underlying transaction volume, USD bn, quarterly mean; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "Securities-financing (repo / stock-loan) markets come under stress",
+        "mechanism": "Novated Securities Financing Transactions in the SFT clearing service reprice and remargin, so member collateral and settlement obligations on the SFT book move sharply",
+        "dtcc_process": "NSCC Securities Financing Transaction clearing service"
+      },
+      "transmission_chain_id": "ECS-NSCC-09",
+      "sources": [
+        {
+          "name": "New York Fed Markets Data API (source of FRED SOFRVOL)",
+          "url": "https://markets.newyorkfed.org/static/docs/markets-api.html"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "ecs-dtc-01",
+      "business_line": "ECS",
+      "sub_line": "DTC",
+      "card_id": "ECS-DTC-01",
+      "week": "2026-10-19",
+      "week_end": "2026-10-23",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "MMI commercial-paper settlement",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Liquidity",
+      "cross_entity": false,
+      "entities": [
+        "DTC"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 3,
+      "V_base": 3,
+      "V_tier": "public_proxy",
+      "V_driver": "Commercial paper outstanding, seasonally adjusted, USD mn, quarterly mean of weekly values",
+      "V_metric": "cp_outstanding",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-07-07",
+      "V_flags": [
+        "detrended"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "Detrended: ratio to own trailing 8-quarter median.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "ecs-dtc-01",
+      "snapshot": "2026-10-19",
+      "shock": null,
+      "vulnerability": 3,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "Commercial paper outstanding, seasonally adjusted, USD mn, quarterly mean of weekly values; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "A money-market issuer or its issuing/paying agent has a funding problem",
+        "mechanism": "The issuing and paying agent cannot give the MMI funding acknowledgment for the day’s presentments, so MMI maturity and issuance settlement for that acronym stalls",
+        "dtcc_process": "DTC MMI settlement (funding acknowledgment)"
+      },
+      "transmission_chain_id": "ECS-DTC-01",
+      "sources": [
+        {
+          "name": "Federal Reserve Board CP release, series DTBSPCK.WW (source of FRED COMPOUT)",
+          "url": "https://www.federalreserve.gov/releases/cp/"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "ficc-gsd-01",
+      "business_line": "FICC",
+      "sub_line": "GSD",
+      "card_id": "FICC-GSD-01",
+      "week": "2026-10-26",
+      "week_end": "2026-10-30",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Treasury volatility and GSD margin",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Market",
+      "cross_entity": false,
+      "entities": [
+        "GSD"
+      ],
+      "legacy_v12_cards": [
+        "FICC-GSD-01"
+      ],
+      "news_coverage": "manual_register_only",
+      "status": "scored",
+      "status_reason": null,
+      "S": 3,
+      "S_source": "market",
+      "S_market": 3,
+      "S_event": null,
+      "signal": {
+        "name": "ust10_abs_change",
+        "description": "|ΔDGS10| daily, bp (FRED)",
+        "chain_id": "FICC-GSD-01",
+        "value": 6.99999999999994,
+        "percentile": 0.4315217391304348,
+        "prior_weeks": 460,
+        "method": "percentile"
+      },
+      "market_chains": [
+        {
+          "chain_id": "FICC-GSD-01",
+          "field": "ust10_abs_change",
+          "description": "|ΔDGS10| daily, bp (FRED)",
+          "S": 3,
+          "weekly_peak": 6.99999999999994,
+          "percentile": 0.4315217391304348,
+          "prior_weeks": 460,
+          "method": "percentile",
+          "reason": null
+        }
+      ],
+      "data_coverage": {
+        "DGS10": {
+          "last_date": "2026-11-03",
+          "required_date": "2026-10-30",
+          "ok": true
+        }
+      },
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 1,
+      "V_base": 1,
+      "V_tier": "pqd",
+      "V_driver": "PQD stress_loss_to_im (GSD)",
+      "V_metric": "stress_loss_to_im",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-09-01",
+      "V_flags": [],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": 3,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Medium",
+        "rule": "signal_chain",
+        "chain_id": "FICC-GSD-01",
+        "chains": {
+          "FICC-GSD-01": "Medium"
+        }
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "ficc-gsd-01",
+      "snapshot": "2026-10-26",
+      "shock": 3,
+      "vulnerability": 1,
+      "confidence": "Medium",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Weekly peak absolute daily change in the 10-year Treasury yield 7 bp, 43rd percentile of 460 prior weeks",
+      "shock_basis": "Weekly peak absolute daily change in the 10-year Treasury yield 7 bp, 43rd percentile of 460 prior weeks",
+      "vulnerability_basis": "PQD stress_loss_to_im (GSD); 2026Q2; DTCC public quantitative disclosure (PQD)",
+      "transmission": {
+        "event": "Treasury selloff or sharp yield swings.",
+        "mechanism": "Larger price moves on members' cleared positions change required margin.",
+        "dtcc_process": "GSD margin requirements."
+      },
+      "transmission_chain_id": "FICC-GSD-01",
+      "sources": [
+        {
+          "name": "FRED: DGS10",
+          "url": "https://fred.stlouisfed.org/series/DGS10"
+        },
+        {
+          "name": "DTCC CPMI-IOSCO public quantitative disclosure, 2026 Q2",
+          "url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
+      "shock_method": "Market indicator"
+    },
+    {
+      "record_id": "ficc-gsd-02",
+      "business_line": "FICC",
+      "sub_line": "GSD",
+      "card_id": "FICC-GSD-02",
+      "week": "2026-10-26",
+      "week_end": "2026-10-30",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Repo funding and GSD liquidity",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Liquidity",
+      "cross_entity": false,
+      "entities": [
+        "GSD"
+      ],
+      "legacy_v12_cards": [
+        "FICC-GSD-02"
+      ],
+      "news_coverage": "manual_register_only",
+      "status": "scored",
+      "status_reason": null,
+      "S": 5,
+      "S_source": "market",
+      "S_market": 5,
+      "S_event": null,
+      "signal": {
+        "name": "sofr_effr_adjusted",
+        "description": "SOFR−EFFR quarter-end adjusted, bp",
+        "chain_id": "FICC-GSD-02",
+        "value": 6.00000000000005,
+        "percentile": 0.8598574821852731,
+        "prior_weeks": 421,
+        "method": "percentile",
+        "daily_values": [
+          {
+            "date": "2026-10-26",
+            "value": 4.000000000000048
+          },
+          {
+            "date": "2026-10-27",
+            "value": 6.00000000000005
+          },
+          {
+            "date": "2026-10-28",
+            "value": 5.000000000000027
+          },
+          {
+            "date": "2026-10-29",
+            "value": 5.000000000000027
+          },
+          {
+            "date": "2026-10-30",
+            "value": 6.00000000000005
+          }
+        ],
+        "daily_inputs": {
+          "SOFR": [
+            {
+              "date": "2026-10-26",
+              "value": 3.93
+            },
+            {
+              "date": "2026-10-27",
+              "value": 3.95
+            },
+            {
+              "date": "2026-10-28",
+              "value": 3.94
+            },
+            {
+              "date": "2026-10-29",
+              "value": 3.94
+            },
+            {
+              "date": "2026-10-30",
+              "value": 3.95
+            }
+          ],
+          "EFFR": [
+            {
+              "date": "2026-10-26",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-27",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-28",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-29",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-30",
+              "value": 3.88
+            }
+          ]
+        },
+        "peak_check": true
+      },
+      "market_chains": [
+        {
+          "chain_id": "FICC-GSD-02",
+          "field": "sofr_effr_adjusted",
+          "description": "SOFR−EFFR quarter-end adjusted, bp",
+          "S": 5,
+          "weekly_peak": 6.00000000000005,
+          "percentile": 0.8598574821852731,
+          "prior_weeks": 421,
+          "method": "percentile",
+          "reason": null
+        }
+      ],
+      "data_coverage": {
+        "SOFR": {
+          "last_date": "2026-11-03",
+          "required_date": "2026-10-30",
+          "ok": true
+        },
+        "EFFR": {
+          "last_date": "2026-11-03",
+          "required_date": "2026-10-30",
+          "ok": true
+        }
+      },
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 4,
+      "V_base": 4,
+      "V_tier": "pqd",
+      "V_driver": "PQD payment_to_qlr (GSD)",
+      "V_metric": "payment_to_qlr",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-09-01",
+      "V_flags": [],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": 20,
+      "show_on_main": true,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Medium",
+        "rule": "signal_chain",
+        "chain_id": "FICC-GSD-02",
+        "chains": {
+          "FICC-GSD-02": "Medium"
+        }
+      },
+      "shared_signal": [
+        "ECS-NSCC-LIQ"
+      ],
+      "shared_signal_fields": {
+        "ECS-NSCC-LIQ": [
+          "sofr_effr_adjusted"
+        ]
+      },
+      "id": "ficc-gsd-02",
+      "snapshot": "2026-10-26",
+      "shock": 5,
+      "vulnerability": 4,
+      "confidence": "Medium",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Weekly peak SOFR–EFFR spread (quarter-end adjusted) 6 bp, 86th percentile of 421 prior weeks",
+      "shock_basis": "Weekly peak SOFR–EFFR spread (quarter-end adjusted) 6 bp, 86th percentile of 421 prior weeks",
+      "vulnerability_basis": "PQD payment_to_qlr (GSD); 2026Q2; DTCC public quantitative disclosure (PQD)",
+      "transmission": {
+        "event": "Repo rates spike or short-term funding tightens.",
+        "mechanism": "Members' funding costs rise, making daily settlement payments harder to fund.",
+        "dtcc_process": "GSD settlement payments and liquidity."
+      },
+      "transmission_chain_id": "FICC-GSD-02",
+      "sources": [
+        {
+          "name": "FRED: SOFR",
+          "url": "https://fred.stlouisfed.org/series/SOFR"
+        },
+        {
+          "name": "FRED: EFFR",
+          "url": "https://fred.stlouisfed.org/series/EFFR"
+        },
+        {
+          "name": "DTCC CPMI-IOSCO public quantitative disclosure, 2026 Q2",
+          "url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
+      "shock_method": "Market indicator"
+    },
+    {
+      "record_id": "ficc-gsd-03",
+      "business_line": "FICC",
+      "sub_line": "GSD",
+      "card_id": "FICC-GSD-03",
+      "week": "2026-10-26",
+      "week_end": "2026-10-30",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Clearing mandate and onboarding",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Regulatory",
+      "cross_entity": false,
+      "entities": [
+        "GSD"
+      ],
+      "legacy_v12_cards": [
+        "FICC-GSD-03"
+      ],
+      "news_coverage": "manual_register_only",
+      "status": "scored",
+      "status_reason": null,
+      "S": 4,
+      "S_source": "event_manual",
+      "S_market": null,
+      "S_event": 4,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 2,
+        "driving_event_ids": [
+          "EV0006"
+        ],
+        "needs_review": false,
+        "events": [
+          {
+            "event_id": "EV0006",
+            "title": "Treasury clearing compliance date: eligible cash transactions",
+            "S": 4,
+            "certainty": 2,
+            "reach": 2,
+            "timing": 1,
+            "effect_date": "2026-12-31",
+            "needs_review": false,
+            "review_reasons": [
+              "S >= 4: human check before publishing"
+            ],
+            "signed_off_by": "Wenqi Cai 2026-11-05T04:45Z",
+            "outlet": "Federal Register (SEC)",
+            "source_tier": "regulator",
+            "source_urls": [
+              "https://www.govinfo.gov/content/pkg/FR-2025-03-04/html/2025-03351.htm"
+            ]
+          },
+          {
+            "event_id": "EV0007",
+            "title": "Treasury clearing compliance date: eligible repo transactions",
+            "S": 2,
+            "certainty": 2,
+            "reach": 2,
+            "timing": 0,
+            "effect_date": "2027-06-30",
+            "needs_review": false,
+            "review_reasons": [],
+            "signed_off_by": null,
+            "outlet": "Federal Register (SEC)",
+            "source_tier": "regulator",
+            "source_urls": [
+              "https://www.govinfo.gov/content/pkg/FR-2025-03-04/html/2025-03351.htm"
+            ]
+          }
+        ]
+      },
+      "V": 3,
+      "V_base": 3,
+      "V_tier": "pqd",
+      "V_driver": "PQD top5_client_share (GSD)",
+      "V_metric": "top5_client_share",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-09-01",
+      "V_flags": [
+        "V5_share_gt_0.5",
+        "history_lt_8_quarters"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "More than half of quarters score V=5 for this driver.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": 12,
+      "show_on_main": true,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "driving_event_chain",
+        "chain_id": "FICC-GSD-03",
+        "chains": {
+          "FICC-GSD-03": "Low"
+        }
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "ficc-gsd-03",
+      "snapshot": "2026-10-26",
+      "shock": 4,
+      "vulnerability": 3,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Hand-entered event EV0006: Treasury clearing compliance date: eligible cash transactions, effective 2026-12-31, source Federal Register (SEC): https://www.govinfo.gov/content/pkg/FR-2025-03-04/html/2025-03351.htm",
+      "shock_basis": "Event EV0006: certainty 2 + reach 2 + timing 1 = 5 → S 4 (rubric v1.2)",
+      "vulnerability_basis": "PQD top5_client_share (GSD); 2026Q2; DTCC public quantitative disclosure (PQD)",
+      "transmission": {
+        "event": "Treasury central clearing deadlines approach, are extended, or change.",
+        "mechanism": "Firms onboard to meet the rule, including through Sponsored clearing, changing onboarding demand and volume.",
+        "dtcc_process": "GSD onboarding and Sponsored volume."
+      },
+      "transmission_chain_id": "FICC-GSD-03",
+      "sources": [
+        {
+          "name": "Federal Register (SEC) (EV0006, EV0007)",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-03-04/html/2025-03351.htm"
+        },
+        {
+          "name": "DTCC CPMI-IOSCO public quantitative disclosure, 2026 Q2",
+          "url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
+      "shock_method": "Event rubric (hand-entered register)",
+      "review_status": "Event EV0006 signed off by Wenqi Cai 2026-11-05T04:45Z"
+    },
+    {
+      "record_id": "ficc-mbsd-01",
+      "business_line": "FICC",
+      "sub_line": "MBSD",
+      "card_id": "FICC-MBSD-01",
+      "week": "2026-10-26",
+      "week_end": "2026-10-30",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "MBS and MBSD margin",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Market",
+      "cross_entity": false,
+      "entities": [
+        "MBSD"
+      ],
+      "legacy_v12_cards": [
+        "FICC-MBSD-01"
+      ],
+      "news_coverage": "manual_register_only",
+      "status": "scored",
+      "status_reason": null,
+      "S": 4,
+      "S_source": "market",
+      "S_market": 4,
+      "S_event": null,
+      "signal": {
+        "name": "mbs_spread_abs_wchg",
+        "description": "|Δ(MORTGAGE30US − DGS10)| weekly, bp",
+        "chain_id": "FICC-MBSD-01",
+        "value": 10.000000000000057,
+        "percentile": 0.6318082788671024,
+        "prior_weeks": 459,
+        "method": "percentile",
+        "daily_values": [
+          {
+            "date": "2026-10-29",
+            "value": 10.000000000000057
+          }
+        ],
+        "daily_inputs": {
+          "MORTGAGE30US": [
+            {
+              "date": "2026-10-29",
+              "value": 7.24
+            }
+          ],
+          "DGS10": [
+            {
+              "date": "2026-10-26",
+              "value": 5.0
+            },
+            {
+              "date": "2026-10-27",
+              "value": 4.99
+            },
+            {
+              "date": "2026-10-28",
+              "value": 5.05
+            },
+            {
+              "date": "2026-10-29",
+              "value": 4.98
+            },
+            {
+              "date": "2026-10-30",
+              "value": 4.94
+            }
+          ]
+        },
+        "peak_check": true
+      },
+      "market_chains": [
+        {
+          "chain_id": "FICC-MBSD-01",
+          "field": "mbs_spread_abs_wchg",
+          "description": "|Δ(MORTGAGE30US − DGS10)| weekly, bp",
+          "S": 4,
+          "weekly_peak": 10.000000000000057,
+          "percentile": 0.6318082788671024,
+          "prior_weeks": 459,
+          "method": "percentile",
+          "reason": null
+        }
+      ],
+      "data_coverage": {
+        "MORTGAGE30US": {
+          "last_date": "2026-10-29",
+          "required_date": "2026-10-29",
+          "ok": true
+        },
+        "DGS10": {
+          "last_date": "2026-11-03",
+          "required_date": "2026-10-30",
+          "ok": true
+        }
+      },
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 1,
+      "V_base": 1,
+      "V_tier": "pqd",
+      "V_driver": "PQD stress_loss_to_im (MBSD)",
+      "V_metric": "stress_loss_to_im",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-09-01",
+      "V_flags": [],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": 4,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Medium",
+        "rule": "signal_chain",
+        "chain_id": "FICC-MBSD-01",
+        "chains": {
+          "FICC-MBSD-01": "Medium"
+        }
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "ficc-mbsd-01",
+      "snapshot": "2026-10-26",
+      "shock": 4,
+      "vulnerability": 1,
+      "confidence": "Medium",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Weekly change in the 30-year mortgage rate minus 10-year Treasury spread 10 bp, 63rd percentile of 459 prior weeks",
+      "shock_basis": "Weekly change in the 30-year mortgage rate minus 10-year Treasury spread 10 bp, 63rd percentile of 459 prior weeks",
+      "vulnerability_basis": "PQD stress_loss_to_im (MBSD); 2026Q2; DTCC public quantitative disclosure (PQD)",
+      "transmission": {
+        "event": "Mortgage rates jump or MBS spreads widen.",
+        "mechanism": "TBA price swings change marked-to-market positions and affect variation margin and margin requirements.",
+        "dtcc_process": "MBSD margin and variation margin."
+      },
+      "transmission_chain_id": "FICC-MBSD-01",
+      "sources": [
+        {
+          "name": "FRED: MORTGAGE30US",
+          "url": "https://fred.stlouisfed.org/series/MORTGAGE30US"
+        },
+        {
+          "name": "FRED: DGS10",
+          "url": "https://fred.stlouisfed.org/series/DGS10"
+        },
+        {
+          "name": "DTCC CPMI-IOSCO public quantitative disclosure, 2026 Q2",
+          "url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
+      "shock_method": "Market indicator"
+    },
+    {
+      "record_id": "ecs-nscc-liq",
+      "business_line": "ECS",
+      "sub_line": "NSCC",
+      "card_id": "ECS-NSCC-LIQ",
+      "week": "2026-10-26",
+      "week_end": "2026-10-30",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "NSCC liquidity",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Liquidity",
+      "cross_entity": false,
+      "entities": [
+        "NSCC"
+      ],
+      "legacy_v12_cards": [
+        "NSCC liquidity"
+      ],
+      "news_coverage": "manual_register_only",
+      "status": "scored",
+      "status_reason": null,
+      "S": 5,
+      "S_source": "market",
+      "S_market": 5,
+      "S_event": null,
+      "signal": {
+        "name": "sofr_effr_adjusted",
+        "description": "SOFR−EFFR quarter-end adjusted, bp",
+        "chain_id": "ECS-NSCC-02",
+        "value": 6.00000000000005,
+        "percentile": 0.8598574821852731,
+        "prior_weeks": 421,
+        "method": "percentile",
+        "daily_values": [
+          {
+            "date": "2026-10-26",
+            "value": 4.000000000000048
+          },
+          {
+            "date": "2026-10-27",
+            "value": 6.00000000000005
+          },
+          {
+            "date": "2026-10-28",
+            "value": 5.000000000000027
+          },
+          {
+            "date": "2026-10-29",
+            "value": 5.000000000000027
+          },
+          {
+            "date": "2026-10-30",
+            "value": 6.00000000000005
+          }
+        ],
+        "daily_inputs": {
+          "SOFR": [
+            {
+              "date": "2026-10-26",
+              "value": 3.93
+            },
+            {
+              "date": "2026-10-27",
+              "value": 3.95
+            },
+            {
+              "date": "2026-10-28",
+              "value": 3.94
+            },
+            {
+              "date": "2026-10-29",
+              "value": 3.94
+            },
+            {
+              "date": "2026-10-30",
+              "value": 3.95
+            }
+          ],
+          "EFFR": [
+            {
+              "date": "2026-10-26",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-27",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-28",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-29",
+              "value": 3.88
+            },
+            {
+              "date": "2026-10-30",
+              "value": 3.88
+            }
+          ]
+        },
+        "peak_check": true
+      },
+      "market_chains": [
+        {
+          "chain_id": "ECS-NSCC-01",
+          "field": "vix_jump",
+          "description": "VIX ÷ 20-day average",
+          "S": 4,
+          "weekly_peak": 1.1423193435487193,
+          "percentile": 0.7346491228070176,
+          "prior_weeks": 456,
+          "method": "percentile",
+          "reason": null
+        },
+        {
+          "chain_id": "ECS-NSCC-02",
+          "field": "sofr_effr_adjusted",
+          "description": "SOFR−EFFR quarter-end adjusted, bp",
+          "S": 5,
+          "weekly_peak": 6.00000000000005,
+          "percentile": 0.8598574821852731,
+          "prior_weeks": 421,
+          "method": "percentile",
+          "reason": null
+        }
+      ],
+      "data_coverage": {
+        "VIXCLS": {
+          "last_date": "2026-11-03",
+          "required_date": "2026-10-30",
+          "ok": true
+        },
+        "SOFR": {
+          "last_date": "2026-11-03",
+          "required_date": "2026-10-30",
+          "ok": true
+        },
+        "EFFR": {
+          "last_date": "2026-11-03",
+          "required_date": "2026-10-30",
+          "ok": true
+        }
+      },
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 3,
+      "V_base": 3,
+      "V_tier": "pqd",
+      "V_driver": "PQD payment_to_qlr (NSCC)",
+      "V_metric": "payment_to_qlr",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-09-01",
+      "V_flags": [],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": 15,
+      "show_on_main": true,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Medium",
+        "rule": "signal_chain",
+        "chain_id": "ECS-NSCC-02",
+        "chains": {
+          "ECS-NSCC-01": "Medium",
+          "ECS-NSCC-02": "Medium"
+        }
+      },
+      "shared_signal": [
+        "FICC-GSD-02"
+      ],
+      "shared_signal_fields": {
+        "FICC-GSD-02": [
+          "sofr_effr_adjusted"
+        ]
+      },
+      "id": "ecs-nscc-liq",
+      "snapshot": "2026-10-26",
+      "shock": 5,
+      "vulnerability": 3,
+      "confidence": "Medium",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Weekly peak SOFR–EFFR spread (quarter-end adjusted) 6 bp, 86th percentile of 421 prior weeks",
+      "shock_basis": "Weekly peak SOFR–EFFR spread (quarter-end adjusted) 6 bp, 86th percentile of 421 prior weeks",
+      "vulnerability_basis": "PQD payment_to_qlr (NSCC); 2026Q2; DTCC public quantitative disclosure (PQD)",
+      "transmission": {
+        "event": "Short-term funding tightens and brokers face higher funding costs.",
+        "mechanism": "Brokers have less spare cash for daily payments, making variation margin and settlement payments harder to fund.",
+        "dtcc_process": "NSCC variation margin and liquidity."
+      },
+      "transmission_chain_id": "ECS-NSCC-02",
+      "sources": [
+        {
+          "name": "FRED: VIXCLS",
+          "url": "https://fred.stlouisfed.org/series/VIXCLS"
+        },
+        {
+          "name": "FRED: SOFR",
+          "url": "https://fred.stlouisfed.org/series/SOFR"
+        },
+        {
+          "name": "FRED: EFFR",
+          "url": "https://fred.stlouisfed.org/series/EFFR"
+        },
+        {
+          "name": "DTCC CPMI-IOSCO public quantitative disclosure, 2026 Q2",
+          "url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
+      "shock_method": "Market indicator"
+    },
+    {
+      "record_id": "ecs-nscc-03",
+      "business_line": "ECS",
+      "sub_line": "NSCC",
+      "card_id": "ECS-NSCC-03",
+      "week": "2026-10-26",
+      "week_end": "2026-10-30",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Volume and settlement",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Operational",
+      "cross_entity": false,
+      "entities": [
+        "NSCC"
+      ],
+      "legacy_v12_cards": [
+        "ECS-NSCC-03"
+      ],
+      "news_coverage": "manual_register_only",
+      "status": "scored",
+      "status_reason": null,
+      "S": 2,
+      "S_source": "market",
+      "S_market": 2,
+      "S_event": null,
+      "signal": {
+        "name": "consolidated_shares",
+        "description": "US consolidated equity volume, shares (Cboe, all venues incl. TRFs)",
+        "chain_id": "ECS-NSCC-03",
+        "value": 0.9624906876207353,
+        "percentile": 0.2916666666666667,
+        "prior_weeks": 408,
+        "method": "percentile"
+      },
+      "market_chains": [
+        {
+          "chain_id": "ECS-NSCC-03",
+          "field": "consolidated_shares",
+          "description": "US consolidated equity volume, shares (Cboe, all venues incl. TRFs)",
+          "S": 2,
+          "weekly_peak": 0.9624906876207353,
+          "percentile": 0.2916666666666667,
+          "prior_weeks": 408,
+          "method": "percentile",
+          "reason": null
+        }
+      ],
+      "data_coverage": {
+        "CBOE_CONSOLIDATED": {
+          "last_date": "2026-11-03",
+          "required_date": "2026-10-30",
+          "ok": true
+        }
+      },
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 1,
+      "V_base": 1,
+      "V_tier": "public_proxy",
+      "V_driver": "Off-exchange (TRF) share of consolidated equity volume, quarterly mean of daily share",
+      "V_metric": "cboe_trf_share",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-07-07",
+      "V_flags": [
+        "detrended"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "Detrended: ratio to own trailing 8-quarter median.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": 2,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Medium",
+        "rule": "signal_chain",
+        "chain_id": "ECS-NSCC-03",
+        "chains": {
+          "ECS-NSCC-03": "Medium"
+        }
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "ecs-nscc-03",
+      "snapshot": "2026-10-26",
+      "shock": 2,
+      "vulnerability": 1,
+      "confidence": "Medium",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Weekly peak US consolidated equity volume relative to the median of the prior 52 weekly peaks 0.96×, 29th percentile of 408 prior weeks",
+      "shock_basis": "Weekly peak US consolidated equity volume relative to the median of the prior 52 weekly peaks 0.96×, 29th percentile of 408 prior weeks",
+      "vulnerability_basis": "Off-exchange (TRF) share of consolidated equity volume, quarterly mean of daily share; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "Equity-market trading volume surges.",
+        "mechanism": "Higher delivery demand and securities-availability pressures may leave more positions undelivered.",
+        "dtcc_process": "NSCC CNS settlement and outstanding fails."
+      },
+      "transmission_chain_id": "ECS-NSCC-03",
+      "sources": [
+        {
+          "name": "Cboe U.S. equities market volume history",
+          "url": "https://www.cboe.com/us/equities/market_statistics/historical_market_volume/"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
+      "shock_method": "Market indicator"
+    },
+    {
+      "record_id": "ecs-set-01",
+      "business_line": "ECS",
+      "sub_line": "NSCC · DTC",
+      "card_id": "ECS-SET-01",
+      "week": "2026-10-26",
+      "week_end": "2026-10-30",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Settlement cycle and processing",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Regulatory",
+      "cross_entity": false,
+      "entities": [
+        "NSCC",
+        "DTC"
+      ],
+      "legacy_v12_cards": [
+        "ECS-SET-01"
+      ],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 5,
+      "V_base": 5,
+      "V_tier": "public_proxy",
+      "V_driver": "SEC CNS fails-to-deliver stock, quarterly mean of daily USD value",
+      "V_metric": "sec_cns_ftd_value",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-08-14",
+      "V_flags": [],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "lowest_tested_chain (S null)",
+        "chain_id": "ECS-SET-01",
+        "chains": {
+          "ECS-SET-01": "Low"
+        }
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "ecs-set-01",
+      "snapshot": "2026-10-26",
+      "shock": null,
+      "vulnerability": 5,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "SEC CNS fails-to-deliver stock, quarterly mean of daily USD value; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "A shorter settlement cycle or longer trading hours, such as T+1, T+0, or 24x5.",
+        "mechanism": "Changed processing, affirmation, and funding windows may make late or manual steps bottlenecks; any increase in fails requires evidence.",
+        "dtcc_process": "NSCC and DTC settlement; retain separate CNS and non-CNS outcomes."
+      },
+      "transmission_chain_id": "ECS-SET-01",
+      "sources": [
+        {
+          "name": "SEC fails-to-deliver data (existing repo files)",
+          "url": "https://www.sec.gov/data-research/sec-markets-data/fails-deliver-data"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "xe-member-ficc",
+      "business_line": "FICC",
+      "sub_line": "GSD · MBSD",
+      "card_id": "XE-MEMBER",
+      "week": "2026-10-26",
+      "week_end": "2026-10-30",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Member stress and default",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Credit",
+      "cross_entity": true,
+      "entities": [
+        "GSD",
+        "NSCC",
+        "MBSD"
+      ],
+      "legacy_v12_cards": [
+        "FICC-GSD-04",
+        "ECS-NSCC-04"
+      ],
+      "news_coverage": "manual_register_only",
+      "status": "scored",
+      "status_reason": null,
+      "S": 3,
+      "S_source": "market",
+      "S_market": 3,
+      "S_event": null,
+      "signal": {
+        "name": "baa_widen20",
+        "description": "Baa−10Y 20-day widening, bp",
+        "chain_id": "FICC-GSD-04",
+        "value": 4.0000000000000036,
+        "percentile": 0.5833333333333334,
+        "prior_weeks": 456,
+        "method": "percentile"
+      },
+      "market_chains": [
+        {
+          "chain_id": "FICC-GSD-04",
+          "field": "baa_widen20",
+          "description": "Baa−10Y 20-day widening, bp",
+          "S": 3,
+          "weekly_peak": 4.0000000000000036,
+          "percentile": 0.5833333333333334,
+          "prior_weeks": 456,
+          "method": "percentile",
+          "reason": null
+        }
+      ],
+      "data_coverage": {
+        "BAA10Y": {
+          "last_date": "2026-11-03",
+          "required_date": "2026-10-30",
+          "ok": true
+        }
+      },
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 1,
+      "V_base": 1,
+      "V_tier": "pqd",
+      "V_driver": "PQD 18.2.2 top-five open-position share: max(GSD, NSCC) percentile series, ranked on its own history",
+      "V_metric": "max(GSD, NSCC) PQD 18.2.2 percentile",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-09-01",
+      "V_flags": [
+        "V5_share_gt_0.5"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "More than half of quarters score V=5 for this driver.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": 3,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Medium",
+        "rule": "signal_chain",
+        "chain_id": "FICC-GSD-04",
+        "chains": {
+          "FICC-GSD-04": "Medium",
+          "ECS-NSCC-04": "Low"
+        }
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "xe-member-ficc",
+      "snapshot": "2026-10-26",
+      "shock": 3,
+      "vulnerability": 1,
+      "confidence": "Medium",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Weekly peak 20-day widening of the Baa–10-year Treasury spread 4 bp, 58th percentile of 456 prior weeks",
+      "shock_basis": "Weekly peak 20-day widening of the Baa–10-year Treasury spread 4 bp, 58th percentile of 456 prior weeks",
+      "vulnerability_basis": "PQD 18.2.2 top-five open-position share: max(GSD, NSCC) percentile series, ranked on its own history; 2026Q2; DTCC public quantitative disclosure (PQD)",
+      "transmission": {
+        "event": "A bank or dealer member is downgraded, reports losses, or deteriorates in credit without a confirmed default.",
+        "mechanism": "Higher member default risk increases surveillance and default-management preparedness; an actual default routes to GSD-06.",
+        "dtcc_process": "FICC member credit surveillance and default-management preparedness."
+      },
+      "transmission_chain_id": "FICC-GSD-04",
+      "sources": [
+        {
+          "name": "FRED: BAA10Y",
+          "url": "https://fred.stlouisfed.org/series/BAA10Y"
+        },
+        {
+          "name": "DTCC CPMI-IOSCO public quantitative disclosure, 2026 Q2",
+          "url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
+      "shock_method": "Market indicator"
+    },
+    {
+      "record_id": "xe-member-ecs",
+      "business_line": "ECS",
+      "sub_line": "NSCC",
+      "card_id": "XE-MEMBER",
+      "week": "2026-10-26",
+      "week_end": "2026-10-30",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Member stress and default",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Credit",
+      "cross_entity": true,
+      "entities": [
+        "GSD",
+        "NSCC",
+        "MBSD"
+      ],
+      "legacy_v12_cards": [
+        "FICC-GSD-04",
+        "ECS-NSCC-04"
+      ],
+      "news_coverage": "manual_register_only",
+      "status": "scored",
+      "status_reason": null,
+      "S": 3,
+      "S_source": "market",
+      "S_market": 3,
+      "S_event": null,
+      "signal": {
+        "name": "baa_widen20",
+        "description": "Baa−10Y 20-day widening, bp",
+        "chain_id": "FICC-GSD-04",
+        "value": 4.0000000000000036,
+        "percentile": 0.5833333333333334,
+        "prior_weeks": 456,
+        "method": "percentile"
+      },
+      "market_chains": [
+        {
+          "chain_id": "FICC-GSD-04",
+          "field": "baa_widen20",
+          "description": "Baa−10Y 20-day widening, bp",
+          "S": 3,
+          "weekly_peak": 4.0000000000000036,
+          "percentile": 0.5833333333333334,
+          "prior_weeks": 456,
+          "method": "percentile",
+          "reason": null
+        }
+      ],
+      "data_coverage": {
+        "BAA10Y": {
+          "last_date": "2026-11-03",
+          "required_date": "2026-10-30",
+          "ok": true
+        }
+      },
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 1,
+      "V_base": 1,
+      "V_tier": "pqd",
+      "V_driver": "PQD 18.2.2 top-five open-position share: max(GSD, NSCC) percentile series, ranked on its own history",
+      "V_metric": "max(GSD, NSCC) PQD 18.2.2 percentile",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-09-01",
+      "V_flags": [
+        "V5_share_gt_0.5"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "More than half of quarters score V=5 for this driver.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": 3,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Medium",
+        "rule": "signal_chain",
+        "chain_id": "FICC-GSD-04",
+        "chains": {
+          "FICC-GSD-04": "Medium",
+          "ECS-NSCC-04": "Low"
+        }
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "xe-member-ecs",
+      "snapshot": "2026-10-26",
+      "shock": 3,
+      "vulnerability": 1,
+      "confidence": "Medium",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Weekly peak 20-day widening of the Baa–10-year Treasury spread 4 bp, 58th percentile of 456 prior weeks",
+      "shock_basis": "Weekly peak 20-day widening of the Baa–10-year Treasury spread 4 bp, 58th percentile of 456 prior weeks",
+      "vulnerability_basis": "PQD 18.2.2 top-five open-position share: max(GSD, NSCC) percentile series, ranked on its own history; 2026Q2; DTCC public quantitative disclosure (PQD)",
+      "transmission": {
+        "event": "A bank or dealer member is downgraded, reports losses, or deteriorates in credit without a confirmed default.",
+        "mechanism": "Higher member default risk increases surveillance and default-management preparedness; an actual default routes to GSD-06.",
+        "dtcc_process": "FICC member credit surveillance and default-management preparedness."
+      },
+      "transmission_chain_id": "FICC-GSD-04",
+      "sources": [
+        {
+          "name": "FRED: BAA10Y",
+          "url": "https://fred.stlouisfed.org/series/BAA10Y"
+        },
+        {
+          "name": "DTCC CPMI-IOSCO public quantitative disclosure, 2026 Q2",
+          "url": "https://files.dtcc.com/download/assets/DTCC-PQD-2026Q2.xlsx/b6842b5aa85d11f18303c6529a108655"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm",
+      "shock_method": "Market indicator"
+    },
+    {
+      "record_id": "xe-disrupt-ficc",
+      "business_line": "FICC",
+      "sub_line": "MBSD",
+      "card_id": "XE-DISRUPT",
+      "week": "2026-10-26",
+      "week_end": "2026-10-30",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Market disruption",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Operational",
+      "cross_entity": true,
+      "entities": [
+        "MBSD",
+        "DTC"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 4,
+      "V_base": 4,
+      "V_tier": "public_proxy",
+      "V_driver": "US trading halts incl. LULD pauses reported by Nasdaq Trader, quarterly count",
+      "V_metric": "nasdaq_trading_halts",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-07-07",
+      "V_flags": [
+        "detrended"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "Detrended: ratio to own trailing 8-quarter median.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "xe-disrupt-ficc",
+      "snapshot": "2026-10-26",
+      "shock": null,
+      "vulnerability": 4,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "US trading halts incl. LULD pauses reported by Nasdaq Trader, quarterly count; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "Market-wide disruption (exchange trading halt, banking moratorium, or declared emergency)",
+        "mechanism": "The Corporation invokes its market-disruption / force-majeure powers to suspend, extend, or modify settlement timeframes and obligations",
+        "dtcc_process": "MBSD settlement timeframes under market disruption"
+      },
+      "transmission_chain_id": "FICC-MBSD-04",
+      "sources": [
+        {
+          "name": "Nasdaq Trader trade-halt history",
+          "url": "https://www.nasdaqtrader.com/Trader.aspx?id=TradeHalts"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "xe-disrupt-ecs",
+      "business_line": "ECS",
+      "sub_line": "DTC",
+      "card_id": "XE-DISRUPT",
+      "week": "2026-10-26",
+      "week_end": "2026-10-30",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Market disruption",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Operational",
+      "cross_entity": true,
+      "entities": [
+        "MBSD",
+        "DTC"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 4,
+      "V_base": 4,
+      "V_tier": "public_proxy",
+      "V_driver": "US trading halts incl. LULD pauses reported by Nasdaq Trader, quarterly count",
+      "V_metric": "nasdaq_trading_halts",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-07-07",
+      "V_flags": [
+        "detrended"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "Detrended: ratio to own trailing 8-quarter median.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "xe-disrupt-ecs",
+      "snapshot": "2026-10-26",
+      "shock": null,
+      "vulnerability": 4,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "US trading halts incl. LULD pauses reported by Nasdaq Trader, quarterly count; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "Market-wide disruption (exchange halt, banking moratorium, or declared emergency)",
+        "mechanism": "The Corporation invokes its market-disruption / force-majeure powers to suspend, extend, or modify DTC settlement obligations and timeframes",
+        "dtcc_process": "DTC settlement timeframes under market disruption"
+      },
+      "transmission_chain_id": "ECS-DTC-03",
+      "sources": [
+        {
+          "name": "Nasdaq Trader trade-halt history",
+          "url": "https://www.nasdaqtrader.com/Trader.aspx?id=TradeHalts"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "xe-settlebank-ficc",
+      "business_line": "FICC",
+      "sub_line": "GSD",
+      "card_id": "XE-SETTLEBANK",
+      "week": "2026-10-26",
+      "week_end": "2026-10-30",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Settling bank",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Credit",
+      "cross_entity": true,
+      "entities": [
+        "NSCC",
+        "GSD",
+        "DTC"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 2,
+      "V_base": 2,
+      "V_tier": "public_proxy",
+      "V_driver": "KBW Nasdaq Bank Index (BKX) drawdown from trailing 52-week high, quarterly max",
+      "V_metric": "kbw_bank_drawdown",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-07-07",
+      "V_flags": [
+        "corr_gt_0.7_with_S"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "V driver correlates |r|>0.7 with an S signal; S×V may double-count.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "xe-settlebank-ficc",
+      "snapshot": "2026-10-26",
+      "shock": null,
+      "vulnerability": 2,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "KBW Nasdaq Bank Index (BKX) drawdown from trailing 52-week high, quarterly max; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "A clearing bank performing a GSD settlement role has an operational or credit problem.",
+        "mechanism": "Securities delivery and Fedwire payment through that bank cannot complete on time, interrupting the affected GSD settlement.",
+        "dtcc_process": "GSD securities settlement via clearing banks."
+      },
+      "transmission_chain_id": "FICC-GSD-08",
+      "sources": [
+        {
+          "name": "Nasdaq index historical data API",
+          "url": "https://www.nasdaq.com/market-activity/index/bkx/historical"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "xe-settlebank-ecs",
+      "business_line": "ECS",
+      "sub_line": "NSCC · DTC",
+      "card_id": "XE-SETTLEBANK",
+      "week": "2026-10-26",
+      "week_end": "2026-10-30",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Settling bank",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Credit",
+      "cross_entity": true,
+      "entities": [
+        "NSCC",
+        "GSD",
+        "DTC"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 2,
+      "V_base": 2,
+      "V_tier": "public_proxy",
+      "V_driver": "KBW Nasdaq Bank Index (BKX) drawdown from trailing 52-week high, quarterly max",
+      "V_metric": "kbw_bank_drawdown",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-07-07",
+      "V_flags": [
+        "corr_gt_0.7_with_S"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "V driver correlates |r|>0.7 with an S signal; S×V may double-count.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "xe-settlebank-ecs",
+      "snapshot": "2026-10-26",
+      "shock": null,
+      "vulnerability": 2,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "KBW Nasdaq Bank Index (BKX) drawdown from trailing 52-week high, quarterly max; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "A settling bank has an operational or credit problem",
+        "mechanism": "The settling bank refuses or fails to settle a member’s net-net balance over Fedwire, so NSCC money settlement for that member cannot complete on time",
+        "dtcc_process": "NSCC settling-bank money settlement"
+      },
+      "transmission_chain_id": "ECS-NSCC-07",
+      "sources": [
+        {
+          "name": "Nasdaq index historical data API",
+          "url": "https://www.nasdaq.com/market-activity/index/bkx/historical"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "xe-cyber-ficc",
+      "business_line": "FICC",
+      "sub_line": "MBSD",
+      "card_id": "XE-CYBER",
+      "week": "2026-10-26",
+      "week_end": "2026-10-30",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Cyber and system events",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Cyber",
+      "cross_entity": true,
+      "entities": [
+        "MBSD",
+        "DTC"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 5,
+      "V_base": 5,
+      "V_tier": "public_proxy",
+      "V_driver": "NVD published CVEs, quarterly count",
+      "V_metric": "nvd_published_cves",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-07-07",
+      "V_flags": [
+        "V5_share_gt_0.5",
+        "weak_proxy",
+        "detrended"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "Weak proxy: counts all published CVEs, not DTCC-specific exposure.",
+        "Detrended: ratio to own trailing 8-quarter median.",
+        "More than half of quarters score V=5 for this driver.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "xe-cyber-ficc",
+      "snapshot": "2026-10-26",
+      "shock": null,
+      "vulnerability": 5,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "NVD published CVEs, quarterly count; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "A cyber event or major outage hits a large member’s systems",
+        "mechanism": "The member’s connectivity to DTCC systems is impaired, so its submissions and deliveries are disrupted and the Corporation can act under the participant-system-disruption rule",
+        "dtcc_process": "MBSD participant system disruption"
+      },
+      "transmission_chain_id": "FICC-MBSD-05",
+      "sources": [
+        {
+          "name": "NIST National Vulnerability Database CVE API 2.0",
+          "url": "https://nvd.nist.gov/developers/vulnerabilities"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "xe-cyber-ecs",
+      "business_line": "ECS",
+      "sub_line": "DTC",
+      "card_id": "XE-CYBER",
+      "week": "2026-10-26",
+      "week_end": "2026-10-30",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Cyber and system events",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Cyber",
+      "cross_entity": true,
+      "entities": [
+        "MBSD",
+        "DTC"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 5,
+      "V_base": 5,
+      "V_tier": "public_proxy",
+      "V_driver": "NVD published CVEs, quarterly count",
+      "V_metric": "nvd_published_cves",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-07-07",
+      "V_flags": [
+        "V5_share_gt_0.5",
+        "weak_proxy",
+        "detrended"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "Weak proxy: counts all published CVEs, not DTCC-specific exposure.",
+        "Detrended: ratio to own trailing 8-quarter median.",
+        "More than half of quarters score V=5 for this driver.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "xe-cyber-ecs",
+      "snapshot": "2026-10-26",
+      "shock": null,
+      "vulnerability": 5,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "NVD published CVEs, quarterly count; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "A large DTC participant suffers a cyber event or major system outage.",
+        "mechanism": "Impaired participant connectivity or instruction transmission disrupts book-entry transfers and settlement, potentially invoking participant-system-disruption handling.",
+        "dtcc_process": "DTC participant system disruption and affected instructions."
+      },
+      "transmission_chain_id": "ECS-DTC-05",
+      "sources": [
+        {
+          "name": "NIST National Vulnerability Database CVE API 2.0",
+          "url": "https://nvd.nist.gov/developers/vulnerabilities"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "ficc-gsd-11",
+      "business_line": "FICC",
+      "sub_line": "GSD",
+      "card_id": "FICC-GSD-11",
+      "week": "2026-10-26",
+      "week_end": "2026-10-30",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Agent-cleared customer stress",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Credit",
+      "cross_entity": false,
+      "entities": [
+        "GSD"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 3,
+      "V_base": 3,
+      "V_tier": "public_proxy",
+      "V_driver": "OFR qualifying hedge fund gross assets / net assets",
+      "V_metric": "ofr_hf_gav_to_nav",
+      "V_quarter": "2026Q1",
+      "V_available_date": "2026-09-27",
+      "V_flags": [
+        "V5_share_gt_0.5",
+        "detrended"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "Detrended: ratio to own trailing 8-quarter median.",
+        "More than half of quarters score V=5 for this driver.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "ficc-gsd-11",
+      "snapshot": "2026-10-26",
+      "shock": null,
+      "vulnerability": 3,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "OFR qualifying hedge fund gross assets / net assets; 2026Q1; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "A buy-side executing-firm customer (for example a hedge fund) comes under stress or fails",
+        "mechanism": "The Agent Clearing Member that submitted the customer’s trades remains responsible to the Corporation for them, so the stress is concentrated on that agent member",
+        "dtcc_process": "GSD Agent Clearing Service"
+      },
+      "transmission_chain_id": "FICC-GSD-11",
+      "sources": [
+        {
+          "name": "OFR Hedge Fund Monitor API (Form PF aggregates)",
+          "url": "https://www.financialresearch.gov/hedge-fund-monitor/api/"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "ficc-mbsd-02",
+      "business_line": "FICC",
+      "sub_line": "MBSD",
+      "card_id": "FICC-MBSD-02",
+      "week": "2026-10-26",
+      "week_end": "2026-10-30",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "Pool delivery",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Operational",
+      "cross_entity": false,
+      "entities": [
+        "MBSD"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 3,
+      "V_base": 3,
+      "V_tier": "public_proxy",
+      "V_driver": "Mortgage origination volume, USD bn per quarter",
+      "V_metric": "nyfed_mortgage_originations",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-08-29",
+      "V_flags": [],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "ficc-mbsd-02",
+      "snapshot": "2026-10-26",
+      "shock": null,
+      "vulnerability": 3,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "Mortgage origination volume, USD bn per quarter; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "Mortgage-backed pool supply or reference data breaks down (for example pool allocation or data errors around month-end settlement)",
+        "mechanism": "Members cannot satisfy their Pool Deliver Obligations on time, so deliveries fail and the Corporation applies the fails charge to the funds amount of each failed position",
+        "dtcc_process": "MBSD pool settlement and fails charge"
+      },
+      "transmission_chain_id": "FICC-MBSD-02",
+      "sources": [
+        {
+          "name": "New York Fed Household Debt and Credit Report (CCP/Equifax), Page 6 data",
+          "url": "https://www.newyorkfed.org/microeconomics/hhdc"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "ecs-nscc-08",
+      "business_line": "ECS",
+      "sub_line": "NSCC",
+      "card_id": "ECS-NSCC-08",
+      "week": "2026-10-26",
+      "week_end": "2026-10-30",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "ACATS account transfers",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Credit",
+      "cross_entity": false,
+      "entities": [
+        "NSCC"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 3,
+      "V_base": 3,
+      "V_tier": "public_proxy",
+      "V_driver": "NYSE Arca Securities Broker/Dealer Index (XBD) drawdown from trailing 52-week high, quarterly max",
+      "V_metric": "xbd_broker_dealer_drawdown",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-07-07",
+      "V_flags": [
+        "corr_gt_0.7_with_S"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "V driver correlates |r|>0.7 with an S signal; S×V may double-count.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "ecs-nscc-08",
+      "snapshot": "2026-10-26",
+      "shock": null,
+      "vulnerability": 3,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "NYSE Arca Securities Broker/Dealer Index (XBD) drawdown from trailing 52-week high, quarterly max; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "A retail broker fails or exits abruptly",
+        "mechanism": "A wave of customer accounts is moved through the Automated Customer Account Transfer Service (ACATS) within fixed timeframes, concentrating transfer and settlement activity",
+        "dtcc_process": "NSCC ACATS customer account transfers"
+      },
+      "transmission_chain_id": "ECS-NSCC-08",
+      "sources": [
+        {
+          "name": "Yahoo Finance chart API (^XBD index closes)",
+          "url": "https://finance.yahoo.com/quote/%5EXBD/history/"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "ecs-nscc-09",
+      "business_line": "ECS",
+      "sub_line": "NSCC",
+      "card_id": "ECS-NSCC-09",
+      "week": "2026-10-26",
+      "week_end": "2026-10-30",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "SFT securities financing",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Liquidity",
+      "cross_entity": false,
+      "entities": [
+        "NSCC"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 3,
+      "V_base": 3,
+      "V_tier": "public_proxy",
+      "V_driver": "SOFR underlying transaction volume, USD bn, quarterly mean",
+      "V_metric": "sofr_volume",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-07-07",
+      "V_flags": [
+        "V5_share_gt_0.5",
+        "detrended"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "Detrended: ratio to own trailing 8-quarter median.",
+        "More than half of quarters score V=5 for this driver.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "ecs-nscc-09",
+      "snapshot": "2026-10-26",
+      "shock": null,
+      "vulnerability": 3,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "SOFR underlying transaction volume, USD bn, quarterly mean; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "Securities-financing (repo / stock-loan) markets come under stress",
+        "mechanism": "Novated Securities Financing Transactions in the SFT clearing service reprice and remargin, so member collateral and settlement obligations on the SFT book move sharply",
+        "dtcc_process": "NSCC Securities Financing Transaction clearing service"
+      },
+      "transmission_chain_id": "ECS-NSCC-09",
+      "sources": [
+        {
+          "name": "New York Fed Markets Data API (source of FRED SOFRVOL)",
+          "url": "https://markets.newyorkfed.org/static/docs/markets-api.html"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    },
+    {
+      "record_id": "ecs-dtc-01",
+      "business_line": "ECS",
+      "sub_line": "DTC",
+      "card_id": "ECS-DTC-01",
+      "week": "2026-10-26",
+      "week_end": "2026-10-30",
+      "spec_version": "v1.3-indicator",
+      "official": true,
+      "title": "MMI commercial-paper settlement",
+      "card_status": "PROPOSED",
+      "region": "US",
+      "risk_family": "Liquidity",
+      "cross_entity": false,
+      "entities": [
+        "DTC"
+      ],
+      "legacy_v12_cards": [],
+      "news_coverage": "manual_register_only",
+      "status": "news_not_scanned",
+      "status_reason": "no market signal for this card and no active manual-register event; news classifier not yet running",
+      "S": null,
+      "S_source": null,
+      "S_market": null,
+      "S_event": null,
+      "signal": null,
+      "market_chains": [],
+      "data_coverage": {},
+      "event_manual": {
+        "active_events": 0,
+        "driving_event_ids": [],
+        "needs_review": false,
+        "events": []
+      },
+      "V": 3,
+      "V_base": 3,
+      "V_tier": "public_proxy",
+      "V_driver": "Commercial paper outstanding, seasonally adjusted, USD mn, quarterly mean of weekly values",
+      "V_metric": "cp_outstanding",
+      "V_quarter": "2026Q2",
+      "V_available_date": "2026-07-07",
+      "V_flags": [
+        "detrended"
+      ],
+      "V_override_reason": null,
+      "V_caveats": [
+        "Public-proxy V from a real public series; not observed DTCC resources.",
+        "Detrended: ratio to own trailing 8-quarter median.",
+        "Historical source release dates/vintages are not verified; availability uses assumed publication lags."
+      ],
+      "V_null_reason": null,
+      "severity": null,
+      "show_on_main": false,
+      "needs_human_signoff": false,
+      "chain_confidence": {
+        "level": "Low",
+        "rule": "untested",
+        "chain_id": null,
+        "chains": {}
+      },
+      "shared_signal": [],
+      "shared_signal_fields": {},
+      "id": "ecs-dtc-01",
+      "snapshot": "2026-10-26",
+      "shock": null,
+      "vulnerability": 3,
+      "confidence": "Low",
+      "updated_at": "2026-11-05T05:16:00Z",
+      "what_happened": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "shock_basis": "Not scored: no market indicator for this card and no active hand-entered event; news is not yet scanned.",
+      "vulnerability_basis": "Commercial paper outstanding, seasonally adjusted, USD mn, quarterly mean of weekly values; 2026Q2; public proxy series, not DTCC data",
+      "transmission": {
+        "event": "A money-market issuer or its issuing/paying agent has a funding problem",
+        "mechanism": "The issuing and paying agent cannot give the MMI funding acknowledgment for the day’s presentments, so MMI maturity and issuance settlement for that acronym stalls",
+        "dtcc_process": "DTC MMI settlement (funding acknowledgment)"
+      },
+      "transmission_chain_id": "ECS-DTC-01",
+      "sources": [
+        {
+          "name": "Federal Reserve Board CP release, series DTBSPCK.WW (source of FRED COMPOUT)",
+          "url": "https://www.federalreserve.gov/releases/cp/"
+        }
+      ],
+      "ai_generated_fields": [],
+      "so_what": null,
+      "so_now_what": null,
+      "analysis_status": "pending_llm"
+    }
+  ]
+}
